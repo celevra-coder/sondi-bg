@@ -36,7 +36,7 @@ export default function Home() {
 
           <div className="mt-10">
             <Link
-              href="/map"
+              href="/explore"
               className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-10 py-4 text-base font-light tracking-[0.12em] backdrop-blur-md transition duration-500 hover:bg-white hover:text-black"
             >
               Изследвай
