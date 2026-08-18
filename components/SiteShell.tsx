@@ -66,10 +66,17 @@ export default function SiteShell({
       {!keepHeaderVisible && (
         <button
           type="button"
-          onClick={() => setHeaderOpen((value) => !value)}
+          onClick={() => {
+            const nextOpen = !headerOpen;
+            setHeaderOpen(nextOpen);
+
+            if (typeof window !== "undefined" && window.innerWidth < 1280) {
+              setMobileOpen(nextOpen);
+            }
+          }}
           className="fixed right-4 top-3 z-[120] rounded-full border border-[#b9dbe3] bg-[#e8f6f9]/95 px-4 py-2 text-xs font-medium text-[#24505b] shadow-md backdrop-blur-xl transition hover:bg-white"
         >
-          Меню
+          {headerOpen && mobileOpen ? "Затвори" : "Меню"}
         </button>
       )}
 
