@@ -500,6 +500,92 @@ document
     );
   });
 
+async function activateThematicMode(mode){
+  activeThematicMode =
+    mode === "default"
+      ? ""
+      : mode;
+
+  const bdCheckbox =
+    document.getElementById("layer-bd-ibr");
+
+  const eeaCheckbox =
+    document.getElementById("layer-groundwater");
+
+  // Тематичните режими използват официалния БД ИБР / ПУРБ3 слой.
+  if (eeaCheckbox && eeaCheckbox.checked) {
+    eeaCheckbox.checked = false;
+
+    if (map.hasLayer(groundwaterLayer)) {
+      map.removeLayer(groundwaterLayer);
+    }
+  }
+
+  if (bdCheckbox) {
+    bdCheckbox.checked = true;
+  }
+
+  if (!map.hasLayer(bdIbrGroundwaterLayer)) {
+    bdIbrGroundwaterLayer.addTo(map);
+  }
+
+  await loadBdIbrGroundwaterBodies();
+
+  if (activeThematicMode === "point-pressure") {
+    await loadPointPressureData();
+  }
+
+  if (activeThematicMode === "diffuse-pressure") {
+    await loadDiffusePressureData();
+  }
+
+  if (activeThematicMode === "pollution-risk") {
+    await loadPollutionRiskData();
+  }
+
+  if (activeThematicMode === "abstraction-pressure") {
+    await loadAbstractionPressureData();
+
+    if (typeof loadQuantitativeRiskData === "function") {
+      await loadQuantitativeRiskData();
+    }
+  }
+
+  applyBdIbrThematicStyle();
+
+  if (typeof updatePointPressureLegend === "function") {
+    updatePointPressureLegend();
+  }
+
+  if (typeof updateDiffusePressureLegend === "function") {
+    updateDiffusePressureLegend();
+  }
+
+  if (typeof updatePollutionRiskLegend === "function") {
+    updatePollutionRiskLegend();
+  }
+
+  if (typeof updateAbstractionPressureLegend === "function") {
+    updateAbstractionPressureLegend();
+  }
+
+  zoomOutForRegionalLayer(9);
+
+  setTimeout(function(){
+    updateRightLayerControlVisibility();
+  }, 0);
+}
+
+document
+  .querySelectorAll('input[name="thematic-mode"]')
+  .forEach(function(radio){
+    radio.addEventListener("change", function(){
+      if (!radio.checked) return;
+
+      activateThematicMode(radio.value);
+    });
+  });
+
 map.on(
   'overlayadd overlayremove',
   () => setTimeout(
@@ -2255,9 +2341,10 @@ async function loadGroundwaterBodies(){
        precision:5,
        style:()=>({
          color:'#1565c0',
-         weight:2,
+         weight:1.2,
+         opacity:0.75,
          fillColor:'#42a5f5',
-         fillOpacity:0.22
+         fillOpacity:0.07
        }),
        onEachFeature:(feature,l)=>{
          const p=feature.properties||{};
@@ -2269,7 +2356,7 @@ async function loadGroundwaterBodies(){
    }else{
      layer=L.esri.dynamicMapLayer({
        url:serviceUrl,
-       opacity:0.5,
+       opacity:0.25,
        useCors:true
      });
    }
@@ -3380,7 +3467,36 @@ const data={"type": "FeatureCollection", "features": [{"type": "Feature", "geome
 const missing=[{"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Варна", "settlement": "Варна", "deposit": "\"EÐ’Ð¥\" - ÑƒÑ‡Ð°ÑÑ‚ÑŠÐº  Ð’Ð°Ñ€Ð½Ð° - â„–101", "section": "", "facility": "С-8х           Вълнолома -Варна", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "", "status": "ÑÐ°Ð¼Ð¾Ð»Ð¸ÐºÐ²Ð¸Ð´Ð¸Ñ€Ð°Ð½", "registry_number": "251 101 00021/               27.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ликвидиран/закрит", "temperature_class": "Без температура"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Варна", "settlement": "Варна", "deposit": "\"EÐ’Ð¥\" - ÑƒÑ‡Ð°ÑÑ‚ÑŠÐº  Ð’Ð°Ñ€Ð½Ð° - â„–101", "section": "", "facility": "С-2          Карантината -Варна", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "", "status": "ÑÐ°Ð¼Ð¾Ð»Ð¸ÐºÐ²Ð¸Ð´Ð¸Ñ€Ð°Ð½", "registry_number": "251 101 00025/                          27.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ликвидиран/закрит", "temperature_class": "Без температура"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Варна", "settlement": "Варна", "deposit": "\"EÐ’Ð¥\" - ÑƒÑ‡Ð°ÑÑ‚ÑŠÐº  Ð’Ð°Ñ€Ð½Ð° - â„–101", "section": "", "facility": "С-4       Санаториума", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "", "status": "ÑÐ°Ð¼Ð¾Ð»Ð¸ÐºÐ²Ð¸Ð´Ð¸Ñ€Ð°Ð½", "registry_number": "251 101 00027/                          27.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ликвидиран/закрит", "temperature_class": "Без температура"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Долни чифлик", "deposit": "Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ -  â„–99", "section": "", "facility": "Р-1                      Д.Чифлик", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "43", "status": "ликвидиран", "registry_number": "251 099 00037/             27.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ликвидиран/закрит", "temperature_class": "40–60°C"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Долни чифлик", "deposit": "Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ -  â„–99", "section": "", "facility": "Р-63                                  Д.Чифлик", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "23", "status": "ÑÐ°Ð¼Ð¾Ð»Ð¸ÐºÐ²Ð¸Ð´Ð¸Ñ€Ð°Ð½", "registry_number": "251 099 00038           /27.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ликвидиран/закрит", "temperature_class": "< 25°C"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Ñ.Ð¡Ñ‚. ÐžÑ€ÑÑ…Ð¾Ð²Ð¾", "deposit": "Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ -  â„–99", "section": "", "facility": "Ð -11               Ð¡Ñ‚.ÐžÑ€ÑÑ…Ð¾Ð²Ð¾", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "30", "status": " ликвидиран", "registry_number": "251 099 00040              /27.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ликвидиран/закрит", "temperature_class": "25–40°C"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Варна", "settlement": "Варна", "deposit": "\"ÐœÐ’Ð’Ð¥\" - ÑƒÑ‡Ð°ÑÑ‚ÑŠÐº  Ð’Ð°Ñ€Ð½Ð° - â„–101", "section": "", "facility": "С-3х                            КК \"Г. Димитров\"", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "32.8", "status": "ликвидиран", "registry_number": "251 100 00057/28.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ликвидиран/закрит", "temperature_class": "25–40°C"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Ñ.Ð¨ÐºÐ¾Ñ€Ð¿Ð¸Ð»Ð¾Ð²Ñ†Ð¸", "deposit": "â„– 99 - Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ ", "section": "", "facility": "Р-55             Шкорпиловци", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "", "status": "няма данни", "registry_number": "251 099 00067/ 31.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ð”Ñ€ÑƒÐ³Ð¾ Ð¼Ð¸Ð½ÐµÑ€Ð°Ð»Ð½Ð¾ ÑÑŠÐ¾Ñ€ÑŠÐ¶ÐµÐ½Ð¸Ðµ", "temperature_class": "Без температура"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Ñ.Ð¨ÐºÐ¾Ñ€Ð¿Ð¸Ð»Ð¾Ð²Ñ†Ð¸", "deposit": "â„– 99 - Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ ", "section": "", "facility": "Р-56             Шкорпиловци", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "", "status": "няма данни", "registry_number": "251 099 00068/ 31.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ð”Ñ€ÑƒÐ³Ð¾ Ð¼Ð¸Ð½ÐµÑ€Ð°Ð»Ð½Ð¾ ÑÑŠÐ¾Ñ€ÑŠÐ¶ÐµÐ½Ð¸Ðµ", "temperature_class": "Без температура"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Ñ.Ð¨ÐºÐ¾Ñ€Ð¿Ð¸Ð»Ð¾Ð²Ñ†Ð¸", "deposit": "â„– 99 - Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ ", "section": "", "facility": "Р-57             Шкорпиловци", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "43", "status": "няма данни", "registry_number": "251 099 00069/ 31.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ð”Ñ€ÑƒÐ³Ð¾ Ð¼Ð¸Ð½ÐµÑ€Ð°Ð»Ð½Ð¾ ÑÑŠÐ¾Ñ€ÑŠÐ¶ÐµÐ½Ð¸Ðµ", "temperature_class": "40–60°C"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Ñ.Ð¨ÐºÐ¾Ñ€Ð¿Ð¸Ð»Ð¾Ð²Ñ†Ð¸", "deposit": "Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ -  â„–99", "section": "", "facility": "Р-58             Шкорпиловци", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "33", "status": "ликвидиран", "registry_number": "251 099 00070/ 31.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ликвидиран/закрит", "temperature_class": "25–40°C"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Ñ.Ð¨ÐºÐ¾Ñ€Ð¿Ð¸Ð»Ð¾Ð²Ñ†Ð¸", "deposit": "â„– 99 - Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ ", "section": "", "facility": "Р-59             Шкорпиловци", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "", "status": "няма данни", "registry_number": "251 099 00071/ 31.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ð”Ñ€ÑƒÐ³Ð¾ Ð¼Ð¸Ð½ÐµÑ€Ð°Ð»Ð½Ð¾ ÑÑŠÐ¾Ñ€ÑŠÐ¶ÐµÐ½Ð¸Ðµ", "temperature_class": "Без температура"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Ñ.Ð¨ÐºÐ¾Ñ€Ð¿Ð¸Ð»Ð¾Ð²Ñ†Ð¸", "deposit": "â„– 99 - Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ ", "section": "", "facility": "Р-60           Шкорпиловци", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "", "status": "няма данни", "registry_number": "251 099 00072/ 31.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ð”Ñ€ÑƒÐ³Ð¾ Ð¼Ð¸Ð½ÐµÑ€Ð°Ð»Ð½Ð¾ ÑÑŠÐ¾Ñ€ÑŠÐ¶ÐµÐ½Ð¸Ðµ", "temperature_class": "Без температура"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Ñ.Ð¨ÐºÐ¾Ñ€Ð¿Ð¸Ð»Ð¾Ð²Ñ†Ð¸", "deposit": "Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ -  â„–99", "section": "", "facility": "Р-62         Шкорпиловци", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "38", "status": "ликвидиран", "registry_number": "251 099 00073/ 31.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ликвидиран/закрит", "temperature_class": "25–40°C"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Ñ.Ð¨ÐºÐ¾Ñ€Ð¿Ð¸Ð»Ð¾Ð²Ñ†Ð¸", "deposit": "Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ -  â„–99", "section": "", "facility": "Р-79          Шкорпиловци", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "38", "status": "ликвидиран", "registry_number": "251 099 00074/ 31.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ликвидиран/закрит", "temperature_class": "25–40°C"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Ñ.Ð¡Ñ‚. ÐžÑ€ÑÑ…Ð¾Ð²Ð¾", "deposit": "â„– 99 - Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ ", "section": "", "facility": "Р-61                    Пода", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "", "status": "няма данни", "registry_number": "251 099 00075/ 31.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ð”Ñ€ÑƒÐ³Ð¾ Ð¼Ð¸Ð½ÐµÑ€Ð°Ð»Ð½Ð¾ ÑÑŠÐ¾Ñ€ÑŠÐ¶ÐµÐ½Ð¸Ðµ", "temperature_class": "Без температура"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Варна", "municipality": "Д.чифлик", "settlement": "Ñ.Ð¡Ñ‚. ÐžÑ€ÑÑ…Ð¾Ð²Ð¾", "deposit": "â„– 99 - Ð Ð°Ð¹Ð¾Ð½ \"Ð”Ð¾Ð»Ð½Ð° ÐšÐ°Ð¼Ñ‡Ð¸Ñ\"                 -Ð¹Ð¾Ð´Ð¾-Ð±Ñ€Ð¾Ð¼Ð½Ð¸ Ð²Ð¾Ð´Ð¸ ", "section": "", "facility": "Р-66                   Пода", "facility_type": "водовземно", "year": "няма данни", "latitude": "", "longitude": "", "depth_m": "няма данни", "temperature_c": "", "status": "няма данни", "registry_number": "251 099 00076/ 31.03.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ð”Ñ€ÑƒÐ³Ð¾ Ð¼Ð¸Ð½ÐµÑ€Ð°Ð»Ð½Ð¾ ÑÑŠÐ¾Ñ€ÑŠÐ¶ÐµÐ½Ð¸Ðµ", "temperature_class": "Без температура"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Добрич", "municipality": "Балчик", "settlement": "Балчик", "deposit": "\"Ð•Ð’Ð¥\" -  â„–101 - ÑƒÑ‡Ð°ÑÑ‚ÑŠÐº Ð‘Ð°Ð»Ñ‡Ð¸Ðº", "section": "", "facility": "Тх-16х           Тузлата", "facility_type": "водовземно", "year": "1976", "latitude": "", "longitude": "", "depth_m": "526,00", "temperature_c": "32", "status": "ликвидиран", "registry_number": "251 101 00094/ 09.04.2008 г", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ликвидиран/закрит", "temperature_class": "25–40°C"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Добрич", "municipality": "Балчик", "settlement": "Ñ.ÐšÑ€Ð°Ð½ÐµÐ²Ð¾", "deposit": "\"Ð•Ð’Ð¥\" -  â„–101 - ÑƒÑ‡Ð°ÑÑ‚ÑŠÐº Ð‘Ð°Ð»Ñ‡Ð¸Ðº", "section": "", "facility": "Вн-24                         Кранево", "facility_type": "водовземно", "year": "1989", "latitude": "", "longitude": "", "depth_m": "671,0", "temperature_c": "23", "status": "", "registry_number": "251 101 00106/ 15.04.2008г.", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "Ð”Ñ€ÑƒÐ³Ð¾ Ð¼Ð¸Ð½ÐµÑ€Ð°Ð»Ð½Ð¾ ÑÑŠÐ¾Ñ€ÑŠÐ¶ÐµÐ½Ð¸Ðµ", "temperature_class": "< 25°C"}, {"basin_directorate": "Ð§ÐµÑ€Ð½Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Ð‘ÑƒÑ€Ð³Ð°Ñ", "municipality": "Ð‘ÑƒÑ€Ð³Ð°Ñ", "settlement": "Ñ.Ð˜Ð·Ð²Ð¾Ñ€Ð¸Ñ‰Ðµ", "deposit": "\"Ð˜Ð·Ð²Ð¾Ñ€Ð¸Ñ‰Ðµ\"             Ð¾Ð±Ñ‰Ð¸Ð½Ð° Ð‘ÑƒÑ€Ð³Ð°Ñ                 â„– 30", "section": "", "facility": "Б-108            \"Изворище\"     ПИ 32425.65.216", "facility_type": "водовземно", "year": "", "latitude": "", "longitude": "", "depth_m": "155.5", "temperature_c": "25.5", "status": "оборудван", "registry_number": "215 001 00118/07.05.2008г.", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð§Ð  ÐºÑŠÐ¼ 31.12.2025", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "ÐšÐ°Ð¿Ñ‚Ð°Ð¶/ÐµÑÑ‚ÐµÑÑ‚Ð²ÐµÐ½ Ð¸Ð·Ð²Ð¾Ñ€", "temperature_class": "25–40°C"}, {"basin_directorate": "Ð˜Ð·Ñ‚Ð¾Ñ‡Ð½Ð¾Ð±ÐµÐ»Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "", "municipality": "", "settlement": "", "deposit": "ÐŸÐ°Ð²ÐµÐ» Ð±Ð°Ð½Ñ, Ñ. ÐŸÐ°Ð²ÐµÐ» Ð±Ð°Ð½Ñ, Ð¾Ð±Ñ‰Ð¸Ð½Ð° ÐŸÐ°Ð²ÐµÐ» Ð±Ð°Ð½Ñ, Ð¾Ð±Ð»Ð°ÑÑ‚ Ð¡Ñ‚Ð°Ñ€Ð° Ð—Ð°Ð³Ð¾Ñ€Ð°", "section": "-", "facility": "ÐšÐ•Ð˜ \"Ð“Ð¾Ð»ÑÐ¼ Ð³ÑŒÐ¾Ð»\"", "facility_type": "водовземно", "year": "1930-1931", "latitude": "", "longitude": "", "depth_m": "", "temperature_c": "", "status": "добро", "registry_number": "351054010  26.03.2008г.", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð˜Ð‘Ð  ÐºÑŠÐ¼ 30.09.2019", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "ÐšÐ°Ð¿Ñ‚Ð°Ð¶/ÐµÑÑ‚ÐµÑÑ‚Ð²ÐµÐ½ Ð¸Ð·Ð²Ð¾Ñ€", "temperature_class": "Без температура"}, {"basin_directorate": "Ð˜Ð·Ñ‚Ð¾Ñ‡Ð½Ð¾Ð±ÐµÐ»Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "", "municipality": "", "settlement": "", "deposit": "ÐŸÐ°Ð²ÐµÐ» Ð±Ð°Ð½Ñ, Ñ. ÐŸÐ°Ð²ÐµÐ» Ð±Ð°Ð½Ñ, Ð¾Ð±Ñ‰Ð¸Ð½Ð° ÐŸÐ°Ð²ÐµÐ» Ð±Ð°Ð½Ñ, Ð¾Ð±Ð»Ð°ÑÑ‚ Ð¡Ñ‚Ð°Ñ€Ð° Ð—Ð°Ð³Ð¾Ñ€Ð°", "section": "-", "facility": "КЕИ \"Малък гьол\"", "facility_type": "водовземно", "year": "1930-1931", "latitude": "", "longitude": "", "depth_m": "5", "temperature_c": "", "status": "добро", "registry_number": "351054011  26.03.2008г.", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð˜Ð‘Ð  ÐºÑŠÐ¼ 30.09.2019", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "ÐšÐ°Ð¿Ñ‚Ð°Ð¶/ÐµÑÑ‚ÐµÑÑ‚Ð²ÐµÐ½ Ð¸Ð·Ð²Ð¾Ñ€", "temperature_class": "Без температура"}, {"basin_directorate": "Ð—Ð°Ð¿Ð°Ð´Ð½Ð¾Ð±ÐµÐ»Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Благоевград", "municipality": "Симитли", "settlement": "Симитли", "deposit": "â€žÐ¡Ð¸Ð¼Ð¸Ñ‚Ð»Ð¸â€ â„–70", "section": "", "facility": "Сондаж №4", "facility_type": "", "year": "1959", "latitude": "", "longitude": "", "depth_m": "192", "temperature_c": "", "status": "", "registry_number": "", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð—Ð‘Ð  ÐºÑŠÐ¼ 06.02.2026", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "ÐœÐ¸Ð½ÐµÑ€Ð°Ð»ÐµÐ½ ÑÐ¾Ð½Ð´Ð°Ð¶", "temperature_class": "Без температура"}, {"basin_directorate": "Ð—Ð°Ð¿Ð°Ð´Ð½Ð¾Ð±ÐµÐ»Ð¾Ð¼Ð¾Ñ€ÑÐºÐ¸ Ñ€Ð°Ð¹Ð¾Ð½", "district": "Благоевград", "municipality": "Сандански", "settlement": "Сандански", "deposit": "â€žÐ¡Ð°Ð½Ð´Ð°Ð½ÑÐºÐ¸â€ â„–66", "section": "", "facility": "Сондаж №МС4", "facility_type": "за мониторинг", "year": "", "latitude": "", "longitude": "", "depth_m": "85", "temperature_c": "", "status": "добро", "registry_number": "", "source_date": "", "source": "Ð ÐµÐ³Ð¸ÑÑ‚ÑŠÑ€ Ð‘Ð”Ð—Ð‘Ð  ÐºÑŠÐ¼ 06.02.2026", "source_url": "", "coordinate_accuracy": "", "mapped_status": "Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÐµÐ½ Ð·Ð°Ð¿Ð¸Ñ Ð±ÐµÐ· Ð½Ð°Ð´ÐµÐ¶Ð´Ð½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐµÐ½Ð¸ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸", "display_category": "ÐœÐ¾Ð½Ð¸Ñ‚Ð¾Ñ€Ð¸Ð½Ð³Ð¾Ð² ÑÐ¾Ð½Ð´Ð°Ð¶", "temperature_class": "Без температура"}];
 const markers=[];
 
-function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function repairMapText(value){
+  let s = String(value ?? '');
+
+  if (!/[ÐÑâ]/.test(s)) {
+    return s;
+  }
+
+  try {
+    const repaired = decodeURIComponent(escape(s));
+
+    if (repaired && repaired !== s) {
+      return repaired;
+    }
+  } catch (error) {}
+
+  return s;
+}
+
+function esc(s){
+  return repairMapText(s).replace(
+    /[&<>"']/g,
+    c => ({
+      '&':'&amp;',
+      '<':'&lt;',
+      '>':'&gt;',
+      '"':'&quot;',
+      "'":'&#39;'
+    }[c])
+  );
+}
 function num(v){if(v===null||v===undefined||v==='')return null;const n=parseFloat(String(v).replace(',','.'));return Number.isFinite(n)?n:null}
 function copyC(a,b){navigator.clipboard.writeText(a.toFixed(7)+', '+b.toFixed(7));alert('ÐšÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸Ñ‚Ðµ ÑÐ° ÐºÐ¾Ð¿Ð¸Ñ€Ð°Ð½Ð¸')}
 function addOptions(id,vals){const s=document.getElementById(id);[...new Set(vals.filter(Boolean))].sort((a,b)=>a.localeCompare(b,'bg')).forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;s.appendChild(o)})}
@@ -3498,10 +3614,20 @@ function toggleUnmapped(){
 .forEach(i=>document.getElementById(i).addEventListener('input',applyFilters));
 
 
+
+function zoomOutForRegionalLayer(maxZoom = 9){
+  if (map.getZoom() > maxZoom) {
+    map.setZoom(maxZoom, {
+      animate: true
+    });
+  }
+}
+
 document.getElementById('layer-bd-ibr').addEventListener('change',e=>{
   if(e.target.checked){
     bdIbrGroundwaterLayer.addTo(map);
     loadBdIbrGroundwaterBodies();
+    zoomOutForRegionalLayer(9);
   }else{
     map.removeLayer(bdIbrGroundwaterLayer);
   }
@@ -3547,6 +3673,7 @@ document.getElementById('layer-groundwater').addEventListener('change',e=>{
  if(e.target.checked){
    groundwaterLayer.addTo(map);
    loadGroundwaterBodies();
+   zoomOutForRegionalLayer(9);
  }else map.removeLayer(groundwaterLayer);
 });
 document.getElementById('layer-faults').addEventListener('change',e=>{
