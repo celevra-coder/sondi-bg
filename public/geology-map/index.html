@@ -2320,55 +2320,126 @@ async function loadQuantitativeMonitoring(){
 }
 
 async function loadGroundwaterBodies(){
- if(groundwaterLoaded||groundwaterLoading)return;
- groundwaterLoading=true;
- setLayerStatus('gw-load-status','зарежда се…','#a05a00');
- try{
-   const itemId='0d434f49a03e43c4b62b11044f822149';
-   const metaUrl=`https://www.arcgis.com/sharing/rest/content/items/${itemId}?f=json`;
-   const meta=await fetch(metaUrl).then(r=>{
-     if(!r.ok)throw new Error('ArcGIS metadata HTTP '+r.status);
-     return r.json();
-   });
-   if(!meta.url)throw new Error('Липсва service URL');
-   const serviceUrl=meta.url.replace(/\/$/,'');
-   let layer;
-   if(/FeatureServer/i.test(serviceUrl)){
-     const layerUrl=/\/\d+$/.test(serviceUrl)?serviceUrl:serviceUrl+'/0';
-     layer=L.esri.featureLayer({
-       url:layerUrl,
-       simplifyFactor:0.4,
-       precision:5,
-       style:()=>({
-         color:'#1565c0',
-         weight:1.2,
-         opacity:0.75,
-         fillColor:'#42a5f5',
-         fillOpacity:0.07
-       }),
-       onEachFeature:(feature,l)=>{
-         const p=feature.properties||{};
-         const name=p.name||p.Name||p.WATERBODY_NAME||p.WB_NAME||p.euName||'Подземно водно тяло';
-         const code=p.euCode||p.EU_CD||p.code||p.Code||p.WB_CODE||'—';
-         l.bindPopup(`<b>${esc(name)}</b><br>Код: ${esc(code)}<br>Източник: EEA / WFD`);
-       }
-     });
-   }else{
-     layer=L.esri.dynamicMapLayer({
-       url:serviceUrl,
-       opacity:0.25,
-       useCors:true
-     });
-   }
-   layer.addTo(groundwaterLayer);
-   groundwaterLoaded=true;
-   setLayerStatus('gw-load-status','заредено ✓','#0b6b43');
- }catch(err){
-   console.error('Groundwater load error',err);
-   setLayerStatus('gw-load-status','грешка при зареждане','#b00020');
- }
- groundwaterLoading=false;
+  if(groundwaterLoaded || groundwaterLoading) return;
+
+  groundwaterLoading = true;
+  setLayerStatus('gw-load-status','зарежда се…','#a05a00');
+
+  try{
+    const itemId = '0d434f49a03e43c4b62b11044f822149';
+
+    const metaUrl =
+      `https://www.arcgis.com/sharing/rest/content/items/${itemId}?f=json`;
+
+    const meta = await fetch(metaUrl).then(r => {
+      if(!r.ok) throw new Error('ArcGIS metadata HTTP ' + r.status);
+      return r.json();
+    });
+
+    if(!meta.url) throw new Error('Липсва service URL');
+
+    const serviceUrl = meta.url.replace(/\/$/,'');
+    let polygonLayerUrl = null;
+
+    const baseUrl = serviceUrl.replace(/\/\d+$/,'');
+
+    const serviceMeta = await fetch(
+      baseUrl + '?f=json'
+    ).then(r => {
+      if(!r.ok) throw new Error('Service metadata HTTP ' + r.status);
+      return r.json();
+    });
+
+    const candidates = Array.isArray(serviceMeta.layers)
+      ? serviceMeta.layers
+      : [];
+
+    for(const candidate of candidates){
+      const candidateUrl = baseUrl + '/' + candidate.id;
+
+      try{
+        const candidateMeta = await fetch(
+          candidateUrl + '?f=json'
+        ).then(r => r.json());
+
+        if(candidateMeta.geometryType === 'esriGeometryPolygon'){
+          polygonLayerUrl = candidateUrl;
+          break;
+        }
+      }catch(error){}
+    }
+
+    if(!polygonLayerUrl){
+      throw new Error('Не е намерен полигонален EEA/WFD слой.');
+    }
+
+    const layer = L.esri.featureLayer({
+      url: polygonLayerUrl,
+      simplifyFactor: 0.6,
+      precision: 5,
+
+      style: () => ({
+        color: '#176f8a',
+        weight: 1.2,
+        opacity: 0.8,
+        fillColor: '#63b7cd',
+        fillOpacity: 0.055
+      }),
+
+      onEachFeature: (feature, leafletLayer) => {
+        const p = feature.properties || {};
+
+        const name =
+          p.name ||
+          p.Name ||
+          p.WATERBODY_NAME ||
+          p.WB_NAME ||
+          p.euName ||
+          'Подземно водно тяло';
+
+        const code =
+          p.euCode ||
+          p.EU_CD ||
+          p.code ||
+          p.Code ||
+          p.WB_CODE ||
+          '—';
+
+        leafletLayer.bindPopup(
+          '<b>' + esc(name) + '</b><br>' +
+          'Код: ' + esc(code) + '<br>' +
+          'Източник: EEA / WFD'
+        );
+      }
+    });
+
+    layer.addTo(groundwaterLayer);
+
+    groundwaterLoaded = true;
+
+    setLayerStatus(
+      'gw-load-status',
+      'заредено ✓',
+      '#0b6b43'
+    );
+
+    if(map.getZoom() > 8){
+      map.setZoom(8, {animate:true});
+    }
+
+  }catch(err){
+    console.error('Groundwater load error', err);
+
+    setLayerStatus(
+      'gw-load-status',
+      'грешка при зареждане',
+      '#b00020'
+    );
+  }
+
+  groundwaterLoading = false;
 }
+
 
 // GEM_FAULT_POPUP_START
 
@@ -3539,22 +3610,103 @@ function makeMarker(lat,lon,p){
 addOptions('basin',data.features.map(f=>f.properties.basin_directorate));
 addOptions('category',data.features.map(f=>f.properties.display_category));
 
+
+function repairFacilityText(value){
+  let s = String(value ?? '');
+
+  if(
+    !s.includes('Ð') &&
+    !s.includes('Ñ') &&
+    !s.includes('â') &&
+    !s.includes('Â')
+  ){
+    return s;
+  }
+
+  const cp1252 = {
+    '€':0x80,
+    '‚':0x82,
+    'ƒ':0x83,
+    '„':0x84,
+    '…':0x85,
+    '†':0x86,
+    '‡':0x87,
+    'ˆ':0x88,
+    '‰':0x89,
+    'Š':0x8A,
+    '‹':0x8B,
+    'Œ':0x8C,
+    'Ž':0x8E,
+    '‘':0x91,
+    '’':0x92,
+    '“':0x93,
+    '”':0x94,
+    '•':0x95,
+    '–':0x96,
+    '—':0x97,
+    '˜':0x98,
+    '™':0x99,
+    'š':0x9A,
+    '›':0x9B,
+    'œ':0x9C,
+    'ž':0x9E,
+    'Ÿ':0x9F
+  };
+
+  try{
+    const bytes = [];
+
+    for(const ch of s){
+      const code =
+        cp1252[ch] !== undefined
+          ? cp1252[ch]
+          : ch.charCodeAt(0);
+
+      if(code > 255) return s;
+
+      bytes.push(code);
+    }
+
+    return new TextDecoder(
+      'utf-8',
+      {fatal:true}
+    ).decode(new Uint8Array(bytes));
+
+  }catch(error){
+    return s;
+  }
+}
+
+function facilityText(value){
+  return esc(repairFacilityText(value));
+}
+
+
 data.features.forEach((f,featureIndex)=>{
  const p=f.properties,lat=f.geometry.coordinates[1],lon=f.geometry.coordinates[0],t=num(p.temperature_c),d=num(p.depth_m);
  const m=makeMarker(lat,lon,p);
- m.bindPopup(`<b>${esc(p.facility)}</b><br>
- <b>ÐšÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ:</b> ${esc(p.display_category)}<br>
- ÐÐ°Ñ…Ð¾Ð´Ð¸Ñ‰Ðµ: ${esc(p.deposit)||'â€”'}<br>
- ÐÐ°ÑÐµÐ»ÐµÐ½Ð¾ Ð¼ÑÑÑ‚Ð¾: ${esc(p.settlement)||'â€”'}<br>
- ÐžÐ±Ñ‰Ð¸Ð½Ð°: ${esc(p.municipality)||'â€”'}<br>
- ÐžÐ±Ð»Ð°ÑÑ‚: ${esc(p.district)||'â€”'}<br>
- Ð”Ð¸Ñ€ÐµÐºÑ†Ð¸Ñ: ${esc(p.basin_directorate)}<br>
- Ð”ÑŠÐ»Ð±Ð¾Ñ‡Ð¸Ð½Ð°: <b>${d===null?'Ð½ÑÐ¼Ð° Ð´Ð°Ð½Ð½Ð¸':d+' m'}</b><br>
- Ð¢ÐµÐ¼Ð¿ÐµÑ€Ð°Ñ‚ÑƒÑ€Ð°: <b>${t===null?'Ð½ÑÐ¼Ð° Ð´Ð°Ð½Ð½Ð¸':t+' Â°C'}</b><br>
- ÐšÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸:<br><span class="coord">${lat.toFixed(7)}, ${lon.toFixed(7)}</span><br>
- Ð¡Ñ‚Ð°Ñ‚ÑƒÑ: ${esc(p.status)||'â€”'}<br>
- <button class="copy" onclick="copyC(${lat},${lon})">Копирай координатите</button>
- <button class="analysis-btn" onclick="analyzeFeature(${featureIndex})">ÐÐ½Ð°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð¹ Ñ‚Ð¾Ñ‡ÐºÐ°Ñ‚Ð°</button>`);
+ m.bindPopup(
+   `<b>${facilityText(p.facility)}</b><br>
+   <b>Категория:</b> ${facilityText(p.display_category) || '—'}<br>
+   <b>Находище:</b> ${facilityText(p.deposit) || '—'}<br>
+   <b>Населено място:</b> ${facilityText(p.settlement) || '—'}<br>
+   <b>Община:</b> ${facilityText(p.municipality) || '—'}<br>
+   <b>Област:</b> ${facilityText(p.district) || '—'}<br>
+   <b>Басейнова дирекция:</b> ${facilityText(p.basin_directorate) || '—'}<br>
+   <b>Дълбочина:</b> ${d === null ? 'няма данни' : d + ' m'}<br>
+   <b>Температура:</b> ${t === null ? 'няма данни' : t + ' °C'}<br>
+   <b>Координати:</b><br>
+   <span class="coord">${lat.toFixed(7)}, ${lon.toFixed(7)}</span><br>
+   <b>Статус:</b> ${facilityText(p.status) || '—'}<br>
+
+   <button class="copy" onclick="copyC(${lat},${lon})">
+     Копирай координатите
+   </button>
+
+   <button class="analysis-btn" onclick="analyzeFeature(${featureIndex})">
+     Анализирай точката
+   </button>`
+ );
  markers.push({marker:m,p,text:Object.values(p).join(' ').toLowerCase(),layer:categoryLayer(p.display_category)});
 });
 
