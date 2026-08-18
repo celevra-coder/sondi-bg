@@ -7858,6 +7858,40 @@ function closeMobilePanel(){
   }
 }
 
+
+function closeMobilePanelAfterMapAction(delay = 180){
+  if (window.innerWidth > 700) return;
+
+  setTimeout(function(){
+    closeMobilePanel();
+
+    if (typeof map !== 'undefined') {
+      setTimeout(function(){
+        map.invalidateSize();
+      }, 120);
+    }
+  }, delay);
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  const panel = document.querySelector('.panel');
+  if (!panel) return;
+
+  panel.addEventListener('change', function(event){
+    if (window.innerWidth > 700) return;
+
+    const target = event.target;
+
+    if (
+      target.matches('input[type="checkbox"]') ||
+      target.matches('input[type="radio"]') ||
+      target.matches('select')
+    ) {
+      closeMobilePanelAfterMapAction();
+    }
+  });
+});
+
 window.addEventListener('resize', function(){
   const panel = document.querySelector('.panel');
   if (!panel) return;
