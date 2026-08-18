@@ -8097,9 +8097,18 @@ async function startLocationAnalysis(
 
   map.closePopup();
 
+  const analysisBox =
+    document.getElementById(
+      "location-analysis-box"
+    );
+
+  if (analysisBox) {
+    analysisBox.style.display = "block";
+  }
+
   /*
-    Първо отваряме панела на телефон.
-    После стартираме съществуващия FREE анализ.
+    Първо показваме FREE анализа.
+    На телефон отваряме и страничния панел.
   */
   if (
     window.innerWidth <= 700 &&
