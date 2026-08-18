@@ -3900,9 +3900,41 @@ function startMapAnalysis(){
 }
 
 function analyzeFeature(index){
- const f=featureIndexLookup[index];
- const c=f.geometry.coordinates;
- analyzeLocation(c[1],c[0],f.properties.facility||'Ð˜Ð·Ð±Ñ€Ð°Ð½Ð° Ñ‚Ð¾Ñ‡ÐºÐ°');
+  const f =
+    data &&
+    Array.isArray(data.features)
+      ? data.features[index]
+      : null;
+
+  if (
+    !f ||
+    !f.geometry ||
+    !Array.isArray(f.geometry.coordinates)
+  ) {
+    console.error(
+      "Не е намерено съоръжението за анализ:",
+      index
+    );
+    return;
+  }
+
+  const lon =
+    Number(f.geometry.coordinates[0]);
+
+  const lat =
+    Number(f.geometry.coordinates[1]);
+
+  const label =
+    repairFacilityText(
+      f.properties?.facility ||
+      "Избрана точка"
+    );
+
+  startLocationAnalysis(
+    lat,
+    lon,
+    label
+  );
 }
 
 map.on('click',e=>{
@@ -7985,7 +8017,83 @@ function analyzeSearchedLocation(
 
 // SEARCHED_LOCATION_ANALYSIS_END
 
-function showSearchedCoordinates(latitude, longitude, status) {
+
+/* UNIFIED_LOCATION_ANALYSIS_START */
+
+async function startLocationAnalysis(
+  latitude,
+  longitude,
+  label = "Избрана точка"
+) {
+  const lat = Number(latitude);
+  const lon = Number(longitude);
+
+  if (
+    !Number.isFinite(lat) ||
+    !Number.isFinite(lon)
+  ) {
+    console.error(
+      "Невалидни координати за анализ:",
+      latitude,
+      longitude
+    );
+    return;
+  }
+
+  map.closePopup();
+
+  // На телефон резултатът е в страничния панел,
+  // затова го отваряме автоматично.
+  if (
+    window.innerWidth <= 700 &&
+    typeof openMobilePanel === "function"
+  ) {
+    openMobilePanel();
+  }
+
+  await analyzeLocation(
+    lat,
+    lon,
+    label
+  );
+
+  if (window.innerWidth <= 700) {
+    setTimeout(function () {
+      const analysisResult =
+        document.getElementById(
+          "analysis-result"
+        );
+
+      if (analysisResult) {
+        analysisResult.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }, 150);
+  }
+}
+
+function analyzeSearchedLocation(
+  latitude,
+  longitude,
+  label = "Търсена локация"
+) {
+  return startLocationAnalysis(
+    latitude,
+    longitude,
+    label
+  );
+}
+
+/* UNIFIED_LOCATION_ANALYSIS_END */
+
+function showSearchedCoordinates(
+  latitude,
+  longitude,
+  status,
+  label = "Търсена локация"
+) {
   if (coordinateSearchMarker) {
     map.removeLayer(coordinateSearchMarker);
   }
@@ -7996,7 +8104,9 @@ function showSearchedCoordinates(latitude, longitude, status) {
 
   const popupHtml =
     "<div style=\"min-width:230px\">" +
-    "<strong>Търсена локация</strong><br>" +
+    "<strong>" +
+    esc(label) +
+    "</strong><br>" +
     "<span class=\"coord\">" +
     latitude.toFixed(7) +
     ", " +
@@ -8010,7 +8120,7 @@ function showSearchedCoordinates(latitude, longitude, status) {
     latitude +
     "," +
     longitude +
-    ")\">" +
+    ",'Търсена локация')\">" +
     "Анализирай тази локация" +
     "</button>" +
     "</div>";
@@ -8110,33 +8220,11 @@ async function searchCoordinates() {
       throw new Error("Invalid place coordinates.");
     }
 
-    if (coordinateSearchMarker) {
-      map.removeLayer(coordinateSearchMarker);
-    }
-
-    coordinateSearchMarker = L.marker(
-      [latitude, longitude]
-    ).addTo(map);
-
-    const popup =
-      "<div style=\"min-width:240px\">" +
-      "<strong>" +
-      (result.display_name || query) +
-      "</strong><br>" +
-      "<span class=\"coord\">" +
-      latitude.toFixed(6) +
-      ", " +
-      longitude.toFixed(6) +
-      "</span>" +
-      "</div>";
-
-    coordinateSearchMarker
-      .bindPopup(popup)
-      .openPopup();
-
-    map.setView(
-      [latitude, longitude],
-      14
+    showSearchedCoordinates(
+      latitude,
+      longitude,
+      status,
+      result.display_name || query
     );
 
     status.textContent =
