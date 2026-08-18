@@ -1734,8 +1734,10 @@ const styles: Record<
   materialDetailGrid: {
     display: "grid",
     gridTemplateColumns:
-      "minmax(0,1.4fr) minmax(260px,.6fr)",
+      "repeat(auto-fit, minmax(min(100%, 300px), 1fr))",
     gap: 15,
+    width: "100%",
+    alignItems: "start",
   },
 
   materialDetailMain: {
@@ -1743,6 +1745,10 @@ const styles: Record<
     background: "#f7f5ef",
     borderRadius: 8,
     border: "1px solid #e3ded0",
+    minWidth: 0,
+    width: "100%",
+    boxSizing: "border-box",
+    overflowWrap: "anywhere",
   },
 
   materialDetailTitle: {
@@ -1756,6 +1762,10 @@ const styles: Record<
     background: "#eef6f2",
     borderRadius: 8,
     borderLeft: "4px solid #0b6b43",
+    minWidth: 0,
+    width: "100%",
+    boxSizing: "border-box",
+    overflowWrap: "anywhere",
   },
 
   interpretationBadge: {
