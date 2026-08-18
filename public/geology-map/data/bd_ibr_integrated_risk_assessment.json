@@ -1,0 +1,1206 @@
+{
+  "source": {
+    "file": "Annex 2.4.2.3 Риск оценка ПВТ.pdf",
+    "title_bg": "Приложение № 2.4.2.3 Резултати от оценка на риска на базата на определения значим точков и дифузен натиск и анализа на резултатите от мониторинг на подземни води",
+    "layout_note": "Оригиналната широка таблица е разделена хоризонтално в PDF: стр. 1–4 съдържат идентификаторите и натиска, стр. 6–9 съдържат дифузните източници, замърсителите и риск-оценките. Редовете са съпоставени по последователност; във всяка половина са намерени точно 41 ПВТ."
+  },
+  "records": [
+    {
+      "gwb_code": "BG3G000000Q001",
+      "name_bg": "Порови води в Кватернер - Пирдоп - Златишка котловина",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 31.82,
+        "source_description": "Хвостохранилища , складове пестициди, петролна база, населени места несвързани с канализация"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 71.98,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. на метали, ХХ"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "SO4"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ002",
+      "name_bg": "Порови води в Неоген - Кватернер - Карловска котловина",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 11.32,
+        "source_description": "Депо за отпадъци, населени места с частично изградена канализация, нах. строителни материали, склад за пестициди"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 71.88,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове."
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ003",
+      "name_bg": "Порови води в Неоген - Кватернер - Казанлъшка котловина",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 27.0,
+        "source_description": "Депо за отпадъци, складове за пестициди, земни лагуни, индустрия, населени места с частично изградена канализация, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 77.12,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. строителни материали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000Q004",
+      "name_bg": "Порови води в Кватернер - Твърдишка котловина",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 24.52,
+        "source_description": "Депо за отпадъци, складове за пестициди, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 76.68,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. на уран"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ005",
+      "name_bg": "Порови води в Неоген - Кватернер - Сунгурларско - Карнобатска котловина",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 14.2,
+        "source_description": "Складове за пестициди, петролна база, земна лагуна, населени места с частично изградена канализация"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 84.04,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. строителни материали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "NO3"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ006",
+      "name_bg": "Порови води в Неоген - Кватернер - Ихтиманска котловина",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 9.66,
+        "source_description": "Складове за пестициди,, ХХ, петролна база, индустрия, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 87.92,
+        "source_description": "Иинфра структора без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове."
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ007",
+      "name_bg": "Порови води в Неоген - Кватернер - котловина Долна баня - Костенец",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 13.19,
+        "source_description": "Складове за пестициди, индустрия, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 63.73,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове."
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "PO4"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ008",
+      "name_bg": "Порови води в Неоген - Кватернер - Велинград",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 30.65,
+        "source_description": "Депа за отпадъци, склад за пестициди, петролна база"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 43.39,
+        "source_description": "От селскостопанска дифузия-вероятно от органични азотни и фосфорни торове."
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ009",
+      "name_bg": "Порови води в Неоген - Кватернер - Хасково",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 10.18,
+        "source_description": "Депа за отпадъци, ферми, складове за пестициди, земни лагуни, населени места с частично изградена канализация, нах. на строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 74.89,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. на уран, нах. строителни материали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "Обща алфа-активност"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000Q010",
+      "name_bg": "Порови води в Кватернер - река Арда",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 23.95,
+        "source_description": "Депа за ОО и БО, складове за пестициди, петролна база, земна лагуна, населени места с частично изградена канализация"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 86.11,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, ХХ, нах. строителни материали, нах. индустриални минерали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000Q012",
+      "name_bg": "Порови води в Кватернер - Марица Изток",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 14.82,
+        "source_description": "Депа за отпадъци, складове за пестициди, петролна база, индустрия, ферми, населени места с частично изградена канализация, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 94.2,
+        "source_description": "Иинфраструктора без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, Източномаришки въглищен басейн, нах. на уран, ХХ, нах. строителни материали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "NO3, Mn"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000Q013",
+      "name_bg": "Порови води в Кватернер - Горнотракийска низина",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 21.88,
+        "source_description": "Депа за отпадъци, складове за пестициди, петролни бази, ГПСОВ, индустрия, земни лагуни , населени места с частично изградена канализация , нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 85.96,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. на уран, нах. строителни материали, нах. индустриални минерали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ015",
+      "name_bg": "Порови води в Неоген - Кватернер - Сливенско- Стралджанска област",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 10.54,
+        "source_description": "Депа за отпадъци, ферми, складове за пестициди, петролна база, земна лагуна, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 90.6,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. строителни материали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "NO3"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ018",
+      "name_bg": "Порови води в Неоген - Кватернер - Пазарджик - Пловдивския район",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 13.45,
+        "source_description": "Депо за отпадъци, складове за пестициди, ферми, населени места с частично изградена канализация, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 81.63,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, ХХ, ураново находище, нахо. строителни материали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "Обща алфа-активност"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000Q052",
+      "name_bg": "Порови води в Кватернер - Свиленград-Стамболово",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 17.93,
+        "source_description": "Депо за отпадъци, складове за пестициди, населени места с частично изградена канализация"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 71.85,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове."
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "NH4, PO4, NO2, F, Mn"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ054",
+      "name_bg": "Порови води в Неоген - Ямбол - Елхово",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 11.57,
+        "source_description": "Депа за отпадъци, складове за пестициди, ферми, нах. строителни материали, нах. на уран, Населени места с частично изградена канализация"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 88.12,
+        "source_description": "Нах. строителни материали, нах. индустриални минерали, нах. на уран, населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "NO3"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000N053",
+      "name_bg": "Порови води в Неоген - Свиленград-Стамболово",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 5.65,
+        "source_description": "Депа за отпадъци, складове за пестициди, населени места с частично изградена канализация"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 71.99,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове."
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000N016",
+      "name_bg": "Порови води в Неоген - Белово",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 28.26,
+        "source_description": "Населени места с частично изградена канализация, нах. индустриални минерали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 26.81,
+        "source_description": "От селскостопанска дифузия-вероятно от органични азотни и фосфорни торове."
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000PgN019",
+      "name_bg": "Порови води в Палеоген - Неоген - Марица Изток",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 9.78,
+        "source_description": "Депа за отпадъци, складове за пестициди, ферми, индустрия, населени места с частично изградена канализация, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 97.68,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия, находища на уран, Източномаришки въглищен басейн, нах. строителни материали, нах. индустриални минерали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "NO3, NH4, SO4"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000PgN020",
+      "name_bg": "Пукнатинни води - Пещера- Доспат",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 5.18,
+        "source_description": "Депа за отпадъци, складове за пестициди, индустрия, ферми, населени места с частично изградена канализация канализация, нах. скално-облицовъчни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 5.26,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове."
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000Pg2055",
+      "name_bg": "Пукнатинни води - Свиленградски масив",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 9.92,
+        "source_description": "Складове за пестициди"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 78.96,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове."
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000PgN026",
+      "name_bg": "Карстови води - Чирпан - Димитровград",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 16.79,
+        "source_description": "Депа за отпадъци, Складове за пестициди, индустрия, земни лагуни, населени места с частично изградена канализация, нах. индустриални минерали, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 87.33,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. строителни материали, нах. индустриални минерали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "NO3"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0PzK2Pg027",
+      "name_bg": "Пукнатинни води - масив Шипка - Сливен",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 3.44,
+        "source_description": "Депа за отпадъци, складове за пестициди, индустрия, нах на уран, населени места с частично изградена канализация, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 30.42,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. на уран, находища на твърди горива, нах. строителни материали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "NO3"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000K2029",
+      "name_bg": "Пукнатинни води - Г. Малинско - Панагюрски район",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 5.66,
+        "source_description": "Депа за отпадъци, складове за пестициди, населени места с частично изградена канализация, производство на мед, нах. строителни материали, нах. индустриални минерали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 41.43,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, находища на медно-златни руди+медно-пиритни и златосъдържащи руди, хвостохранилища"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000K2030",
+      "name_bg": "Пукнатинни води - Брезовско - Ямболска зона",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 9.63,
+        "source_description": null
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 54.3,
+        "source_description": null
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000K2031",
+      "name_bg": "Пукнатинни води - Сливенско- Сунгурларска зона",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 4.18,
+        "source_description": "Компресорна станция, депо за отпадъци, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 45.59,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. строителни материали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000T2032",
+      "name_bg": "Карстови води - Сърнена гора",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 5.55,
+        "source_description": "Нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 25.16,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове."
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000T2056",
+      "name_bg": "Карстови води - Байлово - Мирковски масив",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 9.67,
+        "source_description": "Нах. строителни материали, нах. индустриални минерали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 33.96,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, находища на медно-златни руди и медно-порфирни златосъдържащи руди, хвостохранилища"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000T12034",
+      "name_bg": "Карстови води - Тополовградски масив",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 11.28,
+        "source_description": "ХХ, Нах. на уран, нах. индустриални минерали, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 55.65,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, находища на уран, Източномаришки въглищен басейн, нах. строителни материали, нах. индустриални минерали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000T13035",
+      "name_bg": "Карстови води - Св. Илийски комплекс",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 17.12,
+        "source_description": "Депо за отпадъци, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 70.72,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. строителни материали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "NO3"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000T23036",
+      "name_bg": "Карстови води - Твърдишко - Сливенски басейн",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 1.96,
+        "source_description": "Нах. строителни материали, нах. индустриални минерали, нах. скално-облицовъчни материали, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 20.0,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, находища на твърди горива"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt037",
+      "name_bg": "Карстови води - Малко Белово",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 7.72,
+        "source_description": "Складове за пестициди, индустрия, населени места с частично изградена канализация, нах. индустриални минерали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 13.29,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt038",
+      "name_bg": "Карстови води - Велинградски басейн",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 2.84,
+        "source_description": null
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 8.3,
+        "source_description": "От селскостопанска дифузия, нах. индустриални минерали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt041",
+      "name_bg": "Карстови води - Централно Родопски масив",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 9.86,
+        "source_description": "Депа за отпадъци, ХХ, земна лагуна, нах. строителни материали, населени места с частично изградена канализация"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 27.96,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. метали, нах. строителни материали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt043",
+      "name_bg": "Карстови води - Смолянски масив",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 24.1,
+        "source_description": "Нах. скално-облицовъчни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 54.81,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. метали, ХХ"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt044",
+      "name_bg": "Пукнатинни води - Западно- и централнобалкански масив",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 3.77,
+        "source_description": "Депа за отпадъци, Складове за пестициди, ХХ, индустрия, земна лагуна, населени места с частично изградена канализация, нах. строителни материали, нах. индустриални минерали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 30.38,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия, находища на медно-златни руди и златно-медно-пиритни руди и порфирни златосъдържащи руди, хвостохранилища, нах. строителни материали, нах. индустриални минерали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": "As"
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": true,
+          "label_bg": "в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt045",
+      "name_bg": "Пукнатинни води - Шишманово – Устремски масив",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 9.77,
+        "source_description": "Депа за отпадъци, складове за пестициди, ХХ, населени места с частично изградена канализация, нах. индустриални минерали, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 56.87,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, Източномаришки въглищен басейн, находища на уран, нах. индустриални минерали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt047",
+      "name_bg": "Пукнатинни води - Западно Родопски комплекс",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 2.56,
+        "source_description": "Депа за отпадъци, складове за пестициди, петролна база, населени места с частично изградена канализация, нах. скално- облицовъчни материали, нах. строителни материали"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 8.29,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, нах. индустриални минерали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000PtPg049",
+      "name_bg": "Пукнатинни води - Източно Родопски комплекс",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 7.87,
+        "source_description": "Депа за отпадъци, складове за пестициди, земна лагуна, нах. индустриални минерали, нах. скално-облицовъчни материали, нах. строителни материали, населени места с частично изградена канализация"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 57.15,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, хвостохранилища, находища метали, нах. на уран, нах. скално- облицовъчни материали, нах. строителни материали, нах. индустриални минерали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt050",
+      "name_bg": "Пукнатинни води - Централно Родопски комплекс",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 6.42,
+        "source_description": "Депа за отпадъци, складове за пестициди, нах. на уран, нах. строителни материали, населени места с частично изградена канализация"
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 25.28,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове, находища метали, находища на уран, нах. строителни материали"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt051",
+      "name_bg": "Карстови води - Настан - Триградски басейн",
+      "point_pressure": {
+        "potential_impact_percent_exposed_area": 11.04,
+        "source_description": null
+      },
+      "diffuse_pressure": {
+        "potential_impact_percent_exposed_area": 16.09,
+        "source_description": "Населени места без канализация и от селскостопанска дифузия-вероятно от органични азотни и фосфорни торове,"
+      },
+      "monitoring_2015_2020": {
+        "pollutants": null
+      },
+      "risk_assessment": {
+        "chemical_monitoring_only": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "chemical_monitoring_plus_diffuse_pressure": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        },
+        "quantitative_in_this_annex": {
+          "at_risk": false,
+          "label_bg": "не в риск"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "total_gwb": 41,
+    "chemical_monitoring_at_risk": 14,
+    "chemical_monitoring_plus_diffuse_at_risk": 20,
+    "quantitative_at_risk_in_this_annex": 7,
+    "records_with_named_pollutants": 14
+  },
+  "important_note": "Полето quantitative_in_this_annex се пази като отделна оценка от Annex 2.4.2.3 и не трябва да заменя крайната количествена риск-оценка от Annex 2.4.2.7."
+}

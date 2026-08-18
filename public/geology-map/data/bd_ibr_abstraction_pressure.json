@@ -1,0 +1,1574 @@
+{
+  "source": "ПУРБ / Раздел 2 / Annex 2.3.3.4.xlsx – вътрешно заглавие: Приложение 2.3.3.1 „Натиск от водовземане върху подземните водни тела“",
+  "units": {
+    "permitted_amounts": "l/s",
+    "available_resource": "l/s",
+    "exploitation_index": "dimensionless ratio"
+  },
+  "records": [
+    {
+      "gwb_code": "BG3G000000Q001",
+      "name_bg": "Порови води в Кватернер - Пирдоп - Златишка котловина",
+      "permitted_total_lps": 11.0,
+      "available_resource_lps": 116.066344969,
+      "exploitation_index": 0.094773382,
+      "dominant_sector": "other",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 1.966,
+          "exploitation_index": 0.016938588
+        },
+        "other": {
+          "amount_lps": 7.864,
+          "exploitation_index": 0.067754352
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 1.17,
+          "exploitation_index": 0.010080441
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ002",
+      "name_bg": "Порови води в Неоген - Кватернер - Карловска котловина",
+      "permitted_total_lps": 558.0,
+      "available_resource_lps": 1330.879812349,
+      "exploitation_index": 0.419271519,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 477.112930249,
+          "exploitation_index": 0.358494378
+        },
+        "agriculture": {
+          "amount_lps": 10.589462995,
+          "exploitation_index": 0.007956739
+        },
+        "industry": {
+          "amount_lps": 12.829123546,
+          "exploitation_index": 0.009639581
+        },
+        "other": {
+          "amount_lps": 3.035501097,
+          "exploitation_index": 0.002280823
+        },
+        "aquaculture": {
+          "amount_lps": 45.662982113,
+          "exploitation_index": 0.034310372
+        },
+        "household_self_supply": {
+          "amount_lps": 8.77,
+          "exploitation_index": 0.006589626
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ003",
+      "name_bg": "Порови води в Неоген - Кватернер - Казанлъшка котловина",
+      "permitted_total_lps": 710.0,
+      "available_resource_lps": 1969.867398419,
+      "exploitation_index": 0.360430352,
+      "dominant_sector": "industry",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 243.817852177,
+          "exploitation_index": 0.123773738
+        },
+        "agriculture": {
+          "amount_lps": 24.98775157,
+          "exploitation_index": 0.012684992
+        },
+        "industry": {
+          "amount_lps": 350.283331163,
+          "exploitation_index": 0.177820767
+        },
+        "other": {
+          "amount_lps": 11.102694755,
+          "exploitation_index": 0.005636265
+        },
+        "aquaculture": {
+          "amount_lps": 6.688370335,
+          "exploitation_index": 0.00339534
+        },
+        "household_self_supply": {
+          "amount_lps": 73.12,
+          "exploitation_index": 0.03711925
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000Q004",
+      "name_bg": "Порови води в Кватернер - Твърдишка котловина",
+      "permitted_total_lps": 20.0,
+      "available_resource_lps": 309.857654732,
+      "exploitation_index": 0.064545767,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 9.168926174,
+          "exploitation_index": 0.029590769
+        },
+        "agriculture": {
+          "amount_lps": 1.014261745,
+          "exploitation_index": 0.003273315
+        },
+        "industry": {
+          "amount_lps": 1.379395973,
+          "exploitation_index": 0.004451709
+        },
+        "other": {
+          "amount_lps": 0.527416107,
+          "exploitation_index": 0.001702124
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 7.91,
+          "exploitation_index": 0.025527851
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ005",
+      "name_bg": "Порови води в Неоген - Кватернер - Сунгурларско - Карнобатска котловина",
+      "permitted_total_lps": 31.0,
+      "available_resource_lps": 481.530846771,
+      "exploitation_index": 0.064378015,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 12.434466737,
+          "exploitation_index": 0.025822783
+        },
+        "agriculture": {
+          "amount_lps": 0.269250264,
+          "exploitation_index": 0.000559155
+        },
+        "industry": {
+          "amount_lps": 10.366135164,
+          "exploitation_index": 0.021527458
+        },
+        "other": {
+          "amount_lps": 0.110147835,
+          "exploitation_index": 0.0029
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 7.82,
+          "exploitation_index": 0.2526
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ006",
+      "name_bg": "Порови води в Неоген - Кватернер - Ихтиманска котловина",
+      "permitted_total_lps": 47.0,
+      "available_resource_lps": 197.110904721,
+      "exploitation_index": 0.238444444,
+      "dominant_sector": "agriculture",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 9.839322594,
+          "exploitation_index": 0.049917698
+        },
+        "agriculture": {
+          "amount_lps": 21.871747212,
+          "exploitation_index": 0.11096163
+        },
+        "industry": {
+          "amount_lps": 6.834180091,
+          "exploitation_index": 0.03467175
+        },
+        "other": {
+          "amount_lps": 4.504750103,
+          "exploitation_index": 0.022853886
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 3.95,
+          "exploitation_index": 0.02003948
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ007",
+      "name_bg": "Порови води в Неоген - Кватернер - котловина Долна баня - Костенец",
+      "permitted_total_lps": 8.999999961,
+      "available_resource_lps": 170.039371501,
+      "exploitation_index": 0.052928918,
+      "dominant_sector": "other",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 0.548372078,
+          "exploitation_index": 0.003224971
+        },
+        "other": {
+          "amount_lps": 7.311627704,
+          "exploitation_index": 0.042999616
+        },
+        "aquaculture": {
+          "amount_lps": 1.79e-07,
+          "exploitation_index": 1e-09
+        },
+        "household_self_supply": {
+          "amount_lps": 1.14,
+          "exploitation_index": 0.00670433
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ008",
+      "name_bg": "Порови води в Неоген - Кватернер - Велинград",
+      "permitted_total_lps": 23.0,
+      "available_resource_lps": 67.695057447,
+      "exploitation_index": 0.339758926,
+      "dominant_sector": "agriculture",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "agriculture": {
+          "amount_lps": 14.56626943,
+          "exploitation_index": 0.215174785
+        },
+        "industry": {
+          "amount_lps": 1.2417962,
+          "exploitation_index": 0.018343971
+        },
+        "other": {
+          "amount_lps": 5.76193437,
+          "exploitation_index": 0.085116027
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 1.43,
+          "exploitation_index": 0.021124142
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ009",
+      "name_bg": "Порови води в Неоген - Кватернер - Хасково",
+      "permitted_total_lps": 654.0,
+      "available_resource_lps": 845.487936708,
+      "exploitation_index": 0.773517837,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 500.596972945,
+          "exploitation_index": 0.592080562
+        },
+        "agriculture": {
+          "amount_lps": 6.28291378,
+          "exploitation_index": 0.00743111
+        },
+        "industry": {
+          "amount_lps": 52.124914324,
+          "exploitation_index": 0.06165069
+        },
+        "other": {
+          "amount_lps": 47.01519895,
+          "exploitation_index": 0.055607179
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 47.98,
+          "exploitation_index": 0.056748296
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000Q010",
+      "name_bg": "Порови води в Кватернер - река Арда",
+      "permitted_total_lps": 252.0,
+      "available_resource_lps": 640.331791055,
+      "exploitation_index": 0.393545977,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 220.63704946,
+          "exploitation_index": 0.344566758
+        },
+        "agriculture": {
+          "amount_lps": 0.693301388,
+          "exploitation_index": 0.001082722
+        },
+        "industry": {
+          "amount_lps": 27.189649152,
+          "exploitation_index": 0.042461814
+        },
+        "other": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 3.48,
+          "exploitation_index": 0.005434683
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000Q012",
+      "name_bg": "Порови води в Кватернер - Марица Изток",
+      "permitted_total_lps": 481.0,
+      "available_resource_lps": 2103.570699078,
+      "exploitation_index": 0.228658823,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 215.277440708,
+          "exploitation_index": 0.102339057
+        },
+        "agriculture": {
+          "amount_lps": 61.777130037,
+          "exploitation_index": 0.029367746
+        },
+        "industry": {
+          "amount_lps": 73.585361653,
+          "exploitation_index": 0.034981169
+        },
+        "other": {
+          "amount_lps": 27.560729742,
+          "exploitation_index": 0.013101879
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 102.71,
+          "exploitation_index": 0.048826503
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.08933786,
+          "exploitation_index": 0.000185734
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000Q013",
+      "name_bg": "Порови води в Кватернер - Горнотракийска низина",
+      "permitted_total_lps": 3912.0,
+      "available_resource_lps": 8305.330122763,
+      "exploitation_index": 0.471022818,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 1527.422637775,
+          "exploitation_index": 0.183908721
+        },
+        "agriculture": {
+          "amount_lps": 508.707375089,
+          "exploitation_index": 0.061250711
+        },
+        "industry": {
+          "amount_lps": 1253.300037913,
+          "exploitation_index": 0.150903097
+        },
+        "other": {
+          "amount_lps": 326.891237742,
+          "exploitation_index": 0.039359211
+        },
+        "aquaculture": {
+          "amount_lps": 12.56871148,
+          "exploitation_index": 0.001513331
+        },
+        "household_self_supply": {
+          "amount_lps": 283.11,
+          "exploitation_index": 0.034087748
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ015",
+      "name_bg": "Порови води в Неоген - Кватернер - Сливенско- Стралджанска област",
+      "permitted_total_lps": 819.0,
+      "available_resource_lps": 2686.280706617,
+      "exploitation_index": 0.304882508,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 576.009167452,
+          "exploitation_index": 0.214426276
+        },
+        "agriculture": {
+          "amount_lps": 18.748420573,
+          "exploitation_index": 0.0246
+        },
+        "industry": {
+          "amount_lps": 147.945751201,
+          "exploitation_index": 0.1785
+        },
+        "other": {
+          "amount_lps": 19.346660774,
+          "exploitation_index": 0.0233
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 56.95,
+          "exploitation_index": 0.021200316
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ018",
+      "name_bg": "Порови води в Неоген -  Пазарджик - Пловдивския район",
+      "permitted_total_lps": 3057.858047582,
+      "available_resource_lps": 3359.106906913,
+      "exploitation_index": 0.910318764,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 2681.674276268,
+          "exploitation_index": 0.798329541
+        },
+        "agriculture": {
+          "amount_lps": 38.808329853,
+          "exploitation_index": 0.011553169
+        },
+        "industry": {
+          "amount_lps": 257.599800732,
+          "exploitation_index": 0.076686991
+        },
+        "other": {
+          "amount_lps": 25.039989058,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 1.565651671,
+          "exploitation_index": 0.000466092
+        },
+        "household_self_supply": {
+          "amount_lps": 53.17,
+          "exploitation_index": 0.015828612
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000Q052",
+      "name_bg": "Порови води в Кватернер -  Свиленград-Стамболово",
+      "permitted_total_lps": 110.999971092,
+      "available_resource_lps": 491.674711764,
+      "exploitation_index": 0.225758959,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 58.887717957,
+          "exploitation_index": 0.11976967
+        },
+        "agriculture": {
+          "amount_lps": 9.670715512,
+          "exploitation_index": 0.01966893
+        },
+        "industry": {
+          "amount_lps": 11.577742791,
+          "exploitation_index": 0.023547566
+        },
+        "other": {
+          "amount_lps": 22.343794832,
+          "exploitation_index": 0.045444263
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 8.52,
+          "exploitation_index": 0.01732853
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000NQ054",
+      "name_bg": "Порови води в Неоген - Кватернер - Ямбол - Елхово",
+      "permitted_total_lps": 1005.733153413,
+      "available_resource_lps": 3146.620083733,
+      "exploitation_index": 0.319623319,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 830.612946875,
+          "exploitation_index": 0.263969887
+        },
+        "agriculture": {
+          "amount_lps": 9.469524111,
+          "exploitation_index": 0.003009427
+        },
+        "industry": {
+          "amount_lps": 106.409665081,
+          "exploitation_index": 0.033817131
+        },
+        "other": {
+          "amount_lps": 26.751017346,
+          "exploitation_index": 0.008501508
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 32.49,
+          "exploitation_index": 0.010325365
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000N053",
+      "name_bg": "Порови води в Неоген - Свиленград-Стамболово",
+      "permitted_total_lps": 189.835342678,
+      "available_resource_lps": 549.888423794,
+      "exploitation_index": 0.345225203,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 156.424455711,
+          "exploitation_index": 0.28446581
+        },
+        "agriculture": {
+          "amount_lps": 6.689203698,
+          "exploitation_index": 0.012164656
+        },
+        "industry": {
+          "amount_lps": 7.306668655,
+          "exploitation_index": 0.013287548
+        },
+        "other": {
+          "amount_lps": 1.945014614,
+          "exploitation_index": 0.003537108
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 17.47,
+          "exploitation_index": 0.031770081
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000000N016",
+      "name_bg": "Порови води в Неоген - Белово",
+      "permitted_total_lps": 0.853,
+      "available_resource_lps": 21.53138089,
+      "exploitation_index": 0.039616595,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 0.67,
+          "exploitation_index": 0.031117373
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 0.183,
+          "exploitation_index": 0.008499223
+        },
+        "other": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000PgN019",
+      "name_bg": "Порови води в Палеоген - Неоген - Марица Изток",
+      "permitted_total_lps": 272.073487576,
+      "available_resource_lps": 1429.104163818,
+      "exploitation_index": 0.190380446,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 135.731551971,
+          "exploitation_index": 0.094976668
+        },
+        "agriculture": {
+          "amount_lps": 12.156944635,
+          "exploitation_index": 0.008506689
+        },
+        "industry": {
+          "amount_lps": 7.464238027,
+          "exploitation_index": 0.005223019
+        },
+        "other": {
+          "amount_lps": 13.290752943,
+          "exploitation_index": 0.009300059
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 103.43,
+          "exploitation_index": 0.072374011
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000PgN020",
+      "name_bg": "Пукнатинни води -  Пещера-Доспат",
+      "permitted_total_lps": 271.864482577,
+      "available_resource_lps": 1889.452807986,
+      "exploitation_index": 0.143885299,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 106.571805777,
+          "exploitation_index": 0.0
+        },
+        "agriculture": {
+          "amount_lps": 1.634372641,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 56.749050045,
+          "exploitation_index": 0.030034648
+        },
+        "other": {
+          "amount_lps": 9.638607885,
+          "exploitation_index": 0.005101269
+        },
+        "aquaculture": {
+          "amount_lps": 93.126646228,
+          "exploitation_index": 0.049287628
+        },
+        "household_self_supply": {
+          "amount_lps": 2.41,
+          "exploitation_index": 0.001275502
+        },
+        "tourism_recreation": {
+          "amount_lps": 1.734,
+          "exploitation_index": 0.006378178
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000Pg2055",
+      "name_bg": "Пукнатинни води - Свиленградски масив",
+      "permitted_total_lps": 9.0,
+      "available_resource_lps": 99.713628504,
+      "exploitation_index": 0.090258475,
+      "dominant_sector": "agriculture",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "agriculture": {
+          "amount_lps": 3.314771654,
+          "exploitation_index": 0.033242915
+        },
+        "industry": {
+          "amount_lps": 1.018393701,
+          "exploitation_index": 0.010213185
+        },
+        "other": {
+          "amount_lps": 2.006834646,
+          "exploitation_index": 0.020125982
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 2.66,
+          "exploitation_index": 0.026676394
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000PgN026",
+      "name_bg": "Карстови води - Чирпан - Димитровград",
+      "permitted_total_lps": 191.99350413,
+      "available_resource_lps": 894.861712064,
+      "exploitation_index": 0.214551032,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 129.670554982,
+          "exploitation_index": 0.144905691
+        },
+        "agriculture": {
+          "amount_lps": 5.820299432,
+          "exploitation_index": 0.006504133
+        },
+        "industry": {
+          "amount_lps": 3.663670625,
+          "exploitation_index": 0.004094119
+        },
+        "other": {
+          "amount_lps": 11.828979091,
+          "exploitation_index": 0.013218779
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 41.01,
+          "exploitation_index": 0.04582831
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0PZK2Pg027",
+      "name_bg": "Пукнатинни води - масив Шипка - Сливен",
+      "permitted_total_lps": 56.352147028,
+      "available_resource_lps": 1948.211430995,
+      "exploitation_index": 0.028925067,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 33.263419187,
+          "exploitation_index": 0.017073824
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 4.374348279,
+          "exploitation_index": 0.002245315
+        },
+        "other": {
+          "amount_lps": 4.164379562,
+          "exploitation_index": 0.00213754
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 14.05,
+          "exploitation_index": 0.007211743
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.5,
+          "exploitation_index": 0.008872776
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000K2029",
+      "name_bg": "Пукнатинни води - Г. Малинско - Панагюрски район",
+      "permitted_total_lps": 58.0,
+      "available_resource_lps": 516.969768188,
+      "exploitation_index": 0.112192247,
+      "dominant_sector": "industry",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 15.491548043,
+          "exploitation_index": 0.029966062
+        },
+        "agriculture": {
+          "amount_lps": 0.295077106,
+          "exploitation_index": 0.000570782
+        },
+        "industry": {
+          "amount_lps": 30.983096085,
+          "exploitation_index": 0.059932124
+        },
+        "other": {
+          "amount_lps": 2.980278766,
+          "exploitation_index": 0.0057649
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 8.25,
+          "exploitation_index": 0.01595838
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000K2030",
+      "name_bg": "Пукнатинни води - Брезовско - Ямболска зона",
+      "permitted_total_lps": 123.0,
+      "available_resource_lps": 593.641415553,
+      "exploitation_index": 0.207195787,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 81.92826087,
+          "exploitation_index": 0.138009678
+        },
+        "agriculture": {
+          "amount_lps": 12.385706847,
+          "exploitation_index": 0.020863953
+        },
+        "industry": {
+          "amount_lps": 2.265946368,
+          "exploitation_index": 0.003817029
+        },
+        "other": {
+          "amount_lps": 4.820085915,
+          "exploitation_index": 0.008119524
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 21.6,
+          "exploitation_index": 0.036385602
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000K2031",
+      "name_bg": "Пукнатинни води - Сливенско-Сунгурларска зона",
+      "permitted_total_lps": 12.0,
+      "available_resource_lps": 265.996245809,
+      "exploitation_index": 0.045113419,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 7.78633756,
+          "exploitation_index": 0.029272359
+        },
+        "agriculture": {
+          "amount_lps": 1.48366244,
+          "exploitation_index": 0.005577757
+        },
+        "industry": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "other": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 2.73,
+          "exploitation_index": 0.010263303
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000T2032",
+      "name_bg": "Карстови води - Сърнена гора",
+      "permitted_total_lps": 8.988832567,
+      "available_resource_lps": 38.935833752,
+      "exploitation_index": 0.230862722,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 7.24125667,
+          "exploitation_index": 0.185979237
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 0.707575897,
+          "exploitation_index": 0.018172871
+        },
+        "other": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 1.04,
+          "exploitation_index": 0.026710613
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000T2056",
+      "name_bg": "Карстови води - Байлово - Мирковски масив",
+      "permitted_total_lps": 0.03,
+      "available_resource_lps": 103.669829678,
+      "exploitation_index": 0.00028938,
+      "dominant_sector": "household_self_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "other": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 0.03,
+          "exploitation_index": 0.00028938
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000T12034",
+      "name_bg": "Карстови води - Тополовградски масив",
+      "permitted_total_lps": 80.0,
+      "available_resource_lps": 1082.610668271,
+      "exploitation_index": 0.073895448,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 79.34,
+          "exploitation_index": 0.0
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "other": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 0.66,
+          "exploitation_index": 0.000609637
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000T13035",
+      "name_bg": "Карстови води - Св. Илийски комплекс",
+      "permitted_total_lps": 15.508883929,
+      "available_resource_lps": 395.004683934,
+      "exploitation_index": 0.039262532,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 10.690044643,
+          "exploitation_index": 0.027063083
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 0.218839286,
+          "exploitation_index": 0.000554017
+        },
+        "other": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 4.6,
+          "exploitation_index": 0.011645432
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G0000T23036",
+      "name_bg": "Карстови води - Твърдишко - Сливенски басейн",
+      "permitted_total_lps": 26.0,
+      "available_resource_lps": 386.409824694,
+      "exploitation_index": 0.067286074,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 25.47,
+          "exploitation_index": 0.065914473
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "other": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 0.53,
+          "exploitation_index": 0.001371601
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt037",
+      "name_bg": "Карстови води - Малко Белово",
+      "permitted_total_lps": 24.74,
+      "available_resource_lps": 261.429158686,
+      "exploitation_index": 0.094633667,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 24.74,
+          "exploitation_index": 1.0
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "other": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt038",
+      "name_bg": "Карстови води - Велинградски басейн",
+      "permitted_total_lps": 246.0,
+      "available_resource_lps": 1575.787713075,
+      "exploitation_index": 0.156112399,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 246.0,
+          "exploitation_index": 0.156112399
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "other": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt041",
+      "name_bg": "Карстови води - Централно Родопски масив",
+      "permitted_total_lps": 687.0,
+      "available_resource_lps": 2529.422601394,
+      "exploitation_index": 0.271603488,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 660.673062201,
+          "exploitation_index": 0.261195208
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 25.200717703,
+          "exploitation_index": 0.009963032
+        },
+        "other": {
+          "amount_lps": 0.106220096,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 1.02,
+          "exploitation_index": 0.000403254
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt043",
+      "name_bg": "Карстови води - Смолянски масив",
+      "permitted_total_lps": 25.0,
+      "available_resource_lps": 1067.938412354,
+      "exploitation_index": 0.02340959,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 24.93,
+          "exploitation_index": 0.023344043
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "other": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 0.07,
+          "exploitation_index": 6.5547e-05
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt044",
+      "name_bg": "Пукнатинни води - Западно- и централнобалкански масив",
+      "permitted_total_lps": 149.0,
+      "available_resource_lps": 4169.486155075,
+      "exploitation_index": 0.035735818,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 86.619599219,
+          "exploitation_index": 0.020774646
+        },
+        "agriculture": {
+          "amount_lps": 6.063298599,
+          "exploitation_index": 0.001454208
+        },
+        "industry": {
+          "amount_lps": 5.500976551,
+          "exploitation_index": 0.001319342
+        },
+        "other": {
+          "amount_lps": 9.362662091,
+          "exploitation_index": 0.002245519
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 40.72,
+          "exploitation_index": 0.009766191
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.73346354,
+          "exploitation_index": 0.004922574
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt045",
+      "name_bg": "Пукнатинни води - Шишманово – Устремски масив",
+      "permitted_total_lps": 5.0,
+      "available_resource_lps": 716.628064481,
+      "exploitation_index": 0.00697712,
+      "dominant_sector": "household_self_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "agriculture": {
+          "amount_lps": 0.330769231,
+          "exploitation_index": 0.000461563
+        },
+        "industry": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "other": {
+          "amount_lps": 0.463076923,
+          "exploitation_index": 0.000646189
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 2.42,
+          "exploitation_index": 0.003376926
+        },
+        "tourism_recreation": {
+          "amount_lps": 1.786153846,
+          "exploitation_index": 0.357230769
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt047",
+      "name_bg": "Пукнатинни води - Западно Родопски комплекс",
+      "permitted_total_lps": 54.668621524,
+      "available_resource_lps": 941.895007163,
+      "exploitation_index": 0.058041099,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 50.126517533,
+          "exploitation_index": 0.053218795
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 0.198827086,
+          "exploitation_index": 0.000211093
+        },
+        "other": {
+          "amount_lps": 0.684848851,
+          "exploitation_index": 0.0
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 0.19,
+          "exploitation_index": 0.000201721
+        },
+        "tourism_recreation": {
+          "amount_lps": 3.468428053,
+          "exploitation_index": 0.063444586
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G000PTPg049",
+      "name_bg": "Пукнатинни води - Източно Родопски комплекс",
+      "permitted_total_lps": 371.0,
+      "available_resource_lps": 10752.789190353,
+      "exploitation_index": 0.034502676,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 266.936067475,
+          "exploitation_index": 0.024824821
+        },
+        "agriculture": {
+          "amount_lps": 13.955960201,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 4.78845151,
+          "exploitation_index": 0.0
+        },
+        "other": {
+          "amount_lps": 29.991789799,
+          "exploitation_index": 0.00278921
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 51.38,
+          "exploitation_index": 0.0
+        },
+        "tourism_recreation": {
+          "amount_lps": 3.947731016,
+          "exploitation_index": 0.010640784
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt050",
+      "name_bg": "Пукнатинни води - Централно Родопски комплекс",
+      "permitted_total_lps": 70.474929707,
+      "available_resource_lps": 2830.798975475,
+      "exploitation_index": 0.024895773,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 47.344087591,
+          "exploitation_index": 0.016724638
+        },
+        "agriculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "industry": {
+          "amount_lps": 16.877985401,
+          "exploitation_index": 0.005962269
+        },
+        "other": {
+          "amount_lps": 2.986569343,
+          "exploitation_index": 0.001055027
+        },
+        "aquaculture": {
+          "amount_lps": 0.0,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 2.16,
+          "exploitation_index": 0.000763035
+        },
+        "tourism_recreation": {
+          "amount_lps": 1.106287371,
+          "exploitation_index": 0.015697602
+        }
+      }
+    },
+    {
+      "gwb_code": "BG3G00000Pt051",
+      "name_bg": "Карстови води - Настан - Триградски басейн",
+      "permitted_total_lps": 487.0,
+      "available_resource_lps": 4772.719769965,
+      "exploitation_index": 0.102038256,
+      "dominant_sector": "public_water_supply",
+      "sectors": {
+        "public_water_supply": {
+          "amount_lps": 204.596461094,
+          "exploitation_index": 0.042867897
+        },
+        "agriculture": {
+          "amount_lps": 0.042271996,
+          "exploitation_index": null
+        },
+        "industry": {
+          "amount_lps": 173.936053927,
+          "exploitation_index": null
+        },
+        "other": {
+          "amount_lps": 0.314397971,
+          "exploitation_index": null
+        },
+        "aquaculture": {
+          "amount_lps": 107.225560092,
+          "exploitation_index": 0.0
+        },
+        "household_self_supply": {
+          "amount_lps": 0.02,
+          "exploitation_index": 4.19e-06
+        },
+        "tourism_recreation": {
+          "amount_lps": 0.86525492,
+          "exploitation_index": 0.001776704
+        }
+      }
+    }
+  ],
+  "summary": {
+    "total": 41,
+    "max_exploitation_index": 0.910318764,
+    "min_exploitation_index": 0.00028938
+  },
+  "note": "Данните са извлечени от лист „Вб,лсек“. Вторият лист представя същите количества в m³/година."
+}

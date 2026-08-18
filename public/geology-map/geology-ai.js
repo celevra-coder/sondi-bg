@@ -371,21 +371,6 @@
 
     document.body.appendChild(modal);
 
-    const panel = document.querySelector(".panel");
-    const analysisBox = document.querySelector(".analysisbox");
-
-    const button = document.createElement("button");
-    button.type = "button";
-    button.textContent = "＋ Ново проучване и AI анализ";
-    button.style.marginTop = "10px";
-    button.style.background = "#087849";
-    button.addEventListener("click", openForm);
-
-    if (analysisBox) {
-      analysisBox.insertAdjacentElement("beforebegin", button);
-    } else if (panel) {
-      panel.appendChild(button);
-    }
 
     document
       .getElementById("geo-ai-cancel")

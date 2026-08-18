@@ -46,6 +46,9 @@ export default function SiteShell({
 }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [headerOpen, setHeaderOpen] = useState(false);
+
+  const keepHeaderVisible = pathname === "/explore";
 
   if (pathname === "/") {
     return <>{children}</>;
@@ -53,7 +56,38 @@ export default function SiteShell({
 
   return (
     <div className="flex min-h-screen flex-col bg-white text-[#102f38]">
-      <header className="sticky top-0 z-[100] border-b border-[#cde7ee] bg-[#e5f5f9]/95 backdrop-blur-xl">
+      {!keepHeaderVisible && (
+        <div
+          className="fixed left-0 right-0 top-0 z-[110] h-5"
+          onMouseEnter={() => setHeaderOpen(true)}
+        />
+      )}
+
+      {!keepHeaderVisible && (
+        <button
+          type="button"
+          onClick={() => setHeaderOpen((value) => !value)}
+          className="fixed right-4 top-3 z-[120] rounded-full border border-[#b9dbe3] bg-[#e8f6f9]/95 px-4 py-2 text-xs font-medium text-[#24505b] shadow-md backdrop-blur-xl transition hover:bg-white"
+        >
+          Меню
+        </button>
+      )}
+
+      <header
+        onMouseEnter={() => setHeaderOpen(true)}
+        onMouseLeave={() => {
+          if (!keepHeaderVisible) setHeaderOpen(false);
+        }}
+        className={[
+          "z-[100] border-b border-[#cde7ee] bg-[#e5f5f9]/95 backdrop-blur-xl transition-transform duration-300 ease-out",
+          keepHeaderVisible
+            ? "sticky top-0 translate-y-0"
+            : "fixed left-0 right-0 top-0",
+          !keepHeaderVisible && !headerOpen
+            ? "-translate-y-full"
+            : "translate-y-0",
+        ].join(" ")}
+      >
         <div className="mx-auto flex h-[86px] max-w-[1540px] items-center px-7 lg:px-10">
           <Link href="/explore" className="flex shrink-0 items-center gap-3">
             <div className="relative h-12 w-12">
