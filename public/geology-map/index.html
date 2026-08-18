@@ -639,6 +639,62 @@ function buildSondiProUrl(feature){
   return "/pro?" + params.toString();
 }
 
+
+function groundwaterFreeAnalysisButtonHtml(feature){
+  return `
+    <div style="
+      margin-top:14px;
+      padding-top:12px;
+      border-top:1px solid #dce6e8;
+    ">
+      <button
+        type="button"
+        onclick="analyzeLastGroundwaterPoint()"
+        style="
+          display:block;
+          width:100%;
+          padding:11px 13px;
+          border:0;
+          border-radius:9px;
+          background:#0b6b43;
+          color:#ffffff;
+          cursor:pointer;
+          font-weight:700;
+          font-size:13px;
+        "
+      >
+        Анализирай тази точка
+      </button>
+
+      <div style="
+        margin-top:6px;
+        font-size:11px;
+        color:#5b6b70;
+        line-height:1.35;
+      ">
+        Ще се покаже съкратен анализ.
+        Разширеният Sondi PRO анализ е достъпен
+        след него.
+      </div>
+    </div>
+  `;
+}
+
+function analyzeLastGroundwaterPoint(){
+  if (!lastGroundwaterClickLatLng) {
+    console.error(
+      "Липсват координати на избраното ПВТ."
+    );
+    return;
+  }
+
+  startLocationAnalysis(
+    Number(lastGroundwaterClickLatLng.lat),
+    Number(lastGroundwaterClickLatLng.lng),
+    "Избрана точка в подземно водно тяло"
+  );
+}
+
 function sondiProButtonHtml(feature){
   const url = buildSondiProUrl(feature);
 
@@ -2012,7 +2068,7 @@ async function loadBdIbrGroundwaterBodies(){
             popupHtml += quantitativeRiskDetailsHtml(feature);
           }
 
-          popupHtml += sondiProButtonHtml(feature);
+          popupHtml += groundwaterFreeAnalysisButtonHtml(feature);
 
           return popupHtml;
         });
@@ -3900,35 +3956,46 @@ function startMapAnalysis(){
 }
 
 function analyzeFeature(index){
-  const f =
+  const feature =
     data &&
     Array.isArray(data.features)
       ? data.features[index]
       : null;
 
   if (
-    !f ||
-    !f.geometry ||
-    !Array.isArray(f.geometry.coordinates)
+    !feature ||
+    !feature.geometry ||
+    !Array.isArray(
+      feature.geometry.coordinates
+    )
   ) {
     console.error(
-      "Не е намерено съоръжението за анализ:",
+      "Липсва съоръжение:",
       index
     );
     return;
   }
 
   const lon =
-    Number(f.geometry.coordinates[0]);
+    Number(
+      feature.geometry.coordinates[0]
+    );
 
   const lat =
-    Number(f.geometry.coordinates[1]);
+    Number(
+      feature.geometry.coordinates[1]
+    );
 
   const label =
-    repairFacilityText(
-      f.properties?.facility ||
-      "Избрана точка"
-    );
+    typeof repairFacilityText === "function"
+      ? repairFacilityText(
+          feature.properties?.facility ||
+          "Избран сондаж"
+        )
+      : (
+          feature.properties?.facility ||
+          "Избран сондаж"
+        );
 
   startLocationAnalysis(
     lat,
@@ -7991,31 +8058,7 @@ function parseCoordinates(value) {
 
 let coordinateSearchMarker = null;
 
-// SEARCHED_LOCATION_ANALYSIS_START
 
-function analyzeSearchedLocation(
-  latitude,
-  longitude
-) {
-  map.closePopup();
-
-  const box =
-    document.getElementById(
-      "location-analysis-box"
-    );
-
-  if (box) {
-    box.style.display = "block";
-  }
-
-  analyzeLocation(
-    Number(latitude),
-    Number(longitude),
-    "Търсена локация"
-  );
-}
-
-// SEARCHED_LOCATION_ANALYSIS_END
 
 
 /* UNIFIED_LOCATION_ANALYSIS_START */
@@ -8028,49 +8071,99 @@ async function startLocationAnalysis(
   const lat = Number(latitude);
   const lon = Number(longitude);
 
+  const status =
+    document.getElementById("analysis-status");
+
+  const result =
+    document.getElementById("analysis-result");
+
   if (
     !Number.isFinite(lat) ||
     !Number.isFinite(lon)
   ) {
     console.error(
-      "Невалидни координати за анализ:",
+      "Невалидни координати:",
       latitude,
       longitude
     );
+
+    if (status) {
+      status.textContent =
+        "Невалидни координати за анализ.";
+    }
+
     return;
   }
 
   map.closePopup();
 
-  // На телефон резултатът е в страничния панел,
-  // затова го отваряме автоматично.
+  /*
+    Първо отваряме панела на телефон.
+    После стартираме съществуващия FREE анализ.
+  */
   if (
     window.innerWidth <= 700 &&
     typeof openMobilePanel === "function"
   ) {
     openMobilePanel();
+
+    if (typeof map !== "undefined") {
+      setTimeout(function () {
+        map.invalidateSize();
+      }, 100);
+    }
   }
 
-  await analyzeLocation(
-    lat,
-    lon,
-    label
-  );
+  if (status) {
+    status.textContent =
+      "Подготвям анализ на избраната точка…";
+  }
+
+  if (result) {
+    result.innerHTML = "";
+  }
+
+  try {
+    await analyzeLocation(
+      lat,
+      lon,
+      label
+    );
+  }
+  catch (error) {
+    console.error(
+      "Location analysis error:",
+      error
+    );
+
+    if (status) {
+      status.textContent =
+        "Възникна грешка при анализа.";
+    }
+
+    if (result) {
+      result.innerHTML =
+        "<div style=\"padding:8px 0\">" +
+        "Анализът не можа да бъде завършен. " +
+        "Опитайте отново." +
+        "</div>";
+    }
+  }
 
   if (window.innerWidth <= 700) {
     setTimeout(function () {
-      const analysisResult =
+      const box =
         document.getElementById(
           "analysis-result"
         );
 
-      if (analysisResult) {
-        analysisResult.scrollIntoView({
+      if (box) {
+        box.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
       }
-    }, 150);
+    }, 250);
   }
 }
 
