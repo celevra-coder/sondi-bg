@@ -1,4 +1,4 @@
-﻿import { Cormorant_Garamond } from "next/font/google";
+import { Cormorant_Garamond } from "next/font/google";
 
 const heroFont = Cormorant_Garamond({
   subsets: ["cyrillic", "latin"],
@@ -95,7 +95,6 @@ export default function Home() {
             професионални анализи на едно място.
           </p>
 
-          <div className="mt-8 sm:mt-9 md:mt-11">
           <div className="mt-8 sm:mt-9 md:mt-11">
             <button
               type="button"
