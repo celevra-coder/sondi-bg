@@ -7692,6 +7692,16 @@ function showSearchedCoordinates(latitude, longitude, status) {
       ", " +
       longitude.toFixed(7);
   }
+
+  if (window.innerWidth <= 700) {
+    closeMobilePanel();
+
+    setTimeout(function () {
+      if (typeof map !== "undefined") {
+        map.invalidateSize();
+      }
+    }, 150);
+  }
 }
 async function searchCoordinates() {
   const input = document.getElementById("search");
@@ -7793,6 +7803,16 @@ async function searchCoordinates() {
     status.textContent =
       "\u041d\u0430\u043c\u0435\u0440\u0435\u043d\u043e: " +
       (result.display_name || query);
+
+    if (window.innerWidth <= 700) {
+      closeMobilePanel();
+
+      setTimeout(function () {
+        if (typeof map !== "undefined") {
+          map.invalidateSize();
+        }
+      }, 150);
+    }
   } catch (error) {
     console.error("[Place search]", error);
 
