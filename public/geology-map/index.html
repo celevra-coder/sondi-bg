@@ -145,6 +145,66 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
   }
 }
 
+
+/* MOBILE_MAP_LAYER_UI_START */
+@media (max-width: 700px) {
+
+  /* На телефона управлението е през "Слоеве и анализ". */
+  .leaflet-control-layers {
+    display: none !important;
+  }
+
+  .leaflet-bottom.leaflet-right {
+    right: 10px;
+    bottom: 10px;
+    max-width: calc(100vw - 20px);
+  }
+
+  .legend {
+    width: auto;
+    max-width: 190px;
+    max-height: 42px;
+    overflow: hidden;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 0 !important;
+    line-height: 1.4;
+    padding: 10px 12px;
+  }
+
+  .legend::before {
+    content: "Легенда ▾";
+    display: block;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #173d47;
+    white-space: nowrap;
+  }
+
+  .legend:not(.mobile-legend-open) .symbol {
+    display: none !important;
+  }
+
+  .legend.mobile-legend-open {
+    max-width: min(280px, calc(100vw - 30px));
+    max-height: 55vh;
+    overflow-y: auto;
+    font-size: 11px !important;
+    padding: 10px 12px 12px;
+  }
+
+  .legend.mobile-legend-open::before {
+    content: "Легенда ▴";
+    margin-bottom: 8px;
+  }
+
+  .legend.mobile-legend-open .symbol {
+    display: inline-flex;
+  }
+}
+/* MOBILE_MAP_LAYER_UI_END */
+
 </style>
 </head>
 <body>
@@ -3365,7 +3425,7 @@ addOptions('category',data.features.map(f=>f.properties.display_category));
 
 data.features.forEach((f,featureIndex)=>{
  const p=f.properties,lat=f.geometry.coordinates[1],lon=f.geometry.coordinates[0],t=num(p.temperature_c),d=num(p.depth_m);
- const m=makeMarker(lat,lon,p).addTo(map);
+ const m=makeMarker(lat,lon,p);
  m.bindPopup(`<b>${esc(p.facility)}</b><br>
  <b>ÐšÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ:</b> ${esc(p.display_category)}<br>
  ÐÐ°Ñ…Ð¾Ð´Ð¸Ñ‰Ðµ: ${esc(p.deposit)||'â€”'}<br>
@@ -3420,7 +3480,7 @@ function fitVisible(){
 function resetFilters(){
  ['search','tempMin','depthMax'].forEach(i=>document.getElementById(i).value='');
  ['basin','category'].forEach(i=>document.getElementById(i).value='');
- ['layer-wells','layer-springs','layer-monitoring','layer-inactive','layer-other'].forEach(i=>document.getElementById(i).checked=true);
+ ['layer-wells','layer-springs','layer-monitoring','layer-inactive','layer-other'].forEach(i=>document.getElementById(i).checked=false);
  
 }
 
@@ -7921,5 +7981,48 @@ function toggleLayersPanel(){
 }
 
 </script>
+
+<script>
+/* MOBILE_LEGEND_BEHAVIOR_START */
+(function () {
+  function prepareMobileLegends() {
+    if (window.innerWidth > 700) return;
+
+    document.querySelectorAll(".legend").forEach(function (legend) {
+      if (legend.dataset.mobileLegendReady === "1") return;
+
+      legend.dataset.mobileLegendReady = "1";
+
+      legend.addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        document.querySelectorAll(".legend").forEach(function (other) {
+          if (other !== legend) {
+            other.classList.remove("mobile-legend-open");
+          }
+        });
+
+        legend.classList.toggle("mobile-legend-open");
+      });
+    });
+  }
+
+  window.addEventListener("load", function () {
+    setTimeout(prepareMobileLegends, 300);
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 700) {
+      document.querySelectorAll(".legend").forEach(function (legend) {
+        legend.classList.remove("mobile-legend-open");
+      });
+    } else {
+      prepareMobileLegends();
+    }
+  });
+})();
+ /* MOBILE_LEGEND_BEHAVIOR_END */
+</script>
+
 </body>
 </html>
