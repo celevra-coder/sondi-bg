@@ -2,6 +2,67 @@ import Link from "next/link";
 
 const groups = [
   {
+    title: "Официална оценка на състоянието",
+    intro:
+      "Как институциите оценяват качеството, количеството и риска за подземните водни тела.",
+    items: [
+      {
+        title: "Какво означава химично състояние на подземните води?",
+        href: "/knowledge/water-quality/chemical-status",
+      },
+      {
+        title: "Какво означава подземно водно тяло „в риск“?",
+        href: "/knowledge/water-quality/chemical-risk",
+      },
+      {
+        title: "Какво е количествено състояние?",
+        href: "/knowledge/water-quality/quantitative-status",
+      },
+      {
+        title: "Как се разбира експлоатационният индекс?",
+        href: "/knowledge/water-quality/exploitation-index",
+      },
+    ],
+  },
+  {
+    title: "Мониторинг и показатели",
+    intro:
+      "Как се четат официалните измервания, праговете, тенденциите и установените превишения.",
+    items: [
+      {
+        title: "Прагови, фонови стойности и стандарт за качество",
+        href: "/knowledge/water-quality/threshold-background-standard",
+      },
+      {
+        title: "Какво означава възходяща тенденция?",
+        href: "/knowledge/water-quality/upward-trend",
+      },
+      {
+        title: "Как се четат мониторинговите данни и превишенията?",
+        href: "/knowledge/water-quality/monitoring-exceedances",
+      },
+    ],
+  },
+  {
+    title: "Практическо тълкуване",
+    intro:
+      "Как официалните регионални оценки се използват правилно при проверка на конкретно място.",
+    items: [
+      {
+        title: "Какво показва официалният воден баланс?",
+        href: "/knowledge/water-quality/water-balance",
+      },
+      {
+        title: "Как се сравняват оценките от ПУРБ 2 и ПУРБ 3?",
+        href: "/knowledge/water-quality/rbmp-comparison",
+      },
+      {
+        title: "Регионална оценка и водна проба от конкретен сондаж",
+        href: "/knowledge/water-quality/regional-vs-water-sample",
+      },
+    ],
+  },
+  {
     title: "Защита на водите",
     intro:
       "Как се определят защитените зони и какво означават те за подземните води и питейното водоснабдяване.",
@@ -92,12 +153,13 @@ export default function WaterQualityKnowledgePage() {
         </div>
 
         <div className="mt-20 border-l-4 border-[#2c8498] bg-[#edf8fa] p-7">
-          <strong>Разделът ще се разширява</strong>
+          <strong>Как да използваш тези материали?</strong>
 
           <p className="mt-2 max-w-3xl leading-7 text-[#5b767d]">
-            Тук постепенно ще бъдат добавени материалите за химично
-            състояние, нитрати, замърсяване, значими натиски и
-            оценка на риска за подземните води.
+            Статиите обясняват показателите от официалната оценка
+            на подземните водни тела. Те помагат за правилното
+            разчитане на PRO анализа, но не заместват изследване
+            на водата от конкретен водоизточник.
           </p>
         </div>
       </section>
