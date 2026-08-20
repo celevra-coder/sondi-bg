@@ -11,22 +11,53 @@ type SearchParams = Promise<{
 function Card({
   title,
   subtitle,
+  knowledgeHref,
   children,
 }: {
   title: string;
   subtitle?: string;
+  knowledgeHref: string;
   children?: React.ReactNode;
 }) {
   return (
     <section style={{
+      position: "relative",
       background: "#fff",
       border: "1px solid #dce8eb",
       borderRadius: 18,
       padding: 20,
       boxShadow: "0 8px 28px rgba(16,62,73,.05)",
     }}>
+      <Link
+        href={knowledgeHref}
+        aria-label={`Прочети повече за ${title} в Знания`}
+        title="Прочети повече в Знания"
+        style={{
+          position: "absolute",
+          top: 16,
+          right: 16,
+          width: 30,
+          height: 30,
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          border: "2px solid #0d8055",
+          background: "#eef8f4",
+          color: "#0d8055",
+          textDecoration: "none",
+          fontSize: 18,
+          lineHeight: 1,
+          fontWeight: 900,
+          boxShadow: "0 3px 10px rgba(13,128,85,.12)",
+        }}
+      >
+        !
+      </Link>
+
       <h2 style={{
         margin: 0,
+        paddingRight: 42,
         color: "#123b46",
         fontSize: 19,
       }}>
@@ -36,6 +67,7 @@ function Card({
       {subtitle && (
         <p style={{
           margin: "6px 0 0",
+          paddingRight: 34,
           fontSize: 13,
           lineHeight: 1.5,
           color: "#708288",
@@ -50,7 +82,6 @@ function Card({
     </section>
   );
 }
-
 function Row({
   label,
   value,
@@ -367,6 +398,87 @@ export default async function ProPage({
     comparison?.risk_2022_2027 ??
     "Няма данни";
 
+  const pointPressurePercent =
+    Number(
+      profile.pointPressure
+        ?.potential_impact_percent
+    );
+
+  const diffusePressurePercent =
+    Number(
+      profile.diffusePressure
+        ?.potential_impact_percent
+    );
+
+  const hasPointPressure =
+    Number.isFinite(pointPressurePercent) &&
+    pointPressurePercent > 0;
+
+  const hasDiffusePressure =
+    Number.isFinite(diffusePressurePercent) &&
+    diffusePressurePercent > 0;
+
+  const significantPressureItems =
+    Array.isArray(
+      significant?.significant_pressures
+    )
+      ? significant.significant_pressures
+      : [];
+
+  const hasSignificantPressure =
+    significantPressureItems.length > 0;
+
+  const hasPressureInformation =
+    Number.isFinite(pointPressurePercent) ||
+    Number.isFinite(diffusePressurePercent) ||
+    hasSignificantPressure ||
+    Boolean(profile.pollutionRisk);
+
+  const pressureNeedsAttention =
+    hasPointPressure ||
+    hasDiffusePressure ||
+    hasSignificantPressure;
+
+  const pressureSummaryTone =
+    pressureNeedsAttention
+      ? "warn"
+      : hasPressureInformation
+        ? "good"
+        : "neutral";
+
+  const pressureSummaryTitle =
+    pressureNeedsAttention
+      ? "Има данни за натиск върху подземното водно тяло"
+      : hasPressureInformation
+        ? "Не е установен съществен натиск в показаните данни"
+        : "Няма достатъчно данни за оценка на натиска";
+
+  const pressureTypes = [
+    hasPointPressure
+      ? "точков натиск"
+      : null,
+    hasDiffusePressure
+      ? "дифузен натиск"
+      : null,
+    hasSignificantPressure
+      ? "значим натиск"
+      : null,
+  ].filter(
+    (item): item is string =>
+      item !== null
+  );
+
+  const pressureSummaryText =
+    pressureNeedsAttention
+      ? (
+          "Официалните данни показват " +
+          pressureTypes.join(", ") +
+          ". Това е оценка за цялото подземно водно тяло, а не доказателство за замърсяване в конкретния имот."
+        )
+      : hasPressureInformation
+        ? "В показаните официални данни не се откроява съществен натиск. Оценката се отнася за цялото подземно водно тяло."
+        : "Липсват достатъчно официални данни за просто и надеждно заключение.";
+
   const quantitativeStatus =
     waterBalance?.quantitative_status ??
     significant?.quantitative_status ??
@@ -411,6 +523,56 @@ export default async function ProPage({
     !String(chemicalRisk)
       .toLowerCase()
       .includes("не в риск");
+
+  const chemicalSummaryTone =
+    chemicalIsBad ||
+    chemicalIsAtRisk ||
+    hasUpwardTrend ||
+    exceedances.length > 0
+      ? "warn"
+      : String(chemical)
+          .toLowerCase() === "добро"
+        ? "good"
+        : "neutral";
+
+  const chemicalSummaryTitle =
+    chemicalIsBad
+      ? "Необходимо е внимание към качеството на водата"
+      : chemicalIsAtRisk
+        ? "Има риск за бъдещото химично състояние"
+        : String(chemical)
+            .toLowerCase() === "добро"
+          ? "Химичното състояние е оценено като добро"
+          : "Няма достатъчно данни за химична оценка";
+
+  const chemicalSummaryText =
+    chemicalIsBad
+      ? (
+          "Подземното водно тяло е с лошо химично състояние" +
+          (
+            String(pollutants) !==
+            "Няма посочени"
+              ? `. Посочени проблемни показатели: ${String(
+                  pollutants
+                )}.`
+              : "."
+          )
+        )
+      : chemicalIsAtRisk
+        ? "Текущото състояние не е оценено като лошо, но има официално установен риск да не бъде постигнато или запазено добро химично състояние."
+        : String(chemical)
+            .toLowerCase() === "добро"
+          ? (
+              "Общата официална оценка е благоприятна." +
+              (
+                hasUpwardTrend
+                  ? " Въпреки това е отчетена възходяща тенденция, която изисква наблюдение."
+                  : ""
+              )
+            )
+          : "Липсват достатъчно официални данни за ясно заключение.";
+
+
 
   const quantitativeIsBad =
     String(quantitativeStatus)
@@ -805,6 +967,7 @@ export default async function ProPage({
         }}>
           <Card
             title="1. Местоположение и подземно водно тяло"
+            knowledgeHref="/knowledge/water-quality/regional-vs-water-sample"
             subtitle="Основна идентификация на анализираната точка."
           >
             <Row
@@ -827,6 +990,7 @@ export default async function ProPage({
 
           <Card
             title="2. Геология и хидрогеология"
+            knowledgeHref="/knowledge/water-quality"
             subtitle="Ще се обогатява с данните от следващите раздели."
           >
             <div style={{
@@ -842,6 +1006,7 @@ export default async function ProPage({
 
           <Card
             title="3. Количествен ресурс"
+            knowledgeHref="/knowledge/water-quality/quantitative-status"
             subtitle="Разбираемо обобщение на водния баланс и използването на ресурса."
           >
             <div style={{
@@ -1042,169 +1207,301 @@ export default async function ProPage({
           </Card>
           <Card
             title="4. Натиск и риск от замърсяване"
-            subtitle="Точков, дифузен и значим натиск."
+            knowledgeHref="/knowledge/water-quality/chemical-risk"
+            subtitle="Ясно заключение и подробни официални данни в падащо меню."
           >
-            <Row
-              label="Точков натиск"
-              value={
-                profile.pointPressure
-                  ?.potential_impact_percent != null
-                  ? `${profile.pointPressure
-                      .potential_impact_percent}%`
-                  : "Налични подробни данни"
-              }
-            />
+            <div style={{
+              padding: 14,
+              borderRadius: 12,
+              background:
+                pressureSummaryTone === "warn"
+                  ? "#fff4e5"
+                  : pressureSummaryTone === "good"
+                    ? "#eaf7ef"
+                    : "#f1f5f6",
+              border:
+                pressureSummaryTone === "warn"
+                  ? "1px solid #efc27b"
+                  : pressureSummaryTone === "good"
+                    ? "1px solid #aad8ba"
+                    : "1px solid #d4dfe2",
+            }}>
+              <div style={{
+                fontSize: 17,
+                fontWeight: 800,
+                color:
+                  pressureSummaryTone === "warn"
+                    ? "#8a4f00"
+                    : pressureSummaryTone === "good"
+                      ? "#25633a"
+                      : "#45616a",
+              }}>
+                {pressureSummaryTitle}
+              </div>
 
-            <Row
-              label="Дифузен натиск"
-              value={
-                profile.diffusePressure
-                  ?.potential_impact_percent != null
-                  ? `${profile.diffusePressure
-                      .potential_impact_percent}%`
-                  : "Налични подробни данни"
-              }
-            />
+              <div style={{
+                marginTop: 7,
+                color: "#314d55",
+                fontSize: 14,
+                lineHeight: 1.6,
+              }}>
+                {pressureSummaryText}
+              </div>
+            </div>
 
-            <Row
-              label="Риск от замърсяване"
-              value={
-                profile.pollutionRisk
-                  ? "Налична официална оценка"
-                  : "—"
-              }
-            />
+            <details style={{
+              marginTop: 14,
+              borderTop: "1px solid #e1eaec",
+              paddingTop: 12,
+            }}>
+              <summary style={{
+                cursor: "pointer",
+                color: "#245663",
+                fontWeight: 800,
+              }}>
+                Виж подробните официални данни
+              </summary>
 
-            <Row
-              label="Значим натиск"
-              value={
-                significant?.significant_pressures?.length
-                  ? significant.significant_pressures.join(", ")
-                  : "Не е посочен"
-              }
-            />
+              <div style={{ marginTop: 10 }}>
+                <Row
+                  label="Точков натиск"
+                  value={
+                    Number.isFinite(
+                      pointPressurePercent
+                    )
+                      ? `${formatNumber(
+                          pointPressurePercent
+                        )}%`
+                      : "Няма числова стойност"
+                  }
+                />
+
+                <Row
+                  label="Дифузен натиск"
+                  value={
+                    Number.isFinite(
+                      diffusePressurePercent
+                    )
+                      ? `${formatNumber(
+                          diffusePressurePercent
+                        )}%`
+                      : "Няма числова стойност"
+                  }
+                />
+
+                <Row
+                  label="Риск от замърсяване"
+                  value={
+                    profile.pollutionRisk
+                      ? "Налична официална оценка"
+                      : "Няма налична оценка"
+                  }
+                />
+
+                <Row
+                  label="Значим натиск"
+                  value={
+                    hasSignificantPressure
+                      ? significantPressureItems.join(", ")
+                      : "Не е посочен"
+                  }
+                />
+              </div>
+            </details>
           </Card>
 
           <Card
             title="5. Химично състояние"
-            subtitle="Официална оценка, риск, показатели и сравнение между ПУРБ 2 и ПУРБ 3."
+            knowledgeHref="/knowledge/water-quality/chemical-status"
+            subtitle="Ясно заключение и подробни официални данни в падащо меню."
           >
-            <Row
-              label="Химично състояние"
-              value={chemical}
-            />
-
-            <Row
-              label="Химичен риск"
-              value={chemicalRisk}
-            />
-
-            <Row
-              label="Възходяща тенденция"
-              value={section4?.upward_trend ?? "—"}
-            />
-
-            <Row
-              label="Проблемни показатели"
-              value={String(pollutants)}
-            />
-
-            <Row
-              label="Риск ПУРБ 2"
-              value={
-                comparison?.risk_2016_2021 ?? "—"
-              }
-            />
-
-            <Row
-              label="Състояние ПУРБ 2"
-              value={
-                comparison?.status_2016_2021 ?? "—"
-              }
-            />
-
-            <Row
-              label="Риск ПУРБ 3"
-              value={
-                comparison?.risk_2022_2027 ?? "—"
-              }
-            />
-
-            <Row
-              label="Състояние ПУРБ 3"
-              value={
-                comparison?.status_2022_2027 ?? "—"
-              }
-            />
-
-            {section4?.tests ? (
-              <details style={{
-                marginTop: 14,
-                borderTop: "1px solid #e1eaec",
-                paddingTop: 12,
-              }}>
-                <summary style={{
-                  cursor: "pointer",
-                  fontWeight: 800,
-                  color: "#245663",
-                }}>
-                  Резултати от химичните тестове
-                </summary>
-
-                <div style={{ marginTop: 8 }}>
-                  <Row
-                    label="Обща оценка"
-                    value={section4.tests.general ?? "—"}
-                  />
-                  <Row
-                    label="Солен или замърсяващ интрузивен натиск"
-                    value={
-                      section4.tests
-                        .saline_or_polluted_intrusion ?? "—"
-                    }
-                  />
-                  <Row
-                    label="Въздействие върху повърхностни води"
-                    value={
-                      section4.tests
-                        .surface_water_impact ?? "—"
-                    }
-                  />
-                  <Row
-                    label="Зависими екосистеми"
-                    value={
-                      section4.tests
-                        .groundwater_dependent_ecosystems ?? "—"
-                    }
-                  />
-                  <Row
-                    label="Влошаване на питейни води"
-                    value={
-                      section4.tests
-                        .drinking_water_deterioration ?? "—"
-                    }
-                  />
-                </div>
-              </details>
-            ) : null}
-
             <div style={{
-              marginTop: 12,
-              padding: 11,
-              borderRadius: 10,
-              background: "#eef7f5",
-              color: "#47645d",
-              fontSize: 12,
-              lineHeight: 1.5,
+              padding: 14,
+              borderRadius: 12,
+              background:
+                chemicalSummaryTone === "warn"
+                  ? "#fff4e5"
+                  : chemicalSummaryTone === "good"
+                    ? "#eaf7ef"
+                    : "#f1f5f6",
+              border:
+                chemicalSummaryTone === "warn"
+                  ? "1px solid #efc27b"
+                  : chemicalSummaryTone === "good"
+                    ? "1px solid #aad8ba"
+                    : "1px solid #d4dfe2",
             }}>
-              Данните са официална регионална оценка
-              за подземното водно тяло. Те не заместват
-              лабораторно изследване на водата от
-              конкретния имот или сондаж.
+              <div style={{
+                fontSize: 17,
+                fontWeight: 800,
+                color:
+                  chemicalSummaryTone === "warn"
+                    ? "#8a4f00"
+                    : chemicalSummaryTone === "good"
+                      ? "#25633a"
+                      : "#45616a",
+              }}>
+                {chemicalSummaryTitle}
+              </div>
+
+              <div style={{
+                marginTop: 7,
+                color: "#314d55",
+                fontSize: 14,
+                lineHeight: 1.6,
+              }}>
+                {chemicalSummaryText}
+              </div>
+
+              <div style={{
+                marginTop: 9,
+                color: "#64777d",
+                fontSize: 12,
+                lineHeight: 1.5,
+              }}>
+                Оценката се отнася за цялото подземно
+                водно тяло, а не за водна проба от
+                конкретния имот.
+              </div>
             </div>
+
+            <details style={{
+              marginTop: 14,
+              borderTop: "1px solid #e1eaec",
+              paddingTop: 12,
+            }}>
+              <summary style={{
+                cursor: "pointer",
+                color: "#245663",
+                fontWeight: 800,
+              }}>
+                Виж подробните официални данни
+              </summary>
+
+              <div style={{ marginTop: 10 }}>
+                <Row
+                  label="Химично състояние"
+                  value={chemical}
+                />
+
+                <Row
+                  label="Химичен риск"
+                  value={chemicalRisk}
+                />
+
+                <Row
+                  label="Възходяща тенденция"
+                  value={
+                    section4?.upward_trend ?? "—"
+                  }
+                />
+
+                <Row
+                  label="Проблемни показатели"
+                  value={String(pollutants)}
+                />
+
+                <Row
+                  label="Риск ПУРБ 2"
+                  value={
+                    comparison?.risk_2016_2021 ??
+                    "—"
+                  }
+                />
+
+                <Row
+                  label="Състояние ПУРБ 2"
+                  value={
+                    comparison?.status_2016_2021 ??
+                    "—"
+                  }
+                />
+
+                <Row
+                  label="Риск ПУРБ 3"
+                  value={
+                    comparison?.risk_2022_2027 ??
+                    "—"
+                  }
+                />
+
+                <Row
+                  label="Състояние ПУРБ 3"
+                  value={
+                    comparison?.status_2022_2027 ??
+                    "—"
+                  }
+                />
+
+                {section4?.tests ? (
+                  <details style={{
+                    marginTop: 14,
+                    borderTop:
+                      "1px solid #e1eaec",
+                    paddingTop: 12,
+                  }}>
+                    <summary style={{
+                      cursor: "pointer",
+                      color: "#245663",
+                      fontWeight: 800,
+                    }}>
+                      Резултати от химичните тестове
+                    </summary>
+
+                    <div style={{ marginTop: 8 }}>
+                      <Row
+                        label="Обща оценка"
+                        value={
+                          section4.tests.general ??
+                          "—"
+                        }
+                      />
+
+                      <Row
+                        label="Солен или замърсяващ интрузивен натиск"
+                        value={
+                          section4.tests
+                            .saline_or_polluted_intrusion ??
+                          "—"
+                        }
+                      />
+
+                      <Row
+                        label="Въздействие върху повърхностни води"
+                        value={
+                          section4.tests
+                            .surface_water_impact ??
+                          "—"
+                        }
+                      />
+
+                      <Row
+                        label="Зависими екосистеми"
+                        value={
+                          section4.tests
+                            .groundwater_dependent_ecosystems ??
+                          "—"
+                        }
+                      />
+
+                      <Row
+                        label="Влошаване на питейни води"
+                        value={
+                          section4.tests
+                            .drinking_water_deterioration ??
+                          "—"
+                        }
+                      />
+                    </div>
+                  </details>
+                ) : null}
+              </div>
+            </details>
           </Card>
+
           <Card
             title="6. Мониторинг"
+            knowledgeHref="/knowledge/water-quality/monitoring-exceedances"
             subtitle="Разбираемо обобщение на официалните данни за качеството на водата."
           >
             <section style={{
@@ -1561,6 +1858,7 @@ export default async function ProPage({
           </Card>
           <Card
             title="7. Климатична устойчивост"
+            knowledgeHref="/knowledge/water-quality/water-balance"
             subtitle="Прогнозна промяна на естествения ресурс на подземното водно тяло — PRO."
           >
             {climate ? (
@@ -1679,6 +1977,7 @@ export default async function ProPage({
 
           <Card
             title="8. Какво има около точката"
+            knowledgeHref="/knowledge/water-quality/drinking-water-protection-zones"
             subtitle="Официални сондажи, извори и мониторингови пунктове около избраните координати."
           >
             {spatial ? (
@@ -2046,6 +2345,7 @@ export default async function ProPage({
 
           <Card
             title="9. Сондажна перспектива"
+            knowledgeHref="/knowledge/water-quality/exploitation-index"
             subtitle="Оценка на локалния потенциал за проучване."
           >
             <div style={{
@@ -2064,6 +2364,7 @@ export default async function ProPage({
 
           <Card
             title="10. Препоръка за сондаж"
+            knowledgeHref="/knowledge/water-quality/quantitative-status"
             subtitle="Практическа оценка за сондиране на същата анализирана точка."
           >
             {lat && lng ? (
@@ -2113,6 +2414,7 @@ export default async function ProPage({
 
           <Card
             title="11. Професионално заключение"
+            knowledgeHref="/knowledge/water-quality/rbmp-comparison"
             subtitle="Обобщение на всички налични официални и пространствени данни."
           >
             <div style={{
