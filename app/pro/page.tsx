@@ -341,6 +341,136 @@ export default async function ProPage({
       maximumFractionDigits,
     });
   };
+
+  const chemicalIsBad =
+    String(chemical).toLowerCase() === "лошо";
+
+  const chemicalIsAtRisk =
+    String(chemicalRisk)
+      .toLowerCase()
+      .includes("в риск") &&
+    !String(chemicalRisk)
+      .toLowerCase()
+      .includes("не в риск");
+
+  const quantitativeIsBad =
+    String(quantitativeStatus)
+      .toLowerCase() === "лошо";
+
+  const quantitativeIsAtRisk =
+    String(quantRisk)
+      .toLowerCase()
+      .includes("в риск") &&
+    !String(quantRisk)
+      .toLowerCase()
+      .includes("не в риск");
+
+  const exploitationNumber =
+    Number(exploitation);
+
+  const exploitationIsHigh =
+    Number.isFinite(exploitationNumber) &&
+    exploitationNumber >= 0.75;
+
+  const proConclusionTone =
+    chemicalIsBad ||
+    chemicalIsAtRisk ||
+    exceedances.length > 0
+      ? "bad"
+      : quantitativeIsBad ||
+          quantitativeIsAtRisk ||
+          exploitationIsHigh ||
+          hasUpwardTrend
+        ? "warn"
+        : "good";
+
+  const proConclusionTitle =
+    proConclusionTone === "bad"
+      ? "Необходимо е повишено внимание към качеството"
+      : proConclusionTone === "warn"
+        ? "Има показатели, които трябва да се проследяват"
+        : "Официалните показатели са благоприятни";
+
+  const conclusionParts: string[] = [];
+
+  if (chemicalIsBad) {
+    conclusionParts.push(
+      "Химичното състояние на водното тяло е оценено като лошо"
+    );
+  } else if (
+    String(chemical).toLowerCase() === "добро"
+  ) {
+    conclusionParts.push(
+      "Химичното състояние е оценено като добро"
+    );
+  }
+
+  if (chemicalIsAtRisk) {
+    conclusionParts.push(
+      "водното тяло е определено в химичен риск"
+    );
+  }
+
+  if (exceedances.length > 0) {
+    conclusionParts.push(
+      `установени са превишения в ${exceedanceStationCount} мониторингови пункта`
+    );
+  }
+
+  if (mainExceedanceIndicators) {
+    conclusionParts.push(
+      `основните проблемни показатели са ${mainExceedanceIndicators}`
+    );
+  }
+
+  if (hasUpwardTrend) {
+    conclusionParts.push(
+      "отчетена е възходяща тенденция"
+    );
+  }
+
+  if (
+    String(quantitativeStatus)
+      .toLowerCase() === "добро"
+  ) {
+    conclusionParts.push(
+      "количественото състояние е добро"
+    );
+  } else if (quantitativeIsBad) {
+    conclusionParts.push(
+      "количественото състояние е лошо"
+    );
+  }
+
+  if (exploitationIsHigh) {
+    conclusionParts.push(
+      "експлоатационният индекс е висок"
+    );
+  }
+
+  const proConclusionText =
+    conclusionParts.length > 0
+      ? `${conclusionParts.join(". ")}.`
+      : "Няма достатъчно официални данни за общо заключение.";
+
+  const proConclusionColors = {
+    good: {
+      background: "#eaf7ef",
+      border: "#bfe1cc",
+      title: "#176a42",
+    },
+    warn: {
+      background: "#fff7e5",
+      border: "#ecd7a6",
+      title: "#876018",
+    },
+    bad: {
+      background: "#fff0f0",
+      border: "#edc7c7",
+      title: "#9c3030",
+    },
+  }[proConclusionTone];
+
   return (
     <main style={{
       minHeight: "100vh",
@@ -860,6 +990,73 @@ export default async function ProPage({
             title="6. Мониторинг"
             subtitle="Разбираемо обобщение на официалните данни за качеството на водата."
           >
+            <section style={{
+              marginTop: 0,
+              padding: "18px 20px",
+              borderRadius: 16,
+              background:
+                proConclusionColors.background,
+              border:
+                `1px solid ${proConclusionColors.border}`,
+            }}>
+              <div style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 9,
+                flexWrap: "wrap",
+              }}>
+                <div style={{
+                  padding: "4px 8px",
+                  borderRadius: 7,
+                  background: "#0d8055",
+                  color: "#fff",
+                  fontSize: 10,
+                  fontWeight: 900,
+                  letterSpacing: ".08em",
+                }}>
+                  PRO
+                </div>
+
+                <div style={{
+                  fontSize: 12,
+                  fontWeight: 900,
+                  color: proConclusionColors.title,
+                  textTransform: "uppercase",
+                  letterSpacing: ".05em",
+                }}>
+                  Общо заключение
+                </div>
+              </div>
+
+              <h2 style={{
+                margin: "10px 0 0",
+                fontSize: 20,
+                color: proConclusionColors.title,
+              }}>
+                {proConclusionTitle}
+              </h2>
+
+              <p style={{
+                margin: "8px 0 0",
+                color: "#334f56",
+                fontSize: 14,
+                lineHeight: 1.65,
+              }}>
+                {proConclusionText}
+              </p>
+
+              <p style={{
+                margin: "9px 0 0",
+                color: "#6b7d82",
+                fontSize: 11,
+                lineHeight: 1.5,
+              }}>
+                Заключението е автоматично обобщение на
+                официалните данни за подземното водно тяло,
+                а не оценка на водата в конкретния имот.
+              </p>
+            </section>
+
             <div style={{
               padding: 14,
               borderRadius: 12,
