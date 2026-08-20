@@ -188,11 +188,128 @@ export default async function ProPage({
   const integrated =
     profile.integratedRisk;
 
+  const section4 =
+    profile.section4;
+
+  const comparison =
+    section4?.comparison;
+
+  const waterBalance =
+    section4?.water_balance;
+
+  const abstractionByUse =
+    section4?.abstraction_by_use;
+
+  const thresholds =
+    Array.isArray(section4?.thresholds)
+      ? section4.thresholds
+      : [];
+
+  const trendSeries =
+    Array.isArray(section4?.trend_series)
+      ? section4.trend_series
+      : [];
+
+  const drinkingMonitoring =
+    Array.isArray(section4?.drinking_monitoring)
+      ? section4.drinking_monitoring
+      : [];
+
+  const exceedances =
+    drinkingMonitoring.flatMap((station: any) =>
+      Array.isArray(station?.indicators)
+        ? station.indicators
+            .filter(
+              (indicator: any) =>
+                indicator?.exceeds_standard === true
+            )
+            .map((indicator: any) => ({
+              stationCode:
+                station?.station_code ?? null,
+              stationName:
+                station?.station_name ?? "—",
+              ...indicator,
+            }))
+        : []
+    );
+
+  const exceedanceStationCount =
+    new Set(
+      exceedances.map(
+        (item: any) =>
+          item?.stationCode ??
+          item?.stationName
+      )
+    ).size;
+
+  const exceedanceIndicatorCounts =
+    exceedances.reduce(
+      (
+        counts: Record<string, number>,
+        item: any
+      ) => {
+        const indicator =
+          String(item?.indicator ?? "").trim();
+
+        if (indicator) {
+          counts[indicator] =
+            (counts[indicator] ?? 0) + 1;
+        }
+
+        return counts;
+      },
+      {}
+    );
+
+  const mainExceedanceIndicators =
+    Object.entries(
+      exceedanceIndicatorCounts as Record<string, number>
+    )
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 4)
+      .map(([indicator]) => indicator)
+      .join(", ");
+
+  const hasUpwardTrend =
+    String(section4?.upward_trend)
+      .toLowerCase() === "да";
+
+  const monitoringSummary =
+    !section4
+      ? "За това подземно водно тяло няма налични данни от Раздел 4."
+      : exceedances.length > 0
+        ? (
+            `Официалният мониторинг показва превишения в ${exceedanceStationCount} мониторингови пункта. ` +
+            (
+              mainExceedanceIndicators
+                ? `Основни проблемни показатели: ${mainExceedanceIndicators}. `
+                : ""
+            ) +
+            (
+              hasUpwardTrend
+                ? "Отчетена е и възходяща тенденция."
+                : "Не е отчетена обща възходяща тенденция."
+            )
+          )
+        : (
+            "В наличните официални мониторингови записи няма установени превишения. " +
+            (
+              hasUpwardTrend
+                ? "Въпреки това е отчетена възходяща тенденция."
+                : "Не е отчетена възходяща тенденция."
+            )
+          );
   const chemical =
+    section4?.chemical_status ??
     significant?.chemical_status ??
     "Няма данни";
 
+  const chemicalRisk =
+    comparison?.risk_2022_2027 ??
+    "Няма данни";
+
   const quantitativeStatus =
+    waterBalance?.quantitative_status ??
     significant?.quantitative_status ??
     "Няма данни";
 
@@ -201,13 +318,29 @@ export default async function ProPage({
     "Няма данни";
 
   const exploitation =
+    waterBalance?.exploitation_index ??
     abstraction?.exploitation_index;
 
   const pollutants =
+    section4?.pollutants ??
     integrated?.monitoring_2015_2020?.pollutants ??
     significant?.quality_parameters_outside_standard ??
     "Няма посочени";
 
+  const formatNumber = (
+    value: unknown,
+    maximumFractionDigits = 2
+  ) => {
+    const number = Number(value);
+
+    if (!Number.isFinite(number)) {
+      return "—";
+    }
+
+    return number.toLocaleString("bg-BG", {
+      maximumFractionDigits,
+    });
+  };
   return (
     <main style={{
       minHeight: "100vh",
@@ -330,6 +463,22 @@ export default async function ProPage({
           />
 
           <Status
+            label="Химичен риск"
+            value={chemicalRisk}
+            tone={
+              String(chemicalRisk)
+                .toLowerCase()
+                .includes("не в риск")
+                ? "good"
+                : String(chemicalRisk)
+                    .toLowerCase()
+                    .includes("в риск")
+                  ? "bad"
+                  : "neutral"
+            }
+          />
+
+          <Status
             label="Количествено състояние"
             value={quantitativeStatus}
             tone={
@@ -421,32 +570,52 @@ export default async function ProPage({
 
           <Card
             title="3. Количествен ресурс"
-            subtitle="Ресурс, водовземане и официален количествен риск."
+            subtitle="Официален воден баланс, водовземане и количествен риск — Раздел 4."
           >
             <Row
               label="Разполагаем ресурс"
               value={
-                abstraction?.available_resource_lps != null
-                  ? `${Number(
-                      abstraction.available_resource_lps
-                    ).toLocaleString("bg-BG", {
-                      maximumFractionDigits: 2,
-                    })} l/s`
+                waterBalance?.available_resource_l_s != null
+                  ? `${formatNumber(
+                      waterBalance.available_resource_l_s
+                    )} l/s`
+                  : abstraction?.available_resource_lps != null
+                    ? `${formatNumber(
+                        abstraction.available_resource_lps
+                      )} l/s`
+                    : "—"
+              }
+            />
+
+            <Row
+              label="Общо водовземане"
+              value={
+                waterBalance?.total_abstraction_m3_y != null
+                  ? `${formatNumber(
+                      waterBalance.total_abstraction_m3_y
+                    )} m³/год.`
+                  : abstraction?.permitted_total_lps != null
+                    ? `${formatNumber(
+                        abstraction.permitted_total_lps
+                      )} l/s`
+                    : "—"
+              }
+            />
+
+            <Row
+              label="Самоснабдяване на населението"
+              value={
+                waterBalance?.citizen_self_supply_m3_y != null
+                  ? `${formatNumber(
+                      waterBalance.citizen_self_supply_m3_y
+                    )} m³/год.`
                   : "—"
               }
             />
 
             <Row
-              label="Разрешено водовземане"
-              value={
-                abstraction?.permitted_total_lps != null
-                  ? `${Number(
-                      abstraction.permitted_total_lps
-                    ).toLocaleString("bg-BG", {
-                      maximumFractionDigits: 2,
-                    })} l/s`
-                  : "—"
-              }
+              label="Количествено състояние"
+              value={quantitativeStatus}
             />
 
             <Row
@@ -454,10 +623,7 @@ export default async function ProPage({
               value={
                 exploitation == null
                   ? "—"
-                  : Number(exploitation)
-                      .toLocaleString("bg-BG", {
-                        maximumFractionDigits: 3,
-                      })
+                  : formatNumber(exploitation, 3)
               }
             />
 
@@ -465,8 +631,68 @@ export default async function ProPage({
               label="Официален количествен риск"
               value={quantRisk}
             />
-          </Card>
 
+            {abstractionByUse ? (
+              <details style={{
+                marginTop: 14,
+                borderTop: "1px solid #e1eaec",
+                paddingTop: 12,
+              }}>
+                <summary style={{
+                  cursor: "pointer",
+                  fontWeight: 800,
+                  color: "#245663",
+                }}>
+                  Водовземане по предназначение
+                </summary>
+
+                <div style={{ marginTop: 8 }}>
+                  <Row
+                    label="Обществено водоснабдяване"
+                    value={`${formatNumber(
+                      abstractionByUse.public_water_supply_l_s
+                    )} l/s`}
+                  />
+                  <Row
+                    label="Земеделие"
+                    value={`${formatNumber(
+                      abstractionByUse.agriculture_l_s
+                    )} l/s`}
+                  />
+                  <Row
+                    label="Промишленост"
+                    value={`${formatNumber(
+                      abstractionByUse.industry_l_s
+                    )} l/s`}
+                  />
+                  <Row
+                    label="Аквакултури"
+                    value={`${formatNumber(
+                      abstractionByUse.aquaculture_l_s
+                    )} l/s`}
+                  />
+                  <Row
+                    label="Битово самоснабдяване"
+                    value={`${formatNumber(
+                      abstractionByUse.household_self_supply_l_s
+                    )} l/s`}
+                  />
+                  <Row
+                    label="Туризъм и рекреация"
+                    value={`${formatNumber(
+                      abstractionByUse.tourism_recreation_l_s
+                    )} l/s`}
+                  />
+                  <Row
+                    label="Други цели"
+                    value={`${formatNumber(
+                      abstractionByUse.other_l_s
+                    )} l/s`}
+                  />
+                </div>
+              </details>
+            ) : null}
+          </Card>
           <Card
             title="4. Натиск и риск от замърсяване"
             subtitle="Точков, дифузен и значим натиск."
@@ -514,11 +740,21 @@ export default async function ProPage({
 
           <Card
             title="5. Химично състояние"
-            subtitle="Проблемни показатели и интегрирана оценка."
+            subtitle="Официална оценка, риск, показатели и сравнение между ПУРБ 2 и ПУРБ 3."
           >
             <Row
               label="Химично състояние"
               value={chemical}
+            />
+
+            <Row
+              label="Химичен риск"
+              value={chemicalRisk}
+            />
+
+            <Row
+              label="Възходяща тенденция"
+              value={section4?.upward_trend ?? "—"}
             />
 
             <Row
@@ -527,15 +763,83 @@ export default async function ProPage({
             />
 
             <Row
-              label="Мониторинг + дифузен натиск"
+              label="Риск ПУРБ 2"
               value={
-                integrated
-                  ?.risk_assessment
-                  ?.chemical_monitoring_plus_diffuse_pressure
-                  ?.label_bg ??
-                "—"
+                comparison?.risk_2016_2021 ?? "—"
               }
             />
+
+            <Row
+              label="Състояние ПУРБ 2"
+              value={
+                comparison?.status_2016_2021 ?? "—"
+              }
+            />
+
+            <Row
+              label="Риск ПУРБ 3"
+              value={
+                comparison?.risk_2022_2027 ?? "—"
+              }
+            />
+
+            <Row
+              label="Състояние ПУРБ 3"
+              value={
+                comparison?.status_2022_2027 ?? "—"
+              }
+            />
+
+            {section4?.tests ? (
+              <details style={{
+                marginTop: 14,
+                borderTop: "1px solid #e1eaec",
+                paddingTop: 12,
+              }}>
+                <summary style={{
+                  cursor: "pointer",
+                  fontWeight: 800,
+                  color: "#245663",
+                }}>
+                  Резултати от химичните тестове
+                </summary>
+
+                <div style={{ marginTop: 8 }}>
+                  <Row
+                    label="Обща оценка"
+                    value={section4.tests.general ?? "—"}
+                  />
+                  <Row
+                    label="Солен или замърсяващ интрузивен натиск"
+                    value={
+                      section4.tests
+                        .saline_or_polluted_intrusion ?? "—"
+                    }
+                  />
+                  <Row
+                    label="Въздействие върху повърхностни води"
+                    value={
+                      section4.tests
+                        .surface_water_impact ?? "—"
+                    }
+                  />
+                  <Row
+                    label="Зависими екосистеми"
+                    value={
+                      section4.tests
+                        .groundwater_dependent_ecosystems ?? "—"
+                    }
+                  />
+                  <Row
+                    label="Влошаване на питейни води"
+                    value={
+                      section4.tests
+                        .drinking_water_deterioration ?? "—"
+                    }
+                  />
+                </div>
+              </details>
+            ) : null}
 
             <div style={{
               marginTop: 12,
@@ -546,27 +850,301 @@ export default async function ProPage({
               fontSize: 12,
               lineHeight: 1.5,
             }}>
-              Раздел 4 ще добави конкретните
-              химични анализи и стойности.
+              Данните са официална регионална оценка
+              за подземното водно тяло. Те не заместват
+              лабораторно изследване на водата от
+              конкретния имот или сондаж.
             </div>
           </Card>
-
           <Card
             title="6. Мониторинг"
-            subtitle="Химични и количествени пунктове около точката."
+            subtitle="Разбираемо обобщение на официалните данни за качеството на водата."
           >
             <div style={{
-              padding: 12,
-              background: "#f5f8f9",
-              borderRadius: 10,
-              color: "#708187",
-              fontSize: 13,
+              padding: 14,
+              borderRadius: 12,
+              background:
+                exceedances.length > 0
+                  ? "#fff1f1"
+                  : "#eef7f5",
+              border:
+                exceedances.length > 0
+                  ? "1px solid #efcaca"
+                  : "1px solid #cfe5de",
+              color:
+                exceedances.length > 0
+                  ? "#7d3030"
+                  : "#365f55",
+              fontSize: 14,
+              lineHeight: 1.65,
             }}>
-              Ще бъде свързано с мониторинговите
-              данни и пространствения анализ.
-            </div>
-          </Card>
+              <div style={{
+                fontWeight: 900,
+                marginBottom: 6,
+              }}>
+                {exceedances.length > 0
+                  ? "Има данни за проблем с качеството"
+                  : "Няма установени превишения"}
+              </div>
 
+              {monitoringSummary}
+            </div>
+
+            <div style={{
+              marginTop: 12,
+              padding: 11,
+              borderRadius: 10,
+              background: "#fff8e8",
+              color: "#705a27",
+              fontSize: 12,
+              lineHeight: 1.55,
+            }}>
+              Данните се отнасят за цялото подземно
+              водно тяло. Те не доказват автоматично
+              същото качество на водата в конкретния
+              имот.
+            </div>
+
+            <details style={{
+              marginTop: 14,
+              border: "1px solid #dce8eb",
+              borderRadius: 11,
+              padding: 12,
+              background: "#f8fbfc",
+            }}>
+              <summary style={{
+                cursor: "pointer",
+                fontWeight: 900,
+                color: "#245663",
+              }}>
+                Виж подробните официални данни
+              </summary>
+
+              <div style={{
+                marginTop: 14,
+                display: "grid",
+                gap: 16,
+              }}>
+                <section>
+                  <div style={{
+                    fontWeight: 900,
+                    marginBottom: 7,
+                  }}>
+                    Обобщени стойности
+                  </div>
+
+                  <Row
+                    label="Времеви серии"
+                    value={String(trendSeries.length)}
+                  />
+                  <Row
+                    label="Питейни мониторингови пунктове"
+                    value={String(drinkingMonitoring.length)}
+                  />
+                  <Row
+                    label="Пунктове с превишения"
+                    value={String(exceedanceStationCount)}
+                  />
+                  <Row
+                    label="Установени превишения"
+                    value={String(exceedances.length)}
+                  />
+                  <Row
+                    label="Прагови показатели"
+                    value={String(thresholds.length)}
+                  />
+                </section>
+
+                {trendSeries.length > 0 ? (
+                  <section>
+                    <div style={{
+                      fontWeight: 900,
+                      marginBottom: 7,
+                    }}>
+                      Тенденции
+                    </div>
+
+                    <div style={{
+                      display: "grid",
+                      gap: 8,
+                    }}>
+                      {trendSeries.map(
+                        (trend: any, index: number) => {
+                          const points =
+                            Array.isArray(trend?.points)
+                              ? trend.points
+                              : [];
+
+                          const firstYear =
+                            points[0]?.year ?? "—";
+
+                          const lastYear =
+                            points[points.length - 1]
+                              ?.year ?? "—";
+
+                          return (
+                            <div
+                              key={`${trend?.station_code ?? index}-${trend?.indicator ?? index}`}
+                              style={{
+                                padding: 10,
+                                borderRadius: 9,
+                                background: "#eef3f5",
+                                fontSize: 12,
+                                lineHeight: 1.5,
+                              }}
+                            >
+                              <strong>
+                                {trend?.station_name ?? "—"}
+                              </strong>
+                              <div>
+                                Показател:{" "}
+                                {trend?.indicator ?? "—"}
+                              </div>
+                              <div>
+                                Период: {firstYear}–{lastYear}
+                              </div>
+                            </div>
+                          );
+                        }
+                      )}
+                    </div>
+                  </section>
+                ) : null}
+
+                <section>
+                  <div style={{
+                    fontWeight: 900,
+                    marginBottom: 7,
+                  }}>
+                    Установени превишения
+                  </div>
+
+                  {exceedances.length > 0 ? (
+                    <div style={{
+                      display: "grid",
+                      gap: 8,
+                    }}>
+                      {exceedances.map(
+                        (item: any, index: number) => (
+                          <div
+                            key={`${item?.stationCode ?? index}-${item?.indicator ?? index}`}
+                            style={{
+                              padding: 10,
+                              borderRadius: 9,
+                              background: "#fff1f1",
+                              border: "1px solid #f1cccc",
+                              fontSize: 12,
+                              lineHeight: 1.5,
+                            }}
+                          >
+                            <strong>
+                              {item?.stationName ?? "—"}
+                            </strong>
+                            <div>
+                              {item?.indicator ?? "—"}:{" "}
+                              {formatNumber(
+                                item?.mean_value,
+                                6
+                              )}
+                              {" при норма "}
+                              {formatNumber(
+                                item?.quality_standard,
+                                6
+                              )}
+                            </div>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  ) : (
+                    <div style={{
+                      padding: 10,
+                      borderRadius: 9,
+                      background: "#eef7f5",
+                      color: "#47645d",
+                      fontSize: 12,
+                    }}>
+                      Няма установени превишения
+                      в наличните записи.
+                    </div>
+                  )}
+                </section>
+
+                <section>
+                  <div style={{
+                    fontWeight: 900,
+                    marginBottom: 7,
+                  }}>
+                    Прагови и фонови стойности
+                  </div>
+
+                  {thresholds.length > 0 ? (
+                    <div style={{
+                      display: "grid",
+                      gap: 8,
+                    }}>
+                      {thresholds.map(
+                        (threshold: any, index: number) => (
+                          <div
+                            key={`${threshold?.indicator ?? index}-${index}`}
+                            style={{
+                              padding: 10,
+                              borderRadius: 9,
+                              background: "#eef3f5",
+                              fontSize: 12,
+                              lineHeight: 1.5,
+                            }}
+                          >
+                            <strong>
+                              {threshold?.indicator ?? "—"}
+                            </strong>
+                            <div>
+                              Праг:{" "}
+                              {formatNumber(
+                                threshold?.threshold_value,
+                                6
+                              )}{" "}
+                              {threshold?.unit ?? ""}
+                            </div>
+                            <div>
+                              Фонова стойност:{" "}
+                              {formatNumber(
+                                threshold?.background_value,
+                                6
+                              )}{" "}
+                              {threshold?.unit ?? ""}
+                            </div>
+                            <div>
+                              Стандарт:{" "}
+                              {formatNumber(
+                                threshold?.quality_standard,
+                                6
+                              )}{" "}
+                              {threshold?.unit ?? ""}
+                            </div>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  ) : (
+                    <div style={{
+                      padding: 10,
+                      borderRadius: 9,
+                      background: "#fff7e5",
+                      color: "#765b20",
+                      fontSize: 12,
+                      lineHeight: 1.5,
+                    }}>
+                      За това водно тяло няма надеждно
+                      свързани прагови стойности.
+                      Не е правено предположително
+                      свързване със стари кодове.
+                    </div>
+                  )}
+                </section>
+              </div>
+            </details>
+          </Card>
           <Card
             title="7. Климатична устойчивост"
             subtitle="Прогнозна промяна на естествения ресурс на подземното водно тяло — PRO."

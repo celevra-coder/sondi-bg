@@ -21,6 +21,8 @@ export type GwbProfile = {
 
   climate?: any;
 
+  section4?: any;
+
   sources: string[];
 };
 
@@ -67,7 +69,9 @@ function findRecord(
       ? data
       : Array.isArray(data.records)
         ? data.records
-        : [];
+        : Array.isArray(data.profiles)
+          ? data.profiles
+          : [];
 
   const wanted = normalizeCode(gwbCode);
 
@@ -108,6 +112,9 @@ const DATASETS = {
 
   climate:
     "bd_ibr_climate_resource_forecast.json",
+
+  section4:
+    "bd_ibr_section4_pro_profiles.json",
 } as const;
 
 export function getGwbProfile(
@@ -184,6 +191,9 @@ export function getGwbProfile(
 
     climate:
       records.climate,
+
+    section4:
+      records.section4,
 
     sources,
   };
