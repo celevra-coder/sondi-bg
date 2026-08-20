@@ -82,10 +82,12 @@ function Status({
   label,
   value,
   tone = "neutral",
+  help,
 }: {
   label: string;
   value: string;
   tone?: "good" | "bad" | "warn" | "neutral";
+  help?: string;
 }) {
   const styles = {
     good: { bg: "#eaf7ef", fg: "#177344" },
@@ -98,17 +100,74 @@ function Status({
 
   return (
     <div style={{
+      position: "relative",
       background: s.bg,
       borderRadius: 14,
       padding: 14,
     }}>
       <div style={{
-        fontSize: 11,
-        fontWeight: 800,
-        opacity: .7,
-        textTransform: "uppercase",
+        display: "flex",
+        alignItems: "flex-start",
+        justifyContent: "space-between",
+        gap: 8,
       }}>
-        {label}
+        <div style={{
+          fontSize: 11,
+          fontWeight: 800,
+          opacity: .7,
+          textTransform: "uppercase",
+        }}>
+          {label}
+        </div>
+
+        {help ? (
+          <details style={{
+            position: "relative",
+            flexShrink: 0,
+          }}>
+            <summary
+              aria-label={`Пояснение: ${label}`}
+              style={{
+                display: "grid",
+                placeItems: "center",
+                width: 22,
+                height: 22,
+                borderRadius: "50%",
+                background: "rgba(255,255,255,.72)",
+                border: "1px solid rgba(31,52,58,.18)",
+                color: "#294950",
+                cursor: "pointer",
+                fontSize: 13,
+                fontWeight: 900,
+                listStyle: "none",
+                userSelect: "none",
+              }}
+            >
+              ?
+            </summary>
+
+            <div style={{
+              position: "absolute",
+              zIndex: 30,
+              top: 28,
+              right: 0,
+              width: "min(280px,calc(100vw - 54px))",
+              padding: 12,
+              borderRadius: 11,
+              background: "#fff",
+              border: "1px solid #d6e3e6",
+              boxShadow:
+                "0 10px 30px rgba(16,62,73,.18)",
+              color: "#334f56",
+              fontSize: 12,
+              fontWeight: 500,
+              lineHeight: 1.55,
+              textTransform: "none",
+            }}>
+              {help}
+            </div>
+          </details>
+        ) : null}
       </div>
 
       <div style={{
@@ -372,6 +431,84 @@ export default async function ProPage({
     Number.isFinite(exploitationNumber) &&
     exploitationNumber >= 0.75;
 
+  const exploitationPercent =
+    Number.isFinite(exploitationNumber)
+      ? exploitationNumber * 100
+      : null;
+
+  const quantityLoad =
+    exploitationPercent == null
+      ? "неизвестно"
+      : exploitationPercent >= 75
+        ? "високо"
+        : exploitationPercent >= 50
+          ? "умерено"
+          : "ниско";
+
+  const quantitySummaryTone =
+    quantitativeIsBad ||
+    quantitativeIsAtRisk ||
+    exploitationIsHigh
+      ? "warn"
+      : String(quantitativeStatus)
+          .toLowerCase() === "добро"
+        ? "good"
+        : "neutral";
+
+  const quantitySummaryTitle =
+    quantitySummaryTone === "warn"
+      ? "Необходимо е внимание към количествения ресурс"
+      : quantitySummaryTone === "good"
+        ? "Количественият ресурс е в добро състояние"
+        : "Няма достатъчно данни за количествена оценка";
+
+  const quantityStateText =
+    String(quantitativeStatus)
+      .toLowerCase() === "добро"
+      ? "Количественото състояние е оценено като добро."
+      : quantitativeIsBad
+        ? "Количественото състояние е оценено като лошо."
+        : "Няма достатъчно данни за количественото състояние.";
+
+  const quantityRiskText =
+    quantitativeIsAtRisk
+      ? "Официалната оценка показва количествен риск."
+      : String(quantRisk)
+          .toLowerCase()
+          .includes("не в риск")
+        ? "Не е установен официален количествен риск."
+        : "Няма достатъчно данни за количествения риск.";
+
+  const quantityUseText =
+    exploitationPercent == null
+      ? "Няма изчислен експлоатационен индекс."
+      : (
+          `Използват се приблизително ${formatNumber(
+            exploitationPercent,
+            0
+          )}% от разполагаемия ресурс, което показва ${quantityLoad} натоварване.`
+        );
+
+  const quantitySummaryText =
+    `${quantityStateText} ${quantityRiskText} ${quantityUseText}`;
+
+  const quantitySummaryColors = {
+    good: {
+      background: "#eef7f5",
+      border: "#cfe5de",
+      title: "#27644f",
+    },
+    warn: {
+      background: "#fff7e5",
+      border: "#ecd7a6",
+      title: "#876018",
+    },
+    neutral: {
+      background: "#f1f5f6",
+      border: "#d7e1e3",
+      title: "#476168",
+    },
+  }[quantitySummaryTone];
   const proConclusionTone =
     chemicalIsBad ||
     chemicalIsAtRisk ||
@@ -584,6 +721,7 @@ export default async function ProPage({
         }}>
           <Status
             label="Химично състояние"
+            help="Официална обща оценка за качеството на цялото подземно водно тяло. Не е лабораторен резултат за конкретен имот."
             value={chemical}
             tone={
               String(chemical).toLowerCase() === "лошо"
@@ -594,6 +732,7 @@ export default async function ProPage({
 
           <Status
             label="Химичен риск"
+            help="Показва дали има риск водното тяло да не постигне или запази добро химично състояние през периода на ПУРБ."
             value={chemicalRisk}
             tone={
               String(chemicalRisk)
@@ -610,6 +749,7 @@ export default async function ProPage({
 
           <Status
             label="Количествено състояние"
+            help="Оценява общия баланс между наличния подземен воден ресурс и водовземането. Не показва очаквания дебит в конкретната точка."
             value={quantitativeStatus}
             tone={
               String(quantitativeStatus).toLowerCase() === "добро"
@@ -620,6 +760,7 @@ export default async function ProPage({
 
           <Status
             label="Количествен риск"
+            help="Показва дали има риск водното тяло да не постигне или запази добро количествено състояние."
             value={quantRisk}
             tone={
               String(quantRisk)
@@ -636,6 +777,7 @@ export default async function ProPage({
 
           <Status
             label="Експлоатационен индекс"
+            help="Показва каква част от разполагаемия ресурс се използва. Например стойност 0,58 означава приблизително 58% използван ресурс."
             value={
               exploitation == null
                 ? "Няма данни"
@@ -700,128 +842,203 @@ export default async function ProPage({
 
           <Card
             title="3. Количествен ресурс"
-            subtitle="Официален воден баланс, водовземане и количествен риск — Раздел 4."
+            subtitle="Разбираемо обобщение на водния баланс и използването на ресурса."
           >
-            <Row
-              label="Разполагаем ресурс"
-              value={
-                waterBalance?.available_resource_l_s != null
-                  ? `${formatNumber(
-                      waterBalance.available_resource_l_s
-                    )} l/s`
-                  : abstraction?.available_resource_lps != null
-                    ? `${formatNumber(
-                        abstraction.available_resource_lps
-                      )} l/s`
-                    : "—"
-              }
-            />
-
-            <Row
-              label="Общо водовземане"
-              value={
-                waterBalance?.total_abstraction_m3_y != null
-                  ? `${formatNumber(
-                      waterBalance.total_abstraction_m3_y
-                    )} m³/год.`
-                  : abstraction?.permitted_total_lps != null
-                    ? `${formatNumber(
-                        abstraction.permitted_total_lps
-                      )} l/s`
-                    : "—"
-              }
-            />
-
-            <Row
-              label="Самоснабдяване на населението"
-              value={
-                waterBalance?.citizen_self_supply_m3_y != null
-                  ? `${formatNumber(
-                      waterBalance.citizen_self_supply_m3_y
-                    )} m³/год.`
-                  : "—"
-              }
-            />
-
-            <Row
-              label="Количествено състояние"
-              value={quantitativeStatus}
-            />
-
-            <Row
-              label="Експлоатационен индекс"
-              value={
-                exploitation == null
-                  ? "—"
-                  : formatNumber(exploitation, 3)
-              }
-            />
-
-            <Row
-              label="Официален количествен риск"
-              value={quantRisk}
-            />
-
-            {abstractionByUse ? (
-              <details style={{
-                marginTop: 14,
-                borderTop: "1px solid #e1eaec",
-                paddingTop: 12,
+            <div style={{
+              padding: 14,
+              borderRadius: 12,
+              background:
+                quantitySummaryColors.background,
+              border:
+                `1px solid ${quantitySummaryColors.border}`,
+              color: "#38535b",
+              fontSize: 14,
+              lineHeight: 1.65,
+            }}>
+              <div style={{
+                fontWeight: 900,
+                color: quantitySummaryColors.title,
+                marginBottom: 6,
               }}>
-                <summary style={{
-                  cursor: "pointer",
-                  fontWeight: 800,
-                  color: "#245663",
-                }}>
-                  Водовземане по предназначение
-                </summary>
+                {quantitySummaryTitle}
+              </div>
 
-                <div style={{ marginTop: 8 }}>
+              {quantitySummaryText}
+            </div>
+
+            <div style={{
+              marginTop: 12,
+              padding: 11,
+              borderRadius: 10,
+              background: "#f5f8f9",
+              color: "#61767c",
+              fontSize: 12,
+              lineHeight: 1.55,
+            }}>
+              Оценката е за цялото подземно водно
+              тяло и не определя очаквания дебит
+              в конкретния имот.
+            </div>
+
+            <details style={{
+              marginTop: 14,
+              border: "1px solid #dce8eb",
+              borderRadius: 11,
+              padding: 12,
+              background: "#f8fbfc",
+            }}>
+              <summary style={{
+                cursor: "pointer",
+                fontWeight: 900,
+                color: "#245663",
+              }}>
+                Виж подробните данни за ресурса
+              </summary>
+
+              <div style={{
+                marginTop: 14,
+                display: "grid",
+                gap: 16,
+              }}>
+                <section>
+                  <div style={{
+                    fontWeight: 900,
+                    marginBottom: 7,
+                  }}>
+                    Воден баланс
+                  </div>
+
                   <Row
-                    label="Обществено водоснабдяване"
-                    value={`${formatNumber(
-                      abstractionByUse.public_water_supply_l_s
-                    )} l/s`}
+                    label="Разполагаем ресурс"
+                    value={
+                      waterBalance?.available_resource_l_s != null
+                        ? `${formatNumber(
+                            waterBalance.available_resource_l_s
+                          )} l/s`
+                        : abstraction?.available_resource_lps != null
+                          ? `${formatNumber(
+                              abstraction.available_resource_lps
+                            )} l/s`
+                          : "—"
+                    }
                   />
+
                   <Row
-                    label="Земеделие"
-                    value={`${formatNumber(
-                      abstractionByUse.agriculture_l_s
-                    )} l/s`}
+                    label="Общо водовземане"
+                    value={
+                      waterBalance?.total_abstraction_m3_y != null
+                        ? `${formatNumber(
+                            waterBalance.total_abstraction_m3_y
+                          )} m³/год.`
+                        : abstraction?.permitted_total_lps != null
+                          ? `${formatNumber(
+                              abstraction.permitted_total_lps
+                            )} l/s`
+                          : "—"
+                    }
                   />
+
                   <Row
-                    label="Промишленост"
-                    value={`${formatNumber(
-                      abstractionByUse.industry_l_s
-                    )} l/s`}
+                    label="Самоснабдяване на населението"
+                    value={
+                      waterBalance?.citizen_self_supply_m3_y != null
+                        ? `${formatNumber(
+                            waterBalance.citizen_self_supply_m3_y
+                          )} m³/год.`
+                        : "—"
+                    }
                   />
+
                   <Row
-                    label="Аквакултури"
-                    value={`${formatNumber(
-                      abstractionByUse.aquaculture_l_s
-                    )} l/s`}
+                    label="Количествено състояние"
+                    value={quantitativeStatus}
                   />
+
                   <Row
-                    label="Битово самоснабдяване"
-                    value={`${formatNumber(
-                      abstractionByUse.household_self_supply_l_s
-                    )} l/s`}
+                    label="Експлоатационен индекс"
+                    value={
+                      exploitation == null
+                        ? "—"
+                        : formatNumber(
+                            exploitation,
+                            3
+                          )
+                    }
                   />
+
                   <Row
-                    label="Туризъм и рекреация"
-                    value={`${formatNumber(
-                      abstractionByUse.tourism_recreation_l_s
-                    )} l/s`}
+                    label="Използван ресурс"
+                    value={
+                      exploitationPercent == null
+                        ? "—"
+                        : `${formatNumber(
+                            exploitationPercent,
+                            0
+                          )}% — ${quantityLoad} натоварване`
+                    }
                   />
+
                   <Row
-                    label="Други цели"
-                    value={`${formatNumber(
-                      abstractionByUse.other_l_s
-                    )} l/s`}
+                    label="Официален количествен риск"
+                    value={quantRisk}
                   />
-                </div>
-              </details>
-            ) : null}
+                </section>
+
+                {abstractionByUse ? (
+                  <section>
+                    <div style={{
+                      fontWeight: 900,
+                      marginBottom: 7,
+                    }}>
+                      Водовземане по предназначение
+                    </div>
+
+                    <Row
+                      label="Обществено водоснабдяване"
+                      value={`${formatNumber(
+                        abstractionByUse.public_water_supply_l_s
+                      )} l/s`}
+                    />
+                    <Row
+                      label="Земеделие"
+                      value={`${formatNumber(
+                        abstractionByUse.agriculture_l_s
+                      )} l/s`}
+                    />
+                    <Row
+                      label="Промишленост"
+                      value={`${formatNumber(
+                        abstractionByUse.industry_l_s
+                      )} l/s`}
+                    />
+                    <Row
+                      label="Аквакултури"
+                      value={`${formatNumber(
+                        abstractionByUse.aquaculture_l_s
+                      )} l/s`}
+                    />
+                    <Row
+                      label="Битово самоснабдяване"
+                      value={`${formatNumber(
+                        abstractionByUse.household_self_supply_l_s
+                      )} l/s`}
+                    />
+                    <Row
+                      label="Туризъм и рекреация"
+                      value={`${formatNumber(
+                        abstractionByUse.tourism_recreation_l_s
+                      )} l/s`}
+                    />
+                    <Row
+                      label="Други цели"
+                      value={`${formatNumber(
+                        abstractionByUse.other_l_s
+                      )} l/s`}
+                    />
+                  </section>
+                ) : null}
+              </div>
+            </details>
           </Card>
           <Card
             title="4. Натиск и риск от замърсяване"
