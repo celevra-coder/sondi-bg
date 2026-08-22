@@ -928,6 +928,235 @@ export default async function ProPage({
     },
   }[proConclusionTone];
 
+  const nearbyWellCount5Km =
+    spatial?.counts?.wells?.km5 ?? 0;
+
+  const nearbySpringCount5Km =
+    spatial?.counts?.springs?.km5 ?? 0;
+
+  const nearestWellDistanceKm =
+    spatial?.nearestWell?.distanceKm ?? null;
+
+  const nearestSpringDistanceKm =
+    spatial?.nearestSpring?.distanceKm ?? null;
+
+  const nearestFaultDistanceKm =
+    spatial?.nearestFault?.distanceKm ?? null;
+
+  const nearestWellDepthRaw =
+    spatial?.nearestWell?.properties?.depth_m;
+
+  const nearestWellDepth =
+    nearestWellDepthRaw != null &&
+    String(nearestWellDepthRaw).trim() !== "" &&
+    Number.isFinite(Number(nearestWellDepthRaw)) &&
+    Number(nearestWellDepthRaw) > 0
+      ? Number(nearestWellDepthRaw)
+      : null;
+
+  const drillingHasCoordinates =
+    Boolean(lat && lng);
+
+  const drillingHasLocalEvidence =
+    drillingHasCoordinates && (
+      nearbyWellCount5Km > 0 ||
+      nearbySpringCount5Km > 0 ||
+      nearestFaultDistanceKm != null
+    );
+
+  const drillingHasResourceConcern =
+    quantitativeIsBad ||
+    quantitativeIsAtRisk ||
+    exploitationIsHigh;
+
+  const drillingHasQualityConcern =
+    chemicalIsBad ||
+    chemicalIsAtRisk ||
+    exceedances.length > 0;
+
+  const drillingPerspectiveTone =
+    drillingHasResourceConcern ||
+    drillingHasQualityConcern
+      ? "warn"
+      : geologyAvailable &&
+        drillingHasLocalEvidence
+        ? "good"
+        : "neutral";
+
+  const drillingPerspectiveTitle =
+    drillingPerspectiveTone === "good"
+      ? "Има основания за допълнително сондажно проучване"
+      : drillingPerspectiveTone === "warn"
+        ? "Проучването изисква внимание към установените рискове"
+        : "Необходими са още локални данни за надеждна преценка";
+
+  const drillingPerspectiveParts: string[] = [];
+
+  if (geologyAvailable) {
+    drillingPerspectiveParts.push(
+      geologyAquiferType !== "Няма данни"
+        ? `Официалните данни определят водоносната среда като ${geologyAquiferType}.`
+        : "Налични са официални данни за геоложките и хидрогеоложките особености на водното тяло."
+    );
+  }
+
+  if (nearbyWellCount5Km > 0) {
+    drillingPerspectiveParts.push(
+      `В радиус до 5 km са отчетени ${nearbyWellCount5Km} официални минерални водовземни сондажа.`
+    );
+  }
+
+  if (nearbySpringCount5Km > 0) {
+    drillingPerspectiveParts.push(
+      `В същия район са отчетени ${nearbySpringCount5Km} минерални извора или каптажа.`
+    );
+  }
+
+  if (nearestFaultDistanceKm != null) {
+    drillingPerspectiveParts.push(
+      `Най-близката известна разломна структура е на ${formatNumber(nearestFaultDistanceKm, 2)} km.`
+    );
+  }
+
+  if (drillingHasResourceConcern) {
+    drillingPerspectiveParts.push(
+      "Количествените показатели или натоварването на ресурса изискват предварителна проверка."
+    );
+  }
+
+  if (drillingHasQualityConcern) {
+    drillingPerspectiveParts.push(
+      "Има официални данни за проблеми или риск, свързани с качеството на водата."
+    );
+  }
+
+  const drillingPerspectiveText =
+    drillingPerspectiveParts.length > 0
+      ? drillingPerspectiveParts.join(" ")
+      : "За избраната точка няма достатъчно комбинирани официални и пространствени данни.";
+
+  const drillingRecommendationTitle =
+    !drillingHasCoordinates
+      ? "Първо изберете точка от картата"
+      : drillingHasResourceConcern
+        ? "Проверете количествения ресурс преди планиране на сондаж"
+        : drillingHasQualityConcern
+          ? "Планирайте проучване с внимание към качеството на водата"
+          : drillingHasLocalEvidence
+            ? "Точката е подходяща за последващо локално проучване"
+            : "Необходимо е допълнително локално проучване";
+
+  const drillingRecommendationParts: string[] = [];
+
+  if (drillingHasCoordinates) {
+    drillingRecommendationParts.push(
+      "Оценката се отнася за същите координати, избрани в PRO анализа."
+    );
+  }
+
+  if (nearestWellDistanceKm != null) {
+    drillingRecommendationParts.push(
+      `Най-близкият регистриран минерален водовземен сондаж е на ${formatNumber(nearestWellDistanceKm, 2)} km.`
+    );
+  }
+
+  if (nearestWellDepth != null) {
+    drillingRecommendationParts.push(
+      `За този минерален сондаж е посочена дълбочина ${formatNumber(nearestWellDepth, 0)} m. Тази дълбочина се отнася за минерално съоръжение и не е ориентир за обикновен сондаж за вода.`
+    );
+  }
+
+  if (drillingHasQualityConcern) {
+    drillingRecommendationParts.push(
+      "При реално водовземане качеството следва да бъде проверено чрез лабораторно изследване."
+    );
+  }
+
+  const drillingRecommendationText =
+    drillingRecommendationParts.length > 0
+      ? drillingRecommendationParts.join(" ")
+      : "Не са налични достатъчно локални данни за практическа препоръка.";
+
+  const professionalConclusionParts: string[] = [];
+
+  if (profile.identity.nameBg) {
+    professionalConclusionParts.push(
+      `Анализираната точка попада в подземно водно тяло ${profile.identity.nameBg}.`
+    );
+  }
+
+  if (geologyAvailable) {
+    professionalConclusionParts.push(
+      geologyHorizon !== "Няма данни"
+        ? `Хидрогеоложкият хоризонт е ${geologyHorizon}.`
+        : "За водното тяло са налични официални геоложки данни."
+    );
+  }
+
+  if (String(quantitativeStatus).toLowerCase() === "добро") {
+    professionalConclusionParts.push(
+      "Количественото състояние е оценено като добро."
+    );
+  } else if (quantitativeIsBad) {
+    professionalConclusionParts.push(
+      "Количественото състояние е оценено като лошо."
+    );
+  }
+
+  if (chemicalIsBad) {
+    professionalConclusionParts.push(
+      "Химичното състояние е оценено като лошо."
+    );
+  } else if (String(chemical).toLowerCase() === "добро") {
+    professionalConclusionParts.push(
+      "Химичното състояние е оценено като добро."
+    );
+  }
+
+  if (chemicalIsAtRisk) {
+    professionalConclusionParts.push(
+      "Водното тяло е определено в химичен риск."
+    );
+  }
+
+  if (exploitationPercent != null) {
+    professionalConclusionParts.push(
+      `Официалният експлоатационен индекс съответства на приблизително ${formatNumber(exploitationPercent, 0)}% използване на разполагаемия ресурс.`
+    );
+  }
+
+  if (section7MeasureCount > 0) {
+    professionalConclusionParts.push(
+      `За водното тяло са предвидени ${section7MeasureCount} официални мерки.`
+    );
+  }
+
+  const professionalConclusionText =
+    professionalConclusionParts.length > 0
+      ? professionalConclusionParts.join(" ")
+      : "Няма достатъчно официални данни за професионално заключение.";
+
+  const finalCardColors = {
+    good: {
+      background: "#eef7f5",
+      border: "#cfe5de",
+      title: "#27644f",
+    },
+    warn: {
+      background: "#fff7e5",
+      border: "#ecd7a6",
+      title: "#876018",
+    },
+    neutral: {
+      background: "#f1f5f6",
+      border: "#d7e1e3",
+      title: "#476168",
+    },
+  };
+
+  const drillingPerspectiveColors =
+    finalCardColors[drillingPerspectiveTone];
+
   return (
     <main style={{
       minHeight: "100vh",
@@ -2724,7 +2953,7 @@ export default async function ProPage({
                     border: "1px solid #dce8eb",
                   }}>
                     <strong>
-                      Сондажи около точката
+                      Минерални сондажи около точката
                     </strong>
 
                     <Row
@@ -2748,7 +2977,7 @@ export default async function ProPage({
                     border: "1px solid #dce8eb",
                   }}>
                     <strong>
-                      Извори и каптажи
+                      Минерални извори и каптажи
                     </strong>
 
                     <Row
@@ -2774,7 +3003,7 @@ export default async function ProPage({
                     background: "#eef7f5",
                   }}>
                     <strong>
-                      Най-близък сондаж
+                      Най-близък минерален водовземен сондаж
                     </strong>
 
                     <Row
@@ -2838,7 +3067,7 @@ export default async function ProPage({
                     background: "#eef6fa",
                   }}>
                     <strong>
-                      Най-близък извор / каптаж
+                      Най-близък минерален извор / каптаж
                     </strong>
 
                     <Row
@@ -2947,6 +3176,69 @@ export default async function ProPage({
                       себе си не доказва наличие
                       или дебит на вода в конкретната
                       точка.
+                    </div>
+                  </div>
+                )}
+
+                {spatial.nearestMappedMonitoring && (
+                  <div style={{
+                    marginTop: 12,
+                    padding: 14,
+                    borderRadius: 12,
+                    background: "#f5f0fb",
+                  }}>
+                    <strong>
+                      Най-близък минерален мониторингов сондаж
+                    </strong>
+
+                    <Row
+                      label="Обект"
+                      value={
+                        spatial.nearestMappedMonitoring
+                          .properties.facility ||
+                        "—"
+                      }
+                    />
+
+                    <Row
+                      label="Разстояние"
+                      value={
+                        spatial.nearestMappedMonitoring
+                          .distanceKm.toFixed(2) +
+                        " km"
+                      }
+                    />
+
+                    <Row
+                      label="Дълбочина"
+                      value={
+                        spatial.nearestMappedMonitoring
+                          .properties.depth_m != null
+                          ? spatial.nearestMappedMonitoring
+                              .properties.depth_m +
+                            " m"
+                          : "—"
+                      }
+                    />
+
+                    <Row
+                      label="Минерално находище"
+                      value={
+                        spatial.nearestMappedMonitoring
+                          .properties.deposit ||
+                        "—"
+                      }
+                    />
+
+                    <div style={{
+                      marginTop: 9,
+                      color: "#62556f",
+                      fontSize: 12,
+                      lineHeight: 1.55,
+                    }}>
+                      Това съоръжение наблюдава минерално
+                      находище и не е обикновен сондаж
+                      за подземна вода.
                     </div>
                   </div>
                 )}
@@ -3075,43 +3367,203 @@ export default async function ProPage({
           <Card
             title="10. Сондажна перспектива"
             knowledgeHref="/knowledge/water-quality/exploitation-index"
-            subtitle="Оценка на локалния потенциал за проучване."
+            subtitle="Разбираема оценка на наличните геоложки, ресурсни и локални данни."
           >
             <div style={{
-              padding: 12,
-              background: "#fff7e8",
+              padding: 15,
+              borderRadius: 12,
+              background:
+                drillingPerspectiveColors.background,
+              border:
+                `1px solid ${drillingPerspectiveColors.border}`,
+              color: "#38535b",
+              fontSize: 14,
+              lineHeight: 1.65,
+            }}>
+              <div style={{
+                fontWeight: 900,
+                color: drillingPerspectiveColors.title,
+                marginBottom: 7,
+              }}>
+                {drillingPerspectiveTitle}
+              </div>
+
+              {drillingPerspectiveText}
+            </div>
+
+            <details style={{
+              marginTop: 12,
+              padding: "12px 14px",
+              border: "1px solid #dce8eb",
+              borderRadius: 12,
+            }}>
+              <summary style={{
+                cursor: "pointer",
+                color: "#173f49",
+                fontWeight: 800,
+              }}>
+                Виж използваните данни за перспективата
+              </summary>
+
+              <div style={{ marginTop: 10 }}>
+                <Row
+                  label="Водоносна среда"
+                  value={geologyAquiferType}
+                />
+
+                <Row
+                  label="Хидрогеоложки хоризонт"
+                  value={geologyHorizon}
+                />
+
+                <Row
+                  label="Количествено състояние"
+                  value={quantitativeStatus}
+                />
+
+                <Row
+                  label="Химично състояние"
+                  value={chemical}
+                />
+
+                <Row
+                  label="Сондажи до 5 km"
+                  value={
+                    drillingHasCoordinates
+                      ? nearbyWellCount5Km
+                      : "Няма избрана точка"
+                  }
+                />
+
+                <Row
+                  label="Извори до 5 km"
+                  value={
+                    drillingHasCoordinates
+                      ? nearbySpringCount5Km
+                      : "Няма избрана точка"
+                  }
+                />
+
+                <Row
+                  label="Най-близък разлом"
+                  value={
+                    nearestFaultDistanceKm != null
+                      ? `${formatNumber(nearestFaultDistanceKm, 2)} km`
+                      : "Няма налични данни"
+                  }
+                />
+              </div>
+            </details>
+
+            <div style={{
+              marginTop: 12,
+              padding: "10px 12px",
               borderRadius: 10,
-              color: "#755e2b",
-              fontSize: 13,
+              background: "#f5f8f9",
+              color: "#64767b",
+              fontSize: 12,
               lineHeight: 1.55,
             }}>
-              Тази секция ще използва геологията,
-              разломите, известните водоизточници,
-              мониторинга и други локални данни.
+              Оценката не доказва наличие на вода, дълбочина
+              или дебит в конкретния имот.
             </div>
           </Card>
 
           <Card
             title="11. Препоръка за сондаж"
             knowledgeHref="/knowledge/water-quality/quantitative-status"
-            subtitle="Практическа оценка за сондиране на същата анализирана точка."
+            subtitle="Практическа интерпретация на официалните и пространствените данни."
           >
-            {lat && lng ? (
+            <div style={{
+              padding: 15,
+              borderRadius: 12,
+              background:
+                drillingHasResourceConcern ||
+                drillingHasQualityConcern
+                  ? "#fff7e5"
+                  : "#eef7f5",
+              border:
+                drillingHasResourceConcern ||
+                drillingHasQualityConcern
+                  ? "1px solid #ecd7a6"
+                  : "1px solid #cfe5de",
+              color: "#38535b",
+              fontSize: 14,
+              lineHeight: 1.65,
+            }}>
+              <div style={{
+                fontWeight: 900,
+                color:
+                  drillingHasResourceConcern ||
+                  drillingHasQualityConcern
+                    ? "#876018"
+                    : "#27644f",
+                marginBottom: 7,
+              }}>
+                {drillingRecommendationTitle}
+              </div>
+
+              {drillingRecommendationText}
+            </div>
+
+            {drillingHasCoordinates ? (
               <>
-                <div style={{
-                  padding: 12,
-                  background: "#eef7f5",
-                  borderRadius: 10,
-                  color: "#47645d",
-                  fontSize: 13,
-                  lineHeight: 1.55,
+                <details style={{
+                  marginTop: 12,
+                  padding: "12px 14px",
+                  border: "1px solid #dce8eb",
+                  borderRadius: 12,
                 }}>
-                  Препоръката използва същите координати
-                  като настоящия PRO анализ.
-                </div>
+                  <summary style={{
+                    cursor: "pointer",
+                    color: "#173f49",
+                    fontWeight: 800,
+                  }}>
+                    Виж основанията за препоръката
+                  </summary>
+
+                  <div style={{ marginTop: 10 }}>
+                    <Row
+                      label="Най-близък минерален сондаж"
+                      value={
+                        nearestWellDistanceKm != null
+                          ? `${formatNumber(nearestWellDistanceKm, 2)} km`
+                          : "Няма налични данни"
+                      }
+                    />
+
+                    <Row
+                      label="Дълбочина на минералния сондаж"
+                      value={
+                        nearestWellDepth != null
+                          ? `${formatNumber(nearestWellDepth, 0)} m`
+                          : "Няма официално посочена дълбочина"
+                      }
+                    />
+
+                    <Row
+                      label="Най-близък минерален извор"
+                      value={
+                        nearestSpringDistanceKm != null
+                          ? `${formatNumber(nearestSpringDistanceKm, 2)} km`
+                          : "Няма налични данни"
+                      }
+                    />
+
+                    <Row
+                      label="Натоварване на ресурса"
+                      value={quantityLoad}
+                    />
+
+                    <Row
+                      label="Химичен риск"
+                      value={chemicalRisk}
+                    />
+                  </div>
+                </details>
 
                 <Link
-                  href={`/geology/report?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lng)}`}
+                  href={`/geology/report?lat=${encodeURIComponent(lat!)}&lon=${encodeURIComponent(lng!)}`}
                   style={{
                     display: "block",
                     marginTop: 12,
@@ -3129,14 +3581,31 @@ export default async function ProPage({
               </>
             ) : (
               <div style={{
+                marginTop: 12,
                 padding: 12,
                 background: "#f5f8f9",
                 borderRadius: 10,
                 color: "#708187",
                 fontSize: 13,
               }}>
-                За препоръка за сондаж първо трябва
-                да бъде избрана точка от картата.
+                За локална препоръка първо изберете
+                точка от картата.
+              </div>
+            )}
+
+            {nearestWellDepth != null && (
+              <div style={{
+                marginTop: 12,
+                padding: "10px 12px",
+                borderRadius: 10,
+                background: "#f5f8f9",
+                color: "#64767b",
+                fontSize: 12,
+                lineHeight: 1.55,
+              }}>
+                Посочената дълбочина се отнася за минерален
+                регистриран сондаж и не представлява
+                прогноза за конкретния имот.
               </div>
             )}
           </Card>
@@ -3144,17 +3613,111 @@ export default async function ProPage({
           <Card
             title="12. Професионално заключение"
             knowledgeHref="/knowledge/water-quality/rbmp-comparison"
-            subtitle="Обобщение на всички налични официални и пространствени данни."
+            subtitle="Обобщение на официалните данни за ресурса, качеството и локалната ситуация."
           >
             <div style={{
-              padding: 12,
-              background: "#f5f8f9",
-              borderRadius: 10,
-              color: "#708187",
-              fontSize: 13,
+              padding: 15,
+              borderRadius: 12,
+              background:
+                proConclusionColors.background,
+              border:
+                `1px solid ${proConclusionColors.border}`,
+              color: "#38535b",
+              fontSize: 14,
+              lineHeight: 1.7,
             }}>
-              Ще се генерира след като свържем
-              всички компоненти на анализа.
+              <div style={{
+                fontWeight: 900,
+                color: proConclusionColors.title,
+                marginBottom: 7,
+              }}>
+                {proConclusionTitle}
+              </div>
+
+              {professionalConclusionText}
+            </div>
+
+            <details style={{
+              marginTop: 12,
+              padding: "12px 14px",
+              border: "1px solid #dce8eb",
+              borderRadius: 12,
+            }}>
+              <summary style={{
+                cursor: "pointer",
+                color: "#173f49",
+                fontWeight: 800,
+              }}>
+                Виж обобщените официални показатели
+              </summary>
+
+              <div style={{ marginTop: 10 }}>
+                <Row
+                  label="Подземно водно тяло"
+                  value={profile.identity.nameBg}
+                />
+
+                <Row
+                  label="Код на водното тяло"
+                  value={profile.gwbCode}
+                />
+
+                <Row
+                  label="Химично състояние"
+                  value={chemical}
+                />
+
+                <Row
+                  label="Химичен риск"
+                  value={chemicalRisk}
+                />
+
+                <Row
+                  label="Количествено състояние"
+                  value={quantitativeStatus}
+                />
+
+                <Row
+                  label="Количествен риск"
+                  value={quantRisk}
+                />
+
+                <Row
+                  label="Използване на ресурса"
+                  value={
+                    exploitationPercent != null
+                      ? `${formatNumber(exploitationPercent, 0)}%`
+                      : "Няма налични данни"
+                  }
+                />
+
+                <Row
+                  label="Проблемни показатели"
+                  value={pollutants}
+                />
+
+                <Row
+                  label="Официални мерки"
+                  value={
+                    section7
+                      ? section7MeasureCount
+                      : "Още няма обработени данни"
+                  }
+                />
+              </div>
+            </details>
+
+            <div style={{
+              marginTop: 12,
+              padding: "10px 12px",
+              borderRadius: 10,
+              background: "#f5f8f9",
+              color: "#64767b",
+              fontSize: 12,
+              lineHeight: 1.55,
+            }}>
+              Заключението обобщава наличната официална
+              информация и не замества проучване на място.
             </div>
           </Card>
         </div>

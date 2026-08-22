@@ -167,7 +167,7 @@ export function getSpatialProfile(
     f =>
       String(
         f.properties?.display_category || ""
-      ).toLowerCase().includes("сондаж")
+      ).trim().toLowerCase() === "минерален сондаж"
   );
 
   const springs = facilities.filter(

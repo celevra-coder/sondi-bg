@@ -284,10 +284,12 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 
 <div class="layerbox">
 <b>Слоеве</b>
-<label class="layerrow"><input type="checkbox" id="layer-wells"> 🔴 Минерални сондажи</label>
-<label class="layerrow"><input type="checkbox" id="layer-springs"> 🔵 Каптажи и естествени извори</label>
-<label class="layerrow"><input type="checkbox" id="layer-monitoring"> 🟣 Мониторингови сондажи</label>
-<label class="layerrow"><input type="checkbox" id="layer-inactive"> ⚫ Ликвидирани и консервирани</label>
+<label class="layerrow"><input type="checkbox" id="layer-ordinary-wells"> 🟢 Обикновени сондажи и кладенци – БД Черноморски район</label>
+<div id="ordinary-wells-load-status" class="small" style="margin-left:24px">изключено</div>
+<label class="layerrow"><input type="checkbox" id="layer-wells"> 🔴 Минерални водовземни сондажи</label>
+<label class="layerrow"><input type="checkbox" id="layer-springs"> 🔵 Минерални каптажи и извори</label>
+<label class="layerrow"><input type="checkbox" id="layer-monitoring"> 🟣 Минерални мониторингови сондажи</label>
+<label class="layerrow"><input type="checkbox" id="layer-inactive"> ⚫ Закрити и консервирани минерални съоръжения</label>
 <label class="layerrow"><input type="checkbox" id="layer-other"> ◇ Други минерални съоръжения</label>
 <label class="layerrow"><input type="checkbox" id="layer-groundwater"> 🟦 Подземни водни тела (EEA/WFD)</label><div id="gw-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-bd-ibr"> 🔷 Подземни водни тела – БД ИБР / ПУРБ3</label>
@@ -383,6 +385,9 @@ const topo=L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZo
 const groundwaterLayer = L.layerGroup();
 const bdIbrGroundwaterLayer = L.layerGroup();
 const bdBsGroundwaterLayer = L.layerGroup();
+const ordinaryGroundwaterWellsLayer = L.layerGroup();
+let ordinaryGroundwaterWellsLoaded = false;
+let ordinaryGroundwaterWellsLoading = false;
 
 const geologyAgeBounds = [
   [40.96405463472572, 23.499441370514838],
@@ -432,6 +437,7 @@ let faultsLoading=false;
 const rightLayerControl = L.control.layers(
  {'Карта':osm,'Релеф':topo},
  {
+   '🟢 Обикновени сондажи – БД Черноморски район':ordinaryGroundwaterWellsLayer,
    '🟦 Подземни водни тела (EEA/WFD)':groundwaterLayer,
    '🔷 Подземни водни тела – БД ИБР / ПУРБ3':bdIbrGroundwaterLayer,
    '🔹 Подземни водни тела – БД Черноморски район / ПУРБ3':bdBsGroundwaterLayer,
@@ -2298,6 +2304,228 @@ async function loadBdIbrGroundwaterBodies(){
   }
 }
 
+
+function ordinaryWellEscape(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function ordinaryWellValue(value, suffix) {
+  if (value === null || value === undefined || value === "") {
+    return "Няма данни";
+  }
+
+  return ordinaryWellEscape(value) + (suffix || "");
+}
+
+async function loadOrdinaryGroundwaterWells() {
+  if (
+    ordinaryGroundwaterWellsLoaded ||
+    ordinaryGroundwaterWellsLoading
+  ) {
+    return;
+  }
+
+  ordinaryGroundwaterWellsLoading = true;
+
+  setLayerStatus(
+    "ordinary-wells-load-status",
+    "зарежда се…",
+    "#a05a00"
+  );
+
+  try {
+    const response = await fetch(
+      "/geology-map/data/bd_bs_ordinary_groundwater_wells.geojson"
+    );
+
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+
+    const ordinaryData = await response.json();
+
+    if (
+      ordinaryData.type !== "FeatureCollection" ||
+      !Array.isArray(ordinaryData.features)
+    ) {
+      throw new Error("Невалиден GeoJSON формат");
+    }
+
+    const canvasRenderer = L.canvas({
+      padding: 0.5
+    });
+
+    const ordinaryLayer = L.geoJSON(ordinaryData, {
+      pointToLayer(feature, latlng) {
+        return L.circleMarker(latlng, {
+          renderer: canvasRenderer,
+          radius: 5,
+          color: "#14532d",
+          weight: 1,
+          fillColor: "#22c55e",
+          fillOpacity: 0.88
+        });
+      },
+
+      onEachFeature(feature, layer) {
+        const p = feature.properties || {};
+
+        const coordinates =
+          feature.geometry?.coordinates || [];
+
+        const lng = Number(coordinates[0]);
+        const lat = Number(coordinates[1]);
+
+        const params = new URLSearchParams();
+
+        if (
+          Number.isFinite(lat) &&
+          Number.isFinite(lng)
+        ) {
+          params.set("lat", String(lat));
+          params.set("lng", String(lng));
+        }
+
+        if (p.groundwater_body_code) {
+          params.set(
+            "gwb",
+            String(p.groundwater_body_code)
+          );
+        }
+
+        const proUrl =
+          "/pro?" + params.toString();
+
+        const popupHtml =
+          '<div style="min-width:275px;max-width:360px;line-height:1.48">' +
+
+          '<div style="font-size:15px;font-weight:800;color:#14532d;margin-bottom:8px">' +
+          "Обикновено водовземно съоръжение" +
+          "</div>" +
+
+          "<b>Населено място:</b> " +
+          ordinaryWellValue(p.settlement) +
+          "<br>" +
+
+          "<b>Община:</b> " +
+          ordinaryWellValue(p.municipality) +
+          "<br>" +
+
+          "<b>Област:</b> " +
+          ordinaryWellValue(p.district) +
+          "<br>" +
+
+          "<b>Дълбочина:</b> " +
+          ordinaryWellValue(p.depth_m, " m") +
+          "<br>" +
+
+          "<b>Статично водно ниво:</b> " +
+          ordinaryWellValue(
+            p.static_water_level_m,
+            " m"
+          ) +
+          "<br>" +
+
+          "<b>Водоносен хоризонт:</b> " +
+          ordinaryWellValue(p.aquifer) +
+          "<br>" +
+
+          "<b>Подземно водно тяло:</b> " +
+          ordinaryWellValue(
+            p.groundwater_body_code
+          ) +
+          "<br>" +
+
+          "<b>Предназначение:</b> " +
+          ordinaryWellValue(p.purpose) +
+          "<br>" +
+
+          "<b>Статус:</b> " +
+          ordinaryWellValue(
+            p.facility_status
+          ) +
+          "<br>" +
+
+          "<b>Разрешено количество:</b> " +
+          ordinaryWellValue(
+            p.permitted_volume_m3,
+            " m³"
+          ) +
+          "<br>" +
+
+          "<b>Регистрационен номер:</b> " +
+          ordinaryWellValue(
+            p.registration_number
+          ) +
+
+          '<div style="margin-top:10px">' +
+
+          '<a href="' +
+          ordinaryWellEscape(proUrl) +
+          '" style="display:block;text-align:center;padding:9px 12px;border-radius:8px;background:#166534;color:#fff;text-decoration:none;font-weight:700">' +
+          "Анализирай точката" +
+          "</a>" +
+
+          "</div>" +
+
+          '<div style="margin-top:8px;font-size:11px;color:#64748b">' +
+          "Източник: официален регистър на БД Черноморски район." +
+          "</div>" +
+
+          "</div>";
+
+        layer.bindPopup(
+          popupHtml,
+          {
+            maxWidth: 380
+          }
+        );
+      }
+    });
+
+    ordinaryLayer.addTo(
+      ordinaryGroundwaterWellsLayer
+    );
+
+    window.ordinaryGroundwaterWellsGeoJson =
+      ordinaryData;
+
+    ordinaryGroundwaterWellsLoaded = true;
+
+    setLayerStatus(
+      "ordinary-wells-load-status",
+      "заредени: " +
+        ordinaryData.features.length +
+        " съоръжения",
+      "#166534"
+    );
+
+    console.log(
+      "[BD BS] Ordinary groundwater facilities:",
+      ordinaryData.features.length
+    );
+
+  } catch (error) {
+    console.error(
+      "[BD BS] Ordinary groundwater facilities error:",
+      error
+    );
+
+    setLayerStatus(
+      "ordinary-wells-load-status",
+      "грешка при зареждане",
+      "#b91c1c"
+    );
+
+  } finally {
+    ordinaryGroundwaterWellsLoading = false;
+  }
+}
 
 async function loadBdBsGroundwaterBodies() {
   if (bdBsGroundwaterLoaded || bdBsGroundwaterLoading) {
@@ -4168,6 +4396,7 @@ data.features.forEach((f,featureIndex)=>{
  m.bindPopup(
    `<b>${facilityText(p.facility)}</b><br>
    <b>Категория:</b> ${facilityText(p.display_category) || '—'}<br>
+   <b>Вид регистър:</b> съоръжения за минерални води<br>
    <b>Находище:</b> ${facilityText(p.deposit) || '—'}<br>
    <b>Населено място:</b> ${facilityText(p.settlement) || '—'}<br>
    <b>Община:</b> ${facilityText(p.municipality) || '—'}<br>
@@ -4276,6 +4505,66 @@ document.getElementById('layer-bd-ibr').addEventListener('change',e=>{
 });
 
 
+
+document.getElementById("layer-ordinary-wells").addEventListener(
+  "change",
+  event => {
+    if (event.target.checked) {
+      ordinaryGroundwaterWellsLayer.addTo(map);
+
+      loadOrdinaryGroundwaterWells();
+
+    } else {
+      map.removeLayer(
+        ordinaryGroundwaterWellsLayer
+      );
+
+      setLayerStatus(
+        "ordinary-wells-load-status",
+        ordinaryGroundwaterWellsLoaded
+          ? "изключено"
+          : "изключено",
+        "#64748b"
+      );
+    }
+  }
+);
+
+map.on("layeradd", event => {
+  if (
+    event.layer !== ordinaryGroundwaterWellsLayer
+  ) {
+    return;
+  }
+
+  const checkbox =
+    document.getElementById(
+      "layer-ordinary-wells"
+    );
+
+  if (checkbox) {
+    checkbox.checked = true;
+  }
+
+  loadOrdinaryGroundwaterWells();
+});
+
+map.on("layerremove", event => {
+  if (
+    event.layer !== ordinaryGroundwaterWellsLayer
+  ) {
+    return;
+  }
+
+  const checkbox =
+    document.getElementById(
+      "layer-ordinary-wells"
+    );
+
+  if (checkbox) {
+    checkbox.checked = false;
+  }
+});
 
 document.getElementById("layer-bd-bs").addEventListener("change", event => {
   if (event.target.checked) {
@@ -8139,12 +8428,14 @@ const legend=L.control({position:'bottomright'});
 legend.onAdd=()=>{
  const d=L.DomUtil.create('div','legend facility-legend');
  d.style.display='none';
- d.innerHTML=`<b>Тип съоръжение</b><br>
- <span class="symbol dot" style="background:#d62728"></span>Минерален сондаж<br>
- <span class="symbol dot" style="background:#4db6e5;width:11px;height:11px"></span>Каптаж/извор<br>
- <span class="symbol">◆</span>Мониторингов<br>
- <span class="symbol">×</span>Ликвидиран/консервиран<br>
- <span class="symbol">◇</span>Друг тип<br>
+ d.innerHTML=`<b>Водовземни съоръжения</b><br>
+ <span class="symbol dot" style="background:#22c55e;border:1px solid #14532d"></span>Обикновен сондаж/кладенец<br>
+ <b style="display:block;margin-top:8px">Съоръжения за минерални води</b>
+ <span class="symbol dot" style="background:#d62728"></span>Минерален водовземен сондаж<br>
+ <span class="symbol dot" style="background:#4db6e5;width:11px;height:11px"></span>Минерален каптаж/извор<br>
+ <span class="symbol">◆</span>Минерален мониторингов сондаж<br>
+ <span class="symbol">×</span>Закрито минерално съоръжение<br>
+ <span class="symbol">◇</span>Друго минерално съоръжение<br>
 <span class="symbol" style="background:#4da6ff55;border:2px solid #2878b5"></span>Подземно водно тяло<br>
 <span class="symbol" style="border-top:3px solid #7a4a21;height:2px"></span>Активен разлом (GEM)<br><br>
  <b>Температура на сондажа</b><br>
