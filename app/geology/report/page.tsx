@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 
@@ -23,6 +23,7 @@ type GeologyResult = {
 };
 
 type ReportData = {
+  professionalDrilling: any;
   lat: number;
   lon: number;
   geology: GeologyResult | null;
@@ -815,8 +816,16 @@ export default function GeologyReportPage() {
 
         const [
           geology,
-          bodiesData,
+          eastBodiesData,
+          blackSeaBodiesData,
           monitoringData,
+          geologyProfilesData,
+          eastOrdinaryData,
+          blackSeaOrdinaryData,
+          mineralFacilitiesData,
+          section4Data,
+          section5Data,
+          section7Data,
         ] = await Promise.all([
           geologyAt(lat, lon),
 
@@ -825,19 +834,459 @@ export default function GeologyReportPage() {
           ).then(r => r.json()),
 
           fetch(
+            "/geology-map/data/bd_bs_groundwater_bodies.geojson"
+          ).then(r => r.json()),
+
+          fetch(
             "/geology-map/data/bd_ibr_monitoring_2019_2020.geojson"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/groundwater_geology_profiles.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_ibr_ordinary_groundwater_wells.geojson"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_bs_ordinary_groundwater_wells.geojson"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/official_water_facilities.geojson"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_ibr_section4_pro_profiles.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_ibr_section5_environmental_objectives.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_ibr_section7_groundwater_measures.json"
           ).then(r => r.json()),
         ]);
 
-        const bodies =
-          (bodiesData.features || [])
-            .filter((f: AnyFeature) =>
-              pointInPolygonGeometry(
-                lon,
-                lat,
-                f.geometry
-              )
+        const requestedGwb =
+          String(params.get("gwb") || "")
+            .trim()
+            .toUpperCase();
+
+        const allBodies = [
+          ...(eastBodiesData.features || []),
+          ...(blackSeaBodiesData.features || []),
+        ];
+
+        const intersectingBodies = allBodies.filter(
+          (feature: AnyFeature) =>
+            pointInPolygonGeometry(
+              lon,
+              lat,
+              feature.geometry
+            )
+        );
+
+        const bodyCode = (
+          feature: AnyFeature
+        ) =>
+          String(
+            feature.properties?.localId ||
+            feature.properties?.cod ||
+            feature.properties?.code ||
+            feature.properties?.gwb_code ||
+            ""
+          ).trim().toUpperCase();
+
+        const selectedBody =
+          (
+            requestedGwb
+              ? intersectingBodies.find(
+                  (feature: AnyFeature) =>
+                    bodyCode(feature) === requestedGwb
+                ) ||
+                allBodies.find(
+                  (feature: AnyFeature) =>
+                    bodyCode(feature) === requestedGwb
+                )
+              : null
+          ) ||
+          intersectingBodies[0] ||
+          null;
+
+        const selectedGwbCode =
+          selectedBody
+            ? bodyCode(selectedBody)
+            : requestedGwb;
+
+        const basinCode =
+          selectedGwbCode.startsWith("BG2")
+            ? "BG2"
+            : selectedGwbCode.startsWith("BG3")
+              ? "BG3"
+              : "";
+
+        const basinName =
+          basinCode === "BG2"
+            ? "Черноморски район"
+            : basinCode === "BG3"
+              ? "Източнобеломорски район"
+              : "Неопределен район";
+
+        const selectedGeologyProfile =
+          (geologyProfilesData.profiles || []).find(
+            (profile: any) =>
+              String(
+                profile.code ||
+                profile.gwb_code ||
+                ""
+              ).trim().toUpperCase() === selectedGwbCode
+          ) || null;
+
+        const bodies = (
+          selectedBody
+            ? [
+                selectedBody,
+                ...intersectingBodies.filter(
+                  (feature: AnyFeature) =>
+                    bodyCode(feature) !== selectedGwbCode
+                ),
+              ]
+            : intersectingBodies
+        ).map(
+          (feature: AnyFeature) => {
+            const properties =
+              feature.properties || {};
+
+            const profile =
+              (geologyProfilesData.profiles || []).find(
+                (item: any) =>
+                  String(
+                    item.code ||
+                    item.gwb_code ||
+                    ""
+                  ).trim().toUpperCase() ===
+                  bodyCode(feature)
+              ) || null;
+
+            return {
+              ...feature,
+              properties: {
+                ...properties,
+
+                localId:
+                  properties.localId ||
+                  properties.cod ||
+                  profile?.code ||
+                  "",
+
+                nameText:
+                  profile?.name ||
+                  properties.ime ||
+                  properties.nameText ||
+                  properties.nameTxtInt ||
+                  "",
+
+                water_type_bg:
+                  properties.water_type_bg ||
+                  profile?.water_type ||
+                  profile?.collector_type ||
+                  "",
+
+                horizon_bg:
+                  properties.horizon_bg ||
+                  profile?.hydrogeological_horizon ||
+                  "",
+
+                gwb_type_name_bg:
+                  properties.gwb_type_name_bg ||
+                  profile?.aquifer_type_name ||
+                  "",
+              },
+            };
+          }
+        );
+
+        const eastOrdinaryFeatures = (
+          eastOrdinaryData.features || []
+        ).filter(
+          (feature: AnyFeature) =>
+            [
+              "ordinary_borehole",
+              "combined_well",
+              "shaft_well",
+            ].includes(
+              String(
+                feature.properties?.category || ""
+              ).trim().toLowerCase()
+            )
+        );
+
+        const blackSeaOrdinaryFeatures =
+          blackSeaOrdinaryData.features || [];
+
+        const selectedOrdinaryFeatures =
+          basinCode === "BG2"
+            ? blackSeaOrdinaryFeatures
+            : basinCode === "BG3"
+              ? eastOrdinaryFeatures
+              : [
+                  ...eastOrdinaryFeatures,
+                  ...blackSeaOrdinaryFeatures,
+                ];
+
+        const measuredFacilities = (
+          features: AnyFeature[]
+        ) =>
+          features
+            .filter(
+              (feature: AnyFeature) =>
+                feature.geometry?.type === "Point" &&
+                Array.isArray(
+                  feature.geometry.coordinates
+                ) &&
+                feature.geometry.coordinates.length >= 2
+            )
+            .map(
+              (feature: AnyFeature) => ({
+                properties:
+                  feature.properties || {},
+
+                distanceKm:
+                  haversineKm(
+                    lat,
+                    lon,
+                    Number(
+                      feature.geometry?.coordinates?.[1]
+                    ),
+                    Number(
+                      feature.geometry?.coordinates?.[0]
+                    )
+                  ),
+              })
+            )
+            .filter(
+              (item: any) =>
+                Number.isFinite(item.distanceKm)
+            )
+            .sort(
+              (first: any, second: any) =>
+                first.distanceKm -
+                second.distanceKm
             );
+
+        const ordinaryNearby =
+          measuredFacilities(
+            selectedOrdinaryFeatures
+          );
+
+        const ordinaryWithin5Km =
+          ordinaryNearby.filter(
+            (item: any) =>
+              item.distanceKm <= 5
+          );
+
+        const ordinarySameBody =
+          ordinaryWithin5Km.filter(
+            (item: any) =>
+              String(
+                item.properties
+                  ?.groundwater_body_code ||
+                ""
+              ).trim().toUpperCase() ===
+              selectedGwbCode
+          );
+
+        const numericValues = (
+          records: any[],
+          field: string
+        ) =>
+          records
+            .map(
+              (record: any) =>
+                record.properties?.[field]
+            )
+            .filter(
+              (value: any) =>
+                value !== null &&
+                value !== undefined &&
+                String(value).trim() !== "" &&
+                Number.isFinite(Number(value)) &&
+                Number(value) >= 0
+            )
+            .map(
+              (value: any) =>
+                Number(value)
+            )
+            .sort(
+              (first: number, second: number) =>
+                first - second
+            );
+
+        const preferredDepthRecords =
+          ordinarySameBody.length >= 3
+            ? ordinarySameBody
+            : ordinaryWithin5Km;
+
+        const depthValues = numericValues(
+          preferredDepthRecords,
+          "depth_m"
+        ).filter(
+          (value: number) =>
+            value > 0
+        );
+
+        const staticLevelValues = numericValues(
+          preferredDepthRecords,
+          "static_water_level_m"
+        );
+
+        const median = (
+          values: number[]
+        ) => {
+          if (!values.length) {
+            return null;
+          }
+
+          const middle =
+            Math.floor(values.length / 2);
+
+          return values.length % 2 === 1
+            ? values[middle]
+            : (
+                values[middle - 1] +
+                values[middle]
+              ) / 2;
+        };
+
+        const mineralNearby = measuredFacilities(
+          (
+            mineralFacilitiesData.features || []
+          ).filter(
+            (feature: AnyFeature) =>
+              String(
+                feature.properties
+                  ?.display_category ||
+                ""
+              ).trim().toLowerCase() ===
+              "минерален сондаж"
+          )
+        );
+
+        const findProfile = (
+          dataset: any
+        ) =>
+          (
+            dataset?.profiles || []
+          ).find(
+            (profile: any) =>
+              String(
+                profile.code ||
+                profile.gwb_code ||
+                ""
+              ).trim().toUpperCase() ===
+              selectedGwbCode
+          ) || null;
+
+        const section4 =
+          basinCode === "BG3"
+            ? findProfile(section4Data)
+            : null;
+
+        const section5 =
+          basinCode === "BG3"
+            ? findProfile(section5Data)
+            : null;
+
+        const section7 =
+          basinCode === "BG3"
+            ? findProfile(section7Data)
+            : null;
+
+        const professionalDrilling = {
+          basinCode,
+          basinName,
+          groundwaterBodyCode:
+            selectedGwbCode,
+
+          geologyProfile:
+            selectedGeologyProfile,
+
+          nearestOrdinary:
+            ordinaryNearby[0] || null,
+
+          ordinaryWithin5Km:
+            ordinaryWithin5Km.slice(0, 12),
+
+          ordinaryCount1Km:
+            ordinaryNearby.filter(
+              (item: any) =>
+                item.distanceKm <= 1
+            ).length,
+
+          ordinaryCount3Km:
+            ordinaryNearby.filter(
+              (item: any) =>
+                item.distanceKm <= 3
+            ).length,
+
+          ordinaryCount5Km:
+            ordinaryWithin5Km.length,
+
+          ordinarySameBodyCount:
+            ordinarySameBody.length,
+
+          depthMin:
+            depthValues.length
+              ? depthValues[0]
+              : null,
+
+          depthMax:
+            depthValues.length
+              ? depthValues[
+                  depthValues.length - 1
+                ]
+              : null,
+
+          depthMedian:
+            median(depthValues),
+
+          depthCount:
+            depthValues.length,
+
+          staticMin:
+            staticLevelValues.length
+              ? staticLevelValues[0]
+              : null,
+
+          staticMax:
+            staticLevelValues.length
+              ? staticLevelValues[
+                  staticLevelValues.length - 1
+                ]
+              : null,
+
+          staticMedian:
+            median(staticLevelValues),
+
+          staticCount:
+            staticLevelValues.length,
+
+          nearestMineral:
+            mineralNearby[0] || null,
+
+          mineralsWithin10Km:
+            mineralNearby.filter(
+              (item: any) =>
+                item.distanceKm <= 10
+            ).slice(0, 5),
+
+          section4,
+          section5,
+          section7,
+        };
 
         let nearest = null as
           | {
@@ -880,6 +1329,7 @@ export default function GeologyReportPage() {
         }
 
         setData({
+          professionalDrilling,
           lat,
           lon,
           geology,
@@ -919,6 +1369,105 @@ export default function GeologyReportPage() {
       </main>
     );
   }
+
+  const professional =
+    data.professionalDrilling;
+
+  const geologyProfile =
+    professional?.geologyProfile || null;
+
+  const lithologyText = [
+    geologyProfile?.lithology,
+    geologyProfile?.water_type,
+    geologyProfile?.collector_type,
+    geologyProfile?.aquifer_type_name,
+    geologyProfile?.recharge_cover_layers,
+    geologyProfile?.hydrogeological_horizon,
+  ].filter(Boolean)
+   .join(" ")
+   .toLowerCase();
+
+  const looseGround =
+    /пяс|чакъл|алув|нанос|рохк|льос/.test(
+      lithologyText
+    );
+
+  const rockGround =
+    /варов|доломит|гранит|гнайс|скал|пукнат|карст/.test(
+      lithologyText
+    );
+
+  const mixedGround =
+    looseGround && rockGround;
+
+  const drillingTechnology =
+    mixedGround
+      ? "Възможна комбинирана технология: обсаждане или промивно преминаване през нестабилните горни пластове и преценка за пневмоударно сондиране след достигане на устойчива скала."
+      : looseGround
+        ? "При потвърдени рохкави седименти може да се обсъди ротационно сондиране с промивка и своевременно обсаждане на нестабилните участъци."
+        : rockGround
+          ? "При потвърдена компактна скала може да се обсъди пневмоударно сондиране с въздух или друга подходяща технология за скални условия."
+          : "Няма достатъчно официални литоложки данни за надеждна препоръка на конкретна сондажна технология.";
+
+  const casingRecommendation =
+    looseGround
+      ? "Вероятно ще е необходимо обсаждане в рохкавите и нестабилни интервали. Материалът, диаметърът и дълбочината на обсадните тръби се определят по сондажния разрез и проекта."
+      : rockGround
+        ? "Начално обсаждане и санитарно уплътняване се преценяват според покривните пластове. В здрава скала конструкцията зависи от действително установените условия."
+        : "Необходимостта от обсадни тръби следва да се определи след теренно проучване и установяване на реалните пластове.";
+
+  const filterRecommendation =
+    looseGround
+      ? "При водоносни пясъци и чакъли може да е необходим филтърен участък и подходяща чакълеста засипка. Интервалът и отворите се определят според реалния пласт."
+      : rockGround
+        ? "При устойчива скална или карстова среда необходимостта от филтър се определя според напукаността, устойчивостта и конструкцията на сондажа."
+        : "Наличните данни не определят надеждно необходимостта от филтърна колона.";
+
+  const cementationRecommendation =
+    mixedGround ||
+    (
+      Number(
+        geologyProfile?.vertical_horizons
+      ) > 1
+    )
+      ? "Да се прецени изолиране на плитките води и разделяне на водоносните интервали чрез подходящо обсаждане и циментация. Точните дълбочини се определят само по реалния сондажен разрез."
+      : "Да се предвиди санитарно уплътняване на горната част и да се оцени необходимостта от изолиране на плитки или замърсени води.";
+
+  const nearestOrdinary =
+    professional?.nearestOrdinary || null;
+
+  const nearestMineral =
+    professional?.nearestMineral || null;
+
+  const section4 =
+    professional?.section4 || null;
+
+  const section5 =
+    professional?.section5 || null;
+
+  const section7 =
+    professional?.section7 || null;
+
+  const fmt = (
+    value: any,
+    digits = 1
+  ) => {
+    if (
+      value === null ||
+      value === undefined ||
+      String(value).trim() === "" ||
+      !Number.isFinite(Number(value))
+    ) {
+      return "Няма данни";
+    }
+
+    return Number(value).toLocaleString(
+      "bg-BG",
+      {
+        maximumFractionDigits: digits,
+      }
+    );
+  };
 
   const geologyCode =
     data.geology?.unit?.code || "";
@@ -1557,11 +2106,670 @@ export default function GeologyReportPage() {
         </section>
 
 
+                <section style={styles.card}>
+          <div style={styles.sectionLabel}>
+            РЕАЛНИ РЕГИСТРИРАНИ СЪОРЪЖЕНИЯ
+          </div>
+
+          <h2 style={styles.h2}>
+            Обикновени сондажи и кладенци около точката
+          </h2>
+
+          <div style={styles.recommendGrid}>
+            <div style={styles.recommendItem}>
+              <strong>Район</strong>
+              <span>{professional.basinName}</span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>Подземно водно тяло</strong>
+              <span>
+                {professional.groundwaterBodyCode ||
+                  "Не е определено"}
+              </span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>Съоръжения до 1 km</strong>
+              <span>{professional.ordinaryCount1Km}</span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>Съоръжения до 3 km</strong>
+              <span>{professional.ordinaryCount3Km}</span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>Съоръжения до 5 km</strong>
+              <span>{professional.ordinaryCount5Km}</span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>
+                Съоръжения в същото водно тяло до 5 km
+              </strong>
+              <span>
+                {professional.ordinarySameBodyCount}
+              </span>
+            </div>
+          </div>
+
+          {nearestOrdinary ? (
+            <div style={styles.note}>
+              <strong>
+                Най-близко обикновено съоръжение:
+              </strong>{" "}
+
+              {fmt(nearestOrdinary.distanceKm, 2)} km.
+
+              {" "}Населено място:{" "}
+              {nearestOrdinary.properties?.settlement ||
+                "Няма данни"}.
+
+              {" "}Дълбочина:{" "}
+              {fmt(nearestOrdinary.properties?.depth_m)} m.
+
+              {" "}Статично водно ниво:{" "}
+              {fmt(
+                nearestOrdinary.properties
+                  ?.static_water_level_m
+              )} m.
+            </div>
+          ) : (
+            <div style={styles.warning}>
+              Няма намерени регистрирани обикновени
+              водовземни съоръжения.
+            </div>
+          )}
+
+          {professional.ordinaryWithin5Km.length > 0 && (
+            <details style={{ marginTop: 16 }}>
+              <summary style={{
+                cursor: "pointer",
+                fontWeight: 800,
+                color: "#173f32",
+              }}>
+                Виж близките регистрирани съоръжения
+              </summary>
+
+              <div style={{
+                overflowX: "auto",
+                marginTop: 12,
+              }}>
+                <table style={{
+                  width: "100%",
+                  borderCollapse: "collapse",
+                  fontSize: 14,
+                }}>
+                  <thead>
+                    <tr>
+                      <th style={{
+                        textAlign: "left",
+                        padding: 8,
+                      }}>
+                        Населено място
+                      </th>
+
+                      <th style={{ padding: 8 }}>
+                        Разстояние
+                      </th>
+
+                      <th style={{ padding: 8 }}>
+                        Дълбочина
+                      </th>
+
+                      <th style={{ padding: 8 }}>
+                        Статично ниво
+                      </th>
+
+                      <th style={{ padding: 8 }}>
+                        Водно тяло
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {professional.ordinaryWithin5Km.map(
+                      (item: any, index: number) => (
+                        <tr key={
+                          String(
+                            item.properties
+                              ?.registration_number ||
+                            index
+                          ) +
+                          "-" +
+                          index
+                        }>
+                          <td style={{
+                            padding: 8,
+                            borderTop:
+                              "1px solid #e2e9e5",
+                          }}>
+                            {item.properties?.settlement ||
+                              "Няма данни"}
+                          </td>
+
+                          <td style={{
+                            padding: 8,
+                            borderTop:
+                              "1px solid #e2e9e5",
+                          }}>
+                            {fmt(item.distanceKm, 2)} km
+                          </td>
+
+                          <td style={{
+                            padding: 8,
+                            borderTop:
+                              "1px solid #e2e9e5",
+                          }}>
+                            {item.properties?.depth_m != null
+                              ? `${fmt(
+                                  item.properties.depth_m
+                                )} m`
+                              : "Няма данни"}
+                          </td>
+
+                          <td style={{
+                            padding: 8,
+                            borderTop:
+                              "1px solid #e2e9e5",
+                          }}>
+                            {item.properties
+                              ?.static_water_level_m != null
+                              ? `${fmt(
+                                  item.properties
+                                    .static_water_level_m
+                                )} m`
+                              : "Няма данни"}
+                          </td>
+
+                          <td style={{
+                            padding: 8,
+                            borderTop:
+                              "1px solid #e2e9e5",
+                          }}>
+                            {item.properties
+                              ?.groundwater_body_code ||
+                              "Няма данни"}
+                          </td>
+                        </tr>
+                      )
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          )}
+        </section>
+
+        <section style={styles.card}>
+          <div style={styles.sectionLabel}>
+            ДЪЛБОЧИНА И СТАТИЧНО ВОДНО НИВО
+          </div>
+
+          <h2 style={styles.h2}>
+            Ориентири от действителни съседни съоръжения
+          </h2>
+
+          <div style={styles.recommendGrid}>
+            <div style={styles.recommendItem}>
+              <strong>
+                Регистрирани дълбочини до 5 km
+              </strong>
+
+              <span>
+                {professional.depthCount > 0
+                  ? `${fmt(
+                      professional.depthMin
+                    )} - ${fmt(
+                      professional.depthMax
+                    )} m`
+                  : "Няма достатъчно данни"}
+              </span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>
+                Медианна дълбочина
+              </strong>
+
+              <span>
+                {professional.depthMedian != null
+                  ? `${fmt(
+                      professional.depthMedian
+                    )} m`
+                  : "Няма достатъчно данни"}
+              </span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>
+                Статични водни нива
+              </strong>
+
+              <span>
+                {professional.staticCount > 0
+                  ? `${fmt(
+                      professional.staticMin
+                    )} - ${fmt(
+                      professional.staticMax
+                    )} m`
+                  : "Няма достатъчно данни"}
+              </span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>
+                Медианно статично ниво
+              </strong>
+
+              <span>
+                {professional.staticMedian != null
+                  ? `${fmt(
+                      professional.staticMedian
+                    )} m`
+                  : "Няма достатъчно данни"}
+              </span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>
+                Брой съоръжения с известна дълбочина
+              </strong>
+
+              <span>
+                {professional.depthCount}
+              </span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>
+                Брой съоръжения със статично ниво
+              </strong>
+
+              <span>
+                {professional.staticCount}
+              </span>
+            </div>
+          </div>
+
+          <div style={styles.warning}>
+            Статичното водно ниво е установеното ниво на
+            водата в съществуващо съоръжение. То не е
+            гарантирана дълбочина до първата вода.
+            Дълбочините на близките съоръжения са
+            сравнителен ориентир, а не проектна
+            дълбочина за конкретния имот.
+          </div>
+        </section>
+
+        <section style={styles.card}>
+          <div style={styles.sectionLabel}>
+            ТЕХНОЛОГИЯ И КОНСТРУКЦИЯ НА СОНДАЖА
+          </div>
+
+          <h2 style={styles.h2}>
+            Предварителна техническа преценка
+          </h2>
+
+          <div style={styles.recommendGrid}>
+            <div style={styles.recommendItem}>
+              <strong>
+                Официално описана литология
+              </strong>
+
+              <span>
+                {geologyProfile?.lithology ||
+                  "Няма публикувана подробна литология"}
+              </span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>
+                Водоносен хоризонт
+              </strong>
+
+              <span>
+                {geologyProfile
+                  ?.hydrogeological_horizon ||
+                  "Няма налични данни"}
+              </span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>
+                Тип на водоносната среда
+              </strong>
+
+              <span>
+                {geologyProfile?.water_type ||
+                  geologyProfile?.collector_type ||
+                  "Няма налични данни"}
+              </span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>
+                Дебелина на водоносния хоризонт
+              </strong>
+
+              <span>
+                {geologyProfile?.aquifer_thickness_m
+                  ? `${geologyProfile.aquifer_thickness_m} m`
+                  : "Няма налични данни"}
+              </span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>
+                Коефициент на филтрация
+              </strong>
+
+              <span>
+                {geologyProfile
+                  ?.filtration_coefficient_m_day
+                  ? `${geologyProfile.filtration_coefficient_m_day} m/ден`
+                  : "Няма налични данни"}
+              </span>
+            </div>
+
+            <div style={styles.recommendItem}>
+              <strong>
+                Водопроводимост
+              </strong>
+
+              <span>
+                {geologyProfile
+                  ?.transmissivity_m2_day
+                  ? `${geologyProfile.transmissivity_m2_day} m²/ден`
+                  : "Няма налични данни"}
+              </span>
+            </div>
+          </div>
+
+          <details style={{ marginTop: 18 }}>
+            <summary style={{
+              cursor: "pointer",
+              fontWeight: 800,
+              color: "#173f32",
+            }}>
+              Виж технологичните препоръки
+            </summary>
+
+            <div style={styles.note}>
+              <strong>
+                Подходящ тип сондажна технология:
+              </strong>
+
+              <p>
+                {drillingTechnology}
+              </p>
+
+              <strong>
+                Обсадни тръби:
+              </strong>
+
+              <p>
+                {casingRecommendation}
+              </p>
+
+              <strong>
+                Филтри и чакълеста засипка:
+              </strong>
+
+              <p>
+                {filterRecommendation}
+              </p>
+
+              <strong>
+                Изолиране на горни води и циментация:
+              </strong>
+
+              <p style={{ marginBottom: 0 }}>
+                {cementationRecommendation}
+              </p>
+            </div>
+          </details>
+
+          <div style={styles.warning}>
+            Методът, диаметърът, сондажната глава,
+            обсадните тръби, филтърните интервали и
+            циментацията се определят окончателно по
+            проект и действителен сондажен разрез.
+          </div>
+        </section>
+
+        <section style={styles.card}>
+          <div style={styles.sectionLabel}>
+            КАЧЕСТВО, РЕСУРС И ОГРАНИЧЕНИЯ
+          </div>
+
+          <h2 style={styles.h2}>
+            Официални данни за избраното водно тяло
+          </h2>
+
+          {section4 ? (
+            <>
+              <div style={styles.recommendGrid}>
+                <div style={styles.recommendItem}>
+                  <strong>
+                    Химично състояние
+                  </strong>
+
+                  <span>
+                    {section4.chemical_status ||
+                      "Няма данни"}
+                  </span>
+                </div>
+
+                <div style={styles.recommendItem}>
+                  <strong>
+                    Количествено състояние
+                  </strong>
+
+                  <span>
+                    {section4.water_balance
+                      ?.quantitative_status ||
+                      "Няма данни"}
+                  </span>
+                </div>
+
+                <div style={styles.recommendItem}>
+                  <strong>
+                    Проблемни показатели
+                  </strong>
+
+                  <span>
+                    {Array.isArray(
+                      section4.pollutants
+                    )
+                      ? section4.pollutants.join(", ")
+                      : section4.pollutants ||
+                        "Няма посочени"}
+                  </span>
+                </div>
+
+                <div style={styles.recommendItem}>
+                  <strong>
+                    Експлоатационен индекс
+                  </strong>
+
+                  <span>
+                    {section4.water_balance
+                      ?.exploitation_index != null
+                      ? `${fmt(
+                          Number(
+                            section4.water_balance
+                              .exploitation_index
+                          ) * 100
+                        )}%`
+                      : "Няма данни"}
+                  </span>
+                </div>
+
+                <div style={styles.recommendItem}>
+                  <strong>
+                    Официална екологична цел
+                  </strong>
+
+                  <span>
+                    {section5?.goal_label_bg ||
+                      "Няма въведени данни"}
+                  </span>
+                </div>
+
+                <div style={styles.recommendItem}>
+                  <strong>
+                    Предвидени индивидуални мерки
+                  </strong>
+
+                  <span>
+                    {Array.isArray(
+                      section7?.measures
+                    )
+                      ? section7.measures.length
+                      : "Няма въведени данни"}
+                  </span>
+                </div>
+              </div>
+
+              <div style={styles.warning}>
+                Оценката се отнася за цялото подземно
+                водно тяло. Качеството на водата от
+                конкретен сондаж се установява чрез
+                лабораторно изследване.
+              </div>
+            </>
+          ) : (
+            <div style={styles.note}>
+              За този район все още няма въведени
+              подробни официални данни за химичен
+              състав, мониторинг, екологични цели
+              и мерки. Не се използват данни от
+              друг басейнов район.
+            </div>
+          )}
+        </section>
+
+        <section style={styles.card}>
+          <div style={styles.sectionLabel}>
+            МИНЕРАЛНИ ВОДИ
+          </div>
+
+          <h2 style={styles.h2}>
+            Минерални сондажи в района
+          </h2>
+
+          {nearestMineral ? (
+            <>
+              <div style={styles.recommendGrid}>
+                <div style={styles.recommendItem}>
+                  <strong>
+                    Най-близък минерален сондаж
+                  </strong>
+
+                  <span>
+                    {fmt(
+                      nearestMineral.distanceKm,
+                      2
+                    )} km
+                  </span>
+                </div>
+
+                <div style={styles.recommendItem}>
+                  <strong>
+                    Наименование
+                  </strong>
+
+                  <span>
+                    {nearestMineral.properties
+                      ?.facility ||
+                      "Няма данни"}
+                  </span>
+                </div>
+
+                <div style={styles.recommendItem}>
+                  <strong>
+                    Находище
+                  </strong>
+
+                  <span>
+                    {nearestMineral.properties
+                      ?.deposit ||
+                      "Няма данни"}
+                  </span>
+                </div>
+
+                <div style={styles.recommendItem}>
+                  <strong>
+                    Дълбочина на минералния сондаж
+                  </strong>
+
+                  <span>
+                    {nearestMineral.properties
+                      ?.depth_m != null &&
+                    String(
+                      nearestMineral.properties
+                        .depth_m
+                    ).trim() !== ""
+                      ? `${fmt(
+                          nearestMineral.properties
+                            .depth_m
+                        )} m`
+                      : "Няма данни"}
+                  </span>
+                </div>
+
+                <div style={styles.recommendItem}>
+                  <strong>
+                    Температура
+                  </strong>
+
+                  <span>
+                    {nearestMineral.properties
+                      ?.temperature_c != null &&
+                    String(
+                      nearestMineral.properties
+                        .temperature_c
+                    ).trim() !== ""
+                      ? `${fmt(
+                          nearestMineral.properties
+                            .temperature_c
+                        )} °C`
+                      : "Няма публикувана температура"}
+                  </span>
+                </div>
+
+                <div style={styles.recommendItem}>
+                  <strong>
+                    Минерални сондажи до 10 km
+                  </strong>
+
+                  <span>
+                    {professional
+                      .mineralsWithin10Km.length}
+                  </span>
+                </div>
+              </div>
+
+              <div style={styles.warning}>
+                Близък минерален сондаж не доказва
+                наличие на минерална вода в конкретния
+                имот. Проучването на минерални води
+                изисква самостоятелна хидрогеоложка
+                оценка и проверка на приложимия
+                разрешителен режим.
+              </div>
+            </>
+          ) : (
+            <div style={styles.note}>
+              Няма намерен регистриран минерален сондаж.
+            </div>
+          )}
+        </section>
+
         <div style={styles.footer}>
-          Източници: БД ИБР / ПУРБ 2022–2027,
-          геоложка карта 1:850 000 и
-          количествен мониторинг НИМХ
-          2019–2020.
+          Източници: официални регистри на басейновите дирекции, ПУРБ 2022–2027, геоложки и хидрогеоложки данни, регистрирани водовземни съоръжения и наличен официален мониторинг.
         </div>
 
       </div>

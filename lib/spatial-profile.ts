@@ -163,6 +163,116 @@ export function getSpatialProfile(
   const faults: Feature[] =
     faultsData.features || [];
 
+  const eastOrdinaryData =
+    readGeoJson(
+      "bd_ibr_ordinary_groundwater_wells.geojson"
+    );
+
+  const blackSeaOrdinaryData =
+    readGeoJson(
+      "bd_bs_ordinary_groundwater_wells.geojson"
+    );
+
+  const eastOrdinaryFacilities: Feature[] =
+    (eastOrdinaryData.features || []).filter(
+      (feature: Feature) =>
+        [
+          "ordinary_borehole",
+          "combined_well",
+          "shaft_well",
+        ].includes(
+          String(feature.properties?.category || "")
+            .trim()
+            .toLowerCase()
+        )
+    );
+
+  const blackSeaOrdinaryFacilities: Feature[] =
+    blackSeaOrdinaryData.features || [];
+
+  const ordinaryFacilities: Feature[] = [
+    ...eastOrdinaryFacilities,
+    ...blackSeaOrdinaryFacilities,
+  ];
+
+  const ordinaryNearby = ordinaryFacilities
+    .map((feature: Feature) => ({
+      distanceKm: featureDistance(feature, lat, lng),
+      properties: feature.properties || {},
+    }))
+    .filter(
+      (item) =>
+        item.distanceKm !== null &&
+        Number.isFinite(item.distanceKm)
+    )
+    .map((item) => ({
+      distanceKm: Number(item.distanceKm),
+      properties: item.properties,
+    }))
+    .sort(
+      (first, second) =>
+        first.distanceKm - second.distanceKm
+    );
+
+  const ordinaryWithin5Km = ordinaryNearby.filter(
+    (item) => item.distanceKm <= 5
+  );
+
+  const ordinaryDepths = ordinaryWithin5Km
+    .map((item) => item.properties?.depth_m)
+    .filter(
+      (value) =>
+        value !== null &&
+        value !== undefined &&
+        String(value).trim() !== "" &&
+        Number.isFinite(Number(value)) &&
+        Number(value) > 0
+    )
+    .map((value) => Number(value));
+
+  const ordinaryStaticLevels = ordinaryWithin5Km
+    .map(
+      (item) =>
+        item.properties?.static_water_level_m
+    )
+    .filter(
+      (value) =>
+        value !== null &&
+        value !== undefined &&
+        String(value).trim() !== "" &&
+        Number.isFinite(Number(value)) &&
+        Number(value) >= 0
+    )
+    .map((value) => Number(value));
+
+  const ordinaryStatistics = {
+    depthMin:
+      ordinaryDepths.length > 0
+        ? Math.min(...ordinaryDepths)
+        : null,
+
+    depthMax:
+      ordinaryDepths.length > 0
+        ? Math.max(...ordinaryDepths)
+        : null,
+
+    staticLevelMin:
+      ordinaryStaticLevels.length > 0
+        ? Math.min(...ordinaryStaticLevels)
+        : null,
+
+    staticLevelMax:
+      ordinaryStaticLevels.length > 0
+        ? Math.max(...ordinaryStaticLevels)
+        : null,
+
+    depthCount:
+      ordinaryDepths.length,
+
+    staticLevelCount:
+      ordinaryStaticLevels.length,
+  };
+
   const wells = facilities.filter(
     f =>
       String(
@@ -314,6 +424,14 @@ export function getSpatialProfile(
   }
 
   return {
+    nearestOrdinaryWell:
+      ordinaryNearby[0] ?? null,
+
+    nearbyOrdinaryWells:
+      ordinaryWithin5Km.slice(0, 10),
+
+    ordinaryStatistics,
+
     nearestWell:
       nearest(wells, lat, lng),
 
@@ -329,6 +447,20 @@ export function getSpatialProfile(
     nearestFault,
 
     counts: {
+      ordinaryWells: {
+        km1: countWithin(
+          ordinaryFacilities, lat, lng, 1
+        ),
+
+        km3: countWithin(
+          ordinaryFacilities, lat, lng, 3
+        ),
+
+        km5: countWithin(
+          ordinaryFacilities, lat, lng, 5
+        ),
+      },
+
       wells: {
         km1: countWithin(
           wells, lat, lng, 1

@@ -928,6 +928,46 @@ export default async function ProPage({
     },
   }[proConclusionTone];
 
+  const nearbyOrdinaryWellCount1Km =
+    spatial?.counts?.ordinaryWells?.km1 ?? 0;
+
+  const nearbyOrdinaryWellCount3Km =
+    spatial?.counts?.ordinaryWells?.km3 ?? 0;
+
+  const nearbyOrdinaryWellCount5Km =
+    spatial?.counts?.ordinaryWells?.km5 ?? 0;
+
+  const nearestOrdinaryWell =
+    spatial?.nearestOrdinaryWell ?? null;
+
+  const nearestOrdinaryWellDistanceKm =
+    nearestOrdinaryWell?.distanceKm ?? null;
+
+  const nearestOrdinaryWellDepthRaw =
+    nearestOrdinaryWell?.properties?.depth_m;
+
+  const nearestOrdinaryWellDepth =
+    nearestOrdinaryWellDepthRaw !== null &&
+    nearestOrdinaryWellDepthRaw !== undefined &&
+    String(nearestOrdinaryWellDepthRaw).trim() !== "" &&
+    Number.isFinite(Number(nearestOrdinaryWellDepthRaw))
+      ? Number(nearestOrdinaryWellDepthRaw)
+      : null;
+
+  const nearestOrdinaryWaterLevelRaw =
+    nearestOrdinaryWell?.properties?.static_water_level_m;
+
+  const nearestOrdinaryWaterLevel =
+    nearestOrdinaryWaterLevelRaw !== null &&
+    nearestOrdinaryWaterLevelRaw !== undefined &&
+    String(nearestOrdinaryWaterLevelRaw).trim() !== "" &&
+    Number.isFinite(Number(nearestOrdinaryWaterLevelRaw))
+      ? Number(nearestOrdinaryWaterLevelRaw)
+      : null;
+
+  const ordinaryStatistics =
+    spatial?.ordinaryStatistics ?? null;
+
   const nearbyWellCount5Km =
     spatial?.counts?.wells?.km5 ?? 0;
 
@@ -1051,6 +1091,24 @@ export default async function ProPage({
   if (drillingHasCoordinates) {
     drillingRecommendationParts.push(
       "Оценката се отнася за същите координати, избрани в PRO анализа."
+    );
+  }
+
+  if (nearestOrdinaryWellDistanceKm != null) {
+    drillingRecommendationParts.push(
+      `Най-близкото регистрирано обикновено водовземно съоръжение е на ${formatNumber(nearestOrdinaryWellDistanceKm, 2)} km от избраната точка.`
+    );
+  }
+
+  if (nearestOrdinaryWellDepth != null) {
+    drillingRecommendationParts.push(
+      `За него е посочена дълбочина ${formatNumber(nearestOrdinaryWellDepth, 1)} m.`
+    );
+  }
+
+  if (nearestOrdinaryWaterLevel != null) {
+    drillingRecommendationParts.push(
+      `Регистрираното статично водно ниво е ${formatNumber(nearestOrdinaryWaterLevel, 1)} m. Това е установеното ниво на водата в съществуващото съоръжение, а не гарантирана дълбочина до вода за конкретния имот.`
     );
   }
 
@@ -3524,6 +3582,111 @@ export default async function ProPage({
 
                   <div style={{ marginTop: 10 }}>
                     <Row
+                      label="Обикновени съоръжения до 1 km"
+                      value={nearbyOrdinaryWellCount1Km}
+                    />
+
+                    <Row
+                      label="Обикновени съоръжения до 3 km"
+                      value={nearbyOrdinaryWellCount3Km}
+                    />
+
+                    <Row
+                      label="Обикновени съоръжения до 5 km"
+                      value={nearbyOrdinaryWellCount5Km}
+                    />
+
+                    <Row
+                      label="Най-близко обикновено съоръжение"
+                      value={
+                        nearestOrdinaryWellDistanceKm != null
+                          ? `${formatNumber(
+                              nearestOrdinaryWellDistanceKm,
+                              2
+                            )} km`
+                          : "Няма налични данни"
+                      }
+                    />
+
+                    <Row
+                      label="Вид на обикновеното съоръжение"
+                      value={
+                        nearestOrdinaryWell?.properties
+                          ?.display_category ===
+                        "Ordinary groundwater abstraction facility"
+                          ? "Обикновено водовземно съоръжение"
+                          : nearestOrdinaryWell?.properties
+                              ?.display_category ??
+                            "Няма налични данни"
+                      }
+                    />
+
+                    <Row
+                      label="Населено място"
+                      value={
+                        nearestOrdinaryWell?.properties
+                          ?.settlement ??
+                        "Няма налични данни"
+                      }
+                    />
+
+                    <Row
+                      label="Дълбочина на обикновеното съоръжение"
+                      value={
+                        nearestOrdinaryWellDepth != null
+                          ? `${formatNumber(
+                              nearestOrdinaryWellDepth,
+                              1
+                            )} m`
+                          : "Няма налични данни"
+                      }
+                    />
+
+                    <Row
+                      label="Статично водно ниво"
+                      value={
+                        nearestOrdinaryWaterLevel != null
+                          ? `${formatNumber(
+                              nearestOrdinaryWaterLevel,
+                              1
+                            )} m`
+                          : "Няма налични данни"
+                      }
+                    />
+
+                    <Row
+                      label="Диапазон на дълбочините до 5 km"
+                      value={
+                        ordinaryStatistics?.depthMin != null &&
+                        ordinaryStatistics?.depthMax != null
+                          ? `${formatNumber(
+                              ordinaryStatistics.depthMin,
+                              1
+                            )} - ${formatNumber(
+                              ordinaryStatistics.depthMax,
+                              1
+                            )} m`
+                          : "Няма налични данни"
+                      }
+                    />
+
+                    <Row
+                      label="Статични водни нива до 5 km"
+                      value={
+                        ordinaryStatistics?.staticLevelMin != null &&
+                        ordinaryStatistics?.staticLevelMax != null
+                          ? `${formatNumber(
+                              ordinaryStatistics.staticLevelMin,
+                              1
+                            )} - ${formatNumber(
+                              ordinaryStatistics.staticLevelMax,
+                              1
+                            )} m`
+                          : "Няма налични данни"
+                      }
+                    />
+
+                    <Row
                       label="Най-близък минерален сондаж"
                       value={
                         nearestWellDistanceKm != null
@@ -3563,7 +3726,7 @@ export default async function ProPage({
                 </details>
 
                 <Link
-                  href={`/geology/report?lat=${encodeURIComponent(lat!)}&lon=${encodeURIComponent(lng!)}`}
+                  href={`/geology/report?lat=${encodeURIComponent(lat!)}&lon=${encodeURIComponent(lng!)}&gwb=${encodeURIComponent(profile.gwbCode)}`}
                   style={{
                     display: "block",
                     marginTop: 12,
