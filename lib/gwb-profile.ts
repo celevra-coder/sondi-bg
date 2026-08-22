@@ -25,6 +25,8 @@ export type GwbProfile = {
 
   section5?: any;
 
+  section7?: any;
+
   sources: string[];
 };
 
@@ -120,6 +122,9 @@ const DATASETS = {
 
   section5:
     "bd_ibr_section5_environmental_objectives.json",
+
+  section7:
+    "bd_ibr_section7_groundwater_measures.json",
 } as const;
 
 export function getGwbProfile(
@@ -202,6 +207,9 @@ export function getGwbProfile(
 
     section5:
       records.section5,
+
+    section7:
+      records.section7,
 
     sources,
   };

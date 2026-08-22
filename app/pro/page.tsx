@@ -284,6 +284,27 @@ export default async function ProPage({
   const section5 =
     profile.section5;
 
+  const section7 =
+    profile.section7;
+
+  const section7Measures: any[] =
+    Array.isArray(section7?.measures)
+      ? section7.measures
+      : [];
+
+  const section7MeasureCount =
+    section7Measures.length;
+
+  const section7Categories: string[] =
+    section7?.category_counts
+      ? Object.keys(section7.category_counts)
+      : [];
+
+  const section7Summary =
+    section7MeasureCount > 0
+      ? `За това подземно водно тяло са предвидени ${section7MeasureCount} конкретни мерки за опазване и подобряване на състоянието му.`
+      : "За това подземно водно тяло няма отделно посочени индивидуални мерки. Това не означава, че за района не се прилагат общи басейнови мерки.";
+
   const section5GoalCategory =
     String(section5?.goal_category ?? "");
 
@@ -2055,6 +2076,156 @@ export default async function ProPage({
                     {section5GoalSummary}
                   </div>
                 </div>
+                {section7 ? (
+                  <div style={{
+                    marginTop: 14,
+                    padding: 14,
+                    borderRadius: 12,
+                    background:
+                      section7MeasureCount > 0
+                        ? "#eef7f5"
+                        : "#f5f8f9",
+                    border:
+                      section7MeasureCount > 0
+                        ? "1px solid #c9e4dc"
+                        : "1px solid #dce5e8",
+                  }}>
+                    <div style={{
+                      fontSize: 15,
+                      fontWeight: 800,
+                      color: "#245663",
+                    }}>
+                      Предвидени мерки за водното тяло
+                    </div>
+
+                    <div style={{
+                      marginTop: 7,
+                      fontSize: 13,
+                      lineHeight: 1.65,
+                      color: "#40585f",
+                    }}>
+                      {section7Summary}
+                    </div>
+
+                    {section7Categories.length > 0 ? (
+                      <div style={{
+                        marginTop: 9,
+                        fontSize: 12,
+                        lineHeight: 1.6,
+                        color: "#587078",
+                      }}>
+                        <strong>Основни направления:</strong>{" "}
+                        {section7Categories.join(", ")}.
+                      </div>
+                    ) : null}
+
+                    {section7MeasureCount > 0 ? (
+                      <details style={{
+                        marginTop: 12,
+                        paddingTop: 10,
+                        borderTop: "1px solid #d8e8e3",
+                      }}>
+                        <summary style={{
+                          cursor: "pointer",
+                          color: "#245663",
+                          fontWeight: 800,
+                          fontSize: 13,
+                        }}>
+                          Виж предвидените мерки
+                          {" "}({section7MeasureCount})
+                        </summary>
+
+                        <div style={{
+                          display: "grid",
+                          gap: 10,
+                          marginTop: 12,
+                        }}>
+                          {section7Measures.map(
+                            (measure: any, index: number) => (
+                              <div
+                                key={
+                                  `${measure.action_code ?? measure.measure_code ?? "measure"}-${index}`
+                                }
+                                style={{
+                                  padding: 12,
+                                  borderRadius: 10,
+                                  background: "#fff",
+                                  border: "1px solid #e0e9e7",
+                                }}
+                              >
+                                <div style={{
+                                  fontSize: 13,
+                                  fontWeight: 800,
+                                  color: "#274b54",
+                                  lineHeight: 1.5,
+                                }}>
+                                  {measure.action_name ??
+                                    measure.measure_name ??
+                                    "Официална мярка"}
+                                </div>
+
+                                {measure.category_label_bg ? (
+                                  <div style={{
+                                    marginTop: 6,
+                                    color: "#567079",
+                                    fontSize: 12,
+                                  }}>
+                                    <strong>Направление:</strong>{" "}
+                                    {measure.category_label_bg}
+                                  </div>
+                                ) : null}
+
+                                {measure.responsible_authority ? (
+                                  <div style={{
+                                    marginTop: 5,
+                                    color: "#567079",
+                                    fontSize: 12,
+                                  }}>
+                                    <strong>Отговорен:</strong>{" "}
+                                    {measure.responsible_authority}
+                                  </div>
+                                ) : null}
+
+                                {measure.municipality ? (
+                                  <div style={{
+                                    marginTop: 5,
+                                    color: "#567079",
+                                    fontSize: 12,
+                                  }}>
+                                    <strong>Община:</strong>{" "}
+                                    {measure.municipality}
+                                  </div>
+                                ) : null}
+
+                                {measure.environmental_contribution ? (
+                                  <div style={{
+                                    marginTop: 7,
+                                    color: "#47645d",
+                                    fontSize: 12,
+                                    lineHeight: 1.55,
+                                  }}>
+                                    <strong>Очакван ефект:</strong>{" "}
+                                    {measure.environmental_contribution}
+                                  </div>
+                                ) : null}
+                              </div>
+                            )
+                          )}
+                        </div>
+
+                        <div style={{
+                          marginTop: 10,
+                          color: "#72848a",
+                          fontSize: 11,
+                          lineHeight: 1.5,
+                        }}>
+                          Източник: ПУРБ 2022–2027,
+                          Раздел 7 — Програма от мерки.
+                        </div>
+                      </details>
+                    ) : null}
+                  </div>
+                ) : null}
 
                 <details style={{
                   marginTop: 14,
