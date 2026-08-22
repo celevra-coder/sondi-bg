@@ -281,6 +281,40 @@ export default async function ProPage({
   const section4 =
     profile.section4;
 
+  const section5 =
+    profile.section5;
+
+  const section5GoalCategory =
+    String(section5?.goal_category ?? "");
+
+  const section5GoalTone =
+    section5GoalCategory === "goal_achieved" ||
+    section5GoalCategory === "maintain_good_status"
+      ? "good"
+      : section5GoalCategory === "extended_after_2027" ||
+        section5GoalCategory === "less_strict_goal"
+        ? "warn"
+        : "neutral";
+
+  const section5GoalTitle =
+    section5?.goal_label_bg ??
+    "Няма налична официална цел";
+
+  const section5ProblemIndicators =
+    section5?.purb3?.parameters_outside_standard ??
+    "Няма посочени";
+
+  const section5GoalSummary =
+    section5GoalCategory === "goal_achieved"
+      ? "Целта от предходния план е постигната. Текущата официална цел е запазване на доброто химично състояние."
+      : section5GoalCategory === "less_strict_goal"
+        ? `Определена е по-малко строга цел. Проблемни показатели: ${section5ProblemIndicators}.`
+        : section5GoalCategory === "extended_after_2027"
+          ? `Доброто химично състояние трябва да бъде постигнато след 2027 г. Проблемни показатели: ${section5ProblemIndicators}.`
+          : section5GoalCategory === "maintain_good_status"
+            ? "Химичното състояние е добро. Официалната цел е то да бъде запазено."
+            : "Няма достатъчно данни за официалната екологична цел.";
+
   const comparison =
     section4?.comparison;
 
@@ -1856,6 +1890,7 @@ export default async function ProPage({
               </div>
             </details>
           </Card>
+          <div style={{ display: "grid", gap: 16, alignContent: "start" }}>
           <Card
             title="7. Климатична устойчивост"
             knowledgeHref="/knowledge/water-quality/water-balance"
@@ -1976,7 +2011,185 @@ export default async function ProPage({
           </Card>
 
           <Card
-            title="8. Какво има около точката"
+            title="8. Екологични цели и срокове"
+            knowledgeHref="/knowledge/water-quality/environmental-objectives-exemptions"
+            subtitle="Официални цели, срокове и защита на питейните води."
+          >
+            {section5 ? (
+              <>
+                <div style={{
+                  padding: 14,
+                  borderRadius: 12,
+                  background:
+                    section5GoalTone === "warn"
+                      ? "#fff4e5"
+                      : section5GoalTone === "good"
+                        ? "#eaf7ef"
+                        : "#f1f5f6",
+                  border:
+                    section5GoalTone === "warn"
+                      ? "1px solid #efc27b"
+                      : section5GoalTone === "good"
+                        ? "1px solid #aad8ba"
+                        : "1px solid #d4dfe2",
+                }}>
+                  <div style={{
+                    fontSize: 17,
+                    fontWeight: 800,
+                    color:
+                      section5GoalTone === "warn"
+                        ? "#8a4f00"
+                        : section5GoalTone === "good"
+                          ? "#25633a"
+                          : "#45616a",
+                  }}>
+                    {section5GoalTitle}
+                  </div>
+
+                  <div style={{
+                    marginTop: 7,
+                    color: "#314d55",
+                    fontSize: 14,
+                    lineHeight: 1.6,
+                  }}>
+                    {section5GoalSummary}
+                  </div>
+                </div>
+
+                <details style={{
+                  marginTop: 14,
+                  paddingTop: 12,
+                  borderTop: "1px solid #e1eaec",
+                }}>
+                  <summary style={{
+                    cursor: "pointer",
+                    color: "#245663",
+                    fontWeight: 800,
+                  }}>
+                    Виж официалните цели и срокове
+                  </summary>
+
+                  <div style={{ marginTop: 10 }}>
+                    <Row
+                      label="Състояние ПУРБ 2"
+                      value={section5.purb2?.chemical_status ?? "—"}
+                    />
+
+                    <Row
+                      label="Цел ПУРБ 2"
+                      value={section5.purb2?.objective ?? "—"}
+                    />
+
+                    <Row
+                      label="Състояние ПУРБ 3"
+                      value={section5.purb3?.chemical_status ?? "—"}
+                    />
+
+                    <Row
+                      label="Проблемни показатели"
+                      value={section5ProblemIndicators}
+                    />
+
+                    <Row
+                      label="Цел ПУРБ 3"
+                      value={section5.purb3?.objective ?? "—"}
+                    />
+
+                    <Row
+                      label="Срок"
+                      value={
+                        section5.purb3?.target_year ??
+                        section5.exception_detail?.target_year_or_type ??
+                        "Не е приложим"
+                      }
+                    />
+
+                    <Row
+                      label="Изключение"
+                      value={
+                        section5.purb3?.exception ??
+                        "Няма приложено изключение"
+                      }
+                    />
+
+                    {section5.exception_detail ? (
+                      <>
+                        <Row
+                          label="Правно основание"
+                          value={
+                            section5.exception_detail.legal_basis ??
+                            "—"
+                          }
+                        />
+
+                        <div style={{
+                          marginTop: 10,
+                          padding: 12,
+                          borderRadius: 10,
+                          background: "#f5f8f9",
+                          color: "#435b62",
+                          fontSize: 13,
+                          lineHeight: 1.65,
+                        }}>
+                          <strong>
+                            Официална обосновка:
+                          </strong>{" "}
+                          {section5.exception_detail.justification ??
+                            "Няма налична обосновка."}
+                        </div>
+                      </>
+                    ) : null}
+
+                    {section5.drinking_water_objective ? (
+                      <>
+                        <Row
+                          label="Защитена питейна зона"
+                          value={
+                            section5.drinking_water_objective.zone_code ??
+                            "—"
+                          }
+                        />
+
+                        <Row
+                          label="Цел за питейните води"
+                          value={
+                            section5.drinking_water_objective.objective ??
+                            "—"
+                          }
+                        />
+                      </>
+                    ) : null}
+                  </div>
+                </details>
+
+                <div style={{
+                  marginTop: 12,
+                  padding: 11,
+                  borderRadius: 10,
+                  background: "#eef7f5",
+                  color: "#47645d",
+                  fontSize: 12,
+                  lineHeight: 1.5,
+                }}>
+                  Данните се отнасят за цялото подземно
+                  водно тяло, а не за конкретен имот.
+                </div>
+              </>
+            ) : (
+              <div style={{
+                padding: 12,
+                borderRadius: 10,
+                background: "#f5f8f9",
+                color: "#708187",
+                fontSize: 13,
+              }}>
+                Няма налични данни от Раздел 5.
+              </div>
+            )}
+          </Card>
+          </div>
+          <Card
+            title="9. Какво има около точката"
             knowledgeHref="/knowledge/water-quality/drinking-water-protection-zones"
             subtitle="Официални сондажи, извори и мониторингови пунктове около избраните координати."
           >
@@ -2344,7 +2557,7 @@ export default async function ProPage({
           </Card>
 
           <Card
-            title="9. Сондажна перспектива"
+            title="10. Сондажна перспектива"
             knowledgeHref="/knowledge/water-quality/exploitation-index"
             subtitle="Оценка на локалния потенциал за проучване."
           >
@@ -2363,7 +2576,7 @@ export default async function ProPage({
           </Card>
 
           <Card
-            title="10. Препоръка за сондаж"
+            title="11. Препоръка за сондаж"
             knowledgeHref="/knowledge/water-quality/quantitative-status"
             subtitle="Практическа оценка за сондиране на същата анализирана точка."
           >
@@ -2413,7 +2626,7 @@ export default async function ProPage({
           </Card>
 
           <Card
-            title="11. Професионално заключение"
+            title="12. Професионално заключение"
             knowledgeHref="/knowledge/water-quality/rbmp-comparison"
             subtitle="Обобщение на всички налични официални и пространствени данни."
           >

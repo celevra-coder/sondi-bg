@@ -56,6 +56,11 @@ const groups = [
         title: "Как се сравняват оценките от ПУРБ 2 и ПУРБ 3?",
         href: "/knowledge/water-quality/rbmp-comparison",
       },
+
+      {
+        title: "Екологични цели, срокове и изключения",
+        href: "/knowledge/water-quality/environmental-objectives-exemptions",
+      },
       {
         title: "Регионална оценка и водна проба от конкретен сондаж",
         href: "/knowledge/water-quality/regional-vs-water-sample",
