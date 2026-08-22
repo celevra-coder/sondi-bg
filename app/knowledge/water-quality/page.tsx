@@ -97,6 +97,10 @@ const groups = [
         title: "Зони за защита на подземни води за питейни нужди",
         href: "/knowledge/water-quality/drinking-water-protection-zones",
       },
+      {
+        title: "Какво означава трансгранично подземно водно тяло?",
+        href: "/knowledge/water-quality/transboundary-groundwater",
+      },
     ],
   },
 ];
