@@ -292,6 +292,8 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 <label class="layerrow"><input type="checkbox" id="layer-groundwater"> 🟦 Подземни водни тела (EEA/WFD)</label><div id="gw-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-bd-ibr"> 🔷 Подземни водни тела – БД ИБР / ПУРБ3</label>
 <div id="bd-ibr-load-status" class="small" style="margin-left:24px">изключено</div>
+<label class="layerrow"><input type="checkbox" id="layer-bd-bs"> 🔹 Подземни водни тела – БД Черноморски район / ПУРБ3</label>
+<div id="bd-bs-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-geology-age"> 🪨 Геоложка възраст – БД ИБР</label>
 <div id="geology-age-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-quant-monitoring"> 🟣 Количествен мониторинг – НИМХ 2019–2020</label>
@@ -380,6 +382,7 @@ const topo=L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZo
 
 const groundwaterLayer = L.layerGroup();
 const bdIbrGroundwaterLayer = L.layerGroup();
+const bdBsGroundwaterLayer = L.layerGroup();
 
 const geologyAgeBounds = [
   [40.96405463472572, 23.499441370514838],
@@ -401,6 +404,8 @@ const faultsLayer = L.layerGroup();
 let groundwaterLoaded=false;
 let bdIbrGroundwaterLoaded=false;
 let bdIbrGroundwaterLoading=false;
+let bdBsGroundwaterLoaded=false;
+let bdBsGroundwaterLoading=false;
 
 let bdIbrGroundwaterLeafletLayer = null;
 let pointPressureData = null;
@@ -429,6 +434,7 @@ const rightLayerControl = L.control.layers(
  {
    '🟦 Подземни водни тела (EEA/WFD)':groundwaterLayer,
    '🔷 Подземни водни тела – БД ИБР / ПУРБ3':bdIbrGroundwaterLayer,
+   '🔹 Подземни водни тела – БД Черноморски район / ПУРБ3':bdBsGroundwaterLayer,
    '🪨 Геоложка възраст – БД ИБР':geologyAgeLayer,
    '🟣 Количествен мониторинг – НИМХ 2019–2020':quantitativeMonitoringLayer,
    'ðŸŸ¤ Ðктивни разломи (GEM)':faultsLayer
@@ -450,6 +456,7 @@ function updateRightLayerControlVisibility() {
     'layer-other',
     'layer-groundwater',
     'layer-bd-ibr',
+    'layer-bd-bs',
     'layer-geology-age',
     'layer-quant-monitoring',
     'layer-faults'
@@ -2292,6 +2299,236 @@ async function loadBdIbrGroundwaterBodies(){
 }
 
 
+async function loadBdBsGroundwaterBodies() {
+  if (bdBsGroundwaterLoaded || bdBsGroundwaterLoading) {
+    return;
+  }
+
+  bdBsGroundwaterLoading = true;
+
+  setLayerStatus(
+    "bd-bs-load-status",
+    "зарежда се…",
+    "#a05a00"
+  );
+
+  try {
+    const response = await fetch(
+      "/geology-map/data/bd_bs_groundwater_bodies.geojson"
+    );
+
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+
+    const data = await response.json();
+
+    if (
+      !data ||
+      data.type !== "FeatureCollection" ||
+      !Array.isArray(data.features)
+    ) {
+      throw new Error("Невалиден GeoJSON формат");
+    }
+
+    const layer = L.geoJSON(data, {
+      style: function(feature) {
+        const p = feature.properties || {};
+
+        const chemicalStatus = String(
+          p.ch_s || ""
+        ).toLowerCase();
+
+        const chemicalRisk = String(
+          p.risk_ch || ""
+        ).toLowerCase();
+
+        const isBad =
+          chemicalStatus === "лошо";
+
+        const isAtRisk =
+          chemicalRisk.includes("в риск") &&
+          !chemicalRisk.includes("не е в риск") &&
+          !chemicalRisk.includes("не в риск");
+
+        return {
+          color: isBad
+            ? "#b42318"
+            : isAtRisk
+              ? "#b7791f"
+              : "#126b8a",
+
+          fillColor: isBad
+            ? "#e85d5d"
+            : isAtRisk
+              ? "#edb85b"
+              : "#4da6c7",
+
+          weight: 2,
+          fillOpacity: 0.18
+        };
+      },
+
+      onEachFeature: function(feature, featureLayer) {
+        const p = feature.properties || {};
+
+        const code =
+          p.gwb_code ||
+          p.cod ||
+          p.localId ||
+          "—";
+
+        const name =
+          p.gwb_name ||
+          p.ime ||
+          "Подземно водно тяло";
+
+        const areaSquareMeters =
+          Number(p.Shape_Area);
+
+        const areaText =
+          Number.isFinite(areaSquareMeters)
+            ? (areaSquareMeters / 1000000)
+                .toFixed(2) + " km²"
+            : "—";
+
+        const chemical =
+          p.ch_s || "—";
+
+        const chemicalRisk =
+          p.risk_ch || "—";
+
+        const quantitative =
+          p.q_s || "—";
+
+        const quantitativeRisk =
+          p.risk_q || "—";
+
+        const horizons =
+          p.horizons || "—";
+
+        const age =
+          p.Age || "—";
+
+        const chemicalColor =
+          String(chemical).toLowerCase() === "лошо"
+            ? "#b42318"
+            : "#0b6b43";
+
+        const quantitativeColor =
+          String(quantitative).toLowerCase() === "добро"
+            ? "#0b6b43"
+            : "#b7791f";
+
+        const html =
+          '<div style="min-width:285px;max-width:360px;line-height:1.5">' +
+
+          '<div style="font-weight:700;font-size:15px;margin-bottom:7px">' +
+          esc(name) +
+          '</div>' +
+
+          '<div><b>Код:</b> ' +
+          esc(code) +
+          '</div>' +
+
+          '<div><b>Площ:</b> ' +
+          esc(areaText) +
+          '</div>' +
+
+          '<div><b>Хоризонти:</b> ' +
+          esc(horizons) +
+          '</div>' +
+
+          '<div><b>Геоложка възраст:</b> ' +
+          esc(age) +
+          '</div>' +
+
+          '<div style="margin-top:8px;padding-top:7px;border-top:1px solid #ddd">' +
+
+          '<div><b>Химично състояние:</b> ' +
+          '<span style="font-weight:700;color:' +
+          chemicalColor +
+          '">' +
+          esc(chemical) +
+          '</span></div>' +
+
+          '<div><b>Химичен риск:</b> ' +
+          esc(chemicalRisk) +
+          '</div>' +
+
+          '<div><b>Количествено състояние:</b> ' +
+          '<span style="font-weight:700;color:' +
+          quantitativeColor +
+          '">' +
+          esc(quantitative) +
+          '</span></div>' +
+
+          '<div><b>Количествен риск:</b> ' +
+          esc(quantitativeRisk) +
+          '</div>' +
+
+          '</div>' +
+
+          '<div style="margin-top:8px;font-size:11px;color:#666">' +
+          'Източник: Басейнова дирекция „Черноморски район“, ' +
+          'ПУРБ 2022–2027, официален GIS слой.' +
+          '</div>' +
+
+          '</div>';
+
+        featureLayer.bindPopup(html);
+
+        featureLayer.on("click", function(event) {
+          lastGroundwaterClickLatLng = event.latlng;
+        });
+
+        featureLayer.on("mouseover", function() {
+          this.setStyle({
+            weight: 3,
+            fillOpacity: 0.30
+          });
+        });
+
+        featureLayer.on("mouseout", function() {
+          layer.resetStyle(this);
+        });
+      }
+    });
+
+    layer.addTo(bdBsGroundwaterLayer);
+
+    bdBsGroundwaterLoaded = true;
+    bdBsGroundwaterLoading = false;
+
+    window.bdBsGroundwaterGeoJson = data;
+
+    setLayerStatus(
+      "bd-bs-load-status",
+      "заредено ✓ (" + data.features.length + " водни тела)",
+      "#0b6b43"
+    );
+
+    console.log(
+      "[BD Black Sea] Groundwater bodies loaded:",
+      data.features.length
+    );
+
+  } catch (error) {
+    bdBsGroundwaterLoading = false;
+
+    console.error(
+      "[BD Black Sea] Load error:",
+      error
+    );
+
+    setLayerStatus(
+      "bd-bs-load-status",
+      "грешка при зареждане",
+      "#b00020"
+    );
+  }
+}
+
 function monitoringValue(value, digits = 2) {
   if (value === null || value === undefined || value === "") return "—";
 
@@ -4039,6 +4276,16 @@ document.getElementById('layer-bd-ibr').addEventListener('change',e=>{
 });
 
 
+
+document.getElementById("layer-bd-bs").addEventListener("change", event => {
+  if (event.target.checked) {
+    bdBsGroundwaterLayer.addTo(map);
+    loadBdBsGroundwaterBodies();
+    zoomOutForRegionalLayer(9);
+  } else {
+    map.removeLayer(bdBsGroundwaterLayer);
+  }
+});
 
 document.getElementById('layer-geology-age').addEventListener('change',e=>{
   if(e.target.checked){
