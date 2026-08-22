@@ -27,6 +27,10 @@ export type GwbProfile = {
 
   section7?: any;
 
+  geology?: any;
+
+  blackSeaSection1?: any;
+
   sources: string[];
 };
 
@@ -125,6 +129,12 @@ const DATASETS = {
 
   section7:
     "bd_ibr_section7_groundwater_measures.json",
+
+  geology:
+    "groundwater_geology_profiles.json",
+
+  blackSeaSection1:
+    "bd_bs_section1_profiles.json",
 } as const;
 
 export function getGwbProfile(
@@ -210,6 +220,12 @@ export function getGwbProfile(
 
     section7:
       records.section7,
+
+    geology:
+      records.geology,
+
+    blackSeaSection1:
+      records.blackSeaSection1,
 
     sources,
   };

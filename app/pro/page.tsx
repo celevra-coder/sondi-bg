@@ -232,6 +232,65 @@ export default async function ProPage({
 
   const profile = getGwbProfile(gwb);
 
+  const blackSeaSection1 =
+    profile.blackSeaSection1;
+
+  const blackSeaDetailed =
+    blackSeaSection1?.detailed;
+
+  const blackSeaInitial =
+    blackSeaSection1?.initial;
+
+  const blackSeaGis =
+    blackSeaSection1?.gis;
+
+  const blackSeaLevelMonitoring: any[] =
+    Array.isArray(blackSeaSection1?.monitoring)
+      ? blackSeaSection1.monitoring
+      : [];
+
+  const blackSeaCurrentResources =
+    blackSeaDetailed?.resources ?? null;
+
+  const geology =
+    profile.geology;
+
+  const geologyAvailable =
+    Boolean(geology);
+
+  const geologyAquiferType =
+    geology?.aquifer_type_name ??
+    "Няма налични данни";
+
+  const geologyWaterType =
+    geology?.water_type ??
+    geology?.collector_type ??
+    null;
+
+  const geologyHorizon =
+    geology?.hydrogeological_horizon ??
+    null;
+
+  const geologyPressureType =
+    geology?.aquifer_pressure_type ??
+    null;
+
+  const geologyLithology =
+    geology?.lithology ??
+    null;
+
+  const geologySummary =
+    geologyAvailable
+      ? (
+          geology?.water_type &&
+          geology?.hydrogeological_horizon
+            ? `Водното тяло е свързано с ${String(geology.water_type).toLowerCase()} във водоносен хоризонт ${geology.hydrogeological_horizon}.`
+            : geology?.collector_type
+              ? `Водното тяло е свързано с ${String(geology.collector_type).toLowerCase()} водоносен колектор.`
+              : "За това подземно водно тяло има официална характеристика на водоносния хоризонт и геоложките условия."
+        )
+      : null;
+
   const climate = profile.climate;
 
   const formatClimatePercent = (
@@ -301,7 +360,9 @@ export default async function ProPage({
       : [];
 
   const section7Summary =
-    section7MeasureCount > 0
+    !section7
+      ? "Официалната програма от мерки за това водно тяло все още не е обработена."
+      : section7MeasureCount > 0
       ? `За това подземно водно тяло са предвидени ${section7MeasureCount} конкретни мерки за опазване и подобряване на състоянието му.`
       : "За това подземно водно тяло няма отделно посочени индивидуални мерки. Това не означава, че за района не се прилагат общи басейнови мерки.";
 
@@ -340,7 +401,33 @@ export default async function ProPage({
     section4?.comparison;
 
   const waterBalance =
-    section4?.water_balance;
+    section4?.water_balance ??
+    (
+      blackSeaCurrentResources
+        ? {
+            available_resource_l_s:
+              blackSeaCurrentResources.available_resource_l_s,
+
+            total_abstraction_l_s:
+              blackSeaCurrentResources.permitted_abstraction_l_s,
+
+            permitted_abstraction_l_s:
+              blackSeaCurrentResources.permitted_abstraction_l_s,
+
+            free_resource_l_s:
+              blackSeaCurrentResources.free_resource_l_s,
+
+            natural_resource_l_s:
+              blackSeaCurrentResources.natural_resource_l_s,
+
+            quantitative_status:
+              blackSeaGis?.quantitative_status,
+
+            exploitation_index:
+              blackSeaCurrentResources.exploitation_index,
+          }
+        : undefined
+    );
 
   const abstractionByUse =
     section4?.abstraction_by_use;
@@ -421,7 +508,13 @@ export default async function ProPage({
 
   const monitoringSummary =
     !section4
-      ? "За това подземно водно тяло няма налични данни от Раздел 4."
+      ? blackSeaSection1
+        ? (
+            blackSeaLevelMonitoring.length > 0
+              ? `Налични са ${blackSeaLevelMonitoring.length} официални пункта за наблюдение на водните нива. Подробните химични измервания, праговите стойности и тенденциите все още не са обработени.`
+              : "Подробните данни от официалния химичен мониторинг все още не са обработени."
+          )
+        : "За това подземно водно тяло няма налични данни от Раздел 4."
       : exceedances.length > 0
         ? (
             `Официалният мониторинг показва превишения в ${exceedanceStationCount} мониторингови пункта. ` +
@@ -446,11 +539,14 @@ export default async function ProPage({
           );
   const chemical =
     section4?.chemical_status ??
+    blackSeaGis?.chemical_status ??
     significant?.chemical_status ??
     "Няма данни";
 
   const chemicalRisk =
     comparison?.risk_2022_2027 ??
+    blackSeaDetailed?.purb3?.chemical_risk ??
+    blackSeaGis?.chemical_risk ??
     "Няма данни";
 
   const pointPressurePercent =
@@ -536,19 +632,26 @@ export default async function ProPage({
 
   const quantitativeStatus =
     waterBalance?.quantitative_status ??
+    blackSeaGis?.quantitative_status ??
     significant?.quantitative_status ??
     "Няма данни";
 
   const quantRisk =
     quantitative?.final_quantitative_risk_label_bg ??
+    blackSeaDetailed?.purb3?.quantitative_risk ??
+    blackSeaGis?.quantitative_risk ??
     "Няма данни";
 
   const exploitation =
     waterBalance?.exploitation_index ??
+    blackSeaCurrentResources?.exploitation_index ??
     abstraction?.exploitation_index;
 
   const pollutants =
     section4?.pollutants ??
+    blackSeaDetailed
+      ?.chemical_assessment
+      ?.exceedance_parameters ??
     integrated?.monitoring_2015_2020?.pollutants ??
     significant?.quality_parameters_outside_standard ??
     "Няма посочени";
@@ -1046,17 +1149,259 @@ export default async function ProPage({
           <Card
             title="2. Геология и хидрогеология"
             knowledgeHref="/knowledge/water-quality"
-            subtitle="Ще се обогатява с данните от следващите раздели."
+            subtitle={
+              geologyAvailable
+                ? "Разбираема характеристика на водоносния хоризонт и геоложките условия."
+                : "Все още няма налична официална геоложка характеристика."
+            }
           >
-            <div style={{
-              padding: 12,
-              background: "#f5f8f9",
-              borderRadius: 10,
-              color: "#708187",
-              fontSize: 13,
-            }}>
-              Очаква допълнителни данни.
-            </div>
+            {geologyAvailable ? (
+              <>
+                <div style={{
+                  padding: "15px 16px",
+                  background: "#eef7f8",
+                  border: "1px solid #d4e8e9",
+                  borderRadius: 12,
+                  color: "#194851",
+                  fontSize: 14,
+                  lineHeight: 1.6,
+                }}>
+                  <div style={{
+                    fontWeight: 800,
+                    marginBottom: 7,
+                  }}>
+                    Какъв е водоносният хоризонт?
+                  </div>
+
+                  <div>
+                    {geologySummary}
+                  </div>
+                </div>
+
+                <div style={{
+                  marginTop: 12,
+                }}>
+                  <Row
+                    label="Тип водоносен хоризонт"
+                    value={String(geologyAquiferType)}
+                  />
+
+                  {geologyWaterType && (
+                    <Row
+                      label="Тип подземни води"
+                      value={String(geologyWaterType)}
+                    />
+                  )}
+
+                  {geologyHorizon && (
+                    <Row
+                      label="Хидрогеоложки хоризонт"
+                      value={String(geologyHorizon)}
+                    />
+                  )}
+
+                  {geologyPressureType && (
+                    <Row
+                      label="Характер на водите"
+                      value={String(geologyPressureType)}
+                    />
+                  )}
+
+                  {geology?.aquifer_thickness_m != null && (
+                    <Row
+                      label="Дебелина на водоносния пласт"
+                      value={`${geology.aquifer_thickness_m} m`}
+                    />
+                  )}
+                </div>
+
+                <details style={{
+                  marginTop: 12,
+                  border: "1px solid #e1e9eb",
+                  borderRadius: 10,
+                  background: "#fff",
+                }}>
+                  <summary style={{
+                    padding: "11px 13px",
+                    cursor: "pointer",
+                    fontWeight: 700,
+                    color: "#24545d",
+                    fontSize: 13,
+                  }}>
+                    Виж подробните официални данни
+                  </summary>
+
+                  <div style={{
+                    padding: "0 13px 12px",
+                  }}>
+                    {geologyLithology && (
+                      <Row
+                        label="Геоложки строеж"
+                        value={String(geologyLithology)}
+                      />
+                    )}
+
+                    {geology?.lithostratigraphic_units && (
+                      <Row
+                        label="Геоложки единици"
+                        value={
+                          String(
+                            geology.lithostratigraphic_units
+                          )
+                        }
+                      />
+                    )}
+
+                    {geology?.tectonic_unit && (
+                      <Row
+                        label="Тектонска единица"
+                        value={
+                          String(geology.tectonic_unit)
+                        }
+                      />
+                    )}
+
+                    {geology?.collector_type && (
+                      <Row
+                        label="Водоносен колектор"
+                        value={
+                          String(geology.collector_type)
+                        }
+                      />
+                    )}
+
+                    {geology?.recharge_cover_layers && (
+                      <Row
+                        label="Покриващи пластове"
+                        value={
+                          String(
+                            geology.recharge_cover_layers
+                          )
+                        }
+                      />
+                    )}
+
+                    {geology?.filtration_coefficient_m_day != null && (
+                      <Row
+                        label="Коефициент на филтрация"
+                        value={
+                          `${geology.filtration_coefficient_m_day} m/ден`
+                        }
+                      />
+                    )}
+
+                    {geology?.transmissivity_m2_day != null && (
+                      <Row
+                        label="Проводимост на пласта"
+                        value={
+                          `${geology.transmissivity_m2_day} m²/ден`
+                        }
+                      />
+                    )}
+
+                    {geology?.porosity_percent != null && (
+                      <Row
+                        label="Порестост"
+                        value={
+                          `${geology.porosity_percent}%`
+                        }
+                      />
+                    )}
+
+                    {geology?.infiltration_percent != null && (
+                      <Row
+                        label="Инфилтрация"
+                        value={
+                          `${geology.infiltration_percent}%`
+                        }
+                      />
+                    )}
+
+                    {geology?.vertical_horizons != null && (
+                      <Row
+                        label="Вертикални хоризонти"
+                        value={
+                          String(
+                            geology.vertical_horizons
+                          )
+                        }
+                      />
+                    )}
+
+                    {geology?.area_km2 != null && (
+                      <Row
+                        label="Площ на водното тяло"
+                        value={
+                          `${Number(
+                            geology.area_km2
+                          ).toFixed(2)} km²`
+                        }
+                      />
+                    )}
+
+                    {geology?.river_basin && (
+                      <Row
+                        label="Поречие"
+                        value={
+                          String(geology.river_basin)
+                        }
+                      />
+                    )}
+
+                    {geology?.location && (
+                      <Row
+                        label="Местоположение"
+                        value={
+                          String(geology.location)
+                        }
+                      />
+                    )}
+
+                    {geology?.settlements && (
+                      <Row
+                        label="Населени места"
+                        value={
+                          String(geology.settlements)
+                        }
+                      />
+                    )}
+
+                    {geology?.monitoring_count != null && (
+                      <Row
+                        label="Мониторингови пунктове"
+                        value={
+                          String(
+                            geology.monitoring_count
+                          )
+                        }
+                      />
+                    )}
+
+                    <div style={{
+                      marginTop: 10,
+                      color: "#667b82",
+                      fontSize: 11,
+                      lineHeight: 1.5,
+                    }}>
+                      Източник: {geology?.source}
+                      {" "}
+                      Данните се отнасят за цялото
+                      подземно водно тяло.
+                    </div>
+                  </div>
+                </details>
+              </>
+            ) : (
+              <div style={{
+                padding: 12,
+                background: "#f5f8f9",
+                borderRadius: 10,
+                color: "#708187",
+                fontSize: 13,
+              }}>
+                Няма налични официални геоложки данни.
+              </div>
+            )}
           </Card>
 
           <Card
