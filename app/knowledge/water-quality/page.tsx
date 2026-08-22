@@ -101,6 +101,11 @@ const groups = [
         title: "Какво означава трансгранично подземно водно тяло?",
         href: "/knowledge/water-quality/transboundary-groundwater",
       },
+      {
+        title:
+          "Коя институция отговаря за сондажите и подземните води?",
+        href: "/knowledge/water-quality/groundwater-competent-authorities",
+      },
     ],
   },
 ];
