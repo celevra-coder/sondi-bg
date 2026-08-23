@@ -241,6 +241,43 @@ export default async function ProPage({
   const blackSeaSection3 =
     profile.blackSeaSection3;
 
+  const blackSeaSection4 =
+    profile.blackSeaSection4;
+
+  const blackSeaChemicalMonitoring: any[] =
+    Array.isArray(
+      blackSeaSection4?.chemical_monitoring
+    )
+      ? blackSeaSection4.chemical_monitoring
+      : [];
+
+  const blackSeaQuantitativeMonitoring: any[] =
+    Array.isArray(
+      blackSeaSection4?.quantitative_monitoring
+    )
+      ? blackSeaSection4.quantitative_monitoring
+      : [];
+
+  const blackSeaAffectedArea =
+    blackSeaSection4?.affected_area ?? null;
+
+  const blackSeaAffectedStationCodes: string[] =
+    Array.isArray(
+      blackSeaAffectedArea?.monitoring_station_codes
+    )
+      ? blackSeaAffectedArea.monitoring_station_codes
+      : [];
+
+  const blackSeaDrinkingAssessment =
+    blackSeaSection4?.drinking_water_protection ?? null;
+
+  const blackSeaSurfaceWaterLinks: any[] =
+    Array.isArray(
+      blackSeaSection4?.surface_water_links
+    )
+      ? blackSeaSection4.surface_water_links
+      : [];
+
   const blackSeaDrinkingProtection =
     blackSeaSection3?.drinking_water_protection ?? null;
 
@@ -407,7 +444,54 @@ export default async function ProPage({
     profile.integratedRisk;
 
   const section4 =
-    profile.section4;
+    profile.section4 ??
+    (
+      blackSeaSection4
+        ? {
+            ...blackSeaSection4,
+
+            comparison: {
+              risk_2022_2027:
+                blackSeaSection4.chemical_risk,
+
+              status_2022_2027:
+                blackSeaSection4.overall_status_purb3,
+
+              status_2016_2021:
+                blackSeaSection4.overall_status_purb2,
+            },
+
+            water_balance:
+              blackSeaSection4.water_balance
+                ? {
+                    ...blackSeaSection4.water_balance,
+
+                    quantitative_status:
+                      blackSeaSection4.quantitative_status ??
+                      blackSeaSection4.water_balance.status,
+                  }
+                : undefined,
+
+            tests:
+              blackSeaSection4.chemical_tests,
+
+            upward_trend:
+              blackSeaSection4.upward_trend === true
+                ? "да"
+                : blackSeaSection4.upward_trend === false
+                  ? "не"
+                  : null,
+
+            drinking_monitoring:
+              blackSeaChemicalMonitoring.filter(
+                (station: any) =>
+                  station?.drinking_water_monitoring === true
+              ),
+
+            trend_series: [],
+          }
+        : undefined
+    );
 
   const section5 =
     profile.section5;
@@ -576,7 +660,34 @@ export default async function ProPage({
       .toLowerCase() === "да";
 
   const monitoringSummary =
-    !section4
+    blackSeaSection4
+      ? (
+          blackSeaAffectedArea
+            ? (
+                `Официалната оценка отчита засегнати участъци и превишения в ${blackSeaAffectedStationCodes.length} мониторингови пункта. ` +
+                (
+                  blackSeaAffectedArea.status_deteriorating_indicators
+                    ? `Проблемни показатели: ${blackSeaAffectedArea.status_deteriorating_indicators}. `
+                    : ""
+                ) +
+                (
+                  blackSeaSection4.upward_trend === true
+                    ? "Отчетена е възходяща тенденция."
+                    : blackSeaSection4.upward_trend === false
+                      ? "Не е отчетена възходяща тенденция."
+                      : "Няма публикувана оценка на тенденцията."
+                )
+              )
+            : (
+                `За водното тяло са посочени ${blackSeaChemicalMonitoring.length} химични и ${blackSeaQuantitativeMonitoring.length} количествени мониторингови пункта. ` +
+                (
+                  blackSeaSection4.upward_trend === true
+                    ? "Отчетена е възходяща тенденция."
+                    : "Няма отделно публикувана засегната площ с установени превишения."
+                )
+              )
+        )
+      : !section4
       ? blackSeaSection1
         ? (
             blackSeaLevelMonitoring.length > 0
@@ -2733,13 +2844,17 @@ export default async function ProPage({
                 fontWeight: 900,
                 marginBottom: 6,
               }}>
-                {section4
-                  ? exceedances.length > 0
-                    ? "Има данни за проблем с качеството"
-                    : "Няма установени превишения"
-                  : blackSeaSection2
-                    ? "Химичният мониторинг предстои да бъде добавен"
-                    : "Няма налични данни от химичен мониторинг"}
+                {blackSeaSection4
+                  ? blackSeaAffectedArea
+                    ? "Има официално установени проблемни показатели"
+                    : "Налична е официална програма за мониторинг"
+                  : section4
+                    ? exceedances.length > 0
+                      ? "Има данни за проблем с качеството"
+                      : "Няма установени превишения"
+                    : blackSeaSection2
+                      ? "Химичният мониторинг предстои да бъде добавен"
+                      : "Няма налични данни от химичен мониторинг"}
               </div>
 
               {monitoringSummary}
@@ -2999,7 +3114,344 @@ export default async function ProPage({
                 </section>
               </div>
             </details>
-          </Card>
+          
+            {blackSeaSection4 ? (
+              <details style={{
+                marginTop: 12,
+                padding: "11px 12px",
+                border: "1px solid #d9e5e7",
+                borderRadius: 11,
+                background: "#ffffff",
+              }}>
+                <summary style={{
+                  cursor: "pointer",
+                  fontWeight: 800,
+                  color: "#204951",
+                }}>
+                  Официални мониторингови пунктове и оценки
+                </summary>
+
+                <div style={{
+                  display: "grid",
+                  gap: 12,
+                  marginTop: 12,
+                }}>
+                  <section>
+                    <Row
+                      label="Пунктове за химичен мониторинг"
+                      value={
+                        String(
+                          blackSeaChemicalMonitoring.length
+                        )
+                      }
+                    />
+
+                    <Row
+                      label="Пунктове за количествен мониторинг"
+                      value={
+                        String(
+                          blackSeaQuantitativeMonitoring.length
+                        )
+                      }
+                    />
+
+                    <Row
+                      label="Пунктове със засегнати участъци"
+                      value={
+                        String(
+                          blackSeaAffectedStationCodes.length
+                        )
+                      }
+                    />
+
+                    <Row
+                      label="Достоверност на химичната оценка"
+                      value={
+                        blackSeaSection4.chemical_confidence ??
+                        "Няма данни"
+                      }
+                    />
+
+                    <Row
+                      label="Достоверност на количествената оценка"
+                      value={
+                        blackSeaSection4.quantitative_confidence ??
+                        "Няма данни"
+                      }
+                    />
+
+                    <Row
+                      label="Общо състояние ПУРБ 2016–2021"
+                      value={
+                        blackSeaSection4.overall_status_purb2 ??
+                        "Няма данни"
+                      }
+                    />
+
+                    <Row
+                      label="Общо състояние ПУРБ 2022–2027"
+                      value={
+                        blackSeaSection4.overall_status_purb3 ??
+                        "Няма данни"
+                      }
+                    />
+                  </section>
+
+                  {blackSeaAffectedArea ? (
+                    <section style={{
+                      padding: 11,
+                      borderRadius: 9,
+                      background: "#fff5ed",
+                    }}>
+                      <div style={{
+                        fontWeight: 800,
+                        marginBottom: 7,
+                      }}>
+                        Засегнати участъци и проблемни показатели
+                      </div>
+
+                      <Row
+                        label="Показатели, влошаващи състоянието"
+                        value={
+                          blackSeaAffectedArea
+                            .status_deteriorating_indicators ??
+                          "Няма данни"
+                        }
+                      />
+
+                      <Row
+                        label="Засегната площ"
+                        value={
+                          blackSeaAffectedArea
+                            .affected_area_percent ??
+                          "Няма данни"
+                        }
+                      />
+
+                      <Row
+                        label="Кодове на засегнатите пунктове"
+                        value={
+                          blackSeaAffectedStationCodes.length > 0
+                            ? blackSeaAffectedStationCodes.join(", ")
+                            : "Няма публикувани кодове"
+                        }
+                      />
+
+                      <div style={{
+                        marginTop: 8,
+                        fontSize: 12,
+                        color: "#67757a",
+                        lineHeight: 1.5,
+                      }}>
+                        Посочени са официално установени проблемни
+                        показатели. Публикуваните приложения не съдържат
+                        индивидуални числови лабораторни резултати за
+                        всеки пункт.
+                      </div>
+                    </section>
+                  ) : null}
+
+                  {blackSeaChemicalMonitoring.length > 0 ? (
+                    <details>
+                      <summary style={{
+                        cursor: "pointer",
+                        fontWeight: 700,
+                      }}>
+                        Пунктове за химичен мониторинг
+                        {" "}
+                        ({blackSeaChemicalMonitoring.length})
+                      </summary>
+
+                      <div style={{
+                        display: "grid",
+                        gap: 8,
+                        marginTop: 9,
+                      }}>
+                        {blackSeaChemicalMonitoring.map(
+                          (station: any, index: number) => (
+                            <div
+                              key={
+                                station?.station_code ??
+                                `chemical-station-${index}`
+                              }
+                              style={{
+                                padding: 10,
+                                borderRadius: 9,
+                                background: "#eef4f5",
+                                fontSize: 12,
+                                lineHeight: 1.5,
+                              }}
+                            >
+                              <strong>
+                                {station?.station_name ??
+                                  "Мониторингов пункт"}
+                              </strong>
+
+                              <div>
+                                Код: {station?.station_code ?? "—"}
+                              </div>
+
+                              <div>
+                                Населено място:
+                                {" "}
+                                {station?.settlement ?? "—"}
+                              </div>
+
+                              <div>
+                                Дълбочина:
+                                {" "}
+                                {station?.depth_m != null
+                                  ? `${formatNumber(station.depth_m, 2)} m`
+                                  : "Няма данни"}
+                              </div>
+
+                              <div>
+                                Предназначение:
+                                {" "}
+                                {station?.use ?? "Няма данни"}
+                              </div>
+                            </div>
+                          )
+                        )}
+                      </div>
+                    </details>
+                  ) : null}
+
+                  {blackSeaQuantitativeMonitoring.length > 0 ? (
+                    <details>
+                      <summary style={{
+                        cursor: "pointer",
+                        fontWeight: 700,
+                      }}>
+                        Пунктове за количествен мониторинг
+                        {" "}
+                        ({blackSeaQuantitativeMonitoring.length})
+                      </summary>
+
+                      <div style={{
+                        display: "grid",
+                        gap: 8,
+                        marginTop: 9,
+                      }}>
+                        {blackSeaQuantitativeMonitoring.map(
+                          (station: any, index: number) => (
+                            <div
+                              key={
+                                station?.station_code ??
+                                `quantitative-station-${index}`
+                              }
+                              style={{
+                                padding: 10,
+                                borderRadius: 9,
+                                background: "#eef4f5",
+                                fontSize: 12,
+                                lineHeight: 1.5,
+                              }}
+                            >
+                              <strong>
+                                {station?.station_name ??
+                                  "Мониторингов пункт"}
+                              </strong>
+
+                              <div>
+                                Код: {station?.station_code ?? "—"}
+                              </div>
+
+                              <div>
+                                Населено място:
+                                {" "}
+                                {station?.settlement ?? "—"}
+                              </div>
+
+                              <div>
+                                Дълбочина:
+                                {" "}
+                                {station?.depth_m != null
+                                  ? `${formatNumber(station.depth_m, 2)} m`
+                                  : "Няма данни"}
+                              </div>
+
+                              <div>
+                                Изпълнител:
+                                {" "}
+                                {station?.operator ?? "Няма данни"}
+                              </div>
+                            </div>
+                          )
+                        )}
+                      </div>
+                    </details>
+                  ) : null}
+
+                  {blackSeaDrinkingAssessment ? (
+                    <section>
+                      <div style={{
+                        fontWeight: 800,
+                        marginBottom: 7,
+                      }}>
+                        Оценка на зоната за питейно водоснабдяване
+                      </div>
+
+                      <Row
+                        label="Код на защитената зона"
+                        value={
+                          blackSeaDrinkingAssessment.zone_code ??
+                          "Няма данни"
+                        }
+                      />
+
+                      <Row
+                        label="Химично състояние на защитената зона"
+                        value={
+                          blackSeaDrinkingAssessment.chemical_status ??
+                          "Няма данни"
+                        }
+                      />
+
+                      <Row
+                        label="Количествено състояние на защитената зона"
+                        value={
+                          blackSeaDrinkingAssessment
+                            .quantitative_status ??
+                          "Няма данни"
+                        }
+                      />
+                    </section>
+                  ) : null}
+
+                  {blackSeaSurfaceWaterLinks.length > 0 ? (
+                    <section>
+                      <div style={{
+                        fontWeight: 800,
+                        marginBottom: 7,
+                      }}>
+                        Свързани повърхностни водни тела
+                      </div>
+
+                      {blackSeaSurfaceWaterLinks.map(
+                        (linkedBody: any, index: number) => (
+                          <Row
+                            key={
+                              linkedBody?.code ??
+                              `surface-water-${index}`
+                            }
+                            label={
+                              linkedBody?.code ??
+                              "Повърхностно водно тяло"
+                            }
+                            value={
+                              linkedBody?.name ??
+                              "Няма данни"
+                            }
+                          />
+                        )
+                      )}
+                    </section>
+                  ) : null}
+                </div>
+              </details>
+            ) : null}
+</Card>
           <div style={{ display: "grid", gap: 16, alignContent: "start" }}>
           <Card
             title="7. Климатична устойчивост"
