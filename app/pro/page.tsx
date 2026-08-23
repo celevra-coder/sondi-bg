@@ -244,6 +244,9 @@ export default async function ProPage({
   const blackSeaSection4 =
     profile.blackSeaSection4;
 
+  const blackSeaSection5 =
+    profile.blackSeaSection5;
+
   const blackSeaChemicalMonitoring: any[] =
     Array.isArray(
       blackSeaSection4?.chemical_monitoring
@@ -494,7 +497,8 @@ export default async function ProPage({
     );
 
   const section5 =
-    profile.section5;
+    profile.section5 ??
+    blackSeaSection5;
 
   const section7 =
     profile.section7;
@@ -527,7 +531,9 @@ export default async function ProPage({
     section5GoalCategory === "maintain_good_status"
       ? "good"
       : section5GoalCategory === "extended_after_2027" ||
-        section5GoalCategory === "less_strict_goal"
+        section5GoalCategory === "less_strict_goal" ||
+        section5GoalCategory === "restore_good_status" ||
+        section5GoalCategory === "exception_until_2027"
         ? "warn"
         : "neutral";
 
@@ -545,10 +551,14 @@ export default async function ProPage({
       : section5GoalCategory === "less_strict_goal"
         ? `Определена е по-малко строга цел. Проблемни показатели: ${section5ProblemIndicators}.`
         : section5GoalCategory === "extended_after_2027"
-          ? `Доброто химично състояние трябва да бъде постигнато след 2027 г. Проблемни показатели: ${section5ProblemIndicators}.`
-          : section5GoalCategory === "maintain_good_status"
-            ? "Химичното състояние е добро. Официалната цел е то да бъде запазено."
-            : "Няма достатъчно данни за официалната екологична цел.";
+          ? `Доброто състояние трябва да бъде постигнато след 2027 г. Проблемни показатели: ${section5ProblemIndicators}.`
+          : section5GoalCategory === "restore_good_status"
+            ? `Официалната цел е постигане на добро състояние. Проблемни показатели: ${section5ProblemIndicators}.`
+            : section5GoalCategory === "exception_until_2027"
+              ? `За постигането на добро състояние е приложено официално обосновано изключение. Проблемни показатели: ${section5ProblemIndicators}.`
+              : section5GoalCategory === "maintain_good_status"
+                ? "Химичното и количественото състояние са оценени като добри. Официалната цел е запазване на доброто състояние."
+                : "Няма достатъчно данни за официалната екологична цел.";
 
   const comparison =
     section4?.comparison;
@@ -3810,6 +3820,8 @@ export default async function ProPage({
                     <Row
                       label="Срок"
                       value={
+                        section5.purb3?.target_period_label_bg ??
+                        section5.deadline?.label_bg ??
                         section5.purb3?.target_year ??
                         section5.exception_detail?.target_year_or_type ??
                         "Не е приложим"
