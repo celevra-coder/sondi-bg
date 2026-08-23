@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getGwbProfile } from "@/lib/gwb-profile";
-import { getSpatialProfile } from "@/lib/spatial-profile";
-import { getBlackSeaGisAnalysis } from "@/lib/black-sea-gis";
+import { getSpatialProfile } from "@/lib/spatial-profile.mineral-preview";
 
 type SearchParams = Promise<{
   gwb?: string;
@@ -236,164 +235,6 @@ export default async function ProPage({
   const blackSeaSection1 =
     profile.blackSeaSection1;
 
-  const blackSeaSection2 =
-    profile.blackSeaSection2;
-
-  const blackSeaSection3 =
-    profile.blackSeaSection3;
-
-  const blackSeaSection4 =
-    profile.blackSeaSection4;
-
-  const blackSeaSection5 =
-    profile.blackSeaSection5;
-
-  const blackSeaSection7 =
-    profile.blackSeaSection7;
-
-  const blackSeaCurrentRegisters =
-    profile.blackSeaCurrentRegisters ?? null;
-
-  const blackSeaAdditionalRegisters =
-    profile.blackSeaAdditionalRegisters ?? null;
-
-  const officialHydrogeologicalInvestigations: any[] =
-    Array.isArray(
-      blackSeaAdditionalRegisters
-        ?.hydrogeological_investigations
-    )
-      ? blackSeaAdditionalRegisters
-          .hydrogeological_investigations
-      : [];
-
-  const officialInvestigationDepths =
-    officialHydrogeologicalInvestigations
-      .map((item: any) => item?.project_depth_m)
-      .filter(
-        (value: any) =>
-          value !== null &&
-          value !== undefined &&
-          Number.isFinite(Number(value)) &&
-          Number(value) > 0
-      )
-      .map((value: any) => Number(value));
-
-  const blackSeaRegisterResource =
-    blackSeaCurrentRegisters?.current_resource ?? null;
-
-  const blackSeaOrdinaryPermits =
-    blackSeaCurrentRegisters?.ordinary_groundwater_permits ?? null;
-
-  const blackSeaMineralPermits =
-    blackSeaCurrentRegisters?.mineral_water_permits ?? null;
-
-  const blackSeaRegisterPeriod =
-    blackSeaRegisterResource?.month_label_bg &&
-    blackSeaRegisterResource?.year
-      ? (
-          String(blackSeaRegisterResource.month_label_bg) +
-          " " +
-          String(blackSeaRegisterResource.year)
-        )
-      : null;
-
-  const blackSeaChemicalMonitoring: any[] =
-    Array.isArray(
-      blackSeaSection4?.chemical_monitoring
-    )
-      ? blackSeaSection4.chemical_monitoring
-      : [];
-
-  const blackSeaQuantitativeMonitoring: any[] =
-    Array.isArray(
-      blackSeaSection4?.quantitative_monitoring
-    )
-      ? blackSeaSection4.quantitative_monitoring
-      : [];
-
-  const blackSeaAffectedArea =
-    blackSeaSection4?.affected_area ?? null;
-
-  const blackSeaAffectedStationCodes: string[] =
-    Array.isArray(
-      blackSeaAffectedArea?.monitoring_station_codes
-    )
-      ? blackSeaAffectedArea.monitoring_station_codes
-      : [];
-
-  const blackSeaDrinkingAssessment =
-    blackSeaSection4?.drinking_water_protection ?? null;
-
-  const blackSeaSurfaceWaterLinks: any[] =
-    Array.isArray(
-      blackSeaSection4?.surface_water_links
-    )
-      ? blackSeaSection4.surface_water_links
-      : [];
-
-  const blackSeaDrinkingProtection =
-    blackSeaSection3?.drinking_water_protection ?? null;
-
-  const blackSeaNitrateVulnerability =
-    blackSeaSection3?.nitrate_vulnerability ?? null;
-
-  const blackSeaIsNitrateVulnerable =
-    blackSeaNitrateVulnerability
-      ?.is_currently_vulnerable === true;
-
-  const blackSeaWasNitrateVulnerable2019 =
-    blackSeaNitrateVulnerability
-      ?.was_vulnerable_2019 === true;
-
-  const blackSeaIsDrinkingProtectionZone =
-    blackSeaDrinkingProtection
-      ?.is_designated === true;
-
-  const blackSeaSection2Chemical =
-    blackSeaSection2?.chemical_risk ?? null;
-
-  const blackSeaSection2Quantitative =
-    blackSeaSection2?.quantitative_risk ?? null;
-
-  const blackSeaSection2Vulnerability =
-    blackSeaSection2?.vulnerability ?? null;
-
-  const blackSeaPollutionSources: any[] =
-    Array.isArray(
-      blackSeaSection2?.pollution_sources
-    )
-      ? blackSeaSection2.pollution_sources
-      : [];
-
-  const blackSeaPointSourceCount =
-    Number(
-      blackSeaSection2?.point_source_count ?? 0
-    );
-
-  const blackSeaDiffuseSourceCount =
-    Number(
-      blackSeaSection2?.diffuse_source_count ?? 0
-    );
-
-  const blackSeaMarineIntrusion =
-    blackSeaSection2
-      ?.marine_intrusion
-      ?.mentioned_in_official_pressure_assessment === true;
-
-  const blackSeaChemicalRiskLabel =
-    blackSeaSection2Chemical?.at_risk === true
-      ? "в риск"
-      : blackSeaSection2Chemical?.at_risk === false
-        ? "не в риск"
-        : null;
-
-  const blackSeaQuantitativeRiskLabel =
-    blackSeaSection2Quantitative?.at_risk === true
-      ? "в риск"
-      : blackSeaSection2Quantitative?.at_risk === false
-        ? "не в риск"
-        : null;
-
   const blackSeaDetailed =
     blackSeaSection1?.detailed;
 
@@ -411,42 +252,8 @@ export default async function ProPage({
   const blackSeaCurrentResources =
     blackSeaDetailed?.resources ?? null;
 
-  const blackSeaRegionalGeology =
-    blackSeaGis.regionalGeology;
-
   const geology =
-    gwb.toUpperCase().startsWith("BG2G") &&
-    blackSeaRegionalGeology
-      ? {
-          ...profile.geology,
-          aquifer_type_name:
-            blackSeaRegionalGeology
-              .aquifer_environment ||
-            profile.geology?.aquifer_type_name,
-          water_type:
-            blackSeaRegionalGeology
-              .aquifer_environment
-              ? `${blackSeaRegionalGeology.aquifer_environment} водоносна среда`
-              : profile.geology?.water_type,
-          hydrogeological_horizon:
-            blackSeaRegionalGeology
-              .hydrogeological_horizons ||
-            profile.geology
-              ?.hydrogeological_horizon,
-          lithology:
-            blackSeaRegionalGeology
-              .geological_age_label
-              ? `Регионална геоложка възраст: ${blackSeaRegionalGeology.geological_age_label}`
-              : profile.geology?.lithology,
-          regional_geological_age:
-            blackSeaRegionalGeology
-              .geological_age_label,
-          regional_explanation:
-            blackSeaRegionalGeology
-              .regional_explanation,
-          is_detailed_point_geology: false,
-        }
-      : profile.geology;
+    profile.geology;
 
   const geologyAvailable =
     Boolean(geology);
@@ -531,62 +338,13 @@ export default async function ProPage({
     profile.integratedRisk;
 
   const section4 =
-    profile.section4 ??
-    (
-      blackSeaSection4
-        ? {
-            ...blackSeaSection4,
-
-            comparison: {
-              risk_2022_2027:
-                blackSeaSection4.chemical_risk,
-
-              status_2022_2027:
-                blackSeaSection4.overall_status_purb3,
-
-              status_2016_2021:
-                blackSeaSection4.overall_status_purb2,
-            },
-
-            water_balance:
-              blackSeaSection4.water_balance
-                ? {
-                    ...blackSeaSection4.water_balance,
-
-                    quantitative_status:
-                      blackSeaSection4.quantitative_status ??
-                      blackSeaSection4.water_balance.status,
-                  }
-                : undefined,
-
-            tests:
-              blackSeaSection4.chemical_tests,
-
-            upward_trend:
-              blackSeaSection4.upward_trend === true
-                ? "да"
-                : blackSeaSection4.upward_trend === false
-                  ? "не"
-                  : null,
-
-            drinking_monitoring:
-              blackSeaChemicalMonitoring.filter(
-                (station: any) =>
-                  station?.drinking_water_monitoring === true
-              ),
-
-            trend_series: [],
-          }
-        : undefined
-    );
+    profile.section4;
 
   const section5 =
-    profile.section5 ??
-    blackSeaSection5;
+    profile.section5;
 
   const section7 =
-    profile.section7 ??
-    blackSeaSection7;
+    profile.section7;
 
   const section7Measures: any[] =
     Array.isArray(section7?.measures)
@@ -616,9 +374,7 @@ export default async function ProPage({
     section5GoalCategory === "maintain_good_status"
       ? "good"
       : section5GoalCategory === "extended_after_2027" ||
-        section5GoalCategory === "less_strict_goal" ||
-        section5GoalCategory === "restore_good_status" ||
-        section5GoalCategory === "exception_until_2027"
+        section5GoalCategory === "less_strict_goal"
         ? "warn"
         : "neutral";
 
@@ -636,53 +392,15 @@ export default async function ProPage({
       : section5GoalCategory === "less_strict_goal"
         ? `Определена е по-малко строга цел. Проблемни показатели: ${section5ProblemIndicators}.`
         : section5GoalCategory === "extended_after_2027"
-          ? `Доброто състояние трябва да бъде постигнато след 2027 г. Проблемни показатели: ${section5ProblemIndicators}.`
-          : section5GoalCategory === "restore_good_status"
-            ? `Официалната цел е постигане на добро състояние. Проблемни показатели: ${section5ProblemIndicators}.`
-            : section5GoalCategory === "exception_until_2027"
-              ? `За постигането на добро състояние е приложено официално обосновано изключение. Проблемни показатели: ${section5ProblemIndicators}.`
-              : section5GoalCategory === "maintain_good_status"
-                ? "Химичното и количественото състояние са оценени като добри. Официалната цел е запазване на доброто състояние."
-                : "Няма достатъчно данни за официалната екологична цел.";
+          ? `Доброто химично състояние трябва да бъде постигнато след 2027 г. Проблемни показатели: ${section5ProblemIndicators}.`
+          : section5GoalCategory === "maintain_good_status"
+            ? "Химичното състояние е добро. Официалната цел е то да бъде запазено."
+            : "Няма достатъчно данни за официалната екологична цел.";
 
   const comparison =
     section4?.comparison;
 
   const waterBalance =
-    (
-      blackSeaRegisterResource
-        ? {
-            natural_resource_l_s:
-              blackSeaRegisterResource.natural_resource_l_s,
-
-            ecosystem_requirement_l_s:
-              blackSeaRegisterResource.ecosystem_requirement_l_s,
-
-            available_resource_l_s:
-              blackSeaRegisterResource.available_resource_l_s,
-
-            total_abstraction_l_s:
-              Number(
-                blackSeaRegisterResource.authorized_abstraction_l_s ?? 0
-              ) +
-              Number(
-                blackSeaRegisterResource.household_abstraction_l_s ?? 0
-              ),
-
-            permitted_abstraction_l_s:
-              blackSeaRegisterResource.authorized_abstraction_l_s,
-
-            household_abstraction_l_s:
-              blackSeaRegisterResource.household_abstraction_l_s,
-
-            free_resource_l_s:
-              blackSeaRegisterResource.free_resource_l_s,
-
-            exploitation_index:
-              blackSeaRegisterResource.exploitation_index,
-          }
-        : null
-    ) ??
     section4?.water_balance ??
     (
       blackSeaCurrentResources
@@ -789,34 +507,7 @@ export default async function ProPage({
       .toLowerCase() === "да";
 
   const monitoringSummary =
-    blackSeaSection4
-      ? (
-          blackSeaAffectedArea
-            ? (
-                `Официалната оценка отчита засегнати участъци и превишения в ${blackSeaAffectedStationCodes.length} мониторингови пункта. ` +
-                (
-                  blackSeaAffectedArea.status_deteriorating_indicators
-                    ? `Проблемни показатели: ${blackSeaAffectedArea.status_deteriorating_indicators}. `
-                    : ""
-                ) +
-                (
-                  blackSeaSection4.upward_trend === true
-                    ? "Отчетена е възходяща тенденция."
-                    : blackSeaSection4.upward_trend === false
-                      ? "Не е отчетена възходяща тенденция."
-                      : "Няма публикувана оценка на тенденцията."
-                )
-              )
-            : (
-                `За водното тяло са посочени ${blackSeaChemicalMonitoring.length} химични и ${blackSeaQuantitativeMonitoring.length} количествени мониторингови пункта. ` +
-                (
-                  blackSeaSection4.upward_trend === true
-                    ? "Отчетена е възходяща тенденция."
-                    : "Няма отделно публикувана засегната площ с установени превишения."
-                )
-              )
-        )
-      : !section4
+    !section4
       ? blackSeaSection1
         ? (
             blackSeaLevelMonitoring.length > 0
@@ -854,7 +545,6 @@ export default async function ProPage({
 
   const chemicalRisk =
     comparison?.risk_2022_2027 ??
-    blackSeaChemicalRiskLabel ??
     blackSeaDetailed?.purb3?.chemical_risk ??
     blackSeaGis?.chemical_risk ??
     "Няма данни";
@@ -872,18 +562,12 @@ export default async function ProPage({
     );
 
   const hasPointPressure =
-    (
-      Number.isFinite(pointPressurePercent) &&
-      pointPressurePercent > 0
-    ) ||
-    blackSeaPointSourceCount > 0;
+    Number.isFinite(pointPressurePercent) &&
+    pointPressurePercent > 0;
 
   const hasDiffusePressure =
-    (
-      Number.isFinite(diffusePressurePercent) &&
-      diffusePressurePercent > 0
-    ) ||
-    blackSeaDiffuseSourceCount > 0;
+    Number.isFinite(diffusePressurePercent) &&
+    diffusePressurePercent > 0;
 
   const significantPressureItems =
     Array.isArray(
@@ -954,7 +638,6 @@ export default async function ProPage({
 
   const quantRisk =
     quantitative?.final_quantitative_risk_label_bg ??
-    blackSeaQuantitativeRiskLabel ??
     blackSeaDetailed?.purb3?.quantitative_risk ??
     blackSeaGis?.quantitative_risk ??
     "Няма данни";
@@ -962,18 +645,10 @@ export default async function ProPage({
   const exploitation =
     waterBalance?.exploitation_index ??
     blackSeaCurrentResources?.exploitation_index ??
-    (
-      blackSeaSection2Quantitative?.exploitation_percent != null
-        ? Number(
-            blackSeaSection2Quantitative.exploitation_percent
-          ) / 100
-        : undefined
-    ) ??
     abstraction?.exploitation_index;
 
   const pollutants =
     section4?.pollutants ??
-    blackSeaSection2Chemical?.parameters_and_impact ??
     blackSeaDetailed
       ?.chemical_assessment
       ?.exceedance_parameters ??
@@ -1253,46 +928,6 @@ export default async function ProPage({
     },
   }[proConclusionTone];
 
-  const nearbyOrdinaryWellCount1Km =
-    spatial?.counts?.ordinaryWells?.km1 ?? 0;
-
-  const nearbyOrdinaryWellCount3Km =
-    spatial?.counts?.ordinaryWells?.km3 ?? 0;
-
-  const nearbyOrdinaryWellCount5Km =
-    spatial?.counts?.ordinaryWells?.km5 ?? 0;
-
-  const nearestOrdinaryWell =
-    spatial?.nearestOrdinaryWell ?? null;
-
-  const nearestOrdinaryWellDistanceKm =
-    nearestOrdinaryWell?.distanceKm ?? null;
-
-  const nearestOrdinaryWellDepthRaw =
-    nearestOrdinaryWell?.properties?.depth_m;
-
-  const nearestOrdinaryWellDepth =
-    nearestOrdinaryWellDepthRaw !== null &&
-    nearestOrdinaryWellDepthRaw !== undefined &&
-    String(nearestOrdinaryWellDepthRaw).trim() !== "" &&
-    Number.isFinite(Number(nearestOrdinaryWellDepthRaw))
-      ? Number(nearestOrdinaryWellDepthRaw)
-      : null;
-
-  const nearestOrdinaryWaterLevelRaw =
-    nearestOrdinaryWell?.properties?.static_water_level_m;
-
-  const nearestOrdinaryWaterLevel =
-    nearestOrdinaryWaterLevelRaw !== null &&
-    nearestOrdinaryWaterLevelRaw !== undefined &&
-    String(nearestOrdinaryWaterLevelRaw).trim() !== "" &&
-    Number.isFinite(Number(nearestOrdinaryWaterLevelRaw))
-      ? Number(nearestOrdinaryWaterLevelRaw)
-      : null;
-
-  const ordinaryStatistics =
-    spatial?.ordinaryStatistics ?? null;
-
   const nearbyWellCount5Km =
     spatial?.counts?.wells?.km5 ?? 0;
 
@@ -1419,24 +1054,6 @@ export default async function ProPage({
     );
   }
 
-  if (nearestOrdinaryWellDistanceKm != null) {
-    drillingRecommendationParts.push(
-      `Най-близкото регистрирано обикновено водовземно съоръжение е на ${formatNumber(nearestOrdinaryWellDistanceKm, 2)} km от избраната точка.`
-    );
-  }
-
-  if (nearestOrdinaryWellDepth != null) {
-    drillingRecommendationParts.push(
-      `За него е посочена дълбочина ${formatNumber(nearestOrdinaryWellDepth, 1)} m.`
-    );
-  }
-
-  if (nearestOrdinaryWaterLevel != null) {
-    drillingRecommendationParts.push(
-      `Регистрираното статично водно ниво е ${formatNumber(nearestOrdinaryWaterLevel, 1)} m. Това е установеното ниво на водата в съществуващото съоръжение, а не гарантирана дълбочина до вода за конкретния имот.`
-    );
-  }
-
   if (nearestWellDistanceKm != null) {
     drillingRecommendationParts.push(
       `Най-близкият регистриран минерален водовземен сондаж е на ${formatNumber(nearestWellDistanceKm, 2)} km.`
@@ -1455,34 +1072,6 @@ export default async function ProPage({
     );
   }
 
-  if (
-    blackSeaRegisterResource?.free_resource_l_s != null
-  ) {
-    drillingRecommendationParts.push(
-      `По актуалния регистър${
-        blackSeaRegisterPeriod
-          ? ` към ${blackSeaRegisterPeriod}`
-          : ""
-      } свободният ресурс за цялото подземно водно тяло е ${
-        formatNumber(
-          blackSeaRegisterResource.free_resource_l_s
-        )
-      } l/s. Тази стойност не е прогноза за дебита на конкретния имот.`
-    );
-  }
-
-  if (
-    blackSeaOrdinaryPermits?.active_permit_count != null
-  ) {
-    drillingRecommendationParts.push(
-      `За цялото подземно водно тяло са отчетени ${
-        formatNumber(
-          blackSeaOrdinaryPermits.active_permit_count,
-          0
-        )
-      } действащи разрешителни за водовземане. Това не е броят на сондажите около избраната точка.`
-    );
-  }
   const drillingRecommendationText =
     drillingRecommendationParts.length > 0
       ? drillingRecommendationParts.join(" ")
@@ -1542,54 +1131,6 @@ export default async function ProPage({
     );
   }
 
-  if (
-    blackSeaRegisterResource?.available_resource_l_s != null &&
-    blackSeaRegisterResource?.free_resource_l_s != null
-  ) {
-    professionalConclusionParts.push(
-      `По актуалния регистър${
-        blackSeaRegisterPeriod
-          ? ` към ${blackSeaRegisterPeriod}`
-          : ""
-      } разполагаемият ресурс е ${
-        formatNumber(
-          blackSeaRegisterResource.available_resource_l_s
-        )
-      } l/s, а свободният ресурс е ${
-        formatNumber(
-          blackSeaRegisterResource.free_resource_l_s
-        )
-      } l/s за цялото подземно водно тяло.`
-    );
-  }
-
-  if (
-    blackSeaOrdinaryPermits?.active_permit_count != null
-  ) {
-    professionalConclusionParts.push(
-      `За водното тяло са отчетени ${
-        formatNumber(
-          blackSeaOrdinaryPermits.active_permit_count,
-          0
-        )
-      } действащи разрешителни за водовземане.`
-    );
-  }
-
-  if (
-    Number(
-      blackSeaMineralPermits?.active_permit_count ?? 0
-    ) > 0
-  ) {
-    professionalConclusionParts.push(
-      `В регистъра са отчетени ${
-        formatNumber(
-          blackSeaMineralPermits.active_permit_count,
-          0
-        )
-      } действащи разрешителни за минерална вода, което само по себе си не доказва минерална вода в конкретния имот.`
-    );
-  }
   const professionalConclusionText =
     professionalConclusionParts.length > 0
       ? professionalConclusionParts.join(" ")
@@ -2090,275 +1631,6 @@ export default async function ProPage({
                 Няма налични официални геоложки данни.
               </div>
             )}
-          
-            {blackSeaGis.isInsideProtectionZone && (
-              <div style={{
-                marginTop: 16,
-                padding: "14px 15px",
-                borderRadius: 12,
-                border: "2px solid #d39b25",
-                background: "#fff4d6",
-                color: "#624508",
-                fontSize: 13,
-                lineHeight: 1.65,
-              }}>
-                <strong>
-                  Избраната точка попада в официална
-                  санитарно-охранителна зона
-                </strong>
-
-                {blackSeaGis.protectionZonesAtPoint.map(
-                  (zone: any, index: number) => (
-                    <div
-                      key={
-                        String(
-                          zone.properties
-                            ?.source_object_id ||
-                          index
-                        ) +
-                        "-" +
-                        String(
-                          zone.properties
-                            ?.protection_belt ||
-                          ""
-                        )
-                      }
-                      style={{ marginTop: 8 }}
-                    >
-                      <strong>
-                        {zone.properties
-                          ?.protection_belt ||
-                          "Неуточнен пояс"}
-                      </strong>
-
-                      {zone.properties
-                        ?.establishment_order
-                        ? ` — ${zone.properties.establishment_order}`
-                        : ""}
-
-                      {zone.properties
-                        ?.competent_authority
-                        ? `; орган: ${zone.properties.competent_authority}`
-                        : ""}
-                    </div>
-                  )
-                )}
-
-                <div style={{ marginTop: 9 }}>
-                  Проверено по точните официални GIS
-                  граници. Преди сондиране трябва да
-                  се провери приложимият режим.
-                </div>
-              </div>
-            )}
-
-            {blackSeaAdditionalRegisters && (
-              <div style={{
-                marginTop: 16,
-                padding: "14px 15px",
-                borderRadius: 12,
-                border: "1px solid #d4e8e9",
-                background: "#f5faf9",
-                color: "#194851",
-                fontSize: 13,
-                lineHeight: 1.6,
-              }}>
-                <div style={{
-                  fontWeight: 800,
-                  marginBottom: 8,
-                }}>
-                  Официални хидрогеоложки проучвания и защита
-                </div>
-
-                <Row
-                  label="Регистрирани проучвания за водното тяло"
-                  value={
-                    blackSeaAdditionalRegisters
-                      ?.investigation_count ?? 0
-                  }
-                />
-
-                {officialInvestigationDepths.length > 0 && (
-                  <Row
-                    label="Проектни дълбочини на проучванията"
-                    value={
-                      `${Math.min(
-                        ...officialInvestigationDepths
-                      )} – ${Math.max(
-                        ...officialInvestigationDepths
-                      )} m`
-                    }
-                  />
-                )}
-
-                <Row
-                  label="Регистрирани санитарно-охранителни зони"
-                  value={
-                    blackSeaAdditionalRegisters
-                      ?.protection_zone_count ?? 0
-                  }
-                />
-
-                {Number(
-                  blackSeaAdditionalRegisters
-                    ?.terminated_protection_zone_count ?? 0
-                ) > 0 && (
-                  <Row
-                    label="Потвърдено прекратени зони"
-                    value={
-                      blackSeaAdditionalRegisters
-                        .terminated_protection_zone_count
-                    }
-                  />
-                )}
-
-                {Number(
-                  blackSeaAdditionalRegisters
-                    ?.protection_zones_requiring_manual_verification_count ?? 0
-                ) > 0 && (
-                  <Row
-                    label="Зони за допълнителна проверка"
-                    value={
-                      blackSeaAdditionalRegisters
-                        .protection_zones_requiring_manual_verification_count
-                    }
-                  />
-                )}
-
-                {Array.isArray(
-                  blackSeaAdditionalRegisters
-                    ?.protection_zone_settlements
-                ) &&
-                  blackSeaAdditionalRegisters
-                    .protection_zone_settlements.length > 0 && (
-                    <Row
-                      label="Населени места със зони"
-                      value={
-                        blackSeaAdditionalRegisters
-                          .protection_zone_settlements
-                          .slice(0, 6)
-                          .join(", ")
-                      }
-                    />
-                  )}
-
-                {officialHydrogeologicalInvestigations.length > 0 ? (
-                  <div style={{
-                    marginTop: 14,
-                    padding: "12px 13px",
-                    borderRadius: 10,
-                    background: "#eaf5ef",
-                    border: "1px solid #cfe4d7",
-                    color: "#244b39",
-                    lineHeight: 1.65,
-                  }}>
-                    <strong>
-                      Какво означават тези проучвания?
-                    </strong>
-
-                    <div style={{ marginTop: 7 }}>
-                      За това подземно водно тяло има{" "}
-                      {officialHydrogeologicalInvestigations.length}{" "}
-                      официално регистрирани{" "}
-                      {officialHydrogeologicalInvestigations.length === 1
-                        ? "хидрогеоложко проучване"
-                        : "хидрогеоложки проучвания"}.
-
-                      {officialInvestigationDepths.length > 0 && (
-                        <>
-                          {" "}В тях са предвиждани проектни
-                          дълбочини{" "}
-                          {Math.min(
-                            ...officialInvestigationDepths
-                          ) === Math.max(
-                            ...officialInvestigationDepths
-                          )
-                            ? `около ${Math.min(
-                                ...officialInvestigationDepths
-                              )} m`
-                            : `между ${Math.min(
-                                ...officialInvestigationDepths
-                              )} и ${Math.max(
-                                ...officialInvestigationDepths
-                              )} m`}.
-                        </>
-                      )}
-
-                      {" "}Тези данни показват как е проучван
-                      същият водоносен хоризонт и служат като
-                      предварителен ориентир, но не гарантират
-                      вода или същата дълбочина в избрания имот.
-                    </div>
-                  </div>
-                ) : (
-                  <div style={{
-                    marginTop: 14,
-                    padding: "12px 13px",
-                    borderRadius: 10,
-                    background: "#f6f7f7",
-                    color: "#52656b",
-                    lineHeight: 1.65,
-                  }}>
-                    За това подземно водно тяло няма налични
-                    регистрирани хидрогеоложки проучвания в
-                    използвания допълнителен официален регистър.
-                  </div>
-                )}
-
-                {Number(
-                  blackSeaAdditionalRegisters
-                    ?.protection_zone_count ?? 0
-                ) > 0 && (
-                  <div style={{
-                    marginTop: 10,
-                    padding: "12px 13px",
-                    borderRadius: 10,
-                    background: "#fff8e8",
-                    border: "1px solid #f0dfaf",
-                    color: "#70531c",
-                    lineHeight: 1.65,
-                  }}>
-                    <strong>
-                      Какво означават санитарните зони?
-                    </strong>
-
-                    <div style={{ marginTop: 7 }}>
-                      За същото подземно водно тяло са
-                      регистрирани{" "}
-                      {
-                        blackSeaAdditionalRegisters
-                          .protection_zone_count
-                      }{" "}
-                      санитарно-охранителни{" "}
-                      {Number(
-                        blackSeaAdditionalRegisters
-                          .protection_zone_count
-                      ) === 1
-                        ? "зона"
-                        : "зони"}.
-
-                      {" "}При планиране на сондаж трябва да
-                      се провери приложимият режим. Данните
-                      тук са за цялото водно тяло, а
-                      избраната точка се проверява отделно
-                      по официалните GIS граници на
-                      санитарно-охранителните пояси.
-                    </div>
-                  </div>
-                )}
-
-                <div style={{
-                  marginTop: 10,
-                  color: "#60757a",
-                  fontSize: 12,
-                }}>
-                  Проучванията са проектни данни, а не доказателство
-                  за действащи сондажи. Санитарните зони са посочени
-                  за цялото водно тяло; няма налични точни граници
-                  за конкретния имот.
-                </div>
-              </div>
-            )}
           </Card>
 
           <Card
@@ -2430,39 +1702,6 @@ export default async function ProPage({
                     Воден баланс
                   </div>
 
-                  {blackSeaRegisterResource ? (
-                    <>
-                      <Row
-                        label="Актуалност на официалния регистър"
-                        value={
-                          blackSeaRegisterPeriod ??
-                          "Няма посочен период"
-                        }
-                      />
-
-                      <Row
-                        label="Естествен ресурс"
-                        value={
-                          blackSeaRegisterResource.natural_resource_l_s != null
-                            ? `${formatNumber(
-                                blackSeaRegisterResource.natural_resource_l_s
-                              )} l/s`
-                            : "Няма налични данни"
-                        }
-                      />
-
-                      <Row
-                        label="Ресурс за водните екосистеми"
-                        value={
-                          blackSeaRegisterResource.ecosystem_requirement_l_s != null
-                            ? `${formatNumber(
-                                blackSeaRegisterResource.ecosystem_requirement_l_s
-                              )} l/s`
-                            : "Няма налични данни"
-                        }
-                      />
-                    </>
-                  ) : null}
                   <Row
                     label="Разполагаем ресурс"
                     value={
@@ -2504,42 +1743,6 @@ export default async function ProPage({
                     }
                   />
 
-                  {blackSeaRegisterResource ? (
-                    <>
-                      <Row
-                        label="Разрешено водовземане"
-                        value={
-                          blackSeaRegisterResource.authorized_abstraction_l_s != null
-                            ? `${formatNumber(
-                                blackSeaRegisterResource.authorized_abstraction_l_s
-                              )} l/s`
-                            : "Няма налични данни"
-                        }
-                      />
-
-                      <Row
-                        label="Водовземане за собствени потребности"
-                        value={
-                          blackSeaRegisterResource.household_abstraction_l_s != null
-                            ? `${formatNumber(
-                                blackSeaRegisterResource.household_abstraction_l_s
-                              )} l/s`
-                            : "Няма налични данни"
-                        }
-                      />
-
-                      <Row
-                        label="Свободен ресурс"
-                        value={
-                          blackSeaRegisterResource.free_resource_l_s != null
-                            ? `${formatNumber(
-                                blackSeaRegisterResource.free_resource_l_s
-                              )} l/s`
-                            : "Няма налични данни"
-                        }
-                      />
-                    </>
-                  ) : null}
                   <Row
                     label="Количествено състояние"
                     value={quantitativeStatus}
@@ -2573,37 +1776,6 @@ export default async function ProPage({
                     label="Официален количествен риск"
                     value={quantRisk}
                   />
-
-                  {blackSeaSection2Quantitative ? (
-                    <>
-                      <Row
-                        label="Официална оценка на водовземането"
-                        value={
-                          blackSeaSection2Quantitative
-                            .exploitation_assessment ??
-                          "Няма налични данни"
-                        }
-                      />
-
-                      <Row
-                        label="Въздействие върху ресурса"
-                        value={
-                          blackSeaSection2Quantitative
-                            .impact_assessment ??
-                          "Няма налични данни"
-                        }
-                      />
-
-                      <Row
-                        label="Достоверност на количествената оценка"
-                        value={
-                          blackSeaSection2Quantitative
-                            .confidence ??
-                          "Няма налични данни"
-                        }
-                      />
-                    </>
-                  ) : null}
                 </section>
 
                 {abstractionByUse ? (
@@ -2723,335 +1895,48 @@ export default async function ProPage({
                 <Row
                   label="Точков натиск"
                   value={
-                    blackSeaSection2
-                      ? `${blackSeaPointSourceCount} потенциални източника`
-                      : Number.isFinite(
+                    Number.isFinite(
+                      pointPressurePercent
+                    )
+                      ? `${formatNumber(
                           pointPressurePercent
-                        )
-                        ? `${formatNumber(
-                            pointPressurePercent
-                          )}%`
-                        : "Няма числова стойност"
+                        )}%`
+                      : "Няма числова стойност"
                   }
                 />
 
                 <Row
                   label="Дифузен натиск"
                   value={
-                    blackSeaSection2
-                      ? `${blackSeaDiffuseSourceCount} потенциални източника`
-                      : Number.isFinite(
+                    Number.isFinite(
+                      diffusePressurePercent
+                    )
+                      ? `${formatNumber(
                           diffusePressurePercent
-                        )
-                        ? `${formatNumber(
-                            diffusePressurePercent
-                          )}%`
-                        : "Няма числова стойност"
+                        )}%`
+                      : "Няма числова стойност"
                   }
                 />
 
                 <Row
                   label="Риск от замърсяване"
                   value={
-                    blackSeaSection2Chemical
-                      ? blackSeaChemicalRiskLabel
-                      : profile.pollutionRisk
-                        ? "Налична официална оценка"
-                        : "Няма налична оценка"
+                    profile.pollutionRisk
+                      ? "Налична официална оценка"
+                      : "Няма налична оценка"
                   }
                 />
 
                 <Row
                   label="Значим натиск"
                   value={
-                    blackSeaSection2Chemical
-                      ?.significant_pressure ??
-                    (
-                      hasSignificantPressure
-                        ? significantPressureItems.join(", ")
-                        : "Не е посочен"
-                    )
+                    hasSignificantPressure
+                      ? significantPressureItems.join(", ")
+                      : "Не е посочен"
                   }
                 />
-
-                {blackSeaSection2 ? (
-                  <>
-                    <Row
-                      label="Потенциални източници общо"
-                      value={
-                        blackSeaSection2
-                          .pollution_source_count ?? 0
-                      }
-                    />
-
-                    <Row
-                      label="Точкови източници"
-                      value={blackSeaPointSourceCount}
-                    />
-
-                    <Row
-                      label="Дифузни източници"
-                      value={blackSeaDiffuseSourceCount}
-                    />
-
-                    <Row
-                      label="Допринасящ натиск"
-                      value={
-                        blackSeaSection2Chemical
-                          ?.contributing_pressure ??
-                        "Не е посочен"
-                      }
-                    />
-
-                    <Row
-                      label="Висока и средно висока уязвимост"
-                      value={
-                        blackSeaSection2Vulnerability
-                          ?.high_and_medium_high_percent != null
-                          ? `${formatNumber(
-                              blackSeaSection2Vulnerability
-                                .high_and_medium_high_percent
-                            )}% от водното тяло`
-                          : "Няма налични данни"
-                      }
-                    />
-
-                    <Row
-                      label="Морска интрузия"
-                      value={
-                        blackSeaMarineIntrusion
-                          ? "Посочена в официалната оценка"
-                          : "Не е посочена"
-                      }
-                    />
-
-                    {blackSeaPollutionSources.length > 0 ? (
-                      <details style={{
-                        marginTop: 14,
-                        borderTop: "1px solid #e1eaec",
-                        paddingTop: 12,
-                      }}>
-                        <summary style={{
-                          cursor: "pointer",
-                          color: "#245663",
-                          fontWeight: 800,
-                        }}>
-                          Виж потенциалните източници на натиск
-                          {" "}
-                          ({blackSeaPollutionSources.length})
-                        </summary>
-
-                        <div style={{
-                          marginTop: 10,
-                          display: "grid",
-                          gap: 10,
-                        }}>
-                          {blackSeaPollutionSources.map(
-                            (source: any, index: number) => (
-                              <div
-                                key={
-                                  String(
-                                    source?.source_row ??
-                                    index
-                                  )
-                                }
-                                style={{
-                                  padding: 11,
-                                  borderRadius: 9,
-                                  background: "#f5f8f9",
-                                  color: "#38535b",
-                                  fontSize: 13,
-                                  lineHeight: 1.55,
-                                }}
-                              >
-                                <div style={{
-                                  fontWeight: 800,
-                                  marginBottom: 4,
-                                }}>
-                                  {
-                                    source?.name ??
-                                    "Ненаименуван източник"
-                                  }
-                                </div>
-
-                                <div>
-                                  Тип:
-                                  {" "}
-                                  {
-                                    source?.source_type ??
-                                    "Не е посочен"
-                                  }
-                                </div>
-
-                                {source?.settlement ? (
-                                  <div>
-                                    Населено място:
-                                    {" "}
-                                    {source.settlement}
-                                  </div>
-                                ) : null}
-
-                                {source?.municipality ? (
-                                  <div>
-                                    Община:
-                                    {" "}
-                                    {source.municipality}
-                                  </div>
-                                ) : null}
-
-                                {source?.affected_area_percent != null ? (
-                                  <div>
-                                    Засегната площ:
-                                    {" "}
-                                    {
-                                      formatNumber(
-                                        source.affected_area_percent,
-                                        2
-                                      )
-                                    }
-                                    % от водното тяло
-                                  </div>
-                                ) : null}
-                              </div>
-                            )
-                          )}
-
-                          <div style={{
-                            color: "#64777d",
-                            fontSize: 12,
-                            lineHeight: 1.55,
-                          }}>
-                            Източниците са отнесени към цялото
-                            подземно водно тяло. Не представляват
-                            доказателство за замърсяване или
-                            конкретно разстояние до избрания имот.
-                          </div>
-                        </div>
-                      </details>
-                    ) : null}
-                  </>
-                ) : null}
               </div>
             </details>
-          
-            {blackSeaSection3 ? (
-              <section style={{
-                marginTop: 14,
-                padding: "14px 15px",
-                borderRadius: 12,
-                background:
-                  blackSeaIsNitrateVulnerable
-                    ? "#fff4e5"
-                    : "#eaf7ef",
-                border:
-                  blackSeaIsNitrateVulnerable
-                    ? "1px solid #efcf98"
-                    : "1px solid #c8e4d1",
-              }}>
-                <div style={{
-                  fontWeight: 900,
-                  color:
-                    blackSeaIsNitrateVulnerable
-                      ? "#8a4f00"
-                      : "#25633a",
-                  marginBottom: 7,
-                }}>
-                  {blackSeaIsNitrateVulnerable
-                    ? "Водното тяло е нитратно уязвимо"
-                    : "Водното тяло не е в актуалния списък на нитратно уязвимите"}
-                </div>
-
-                <div style={{
-                  fontSize: 13,
-                  lineHeight: 1.65,
-                  color: "#38535b",
-                }}>
-                  {blackSeaIsNitrateVulnerable
-                    ? "Официално е определено като замърсено или застрашено от замърсяване с нитрати от земеделски източници."
-                    : "Не присъства в актуалния официален списък на подземните водни тела, замърсени или застрашени от нитрати."}
-                </div>
-
-                <details style={{
-                  marginTop: 11,
-                  paddingTop: 9,
-                  borderTop: "1px solid rgba(23,63,73,.12)",
-                }}>
-                  <summary style={{
-                    cursor: "pointer",
-                    color: "#173f49",
-                    fontWeight: 800,
-                  }}>
-                    Виж официалните данни за нитратната уязвимост
-                  </summary>
-
-                  <div style={{
-                    marginTop: 9,
-                  }}>
-                    <Row
-                      label="Нитратна уязвимост 2024"
-                      value={
-                        blackSeaIsNitrateVulnerable
-                          ? "Да"
-                          : "Не"
-                      }
-                    />
-
-                    <Row
-                      label="Нитратна уязвимост 2019"
-                      value={
-                        blackSeaWasNitrateVulnerable2019
-                          ? "Да"
-                          : "Не"
-                      }
-                    />
-
-                    <Row
-                      label="Ново включено през 2024"
-                      value={
-                        blackSeaNitrateVulnerability
-                          ?.newly_listed_2024
-                          ? "Да"
-                          : "Не"
-                      }
-                    />
-
-                    <Row
-                      label="Актуална заповед"
-                      value={
-                        blackSeaNitrateVulnerability
-                          ?.current_record
-                          ?.ministerial_order ??
-                        "Не е приложима"
-                      }
-                    />
-
-                    <Row
-                      label="Дата на заповедта"
-                      value={
-                        blackSeaNitrateVulnerability
-                          ?.current_record
-                          ?.order_date ??
-                        "Не е приложима"
-                      }
-                    />
-
-                    <div style={{
-                      marginTop: 9,
-                      padding: "9px 10px",
-                      background: "rgba(255,255,255,.72)",
-                      borderRadius: 8,
-                      color: "#60747b",
-                      fontSize: 12,
-                      lineHeight: 1.6,
-                    }}>
-                      Оценката е за подземното водно тяло.
-                      Тя не доказва наличие на нитрати във
-                      водата от конкретния имот.
-                    </div>
-                  </div>
-                </details>
-              </section>
-            ) : null}
           </Card>
 
           <Card
@@ -3145,54 +2030,6 @@ export default async function ProPage({
                   value={String(pollutants)}
                 />
 
-                {blackSeaSection2Chemical ? (
-                  <>
-                    <Row
-                      label="Достоверност на химичната оценка"
-                      value={
-                        blackSeaSection2Chemical.confidence ??
-                        "Няма налични данни"
-                      }
-                    />
-
-                    <Row
-                      label="Основен източник на натиск"
-                      value={
-                        blackSeaSection2Chemical
-                          .significant_pressure ??
-                        "Не е посочен"
-                      }
-                    />
-
-                    <Row
-                      label="Допълнителни източници на натиск"
-                      value={
-                        blackSeaSection2Chemical
-                          .contributing_pressure ??
-                        "Не са посочени"
-                      }
-                    />
-
-                    {blackSeaMarineIntrusion ? (
-                      <div style={{
-                        marginTop: 12,
-                        padding: 11,
-                        borderRadius: 9,
-                        background: "#fff4e5",
-                        border: "1px solid #efc27b",
-                        color: "#825000",
-                        fontSize: 13,
-                        lineHeight: 1.55,
-                      }}>
-                        В официалната оценка е посочена
-                        морска интрузия като възможен натиск
-                        върху подземното водно тяло. Това не
-                        доказва засоляване на конкретния имот.
-                      </div>
-                    ) : null}
-                  </>
-                ) : null}
-
                 <Row
                   label="Риск ПУРБ 2"
                   value={
@@ -3213,7 +2050,6 @@ export default async function ProPage({
                   label="Риск ПУРБ 3"
                   value={
                     comparison?.risk_2022_2027 ??
-                    blackSeaChemicalRiskLabel ??
                     "—"
                   }
                 />
@@ -3222,7 +2058,6 @@ export default async function ProPage({
                   label="Състояние ПУРБ 3"
                   value={
                     comparison?.status_2022_2027 ??
-                    blackSeaGis?.chemical_status ??
                     "—"
                   }
                 />
@@ -3387,17 +2222,9 @@ export default async function ProPage({
                 fontWeight: 900,
                 marginBottom: 6,
               }}>
-                {blackSeaSection4
-                  ? blackSeaAffectedArea
-                    ? "Има официално установени проблемни показатели"
-                    : "Налична е официална програма за мониторинг"
-                  : section4
-                    ? exceedances.length > 0
-                      ? "Има данни за проблем с качеството"
-                      : "Няма установени превишения"
-                    : blackSeaSection2
-                      ? "Химичният мониторинг предстои да бъде добавен"
-                      : "Няма налични данни от химичен мониторинг"}
+                {exceedances.length > 0
+                  ? "Има данни за проблем с качеството"
+                  : "Няма установени превишения"}
               </div>
 
               {monitoringSummary}
@@ -3657,344 +2484,7 @@ export default async function ProPage({
                 </section>
               </div>
             </details>
-          
-            {blackSeaSection4 ? (
-              <details style={{
-                marginTop: 12,
-                padding: "11px 12px",
-                border: "1px solid #d9e5e7",
-                borderRadius: 11,
-                background: "#ffffff",
-              }}>
-                <summary style={{
-                  cursor: "pointer",
-                  fontWeight: 800,
-                  color: "#204951",
-                }}>
-                  Официални мониторингови пунктове и оценки
-                </summary>
-
-                <div style={{
-                  display: "grid",
-                  gap: 12,
-                  marginTop: 12,
-                }}>
-                  <section>
-                    <Row
-                      label="Пунктове за химичен мониторинг"
-                      value={
-                        String(
-                          blackSeaChemicalMonitoring.length
-                        )
-                      }
-                    />
-
-                    <Row
-                      label="Пунктове за количествен мониторинг"
-                      value={
-                        String(
-                          blackSeaQuantitativeMonitoring.length
-                        )
-                      }
-                    />
-
-                    <Row
-                      label="Пунктове със засегнати участъци"
-                      value={
-                        String(
-                          blackSeaAffectedStationCodes.length
-                        )
-                      }
-                    />
-
-                    <Row
-                      label="Достоверност на химичната оценка"
-                      value={
-                        blackSeaSection4.chemical_confidence ??
-                        "Няма данни"
-                      }
-                    />
-
-                    <Row
-                      label="Достоверност на количествената оценка"
-                      value={
-                        blackSeaSection4.quantitative_confidence ??
-                        "Няма данни"
-                      }
-                    />
-
-                    <Row
-                      label="Общо състояние ПУРБ 2016–2021"
-                      value={
-                        blackSeaSection4.overall_status_purb2 ??
-                        "Няма данни"
-                      }
-                    />
-
-                    <Row
-                      label="Общо състояние ПУРБ 2022–2027"
-                      value={
-                        blackSeaSection4.overall_status_purb3 ??
-                        "Няма данни"
-                      }
-                    />
-                  </section>
-
-                  {blackSeaAffectedArea ? (
-                    <section style={{
-                      padding: 11,
-                      borderRadius: 9,
-                      background: "#fff5ed",
-                    }}>
-                      <div style={{
-                        fontWeight: 800,
-                        marginBottom: 7,
-                      }}>
-                        Засегнати участъци и проблемни показатели
-                      </div>
-
-                      <Row
-                        label="Показатели, влошаващи състоянието"
-                        value={
-                          blackSeaAffectedArea
-                            .status_deteriorating_indicators ??
-                          "Няма данни"
-                        }
-                      />
-
-                      <Row
-                        label="Засегната площ"
-                        value={
-                          blackSeaAffectedArea
-                            .affected_area_percent ??
-                          "Няма данни"
-                        }
-                      />
-
-                      <Row
-                        label="Кодове на засегнатите пунктове"
-                        value={
-                          blackSeaAffectedStationCodes.length > 0
-                            ? blackSeaAffectedStationCodes.join(", ")
-                            : "Няма публикувани кодове"
-                        }
-                      />
-
-                      <div style={{
-                        marginTop: 8,
-                        fontSize: 12,
-                        color: "#67757a",
-                        lineHeight: 1.5,
-                      }}>
-                        Посочени са официално установени проблемни
-                        показатели. Публикуваните приложения не съдържат
-                        индивидуални числови лабораторни резултати за
-                        всеки пункт.
-                      </div>
-                    </section>
-                  ) : null}
-
-                  {blackSeaChemicalMonitoring.length > 0 ? (
-                    <details>
-                      <summary style={{
-                        cursor: "pointer",
-                        fontWeight: 700,
-                      }}>
-                        Пунктове за химичен мониторинг
-                        {" "}
-                        ({blackSeaChemicalMonitoring.length})
-                      </summary>
-
-                      <div style={{
-                        display: "grid",
-                        gap: 8,
-                        marginTop: 9,
-                      }}>
-                        {blackSeaChemicalMonitoring.map(
-                          (station: any, index: number) => (
-                            <div
-                              key={
-                                station?.station_code ??
-                                `chemical-station-${index}`
-                              }
-                              style={{
-                                padding: 10,
-                                borderRadius: 9,
-                                background: "#eef4f5",
-                                fontSize: 12,
-                                lineHeight: 1.5,
-                              }}
-                            >
-                              <strong>
-                                {station?.station_name ??
-                                  "Мониторингов пункт"}
-                              </strong>
-
-                              <div>
-                                Код: {station?.station_code ?? "—"}
-                              </div>
-
-                              <div>
-                                Населено място:
-                                {" "}
-                                {station?.settlement ?? "—"}
-                              </div>
-
-                              <div>
-                                Дълбочина:
-                                {" "}
-                                {station?.depth_m != null
-                                  ? `${formatNumber(station.depth_m, 2)} m`
-                                  : "Няма данни"}
-                              </div>
-
-                              <div>
-                                Предназначение:
-                                {" "}
-                                {station?.use ?? "Няма данни"}
-                              </div>
-                            </div>
-                          )
-                        )}
-                      </div>
-                    </details>
-                  ) : null}
-
-                  {blackSeaQuantitativeMonitoring.length > 0 ? (
-                    <details>
-                      <summary style={{
-                        cursor: "pointer",
-                        fontWeight: 700,
-                      }}>
-                        Пунктове за количествен мониторинг
-                        {" "}
-                        ({blackSeaQuantitativeMonitoring.length})
-                      </summary>
-
-                      <div style={{
-                        display: "grid",
-                        gap: 8,
-                        marginTop: 9,
-                      }}>
-                        {blackSeaQuantitativeMonitoring.map(
-                          (station: any, index: number) => (
-                            <div
-                              key={
-                                station?.station_code ??
-                                `quantitative-station-${index}`
-                              }
-                              style={{
-                                padding: 10,
-                                borderRadius: 9,
-                                background: "#eef4f5",
-                                fontSize: 12,
-                                lineHeight: 1.5,
-                              }}
-                            >
-                              <strong>
-                                {station?.station_name ??
-                                  "Мониторингов пункт"}
-                              </strong>
-
-                              <div>
-                                Код: {station?.station_code ?? "—"}
-                              </div>
-
-                              <div>
-                                Населено място:
-                                {" "}
-                                {station?.settlement ?? "—"}
-                              </div>
-
-                              <div>
-                                Дълбочина:
-                                {" "}
-                                {station?.depth_m != null
-                                  ? `${formatNumber(station.depth_m, 2)} m`
-                                  : "Няма данни"}
-                              </div>
-
-                              <div>
-                                Изпълнител:
-                                {" "}
-                                {station?.operator ?? "Няма данни"}
-                              </div>
-                            </div>
-                          )
-                        )}
-                      </div>
-                    </details>
-                  ) : null}
-
-                  {blackSeaDrinkingAssessment ? (
-                    <section>
-                      <div style={{
-                        fontWeight: 800,
-                        marginBottom: 7,
-                      }}>
-                        Оценка на зоната за питейно водоснабдяване
-                      </div>
-
-                      <Row
-                        label="Код на защитената зона"
-                        value={
-                          blackSeaDrinkingAssessment.zone_code ??
-                          "Няма данни"
-                        }
-                      />
-
-                      <Row
-                        label="Химично състояние на защитената зона"
-                        value={
-                          blackSeaDrinkingAssessment.chemical_status ??
-                          "Няма данни"
-                        }
-                      />
-
-                      <Row
-                        label="Количествено състояние на защитената зона"
-                        value={
-                          blackSeaDrinkingAssessment
-                            .quantitative_status ??
-                          "Няма данни"
-                        }
-                      />
-                    </section>
-                  ) : null}
-
-                  {blackSeaSurfaceWaterLinks.length > 0 ? (
-                    <section>
-                      <div style={{
-                        fontWeight: 800,
-                        marginBottom: 7,
-                      }}>
-                        Свързани повърхностни водни тела
-                      </div>
-
-                      {blackSeaSurfaceWaterLinks.map(
-                        (linkedBody: any, index: number) => (
-                          <Row
-                            key={
-                              linkedBody?.code ??
-                              `surface-water-${index}`
-                            }
-                            label={
-                              linkedBody?.code ??
-                              "Повърхностно водно тяло"
-                            }
-                            value={
-                              linkedBody?.name ??
-                              "Няма данни"
-                            }
-                          />
-                        )
-                      )}
-                    </section>
-                  ) : null}
-                </div>
-              </details>
-            ) : null}
-</Card>
+          </Card>
           <div style={{ display: "grid", gap: 16, alignContent: "start" }}>
           <Card
             title="7. Климатична устойчивост"
@@ -4353,8 +2843,6 @@ export default async function ProPage({
                     <Row
                       label="Срок"
                       value={
-                        section5.purb3?.target_period_label_bg ??
-                        section5.deadline?.label_bg ??
                         section5.purb3?.target_year ??
                         section5.exception_detail?.target_year_or_type ??
                         "Не е приложим"
@@ -4443,121 +2931,6 @@ export default async function ProPage({
                 Няма налични данни от Раздел 5.
               </div>
             )}
-          
-            {blackSeaSection3 ? (
-              <section style={{
-                marginTop: 14,
-                padding: "14px 15px",
-                borderRadius: 12,
-                background:
-                  blackSeaIsDrinkingProtectionZone
-                    ? "#edf7fb"
-                    : "#f3f6f7",
-                border:
-                  blackSeaIsDrinkingProtectionZone
-                    ? "1px solid #c5e1eb"
-                    : "1px solid #dce5e8",
-              }}>
-                <div style={{
-                  fontWeight: 900,
-                  color:
-                    blackSeaIsDrinkingProtectionZone
-                      ? "#17627c"
-                      : "#45616a",
-                  marginBottom: 7,
-                }}>
-                  {blackSeaIsDrinkingProtectionZone
-                    ? "Водното тяло е определено за питейно водоснабдяване"
-                    : "Водното тяло не е включено в регистъра на питейните зони"}
-                </div>
-
-                <div style={{
-                  fontSize: 13,
-                  lineHeight: 1.65,
-                  color: "#38535b",
-                }}>
-                  {blackSeaIsDrinkingProtectionZone
-                    ? "За това подземно водно тяло е определена официална зона за защита на води, предназначени за питейно-битово водоснабдяване."
-                    : "В официалния регистър по Раздел 3 няма отделен запис за питейна защитена зона на това подземно водно тяло."}
-                </div>
-
-                <details style={{
-                  marginTop: 11,
-                  paddingTop: 9,
-                  borderTop: "1px solid rgba(23,63,73,.12)",
-                }}>
-                  <summary style={{
-                    cursor: "pointer",
-                    color: "#173f49",
-                    fontWeight: 800,
-                  }}>
-                    Виж официалните данни за питейната зона
-                  </summary>
-
-                  <div style={{
-                    marginTop: 9,
-                  }}>
-                    <Row
-                      label="Определена питейна зона"
-                      value={
-                        blackSeaIsDrinkingProtectionZone
-                          ? "Да"
-                          : "Не"
-                      }
-                    />
-
-                    <Row
-                      label="Код на питейната зона"
-                      value={
-                        blackSeaDrinkingProtection
-                          ?.zone
-                          ?.zone_code ??
-                        "Няма наличен код"
-                      }
-                    />
-
-                    <Row
-                      label="Площ на водното тяло"
-                      value={
-                        blackSeaDrinkingProtection
-                          ?.zone
-                          ?.groundwater_body_area_km2 != null
-                          ? `${formatNumber(
-                              blackSeaDrinkingProtection
-                                .zone
-                                .groundwater_body_area_km2
-                            )} km²`
-                          : "Няма налични данни"
-                      }
-                    />
-
-                    <Row
-                      label="Тип актуализация"
-                      value={
-                        blackSeaDrinkingProtection
-                          ?.zone
-                          ?.update_type ??
-                        "Няма налични данни"
-                      }
-                    />
-
-                    <div style={{
-                      marginTop: 9,
-                      padding: "9px 10px",
-                      background: "rgba(255,255,255,.75)",
-                      borderRadius: 8,
-                      color: "#60747b",
-                      fontSize: 12,
-                      lineHeight: 1.6,
-                    }}>
-                      Данните са за водното тяло.
-                      Не потвърждават, че конкретният имот
-                      попада в санитарно-охранителна зона.
-                    </div>
-                  </div>
-                </details>
-              </section>
-            ) : null}
           </Card>
           </div>
           <Card
@@ -5151,169 +3524,6 @@ export default async function ProPage({
 
                   <div style={{ marginTop: 10 }}>
                     <Row
-                      label="Обикновени съоръжения до 1 km"
-                      value={nearbyOrdinaryWellCount1Km}
-                    />
-
-                    <Row
-                      label="Обикновени съоръжения до 3 km"
-                      value={nearbyOrdinaryWellCount3Km}
-                    />
-
-                    <Row
-                      label="Обикновени съоръжения до 5 km"
-                      value={nearbyOrdinaryWellCount5Km}
-                    />
-
-                    {blackSeaCurrentRegisters ? (
-                      <>
-                        <Row
-                          label="Действащи разрешителни за цялото ПВТ"
-                          value={
-                            blackSeaOrdinaryPermits?.active_permit_count ??
-                            0
-                          }
-                        />
-
-                        <Row
-                          label="Разрешен годишен лимит за ПВТ"
-                          value={
-                            blackSeaOrdinaryPermits?.active_annual_limit_m3_year != null
-                              ? `${formatNumber(
-                                  blackSeaOrdinaryPermits.active_annual_limit_m3_year,
-                                  0
-                                )} m³/год.`
-                              : "Няма налични данни"
-                          }
-                        />
-
-                        <Row
-                          label="Свободен ресурс за цялото ПВТ"
-                          value={
-                            blackSeaRegisterResource?.free_resource_l_s != null
-                              ? `${formatNumber(
-                                  blackSeaRegisterResource.free_resource_l_s
-                                )} l/s`
-                              : "Няма налични данни"
-                          }
-                        />
-
-                        <Row
-                          label="Действащи минерални разрешителни за ПВТ"
-                          value={
-                            blackSeaMineralPermits?.active_permit_count ??
-                            0
-                          }
-                        />
-
-                        <div style={{
-                          marginTop: 8,
-                          marginBottom: 12,
-                          padding: "9px 11px",
-                          borderRadius: 9,
-                          background: "#f2f7f8",
-                          color: "#64757b",
-                          fontSize: 12,
-                          lineHeight: 1.55,
-                        }}>
-                          Разрешителните се отнасят за цялото подземно
-                          водно тяло. Те не показват броя на сондажите
-                          около конкретния имот и не доказват наличие
-                          на минерална вода в избраната точка.
-                        </div>
-                      </>
-                    ) : null}
-                    <Row
-                      label="Най-близко обикновено съоръжение"
-                      value={
-                        nearestOrdinaryWellDistanceKm != null
-                          ? `${formatNumber(
-                              nearestOrdinaryWellDistanceKm,
-                              2
-                            )} km`
-                          : "Няма налични данни"
-                      }
-                    />
-
-                    <Row
-                      label="Вид на обикновеното съоръжение"
-                      value={
-                        nearestOrdinaryWell?.properties
-                          ?.display_category ===
-                        "Ordinary groundwater abstraction facility"
-                          ? "Обикновено водовземно съоръжение"
-                          : nearestOrdinaryWell?.properties
-                              ?.display_category ??
-                            "Няма налични данни"
-                      }
-                    />
-
-                    <Row
-                      label="Населено място"
-                      value={
-                        nearestOrdinaryWell?.properties
-                          ?.settlement ??
-                        "Няма налични данни"
-                      }
-                    />
-
-                    <Row
-                      label="Дълбочина на обикновеното съоръжение"
-                      value={
-                        nearestOrdinaryWellDepth != null
-                          ? `${formatNumber(
-                              nearestOrdinaryWellDepth,
-                              1
-                            )} m`
-                          : "Няма налични данни"
-                      }
-                    />
-
-                    <Row
-                      label="Статично водно ниво"
-                      value={
-                        nearestOrdinaryWaterLevel != null
-                          ? `${formatNumber(
-                              nearestOrdinaryWaterLevel,
-                              1
-                            )} m`
-                          : "Няма налични данни"
-                      }
-                    />
-
-                    <Row
-                      label="Диапазон на дълбочините до 5 km"
-                      value={
-                        ordinaryStatistics?.depthMin != null &&
-                        ordinaryStatistics?.depthMax != null
-                          ? `${formatNumber(
-                              ordinaryStatistics.depthMin,
-                              1
-                            )} - ${formatNumber(
-                              ordinaryStatistics.depthMax,
-                              1
-                            )} m`
-                          : "Няма налични данни"
-                      }
-                    />
-
-                    <Row
-                      label="Статични водни нива до 5 km"
-                      value={
-                        ordinaryStatistics?.staticLevelMin != null &&
-                        ordinaryStatistics?.staticLevelMax != null
-                          ? `${formatNumber(
-                              ordinaryStatistics.staticLevelMin,
-                              1
-                            )} - ${formatNumber(
-                              ordinaryStatistics.staticLevelMax,
-                              1
-                            )} m`
-                          : "Няма налични данни"
-                      }
-                    />
-
-                    <Row
                       label="Най-близък минерален сондаж"
                       value={
                         nearestWellDistanceKm != null
@@ -5353,7 +3563,7 @@ export default async function ProPage({
                 </details>
 
                 <Link
-                  href={`/geology/report?lat=${encodeURIComponent(lat!)}&lon=${encodeURIComponent(lng!)}&gwb=${encodeURIComponent(profile.gwbCode)}`}
+                  href={`/geology/report?lat=${encodeURIComponent(lat!)}&lon=${encodeURIComponent(lng!)}`}
                   style={{
                     display: "block",
                     marginTop: 12,

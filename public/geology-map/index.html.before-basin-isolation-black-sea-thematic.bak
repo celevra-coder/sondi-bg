@@ -656,9 +656,6 @@ let bdBsGroundwaterLoaded=false;
 let bdBsGroundwaterLoading=false;
 
 let bdIbrGroundwaterLeafletLayer = null;
-let bdBsGroundwaterLeafletLayer = null;
-let blackSeaThematicPressureData = null;
-let blackSeaThematicPressureLoading = null;
 let pointPressureData = null;
 let pointPressureLoading = false;
 let diffusePressureData = null;
@@ -765,319 +762,6 @@ document
     );
   });
 
-
-async function loadBlackSeaThematicPressureData() {
-  if (blackSeaThematicPressureData) {
-    return blackSeaThematicPressureData;
-  }
-
-  if (blackSeaThematicPressureLoading) {
-    return blackSeaThematicPressureLoading;
-  }
-
-  blackSeaThematicPressureLoading = fetch(
-    "/geology-map/data/bd_bs_section2_pressure_risk.json"
-  )
-    .then(function(response) {
-      if (!response.ok) {
-        throw new Error(
-          "HTTP " + response.status
-        );
-      }
-
-      return response.json();
-    })
-    .then(function(data) {
-      if (!Array.isArray(data.profiles)) {
-        throw new Error(
-          "Невалиден черноморски регистър за натиск и риск"
-        );
-      }
-
-      blackSeaThematicPressureData = data;
-
-      return data;
-    })
-    .finally(function() {
-      blackSeaThematicPressureLoading = null;
-    });
-
-  return blackSeaThematicPressureLoading;
-}
-
-function blackSeaPressureRecordForFeature(feature) {
-  if (
-    !blackSeaThematicPressureData ||
-    !feature
-  ) {
-    return null;
-  }
-
-  const properties = feature.properties || {};
-
-  const featureCode = String(
-    properties.gwb_code ||
-    properties.cod ||
-    properties.localId ||
-    ""
-  ).trim().toUpperCase();
-
-  if (!featureCode.startsWith("BG2G")) {
-    return null;
-  }
-
-  return (
-    blackSeaThematicPressureData.profiles.find(
-      function(record) {
-        return String(
-          record.code ||
-          record.gwb_code ||
-          ""
-        ).trim().toUpperCase() === featureCode;
-      }
-    ) || null
-  );
-}
-
-function blackSeaOfficialAffectedAreaPercent(record, sourceKind) {
-  if (
-    !record ||
-    !Array.isArray(record.pollution_sources)
-  ) {
-    return null;
-  }
-
-  const expectedType =
-    sourceKind === "point"
-      ? "точков"
-      : "дифуз";
-
-  const sources = record.pollution_sources.filter(
-    function(source) {
-      return String(
-        source.source_type || ""
-      ).toLowerCase().includes(
-        expectedType
-      );
-    }
-  );
-
-  if (sources.length === 0) {
-    return 0;
-  }
-
-  const knownPercentages = sources
-    .map(function(source) {
-      const value = source.affected_area_percent;
-
-      if (
-        value === null ||
-        value === undefined ||
-        String(value).trim() === ""
-      ) {
-        return null;
-      }
-
-      const numeric = Number(value);
-
-      return Number.isFinite(numeric) &&
-        numeric >= 0
-        ? numeric
-        : null;
-    })
-    .filter(function(value) {
-      return value !== null;
-    });
-
-  if (knownPercentages.length !== sources.length) {
-    return null;
-  }
-
-  const total = knownPercentages.reduce(
-    function(sum, value) {
-      return sum + value;
-    },
-    0
-  );
-
-  return Math.min(
-    100,
-    total
-  );
-}
-
-function blackSeaLegendPercentageColor(percent) {
-  if (
-    percent === null ||
-    percent === undefined ||
-    !Number.isFinite(Number(percent))
-  ) {
-    return "#a8b5ba";
-  }
-
-  const value = Number(percent);
-
-  if (value >= 75) {
-    return "#b91c1c";
-  }
-
-  if (value >= 50) {
-    return "#ea580c";
-  }
-
-  if (value >= 25) {
-    return "#eab308";
-  }
-
-  return "#16a34a";
-}
-
-function blackSeaThematicColor(record, mode) {
-  if (!record) {
-    return "#a8b5ba";
-  }
-
-  if (mode === "point-pressure") {
-    const officialPercent =
-      blackSeaOfficialAffectedAreaPercent(
-        record,
-        "point"
-      );
-
-    return blackSeaLegendPercentageColor(
-      officialPercent
-    );
-  }
-
-  if (mode === "diffuse-pressure") {
-    const officialPercent =
-      blackSeaOfficialAffectedAreaPercent(
-        record,
-        "diffuse"
-      );
-
-    return blackSeaLegendPercentageColor(
-      officialPercent
-    );
-  }
-
-  if (mode === "pollution-risk") {
-    if (
-      record.chemical_risk?.at_risk === true ||
-      record.marine_intrusion?.at_risk === true ||
-      record.marine_intrusion?.present === true
-    ) {
-      return "#b91c1c";
-    }
-
-    return "#16a34a";
-  }
-
-  if (mode === "abstraction-pressure") {
-    const rawExploitation =
-      record.quantitative_risk
-        ?.exploitation_percent;
-
-    if (
-      rawExploitation === null ||
-      rawExploitation === undefined ||
-      String(rawExploitation).trim() === ""
-    ) {
-      return "#a8b5ba";
-    }
-
-    const exploitation = Number(
-      rawExploitation
-    );
-
-    if (!Number.isFinite(exploitation)) {
-      return "#a8b5ba";
-    }
-
-    if (
-      record.quantitative_risk?.at_risk === true ||
-      exploitation >= 75
-    ) {
-      return "#b91c1c";
-    }
-
-    if (exploitation >= 50) {
-      return "#ea580c";
-    }
-
-    if (exploitation >= 25) {
-      return "#eab308";
-    }
-
-    return "#16a34a";
-  }
-
-  return "#2563eb";
-}
-
-function blackSeaThematicStyle(feature) {
-  const record = blackSeaPressureRecordForFeature(
-    feature
-  );
-
-  const color = blackSeaThematicColor(
-    record,
-    activeThematicMode
-  );
-
-  return {
-    color: color,
-    weight: 1.4,
-    opacity: 0.9,
-    fillColor: color,
-    fillOpacity: 0.52
-  };
-}
-
-function blackSeaDefaultStyle(feature) {
-  const properties = feature.properties || {};
-
-  const status = String(
-    properties.ch_s ||
-    properties.sustoyanie ||
-    ""
-  ).toLowerCase();
-
-  const color = status.includes("лош")
-    ? "#dc2626"
-    : "#2563eb";
-
-  return {
-    color: color,
-    weight: 1.3,
-    opacity: 0.85,
-    fillColor: color,
-    fillOpacity: 0.22
-  };
-}
-
-function applyBdBsThematicStyle() {
-  if (!bdBsGroundwaterLeafletLayer) {
-    return;
-  }
-
-  if (
-    activeThematicMode === "point-pressure" ||
-    activeThematicMode === "diffuse-pressure" ||
-    activeThematicMode === "pollution-risk" ||
-    activeThematicMode === "abstraction-pressure"
-  ) {
-    bdBsGroundwaterLeafletLayer.setStyle(
-      blackSeaThematicStyle
-    );
-  }
-  else {
-    bdBsGroundwaterLeafletLayer.setStyle(
-      blackSeaDefaultStyle
-    );
-  }
-}
-
 async function activateThematicMode(mode){
   activeThematicMode =
     mode === "default"
@@ -1087,12 +771,10 @@ async function activateThematicMode(mode){
   const bdCheckbox =
     document.getElementById("layer-bd-ibr");
 
-  const blackSeaCheckbox =
-    document.getElementById("layer-bd-bs");
-
   const eeaCheckbox =
     document.getElementById("layer-groundwater");
 
+  // Тематичните режими използват официалния БД ИБР / ПУРБ3 слой.
   if (eeaCheckbox && eeaCheckbox.checked) {
     eeaCheckbox.checked = false;
 
@@ -1105,23 +787,11 @@ async function activateThematicMode(mode){
     bdCheckbox.checked = true;
   }
 
-  if (blackSeaCheckbox) {
-    blackSeaCheckbox.checked = true;
-  }
-
   if (!map.hasLayer(bdIbrGroundwaterLayer)) {
     bdIbrGroundwaterLayer.addTo(map);
   }
 
-  if (!map.hasLayer(bdBsGroundwaterLayer)) {
-    bdBsGroundwaterLayer.addTo(map);
-  }
-
-  await Promise.all([
-    loadBdIbrGroundwaterBodies(),
-    loadBdBsGroundwaterBodies(),
-    loadBlackSeaThematicPressureData()
-  ]);
+  await loadBdIbrGroundwaterBodies();
 
   if (activeThematicMode === "point-pressure") {
     await loadPointPressureData();
@@ -1144,7 +814,6 @@ async function activateThematicMode(mode){
   }
 
   applyBdIbrThematicStyle();
-  applyBdBsThematicStyle();
 
   if (typeof updatePointPressureLegend === "function") {
     updatePointPressureLegend();
@@ -2885,7 +2554,6 @@ async function loadBdIbrGroundwaterBodies(){
     layer.addTo(bdIbrGroundwaterLayer);
 
     applyBdIbrThematicStyle();
-  applyBdBsThematicStyle();
 
     bdIbrGroundwaterLoaded = true;
     bdIbrGroundwaterLoading = false;
@@ -3943,16 +3611,7 @@ async function loadBdBsGroundwaterBodies() {
       }
     });
 
-    bdBsGroundwaterLeafletLayer = layer;
-
     layer.addTo(bdBsGroundwaterLayer);
-
-    if (
-      activeThematicMode &&
-      blackSeaThematicPressureData
-    ) {
-      applyBdBsThematicStyle();
-    }
 
     bdBsGroundwaterLoaded = true;
     bdBsGroundwaterLoading = false;

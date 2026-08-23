@@ -23,28 +23,6 @@ export type GwbProfile = {
 
   section4?: any;
 
-  section5?: any;
-
-  section7?: any;
-
-  geology?: any;
-
-  blackSeaSection1?: any;
-
-  blackSeaSection2?: any;
-
-  blackSeaSection3?: any;
-
-  blackSeaSection4?: any;
-
-  blackSeaSection5?: any;
-
-  blackSeaSection7?: any;
-
-  blackSeaCurrentRegisters?: any;
-
-  blackSeaAdditionalRegisters?: any;
-
   sources: string[];
 };
 
@@ -86,28 +64,6 @@ function findRecord(
 ): any | null {
   if (!data) return null;
 
-  const wanted = normalizeCode(gwbCode);
-
-  if (
-    data.profiles &&
-    !Array.isArray(data.profiles) &&
-    typeof data.profiles === "object"
-  ) {
-    const direct = data.profiles[wanted];
-
-    if (direct) return direct;
-
-    const matchingKey = Object.keys(
-      data.profiles
-    ).find(
-      (key) => normalizeCode(key) === wanted
-    );
-
-    return matchingKey
-      ? data.profiles[matchingKey]
-      : null;
-  }
-
   const records =
     Array.isArray(data)
       ? data
@@ -116,6 +72,8 @@ function findRecord(
         : Array.isArray(data.profiles)
           ? data.profiles
           : [];
+
+  const wanted = normalizeCode(gwbCode);
 
   return (
     records.find((record: any) => {
@@ -156,40 +114,7 @@ const DATASETS = {
     "bd_ibr_climate_resource_forecast.json",
 
   section4:
-    "bd_ibr_section4_pro_profiles.json",
-
-  section5:
-    "bd_ibr_section5_environmental_objectives.json",
-
-  section7:
-    "bd_ibr_section7_groundwater_measures.json",
-
-  geology:
-    "groundwater_geology_profiles.json",
-
-  blackSeaSection1:
-    "bd_bs_section1_profiles.json",
-
-  blackSeaSection2:
-    "bd_bs_section2_pressure_risk.json",
-
-  blackSeaSection3:
-    "bd_bs_section3_protected_zones.json",
-
-  blackSeaSection4:
-    "bd_bs_section4_monitoring_status.json",
-
-  blackSeaSection5:
-    "bd_bs_section5_environmental_objectives.json",
-
-  blackSeaSection7:
-    "bd_bs_section7_groundwater_measures.json",
-
-  blackSeaCurrentRegisters:
-    "bd_bs_current_groundwater_registers.json",
-
-  blackSeaAdditionalRegisters:
-    "bd_bs_additional_groundwater_registers.json",
+    "bd_ibr_section4_pro_profiles.preview.json",
 } as const;
 
 export function getGwbProfile(
@@ -269,39 +194,6 @@ export function getGwbProfile(
 
     section4:
       records.section4,
-
-    section5:
-      records.section5,
-
-    section7:
-      records.section7,
-
-    geology:
-      records.geology,
-
-    blackSeaSection1:
-      records.blackSeaSection1,
-
-    blackSeaSection2:
-      records.blackSeaSection2,
-
-    blackSeaSection3:
-      records.blackSeaSection3,
-
-    blackSeaSection4:
-      records.blackSeaSection4,
-
-    blackSeaSection5:
-      records.blackSeaSection5,
-
-    blackSeaSection7:
-      records.blackSeaSection7,
-
-    blackSeaCurrentRegisters:
-      records.blackSeaCurrentRegisters,
-
-    blackSeaAdditionalRegisters:
-      records.blackSeaAdditionalRegisters,
 
     sources,
   };

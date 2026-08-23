@@ -839,126 +839,70 @@ function blackSeaPressureRecordForFeature(feature) {
   );
 }
 
-function blackSeaOfficialAffectedAreaPercent(record, sourceKind) {
-  if (
-    !record ||
-    !Array.isArray(record.pollution_sources)
-  ) {
-    return null;
-  }
-
-  const expectedType =
-    sourceKind === "point"
-      ? "точков"
-      : "дифуз";
-
-  const sources = record.pollution_sources.filter(
-    function(source) {
-      return String(
-        source.source_type || ""
-      ).toLowerCase().includes(
-        expectedType
-      );
-    }
-  );
-
-  if (sources.length === 0) {
-    return 0;
-  }
-
-  const knownPercentages = sources
-    .map(function(source) {
-      const value = source.affected_area_percent;
-
-      if (
-        value === null ||
-        value === undefined ||
-        String(value).trim() === ""
-      ) {
-        return null;
-      }
-
-      const numeric = Number(value);
-
-      return Number.isFinite(numeric) &&
-        numeric >= 0
-        ? numeric
-        : null;
-    })
-    .filter(function(value) {
-      return value !== null;
-    });
-
-  if (knownPercentages.length !== sources.length) {
-    return null;
-  }
-
-  const total = knownPercentages.reduce(
-    function(sum, value) {
-      return sum + value;
-    },
-    0
-  );
-
-  return Math.min(
-    100,
-    total
-  );
-}
-
-function blackSeaLegendPercentageColor(percent) {
-  if (
-    percent === null ||
-    percent === undefined ||
-    !Number.isFinite(Number(percent))
-  ) {
-    return "#a8b5ba";
-  }
-
-  const value = Number(percent);
-
-  if (value >= 75) {
-    return "#b91c1c";
-  }
-
-  if (value >= 50) {
-    return "#ea580c";
-  }
-
-  if (value >= 25) {
-    return "#eab308";
-  }
-
-  return "#16a34a";
-}
-
 function blackSeaThematicColor(record, mode) {
   if (!record) {
     return "#a8b5ba";
   }
 
   if (mode === "point-pressure") {
-    const officialPercent =
-      blackSeaOfficialAffectedAreaPercent(
-        record,
-        "point"
-      );
-
-    return blackSeaLegendPercentageColor(
-      officialPercent
+    const count = Number(
+      record.point_source_count || 0
     );
+
+    return count >= 10
+      ? "#b91c1c"
+      : count >= 5
+        ? "#ea580c"
+        : count >= 1
+          ? "#eab308"
+          : "#16a34a";
   }
 
   if (mode === "diffuse-pressure") {
-    const officialPercent =
-      blackSeaOfficialAffectedAreaPercent(
-        record,
-        "diffuse"
-      );
+    const sources = Array.isArray(
+      record.pollution_sources
+    )
+      ? record.pollution_sources
+      : [];
 
-    return blackSeaLegendPercentageColor(
-      officialPercent
+    const diffuseImpact = sources.reduce(
+      function(total, source) {
+        const sourceType = String(
+          source.source_type || ""
+        ).toLowerCase();
+
+        if (!sourceType.includes("дифуз")) {
+          return total;
+        }
+
+        const percent = Number(
+          source.affected_area_percent
+        );
+
+        return Number.isFinite(percent)
+          ? total + percent
+          : total;
+      },
+      0
     );
+
+    const count = Number(
+      record.diffuse_source_count || 0
+    );
+
+    if (diffuseImpact >= 30 || count >= 10) {
+      return "#b91c1c";
+    }
+
+    if (diffuseImpact >= 15 || count >= 6) {
+      return "#ea580c";
+    }
+
+    if (diffuseImpact > 0 || count > 0) {
+      return "#eab308";
+    }
+
+    return "#16a34a";
   }
 
   if (mode === "pollution-risk") {
@@ -970,33 +914,31 @@ function blackSeaThematicColor(record, mode) {
       return "#b91c1c";
     }
 
+    const vulnerability = Number(
+      record.vulnerability
+        ?.high_and_medium_high_percent || 0
+    );
+
+    if (vulnerability >= 50) {
+      return "#ea580c";
+    }
+
+    if (vulnerability > 0) {
+      return "#eab308";
+    }
+
     return "#16a34a";
   }
 
   if (mode === "abstraction-pressure") {
-    const rawExploitation =
-      record.quantitative_risk
-        ?.exploitation_percent;
-
-    if (
-      rawExploitation === null ||
-      rawExploitation === undefined ||
-      String(rawExploitation).trim() === ""
-    ) {
-      return "#a8b5ba";
-    }
-
     const exploitation = Number(
-      rawExploitation
+      record.quantitative_risk
+        ?.exploitation_percent
     );
-
-    if (!Number.isFinite(exploitation)) {
-      return "#a8b5ba";
-    }
 
     if (
       record.quantitative_risk?.at_risk === true ||
-      exploitation >= 75
+      exploitation >= 80
     ) {
       return "#b91c1c";
     }
@@ -1005,7 +947,7 @@ function blackSeaThematicColor(record, mode) {
       return "#ea580c";
     }
 
-    if (exploitation >= 25) {
+    if (exploitation >= 20) {
       return "#eab308";
     }
 

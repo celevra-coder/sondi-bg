@@ -86,28 +86,6 @@ function findRecord(
 ): any | null {
   if (!data) return null;
 
-  const wanted = normalizeCode(gwbCode);
-
-  if (
-    data.profiles &&
-    !Array.isArray(data.profiles) &&
-    typeof data.profiles === "object"
-  ) {
-    const direct = data.profiles[wanted];
-
-    if (direct) return direct;
-
-    const matchingKey = Object.keys(
-      data.profiles
-    ).find(
-      (key) => normalizeCode(key) === wanted
-    );
-
-    return matchingKey
-      ? data.profiles[matchingKey]
-      : null;
-  }
-
   const records =
     Array.isArray(data)
       ? data
@@ -116,6 +94,8 @@ function findRecord(
         : Array.isArray(data.profiles)
           ? data.profiles
           : [];
+
+  const wanted = normalizeCode(gwbCode);
 
   return (
     records.find((record: any) => {
@@ -189,7 +169,7 @@ const DATASETS = {
     "bd_bs_current_groundwater_registers.json",
 
   blackSeaAdditionalRegisters:
-    "bd_bs_additional_groundwater_registers.json",
+    "bd_bs_additional_groundwater_registers.preview.json",
 } as const;
 
 export function getGwbProfile(

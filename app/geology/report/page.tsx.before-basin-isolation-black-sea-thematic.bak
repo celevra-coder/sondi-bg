@@ -814,19 +814,6 @@ export default function GeologyReportPage() {
           );
         }
 
-        const requestedBasinForGeology =
-          String(params.get("gwb") || "")
-            .trim()
-            .toUpperCase()
-            .startsWith("BG3")
-              ? "BG3"
-              : String(params.get("gwb") || "")
-                  .trim()
-                  .toUpperCase()
-                  .startsWith("BG2")
-                ? "BG2"
-                : "";
-
         const [
           geology,
           eastBodiesData,
@@ -842,18 +829,8 @@ export default function GeologyReportPage() {
           blackSeaSection7Data,
           blackSeaAdditionalRegistersData,
           blackSeaInvestigationFeaturesData,
-          blackSeaRegionalGeologyData,
-          blackSeaProtectionZonesData,
-          blackSeaOfficialSection1Data,
-          blackSeaOfficialSection2Data,
-          blackSeaOfficialSection3Data,
-          blackSeaOfficialSection4Data,
-          blackSeaOfficialSection5Data,
-          blackSeaCurrentRegistersData,
         ] = await Promise.all([
-          requestedBasinForGeology === "BG3"
-            ? geologyAt(lat, lon)
-            : Promise.resolve(null),
+          geologyAt(lat, lon),
 
           fetch(
             "/geology-map/data/bd_ibr_groundwater_bodies_enriched.geojson"
@@ -905,38 +882,6 @@ export default function GeologyReportPage() {
 
           fetch(
             "/geology-map/data/bd_bs_hydrogeological_investigations.geojson"
-          ).then(r => r.json()),
-
-          fetch(
-            "/geology-map/data/bd_bs_regional_geology_profiles.json"
-          ).then(r => r.json()),
-
-          fetch(
-            "/geology-map/data/bd_bs_sanitary_protection_zones.geojson"
-          ).then(r => r.json()),
-
-          fetch(
-            "/geology-map/data/bd_bs_section1_profiles.json"
-          ).then(r => r.json()),
-
-          fetch(
-            "/geology-map/data/bd_bs_section2_pressure_risk.json"
-          ).then(r => r.json()),
-
-          fetch(
-            "/geology-map/data/bd_bs_section3_protected_zones.json"
-          ).then(r => r.json()),
-
-          fetch(
-            "/geology-map/data/bd_bs_section4_monitoring_status.json"
-          ).then(r => r.json()),
-
-          fetch(
-            "/geology-map/data/bd_bs_section5_environmental_objectives.json"
-          ).then(r => r.json()),
-
-          fetch(
-            "/geology-map/data/bd_bs_current_groundwater_registers.json"
           ).then(r => r.json()),
         ]);
 
@@ -1260,246 +1205,15 @@ export default function GeologyReportPage() {
               selectedGwbCode
           ) || null;
 
-        const findBlackSeaOfficialProfile = (
-          dataset: any
-        ): any | null => {
-          if (
-            basinCode !== "BG2" ||
-            !selectedGwbCode ||
-            !dataset
-          ) {
-            return null;
-          }
-
-          const normalize = (
-            value: unknown
-          ) =>
-            String(value ?? "")
-              .trim()
-              .toUpperCase();
-
-          const wanted = normalize(
-            selectedGwbCode
-          );
-
-          const candidates: any[] = [];
-
-          if (Array.isArray(dataset)) {
-            candidates.push(...dataset);
-          }
-
-          if (Array.isArray(dataset?.profiles)) {
-            candidates.push(
-              ...dataset.profiles
-            );
-          }
-
-          if (Array.isArray(dataset?.records)) {
-            candidates.push(
-              ...dataset.records
-            );
-          }
-
-          if (
-            dataset?.profiles &&
-            !Array.isArray(dataset.profiles) &&
-            typeof dataset.profiles === "object"
-          ) {
-            const direct =
-              dataset.profiles[wanted];
-
-            if (direct) {
-              return direct;
-            }
-
-            for (
-              const [key, value]
-              of Object.entries(dataset.profiles)
-            ) {
-              if (normalize(key) === wanted) {
-                return value;
-              }
-            }
-          }
-
-          if (
-            dataset?.profiles_by_groundwater_body_code &&
-            typeof dataset
-              .profiles_by_groundwater_body_code === "object"
-          ) {
-            const direct =
-              dataset
-                .profiles_by_groundwater_body_code
-                [wanted];
-
-            if (direct) {
-              return direct;
-            }
-          }
-
-          return candidates.find(
-            (item: any) =>
-              [
-                item?.code,
-                item?.gwb_code,
-                item?.gwbCode,
-                item?.groundwater_body_code,
-                item?.localId,
-                item?.cod,
-              ].some(
-                value =>
-                  normalize(value) === wanted
-              )
-          ) || null;
-        };
-
-        const blackSeaOfficialSection1 =
-          findBlackSeaOfficialProfile(
-            blackSeaOfficialSection1Data
-          );
-
-        const blackSeaOfficialSection2 =
-          findBlackSeaOfficialProfile(
-            blackSeaOfficialSection2Data
-          );
-
-        const blackSeaOfficialSection3 =
-          findBlackSeaOfficialProfile(
-            blackSeaOfficialSection3Data
-          );
-
-        const blackSeaOfficialSection4 =
-          findBlackSeaOfficialProfile(
-            blackSeaOfficialSection4Data
-          );
-
-        const blackSeaOfficialSection5 =
-          findBlackSeaOfficialProfile(
-            blackSeaOfficialSection5Data
-          );
-
-        const blackSeaCurrentRegisters =
-          findBlackSeaOfficialProfile(
-            blackSeaCurrentRegistersData
-          );
-
-        const blackSeaChemicalMonitoring =
-          Array.isArray(
-            blackSeaOfficialSection4
-              ?.chemical_monitoring
-          )
-            ? blackSeaOfficialSection4
-                .chemical_monitoring
-            : [];
-
-        const blackSeaQuantitativeMonitoring =
-          Array.isArray(
-            blackSeaOfficialSection4
-              ?.quantitative_monitoring
-          )
-            ? blackSeaOfficialSection4
-                .quantitative_monitoring
-            : [];
-
-        const blackSeaChemicalRisk =
-          blackSeaOfficialSection2
-            ?.chemical_risk || null;
-
-        const blackSeaQuantitativeRisk =
-          blackSeaOfficialSection2
-            ?.quantitative_risk || null;
-
-        const blackSeaPollutionSources =
-          Array.isArray(
-            blackSeaOfficialSection2
-              ?.pollution_sources
-          )
-            ? blackSeaOfficialSection2
-                .pollution_sources
-            : [];
-
         const section4 =
           basinCode === "BG3"
             ? findProfile(section4Data)
-            : basinCode === "BG2" &&
-              blackSeaOfficialSection4
-              ? {
-                  ...blackSeaOfficialSection4,
-
-                  comparison: {
-                    risk_2022_2027:
-                      blackSeaOfficialSection4
-                        .chemical_risk ||
-                      blackSeaChemicalRisk
-                        ?.risk_label ||
-                      null,
-
-                    status_2022_2027:
-                      blackSeaOfficialSection4
-                        .overall_status_purb3 ||
-                      blackSeaOfficialSection4
-                        .chemical_status ||
-                      null,
-
-                    status_2016_2021:
-                      blackSeaOfficialSection4
-                        .overall_status_purb2 ||
-                      null,
-                  },
-
-                  chemical_monitoring:
-                    blackSeaChemicalMonitoring,
-
-                  quantitative_monitoring:
-                    blackSeaQuantitativeMonitoring,
-
-                  tests:
-                    blackSeaOfficialSection4
-                      .chemical_tests || [],
-
-                  water_balance:
-                    blackSeaOfficialSection4
-                      .water_balance
-                      ? {
-                          ...blackSeaOfficialSection4
-                            .water_balance,
-
-                          quantitative_status:
-                            blackSeaOfficialSection4
-                              .quantitative_status ||
-                            blackSeaOfficialSection4
-                              .water_balance
-                              ?.status ||
-                            null,
-                        }
-                      : null,
-
-                  upward_trend:
-                    blackSeaOfficialSection4
-                      .upward_trend === true
-                      ? "да"
-                      : blackSeaOfficialSection4
-                          .upward_trend === false
-                        ? "не"
-                        : null,
-
-                  drinking_monitoring:
-                    blackSeaChemicalMonitoring.filter(
-                      (station: any) =>
-                        station
-                          ?.drinking_water_monitoring === true
-                    ),
-
-                  trend_series: [],
-                }
-              : null;
+            : null;
 
         const section5 =
           basinCode === "BG3"
             ? findProfile(section5Data)
-            : basinCode === "BG2"
-              ? blackSeaOfficialSection5
-              : null;
+            : null;
 
         const section7 =
           basinCode === "BG3"
@@ -1515,69 +1229,6 @@ export default function GeologyReportPage() {
                   ?.profiles?.[selectedGwbCode] || null
               )
             : null;
-
-        const blackSeaRegionalGeology =
-          basinCode === "BG2"
-            ? (
-                blackSeaRegionalGeologyData
-                  ?.profiles_by_groundwater_body_code
-                  ?.[selectedGwbCode] || null
-              )
-            : null;
-
-        const exactProtectionZonesAtPoint =
-          basinCode === "BG2"
-            ? (
-                blackSeaProtectionZonesData
-                  ?.features || []
-              ).filter(
-                (feature: AnyFeature) =>
-                  feature.properties
-                    ?.basin_code === "BG2" &&
-                  pointInPolygonGeometry(
-                    lon,
-                    lat,
-                    feature.geometry
-                  )
-              )
-            : [];
-
-        const effectiveGeologyProfile =
-          blackSeaRegionalGeology
-            ? {
-                ...selectedGeologyProfile,
-                code:
-                  blackSeaRegionalGeology
-                    .groundwater_body_code,
-                name:
-                  blackSeaRegionalGeology
-                    .groundwater_body_name,
-                aquifer_type_name:
-                  blackSeaRegionalGeology
-                    .aquifer_environment,
-                water_type:
-                  blackSeaRegionalGeology
-                    .aquifer_environment
-                    ? `${blackSeaRegionalGeology.aquifer_environment} водоносна среда`
-                    : null,
-                hydrogeological_horizon:
-                  blackSeaRegionalGeology
-                    .hydrogeological_horizons,
-                lithology:
-                  blackSeaRegionalGeology
-                    .geological_age_label
-                    ? `Регионална геоложка възраст: ${blackSeaRegionalGeology.geological_age_label}`
-                    : null,
-                regional_geological_age:
-                  blackSeaRegionalGeology
-                    .geological_age_label,
-                regional_explanation:
-                  blackSeaRegionalGeology
-                    .regional_explanation,
-                is_detailed_point_geology:
-                  false,
-              }
-            : selectedGeologyProfile;
 
         const registeredInvestigationNearby =
           basinCode === "BG2"
@@ -1601,36 +1252,6 @@ export default function GeologyReportPage() {
           additionalGroundwaterRegisters:
             blackSeaAdditionalProfile,
 
-          blackSeaOfficialSection1,
-
-          blackSeaOfficialSection2,
-
-          blackSeaOfficialSection3,
-
-          blackSeaOfficialSection4,
-
-          blackSeaOfficialSection5,
-
-          blackSeaCurrentRegisters,
-
-          blackSeaChemicalMonitoring,
-
-          blackSeaQuantitativeMonitoring,
-
-          blackSeaChemicalRisk,
-
-          blackSeaQuantitativeRisk,
-
-          blackSeaPollutionSources,
-
-          regionalGeology:
-            blackSeaRegionalGeology,
-
-          exactProtectionZonesAtPoint,
-
-          isInsideExactProtectionZone:
-            exactProtectionZonesAtPoint.length > 0,
-
           registeredHydrogeologicalInvestigations:
             registeredInvestigationNearby
               .filter(
@@ -1645,7 +1266,7 @@ export default function GeologyReportPage() {
             selectedGwbCode,
 
           geologyProfile:
-            effectiveGeologyProfile,
+            selectedGeologyProfile,
 
           nearestOrdinary:
             ordinaryNearby[0] || null,
@@ -1761,44 +1382,11 @@ export default function GeologyReportPage() {
           }
         }
 
-        const basinSpecificGeology =
-          basinCode === "BG3"
-            ? geology
-            : basinCode === "BG2" && selectedGeologyProfile
-              ? {
-                  status: "official_groundwater_body_profile",
-                  unit: {
-                    id: Number(
-                      selectedBody?.properties?.OBJECTID || 0
-                    ),
-                    code:
-                      effectiveGeologyProfile
-                        .hydrogeological_horizon ||
-                      effectiveGeologyProfile.code ||
-                      selectedGwbCode,
-                    name_bg:
-                      effectiveGeologyProfile.name ||
-                      effectiveGeologyProfile
-                        .aquifer_type_name ||
-                      "Официална характеристика на водното тяло",
-                    name_en:
-                      String(
-                        selectedBody?.properties?.nameText ||
-                        selectedBody?.properties?.nameTxtInt ||
-                        ""
-                      ),
-                  },
-                  source:
-                    "БД Черноморски район — профил на подземно водно тяло",
-                  is_groundwater_body_profile: true,
-                }
-              : null;
-
         setData({
           professionalDrilling,
           lat,
           lon,
-          geology: basinSpecificGeology,
+          geology,
           bodies,
           monitoring: nearest,
         });
@@ -2119,29 +1707,15 @@ export default function GeologyReportPage() {
             </h2>
 
             <p style={{marginBottom:10}}>
-              {professional?.basinCode === "BG2"
-                ? "Това е официалната регионална характеристика " +
-                  "на черноморското подземно водно тяло. " +
-                  "Тя не представлява точен геоложки разрез " +
-                  "на конкретния имот."
-                : "Това е регионалната геоложка единица " +
-                  "според официалната карта на " +
-                  "Източнобеломорския район."}
+              Това е регионалната геоложка
+              единица според картата.
             </p>
 
             <div style={styles.note}>
               <strong>Надеждност:</strong>{" "}
-              {professional?.basinCode === "BG2"
-                ? (
-                    data.geology?.unit
-                      ? "Официален профил на подземното водно тяло; " +
-                        "няма локална геоложка карта за имота."
-                      : "Няма налична официална характеристика " +
-                        "за това черноморско водно тяло."
-                  )
-                : geologyConfidenceBg(
-                    data.geology?.status || ""
-                  )}
+              {geologyConfidenceBg(
+                data.geology?.status || ""
+              )}
             </div>
           </section>
 
@@ -2796,405 +2370,6 @@ export default function GeologyReportPage() {
         </section>
 
 
-        {professional?.isInsideExactProtectionZone && (
-          <section style={{
-            ...styles.card,
-            border: "2px solid #d39b25",
-            background: "#fffaf0",
-          }}>
-            <div style={styles.sectionLabel}>
-              САНИТАРНО-ОХРАНИТЕЛНА ЗОНА
-            </div>
-
-            <h2 style={styles.h2}>
-              Избраната точка попада в официален
-              защитен пояс
-            </h2>
-
-            <div style={styles.warning}>
-              Проверено по точните официални GIS
-              полигони на Черноморския район.
-              Преди сондиране трябва да се провери
-              приложимият разрешителен режим.
-            </div>
-
-            <div style={styles.recommendGrid}>
-              {professional.exactProtectionZonesAtPoint.map(
-                (zone: AnyFeature, index: number) => (
-                  <div
-                    key={
-                      String(
-                        zone.properties
-                          ?.source_object_id ||
-                        index
-                      ) +
-                      "-" +
-                      String(
-                        zone.properties
-                          ?.protection_belt ||
-                        ""
-                      )
-                    }
-                    style={styles.recommendItem}
-                  >
-                    <strong>
-                      {zone.properties
-                        ?.protection_belt ||
-                        "Неуточнен пояс"}
-                    </strong>
-
-                    <span>
-                      {zone.properties
-                        ?.establishment_order ||
-                        "Няма посочена заповед"}
-
-                      {zone.properties
-                        ?.competent_authority
-                        ? `; орган: ${zone.properties.competent_authority}`
-                        : ""}
-                    </span>
-                  </div>
-                )
-              )}
-            </div>
-          </section>
-        )}
-
-        {professional?.basinCode === "BG2" && (
-          <section style={styles.card}>
-            <div style={styles.sectionLabel}>
-              ОФИЦИАЛНА ПРОФЕСИОНАЛНА ОЦЕНКА —
-              ЧЕРНОМОРСКИ РАЙОН
-            </div>
-
-            <h2 style={styles.h2}>
-              Химично състояние, мониторинг,
-              натиск и ограничения
-            </h2>
-
-            <div style={styles.note}>
-              Данните са от официалните регистри
-              и ПУРБ за избраното подземно водно
-              тяло. Те не представляват
-              лабораторна проба от конкретния имот.
-            </div>
-
-            <div style={styles.recommendGrid}>
-              <div style={styles.recommendItem}>
-                <strong>
-                  Официално химично състояние
-                </strong>
-
-                <span>
-                  {String(
-                    professional
-                      ?.blackSeaOfficialSection4
-                      ?.chemical_status ||
-                    professional
-                      ?.blackSeaOfficialSection4
-                      ?.overall_status_purb3 ||
-                    professional
-                      ?.regionalGeology
-                      ?.chemical_status ||
-                    "Няма публикувана оценка"
-                  )}
-                </span>
-              </div>
-
-              <div style={styles.recommendItem}>
-                <strong>
-                  Риск за химичното състояние
-                </strong>
-
-                <span>
-                  {professional
-                    ?.blackSeaChemicalRisk
-                    ?.at_risk === true
-                    ? "В риск"
-                    : professional
-                        ?.blackSeaChemicalRisk
-                        ?.at_risk === false
-                      ? "Не е в риск"
-                      : String(
-                          professional
-                            ?.blackSeaOfficialSection4
-                            ?.chemical_risk ||
-                          professional
-                            ?.blackSeaChemicalRisk
-                            ?.risk_label ||
-                          "Няма публикувана оценка"
-                        )}
-                </span>
-              </div>
-
-              <div style={styles.recommendItem}>
-                <strong>
-                  Количествено състояние
-                </strong>
-
-                <span>
-                  {String(
-                    professional
-                      ?.blackSeaOfficialSection4
-                      ?.quantitative_status ||
-                    professional
-                      ?.regionalGeology
-                      ?.quantitative_status ||
-                    professional
-                      ?.blackSeaOfficialSection4
-                      ?.water_balance
-                      ?.status ||
-                    "Няма публикувана оценка"
-                  )}
-                </span>
-              </div>
-
-              <div style={styles.recommendItem}>
-                <strong>
-                  Количествен риск
-                </strong>
-
-                <span>
-                  {professional
-                    ?.blackSeaQuantitativeRisk
-                    ?.at_risk === true
-                    ? "В риск"
-                    : professional
-                        ?.blackSeaQuantitativeRisk
-                        ?.at_risk === false
-                      ? "Не е в риск"
-                      : String(
-                          professional
-                            ?.blackSeaQuantitativeRisk
-                            ?.risk_label ||
-                          "Няма публикувана оценка"
-                        )}
-                </span>
-              </div>
-
-              <div style={styles.recommendItem}>
-                <strong>
-                  Химични мониторингови пунктове
-                </strong>
-
-                <span>
-                  {
-                    professional
-                      ?.blackSeaChemicalMonitoring
-                      ?.length || 0
-                  }
-                </span>
-              </div>
-
-              <div style={styles.recommendItem}>
-                <strong>
-                  Количествени мониторингови пунктове
-                </strong>
-
-                <span>
-                  {
-                    professional
-                      ?.blackSeaQuantitativeMonitoring
-                      ?.length || 0
-                  }
-                </span>
-              </div>
-
-              <div style={styles.recommendItem}>
-                <strong>
-                  Точкови източници на натиск
-                </strong>
-
-                <span>
-                  {
-                    professional
-                      ?.blackSeaOfficialSection2
-                      ?.point_source_count ?? 0
-                  }
-                </span>
-              </div>
-
-              <div style={styles.recommendItem}>
-                <strong>
-                  Дифузни източници на натиск
-                </strong>
-
-                <span>
-                  {
-                    professional
-                      ?.blackSeaOfficialSection2
-                      ?.diffuse_source_count ?? 0
-                  }
-                </span>
-              </div>
-
-              <div style={styles.recommendItem}>
-                <strong>
-                  Основен замърсяващ натиск
-                </strong>
-
-                <span>
-                  {String(
-                    professional
-                      ?.blackSeaChemicalRisk
-                      ?.significant_pressure ||
-                    "Не е посочен"
-                  )}
-                </span>
-              </div>
-
-              <div style={styles.recommendItem}>
-                <strong>
-                  Проблемни показатели
-                </strong>
-
-                <span>
-                  {String(
-                    professional
-                      ?.blackSeaOfficialSection4
-                      ?.affected_area
-                      ?.status_deteriorating_indicators ||
-                    professional
-                      ?.blackSeaChemicalRisk
-                      ?.parameters_and_impact ||
-                    "Няма публикувани конкретни показатели"
-                  )}
-                </span>
-              </div>
-
-              <div style={styles.recommendItem}>
-                <strong>
-                  Свободен ресурс за водното тяло
-                </strong>
-
-                <span>
-                  {professional
-                    ?.blackSeaCurrentRegisters
-                    ?.current_resource
-                    ?.free_resource_l_s != null
-                    ? `${
-                        professional
-                          .blackSeaCurrentRegisters
-                          .current_resource
-                          .free_resource_l_s
-                      } l/s`
-                    : "Няма публикувана стойност"}
-                </span>
-              </div>
-
-              <div style={styles.recommendItem}>
-                <strong>
-                  Официални мерки за водното тяло
-                </strong>
-
-                <span>
-                  {Array.isArray(section7?.measures)
-                    ? section7.measures.length
-                    : 0}
-                </span>
-              </div>
-            </div>
-
-            {Array.isArray(
-              professional?.blackSeaPollutionSources
-            ) &&
-              professional.blackSeaPollutionSources
-                .length > 0 && (
-                <details style={{ marginTop: 16 }}>
-                  <summary>
-                    Официално отчетени източници
-                    на натиск за водното тяло
-                  </summary>
-
-                  <div style={{ marginTop: 10 }}>
-                    {professional
-                      .blackSeaPollutionSources
-                      .slice(0, 20)
-                      .map(
-                        (
-                          source: any,
-                          index: number
-                        ) => (
-                          <div
-                            key={
-                              String(
-                                source?.name ||
-                                "source"
-                              ) +
-                              "-" +
-                              String(index)
-                            }
-                            style={{
-                              padding: "8px 0",
-                              borderBottom:
-                                "1px solid #e6ecea",
-                            }}
-                          >
-                            <strong>
-                              {String(
-                                source?.name ||
-                                "Неуточнен източник"
-                              )}
-                            </strong>
-
-                            {source?.source_type
-                              ? ` — ${source.source_type}`
-                              : ""}
-
-                            {source?.settlement
-                              ? `; ${source.settlement}`
-                              : ""}
-
-                            {source
-                              ?.affected_area_percent !=
-                            null
-                              ? `; засегната площ: ${
-                                  Number(
-                                    source
-                                      .affected_area_percent
-                                  ).toLocaleString(
-                                    "bg-BG",
-                                    {
-                                      maximumFractionDigits: 2,
-                                    }
-                                  )
-                                }%`
-                              : ""}
-                          </div>
-                        )
-                      )}
-                  </div>
-
-                  <div
-                    style={{
-                      marginTop: 10,
-                      color: "#60757a",
-                    }}
-                  >
-                    Източниците се отнасят за
-                    подземното водно тяло като
-                    цяло. Не доказват замърсяване
-                    в избрания имот.
-                  </div>
-                </details>
-              )}
-
-            <div
-              style={{
-                ...styles.warning,
-                marginTop: 14,
-              }}
-            >
-              Подробен лабораторен химичен състав
-              за конкретната точка може да бъде
-              установен само чрез водна проба.
-              Официалните оценки по-горе описват
-              състоянието и рисковете на
-              съответното подземно водно тяло.
-            </div>
-          </section>
-        )}
-
         {additionalGroundwaterRegisters && (
           <section style={styles.card}>
             <div style={styles.sectionLabel}>
@@ -3504,10 +2679,10 @@ export default function GeologyReportPage() {
 
                 {" "}Преди сондиране трябва да се провери
                 приложимият разрешителен режим и дали
-                имотът попада в защитена зона. Броят тук се отнася за цялото
-                подземно водно тяло. Избраната точка
-                се проверява отделно по официалните
-                GIS граници на защитните пояси.
+                имотът попада в защитена зона. Наличният
+                регистър не съдържа точни пространствени
+                граници и сам по себе си не доказва
+                ограничение за конкретната точка.
               </div>
             )}
 
@@ -3516,11 +2691,9 @@ export default function GeologyReportPage() {
               са проектни примери от официални хидрогеоложки
               проучвания. Те не потвърждават действащ сондаж
               и не определят автоматично технологията или
-              дълбочината за конкретния имот. Санитарните зони от регистъра са
-              обобщени за цялото подземно водно тяло.
-              За избраната точка се използват точните
-              официални GIS граници на защитните пояси.
-              Те не представляват граници на имоти.
+              дълбочината за конкретния имот. Санитарните
+              зони са отчетени за цялото подземно водно
+              тяло и няма налични точни граници на имоти.
             </div>
           </section>
         )}

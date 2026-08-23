@@ -1,0 +1,3454 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сондажи, видими водни тела и активни разломи в България</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+html,body,#map{height:100%;margin:0;font-family:Arial,sans-serif}
+.panel{position:absolute;z-index:1000;top:12px;left:12px;width:410px;max-width:calc(100% - 24px);background:#fff;padding:13px;border-radius:13px;box-shadow:0 2px 14px #0004;max-height:calc(100% - 24px);overflow:auto}
+h2{font-size:18px;margin:0 0 7px} .small{font-size:12px;color:#555;line-height:1.4}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px} .full{grid-column:1/-1}
+input,select,button{width:100%;box-sizing:border-box;padding:8px;border:1px solid #bbb;border-radius:7px}
+button{background:#202020;color:#fff;border:0;cursor:pointer}
+.count{font-weight:bold;margin-top:8px}
+.layerbox{margin-top:10px;padding:9px;border:1px solid #ddd;border-radius:9px;background:#fafafa}
+.layerrow{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:13px}
+.layerrow input{width:auto}
+.future{opacity:.55}
+.legend{background:#fff;padding:10px;border-radius:8px;box-shadow:0 1px 7px #0004;font-size:12px;line-height:1.5}
+.legend .symbol{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;margin-right:6px;font-weight:bold}
+.legend .dot{border-radius:50%;border:1px solid #222}
+.list{display:none;margin-top:8px;max-height:240px;overflow:auto;border:1px solid #ddd;border-radius:8px}
+.item{padding:8px;border-bottom:1px solid #eee;font-size:12px}
+.coord{font-family:Consolas,monospace}
+.copy{margin-top:7px;background:#1769aa}
+.analysisbox{margin-top:10px;padding:10px;border:1px solid #b9cfe0;border-radius:9px;background:#f4faff}
+.analysisbox h3{font-size:14px;margin:0 0 6px}
+.analysis-result{font-size:12px;line-height:1.5}
+.analysis-status{font-size:12px;color:#555}
+.analysis-btn{margin-top:7px;background:#0b6b43}
+.analysis-marker{font-size:24px;line-height:24px;text-shadow:0 1px 3px #fff}
+@media(max-width:700px){.panel{width:calc(100% - 24px)}}
+</style>
+</head>
+<body>
+
+<div class="panel">
+<h2>Сондажи, подземни водни тела и разломи</h2>
+<div class="small">Символът показва типа на съоръжението, а цветът при минералните сондажи показва температурата.</div>
+
+<div class="grid">
+<div class="full"><input id="search" placeholder="Населено място или координати">
+<button
+  type="button"
+  id="coordinate-search-button"
+  onclick="searchCoordinates()"
+  style="margin-top:8px;width:100%;padding:9px;cursor:pointer;"
+>
+  Търси място или координати
+</button>
+
+<div
+  id="coordinate-search-status"
+  style="margin-top:6px;font-size:12px;"
+></div>
+
+<div
+  id="location-analysis-box"
+  style="
+    display:none;
+    margin-top:10px;
+    padding:12px;
+    border:1px solid #b9cfe0;
+    border-radius:10px;
+    background:#f4faff;
+  "
+>
+  <div
+    id="analysis-status"
+    class="analysis-status"
+  ></div>
+
+  <div
+    id="analysis-result"
+    class="analysis-result"
+  ></div>
+</div>
+</div>
+<div><select id="basin"><option value="">Всички дирекции</option></select></div>
+<div><select id="category"><option value="">Всички категории</option></select></div>
+<div><input id="tempMin" type="number" step="0.1" placeholder="Температура от °C"></div>
+<div><input id="depthMax" type="number" step="1" placeholder="Дълбочина до m"></div>
+<div><button onclick="resetFilters()">Изчисти</button></div>
+<div><button onclick="fitVisible()">Покажи точките</button></div>
+</div>
+
+<div class="layerbox">
+<b>Слоеве</b>
+<label class="layerrow"><input type="checkbox" id="layer-wells"> 🔴 Минерални сондажи</label>
+<label class="layerrow"><input type="checkbox" id="layer-springs"> 🔵 Каптажи и естествени извори</label>
+<label class="layerrow"><input type="checkbox" id="layer-monitoring"> 🟣 Мониторингови сондажи</label>
+<label class="layerrow"><input type="checkbox" id="layer-inactive"> ⚫ Ликвидирани и консервирани</label>
+<label class="layerrow"><input type="checkbox" id="layer-other"> ◇ Други минерални съоръжения</label>
+<label class="layerrow"><input type="checkbox" id="layer-groundwater"> 🟦 Подземни водни тела (EEA/WFD)</label><div id="gw-load-status" class="small" style="margin-left:24px">изключено</div>
+<label class="layerrow"><input type="checkbox" id="layer-bd-ibr"> 🔷 Подземни водни тела – БД ИБР / ПУРБ3</label>
+<div id="bd-ibr-load-status" class="small" style="margin-left:24px">изключено</div>
+<label class="layerrow"><input type="checkbox" id="layer-geology-age"> 🪨 Геоложка възраст – БД ИБР</label>
+<div id="geology-age-load-status" class="small" style="margin-left:24px">изключено</div>
+<label class="layerrow"><input type="checkbox" id="layer-quant-monitoring"> 🟣 Количествен мониторинг – НИМХ 2019–2020</label>
+<div id="quant-monitoring-load-status" class="small" style="margin-left:24px">изключено</div>
+<label class="layerrow"><input type="checkbox" id="layer-faults"> 🟤 Активни разломи (GEM)</label><div id="fault-load-status" class="small" style="margin-left:24px">изключено</div>
+<label class="layerrow future"><input type="checkbox" disabled> 📍 AIDU измервания — ще се добавят по-късно</label>
+<label class="layerrow future"><input type="checkbox" disabled> ⭐ Потвърдени успешни сондажи — ще се добавят по-късно</label>
+<div class="small" style="margin-top:7px">
+Подземните водни тела се зареждат от официални източници. Активните разломи са пространствени данни от GEM. До всеки слой се показва дали е зареден успешно.
+</div>
+</div>
+
+
+
+<div class="layerbox" id="thematic-modes-box">
+  <b>Тематични режими</b>
+
+  <label class="layerrow">
+    <input type="radio" name="thematic-mode" value="default">
+    Основен изглед
+  </label>
+
+  <label class="layerrow">
+    <input type="radio" name="thematic-mode" value="point-pressure">
+    Натиск от точкови източници
+  </label>
+
+  <label class="layerrow">
+    <input type="radio" name="thematic-mode" value="diffuse-pressure">
+    Натиск от дифузни източници
+  </label>
+
+  <label class="layerrow">
+    <input type="radio" name="thematic-mode" value="pollution-risk">
+    Риск от замърсяване
+  </label>
+
+  <label class="layerrow">
+    <input type="radio" name="thematic-mode" value="abstraction-pressure">
+    Натиск от водовземане
+  </label>
+
+  <div id="point-pressure-status" class="small" style="margin-left:24px">
+    изключено
+  </div>
+</div>
+
+
+<div id="count" class="count"></div>
+<button style="margin-top:9px" onclick="toggleUnmapped()">Официални записи без координати</button>
+<div id="unmapped" class="list"></div>
+
+<div class="small" style="margin-top:8px">
+Минерални сондажи: 306<br>
+Каптажи/извори: 42<br>
+Мониторингови: 41<br>
+Ликвидирани/закрити: 34<br>
+Консервирани: 8<br>
+Общо официални записи: 432
+</div>
+</div>
+
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+<script src="https://unpkg.com/esri-leaflet@3.0.15/dist/esri-leaflet.js"></script>
+<script>
+const map=L.map('map').setView([42.72,25.35],7);
+
+const gemFaultPaneName = "gemFaultPane";
+
+if (!map.getPane(gemFaultPaneName)) {
+  map.createPane(gemFaultPaneName);
+
+  map.getPane(
+    gemFaultPaneName
+  ).style.zIndex = "650";
+
+  map.getPane(
+    gemFaultPaneName
+  ).style.pointerEvents = "auto";
+}
+
+const osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(map);
+const topo=L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'© OpenTopoMap'});
+
+const groundwaterLayer = L.layerGroup();
+const bdIbrGroundwaterLayer = L.layerGroup();
+
+const geologyAgeBounds = [
+  [40.96405463472572, 23.499441370514838],
+  [43.13414097146175, 26.964034660575408]
+];
+
+const geologyAgeLayer = L.imageOverlay(
+  '/geology-map/data/bd_ibr_geology_2024_affine.png',
+  geologyAgeBounds,
+  {
+    opacity: 0.62,
+    interactive: false,
+    crossOrigin: true
+  }
+);
+
+const quantitativeMonitoringLayer = L.layerGroup();
+const faultsLayer = L.layerGroup();
+let groundwaterLoaded=false;
+let bdIbrGroundwaterLoaded=false;
+let bdIbrGroundwaterLoading=false;
+
+let bdIbrGroundwaterLeafletLayer = null;
+let pointPressureData = null;
+let pointPressureLoading = false;
+let diffusePressureData = null;
+let diffusePressureLoading = false;
+let pollutionRiskData = null;
+let pollutionRiskLoading = false;
+let significantPressureData = null;
+let significantPressureLoading = false;
+let abstractionPressureData = null;
+let abstractionPressureLoading = false;
+let quantitativeRiskData = null;
+let quantitativeRiskLoading = false;
+let activeThematicMode = "";
+let lastGroundwaterClickLatLng = null;
+
+let quantitativeMonitoringLoaded=false;
+let quantitativeMonitoringLoading=false;
+let groundwaterLoading=false;
+let faultsLoaded=false;
+let faultsLoading=false;
+
+const rightLayerControl = L.control.layers(
+ {'Карта':osm,'Релеф':topo},
+ {
+   '🟦 Подземни водни тела (EEA/WFD)':groundwaterLayer,
+   '🔷 Подземни водни тела – БД ИБР / ПУРБ3':bdIbrGroundwaterLayer,
+   '🪨 Геоложка възраст – БД ИБР':geologyAgeLayer,
+   '🟣 Количествен мониторинг – НИМХ 2019–2020':quantitativeMonitoringLayer,
+   'ðŸŸ¤ Ðктивни разломи (GEM)':faultsLayer
+ },
+ {collapsed:false}
+).addTo(map);
+
+const rightLayerControlContainer =
+  rightLayerControl.getContainer();
+
+function updateRightLayerControlVisibility() {
+  if (!rightLayerControlContainer) return;
+
+  const layerIds = [
+    'layer-wells',
+    'layer-springs',
+    'layer-monitoring',
+    'layer-inactive',
+    'layer-other',
+    'layer-groundwater',
+    'layer-bd-ibr',
+    'layer-geology-age',
+    'layer-quant-monitoring',
+    'layer-faults'
+  ];
+
+  const anyLayerSelected =
+    layerIds.some(id => {
+      const el = document.getElementById(id);
+      return el && el.checked;
+    });
+
+  const thematicSelected =
+    Array.from(
+      document.querySelectorAll(
+        'input[name="thematic-mode"]'
+      )
+    ).some(el => el.checked);
+
+  rightLayerControlContainer.style.display =
+    (anyLayerSelected || thematicSelected)
+      ? ''
+      : 'none';
+}
+
+[
+  'layer-wells',
+  'layer-springs',
+  'layer-monitoring',
+  'layer-inactive',
+  'layer-other',
+  'layer-groundwater',
+  'layer-bd-ibr',
+  'layer-geology-age',
+  'layer-quant-monitoring',
+  'layer-faults'
+].forEach(id => {
+  const el = document.getElementById(id);
+
+  if (el) {
+    el.addEventListener(
+      'change',
+      updateRightLayerControlVisibility
+    );
+  }
+});
+
+document
+  .querySelectorAll('input[name="thematic-mode"]')
+  .forEach(el => {
+    el.addEventListener(
+      'change',
+      updateRightLayerControlVisibility
+    );
+  });
+
+map.on(
+  'overlayadd overlayremove',
+  () => setTimeout(
+    updateRightLayerControlVisibility,
+    0
+  )
+);
+
+updateRightLayerControlVisibility();
+
+
+function setLayerStatus(id,text,color){
+ const el=document.getElementById(id);
+ if(el){
+   el.textContent=text;
+   el.style.color=color||'#555';
+ }
+}
+
+
+
+
+function buildSondiProUrl(feature){
+  const props =
+    feature && feature.properties
+      ? feature.properties
+      : {};
+
+  const code = normalizeGwbCode(
+    props.localId || props.localID || props.code || ""
+  );
+
+  const params = new URLSearchParams();
+
+  if (code) {
+    params.set("gwb", code);
+  }
+
+  if (lastGroundwaterClickLatLng) {
+    params.set(
+      "lat",
+      Number(lastGroundwaterClickLatLng.lat).toFixed(7)
+    );
+
+    params.set(
+      "lng",
+      Number(lastGroundwaterClickLatLng.lng).toFixed(7)
+    );
+  }
+
+  return "/pro?" + params.toString();
+}
+
+function sondiProButtonHtml(feature){
+  const url = buildSondiProUrl(feature);
+
+  return `
+    <div style="
+      margin-top:14px;
+      padding-top:12px;
+      border-top:1px solid #dce6e8;
+    ">
+      <a
+        href="${url}"
+        target="_top"
+        style="
+          display:block;
+          padding:11px 13px;
+          border-radius:9px;
+          background:#0c8055;
+          color:#ffffff;
+          text-decoration:none;
+          text-align:center;
+          font-weight:700;
+          font-size:13px;
+        "
+      >
+        Цялостна информация за точката →
+      </a>
+    </div>
+  `;
+}
+
+function normalizeGwbCode(value){
+  return String(value || "")
+    .trim()
+    .toUpperCase();
+}
+
+function pressureCategoryInfo(value){
+  const n = Number(value);
+
+  if (!Number.isFinite(n)) {
+    return {
+      key: "unknown",
+      label: "Няма данни",
+      color: "#aab7bb"
+    };
+  }
+
+  if (n < 5) {
+    return {
+      key: "low",
+      label: "Нисък",
+      color: "#68b7b0"
+    };
+  }
+
+  if (n < 15) {
+    return {
+      key: "moderate",
+      label: "Умерен",
+      color: "#d6c75f"
+    };
+  }
+
+  if (n < 25) {
+    return {
+      key: "elevated",
+      label: "Повишен",
+      color: "#e69a4a"
+    };
+  }
+
+  return {
+    key: "high",
+    label: "Висок",
+    color: "#cf5b5b"
+  };
+}
+
+function pointPressureRecordForFeature(feature){
+  if (!pointPressureData || !feature) return null;
+
+  const p = feature.properties || {};
+
+  const possibleCodes = [
+    p.localId,
+    p.localid,
+    p.code,
+    p.Code,
+    p.gwb_code,
+    p.GWB_CODE,
+    p.identifier,
+    p.inspireId,
+    p.inspireID
+  ];
+
+  for (const rawCode of possibleCodes) {
+    const code = normalizeGwbCode(rawCode);
+    if (!code) continue;
+
+    const match = pointPressureData.records.find(
+      r => normalizeGwbCode(r.gwb_code) === code
+    );
+
+    if (match) return match;
+  }
+
+  return null;
+}
+
+
+function diffusePressureRecordForFeature(feature){
+  if (!diffusePressureData || !feature) return null;
+
+  const p = feature.properties || {};
+  const code = normalizeGwbCode(p.localId);
+
+  if (!code) return null;
+
+  return diffusePressureData.records.find(
+    r => normalizeGwbCode(r.gwb_code) === code
+  ) || null;
+}
+
+function diffusePressureCategoryInfo(value){
+  const n = Number(value);
+
+  if (!Number.isFinite(n)) {
+    return {
+      key: "unknown",
+      label: "Няма данни",
+      color: "#aab7bb"
+    };
+  }
+
+  if (n < 25) {
+    return {
+      key: "low",
+      label: "Нисък",
+      color: "#68b7b0"
+    };
+  }
+
+  if (n < 50) {
+    return {
+      key: "moderate",
+      label: "Умерен",
+      color: "#d6c75f"
+    };
+  }
+
+  if (n < 75) {
+    return {
+      key: "elevated",
+      label: "Повишен",
+      color: "#e69a4a"
+    };
+  }
+
+  return {
+    key: "high",
+    label: "Висок",
+    color: "#cf5b5b"
+  };
+}
+
+function diffusePressureStyle(feature){
+  const record = diffusePressureRecordForFeature(feature);
+
+  if (!record) {
+    return {
+      color: '#8da1a6',
+      weight: 1,
+      opacity: 0.55,
+      fillColor: '#c9d2d4',
+      fillOpacity: 0.28
+    };
+  }
+
+  const category =
+    diffusePressureCategoryInfo(
+      record.potential_impact_percent
+    );
+
+  return {
+    color: category.color,
+    weight: 1.4,
+    opacity: 0.9,
+    fillColor: category.color,
+    fillOpacity: 0.52
+  };
+}
+
+async function loadDiffusePressureData(){
+  if (diffusePressureData || diffusePressureLoading) {
+    return diffusePressureData;
+  }
+
+  diffusePressureLoading = true;
+
+  try {
+    const response = await fetch(
+      '/geology-map/data/bd_ibr_diffuse_source_pressure.json'
+    );
+
+    if (!response.ok) {
+      throw new Error('HTTP ' + response.status);
+    }
+
+    diffusePressureData = await response.json();
+    return diffusePressureData;
+
+  } catch (error) {
+    console.error(
+      '[BD IBR] Diffuse pressure load error:',
+      error
+    );
+    return null;
+
+  } finally {
+    diffusePressureLoading = false;
+  }
+}
+
+function diffusePressureDetailsHtml(feature){
+  const record =
+    diffusePressureRecordForFeature(feature);
+
+  if (!record) {
+    return `
+      <div style="margin-top:10px">
+        <strong>Натиск от дифузни източници</strong><br>
+        Няма налични данни за това подземно водно тяло.
+      </div>
+    `;
+  }
+
+  const category =
+    diffusePressureCategoryInfo(
+      record.potential_impact_percent
+    );
+
+  const fmt = value =>
+    value === null ||
+    value === undefined ||
+    value === ""
+      ? "—"
+      : Number(value).toLocaleString(
+          "bg-BG",
+          { maximumFractionDigits: 2 }
+        );
+
+  return `
+    <div style="
+      margin-top:12px;
+      padding-top:10px;
+      border-top:1px solid #d9e4e7
+    ">
+      <strong>Натиск от дифузни източници</strong><br>
+
+      Категория:
+      <strong style="color:${category.color}">
+        ${category.label}
+      </strong><br>
+
+      Потенциално въздействие:
+      <strong>${fmt(record.potential_impact_percent)}%</strong><br>
+
+      Разкрита част на ПВТ:
+      ${fmt(record.exposed_area_km2)} km²
+
+      <details style="margin-top:8px">
+        <summary style="cursor:pointer">
+          Подробни данни
+        </summary>
+
+        <div style="margin-top:7px;line-height:1.6">
+
+          Земеделие:
+          ${fmt(record.agriculture_area_km2)} km²
+          (${fmt(record.agriculture_impact_percent)}%)<br>
+
+          Населени места без канализация:
+          ${fmt(record.unsewered_settlements_area_km2)} km²
+          (${fmt(record.unsewered_settlements_impact_percent)}%)<br>
+
+          Мини / хвостохранилища:
+          ${fmt(record.mines_tailings_area_km2)} km²
+          (${fmt(record.mines_tailings_impact_percent)}%)<br>
+
+          Индустрия:
+          ${fmt(record.industry_area_km2)} km²
+          (${fmt(record.industry_impact_percent)}%)
+
+        </div>
+      </details>
+
+      <div style="
+        margin-top:9px;
+        color:#667b82;
+        font-size:11px;
+        line-height:1.45
+      ">
+        Данните показват потенциален дифузен натиск
+        върху подземното водно тяло. Това не означава
+        доказано замърсяване във всяка конкретна точка.
+      </div>
+    </div>
+  `;
+}
+
+
+function pollutionRiskRecordForFeature(feature){
+  if (!pollutionRiskData || !feature) return null;
+
+  const p = feature.properties || {};
+  const code = normalizeGwbCode(p.localId);
+
+  if (!code) return null;
+
+  return pollutionRiskData.records.find(
+    r => normalizeGwbCode(r.gwb_code) === code
+  ) || null;
+}
+
+function pollutionRiskStyle(feature){
+  const record =
+    pollutionRiskRecordForFeature(feature);
+
+  if (!record) {
+    return {
+      color: '#8da1a6',
+      weight: 1,
+      opacity: 0.65,
+      fillColor: '#c9d2d4',
+      fillOpacity: 0.30
+    };
+  }
+
+  const atRisk =
+    record.risk_status === 'at_risk';
+
+  const color =
+    atRisk ? '#d94d4d' : '#62ad70';
+
+  return {
+    color: color,
+    weight: 1.5,
+    opacity: 0.95,
+    fillColor: color,
+    fillOpacity: 0.52
+  };
+}
+
+async function loadPollutionRiskData(){
+  if (pollutionRiskData || pollutionRiskLoading) {
+    return pollutionRiskData;
+  }
+
+  pollutionRiskLoading = true;
+
+  try {
+    const response = await fetch(
+      '/geology-map/data/bd_ibr_pollution_risk.json'
+    );
+
+    if (!response.ok) {
+      throw new Error('HTTP ' + response.status);
+    }
+
+    pollutionRiskData = await response.json();
+
+    return pollutionRiskData;
+
+  } catch (error) {
+
+    console.error(
+      '[BD IBR] Pollution risk load error:',
+      error
+    );
+
+    return null;
+
+  } finally {
+    pollutionRiskLoading = false;
+  }
+}
+
+
+function significantPressureRecordForFeature(feature){
+  if (!significantPressureData || !feature) return null;
+
+  const p = feature.properties || {};
+  const code = normalizeGwbCode(p.localId);
+
+  if (!code) return null;
+
+  return significantPressureData.records.find(
+    r => normalizeGwbCode(r.gwb_code) === code
+  ) || null;
+}
+
+async function loadSignificantPressureData(){
+  if (significantPressureData || significantPressureLoading) {
+    return significantPressureData;
+  }
+
+  significantPressureLoading = true;
+
+  try {
+    const response = await fetch(
+      '/geology-map/data/bd_ibr_significant_pressure.json'
+    );
+
+    if (!response.ok) {
+      throw new Error('HTTP ' + response.status);
+    }
+
+    significantPressureData = await response.json();
+
+    return significantPressureData;
+
+  } catch (error) {
+
+    console.error(
+      '[BD IBR] Significant pressure load error:',
+      error
+    );
+
+    return null;
+
+  } finally {
+    significantPressureLoading = false;
+  }
+}
+
+function significantPressureDetailsHtml(feature){
+  const record =
+    significantPressureRecordForFeature(feature);
+
+  if (!record) {
+    return '';
+  }
+
+  const chemicalBad =
+    String(record.chemical_status || "").toLowerCase() === "лошо";
+
+  const chemicalColor =
+    chemicalBad ? '#c93d3d' : '#3f9150';
+
+  const quantitativeGood =
+    String(record.quantitative_status || "").toLowerCase() === "добро";
+
+  const quantitativeColor =
+    quantitativeGood ? '#3f9150' : '#c93d3d';
+
+  const pressures =
+    Array.isArray(record.significant_pressures)
+      ? record.significant_pressures
+      : [];
+
+  const pressuresHtml =
+    pressures.length
+      ? `
+        <ul style="
+          margin:6px 0 0 18px;
+          padding:0;
+          line-height:1.5
+        ">
+          ${pressures
+            .map(item => `<li>${esc(item)}</li>`)
+            .join("")}
+        </ul>
+      `
+      : '—';
+
+  return `
+    <div style="
+      margin-top:12px;
+      padding:10px;
+      border:1px solid #e1e8ea;
+      border-radius:8px;
+      background:#fafcfd
+    ">
+      <strong>Значим натиск и състояние</strong><br>
+
+      Химично състояние:
+      <strong style="color:${chemicalColor}">
+        ${esc(record.chemical_status || '—')}
+      </strong><br>
+
+      Количествено състояние:
+      <strong style="color:${quantitativeColor}">
+        ${esc(record.quantitative_status || '—')}
+      </strong><br>
+
+      Показатели извън стандарта:
+      <strong>
+        ${esc(record.quality_parameters_outside_standard || '—')}
+      </strong><br>
+
+      Значително въздействие:
+      ${esc(record.significant_impact || '—')}<br>
+
+      <details style="margin-top:7px">
+        <summary style="cursor:pointer">
+          Значими натиски
+        </summary>
+
+        ${pressuresHtml}
+      </details>
+    </div>
+  `;
+}
+
+function pollutionRiskDetailsHtml(feature){
+  const record =
+    pollutionRiskRecordForFeature(feature);
+
+  if (!record) {
+    return `
+      <div style="
+        margin-top:12px;
+        padding-top:10px;
+        border-top:1px solid #d9e4e7
+      ">
+        <strong>Официална оценка на риска</strong><br>
+        Няма налични данни.
+      </div>
+    `;
+  }
+
+  const atRisk =
+    record.risk_status === 'at_risk';
+
+  const color =
+    atRisk ? '#c93d3d' : '#3f9150';
+
+  const status =
+    atRisk ? 'В РИСК' : 'НЕ Е В РИСК';
+
+  const fmt = value =>
+    value === null ||
+    value === undefined ||
+    value === ""
+      ? "—"
+      : Number(value).toLocaleString(
+          "bg-BG",
+          { maximumFractionDigits: 2 }
+        );
+
+  const point =
+    pointPressureRecordForFeature(feature);
+
+  const diffuse =
+    diffusePressureRecordForFeature(feature);
+
+  let relatedHtml = '';
+
+  if (point) {
+    const c =
+      pressureCategoryInfo(
+        point.potential_impact_percent
+      );
+
+    relatedHtml += `
+      <div style="
+        margin-top:10px;
+        padding:9px 10px;
+        border:1px solid #dfe9ec;
+        border-radius:8px;
+        background:#f8fbfc
+      ">
+        <strong>Точков натиск</strong><br>
+
+        Категория:
+        <strong>${c.label}</strong><br>
+
+        Потенциално въздействие:
+        <strong>${fmt(point.potential_impact_percent)}%</strong><br>
+
+        Потенциално засегната площ:
+        ${fmt(point.total_pressure_area_km2)} km²
+
+        <details style="margin-top:7px">
+          <summary style="cursor:pointer">
+            Източници
+          </summary>
+
+          <div style="margin-top:6px;line-height:1.55">
+            Селскостопански обекти:
+            ${fmt(point.agriculture_area_km2)} km²<br>
+
+            ПСОВ:
+            ${fmt(point.wwtp_area_km2)} km²<br>
+
+            Депа и сметища:
+            ${fmt(point.waste_area_km2)} km²<br>
+
+            Мини / хвостохранилища:
+            ${fmt(point.mines_tailings_area_km2)} km²<br>
+
+            Разрешителни по Закона за водите:
+            ${fmt(point.water_act_permits_area_km2)} km²<br>
+
+            Комплексни разрешителни:
+            ${fmt(point.integrated_permits_area_km2)} km²<br>
+
+            Частична канализация:
+            ${fmt(point.partial_sewerage_area_km2)} km²<br>
+
+            Петролни бази:
+            ${fmt(point.petroleum_bases_area_km2)} km²
+          </div>
+        </details>
+      </div>
+    `;
+  }
+
+  if (diffuse) {
+    const c =
+      diffusePressureCategoryInfo(
+        diffuse.potential_impact_percent
+      );
+
+    relatedHtml += `
+      <div style="
+        margin-top:10px;
+        padding:9px 10px;
+        border:1px solid #dfe9ec;
+        border-radius:8px;
+        background:#f8fbfc
+      ">
+        <strong>Дифузен натиск</strong><br>
+
+        Категория:
+        <strong>${c.label}</strong><br>
+
+        Потенциално въздействие:
+        <strong>${fmt(diffuse.potential_impact_percent)}%</strong>
+
+        <details style="margin-top:7px">
+          <summary style="cursor:pointer">
+            Основни фактори
+          </summary>
+
+          <div style="margin-top:6px;line-height:1.55">
+            Земеделие:
+            ${fmt(diffuse.agriculture_impact_percent)}%
+            (${fmt(diffuse.agriculture_area_km2)} km²)<br>
+
+            Населени места без канализация:
+            ${fmt(diffuse.unsewered_settlements_impact_percent)}%
+            (${fmt(diffuse.unsewered_settlements_area_km2)} km²)<br>
+
+            Мини / хвостохранилища:
+            ${fmt(diffuse.mines_tailings_impact_percent)}%
+            (${fmt(diffuse.mines_tailings_area_km2)} km²)<br>
+
+            Индустрия:
+            ${fmt(diffuse.industry_impact_percent)}%
+            (${fmt(diffuse.industry_area_km2)} km²)
+          </div>
+        </details>
+      </div>
+    `;
+  }
+
+  return `
+    <div style="
+      margin-top:12px;
+      padding-top:10px;
+      border-top:1px solid #d9e4e7
+    ">
+      <strong>Официална оценка на риска</strong><br>
+
+      Статус:
+      <strong style="
+        color:${color};
+        font-size:14px
+      ">
+        ${status}
+      </strong><br>
+
+      ${
+        record.pollution_source_type
+          ? `
+            Вид източник:
+            <strong>дифузни</strong><br>
+          `
+          : ''
+      }
+
+      ${relatedHtml}
+
+      ${significantPressureDetailsHtml(feature)}
+
+      <div style="
+        margin-top:10px;
+        color:#667b82;
+        font-size:11px;
+        line-height:1.45
+      ">
+        „В риск“ е официална оценка за подземното
+        водно тяло. Това не означава автоматично
+        доказано замърсяване на водата във всяка
+        конкретна точка или сондаж.
+      </div>
+    </div>
+  `;
+}
+
+
+function abstractionPressureRecordForFeature(feature){
+  if (!abstractionPressureData || !feature) return null;
+
+  const code = normalizeGwbCode(
+    (feature.properties || {}).localId
+  );
+
+  if (!code) return null;
+
+  return abstractionPressureData.records.find(
+    r => normalizeGwbCode(r.gwb_code) === code
+  ) || null;
+}
+
+function quantitativeRiskRecordForFeature(feature){
+  if (!quantitativeRiskData || !feature) return null;
+
+  const code = normalizeGwbCode(
+    (feature.properties || {}).localId
+  );
+
+  if (!code) return null;
+
+  return quantitativeRiskData.records.find(
+    r => normalizeGwbCode(r.gwb_code) === code
+  ) || null;
+}
+
+function abstractionCategoryInfo(value){
+  const n = Number(value);
+
+  if (!Number.isFinite(n)) {
+    return {
+      label: "Няма данни",
+      color: "#aab7bb"
+    };
+  }
+
+  if (n < 0.25) {
+    return {
+      label: "Слабо използване",
+      color: "#68b7b0"
+    };
+  }
+
+  if (n < 0.50) {
+    return {
+      label: "Умерено използване",
+      color: "#d6c75f"
+    };
+  }
+
+  if (n < 0.75) {
+    return {
+      label: "Значително използване",
+      color: "#e69a4a"
+    };
+  }
+
+  return {
+    label: "Много високо използване",
+    color: "#cf5b5b"
+  };
+}
+
+function abstractionPressureStyle(feature){
+  const record =
+    abstractionPressureRecordForFeature(feature);
+
+  if (!record) {
+    return {
+      color: '#8da1a6',
+      weight: 1,
+      opacity: 0.55,
+      fillColor: '#c9d2d4',
+      fillOpacity: 0.28
+    };
+  }
+
+  const category =
+    abstractionCategoryInfo(
+      record.exploitation_index
+    );
+
+  return {
+    color: category.color,
+    weight: 1.4,
+    opacity: 0.9,
+    fillColor: category.color,
+    fillOpacity: 0.52
+  };
+}
+
+async function loadAbstractionPressureData(){
+  if (
+    abstractionPressureData ||
+    abstractionPressureLoading
+  ) {
+    return abstractionPressureData;
+  }
+
+  abstractionPressureLoading = true;
+
+  try {
+    const response = await fetch(
+      '/geology-map/data/bd_ibr_abstraction_pressure.json'
+    );
+
+    if (!response.ok) {
+      throw new Error('HTTP ' + response.status);
+    }
+
+    abstractionPressureData =
+      await response.json();
+
+    return abstractionPressureData;
+
+  } catch (error) {
+
+    console.error(
+      '[BD IBR] Abstraction pressure load error:',
+      error
+    );
+
+    return null;
+
+  } finally {
+    abstractionPressureLoading = false;
+  }
+}
+
+async function loadQuantitativeRiskData(){
+  if (
+    quantitativeRiskData ||
+    quantitativeRiskLoading
+  ) {
+    return quantitativeRiskData;
+  }
+
+  quantitativeRiskLoading = true;
+
+  try {
+    const response = await fetch(
+      '/geology-map/data/bd_ibr_quantitative_risk.json'
+    );
+
+    if (!response.ok) {
+      throw new Error('HTTP ' + response.status);
+    }
+
+    quantitativeRiskData =
+      await response.json();
+
+    return quantitativeRiskData;
+
+  } catch (error) {
+
+    console.error(
+      '[BD IBR] Quantitative risk load error:',
+      error
+    );
+
+    return null;
+
+  } finally {
+    quantitativeRiskLoading = false;
+  }
+}
+
+function abstractionPressureDetailsHtml(feature){
+  const record =
+    abstractionPressureRecordForFeature(feature);
+
+  if (!record) {
+    return `
+      <div style="margin-top:12px">
+        <strong>Натиск от водовземане</strong><br>
+        Няма налични данни.
+      </div>
+    `;
+  }
+
+  const category =
+    abstractionCategoryInfo(
+      record.exploitation_index
+    );
+
+  const fmt = value =>
+    value === null ||
+    value === undefined ||
+    value === ""
+      ? "—"
+      : Number(value).toLocaleString(
+          "bg-BG",
+          {maximumFractionDigits:2}
+        );
+
+  const sectorLabels = {
+    public_water_supply:
+      "Питейно-битово водоснабдяване",
+    agriculture:
+      "Земеделие",
+    industry:
+      "Индустрия",
+    other:
+      "Други",
+    aquaculture:
+      "Аквакултури",
+    household_self_supply:
+      "Собствени потребности на домакинствата",
+    tourism_recreation:
+      "Туризъм и отдих"
+  };
+
+  let sectorHtml = '';
+
+  if (record.sectors) {
+    for (const [key, value] of Object.entries(record.sectors)) {
+      if (!value) continue;
+
+      sectorHtml += `
+        ${sectorLabels[key] || key}:
+        ${fmt(value.amount_lps)} l/s
+        ${
+          value.exploitation_index != null
+            ? ` — индекс ${fmt(value.exploitation_index)}`
+            : ''
+        }
+        <br>
+      `;
+    }
+  }
+
+  const dominantLabel =
+    sectorLabels[record.dominant_sector] ||
+    record.dominant_sector ||
+    '—';
+
+  return `
+    <div style="
+      margin-top:12px;
+      padding-top:10px;
+      border-top:1px solid #d9e4e7
+    ">
+      <strong>Натиск от водовземане</strong><br>
+
+      Ниво на използване:
+      <strong style="color:${category.color}">
+        ${category.label}
+      </strong><br>
+
+      Експлоатационен индекс:
+      <strong>${fmt(record.exploitation_index)}</strong><br>
+
+      Разрешено водовземане:
+      <strong>${fmt(record.permitted_total_lps)} l/s</strong><br>
+
+      Разполагаем ресурс:
+      <strong>${fmt(record.available_resource_lps)} l/s</strong><br>
+
+      Доминиращ сектор:
+      <strong>${dominantLabel}</strong>
+
+      <details style="margin-top:8px">
+        <summary style="cursor:pointer">
+          Разбивка по предназначение
+        </summary>
+
+        <div style="margin-top:7px;line-height:1.6">
+          ${sectorHtml || 'Няма подробни данни.'}
+        </div>
+      </details>
+
+      <div style="
+        margin-top:9px;
+        color:#667b82;
+        font-size:11px;
+        line-height:1.45
+      ">
+        Категорията за използване е визуална
+        класификация на Sondi.bg. Официалният
+        количествен риск се показва отделно.
+      </div>
+    </div>
+  `;
+}
+
+function quantitativeRiskDetailsHtml(feature){
+  const record =
+    quantitativeRiskRecordForFeature(feature);
+
+  if (!record) {
+    return '';
+  }
+
+  const atRisk =
+    record.final_quantitative_risk_status ===
+    'at_risk';
+
+  const color =
+    atRisk ? '#c93d3d' : '#3f9150';
+
+  const label =
+    atRisk ? 'В РИСК' : 'НЕ Е В РИСК';
+
+  return `
+    <div style="
+      margin-top:12px;
+      padding:10px;
+      border:1px solid #dfe7e9;
+      border-radius:8px;
+      background:#fafcfd
+    ">
+      <strong>Официален количествен риск</strong><br>
+
+      Крайна оценка:
+      <strong style="color:${color}">
+        ${label}
+      </strong><br>
+
+      ${
+        record.potentially_at_risk
+          ? `
+            Потенциално в риск:
+            <strong>Да</strong><br>
+          `
+          : ''
+      }
+
+      <div style="
+        margin-top:7px;
+        color:#667b82;
+        font-size:11px;
+        line-height:1.45
+      ">
+        Това е официалната оценка за риск от
+        непостигане на добро количествено състояние.
+      </div>
+    </div>
+  `;
+}
+
+function defaultBdIbrStyle(){
+  return {
+    color: '#247f96',
+    weight: 1,
+    opacity: 0.55,
+    fillColor: '#5bb7ca',
+    fillOpacity: 0.08
+  };
+}
+
+function pointPressureStyle(feature){
+  const record = pointPressureRecordForFeature(feature);
+
+  if (!record) {
+    return {
+      color: '#8da1a6',
+      weight: 1,
+      opacity: 0.55,
+      fillColor: '#c9d2d4',
+      fillOpacity: 0.28
+    };
+  }
+
+  const category =
+    pressureCategoryInfo(record.potential_impact_percent);
+
+  return {
+    color: category.color,
+    weight: 1.4,
+    opacity: 0.9,
+    fillColor: category.color,
+    fillOpacity: 0.52
+  };
+}
+
+function applyBdIbrThematicStyle(){
+  if (!bdIbrGroundwaterLeafletLayer) return;
+
+  if (activeThematicMode === "point-pressure") {
+    bdIbrGroundwaterLeafletLayer.setStyle(pointPressureStyle);
+  } else if (activeThematicMode === "diffuse-pressure") {
+    bdIbrGroundwaterLeafletLayer.setStyle(diffusePressureStyle);
+  } else if (activeThematicMode === "pollution-risk") {
+    bdIbrGroundwaterLeafletLayer.setStyle(pollutionRiskStyle);
+  } else if (activeThematicMode === "abstraction-pressure") {
+    bdIbrGroundwaterLeafletLayer.setStyle(abstractionPressureStyle);
+  } else {
+    bdIbrGroundwaterLeafletLayer.setStyle(defaultBdIbrStyle);
+  }
+}
+
+async function loadPointPressureData(){
+  if (pointPressureData || pointPressureLoading) {
+    return pointPressureData;
+  }
+
+  pointPressureLoading = true;
+
+  setLayerStatus(
+    'point-pressure-status',
+    'зарежда се…',
+    '#a05a00'
+  );
+
+  try {
+    const response = await fetch(
+      '/geology-map/data/bd_ibr_point_source_pressure.json'
+    );
+
+    if (!response.ok) {
+      throw new Error('HTTP ' + response.status);
+    }
+
+    pointPressureData = await response.json();
+
+    setLayerStatus(
+      'point-pressure-status',
+      'заредено ✓',
+      '#0b6b43'
+    );
+
+    return pointPressureData;
+
+  } catch (error) {
+
+    console.error(
+      '[BD IBR] Point pressure load error:',
+      error
+    );
+
+    setLayerStatus(
+      'point-pressure-status',
+      'грешка при зареждане',
+      '#b00020'
+    );
+
+    return null;
+
+  } finally {
+    pointPressureLoading = false;
+  }
+}
+
+function pointPressureDetailsHtml(feature){
+  const record = pointPressureRecordForFeature(feature);
+
+  if (!record) {
+    return `
+      <div style="margin-top:10px">
+        <strong>Натиск от точкови източници</strong><br>
+        Няма налични данни за това подземно водно тяло.
+      </div>
+    `;
+  }
+
+  const category =
+    pressureCategoryInfo(record.potential_impact_percent);
+
+  const fmt = value =>
+    value === null ||
+    value === undefined ||
+    value === ""
+      ? "—"
+      : Number(value).toLocaleString(
+          "bg-BG",
+          { maximumFractionDigits: 2 }
+        );
+
+  return `
+    <div style="
+      margin-top:12px;
+      padding-top:10px;
+      border-top:1px solid #d9e4e7
+    ">
+      <strong>Натиск от точкови източници</strong><br>
+
+      Категория:
+      <strong style="color:${category.color}">
+        ${category.label}
+      </strong><br>
+
+      Потенциално въздействие:
+      <strong>${fmt(record.potential_impact_percent)}%</strong><br>
+
+      Разкрита част на ПВТ:
+      ${fmt(record.exposed_area_km2)} km²<br>
+
+      Потенциално засегната площ:
+      ${fmt(record.total_pressure_area_km2)} km²
+
+      <details style="margin-top:8px">
+        <summary style="cursor:pointer">
+          Подробни данни
+        </summary>
+
+        <div style="margin-top:7px;line-height:1.6">
+          Селскостопански обекти:
+          ${fmt(record.agriculture_area_km2)} km²<br>
+
+          ПСОВ:
+          ${fmt(record.wwtp_area_km2)} km²
+          ${record.wwtp_count != null
+            ? ` (${fmt(record.wwtp_count)} бр.)`
+            : ""}<br>
+
+          Депа и сметища:
+          ${fmt(record.waste_area_km2)} km²<br>
+
+          Мини / хвостохранилища:
+          ${fmt(record.mines_tailings_area_km2)} km²<br>
+
+          Разрешителни по Закона за водите:
+          ${fmt(record.water_act_permits_area_km2)} km²
+          ${record.water_act_permits_count != null
+            ? ` (${fmt(record.water_act_permits_count)} бр.)`
+            : ""}<br>
+
+          Комплексни разрешителни:
+          ${fmt(record.integrated_permits_area_km2)} km²
+          ${record.integrated_permits_count != null
+            ? ` (${fmt(record.integrated_permits_count)} бр.)`
+            : ""}<br>
+
+          Частично изградена канализация:
+          ${fmt(record.partial_sewerage_area_km2)} km²<br>
+
+          Петролни бази:
+          ${fmt(record.petroleum_bases_area_km2)} km²
+          ${record.petroleum_bases_count != null
+            ? ` (${fmt(record.petroleum_bases_count)} бр.)`
+            : ""}
+        </div>
+      </details>
+
+      <div style="
+        margin-top:9px;
+        color:#667b82;
+        font-size:11px;
+        line-height:1.45
+      ">
+        Данните показват потенциален натиск върху
+        подземното водно тяло. Те не означават доказано
+        замърсяване във всяка конкретна точка от него.
+      </div>
+    </div>
+  `;
+}
+
+async function loadBdIbrGroundwaterBodies(){
+  if(bdIbrGroundwaterLoaded || bdIbrGroundwaterLoading) return;
+
+  bdIbrGroundwaterLoading = true;
+  setLayerStatus(
+    'bd-ibr-load-status',
+    'зарежда се…',
+    '#a05a00'
+  );
+
+  try {
+    const response = await fetch(
+      '/geology-map/data/bd_ibr_groundwater_bodies_enriched.geojson'
+    );
+
+    if(!response.ok){
+      throw new Error('HTTP ' + response.status);
+    }
+
+    const data = await response.json();
+
+    const layer = L.geoJSON(data, {
+      style: function(feature){
+        if(activeThematicMode === "point-pressure"){
+          return pointPressureStyle(feature);
+        }
+
+        if(activeThematicMode === "diffuse-pressure"){
+          return diffusePressureStyle(feature);
+        }
+
+        if(activeThematicMode === "pollution-risk"){
+          return pollutionRiskStyle(feature);
+        }
+
+        if(activeThematicMode === "abstraction-pressure"){
+          return abstractionPressureStyle(feature);
+        }
+
+        return defaultBdIbrStyle();
+      },
+
+      onEachFeature: function(feature, featureLayer){
+        const p = feature.properties || {};
+
+        const code = p.localId || '—';
+        const name = p.nameText || p.nameTxtInt || 'Подземно водно тяло';
+        const area = Number(p.sizeValue);
+        const areaText = Number.isFinite(area)
+          ? area.toFixed(2) + ' ' + (p.sizeUoM || 'km²')
+          : '—';
+
+        const horizons = p.horizons || '—';
+        const type = p.Type || '—';
+        const location = p.LOCATION || '—';
+        const basin = p.BASIN || '—';
+        const protectionCode = p['Êîä_íà_ÇÇÂ'] || '—';
+        const hydroHorizon = p.horizon_bg || '—';
+        const waterTypeBg = p.water_type_bg || '—';
+        const gwbTypeNameBg = p.gwb_type_name_bg || '—';
+        const hydroSourcePage = p.hydro_source_page || '—';
+        const gwbTypeSourcePage = p.gwb_type_source_page || '—';
+
+        const html =
+          '<div style="min-width:280px;line-height:1.45">' +
+          '<div style="font-weight:700;font-size:14px;margin-bottom:5px">' +
+          name +
+          '</div>' +
+
+          '<div><b>Код:</b> ' + code + '</div>' +
+          '<div><b>Площ:</b> ' + areaText + '</div>' +
+          '<div><b>Хидрогеоложки хоризонт:</b> ' + hydroHorizon + '</div>' +
+          '<div><b>Тип подземни води:</b> ' + waterTypeBg + '</div>' +
+          '<div><b>Хоризонт в GIS:</b> ' + horizons + '</div>' +
+          '<div><b>Тип водно тяло:</b> ' + gwbTypeNameBg + '</div>' +
+          '<div><b>GIS код на типа:</b> ' + type + '</div>' +
+          '<div><b>Район:</b> ' + location + '</div>' +
+          '<div><b>Басейн:</b> ' + basin + '</div>' +
+          '<div><b>Код ЗЗВ:</b> ' + protectionCode + '</div>' +
+
+          '<div style="margin-top:7px;font-size:11px;color:#555">' +
+          'Източници: БД „Източнобеломорски район“ – ПУРБ 2022–2027; ' +
+          'Приложение 1.3.3.1, стр. ' + hydroSourcePage +
+          '; Приложение 1.3.3.2, стр. ' + gwbTypeSourcePage +
+          '</div>' +
+          '</div>';
+
+        featureLayer.on('click', function(e){
+          lastGroundwaterClickLatLng = e.latlng;
+        });
+
+        featureLayer.bindPopup(() => {
+          let popupHtml = html;
+
+          if (activeThematicMode === "point-pressure") {
+            popupHtml += pointPressureDetailsHtml(feature);
+          }
+
+          if (activeThematicMode === "diffuse-pressure") {
+            popupHtml += diffusePressureDetailsHtml(feature);
+          }
+
+          if (activeThematicMode === "pollution-risk") {
+            popupHtml += pollutionRiskDetailsHtml(feature);
+          }
+
+          if (activeThematicMode === "abstraction-pressure") {
+            popupHtml += abstractionPressureDetailsHtml(feature);
+            popupHtml += quantitativeRiskDetailsHtml(feature);
+          }
+
+          popupHtml += sondiProButtonHtml(feature);
+
+          return popupHtml;
+        });
+
+        featureLayer.on('mouseover', function(){
+          this.setStyle({
+            weight: 3,
+            fillOpacity: 0.28
+          });
+        });
+
+        featureLayer.on('mouseout', function(){
+          this.setStyle({
+            weight: 2,
+            fillOpacity: 0.18
+          });
+        });
+      }
+    });
+
+    bdIbrGroundwaterLeafletLayer = layer;
+    layer.addTo(bdIbrGroundwaterLayer);
+
+    applyBdIbrThematicStyle();
+
+    bdIbrGroundwaterLoaded = true;
+    bdIbrGroundwaterLoading = false;
+
+    const count =
+      data && Array.isArray(data.features)
+        ? data.features.length
+        : 0;
+
+    setLayerStatus(
+      'bd-ibr-load-status',
+      'заредено ✓ (' + count + ' водни тела)',
+      '#0b6b43'
+    );
+
+    window.bdIbrGroundwaterGeoJson = data;
+
+    console.log(
+      '[BD IBR] Groundwater bodies loaded:',
+      count
+    );
+
+  } catch(error){
+    bdIbrGroundwaterLoading = false;
+
+    console.error(
+      '[BD IBR] Load error:',
+      error
+    );
+
+    setLayerStatus(
+      'bd-ibr-load-status',
+      'грешка при зареждане',
+      '#b00020'
+    );
+  }
+}
+
+
+function monitoringValue(value, digits = 2) {
+  if (value === null || value === undefined || value === "") return "—";
+
+  const n = Number(value);
+
+  if (Number.isFinite(n)) {
+    return n.toFixed(digits).replace(/\.00$/, "");
+  }
+
+  return String(value);
+}
+
+function monitoringQaColor(status) {
+  if (status === "confirmed") return "#16834a";
+  if (status === "boundary_near") return "#d18b00";
+  if (status === "review") return "#c0392b";
+  return "#666";
+}
+
+function monitoringMarkerStyle(properties) {
+  if (properties.measurement_type === "discharge") {
+    return {
+      radius: 6,
+      color: "#17658a",
+      weight: 1.5,
+      fillColor: "#5bc0eb",
+      fillOpacity: 0.9
+    };
+  }
+
+  if (properties.measurement_type === "level") {
+    return {
+      radius: 6,
+      color: "#123b73",
+      weight: 1.5,
+      fillColor: "#245fa8",
+      fillOpacity: 0.9
+    };
+  }
+
+  return {
+    radius: 6,
+    color: "#555",
+    weight: 1.5,
+    fillColor: "#aaa",
+    fillOpacity: 0.9
+  };
+}
+
+function buildQuantitativeMonitoringPopup(feature) {
+  const p = feature.properties || {};
+
+  const station = p.station_no || "Мониторингов пункт";
+  const location = p.location || "—";
+  const pointType = p.point_type || "—";
+  const gwb = p.gwb_code || p.gwb_code_original || "—";
+  const geologicalIndex = p.geological_index || "—";
+
+  const elevation =
+    p.ground_elevation_m !== null &&
+    p.ground_elevation_m !== undefined
+      ? monitoringValue(p.ground_elevation_m) + " m"
+      : "—";
+
+  const depth =
+    p.depth_m !== null &&
+    p.depth_m !== undefined
+      ? monitoringValue(p.depth_m) + " m"
+      : "—";
+
+  let measurementHtml = "";
+
+  if (p.measurement_type === "level") {
+    measurementHtml =
+      '<div><b>Средно ниво 2019:</b> ' +
+      monitoringValue(p.level_2019_cm) +
+      ' cm</div>' +
+      '<div><b>Средно ниво 2020:</b> ' +
+      monitoringValue(p.level_2020_cm) +
+      ' cm</div>';
+  }
+  else if (p.measurement_type === "discharge") {
+    measurementHtml =
+      '<div><b>Среден дебит 2019:</b> ' +
+      monitoringValue(p.discharge_2019_ls) +
+      ' l/s</div>' +
+      '<div><b>Среден дебит 2020:</b> ' +
+      monitoringValue(p.discharge_2020_ls) +
+      ' l/s</div>';
+  }
+  else {
+    measurementHtml =
+      '<div><b>Стойност 2019:</b> ' +
+      monitoringValue(p.value_2019) +
+      '</div>' +
+      '<div><b>Стойност 2020:</b> ' +
+      monitoringValue(p.value_2020) +
+      '</div>';
+  }
+
+  let qaHtml =
+    '<div style="margin-top:7px;padding-top:6px;border-top:1px solid #ddd">' +
+    '<b>Пространствен QA:</b> ' +
+    '<span style="color:' +
+    monitoringQaColor(p.spatial_qa) +
+    ';font-weight:700"> ' +
+    esc(p.spatial_qa_bg || "—") +
+    '</span>';
+
+  if (
+    p.spatial_qa !== "confirmed" &&
+    p.distance_to_expected_gwb_m !== null &&
+    p.distance_to_expected_gwb_m !== undefined
+  ) {
+    qaHtml +=
+      '<div style="font-size:11px;color:#666">' +
+      'Разстояние до записаното ПВТ: ' +
+      monitoringValue(p.distance_to_expected_gwb_m) +
+      ' m</div>';
+  }
+
+  qaHtml += '</div>';
+
+  return (
+    '<div style="min-width:285px;max-width:360px;line-height:1.45">' +
+
+    '<div style="font-size:15px;font-weight:700;margin-bottom:6px">' +
+    'Мониторингов пункт ' +
+    esc(station) +
+    '</div>' +
+
+    '<div><b>Местоположение:</b> ' + esc(location) + '</div>' +
+    '<div><b>Вид пункт:</b> ' + esc(pointType) + '</div>' +
+    '<div><b>Кота терен:</b> ' + esc(elevation) + '</div>' +
+    '<div><b>Дълбочина:</b> ' + esc(depth) + '</div>' +
+    '<div><b>Код на ПВТ:</b> ' + esc(gwb) + '</div>' +
+    '<div><b>Геоложки индекс:</b> ' + esc(geologicalIndex) + '</div>' +
+
+    '<div style="margin-top:7px;padding-top:6px;border-top:1px solid #ddd">' +
+    measurementHtml +
+    '</div>' +
+
+    qaHtml +
+
+    '<div style="margin-top:7px;font-size:11px;color:#666">' +
+    'Източник: БД ИБР / НИМХ – ПУРБ 2022–2027, ' +
+    'Приложение 1.3.1.1; средногодишни стойности 2019–2020' +
+    '</div>' +
+
+    '</div>'
+  );
+}
+
+async function loadQuantitativeMonitoring(){
+  if(
+    quantitativeMonitoringLoaded ||
+    quantitativeMonitoringLoading
+  ) return;
+
+  quantitativeMonitoringLoading = true;
+
+  setLayerStatus(
+    'quant-monitoring-load-status',
+    'зарежда се…',
+    '#a05a00'
+  );
+
+  try {
+    const response = await fetch(
+      '/geology-map/data/bd_ibr_monitoring_2019_2020.geojson'
+    );
+
+    if(!response.ok){
+      throw new Error('HTTP ' + response.status);
+    }
+
+    const monitoringData = await response.json();
+
+    const layer = L.geoJSON(monitoringData, {
+
+      pointToLayer: function(feature, latlng){
+        return L.circleMarker(
+          latlng,
+          monitoringMarkerStyle(feature.properties || {})
+        );
+      },
+
+      onEachFeature: function(feature, featureLayer){
+        const p = feature.properties || {};
+
+        featureLayer.bindPopup(
+          buildQuantitativeMonitoringPopup(feature),
+          {maxWidth:390}
+        );
+
+        featureLayer.bindTooltip(
+          (p.station_no || "Мониторингов пункт") +
+          (p.location ? " · " + p.location : "")
+        );
+      }
+    });
+
+    layer.addTo(quantitativeMonitoringLayer);
+
+    quantitativeMonitoringLoaded = true;
+    quantitativeMonitoringLoading = false;
+
+    const count =
+      monitoringData &&
+      Array.isArray(monitoringData.features)
+        ? monitoringData.features.length
+        : 0;
+
+    setLayerStatus(
+      'quant-monitoring-load-status',
+      'заредени ' + count + ' пункта ✓',
+      '#0b6b43'
+    );
+
+    window.quantitativeMonitoringGeoJson = monitoringData;
+
+    console.log(
+      '[BD IBR] Quantitative monitoring loaded:',
+      count
+    );
+
+  } catch(error) {
+
+    quantitativeMonitoringLoading = false;
+
+    console.error(
+      '[BD IBR] Quantitative monitoring load error:',
+      error
+    );
+
+    setLayerStatus(
+      'quant-monitoring-load-status',
+      'грешка при зареждане',
+      '#b00020'
+    );
+  }
+}
+
+async function loadGroundwaterBodies(){
+ if(groundwaterLoaded||groundwaterLoading)return;
+ groundwaterLoading=true;
+ setLayerStatus('gw-load-status','зарежда се…','#a05a00');
+ try{
+   const itemId='0d434f49a03e43c4b62b11044f822149';
+   const metaUrl=`https://www.arcgis.com/sharing/rest/content/items/${itemId}?f=json`;
+   const meta=await fetch(metaUrl).then(r=>{
+     if(!r.ok)throw new Error('ArcGIS metadata HTTP '+r.status);
+     return r.json();
+   });
+   if(!meta.url)throw new Error('Липсва service URL');
+   const serviceUrl=meta.url.replace(/\/$/,'');
+   let layer;
+   if(/FeatureServer/i.test(serviceUrl)){
+     const layerUrl=/\/\d+$/.test(serviceUrl)?serviceUrl:serviceUrl+'/0';
+     layer=L.esri.featureLayer({
+       url:layerUrl,
+       simplifyFactor:0.4,
+       precision:5,
+       style:()=>({
+         color:'#1565c0',
+         weight:2,
+         fillColor:'#42a5f5',
+         fillOpacity:0.22
+       }),
+       onEachFeature:(feature,l)=>{
+         const p=feature.properties||{};
+         const name=p.name||p.Name||p.WATERBODY_NAME||p.WB_NAME||p.euName||'Подземно водно тяло';
+         const code=p.euCode||p.EU_CD||p.code||p.Code||p.WB_CODE||'—';
+         l.bindPopup(`<b>${esc(name)}</b><br>Код: ${esc(code)}<br>Източник: EEA / WFD`);
+       }
+     });
+   }else{
+     layer=L.esri.dynamicMapLayer({
+       url:serviceUrl,
+       opacity:0.5,
+       useCors:true
+     });
+   }
+   layer.addTo(groundwaterLayer);
+   groundwaterLoaded=true;
+   setLayerStatus('gw-load-status','заредено ✓','#0b6b43');
+ }catch(err){
+   console.error('Groundwater load error',err);
+   setLayerStatus('gw-load-status','грешка при зареждане','#b00020');
+ }
+ groundwaterLoading=false;
+}
+
+// GEM_FAULT_POPUP_START
+
+const gemFaultIndex = new Map();
+let selectedGemFaultLayer = null;
+
+function gemHasValue(value) {
+  return !(
+    value === undefined ||
+    value === null ||
+    value === "" ||
+    value === "()" ||
+    value === "(,,)"
+  );
+}
+
+function gemTupleParts(value) {
+  if (!gemHasValue(value)) {
+    return [];
+  }
+
+  return String(value)
+    .replace(/^\(/, "")
+    .replace(/\)$/, "")
+    .split(",")
+    .map(item => item.trim());
+}
+
+function formatGemTuple(value, unit) {
+  const parts = gemTupleParts(value);
+
+  if (!parts.length || !parts[0]) {
+    return "";
+  }
+
+  const preferred = parts[0];
+  const minimum = parts[1] || "";
+  const maximum = parts[2] || "";
+  const suffix = unit || "";
+
+  if (minimum && maximum && minimum !== maximum) {
+    return (
+      preferred +
+      suffix +
+      " (" +
+      minimum +
+      "\u2013" +
+      maximum +
+      suffix +
+      ")"
+    );
+  }
+
+  return preferred + suffix;
+}
+
+function translateGemSlipType(value) {
+  const translations = {
+    "Normal": "\u041d\u043e\u0440\u043c\u0430\u043b\u0435\u043d",
+    "Reverse": "\u0412\u044a\u0437\u0441\u0435\u0434",
+    "Thrust": "\u041d\u0430\u0432\u043b\u0430\u043a",
+    "Dextral": "\u0414\u0435\u0441\u0435\u043d \u043e\u0442\u0441\u0435\u0434",
+    "Sinistral": "\u041b\u044f\u0432 \u043e\u0442\u0441\u0435\u0434",
+    "Dextral-Normal":
+      "\u0414\u0435\u0441\u0435\u043d \u043d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u043e\u0442\u0441\u0435\u0434",
+    "Sinistral-Normal":
+      "\u041b\u044f\u0432 \u043d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u043e\u0442\u0441\u0435\u0434",
+    "Dextral-Reverse":
+      "\u0414\u0435\u0441\u0435\u043d \u043e\u0431\u0440\u0430\u0442\u0435\u043d \u043e\u0442\u0441\u0435\u0434",
+    "Sinistral-Reverse":
+      "\u041b\u044f\u0432 \u043e\u0431\u0440\u0430\u0442\u0435\u043d \u043e\u0442\u0441\u0435\u0434"
+  };
+
+  return translations[value] || value || "";
+}
+
+function gemPopupRow(label, value) {
+  if (!gemHasValue(value)) {
+    return "";
+  }
+
+  return (
+    "<div style=\"margin-top:4px\">" +
+    "<strong>" +
+    esc(label) +
+    ":</strong> " +
+    esc(String(value)) +
+    "</div>"
+  );
+}
+
+function calculateGemFaultLength(feature) {
+  try {
+    const length = turf.length(feature, {
+      units: "kilometers"
+    });
+
+    if (!Number.isFinite(length)) {
+      return "";
+    }
+
+    if (length < 1) {
+      return Math.round(length * 1000) + " m";
+    }
+
+    return length.toFixed(1) + " km";
+  } catch (error) {
+    return "";
+  }
+}
+
+function buildGemFaultPopup(feature) {
+  const p = feature.properties || {};
+
+  const catalogId = gemHasValue(p.catalog_id)
+    ? String(p.catalog_id)
+    : "";
+
+  const slipType = translateGemSlipType(p.slip_type);
+
+  const averageDip = formatGemTuple(
+    p.average_dip,
+    "\u00b0"
+  );
+
+  const averageRake = formatGemTuple(
+    p.average_rake,
+    "\u00b0"
+  );
+
+  const slipRate = formatGemTuple(
+    p.net_slip_rate,
+    " mm/\u0433\u043e\u0434."
+  );
+
+  const upperDepth = formatGemTuple(
+    p.upper_seis_depth,
+    " km"
+  );
+
+  const lowerDepth = formatGemTuple(
+    p.lower_seis_depth,
+    " km"
+  );
+
+  const lineLength = calculateGemFaultLength(feature);
+
+  const bodies =
+    officialBdIbrResult &&
+    officialBdIbrResult.all
+      ? officialBdIbrResult.all
+      : [];
+
+  const geologyUnit =
+    geologyResult &&
+    geologyResult.unit
+      ? geologyResult.unit
+      : null;
+
+  const monitoringFeature =
+    nearestMonitoring &&
+    nearestMonitoring.feature
+      ? nearestMonitoring.feature
+      : null;
+
+  const monitoringProps =
+    monitoringFeature
+      ? monitoringFeature.properties || {}
+      : {};
+
+  const monitoringMeasurement =
+    monitoringFeature
+      ? monitoringMeasurementText(
+          monitoringProps
+        )
+      : null;
+
+  let html =
+    "<hr>" +
+    "<div style=\"font-size:16px;font-weight:800;" +
+    "color:#173d47\">" +
+    "Оценка на избраната точка" +
+    "</div>" +
+
+    "<div class=\"coord\" style=\"margin-top:3px\">" +
+    lat.toFixed(7) +
+    ", " +
+    lon.toFixed(7) +
+    "</div>";
+
+  /*
+   * 1. Подземни води
+   */
+  html +=
+    "<div style=\"margin-top:12px;" +
+    "padding:11px 12px;" +
+    "background:#eef7fb;" +
+    "border-left:4px solid #247f96;" +
+    "border-radius:4px\">" +
+
+    "<strong style=\"font-size:14px\">" +
+    "💧 Подземни води" +
+    "</strong><br>";
+
+  if (bodies.length === 1) {
+    html +=
+      "Точката попада в " +
+      "<strong>официално картографирана зона " +
+      "с подземни води</strong>.<br>" +
+      "<span class=\"small\">" +
+      "За това място е установено едно " +
+      "подземно водно тяло в използвания " +
+      "официален слой." +
+      "</span>";
+  } else if (bodies.length > 1) {
+    html +=
+      "Точката попада в зона, в която се " +
+      "<strong>припокриват " +
+      bodies.length +
+      " официално картографирани подземни " +
+      "водни тела</strong>.<br>" +
+
+      "<span class=\"small\">" +
+      "Това означава, че за мястото има " +
+      "повече от една регионална " +
+      "хидрогеоложка характеристика. " +
+      "За конкретен сондаж трябва да се " +
+      "разглеждат заедно." +
+      "</span>";
+  } else if (groundwaterBody) {
+    html +=
+      "Точката попада в картографирана " +
+      "<strong>зона с подземни води</strong>.";
+  } else {
+    html +=
+      "За тази координата не е намерена " +
+      "официално картографирана зона с " +
+      "подземни води в заредените слоеве.";
+  }
+
+  html += "</div>";
+
+  /*
+   * 2. Мониторинг
+   */
+  html +=
+    "<div style=\"margin-top:10px;" +
+    "padding:11px 12px;" +
+    "background:#f4f8f5;" +
+    "border-left:4px solid #2d8a65;" +
+    "border-radius:4px\">" +
+
+    "<strong style=\"font-size:14px\">" +
+    "📊 Наблюдение на подземните води" +
+    "</strong><br>";
+
+  if (
+    nearestMonitoring &&
+    monitoringFeature
+  ) {
+    html +=
+      "Най-близкият официален " +
+      "мониторингов пункт е на " +
+      "<strong>" +
+      formatAnalysisDistance(
+        nearestMonitoring.distanceKm
+      ) +
+      "</strong>";
+
+    if (monitoringProps.location) {
+      html +=
+        " (" +
+        esc(monitoringProps.location) +
+        ")";
+    }
+
+    html += ".<br>";
+
+    if (
+      monitoringMeasurement &&
+      monitoringMeasurement.v2019 !== null &&
+      monitoringMeasurement.v2019 !== undefined &&
+      monitoringMeasurement.v2020 !== null &&
+      monitoringMeasurement.v2020 !== undefined
+    ) {
+      const v2019 =
+        Number(
+          monitoringMeasurement.v2019
+        );
+
+      const v2020 =
+        Number(
+          monitoringMeasurement.v2020
+        );
+
+      html +=
+        "Отчетени стойности: " +
+        "<strong>2019: " +
+        esc(String(
+          monitoringMeasurement.v2019
+        )) +
+        esc(
+          monitoringMeasurement.unit
+        ) +
+        "</strong> · " +
+        "<strong>2020: " +
+        esc(String(
+          monitoringMeasurement.v2020
+        )) +
+        esc(
+          monitoringMeasurement.unit
+        ) +
+        "</strong>.<br>";
+
+      if (
+        Number.isFinite(v2019) &&
+        Number.isFinite(v2020)
+      ) {
+        const difference =
+          Math.abs(v2020 - v2019);
+
+        html +=
+          "<span class=\"small\">" +
+          "Разликата между двете " +
+          "отчетени стойности е " +
+          "<strong>" +
+          difference.toFixed(1) +
+          esc(
+            monitoringMeasurement.unit
+          ) +
+          "</strong>." +
+          "</span>";
+      }
+    } else {
+      html +=
+        "<span class=\"small\">" +
+        "За пункта няма две сравними " +
+        "стойности за 2019 и 2020 г." +
+        "</span>";
+    }
+  } else {
+    html +=
+      "Няма количествен мониторингов " +
+      "пункт в радиус 50 km.";
+  }
+
+  html += "</div>";
+
+  /*
+   * 3. Геология
+   */
+  html +=
+    "<div style=\"margin-top:10px;" +
+    "padding:11px 12px;" +
+    "background:#f6f3ed;" +
+    "border-left:4px solid " +
+    geologyStatusColor(
+      geologyResult.status
+    ) +
+    ";" +
+    "border-radius:4px\">" +
+
+    "<strong style=\"font-size:14px\">" +
+    "🪨 Геоложка среда" +
+    "</strong><br>";
+
+  if (geologyUnit) {
+    html +=
+      "Регионалната геоложка карта " +
+      "определя района като " +
+      "<strong>" +
+      esc(
+        geologyUnit.name_bg ||
+        geologyUnit.code
+      ) +
+      "</strong>.<br>" +
+
+      "<span class=\"small\">" +
+      "Това описва общата геоложка " +
+      "среда около точката. Не определя " +
+      "сама по себе си точната дълбочина " +
+      "на водата или пластовете в бъдещ " +
+      "сондаж." +
+      "</span>";
+  } else {
+    html +=
+      "За тази точка няма достатъчно " +
+      "данни за надеждно определяне на " +
+      "геоложката единица.";
+  }
+
+  html += "</div>";
+
+  /*
+   * 4. Разлом
+   */
+  html +=
+    "<div style=\"margin-top:10px;" +
+    "padding:11px 12px;" +
+    "background:#fff6f1;" +
+    "border-left:4px solid #9b5d3b;" +
+    "border-radius:4px\">" +
+
+    "<strong style=\"font-size:14px\">" +
+    "〰️ Разломи" +
+    "</strong><br>";
+
+  if (nearestFault) {
+    const faultProperties =
+      nearestFault.feature.properties ||
+      {};
+
+    const faultDistance =
+      nearestFault.distanceKm;
+
+    html +=
+      "Най-близкият картографиран " +
+      "активен разлом е на " +
+      "<strong>" +
+      formatAnalysisDistance(
+        faultDistance
+      ) +
+      "</strong>.<br>";
+
+    if (faultDistance <= 1) {
+      html +=
+        "<span class=\"small\">" +
+        "Разломът е много близо до " +
+        "избраната точка и е важен " +
+        "структурен фактор за по-детайлен " +
+        "хидрогеоложки анализ." +
+        "</span>";
+    } else if (faultDistance <= 5) {
+      html +=
+        "<span class=\"small\">" +
+        "Разломът е сравнително близо " +
+        "и може да има значение за " +
+        "структурата и движението на " +
+        "подземните води в района." +
+        "</span>";
+    } else {
+      html +=
+        "<span class=\"small\">" +
+        "Разломът е сравнително далеч " +
+        "от точката и не е водещ фактор " +
+        "в този базов анализ." +
+        "</span>";
+    }
+
+    L.polyline(
+      [
+        [lat, lon],
+        [
+          nearestFault.nearest.geometry
+            .coordinates[1],
+          nearestFault.nearest.geometry
+            .coordinates[0]
+        ]
+      ],
+      {
+        color: "#7a4a21",
+        weight: 3,
+        dashArray: "6,5",
+        interactive: false
+      }
+    ).addTo(map);
+  } else {
+    html +=
+      "Не е намерен картографиран " +
+      "активен разлом до 25 km.";
+  }
+
+  html += "</div>";
+
+  /*
+   * 5. Сондажи / извори
+   */
+  html +=
+    "<div style=\"margin-top:10px;" +
+    "padding:11px 12px;" +
+    "background:#f8fafb;" +
+    "border-left:4px solid #788b93;" +
+    "border-radius:4px\">" +
+
+    "<strong style=\"font-size:14px\">" +
+    "🚰 Сондажи и извори около точката" +
+    "</strong><br>";
+
+  if (objects10.length) {
+    html +=
+      "В използваната база до 10 km " +
+      "са картографирани:<br>" +
+      "• сондажи: <strong>" +
+      wells.length +
+      "</strong><br>" +
+      "• извори/каптажи: <strong>" +
+      springs.length +
+      "</strong>.";
+
+    if (
+      statistics.minimumDepth !== null
+    ) {
+      html +=
+        "<br><span class=\"small\">" +
+        "Известните дълбочини на " +
+        "близките съоръжения са между " +
+        "<strong>" +
+        statistics.minimumDepth
+          .toFixed(1) +
+        " и " +
+        statistics.maximumDepth
+          .toFixed(1) +
+        " m</strong>." +
+        "</span>";
+    }
+  } else {
+    html +=
+      "В радиус 10 km няма " +
+      "картографирани съоръжения в " +
+      "използвания официален регистър." +
+      "<br><span class=\"small\">" +
+      "Това не означава, че в района " +
+      "няма сондажи или извори, а само " +
+      "че няма такива с налични точни " +
+      "координати в тази база." +
+      "</span>";
+  }
+
+  html += "</div>";
+
+  /*
+   * 6. Кратко обобщение
+   */
+  let summaryText = "";
+
+  if (bodies.length > 0) {
+    summaryText +=
+      "Официалните данни потвърждават " +
+      "наличие на картографирана " +
+      "подземна водна система в района. ";
+  } else {
+    summaryText +=
+      "Наличните официални слоеве не " +
+      "дават достатъчно потвърждение за " +
+      "подземно водно тяло точно в тази " +
+      "координата. ";
+  }
+
+  if (nearestMonitoring) {
+    summaryText +=
+      "Има и официален мониторингов " +
+      "пункт в близост. ";
+  }
+
+  if (
+    nearestFault &&
+    nearestFault.distanceKm <= 5
+  ) {
+    summaryText +=
+      "Наличен е и сравнително близък " +
+      "активен разлом, който трябва да " +
+      "се отчете при по-подробен анализ. ";
+  }
+
+  summaryText +=
+    "За избор на конкретна сондажна " +
+    "точка, дълбочина и очакван дебит " +
+    "са необходими по-детайлни данни.";
+
+  html +=
+    "<div style=\"margin-top:12px;" +
+    "padding:12px;" +
+    "background:#eaf5ef;" +
+    "border:1px solid #bcd8c8;" +
+    "border-radius:8px\">" +
+    "<strong style=\"font-size:14px\">" +
+    "Общо заключение" +
+    "</strong><br>" +
+    esc(summaryText) +
+    "</div>";
+
+  /*
+   * 7. Технически данни
+   */
+  html +=
+    "<details style=\"margin-top:10px;" +
+    "padding:9px 10px;" +
+    "border:1px solid #d9e2e5;" +
+    "border-radius:7px;" +
+    "background:#fafcfc\">" +
+
+    "<summary style=\"cursor:pointer;" +
+    "font-weight:700\">" +
+    "Покажи техническите данни" +
+    "</summary>" +
+
+    "<div style=\"margin-top:9px;" +
+    "font-size:12px;line-height:1.55\">";
+
+  html +=
+    "Оценка на модела: <strong>" +
+    esc(assessment.label) +
+    "</strong><br>" +
+    "Индекс: <strong>" +
+    assessment.score +
+    "/100</strong><br>";
+
+  if (bodies.length) {
+    html +=
+      "<div style=\"margin-top:8px\">" +
+      "<strong>Подземни водни тела:</strong>" +
+      "</div>";
+
+    bodies.forEach((f, index) => {
+      const p =
+        f.properties || {};
+
+      const code =
+        p.localId ||
+        p["ÃŠÃ®Ã¤_Ã­Ã _Ã‡Ã‡Ã‚"] ||
+        "—";
+
+      const name =
+        p.nameText ||
+        p.nameTxtInt ||
+        "Подземно водно тяло";
+
+      html +=
+        "<div style=\"margin-top:5px\">" +
+        (index + 1) +
+        ". <strong>" +
+        esc(code) +
+        "</strong><br>" +
+        esc(name);
+
+      if (p.horizon_bg) {
+        html +=
+          "<br>Хидрогеоложки хоризонт: " +
+          esc(p.horizon_bg);
+      }
+
+      if (p.water_type_bg) {
+        html +=
+          "<br>Тип води: " +
+          esc(p.water_type_bg);
+      }
+
+      html += "</div>";
+    });
+  }
+
+  if (monitoringFeature) {
+    html +=
+      "<div style=\"margin-top:8px\">" +
+      "<strong>Мониторингов пункт:</strong><br>" +
+      "Код: " +
+      esc(
+        monitoringProps.station_no ||
+        "—"
+      );
+
+    if (monitoringProps.gwb_code) {
+      html +=
+        "<br>ПВТ на пункта: " +
+        esc(
+          monitoringProps.gwb_code
+        );
+    }
+
+    if (
+      monitoringProps.geological_index
+    ) {
+      html +=
+        "<br>Геоложки индекс: " +
+        esc(
+          monitoringProps
+            .geological_index
+        );
+    }
+
+    html += "</div>";
+  }
+
+  if (nearestFault) {
+    const faultProperties =
+      nearestFault.feature.properties ||
+      {};
+
+    html +=
+      "<div style=\"margin-top:8px\">" +
+      "<strong>GEM разлом:</strong><br>";
+
+    if (faultProperties.catalog_id) {
+      html +=
+        "Код: " +
+        esc(
+          faultProperties.catalog_id
+        ) +
+        "<br>";
+    }
+
+    if (faultProperties.slip_type) {
+      html +=
+        "Тип движение: " +
+        esc(
+          typeof translateGemSlipType ===
+            "function"
+            ? translateGemSlipType(
+                faultProperties.slip_type
+              )
+            : faultProperties.slip_type
+        ) +
+        "<br>";
+    }
+
+    html += "</div>";
+  }
+
+  if (geologyUnit) {
+    html +=
+      "<div style=\"margin-top:8px\">" +
+      "<strong>Геоложка карта:</strong><br>" +
+      "Код: " +
+      esc(
+        geologyUnit.code || "—"
+      ) +
+      "<br>" +
+      "Единица: " +
+      esc(
+        geologyUnit.name_bg || "—"
+      ) +
+      "</div>";
+  }
+
+  if (objects10.length) {
+    html +=
+      "<div style=\"margin-top:8px\">" +
+      "<strong>Най-близки картографирани обекти:</strong>" +
+      renderAnalysisObjects(
+        objects10
+      ) +
+      "</div>";
+  }
+
+  html +=
+    "<div style=\"margin-top:9px;" +
+    "color:#708187\">" +
+    "Източници: официални регистри на " +
+    "басейновите дирекции, БД ИБР / " +
+    "ПУРБ3, НИМХ 2019–2020, " +
+    "геоложка карта 2024 и GEM Global " +
+    "Active Faults." +
+    "</div>" +
+
+    "</div>" +
+    "</details>";
+
+  html +=
+    "<div style=\"margin-top:16px\">" +
+    "<a " +
+    "href=\"/pro?lat=" +
+    encodeURIComponent(lat.toFixed(7)) +
+    "&lng=" +
+    encodeURIComponent(lon.toFixed(7)) +
+    "\" " +
+    "target=\"_blank\" " +
+    "rel=\"noopener noreferrer\" " +
+    "style=\"" +
+      "display:block;" +
+      "text-align:center;" +
+      "padding:12px 14px;" +
+      "background:#173f32;" +
+      "color:#fff;" +
+      "font-weight:700;" +
+      "text-decoration:none;" +
+      "border-radius:8px;" +
+    "\">" +
+    "📄 Отвори Sondi PRO анализ" +
+    "</a>" +
+    "</div>";
+
+  result.innerHTML = html;
+
+  status.textContent =
+    "\u041a\u043e\u043c\u043f\u043b\u0435\u043a\u0441\u043d\u0438\u044f\u0442 \u0430\u043d\u0430\u043b\u0438\u0437 \u0435 \u0437\u0430\u0432\u044a\u0440\u0448\u0435\u043d.";
+}
+
+
+const legend=L.control({position:'bottomright'});
+legend.onAdd=()=>{
+ const d=L.DomUtil.create('div','legend facility-legend');
+ d.style.display='none';
+ d.innerHTML=`<b>Тип съоръжение</b><br>
+ <span class="symbol dot" style="background:#d62728"></span>Минерален сондаж<br>
+ <span class="symbol dot" style="background:#4db6e5;width:11px;height:11px"></span>Каптаж/извор<br>
+ <span class="symbol">◆</span>Мониторингов<br>
+ <span class="symbol">×</span>Ликвидиран/консервиран<br>
+ <span class="symbol">◇</span>Друг тип<br>
+<span class="symbol" style="background:#4da6ff55;border:2px solid #2878b5"></span>Подземно водно тяло<br>
+<span class="symbol" style="border-top:3px solid #7a4a21;height:2px"></span>Активен разлом (GEM)<br><br>
+ <b>Температура на сондажа</b><br>
+ <span class="symbol dot" style="background:#2b8cbe"></span>&lt; 25°C<br>
+ <span class="symbol dot" style="background:#31a354"></span>25–40°C<br>
+ <span class="symbol dot" style="background:#f0c419"></span>40–60°C<br>
+ <span class="symbol dot" style="background:#f28e2b"></span>60–80°C<br>
+ <span class="symbol dot" style="background:#d62728"></span>≥ 80°C<br>
+ <span class="symbol dot" style="background:#c51b8a"></span>Без температура`;
+ return d;
+};
+
+legend.addTo(map);
+
+function updateFacilityLegend(){
+  const el = document.querySelector('.facility-legend');
+  if (!el) return;
+
+  const ids = [
+    'layer-wells',
+    'layer-springs',
+    'layer-monitoring',
+    'layer-inactive',
+    'layer-other'
+  ];
+
+  const visible = ids.some(id => {
+    const checkbox = document.getElementById(id);
+    return checkbox && checkbox.checked;
+  });
+
+  el.style.display = visible ? 'block' : 'none';
+}
+
+[
+  'layer-wells',
+  'layer-springs',
+  'layer-monitoring',
+  'layer-inactive',
+  'layer-other'
+].forEach(id => {
+  const checkbox = document.getElementById(id);
+
+  if (checkbox) {
+    checkbox.addEventListener(
+      'change',
+      updateFacilityLegend
+    );
+  }
+});
+
+updateFacilityLegend();
+
+
+
+
+
+const abstractionPressureLegend = L.control({
+  position: 'bottomright'
+});
+
+abstractionPressureLegend.onAdd = function(){
+  const d = L.DomUtil.create(
+    'div',
+    'legend abstraction-pressure-legend'
+  );
+
+  d.style.display = 'none';
+
+  d.innerHTML = `
+    <b>Натиск от водовземане</b><br>
+
+    <span class="symbol" style="background:#68b7b0"></span>
+    Слабо използване &lt; 0.25<br>
+
+    <span class="symbol" style="background:#d6c75f"></span>
+    Умерено 0.25–0.50<br>
+
+    <span class="symbol" style="background:#e69a4a"></span>
+    Значително 0.50–0.75<br>
+
+    <span class="symbol" style="background:#cf5b5b"></span>
+    Много високо ≥ 0.75<br>
+
+    <div style="
+      margin-top:7px;
+      max-width:230px;
+      color:#5f6f74;
+      line-height:1.4
+    ">
+      Оцветяването е по експлоатационен индекс.
+      Категориите са визуална класификация на
+      Sondi.bg, а не официална риск-оценка.
+    </div>
+  `;
+
+  return d;
+};
+
+abstractionPressureLegend.addTo(map);
+
+function updateAbstractionPressureLegend(){
+  const el =
+    document.querySelector(
+      '.abstraction-pressure-legend'
+    );
+
+  if (!el) return;
+
+  el.style.display =
+    activeThematicMode === 'abstraction-pressure'
+      ? 'block'
+      : 'none';
+}
+
+const pollutionRiskLegend = L.control({
+  position: 'bottomright'
+});
+
+pollutionRiskLegend.onAdd = function(){
+  const d = L.DomUtil.create(
+    'div',
+    'legend pollution-risk-legend'
+  );
+
+  d.style.display = 'none';
+
+  d.innerHTML = `
+    <b>Риск от замърсяване</b><br>
+
+    <span class="symbol"
+      style="background:#62ad70">
+    </span>
+    Не е в риск<br>
+
+    <span class="symbol"
+      style="background:#d94d4d">
+    </span>
+    В риск<br>
+
+    <div style="
+      margin-top:7px;
+      max-width:225px;
+      color:#5f6f74;
+      line-height:1.4
+    ">
+      Това е официалната оценка на ПВТ.
+      Статусът „в риск“ не означава,
+      че водата във всяка точка е замърсена.
+    </div>
+  `;
+
+  return d;
+};
+
+pollutionRiskLegend.addTo(map);
+
+function updatePollutionRiskLegend(){
+  const el =
+    document.querySelector(
+      '.pollution-risk-legend'
+    );
+
+  if (!el) return;
+
+  el.style.display =
+    activeThematicMode === 'pollution-risk'
+      ? 'block'
+      : 'none';
+}
+
+const diffusePressureLegend = L.control({
+  position: 'bottomright'
+});
+
+diffusePressureLegend.onAdd = function(){
+  const d = L.DomUtil.create(
+    'div',
+    'legend diffuse-pressure-legend'
+  );
+
+  d.style.display = 'none';
+
+  d.innerHTML = `
+    <b>Натиск от дифузни източници</b><br>
+
+    <span class="symbol" style="background:#68b7b0"></span>
+    Нисък &lt; 25%<br>
+
+    <span class="symbol" style="background:#d6c75f"></span>
+    Умерен 25–50%<br>
+
+    <span class="symbol" style="background:#e69a4a"></span>
+    Повишен 50–75%<br>
+
+    <span class="symbol" style="background:#cf5b5b"></span>
+    Висок ≥ 75%<br>
+
+    <div style="
+      margin-top:7px;
+      max-width:220px;
+      color:#5f6f74;
+      line-height:1.35
+    ">
+      Категориите са интерфейсна класификация
+      на Sondi.bg за по-лесно разбиране.
+    </div>
+  `;
+
+  return d;
+};
+
+diffusePressureLegend.addTo(map);
+
+function updateDiffusePressureLegend(){
+  const el =
+    document.querySelector('.diffuse-pressure-legend');
+
+  if (!el) return;
+
+  el.style.display =
+    activeThematicMode === 'diffuse-pressure'
+      ? 'block'
+      : 'none';
+}
+
+const pointPressureLegend = L.control({
+  position: 'bottomright'
+});
+
+pointPressureLegend.onAdd = function(){
+  const d = L.DomUtil.create(
+    'div',
+    'legend point-pressure-legend'
+  );
+
+  d.style.display = 'none';
+
+  d.innerHTML = `
+    <b>Натиск от точкови източници</b><br>
+    <span class="symbol" style="background:#68b7b0"></span>
+    Нисък &lt; 5%<br>
+
+    <span class="symbol" style="background:#d6c75f"></span>
+    Умерен 5–15%<br>
+
+    <span class="symbol" style="background:#e69a4a"></span>
+    Повишен 15–25%<br>
+
+    <span class="symbol" style="background:#cf5b5b"></span>
+    Висок ≥ 25%<br>
+
+    <div style="
+      margin-top:7px;
+      max-width:220px;
+      color:#5f6f74;
+      line-height:1.35
+    ">
+      Цветът показва потенциален натиск върху
+      подземното водно тяло, а не доказано
+      замърсяване на конкретно място.
+    </div>
+  `;
+
+  return d;
+};
+
+pointPressureLegend.addTo(map);
+
+function updatePointPressureLegend(){
+  const el =
+    document.querySelector('.point-pressure-legend');
+
+  if (!el) return;
+
+  el.style.display =
+    activeThematicMode === 'point-pressure'
+      ? 'block'
+      : 'none';
+}
+
+
+
+/* ===== ??Търси място или координати ===== */
+
+
+function parseCoordinates(value) {
+  const raw = String(value || "")
+    .trim()
+    .replace(/[??]/g, " ")
+    .replace(/[;|]/g, " ")
+    .replace(/\s+/g, " ");
+
+  let numbers;
+
+  /*
+    ?????????? ???????:
+    42.1354, 24.7453
+    42.1354 24.7453
+    42,1354 24,7453
+  */
+  const decimalCommaFormat =
+    raw.match(/(-?\d{1,3}),(\d+)\s+(-?\d{1,3}),(\d+)/);
+
+  if (decimalCommaFormat) {
+    numbers = [
+      decimalCommaFormat[1] + "." + decimalCommaFormat[2],
+      decimalCommaFormat[3] + "." + decimalCommaFormat[4]
+    ];
+  } else {
+    numbers = raw.match(/-?\d+(?:\.\d+)?/g);
+  }
+
+  if (!numbers || numbers.length < 2) {
+    return null;
+  }
+
+  let first = Number(numbers[0]);
+  let second = Number(numbers[1]);
+
+  if (!Number.isFinite(first) || !Number.isFinite(second)) {
+    return null;
+  }
+
+  let latitude = first;
+  let longitude = second;
+
+  /*
+    ??? ?? ???????? ????:
+    24.7453, 42.1354
+    ??????????? ?? ???????.
+  */
+  if (
+    first >= 20 &&
+    first <= 30 &&
+    second >= 40 &&
+    second <= 45
+  ) {
+    latitude = second;
+    longitude = first;
+  }
+
+  if (
+    latitude < -90 ||
+    latitude > 90 ||
+    longitude < -180 ||
+    longitude > 180
+  ) {
+    return null;
+  }
+
+  return { latitude, longitude };
+}
+
+
+let coordinateSearchMarker = null;
+
+// SEARCHED_LOCATION_ANALYSIS_START
+
+function analyzeSearchedLocation(
+  latitude,
+  longitude
+) {
+  map.closePopup();
+
+  const box =
+    document.getElementById(
+      "location-analysis-box"
+    );
+
+  if (box) {
+    box.style.display = "block";
+  }
+
+  analyzeLocation(
+    Number(latitude),
+    Number(longitude),
+    "Търсена локация"
+  );
+}
+
+// SEARCHED_LOCATION_ANALYSIS_END
+
+function showSearchedCoordinates(latitude, longitude, status) {
+  if (coordinateSearchMarker) {
+    map.removeLayer(coordinateSearchMarker);
+  }
+
+  coordinateSearchMarker = L.marker(
+    [latitude, longitude]
+  ).addTo(map);
+
+  const popupHtml =
+    "<div style=\"min-width:230px\">" +
+    "<strong>Търсена локация</strong><br>" +
+    "<span class=\"coord\">" +
+    latitude.toFixed(7) +
+    ", " +
+    longitude.toFixed(7) +
+    "</span><br>" +
+    "<button type=\"button\"" +
+    " style=\"margin-top:9px;width:100%;padding:8px;" +
+    "border:0;border-radius:6px;background:#087849;" +
+    "color:#fff;font-weight:bold;cursor:pointer\"" +
+    " onclick=\"analyzeSearchedLocation(" +
+    latitude +
+    "," +
+    longitude +
+    ")\">" +
+    "Анализирай тази локация" +
+    "</button>" +
+    "</div>";
+
+  coordinateSearchMarker
+    .bindPopup(popupHtml)
+    .openPopup();
+
+  map.setView(
+    [latitude, longitude],
+    15
+  );
+
+  if (status) {
+    status.textContent =
+      "Показана точка: " +
+      latitude.toFixed(7) +
+      ", " +
+      longitude.toFixed(7);
+  }
+}
+async function searchCoordinates() {
+  const input = document.getElementById("search");
+
+  const status = document.getElementById(
+    "coordinate-search-status"
+  );
+
+  const query = String(input.value || "").trim();
+
+  if (!query) {
+    status.textContent =
+      "\u0412\u044a\u0432\u0435\u0434\u0438 \u043d\u0430\u0441\u0435\u043b\u0435\u043d\u043e \u043c\u044f\u0441\u0442\u043e \u0438\u043b\u0438 \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u0438.";
+    return;
+  }
+
+  const coordinates = parseCoordinates(query);
+
+  if (coordinates) {
+    showSearchedCoordinates(
+      coordinates.latitude,
+      coordinates.longitude,
+      status
+    );
+    return;
+  }
+
+  status.textContent =
+    "\u0422\u044a\u0440\u0441\u0435\u043d\u0435 \u043d\u0430 \u043c\u044f\u0441\u0442\u043e...";
+
+  try {
+    const url =
+      "https://nominatim.openstreetmap.org/search" +
+      "?format=jsonv2" +
+      "&countrycodes=bg" +
+      "&limit=5" +
+      "&q=" +
+      encodeURIComponent(query);
+
+    const response = await fetch(url, {
+      headers: {
+        "Accept-Language": "bg"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("Place search failed.");
+    }
+
+    const results = await response.json();
+
+    if (!Array.isArray(results) || results.length === 0) {
+      status.textContent =
+        "\u041d\u0435 \u0435 \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u043e \u0442\u0430\u043a\u043e\u0432\u0430 \u043c\u044f\u0441\u0442\u043e \u0432 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f.";
+      return;
+    }
+
+    const result = results[0];
+
+    const latitude = Number(result.lat);
+    const longitude = Number(result.lon);
+
+    if (
+      !Number.isFinite(latitude) ||
+      !Number.isFinite(longitude)
+    ) {
+      throw new Error("Invalid place coordinates.");
+    }
+
+    if (coordinateSearchMarker) {
+      map.removeLayer(coordinateSearchMarker);
+    }
+
+    coordinateSearchMarker = L.marker(
+      [latitude, longitude]
+    ).addTo(map);
+
+    const popup =
+      "<div style=\"min-width:240px\">" +
+      "<strong>" +
+      (result.display_name || query) +
+      "</strong><br>" +
+      "<span class=\"coord\">" +
+      latitude.toFixed(6) +
+      ", " +
+      longitude.toFixed(6) +
+      "</span>" +
+      "</div>";
+
+    coordinateSearchMarker
+      .bindPopup(popup)
+      .openPopup();
+
+    map.setView(
+      [latitude, longitude],
+      14
+    );
+
+    status.textContent =
+      "\u041d\u0430\u043c\u0435\u0440\u0435\u043d\u043e: " +
+      (result.display_name || query);
+  } catch (error) {
+    console.error("[Place search]", error);
+
+    status.textContent =
+      "\u0413\u0440\u0435\u0448\u043a\u0430 \u043f\u0440\u0438 \u0442\u044a\u0440\u0441\u0435\u043d\u0435 \u043d\u0430 \u043d\u0430\u0441\u0435\u043b\u0435\u043d\u043e\u0442\u043e \u043c\u044f\u0441\u0442\u043e.";
+  }
+}
+document
+  .getElementById("search")
+  .addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      searchCoordinates();
+    }
+  });
+
+/* ===== ???? ?? ????Търси място или координати ===== */
+
+</script>
+<script src="/geology-map/geology-ai.js"></script>
+<script src="/geology-map/geology-ai-multibatch.js">
+function toggleLayersPanel(){
+  const panel = document.querySelector('.panel');
+  if (!panel) return;
+
+  panel.style.display =
+    panel.style.display === 'block'
+      ? 'none'
+      : 'block';
+}
+
+</script>
+</body>
+</html>
