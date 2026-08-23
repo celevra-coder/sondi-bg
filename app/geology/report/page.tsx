@@ -826,6 +826,7 @@ export default function GeologyReportPage() {
           section4Data,
           section5Data,
           section7Data,
+          blackSeaSection7Data,
         ] = await Promise.all([
           geologyAt(lat, lon),
 
@@ -867,6 +868,10 @@ export default function GeologyReportPage() {
 
           fetch(
             "/geology-map/data/bd_ibr_section7_groundwater_measures.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_bs_section7_groundwater_measures.json"
           ).then(r => r.json()),
         ]);
 
@@ -1203,7 +1208,9 @@ export default function GeologyReportPage() {
         const section7 =
           basinCode === "BG3"
             ? findProfile(section7Data)
-            : null;
+            : basinCode === "BG2"
+              ? findProfile(blackSeaSection7Data)
+              : null;
 
         const professionalDrilling = {
           basinCode,

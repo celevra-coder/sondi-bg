@@ -247,6 +247,9 @@ export default async function ProPage({
   const blackSeaSection5 =
     profile.blackSeaSection5;
 
+  const blackSeaSection7 =
+    profile.blackSeaSection7;
+
   const blackSeaChemicalMonitoring: any[] =
     Array.isArray(
       blackSeaSection4?.chemical_monitoring
@@ -501,7 +504,8 @@ export default async function ProPage({
     blackSeaSection5;
 
   const section7 =
-    profile.section7;
+    profile.section7 ??
+    blackSeaSection7;
 
   const section7Measures: any[] =
     Array.isArray(section7?.measures)
