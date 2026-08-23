@@ -21,7 +21,7 @@ function Card({
   children?: React.ReactNode;
 }) {
   return (
-    <section style={{
+    <section className="sondi-pro-card" style={{
       position: "relative",
       background: "#fff",
       border: "1px solid #dce8eb",
@@ -1804,7 +1804,7 @@ export default async function ProPage({
           />
         </div>
 
-        <div style={{
+        <div className="sondi-pro-grid" style={{
           display: "grid",
           gridTemplateColumns:
             "repeat(auto-fit,minmax(340px,1fr))",
