@@ -828,16 +828,17 @@ export default function GeologyReportPage() {
           );
         }
 
-        const requestedBasinForGeology =
+        const requestedGwbParam =
           String(params.get("gwb") || "")
             .trim()
-            .toUpperCase()
-            .startsWith("BG3")
+            .toUpperCase();
+
+        const requestedBasinForGeology =
+          requestedGwbParam.startsWith("BG4")
+            ? "BG4"
+            : requestedGwbParam.startsWith("BG3")
               ? "BG3"
-              : String(params.get("gwb") || "")
-                  .trim()
-                  .toUpperCase()
-                  .startsWith("BG2")
+              : requestedGwbParam.startsWith("BG2")
                 ? "BG2"
                 : "";
 
@@ -864,6 +865,20 @@ export default function GeologyReportPage() {
           blackSeaOfficialSection4Data,
           blackSeaOfficialSection5Data,
           blackSeaCurrentRegistersData,
+
+          westernAegeanBodiesData,
+          westernAegeanOrdinaryData,
+          westernAegeanSection1Data,
+          westernAegeanSection2Data,
+          westernAegeanSection3Data,
+          westernAegeanSection4Data,
+          westernAegeanSection5Data,
+          westernAegeanSection7Data,
+          westernAegeanCurrentRegistersData,
+          westernAegeanAdditionalRegistersData,
+          westernAegeanInvestigationFeaturesData,
+          westernAegeanQuantitativeMonitoringData,
+          westernAegeanChemicalMonitoringData,
         ] = await Promise.all([
           requestedBasinForGeology === "BG3"
             ? geologyAt(lat, lon)
@@ -952,6 +967,58 @@ export default function GeologyReportPage() {
           fetch(
             "/geology-map/data/bd_bs_current_groundwater_registers.json"
           ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_groundwater_bodies.geojson"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_active_groundwater_facilities.geojson"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_section1_profiles.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_section2_pressure_risk.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_section3_protected_zones.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_section4_monitoring_status.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_section5_environmental_objectives.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_section7_groundwater_measures.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_current_groundwater_registers.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_additional_groundwater_registers.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_hydrogeological_investigations.geojson"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_quantitative_monitoring.geojson"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_wabd_chemical_monitoring.geojson"
+          ).then(r => r.json()),
         ]);
 
         const requestedGwb =
@@ -962,6 +1029,7 @@ export default function GeologyReportPage() {
         const allBodies = [
           ...(eastBodiesData.features || []),
           ...(blackSeaBodiesData.features || []),
+          ...(westernAegeanBodiesData.features || []),
         ];
 
         const intersectingBodies = allBodies.filter(
@@ -977,6 +1045,7 @@ export default function GeologyReportPage() {
           feature: AnyFeature
         ) =>
           String(
+            feature.properties?.canonical_code ||
             feature.properties?.localId ||
             feature.properties?.cod ||
             feature.properties?.code ||
@@ -1006,18 +1075,22 @@ export default function GeologyReportPage() {
             : requestedGwb;
 
         const basinCode =
-          selectedGwbCode.startsWith("BG2")
-            ? "BG2"
-            : selectedGwbCode.startsWith("BG3")
-              ? "BG3"
-              : "";
+          selectedGwbCode.startsWith("BG4")
+            ? "BG4"
+            : selectedGwbCode.startsWith("BG2")
+              ? "BG2"
+              : selectedGwbCode.startsWith("BG3")
+                ? "BG3"
+                : "";
 
         const basinName =
-          basinCode === "BG2"
-            ? "Черноморски район"
-            : basinCode === "BG3"
-              ? "Източнобеломорски район"
-              : "Неопределен район";
+          basinCode === "BG4"
+            ? "\u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d"
+            : basinCode === "BG2"
+              ? "\u0427\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d"
+              : basinCode === "BG3"
+                ? "\u0418\u0437\u0442\u043e\u0447\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d"
+                : "\u041d\u0435\u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d \u0440\u0430\u0439\u043e\u043d";
 
         const selectedGeologyProfile =
           (geologyProfilesData.profiles || []).find(
@@ -1062,12 +1135,16 @@ export default function GeologyReportPage() {
 
                 localId:
                   properties.localId ||
+                  properties.canonical_code ||
                   properties.cod ||
                   profile?.code ||
                   "",
 
                 nameText:
                   profile?.name ||
+                  properties.groundwater_body_name ||
+                  properties.name_bg ||
+                  properties.name ||
                   properties.ime ||
                   properties.nameText ||
                   properties.nameTxtInt ||
@@ -1111,15 +1188,17 @@ export default function GeologyReportPage() {
         const blackSeaOrdinaryFeatures =
           blackSeaOrdinaryData.features || [];
 
+        const westernAegeanOrdinaryFeatures =
+          westernAegeanOrdinaryData.features || [];
+
         const selectedOrdinaryFeatures =
-          basinCode === "BG2"
-            ? blackSeaOrdinaryFeatures
-            : basinCode === "BG3"
-              ? eastOrdinaryFeatures
-              : [
-                  ...eastOrdinaryFeatures,
-                  ...blackSeaOrdinaryFeatures,
-                ];
+          basinCode === "BG4"
+            ? westernAegeanOrdinaryFeatures
+            : basinCode === "BG2"
+              ? blackSeaOrdinaryFeatures
+              : basinCode === "BG3"
+                ? eastOrdinaryFeatures
+                : [];
 
         const measuredFacilities = (
           features: AnyFeature[]
@@ -1177,7 +1256,11 @@ export default function GeologyReportPage() {
             (item: any) =>
               String(
                 item.properties
+                  ?.canonical_code ||
+                item.properties
                   ?.groundwater_body_code ||
+                item.properties
+                  ?.gwb_code ||
                 ""
               ).trim().toUpperCase() ===
               selectedGwbCode
@@ -1274,6 +1357,83 @@ export default function GeologyReportPage() {
               selectedGwbCode
           ) || null;
 
+        const findOfficialProfile = (
+          dataset: any
+        ): any | null => {
+          if (
+            !selectedGwbCode ||
+            !dataset
+          ) {
+            return null;
+          }
+
+          const normalize = (
+            value: unknown
+          ) =>
+            String(value ?? "")
+              .trim()
+              .toUpperCase();
+
+          const wanted =
+            normalize(selectedGwbCode);
+
+          const candidates: any[] = [];
+
+          if (Array.isArray(dataset)) {
+            candidates.push(...dataset);
+          }
+
+          if (Array.isArray(dataset?.profiles)) {
+            candidates.push(...dataset.profiles);
+          }
+
+          if (Array.isArray(dataset?.records)) {
+            candidates.push(...dataset.records);
+          }
+
+          if (
+            dataset?.profiles &&
+            !Array.isArray(dataset.profiles) &&
+            typeof dataset.profiles === "object"
+          ) {
+            const direct =
+              dataset.profiles[wanted];
+
+            if (direct) {
+              return direct;
+            }
+
+            for (
+              const [key, value]
+              of Object.entries(dataset.profiles)
+            ) {
+              if (
+                normalize(key) === wanted
+              ) {
+                return value;
+              }
+            }
+          }
+
+          return (
+            candidates.find(
+              (item: any) =>
+                [
+                  item?.canonical_code,
+                  item?.code,
+                  item?.gwb_code,
+                  item?.gwbCode,
+                  item?.groundwater_body_code,
+                  item?.localId,
+                  item?.cod,
+                ].some(
+                  value =>
+                    normalize(value) === wanted
+                )
+            ) || null
+          );
+        };
+
         const findBlackSeaOfficialProfile = (
           dataset: any
         ): any | null => {
@@ -1367,6 +1527,88 @@ export default function GeologyReportPage() {
           ) || null;
         };
 
+        const westernAegeanOfficialSection1 =
+          basinCode === "BG4"
+            ? findOfficialProfile(
+                westernAegeanSection1Data
+              )
+            : null;
+
+        const westernAegeanOfficialSection2 =
+          basinCode === "BG4"
+            ? findOfficialProfile(
+                westernAegeanSection2Data
+              )
+            : null;
+
+        const westernAegeanOfficialSection3 =
+          basinCode === "BG4"
+            ? findOfficialProfile(
+                westernAegeanSection3Data
+              )
+            : null;
+
+        const westernAegeanOfficialSection4 =
+          basinCode === "BG4"
+            ? findOfficialProfile(
+                westernAegeanSection4Data
+              )
+            : null;
+
+        const westernAegeanOfficialSection5 =
+          basinCode === "BG4"
+            ? findOfficialProfile(
+                westernAegeanSection5Data
+              )
+            : null;
+
+        const westernAegeanOfficialSection7 =
+          basinCode === "BG4"
+            ? findOfficialProfile(
+                westernAegeanSection7Data
+              )
+            : null;
+
+        const westernAegeanCurrentRegisters =
+          basinCode === "BG4"
+            ? findOfficialProfile(
+                westernAegeanCurrentRegistersData
+              )
+            : null;
+
+        const westernAegeanAdditionalRegisters =
+          basinCode === "BG4"
+            ? findOfficialProfile(
+                westernAegeanAdditionalRegistersData
+              )
+            : null;
+
+        const westernAegeanChemicalMonitoring =
+          Array.isArray(
+            westernAegeanOfficialSection4
+              ?.chemical_monitoring
+          )
+            ? westernAegeanOfficialSection4
+                .chemical_monitoring
+            : [];
+
+        const westernAegeanQuantitativeMonitoring =
+          Array.isArray(
+            westernAegeanOfficialSection4
+              ?.quantitative_monitoring
+          )
+            ? westernAegeanOfficialSection4
+                .quantitative_monitoring
+            : [];
+
+        const westernAegeanChemicalRisk =
+          westernAegeanOfficialSection2
+            ?.chemical_risk || null;
+
+        const westernAegeanQuantitativeRisk =
+          westernAegeanOfficialSection2
+            ?.quantitative_risk || null;
+
         const blackSeaOfficialSection1 =
           findBlackSeaOfficialProfile(
             blackSeaOfficialSection1Data
@@ -1433,94 +1675,167 @@ export default function GeologyReportPage() {
             : [];
 
         const section4 =
-          basinCode === "BG3"
-            ? findProfile(section4Data)
-            : basinCode === "BG2" &&
-              blackSeaOfficialSection4
-              ? {
-                  ...blackSeaOfficialSection4,
+          basinCode === "BG4"
+            ? westernAegeanOfficialSection4
+            : basinCode === "BG3"
+              ? findProfile(section4Data)
+              : basinCode === "BG2" &&
+                blackSeaOfficialSection4
+                ? {
+                    ...blackSeaOfficialSection4,
 
-                  comparison: {
-                    risk_2022_2027:
+                    comparison: {
+                      risk_2022_2027:
+                        blackSeaOfficialSection4
+                          .chemical_risk ||
+                        blackSeaChemicalRisk
+                          ?.risk_label ||
+                        null,
+
+                      status_2022_2027:
+                        blackSeaOfficialSection4
+                          .overall_status_purb3 ||
+                        blackSeaOfficialSection4
+                          .chemical_status ||
+                        null,
+
+                      status_2016_2021:
+                        blackSeaOfficialSection4
+                          .overall_status_purb2 ||
+                        null,
+                    },
+
+                    chemical_monitoring:
+                      blackSeaChemicalMonitoring,
+
+                    quantitative_monitoring:
+                      blackSeaQuantitativeMonitoring,
+
+                    tests:
                       blackSeaOfficialSection4
-                        .chemical_risk ||
-                      blackSeaChemicalRisk
-                        ?.risk_label ||
-                      null,
+                        .chemical_tests || [],
 
-                    status_2022_2027:
+                    water_balance:
+                      blackSeaCurrentRegisters
+                        ?.current_resource
+                        ? {
+                            ...(
+                              blackSeaOfficialSection4
+                                .water_balance || {}
+                            ),
+
+                            natural_resource_l_s:
+                              blackSeaCurrentRegisters
+                                .current_resource
+                                .natural_resource_l_s,
+
+                            available_resource_l_s:
+                              blackSeaCurrentRegisters
+                                .current_resource
+                                .available_resource_l_s,
+
+                            permitted_abstraction_l_s:
+                              blackSeaCurrentRegisters
+                                .current_resource
+                                .authorized_abstraction_l_s,
+
+                            household_abstraction_l_s:
+                              blackSeaCurrentRegisters
+                                .current_resource
+                                .household_abstraction_l_s,
+
+                            total_abstraction_l_s:
+                              Number(
+                                blackSeaCurrentRegisters
+                                  .current_resource
+                                  .authorized_abstraction_l_s || 0
+                              ) +
+                              Number(
+                                blackSeaCurrentRegisters
+                                  .current_resource
+                                  .household_abstraction_l_s || 0
+                              ),
+
+                            free_resource_l_s:
+                              blackSeaCurrentRegisters
+                                .current_resource
+                                .free_resource_l_s,
+
+                            exploitation_index:
+                              blackSeaCurrentRegisters
+                                .current_resource
+                                .exploitation_index,
+
+                            derived_load_percent:
+                              Number(
+                                blackSeaCurrentRegisters
+                                  .current_resource
+                                  .exploitation_index
+                              ) * 100,
+
+                            quantitative_status:
+                              blackSeaOfficialSection4
+                                .quantitative_status ||
+                              blackSeaOfficialSection4
+                                .water_balance
+                                ?.status ||
+                              null,
+                          }
+                        : blackSeaOfficialSection4
+                            .water_balance
+                          ? {
+                              ...blackSeaOfficialSection4
+                                .water_balance,
+
+                              quantitative_status:
+                                blackSeaOfficialSection4
+                                  .quantitative_status ||
+                                blackSeaOfficialSection4
+                                  .water_balance
+                                  ?.status ||
+                                null,
+                            }
+                          : null,
+
+                    upward_trend:
                       blackSeaOfficialSection4
-                        .overall_status_purb3 ||
-                      blackSeaOfficialSection4
-                        .chemical_status ||
-                      null,
+                        .upward_trend === true
+                        ? "\u0434\u0430"
+                        : blackSeaOfficialSection4
+                            .upward_trend === false
+                          ? "\u043d\u0435"
+                          : null,
 
-                    status_2016_2021:
-                      blackSeaOfficialSection4
-                        .overall_status_purb2 ||
-                      null,
-                  },
+                    drinking_monitoring:
+                      blackSeaChemicalMonitoring.filter(
+                        (station: any) =>
+                          station
+                            ?.drinking_water_monitoring === true
+                      ),
 
-                  chemical_monitoring:
-                    blackSeaChemicalMonitoring,
-
-                  quantitative_monitoring:
-                    blackSeaQuantitativeMonitoring,
-
-                  tests:
-                    blackSeaOfficialSection4
-                      .chemical_tests || [],
-
-                  water_balance:
-                    blackSeaOfficialSection4
-                      .water_balance
-                      ? {
-                          ...blackSeaOfficialSection4
-                            .water_balance,
-
-                          quantitative_status:
-                            blackSeaOfficialSection4
-                              .quantitative_status ||
-                            blackSeaOfficialSection4
-                              .water_balance
-                              ?.status ||
-                            null,
-                        }
-                      : null,
-
-                  upward_trend:
-                    blackSeaOfficialSection4
-                      .upward_trend === true
-                      ? "да"
-                      : blackSeaOfficialSection4
-                          .upward_trend === false
-                        ? "не"
-                        : null,
-
-                  drinking_monitoring:
-                    blackSeaChemicalMonitoring.filter(
-                      (station: any) =>
-                        station
-                          ?.drinking_water_monitoring === true
-                    ),
-
-                  trend_series: [],
-                }
-              : null;
+                    trend_series: [],
+                  }
+                : null;
 
         const section5 =
-          basinCode === "BG3"
-            ? findProfile(section5Data)
-            : basinCode === "BG2"
-              ? blackSeaOfficialSection5
-              : null;
+          basinCode === "BG4"
+            ? westernAegeanOfficialSection5
+            : basinCode === "BG3"
+              ? findProfile(section5Data)
+              : basinCode === "BG2"
+                ? blackSeaOfficialSection5
+                : null;
 
         const section7 =
-          basinCode === "BG3"
-            ? findProfile(section7Data)
-            : basinCode === "BG2"
-              ? findProfile(blackSeaSection7Data)
-              : null;
+          basinCode === "BG4"
+            ? westernAegeanOfficialSection7
+            : basinCode === "BG3"
+              ? findProfile(section7Data)
+              : basinCode === "BG2"
+                ? findProfile(
+                    blackSeaSection7Data
+                  )
+                : null;
 
         const blackSeaAdditionalProfile =
           basinCode === "BG2"
@@ -1556,9 +1871,81 @@ export default function GeologyReportPage() {
               )
             : [];
 
-        const effectiveGeologyProfile =
-          blackSeaRegionalGeology
+        const westernAegeanGeologyProfile =
+          basinCode === "BG4" &&
+          westernAegeanOfficialSection1
             ? {
+                ...selectedGeologyProfile,
+
+                code:
+                  westernAegeanOfficialSection1
+                    .code ||
+                  selectedGwbCode,
+
+                name:
+                  westernAegeanOfficialSection1
+                    .name,
+
+                aquifer_type_name:
+                  westernAegeanOfficialSection1
+                    ?.detailed
+                    ?.aquifer_type,
+
+                water_type:
+                  westernAegeanOfficialSection1
+                    ?.typology
+                    ?.groundwater_body_type,
+
+                hydrogeological_horizon:
+                  westernAegeanOfficialSection1
+                    ?.typology
+                    ?.vertical_horizon,
+
+                lithology:
+                  westernAegeanOfficialSection1
+                    ?.detailed
+                    ?.lithology,
+
+                stratigraphy:
+                  westernAegeanOfficialSection1
+                    ?.detailed
+                    ?.stratigraphy,
+
+                aquifer_thickness_m:
+                  westernAegeanOfficialSection1
+                    ?.detailed
+                    ?.aquifer_thickness_m,
+
+                filtration_coefficient_m_day:
+                  westernAegeanOfficialSection1
+                    ?.detailed
+                    ?.hydraulic_conductivity_m_day,
+
+                hydraulic_conductivity_m_day:
+                  westernAegeanOfficialSection1
+                    ?.detailed
+                    ?.hydraulic_conductivity_m_day,
+
+                transmissivity_m2_day:
+                  westernAegeanOfficialSection1
+                    ?.detailed
+                    ?.transmissivity_m2_day,
+
+                pressure_condition:
+                  westernAegeanOfficialSection1
+                    ?.detailed
+                    ?.pressure_condition,
+
+                is_detailed_point_geology:
+                  false,
+              }
+            : null;
+
+        const effectiveGeologyProfile =
+          westernAegeanGeologyProfile ||
+          (
+            blackSeaRegionalGeology
+              ? {
                 ...selectedGeologyProfile,
                 code:
                   blackSeaRegionalGeology
@@ -1590,30 +1977,63 @@ export default function GeologyReportPage() {
                     .regional_explanation,
                 is_detailed_point_geology:
                   false,
-              }
-            : selectedGeologyProfile;
+                }
+              : selectedGeologyProfile
+          );
 
         const registeredInvestigationNearby =
-          basinCode === "BG2"
+          basinCode === "BG4"
             ? measuredFacilities(
                 (
-                  blackSeaInvestigationFeaturesData
+                  westernAegeanInvestigationFeaturesData
                     ?.features || []
                 ).filter(
                   (feature: any) =>
                     String(
-                      feature.properties?.gwb_code || ""
+                      feature.properties
+                        ?.canonical_code ||
+                      feature.properties
+                        ?.gwb_code ||
+                      ""
                     ).trim().toUpperCase() ===
                     selectedGwbCode
                 )
               )
-            : [];
+            : basinCode === "BG2"
+              ? measuredFacilities(
+                  (
+                    blackSeaInvestigationFeaturesData
+                      ?.features || []
+                  ).filter(
+                    (feature: any) =>
+                      String(
+                        feature.properties?.gwb_code || ""
+                      ).trim().toUpperCase() ===
+                      selectedGwbCode
+                  )
+                )
+              : [];
 
         const professionalDrilling = {
           basinCode,
 
+          westernAegeanOfficialSection1,
+          westernAegeanOfficialSection2,
+          westernAegeanOfficialSection3,
+          westernAegeanOfficialSection4,
+          westernAegeanOfficialSection5,
+          westernAegeanCurrentRegisters,
+          westernAegeanAdditionalRegisters,
+          westernAegeanChemicalMonitoring,
+          westernAegeanQuantitativeMonitoring,
+          westernAegeanChemicalRisk,
+          westernAegeanQuantitativeRisk,
+
+
           additionalGroundwaterRegisters:
-            blackSeaAdditionalProfile,
+            basinCode === "BG4"
+              ? westernAegeanAdditionalRegisters
+              : blackSeaAdditionalProfile,
 
           blackSeaOfficialSection1,
 
@@ -1742,9 +2162,44 @@ export default function GeologyReportPage() {
             }
           | null;
 
+        const selectedMonitoringFeatures =
+          basinCode === "BG4"
+            ? (
+                westernAegeanQuantitativeMonitoringData
+                  ?.features || []
+              )
+            : basinCode === "BG2"
+              ? blackSeaQuantitativeMonitoring
+                  .filter(
+                    (station: any) =>
+                      Number.isFinite(
+                        Number(station?.latitude)
+                      ) &&
+                      Number.isFinite(
+                        Number(station?.longitude)
+                      )
+                  )
+                  .map(
+                    (station: any) => ({
+                      type: "Feature",
+                      geometry: {
+                        type: "Point",
+                        coordinates: [
+                          Number(station.longitude),
+                          Number(station.latitude),
+                        ],
+                      },
+                      properties: {
+                        ...station,
+                        gwb_code: selectedGwbCode,
+                      },
+                    })
+                  )
+              : monitoringData.features || [];
+
         for (
           const feature of
-            monitoringData.features || []
+            selectedMonitoringFeatures
         ) {
           if (
             feature.geometry?.type !==
@@ -1781,6 +2236,7 @@ export default function GeologyReportPage() {
           nearest?.feature?.properties || {};
 
         const monitoringGroundwaterBodyCode = [
+          monitoringProperties.canonical_code,
           monitoringProperties.gwb_code,
           monitoringProperties.groundwater_body_code,
           monitoringProperties.groundwaterBodyCode,
@@ -1796,7 +2252,7 @@ export default function GeologyReportPage() {
             String(value || "").trim().toUpperCase()
           )
           .find((value: string) =>
-            /^BG[23]G/.test(value)
+            /^BG[234]G/.test(value)
           ) || "";
 
         const monitoringMatchesSelectedBody =
@@ -1814,33 +2270,56 @@ export default function GeologyReportPage() {
         const basinSpecificGeology =
           basinCode === "BG3"
             ? geology
-            : basinCode === "BG2" && selectedGeologyProfile
+            : (
+                basinCode === "BG2" ||
+                basinCode === "BG4"
+              ) &&
+              effectiveGeologyProfile
               ? {
-                  status: "official_groundwater_body_profile",
+                  status:
+                    "official_groundwater_body_profile",
+
                   unit: {
                     id: Number(
-                      selectedBody?.properties?.OBJECTID || 0
+                      selectedBody
+                        ?.properties
+                        ?.OBJECTID || 0
                     ),
+
                     code:
                       effectiveGeologyProfile
                         .hydrogeological_horizon ||
                       effectiveGeologyProfile.code ||
                       selectedGwbCode,
+
                     name_bg:
                       effectiveGeologyProfile.name ||
                       effectiveGeologyProfile
                         .aquifer_type_name ||
-                      "Официална характеристика на водното тяло",
+                      "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430 \u043d\u0430 \u0432\u043e\u0434\u043d\u043e\u0442\u043e \u0442\u044f\u043b\u043e",
+
                     name_en:
                       String(
-                        selectedBody?.properties?.nameText ||
-                        selectedBody?.properties?.nameTxtInt ||
+                        selectedBody
+                          ?.properties
+                          ?.name_en ||
+                        selectedBody
+                          ?.properties
+                          ?.nameText ||
+                        selectedBody
+                          ?.properties
+                          ?.nameTxtInt ||
                         ""
                       ),
                   },
+
                   source:
-                    "БД Черноморски район — профил на подземно водно тяло",
-                  is_groundwater_body_profile: true,
+                    basinCode === "BG4"
+                      ? "BDZBR PURB3 Section 1"
+                      : "\u0411\u0414 \u0427\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d \u2014 \u043f\u0440\u043e\u0444\u0438\u043b \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e",
+
+                  is_groundwater_body_profile:
+                    true,
                 }
               : null;
 
@@ -2007,10 +2486,30 @@ export default function GeologyReportPage() {
       : [];
 
   const simple =
-    simpleGroundInterpretation(
-      geologyCode,
-      selectedInterpretationBodies
-    );
+    professional?.basinCode === "BG4" &&
+    String(
+      geologyProfile?.water_type ||
+      geologyProfile?.aquifer_type_name ||
+      ""
+    ).toLowerCase().includes("\u043f\u0443\u043a\u043d\u0430\u0442")
+      ? {
+          headline:
+            "\u041f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u0430 \u0441\u043a\u0430\u043b\u043d\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0441\u0440\u0435\u0434\u0430",
+          hardness:
+            "\u0421\u0440\u0435\u0434\u043d\u0430 \u0434\u043e \u0432\u0438\u0441\u043e\u043a\u0430",
+          looseness:
+            "\u041d\u0438\u0441\u043a\u0430 \u0434\u043e \u0441\u0440\u0435\u0434\u043d\u0430",
+          collapse:
+            "\u041d\u0438\u0441\u044a\u043a \u0434\u043e \u0441\u0440\u0435\u0434\u0435\u043d; \u0432\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u0441\u0430 \u043d\u0430\u0440\u0443\u0448\u0435\u043d\u0438 \u0438 \u0438\u0437\u0432\u0435\u0442\u0440\u0435\u043b\u0438 \u0437\u043e\u043d\u0438",
+          drilling:
+            "\u041e\u0447\u0430\u043a\u0432\u0430 \u0441\u0435 \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u043d\u0435 \u0432 \u0441\u043a\u0430\u043b\u043d\u0430 \u0441\u0440\u0435\u0434\u0430. \u041f\u0440\u0438 \u043f\u0440\u0435\u043c\u0438\u043d\u0430\u0432\u0430\u043d\u0435 \u043f\u0440\u0435\u0437 \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d\u0438 \u0438\u043b\u0438 \u0438\u0437\u0432\u0435\u0442\u0440\u0435\u043b\u0438 \u0443\u0447\u0430\u0441\u0442\u044a\u0446\u0438 \u043f\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435\u0442\u043e \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u043f\u0440\u043e\u043c\u0435\u043d\u0438 \u0440\u044f\u0437\u043a\u043e.",
+          water:
+            "\u0412\u043e\u0434\u0430\u0442\u0430 \u0441\u0435 \u0434\u0432\u0438\u0436\u0438 \u0433\u043b\u0430\u0432\u043d\u043e \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438, \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0438 \u0438 \u0438\u0437\u0432\u0435\u0442\u0440\u0435\u043b\u0438 \u0437\u043e\u043d\u0438. \u0422\u043e\u0447\u043d\u0430\u0442\u0430 \u043f\u043e\u0437\u0438\u0446\u0438\u044f \u0438 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430 \u043d\u0435 \u0441\u0435 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f\u0442 \u0441\u0430\u043c\u043e \u043e\u0442 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0438\u044f \u043f\u0440\u043e\u0444\u0438\u043b.",
+        }
+      : simpleGroundInterpretation(
+          geologyCode,
+          selectedInterpretationBodies
+        );
 
 
   const drillingMaterials =
@@ -2025,21 +2524,45 @@ export default function GeologyReportPage() {
       ?.properties || {};
 
   const monitoringType =
-    mp.measurement_type === "level"
-      ? "ниво"
-      : mp.measurement_type ===
-          "discharge"
-        ? "дебит"
-        : "неуточнено";
+    mp.measurement_type === "level" ||
+    Boolean(mp.water_level_frequency)
+      ? "\u043d\u0438\u0432\u043e"
+      : mp.measurement_type === "discharge" ||
+        Boolean(mp.discharge_frequency)
+        ? "\u0434\u0435\u0431\u0438\u0442"
+        : professional?.basinCode === "BG4"
+          ? "\u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433"
+          : "\u043d\u0435\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u043e";
+
+
+  const monitoringFrequency =
+    mp.discharge_frequency != null
+      ? Number(mp.discharge_frequency)
+      : mp.water_level_frequency != null
+        ? Number(mp.water_level_frequency)
+        : null;
+
+  const monitoringFrequencyText =
+    monitoringFrequency != null &&
+    Number.isFinite(monitoringFrequency)
+      ? `${fmt(monitoringFrequency, 0)} \u043f\u044a\u0442\u0438 \u0433\u043e\u0434\u0438\u0448\u043d\u043e`
+      : "\u0447\u0435\u0441\u0442\u043e\u0442\u0430\u0442\u0430 \u043d\u0435 \u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430";
+
+  const monitoringExplanation =
+    mp.discharge_frequency != null
+      ? `\u041d\u0430 \u0442\u043e\u0437\u0438 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432 \u043f\u0443\u043d\u043a\u0442 \u0441\u0435 \u043f\u0440\u043e\u0441\u043b\u0435\u0434\u044f\u0432\u0430 \u0434\u0435\u0431\u0438\u0442\u044a\u0442 ${monitoringFrequencyText}. \u041f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438\u044f\u0442 \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u0441\u044a\u0434\u044a\u0440\u0436\u0430 \u0447\u0435\u0441\u0442\u043e\u0442\u0430\u0442\u0430 \u043d\u0430 \u043d\u0430\u0431\u043b\u044e\u0434\u0435\u043d\u0438\u0435, \u043d\u043e \u043d\u0435 \u0438 \u0441\u0442\u043e\u0439\u043d\u043e\u0441\u0442\u0438\u0442\u0435 \u043e\u0442 \u043e\u0442\u0434\u0435\u043b\u043d\u0438\u0442\u0435 \u0438\u0437\u043c\u0435\u0440\u0432\u0430\u043d\u0438\u044f. \u0417\u0430\u0442\u043e\u0432\u0430 \u043e\u0442 \u0442\u0435\u0437\u0438 \u0434\u0430\u043d\u043d\u0438 \u043d\u0435 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0438 \u0434\u0430\u043b\u0438 \u0434\u0435\u0431\u0438\u0442\u044a\u0442 \u0435 \u0432\u0438\u0441\u043e\u043a \u0438\u043b\u0438 \u043d\u0438\u0441\u044a\u043a, \u043d\u0438\u0442\u043e \u0434\u0430\u043b\u0438 \u0441\u0435 \u0443\u0432\u0435\u043b\u0438\u0447\u0430\u0432\u0430 \u0438\u043b\u0438 \u043d\u0430\u043c\u0430\u043b\u044f\u0432\u0430.`
+      : mp.water_level_frequency != null
+        ? `\u041d\u0430 \u0442\u043e\u0437\u0438 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432 \u043f\u0443\u043d\u043a\u0442 \u0441\u0435 \u043f\u0440\u043e\u0441\u043b\u0435\u0434\u044f\u0432\u0430 \u0432\u043e\u0434\u043d\u043e\u0442\u043e \u043d\u0438\u0432\u043e ${monitoringFrequencyText}. \u041f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438\u044f\u0442 \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u0447\u0435\u0441\u0442\u043e\u0442\u0430\u0442\u0430 \u043d\u0430 \u043d\u0430\u0431\u043b\u044e\u0434\u0435\u043d\u0438\u0435, \u043d\u043e \u043d\u0435 \u0441\u044a\u0434\u044a\u0440\u0436\u0430 \u0441\u0430\u043c\u0438\u0442\u0435 \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438 \u043d\u0438\u0432\u0430. \u0417\u0430\u0442\u043e\u0432\u0430 \u043d\u0435 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0438 \u0434\u0430\u043b\u0438 \u0432\u043e\u0434\u043d\u043e\u0442\u043e \u043d\u0438\u0432\u043e \u0441\u0435 \u043f\u043e\u043a\u0430\u0447\u0432\u0430 \u0438\u043b\u0438 \u0441\u043f\u0430\u0434\u0430.`
+        : "\u041f\u0443\u043d\u043a\u0442\u044a\u0442 \u0435 \u0447\u0430\u0441\u0442 \u043e\u0442 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432\u0430 \u043c\u0440\u0435\u0436\u0430, \u043d\u043e \u0432 \u043d\u0430\u043b\u0438\u0447\u043d\u0438\u044f \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u0438\u043d\u0442\u0435\u0440\u043f\u0440\u0435\u0442\u0430\u0446\u0438\u044f.";
 
   const unit =
-    mp.measurement_type === "level"
+    mp.measurement_type === "level" ||
+    Boolean(mp.water_level_frequency)
       ? " cm"
-      : mp.measurement_type ===
-          "discharge"
+      : mp.measurement_type === "discharge" ||
+        Boolean(mp.discharge_frequency)
         ? " l/s"
         : "";
-
 
   const uniqueWaterTypes = Array.from(
     new Set(
@@ -2174,29 +2697,30 @@ export default function GeologyReportPage() {
             </h2>
 
             <p style={{marginBottom:10}}>
-              {professional?.basinCode === "BG2"
-                ? "Това е официалната регионална характеристика " +
-                  "на черноморското подземно водно тяло. " +
-                  "Тя не представлява точен геоложки разрез " +
-                  "на конкретния имот."
-                : "Това е регионалната геоложка единица " +
-                  "според официалната карта на " +
-                  "Източнобеломорския район."}
+              {professional?.basinCode === "BG4"
+                ? "\u0422\u043e\u0432\u0430 \u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0430 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430 \u043d\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u043e\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e \u0432 \u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438\u044f \u0440\u0430\u0439\u043e\u043d. \u0422\u043e\u0432\u0430 \u043d\u0435 \u0435 \u0442\u043e\u0447\u0435\u043d \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0440\u0430\u0437\u0440\u0435\u0437 \u043d\u0430 \u0438\u043c\u043e\u0442\u0430."
+                : professional?.basinCode === "BG2"
+                  ? "\u0422\u043e\u0432\u0430 \u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0430 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430 \u043d\u0430 \u0447\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u043e\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e. \u0422\u044f \u043d\u0435 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u044f\u0432\u0430 \u0442\u043e\u0447\u0435\u043d \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0440\u0430\u0437\u0440\u0435\u0437 \u043d\u0430 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438\u044f \u0438\u043c\u043e\u0442."
+                  : "\u0422\u043e\u0432\u0430 \u0435 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0430\u0442\u0430 \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0435\u0434\u0438\u043d\u0438\u0446\u0430 \u0441\u043f\u043e\u0440\u0435\u0434 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u043a\u0430\u0440\u0442\u0430 \u043d\u0430 \u0418\u0437\u0442\u043e\u0447\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438\u044f \u0440\u0430\u0439\u043e\u043d."}
             </p>
 
             <div style={styles.note}>
-              <strong>Надеждност:</strong>{" "}
-              {professional?.basinCode === "BG2"
+              <strong>{"\u041d\u0430\u0434\u0435\u0436\u0434\u043d\u043e\u0441\u0442:"}</strong>{" "}
+              {professional?.basinCode === "BG4"
                 ? (
                     data.geology?.unit
-                      ? "Официален профил на подземното водно тяло; " +
-                        "няма локална геоложка карта за имота."
-                      : "Няма налична официална характеристика " +
-                        "за това черноморско водно тяло."
+                      ? "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u043f\u0440\u043e\u0444\u0438\u043b \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e\u0442\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e; \u043d\u0435 \u0435 \u043b\u043e\u043a\u0430\u043b\u0435\u043d \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0440\u0430\u0437\u0440\u0435\u0437 \u043d\u0430 \u0438\u043c\u043e\u0442\u0430."
+                      : "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430 \u0437\u0430 \u0442\u043e\u0432\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e."
                   )
-                : geologyConfidenceBg(
-                    data.geology?.status || ""
-                  )}
+                : professional?.basinCode === "BG2"
+                  ? (
+                      data.geology?.unit
+                        ? "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d \u043f\u0440\u043e\u0444\u0438\u043b \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e\u0442\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e; \u043d\u044f\u043c\u0430 \u043b\u043e\u043a\u0430\u043b\u043d\u0430 \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u043a\u0430\u0440\u0442\u0430 \u0437\u0430 \u0438\u043c\u043e\u0442\u0430."
+                        : "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430 \u0437\u0430 \u0442\u043e\u0432\u0430 \u0447\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e."
+                    )
+                  : geologyConfidenceBg(
+                      data.geology?.status || ""
+                    )}
             </div>
           </section>
 
@@ -2210,9 +2734,11 @@ export default function GeologyReportPage() {
               <>
                 <h2 style={styles.h2}>
                   {mp.station_no ||
-                    "Мониторингов пункт"}
-                  {mp.location
-                    ? ` – ${mp.location}`
+                    mp.eu_point_code ||
+                    mp.nimh_code ||
+                    "\u041c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432 \u043f\u0443\u043d\u043a\u0442"}
+                  {(mp.location || mp.settlement)
+                    ? ` \u2013 ${mp.location || mp.settlement}`
                     : ""}
                 </h2>
 
@@ -2236,6 +2762,13 @@ export default function GeologyReportPage() {
                     {monitoringType}
                   </strong>
                 </p>
+
+                <div style={styles.note}>
+                  <strong>{"\u041a\u0430\u043a\u0432\u043e \u043f\u043e\u043a\u0430\u0437\u0432\u0430\u0442 \u043d\u0430\u043b\u0438\u0447\u043d\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u0438?"}</strong>
+                  <div style={{marginTop:6}}>
+                    {monitoringExplanation}
+                  </div>
+                </div>
 
                 {(mp.mean_2019 != null ||
                   mp.mean_2020 != null) && (
@@ -2305,7 +2838,15 @@ export default function GeologyReportPage() {
                   feature.properties || {};
 
                 const code =
-                  p.localId || "—";
+                  p.localId ||
+                  p.canonical_code ||
+                  (
+                    professional?.basinCode === "BG4" &&
+                    index === 0
+                      ? professional?.groundwaterBodyCode
+                      : ""
+                  ) ||
+                  "?";
 
                 return (
                   <div
@@ -2502,10 +3043,13 @@ export default function GeologyReportPage() {
                     Реално наблюдение:
                   </strong>{" "}
 
-                  {mp.station_no || "Пункт"}
+                  {mp.station_no ||
+                    mp.eu_point_code ||
+                    mp.nimh_code ||
+                    "\u041f\u0443\u043d\u043a\u0442"}
 
-                  {mp.location
-                    ? ` – ${mp.location}`
+                  {(mp.location || mp.settlement)
+                    ? ` \u2013 ${mp.location || mp.settlement}`
                     : ""}
 
                   <div>
@@ -3839,16 +4383,16 @@ export default function GeologyReportPage() {
                       "Няма данни"}
                   </span>
                 </div>
-
                 <div style={styles.recommendItem}>
                   <strong>
-                    Количествено състояние
+                    {"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435"}
                   </strong>
 
                   <span>
-                    {section4.water_balance
-                      ?.quantitative_status ||
-                      "Няма данни"}
+                    {section4.quantitative_status ||
+                      section4.water_balance
+                        ?.quantitative_status ||
+                      "\u041d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438"}
                   </span>
                 </div>
 
@@ -3874,14 +4418,22 @@ export default function GeologyReportPage() {
 
                   <span>
                     {section4.water_balance
-                      ?.exploitation_index != null
+                      ?.derived_load_percent != null
                       ? `${fmt(
                           Number(
                             section4.water_balance
-                              .exploitation_index
-                          ) * 100
+                              .derived_load_percent
+                          )
                         )}%`
-                      : "Няма данни"}
+                      : section4.water_balance
+                          ?.exploitation_index != null
+                        ? `${fmt(
+                            Number(
+                              section4.water_balance
+                                .exploitation_index
+                            ) * 100
+                          )}%`
+                        : "\u041d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438"}
                   </span>
                 </div>
 
@@ -3891,8 +4443,14 @@ export default function GeologyReportPage() {
                   </strong>
 
                   <span>
-                    {section5?.goal_label_bg ||
-                      "Няма въведени данни"}
+                    {professional?.basinCode === "BG4"
+                      ? (
+                          section5?.objectives?.quantitative ||
+                          section5?.objectives?.chemical ||
+                          "\u041d\u044f\u043c\u0430 \u0432\u044a\u0432\u0435\u0434\u0435\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"
+                        )
+                      : section5?.goal_label_bg ||
+                        "\u041d\u044f\u043c\u0430 \u0432\u044a\u0432\u0435\u0434\u0435\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"}
                   </span>
                 </div>
 

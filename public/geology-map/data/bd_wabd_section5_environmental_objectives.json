@@ -1,0 +1,2134 @@
+{
+  "metadata": {
+    "basin_directorate": "Western Aegean Basin Directorate / BDZBR",
+    "river_basin_district_code": "BG4",
+    "planning_period": "2022-2027",
+    "generated_at_utc": "2026-08-23T16:09:42.182249+00:00",
+    "groundwater_body_count": 38,
+    "drinking_objective_count": 34,
+    "without_drinking_objective_count": 4,
+    "exception_record_count": 38,
+    "problem_indicator_profile_count": 38,
+    "chemical_status_counts": {
+      "Добро": 34,
+      "Лошо": 4
+    },
+    "quantitative_status_counts": {
+      "Добро": 35,
+      "Лошо": 3
+    },
+    "goal_category_counts": {
+      "extended_after_2027": 5,
+      "exception_applied": 33
+    },
+    "deadline_counts": {
+      "quantitative_after_2027": 3,
+      "chemical_after_2027": 4
+    },
+    "source_annexes": [
+      "groundwater-objectives-purb3.csv",
+      "groundwater-drinking-protection-objectives.csv"
+    ]
+  },
+  "profiles": [
+    {
+      "gwb_code": "BG4G000000N011",
+      "gwb_name": "Порови води в неоген - Струмешница",
+      "goal_category": "extended_after_2027",
+      "goal_label_bg": "Срок за постигане след 2027 г.",
+      "quantitative_status": "Лошо",
+      "chemical_status": "Лошо",
+      "problem_indicators": "Нитрати",
+      "objectives": {
+        "quantitative": "Постигане на добро количествено състояние",
+        "chemical": "Предотвратяване на замърсяването и постигане на СКОС за добро химично състояние за показатели с отклонения и поддържане на непревишения на СКОС за показатели без отклонения",
+        "chemical_pressure": "Селско стопанство, Ферми и складове за пестициди и торове, Промишленост, Земеделие"
+      },
+      "deadline": {
+        "quantitative": "След 2027г.",
+        "chemical": "след 2027",
+        "extended_after_2027": true
+      },
+      "exception_detail": {
+        "quantitative_exception": "Определено изключение",
+        "quantitative_exception_type": "Удължени срокове по член 4.4 от РДВ",
+        "chemical_exception": "Определено изключение",
+        "chemical_exception_type": "Удължени срокове по член 4.4 от РДВ"
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000N011",
+        "quantitative_objective": "Постигане на добро количествено състояние",
+        "quantitative_deadline": "След 2027г.",
+        "quantitative_exception": "Определено изключение",
+        "chemical_objective": "Предотвратяване на замърсяването и постигане на СКОС за добро химично състояние за показатели с отклонения и поддържане на непревишения на СКОС за показатели без отклонения",
+        "chemical_deadline": "след 2027",
+        "chemical_deviation_indicators": "Нитрати",
+        "chemical_exception": "Определено изключение"
+      },
+      "drinking_water_objective": {
+        "listed": false,
+        "protection_code": null,
+        "source_body_code": null,
+        "source_body_name": null,
+        "body_type": null,
+        "quantitative_status_2021": null,
+        "chemical_status_2021": null,
+        "objective": null,
+        "deadline": null,
+        "deviation_indicators": null
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N012",
+      "gwb_name": "Порови води в неоген - Сандански",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000N012",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": false,
+        "protection_code": null,
+        "source_body_code": null,
+        "source_body_name": null,
+        "body_type": null,
+        "quantitative_status_2021": null,
+        "chemical_status_2021": null,
+        "objective": null,
+        "deadline": null,
+        "deviation_indicators": null
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N013",
+      "gwb_name": "Порови води в неоген - Симитли",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000N013",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000000N013",
+        "source_body_code": "BG4G000000N013",
+        "source_body_name": "Порови подземни води в неоген - Симитли",
+        "body_type": "Грабеновидни депресии",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N014",
+      "gwb_name": "Порови води в неоген - Благоевград",
+      "goal_category": "extended_after_2027",
+      "goal_label_bg": "Срок за постигане след 2027 г.",
+      "quantitative_status": "Лошо",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Постигане на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "След 2027г.",
+        "chemical": "2027",
+        "extended_after_2027": true
+      },
+      "exception_detail": {
+        "quantitative_exception": "Определено изключение",
+        "quantitative_exception_type": "Удължени срокове по член 4.4 от РДВ",
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000N014",
+        "quantitative_objective": "Постигане на добро количествено състояние",
+        "quantitative_deadline": "След 2027г.",
+        "quantitative_exception": "Определено изключение",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000000N014",
+        "source_body_code": "BG4G000000N014",
+        "source_body_name": "Порови подземни води в неоген-Благоевград",
+        "body_type": "Грабеновидни депресии",
+        "quantitative_status_2021": "Лошо",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N015",
+      "gwb_name": "Порови води в неоген -Брезник-Земен",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000N015",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000000N015",
+        "source_body_code": "BG4G000000N015",
+        "source_body_name": "Порови подземни води в неоген -Брезник-Земен",
+        "body_type": "Грабеновидни депресии",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N016",
+      "gwb_name": "Порови води в неоген -Разлог",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000N016",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": false,
+        "protection_code": null,
+        "source_body_code": null,
+        "source_body_name": null,
+        "body_type": null,
+        "quantitative_status_2021": null,
+        "chemical_status_2021": null,
+        "objective": null,
+        "deadline": null,
+        "deviation_indicators": null
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N017",
+      "gwb_name": "Порови води в неоген - Гоце Делчев",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000N017",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000000N017",
+        "source_body_code": "BG4G000000N017",
+        "source_body_name": "Порови подземни води в неоген - Гоце Делчев",
+        "body_type": "Грабеновидни депресии",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q001",
+      "gwb_name": "Порови води в кватернер - Струмешница",
+      "goal_category": "extended_after_2027",
+      "goal_label_bg": "Срок за постигане след 2027 г.",
+      "quantitative_status": "Лошо",
+      "chemical_status": "Лошо",
+      "problem_indicators": "Нитрати",
+      "objectives": {
+        "quantitative": "Постигане на добро количествено състояние",
+        "chemical": "Предотвратяване на замърсяването и постигане на СКОС за добро химично състояние за показатели с отклонения и поддържане на непревишения на СКОС за показатели без отклонения",
+        "chemical_pressure": "Селско стопанство Населени места без изградена канализационна мрежа"
+      },
+      "deadline": {
+        "quantitative": "След 2027г.",
+        "chemical": "след 2027",
+        "extended_after_2027": true
+      },
+      "exception_detail": {
+        "quantitative_exception": "Определено изключение",
+        "quantitative_exception_type": "Удължени срокове по член 4.4 от РДВ",
+        "chemical_exception": "Определено изключение",
+        "chemical_exception_type": "Удължени срокове по член 4.4 от РДВ"
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000Q001",
+        "quantitative_objective": "Постигане на добро количествено състояние",
+        "quantitative_deadline": "След 2027г.",
+        "quantitative_exception": "Определено изключение",
+        "chemical_objective": "Предотвратяване на замърсяването и постигане на СКОС за добро химично състояние за показатели с отклонения и поддържане на непревишения на СКОС за показатели без отклонения",
+        "chemical_deadline": "след 2027",
+        "chemical_deviation_indicators": "Нитрати",
+        "chemical_exception": "Определено изключение"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q001",
+        "source_body_code": "BG4G000000Q001",
+        "source_body_name": "Порови подземни води през кватернера- Струмешница",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Лошо",
+        "chemical_status_2021": "Лошо",
+        "objective": "Постигане на СКОС за добро химично състояние за показатели с отклонения и запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички останали параметри и показатели, които са без отклонения от СКОС",
+        "deadline": "2027",
+        "deviation_indicators": "Нитрати"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q002",
+      "gwb_name": "Порови води в кватернер - Кресна-Сандански",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Предотвратяване на замърсяването и постигане на СКОС за добро химично състояние за показатели с отклонения",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000Q002",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Предотвратяване на замърсяването и постигане на СКОС за добро химично състояние за показатели с отклонения",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q002",
+        "source_body_code": "BG4G000000Q002",
+        "source_body_name": "Порови подземни води кватернер- Кресна-Сандански",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q003",
+      "gwb_name": "Порови води в кватернер - Симитли",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Постигане на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000Q003",
+        "quantitative_objective": "Постигане на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q003",
+        "source_body_code": "BG4G000000Q003",
+        "source_body_name": "Порови подземни води през кватернера- Симитли",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Лошо",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q004",
+      "gwb_name": "Порови води в кватернер - Благоевград",
+      "goal_category": "extended_after_2027",
+      "goal_label_bg": "Срок за постигане след 2027 г.",
+      "quantitative_status": "Добро",
+      "chemical_status": "Лошо",
+      "problem_indicators": "Сулфати",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Предотвратяване на замърсяването и постигане на СКОС за добро химично състояние за показатели с отклонения и поддържане на непревишения на СКОС за показатели без отклонения",
+        "chemical_pressure": "Земеделие, Промишленост"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "след 2027",
+        "extended_after_2027": true
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Определено изключение",
+        "chemical_exception_type": "Удължени срокове по член 4.4 от РДВ"
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000Q004",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Предотвратяване на замърсяването и постигане на СКОС за добро химично състояние за показатели с отклонения и поддържане на непревишения на СКОС за показатели без отклонения",
+        "chemical_deadline": "след 2027",
+        "chemical_deviation_indicators": "Сулфати",
+        "chemical_exception": "Определено изключение"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q004",
+        "source_body_code": "BG4G000000Q004",
+        "source_body_name": "Порови подземни води през кватернер- Благоевград",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Лошо",
+        "objective": "Постигане на СКОС за добро химично състояние за показатели с отклонения и запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички останали параметри и показатели, които са без отклонения от СКОС",
+        "deadline": "2027",
+        "deviation_indicators": "Сулфати"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q005",
+      "gwb_name": "Порови води в кватернер - Дупница",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000Q005",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW00000Q005",
+        "source_body_code": "BG4G000000Q005",
+        "source_body_name": "Порови подземни води в кватернер- Дупница",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q007",
+      "gwb_name": "Порови води в кватернер - Радомир-Брезник",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000Q007",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q007",
+        "source_body_code": "BG4G000000Q007",
+        "source_body_name": "Порови подземни води в кватернер- Радомир-Брезник",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q008",
+      "gwb_name": "Порови води в кватернер - Разлог",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000Q008",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q008",
+        "source_body_code": "BG4G000000Q008",
+        "source_body_name": "Порови подземни води през кватернер- Разлог",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q009",
+      "gwb_name": "Порови води в кватернер - Гоце Делчев",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000000Q009",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q009",
+        "source_body_code": "BG4G000000Q009",
+        "source_body_name": "Порови подземни води през кватернер- Гоце Делчев",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G00000QN006",
+      "gwb_name": "Порови води в кватернер- неоген - Кюстедил",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G00000QN006",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW00000QN006",
+        "source_body_code": "BG4G00000QN006",
+        "source_body_name": "Порови подземни води в кватернерно-неогенски Кюстедил",
+        "body_type": "Грабеновидни депресии",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG018",
+      "gwb_name": "Порово-пукнатинни води в Гоцеделчевски палеогенски водоносен хоризонт",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G00001PG018",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW00001PG018",
+        "source_body_code": "BG4G00001PG018",
+        "source_body_name": "порово-пукнатинни подземни води в Гоцеделчевски палеогенен водоносен хоризонт",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": null
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG038",
+      "gwb_name": "Порови води в палеогенски седиментен комплекс в източните склонове на Влахина планина",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G00001PG038",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW00001PG038",
+        "source_body_code": "BG4G00001PG038",
+        "source_body_name": "Порови води в палеогенския седиментен комплекс в източните склонове на Влахина",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": null
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG039",
+      "gwb_name": "Порово-пукнатинни води в Осоговски палеогенски вулканогенно-седиментен комплекс",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G00001PG039",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW00001PG039",
+        "source_body_code": "BG4G00001PG039",
+        "source_body_name": "Порово-пукнатини подземни води в Осоговски палеогенен вулканоедиментен комплекс",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG138",
+      "gwb_name": "Порови води в палеогенски седиментен комплекс на Бобовдолска и Кюстендилска котловина",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G00001PG138",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW00001PG138",
+        "source_body_code": "BG4G00001PG138",
+        "source_body_name": "Порови подземни води в палеогенски седиментен комплекс на Бобовдолската и Кюстендилската котловина",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG238",
+      "gwb_name": "Порово-пукнатинни води в палеогенски седиментен комплекс на Пернишка котловина",
+      "goal_category": "extended_after_2027",
+      "goal_label_bg": "Срок за постигане след 2027 г.",
+      "quantitative_status": "Добро",
+      "chemical_status": "Лошо",
+      "problem_indicators": "Сулфати",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Предотвратяване на замърсяването и постигане на СКОС за добро химично състояние за показатели с отклонения и поддържане на непревишения на СКОС за показатели без отклонения",
+        "chemical_pressure": "Селско стопанство, минно дело, промишленост"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "след 2027",
+        "extended_after_2027": true
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Определено изключение",
+        "chemical_exception_type": "Удължени срокове по член 4.4 от РДВ"
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G00001PG238",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Предотвратяване на замърсяването и постигане на СКОС за добро химично състояние за показатели с отклонения и поддържане на непревишения на СКОС за показатели без отклонения",
+        "chemical_deadline": "след 2027",
+        "chemical_deviation_indicators": "Сулфати",
+        "chemical_exception": "Определено изключение"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW00001PG238",
+        "source_body_code": "BG4G00001PG238",
+        "source_body_name": "Порово-пукнатинни подземни води в палеогенския седиментен комплекс на Пернишката котловина",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Лошо",
+        "objective": "Постигане на СКОС за добро химично състояние за показатели с отклонения и запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички останали параметри и показатели, които са без отклонения от СКОС",
+        "deadline": "2027",
+        "deviation_indicators": "Сулфати"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G00001T2035",
+      "gwb_name": "Пукнатинно-карстови води в Бобошево-Мърводолски картсов басейн",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G00001T2035",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW00001T2035",
+        "source_body_code": "BG4G00001T2035",
+        "source_body_name": "Пукнатинно-карстови подземни води в Бобошевско-Марводолския карстов басейн",
+        "body_type": "Карстови води, разположени в зони с напукани образувания",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G0001PT1030",
+      "gwb_name": "Пукнатинно-карстови води в Сатовчански карстов басейн",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G0001PT1030",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW0001PT1030",
+        "source_body_code": "BG4G0001PT1030",
+        "source_body_name": "Пукнатинно-карстови подземни води в Сатовчанския карстов басейн",
+        "body_type": "Карстови води, разположени в зони с напукани образувания",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G0001PT1036",
+      "gwb_name": "Пукнатинно-Карстови води в Гоцеделчевски карстов басейн, Тешовски плутон",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G0001PT1036",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW0001PT1036",
+        "source_body_code": "BG4G0001PT1036",
+        "source_body_name": "Пукнатинно-карстови подземни води в Гоцеделчевски карстов басейн, Тешовски плутон",
+        "body_type": "Карстови води, разположени в зони с напукани образувания",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000PT3031",
+      "gwb_name": "Карстови води в Разложки карстов басейн",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000PT3031",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW0000PT3031",
+        "source_body_code": "BG4G000PT3031",
+        "source_body_name": "Карстови подземни води в Разложкия карстов басейн",
+        "body_type": "ПВТ в изолирани и самостоятелни карстови басейни",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G000PT3032",
+      "gwb_name": "Карстови води в Влахински карстов басейн",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G000PT3032",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW0000PT3032",
+        "source_body_code": "BG4G000PT3032",
+        "source_body_name": "Карстови подземни води в карстовия басейн Влахи",
+        "body_type": "ПВТ в изолирани и самостоятелни карстови басейни",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G001PTPZ025",
+      "gwb_name": "Пукнатинни води в Беласишки блок (метаморфити)",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G001PTPZ025",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW001PTPZ025",
+        "source_body_code": "BG4G001PTPZ025",
+        "source_body_name": "Напукани подземни води в блок Беласица (метаморфни скали)",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G001PTPZ026",
+      "gwb_name": "Пукнатинни води в Южнобългарски гранити, Западнородопски метаморфити, Барутин-буйновски интрузив",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G001PTPZ026",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW001PTPZ026",
+        "source_body_code": "BG4G001PTPZ026",
+        "source_body_name": "Напукани подземни води в южнобългарски гранити, Западнородопски метаморфни скали, Барутин-Буйновска интрузия",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G001PTPZ027",
+      "gwb_name": "Пукнатинни води във Верила-Витошки блок",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G001PTPZ027",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW001PTPZ027",
+        "source_body_code": "BG4G001PTPZ027",
+        "source_body_name": "Пукнатинни подпочвени води в кв. Верила- Блок Витоша",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G001PTPZ125",
+      "gwb_name": "Пукнатинни води във Влахино-огражденско-малешевско-осоговски метаморфити",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G001PTPZ125",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW001PtPz125",
+        "source_body_code": "BG4G001PTPZ125",
+        "source_body_name": "Пукнатини подземни води в метаморфни скали Влахина-Огражден-Малешево-Осогово",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G001PZC2021",
+      "gwb_name": "Пукнатинни води в Рило-родопски метаморфити, Южнобългарски гранити, Калински плутон",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G001PZC2021",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW01PZC2021",
+        "source_body_code": "BG4G001PZC2021",
+        "source_body_name": "Напукани подземни води в Рило-Родопски метаморфни скали, Южнобългарски гранити, Калински плутон",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G001QNPG010",
+      "gwb_name": "Порови води в кватернер - Неоген-Палеоген - Доспат",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G001QNPG010",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW001QNPG010",
+        "source_body_code": "BG4G001QNPG010",
+        "source_body_name": "Порови подземни води в кватернер-неоген-палеоген-Доспат",
+        "body_type": "Грабеновидни депресии",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G001T2T3029",
+      "gwb_name": "Пукнатинно-карстови води в Еловдолски карстов басейн",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G001T2T3029",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW001T2T3029",
+        "source_body_code": "BG4G001T2T3029",
+        "source_body_name": "Пукнатинно-карстови подземни води в Еловдолския карстов басейн",
+        "body_type": "Карстови води, разположени в зони с напукани образувания",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G00T1T2033",
+      "gwb_name": "Карстови води в Логодашки карстов басейн",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G00T1T2033",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000T1T2033",
+        "source_body_code": "BG4G00T1T2033",
+        "source_body_name": "Карстови подземни води в Логодажкия карстов басейн",
+        "body_type": "ПВТ в изолирани и самостоятелни карстови басейни",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G00T1T2034",
+      "gwb_name": "Карстови води в Смоличенски карстов басейн",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G00T1T2034",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": false,
+        "protection_code": null,
+        "source_body_code": null,
+        "source_body_name": null,
+        "body_type": null,
+        "quantitative_status_2021": null,
+        "chemical_status_2021": null,
+        "objective": null,
+        "deadline": null,
+        "deviation_indicators": null
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G00T2T3028",
+      "gwb_name": "Карстови води в Земенски карстов басейн",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G00T2T3028",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW000T2T3028",
+        "source_body_code": "BG4G00T2T3028",
+        "source_body_name": "Карстови подземни води в Земенския карстов басейн",
+        "body_type": "ПВТ в изолирани и самостоятелни карстови басейни",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G1PZC2PG019",
+      "gwb_name": "Пукнатинни води в Пирински блок",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G1PZC2PG019",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW1PZC2PG019",
+        "source_body_code": "BG4G1PZC2PG019",
+        "source_body_name": "Напукани подземни води в блок Пирин",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    },
+    {
+      "gwb_code": "BG4G1T1T2T3037",
+      "gwb_name": "Карстови води в Голобърдовски карстов басейн",
+      "goal_category": "exception_applied",
+      "goal_label_bg": "?????????? ??????????",
+      "quantitative_status": "Добро",
+      "chemical_status": "Добро",
+      "problem_indicators": "Без превишения на СКОС",
+      "objectives": {
+        "quantitative": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "chemical": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_pressure": "Няма значителен антропогенен натиск"
+      },
+      "deadline": {
+        "quantitative": "2027",
+        "chemical": "2027",
+        "extended_after_2027": false
+      },
+      "exception_detail": {
+        "quantitative_exception": "Не",
+        "quantitative_exception_type": null,
+        "chemical_exception": "Не",
+        "chemical_exception_type": null
+      },
+      "water_act_basis": null,
+      "purb2": {
+        "included_for_comparison": false
+      },
+      "purb3": {
+        "source_code": "BG4G1T1T2T3037",
+        "quantitative_objective": "Запазване, поддържане и недопускане на влошаване на добро количествено състояние",
+        "quantitative_deadline": "2027",
+        "quantitative_exception": "Не",
+        "chemical_objective": "Запазване, поддържане и недопускане на влошаване на доброто химично състояние",
+        "chemical_deadline": "2027",
+        "chemical_deviation_indicators": "Без превишения на СКОС",
+        "chemical_exception": "Не"
+      },
+      "drinking_water_objective": {
+        "listed": true,
+        "protection_code": "BG4DGW1T1T2T3037",
+        "source_body_code": "BG4G1T1T2T3037",
+        "source_body_name": "Карстови подземни води в карстовия басейн Голо Бърдо",
+        "body_type": "ПВТ в изолирани и самостоятелни карстови басейни",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": "2027",
+        "deviation_indicators": "Без превишения"
+      },
+      "source": {
+        "objectives": "BDZBR PURB 2022-2027 Section 5 groundwater objectives",
+        "drinking_protection": "BDZBR PURB3 drinking groundwater protection objectives"
+      }
+    }
+  ],
+  "quality_report": {
+    "code_corrections": [],
+    "unresolved_objective_rows": [],
+    "unresolved_drinking_rows": [],
+    "duplicate_objective_codes": [],
+    "duplicate_drinking_codes": [],
+    "missing_objective_codes": [],
+    "status_mismatches": []
+  }
+}

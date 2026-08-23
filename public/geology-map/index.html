@@ -397,6 +397,145 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 
 /* SONDI_ANALYSIS_CURTAIN_END */
 
+
+
+/* SONDI_RESPONSIVE_LEGENDS_START */
+
+.legend {
+  position: relative;
+  box-sizing: border-box;
+  max-width: min(270px, calc(100vw - 28px));
+}
+
+.legend-close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,.96) !important;
+  color: #334155 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 22px !important;
+  text-align: center;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 1px 5px rgba(0,0,0,.22);
+}
+
+.legend-close-button:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+@media (max-width: 1100px) {
+  .leaflet-bottom.leaflet-right {
+    right: 8px;
+    bottom: 8px;
+    max-width: min(280px, calc(100vw - 16px));
+  }
+
+  .legend {
+    max-width: min(245px, calc(100vw - 24px));
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 700px) {
+  .leaflet-bottom.leaflet-right {
+    right: 8px;
+    bottom: 8px;
+    max-width: calc(100vw - 16px);
+  }
+
+  .legend {
+    max-width: min(230px, calc(100vw - 20px));
+  }
+
+  .legend.mobile-legend-open {
+    max-width: min(270px, calc(100vw - 20px));
+    max-height: min(52vh, 420px);
+    overflow-y: auto;
+  }
+}
+
+/* SONDI_RESPONSIVE_LEGENDS_END */
+
+
+
+/* SONDI_RIGHT_LAYER_CONTROL_CLOSE_START */
+
+.leaflet-control-layers {
+  position: relative;
+}
+
+.sondi-right-layer-close {
+  position: absolute;
+  top: auto;
+  bottom: 7px;
+  right: 7px;
+  z-index: 50;
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 26px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,.96) !important;
+  color: #334155 !important;
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  line-height: 24px !important;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 1px 5px rgba(0,0,0,.22);
+}
+
+.sondi-right-layer-close:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+.sondi-layer-reopen {
+  display: none;
+  position: fixed;
+  z-index: 1200;
+  top: 54px;
+  right: 12px;
+  width: auto !important;
+  min-width: 76px;
+  padding: 7px 11px !important;
+  border: 1px solid #b9c8ce !important;
+  border-radius: 18px !important;
+  background: rgba(255,255,255,.96) !important;
+  color: #173d47 !important;
+  font-size: 12px !important;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+
+.sondi-layer-reopen.is-visible {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .sondi-layer-reopen {
+    top: 54px;
+    right: 10px;
+  }
+}
+
+/* SONDI_RIGHT_LAYER_CONTROL_CLOSE_END */
+
 </style>
 </head>
 <body>
@@ -526,6 +665,8 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 <div id="east-aegean-wells-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-ordinary-wells"> 🟢 Обикновени сондажи и кладенци – БД Черноморски район</label>
 <div id="ordinary-wells-load-status" class="small" style="margin-left:24px">изключено</div>
+<label class="layerrow"><input type="checkbox" id="layer-western-aegean-wells"> 🟢 Обикновени сондажи и кладенци – БД Западнобеломорски район</label>
+<div id="western-aegean-wells-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-wells"> 🔴 Минерални водовземни сондажи</label>
 <label class="layerrow"><input type="checkbox" id="layer-springs"> 🔵 Минерални каптажи и извори</label>
 <label class="layerrow"><input type="checkbox" id="layer-monitoring"> 🟣 Минерални мониторингови сондажи</label>
@@ -536,6 +677,8 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 <div id="bd-ibr-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-bd-bs"> 🔹 Подземни водни тела – БД Черноморски район / ПУРБ3</label>
 <div id="bd-bs-load-status" class="small" style="margin-left:24px">изключено</div>
+<label class="layerrow"><input type="checkbox" id="layer-bd-wabd"> 💧 Подземни водни тела – БД Западнобеломорски район / ПУРБ3</label>
+<div id="bd-wabd-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-geology-age"> 🪨 Геоложка възраст – БД ИБР</label>
 <div id="geology-age-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-quant-monitoring"> 🟣 Количествен мониторинг – НИМХ 2019–2020</label>
@@ -625,12 +768,16 @@ const topo=L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZo
 const groundwaterLayer = L.layerGroup();
 const bdIbrGroundwaterLayer = L.layerGroup();
 const bdBsGroundwaterLayer = L.layerGroup();
+const bdWabdGroundwaterLayer = L.layerGroup();
 const ordinaryGroundwaterWellsLayer = L.layerGroup();
 const eastAegeanGroundwaterWellsLayer = L.layerGroup();
+const westernAegeanGroundwaterWellsLayer = L.layerGroup();
 let eastAegeanGroundwaterWellsLoaded = false;
 let eastAegeanGroundwaterWellsLoading = false;
 let ordinaryGroundwaterWellsLoaded = false;
 let ordinaryGroundwaterWellsLoading = false;
+let westernAegeanGroundwaterWellsLoaded = false;
+let westernAegeanGroundwaterWellsLoading = false;
 
 const geologyAgeBounds = [
   [40.96405463472572, 23.499441370514838],
@@ -654,10 +801,15 @@ let bdIbrGroundwaterLoaded=false;
 let bdIbrGroundwaterLoading=false;
 let bdBsGroundwaterLoaded=false;
 let bdBsGroundwaterLoading=false;
+let bdWabdGroundwaterLoaded=false;
+let bdWabdGroundwaterLoading=false;
 
 let bdIbrGroundwaterLeafletLayer = null;
 let bdBsGroundwaterLeafletLayer = null;
+let bdWabdGroundwaterLeafletLayer = null;
 let blackSeaThematicPressureData = null;
+let wabdThematicPressureData = null;
+let wabdThematicPressureLoading = false;
 let blackSeaThematicPressureLoading = null;
 let pointPressureData = null;
 let pointPressureLoading = false;
@@ -685,9 +837,11 @@ const rightLayerControl = L.control.layers(
  {
    '🟢 Обикновени сондажи – БД Източнобеломорски район':eastAegeanGroundwaterWellsLayer,
    '🟢 Обикновени сондажи – БД Черноморски район':ordinaryGroundwaterWellsLayer,
+   '🟢 Обикновени сондажи – БД Западнобеломорски район':westernAegeanGroundwaterWellsLayer,
    '🟦 Подземни водни тела (EEA/WFD)':groundwaterLayer,
    '🔷 Подземни водни тела – БД ИБР / ПУРБ3':bdIbrGroundwaterLayer,
    '🔹 Подземни водни тела – БД Черноморски район / ПУРБ3':bdBsGroundwaterLayer,
+   '💧 Подземни водни тела – БД Западнобеломорски район / ПУРБ3':bdWabdGroundwaterLayer,
    '🪨 Геоложка възраст – БД ИБР':geologyAgeLayer,
    '🟣 Количествен мониторинг – НИМХ 2019–2020':quantitativeMonitoringLayer,
    'ðŸŸ¤ Ðктивни разломи (GEM)':faultsLayer
@@ -698,11 +852,106 @@ const rightLayerControl = L.control.layers(
 const rightLayerControlContainer =
   rightLayerControl.getContainer();
 
+function installRightLayerControlClose() {
+  if (!rightLayerControlContainer) {
+    return;
+  }
+
+  if (
+    rightLayerControlContainer.querySelector(
+      ".sondi-right-layer-close"
+    )
+  ) {
+    return;
+  }
+
+  const closeButton =
+    document.createElement("button");
+
+  closeButton.type = "button";
+  closeButton.className =
+    "sondi-right-layer-close";
+
+  closeButton.innerHTML = "&times;";
+
+  closeButton.title =
+    "\u0417\u0430\u0442\u0432\u043e\u0440\u0438 \u043c\u0435\u043d\u044e\u0442\u043e \u0437\u0430 \u0441\u043b\u043e\u0435\u0432\u0435";
+
+  closeButton.setAttribute(
+    "aria-label",
+    "\u0417\u0430\u0442\u0432\u043e\u0440\u0438 \u043c\u0435\u043d\u044e\u0442\u043e \u0437\u0430 \u0441\u043b\u043e\u0435\u0432\u0435"
+  );
+
+  const reopenButton =
+    document.createElement("button");
+
+  reopenButton.type = "button";
+  reopenButton.className =
+    "sondi-layer-reopen";
+
+  reopenButton.textContent =
+    "\u0421\u043b\u043e\u0435\u0432\u0435";
+
+  reopenButton.title =
+    "\u041e\u0442\u0432\u043e\u0440\u0438 \u043c\u0435\u043d\u044e\u0442\u043e \u0437\u0430 \u0441\u043b\u043e\u0435\u0432\u0435";
+
+  document.body.appendChild(
+    reopenButton
+  );
+
+  L.DomEvent.disableClickPropagation(
+    closeButton
+  );
+
+  L.DomEvent.disableScrollPropagation(
+    closeButton
+  );
+
+  closeButton.addEventListener(
+    "click",
+    function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      rightLayerControlContainer.style.display =
+        "none";
+
+      reopenButton.classList.add(
+        "is-visible"
+      );
+    }
+  );
+
+  reopenButton.addEventListener(
+    "click",
+    function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      rightLayerControlContainer.style.display =
+        "";
+
+      reopenButton.classList.remove(
+        "is-visible"
+      );
+    }
+  );
+
+  rightLayerControlContainer.appendChild(
+    closeButton
+  );
+}
+
+installRightLayerControlClose();
+
+
+
 function updateRightLayerControlVisibility() {
   if (!rightLayerControlContainer) return;
 
   const layerIds = [
-    'layer-wells',
+    'layer-western-aegean-wells',
+  'layer-wells',
     'layer-springs',
     'layer-monitoring',
     'layer-inactive',
@@ -710,6 +959,7 @@ function updateRightLayerControlVisibility() {
     'layer-groundwater',
     'layer-bd-ibr',
     'layer-bd-bs',
+    'layer-bd-wabd',
     'layer-geology-age',
     'layer-quant-monitoring',
     'layer-faults'
@@ -1078,6 +1328,246 @@ function applyBdBsThematicStyle() {
   }
 }
 
+
+function wabdThematicFeatureCode(feature) {
+  const p =
+    feature && feature.properties
+      ? feature.properties
+      : {};
+
+  return normalizeGwbCode(
+    p.canonical_code ||
+    p.localId ||
+    p.localID ||
+    p.gwb_code ||
+    p.code ||
+    ""
+  );
+}
+
+function wabdThematicRecordForFeature(feature) {
+  if (
+    !wabdThematicPressureData ||
+    !Array.isArray(wabdThematicPressureData.profiles)
+  ) {
+    return null;
+  }
+
+  const code =
+    wabdThematicFeatureCode(feature);
+
+  if (!code) {
+    return null;
+  }
+
+  return (
+    wabdThematicPressureData.profiles.find(
+      record =>
+        normalizeGwbCode(
+          record.code ||
+          record.gwb_code ||
+          ""
+        ) === code
+    ) || null
+  );
+}
+
+function wabdTextIsRisk(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .includes("\u0432 \u0440\u0438\u0441\u043a");
+}
+
+function wabdCurrentLoadColor(value) {
+  const percent = Number(value);
+
+  if (!Number.isFinite(percent)) {
+    return "#a8b5ba";
+  }
+
+  if (percent >= 75) {
+    return "#cf5b5b";
+  }
+
+  if (percent >= 50) {
+    return "#e69a4a";
+  }
+
+  if (percent >= 25) {
+    return "#d6c75f";
+  }
+
+  return "#68b7b0";
+}
+
+function wabdDefaultStyle(feature) {
+  const p =
+    feature && feature.properties
+      ? feature.properties
+      : {};
+
+  const status =
+    String(
+      p.overall_status_purb3 ||
+      p.overall_status ||
+      ""
+    )
+    .trim()
+    .toLowerCase();
+
+  const color =
+    status.includes("\u043b\u043e\u0448")
+      ? "#dc2626"
+      : "#2563eb";
+
+  return {
+    color: color,
+    weight: 1.3,
+    opacity: 0.85,
+    fillColor: color,
+    fillOpacity: 0.22
+  };
+}
+
+function wabdThematicStyle(feature) {
+  const record =
+    wabdThematicRecordForFeature(feature);
+
+  if (!record) {
+    return {
+      color: "#8da1a6",
+      weight: 1,
+      opacity: 0.65,
+      fillColor: "#c9d2d4",
+      fillOpacity: 0.30
+    };
+  }
+
+  /*
+    WABD has no directly comparable affected-area
+    percentage for point and diffuse pressure.
+    Keep those two modes neutral.
+  */
+  if (
+    activeThematicMode === "point-pressure" ||
+    activeThematicMode === "diffuse-pressure"
+  ) {
+    return {
+      color: "#7d9196",
+      weight: 1.2,
+      opacity: 0.85,
+      fillColor: "#a8b5ba",
+      fillOpacity: 0.38
+    };
+  }
+
+  if (
+    activeThematicMode === "pollution-risk"
+  ) {
+    const atRisk =
+      wabdTextIsRisk(
+        record.chemical_risk?.purb3_risk
+      ) ||
+      wabdTextIsRisk(
+        record.vulnerability
+          ?.chemical_risk_purb3
+      );
+
+    const color =
+      atRisk
+        ? "#d94d4d"
+        : "#62ad70";
+
+    return {
+      color: color,
+      weight: 1.5,
+      opacity: 0.95,
+      fillColor: color,
+      fillOpacity: 0.52
+    };
+  }
+
+  if (
+    activeThematicMode === "abstraction-pressure"
+  ) {
+    const loadPercent =
+      record.quantitative_risk
+        ?.derived_current_load_percent;
+
+    const color =
+      wabdCurrentLoadColor(
+        loadPercent
+      );
+
+    return {
+      color: color,
+      weight: 1.4,
+      opacity: 0.9,
+      fillColor: color,
+      fillOpacity: 0.52
+    };
+  }
+
+  return wabdDefaultStyle(feature);
+}
+
+function applyBdWabdThematicStyle() {
+  if (!bdWabdGroundwaterLeafletLayer) {
+    return;
+  }
+
+  if (activeThematicMode) {
+    bdWabdGroundwaterLeafletLayer.setStyle(
+      wabdThematicStyle
+    );
+  } else {
+    bdWabdGroundwaterLeafletLayer.setStyle(
+      wabdDefaultStyle
+    );
+  }
+}
+
+async function loadWabdThematicPressureData() {
+  if (
+    wabdThematicPressureData ||
+    wabdThematicPressureLoading
+  ) {
+    return wabdThematicPressureData;
+  }
+
+  wabdThematicPressureLoading = true;
+
+  try {
+    const response = await fetch(
+      "/geology-map/data/bd_wabd_section2_pressure_risk.json"
+    );
+
+    if (!response.ok) {
+      throw new Error(
+        "HTTP " + response.status
+      );
+    }
+
+    wabdThematicPressureData =
+      await response.json();
+
+    return wabdThematicPressureData;
+
+  } catch (error) {
+    console.error(
+      "[BD WABD] thematic data load error:",
+      error
+    );
+
+    return null;
+
+  } finally {
+    wabdThematicPressureLoading = false;
+  }
+}
+
+
 async function activateThematicMode(mode){
   activeThematicMode =
     mode === "default"
@@ -1089,6 +1579,9 @@ async function activateThematicMode(mode){
 
   const blackSeaCheckbox =
     document.getElementById("layer-bd-bs");
+
+  const westernAegeanCheckbox =
+    document.getElementById("layer-bd-wabd");
 
   const eeaCheckbox =
     document.getElementById("layer-groundwater");
@@ -1109,6 +1602,10 @@ async function activateThematicMode(mode){
     blackSeaCheckbox.checked = true;
   }
 
+  if (westernAegeanCheckbox) {
+    westernAegeanCheckbox.checked = true;
+  }
+
   if (!map.hasLayer(bdIbrGroundwaterLayer)) {
     bdIbrGroundwaterLayer.addTo(map);
   }
@@ -1117,10 +1614,16 @@ async function activateThematicMode(mode){
     bdBsGroundwaterLayer.addTo(map);
   }
 
+  if (!map.hasLayer(bdWabdGroundwaterLayer)) {
+    bdWabdGroundwaterLayer.addTo(map);
+  }
+
   await Promise.all([
     loadBdIbrGroundwaterBodies(),
     loadBdBsGroundwaterBodies(),
-    loadBlackSeaThematicPressureData()
+    loadBdWabdGroundwaterBodies(),
+    loadBlackSeaThematicPressureData(),
+    loadWabdThematicPressureData()
   ]);
 
   if (activeThematicMode === "point-pressure") {
@@ -1145,6 +1648,7 @@ async function activateThematicMode(mode){
 
   applyBdIbrThematicStyle();
   applyBdBsThematicStyle();
+  applyBdWabdThematicStyle();
 
   if (typeof updatePointPressureLegend === "function") {
     updatePointPressureLegend();
@@ -1168,6 +1672,8 @@ async function activateThematicMode(mode){
     updateRightLayerControlVisibility();
   }, 0);
 }
+
+
 
 document
   .querySelectorAll('input[name="thematic-mode"]')
@@ -1208,7 +1714,12 @@ function buildSondiProUrl(feature){
       : {};
 
   const code = normalizeGwbCode(
-    props.localId || props.localID || props.code || ""
+    props.localId ||
+    props.localID ||
+    props.canonical_code ||
+    props.gwb_code ||
+    props.code ||
+    ""
   );
 
   const params = new URLSearchParams();
@@ -1243,6 +1754,7 @@ function sondiProUrlForPopup(feature, codeOverride){
     codeOverride ||
     props.localId ||
     props.localID ||
+    props.canonical_code ||
     props.gwb_code ||
     props.gwb_code_original ||
     props.euCode ||
@@ -1387,6 +1899,7 @@ function groundwaterFreeAnalysisButtonHtml(feature){
   const selectedGroundwaterCode = normalizeGwbCode(
     selectedProperties.localId ||
     selectedProperties.localID ||
+    selectedProperties.canonical_code ||
     selectedProperties.gwb_code ||
     selectedProperties.gwb_code_original ||
     selectedProperties.cod ||
@@ -3464,6 +3977,472 @@ async function loadOrdinaryGroundwaterWells() {
     ordinaryGroundwaterWellsLoading = false;
   }
 }
+
+
+async function loadWesternAegeanGroundwaterWells() {
+  if (
+    westernAegeanGroundwaterWellsLoaded ||
+    westernAegeanGroundwaterWellsLoading
+  ) {
+    return;
+  }
+
+  westernAegeanGroundwaterWellsLoading = true;
+
+  setLayerStatus(
+    "western-aegean-wells-load-status",
+    "\u0437\u0430\u0440\u0435\u0436\u0434\u0430 \u0441\u0435\u2026",
+    "#a05a00"
+  );
+
+  try {
+    const response = await fetch(
+      "/geology-map/data/bd_wabd_active_groundwater_facilities.geojson"
+    );
+
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+
+    const facilitiesData = await response.json();
+
+    if (
+      facilitiesData.type !== "FeatureCollection" ||
+      !Array.isArray(facilitiesData.features)
+    ) {
+      throw new Error("Invalid WABD facilities GeoJSON");
+    }
+
+    const canvasRenderer = L.canvas({
+      padding: 0.5
+    });
+
+    const facilitiesLayer = L.geoJSON(
+      facilitiesData,
+      {
+        pointToLayer(feature, latlng) {
+          return L.circleMarker(
+            latlng,
+            {
+              renderer: canvasRenderer,
+              radius: 5,
+              color: "#14532d",
+              weight: 1,
+              fillColor: "#22c55e",
+              fillOpacity: 0.88
+            }
+          );
+        },
+
+        onEachFeature(feature, layer) {
+          const p = feature.properties || {};
+          const coordinates =
+            feature.geometry?.coordinates || [];
+
+          const lng = Number(coordinates[0]);
+          const lat = Number(coordinates[1]);
+
+          const facility =
+            p.facility_name ||
+            "\u0412\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435";
+
+          const popupHtml =
+            '<div style="min-width:280px;line-height:1.45">' +
+
+            '<b>' +
+            ordinaryWellEscape(facility) +
+            '</b><br>' +
+
+            '<b>\u0411\u0414:</b> ' +
+            '\u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d<br>' +
+
+            '<b>\u041f\u0412\u0422:</b> ' +
+            ordinaryWellEscape(
+              p.canonical_code || "\u2014"
+            ) +
+            '<br>' +
+
+            '<b>\u0422\u0438\u0442\u0443\u043b\u044f\u0440:</b> ' +
+            ordinaryWellEscape(
+              p.holder || "\u2014"
+            ) +
+            '<br>' +
+
+            '<b>\u0420\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u0435\u043b\u043d\u043e:</b> ' +
+            ordinaryWellEscape(
+              p.permit_number_date || "\u2014"
+            ) +
+            '<br>' +
+
+            '<b>\u0426\u0435\u043b:</b> ' +
+            ordinaryWellEscape(
+              p.water_use_purpose || "\u2014"
+            ) +
+            '<br>' +
+
+            '<b>\u0421\u0440\u0435\u0434\u0435\u043d \u0434\u0435\u0431\u0438\u0442:</b> ' +
+            ordinaryWellValue(
+              p.mean_discharge_lps,
+              " l/s"
+            ) +
+            '<br>' +
+
+            '<b>\u041c\u0430\u043a\u0441. \u0434\u0435\u0431\u0438\u0442:</b> ' +
+            ordinaryWellValue(
+              p.max_discharge_lps,
+              " l/s"
+            ) +
+            '<br>' +
+
+            '<b>\u0413\u043e\u0434\u0438\u0448\u043d\u043e \u0440\u0430\u0437\u0440\u0435\u0448\u0435\u043d\u043e:</b> ' +
+            ordinaryWellValue(
+              p.annual_authorized_volume_m3,
+              " m\u00b3"
+            ) +
+            '<br>' +
+
+            '<b>\u0421\u0442\u0430\u0442\u0443\u0441:</b> ' +
+            ordinaryWellEscape(
+              p.status || "\u2014"
+            ) +
+            '<br>' +
+
+            '<b>\u0410\u043a\u0442\u0443\u0430\u043b\u043d\u043e \u043a\u044a\u043c:</b> ' +
+            ordinaryWellEscape(
+              p.reference_date || "\u2014"
+            ) +
+            '<br>' +
+
+            (
+              Number.isFinite(lat) &&
+              Number.isFinite(lng)
+                ? '<b>\u041a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u0438:</b><br>' +
+                  '<span class="coord">' +
+                  lat.toFixed(7) +
+                  ', ' +
+                  lng.toFixed(7) +
+                  '</span><br>'
+                : ''
+            ) +
+
+            sondiProTeaserHtml(
+              sondiProUrlForPopup(feature),
+              [
+                "\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e\u0442\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e",
+                "\u0411\u043b\u0438\u0437\u043a\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u0438 \u0438 \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u0430\u043d\u0435",
+                "\u0420\u0435\u0441\u0443\u0440\u0441 \u0438 \u043d\u0430\u0442\u043e\u0432\u0430\u0440\u0432\u0430\u043d\u0435"
+              ]
+            ) +
+
+            '</div>';
+
+          layer.bindPopup(
+            popupHtml,
+            {
+              maxWidth: 390
+            }
+          );
+
+          layer.bindTooltip(
+            ordinaryWellEscape(facility)
+          );
+        }
+      }
+    );
+
+    facilitiesLayer.addTo(
+      westernAegeanGroundwaterWellsLayer
+    );
+
+    window.westernAegeanGroundwaterWellsGeoJson =
+      facilitiesData;
+
+    westernAegeanGroundwaterWellsLoaded = true;
+
+    setLayerStatus(
+      "western-aegean-wells-load-status",
+      "\u0437\u0430\u0440\u0435\u0434\u0435\u043d\u0438: " +
+        facilitiesData.features.length +
+        " \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u044f",
+      "#166534"
+    );
+
+    console.log(
+      "[BD WABD] Active groundwater facilities:",
+      facilitiesData.features.length
+    );
+
+  } catch (error) {
+    console.error(
+      "[BD WABD] Active groundwater facilities error:",
+      error
+    );
+
+    setLayerStatus(
+      "western-aegean-wells-load-status",
+      "\u0433\u0440\u0435\u0448\u043a\u0430 \u043f\u0440\u0438 \u0437\u0430\u0440\u0435\u0436\u0434\u0430\u043d\u0435",
+      "#b91c1c"
+    );
+
+  } finally {
+    westernAegeanGroundwaterWellsLoading = false;
+  }
+}
+
+
+async function loadBdWabdGroundwaterBodies() {
+  if (
+    bdWabdGroundwaterLoaded ||
+    bdWabdGroundwaterLoading
+  ) {
+    return;
+  }
+
+  bdWabdGroundwaterLoading = true;
+
+  setLayerStatus(
+    "bd-wabd-load-status",
+    "\u0437\u0430\u0440\u0435\u0436\u0434\u0430 \u0441\u0435\u2026",
+    "#a05a00"
+  );
+
+  try {
+    const response = await fetch(
+      "/geology-map/data/bd_wabd_groundwater_bodies.geojson"
+    );
+
+    if (!response.ok) {
+      throw new Error(
+        "HTTP " + response.status
+      );
+    }
+
+    const data = await response.json();
+
+    if (
+      !data ||
+      data.type !== "FeatureCollection" ||
+      !Array.isArray(data.features)
+    ) {
+      throw new Error(
+        "Invalid WABD groundwater GeoJSON"
+      );
+    }
+
+    const layer = L.geoJSON(
+      data,
+      {
+        style: function(feature) {
+          const p =
+            feature.properties || {};
+
+          const status = String(
+            p.overall_status ||
+            p.overall_status_purb3 ||
+            p.status ||
+            ""
+          ).toLowerCase();
+
+          const bad =
+            status.includes(
+              "\u043b\u043e\u0448"
+            );
+
+          return {
+            color:
+              bad
+                ? "#9f3a38"
+                : "#315f8f",
+
+            fillColor:
+              bad
+                ? "#d97873"
+                : "#6598c8",
+
+            weight: 2,
+            opacity: 0.9,
+            fillOpacity: 0.18
+          };
+        },
+
+        onEachFeature: function(
+          feature,
+          featureLayer
+        ) {
+          const p =
+            feature.properties || {};
+
+          const code =
+            p.canonical_code ||
+            p.gwb_code ||
+            p.code ||
+            p.localId ||
+            "\u2014";
+
+          const name =
+            p.gwb_name ||
+            p.name ||
+            p.name_bg ||
+            p.purb3_source_name ||
+            "\u041f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e";
+
+          const chemical =
+            p.chemical_status ||
+            p.ch_s ||
+            null;
+
+          const quantitative =
+            p.quantitative_status ||
+            p.q_s ||
+            null;
+
+          const overall =
+            p.overall_status ||
+            p.overall_status_purb3 ||
+            null;
+
+          let popupHtml =
+            '<div style="min-width:270px;max-width:360px;line-height:1.45">' +
+
+            '<div style="font-weight:700;font-size:15px;margin-bottom:7px">' +
+            esc(name) +
+            '</div>' +
+
+            '<div><b>\u041a\u043e\u0434:</b> ' +
+            esc(code) +
+            '</div>' +
+
+            '<div><b>\u0420\u0430\u0439\u043e\u043d:</b> ' +
+            '\u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d' +
+            '</div>';
+
+          if (chemical) {
+            popupHtml +=
+              '<div><b>\u0425\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435:</b> ' +
+              esc(chemical) +
+              '</div>';
+          }
+
+          if (quantitative) {
+            popupHtml +=
+              '<div><b>\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435:</b> ' +
+              esc(quantitative) +
+              '</div>';
+          }
+
+          if (overall) {
+            popupHtml +=
+              '<div><b>\u041e\u0431\u0449\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435:</b> ' +
+              esc(overall) +
+              '</div>';
+          }
+
+          popupHtml +=
+            '<div style="margin-top:8px;font-size:11px;color:#666">' +
+            '\u0418\u0437\u0442\u043e\u0447\u043d\u0438\u043a: ' +
+            '\u0411\u0414 \u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d; ' +
+            '\u041f\u0423\u0420\u0411 2022\u20132027; ' +
+            '\u043e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d GIS \u0441\u043b\u043e\u0439.' +
+            '</div>' +
+
+            '</div>';
+
+
+          popupHtml += sondiProTeaserHtml(
+            sondiProUrlForPopup(
+              feature,
+              code
+            ),
+            [
+              "\u0425\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435",
+              "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0438 \u0440\u0438\u0441\u043a",
+              "\u0420\u0435\u0441\u0443\u0440\u0441 \u0438 \u043d\u0430\u0442\u043e\u0432\u0430\u0440\u0432\u0430\u043d\u0435",
+              "\u0411\u043b\u0438\u0437\u043a\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u0438 \u0438 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433"
+            ]
+          );
+
+          popupHtml += groundwaterFreeAnalysisButtonHtml(
+            feature
+          );
+
+          featureLayer.bindPopup(
+            popupHtml,
+            {
+              maxWidth: 390
+            }
+          );
+
+          featureLayer.on(
+            "click",
+            function(event) {
+              lastGroundwaterClickLatLng =
+                event.latlng;
+            }
+          );
+
+          featureLayer.on(
+            "mouseover",
+            function() {
+              this.setStyle({
+                weight: 3,
+                fillOpacity: 0.30
+              });
+            }
+          );
+
+          featureLayer.on(
+            "mouseout",
+            function() {
+              layer.resetStyle(this);
+            }
+          );
+        }
+      }
+    );
+
+    bdWabdGroundwaterLeafletLayer =
+      layer;
+
+    layer.addTo(
+      bdWabdGroundwaterLayer
+    );
+
+    bdWabdGroundwaterLoaded = true;
+    bdWabdGroundwaterLoading = false;
+
+    window.bdWabdGroundwaterGeoJson =
+      data;
+
+    setLayerStatus(
+      "bd-wabd-load-status",
+      "\u0437\u0430\u0440\u0435\u0434\u0435\u043d\u043e \u2713 (" +
+        data.features.length +
+        " \u0432\u043e\u0434\u043d\u0438 \u0442\u0435\u043b\u0430)",
+      "#0b6b43"
+    );
+
+    console.log(
+      "[BD WABD] Groundwater bodies loaded:",
+      data.features.length
+    );
+
+  } catch (error) {
+    bdWabdGroundwaterLoading =
+      false;
+
+    console.error(
+      "[BD WABD] Load error:",
+      error
+    );
+
+    setLayerStatus(
+      "bd-wabd-load-status",
+      "\u0433\u0440\u0435\u0448\u043a\u0430 \u043f\u0440\u0438 \u0437\u0430\u0440\u0435\u0436\u0434\u0430\u043d\u0435",
+      "#b00020"
+    );
+  }
+}
+
 
 async function loadBdBsGroundwaterBodies() {
   if (bdBsGroundwaterLoaded || bdBsGroundwaterLoading) {
@@ -5810,6 +6789,78 @@ map.on(
   }
 );
 
+
+document.getElementById(
+  "layer-western-aegean-wells"
+).addEventListener(
+  "change",
+  event => {
+    if (event.target.checked) {
+      westernAegeanGroundwaterWellsLayer.addTo(
+        map
+      );
+
+      loadWesternAegeanGroundwaterWells();
+
+    } else {
+      map.removeLayer(
+        westernAegeanGroundwaterWellsLayer
+      );
+
+      setLayerStatus(
+        "western-aegean-wells-load-status",
+        "\u0438\u0437\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
+        "#64748b"
+      );
+    }
+  }
+);
+
+map.on(
+  "layeradd",
+  event => {
+    if (
+      event.layer !==
+      westernAegeanGroundwaterWellsLayer
+    ) {
+      return;
+    }
+
+    const checkbox =
+      document.getElementById(
+        "layer-western-aegean-wells"
+      );
+
+    if (checkbox) {
+      checkbox.checked = true;
+    }
+
+    loadWesternAegeanGroundwaterWells();
+  }
+);
+
+map.on(
+  "layerremove",
+  event => {
+    if (
+      event.layer !==
+      westernAegeanGroundwaterWellsLayer
+    ) {
+      return;
+    }
+
+    const checkbox =
+      document.getElementById(
+        "layer-western-aegean-wells"
+      );
+
+    if (checkbox) {
+      checkbox.checked = false;
+    }
+  }
+);
+
+
 document.getElementById("layer-ordinary-wells").addEventListener(
   "change",
   event => {
@@ -5880,6 +6931,34 @@ document.getElementById("layer-bd-bs").addEventListener("change", event => {
   }
 });
 
+document.getElementById(
+  "layer-bd-wabd"
+).addEventListener(
+  "change",
+  event => {
+    if (event.target.checked) {
+      bdWabdGroundwaterLayer.addTo(
+        map
+      );
+
+      loadBdWabdGroundwaterBodies();
+
+      zoomOutForRegionalLayer(9);
+
+    } else {
+      map.removeLayer(
+        bdWabdGroundwaterLayer
+      );
+
+      setLayerStatus(
+        "bd-wabd-load-status",
+        "\u0438\u0437\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
+        "#64748b"
+      );
+    }
+  }
+);
+
 document.getElementById('layer-geology-age').addEventListener('change',e=>{
   if(e.target.checked){
     geologyAgeLayer.addTo(map);
@@ -5948,6 +7027,19 @@ map.on('overlayadd',e=>{
    document.getElementById('layer-bd-ibr').checked=true;
    loadBdIbrGroundwaterBodies();
  }
+ if(e.layer===bdWabdGroundwaterLayer){
+   const checkbox =
+     document.getElementById(
+       "layer-bd-wabd"
+     );
+
+   if(checkbox){
+     checkbox.checked=true;
+   }
+
+   loadBdWabdGroundwaterBodies();
+ }
+
  if(e.layer===groundwaterLayer){
    document.getElementById('layer-groundwater').checked=true;
    loadGroundwaterBodies();
@@ -5975,6 +7067,17 @@ map.on('overlayremove',e=>{
  if(e.layer===bdIbrGroundwaterLayer){
    document.getElementById('layer-bd-ibr').checked=false;
  }
+ if(e.layer===bdWabdGroundwaterLayer){
+   const checkbox =
+     document.getElementById(
+       "layer-bd-wabd"
+     );
+
+   if(checkbox){
+     checkbox.checked=false;
+   }
+ }
+
  if(e.layer===groundwaterLayer) document.getElementById('layer-groundwater').checked=false;
  if(e.layer===quantitativeMonitoringLayer) document.getElementById('layer-quant-monitoring').checked=false;
  if(e.layer===faultsLayer) document.getElementById('layer-faults').checked=false;
@@ -8234,6 +9337,60 @@ function bdIbrGroundwaterAtPoint(point) {
 }
 
 
+
+function bdWabdGroundwaterAtPoint(point) {
+
+  const data =
+    window.bdWabdGroundwaterGeoJson;
+
+  if (
+    !data ||
+    !Array.isArray(data.features)
+  ) {
+    return null;
+  }
+
+  const matches = [];
+
+  for (const feature of data.features) {
+
+    if (
+      !feature ||
+      !feature.geometry
+    ) {
+      continue;
+    }
+
+    try {
+
+      if (
+        turf.booleanPointInPolygon(
+          point,
+          feature
+        )
+      ) {
+        matches.push(feature);
+      }
+
+    } catch (err) {
+      console.warn(
+        "BD WABD polygon test failed:",
+        err
+      );
+    }
+  }
+
+  if (!matches.length) {
+    return null;
+  }
+
+  return {
+    primary: matches[0],
+    all: matches
+  };
+}
+
+
 function nearestQuantitativeMonitoring(
   point,
   maxDistanceKm = 50
@@ -8447,6 +9604,11 @@ async function analyzeLocation(
         ? loadBdIbrGroundwaterBodies()
         : Promise.resolve(),
 
+      typeof loadBdWabdGroundwaterBodies ===
+        "function"
+        ? loadBdWabdGroundwaterBodies()
+        : Promise.resolve(),
+
       typeof loadQuantitativeMonitoring ===
         "function"
         ? loadQuantitativeMonitoring()
@@ -8488,6 +9650,9 @@ async function analyzeLocation(
 
   const officialBdIbrResult =
     bdIbrGroundwaterAtPoint(point);
+
+  const officialBdWabdResult =
+    bdWabdGroundwaterAtPoint(point);
 
   const nearestMonitoring =
     nearestQuantitativeMonitoring(
@@ -9138,11 +10303,22 @@ async function analyzeLocation(
     "\">" +
     "<strong>💧 Подземни води</strong><br>";
 
-  const humanBodies =
+  const humanIbrBodies =
     officialBdIbrResult &&
     officialBdIbrResult.all
       ? officialBdIbrResult.all
       : [];
+
+  const humanWabdBodies =
+    officialBdWabdResult &&
+    officialBdWabdResult.all
+      ? officialBdWabdResult.all
+      : [];
+
+  const humanBodies = [
+    ...humanIbrBodies,
+    ...humanWabdBodies
+  ];
 
   if (humanBodies.length === 1) {
 
@@ -9237,6 +10413,40 @@ async function analyzeLocation(
       if (freeChemicalStatus) {
         freeChemicalSource =
           "БД Източнобеломорски район";
+      }
+    }
+  }
+
+  if (!freeChemicalStatus) {
+
+    const freeWabdFeature =
+      officialBdWabdResult &&
+      officialBdWabdResult.primary
+        ? officialBdWabdResult.primary
+        : (
+            humanWabdBodies.length > 0
+              ? humanWabdBodies[0]
+              : null
+          );
+
+    if (freeWabdFeature) {
+
+      const freeWabdProperties =
+        freeWabdFeature.properties || {};
+
+      freeChemicalFeature =
+        freeWabdFeature;
+
+      freeChemicalStatus =
+        String(
+          freeWabdProperties.chemical_status ||
+          freeWabdProperties.ch_s ||
+          ""
+        ).trim();
+
+      if (freeChemicalStatus) {
+        freeChemicalSource =
+          "\u0411\u0414 \u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d";
       }
     }
   }
@@ -10020,6 +11230,10 @@ async function analyzeLocation(
 
       const tCode =
         tp.localId ||
+        tp.localID ||
+        tp.canonical_code ||
+        tp.gwb_code ||
+        tp.code ||
         "—";
 
       humanHtml +=
@@ -10029,10 +11243,18 @@ async function analyzeLocation(
         esc(tCode) +
         "</strong>";
 
-      if (tp.nameText) {
+      const technicalBodyName =
+        tp.nameText ||
+        tp.nameTxtInt ||
+        tp.gwb_name ||
+        tp.name ||
+        tp.name_bg ||
+        "";
+
+      if (technicalBodyName) {
         humanHtml +=
           " – " +
-          esc(tp.nameText);
+          esc(technicalBodyName);
       }
 
       humanHtml += "<br>";
@@ -10184,8 +11406,16 @@ async function analyzeLocation(
         )
       : "";
 
+  const resolvedGroundwaterCodes = [];
+
+  if (resolvedGroundwaterCode) {
+    resolvedGroundwaterCodes.push(
+      resolvedGroundwaterCode
+    );
+  }
+
   if (
-    !resolvedGroundwaterCode &&
+    !selectedCoordinatesMatch &&
     typeof turf !== "undefined" &&
     typeof turf.point === "function" &&
     typeof turf.booleanPointInPolygon === "function"
@@ -10197,7 +11427,8 @@ async function analyzeLocation(
 
     const availableCollections = [
       window.bdBsGroundwaterGeoJson,
-      window.bdIbrGroundwaterGeoJson
+      window.bdIbrGroundwaterGeoJson,
+      window.bdWabdGroundwaterGeoJson
     ];
 
     for (const collection of availableCollections) {
@@ -10236,10 +11467,11 @@ async function analyzeLocation(
         const properties =
           feature.properties || {};
 
-        resolvedGroundwaterCode =
+        const candidateGroundwaterCode =
           normalizeGwbCode(
             properties.localId ||
             properties.localID ||
+            properties.canonical_code ||
             properties.gwb_code ||
             properties.cod ||
             properties.code ||
@@ -10247,14 +11479,25 @@ async function analyzeLocation(
             ""
           );
 
-        if (resolvedGroundwaterCode) {
-          break;
+        if (
+          candidateGroundwaterCode &&
+          !resolvedGroundwaterCodes.includes(
+            candidateGroundwaterCode
+          )
+        ) {
+          resolvedGroundwaterCodes.push(
+            candidateGroundwaterCode
+          );
         }
       }
+    }
 
-      if (resolvedGroundwaterCode) {
-        break;
-      }
+    if (
+      !resolvedGroundwaterCode &&
+      resolvedGroundwaterCodes.length > 0
+    ) {
+      resolvedGroundwaterCode =
+        resolvedGroundwaterCodes[0];
     }
   }
 
@@ -10284,6 +11527,14 @@ async function analyzeLocation(
         ? "&gwb=" +
           encodeURIComponent(
             resolvedGroundwaterCode
+          )
+        : ""
+    ) +
+    (
+      resolvedGroundwaterCodes.length > 1
+        ? "&gwbs=" +
+          encodeURIComponent(
+            resolvedGroundwaterCodes.join(",")
           )
         : ""
     ) +
@@ -10431,18 +11682,104 @@ abstractionPressureLegend.onAdd = function(){
 
 abstractionPressureLegend.addTo(map);
 
-function updateAbstractionPressureLegend(){
-  const el =
-    document.querySelector(
-      '.abstraction-pressure-legend'
+
+function installThematicLegendCloseButtons() {
+  const selectors = [
+    ".abstraction-pressure-legend",
+    ".pollution-risk-legend",
+    ".diffuse-pressure-legend",
+    ".point-pressure-legend"
+  ];
+
+  selectors.forEach(function(selector) {
+    const legend =
+      document.querySelector(selector);
+
+    if (!legend) {
+      return;
+    }
+
+    if (
+      legend.querySelector(
+        ".legend-close-button"
+      )
+    ) {
+      return;
+    }
+
+    const button =
+      document.createElement("button");
+
+    button.type = "button";
+    button.className =
+      "legend-close-button";
+
+    button.innerHTML = "&times;";
+
+    button.title =
+      "\u0417\u0430\u0442\u0432\u043e\u0440\u0438 \u043b\u0435\u0433\u0435\u043d\u0434\u0430\u0442\u0430";
+
+    button.setAttribute(
+      "aria-label",
+      "\u0417\u0430\u0442\u0432\u043e\u0440\u0438 \u043b\u0435\u0433\u0435\u043d\u0434\u0430\u0442\u0430"
     );
 
-  if (!el) return;
+    L.DomEvent.disableClickPropagation(
+      button
+    );
 
-  el.style.display =
-    activeThematicMode === 'abstraction-pressure'
-      ? 'block'
-      : 'none';
+    L.DomEvent.disableScrollPropagation(
+      button
+    );
+
+    button.addEventListener(
+      "click",
+      function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        legend.style.display = "none";
+        legend.dataset.userClosed = "1";
+      }
+    );
+
+    legend.appendChild(button);
+  });
+}
+
+function setThematicLegendVisible(
+  selector,
+  mode
+) {
+  const legend =
+    document.querySelector(selector);
+
+  if (!legend) {
+    return;
+  }
+
+  if (activeThematicMode !== mode) {
+    legend.style.display = "none";
+    legend.dataset.userClosed = "";
+    return;
+  }
+
+  if (
+    legend.dataset.userClosed === "1"
+  ) {
+    legend.style.display = "none";
+    return;
+  }
+
+  legend.style.display = "block";
+}
+
+
+function updateAbstractionPressureLegend(){
+  setThematicLegendVisible(
+    '.abstraction-pressure-legend',
+    'abstraction-pressure'
+  );
 }
 
 const pollutionRiskLegend = L.control({
@@ -10488,17 +11825,10 @@ pollutionRiskLegend.onAdd = function(){
 pollutionRiskLegend.addTo(map);
 
 function updatePollutionRiskLegend(){
-  const el =
-    document.querySelector(
-      '.pollution-risk-legend'
-    );
-
-  if (!el) return;
-
-  el.style.display =
-    activeThematicMode === 'pollution-risk'
-      ? 'block'
-      : 'none';
+  setThematicLegendVisible(
+    '.pollution-risk-legend',
+    'pollution-risk'
+  );
 }
 
 const diffusePressureLegend = L.control({
@@ -10545,15 +11875,10 @@ diffusePressureLegend.onAdd = function(){
 diffusePressureLegend.addTo(map);
 
 function updateDiffusePressureLegend(){
-  const el =
-    document.querySelector('.diffuse-pressure-legend');
-
-  if (!el) return;
-
-  el.style.display =
-    activeThematicMode === 'diffuse-pressure'
-      ? 'block'
-      : 'none';
+  setThematicLegendVisible(
+    '.diffuse-pressure-legend',
+    'diffuse-pressure'
+  );
 }
 
 const pointPressureLegend = L.control({
@@ -10599,16 +11924,13 @@ pointPressureLegend.onAdd = function(){
 
 pointPressureLegend.addTo(map);
 
+installThematicLegendCloseButtons();
+
 function updatePointPressureLegend(){
-  const el =
-    document.querySelector('.point-pressure-legend');
-
-  if (!el) return;
-
-  el.style.display =
-    activeThematicMode === 'point-pressure'
-      ? 'block'
-      : 'none';
+  setThematicLegendVisible(
+    '.point-pressure-legend',
+    'point-pressure'
+  );
 }
 
 

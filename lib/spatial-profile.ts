@@ -173,6 +173,31 @@ export function getSpatialProfile(
       "bd_bs_ordinary_groundwater_wells.geojson"
     );
 
+  const westernAegeanActiveGroundwaterData =
+    readGeoJson(
+      "bd_wabd_active_groundwater_facilities.geojson"
+    );
+
+  const westernAegeanChemicalMonitoringData =
+    readGeoJson(
+      "bd_wabd_chemical_monitoring.geojson"
+    );
+
+  const westernAegeanQuantitativeMonitoringData =
+    readGeoJson(
+      "bd_wabd_quantitative_monitoring.geojson"
+    );
+
+  const westernAegeanHgpData =
+    readGeoJson(
+      "bd_wabd_hydrogeological_investigations.geojson"
+    );
+
+  const westernAegeanMineralFacilitiesData =
+    readGeoJson(
+      "bd_wabd_mineral_water_facilities.geojson"
+    );
+
   const eastOrdinaryFacilities: Feature[] =
     (eastOrdinaryData.features || []).filter(
       (feature: Feature) =>
@@ -194,6 +219,46 @@ export function getSpatialProfile(
     ...eastOrdinaryFacilities,
     ...blackSeaOrdinaryFacilities,
   ];
+
+  const westernAegeanActiveGroundwaterFacilities: Feature[] =
+    westernAegeanActiveGroundwaterData.features || [];
+
+  const westernAegeanChemicalMonitoring: Feature[] =
+    westernAegeanChemicalMonitoringData.features || [];
+
+  const westernAegeanQuantitativeMonitoring: Feature[] =
+    westernAegeanQuantitativeMonitoringData.features || [];
+
+  const westernAegeanHgpInvestigations: Feature[] =
+    westernAegeanHgpData.features || [];
+
+  const westernAegeanMineralWaterFacilities: Feature[] =
+    westernAegeanMineralFacilitiesData.features || [];
+
+  const westernAegeanActiveNearby =
+    westernAegeanActiveGroundwaterFacilities
+      .map((feature: Feature) => ({
+        distanceKm: featureDistance(feature, lat, lng),
+        properties: feature.properties || {},
+      }))
+      .filter(
+        (item) =>
+          item.distanceKm !== null &&
+          Number.isFinite(item.distanceKm)
+      )
+      .map((item) => ({
+        distanceKm: Number(item.distanceKm),
+        properties: item.properties,
+      }))
+      .sort(
+        (first, second) =>
+          first.distanceKm - second.distanceKm
+      );
+
+  const westernAegeanActiveWithin5Km =
+    westernAegeanActiveNearby.filter(
+      (item) => item.distanceKm <= 5
+    );
 
   const ordinaryNearby = ordinaryFacilities
     .map((feature: Feature) => ({
@@ -444,6 +509,44 @@ export function getSpatialProfile(
     nearestMappedMonitoring:
       nearest(mappedMonitoring, lat, lng),
 
+    nearestWesternAegeanActiveGroundwaterFacility:
+      nearest(
+        westernAegeanActiveGroundwaterFacilities,
+        lat,
+        lng
+      ),
+
+    nearbyWesternAegeanActiveGroundwaterFacilities:
+      westernAegeanActiveWithin5Km.slice(0, 10),
+
+    nearestWesternAegeanChemicalMonitoring:
+      nearest(
+        westernAegeanChemicalMonitoring,
+        lat,
+        lng
+      ),
+
+    nearestWesternAegeanQuantitativeMonitoring:
+      nearest(
+        westernAegeanQuantitativeMonitoring,
+        lat,
+        lng
+      ),
+
+    nearestWesternAegeanHydrogeologicalInvestigation:
+      nearest(
+        westernAegeanHgpInvestigations,
+        lat,
+        lng
+      ),
+
+    nearestWesternAegeanMineralWaterFacility:
+      nearest(
+        westernAegeanMineralWaterFacilities,
+        lat,
+        lng
+      ),
+
     nearestFault,
 
     counts: {
@@ -494,6 +597,117 @@ export function getSpatialProfile(
         ),
         km50: countWithin(
           monitoring, lat, lng, 50
+        ),
+      },
+
+      westernAegeanActiveGroundwaterFacilities: {
+        km1: countWithin(
+          westernAegeanActiveGroundwaterFacilities,
+          lat,
+          lng,
+          1
+        ),
+        km3: countWithin(
+          westernAegeanActiveGroundwaterFacilities,
+          lat,
+          lng,
+          3
+        ),
+        km5: countWithin(
+          westernAegeanActiveGroundwaterFacilities,
+          lat,
+          lng,
+          5
+        ),
+        km10: countWithin(
+          westernAegeanActiveGroundwaterFacilities,
+          lat,
+          lng,
+          10
+        ),
+      },
+
+      westernAegeanChemicalMonitoring: {
+        km5: countWithin(
+          westernAegeanChemicalMonitoring,
+          lat,
+          lng,
+          5
+        ),
+        km10: countWithin(
+          westernAegeanChemicalMonitoring,
+          lat,
+          lng,
+          10
+        ),
+        km50: countWithin(
+          westernAegeanChemicalMonitoring,
+          lat,
+          lng,
+          50
+        ),
+      },
+
+      westernAegeanQuantitativeMonitoring: {
+        km5: countWithin(
+          westernAegeanQuantitativeMonitoring,
+          lat,
+          lng,
+          5
+        ),
+        km10: countWithin(
+          westernAegeanQuantitativeMonitoring,
+          lat,
+          lng,
+          10
+        ),
+        km50: countWithin(
+          westernAegeanQuantitativeMonitoring,
+          lat,
+          lng,
+          50
+        ),
+      },
+
+      westernAegeanHydrogeologicalInvestigations: {
+        km5: countWithin(
+          westernAegeanHgpInvestigations,
+          lat,
+          lng,
+          5
+        ),
+        km10: countWithin(
+          westernAegeanHgpInvestigations,
+          lat,
+          lng,
+          10
+        ),
+        km50: countWithin(
+          westernAegeanHgpInvestigations,
+          lat,
+          lng,
+          50
+        ),
+      },
+
+      westernAegeanMineralWaterFacilities: {
+        km5: countWithin(
+          westernAegeanMineralWaterFacilities,
+          lat,
+          lng,
+          5
+        ),
+        km10: countWithin(
+          westernAegeanMineralWaterFacilities,
+          lat,
+          lng,
+          10
+        ),
+        km50: countWithin(
+          westernAegeanMineralWaterFacilities,
+          lat,
+          lng,
+          50
         ),
       },
     },

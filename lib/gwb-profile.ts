@@ -45,6 +45,22 @@ export type GwbProfile = {
 
   blackSeaAdditionalRegisters?: any;
 
+  westernAegeanSection1?: any;
+
+  westernAegeanSection2?: any;
+
+  westernAegeanSection3?: any;
+
+  westernAegeanSection4?: any;
+
+  westernAegeanSection5?: any;
+
+  westernAegeanSection7?: any;
+
+  westernAegeanCurrentRegisters?: any;
+
+  westernAegeanAdditionalRegisters?: any;
+
   sources: string[];
 };
 
@@ -190,6 +206,30 @@ const DATASETS = {
 
   blackSeaAdditionalRegisters:
     "bd_bs_additional_groundwater_registers.json",
+
+  westernAegeanSection1:
+    "bd_wabd_section1_profiles.json",
+
+  westernAegeanSection2:
+    "bd_wabd_section2_pressure_risk.json",
+
+  westernAegeanSection3:
+    "bd_wabd_section3_protected_zones.json",
+
+  westernAegeanSection4:
+    "bd_wabd_section4_monitoring_status.json",
+
+  westernAegeanSection5:
+    "bd_wabd_section5_environmental_objectives.json",
+
+  westernAegeanSection7:
+    "bd_wabd_section7_groundwater_measures.json",
+
+  westernAegeanCurrentRegisters:
+    "bd_wabd_current_groundwater_registers.json",
+
+  westernAegeanAdditionalRegisters:
+    "bd_wabd_additional_groundwater_registers.json",
 } as const;
 
 export function getGwbProfile(
@@ -302,6 +342,30 @@ export function getGwbProfile(
 
     blackSeaAdditionalRegisters:
       records.blackSeaAdditionalRegisters,
+
+    westernAegeanSection1:
+      records.westernAegeanSection1,
+
+    westernAegeanSection2:
+      records.westernAegeanSection2,
+
+    westernAegeanSection3:
+      records.westernAegeanSection3,
+
+    westernAegeanSection4:
+      records.westernAegeanSection4,
+
+    westernAegeanSection5:
+      records.westernAegeanSection5,
+
+    westernAegeanSection7:
+      records.westernAegeanSection7,
+
+    westernAegeanCurrentRegisters:
+      records.westernAegeanCurrentRegisters,
+
+    westernAegeanAdditionalRegisters:
+      records.westernAegeanAdditionalRegisters,
 
     sources,
   };

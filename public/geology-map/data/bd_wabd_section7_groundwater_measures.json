@@ -1,0 +1,1957 @@
+{
+  "metadata": {
+    "basin_directorate": "Western Aegean Basin Directorate / BDZBR",
+    "river_basin_district_code": "BG4",
+    "planning_period": "2022-2027",
+    "generated_at_utc": "2026-08-23T16:12:04.922598+00:00",
+    "groundwater_body_count": 38,
+    "individual_measure_count": 27,
+    "groundwater_bodies_with_measures": 13,
+    "groundwater_bodies_without_measures": 25,
+    "basin_wide_measure_count": 0,
+    "climate_link_count": 0,
+    "additional_measure_link_count": 27,
+    "driving_force_link_count": 41,
+    "permit_reduction_record_count": 46,
+    "permit_reduction_body_count": 3,
+    "source_annexes": [
+      "groundwater-measures-purb3.csv",
+      "groundwater-permit-reductions-purb3.csv"
+    ],
+    "scope_notice": "Individual PURB3 groundwater measures are preserved as official planning records. Permit reductions are planning measures and are not used as current permit status."
+  },
+  "profiles": [
+    {
+      "gwb_code": "BG4G000000N011",
+      "gwb_name": "Порови води в неоген - Струмешница",
+      "measure_count": 3,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G000000N011",
+          "source_body_name": "Порови води в неоген - Струмешница",
+          "quantitative_status": "Лошо",
+          "chemical_status": "Лошо",
+          "objective_2027": "изключение по чл. 4(4) от РДВ на основата на естествени причини; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за нитрати",
+          "driving_force": "селско стопанство,урбанизация,индустрия",
+          "significant_pressure": null,
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "инвестиционна",
+          "measure_code": "CA_2",
+          "measure_name": "Подобряване на мониторинга на количественото състояние на подземните води",
+          "action_code": "CA_2_2",
+          "action": "Изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми",
+          "measure_description": "Разработване и възлагане на проект за изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми)",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "МОСВ",
+          "partner": "БД",
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G000000N011",
+          "source_body_name": "Порови води в неоген - Струмешница",
+          "quantitative_status": "Лошо",
+          "chemical_status": "Лошо",
+          "objective_2027": "изключение по чл. 4(4) от РДВ на основата на естествени причини; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за нитрати",
+          "driving_force": "водовземане",
+          "significant_pressure": "3.2. Водовземане или отклоняване на оттока – обществено водоснабдяване",
+          "ktm_code": null,
+          "ktm": "Подобряване на управлението",
+          "measure_type_main_supplementary": "основна",
+          "measure_kind": "административна",
+          "measure_code": "CA_3",
+          "measure_name": "Изменение или отнемане на разрешителни за водовземане от подземни води, в резултат от преразглеждането им.",
+          "action_code": "CA_3_4",
+          "action": "Отнемане на част от разрешените водни количества в издадените разрешителни за водовземане за ПВТ опредени в риск/лошо състояние по количество;",
+          "measure_description": "изменение на част от разрешените количества по издадени разрешителни, посочени в списък",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": 65090.92,
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G000000N011",
+          "source_body_name": "Порови води в неоген - Струмешница",
+          "quantitative_status": "Лошо",
+          "chemical_status": "Лошо",
+          "objective_2027": "изключение по чл. 4(4) от РДВ на основата на естествени причини; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за нитрати",
+          "driving_force": "водовземане",
+          "significant_pressure": "3.2. Водовземане или отклоняване на оттока – обществено водоснабдяване",
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "GO_22",
+          "measure_name": "Актуализиране на национална Методика за оценка на подхранване на подземните води",
+          "action_code": "GO_22_1",
+          "action": "Актуализиране на Методика за оценка на подхранване на подземните води с включване на алтернативни подходи, освен прилагания досега подход за оценка на подхранване с коефициент на валежно подхранване",
+          "measure_description": null,
+          "measure_origin": "Нова мярка",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "НИМХ",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": 65090.92,
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "допълваща": 2,
+        "основна": 1
+      },
+      "driving_force_counts": {
+        "селско стопанство": 1,
+        "урбанизация": 1,
+        "индустрия": 1,
+        "водовземане": 2
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 9,
+        "records": [
+          {
+            "source_body_code": "BG4G00000N011",
+            "source_body_name": "Порови води в неоген - Струмешница",
+            "permit_number": 41590148.0,
+            "start_date_raw": "2014-09-23 00:00:00",
+            "holder": "Нанов ООД",
+            "permitted_before_m3_per_year": 2800.0,
+            "permitted_after_review_m3_per_year": 2300.0,
+            "reduction_m3_per_year": 500.0,
+            "reduction_percent": 17.86
+          },
+          {
+            "source_body_code": "BG4G00000N011",
+            "source_body_name": "Порови води в неоген - Струмешница",
+            "permit_number": 41520008.0,
+            "start_date_raw": "24.9.2007 г.",
+            "holder": "Петра-БГ ЕООД",
+            "permitted_before_m3_per_year": 1285.0,
+            "permitted_after_review_m3_per_year": 1078.0,
+            "reduction_m3_per_year": 207.0,
+            "reduction_percent": 16.11
+          },
+          {
+            "source_body_code": "BG4G00000N011",
+            "source_body_name": "Порови води в неоген - Струмешница",
+            "permit_number": 41590026.0,
+            "start_date_raw": "22.5.2013 г.",
+            "holder": "Булгартрансгаз ЕАД",
+            "permitted_before_m3_per_year": 8450.0,
+            "permitted_after_review_m3_per_year": 1078.0,
+            "reduction_m3_per_year": 7372.0,
+            "reduction_percent": 87.24
+          },
+          {
+            "source_body_code": "BG4G00000N011",
+            "source_body_name": "Порови води в неоген - Струмешница",
+            "permit_number": 41590040.0,
+            "start_date_raw": "29.5.2008 г.",
+            "holder": "БДЖ-Пътнически превози ЕООД",
+            "permitted_before_m3_per_year": 3110.0,
+            "permitted_after_review_m3_per_year": 1627.0,
+            "reduction_m3_per_year": 1483.0,
+            "reduction_percent": 47.68
+          },
+          {
+            "source_body_code": "BG4G00000N011",
+            "source_body_name": "Порови води в неоген - Струмешница",
+            "permit_number": 41520070.0,
+            "start_date_raw": "07.11.2016 г.",
+            "holder": "ЕТ Иван Попов",
+            "permitted_before_m3_per_year": 60000.0,
+            "permitted_after_review_m3_per_year": 10749.0,
+            "reduction_m3_per_year": 49251.0,
+            "reduction_percent": 82.08
+          },
+          {
+            "source_body_code": "BG4G00000N011",
+            "source_body_name": "Порови води в неоген - Струмешница",
+            "permit_number": 41590099.0,
+            "start_date_raw": "28.6.2012 г.",
+            "holder": "ЕТ Петър Рутев",
+            "permitted_before_m3_per_year": 2520.0,
+            "permitted_after_review_m3_per_year": 440.0,
+            "reduction_m3_per_year": 2080.0,
+            "reduction_percent": 82.54
+          },
+          {
+            "source_body_code": "BG4G00000N011",
+            "source_body_name": "Порови води в неоген - Струмешница",
+            "permit_number": 41590159.0,
+            "start_date_raw": "8.6.2015 г.",
+            "holder": "Колор фуудс ЕООД",
+            "permitted_before_m3_per_year": 23000.0,
+            "permitted_after_review_m3_per_year": 17895.0,
+            "reduction_m3_per_year": 5105.0,
+            "reduction_percent": 22.2
+          },
+          {
+            "source_body_code": "BG4G00000N011",
+            "source_body_name": "Порови води в неоген - Струмешница",
+            "permit_number": 41520046.0,
+            "start_date_raw": "31.3.2014 г.",
+            "holder": "ЕТ Методи Попов- Златолист",
+            "permitted_before_m3_per_year": 15137.3,
+            "permitted_after_review_m3_per_year": 13476.0,
+            "reduction_m3_per_year": 1661.2999999999993,
+            "reduction_percent": 10.97
+          },
+          {
+            "source_body_code": "BG4G00000N011",
+            "source_body_name": "Порови води в неоген - Струмешница",
+            "permit_number": 41590248.0,
+            "start_date_raw": "25.01.2021 г.",
+            "holder": "Фамили партнерс ООД",
+            "permitted_before_m3_per_year": 31680.0,
+            "permitted_after_review_m3_per_year": 868.0,
+            "reduction_m3_per_year": 30812.0,
+            "reduction_percent": 97.26
+          }
+        ],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N012",
+      "gwb_name": "Порови води в неоген - Сандански",
+      "measure_count": 1,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G000000N012",
+          "source_body_name": "Порови води в неоген - Сандански",
+          "quantitative_status": "Добро",
+          "chemical_status": "Добро",
+          "objective_2027": "запазване на доброто количествено състояние; запазване на доброто химично състояние",
+          "driving_force": "неприложимо",
+          "significant_pressure": "неприложимо",
+          "ktm_code": null,
+          "ktm": "Подобряване на управлението",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "CA_5",
+          "measure_name": "Подобряване на контрола на разрешителните за водовземане от подземни води",
+          "action_code": "CA_5_4",
+          "action": "Извършване на проверки за установяване на незаконно черпене на подземни води",
+          "measure_description": null,
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": 65090.92,
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "допълваща": 1
+      },
+      "driving_force_counts": {
+        "неприложимо": 1
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N013",
+      "gwb_name": "Порови води в неоген - Симитли",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N014",
+      "gwb_name": "Порови води в неоген - Благоевград",
+      "measure_count": 2,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G000000N014",
+          "source_body_name": "Порови води в неоген - Благоевград",
+          "quantitative_status": "Лошо",
+          "chemical_status": "Добро",
+          "objective_2027": "изключение по чл. 4(4) от РДВ на основата на естествени причини; запазване на доброто химично състояние",
+          "driving_force": "водовземане",
+          "significant_pressure": "3.2. Водовземане или отклоняване на оттока – обществено водоснабдяване; 3.1.1.Водовземане или отклоняване на оттока – селско стопанство",
+          "ktm_code": null,
+          "ktm": "Подобряване на управлението",
+          "measure_type_main_supplementary": "основна",
+          "measure_kind": "административна",
+          "measure_code": "CA_3",
+          "measure_name": "Изменение или отнемане на разрешителни за водовземане от подземни води, в резултат от преразглеждането им.",
+          "action_code": "CA_3_4",
+          "action": "Отнемане на част от разрешените водни количества в издадените разрешителни за водовземане за ПВТ опредени в риск/лошо състояние по количество;",
+          "measure_description": "изменение на част от разрешените количества по издадени разрешителни, посочени в списък",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": 65090.92,
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G000000N014",
+          "source_body_name": "Порови води в неоген - Благоевград",
+          "quantitative_status": "Лошо",
+          "chemical_status": "Добро",
+          "objective_2027": "изключение по чл. 4(4) от РДВ на основата на естествени причини; запазване на доброто химично състояние",
+          "driving_force": "водовземане",
+          "significant_pressure": "3.2. Водовземане или отклоняване на оттока – обществено водоснабдяване; 3.1.1.Водовземане или отклоняване на оттока – селско стопанство",
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "GO_22",
+          "measure_name": "Актуализиране на национална Методика за оценка на подхранване на подземните води",
+          "action_code": "GO_22_1",
+          "action": "Актуализиране на Методика за оценка на подхранване на подземните води с включване на алтернативни подходи, освен прилагания досега подход за оценка на подхранване с коефициент на валежно подхранване",
+          "measure_description": null,
+          "measure_origin": "Нова мярка",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "НИМХ",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "основна": 1,
+        "допълваща": 1
+      },
+      "driving_force_counts": {
+        "водовземане": 2
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 16,
+        "records": [
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41530079.0,
+            "start_date_raw": "2014-04-16 00:00:00",
+            "holder": "Стройрайон 2006 ООД Благоевград",
+            "permitted_before_m3_per_year": 14660.0,
+            "permitted_after_review_m3_per_year": 7030.0,
+            "reduction_m3_per_year": 7630.0,
+            "reduction_percent": 52.05
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41520034.0,
+            "start_date_raw": "2012-09-21 00:00:00",
+            "holder": "Българско вино ООД",
+            "permitted_before_m3_per_year": 91342.08,
+            "permitted_after_review_m3_per_year": 673.0,
+            "reduction_m3_per_year": 90669.08,
+            "reduction_percent": 99.26
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41520112.0,
+            "start_date_raw": "2020-09-17 00:00:00",
+            "holder": "ЕТ Ивайло Попов-Еврика",
+            "permitted_before_m3_per_year": 300.0,
+            "permitted_after_review_m3_per_year": 200.0,
+            "reduction_m3_per_year": 100.0,
+            "reduction_percent": 33.33
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41590041.0,
+            "start_date_raw": "13.6.2008 г.",
+            "holder": "ЕТ Милена Ризова",
+            "permitted_before_m3_per_year": 17508.0,
+            "permitted_after_review_m3_per_year": 817.0,
+            "reduction_m3_per_year": 16691.0,
+            "reduction_percent": 95.33
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41590007.0,
+            "start_date_raw": "12.7.2007 г.",
+            "holder": "Благоевград-БТ АД",
+            "permitted_before_m3_per_year": 800.0,
+            "permitted_after_review_m3_per_year": 760.0,
+            "reduction_m3_per_year": 40.0,
+            "reduction_percent": 5.0
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41590208.0,
+            "start_date_raw": "27.04.2018 г.",
+            "holder": "ЮЗУ Неофит Рилски",
+            "permitted_before_m3_per_year": 15768.0,
+            "permitted_after_review_m3_per_year": 5803.0,
+            "reduction_m3_per_year": 9965.0,
+            "reduction_percent": 63.2
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41590176.0,
+            "start_date_raw": "8.4.2016 г.",
+            "holder": "Община Благоевград",
+            "permitted_before_m3_per_year": 4800.0,
+            "permitted_after_review_m3_per_year": 500.0,
+            "reduction_m3_per_year": 4300.0,
+            "reduction_percent": 89.58
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41590173.0,
+            "start_date_raw": "8.4.2016 г.",
+            "holder": "Община Благоевград",
+            "permitted_before_m3_per_year": 8550.0,
+            "permitted_after_review_m3_per_year": 500.0,
+            "reduction_m3_per_year": 8050.0,
+            "reduction_percent": 94.15
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41590175.0,
+            "start_date_raw": "6.4.2016 г.",
+            "holder": "Община Благоевград",
+            "permitted_before_m3_per_year": 3750.0,
+            "permitted_after_review_m3_per_year": 500.0,
+            "reduction_m3_per_year": 3250.0,
+            "reduction_percent": 86.67
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41590177.0,
+            "start_date_raw": "11.4.2016 г.",
+            "holder": "Община Благоевград",
+            "permitted_before_m3_per_year": 4050.0,
+            "permitted_after_review_m3_per_year": 500.0,
+            "reduction_m3_per_year": 3550.0,
+            "reduction_percent": 87.65
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41590102.0,
+            "start_date_raw": "13.8.2012 г.",
+            "holder": "Община Благоевград",
+            "permitted_before_m3_per_year": 21507.0,
+            "permitted_after_review_m3_per_year": 2388.0,
+            "reduction_m3_per_year": 19119.0,
+            "reduction_percent": 88.9
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41590152.0,
+            "start_date_raw": "16.12.2014 г.",
+            "holder": "Специализиран автосервиз Мастервик",
+            "permitted_before_m3_per_year": 855.0,
+            "permitted_after_review_m3_per_year": 527.0,
+            "reduction_m3_per_year": 328.0,
+            "reduction_percent": 38.36
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41590258.0,
+            "start_date_raw": "03.09.2021 г.",
+            "holder": "УКЕВ ТРАНС ЕООД",
+            "permitted_before_m3_per_year": 1400.0,
+            "permitted_after_review_m3_per_year": 460.0,
+            "reduction_m3_per_year": 940.0,
+            "reduction_percent": 67.14
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41520112.0,
+            "start_date_raw": "17.09.2020 г.",
+            "holder": "ЕТ Ивайло Попов - Еврика",
+            "permitted_before_m3_per_year": 300.0,
+            "permitted_after_review_m3_per_year": 200.0,
+            "reduction_m3_per_year": 100.0,
+            "reduction_percent": 33.33
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41590246.0,
+            "start_date_raw": "03.12.2020 г.",
+            "holder": "Бета стар ЕООД",
+            "permitted_before_m3_per_year": 6004.0,
+            "permitted_after_review_m3_per_year": 667.0,
+            "reduction_m3_per_year": 5337.0,
+            "reduction_percent": 88.89
+          },
+          {
+            "source_body_code": "BG4G00000N014",
+            "source_body_name": "Порови води в неоген - Благоевград",
+            "permit_number": 41590262.0,
+            "start_date_raw": "23.12.2021г.",
+            "holder": "ЗОРА-ЕС ЕООД",
+            "permitted_before_m3_per_year": 1600.0,
+            "permitted_after_review_m3_per_year": 652.0,
+            "reduction_m3_per_year": 948.0,
+            "reduction_percent": 59.25
+          }
+        ],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N015",
+      "gwb_name": "Порови води в неоген -  Брезник-Земен",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N016",
+      "gwb_name": "Порови води в неоген - Разлог",
+      "measure_count": 1,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G000000N016",
+          "source_body_name": "Порови води в неоген - Разлог",
+          "quantitative_status": "Добро",
+          "chemical_status": "Добро",
+          "objective_2027": "запазване на доброто количествено състояние; запазване на доброто химично състояние",
+          "driving_force": "неприложимо",
+          "significant_pressure": "неприложимо",
+          "ktm_code": null,
+          "ktm": "Подобряване на управлението",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "CA_5",
+          "measure_name": "Подобряване на контрола на разрешителните за водовземане от подземни води",
+          "action_code": "CA_5_4",
+          "action": "Извършване на проверки за установяване на незаконно черпене на подземни води",
+          "measure_description": null,
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": 65090.92,
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "допълваща": 1
+      },
+      "driving_force_counts": {
+        "неприложимо": 1
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N017",
+      "gwb_name": "Порови води в неоген - Гоце Делчев",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q001",
+      "gwb_name": "Порови води в кватернер - Струмешница",
+      "measure_count": 5,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G000000Q001",
+          "source_body_name": "Порови води в кватернер - Струмешница",
+          "quantitative_status": "Лошо",
+          "chemical_status": "Лошо",
+          "objective_2027": "изключение по чл. 4(4) от РДВ на основата на естествени причини; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за нитрати",
+          "driving_force": "селско стопанство,урбанизация,индустрия",
+          "significant_pressure": "2.2. Дифузни източници - селско стопанство; 3.2. Водовземане или отклоняване на оттока – обществено водоснабдяване",
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "инвестиционна",
+          "measure_code": "CA_2",
+          "measure_name": "Подобряване на мониторинга на количественото състояние на подземните води",
+          "action_code": "CA_2_2",
+          "action": "Изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми",
+          "measure_description": "Разработване и възлагане на проект за изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми)",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "МОСВ",
+          "partner": "БД",
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G000000Q001",
+          "source_body_name": "Порови води в кватернер - Струмешница",
+          "quantitative_status": "Лошо",
+          "chemical_status": "Лошо",
+          "objective_2027": "изключение по чл. 4(4) от РДВ на основата на естествени причини; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за нитрати",
+          "driving_force": "водовземане",
+          "significant_pressure": "3.2. Водовземане или отклоняване на оттока – обществено водоснабдяване",
+          "ktm_code": null,
+          "ktm": "Подобряване на управлението",
+          "measure_type_main_supplementary": "основна",
+          "measure_kind": "административна",
+          "measure_code": "CA_3",
+          "measure_name": "Изменение или отнемане на разрешителни за водовземане от подземни води, в резултат от преразглеждането им.",
+          "action_code": "CA_3_4",
+          "action": "Отнемане на част от разрешените водни количества в издадените разрешителни за водовземане за ПВТ опредени в риск/лошо състояние по количество;",
+          "measure_description": "изменение на част от разрешените количества по издадени разрешителни, посочени в списък",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": 65090.92,
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G000000Q001",
+          "source_body_name": "Порови води в кватернер - Струмешница",
+          "quantitative_status": "Лошо",
+          "chemical_status": "Лошо",
+          "objective_2027": "изключение по чл. 4(4) от РДВ на основата на естествени причини изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за нитрати",
+          "driving_force": "водовземане",
+          "significant_pressure": "3.2. Водовземане или отклоняване на оттока – обществено водоснабдяване",
+          "ktm_code": null,
+          "ktm": "Подобряване на управлението",
+          "measure_type_main_supplementary": "основна",
+          "measure_kind": "административна",
+          "measure_code": "CA_4",
+          "measure_name": "Изпълнение на процедурата по преразглеждане на издадените разрешителни за водовземане от подземни води с цел постигане на целите за водното тяло",
+          "action_code": "CA_4_1",
+          "action": "Изпълнение на процедурата по преразглеждане на издадените разрешителни за водовземане от подземни води с цел постигане на целите за водното тяло",
+          "measure_description": "Преразглеждане на издадените разрешителни за водовземане от подземното водно тяло по отношение на раздадените количества с цел постигане на целите за водното тяло",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": 65090.92,
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G000000Q001",
+          "source_body_name": "Порови води в кватернер - Струмешница",
+          "quantitative_status": "Лошо",
+          "chemical_status": "Лошо",
+          "objective_2027": "изключение по чл. 4(4) от РДВ на основата на естествени причини; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за нитрати",
+          "driving_force": "водовземане",
+          "significant_pressure": "3.2. Водовземане или отклоняване на оттока – обществено водоснабдяване",
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "GO_22",
+          "measure_name": "Актуализиране на национална Методика за оценка на подхранване на подземните води",
+          "action_code": "GO_22_1",
+          "action": "Актуализиране на Методика за оценка на подхранване на подземните води с включване на алтернативни подходи, освен прилагания досега подход за оценка на подхранване с коефициент на валежно подхранване",
+          "measure_description": null,
+          "measure_origin": "Нова мярка",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "НИМХ",
+          "partner": null,
+          "funding": null,
+          "cost_purb2": 65090.92,
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G000000Q001",
+          "source_body_name": "Порови води в кватернер - Струмешница",
+          "quantitative_status": "Лошо",
+          "chemical_status": "Лошо",
+          "objective_2027": "изключение по чл. 4(4) от РДВ на основата на естествени причини изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за нитрати",
+          "driving_force": "водовземане",
+          "significant_pressure": "3.2. Водовземане или отклоняване на оттока – обществено водоснабдяване",
+          "ktm_code": 99.0,
+          "ktm": "Други превантивни мерки",
+          "measure_type_main_supplementary": "основна",
+          "measure_kind": "административна",
+          "measure_code": "PM_1",
+          "measure_name": "Опазване на количественото състояние на подземните води",
+          "action_code": "PM_1_8",
+          "action": "Забрана за издаване на разрешителни за водовземане когато общото водовземане надвишава разполагаемите ресурси на подземните водни тела и/или максимално допустимото експлоатационно понижение на водното ниво надвишава определеното за водното тяло допустимо понижение на водното ниво",
+          "measure_description": "Забрана за издаване на разрешителни за водовземане, когато общото водовземане надвишава разполагаемите ресурси на подземните водни тела",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": 65090.92,
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "допълваща": 2,
+        "основна": 3
+      },
+      "driving_force_counts": {
+        "селско стопанство": 1,
+        "урбанизация": 1,
+        "индустрия": 1,
+        "водовземане": 4
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 21,
+        "records": [
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41560004.0,
+            "start_date_raw": "23.06.2017 г.",
+            "holder": "Първострой - Г ООД",
+            "permitted_before_m3_per_year": 15275.0,
+            "permitted_after_review_m3_per_year": 5135.0,
+            "reduction_m3_per_year": 10140.0,
+            "reduction_percent": 66.38
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41590093.0,
+            "start_date_raw": "26.3.2012 г.",
+            "holder": "Линдън ЕООД",
+            "permitted_before_m3_per_year": 80080.8,
+            "permitted_after_review_m3_per_year": 6934.0,
+            "reduction_m3_per_year": 73146.8,
+            "reduction_percent": 91.34
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41510269.0,
+            "start_date_raw": "9.9.2013 г.",
+            "holder": "Румен Георгиев Динев",
+            "permitted_before_m3_per_year": 3103.0,
+            "permitted_after_review_m3_per_year": 2965.0,
+            "reduction_m3_per_year": 138.0,
+            "reduction_percent": 4.45
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41530002.0,
+            "start_date_raw": "14.7.2013 г.",
+            "holder": "Растер-Юг ООД",
+            "permitted_before_m3_per_year": 15925.0,
+            "permitted_after_review_m3_per_year": 11098.0,
+            "reduction_m3_per_year": 4827.0,
+            "reduction_percent": 30.31
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41530109.0,
+            "start_date_raw": "17.10.2016 г.",
+            "holder": "Беласица АД",
+            "permitted_before_m3_per_year": 13000.0,
+            "permitted_after_review_m3_per_year": 6270.0,
+            "reduction_m3_per_year": 6730.0,
+            "reduction_percent": 51.77
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41510110.0,
+            "start_date_raw": "5.7.2013 г.",
+            "holder": "Руди ЕООД",
+            "permitted_before_m3_per_year": 5200.0,
+            "permitted_after_review_m3_per_year": 366.0,
+            "reduction_m3_per_year": 4834.0,
+            "reduction_percent": 92.96
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 400198.0,
+            "start_date_raw": "20.10.2004 г.",
+            "holder": "Община Петрич",
+            "permitted_before_m3_per_year": 73000.0,
+            "permitted_after_review_m3_per_year": 0.0,
+            "reduction_m3_per_year": 73000.0,
+            "reduction_percent": 100.0
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41520026.0,
+            "start_date_raw": "2.8.2011 г.",
+            "holder": "Агро Ин 2001 ЕООД",
+            "permitted_before_m3_per_year": 63072.0,
+            "permitted_after_review_m3_per_year": 45013.0,
+            "reduction_m3_per_year": 18059.0,
+            "reduction_percent": 28.63
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41530076.0,
+            "start_date_raw": "28.5.2013 г.",
+            "holder": "Белла Стил АД",
+            "permitted_before_m3_per_year": 35000.0,
+            "permitted_after_review_m3_per_year": 12730.0,
+            "reduction_m3_per_year": 22270.0,
+            "reduction_percent": 63.63
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41590057.0,
+            "start_date_raw": "18.3.2009 г.",
+            "holder": "Еко България ЕАД",
+            "permitted_before_m3_per_year": 3250.0,
+            "permitted_after_review_m3_per_year": 1001.0,
+            "reduction_m3_per_year": 2249.0,
+            "reduction_percent": 69.2
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41590112.0,
+            "start_date_raw": "1.11.2012 г.",
+            "holder": "Експрес Мод ООД",
+            "permitted_before_m3_per_year": 11000.0,
+            "permitted_after_review_m3_per_year": 2561.0,
+            "reduction_m3_per_year": 8439.0,
+            "reduction_percent": 76.72
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41590113.0,
+            "start_date_raw": "2.11.2012 г.",
+            "holder": "Актив фрут къмпани",
+            "permitted_before_m3_per_year": 15780.0,
+            "permitted_after_review_m3_per_year": 4375.0,
+            "reduction_m3_per_year": 11405.0,
+            "reduction_percent": 72.28
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41510381.0,
+            "start_date_raw": "18.12.2012 г.",
+            "holder": "ХКС ЕООД - с Кърналово",
+            "permitted_before_m3_per_year": 17617.5,
+            "permitted_after_review_m3_per_year": 4930.0,
+            "reduction_m3_per_year": 12687.5,
+            "reduction_percent": 72.02
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41590143.0,
+            "start_date_raw": "11.8.2014 г.",
+            "holder": "САКСА ООД - гр. Долна Баня",
+            "permitted_before_m3_per_year": 1643.0,
+            "permitted_after_review_m3_per_year": 745.0,
+            "reduction_m3_per_year": 898.0,
+            "reduction_percent": 54.66
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 400601.0,
+            "start_date_raw": "15.11.2006 г.",
+            "holder": "В и К Петрич",
+            "permitted_before_m3_per_year": 18250.0,
+            "permitted_after_review_m3_per_year": 365.0,
+            "reduction_m3_per_year": 17885.0,
+            "reduction_percent": 98.0
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41520119.0,
+            "start_date_raw": "02.06.2021 г.",
+            "holder": "АГРО ТЕР 2016 ООД",
+            "permitted_before_m3_per_year": 1038.0,
+            "permitted_after_review_m3_per_year": 125.0,
+            "reduction_m3_per_year": 913.0,
+            "reduction_percent": 87.96
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41590164.0,
+            "start_date_raw": "11.08.2015 г.",
+            "holder": "ПЕПИНО - 2010 ЕООД",
+            "permitted_before_m3_per_year": 1128.0,
+            "permitted_after_review_m3_per_year": 245.0,
+            "reduction_m3_per_year": 883.0,
+            "reduction_percent": 78.28
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41590216.0,
+            "start_date_raw": "15.10.2018 г.",
+            "holder": "СТОФ ЕАД",
+            "permitted_before_m3_per_year": 2377.7,
+            "permitted_after_review_m3_per_year": 425.0,
+            "reduction_m3_per_year": 1952.6999999999998,
+            "reduction_percent": 82.13
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41590225.0,
+            "start_date_raw": "29.05.2019 г.",
+            "holder": "Иса Евро Комерс АД",
+            "permitted_before_m3_per_year": 3836.25,
+            "permitted_after_review_m3_per_year": 289.0,
+            "reduction_m3_per_year": 3547.25,
+            "reduction_percent": 92.47
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41590257.0,
+            "start_date_raw": "29.07.2021 г.",
+            "holder": "Оки-консулт ЕООД",
+            "permitted_before_m3_per_year": 1600.0,
+            "permitted_after_review_m3_per_year": 1017.0,
+            "reduction_m3_per_year": 583.0,
+            "reduction_percent": 36.44
+          },
+          {
+            "source_body_code": "BG4G00000Q001",
+            "source_body_name": "Порови води в кватернер - Струмешница",
+            "permit_number": 41520121.0,
+            "start_date_raw": "03.09.2021 г.",
+            "holder": "НЮ ФРУТ АД",
+            "permitted_before_m3_per_year": 18911.0,
+            "permitted_after_review_m3_per_year": 525.0,
+            "reduction_m3_per_year": 18386.0,
+            "reduction_percent": 97.22
+          }
+        ],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q002",
+      "gwb_name": "Порови води в кватернер -  Кресна-Сандански",
+      "measure_count": 1,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G000000Q002",
+          "source_body_name": "Порови води в кватернер - Кресна-Сандански",
+          "quantitative_status": "Добро",
+          "chemical_status": "Добро",
+          "objective_2027": "запазване на доброто количествено състояние; запазване на доброто химично състояние",
+          "driving_force": "селско стопанство,урбанизация,индустрия",
+          "significant_pressure": null,
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "инвестиционна",
+          "measure_code": "CA_2",
+          "measure_name": "Подобряване на мониторинга на количественото състояние на подземните води",
+          "action_code": "CA_2_2",
+          "action": "Изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми",
+          "measure_description": "Разработване и възлагане на проект за изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми)",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "МОСВ",
+          "partner": "БД",
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "допълваща": 1
+      },
+      "driving_force_counts": {
+        "селско стопанство": 1,
+        "урбанизация": 1,
+        "индустрия": 1
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q003",
+      "gwb_name": "Порови води в кватернер -  Симитли",
+      "measure_count": 3,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G000000Q003",
+          "source_body_name": "Порови води в кватернер - Симитли",
+          "quantitative_status": "Добро",
+          "chemical_status": "Добро",
+          "objective_2027": "запазване на доброто количествено състояние; запазване на доброто химично състояние",
+          "driving_force": "селско стопанство,урбанизация,индустрия",
+          "significant_pressure": "3.2. Водовземане или отклоняване на оттока – обществено водоснабдяване",
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "инвестиционна",
+          "measure_code": "CA_2",
+          "measure_name": "Подобряване на мониторинга на количественото състояние на подземните води",
+          "action_code": "CA_2_2",
+          "action": "Изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми",
+          "measure_description": "Разработване и възлагане на проект за изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми)",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "МОСВ",
+          "partner": "БД",
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G000000Q003",
+          "source_body_name": "Порови води в кватернер - Симитли",
+          "quantitative_status": "Добро",
+          "chemical_status": "Добро",
+          "objective_2027": "запазване на доброто количествено състояние; запазване на доброто химично състояние",
+          "driving_force": "водовземане",
+          "significant_pressure": "3.2. Водовземане или отклоняване на оттока – обществено водоснабдяване",
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "GO_22",
+          "measure_name": "Актуализиране на национална Методика за оценка на подхранване на подземните води",
+          "action_code": "GO_22_1",
+          "action": "Актуализиране на Методика за оценка на подхранване на подземните води с включване на алтернативни подходи, освен прилагания досега подход за оценка на подхранване с коефициент на валежно подхранване",
+          "measure_description": null,
+          "measure_origin": "Нова мярка",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "НИМХ",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G000000Q003",
+          "source_body_name": "Порови води в кватернер - Симитли",
+          "quantitative_status": "Добро",
+          "chemical_status": "Добро",
+          "objective_2027": "запазване на доброто количествено състояние; запазване на доброто химично състояние",
+          "driving_force": "водовземане",
+          "significant_pressure": "3.2. Водовземане или отклоняване на оттока – обществено водоснабдяване",
+          "ktm_code": 99.0,
+          "ktm": "Други превантивни мерки",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "PM_3",
+          "measure_name": "Прилагане на ОВОС при водовземане от подземни водни тела:",
+          "action_code": "PM_3_1",
+          "action": "Прилагане на ОВОС при водовземане от подземни водни тела:",
+          "measure_description": "Прилагане на задължителна ОВОС, в случаите по чл. 156е, ал. 3 от Закона за водите.",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": "РИОСВ/МОСВ",
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "допълваща": 3
+      },
+      "driving_force_counts": {
+        "селско стопанство": 1,
+        "урбанизация": 1,
+        "индустрия": 1,
+        "водовземане": 2
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q004",
+      "gwb_name": "Порови води в кватернер -  Благоевград",
+      "measure_count": 4,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G000000Q004",
+          "source_body_name": "Порови води в кватернер - Благоевград",
+          "quantitative_status": "Добро",
+          "chemical_status": "Лошо",
+          "objective_2027": "запазване на доброто количествено състояние; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за сулфати и обща твърдост",
+          "driving_force": "селско стопанство,урбанизация,индустрия",
+          "significant_pressure": null,
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "инвестиционна",
+          "measure_code": "CA_2",
+          "measure_name": "Подобряване на мониторинга на количественото състояние на подземните води",
+          "action_code": "CA_2_2",
+          "action": "Изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми",
+          "measure_description": "Разработване и възлагане на проект за изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми)",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "МОСВ",
+          "partner": "БД",
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G000000Q004",
+          "source_body_name": "Порови води в кватернер - Благоевград",
+          "quantitative_status": "Добро",
+          "chemical_status": "Лошо",
+          "objective_2027": "запазване на доброто количествено състояние; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за сулфати и обща твърдост",
+          "driving_force": "селско стопанство,урбанизация,индустрия",
+          "significant_pressure": null,
+          "ktm_code": 21.0,
+          "ktm": "Мерки за недопускане или контрол на замърсяването от урбанизирани зони, транспорт и изградена инфраструктура.",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "DP_4",
+          "measure_name": "Намаляване на замърсяването от минни дейности",
+          "action_code": "DP_4_4",
+          "action": "Управление на повърхностни, подземни и дренажни води от минни обекти",
+          "measure_description": "Провеждане на проучвателен мониторинг в зоните с минни обекти, който ще служи за определяне/актуализиране на локални фонови концентрации на повърхностни и подземни водни тела",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": "ИАОС",
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G000000Q004",
+          "source_body_name": "Порови води в кватернер - Благоевград",
+          "quantitative_status": "Добро",
+          "chemical_status": "Лошо",
+          "objective_2027": "запазване на доброто количествено състояние; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за сулфати и обща твърдост",
+          "driving_force": "индустрия точков",
+          "significant_pressure": "2.2. Дифузни източници - селско стопанство",
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността.",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "DP_6",
+          "measure_name": "Изпълнение на програма за собствен мониторинг на повърхностни, подземни води и отпадъчни води в района на депа за отпадъци",
+          "action_code": "DP_6_1",
+          "action": "Изпълнение на собствен мониторинг на повърхностните, подземните и отпадъчните води в района на депа на опасни отпадъци и осигуряване на информация за натиска върху водите",
+          "measure_description": "Вписване на условие за провеждане на собствен мониторинг в издадените разрешителни по реда на ЗВ и ЗООС",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": "ИАОС",
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G000000Q004",
+          "source_body_name": "Порови води в кватернер - Благоевград",
+          "quantitative_status": "Добро",
+          "chemical_status": "Лошо",
+          "objective_2027": "запазване на доброто количествено състояние; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за сулфати и обща твърдост",
+          "driving_force": "Промишленост",
+          "significant_pressure": "1.3. Точкови източници - промишлени отпадъчни води от инсталации, включени в Е-РИПЗ (зауствания индустрия с КР)",
+          "ktm_code": 16.0,
+          "ktm": "Модернизиране или подобрения на пречиствателни станции за промишлени отпадъчни води (включително от земеделски стопанства).",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "IP_1",
+          "measure_name": "Изпълнение на процедурата по преразглеждане на издадените разрешителни за заустване на отпадъчни води",
+          "action_code": "IP_1_2",
+          "action": "Преразглеждане на комплексно разрешително на индустриален обект и промяна на емисионните ограничения за достигане/запазване на доброто състояние на водното тяло",
+          "measure_description": "промяна на емисионните ограничения за достигане на доброто химично състояние на подземното водното тяло за ТЕЦ Бобов дол с КР №45-H4/2019 и КР №299-H1/2019",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": "Опазване, подобряване и непускане влошаване в състоянието на водната среда и водните екосистеми, чрез прогресивно намаляване на емисиите и ограничаване на замърсяването, включително замърсяването със специфични замърсители и приоритетни вещества.",
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "ИАОС",
+          "partner": "БД",
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "допълваща": 4
+      },
+      "driving_force_counts": {
+        "селско стопанство": 2,
+        "урбанизация": 2,
+        "индустрия": 2,
+        "индустрия точков": 1,
+        "Промишленост": 1
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q005",
+      "gwb_name": "Порови води в кватернер -  Дупница",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q007",
+      "gwb_name": "Порови води в кватернер  -  Радомир-Брезник",
+      "measure_count": 1,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G000000Q007",
+          "source_body_name": "Порови води в кватернер - Радомир-Брезник",
+          "quantitative_status": "Добро",
+          "chemical_status": "Добро",
+          "objective_2027": "запазване на доброто количествено състояние; запазване на доброто химично състояние",
+          "driving_force": "неприложимо",
+          "significant_pressure": "неприложимо",
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "инвестиционна",
+          "measure_code": "CA_2",
+          "measure_name": "Подобряване на мониторинга на количественото състояние на подземните води",
+          "action_code": "CA_2_2",
+          "action": "Изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми",
+          "measure_description": "Разработване и възлагане на проект за изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми)",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "МОСВ",
+          "partner": "БД",
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "допълваща": 1
+      },
+      "driving_force_counts": {
+        "неприложимо": 1
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q008",
+      "gwb_name": "Порови води в кватернер  -  Разлог",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q009",
+      "gwb_name": "Порови води в кватернер  -  Гоце Делчев",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G00000QN006",
+      "gwb_name": "Порови води в кватернер - Неоген - Кюстендил",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG018",
+      "gwb_name": "Порово-пукнатинни води в палеоген Гоце Делчев",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG038",
+      "gwb_name": "Порово-пукнатинни води в палеогенски седиментен комплекс в източните склонове на Влахина планина",
+      "measure_count": 1,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G00001Pg038",
+          "source_body_name": "Порово-пукнатинни води в палеогенски седиментен комплекс в източните склонове на Влахина планина",
+          "quantitative_status": "Добро",
+          "chemical_status": "Добро",
+          "objective_2027": "запазване на доброто количествено състояние; запазване на доброто химично състояние",
+          "driving_force": "неприложимо",
+          "significant_pressure": "неприложимо",
+          "ktm_code": null,
+          "ktm": "Подобряване на управлението",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "CA_5",
+          "measure_name": "Подобряване на контрола на разрешителните за водовземане от подземни води",
+          "action_code": "CA_5_4",
+          "action": "Извършване на проверки за установяване на незаконно черпене на подземни води",
+          "measure_description": null,
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": 65090.92,
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "допълваща": 1
+      },
+      "driving_force_counts": {
+        "неприложимо": 1
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG039",
+      "gwb_name": "Пукнатинно-порови води в Осоговски палеогенски вулканогенно-седиментен комплекс",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG138",
+      "gwb_name": "Порово-пукнатинни води в палеогенски седиментен комплекс на Бобовдолска и Кюстендилска котловина",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG238",
+      "gwb_name": "Порово-пукнатинни води в палеогенски седиментен комплекс на Пернишка котловина",
+      "measure_count": 3,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G00001Pg238",
+          "source_body_name": "Порови води в палеогенски седиментен комплекс на Пернишка котловина",
+          "quantitative_status": "Добро",
+          "chemical_status": "Лошо",
+          "objective_2027": "запазване на доброто количествено състояние; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за сулфати, желязо, манган",
+          "driving_force": "селско стопанство,урбанизация,индустрия",
+          "significant_pressure": null,
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "инвестиционна",
+          "measure_code": "CA_2",
+          "measure_name": "Подобряване на мониторинга на количественото състояние на подземните води",
+          "action_code": "CA_2_2",
+          "action": "Изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми",
+          "measure_description": "Разработване и възлагане на проект за изграждане на нови пунктове за мониторинг на подземни води в райони с установен риск от въздействие върху рецептори, определящи за състоянието на подземните водни тела (свързани повърхностни водни тела, сухоземни екосистеми)",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "МОСВ",
+          "partner": "БД",
+          "funding": "Държавен бюджет",
+          "cost_purb2": "неприложимо",
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G00001Pg238",
+          "source_body_name": "Порови води в палеогенски седиментен комплекс на Пернишка котловина",
+          "quantitative_status": "Добро",
+          "chemical_status": "Лошо",
+          "objective_2027": "запазване на доброто количествено състояние; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за сулфати, желязо, манган",
+          "driving_force": "мини",
+          "significant_pressure": "2.10. Дифузни източници - други (индустрия)",
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността.",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "DP_6",
+          "measure_name": "Изпълнение на програма за собствен мониторинг на повърхностни, подземни води и отпадъчни води в района на депа за отпадъци",
+          "action_code": "DP_6_1",
+          "action": "Изпълнение на собствен мониторинг на повърхностните, подземните и отпадъчните води в района на депа на опасни отпадъци и осигуряване на информация за натиска върху водите",
+          "measure_description": "Вписване на условие за провеждане на собствен мониторинг в издадените разрешителни по реда на ЗВ и ЗООС",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "ИАОС",
+          "partner": "Титуляри на разрешителни",
+          "funding": "Държавен бюджет/средства на титуляра",
+          "cost_purb2": "неприложимо",
+          "note": null
+        },
+        {
+          "source_body_code": "BG4G00001Pg238",
+          "source_body_name": "Порови води в палеогенски седиментен комплекс на Пернишка котловина",
+          "quantitative_status": "Добро",
+          "chemical_status": "Лошо",
+          "objective_2027": "запазване на доброто количествено състояние; изключение по чл. 4(4) от РДВ на основата на естествени причини и техническа невъзможност за сулфати, желязо, манган",
+          "driving_force": "мини",
+          "significant_pressure": "2.8. Дифузен източник – минна дейност (добив на подземни богатства - заемащи площ над 250000 м2)",
+          "ktm_code": 14.0,
+          "ktm": "Научноизследователска дейност, подобряване на базата от знания за намаляване на несигурността.",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "OS_3",
+          "measure_name": "Проучване за установяване на замърсяване на повърхностни и подземни води",
+          "action_code": "OS_3_2",
+          "action": "Провеждане на мониторинг за установяване въздействието на минната дейност върху повърхностни и подземни води",
+          "measure_description": "Предприемане на проучвателен мониторинг на руднични води, повърхностни и подземни води, седименти и биота, извършван от акредитирани институции във връзка с оценката на натиска и въздействията на рудничните води",
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": "МОСВ",
+          "funding": "Държавен бюджет",
+          "cost_purb2": 2603.64,
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "допълваща": 3
+      },
+      "driving_force_counts": {
+        "селско стопанство": 1,
+        "урбанизация": 1,
+        "индустрия": 1,
+        "мини": 2
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G00001T2035",
+      "gwb_name": "Пукнатинно-карстови води в Бобошево-Мърводолски картсов басейн",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G0001PT1030",
+      "gwb_name": "Пукнатинно-карстови води в Сатовчански карстов басейн",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G0001PT1036",
+      "gwb_name": "Пукнатинно-карстови води в Сатовчански карстов басейн",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000PT3031",
+      "gwb_name": "Карстови води в Разложки карстов басейн",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G000PT3032",
+      "gwb_name": "Карстови води в Влахински карстов басейн",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G001PTPZ025",
+      "gwb_name": "Пукнатинни води в Беласишки метаморфити",
+      "measure_count": 1,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G001PtPz025",
+          "source_body_name": "Пукнатинни води в Беласишки метаморфити",
+          "quantitative_status": "Добро",
+          "chemical_status": "Добро",
+          "objective_2027": "запазване на доброто количествено състояние; запазване на доброто химично състояние",
+          "driving_force": "неприложимо",
+          "significant_pressure": "неприложимо",
+          "ktm_code": null,
+          "ktm": "Подобряване на управлението",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "CA_5",
+          "measure_name": "Подобряване на контрола на разрешителните за водовземане от подземни води",
+          "action_code": "CA_5_4",
+          "action": "Извършване на проверки за установяване на незаконно черпене на подземни води",
+          "measure_description": null,
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": 65090.92,
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "допълваща": 1
+      },
+      "driving_force_counts": {
+        "неприложимо": 1
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G001PTPZ026",
+      "gwb_name": "Пукнатинни води в Южнобългарски гранити, Западнородопски метаморфити, Барутин-буйновски интрузив",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G001PTPZ027",
+      "gwb_name": "Пукнатинни води във Верила-Витошки блок",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G001PTPZ125",
+      "gwb_name": "Пукнатинни води във Влахино-огражденско-малешевско-осоговски метаморфити",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G001PZC2021",
+      "gwb_name": "Пукнатинни води в Рило-родопски метаморфити, Южнобългарски гранити, Калински плутон",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G001QNPG010",
+      "gwb_name": "Порови води в кватернер - Неоген-Палеоген - Доспат",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G001T2T3029",
+      "gwb_name": "Пукнатинно-карстови води в Еловдолски карстов басейн",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G00T1T2033",
+      "gwb_name": "Карстови води в Логодашки карстов басейн",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G00T1T2034",
+      "gwb_name": "Карстови води в Смоличенски карстов басейн",
+      "measure_count": 1,
+      "has_individual_measures": true,
+      "measures": [
+        {
+          "source_body_code": "BG4G00T1T2034",
+          "source_body_name": "Карстови води в Смоличенски карстов басейн",
+          "quantitative_status": "Добро",
+          "chemical_status": "Добро",
+          "objective_2027": "запазване на доброто количествено състояние; запазване на доброто химично състояние",
+          "driving_force": "неприложимо",
+          "significant_pressure": "неприложимо",
+          "ktm_code": null,
+          "ktm": "Подобряване на управлението",
+          "measure_type_main_supplementary": "допълваща",
+          "measure_kind": "административна",
+          "measure_code": "CA_5",
+          "measure_name": "Подобряване на контрола на разрешителните за водовземане от подземни води",
+          "action_code": "CA_5_4",
+          "action": "Извършване на проверки за установяване на незаконно черпене на подземни води",
+          "measure_description": null,
+          "measure_origin": "Мярка от каталога на втория ПУРБ",
+          "contribution": null,
+          "settlement": "неприложимо",
+          "municipality": "неприложимо",
+          "region": "неприложимо",
+          "responsible": "БД",
+          "partner": null,
+          "funding": "Държавен бюджет",
+          "cost_purb2": 65090.92,
+          "note": null
+        }
+      ],
+      "category_counts": {
+        "допълваща": 1
+      },
+      "driving_force_counts": {
+        "неприложимо": 1
+      },
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G00T2T3028",
+      "gwb_name": "Карстови води в Земенски карстов басейн",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G1PZC2PG019",
+      "gwb_name": "Пукнатинни води в Пирински блок",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    },
+    {
+      "gwb_code": "BG4G1T1T2T3037",
+      "gwb_name": "Карстови води в Голобърдовски карстов басейн",
+      "measure_count": 0,
+      "has_individual_measures": false,
+      "measures": [],
+      "category_counts": {},
+      "driving_force_counts": {},
+      "climate_assessment_counts": {},
+      "permit_reduction_planning": {
+        "record_count": 0,
+        "records": [],
+        "status_note": "PURB3 planning measure; not treated as current permit status."
+      }
+    }
+  ],
+  "basin_wide_measures": [],
+  "quality_report": {
+    "unresolved_groundwater_rows": [],
+    "ambiguous_groundwater_rows": [],
+    "code_corrections": [],
+    "groundwater_rows_without_measure_code": [],
+    "climate_action_conflicts": [],
+    "unknown_permit_reduction_codes": [],
+    "duplicate_measure_rows": 0,
+    "duplicate_permit_reduction_rows": 0
+  }
+}

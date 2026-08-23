@@ -5,6 +5,7 @@ import { getBlackSeaGisAnalysis } from "@/lib/black-sea-gis";
 
 type SearchParams = Promise<{
   gwb?: string;
+  gwbs?: string;
   lat?: string;
   lng?: string;
 }>;
@@ -222,8 +223,23 @@ export default async function ProPage({
   const params = await searchParams;
 
   const gwb =
-    params.gwb?.trim() ||
+    params.gwb?.trim().toUpperCase() ||
     "BG3G00000NQ018";
+
+  const gwbsFromParams =
+    String(params.gwbs || "")
+      .split(",")
+      .map((code) =>
+        code.trim().toUpperCase()
+      )
+      .filter(Boolean);
+
+  const groundwaterCodes = Array.from(
+    new Set([
+      gwb,
+      ...gwbsFromParams,
+    ])
+  );
 
   const lat = params.lat ?? null;
   const lng = params.lng ?? null;
@@ -232,6 +248,31 @@ export default async function ProPage({
     getSpatialProfile(lat, lng);
 
   const profile = getGwbProfile(gwb);
+
+  const normalizedGwbCode =
+    gwb.toUpperCase();
+
+  const isBlackSeaGwb =
+    normalizedGwbCode.startsWith("BG2G");
+
+  const isEastAegeanGwb =
+    normalizedGwbCode.startsWith("BG3G");
+
+  const isWesternAegeanGwb =
+    normalizedGwbCode.startsWith("BG4G");
+
+
+  const groundwaterProfiles =
+    groundwaterCodes.map(
+      (code) => getGwbProfile(code)
+    );
+
+  const additionalGroundwaterProfiles =
+    groundwaterProfiles.filter(
+      (item) =>
+        item.gwbCode.toUpperCase() !==
+        gwb.toUpperCase()
+    );
 
   const blackSeaSection1 =
     profile.blackSeaSection1;
@@ -257,18 +298,71 @@ export default async function ProPage({
   const blackSeaAdditionalRegisters =
     profile.blackSeaAdditionalRegisters ?? null;
 
+  const westernAegeanSection1 =
+    isWesternAegeanGwb
+      ? profile.westernAegeanSection1
+      : undefined;
+
+  const westernAegeanSection2 =
+    isWesternAegeanGwb
+      ? profile.westernAegeanSection2
+      : undefined;
+
+  const westernAegeanSection3 =
+    isWesternAegeanGwb
+      ? profile.westernAegeanSection3
+      : undefined;
+
+  const westernAegeanSection4 =
+    isWesternAegeanGwb
+      ? profile.westernAegeanSection4
+      : undefined;
+
+  const westernAegeanSection5 =
+    isWesternAegeanGwb
+      ? profile.westernAegeanSection5
+      : undefined;
+
+  const westernAegeanSection7 =
+    isWesternAegeanGwb
+      ? profile.westernAegeanSection7
+      : undefined;
+
+  const westernAegeanCurrentRegisters =
+    isWesternAegeanGwb
+      ? profile.westernAegeanCurrentRegisters ?? null
+      : null;
+
+  const westernAegeanAdditionalRegisters =
+    isWesternAegeanGwb
+      ? profile.westernAegeanAdditionalRegisters ?? null
+      : null;
+
+  const activeAdditionalRegisters =
+    isWesternAegeanGwb
+      ? westernAegeanAdditionalRegisters
+      : isBlackSeaGwb
+        ? blackSeaAdditionalRegisters
+        : null;
+
+
   const officialHydrogeologicalInvestigations: any[] =
     Array.isArray(
-      blackSeaAdditionalRegisters
+      activeAdditionalRegisters
         ?.hydrogeological_investigations
     )
-      ? blackSeaAdditionalRegisters
+      ? activeAdditionalRegisters
           .hydrogeological_investigations
       : [];
 
   const officialInvestigationDepths =
     officialHydrogeologicalInvestigations
-      .map((item: any) => item?.project_depth_m)
+      .map(
+        (item: any) =>
+          item?.project_depth_m ??
+          item?.survey_depth_m_raw ??
+          item?.survey_depth_m
+      )
       .filter(
         (value: any) =>
           value !== null &&
@@ -412,41 +506,135 @@ export default async function ProPage({
     blackSeaDetailed?.resources ?? null;
 
   const blackSeaRegionalGeology =
-    blackSeaGis.regionalGeology;
+    blackSeaGis?.regionalGeology;
 
-  const geology =
-    gwb.toUpperCase().startsWith("BG2G") &&
-    blackSeaRegionalGeology
+  const westernAegeanDetailed =
+    westernAegeanSection1?.detailed ?? null;
+
+  const westernAegeanInitial =
+    westernAegeanSection1?.initial ?? null;
+
+  const westernAegeanGeology =
+    westernAegeanDetailed
       ? {
           ...profile.geology,
+
           aquifer_type_name:
-            blackSeaRegionalGeology
-              .aquifer_environment ||
+            westernAegeanDetailed.aquifer_type ??
             profile.geology?.aquifer_type_name,
+
           water_type:
-            blackSeaRegionalGeology
-              .aquifer_environment
-              ? `${blackSeaRegionalGeology.aquifer_environment} водоносна среда`
-              : profile.geology?.water_type,
+            westernAegeanSection1
+              ?.typology
+              ?.groundwater_body_type ??
+            profile.geology?.water_type,
+
           hydrogeological_horizon:
-            blackSeaRegionalGeology
-              .hydrogeological_horizons ||
+            westernAegeanSection1
+              ?.typology
+              ?.vertical_horizon ??
             profile.geology
               ?.hydrogeological_horizon,
+
+          aquifer_pressure_type:
+            westernAegeanDetailed
+              .pressure_condition ??
+            profile.geology
+              ?.aquifer_pressure_type,
+
           lithology:
-            blackSeaRegionalGeology
-              .geological_age_label
-              ? `Регионална геоложка възраст: ${blackSeaRegionalGeology.geological_age_label}`
-              : profile.geology?.lithology,
-          regional_geological_age:
-            blackSeaRegionalGeology
-              .geological_age_label,
-          regional_explanation:
-            blackSeaRegionalGeology
-              .regional_explanation,
+            westernAegeanDetailed.lithology ??
+            profile.geology?.lithology,
+
+          stratigraphy:
+            westernAegeanDetailed.stratigraphy,
+
+          tectonics:
+            westernAegeanDetailed.tectonics,
+
+          aquifer_thickness_m:
+            westernAegeanDetailed
+              .aquifer_thickness_m,
+
+          hydraulic_conductivity_m_day:
+            westernAegeanDetailed
+              .hydraulic_conductivity_m_day,
+
+          transmissivity_m2_day:
+            westernAegeanDetailed
+              .transmissivity_m2_day,
+
+          filtration_properties:
+            westernAegeanDetailed
+              .filtration_properties,
+
+          porosity_percent:
+            westernAegeanDetailed
+              .porosity_percent,
+
+          delineation_criteria:
+            westernAegeanInitial
+              ?.delineation_criteria,
+
+          flow_characteristics:
+            westernAegeanInitial
+              ?.flow_characteristics,
+
+          total_area_km2:
+            westernAegeanInitial
+              ?.total_area_km2,
+
+          source:
+            "BDZBR PURB3 Section 1",
+
           is_detailed_point_geology: false,
         }
       : profile.geology;
+
+  const geology =
+    isWesternAegeanGwb
+      ? westernAegeanGeology
+      : isBlackSeaGwb &&
+        blackSeaRegionalGeology
+        ? {
+            ...profile.geology,
+
+            aquifer_type_name:
+              blackSeaRegionalGeology
+                .aquifer_environment ||
+              profile.geology
+                ?.aquifer_type_name,
+
+            water_type:
+              blackSeaRegionalGeology
+                .aquifer_environment
+                ? `${blackSeaRegionalGeology.aquifer_environment} ????????? ?????`
+                : profile.geology
+                    ?.water_type,
+
+            hydrogeological_horizon:
+              blackSeaRegionalGeology
+                .hydrogeological_horizons ||
+              profile.geology
+                ?.hydrogeological_horizon,
+
+            lithology:
+              blackSeaRegionalGeology
+                .geological_age_label
+                ? `?????????? ???????? ???????: ${blackSeaRegionalGeology.geological_age_label}`
+                : profile.geology?.lithology,
+
+            regional_geological_age:
+              blackSeaRegionalGeology
+                .geological_age_label,
+
+            regional_explanation:
+              blackSeaRegionalGeology
+                .regional_explanation,
+
+            is_detailed_point_geology: false,
+          }
+        : profile.geology;
 
   const geologyAvailable =
     Boolean(geology);
@@ -518,6 +706,12 @@ export default async function ProPage({
         )
       : "Няма достатъчно данни за дългосрочно заключение.";
 
+
+  const climateUnavailableText =
+    isWesternAegeanGwb
+      ? "\u0417\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u043e\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e \u0432 \u0438\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u043d\u0438\u0442\u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438 \u043d\u044f\u043c\u0430 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430 \u043e\u0442\u0434\u0435\u043b\u043d\u0430 \u043a\u043b\u0438\u043c\u0430\u0442\u0438\u0447\u043d\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430. \u0422\u0435\u043a\u0443\u0449\u0438\u044f\u0442 \u0440\u0435\u0441\u0443\u0440\u0441 \u0438 \u0432\u043e\u0434\u043d\u0438\u044f\u0442 \u0431\u0430\u043b\u0430\u043d\u0441 \u043d\u0435 \u0441\u0435 \u0438\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u0442 \u043a\u0430\u0442\u043e \u043a\u043b\u0438\u043c\u0430\u0442\u0438\u0447\u043d\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430."
+      : "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u043a\u043b\u0438\u043c\u0430\u0442\u0438\u0447\u043d\u0430 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430 \u0437\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u043e\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e.";
+
   const significant =
     profile.significantPressure;
 
@@ -530,63 +724,185 @@ export default async function ProPage({
   const integrated =
     profile.integratedRisk;
 
+  const normalizedWesternAegeanSection4 =
+    westernAegeanSection4
+      ? {
+          ...westernAegeanSection4,
+
+          comparison: {
+            risk_2022_2027:
+              westernAegeanSection4
+                .chemical_risk,
+
+            status_2022_2027:
+              westernAegeanSection4
+                .overall_status_purb3,
+
+            status_2016_2021:
+              westernAegeanSection4
+                .overall_status_purb2,
+          },
+
+          water_balance:
+            westernAegeanSection4
+              .water_balance
+              ? {
+                  ...westernAegeanSection4
+                    .water_balance,
+
+                  available_resource_l_s:
+                    westernAegeanSection4
+                      .water_balance
+                      .available_resource_lps,
+
+                  permitted_abstraction_l_s:
+                    westernAegeanSection4
+                      .water_balance
+                      .permitted_total_lps,
+
+                  total_abstraction_l_s:
+                    westernAegeanSection4
+                      .water_balance
+                      .permitted_total_lps,
+
+                  free_resource_l_s:
+                    westernAegeanSection4
+                      .water_balance
+                      .free_water_lps,
+
+                  exploitation_index:
+                    westernAegeanSection4
+                      .water_balance
+                      .derived_load_percent != null
+                      ? Number(
+                          westernAegeanSection4
+                            .water_balance
+                            .derived_load_percent
+                        ) / 100
+                      : undefined,
+
+                  quantitative_status:
+                    westernAegeanSection4
+                      .quantitative_status,
+                }
+              : undefined,
+
+          tests:
+            westernAegeanSection4
+              .chemical_tests,
+
+          upward_trend:
+            westernAegeanSection4
+              .upward_trend === true
+              ? "\u0434\u0430"
+              : westernAegeanSection4
+                  .upward_trend === false
+                ? "\u043d\u0435"
+                : null,
+
+          drinking_monitoring:
+            Array.isArray(
+              westernAegeanSection4
+                .chemical_monitoring
+            )
+              ? westernAegeanSection4
+                  .chemical_monitoring
+                  .filter(
+                    (station: any) =>
+                      station?.point_use === "DW" ||
+                      station
+                        ?.drinking_water_protection_zone === "X"
+                  )
+              : [],
+
+          trend_series:
+            Array.isArray(
+              westernAegeanSection4
+                .trend_series
+            )
+              ? westernAegeanSection4
+                  .trend_series
+              : [],
+        }
+      : undefined;
+
+  const normalizedBlackSeaSection4 =
+    blackSeaSection4
+      ? {
+          ...blackSeaSection4,
+
+          comparison: {
+            risk_2022_2027:
+              blackSeaSection4.chemical_risk,
+
+            status_2022_2027:
+              blackSeaSection4
+                .overall_status_purb3,
+
+            status_2016_2021:
+              blackSeaSection4
+                .overall_status_purb2,
+          },
+
+          water_balance:
+            blackSeaSection4.water_balance
+              ? {
+                  ...blackSeaSection4
+                    .water_balance,
+
+                  quantitative_status:
+                    blackSeaSection4
+                      .quantitative_status ??
+                    blackSeaSection4
+                      .water_balance
+                      .status,
+                }
+              : undefined,
+
+          tests:
+            blackSeaSection4
+              .chemical_tests,
+
+          upward_trend:
+            blackSeaSection4
+              .upward_trend === true
+              ? "\u0434\u0430"
+              : blackSeaSection4
+                  .upward_trend === false
+                ? "\u043d\u0435"
+                : null,
+
+          drinking_monitoring:
+            blackSeaChemicalMonitoring.filter(
+              (station: any) =>
+                station
+                  ?.drinking_water_monitoring === true
+            ),
+
+          trend_series: [],
+        }
+      : undefined;
+
   const section4 =
-    profile.section4 ??
-    (
-      blackSeaSection4
-        ? {
-            ...blackSeaSection4,
-
-            comparison: {
-              risk_2022_2027:
-                blackSeaSection4.chemical_risk,
-
-              status_2022_2027:
-                blackSeaSection4.overall_status_purb3,
-
-              status_2016_2021:
-                blackSeaSection4.overall_status_purb2,
-            },
-
-            water_balance:
-              blackSeaSection4.water_balance
-                ? {
-                    ...blackSeaSection4.water_balance,
-
-                    quantitative_status:
-                      blackSeaSection4.quantitative_status ??
-                      blackSeaSection4.water_balance.status,
-                  }
-                : undefined,
-
-            tests:
-              blackSeaSection4.chemical_tests,
-
-            upward_trend:
-              blackSeaSection4.upward_trend === true
-                ? "да"
-                : blackSeaSection4.upward_trend === false
-                  ? "не"
-                  : null,
-
-            drinking_monitoring:
-              blackSeaChemicalMonitoring.filter(
-                (station: any) =>
-                  station?.drinking_water_monitoring === true
-              ),
-
-            trend_series: [],
-          }
-        : undefined
-    );
+    isWesternAegeanGwb
+      ? normalizedWesternAegeanSection4
+      : isBlackSeaGwb
+        ? normalizedBlackSeaSection4
+        : profile.section4;
 
   const section5 =
-    profile.section5 ??
-    blackSeaSection5;
+    isWesternAegeanGwb
+      ? westernAegeanSection5
+      : isBlackSeaGwb
+        ? blackSeaSection5
+        : profile.section5;
 
   const section7 =
-    profile.section7 ??
-    blackSeaSection7;
+    isWesternAegeanGwb
+      ? westernAegeanSection7
+      : isBlackSeaGwb
+        ? blackSeaSection7
+        : profile.section7;
 
   const section7Measures: any[] =
     Array.isArray(section7?.measures)
@@ -609,7 +925,16 @@ export default async function ProPage({
       : "За това подземно водно тяло няма отделно посочени индивидуални мерки. Това не означава, че за района не се прилагат общи басейнови мерки.";
 
   const section5GoalCategory =
-    String(section5?.goal_category ?? "");
+    isWesternAegeanGwb
+      ? (
+          String(section5?.quantitative_status).toLowerCase() ===
+            "?????" &&
+          String(section5?.chemical_status).toLowerCase() ===
+            "?????"
+            ? "maintain_good_status"
+            : String(section5?.goal_category ?? "")
+        )
+      : String(section5?.goal_category ?? "");
 
   const section5GoalTone =
     section5GoalCategory === "goal_achieved" ||
@@ -623,93 +948,189 @@ export default async function ProPage({
         : "neutral";
 
   const section5GoalTitle =
-    section5?.goal_label_bg ??
-    "Няма налична официална цел";
+    isWesternAegeanGwb
+      ? (
+          section5?.objectives?.quantitative ||
+          section5?.objectives?.chemical ||
+          "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0446\u0435\u043b"
+        )
+      : section5?.goal_label_bg ??
+        "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0446\u0435\u043b";
 
   const section5ProblemIndicators =
-    section5?.purb3?.parameters_outside_standard ??
-    "Няма посочени";
+    isWesternAegeanGwb
+      ? (
+          section5?.problem_indicators ??
+          section5?.purb3?.chemical_deviation_indicators ??
+          "\u041d\u044f\u043c\u0430 \u043f\u043e\u0441\u043e\u0447\u0435\u043d\u0438"
+        )
+      : section5?.purb3?.parameters_outside_standard ??
+        "\u041d\u044f\u043c\u0430 \u043f\u043e\u0441\u043e\u0447\u0435\u043d\u0438";
 
   const section5GoalSummary =
-    section5GoalCategory === "goal_achieved"
-      ? "Целта от предходния план е постигната. Текущата официална цел е запазване на доброто химично състояние."
-      : section5GoalCategory === "less_strict_goal"
-        ? `Определена е по-малко строга цел. Проблемни показатели: ${section5ProblemIndicators}.`
-        : section5GoalCategory === "extended_after_2027"
-          ? `Доброто състояние трябва да бъде постигнато след 2027 г. Проблемни показатели: ${section5ProblemIndicators}.`
-          : section5GoalCategory === "restore_good_status"
-            ? `Официалната цел е постигане на добро състояние. Проблемни показатели: ${section5ProblemIndicators}.`
-            : section5GoalCategory === "exception_until_2027"
-              ? `За постигането на добро състояние е приложено официално обосновано изключение. Проблемни показатели: ${section5ProblemIndicators}.`
-              : section5GoalCategory === "maintain_good_status"
-                ? "Химичното и количественото състояние са оценени като добри. Официалната цел е запазване на доброто състояние."
-                : "Няма достатъчно данни за официалната екологична цел.";
+    isWesternAegeanGwb
+      ? (
+          section5GoalCategory ===
+            "maintain_good_status"
+            ? "\u0425\u0438\u043c\u0438\u0447\u043d\u043e\u0442\u043e \u0438 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043e\u0442\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0441\u0430 \u043e\u0446\u0435\u043d\u0435\u043d\u0438 \u043a\u0430\u0442\u043e \u0434\u043e\u0431\u0440\u0438. \u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0446\u0435\u043b \u0435 \u0437\u0430\u043f\u0430\u0437\u0432\u0430\u043d\u0435, \u043f\u043e\u0434\u0434\u044a\u0440\u0436\u0430\u043d\u0435 \u0438 \u043d\u0435\u0434\u043e\u043f\u0443\u0441\u043a\u0430\u043d\u0435 \u043d\u0430 \u0432\u043b\u043e\u0448\u0430\u0432\u0430\u043d\u0435. \u0421\u0440\u043e\u043a\u044a\u0442 \u0432 \u041f\u0423\u0420\u0411 \u0435 2027 \u0433."
+            : "\u0417\u0430 \u0442\u043e\u0432\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e \u0438\u043c\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u043e \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438 \u0446\u0435\u043b\u0438 \u0438 \u0441\u0440\u043e\u043a\u043e\u0432\u0435 \u0432 \u041f\u0423\u0420\u0411."
+        )
+      : section5GoalCategory === "goal_achieved"
+        ? "\u0426\u0435\u043b\u0442\u0430 \u043e\u0442 \u043f\u0440\u0435\u0434\u0445\u043e\u0434\u043d\u0438\u044f \u043f\u043b\u0430\u043d \u0435 \u043f\u043e\u0441\u0442\u0438\u0433\u043d\u0430\u0442\u0430. \u0422\u0435\u043a\u0443\u0449\u0430\u0442\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0446\u0435\u043b \u0435 \u0437\u0430\u043f\u0430\u0437\u0432\u0430\u043d\u0435 \u043d\u0430 \u0434\u043e\u0431\u0440\u043e\u0442\u043e \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435."
+        : section5GoalCategory === "less_strict_goal"
+          ? `\u041e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0430 \u0435 \u043f\u043e-\u043c\u0430\u043b\u043a\u043e \u0441\u0442\u0440\u043e\u0433\u0430 \u0446\u0435\u043b. \u041f\u0440\u043e\u0431\u043b\u0435\u043c\u043d\u0438 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438: ${section5ProblemIndicators}.`
+          : section5GoalCategory === "extended_after_2027"
+            ? `\u0414\u043e\u0431\u0440\u043e\u0442\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0431\u044a\u0434\u0435 \u043f\u043e\u0441\u0442\u0438\u0433\u043d\u0430\u0442\u043e \u0441\u043b\u0435\u0434 2027 \u0433. \u041f\u0440\u043e\u0431\u043b\u0435\u043c\u043d\u0438 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438: ${section5ProblemIndicators}.`
+            : section5GoalCategory === "restore_good_status"
+              ? `\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0446\u0435\u043b \u0435 \u043f\u043e\u0441\u0442\u0438\u0433\u0430\u043d\u0435 \u043d\u0430 \u0434\u043e\u0431\u0440\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435. \u041f\u0440\u043e\u0431\u043b\u0435\u043c\u043d\u0438 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438: ${section5ProblemIndicators}.`
+              : section5GoalCategory === "exception_until_2027"
+                ? `\u0417\u0430 \u043f\u043e\u0441\u0442\u0438\u0433\u0430\u043d\u0435\u0442\u043e \u043d\u0430 \u0434\u043e\u0431\u0440\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u043e \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u043e \u043e\u0431\u043e\u0441\u043d\u043e\u0432\u0430\u043d\u043e \u0438\u0437\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435. \u041f\u0440\u043e\u0431\u043b\u0435\u043c\u043d\u0438 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438: ${section5ProblemIndicators}.`
+                : section5GoalCategory === "maintain_good_status"
+                  ? "\u0425\u0438\u043c\u0438\u0447\u043d\u043e\u0442\u043e \u0438 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043e\u0442\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0441\u0430 \u043e\u0446\u0435\u043d\u0435\u043d\u0438 \u043a\u0430\u0442\u043e \u0434\u043e\u0431\u0440\u0438. \u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0446\u0435\u043b \u0435 \u0437\u0430\u043f\u0430\u0437\u0432\u0430\u043d\u0435 \u043d\u0430 \u0434\u043e\u0431\u0440\u043e\u0442\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435."
+                  : "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0435\u043a\u043e\u043b\u043e\u0433\u0438\u0447\u043d\u0430 \u0446\u0435\u043b.";
 
   const comparison =
     section4?.comparison;
 
+  const westernAegeanRegisterResource =
+    westernAegeanCurrentRegisters
+      ?.current_resource ?? null;
+
+  const westernAegeanWaterBalance =
+    westernAegeanRegisterResource
+      ? {
+          available_resource_l_s:
+            westernAegeanRegisterResource
+              .available_resource_lps,
+
+          total_abstraction_l_s:
+            westernAegeanRegisterResource
+              .permitted_total_lps,
+
+          permitted_abstraction_l_s:
+            westernAegeanRegisterResource
+              .permitted_total_lps,
+
+          issued_permits_l_s:
+            westernAegeanRegisterResource
+              .issued_permits_lps,
+
+          household_abstraction_l_s:
+            westernAegeanRegisterResource
+              .own_needs_wells_lps,
+
+          free_resource_l_s:
+            westernAegeanRegisterResource
+              .free_water_lps,
+
+          quantitative_status:
+            westernAegeanSection4
+              ?.quantitative_status,
+
+          exploitation_index:
+            westernAegeanRegisterResource
+              .derived_load_percent != null
+              ? Number(
+                  westernAegeanRegisterResource
+                    .derived_load_percent
+                ) / 100
+              : undefined,
+
+          reference:
+            westernAegeanRegisterResource
+              .reference,
+
+          source:
+            westernAegeanRegisterResource
+              .source,
+        }
+      : normalizedWesternAegeanSection4
+          ?.water_balance;
+
   const waterBalance =
-    (
-      blackSeaRegisterResource
-        ? {
-            natural_resource_l_s:
-              blackSeaRegisterResource.natural_resource_l_s,
+    isWesternAegeanGwb
+      ? westernAegeanWaterBalance
+      : isBlackSeaGwb
+        ? (
+            (
+              blackSeaRegisterResource
+                ? {
+                    natural_resource_l_s:
+                      blackSeaRegisterResource
+                        .natural_resource_l_s,
 
-            ecosystem_requirement_l_s:
-              blackSeaRegisterResource.ecosystem_requirement_l_s,
+                    ecosystem_requirement_l_s:
+                      blackSeaRegisterResource
+                        .ecosystem_requirement_l_s,
 
-            available_resource_l_s:
-              blackSeaRegisterResource.available_resource_l_s,
+                    available_resource_l_s:
+                      blackSeaRegisterResource
+                        .available_resource_l_s,
 
-            total_abstraction_l_s:
-              Number(
-                blackSeaRegisterResource.authorized_abstraction_l_s ?? 0
-              ) +
-              Number(
-                blackSeaRegisterResource.household_abstraction_l_s ?? 0
-              ),
+                    total_abstraction_l_s:
+                      Number(
+                        blackSeaRegisterResource
+                          .authorized_abstraction_l_s ?? 0
+                      ) +
+                      Number(
+                        blackSeaRegisterResource
+                          .household_abstraction_l_s ?? 0
+                      ),
 
-            permitted_abstraction_l_s:
-              blackSeaRegisterResource.authorized_abstraction_l_s,
+                    permitted_abstraction_l_s:
+                      blackSeaRegisterResource
+                        .authorized_abstraction_l_s,
 
-            household_abstraction_l_s:
-              blackSeaRegisterResource.household_abstraction_l_s,
+                    household_abstraction_l_s:
+                      blackSeaRegisterResource
+                        .household_abstraction_l_s,
 
-            free_resource_l_s:
-              blackSeaRegisterResource.free_resource_l_s,
+                    free_resource_l_s:
+                      blackSeaRegisterResource
+                        .free_resource_l_s,
 
-            exploitation_index:
-              blackSeaRegisterResource.exploitation_index,
-          }
-        : null
-    ) ??
-    section4?.water_balance ??
-    (
-      blackSeaCurrentResources
-        ? {
-            available_resource_l_s:
-              blackSeaCurrentResources.available_resource_l_s,
+                    exploitation_index:
+                      blackSeaRegisterResource
+                        .exploitation_index,
+                  }
+                : null
+            ) ??
+            section4?.water_balance ??
+            (
+              blackSeaCurrentResources
+                ? {
+                    available_resource_l_s:
+                      blackSeaCurrentResources
+                        .available_resource_l_s,
 
-            total_abstraction_l_s:
-              blackSeaCurrentResources.permitted_abstraction_l_s,
+                    total_abstraction_l_s:
+                      blackSeaCurrentResources
+                        .permitted_abstraction_l_s,
 
-            permitted_abstraction_l_s:
-              blackSeaCurrentResources.permitted_abstraction_l_s,
+                    permitted_abstraction_l_s:
+                      blackSeaCurrentResources
+                        .permitted_abstraction_l_s,
 
-            free_resource_l_s:
-              blackSeaCurrentResources.free_resource_l_s,
+                    free_resource_l_s:
+                      blackSeaCurrentResources
+                        .free_resource_l_s,
 
-            natural_resource_l_s:
-              blackSeaCurrentResources.natural_resource_l_s,
+                    natural_resource_l_s:
+                      blackSeaCurrentResources
+                        .natural_resource_l_s,
 
-            quantitative_status:
-              blackSeaGis?.quantitative_status,
+                    quantitative_status:
+                      blackSeaGis
+                        ?.quantitative_status,
 
-            exploitation_index:
-              blackSeaCurrentResources.exploitation_index,
-          }
-        : undefined
-    );
+                    exploitation_index:
+                      blackSeaCurrentResources
+                        .exploitation_index,
+                  }
+                : undefined
+            )
+          )
+        : section4?.water_balance;
 
   const abstractionByUse =
     section4?.abstraction_by_use;
@@ -848,16 +1269,40 @@ export default async function ProPage({
           );
   const chemical =
     section4?.chemical_status ??
-    blackSeaGis?.chemical_status ??
+    (
+      isBlackSeaGwb
+        ? blackSeaGis?.chemical_status
+        : undefined
+    ) ??
     significant?.chemical_status ??
-    "Няма данни";
+    "???? ?????";
 
   const chemicalRisk =
+    section4?.chemical_risk ??
     comparison?.risk_2022_2027 ??
-    blackSeaChemicalRiskLabel ??
-    blackSeaDetailed?.purb3?.chemical_risk ??
-    blackSeaGis?.chemical_risk ??
-    "Няма данни";
+    (
+      isWesternAegeanGwb
+        ? westernAegeanSection2
+            ?.chemical_risk
+            ?.purb3_risk
+        : undefined
+    ) ??
+    (
+      isBlackSeaGwb
+        ? blackSeaChemicalRiskLabel
+        : undefined
+    ) ??
+    (
+      isBlackSeaGwb
+        ? blackSeaDetailed?.purb3?.chemical_risk
+        : undefined
+    ) ??
+    (
+      isBlackSeaGwb
+        ? blackSeaGis?.chemical_risk
+        : undefined
+    ) ??
+    "???? ?????";
 
   const pointPressurePercent =
     Number(
@@ -876,14 +1321,32 @@ export default async function ProPage({
       Number.isFinite(pointPressurePercent) &&
       pointPressurePercent > 0
     ) ||
-    blackSeaPointSourceCount > 0;
+    (
+      isWesternAegeanGwb
+        ? Number(
+            westernAegeanSection2
+              ?.point_source_count ?? 0
+          ) > 0
+        : isBlackSeaGwb
+          ? blackSeaPointSourceCount > 0
+          : false
+    );
 
   const hasDiffusePressure =
     (
       Number.isFinite(diffusePressurePercent) &&
       diffusePressurePercent > 0
     ) ||
-    blackSeaDiffuseSourceCount > 0;
+    (
+      isWesternAegeanGwb
+        ? Number(
+            westernAegeanSection2
+              ?.diffuse_source_count ?? 0
+          ) > 0
+        : isBlackSeaGwb
+          ? blackSeaDiffuseSourceCount > 0
+          : false
+    );
 
   const significantPressureItems =
     Array.isArray(
@@ -906,29 +1369,83 @@ export default async function ProPage({
     hasDiffusePressure ||
     hasSignificantPressure;
 
+  const westernAegeanChemicalRiskText =
+    String(
+      section4?.chemical_risk ??
+      westernAegeanSection2
+        ?.chemical_risk?.purb3_risk ??
+      ""
+    ).toLowerCase();
+
+  const westernAegeanQuantRiskText =
+    String(
+      section4?.quantitative_risk ??
+      westernAegeanSection2
+        ?.quantitative_risk?.purb3_risk ??
+      ""
+    ).toLowerCase();
+
+  const westernAegeanHasRiskAssessment =
+    isWesternAegeanGwb &&
+    (
+      westernAegeanChemicalRiskText.length > 0 ||
+      westernAegeanQuantRiskText.length > 0
+    );
+
+  const westernAegeanIsAtRisk =
+    isWesternAegeanGwb &&
+    (
+      (
+        westernAegeanChemicalRiskText.includes("\u0432 \u0440\u0438\u0441\u043a") &&
+        !westernAegeanChemicalRiskText.includes("\u043d\u0435 \u0432 \u0440\u0438\u0441\u043a") &&
+        !westernAegeanChemicalRiskText.includes("\u043d\u0435 \u0435 \u0432 \u0440\u0438\u0441\u043a")
+      ) ||
+      (
+        westernAegeanQuantRiskText.includes("\u0432 \u0440\u0438\u0441\u043a") &&
+        !westernAegeanQuantRiskText.includes("\u043d\u0435 \u0432 \u0440\u0438\u0441\u043a") &&
+        !westernAegeanQuantRiskText.includes("\u043d\u0435 \u0435 \u0432 \u0440\u0438\u0441\u043a")
+      )
+    );
+
   const pressureSummaryTone =
-    pressureNeedsAttention
-      ? "warn"
-      : hasPressureInformation
-        ? "good"
-        : "neutral";
+    isWesternAegeanGwb
+      ? (
+          westernAegeanIsAtRisk
+            ? "warn"
+            : westernAegeanHasRiskAssessment
+              ? "good"
+              : "neutral"
+        )
+      : pressureNeedsAttention
+        ? "warn"
+        : hasPressureInformation
+          ? "good"
+          : "neutral";
 
   const pressureSummaryTitle =
-    pressureNeedsAttention
-      ? "Има данни за натиск върху подземното водно тяло"
-      : hasPressureInformation
-        ? "Не е установен съществен натиск в показаните данни"
-        : "Няма достатъчно данни за оценка на натиска";
+    isWesternAegeanGwb
+      ? (
+          westernAegeanIsAtRisk
+            ? "\u0418\u043c\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u043e \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d \u0440\u0438\u0441\u043a \u0437\u0430 \u0432\u043e\u0434\u043d\u043e\u0442\u043e \u0442\u044f\u043b\u043e"
+            : westernAegeanHasRiskAssessment
+              ? "\u0412\u043e\u0434\u043d\u043e\u0442\u043e \u0442\u044f\u043b\u043e \u043d\u0435 \u0435 \u043e\u0446\u0435\u043d\u0435\u043d\u043e \u043a\u0430\u0442\u043e \u0432 \u0440\u0438\u0441\u043a"
+              : "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u043d\u0430 \u0440\u0438\u0441\u043a\u0430"
+        )
+      : pressureNeedsAttention
+        ? "\u0418\u043c\u0430 \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043d\u0430\u0442\u0438\u0441\u043a \u0432\u044a\u0440\u0445\u0443 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e\u0442\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e"
+        : hasPressureInformation
+          ? "\u041d\u0435 \u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d \u0441\u044a\u0449\u0435\u0441\u0442\u0432\u0435\u043d \u043d\u0430\u0442\u0438\u0441\u043a \u0432 \u043f\u043e\u043a\u0430\u0437\u0430\u043d\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u0438"
+          : "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u043d\u0430 \u043d\u0430\u0442\u0438\u0441\u043a\u0430";
 
   const pressureTypes = [
     hasPointPressure
-      ? "точков натиск"
+      ? "\u0442\u043e\u0447\u043a\u043e\u0432 \u043d\u0430\u0442\u0438\u0441\u043a"
       : null,
     hasDiffusePressure
-      ? "дифузен натиск"
+      ? "\u0434\u0438\u0444\u0443\u0437\u0435\u043d \u043d\u0430\u0442\u0438\u0441\u043a"
       : null,
     hasSignificantPressure
-      ? "значим натиск"
+      ? "\u0437\u043d\u0430\u0447\u0438\u043c \u043d\u0430\u0442\u0438\u0441\u043a"
       : null,
   ].filter(
     (item): item is string =>
@@ -936,36 +1453,79 @@ export default async function ProPage({
   );
 
   const pressureSummaryText =
-    pressureNeedsAttention
+    isWesternAegeanGwb
       ? (
-          "Официалните данни показват " +
-          pressureTypes.join(", ") +
-          ". Това е оценка за цялото подземно водно тяло, а не доказателство за замърсяване в конкретния имот."
+          westernAegeanHasRiskAssessment
+            ? (
+                westernAegeanIsAtRisk
+                  ? "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0437\u0430 \u041f\u0423\u0420\u0411 \u043f\u043e\u0441\u043e\u0447\u0432\u0430 \u0440\u0438\u0441\u043a \u0437\u0430 \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435\u0442\u043e \u043d\u0430 \u0446\u044f\u043b\u043e\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e. \u0422\u043e\u0432\u0430 \u043d\u0435 \u0434\u043e\u043a\u0430\u0437\u0432\u0430 \u043d\u0430\u0442\u0438\u0441\u043a \u0438\u043b\u0438 \u0437\u0430\u043c\u044a\u0440\u0441\u044f\u0432\u0430\u043d\u0435 \u0432 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438\u044f \u0438\u043c\u043e\u0442."
+                  : "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438\u0442\u0435 \u043e\u0446\u0435\u043d\u043a\u0438 \u0437\u0430 \u0445\u0438\u043c\u0438\u0447\u0435\u043d \u0438 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d \u0440\u0438\u0441\u043a \u043d\u0435 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f\u0442 \u0442\u043e\u0432\u0430 \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e \u043a\u0430\u0442\u043e \u0432 \u0440\u0438\u0441\u043a. \u0417\u0430 \u0442\u043e\u0447\u043a\u043e\u0432 \u0438 \u0434\u0438\u0444\u0443\u0437\u0435\u043d \u043d\u0430\u0442\u0438\u0441\u043a \u043d\u0435 \u0441\u0435 \u0438\u0437\u0447\u0438\u0441\u043b\u044f\u0432\u0430 \u0438\u0437\u043c\u0438\u0441\u043b\u0435\u043d \u043f\u0440\u043e\u0446\u0435\u043d\u0442."
+              )
+            : "\u041b\u0438\u043f\u0441\u0432\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0437\u0430 \u043d\u0430\u0434\u0435\u0436\u0434\u043d\u043e \u0437\u0430\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435."
         )
-      : hasPressureInformation
-        ? "В показаните официални данни не се откроява съществен натиск. Оценката се отнася за цялото подземно водно тяло."
-        : "Липсват достатъчно официални данни за просто и надеждно заключение.";
+      : pressureNeedsAttention
+        ? (
+            "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u0438 \u043f\u043e\u043a\u0430\u0437\u0432\u0430\u0442 " +
+            pressureTypes.join(", ") +
+            ". \u0422\u043e\u0432\u0430 \u0435 \u043e\u0446\u0435\u043d\u043a\u0430 \u0437\u0430 \u0446\u044f\u043b\u043e\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e, \u0430 \u043d\u0435 \u0434\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0441\u0442\u0432\u043e \u0437\u0430 \u0437\u0430\u043c\u044a\u0440\u0441\u044f\u0432\u0430\u043d\u0435 \u0432 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438\u044f \u0438\u043c\u043e\u0442."
+          )
+        : hasPressureInformation
+          ? "\u0412 \u043f\u043e\u043a\u0430\u0437\u0430\u043d\u0438\u0442\u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438 \u043d\u0435 \u0441\u0435 \u043e\u0442\u043a\u0440\u043e\u044f\u0432\u0430 \u0441\u044a\u0449\u0435\u0441\u0442\u0432\u0435\u043d \u043d\u0430\u0442\u0438\u0441\u043a. \u041e\u0446\u0435\u043d\u043a\u0430\u0442\u0430 \u0441\u0435 \u043e\u0442\u043d\u0430\u0441\u044f \u0437\u0430 \u0446\u044f\u043b\u043e\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e."
+          : "\u041b\u0438\u043f\u0441\u0432\u0430\u0442 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043f\u0440\u043e\u0441\u0442\u043e \u0438 \u043d\u0430\u0434\u0435\u0436\u0434\u043d\u043e \u0437\u0430\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435.";
 
   const quantitativeStatus =
     waterBalance?.quantitative_status ??
-    blackSeaGis?.quantitative_status ??
+    section4?.quantitative_status ??
+    (
+      isBlackSeaGwb
+        ? blackSeaGis?.quantitative_status
+        : undefined
+    ) ??
     significant?.quantitative_status ??
-    "Няма данни";
+    "???? ?????";
 
   const quantRisk =
+    section4?.quantitative_risk ??
+    (
+      isWesternAegeanGwb
+        ? westernAegeanSection2
+            ?.quantitative_risk
+            ?.purb3_risk
+        : undefined
+    ) ??
     quantitative?.final_quantitative_risk_label_bg ??
-    blackSeaQuantitativeRiskLabel ??
-    blackSeaDetailed?.purb3?.quantitative_risk ??
-    blackSeaGis?.quantitative_risk ??
-    "Няма данни";
+    (
+      isBlackSeaGwb
+        ? blackSeaQuantitativeRiskLabel
+        : undefined
+    ) ??
+    (
+      isBlackSeaGwb
+        ? blackSeaDetailed?.purb3?.quantitative_risk
+        : undefined
+    ) ??
+    (
+      isBlackSeaGwb
+        ? blackSeaGis?.quantitative_risk
+        : undefined
+    ) ??
+    "???? ?????";
 
   const exploitation =
     waterBalance?.exploitation_index ??
-    blackSeaCurrentResources?.exploitation_index ??
     (
-      blackSeaSection2Quantitative?.exploitation_percent != null
+      isBlackSeaGwb
+        ? blackSeaCurrentResources
+            ?.exploitation_index
+        : undefined
+    ) ??
+    (
+      isBlackSeaGwb &&
+      blackSeaSection2Quantitative
+        ?.exploitation_percent != null
         ? Number(
-            blackSeaSection2Quantitative.exploitation_percent
+            blackSeaSection2Quantitative
+              .exploitation_percent
           ) / 100
         : undefined
     ) ??
@@ -999,13 +1559,13 @@ export default async function ProPage({
   const chemicalIsBad =
     String(chemical).toLowerCase() === "лошо";
 
+  const chemicalRiskText =
+    String(chemicalRisk).toLowerCase();
+
   const chemicalIsAtRisk =
-    String(chemicalRisk)
-      .toLowerCase()
-      .includes("в риск") &&
-    !String(chemicalRisk)
-      .toLowerCase()
-      .includes("не в риск");
+    chemicalRiskText.includes("\u0432 \u0440\u0438\u0441\u043a") &&
+    !chemicalRiskText.includes("\u043d\u0435 \u0432 \u0440\u0438\u0441\u043a") &&
+    !chemicalRiskText.includes("\u043d\u0435 \u0435 \u0432 \u0440\u0438\u0441\u043a");
 
   const chemicalSummaryTone =
     chemicalIsBad ||
@@ -1061,13 +1621,13 @@ export default async function ProPage({
     String(quantitativeStatus)
       .toLowerCase() === "лошо";
 
+  const quantitativeRiskText =
+    String(quantRisk).toLowerCase();
+
   const quantitativeIsAtRisk =
-    String(quantRisk)
-      .toLowerCase()
-      .includes("в риск") &&
-    !String(quantRisk)
-      .toLowerCase()
-      .includes("не в риск");
+    quantitativeRiskText.includes("\u0432 \u0440\u0438\u0441\u043a") &&
+    !quantitativeRiskText.includes("\u043d\u0435 \u0432 \u0440\u0438\u0441\u043a") &&
+    !quantitativeRiskText.includes("\u043d\u0435 \u0435 \u0432 \u0440\u0438\u0441\u043a");
 
   const exploitationNumber =
     Number(exploitation);
@@ -1117,12 +1677,13 @@ export default async function ProPage({
 
   const quantityRiskText =
     quantitativeIsAtRisk
-      ? "Официалната оценка показва количествен риск."
-      : String(quantRisk)
-          .toLowerCase()
-          .includes("не в риск")
-        ? "Не е установен официален количествен риск."
-        : "Няма достатъчно данни за количествения риск.";
+      ? "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d \u0440\u0438\u0441\u043a."
+      : (
+          quantitativeRiskText.includes("\u043d\u0435 \u0432 \u0440\u0438\u0441\u043a") ||
+          quantitativeRiskText.includes("\u043d\u0435 \u0435 \u0432 \u0440\u0438\u0441\u043a")
+        )
+        ? "\u041d\u0435 \u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d \u0440\u0438\u0441\u043a."
+        : "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u0438\u044f \u0440\u0438\u0441\u043a.";
 
   const quantityUseText =
     exploitationPercent == null
@@ -1718,6 +2279,70 @@ export default async function ProPage({
           }}>
             {profile.gwbCode}
           </div>
+
+          {additionalGroundwaterProfiles.length > 0 ? (
+            <div style={{
+              marginTop: 18,
+              paddingTop: 15,
+              borderTop: "1px solid rgba(255,255,255,.18)",
+            }}>
+              <div style={{
+                fontSize: 11,
+                fontWeight: 800,
+                opacity: .7,
+                textTransform: "uppercase",
+                letterSpacing: ".04em",
+              }}>
+                {"\u0414\u043e\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u043d\u0438 \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438 \u041f\u0412\u0422 / \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0438"}
+              </div>
+
+              <div style={{
+                display: "grid",
+                gap: 8,
+                marginTop: 9,
+              }}>
+                {additionalGroundwaterProfiles.map(
+                  (additionalProfile) => (
+                    <div
+                      key={additionalProfile.gwbCode}
+                      style={{
+                        padding: "9px 11px",
+                        borderRadius: 10,
+                        background: "rgba(255,255,255,.08)",
+                        border: "1px solid rgba(255,255,255,.12)",
+                      }}
+                    >
+                      <div style={{
+                        fontSize: 13,
+                        fontWeight: 700,
+                      }}>
+                        {additionalProfile.identity.nameBg ||
+                          "\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435\u0442\u043e \u043d\u0435 \u0435 \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u043e"}
+                      </div>
+
+                      <div style={{
+                        marginTop: 3,
+                        opacity: .72,
+                        fontSize: 12,
+                        fontFamily: "monospace",
+                      }}>
+                        {additionalProfile.gwbCode}
+                      </div>
+                    </div>
+                  )
+                )}
+              </div>
+
+              <div style={{
+                marginTop: 9,
+                fontSize: 11,
+                lineHeight: 1.45,
+                opacity: .66,
+              }}>
+                {"\u041f\u043e\u0434\u0437\u0435\u043c\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u043d\u0438 \u0442\u0435\u043b\u0430 \u043c\u043e\u0433\u0430\u0442 \u0434\u0430 \u0441\u0435 \u043f\u0440\u0438\u043f\u043e\u043a\u0440\u0438\u0432\u0430\u0442 \u043f\u043b\u0430\u043d\u043e\u0432\u043e \u0432 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u0438 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u043d\u0438\u0432\u0430. \u0414\u0430\u043d\u043d\u0438\u0442\u0435 \u0438\u043c \u0441\u0435 \u0437\u0430\u043f\u0430\u0437\u0432\u0430\u0442 \u043e\u0442\u0434\u0435\u043b\u043d\u043e."}
+              </div>
+            </div>
+          ) : null}
         </section>
 
         <div style={{
@@ -2091,7 +2716,7 @@ export default async function ProPage({
               </div>
             )}
           
-            {blackSeaGis.isInsideProtectionZone && (
+            {blackSeaGis?.isInsideProtectionZone && (
               <div style={{
                 marginTop: 16,
                 padding: "14px 15px",
@@ -2107,7 +2732,7 @@ export default async function ProPage({
                   санитарно-охранителна зона
                 </strong>
 
-                {blackSeaGis.protectionZonesAtPoint.map(
+                {blackSeaGis?.protectionZonesAtPoint?.map(
                   (zone: any, index: number) => (
                     <div
                       key={
@@ -4109,8 +4734,7 @@ export default async function ProPage({
                 color: "#708187",
                 fontSize: 13,
               }}>
-                Няма налична климатична прогноза за
-                избраното подземно водно тяло.
+                {climateUnavailableText}
               </div>
             )}
           </Card>

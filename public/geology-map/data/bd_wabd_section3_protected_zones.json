@@ -1,0 +1,986 @@
+{
+  "metadata": {
+    "dataset": "BDZBR PURB3 Section 3 protected groundwater context",
+    "generated_at": "2026-08-23T16:06:05.721588+00:00",
+    "groundwater_body_count": 38,
+    "drinking_protection_body_count": 34,
+    "current_nitrate_vulnerable_body_count": 0,
+    "historic_nitrate_vulnerable_body_count": 0,
+    "newly_listed_nitrate_body_count": 0,
+    "removed_nitrate_body_count": 0,
+    "current_nitrate_municipality_count": 0,
+    "historic_nitrate_municipality_count": 0,
+    "drinking_register_source": "BDZBR PURB3 Section 5.3.1.2 drinking groundwater protection objectives",
+    "nitrate_register_source": "BDZBR PURB3 Section 3 / Order RD-900 of 21.10.2024",
+    "current_nitrate_order": "RD-900",
+    "current_nitrate_order_date": "2024-10-21",
+    "historic_nitrate_order": null,
+    "historic_nitrate_order_date": null,
+    "parcel_level_gis_available": false
+  },
+  "profiles": [
+    {
+      "gwb_code": "BG4G000000N011",
+      "gwb_name": "Порови води в неоген - Струмешница",
+      "gis_chemical_status": "Лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "Лошо",
+      "gis_quantitative_risk": "В риск",
+      "drinking_water_protection": {
+        "listed": false,
+        "protection_code": null,
+        "source_body_code": null,
+        "source_body_name": null,
+        "body_type": null,
+        "quantitative_status_2021": null,
+        "chemical_status_2021": null,
+        "objective": null,
+        "deadline": null,
+        "deviation_indicators": null
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N012",
+      "gwb_name": "Порови води в неоген - Сандански",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": false,
+        "protection_code": null,
+        "source_body_code": null,
+        "source_body_name": null,
+        "body_type": null,
+        "quantitative_status_2021": null,
+        "chemical_status_2021": null,
+        "objective": null,
+        "deadline": null,
+        "deviation_indicators": null
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N013",
+      "gwb_name": "Порови води в неоген - Симитли",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "В риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000000N013",
+        "source_body_code": "BG4G000000N013",
+        "source_body_name": "Порови подземни води в неоген - Симитли",
+        "body_type": "Грабеновидни депресии",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N014",
+      "gwb_name": "Порови води в неоген - Благоевград",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Лошо",
+      "gis_quantitative_risk": "В риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000000N014",
+        "source_body_code": "BG4G000000N014",
+        "source_body_name": "Порови подземни води в неоген-Благоевград",
+        "body_type": "Грабеновидни депресии",
+        "quantitative_status_2021": "Лошо",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N015",
+      "gwb_name": "Порови води в неоген -  Брезник-Земен",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000000N015",
+        "source_body_code": "BG4G000000N015",
+        "source_body_name": "Порови подземни води в неоген -Брезник-Земен",
+        "body_type": "Грабеновидни депресии",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N016",
+      "gwb_name": "Порови води в неоген - Разлог",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": false,
+        "protection_code": null,
+        "source_body_code": null,
+        "source_body_name": null,
+        "body_type": null,
+        "quantitative_status_2021": null,
+        "chemical_status_2021": null,
+        "objective": null,
+        "deadline": null,
+        "deviation_indicators": null
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000N017",
+      "gwb_name": "Порови води в неоген - Гоце Делчев",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000000N017",
+        "source_body_code": "BG4G000000N017",
+        "source_body_name": "Порови подземни води в неоген - Гоце Делчев",
+        "body_type": "Грабеновидни депресии",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q001",
+      "gwb_name": "Порови води в кватернер - Струмешница",
+      "gis_chemical_status": "Лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "Лошо",
+      "gis_quantitative_risk": "В риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q001",
+        "source_body_code": "BG4G000000Q001",
+        "source_body_name": "Порови подземни води през кватернера- Струмешница",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Лошо",
+        "chemical_status_2021": "Лошо",
+        "objective": "Постигане на СКОС за добро химично състояние за показатели с отклонения и запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички останали параметри и показатели, които са без отклонения от СКОС",
+        "deadline": 2027.0,
+        "deviation_indicators": "Нитрати"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q002",
+      "gwb_name": "Порови води в кватернер -  Кресна-Сандански",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q002",
+        "source_body_code": "BG4G000000Q002",
+        "source_body_name": "Порови подземни води кватернер- Кресна-Сандански",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q003",
+      "gwb_name": "Порови води в кватернер -  Симитли",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "В риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q003",
+        "source_body_code": "BG4G000000Q003",
+        "source_body_name": "Порови подземни води през кватернера- Симитли",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Лошо",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q004",
+      "gwb_name": "Порови води в кватернер -  Благоевград",
+      "gis_chemical_status": "Лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q004",
+        "source_body_code": "BG4G000000Q004",
+        "source_body_name": "Порови подземни води през кватернер- Благоевград",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Лошо",
+        "objective": "Постигане на СКОС за добро химично състояние за показатели с отклонения и запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички останали параметри и показатели, които са без отклонения от СКОС",
+        "deadline": 2027.0,
+        "deviation_indicators": "Сулфати"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q005",
+      "gwb_name": "Порови води в кватернер -  Дупница",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW00000Q005",
+        "source_body_code": "BG4G000000Q005",
+        "source_body_name": "Порови подземни води в кватернер- Дупница",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q007",
+      "gwb_name": "Порови води в кватернер  -  Радомир-Брезник",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q007",
+        "source_body_code": "BG4G000000Q007",
+        "source_body_name": "Порови подземни води в кватернер- Радомир-Брезник",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q008",
+      "gwb_name": "Порови води в кватернер  -  Разлог",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q008",
+        "source_body_code": "BG4G000000Q008",
+        "source_body_name": "Порови подземни води през кватернер- Разлог",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000000Q009",
+      "gwb_name": "Порови води в кватернер  -  Гоце Делчев",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000000Q009",
+        "source_body_code": "BG4G000000Q009",
+        "source_body_name": "Порови подземни води през кватернер- Гоце Делчев",
+        "body_type": "Алувиални отложения в тераси на реките",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G00000QN006",
+      "gwb_name": "Порови води в кватернер - Неоген - Кюстендил",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW00000QN006",
+        "source_body_code": "BG4G00000QN006",
+        "source_body_name": "Порови подземни води в кватернерно-неогенски Кюстедил",
+        "body_type": "Грабеновидни депресии",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG018",
+      "gwb_name": "Порово-пукнатинни води в палеоген Гоце Делчев",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW00001PG018",
+        "source_body_code": "BG4G00001PG018",
+        "source_body_name": "порово-пукнатинни подземни води в Гоцеделчевски палеогенен водоносен хоризонт",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": null
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG038",
+      "gwb_name": "Порово-пукнатинни води в палеогенски седиментен комплекс в източните склонове на Влахина планина",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "В риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW00001PG038",
+        "source_body_code": "BG4G00001PG038",
+        "source_body_name": "Порови води в палеогенския седиментен комплекс в източните склонове на Влахина",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": null
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG039",
+      "gwb_name": "Пукнатинно-порови води в Осоговски палеогенски вулканогенно-седиментен комплекс",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW00001PG039",
+        "source_body_code": "BG4G00001PG039",
+        "source_body_name": "Порово-пукнатини подземни води в Осоговски палеогенен вулканоедиментен комплекс",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG138",
+      "gwb_name": "Порово-пукнатинни води в палеогенски седиментен комплекс на Бобовдолска и Кюстендилска котловина",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW00001PG138",
+        "source_body_code": "BG4G00001PG138",
+        "source_body_name": "Порови подземни води в палеогенски седиментен комплекс на Бобовдолската и Кюстендилската котловина",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G00001PG238",
+      "gwb_name": "Порово-пукнатинни води в палеогенски седиментен комплекс на Пернишка котловина",
+      "gis_chemical_status": "Лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW00001PG238",
+        "source_body_code": "BG4G00001PG238",
+        "source_body_name": "Порово-пукнатинни подземни води в палеогенския седиментен комплекс на Пернишката котловина",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Лошо",
+        "objective": "Постигане на СКОС за добро химично състояние за показатели с отклонения и запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички останали параметри и показатели, които са без отклонения от СКОС",
+        "deadline": 2027.0,
+        "deviation_indicators": "Сулфати"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G00001T2035",
+      "gwb_name": "Пукнатинно-карстови води в Бобошево-Мърводолски картсов басейн",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW00001T2035",
+        "source_body_code": "BG4G00001T2035",
+        "source_body_name": "Пукнатинно-карстови подземни води в Бобошевско-Марводолския карстов басейн",
+        "body_type": "Карстови води, разположени в зони с напукани образувания",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G0001PT1030",
+      "gwb_name": "Пукнатинно-карстови води в Сатовчански карстов басейн",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW0001PT1030",
+        "source_body_code": "BG4G0001PT1030",
+        "source_body_name": "Пукнатинно-карстови подземни води в Сатовчанския карстов басейн",
+        "body_type": "Карстови води, разположени в зони с напукани образувания",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G0001PT1036",
+      "gwb_name": "Пукнатинно-карстови води в Сатовчански карстов басейн",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW0001PT1036",
+        "source_body_code": "BG4G0001PT1036",
+        "source_body_name": "Пукнатинно-карстови подземни води в Гоцеделчевски карстов басейн, Тешовски плутон",
+        "body_type": "Карстови води, разположени в зони с напукани образувания",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000PT3031",
+      "gwb_name": "Карстови води в Разложки карстов басейн",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW0000PT3031",
+        "source_body_code": "BG4G000PT3031",
+        "source_body_name": "Карстови подземни води в Разложкия карстов басейн",
+        "body_type": "ПВТ в изолирани и самостоятелни карстови басейни",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G000PT3032",
+      "gwb_name": "Карстови води в Влахински карстов басейн",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW0000PT3032",
+        "source_body_code": "BG4G000PT3032",
+        "source_body_name": "Карстови подземни води в карстовия басейн Влахи",
+        "body_type": "ПВТ в изолирани и самостоятелни карстови басейни",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G001PTPZ025",
+      "gwb_name": "Пукнатинни води в Беласишки метаморфити",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "В риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW001PTPZ025",
+        "source_body_code": "BG4G001PTPZ025",
+        "source_body_name": "Напукани подземни води в блок Беласица (метаморфни скали)",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G001PTPZ026",
+      "gwb_name": "Пукнатинни води в Южнобългарски гранити, Западнородопски метаморфити, Барутин-буйновски интрузив",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW001PTPZ026",
+        "source_body_code": "BG4G001PTPZ026",
+        "source_body_name": "Напукани подземни води в южнобългарски гранити, Западнородопски метаморфни скали, Барутин-Буйновска интрузия",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G001PTPZ027",
+      "gwb_name": "Пукнатинни води във Верила-Витошки блок",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW001PTPZ027",
+        "source_body_code": "BG4G001PTPZ027",
+        "source_body_name": "Пукнатинни подпочвени води в кв. Верила- Блок Витоша",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G001PTPZ125",
+      "gwb_name": "Пукнатинни води във Влахино-огражденско-малешевско-осоговски метаморфити",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW001PtPz125",
+        "source_body_code": "BG4G001PTPZ125",
+        "source_body_name": "Пукнатини подземни води в метаморфни скали Влахина-Огражден-Малешево-Осогово",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G001PZC2021",
+      "gwb_name": "Пукнатинни води в Рило-родопски метаморфити, Южнобългарски гранити, Калински плутон",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW01PZC2021",
+        "source_body_code": "BG4G001PZC2021",
+        "source_body_name": "Напукани подземни води в Рило-Родопски метаморфни скали, Южнобългарски гранити, Калински плутон",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G001QNPG010",
+      "gwb_name": "Порови води в кватернер - Неоген-Палеоген - Доспат",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW001QNPG010",
+        "source_body_code": "BG4G001QNPG010",
+        "source_body_name": "Порови подземни води в кватернер-неоген-палеоген-Доспат",
+        "body_type": "Грабеновидни депресии",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G001T2T3029",
+      "gwb_name": "Пукнатинно-карстови води в Еловдолски карстов басейн",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW001T2T3029",
+        "source_body_code": "BG4G001T2T3029",
+        "source_body_name": "Пукнатинно-карстови подземни води в Еловдолския карстов басейн",
+        "body_type": "Карстови води, разположени в зони с напукани образувания",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G00T1T2033",
+      "gwb_name": "Карстови води в Логодашки карстов басейн",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000T1T2033",
+        "source_body_code": "BG4G00T1T2033",
+        "source_body_name": "Карстови подземни води в Логодажкия карстов басейн",
+        "body_type": "ПВТ в изолирани и самостоятелни карстови басейни",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G00T1T2034",
+      "gwb_name": "Карстови води в Смоличенски карстов басейн",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": false,
+        "protection_code": null,
+        "source_body_code": null,
+        "source_body_name": null,
+        "body_type": null,
+        "quantitative_status_2021": null,
+        "chemical_status_2021": null,
+        "objective": null,
+        "deadline": null,
+        "deviation_indicators": null
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G00T2T3028",
+      "gwb_name": "Карстови води в Земенски карстов басейн",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW000T2T3028",
+        "source_body_code": "BG4G00T2T3028",
+        "source_body_name": "Карстови подземни води в Земенския карстов басейн",
+        "body_type": "ПВТ в изолирани и самостоятелни карстови басейни",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G1PZC2PG019",
+      "gwb_name": "Пукнатинни води в Пирински блок",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW1PZC2PG019",
+        "source_body_code": "BG4G1PZC2PG019",
+        "source_body_name": "Напукани подземни води в блок Пирин",
+        "body_type": "Пукнатини, носещи вода",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    },
+    {
+      "gwb_code": "BG4G1T1T2T3037",
+      "gwb_name": "Карстови води в Голобърдовски карстов басейн",
+      "gis_chemical_status": "Добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "Добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "listed": true,
+        "protection_code": "BG4DGW1T1T2T3037",
+        "source_body_code": "BG4G1T1T2T3037",
+        "source_body_name": "Карстови подземни води в карстовия басейн Голо Бърдо",
+        "body_type": "ПВТ в изолирани и самостоятелни карстови басейни",
+        "quantitative_status_2021": "Добро",
+        "chemical_status_2021": "Добро",
+        "objective": "Запазване, поддържане и предотвратяване на влошаването на доброто химично състояние по всички параметри и показатели",
+        "deadline": 2027.0,
+        "deviation_indicators": "Без превишения"
+      },
+      "nitrate_vulnerability": {
+        "body_level_dataset_available": false,
+        "parcel_level_membership_inferred": false,
+        "note": "No parcel-level nitrate geometry is assigned in this production profile."
+      }
+    }
+  ],
+  "nitrate_municipalities": [],
+  "quality_report": {
+    "unmatched_drinking_codes": [],
+    "unmatched_current_nitrate_codes": [],
+    "unmatched_historic_nitrate_codes": [],
+    "normalized_drinking_codes": [],
+    "newly_listed_nitrate_codes": [],
+    "removed_after_2019_codes": [],
+    "surface_water_rows_excluded": [],
+    "pdf_maps_used_as_gis": false,
+    "guessed_parcel_membership": false,
+    "note": "Facility-specific sanitary protection zone orders are stored separately in the additional groundwater registers dataset and are not converted to groundwater-body geometry."
+  }
+}

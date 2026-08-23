@@ -1,0 +1,961 @@
+{
+  "type": "FeatureCollection",
+  "name": "BDZBR hydrogeological investigations HGP",
+  "metadata": {
+    "basin": "Western Aegean / BDZBR",
+    "source_file": "hydrogeological-surveys-HGP-2025-12-05-final.csv",
+    "source_as_of": "2025-12-05",
+    "source_record_count": 25,
+    "mapped_feature_count": 21,
+    "mapped_bdzbr_feature_count": 19,
+    "mapped_outside_bdzbr_feature_count": 1,
+    "unlocated_record_count": 4,
+    "groundwater_body_count_with_mapped_hgp": 12,
+    "coordinate_policy": "Only validated source coordinates are mapped. No missing coordinates are inferred.",
+    "generated_at_utc": "2026-08-23T16:19:33.630642+00:00",
+    "mapped_unassigned_feature_count": 1,
+    "groundwater_body_linkage_note": "Mapped HGP records without an official canonical groundwater-body code remain spatially visible but unassigned; no body linkage is inferred."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.9685,
+          41.46443056
+        ]
+      },
+      "properties": {
+        "source_excel_row": 4.0,
+        "registry_sequence": 1.0,
+        "incoming_number": "РД-11-218",
+        "incoming_date": "2018-07-16 00:00:00",
+        "applicant": "ЗП Величка Проданова",
+        "permit_or_statement_number": "РД-11-218(1) 41510580",
+        "permit_or_statement_date": "08.08.2018 17.2.2020",
+        "effective_date": "2020-02-17 00:00:00",
+        "term_years": 10.0,
+        "published_end_date": "2030-02-17 00:00:00",
+        "aquifer_or_mineral_deposit": "Пукнатинни води във Влахино-огражденско-малешевско-осоговски метаморфити BG4G001PTPZ125",
+        "groundwater_body_code_source": "BG4G001PTPZ125",
+        "groundwater_body_code_canonical": "BG4G001PTPZ125",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": 20.0,
+        "latitude_source": "41°27'51.95\"",
+        "longitude_source": "22°58'6.6\"",
+        "settlement": "Гега",
+        "municipality": "Петрич",
+        "district": "Благоевград",
+        "property_id": "ПИ 14581.200.594",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, оборудване с временна колона и филтри, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 30.0,
+        "construction": "сондиране ф 112 мм",
+        "record_status": "permit_or_effective_approval",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.09473333,
+          42.60020556
+        ]
+      },
+      "properties": {
+        "source_excel_row": 6.0,
+        "registry_sequence": 3.0,
+        "incoming_number": "РД-11-567",
+        "incoming_date": "2019-11-15 00:00:00",
+        "applicant": "Стомана индъстри АД",
+        "permit_or_statement_number": "РД-11-567(1) 41530121",
+        "permit_or_statement_date": "29.1.2020 19.05.2021",
+        "effective_date": "2021-05-19 00:00:00",
+        "term_years": 10.0,
+        "published_end_date": "2031-05-19 00:00:00",
+        "aquifer_or_mineral_deposit": "Порови води в палеогенски седиментен комплекс на Пернишка котловина BG4G00001PG238",
+        "groundwater_body_code_source": "BG4G00001PG238",
+        "groundwater_body_code_canonical": "BG4G00001PG238",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°36'0.74\"",
+        "longitude_source": "23°05'41.04\"",
+        "settlement": "Перник",
+        "municipality": "Перник",
+        "district": "Перник",
+        "property_id": "ПИ 55871.513.126",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, оборудване с временна колона и филтри, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 55.0,
+        "construction": "сондиране ф 155мм, PVC тръба с ф 110 мм",
+        "record_status": "permit_or_effective_approval",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.84394444,
+          42.73733333
+        ]
+      },
+      "properties": {
+        "source_excel_row": 7.0,
+        "registry_sequence": 4.0,
+        "incoming_number": "РД-11-116",
+        "incoming_date": "2020-02-18 00:00:00",
+        "applicant": "Община Брезник",
+        "permit_or_statement_number": "РД-11-116(1) 41510591",
+        "permit_or_statement_date": "19.05.2020 26.05.2021",
+        "effective_date": "2021-05-26 00:00:00",
+        "term_years": 10.0,
+        "published_end_date": "2031-05-26 00:00:00",
+        "aquifer_or_mineral_deposit": "Порови води в неоген Брезник-Земен BG4G000000N015",
+        "groundwater_body_code_source": "BG4G000000N015",
+        "groundwater_body_code_canonical": "BG4G000000N015",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°44'14.4\"",
+        "longitude_source": "22°50'38.2\"",
+        "settlement": "Конска",
+        "municipality": "Брезник",
+        "district": "Перник",
+        "property_id": "ПИ 41126.16.128",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, оборудване с обсадна колона и филтри, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 60.0,
+        "construction": "сондиране ф 200мм, PVC колона с ф 110 мм",
+        "record_status": "permit_or_effective_approval",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.91583333,
+          42.74748611
+        ]
+      },
+      "properties": {
+        "source_excel_row": 8.0,
+        "registry_sequence": 5.0,
+        "incoming_number": "РД-11-117",
+        "incoming_date": "2020-02-18 00:00:00",
+        "applicant": "Община Брезник",
+        "permit_or_statement_number": "РД-11-117(1)",
+        "permit_or_statement_date": "2020-05-19 00:00:00",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Пукнатинни води във Верила-Витошки блок BG4G001PtPz027",
+        "groundwater_body_code_source": "BG4G001PTPZ027",
+        "groundwater_body_code_canonical": "BG4G001PTPZ027",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°44'50.95\"",
+        "longitude_source": "22°54'57.0\"",
+        "settlement": "Арзан",
+        "municipality": "Брезник",
+        "district": "Перник",
+        "property_id": "ПИ 00610.19.264",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, оборудване с обсадна колона и филтри, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 60.0,
+        "construction": "сондиране ф 200мм, PVC колона с ф 110 мм",
+        "record_status": "registered_statement",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.84758333,
+          42.72138889
+        ]
+      },
+      "properties": {
+        "source_excel_row": 9.0,
+        "registry_sequence": 6.0,
+        "incoming_number": "РД-11-118",
+        "incoming_date": "2020-02-18 00:00:00",
+        "applicant": "Община Брезник",
+        "permit_or_statement_number": "РД-11-118(1)",
+        "permit_or_statement_date": "2020-05-19 00:00:00",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Кватернер-Радомир- Брезник BG4G000000Q007",
+        "groundwater_body_code_source": "BG4G000000Q007",
+        "groundwater_body_code_canonical": "BG4G000000Q007",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°43'17.0\"",
+        "longitude_source": "22°50'51.3\"",
+        "settlement": "Режанци",
+        "municipality": "Брезник",
+        "district": "Перник",
+        "property_id": "ПИ 17796.501.18",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, оборудване с обсадна колона и филтри, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 25.0,
+        "construction": "сондиране ф 200мм, PVC колона с ф 110 мм",
+        "record_status": "registered_statement",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.03401652,
+          42.28924976
+        ]
+      },
+      "properties": {
+        "source_excel_row": 10.0,
+        "registry_sequence": 7.0,
+        "incoming_number": "РД-11-275",
+        "incoming_date": "2020-04-14 00:00:00",
+        "applicant": "Хийт енерджи ЕООД",
+        "permit_or_statement_number": "РД-11-275(1)",
+        "permit_or_statement_date": "2020-05-19 00:00:00",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Порови води в палеогенски седиментен комплекс на Бобовдолска и Кюстендилска котловина BG4G00001Pg138",
+        "groundwater_body_code_source": "BG4G00001PG138",
+        "groundwater_body_code_canonical": "BG4G00001PG138",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°17'21.29912\"",
+        "longitude_source": "23°02'02.45947\"",
+        "settlement": "Големо село",
+        "municipality": "Бобов дол",
+        "district": "Кюстендил",
+        "property_id": "ПИ 15535.502.102",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 140.0,
+        "construction": "сондиране ф 190мм, PVC тръба с ф 110 мм",
+        "record_status": "registered_statement",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.54913056,
+          42.32038611
+        ]
+      },
+      "properties": {
+        "source_excel_row": 11.0,
+        "registry_sequence": 8.0,
+        "incoming_number": "РД-11-457",
+        "incoming_date": "2020-07-09 00:00:00",
+        "applicant": "Самел-90 АД Самоков",
+        "permit_or_statement_number": "РД-11-457(1)-за допълнителна информация; РД-11-457(4)- по компетентност до БДДР; РД-11-457(7)-съгласуване; РД-11-457(11)-писмо относно незаконосъобразност на съгласувано становище",
+        "permit_or_statement_date": "20.7.2020 21.08.2020 28.10.2020 21.06.2022",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Порови води в Неоген-Кватернер Самоковска долина BG1G00000NQ031",
+        "groundwater_body_code_source": "BG1G00000NQ031",
+        "groundwater_body_code_canonical": "BG1G00000NQ031",
+        "in_bdzbr_validated_body_set": false,
+        "body_code_resolution": "outside_BDZBR_body_preserved",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°19'13.39\"",
+        "longitude_source": "23°32'56.87\"",
+        "settlement": "Доспей",
+        "municipality": "Самоков",
+        "district": "София",
+        "property_id": "ПИ 23039.7.44524",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 1200.0,
+        "construction": null,
+        "record_status": "coordinated",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.11486111,
+          42.26
+        ]
+      },
+      "properties": {
+        "source_excel_row": 13.0,
+        "registry_sequence": 10.0,
+        "incoming_number": "РД-11-703",
+        "incoming_date": "2020-10-28 00:00:00",
+        "applicant": "Детска градина \"Калина\"",
+        "permit_or_statement_number": "РД-11-703(1)",
+        "permit_or_statement_date": "2020-11-11 00:00:00",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Пукнатинни води във Верила-Витошки блок BG4G001PtPz027",
+        "groundwater_body_code_source": "BG4G001PTPZ027",
+        "groundwater_body_code_canonical": "BG4G001PTPZ027",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°15'36.0\"",
+        "longitude_source": "23°06'53.5\"",
+        "settlement": "Дупница",
+        "municipality": "Дупница",
+        "district": "Кюстендил",
+        "property_id": "ПИ 68789.16.358",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 70.0,
+        "construction": "сондиране ф 310мм, PVC тръба с ф 110 мм",
+        "record_status": "registered_statement",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.25338889,
+          41.40494444
+        ]
+      },
+      "properties": {
+        "source_excel_row": 14.0,
+        "registry_sequence": 11.0,
+        "incoming_number": "РД-11-882",
+        "incoming_date": "2020-11-25 00:00:00",
+        "applicant": "Община Петрич",
+        "permit_or_statement_number": "РД-11-882(5) 41590254",
+        "permit_or_statement_date": "04.03.2021 26.07.2021",
+        "effective_date": "2021-07-26 00:00:00",
+        "term_years": 10.0,
+        "published_end_date": "2031-07-26 00:00:00",
+        "aquifer_or_mineral_deposit": "Пукнатинни води в Беласишки метаморфити BG4G001PTPZ025",
+        "groundwater_body_code_source": "BG4G001PTPZ025",
+        "groundwater_body_code_canonical": "BG4G001PTPZ025",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "41°24'17.8\"",
+        "longitude_source": "23°15'12.2\"",
+        "settlement": "Петрич",
+        "municipality": "Петрич",
+        "district": "Благоевград",
+        "property_id": "ПИ 56126.44.109",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 150.0,
+        "construction": "сондиране ф 152мм, PVC тръба с ф 110 мм",
+        "record_status": "permit_or_effective_approval",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.08268351,
+          42.02002027
+        ]
+      },
+      "properties": {
+        "source_excel_row": 15.0,
+        "registry_sequence": 12.0,
+        "incoming_number": "РД-11-340",
+        "incoming_date": "2021-04-19 00:00:00",
+        "applicant": "ЮЗУ Неофит Рилски",
+        "permit_or_statement_number": "РД-11-340(4)",
+        "permit_or_statement_date": "2021-05-28 00:00:00",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Порови води в неоген - Благоевград BG4G000000N014",
+        "groundwater_body_code_source": "BG4G000000N014",
+        "groundwater_body_code_canonical": "BG4G000000N014",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°01'12.07297\"",
+        "longitude_source": "23°04'57.66062\"",
+        "settlement": "Благоевград",
+        "municipality": "Благоевград",
+        "district": "Благоевград",
+        "property_id": "ПИ 04279.601.357",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 140.0,
+        "construction": "сондиране ф 190мм, PVC тръба с ф 110 мм",
+        "record_status": "registered_statement",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.12925944,
+          42.032875
+        ]
+      },
+      "properties": {
+        "source_excel_row": 16.0,
+        "registry_sequence": 13.0,
+        "incoming_number": "РД-11-386",
+        "incoming_date": "2021-05-10 00:00:00",
+        "applicant": "ЮЗУ Неофит Рилски",
+        "permit_or_statement_number": "РД-11-386(1)",
+        "permit_or_statement_date": "2021-05-26 00:00:00",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Пукнатинни води в Рило-родопски метаморфити, Южнобългарски гранити, Калински плутон BG4G001PzC2021",
+        "groundwater_body_code_source": "BG4G001PZC2021",
+        "groundwater_body_code_canonical": "BG4G001PZC2021",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°01'58.350\"",
+        "longitude_source": "23°07'45.334\"",
+        "settlement": "Делвино",
+        "municipality": "Благоевград",
+        "district": "Благоевград",
+        "property_id": "ПИ 20540.38.43",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 140.0,
+        "construction": "сондиране ф 190мм, PVC тръба с ф 110 мм",
+        "record_status": "registered_statement",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.16711111,
+          42.24527778
+        ]
+      },
+      "properties": {
+        "source_excel_row": 17.0,
+        "registry_sequence": 14.0,
+        "incoming_number": "РД-11-720 РД-11-81",
+        "incoming_date": "29.10.2021 02.02.2023",
+        "applicant": "Община Дупница",
+        "permit_or_statement_number": "РД-11-720(1)-отказ РД-11-81(1)-съгласувано при изпълнение на поставени условия",
+        "permit_or_statement_date": "15.2.2022 14.02.2023",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Пукнатинни води в Рило-родопски метаморфити, Южнобългарски гранити, Калински плутон BG4G001PzC2021",
+        "groundwater_body_code_source": "BG4G001PZC2021",
+        "groundwater_body_code_canonical": "BG4G001PZC2021",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°14'43.0\"",
+        "longitude_source": "23°10'01.6\"",
+        "settlement": "Бистрица",
+        "municipality": "Дупница",
+        "district": "Кюстендил",
+        "property_id": "ПИ 04220.6.34",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, оборудване с временна колона и филтри, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 1000.0,
+        "construction": "сондиране ф 444,5мм,метална колона; сондиране ф 311,12мм, метална колона; сондиране ф 165 мм, филтърна колна (спирален филтър със слот 0,50мм)",
+        "record_status": "approved_after_previous_refusal",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.79005556,
+          41.62821944
+        ]
+      },
+      "properties": {
+        "source_excel_row": 18.0,
+        "registry_sequence": 15.0,
+        "incoming_number": "РД-11-745 РД-11-884",
+        "incoming_date": "9.11.2021 18.11.2022",
+        "applicant": "С. И. М. КСМ инвест ЕООД",
+        "permit_or_statement_number": "РД-11-745(1) откоз РД-11-745(6)-отказ РД-11-884(1)-откоз РД-11-884(3) РД-11-884(10)",
+        "permit_or_statement_date": "24.01.2022 04.05.2022 06.02.2023 13.04.2023 08.11.2023",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Порови води в неоген- Гоце Делчев BG4G000000N017",
+        "groundwater_body_code_source": "BG4G000000N017",
+        "groundwater_body_code_canonical": "BG4G000000N017",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "41°37'41.59\"",
+        "longitude_source": "23°47'24.20\"",
+        "settlement": "Огняново",
+        "municipality": "Гърмен",
+        "district": "Благоевград",
+        "property_id": "ПИ 53326.31.67",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 350.0,
+        "construction": "сондиране ф 250 мм, PVC тръба с ф 110 мм",
+        "record_status": "refused_or_not_coordinated",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.64413056,
+          42.30971944
+        ]
+      },
+      "properties": {
+        "source_excel_row": 20.0,
+        "registry_sequence": 17.0,
+        "incoming_number": "РД-11-652",
+        "incoming_date": "2022-08-24 00:00:00",
+        "applicant": "Община Кюстендил",
+        "permit_or_statement_number": "РД-11-652(2) РД-11-652(4)",
+        "permit_or_statement_date": "20.1.2023 18.08.2023",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Пукнатинни води във Влахино-огражденско-малешевско-осоговски метаморфити BG4G001PTPZ125",
+        "groundwater_body_code_source": "BG4G001PTPZ125",
+        "groundwater_body_code_canonical": "BG4G001PTPZ125",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°18'34.99\"",
+        "longitude_source": "22°38'38.87\"",
+        "settlement": "Радловци",
+        "municipality": "Кюстендил",
+        "district": "Кюстендил",
+        "property_id": "ПИ 61457.44.29",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, експлоатационна колона и филтри, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 80.0,
+        "construction": "сондиране ф 152мм, експлоатационна колонаи филтри ф 114 мм",
+        "record_status": "registered_statement",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.05585489,
+          42.07641066
+        ]
+      },
+      "properties": {
+        "source_excel_row": 21.0,
+        "registry_sequence": 18.0,
+        "incoming_number": "РД-11-216",
+        "incoming_date": "2023-03-21 00:00:00",
+        "applicant": "Ф ЕНД Р КЛУН ООД",
+        "permit_or_statement_number": null,
+        "permit_or_statement_date": null,
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": null,
+        "groundwater_body_code_source": null,
+        "groundwater_body_code_canonical": null,
+        "in_bdzbr_validated_body_set": false,
+        "body_code_resolution": "no_source_body_code",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°04'35.07838\"",
+        "longitude_source": "23°03'21.07762\"",
+        "settlement": "Кочериново",
+        "municipality": "Кочериново",
+        "district": "Кюстендил",
+        "property_id": "ПИ 39116.103.4",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": 10.0,
+        "construction": "сондиране ф 190мм, PVC тръба с ф 110 мм",
+        "record_status": "application_or_unresolved",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.05402778,
+          42.00530556
+        ]
+      },
+      "properties": {
+        "source_excel_row": 22.0,
+        "registry_sequence": 19.0,
+        "incoming_number": "РД-11-558",
+        "incoming_date": "2023-09-20 00:00:00",
+        "applicant": "ГРИЙН ХАУС ГРУП ЕННД",
+        "permit_or_statement_number": "РД-11-558(1)-не съгласува",
+        "permit_or_statement_date": "2023-11-09 00:00:00",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Порови води в неоген - Благоевград BG4G000000N014",
+        "groundwater_body_code_source": "BG4G000000N014",
+        "groundwater_body_code_canonical": "BG4G000000N014",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°0'19.10\"",
+        "longitude_source": "23°3'14.50\"",
+        "settlement": "Зелен дол",
+        "municipality": "Благоевград",
+        "district": "Благоевград",
+        "property_id": "ПИ 30702.78.623 (стар номер 000623)",
+        "activity_type": "проучвателен геотермален (сух) сондаж",
+        "activity_scope": "топлопроводимост на земята и измерване на геотермална температура, с цел бъдещо изграждане на геотермална система за отопление и иохлаждане на оранжерийния комплекс в имота",
+        "survey_depth_m_raw": 100.0,
+        "construction": "сондиране ф 132мм, комплект геотермален топлообменник, състоящ се от 4 бр. полиетиленови тръби ф 32 мм, затворени на дъното на сондажа с 2 броя \"U\" фитинг за 16 бара",
+        "record_status": "refused_or_not_coordinated",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.38969167,
+          41.521975
+        ]
+      },
+      "properties": {
+        "source_excel_row": 24.0,
+        "registry_sequence": 21.0,
+        "incoming_number": "РД-11-728",
+        "incoming_date": "2024-11-19 00:00:00",
+        "applicant": "Община Сандански",
+        "permit_or_statement_number": "РД-11-728(1)/-не съгласува",
+        "permit_or_statement_date": "2025-01-03 00:00:00",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Порови води в неоген- Сандански BG4G000000N012",
+        "groundwater_body_code_source": "BG4G000000N012",
+        "groundwater_body_code_canonical": "BG4G000000N012",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "41°31'19.11\"",
+        "longitude_source": "23°23'22.89\"",
+        "settlement": "Мелник",
+        "municipality": "Сандански",
+        "district": "Благоевград",
+        "property_id": "ПИ 47754.501.198",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "търсене и разкриване на подземни води с дълбока циркулация (питейни), в райна на гр. Мелник",
+        "survey_depth_m_raw": 600.0,
+        "construction": "от 0 до 10 м сондиране ф 440-490 мм-безядково, спускане на кондукторна колона с ф 324/5мм, циментация на колонота по цялата дължина; от 10 до 200 м сондиране безядково с диаметър ф 311 мм ; от 200 до 600м-сондиране безядково с диаметър ф251мм; Обсадна ПВЦ колона ф125/9,3 мм",
+        "record_status": "refused_or_not_coordinated",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.38969167,
+          41.521975
+        ]
+      },
+      "properties": {
+        "source_excel_row": 25.0,
+        "registry_sequence": 22.0,
+        "incoming_number": "РД-11-729",
+        "incoming_date": "2024-11-19 00:00:00",
+        "applicant": "Община Сандански",
+        "permit_or_statement_number": "РД-11-729(1)/-не съгласува",
+        "permit_or_statement_date": "2025-01-03 00:00:00",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Порови води в неоген- Сандански BG4G000000N012",
+        "groundwater_body_code_source": "BG4G000000N012",
+        "groundwater_body_code_canonical": "BG4G000000N012",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "41°31'19.11\"",
+        "longitude_source": "23°23'22.89\"",
+        "settlement": "Мелник",
+        "municipality": "Сандански",
+        "district": "Благоевград",
+        "property_id": "ПИ 47754.501.198",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "търсене и разкриване на подземни води с дълбока циркулация (термални/минерални), в райна на гр. Мелник",
+        "survey_depth_m_raw": 600.0,
+        "construction": "от 0 до 10 м сондиране ф 440-490 мм-безядково, спускане на кондукторна колона с ф 324/5мм, циментация на колонота по цялата дължина; от 10 до 200 м сондиране безядково с диаметър ф 311 мм ; от 200 до 600м-сондиране безядково с диаметър ф251мм; Обсадна ПВЦ колона ф125/9,3 мм",
+        "record_status": "refused_or_not_coordinated",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.03506667,
+          42.07882778
+        ]
+      },
+      "properties": {
+        "source_excel_row": 26.0,
+        "registry_sequence": 23.0,
+        "incoming_number": "РД-11-752",
+        "incoming_date": "2024-11-27 00:00:00",
+        "applicant": "\"УНИ ЕНЕРДЖИ\" ООД",
+        "permit_or_statement_number": "РД-11-752(1)",
+        "permit_or_statement_date": "2025-01-16 00:00:00",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Порови води в кватернер - Благоевград BG4G000000Q004",
+        "groundwater_body_code_source": "BG4G000000Q004",
+        "groundwater_body_code_canonical": "BG4G000000Q004",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "42°04'43.78\"",
+        "longitude_source": "23°02'06.24\"",
+        "settlement": "Кочериново",
+        "municipality": "Кочериново",
+        "district": "Кюстендил",
+        "property_id": "ПИ 39116.11.199",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "търсене и разкриване на подземни води за питейно-битово водоснабдяване на бензиностанция",
+        "survey_depth_m_raw": "до 25",
+        "construction": "сондиране с триколково длето ф200мм, тип С. спускане на експлоатационно-филтрова колона с диаметър ф 110 мм",
+        "record_status": "registered_statement",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.023025,
+          41.93690861
+        ]
+      },
+      "properties": {
+        "source_excel_row": 27.0,
+        "registry_sequence": 24.0,
+        "incoming_number": "РД-11-44",
+        "incoming_date": "2025-01-13 00:00:00",
+        "applicant": "ЕКО-ЕЛ.2010 ЕООД",
+        "permit_or_statement_number": "РД-11-44(1)",
+        "permit_or_statement_date": "2025-01-22 00:00:00",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Пукнатинни води във Влахино-огражденско-малешевско-осоговски метаморфити BG4G001PTPZ125",
+        "groundwater_body_code_source": "BG4G001PTPZ125",
+        "groundwater_body_code_canonical": "BG4G001PTPZ125",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "41°56'12.871\"",
+        "longitude_source": "23°1'22.89\"",
+        "settlement": "Падеш",
+        "municipality": "Благоевград",
+        "district": "Благоевград",
+        "property_id": "ПИ 55107.23.39",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "търсене и разкриване на пресни студени подземни води за самостоятелно питейно-битово водоснабдяване на Дом за възрастни хора",
+        "survey_depth_m_raw": "до 85",
+        "construction": "сондиране въздушно-ударно ф 151мм, PVC тръба с ф 110 мм",
+        "record_status": "registered_statement",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.16928139,
+          41.65152556
+        ]
+      },
+      "properties": {
+        "source_excel_row": 28.0,
+        "registry_sequence": 25.0,
+        "incoming_number": "РД-11-829",
+        "incoming_date": "2025-10-10 00:00:00",
+        "applicant": "ЗП Владимир Захариев Шопов",
+        "permit_or_statement_number": "РД-11-829(2)",
+        "permit_or_statement_date": "2025-11-17 00:00:00",
+        "effective_date": null,
+        "term_years": null,
+        "published_end_date": null,
+        "aquifer_or_mineral_deposit": "Пукнатинни води във Влахино-огражденско-малешевско-осоговски метаморфити BG4G001PTPZ125",
+        "groundwater_body_code_source": "BG4G001PTPZ125",
+        "groundwater_body_code_canonical": "BG4G001PTPZ125",
+        "in_bdzbr_validated_body_set": true,
+        "body_code_resolution": "mapped_via_validated_body_code_mapping",
+        "survey_purpose": "изграждане на кладенец",
+        "survey_area_m2_raw": null,
+        "latitude_source": "41°39'05.492\"",
+        "longitude_source": "23°10'09.413\"",
+        "settlement": "Каменица",
+        "municipality": "Струмяни",
+        "district": "Благоевград",
+        "property_id": "ПИ 35818.8.1",
+        "activity_type": "проучвателен сондаж",
+        "activity_scope": "установяване на геолого-литоложкия строеж, експлоатационна колона и филтри, водочерпене, пробонабиране;",
+        "survey_depth_m_raw": "от 30 до 60",
+        "construction": "диаметър на сондиране - ф 110мм, PVC тръба с ф 110 мм",
+        "record_status": "registered_statement",
+        "map_eligible": "yes",
+        "source_as_of": "2025-12-05"
+      }
+    }
+  ],
+  "quality_report": {
+    "unlocated_records": [
+      {
+        "source_row": 1,
+        "registry_sequence": 2.0,
+        "canonical_code": null,
+        "settlement": "Катунци",
+        "map_eligible": "no"
+      },
+      {
+        "source_row": 8,
+        "registry_sequence": 9.0,
+        "canonical_code": null,
+        "settlement": null,
+        "map_eligible": "no"
+      },
+      {
+        "source_row": 15,
+        "registry_sequence": 16.0,
+        "canonical_code": null,
+        "settlement": "Бетеловото,",
+        "map_eligible": "no"
+      },
+      {
+        "source_row": 19,
+        "registry_sequence": 20.0,
+        "canonical_code": "BG4G000000N012",
+        "settlement": "Хърсово",
+        "map_eligible": "no"
+      }
+    ],
+    "outside_bdzbr_records": [
+      {
+        "source_row": 7,
+        "canonical_code": "BG1G00000NQ031",
+        "registry_sequence": 8.0,
+        "settlement": "Доспей"
+      }
+    ],
+    "missing_groundwater_body_code_rows": [
+      1,
+      8,
+      15,
+      17
+    ],
+    "mapped_unassigned_records": [
+      {
+        "registry_sequence": 18.0,
+        "incoming_number": "РД-11-216",
+        "settlement": "Кочериново",
+        "municipality": "Кочериново",
+        "district": "Кюстендил",
+        "longitude": 23.05585489,
+        "latitude": 42.07641066,
+        "body_link_status": "unassigned_no_source_body_code"
+      }
+    ]
+  }
+}
