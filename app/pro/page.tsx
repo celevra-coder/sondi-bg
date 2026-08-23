@@ -238,6 +238,27 @@ export default async function ProPage({
   const blackSeaSection2 =
     profile.blackSeaSection2;
 
+  const blackSeaSection3 =
+    profile.blackSeaSection3;
+
+  const blackSeaDrinkingProtection =
+    blackSeaSection3?.drinking_water_protection ?? null;
+
+  const blackSeaNitrateVulnerability =
+    blackSeaSection3?.nitrate_vulnerability ?? null;
+
+  const blackSeaIsNitrateVulnerable =
+    blackSeaNitrateVulnerability
+      ?.is_currently_vulnerable === true;
+
+  const blackSeaWasNitrateVulnerable2019 =
+    blackSeaNitrateVulnerability
+      ?.was_vulnerable_2019 === true;
+
+  const blackSeaIsDrinkingProtectionZone =
+    blackSeaDrinkingProtection
+      ?.is_designated === true;
+
   const blackSeaSection2Chemical =
     blackSeaSection2?.chemical_risk ?? null;
 
@@ -2258,6 +2279,125 @@ export default async function ProPage({
                 ) : null}
               </div>
             </details>
+          
+            {blackSeaSection3 ? (
+              <section style={{
+                marginTop: 14,
+                padding: "14px 15px",
+                borderRadius: 12,
+                background:
+                  blackSeaIsNitrateVulnerable
+                    ? "#fff4e5"
+                    : "#eaf7ef",
+                border:
+                  blackSeaIsNitrateVulnerable
+                    ? "1px solid #efcf98"
+                    : "1px solid #c8e4d1",
+              }}>
+                <div style={{
+                  fontWeight: 900,
+                  color:
+                    blackSeaIsNitrateVulnerable
+                      ? "#8a4f00"
+                      : "#25633a",
+                  marginBottom: 7,
+                }}>
+                  {blackSeaIsNitrateVulnerable
+                    ? "Водното тяло е нитратно уязвимо"
+                    : "Водното тяло не е в актуалния списък на нитратно уязвимите"}
+                </div>
+
+                <div style={{
+                  fontSize: 13,
+                  lineHeight: 1.65,
+                  color: "#38535b",
+                }}>
+                  {blackSeaIsNitrateVulnerable
+                    ? "Официално е определено като замърсено или застрашено от замърсяване с нитрати от земеделски източници."
+                    : "Не присъства в актуалния официален списък на подземните водни тела, замърсени или застрашени от нитрати."}
+                </div>
+
+                <details style={{
+                  marginTop: 11,
+                  paddingTop: 9,
+                  borderTop: "1px solid rgba(23,63,73,.12)",
+                }}>
+                  <summary style={{
+                    cursor: "pointer",
+                    color: "#173f49",
+                    fontWeight: 800,
+                  }}>
+                    Виж официалните данни за нитратната уязвимост
+                  </summary>
+
+                  <div style={{
+                    marginTop: 9,
+                  }}>
+                    <Row
+                      label="Нитратна уязвимост 2024"
+                      value={
+                        blackSeaIsNitrateVulnerable
+                          ? "Да"
+                          : "Не"
+                      }
+                    />
+
+                    <Row
+                      label="Нитратна уязвимост 2019"
+                      value={
+                        blackSeaWasNitrateVulnerable2019
+                          ? "Да"
+                          : "Не"
+                      }
+                    />
+
+                    <Row
+                      label="Ново включено през 2024"
+                      value={
+                        blackSeaNitrateVulnerability
+                          ?.newly_listed_2024
+                          ? "Да"
+                          : "Не"
+                      }
+                    />
+
+                    <Row
+                      label="Актуална заповед"
+                      value={
+                        blackSeaNitrateVulnerability
+                          ?.current_record
+                          ?.ministerial_order ??
+                        "Не е приложима"
+                      }
+                    />
+
+                    <Row
+                      label="Дата на заповедта"
+                      value={
+                        blackSeaNitrateVulnerability
+                          ?.current_record
+                          ?.order_date ??
+                        "Не е приложима"
+                      }
+                    />
+
+                    <div style={{
+                      marginTop: 9,
+                      padding: "9px 10px",
+                      background: "rgba(255,255,255,.72)",
+                      borderRadius: 8,
+                      color: "#60747b",
+                      fontSize: 12,
+                      lineHeight: 1.6,
+                    }}>
+                      Оценката е за подземното водно тяло.
+                      Тя не доказва наличие на нитрати във
+                      водата от конкретния имот.
+                    </div>
+                  </div>
+                </details>
+              </section>
+            ) : null}
           </Card>
 
           <Card
@@ -3306,6 +3446,121 @@ export default async function ProPage({
                 Няма налични данни от Раздел 5.
               </div>
             )}
+          
+            {blackSeaSection3 ? (
+              <section style={{
+                marginTop: 14,
+                padding: "14px 15px",
+                borderRadius: 12,
+                background:
+                  blackSeaIsDrinkingProtectionZone
+                    ? "#edf7fb"
+                    : "#f3f6f7",
+                border:
+                  blackSeaIsDrinkingProtectionZone
+                    ? "1px solid #c5e1eb"
+                    : "1px solid #dce5e8",
+              }}>
+                <div style={{
+                  fontWeight: 900,
+                  color:
+                    blackSeaIsDrinkingProtectionZone
+                      ? "#17627c"
+                      : "#45616a",
+                  marginBottom: 7,
+                }}>
+                  {blackSeaIsDrinkingProtectionZone
+                    ? "Водното тяло е определено за питейно водоснабдяване"
+                    : "Водното тяло не е включено в регистъра на питейните зони"}
+                </div>
+
+                <div style={{
+                  fontSize: 13,
+                  lineHeight: 1.65,
+                  color: "#38535b",
+                }}>
+                  {blackSeaIsDrinkingProtectionZone
+                    ? "За това подземно водно тяло е определена официална зона за защита на води, предназначени за питейно-битово водоснабдяване."
+                    : "В официалния регистър по Раздел 3 няма отделен запис за питейна защитена зона на това подземно водно тяло."}
+                </div>
+
+                <details style={{
+                  marginTop: 11,
+                  paddingTop: 9,
+                  borderTop: "1px solid rgba(23,63,73,.12)",
+                }}>
+                  <summary style={{
+                    cursor: "pointer",
+                    color: "#173f49",
+                    fontWeight: 800,
+                  }}>
+                    Виж официалните данни за питейната зона
+                  </summary>
+
+                  <div style={{
+                    marginTop: 9,
+                  }}>
+                    <Row
+                      label="Определена питейна зона"
+                      value={
+                        blackSeaIsDrinkingProtectionZone
+                          ? "Да"
+                          : "Не"
+                      }
+                    />
+
+                    <Row
+                      label="Код на питейната зона"
+                      value={
+                        blackSeaDrinkingProtection
+                          ?.zone
+                          ?.zone_code ??
+                        "Няма наличен код"
+                      }
+                    />
+
+                    <Row
+                      label="Площ на водното тяло"
+                      value={
+                        blackSeaDrinkingProtection
+                          ?.zone
+                          ?.groundwater_body_area_km2 != null
+                          ? `${formatNumber(
+                              blackSeaDrinkingProtection
+                                .zone
+                                .groundwater_body_area_km2
+                            )} km²`
+                          : "Няма налични данни"
+                      }
+                    />
+
+                    <Row
+                      label="Тип актуализация"
+                      value={
+                        blackSeaDrinkingProtection
+                          ?.zone
+                          ?.update_type ??
+                        "Няма налични данни"
+                      }
+                    />
+
+                    <div style={{
+                      marginTop: 9,
+                      padding: "9px 10px",
+                      background: "rgba(255,255,255,.75)",
+                      borderRadius: 8,
+                      color: "#60747b",
+                      fontSize: 12,
+                      lineHeight: 1.6,
+                    }}>
+                      Данните са за водното тяло.
+                      Не потвърждават, че конкретният имот
+                      попада в санитарно-охранителна зона.
+                    </div>
+                  </div>
+                </details>
+              </section>
+            ) : null}
           </Card>
           </div>
           <Card

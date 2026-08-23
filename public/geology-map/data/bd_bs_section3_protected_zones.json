@@ -1,0 +1,2716 @@
+{
+  "metadata": {
+    "dataset": "Black Sea Basin District Section 3 protected areas",
+    "generated_at": "2026-08-23T08:03:35+03:00",
+    "groundwater_body_count": 40,
+    "drinking_protection_body_count": 32,
+    "current_nitrate_vulnerable_body_count": 29,
+    "historic_nitrate_vulnerable_body_count": 14,
+    "newly_listed_nitrate_body_count": 16,
+    "removed_nitrate_body_count": 1,
+    "current_nitrate_municipality_count": 52,
+    "historic_nitrate_municipality_count": 38,
+    "drinking_register_source": "Приложение_3.1.2 Регистър на подземните води за ПБВ_fin.xlsx",
+    "nitrate_register_source": "Приложение_3.3.1 Нитратно-уязвими зони_fin.xlsx",
+    "current_nitrate_order": "РД-900",
+    "current_nitrate_order_date": "2024-10-21",
+    "historic_nitrate_order": "РД-660",
+    "historic_nitrate_order_date": "2019-08-28",
+    "parcel_level_gis_available": false
+  },
+  "profiles": [
+    {
+      "gwb_code": "BG2G000000N018",
+      "gwb_name": "Карстово - порови води в неоген - миоцен -сармат Изгрев-Варна -Ботево-Батово",
+      "gis_chemical_status": "лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000N018",
+          "groundwater_body_code": "BG2G000000N018",
+          "groundwater_body_name": "Карстово-порови води в неоген-миоцен-сармат Изгрев-Варна- Бонево-Батова",
+          "groundwater_body_area_km2": 1127.68,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 14,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000N018",
+          "groundwater_body_name": "Карстово-порови води в неоген - миоцен - сармат Изгрев - Варна - Ботево - Батово",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 15,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G000000N018",
+          "groundwater_body_name": "Карстово-порови води в неоген - миоцен - сармат Изгрев - Варна - Ботево - Батово",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 7,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N019",
+      "gwb_name": "Порови води в неоген - миоцен Галата- Долен чифлик",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000N019",
+          "groundwater_body_code": "BG2G000000N019",
+          "groundwater_body_name": "Порови води в неоген-миоцен Галата-Долен Чифлик",
+          "groundwater_body_area_km2": 429.97,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 15,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000N019",
+          "groundwater_body_name": "Порови води в неоген - миоцен Галата- Долен чифлик",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 16,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N020",
+      "gwb_name": "Порови води в неоген - сармат Руен - Несебър",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": false,
+        "zone": null,
+        "label_bg": "Водното тяло не присъства в регистъра на питейните зони",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000N020",
+          "groundwater_body_name": "Порови води в неоген - сармат Руен - Несебър",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 17,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N021",
+      "gwb_name": "Порови води в неоген - сармат Айтос",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000N021",
+          "groundwater_body_code": "BG2G000000N021",
+          "groundwater_body_name": "Порови води в неоген - сармат Айтос",
+          "groundwater_body_area_km2": 68.08,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 16,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": false,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": null,
+        "historical_record": null,
+        "label_bg": "Не присъства в актуалния списък за нитратна уязвимост",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N022",
+      "gwb_name": "Порови води в неоген - сармат Средец",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": false,
+        "zone": null,
+        "label_bg": "Водното тяло не присъства в регистъра на питейните зони",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000N022",
+          "groundwater_body_name": "Порови води в неоген - сармат Средец",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 18,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N023",
+      "gwb_name": "Порови води в неоген - сармат Созопол",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": false,
+        "zone": null,
+        "label_bg": "Водното тяло не присъства в регистъра на питейните зони",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": false,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": null,
+        "historical_record": null,
+        "label_bg": "Не присъства в актуалния списък за нитратна уязвимост",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N024",
+      "gwb_name": "Порови води в неоген - сармат Приморско",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": false,
+        "zone": null,
+        "label_bg": "Водното тяло не присъства в регистъра на питейните зони",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000N024",
+          "groundwater_body_name": "Порови води в неоген-сармат Приморско",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 19,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N025",
+      "gwb_name": "Порови води в неоген - Бургас",
+      "gis_chemical_status": "лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "В риск",
+      "drinking_water_protection": {
+        "is_designated": false,
+        "zone": null,
+        "label_bg": "Водното тяло не присъства в регистъра на питейните зони",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000N025",
+          "groundwater_body_name": "Порови води в неоген - Бургас",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 20,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N044",
+      "gwb_name": "Карстово - порови води в неоген -сармат СИ Добруджа",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "В риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000N044",
+          "groundwater_body_code": "BG2G000000N044",
+          "groundwater_body_name": "Карстово-порови води в неоген - сармат СИ Добруджа",
+          "groundwater_body_area_km2": 1553.86,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 17,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000N044",
+          "groundwater_body_name": "Карстово - порови води в неоген - сармат СИ Добруджа",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 21,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G000000N044",
+          "groundwater_body_name": "Карстово-порови води в неоген - сармат СИ Добруджа",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 6,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q002",
+      "gwb_name": "Порови води в кватернера на р. Батова",
+      "gis_chemical_status": "лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": false,
+        "zone": null,
+        "label_bg": "Водното тяло не присъства в регистъра на питейните зони",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000Q002",
+          "groundwater_body_name": "Порови води в кватернера на р. Батова",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 6,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q003",
+      "gwb_name": "Порови води в кватернера на р. Провадийска",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000Q003",
+          "groundwater_body_code": "BG2G000000Q003",
+          "groundwater_body_name": "Порови води в кватернера на р. Провадийска",
+          "groundwater_body_area_km2": 157.01,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 4,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000Q003",
+          "groundwater_body_name": "Порови води в кватернера на р. Провадийска",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 7,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G000000Q003",
+          "groundwater_body_name": "Порови води в кватернер в терасата на р. Провадийска",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 8,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q004",
+      "gwb_name": "Порови води в кватернера на р. Врана",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000Q004",
+          "groundwater_body_code": "BG2G000000Q004",
+          "groundwater_body_name": "Порови води в кватернера на р. Врана",
+          "groundwater_body_area_km2": 165.44,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 5,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000Q004",
+          "groundwater_body_name": "Порови води в кватернера на р. Врана",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 8,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q005",
+      "gwb_name": "Порови води в кватернера на р. Камчия",
+      "gis_chemical_status": "лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000Q005",
+          "groundwater_body_code": "BG2G000000Q005",
+          "groundwater_body_name": "Порови води в кватернера на р. Камчия",
+          "groundwater_body_area_km2": 179.16,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 6,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000Q005",
+          "groundwater_body_name": "Порови води в кватернера на р. Камчия",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 9,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q006",
+      "gwb_name": "Порови води в кватернера на р. Хаджийска",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000Q006",
+          "groundwater_body_code": "BG2G000000Q006",
+          "groundwater_body_name": "Порови води в кватернера на р. Хаджийска",
+          "groundwater_body_area_km2": 174.7,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 7,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000Q006",
+          "groundwater_body_name": "Порови води в кватернера на р. Хаджийска",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 10,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G000000Q006",
+          "groundwater_body_name": "Порови води в кватернера на р. Хаджийска",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 16,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q007",
+      "gwb_name": "Порови води в кватернер на р. Луда Камчия",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000Q007",
+          "groundwater_body_code": "BG2G000000Q007",
+          "groundwater_body_name": "Порови води в кватернера на р. Луда Камчия",
+          "groundwater_body_area_km2": 104.17,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 8,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000Q007",
+          "groundwater_body_name": "Порови води в кватернер на р.Луда Камчия",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 11,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G000000Q007",
+          "groundwater_body_name": "Порови води в кватернер на р. Луда Камчия",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 9,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q008",
+      "gwb_name": "Порови води в кватернера на р. Айтоска",
+      "gis_chemical_status": "лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000Q008",
+          "groundwater_body_code": "BG2G000000Q008",
+          "groundwater_body_name": "Порови води в кватернера на р. Айтоска",
+          "groundwater_body_area_km2": 103.01,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 9,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000Q008",
+          "groundwater_body_name": "Порови води в кватернера на р. Айтоска",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 12,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G000000Q008",
+          "groundwater_body_name": "Порови води в кватернера на р. Айтоска",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 10,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q009",
+      "gwb_name": "Порови води в кватернера на р. Средецка – Мандра",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000Q009",
+          "groundwater_body_code": "BG2G000000Q009",
+          "groundwater_body_name": "Порови води в кватернера на р. Средецка-Мандра",
+          "groundwater_body_area_km2": 232.12,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 10,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000Q009",
+          "groundwater_body_name": "Порови води в кватернера на р. Средецка - Мандра",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 13,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G000000Q009",
+          "groundwater_body_name": "Порови води в кватернера на р. Средецка - Мандра",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 11,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q010",
+      "gwb_name": "Порови води в кватернера на р. Ропотамо",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000Q010",
+          "groundwater_body_code": "BG2G000000Q010",
+          "groundwater_body_name": "Порови води в кватернера на р. Ропотамо",
+          "groundwater_body_area_km2": 14.05,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 11,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": false,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": null,
+        "historical_record": null,
+        "label_bg": "Не присъства в актуалния списък за нитратна уязвимост",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q011",
+      "gwb_name": "Порови води в кватернера на р. Дяволска",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": false,
+        "zone": null,
+        "label_bg": "Водното тяло не присъства в регистъра на питейните зони",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000000Q011",
+          "groundwater_body_name": "Порови води в кватернера на р. Дяволска",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 14,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q012",
+      "gwb_name": "Порови води в кватернера на р. Велека",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000Q012",
+          "groundwater_body_code": "BG2G000000Q012",
+          "groundwater_body_name": "Порови води в кватернера на р. Велека",
+          "groundwater_body_area_km2": 17.27,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 12,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": false,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": null,
+        "historical_record": null,
+        "label_bg": "Не присъства в актуалния списък за нитратна уязвимост",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q013",
+      "gwb_name": "Порови води в кватернера на р. Резовска",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": false,
+        "zone": null,
+        "label_bg": "Водното тяло не присъства в регистъра на питейните зони",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": false,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": null,
+        "historical_record": null,
+        "label_bg": "Не присъства в актуалния списък за нитратна уязвимост",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q014",
+      "gwb_name": "Порови води в кватернера на р. Двойница",
+      "gis_chemical_status": "лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "В риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000000Q014",
+          "groundwater_body_code": "BG2G000000Q014",
+          "groundwater_body_name": "Порови води в кватернера на р. Двойница",
+          "groundwater_body_area_km2": 26.92,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 13,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": false,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": null,
+        "historical_record": null,
+        "label_bg": "Не присъства в актуалния списък за нитратна уязвимост",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G00000JT042",
+      "gwb_name": "Карстови води в юра-триас карстово-пукнатинна зона",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000K1J3042",
+          "groundwater_body_code": "BG2G00000JT042",
+          "groundwater_body_name": "Карстови води в юра - триас карстово - пукнатинна зона",
+          "groundwater_body_area_km2": 329.14,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 34,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": false,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": null,
+        "historical_record": null,
+        "label_bg": "Не присъства в актуалния списък за нитратна уязвимост",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G00000K2030",
+      "gwb_name": "Карстови води в горна креда-мастрихт Шуменско плато",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW00000K2030",
+          "groundwater_body_code": "BG2G00000K2030",
+          "groundwater_body_name": "Карстови води в горна креда-мастрихт Шуменско плато",
+          "groundwater_body_area_km2": 53.44,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 22,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G00000K2030",
+          "groundwater_body_name": "Карстови води в горна креда-мастрихт Шуменско плато",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 26,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G00000K2031",
+      "gwb_name": "Карстови води в горна креда турон-мастрихт Каспичан",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW00000K2031",
+          "groundwater_body_code": "BG2G00000K2031",
+          "groundwater_body_name": "Карстови води в горна креда турон-мастрихт Каспичан",
+          "groundwater_body_area_km2": 38.2,
+          "update_type": "Новоопределена зона",
+          "source_annex": "3.1.2",
+          "source_row": 23,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G00000K2031",
+          "groundwater_body_name": "Карстови води в горна креда турон-мастрихт Каспичан",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 27,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G00000K2032",
+      "gwb_name": "Карстово - пукнатинни води в горна креда турон - мастрихт- Провадийска синклинала",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW00000K2032",
+          "groundwater_body_code": "BG2G00000K2032",
+          "groundwater_body_name": "Карстово - пукнатинни води в горна креда - турон - мастрихт - Провадийска синклинала",
+          "groundwater_body_area_km2": 960.67,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 24,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G00000K2032",
+          "groundwater_body_name": "Карстово - пукнатинни води в горна креда - турон - мастрихт - Провадийска синклинала",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 28,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G00000K2033",
+      "gwb_name": "Карстово- пукнатинни води в горна креда плюс юра-триас Котелски карстов басейн",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW00000K2033",
+          "groundwater_body_code": "BG2G00000K2033",
+          "groundwater_body_name": "Карстово - пукнатинни води в горна креда, плюс юра - триас Котелски карстов басейн",
+          "groundwater_body_area_km2": 851.7,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 25,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": false,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": null,
+        "historical_record": null,
+        "label_bg": "Не присъства в актуалния списък за нитратна уязвимост",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G00000K2034",
+      "gwb_name": "Пукнатинни води в горна креда, Бургаска вулканична зона, северно и западно от Бургас",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW00000K2034",
+          "groundwater_body_code": "BG2G00000K2034",
+          "groundwater_body_name": "Пукнатинни води в горна креда, Бургаска вулканична зона северно и западно от Бургас",
+          "groundwater_body_area_km2": 3034.14,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 26,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G00000K2034",
+          "groundwater_body_name": "Пукнатинни води в горна креда, Бургаска вулканична зона северно и западно от Бургас",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 29,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G00000K2034",
+          "groundwater_body_name": "Пукнатинни води в К2t сn-st-Бургаска вулканична северно и западно от Бургас",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 12,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G00000K2035",
+      "gwb_name": "Пукнатинни води в горна креда, Бургаска вулканична зона, южно от Бургас",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW00000K2035",
+          "groundwater_body_code": "BG2G00000K2035",
+          "groundwater_body_name": "Пукнатинни води в горна креда, Бургаска вулканична зона, южно от Бургас",
+          "groundwater_body_area_km2": 1631.52,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 27,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G00000K2035",
+          "groundwater_body_name": "Пукнатинни води в горна креда, Бургаска вулканична зона, южно от Бургас",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 30,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G00000PG026",
+      "gwb_name": "Порови води в палеоген - еоцен Варна - Шабла",
+      "gis_chemical_status": "лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW00000PG026",
+          "groundwater_body_code": "BG2G00000PG026",
+          "groundwater_body_name": "Порови води в палеоген-еоцен Варна-Шабла",
+          "groundwater_body_area_km2": 3479.96,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 18,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G00000PG026",
+          "groundwater_body_name": "Порови води в палеоген-еоцен Варна-Шабла",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 22,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G00000PG026",
+          "groundwater_body_name": "Порови води в палеоген - еоцен Варна - Шабла",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 13,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G00000PG027",
+      "gwb_name": "Порови води в палеоген - еоцен, олигоцен Провадия",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW00000PG027",
+          "groundwater_body_code": "BG2G00000PG027",
+          "groundwater_body_name": "Порови води в палеоген-еоцен,олигоцен Провадия",
+          "groundwater_body_area_km2": 916.43,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 19,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G00000PG027",
+          "groundwater_body_name": "Порови води в палеоген-еоцен, олигоцен Провадия",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 23,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G00000PG027",
+          "groundwater_body_name": "Порови води в палеоген - еоцен, олигоцен Провадия",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 14,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G00000PG028",
+      "gwb_name": "Порови води в палеоген, палеоцен, еоцен Руен- Бяла",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW00000PG028",
+          "groundwater_body_code": "BG2G00000PG028",
+          "groundwater_body_name": "Порови води в палеоген, палеоцен, еоцен Руен- Бяла",
+          "groundwater_body_area_km2": 1516.14,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 20,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G00000PG028",
+          "groundwater_body_name": "Порови води в палеоген, палеоцен, еоцен Руен- Бяла",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 24,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G00000PG029",
+      "gwb_name": "Порови води в палеоген - еоцен , олигоцен Бургас",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW00000PG029",
+          "groundwater_body_code": "BG2G00000PG029",
+          "groundwater_body_name": "Порови води в палеоген-еоцен,олигоцен Бургас",
+          "groundwater_body_area_km2": 783.23,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 21,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G00000PG029",
+          "groundwater_body_name": "Порови води в палеоген-еоцен, олигоцен Бургас",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 25,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G00000PG029",
+          "groundwater_body_name": "Порови води в палеоген - еоцен, олигоцен Бургас",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 15,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000J3K1040",
+      "gwb_name": "Карстови води в малм-валанж",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000J3K1040",
+          "groundwater_body_code": "BG2G000J3K1040",
+          "groundwater_body_name": "Карстови води в малм-валанж",
+          "groundwater_body_area_km2": 3138.2,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 32,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": false,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": null,
+        "historical_record": null,
+        "label_bg": "Не присъства в актуалния списък за нитратна уязвимост",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000J3K1041",
+      "gwb_name": "Карстови води в малм-валанж",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000J3K1041",
+          "groundwater_body_code": "BG2G000J3K1041",
+          "groundwater_body_name": "Карстови води в малм-валанж",
+          "groundwater_body_area_km2": 2626.19,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 33,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": false,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": true,
+        "current_record": null,
+        "historical_record": {
+          "groundwater_body_code": "BG2G000J3K1041",
+          "groundwater_body_name": "Карстови води в малм-валанж",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 19,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Присъства само в предходния списък",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000K1HB036",
+      "gwb_name": "Пукнатинни води в хотрив - барем - апт Каспичан, Тервел, Крушари",
+      "gis_chemical_status": "лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000K1HB036",
+          "groundwater_body_code": "BG2G000K1HB036",
+          "groundwater_body_name": "Пукнатинни води в хотрив-барем-апт Каспичан-Тервел-Крушари",
+          "groundwater_body_area_km2": 1231.55,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 28,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000K1HB036",
+          "groundwater_body_name": "Пукнатинни води в хотрив-барем-апт Каспичан-Тервел-Крушари",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 31,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G000K1HB036",
+          "groundwater_body_name": "Пукнатинни води в хотрив - барем - апт Каспичан, Тервел, Крушари",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 17,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000K1HB037",
+      "gwb_name": "Пукнатинни води във Валанж- Хотрив - апт Шумен - Търговище",
+      "gis_chemical_status": "лошо",
+      "gis_chemical_risk": "В риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000K1HB037",
+          "groundwater_body_code": "BG2G000K1HB037",
+          "groundwater_body_name": "Пукнатинни води във валанж – хотрив - апт Шумен -Търговище",
+          "groundwater_body_area_km2": 1071.89,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 29,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": true,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000K1HB037",
+          "groundwater_body_name": "Пукнатинни води във валанж – хотрив - апт Шумен -Търговище",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 32,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": {
+          "groundwater_body_code": "BG2G000K1HB037",
+          "groundwater_body_name": "Пукнатинни води във Валанж- Хотрив - апт Шумен - Търговище",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-660",
+          "order_date": "2019-08-28",
+          "assessment_year": 2019,
+          "source_row": 18,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000K1HB038",
+      "gwb_name": "Пукнатинни води в Предбалкан -Валанж- Хотрив - апт Конево",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000K1HB038",
+          "groundwater_body_code": "BG2G000K1HB038",
+          "groundwater_body_name": "Пукнатинни води във валанж – хотрив – апт Предбалкан Конево",
+          "groundwater_body_area_km2": 1112.38,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 30,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": false,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": false,
+        "removed_after_2019": false,
+        "current_record": null,
+        "historical_record": null,
+        "label_bg": "Не присъства в актуалния списък за нитратна уязвимост",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000K1HB039",
+      "gwb_name": "Пукнатинни води в Предбалкан -Валанж- Хотрив-Риш",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000K1HB039",
+          "groundwater_body_code": "BG2G000K1HB039",
+          "groundwater_body_name": "Пукнатинни води във валанж – хотрив Предбалкан Риш",
+          "groundwater_body_area_km2": 231.44,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 31,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000K1HB039",
+          "groundwater_body_name": "Пукнатинни води във валанж – хотрив Предбалкан Риш",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 33,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    },
+    {
+      "gwb_code": "BG2G000PTPZ043",
+      "gwb_name": "Пукнатинни води в палеозой- протерозой пукнатинна зона",
+      "gis_chemical_status": "добро",
+      "gis_chemical_risk": "Не е в риск",
+      "gis_quantitative_status": "добро",
+      "gis_quantitative_risk": "Не е в риск",
+      "drinking_water_protection": {
+        "is_designated": true,
+        "zone": {
+          "is_drinking_water_protection_zone": true,
+          "zone_code": "BG2DGW000PZPL3043",
+          "groundwater_body_code": "BG2G000PTPZ043",
+          "groundwater_body_name": "Пукнатинни води в палеозой - протерозой пукнатинна зона",
+          "groundwater_body_area_km2": 1654.92,
+          "update_type": "Без промяна",
+          "source_annex": "3.1.2",
+          "source_row": 35,
+          "source_scope": "Официална зона за защита на подземно водно тяло, предназначено за питейно-битово водоснабдяване.",
+          "parcel_level_confirmation": false
+        },
+        "label_bg": "Определена зона за питейно водоснабдяване",
+        "scope_notice": "Отнася се за подземното водно тяло и не потвърждава, че конкретният имот попада в санитарно-охранителна зона."
+      },
+      "nitrate_vulnerability": {
+        "is_currently_vulnerable": true,
+        "was_vulnerable_2019": false,
+        "newly_listed_2024": true,
+        "removed_after_2019": false,
+        "current_record": {
+          "groundwater_body_code": "BG2G000PTPZ043",
+          "groundwater_body_name": "Пукнатинни води в палеозой-протерозой пукнатинна зона",
+          "is_nitrate_vulnerable": true,
+          "source_annex": "3.3.1",
+          "ministerial_order": "РД-900",
+          "order_date": "2024-10-21",
+          "assessment_year": 2024,
+          "source_row": 34,
+          "source_scope": "Подземно водно тяло, замърсено или застрашено от замърсяване с нитрати от земеделски източници.",
+          "parcel_level_confirmation": false
+        },
+        "historical_record": null,
+        "label_bg": "Актуално определено като нитратно уязвимо",
+        "scope_notice": "Отнася се за официалната класификация на водното тяло. Не доказва измерени нитрати в конкретен имот или сондаж."
+      }
+    }
+  ],
+  "nitrate_municipalities": {
+    "current_2024": [
+      {
+        "municipality": "Аврен",
+        "coverage_description": "61.28",
+        "coverage_percent": 61.28,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 225,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Айтос",
+        "coverage_description": "73.21",
+        "coverage_percent": 73.21,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 226,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Аксаково",
+        "coverage_description": "72.17",
+        "coverage_percent": 72.17,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 227,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Балчик",
+        "coverage_description": "85.49",
+        "coverage_percent": 85.49,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 228,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Белослав",
+        "coverage_description": "72.06",
+        "coverage_percent": 72.06,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 229,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Болярово",
+        "coverage_description": "80.52",
+        "coverage_percent": 80.52,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 230,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Бургас",
+        "coverage_description": "79.99",
+        "coverage_percent": 79.99,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 231,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Бяла",
+        "coverage_description": "36.4",
+        "coverage_percent": 36.4,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 232,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Варна",
+        "coverage_description": "49.1",
+        "coverage_percent": 49.1,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 233,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Велики Преслав",
+        "coverage_description": "61.24",
+        "coverage_percent": 61.24,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 234,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Венец",
+        "coverage_description": "69.19",
+        "coverage_percent": 69.19,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 235,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Ветрино",
+        "coverage_description": "90.02",
+        "coverage_percent": 90.02,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 236,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Вълчи Дол",
+        "coverage_description": "90.09",
+        "coverage_percent": 90.09,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 237,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Върбица",
+        "coverage_description": "10.66",
+        "coverage_percent": 10.66,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 238,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Генерал Тошево",
+        "coverage_description": "94.07",
+        "coverage_percent": 94.07,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 239,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Девня",
+        "coverage_description": "59.48",
+        "coverage_percent": 59.48,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 240,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Добрич",
+        "coverage_description": "89.91",
+        "coverage_percent": 89.91,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 241,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Добрич-селска",
+        "coverage_description": "86.68",
+        "coverage_percent": 86.68,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 242,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Долни чифлик",
+        "coverage_description": "35.07",
+        "coverage_percent": 35.07,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 243,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Дългопол",
+        "coverage_description": "31.35",
+        "coverage_percent": 31.35,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 244,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Каварна",
+        "coverage_description": "93.01",
+        "coverage_percent": 93.01,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 245,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Камено",
+        "coverage_description": "89.12",
+        "coverage_percent": 89.12,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 246,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Каолиново",
+        "coverage_description": "78.91",
+        "coverage_percent": 78.91,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 247,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Карнобат",
+        "coverage_description": "90.78",
+        "coverage_percent": 90.78,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 248,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Каспичан",
+        "coverage_description": "75.94",
+        "coverage_percent": 75.94,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 249,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Котел",
+        "coverage_description": "20.51",
+        "coverage_percent": 20.51,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 250,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Лозница",
+        "coverage_description": "83.8",
+        "coverage_percent": 83.8,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 251,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Малко Търново",
+        "coverage_description": "11.08",
+        "coverage_percent": 11.08,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 252,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Несебър",
+        "coverage_description": "43.47",
+        "coverage_percent": 43.47,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 253,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Никола Козлево",
+        "coverage_description": "70.86",
+        "coverage_percent": 70.86,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 254,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Нови пазар",
+        "coverage_description": "80.67",
+        "coverage_percent": 80.67,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 255,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Омуртаг",
+        "coverage_description": "27.63",
+        "coverage_percent": 27.63,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 256,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Поморие",
+        "coverage_description": "73.88",
+        "coverage_percent": 73.88,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 257,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Попово",
+        "coverage_description": "75.61",
+        "coverage_percent": 75.61,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 258,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Приморско",
+        "coverage_description": "24.69",
+        "coverage_percent": 24.69,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 259,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Провадия",
+        "coverage_description": "77.88",
+        "coverage_percent": 77.88,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 260,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Разград",
+        "coverage_description": "74.44",
+        "coverage_percent": 74.44,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 261,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Руен",
+        "coverage_description": "46",
+        "coverage_percent": 46.0,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 262,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Самуил",
+        "coverage_description": "78.34",
+        "coverage_percent": 78.34,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 263,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Сливен",
+        "coverage_description": "57.24",
+        "coverage_percent": 57.24,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 264,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Смядово",
+        "coverage_description": "45.18",
+        "coverage_percent": 45.18,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 265,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Созопол",
+        "coverage_description": "43.75",
+        "coverage_percent": 43.75,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 266,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Средец",
+        "coverage_description": "65.87",
+        "coverage_percent": 65.87,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 267,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Стралджа",
+        "coverage_description": "88.01",
+        "coverage_percent": 88.01,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 268,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Суворово",
+        "coverage_description": "84.23",
+        "coverage_percent": 84.23,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 269,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Сунгурларе",
+        "coverage_description": "53.62",
+        "coverage_percent": 53.62,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 270,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Тунджа",
+        "coverage_description": "91.62",
+        "coverage_percent": 91.62,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 271,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Търговище",
+        "coverage_description": "60.45",
+        "coverage_percent": 60.45,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 272,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Хитрино",
+        "coverage_description": "84.7",
+        "coverage_percent": 84.7,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 273,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Царево",
+        "coverage_description": "17.21",
+        "coverage_percent": 17.21,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 274,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Шабла",
+        "coverage_description": "94.41",
+        "coverage_percent": 94.41,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 275,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Шумен",
+        "coverage_description": "74.05",
+        "coverage_percent": 74.05,
+        "ministerial_order": "РД-900",
+        "assessment_year": 2024,
+        "source_row": 276,
+        "point_level_confirmation": false
+      }
+    ],
+    "historical_2019": [
+      {
+        "municipality": "Аврен",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 39,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Айтос",
+        "coverage_description": "до 100",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 40,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Аксаково",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 41,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Балчик",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 42,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Болярово",
+        "coverage_description": "до 250",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 43,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Бургас",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 44,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Велики Преслав",
+        "coverage_description": "до 200",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 45,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Венец",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 46,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Ветрино",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 47,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Вълчи Дол",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 48,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Върбица",
+        "coverage_description": "до 300",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 49,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Генерал Тошево",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 50,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Провадия",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 51,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Разград",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 52,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Самуил",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 53,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Сливен",
+        "coverage_description": "до 350",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 54,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Смядово",
+        "coverage_description": "до 100",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 55,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Средец",
+        "coverage_description": "до 250",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 56,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Каварна",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 57,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Камено",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 58,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Каолиново",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 59,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Карнобат",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 60,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Каспичан",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 61,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Лозница",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 62,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Несебър",
+        "coverage_description": "до 100",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 63,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Никола Козлево",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 64,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Нови пазар",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 65,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Омуртаг",
+        "coverage_description": "до 300",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 66,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Поморие",
+        "coverage_description": "до 100",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 67,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Попово",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 68,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Стралджа",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 69,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Суворово",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 70,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Сунгурларе",
+        "coverage_description": "до 350",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 71,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Тунджа",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 72,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Търговище",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 73,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Хитрино",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 74,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Шабла",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 75,
+        "point_level_confirmation": false
+      },
+      {
+        "municipality": "Шумен",
+        "coverage_description": "*",
+        "coverage_percent": null,
+        "ministerial_order": "РД-660",
+        "assessment_year": 2019,
+        "source_row": 76,
+        "point_level_confirmation": false
+      }
+    ],
+    "scope_notice": "Данните са на ниво община и не позволяват определяне на принадлежността на конкретен имот без точен GIS слой."
+  },
+  "quality_report": {
+    "unmatched_drinking_codes": [],
+    "unmatched_current_nitrate_codes": [],
+    "unmatched_historic_nitrate_codes": [],
+    "normalized_drinking_codes": [
+      {
+        "row": 22,
+        "original_code": "BG2G00000К2030",
+        "normalized_code": "BG2G00000K2030"
+      },
+      {
+        "row": 23,
+        "original_code": "BG2G00000К2031",
+        "normalized_code": "BG2G00000K2031"
+      },
+      {
+        "row": 24,
+        "original_code": "BG2G00000К2032",
+        "normalized_code": "BG2G00000K2032"
+      },
+      {
+        "row": 25,
+        "original_code": "BG2G00000К2033",
+        "normalized_code": "BG2G00000K2033"
+      },
+      {
+        "row": 26,
+        "original_code": "BG2G00000К2034",
+        "normalized_code": "BG2G00000K2034"
+      },
+      {
+        "row": 27,
+        "original_code": "BG2G00000К2035",
+        "normalized_code": "BG2G00000K2035"
+      },
+      {
+        "row": 28,
+        "original_code": "BG2G000К1HВ036",
+        "normalized_code": "BG2G000K1HB036"
+      },
+      {
+        "row": 29,
+        "original_code": "BG2G000К1НВ037",
+        "normalized_code": "BG2G000K1HB037"
+      },
+      {
+        "row": 30,
+        "original_code": "BG2G000К1НВ038",
+        "normalized_code": "BG2G000K1HB038"
+      },
+      {
+        "row": 31,
+        "original_code": "BG2G000К1НВ039",
+        "normalized_code": "BG2G000K1HB039"
+      },
+      {
+        "row": 32,
+        "original_code": "BG2G000J3К1040",
+        "normalized_code": "BG2G000J3K1040"
+      },
+      {
+        "row": 33,
+        "original_code": "BG2G000J3К1041",
+        "normalized_code": "BG2G000J3K1041"
+      }
+    ],
+    "newly_listed_nitrate_codes": [
+      "BG2G000000N019",
+      "BG2G000000N020",
+      "BG2G000000N022",
+      "BG2G000000N024",
+      "BG2G000000N025",
+      "BG2G000000Q002",
+      "BG2G000000Q004",
+      "BG2G000000Q005",
+      "BG2G000000Q011",
+      "BG2G00000K2030",
+      "BG2G00000K2031",
+      "BG2G00000K2032",
+      "BG2G00000K2035",
+      "BG2G00000PG028",
+      "BG2G000K1HB039",
+      "BG2G000PTPZ043"
+    ],
+    "removed_after_2019_codes": [
+      "BG2G000J3K1041"
+    ],
+    "surface_water_rows_excluded": true,
+    "pdf_maps_used_as_gis": false,
+    "guessed_parcel_membership": false
+  }
+}
