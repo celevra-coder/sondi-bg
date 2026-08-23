@@ -235,6 +235,54 @@ export default async function ProPage({
   const blackSeaSection1 =
     profile.blackSeaSection1;
 
+  const blackSeaSection2 =
+    profile.blackSeaSection2;
+
+  const blackSeaSection2Chemical =
+    blackSeaSection2?.chemical_risk ?? null;
+
+  const blackSeaSection2Quantitative =
+    blackSeaSection2?.quantitative_risk ?? null;
+
+  const blackSeaSection2Vulnerability =
+    blackSeaSection2?.vulnerability ?? null;
+
+  const blackSeaPollutionSources: any[] =
+    Array.isArray(
+      blackSeaSection2?.pollution_sources
+    )
+      ? blackSeaSection2.pollution_sources
+      : [];
+
+  const blackSeaPointSourceCount =
+    Number(
+      blackSeaSection2?.point_source_count ?? 0
+    );
+
+  const blackSeaDiffuseSourceCount =
+    Number(
+      blackSeaSection2?.diffuse_source_count ?? 0
+    );
+
+  const blackSeaMarineIntrusion =
+    blackSeaSection2
+      ?.marine_intrusion
+      ?.mentioned_in_official_pressure_assessment === true;
+
+  const blackSeaChemicalRiskLabel =
+    blackSeaSection2Chemical?.at_risk === true
+      ? "в риск"
+      : blackSeaSection2Chemical?.at_risk === false
+        ? "не в риск"
+        : null;
+
+  const blackSeaQuantitativeRiskLabel =
+    blackSeaSection2Quantitative?.at_risk === true
+      ? "в риск"
+      : blackSeaSection2Quantitative?.at_risk === false
+        ? "не в риск"
+        : null;
+
   const blackSeaDetailed =
     blackSeaSection1?.detailed;
 
@@ -545,6 +593,7 @@ export default async function ProPage({
 
   const chemicalRisk =
     comparison?.risk_2022_2027 ??
+    blackSeaChemicalRiskLabel ??
     blackSeaDetailed?.purb3?.chemical_risk ??
     blackSeaGis?.chemical_risk ??
     "Няма данни";
@@ -562,12 +611,18 @@ export default async function ProPage({
     );
 
   const hasPointPressure =
-    Number.isFinite(pointPressurePercent) &&
-    pointPressurePercent > 0;
+    (
+      Number.isFinite(pointPressurePercent) &&
+      pointPressurePercent > 0
+    ) ||
+    blackSeaPointSourceCount > 0;
 
   const hasDiffusePressure =
-    Number.isFinite(diffusePressurePercent) &&
-    diffusePressurePercent > 0;
+    (
+      Number.isFinite(diffusePressurePercent) &&
+      diffusePressurePercent > 0
+    ) ||
+    blackSeaDiffuseSourceCount > 0;
 
   const significantPressureItems =
     Array.isArray(
@@ -638,6 +693,7 @@ export default async function ProPage({
 
   const quantRisk =
     quantitative?.final_quantitative_risk_label_bg ??
+    blackSeaQuantitativeRiskLabel ??
     blackSeaDetailed?.purb3?.quantitative_risk ??
     blackSeaGis?.quantitative_risk ??
     "Няма данни";
@@ -645,10 +701,18 @@ export default async function ProPage({
   const exploitation =
     waterBalance?.exploitation_index ??
     blackSeaCurrentResources?.exploitation_index ??
+    (
+      blackSeaSection2Quantitative?.exploitation_percent != null
+        ? Number(
+            blackSeaSection2Quantitative.exploitation_percent
+          ) / 100
+        : undefined
+    ) ??
     abstraction?.exploitation_index;
 
   const pollutants =
     section4?.pollutants ??
+    blackSeaSection2Chemical?.parameters_and_impact ??
     blackSeaDetailed
       ?.chemical_assessment
       ?.exceedance_parameters ??
@@ -1834,6 +1898,37 @@ export default async function ProPage({
                     label="Официален количествен риск"
                     value={quantRisk}
                   />
+
+                  {blackSeaSection2Quantitative ? (
+                    <>
+                      <Row
+                        label="Официална оценка на водовземането"
+                        value={
+                          blackSeaSection2Quantitative
+                            .exploitation_assessment ??
+                          "Няма налични данни"
+                        }
+                      />
+
+                      <Row
+                        label="Въздействие върху ресурса"
+                        value={
+                          blackSeaSection2Quantitative
+                            .impact_assessment ??
+                          "Няма налични данни"
+                        }
+                      />
+
+                      <Row
+                        label="Достоверност на количествената оценка"
+                        value={
+                          blackSeaSection2Quantitative
+                            .confidence ??
+                          "Няма налични данни"
+                        }
+                      />
+                    </>
+                  ) : null}
                 </section>
 
                 {abstractionByUse ? (
@@ -1953,46 +2048,214 @@ export default async function ProPage({
                 <Row
                   label="Точков натиск"
                   value={
-                    Number.isFinite(
-                      pointPressurePercent
-                    )
-                      ? `${formatNumber(
+                    blackSeaSection2
+                      ? `${blackSeaPointSourceCount} потенциални източника`
+                      : Number.isFinite(
                           pointPressurePercent
-                        )}%`
-                      : "Няма числова стойност"
+                        )
+                        ? `${formatNumber(
+                            pointPressurePercent
+                          )}%`
+                        : "Няма числова стойност"
                   }
                 />
 
                 <Row
                   label="Дифузен натиск"
                   value={
-                    Number.isFinite(
-                      diffusePressurePercent
-                    )
-                      ? `${formatNumber(
+                    blackSeaSection2
+                      ? `${blackSeaDiffuseSourceCount} потенциални източника`
+                      : Number.isFinite(
                           diffusePressurePercent
-                        )}%`
-                      : "Няма числова стойност"
+                        )
+                        ? `${formatNumber(
+                            diffusePressurePercent
+                          )}%`
+                        : "Няма числова стойност"
                   }
                 />
 
                 <Row
                   label="Риск от замърсяване"
                   value={
-                    profile.pollutionRisk
-                      ? "Налична официална оценка"
-                      : "Няма налична оценка"
+                    blackSeaSection2Chemical
+                      ? blackSeaChemicalRiskLabel
+                      : profile.pollutionRisk
+                        ? "Налична официална оценка"
+                        : "Няма налична оценка"
                   }
                 />
 
                 <Row
                   label="Значим натиск"
                   value={
-                    hasSignificantPressure
-                      ? significantPressureItems.join(", ")
-                      : "Не е посочен"
+                    blackSeaSection2Chemical
+                      ?.significant_pressure ??
+                    (
+                      hasSignificantPressure
+                        ? significantPressureItems.join(", ")
+                        : "Не е посочен"
+                    )
                   }
                 />
+
+                {blackSeaSection2 ? (
+                  <>
+                    <Row
+                      label="Потенциални източници общо"
+                      value={
+                        blackSeaSection2
+                          .pollution_source_count ?? 0
+                      }
+                    />
+
+                    <Row
+                      label="Точкови източници"
+                      value={blackSeaPointSourceCount}
+                    />
+
+                    <Row
+                      label="Дифузни източници"
+                      value={blackSeaDiffuseSourceCount}
+                    />
+
+                    <Row
+                      label="Допринасящ натиск"
+                      value={
+                        blackSeaSection2Chemical
+                          ?.contributing_pressure ??
+                        "Не е посочен"
+                      }
+                    />
+
+                    <Row
+                      label="Висока и средно висока уязвимост"
+                      value={
+                        blackSeaSection2Vulnerability
+                          ?.high_and_medium_high_percent != null
+                          ? `${formatNumber(
+                              blackSeaSection2Vulnerability
+                                .high_and_medium_high_percent
+                            )}% от водното тяло`
+                          : "Няма налични данни"
+                      }
+                    />
+
+                    <Row
+                      label="Морска интрузия"
+                      value={
+                        blackSeaMarineIntrusion
+                          ? "Посочена в официалната оценка"
+                          : "Не е посочена"
+                      }
+                    />
+
+                    {blackSeaPollutionSources.length > 0 ? (
+                      <details style={{
+                        marginTop: 14,
+                        borderTop: "1px solid #e1eaec",
+                        paddingTop: 12,
+                      }}>
+                        <summary style={{
+                          cursor: "pointer",
+                          color: "#245663",
+                          fontWeight: 800,
+                        }}>
+                          Виж потенциалните източници на натиск
+                          {" "}
+                          ({blackSeaPollutionSources.length})
+                        </summary>
+
+                        <div style={{
+                          marginTop: 10,
+                          display: "grid",
+                          gap: 10,
+                        }}>
+                          {blackSeaPollutionSources.map(
+                            (source: any, index: number) => (
+                              <div
+                                key={
+                                  String(
+                                    source?.source_row ??
+                                    index
+                                  )
+                                }
+                                style={{
+                                  padding: 11,
+                                  borderRadius: 9,
+                                  background: "#f5f8f9",
+                                  color: "#38535b",
+                                  fontSize: 13,
+                                  lineHeight: 1.55,
+                                }}
+                              >
+                                <div style={{
+                                  fontWeight: 800,
+                                  marginBottom: 4,
+                                }}>
+                                  {
+                                    source?.name ??
+                                    "Ненаименуван източник"
+                                  }
+                                </div>
+
+                                <div>
+                                  Тип:
+                                  {" "}
+                                  {
+                                    source?.source_type ??
+                                    "Не е посочен"
+                                  }
+                                </div>
+
+                                {source?.settlement ? (
+                                  <div>
+                                    Населено място:
+                                    {" "}
+                                    {source.settlement}
+                                  </div>
+                                ) : null}
+
+                                {source?.municipality ? (
+                                  <div>
+                                    Община:
+                                    {" "}
+                                    {source.municipality}
+                                  </div>
+                                ) : null}
+
+                                {source?.affected_area_percent != null ? (
+                                  <div>
+                                    Засегната площ:
+                                    {" "}
+                                    {
+                                      formatNumber(
+                                        source.affected_area_percent,
+                                        2
+                                      )
+                                    }
+                                    % от водното тяло
+                                  </div>
+                                ) : null}
+                              </div>
+                            )
+                          )}
+
+                          <div style={{
+                            color: "#64777d",
+                            fontSize: 12,
+                            lineHeight: 1.55,
+                          }}>
+                            Източниците са отнесени към цялото
+                            подземно водно тяло. Не представляват
+                            доказателство за замърсяване или
+                            конкретно разстояние до избрания имот.
+                          </div>
+                        </div>
+                      </details>
+                    ) : null}
+                  </>
+                ) : null}
               </div>
             </details>
           </Card>
@@ -2088,6 +2351,54 @@ export default async function ProPage({
                   value={String(pollutants)}
                 />
 
+                {blackSeaSection2Chemical ? (
+                  <>
+                    <Row
+                      label="Достоверност на химичната оценка"
+                      value={
+                        blackSeaSection2Chemical.confidence ??
+                        "Няма налични данни"
+                      }
+                    />
+
+                    <Row
+                      label="Основен източник на натиск"
+                      value={
+                        blackSeaSection2Chemical
+                          .significant_pressure ??
+                        "Не е посочен"
+                      }
+                    />
+
+                    <Row
+                      label="Допълнителни източници на натиск"
+                      value={
+                        blackSeaSection2Chemical
+                          .contributing_pressure ??
+                        "Не са посочени"
+                      }
+                    />
+
+                    {blackSeaMarineIntrusion ? (
+                      <div style={{
+                        marginTop: 12,
+                        padding: 11,
+                        borderRadius: 9,
+                        background: "#fff4e5",
+                        border: "1px solid #efc27b",
+                        color: "#825000",
+                        fontSize: 13,
+                        lineHeight: 1.55,
+                      }}>
+                        В официалната оценка е посочена
+                        морска интрузия като възможен натиск
+                        върху подземното водно тяло. Това не
+                        доказва засоляване на конкретния имот.
+                      </div>
+                    ) : null}
+                  </>
+                ) : null}
+
                 <Row
                   label="Риск ПУРБ 2"
                   value={
@@ -2108,6 +2419,7 @@ export default async function ProPage({
                   label="Риск ПУРБ 3"
                   value={
                     comparison?.risk_2022_2027 ??
+                    blackSeaChemicalRiskLabel ??
                     "—"
                   }
                 />
@@ -2116,6 +2428,7 @@ export default async function ProPage({
                   label="Състояние ПУРБ 3"
                   value={
                     comparison?.status_2022_2027 ??
+                    blackSeaGis?.chemical_status ??
                     "—"
                   }
                 />
@@ -2280,9 +2593,13 @@ export default async function ProPage({
                 fontWeight: 900,
                 marginBottom: 6,
               }}>
-                {exceedances.length > 0
-                  ? "Има данни за проблем с качеството"
-                  : "Няма установени превишения"}
+                {section4
+                  ? exceedances.length > 0
+                    ? "Има данни за проблем с качеството"
+                    : "Няма установени превишения"
+                  : blackSeaSection2
+                    ? "Химичният мониторинг предстои да бъде добавен"
+                    : "Няма налични данни от химичен мониторинг"}
               </div>
 
               {monitoringSummary}
