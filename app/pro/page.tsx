@@ -250,6 +250,28 @@ export default async function ProPage({
   const blackSeaSection7 =
     profile.blackSeaSection7;
 
+  const blackSeaCurrentRegisters =
+    profile.blackSeaCurrentRegisters ?? null;
+
+  const blackSeaRegisterResource =
+    blackSeaCurrentRegisters?.current_resource ?? null;
+
+  const blackSeaOrdinaryPermits =
+    blackSeaCurrentRegisters?.ordinary_groundwater_permits ?? null;
+
+  const blackSeaMineralPermits =
+    blackSeaCurrentRegisters?.mineral_water_permits ?? null;
+
+  const blackSeaRegisterPeriod =
+    blackSeaRegisterResource?.month_label_bg &&
+    blackSeaRegisterResource?.year
+      ? (
+          String(blackSeaRegisterResource.month_label_bg) +
+          " " +
+          String(blackSeaRegisterResource.year)
+        )
+      : null;
+
   const blackSeaChemicalMonitoring: any[] =
     Array.isArray(
       blackSeaSection4?.chemical_monitoring
@@ -568,6 +590,40 @@ export default async function ProPage({
     section4?.comparison;
 
   const waterBalance =
+    (
+      blackSeaRegisterResource
+        ? {
+            natural_resource_l_s:
+              blackSeaRegisterResource.natural_resource_l_s,
+
+            ecosystem_requirement_l_s:
+              blackSeaRegisterResource.ecosystem_requirement_l_s,
+
+            available_resource_l_s:
+              blackSeaRegisterResource.available_resource_l_s,
+
+            total_abstraction_l_s:
+              Number(
+                blackSeaRegisterResource.authorized_abstraction_l_s ?? 0
+              ) +
+              Number(
+                blackSeaRegisterResource.household_abstraction_l_s ?? 0
+              ),
+
+            permitted_abstraction_l_s:
+              blackSeaRegisterResource.authorized_abstraction_l_s,
+
+            household_abstraction_l_s:
+              blackSeaRegisterResource.household_abstraction_l_s,
+
+            free_resource_l_s:
+              blackSeaRegisterResource.free_resource_l_s,
+
+            exploitation_index:
+              blackSeaRegisterResource.exploitation_index,
+          }
+        : null
+    ) ??
     section4?.water_balance ??
     (
       blackSeaCurrentResources
@@ -1340,6 +1396,34 @@ export default async function ProPage({
     );
   }
 
+  if (
+    blackSeaRegisterResource?.free_resource_l_s != null
+  ) {
+    drillingRecommendationParts.push(
+      `По актуалния регистър${
+        blackSeaRegisterPeriod
+          ? ` към ${blackSeaRegisterPeriod}`
+          : ""
+      } свободният ресурс за цялото подземно водно тяло е ${
+        formatNumber(
+          blackSeaRegisterResource.free_resource_l_s
+        )
+      } l/s. Тази стойност не е прогноза за дебита на конкретния имот.`
+    );
+  }
+
+  if (
+    blackSeaOrdinaryPermits?.active_permit_count != null
+  ) {
+    drillingRecommendationParts.push(
+      `За цялото подземно водно тяло са отчетени ${
+        formatNumber(
+          blackSeaOrdinaryPermits.active_permit_count,
+          0
+        )
+      } действащи разрешителни за водовземане. Това не е броят на сондажите около избраната точка.`
+    );
+  }
   const drillingRecommendationText =
     drillingRecommendationParts.length > 0
       ? drillingRecommendationParts.join(" ")
@@ -1399,6 +1483,54 @@ export default async function ProPage({
     );
   }
 
+  if (
+    blackSeaRegisterResource?.available_resource_l_s != null &&
+    blackSeaRegisterResource?.free_resource_l_s != null
+  ) {
+    professionalConclusionParts.push(
+      `По актуалния регистър${
+        blackSeaRegisterPeriod
+          ? ` към ${blackSeaRegisterPeriod}`
+          : ""
+      } разполагаемият ресурс е ${
+        formatNumber(
+          blackSeaRegisterResource.available_resource_l_s
+        )
+      } l/s, а свободният ресурс е ${
+        formatNumber(
+          blackSeaRegisterResource.free_resource_l_s
+        )
+      } l/s за цялото подземно водно тяло.`
+    );
+  }
+
+  if (
+    blackSeaOrdinaryPermits?.active_permit_count != null
+  ) {
+    professionalConclusionParts.push(
+      `За водното тяло са отчетени ${
+        formatNumber(
+          blackSeaOrdinaryPermits.active_permit_count,
+          0
+        )
+      } действащи разрешителни за водовземане.`
+    );
+  }
+
+  if (
+    Number(
+      blackSeaMineralPermits?.active_permit_count ?? 0
+    ) > 0
+  ) {
+    professionalConclusionParts.push(
+      `В регистъра са отчетени ${
+        formatNumber(
+          blackSeaMineralPermits.active_permit_count,
+          0
+        )
+      } действащи разрешителни за минерална вода, което само по себе си не доказва минерална вода в конкретния имот.`
+    );
+  }
   const professionalConclusionText =
     professionalConclusionParts.length > 0
       ? professionalConclusionParts.join(" ")
@@ -1970,6 +2102,39 @@ export default async function ProPage({
                     Воден баланс
                   </div>
 
+                  {blackSeaRegisterResource ? (
+                    <>
+                      <Row
+                        label="Актуалност на официалния регистър"
+                        value={
+                          blackSeaRegisterPeriod ??
+                          "Няма посочен период"
+                        }
+                      />
+
+                      <Row
+                        label="Естествен ресурс"
+                        value={
+                          blackSeaRegisterResource.natural_resource_l_s != null
+                            ? `${formatNumber(
+                                blackSeaRegisterResource.natural_resource_l_s
+                              )} l/s`
+                            : "Няма налични данни"
+                        }
+                      />
+
+                      <Row
+                        label="Ресурс за водните екосистеми"
+                        value={
+                          blackSeaRegisterResource.ecosystem_requirement_l_s != null
+                            ? `${formatNumber(
+                                blackSeaRegisterResource.ecosystem_requirement_l_s
+                              )} l/s`
+                            : "Няма налични данни"
+                        }
+                      />
+                    </>
+                  ) : null}
                   <Row
                     label="Разполагаем ресурс"
                     value={
@@ -2011,6 +2176,42 @@ export default async function ProPage({
                     }
                   />
 
+                  {blackSeaRegisterResource ? (
+                    <>
+                      <Row
+                        label="Разрешено водовземане"
+                        value={
+                          blackSeaRegisterResource.authorized_abstraction_l_s != null
+                            ? `${formatNumber(
+                                blackSeaRegisterResource.authorized_abstraction_l_s
+                              )} l/s`
+                            : "Няма налични данни"
+                        }
+                      />
+
+                      <Row
+                        label="Водовземане за собствени потребности"
+                        value={
+                          blackSeaRegisterResource.household_abstraction_l_s != null
+                            ? `${formatNumber(
+                                blackSeaRegisterResource.household_abstraction_l_s
+                              )} l/s`
+                            : "Няма налични данни"
+                        }
+                      />
+
+                      <Row
+                        label="Свободен ресурс"
+                        value={
+                          blackSeaRegisterResource.free_resource_l_s != null
+                            ? `${formatNumber(
+                                blackSeaRegisterResource.free_resource_l_s
+                              )} l/s`
+                            : "Няма налични данни"
+                        }
+                      />
+                    </>
+                  ) : null}
                   <Row
                     label="Количествено състояние"
                     value={quantitativeStatus}
@@ -4636,6 +4837,64 @@ export default async function ProPage({
                       value={nearbyOrdinaryWellCount5Km}
                     />
 
+                    {blackSeaCurrentRegisters ? (
+                      <>
+                        <Row
+                          label="Действащи разрешителни за цялото ПВТ"
+                          value={
+                            blackSeaOrdinaryPermits?.active_permit_count ??
+                            0
+                          }
+                        />
+
+                        <Row
+                          label="Разрешен годишен лимит за ПВТ"
+                          value={
+                            blackSeaOrdinaryPermits?.active_annual_limit_m3_year != null
+                              ? `${formatNumber(
+                                  blackSeaOrdinaryPermits.active_annual_limit_m3_year,
+                                  0
+                                )} m³/год.`
+                              : "Няма налични данни"
+                          }
+                        />
+
+                        <Row
+                          label="Свободен ресурс за цялото ПВТ"
+                          value={
+                            blackSeaRegisterResource?.free_resource_l_s != null
+                              ? `${formatNumber(
+                                  blackSeaRegisterResource.free_resource_l_s
+                                )} l/s`
+                              : "Няма налични данни"
+                          }
+                        />
+
+                        <Row
+                          label="Действащи минерални разрешителни за ПВТ"
+                          value={
+                            blackSeaMineralPermits?.active_permit_count ??
+                            0
+                          }
+                        />
+
+                        <div style={{
+                          marginTop: 8,
+                          marginBottom: 12,
+                          padding: "9px 11px",
+                          borderRadius: 9,
+                          background: "#f2f7f8",
+                          color: "#64757b",
+                          fontSize: 12,
+                          lineHeight: 1.55,
+                        }}>
+                          Разрешителните се отнасят за цялото подземно
+                          водно тяло. Те не показват броя на сондажите
+                          около конкретния имот и не доказват наличие
+                          на минерална вода в избраната точка.
+                        </div>
+                      </>
+                    ) : null}
                     <Row
                       label="Най-близко обикновено съоръжение"
                       value={

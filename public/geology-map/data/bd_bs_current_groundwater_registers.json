@@ -1,0 +1,5365 @@
+{
+  "metadata": {
+    "basin": "black_sea",
+    "generated_at_utc": "2026-08-23T07:31:41.706971+00:00",
+    "inspection_date": "2026-08-23",
+    "groundwater_body_count": 40,
+    "latest_resource_year": 2026,
+    "latest_resource_month": 8,
+    "latest_resource_month_label_bg": "август",
+    "profiles_with_current_resource": 40,
+    "profiles_without_current_resource": 0,
+    "profiles_with_active_groundwater_permits": 37,
+    "active_groundwater_permit_count": 1202,
+    "groundwater_permit_status_counts": {
+      "terminated": 373,
+      "expired": 462,
+      "withdrawn": 79,
+      "active": 1202,
+      "unknown_period": 2
+    },
+    "profiles_with_mineral_permit_records": 4,
+    "mineral_permit_record_count": 284,
+    "active_mineral_permit_count": 99,
+    "mineral_permit_status_counts": {
+      "expired": 93,
+      "terminated": 76,
+      "withdrawn": 15,
+      "active": 99,
+      "unknown_period": 1
+    },
+    "monthly_sheet_summary": [
+      {
+        "month": 1,
+        "month_label_bg": "януари",
+        "recognized_body_count": 40,
+        "available_resource_count": 40,
+        "authorized_quantity_count": 40,
+        "free_quantity_count": 40
+      },
+      {
+        "month": 2,
+        "month_label_bg": "февруари",
+        "recognized_body_count": 40,
+        "available_resource_count": 40,
+        "authorized_quantity_count": 40,
+        "free_quantity_count": 40
+      },
+      {
+        "month": 3,
+        "month_label_bg": "март",
+        "recognized_body_count": 40,
+        "available_resource_count": 40,
+        "authorized_quantity_count": 40,
+        "free_quantity_count": 40
+      },
+      {
+        "month": 4,
+        "month_label_bg": "април",
+        "recognized_body_count": 40,
+        "available_resource_count": 40,
+        "authorized_quantity_count": 40,
+        "free_quantity_count": 40
+      },
+      {
+        "month": 5,
+        "month_label_bg": "май",
+        "recognized_body_count": 40,
+        "available_resource_count": 40,
+        "authorized_quantity_count": 40,
+        "free_quantity_count": 40
+      },
+      {
+        "month": 6,
+        "month_label_bg": "юни",
+        "recognized_body_count": 40,
+        "available_resource_count": 40,
+        "authorized_quantity_count": 40,
+        "free_quantity_count": 40
+      },
+      {
+        "month": 7,
+        "month_label_bg": "юли",
+        "recognized_body_count": 40,
+        "available_resource_count": 40,
+        "authorized_quantity_count": 40,
+        "free_quantity_count": 40
+      },
+      {
+        "month": 8,
+        "month_label_bg": "август",
+        "recognized_body_count": 40,
+        "available_resource_count": 40,
+        "authorized_quantity_count": 40,
+        "free_quantity_count": 40
+      },
+      {
+        "month": 9,
+        "month_label_bg": "септември",
+        "recognized_body_count": 40,
+        "available_resource_count": 0,
+        "authorized_quantity_count": 0,
+        "free_quantity_count": 0
+      },
+      {
+        "month": 10,
+        "month_label_bg": "октомври",
+        "recognized_body_count": 40,
+        "available_resource_count": 40,
+        "authorized_quantity_count": 0,
+        "free_quantity_count": 0
+      },
+      {
+        "month": 11,
+        "month_label_bg": "ноември",
+        "recognized_body_count": 40,
+        "available_resource_count": 40,
+        "authorized_quantity_count": 0,
+        "free_quantity_count": 0
+      },
+      {
+        "month": 12,
+        "month_label_bg": "декември",
+        "recognized_body_count": 40,
+        "available_resource_count": 0,
+        "authorized_quantity_count": 0,
+        "free_quantity_count": 0
+      }
+    ],
+    "source_files": [
+      "МЕСЕЧНИ_РЕСУРСИ.xlsx",
+      "Registyr_podzemni_vodi.xlsx",
+      "Registyr_mineralni.xlsx"
+    ],
+    "personal_data_excluded": true
+  },
+  "profiles": [
+    {
+      "gwb_code": "BG2G000000N018",
+      "gwb_name": "Карстово - порови води в неоген - миоцен -сармат Изгрев-Варна -Ботево-Батово",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 1932.0,
+        "ecosystem_requirement_l_s": 49.4,
+        "available_resource_l_s": 1882.6,
+        "authorized_abstraction_l_s": 308.26,
+        "household_abstraction_l_s": 79.2,
+        "free_resource_l_s": 1495.14,
+        "exploitation_index": 0.205811,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 1882.6,
+          "authorized_abstraction_l_s": 281.64,
+          "household_abstraction_l_s": 77.5,
+          "free_resource_l_s": 1523.46,
+          "exploitation_index": 0.190768
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 1882.6,
+          "authorized_abstraction_l_s": 300.55,
+          "household_abstraction_l_s": 77.81,
+          "free_resource_l_s": 1504.24,
+          "exploitation_index": 0.200977
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 1882.6,
+          "authorized_abstraction_l_s": 281.14,
+          "household_abstraction_l_s": 78.24,
+          "free_resource_l_s": 1523.22,
+          "exploitation_index": 0.190896
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 1882.6,
+          "authorized_abstraction_l_s": 303.29,
+          "household_abstraction_l_s": 78.54,
+          "free_resource_l_s": 1500.77,
+          "exploitation_index": 0.202821
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 1882.6,
+          "authorized_abstraction_l_s": 303.34,
+          "household_abstraction_l_s": 78.54,
+          "free_resource_l_s": 1500.71,
+          "exploitation_index": 0.202847
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 1882.6,
+          "authorized_abstraction_l_s": 305.44,
+          "household_abstraction_l_s": 78.54,
+          "free_resource_l_s": 1498.62,
+          "exploitation_index": 0.203963
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 1882.6,
+          "authorized_abstraction_l_s": 307.93,
+          "household_abstraction_l_s": 79.11,
+          "free_resource_l_s": 1495.57,
+          "exploitation_index": 0.205588
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 1882.6,
+          "authorized_abstraction_l_s": 308.26,
+          "household_abstraction_l_s": 79.2,
+          "free_resource_l_s": 1495.14,
+          "exploitation_index": 0.205811
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 275,
+        "active_permit_count": 148,
+        "active_permits_with_annual_limit": 148,
+        "active_annual_limit_m3_year": 9776936.76,
+        "active_annual_limit_equivalent_l_s": 310.024631,
+        "purpose_counts": {
+          "водоснабдяване за други цели": 35,
+          "други цели": 28,
+          "питейно-битово водоснабдяване": 20,
+          "самостоятелно водоснабдяване за напояване на земеделски култури": 11,
+          "напояване": 8,
+          "промишлени цели": 6,
+          "животновъдство": 3,
+          "обществено питейно-битово водоснабдяване": 3,
+          "промишлено водоснабдяване": 3,
+          "\"водоснабдяване за други цели\" (поливане на тревни площи": 1,
+          "водоснабдяане за други цели - поливане на тревни площи, пълнене на тоалетни казанчета.": 1,
+          "водоснабдяване за аквакултури": 1,
+          "водоснабдяване за други цели (измиване на автоммобилили и площадки)": 1,
+          "водоснабдяване за други цели - поливане на тревни площи, измиване на плочници, захранване на басейни)": 1,
+          "водоснабдяване за други цели и противопожарни нужди": 1,
+          "водоснабдяване за други цели самостоятелно водоснабдяване за напояване на земеделски култури": 1,
+          "водоснабдяване за други цели; водоснабдяване за промишлени цели; охлаждане;": 1,
+          "други цели - автомивка": 1,
+          "други цели - за нуждите на съществуваща автомивка": 1,
+          "животновъдство други цели": 1,
+          "животновъдство и други цели": 1,
+          "за промишлено водоснабдяване - измиване на промишлена техника": 1,
+          "напояване на земеделски култури": 1,
+          "напоявяне": 1,
+          "охлаждане": 1,
+          "охлаждане на производствени машини и съоръжения в процеса на работата им": 1,
+          "питейно-битово водоснабдяване и други цели": 1,
+          "питейно-битово водоснабдяване напояване отдих": 1,
+          "питейно-битово водоснабдяване промишлени цели противопожарни нужди": 1,
+          "питейно-битово водоснабдяване противопожарни цели други цели": 1,
+          "промишлено водоснабдяване (производство на бетон)": 1,
+          "промишлено водоснабдяване и други цели": 1,
+          "самостоятелно водоснабдяване за животновъдство и аквакултури": 1,
+          "самостоятелно водоснабдяване за напояване на земеделски култури (гравитачно)": 1,
+          "самостоятелно водоснабдяване на земеделски култури": 1,
+          "самостоятелно питейно-битово водоснабдяване": 1,
+          "самостоятелно питейно-битово водоснабдяване други цели": 1,
+          "самостоятелно питейно-битово водоснабдяване и други цели": 1,
+          "самостоятелно питейно-битово водоснабдяване и друти цели": 1,
+          "самостоятелно питейно-битово и други цели": 1
+        },
+        "earliest_expiry_date": "2026-09-14",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N019",
+      "gwb_name": "Порови води в неоген - миоцен Галата- Долен чифлик",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 254.0,
+        "ecosystem_requirement_l_s": 14.56,
+        "available_resource_l_s": 239.44,
+        "authorized_abstraction_l_s": 88.21,
+        "household_abstraction_l_s": 15.25,
+        "free_resource_l_s": 135.98,
+        "exploitation_index": 0.432092,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 239.44,
+          "authorized_abstraction_l_s": 86.72,
+          "household_abstraction_l_s": 14.69,
+          "free_resource_l_s": 138.03,
+          "exploitation_index": 0.42353
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 239.44,
+          "authorized_abstraction_l_s": 86.88,
+          "household_abstraction_l_s": 14.83,
+          "free_resource_l_s": 137.73,
+          "exploitation_index": 0.424783
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 239.44,
+          "authorized_abstraction_l_s": 85.81,
+          "household_abstraction_l_s": 14.96,
+          "free_resource_l_s": 138.67,
+          "exploitation_index": 0.420857
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 239.44,
+          "authorized_abstraction_l_s": 86.37,
+          "household_abstraction_l_s": 15.02,
+          "free_resource_l_s": 138.05,
+          "exploitation_index": 0.423446
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 239.44,
+          "authorized_abstraction_l_s": 85.86,
+          "household_abstraction_l_s": 15.02,
+          "free_resource_l_s": 138.56,
+          "exploitation_index": 0.421316
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 239.44,
+          "authorized_abstraction_l_s": 88.21,
+          "household_abstraction_l_s": 15.08,
+          "free_resource_l_s": 136.14,
+          "exploitation_index": 0.431382
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 239.44,
+          "authorized_abstraction_l_s": 87.81,
+          "household_abstraction_l_s": 15.2,
+          "free_resource_l_s": 136.43,
+          "exploitation_index": 0.430212
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 239.44,
+          "authorized_abstraction_l_s": 88.21,
+          "household_abstraction_l_s": 15.25,
+          "free_resource_l_s": 135.98,
+          "exploitation_index": 0.432092
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 92,
+        "active_permit_count": 52,
+        "active_permits_with_annual_limit": 52,
+        "active_annual_limit_m3_year": 2768390.0,
+        "active_annual_limit_equivalent_l_s": 87.785071,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 12,
+          "водоснабдяване за други цели": 10,
+          "самостоятелно питейно-битово водоснабдяване": 6,
+          "напояване": 4,
+          "самостоятелно водоснабдяване за напояване на земеделски култури": 3,
+          "водоснабдяване за животновъдство и аквакултури": 2,
+          "други цели": 2,
+          "обществено питейно-битово водоснабдяване": 2,
+          "\"Самостоятелно питейно-битово водоснабдяване, когато черпената вода се ползва за питейно-битови цели\" и \"Водоснабдяване за други цели\"": 1,
+          "напояване противопожарни цели": 1,
+          "питейно-битово водоснабдяване други цели": 1,
+          "питейно-битово водоснабдяване и други цели": 1,
+          "промишлени цели": 1,
+          "самостоятелно питейно-битово водоснабдване, когато отнетата вода се ползва за питейно-битови цели": 1,
+          "самостоятелно питейно-битово водоснабдяване други цели ППН": 1,
+          "самостоятелно питейно-битово водоснабдяване и други цели": 1,
+          "самостоятелно питейно-битово водоснабдяване, когато отнетата вода се ползва за питейно-битови цели и водоснабдяване за други цели": 1,
+          "самостоятелно питейно-битово водоснабдяване, когато отнетата вода се ползва за питейно-битови цели\", в т.ч. и ППН": 1,
+          "самостоятелно питейно-битово водоснабдяване, когато отнетата вода се ползва за питейно-битови цели; водоснабдяване за други цели": 1
+        },
+        "earliest_expiry_date": "2026-11-02",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N020",
+      "gwb_name": "Порови води в неоген - сармат Руен - Несебър",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 18.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 18.0,
+        "authorized_abstraction_l_s": 4.23,
+        "household_abstraction_l_s": 0.03,
+        "free_resource_l_s": 13.75,
+        "exploitation_index": 0.236667,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 18.0,
+          "authorized_abstraction_l_s": 4.69,
+          "household_abstraction_l_s": 0.03,
+          "free_resource_l_s": 13.28,
+          "exploitation_index": 0.262222
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 18.0,
+          "authorized_abstraction_l_s": 4.69,
+          "household_abstraction_l_s": 0.03,
+          "free_resource_l_s": 13.28,
+          "exploitation_index": 0.262222
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 18.0,
+          "authorized_abstraction_l_s": 4.69,
+          "household_abstraction_l_s": 0.03,
+          "free_resource_l_s": 13.28,
+          "exploitation_index": 0.262222
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 18.0,
+          "authorized_abstraction_l_s": 4.69,
+          "household_abstraction_l_s": 0.03,
+          "free_resource_l_s": 13.28,
+          "exploitation_index": 0.262222
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 18.0,
+          "authorized_abstraction_l_s": 4.5,
+          "household_abstraction_l_s": 0.03,
+          "free_resource_l_s": 13.47,
+          "exploitation_index": 0.251667
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 18.0,
+          "authorized_abstraction_l_s": 4.23,
+          "household_abstraction_l_s": 0.03,
+          "free_resource_l_s": 13.75,
+          "exploitation_index": 0.236667
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 18.0,
+          "authorized_abstraction_l_s": 4.23,
+          "household_abstraction_l_s": 0.03,
+          "free_resource_l_s": 13.75,
+          "exploitation_index": 0.236667
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 18.0,
+          "authorized_abstraction_l_s": 4.23,
+          "household_abstraction_l_s": 0.03,
+          "free_resource_l_s": 13.75,
+          "exploitation_index": 0.236667
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 19,
+        "active_permit_count": 12,
+        "active_permits_with_annual_limit": 12,
+        "active_annual_limit_m3_year": 134426.6,
+        "active_annual_limit_equivalent_l_s": 4.26264,
+        "purpose_counts": {
+          "други цели": 5,
+          "напояване": 4,
+          "Водоснабдяване за други цели": 2,
+          "самостоятелно водоснабдяване за напояване на земеделски култури": 1
+        },
+        "earliest_expiry_date": "2028-01-15",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N021",
+      "gwb_name": "Порови води в неоген - сармат Айтос",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 22.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 22.0,
+        "authorized_abstraction_l_s": 2.54,
+        "household_abstraction_l_s": 0.0,
+        "free_resource_l_s": 19.46,
+        "exploitation_index": 0.115455,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 2.54,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 19.46,
+          "exploitation_index": 0.115455
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 2.54,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 19.46,
+          "exploitation_index": 0.115455
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 2.54,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 19.46,
+          "exploitation_index": 0.115455
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 2.54,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 19.46,
+          "exploitation_index": 0.115455
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 2.54,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 19.46,
+          "exploitation_index": 0.115455
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 2.54,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 19.46,
+          "exploitation_index": 0.115455
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 2.54,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 19.46,
+          "exploitation_index": 0.115455
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 2.54,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 19.46,
+          "exploitation_index": 0.115455
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 1,
+        "active_permit_count": 1,
+        "active_permits_with_annual_limit": 1,
+        "active_annual_limit_m3_year": 80000.0,
+        "active_annual_limit_equivalent_l_s": 2.536783,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 1
+        },
+        "earliest_expiry_date": "2030-07-17",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N022",
+      "gwb_name": "Порови води в неоген - сармат Средец",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 25.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 25.0,
+        "authorized_abstraction_l_s": 0.0,
+        "household_abstraction_l_s": 4.53,
+        "free_resource_l_s": 20.47,
+        "exploitation_index": 0.1812,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 25.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 4.51,
+          "free_resource_l_s": 20.49,
+          "exploitation_index": 0.1804
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 25.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 4.52,
+          "free_resource_l_s": 20.48,
+          "exploitation_index": 0.1808
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 25.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 4.52,
+          "free_resource_l_s": 20.48,
+          "exploitation_index": 0.1808
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 25.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 4.53,
+          "free_resource_l_s": 20.47,
+          "exploitation_index": 0.1812
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 25.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 4.53,
+          "free_resource_l_s": 20.47,
+          "exploitation_index": 0.1812
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 25.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 4.53,
+          "free_resource_l_s": 20.47,
+          "exploitation_index": 0.1812
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 25.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 4.53,
+          "free_resource_l_s": 20.47,
+          "exploitation_index": 0.1812
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 25.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 4.53,
+          "free_resource_l_s": 20.47,
+          "exploitation_index": 0.1812
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "active_permits_with_annual_limit": 0,
+        "active_annual_limit_m3_year": 0.0,
+        "active_annual_limit_equivalent_l_s": null,
+        "purpose_counts": {},
+        "earliest_expiry_date": null,
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N023",
+      "gwb_name": "Порови води в неоген - сармат Созопол",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 5.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 5.0,
+        "authorized_abstraction_l_s": 0.0,
+        "household_abstraction_l_s": 0.1,
+        "free_resource_l_s": 4.9,
+        "exploitation_index": 0.02,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 5.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.1,
+          "free_resource_l_s": 4.9,
+          "exploitation_index": 0.02
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 5.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.1,
+          "free_resource_l_s": 4.9,
+          "exploitation_index": 0.02
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 5.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.1,
+          "free_resource_l_s": 4.9,
+          "exploitation_index": 0.02
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 5.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.1,
+          "free_resource_l_s": 4.9,
+          "exploitation_index": 0.02
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 5.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.1,
+          "free_resource_l_s": 4.9,
+          "exploitation_index": 0.02
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 5.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.1,
+          "free_resource_l_s": 4.9,
+          "exploitation_index": 0.02
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 5.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.1,
+          "free_resource_l_s": 4.9,
+          "exploitation_index": 0.02
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 5.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.1,
+          "free_resource_l_s": 4.9,
+          "exploitation_index": 0.02
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 1,
+        "active_permit_count": 0,
+        "active_permits_with_annual_limit": 0,
+        "active_annual_limit_m3_year": 0.0,
+        "active_annual_limit_equivalent_l_s": null,
+        "purpose_counts": {},
+        "earliest_expiry_date": null,
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N024",
+      "gwb_name": "Порови води в неоген - сармат Приморско",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 8.0,
+        "ecosystem_requirement_l_s": 0.52,
+        "available_resource_l_s": 7.48,
+        "authorized_abstraction_l_s": 0.25,
+        "household_abstraction_l_s": 0.71,
+        "free_resource_l_s": 6.53,
+        "exploitation_index": 0.128342,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 7.48,
+          "authorized_abstraction_l_s": 0.2,
+          "household_abstraction_l_s": 0.69,
+          "free_resource_l_s": 6.59,
+          "exploitation_index": 0.118984
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 7.48,
+          "authorized_abstraction_l_s": 0.2,
+          "household_abstraction_l_s": 0.69,
+          "free_resource_l_s": 6.59,
+          "exploitation_index": 0.118984
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 7.48,
+          "authorized_abstraction_l_s": 0.14,
+          "household_abstraction_l_s": 0.7,
+          "free_resource_l_s": 6.64,
+          "exploitation_index": 0.112299
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 7.48,
+          "authorized_abstraction_l_s": 0.14,
+          "household_abstraction_l_s": 0.7,
+          "free_resource_l_s": 6.64,
+          "exploitation_index": 0.112299
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 7.48,
+          "authorized_abstraction_l_s": 0.14,
+          "household_abstraction_l_s": 0.7,
+          "free_resource_l_s": 6.64,
+          "exploitation_index": 0.112299
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 7.48,
+          "authorized_abstraction_l_s": 0.14,
+          "household_abstraction_l_s": 0.7,
+          "free_resource_l_s": 6.64,
+          "exploitation_index": 0.112299
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 7.48,
+          "authorized_abstraction_l_s": 0.19,
+          "household_abstraction_l_s": 0.7,
+          "free_resource_l_s": 6.59,
+          "exploitation_index": 0.118984
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 7.48,
+          "authorized_abstraction_l_s": 0.25,
+          "household_abstraction_l_s": 0.71,
+          "free_resource_l_s": 6.53,
+          "exploitation_index": 0.128342
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 7,
+        "active_permit_count": 4,
+        "active_permits_with_annual_limit": 4,
+        "active_annual_limit_m3_year": 7824.0,
+        "active_annual_limit_equivalent_l_s": 0.248097,
+        "purpose_counts": {
+          "други цели": 3,
+          "водоснабдяване за други цели": 1
+        },
+        "earliest_expiry_date": "2028-09-27",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N025",
+      "gwb_name": "Порови води в неоген - Бургас",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 47.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 47.0,
+        "authorized_abstraction_l_s": 22.45,
+        "household_abstraction_l_s": 19.25,
+        "free_resource_l_s": 5.29,
+        "exploitation_index": 0.887234,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 47.0,
+          "authorized_abstraction_l_s": 19.56,
+          "household_abstraction_l_s": 22.58,
+          "free_resource_l_s": 4.86,
+          "exploitation_index": 0.896596
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 47.0,
+          "authorized_abstraction_l_s": 16.27,
+          "household_abstraction_l_s": 19.17,
+          "free_resource_l_s": 11.56,
+          "exploitation_index": 0.754043
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 47.0,
+          "authorized_abstraction_l_s": 16.27,
+          "household_abstraction_l_s": 19.16,
+          "free_resource_l_s": 11.57,
+          "exploitation_index": 0.75383
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 47.0,
+          "authorized_abstraction_l_s": 16.27,
+          "household_abstraction_l_s": 19.21,
+          "free_resource_l_s": 11.52,
+          "exploitation_index": 0.754894
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 47.0,
+          "authorized_abstraction_l_s": 21.78,
+          "household_abstraction_l_s": 19.21,
+          "free_resource_l_s": 6.02,
+          "exploitation_index": 0.872128
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 47.0,
+          "authorized_abstraction_l_s": 21.78,
+          "household_abstraction_l_s": 19.21,
+          "free_resource_l_s": 6.02,
+          "exploitation_index": 0.872128
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 47.0,
+          "authorized_abstraction_l_s": 22.45,
+          "household_abstraction_l_s": 19.21,
+          "free_resource_l_s": 5.34,
+          "exploitation_index": 0.886383
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 47.0,
+          "authorized_abstraction_l_s": 22.45,
+          "household_abstraction_l_s": 19.25,
+          "free_resource_l_s": 5.29,
+          "exploitation_index": 0.887234
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 72,
+        "active_permit_count": 32,
+        "active_permits_with_annual_limit": 32,
+        "active_annual_limit_m3_year": 706154.51,
+        "active_annual_limit_equivalent_l_s": 22.392013,
+        "purpose_counts": {
+          "други цели": 16,
+          "промишлени цели": 6,
+          "водоснабдяване за други цели": 6,
+          "охлаждане": 2,
+          "\"промишлено водоснабдяване'": 1,
+          "охлаждане и други цели": 1
+        },
+        "earliest_expiry_date": "2027-05-16",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000N044",
+      "gwb_name": "Карстово - порови води в неоген -сармат СИ Добруджа",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 2692.0,
+        "ecosystem_requirement_l_s": 0.52,
+        "available_resource_l_s": 2691.48,
+        "authorized_abstraction_l_s": 239.59,
+        "household_abstraction_l_s": 23.46,
+        "free_resource_l_s": 2428.43,
+        "exploitation_index": 0.097734,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 2691.48,
+          "authorized_abstraction_l_s": 218.66,
+          "household_abstraction_l_s": 23.2,
+          "free_resource_l_s": 2449.62,
+          "exploitation_index": 0.089861
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 2691.48,
+          "authorized_abstraction_l_s": 223.47,
+          "household_abstraction_l_s": 23.27,
+          "free_resource_l_s": 2444.74,
+          "exploitation_index": 0.091674
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 2691.48,
+          "authorized_abstraction_l_s": 225.39,
+          "household_abstraction_l_s": 23.33,
+          "free_resource_l_s": 2442.76,
+          "exploitation_index": 0.09241
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 2691.48,
+          "authorized_abstraction_l_s": 231.29,
+          "household_abstraction_l_s": 23.35,
+          "free_resource_l_s": 2436.84,
+          "exploitation_index": 0.09461
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 2691.48,
+          "authorized_abstraction_l_s": 239.1,
+          "household_abstraction_l_s": 23.35,
+          "free_resource_l_s": 2429.03,
+          "exploitation_index": 0.097511
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 2691.48,
+          "authorized_abstraction_l_s": 237.81,
+          "household_abstraction_l_s": 23.4,
+          "free_resource_l_s": 2430.27,
+          "exploitation_index": 0.097051
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 2691.48,
+          "authorized_abstraction_l_s": 243.07,
+          "household_abstraction_l_s": 23.43,
+          "free_resource_l_s": 2424.98,
+          "exploitation_index": 0.099016
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 2691.48,
+          "authorized_abstraction_l_s": 239.59,
+          "household_abstraction_l_s": 23.46,
+          "free_resource_l_s": 2428.43,
+          "exploitation_index": 0.097734
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 326,
+        "active_permit_count": 174,
+        "active_permits_with_annual_limit": 174,
+        "active_annual_limit_m3_year": 8400276.31,
+        "active_annual_limit_equivalent_l_s": 266.371014,
+        "purpose_counts": {
+          "напояване": 40,
+          "самостоятелно водоснабдяване за напояване на земеделски култури": 46,
+          "напояване на земеделски култури": 17,
+          "други цели": 14,
+          "водоснабдяване за други цели": 13,
+          "самостоятелно водоснабдяване на земеделски култури": 6,
+          "питейно-битово водоснабдяване": 5,
+          "Самостоятелно водоснабдяваане за напояване на земеделски култури": 3,
+          "промишлено водоснабдяване": 3,
+          "напояване и други цели": 2,
+          "промишлени цели": 2,
+          "\"водоснабдяване за други цели\" (напояване на зелени площи)": 1,
+          "Самостоятелно водоснабдяване за напояване на земеделски култури и водоснабдяване за друге цели": 1,
+          "други": 1,
+          "други цели - поливане на дръвчета, цветя и тревни площи, между редовете на дръвчетата": 1,
+          "други цели - поливане на зелени площи, вода за тоалени казанчета и противопожарни нужди": 1,
+          "други цели - приготвяне на работни разтвори на ПРЗ, за третиране на земеделски култури и противоп. нужди.": 1,
+          "други цели ППН": 1,
+          "други цели и напояване": 1,
+          "животновъдство": 1,
+          "напояване и охлаждане": 1,
+          "напояване, други цели и ППН": 1,
+          "напоявне": 1,
+          "напоявяне": 1,
+          "охлаждане": 1,
+          "охлаждане и напояване": 1,
+          "охлаждане на производствени машини и съоръжения в процеса на работата им; водоснабдяване за други цели": 1,
+          "промишлено водоснабдяване водоснабдяване за други цели водоснабдяване за животновъдство и аквакултури": 1,
+          "промишлено водоснабдяване и охлаждане": 1,
+          "самостоятелно водоснабдяване за напояване": 1,
+          "самостоятелно водоснабдяване за напояване на земеделски култури (царевица)": 1,
+          "самостоятелно напояване на земеделски култури": 1,
+          "самостоятелно питейно-битови": 1,
+          "самостоятелно питейно-битово водоснабдяване": 1
+        },
+        "earliest_expiry_date": "2026-10-05",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q002",
+      "gwb_name": "Порови води в кватернера на р. Батова",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 20.0,
+        "ecosystem_requirement_l_s": 0.82,
+        "available_resource_l_s": 19.18,
+        "authorized_abstraction_l_s": 0.2,
+        "household_abstraction_l_s": 0.0,
+        "free_resource_l_s": 18.98,
+        "exploitation_index": 0.010428,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 19.18,
+          "authorized_abstraction_l_s": 0.2,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 18.98,
+          "exploitation_index": 0.010428
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 19.18,
+          "authorized_abstraction_l_s": 0.2,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 18.98,
+          "exploitation_index": 0.010428
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 19.18,
+          "authorized_abstraction_l_s": 0.2,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 18.98,
+          "exploitation_index": 0.010428
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 19.18,
+          "authorized_abstraction_l_s": 0.2,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 18.98,
+          "exploitation_index": 0.010428
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 19.18,
+          "authorized_abstraction_l_s": 0.2,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 18.98,
+          "exploitation_index": 0.010428
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 19.18,
+          "authorized_abstraction_l_s": 0.2,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 18.98,
+          "exploitation_index": 0.010428
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 19.18,
+          "authorized_abstraction_l_s": 0.2,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 18.98,
+          "exploitation_index": 0.010428
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 19.18,
+          "authorized_abstraction_l_s": 0.2,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 18.98,
+          "exploitation_index": 0.010428
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 7,
+        "active_permit_count": 2,
+        "active_permits_with_annual_limit": 2,
+        "active_annual_limit_m3_year": 6162.0,
+        "active_annual_limit_equivalent_l_s": 0.195396,
+        "purpose_counts": {
+          "други цели": 1,
+          "напояване и други цели": 1
+        },
+        "earliest_expiry_date": "2031-11-04",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q003",
+      "gwb_name": "Порови води в кватернера на р. Провадийска",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 297.0,
+        "ecosystem_requirement_l_s": 8.61,
+        "available_resource_l_s": 288.39,
+        "authorized_abstraction_l_s": 129.55,
+        "household_abstraction_l_s": 28.19,
+        "free_resource_l_s": 130.64,
+        "exploitation_index": 0.546968,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 288.39,
+          "authorized_abstraction_l_s": 125.95,
+          "household_abstraction_l_s": 28.17,
+          "free_resource_l_s": 134.27,
+          "exploitation_index": 0.534415
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 288.39,
+          "authorized_abstraction_l_s": 129.45,
+          "household_abstraction_l_s": 28.17,
+          "free_resource_l_s": 130.78,
+          "exploitation_index": 0.546552
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 288.39,
+          "authorized_abstraction_l_s": 129.45,
+          "household_abstraction_l_s": 28.18,
+          "free_resource_l_s": 130.76,
+          "exploitation_index": 0.546586
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 288.39,
+          "authorized_abstraction_l_s": 129.51,
+          "household_abstraction_l_s": 28.18,
+          "free_resource_l_s": 130.7,
+          "exploitation_index": 0.546794
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 288.39,
+          "authorized_abstraction_l_s": 128.71,
+          "household_abstraction_l_s": 28.19,
+          "free_resource_l_s": 131.49,
+          "exploitation_index": 0.544055
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 288.39,
+          "authorized_abstraction_l_s": 128.82,
+          "household_abstraction_l_s": 28.19,
+          "free_resource_l_s": 131.38,
+          "exploitation_index": 0.544436
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 288.39,
+          "authorized_abstraction_l_s": 128.76,
+          "household_abstraction_l_s": 28.19,
+          "free_resource_l_s": 131.44,
+          "exploitation_index": 0.544228
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 288.39,
+          "authorized_abstraction_l_s": 129.55,
+          "household_abstraction_l_s": 28.19,
+          "free_resource_l_s": 130.64,
+          "exploitation_index": 0.546968
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 95,
+        "active_permit_count": 42,
+        "active_permits_with_annual_limit": 42,
+        "active_annual_limit_m3_year": 3947474.23,
+        "active_annual_limit_equivalent_l_s": 125.173587,
+        "purpose_counts": {
+          "обществено питейно-битово водоснабдяване": 6,
+          "водоснабдяване за други цели": 5,
+          "питейно-битово водоснабдяване": 5,
+          "други цели": 4,
+          "напояване": 4,
+          "животновъдство": 3,
+          "промишлени цели": 3,
+          "самостоятелно водоснабдяване за напояване на земеделски култури": 2,
+          "други": 1,
+          "други цели и промишлено водоснабдяване": 1,
+          "други цели противопожарни нужди": 1,
+          "охлаждане": 1,
+          "охлаждане на произв. машини": 1,
+          "промишлени цели и охлаждане": 1,
+          "промишлено водоснабдяване": 1,
+          "самостоятелно водоснабдяване на земеделски култури": 1,
+          "самостоятелно питейно-битово водоснабдяване": 1,
+          "самостоятелно питейно-битово водоснабдяване и животновъдство": 1
+        },
+        "earliest_expiry_date": "2026-09-28",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q004",
+      "gwb_name": "Порови води в кватернера на р. Врана",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 308.0,
+        "ecosystem_requirement_l_s": 21.73,
+        "available_resource_l_s": 286.27,
+        "authorized_abstraction_l_s": 143.61,
+        "household_abstraction_l_s": 19.19,
+        "free_resource_l_s": 123.47,
+        "exploitation_index": 0.568694,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 286.27,
+          "authorized_abstraction_l_s": 144.03,
+          "household_abstraction_l_s": 44.31,
+          "free_resource_l_s": 97.93,
+          "exploitation_index": 0.65791
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 286.27,
+          "authorized_abstraction_l_s": 143.9,
+          "household_abstraction_l_s": 44.31,
+          "free_resource_l_s": 98.0,
+          "exploitation_index": 0.657456
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 286.27,
+          "authorized_abstraction_l_s": 141.98,
+          "household_abstraction_l_s": 19.16,
+          "free_resource_l_s": 125.13,
+          "exploitation_index": 0.562895
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 286.27,
+          "authorized_abstraction_l_s": 143.73,
+          "household_abstraction_l_s": 19.18,
+          "free_resource_l_s": 123.36,
+          "exploitation_index": 0.569078
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 286.27,
+          "authorized_abstraction_l_s": 143.73,
+          "household_abstraction_l_s": 19.18,
+          "free_resource_l_s": 123.35,
+          "exploitation_index": 0.569078
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 286.27,
+          "authorized_abstraction_l_s": 143.73,
+          "household_abstraction_l_s": 19.35,
+          "free_resource_l_s": 123.19,
+          "exploitation_index": 0.569672
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 286.27,
+          "authorized_abstraction_l_s": 144.19,
+          "household_abstraction_l_s": 19.19,
+          "free_resource_l_s": 122.88,
+          "exploitation_index": 0.57072
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 286.27,
+          "authorized_abstraction_l_s": 143.61,
+          "household_abstraction_l_s": 19.19,
+          "free_resource_l_s": 123.47,
+          "exploitation_index": 0.568694
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 115,
+        "active_permit_count": 62,
+        "active_permits_with_annual_limit": 62,
+        "active_annual_limit_m3_year": 4512015.8,
+        "active_annual_limit_equivalent_l_s": 143.075082,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 17,
+          "обществено питейно-битово водоснабдяване": 9,
+          "други цели": 5,
+          "водоснабдяване за животновъдство": 4,
+          "промишлени цели": 4,
+          "промишлено водоснабдяване": 5,
+          "водоснабдяване за други цели": 3,
+          "животновъдство": 3,
+          "охлаждане": 2,
+          "\"самостоятелно питейно-битово водоснабдяване, когато отнетата вода се ползва за питейно-битови цели\" и \"водоснабдяване за други цели\"": 1,
+          "Промишлено водоснабдяване Водоснабдяване за други цели": 1,
+          "Самостоятелно водоснабдяване за напояване на земеделски култури": 2,
+          "Самостоятелно питейно-битово водоснабдяване; самостоятелно водоснабдяване за напояване на земеделски култури водоснабдяване за други цели": 1,
+          "други и самостоятелно питейно-битови": 1,
+          "животновъдство противопожарни цели": 1,
+          "напояване": 1,
+          "промишлени цели питейно-битово водоснабдяване": 1,
+          "промишлено водоснабдяване и водоснабдяване за други цели": 1
+        },
+        "earliest_expiry_date": "2028-05-23",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q005",
+      "gwb_name": "Порови води в кватернера на р. Камчия",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 319.0,
+        "ecosystem_requirement_l_s": 11.89,
+        "available_resource_l_s": 307.11,
+        "authorized_abstraction_l_s": 83.84,
+        "household_abstraction_l_s": 11.95,
+        "free_resource_l_s": 211.32,
+        "exploitation_index": 0.311908,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 307.11,
+          "authorized_abstraction_l_s": 82.64,
+          "household_abstraction_l_s": 11.92,
+          "free_resource_l_s": 212.55,
+          "exploitation_index": 0.307903
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 307.11,
+          "authorized_abstraction_l_s": 82.64,
+          "household_abstraction_l_s": 11.92,
+          "free_resource_l_s": 212.54,
+          "exploitation_index": 0.307903
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 307.11,
+          "authorized_abstraction_l_s": 83.84,
+          "household_abstraction_l_s": 11.93,
+          "free_resource_l_s": 211.34,
+          "exploitation_index": 0.311843
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 307.11,
+          "authorized_abstraction_l_s": 83.84,
+          "household_abstraction_l_s": 11.93,
+          "free_resource_l_s": 211.34,
+          "exploitation_index": 0.311843
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 307.11,
+          "authorized_abstraction_l_s": 83.84,
+          "household_abstraction_l_s": 11.93,
+          "free_resource_l_s": 211.34,
+          "exploitation_index": 0.311843
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 307.11,
+          "authorized_abstraction_l_s": 83.84,
+          "household_abstraction_l_s": 11.94,
+          "free_resource_l_s": 211.33,
+          "exploitation_index": 0.311875
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 307.11,
+          "authorized_abstraction_l_s": 83.84,
+          "household_abstraction_l_s": 11.96,
+          "free_resource_l_s": 211.31,
+          "exploitation_index": 0.31194
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 307.11,
+          "authorized_abstraction_l_s": 83.84,
+          "household_abstraction_l_s": 11.95,
+          "free_resource_l_s": 211.32,
+          "exploitation_index": 0.311908
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 39,
+        "active_permit_count": 23,
+        "active_permits_with_annual_limit": 23,
+        "active_annual_limit_m3_year": 2637482.0,
+        "active_annual_limit_equivalent_l_s": 83.634006,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 9,
+          "напояване": 3,
+          "самостоятелно водоснабдяване за напояване на земеделски култури": 5,
+          "водоснабдяване за животновъдство и аквакултури": 2,
+          "водоснабдяване за други цели": 1,
+          "други цели": 1,
+          "животновъдство": 1,
+          "обществено питейно-битово водоснабдяване": 1
+        },
+        "earliest_expiry_date": "2026-09-30",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q006",
+      "gwb_name": "Порови води в кватернера на р. Хаджийска",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 86.0,
+        "ecosystem_requirement_l_s": 2.46,
+        "available_resource_l_s": 83.54,
+        "authorized_abstraction_l_s": 28.5,
+        "household_abstraction_l_s": 14.23,
+        "free_resource_l_s": 40.81,
+        "exploitation_index": 0.511492,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 83.54,
+          "authorized_abstraction_l_s": 29.32,
+          "household_abstraction_l_s": 14.16,
+          "free_resource_l_s": 40.06,
+          "exploitation_index": 0.520469
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 83.54,
+          "authorized_abstraction_l_s": 29.32,
+          "household_abstraction_l_s": 14.18,
+          "free_resource_l_s": 40.04,
+          "exploitation_index": 0.520709
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 83.54,
+          "authorized_abstraction_l_s": 29.32,
+          "household_abstraction_l_s": 14.18,
+          "free_resource_l_s": 40.04,
+          "exploitation_index": 0.520709
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 83.54,
+          "authorized_abstraction_l_s": 29.32,
+          "household_abstraction_l_s": 14.22,
+          "free_resource_l_s": 40.0,
+          "exploitation_index": 0.521187
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 83.54,
+          "authorized_abstraction_l_s": 29.14,
+          "household_abstraction_l_s": 14.22,
+          "free_resource_l_s": 40.19,
+          "exploitation_index": 0.519033
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 83.54,
+          "authorized_abstraction_l_s": 29.14,
+          "household_abstraction_l_s": 14.22,
+          "free_resource_l_s": 40.19,
+          "exploitation_index": 0.519033
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 83.54,
+          "authorized_abstraction_l_s": 29.32,
+          "household_abstraction_l_s": 14.23,
+          "free_resource_l_s": 39.99,
+          "exploitation_index": 0.521307
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 83.54,
+          "authorized_abstraction_l_s": 28.5,
+          "household_abstraction_l_s": 14.23,
+          "free_resource_l_s": 40.81,
+          "exploitation_index": 0.511492
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 28,
+        "active_permit_count": 12,
+        "active_permits_with_annual_limit": 12,
+        "active_annual_limit_m3_year": 573863.0,
+        "active_annual_limit_equivalent_l_s": 18.197076,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 5,
+          "други цели": 2,
+          "Водоснабдяване за други цели": 1,
+          "напояване": 1,
+          "самостоятелно водоснабдяване за напояване на земеделски култури (зеленчуци и царевица) и ППН": 1,
+          "самостоятелно водоснабдяване за напояване на земеделски култури (трайни насаждения)": 1,
+          "самостоятелно питейно-битово водоснабдяване и други цели": 1
+        },
+        "earliest_expiry_date": "2028-08-22",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q007",
+      "gwb_name": "Порови води в кватернер на р. Луда Камчия",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 60.0,
+        "ecosystem_requirement_l_s": 12.3,
+        "available_resource_l_s": 47.7,
+        "authorized_abstraction_l_s": 3.03,
+        "household_abstraction_l_s": 2.43,
+        "free_resource_l_s": 42.24,
+        "exploitation_index": 0.114465,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 47.7,
+          "authorized_abstraction_l_s": 3.028856,
+          "household_abstraction_l_s": 2.43,
+          "free_resource_l_s": 42.241144,
+          "exploitation_index": 0.114441
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 47.7,
+          "authorized_abstraction_l_s": 3.03,
+          "household_abstraction_l_s": 2.43,
+          "free_resource_l_s": 42.24,
+          "exploitation_index": 0.114465
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 47.7,
+          "authorized_abstraction_l_s": 3.028856,
+          "household_abstraction_l_s": 2.43,
+          "free_resource_l_s": 42.241144,
+          "exploitation_index": 0.114441
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 47.7,
+          "authorized_abstraction_l_s": 3.028856,
+          "household_abstraction_l_s": 2.43,
+          "free_resource_l_s": 42.241144,
+          "exploitation_index": 0.114441
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 47.7,
+          "authorized_abstraction_l_s": 3.03,
+          "household_abstraction_l_s": 2.43,
+          "free_resource_l_s": 42.24,
+          "exploitation_index": 0.114465
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 47.7,
+          "authorized_abstraction_l_s": 3.03,
+          "household_abstraction_l_s": 2.43,
+          "free_resource_l_s": 42.24,
+          "exploitation_index": 0.114465
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 47.7,
+          "authorized_abstraction_l_s": 3.03,
+          "household_abstraction_l_s": 2.43,
+          "free_resource_l_s": 42.24,
+          "exploitation_index": 0.114465
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 47.7,
+          "authorized_abstraction_l_s": 3.03,
+          "household_abstraction_l_s": 2.43,
+          "free_resource_l_s": 42.24,
+          "exploitation_index": 0.114465
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 6,
+        "active_permit_count": 5,
+        "active_permits_with_annual_limit": 5,
+        "active_annual_limit_m3_year": 90518.0,
+        "active_annual_limit_equivalent_l_s": 2.870307,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 4,
+          "Обществено питейно-битово водоснабдяване": 1
+        },
+        "earliest_expiry_date": "2032-04-21",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q008",
+      "gwb_name": "Порови води в кватернера на р. Айтоска",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 168.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 168.0,
+        "authorized_abstraction_l_s": 10.62,
+        "household_abstraction_l_s": 19.86,
+        "free_resource_l_s": 137.52,
+        "exploitation_index": 0.181429,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 168.0,
+          "authorized_abstraction_l_s": 11.04,
+          "household_abstraction_l_s": 19.81,
+          "free_resource_l_s": 137.15,
+          "exploitation_index": 0.183631
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 168.0,
+          "authorized_abstraction_l_s": 11.04,
+          "household_abstraction_l_s": 19.85,
+          "free_resource_l_s": 137.12,
+          "exploitation_index": 0.183869
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 168.0,
+          "authorized_abstraction_l_s": 11.04,
+          "household_abstraction_l_s": 19.85,
+          "free_resource_l_s": 137.11,
+          "exploitation_index": 0.183869
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 168.0,
+          "authorized_abstraction_l_s": 11.16,
+          "household_abstraction_l_s": 19.85,
+          "free_resource_l_s": 136.99,
+          "exploitation_index": 0.184583
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 168.0,
+          "authorized_abstraction_l_s": 11.16,
+          "household_abstraction_l_s": 19.85,
+          "free_resource_l_s": 136.99,
+          "exploitation_index": 0.184583
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 168.0,
+          "authorized_abstraction_l_s": 11.16,
+          "household_abstraction_l_s": 19.86,
+          "free_resource_l_s": 136.98,
+          "exploitation_index": 0.184643
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 168.0,
+          "authorized_abstraction_l_s": 10.62,
+          "household_abstraction_l_s": 19.86,
+          "free_resource_l_s": 137.52,
+          "exploitation_index": 0.181429
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 168.0,
+          "authorized_abstraction_l_s": 10.62,
+          "household_abstraction_l_s": 19.86,
+          "free_resource_l_s": 137.52,
+          "exploitation_index": 0.181429
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 46,
+        "active_permit_count": 18,
+        "active_permits_with_annual_limit": 18,
+        "active_annual_limit_m3_year": 525817.8,
+        "active_annual_limit_equivalent_l_s": 16.673573,
+        "purpose_counts": {
+          "напояване": 4,
+          "питейно-битово водоснабдяване": 4,
+          "самостоятелно водоснабдяване за напояване на земеделски култури": 4,
+          "водоснабдяване за други цели": 2,
+          "Самостоятелно водоснабдяваане за напояване на земеделски култури": 1,
+          "други цели": 1,
+          "напояване и други цели": 1,
+          "охлаждане и други цели": 1
+        },
+        "earliest_expiry_date": "2026-10-31",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q009",
+      "gwb_name": "Порови води в кватернера на р. Средецка – Мандра",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 227.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 227.0,
+        "authorized_abstraction_l_s": 67.51,
+        "household_abstraction_l_s": 6.09,
+        "free_resource_l_s": 153.4,
+        "exploitation_index": 0.324229,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 227.0,
+          "authorized_abstraction_l_s": 67.350615,
+          "household_abstraction_l_s": 6.08,
+          "free_resource_l_s": 153.569385,
+          "exploitation_index": 0.323483
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 227.0,
+          "authorized_abstraction_l_s": 67.35,
+          "household_abstraction_l_s": 6.09,
+          "free_resource_l_s": 153.56,
+          "exploitation_index": 0.323524
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 227.0,
+          "authorized_abstraction_l_s": 67.350615,
+          "household_abstraction_l_s": 6.09,
+          "free_resource_l_s": 153.559385,
+          "exploitation_index": 0.323527
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 227.0,
+          "authorized_abstraction_l_s": 67.51,
+          "household_abstraction_l_s": 6.09,
+          "free_resource_l_s": 153.4,
+          "exploitation_index": 0.324229
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 227.0,
+          "authorized_abstraction_l_s": 67.51,
+          "household_abstraction_l_s": 6.09,
+          "free_resource_l_s": 153.4,
+          "exploitation_index": 0.324229
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 227.0,
+          "authorized_abstraction_l_s": 67.51,
+          "household_abstraction_l_s": 6.09,
+          "free_resource_l_s": 153.4,
+          "exploitation_index": 0.324229
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 227.0,
+          "authorized_abstraction_l_s": 67.51,
+          "household_abstraction_l_s": 6.09,
+          "free_resource_l_s": 153.4,
+          "exploitation_index": 0.324229
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 227.0,
+          "authorized_abstraction_l_s": 67.51,
+          "household_abstraction_l_s": 6.09,
+          "free_resource_l_s": 153.4,
+          "exploitation_index": 0.324229
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 26,
+        "active_permit_count": 18,
+        "active_permits_with_annual_limit": 18,
+        "active_annual_limit_m3_year": 1939646.2,
+        "active_annual_limit_equivalent_l_s": 61.505778,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 13,
+          "водоснабдяване за други цели": 1,
+          "животновъдство други цели": 1,
+          "напояване": 1,
+          "охлаждане": 1,
+          "охлаждане, промишлени цели,напояване": 1
+        },
+        "earliest_expiry_date": "2026-09-19",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q010",
+      "gwb_name": "Порови води в кватернера на р. Ропотамо",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 26.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 26.0,
+        "authorized_abstraction_l_s": 3.0,
+        "household_abstraction_l_s": 0.0,
+        "free_resource_l_s": 23.0,
+        "exploitation_index": 0.115385,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 26.0,
+          "authorized_abstraction_l_s": 3.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 23.0,
+          "exploitation_index": 0.115385
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 26.0,
+          "authorized_abstraction_l_s": 3.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 23.0,
+          "exploitation_index": 0.115385
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 26.0,
+          "authorized_abstraction_l_s": 3.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 23.0,
+          "exploitation_index": 0.115385
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 26.0,
+          "authorized_abstraction_l_s": 3.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 23.0,
+          "exploitation_index": 0.115385
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 26.0,
+          "authorized_abstraction_l_s": 3.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 23.0,
+          "exploitation_index": 0.115385
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 26.0,
+          "authorized_abstraction_l_s": 3.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 23.0,
+          "exploitation_index": 0.115385
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 26.0,
+          "authorized_abstraction_l_s": 3.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 23.0,
+          "exploitation_index": 0.115385
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 26.0,
+          "authorized_abstraction_l_s": 3.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 23.0,
+          "exploitation_index": 0.115385
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 1,
+        "active_permit_count": 1,
+        "active_permits_with_annual_limit": 1,
+        "active_annual_limit_m3_year": 94608.0,
+        "active_annual_limit_equivalent_l_s": 3.0,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 1
+        },
+        "earliest_expiry_date": "2029-09-09",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q011",
+      "gwb_name": "Порови води в кватернера на р. Дяволска",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 22.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 22.0,
+        "authorized_abstraction_l_s": 1.53,
+        "household_abstraction_l_s": 0.0,
+        "free_resource_l_s": 20.47,
+        "exploitation_index": 0.069545,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 1.526826,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 20.473174,
+          "exploitation_index": 0.069401
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 1.53,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 20.47,
+          "exploitation_index": 0.069545
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 1.526826,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 20.473174,
+          "exploitation_index": 0.069401
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 1.526826,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 20.473174,
+          "exploitation_index": 0.069401
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 1.53,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 20.47,
+          "exploitation_index": 0.069545
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 1.53,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 20.47,
+          "exploitation_index": 0.069545
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 1.53,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 20.47,
+          "exploitation_index": 0.069545
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 22.0,
+          "authorized_abstraction_l_s": 1.53,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 20.47,
+          "exploitation_index": 0.069545
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 5,
+        "active_permit_count": 1,
+        "active_permits_with_annual_limit": 1,
+        "active_annual_limit_m3_year": 3150.0,
+        "active_annual_limit_equivalent_l_s": 0.099886,
+        "purpose_counts": {
+          "охлаждане": 1
+        },
+        "earliest_expiry_date": "2035-10-31",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q012",
+      "gwb_name": "Порови води в кватернера на р. Велека",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 36.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 36.0,
+        "authorized_abstraction_l_s": 8.09,
+        "household_abstraction_l_s": 0.0,
+        "free_resource_l_s": 27.91,
+        "exploitation_index": 0.224722,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 36.0,
+          "authorized_abstraction_l_s": 8.08549,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 27.91451,
+          "exploitation_index": 0.224597
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 36.0,
+          "authorized_abstraction_l_s": 8.09,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 27.91,
+          "exploitation_index": 0.224722
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 36.0,
+          "authorized_abstraction_l_s": 8.08549,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 27.91451,
+          "exploitation_index": 0.224597
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 36.0,
+          "authorized_abstraction_l_s": 8.08549,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 27.91451,
+          "exploitation_index": 0.224597
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 36.0,
+          "authorized_abstraction_l_s": 8.09,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 27.91,
+          "exploitation_index": 0.224722
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 36.0,
+          "authorized_abstraction_l_s": 8.09,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 27.91,
+          "exploitation_index": 0.224722
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 36.0,
+          "authorized_abstraction_l_s": 8.09,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 27.91,
+          "exploitation_index": 0.224722
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 36.0,
+          "authorized_abstraction_l_s": 8.09,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 27.91,
+          "exploitation_index": 0.224722
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 6,
+        "active_permit_count": 3,
+        "active_permits_with_annual_limit": 3,
+        "active_annual_limit_m3_year": 254984.0,
+        "active_annual_limit_equivalent_l_s": 8.08549,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 3
+        },
+        "earliest_expiry_date": "2029-05-05",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q013",
+      "gwb_name": "Порови води в кватернера на р. Резовска",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 7.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 7.0,
+        "authorized_abstraction_l_s": 0.0,
+        "household_abstraction_l_s": 0.0,
+        "free_resource_l_s": 7.0,
+        "exploitation_index": 0.0,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 7.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 7.0,
+          "exploitation_index": 0.0
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 7.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 7.0,
+          "exploitation_index": 0.0
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 7.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 7.0,
+          "exploitation_index": 0.0
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 7.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 7.0,
+          "exploitation_index": 0.0
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 7.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 7.0,
+          "exploitation_index": 0.0
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 7.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 7.0,
+          "exploitation_index": 0.0
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 7.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 7.0,
+          "exploitation_index": 0.0
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 7.0,
+          "authorized_abstraction_l_s": 0.0,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 7.0,
+          "exploitation_index": 0.0
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 1,
+        "active_permit_count": 0,
+        "active_permits_with_annual_limit": 0,
+        "active_annual_limit_m3_year": 0.0,
+        "active_annual_limit_equivalent_l_s": null,
+        "purpose_counts": {},
+        "earliest_expiry_date": null,
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000000Q014",
+      "gwb_name": "Порови води в кватернера на р. Двойница",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 38.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 38.0,
+        "authorized_abstraction_l_s": 13.54,
+        "household_abstraction_l_s": 2.45,
+        "free_resource_l_s": 22.02,
+        "exploitation_index": 0.420789,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 38.0,
+          "authorized_abstraction_l_s": 13.53561,
+          "household_abstraction_l_s": 2.45,
+          "free_resource_l_s": 22.01439,
+          "exploitation_index": 0.420674
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 38.0,
+          "authorized_abstraction_l_s": 13.54,
+          "household_abstraction_l_s": 2.45,
+          "free_resource_l_s": 22.02,
+          "exploitation_index": 0.420789
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 38.0,
+          "authorized_abstraction_l_s": 13.53561,
+          "household_abstraction_l_s": 2.45,
+          "free_resource_l_s": 22.01439,
+          "exploitation_index": 0.420674
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 38.0,
+          "authorized_abstraction_l_s": 13.53561,
+          "household_abstraction_l_s": 2.45,
+          "free_resource_l_s": 22.01439,
+          "exploitation_index": 0.420674
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 38.0,
+          "authorized_abstraction_l_s": 13.54,
+          "household_abstraction_l_s": 2.45,
+          "free_resource_l_s": 22.02,
+          "exploitation_index": 0.420789
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 38.0,
+          "authorized_abstraction_l_s": 13.54,
+          "household_abstraction_l_s": 2.45,
+          "free_resource_l_s": 22.02,
+          "exploitation_index": 0.420789
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 38.0,
+          "authorized_abstraction_l_s": 13.54,
+          "household_abstraction_l_s": 2.45,
+          "free_resource_l_s": 22.02,
+          "exploitation_index": 0.420789
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 38.0,
+          "authorized_abstraction_l_s": 13.54,
+          "household_abstraction_l_s": 2.45,
+          "free_resource_l_s": 22.02,
+          "exploitation_index": 0.420789
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 10,
+        "active_permit_count": 2,
+        "active_permits_with_annual_limit": 2,
+        "active_annual_limit_m3_year": 426859.0,
+        "active_annual_limit_equivalent_l_s": 13.53561,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 2
+        },
+        "earliest_expiry_date": "2034-02-25",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G00000JT042",
+      "gwb_name": "Карстови води в юра-триас карстово-пукнатинна зона",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 1147.0,
+        "ecosystem_requirement_l_s": 4.0,
+        "available_resource_l_s": 1143.0,
+        "authorized_abstraction_l_s": 15.31,
+        "household_abstraction_l_s": 0.21,
+        "free_resource_l_s": 1127.48,
+        "exploitation_index": 0.013578,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 1143.0,
+          "authorized_abstraction_l_s": 15.31,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 1127.48,
+          "exploitation_index": 0.013578
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 1143.0,
+          "authorized_abstraction_l_s": 15.31,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 1.36,
+          "exploitation_index": 0.013578
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 1143.0,
+          "authorized_abstraction_l_s": 15.31,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 1127.48,
+          "exploitation_index": 0.013578
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 1143.0,
+          "authorized_abstraction_l_s": 15.31,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 1127.48,
+          "exploitation_index": 0.013578
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 1143.0,
+          "authorized_abstraction_l_s": 15.31,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 1127.48,
+          "exploitation_index": 0.013578
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 1143.0,
+          "authorized_abstraction_l_s": 15.31,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 1127.48,
+          "exploitation_index": 0.013578
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 1143.0,
+          "authorized_abstraction_l_s": 15.31,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 1127.48,
+          "exploitation_index": 0.013578
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 1143.0,
+          "authorized_abstraction_l_s": 15.31,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 1127.48,
+          "exploitation_index": 0.013578
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 24,
+        "active_permit_count": 15,
+        "active_permits_with_annual_limit": 15,
+        "active_annual_limit_m3_year": 493930.0,
+        "active_annual_limit_equivalent_l_s": 15.662418,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 11,
+          "Обществено питейно-битово водоснабдяване": 2,
+          "други цели": 1,
+          "напояване други цели противопожарни": 1
+        },
+        "earliest_expiry_date": "2030-07-16",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G00000K2030",
+      "gwb_name": "Карстови води в горна креда-мастрихт Шуменско плато",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 130.0,
+        "ecosystem_requirement_l_s": 2.52,
+        "available_resource_l_s": 127.48,
+        "authorized_abstraction_l_s": 21.71,
+        "household_abstraction_l_s": 0.0,
+        "free_resource_l_s": 105.77,
+        "exploitation_index": 0.170301,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 127.48,
+          "authorized_abstraction_l_s": 14.47,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 113.01,
+          "exploitation_index": 0.113508
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 127.48,
+          "authorized_abstraction_l_s": 21.71,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 105.77,
+          "exploitation_index": 0.170301
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 127.48,
+          "authorized_abstraction_l_s": 14.47,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 113.01,
+          "exploitation_index": 0.113508
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 127.48,
+          "authorized_abstraction_l_s": 21.71,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 105.77,
+          "exploitation_index": 0.170301
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 127.48,
+          "authorized_abstraction_l_s": 21.71,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 105.77,
+          "exploitation_index": 0.170301
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 127.48,
+          "authorized_abstraction_l_s": 21.71,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 105.77,
+          "exploitation_index": 0.170301
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 127.48,
+          "authorized_abstraction_l_s": 21.71,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 105.77,
+          "exploitation_index": 0.170301
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 127.48,
+          "authorized_abstraction_l_s": 21.71,
+          "household_abstraction_l_s": 0.0,
+          "free_resource_l_s": 105.77,
+          "exploitation_index": 0.170301
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 15,
+        "active_permit_count": 12,
+        "active_permits_with_annual_limit": 12,
+        "active_annual_limit_m3_year": 684677.0,
+        "active_annual_limit_equivalent_l_s": 21.710965,
+        "purpose_counts": {
+          "обществено питейно-битово водоснабдяване": 6,
+          "питейно-битово водоснабдяване": 4,
+          "самостоятелно питейно-битово водоснабдяване": 2
+        },
+        "earliest_expiry_date": "2031-05-18",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G00000K2031",
+      "gwb_name": "Карстови води в горна креда турон-мастрихт Каспичан",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 68.0,
+        "ecosystem_requirement_l_s": 0.84,
+        "available_resource_l_s": 67.16,
+        "authorized_abstraction_l_s": 2.2,
+        "household_abstraction_l_s": 0.21,
+        "free_resource_l_s": 64.75,
+        "exploitation_index": 0.035884,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 67.16,
+          "authorized_abstraction_l_s": 2.2,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 64.75,
+          "exploitation_index": 0.035884
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 67.16,
+          "authorized_abstraction_l_s": 2.2,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 64.75,
+          "exploitation_index": 0.035884
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 67.16,
+          "authorized_abstraction_l_s": 2.2,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 64.75,
+          "exploitation_index": 0.035884
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 67.16,
+          "authorized_abstraction_l_s": 2.2,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 64.75,
+          "exploitation_index": 0.035884
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 67.16,
+          "authorized_abstraction_l_s": 2.2,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 64.75,
+          "exploitation_index": 0.035884
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 67.16,
+          "authorized_abstraction_l_s": 2.2,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 64.75,
+          "exploitation_index": 0.035884
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 67.16,
+          "authorized_abstraction_l_s": 2.2,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 64.75,
+          "exploitation_index": 0.035884
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 67.16,
+          "authorized_abstraction_l_s": 2.2,
+          "household_abstraction_l_s": 0.21,
+          "free_resource_l_s": 64.75,
+          "exploitation_index": 0.035884
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 4,
+        "active_permit_count": 2,
+        "active_permits_with_annual_limit": 2,
+        "active_annual_limit_m3_year": 69379.0,
+        "active_annual_limit_equivalent_l_s": 2.199994,
+        "purpose_counts": {
+          "обществено питейно-битово водоснабдяване": 2
+        },
+        "earliest_expiry_date": "2032-09-12",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G00000K2032",
+      "gwb_name": "Карстово - пукнатинни води в горна креда турон - мастрихт- Провадийска синклинала",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 231.0,
+        "ecosystem_requirement_l_s": 13.2,
+        "available_resource_l_s": 217.8,
+        "authorized_abstraction_l_s": 52.69,
+        "household_abstraction_l_s": 10.74,
+        "free_resource_l_s": 154.37,
+        "exploitation_index": 0.29123,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 217.8,
+          "authorized_abstraction_l_s": 55.06,
+          "household_abstraction_l_s": 10.63,
+          "free_resource_l_s": 152.11,
+          "exploitation_index": 0.301607
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 217.8,
+          "authorized_abstraction_l_s": 55.06,
+          "household_abstraction_l_s": 10.66,
+          "free_resource_l_s": 152.07,
+          "exploitation_index": 0.301745
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 217.8,
+          "authorized_abstraction_l_s": 55.06,
+          "household_abstraction_l_s": 10.68,
+          "free_resource_l_s": 152.06,
+          "exploitation_index": 0.301837
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 217.8,
+          "authorized_abstraction_l_s": 55.76,
+          "household_abstraction_l_s": 10.73,
+          "free_resource_l_s": 151.31,
+          "exploitation_index": 0.30528
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 217.8,
+          "authorized_abstraction_l_s": 52.69,
+          "household_abstraction_l_s": 10.73,
+          "free_resource_l_s": 154.38,
+          "exploitation_index": 0.291185
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 217.8,
+          "authorized_abstraction_l_s": 52.69,
+          "household_abstraction_l_s": 10.73,
+          "free_resource_l_s": 154.38,
+          "exploitation_index": 0.291185
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 217.8,
+          "authorized_abstraction_l_s": 52.69,
+          "household_abstraction_l_s": 10.74,
+          "free_resource_l_s": 154.37,
+          "exploitation_index": 0.29123
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 217.8,
+          "authorized_abstraction_l_s": 52.69,
+          "household_abstraction_l_s": 10.74,
+          "free_resource_l_s": 154.37,
+          "exploitation_index": 0.29123
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 33,
+        "active_permit_count": 26,
+        "active_permits_with_annual_limit": 26,
+        "active_annual_limit_m3_year": 1680550.0,
+        "active_annual_limit_equivalent_l_s": 53.289891,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 11,
+          "обществено питейно-битово водоснабдяване": 8,
+          "Самостоятелно водоснабдяваане за напояване на земеделски култури": 1,
+          "водоснабдяване за други цели": 1,
+          "напояване": 1,
+          "напояване на земеделски култури": 1,
+          "напояване на земеделски култури самостоятелно питейно-битово водоснабдяване други цели": 1,
+          "самостоятелно водоснабдяване на земеделски култури": 1,
+          "самостоятелно питейно-битово водоснабдяване": 1
+        },
+        "earliest_expiry_date": "2027-04-05",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G00000K2033",
+      "gwb_name": "Карстово- пукнатинни води в горна креда плюс юра-триас Котелски карстов басейн",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 784.0,
+        "ecosystem_requirement_l_s": 33.6,
+        "available_resource_l_s": 750.4,
+        "authorized_abstraction_l_s": 103.24,
+        "household_abstraction_l_s": 5.55,
+        "free_resource_l_s": 641.61,
+        "exploitation_index": 0.144976,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 750.4,
+          "authorized_abstraction_l_s": 103.24,
+          "household_abstraction_l_s": 5.52,
+          "free_resource_l_s": 641.64,
+          "exploitation_index": 0.144936
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 750.4,
+          "authorized_abstraction_l_s": 103.24,
+          "household_abstraction_l_s": 5.52,
+          "free_resource_l_s": 641.64,
+          "exploitation_index": 0.144936
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 750.4,
+          "authorized_abstraction_l_s": 103.24,
+          "household_abstraction_l_s": 5.51,
+          "free_resource_l_s": 641.65,
+          "exploitation_index": 0.144923
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 750.4,
+          "authorized_abstraction_l_s": 103.24,
+          "household_abstraction_l_s": 5.53,
+          "free_resource_l_s": 641.63,
+          "exploitation_index": 0.144949
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 750.4,
+          "authorized_abstraction_l_s": 103.24,
+          "household_abstraction_l_s": 5.53,
+          "free_resource_l_s": 641.63,
+          "exploitation_index": 0.144949
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 750.4,
+          "authorized_abstraction_l_s": 103.24,
+          "household_abstraction_l_s": 5.55,
+          "free_resource_l_s": 641.62,
+          "exploitation_index": 0.144976
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 750.4,
+          "authorized_abstraction_l_s": 103.24,
+          "household_abstraction_l_s": 5.55,
+          "free_resource_l_s": 641.61,
+          "exploitation_index": 0.144976
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 750.4,
+          "authorized_abstraction_l_s": 103.24,
+          "household_abstraction_l_s": 5.55,
+          "free_resource_l_s": 641.61,
+          "exploitation_index": 0.144976
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 26,
+        "active_permit_count": 16,
+        "active_permits_with_annual_limit": 16,
+        "active_annual_limit_m3_year": 3228535.8,
+        "active_annual_limit_equivalent_l_s": 102.376199,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 8,
+          "обществено питейно-битово водоснабдяване": 3,
+          "самостоятелно питейно-битово водоснабдяване": 3,
+          "напояване и други цели": 1,
+          "самостоятелно питейно-битово водоснабдяване други цели": 1
+        },
+        "earliest_expiry_date": "2027-05-17",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G00000K2034",
+      "gwb_name": "Пукнатинни води в горна креда, Бургаска вулканична зона, северно и западно от Бургас",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 479.0,
+        "ecosystem_requirement_l_s": 32.4,
+        "available_resource_l_s": 446.6,
+        "authorized_abstraction_l_s": 117.45,
+        "household_abstraction_l_s": 63.66,
+        "free_resource_l_s": 265.49,
+        "exploitation_index": 0.405531,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 446.6,
+          "authorized_abstraction_l_s": 104.57,
+          "household_abstraction_l_s": 62.3,
+          "free_resource_l_s": 279.73,
+          "exploitation_index": 0.373645
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 446.6,
+          "authorized_abstraction_l_s": 106.69,
+          "household_abstraction_l_s": 63.43,
+          "free_resource_l_s": 276.49,
+          "exploitation_index": 0.380923
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 446.6,
+          "authorized_abstraction_l_s": 113.4,
+          "household_abstraction_l_s": 63.41,
+          "free_resource_l_s": 269.79,
+          "exploitation_index": 0.395902
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 446.6,
+          "authorized_abstraction_l_s": 116.79,
+          "household_abstraction_l_s": 63.47,
+          "free_resource_l_s": 266.34,
+          "exploitation_index": 0.403627
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 446.6,
+          "authorized_abstraction_l_s": 116.71,
+          "household_abstraction_l_s": 63.47,
+          "free_resource_l_s": 266.42,
+          "exploitation_index": 0.403448
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 446.6,
+          "authorized_abstraction_l_s": 116.35,
+          "household_abstraction_l_s": 63.62,
+          "free_resource_l_s": 266.63,
+          "exploitation_index": 0.402978
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 446.6,
+          "authorized_abstraction_l_s": 117.36,
+          "household_abstraction_l_s": 63.65,
+          "free_resource_l_s": 265.6,
+          "exploitation_index": 0.405307
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 446.6,
+          "authorized_abstraction_l_s": 117.45,
+          "household_abstraction_l_s": 63.66,
+          "free_resource_l_s": 265.49,
+          "exploitation_index": 0.405531
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 213,
+        "active_permit_count": 125,
+        "active_permits_with_annual_limit": 125,
+        "active_annual_limit_m3_year": 2981071.0,
+        "active_annual_limit_equivalent_l_s": 94.529141,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 43,
+          "напояване": 15,
+          "други цели": 14,
+          "напояване на земеделски култури": 9,
+          "водоснабдяване за други цели": 9,
+          "Самостоятелно водоснабдяваане за напояване на земеделски култури": 3,
+          "обществено питейно-битово водоснабдяване": 5,
+          "самостоятелно водоснабдяване за напояване на земеделски култури": 3,
+          "самостоятелно питейно-битово": 3,
+          "самостоятелно питейно-битово водоснабдяване и други цели": 3,
+          "животновъдство": 2,
+          "промишлени цели": 2,
+          "\"промишлено водоснабдяване\"": 1,
+          "Обществени питейно-битово водоснабдяване": 1,
+          "водоснабдяване за други цели - поливане на тревни площи": 1,
+          "водоснабдяване за животновъдство и аквакултури": 1,
+          "всички други цели": 1,
+          "за водоснабдяване за други цели (за пръскане на селскостопански насаждения)": 1,
+          "напояване и други цели": 1,
+          "напояване и питейно-битово водоснабдяване": 1,
+          "питейно-битови и други цели": 1,
+          "промишлени и други цели": 1,
+          "промишлени цели питейно-битово водоснабдяване": 1,
+          "промишлено водоснабдяване": 1,
+          "самостоятелно водоснабдяване за напояване на земеделски култури и водоснабдяване за животновъдство и аквакултури": 1,
+          "самостоятелно водоснабдяване на земеделски култури": 1
+        },
+        "earliest_expiry_date": "2026-09-15",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 33,
+        "active_permit_count": 14,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G00000K2035",
+      "gwb_name": "Пукнатинни води в горна креда, Бургаска вулканична зона, южно от Бургас",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 245.0,
+        "ecosystem_requirement_l_s": 2.0,
+        "available_resource_l_s": 243.0,
+        "authorized_abstraction_l_s": 7.86,
+        "household_abstraction_l_s": 9.34,
+        "free_resource_l_s": 225.81,
+        "exploitation_index": 0.070782,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 243.0,
+          "authorized_abstraction_l_s": 6.05,
+          "household_abstraction_l_s": 8.95,
+          "free_resource_l_s": 228.0,
+          "exploitation_index": 0.061728
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 243.0,
+          "authorized_abstraction_l_s": 7.91,
+          "household_abstraction_l_s": 9.24,
+          "free_resource_l_s": 225.85,
+          "exploitation_index": 0.070576
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 243.0,
+          "authorized_abstraction_l_s": 5.59,
+          "household_abstraction_l_s": 9.24,
+          "free_resource_l_s": 228.17,
+          "exploitation_index": 0.061029
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 243.0,
+          "authorized_abstraction_l_s": 8.04,
+          "household_abstraction_l_s": 9.29,
+          "free_resource_l_s": 225.67,
+          "exploitation_index": 0.071317
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 243.0,
+          "authorized_abstraction_l_s": 8.04,
+          "household_abstraction_l_s": 9.29,
+          "free_resource_l_s": 225.66,
+          "exploitation_index": 0.071317
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 243.0,
+          "authorized_abstraction_l_s": 7.81,
+          "household_abstraction_l_s": 9.3,
+          "free_resource_l_s": 225.89,
+          "exploitation_index": 0.070412
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 243.0,
+          "authorized_abstraction_l_s": 7.84,
+          "household_abstraction_l_s": 9.32,
+          "free_resource_l_s": 225.84,
+          "exploitation_index": 0.070617
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 243.0,
+          "authorized_abstraction_l_s": 7.86,
+          "household_abstraction_l_s": 9.34,
+          "free_resource_l_s": 225.81,
+          "exploitation_index": 0.070782
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 70,
+        "active_permit_count": 30,
+        "active_permits_with_annual_limit": 30,
+        "active_annual_limit_m3_year": 247753.0,
+        "active_annual_limit_equivalent_l_s": 7.856196,
+        "purpose_counts": {
+          "водоснабдяване за други цели": 7,
+          "Самостоятелно водоснабдяваане за напояване на земеделски култури": 3,
+          "питейно-битово водоснабдяване": 3,
+          "водоснабдяване за други цели - напояване и оросяване на площи": 2,
+          "други цели": 2,
+          "напояване на земеделски култури": 2,
+          "промишлени цели": 2,
+          "Самостоятелно водоснабдяване за напояване на земеделски култури": 2,
+          "водоснабдяване за животновъдство": 1,
+          "животновъдство други цели": 1,
+          "напояване": 1,
+          "обществено питейно-битово водоснабдяване": 1,
+          "промишлени цели напояване на земеделски култури": 1,
+          "самостоятелно водоснабдяване на земеделски култури": 1,
+          "самостоятелно питейно-битово водоснабдяване": 1
+        },
+        "earliest_expiry_date": "2026-10-01",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G00000PG026",
+      "gwb_name": "Порови води в палеоген - еоцен Варна - Шабла",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 1258.0,
+        "ecosystem_requirement_l_s": 12.48,
+        "available_resource_l_s": 1245.52,
+        "authorized_abstraction_l_s": 143.07,
+        "household_abstraction_l_s": 6.4,
+        "free_resource_l_s": 1096.05,
+        "exploitation_index": 0.120006,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 1245.52,
+          "authorized_abstraction_l_s": 127.42,
+          "household_abstraction_l_s": 6.34,
+          "free_resource_l_s": 1111.76,
+          "exploitation_index": 0.107393
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 1245.52,
+          "authorized_abstraction_l_s": 141.43,
+          "household_abstraction_l_s": 6.36,
+          "free_resource_l_s": 1097.73,
+          "exploitation_index": 0.118657
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 1245.52,
+          "authorized_abstraction_l_s": 126.84,
+          "household_abstraction_l_s": 6.37,
+          "free_resource_l_s": 1112.31,
+          "exploitation_index": 0.106951
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 1245.52,
+          "authorized_abstraction_l_s": 141.43,
+          "household_abstraction_l_s": 6.38,
+          "free_resource_l_s": 1097.71,
+          "exploitation_index": 0.118673
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 1245.52,
+          "authorized_abstraction_l_s": 141.87,
+          "household_abstraction_l_s": 6.38,
+          "free_resource_l_s": 1097.27,
+          "exploitation_index": 0.119027
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 1245.52,
+          "authorized_abstraction_l_s": 141.43,
+          "household_abstraction_l_s": 6.39,
+          "free_resource_l_s": 1097.7,
+          "exploitation_index": 0.118681
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 1245.52,
+          "authorized_abstraction_l_s": 144.53,
+          "household_abstraction_l_s": 6.4,
+          "free_resource_l_s": 1094.59,
+          "exploitation_index": 0.121178
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 1245.52,
+          "authorized_abstraction_l_s": 143.07,
+          "household_abstraction_l_s": 6.4,
+          "free_resource_l_s": 1096.05,
+          "exploitation_index": 0.120006
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 67,
+        "active_permit_count": 40,
+        "active_permits_with_annual_limit": 40,
+        "active_annual_limit_m3_year": 4560265.0,
+        "active_annual_limit_equivalent_l_s": 144.605055,
+        "purpose_counts": {
+          "други цели": 7,
+          "напояване": 6,
+          "водоснабдяване за други цели": 6,
+          "питейно-битово водоснабдяване": 4,
+          "самостоятелно водоснабдяване за напояване на земеделски култури": 4,
+          "промишлени цели": 2,
+          "водоснабдяване за аквакултури за други цели": 1,
+          "водоснабдяване за други цели и самостоятелно питейно-битово водоснабдяване, когато отнетата вода се ползва за питейно-битови цели": 1,
+          "други цели - поливане на тревни площи и противопожарни нужди": 1,
+          "животновъдство": 1,
+          "напояване и други цели": 1,
+          "напояване питейно-битово водоснабдяване": 1,
+          "напояване противопожарни цели": 1,
+          "обществено питейно-битово водоснабдяване": 1,
+          "питейно-битово водоснабдяване промишлени цели охлаждане": 1,
+          "промишлено водоснабдяване": 1,
+          "самостоятелно водоснабдяване за напояване на земеделски култури; водоснабдяване за други цели": 1
+        },
+        "earliest_expiry_date": "2027-07-05",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 6,
+        "active_permit_count": 1,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G00000PG027",
+      "gwb_name": "Порови води в палеоген - еоцен, олигоцен Провадия",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 781.0,
+        "ecosystem_requirement_l_s": 72.8,
+        "available_resource_l_s": 708.2,
+        "authorized_abstraction_l_s": 19.73,
+        "household_abstraction_l_s": 2.07,
+        "free_resource_l_s": 686.41,
+        "exploitation_index": 0.030782,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 708.2,
+          "authorized_abstraction_l_s": 19.25,
+          "household_abstraction_l_s": 2.06,
+          "free_resource_l_s": 686.89,
+          "exploitation_index": 0.03009
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 708.2,
+          "authorized_abstraction_l_s": 19.25,
+          "household_abstraction_l_s": 2.06,
+          "free_resource_l_s": 686.89,
+          "exploitation_index": 0.03009
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 708.2,
+          "authorized_abstraction_l_s": 19.25,
+          "household_abstraction_l_s": 2.06,
+          "free_resource_l_s": 686.89,
+          "exploitation_index": 0.03009
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 708.2,
+          "authorized_abstraction_l_s": 19.25,
+          "household_abstraction_l_s": 2.07,
+          "free_resource_l_s": 686.88,
+          "exploitation_index": 0.030104
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 708.2,
+          "authorized_abstraction_l_s": 19.25,
+          "household_abstraction_l_s": 2.07,
+          "free_resource_l_s": 686.88,
+          "exploitation_index": 0.030104
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 708.2,
+          "authorized_abstraction_l_s": 19.25,
+          "household_abstraction_l_s": 2.07,
+          "free_resource_l_s": 686.88,
+          "exploitation_index": 0.030104
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 708.2,
+          "authorized_abstraction_l_s": 19.25,
+          "household_abstraction_l_s": 2.07,
+          "free_resource_l_s": 686.88,
+          "exploitation_index": 0.030104
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 708.2,
+          "authorized_abstraction_l_s": 19.73,
+          "household_abstraction_l_s": 2.07,
+          "free_resource_l_s": 686.41,
+          "exploitation_index": 0.030782
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 15,
+        "active_permit_count": 13,
+        "active_permits_with_annual_limit": 13,
+        "active_annual_limit_m3_year": 637156.0,
+        "active_annual_limit_equivalent_l_s": 20.204084,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 6,
+          "обществено питейно-битово водоснабдяване": 4,
+          "водоснабдяване за други цели": 1,
+          "напояване": 1,
+          "самостоятелно водоснабдяване за напояване на земеделски култури": 1
+        },
+        "earliest_expiry_date": "2026-09-30",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G00000PG028",
+      "gwb_name": "Порови води в палеоген, палеоцен, еоцен Руен- Бяла",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 536.0,
+        "ecosystem_requirement_l_s": 148.72,
+        "available_resource_l_s": 387.28,
+        "authorized_abstraction_l_s": 33.6,
+        "household_abstraction_l_s": 21.21,
+        "free_resource_l_s": 332.47,
+        "exploitation_index": 0.141526,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 387.28,
+          "authorized_abstraction_l_s": 32.72,
+          "household_abstraction_l_s": 21.16,
+          "free_resource_l_s": 333.4,
+          "exploitation_index": 0.139124
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 387.28,
+          "authorized_abstraction_l_s": 32.72,
+          "household_abstraction_l_s": 21.16,
+          "free_resource_l_s": 333.4,
+          "exploitation_index": 0.139124
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 387.28,
+          "authorized_abstraction_l_s": 32.72,
+          "household_abstraction_l_s": 21.18,
+          "free_resource_l_s": 333.38,
+          "exploitation_index": 0.139176
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 387.28,
+          "authorized_abstraction_l_s": 32.65,
+          "household_abstraction_l_s": 21.19,
+          "free_resource_l_s": 333.44,
+          "exploitation_index": 0.139021
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 387.28,
+          "authorized_abstraction_l_s": 32.65,
+          "household_abstraction_l_s": 21.19,
+          "free_resource_l_s": 333.43,
+          "exploitation_index": 0.139021
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 387.28,
+          "authorized_abstraction_l_s": 32.65,
+          "household_abstraction_l_s": 21.2,
+          "free_resource_l_s": 333.43,
+          "exploitation_index": 0.139047
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 387.28,
+          "authorized_abstraction_l_s": 33.6,
+          "household_abstraction_l_s": 21.21,
+          "free_resource_l_s": 332.47,
+          "exploitation_index": 0.141526
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 387.28,
+          "authorized_abstraction_l_s": 33.6,
+          "household_abstraction_l_s": 21.21,
+          "free_resource_l_s": 332.47,
+          "exploitation_index": 0.141526
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 57,
+        "active_permit_count": 36,
+        "active_permits_with_annual_limit": 36,
+        "active_annual_limit_m3_year": 963222.0,
+        "active_annual_limit_equivalent_l_s": 30.543569,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 23,
+          "самостоятелно питейно-битово водоснадяване": 5,
+          "обществено питейно-битово водоснабдяване": 3,
+          "самостоятелно питейно-битово водоснабдяване": 2,
+          "Водоснабдяване за други цели": 2,
+          "водоснабдяване за животновъдство и аквакултури": 1
+        },
+        "earliest_expiry_date": "2029-08-05",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G00000PG029",
+      "gwb_name": "Порови води в палеоген - еоцен , олигоцен Бургас",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 193.0,
+        "ecosystem_requirement_l_s": 0.0,
+        "available_resource_l_s": 193.0,
+        "authorized_abstraction_l_s": 20.51,
+        "household_abstraction_l_s": 16.26,
+        "free_resource_l_s": 156.23,
+        "exploitation_index": 0.190518,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 193.0,
+          "authorized_abstraction_l_s": 13.44,
+          "household_abstraction_l_s": 12.85,
+          "free_resource_l_s": 166.71,
+          "exploitation_index": 0.136218
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 193.0,
+          "authorized_abstraction_l_s": 13.44,
+          "household_abstraction_l_s": 15.19,
+          "free_resource_l_s": 164.37,
+          "exploitation_index": 0.148342
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 193.0,
+          "authorized_abstraction_l_s": 13.49,
+          "household_abstraction_l_s": 15.2,
+          "free_resource_l_s": 164.31,
+          "exploitation_index": 0.148653
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 193.0,
+          "authorized_abstraction_l_s": 19.07,
+          "household_abstraction_l_s": 16.21,
+          "free_resource_l_s": 157.72,
+          "exploitation_index": 0.182798
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 193.0,
+          "authorized_abstraction_l_s": 19.07,
+          "household_abstraction_l_s": 16.21,
+          "free_resource_l_s": 157.72,
+          "exploitation_index": 0.182798
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 193.0,
+          "authorized_abstraction_l_s": 19.97,
+          "household_abstraction_l_s": 16.23,
+          "free_resource_l_s": 156.8,
+          "exploitation_index": 0.187565
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 193.0,
+          "authorized_abstraction_l_s": 20.51,
+          "household_abstraction_l_s": 16.21,
+          "free_resource_l_s": 156.28,
+          "exploitation_index": 0.190259
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 193.0,
+          "authorized_abstraction_l_s": 20.51,
+          "household_abstraction_l_s": 16.26,
+          "free_resource_l_s": 156.23,
+          "exploitation_index": 0.190518
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 68,
+        "active_permit_count": 44,
+        "active_permits_with_annual_limit": 44,
+        "active_annual_limit_m3_year": 637192.9,
+        "active_annual_limit_equivalent_l_s": 20.205254,
+        "purpose_counts": {
+          "други цели": 8,
+          "напояване на земеделски култури": 6,
+          "водоснабдяване за други цели": 4,
+          "Промишлено водоснабдяване": 5,
+          "напояване": 3,
+          "самостоятелно водоснабдяване за напояване на земеделски култури": 5,
+          "промишлени цели": 2,
+          "промишлени цели напояване": 2,
+          "Самостоятелно водоснабдяваане за напояване на земеделски култури": 1,
+          "водоснабдяване за \"други цели\"": 1,
+          "други цели и противопожарни": 1,
+          "напояване и други цели": 1,
+          "напояване на земеделски култури охлаждане други цели": 1,
+          "охлаждане": 1,
+          "охлаждане на производствени машини и съоръжения в процеса на работата им": 1,
+          "питейно-битово водоснабдяване": 1,
+          "поливане на зелени площи в ПИ 80916.70.54": 1
+        },
+        "earliest_expiry_date": "2027-08-11",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000J3K1040",
+      "gwb_name": "Карстови води в малм-валанж",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 2512.0,
+        "ecosystem_requirement_l_s": 21.84,
+        "available_resource_l_s": 2490.16,
+        "authorized_abstraction_l_s": 477.23,
+        "household_abstraction_l_s": 4.99,
+        "free_resource_l_s": 2007.94,
+        "exploitation_index": 0.19365,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 2490.16,
+          "authorized_abstraction_l_s": 417.46,
+          "household_abstraction_l_s": 2.22,
+          "free_resource_l_s": 2070.48,
+          "exploitation_index": 0.168535
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 2490.16,
+          "authorized_abstraction_l_s": 442.83,
+          "household_abstraction_l_s": 2.22,
+          "free_resource_l_s": 2045.11,
+          "exploitation_index": 0.178723
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 2490.16,
+          "authorized_abstraction_l_s": 472.58,
+          "household_abstraction_l_s": 3.66,
+          "free_resource_l_s": 2013.92,
+          "exploitation_index": 0.191249
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 2490.16,
+          "authorized_abstraction_l_s": 473.09,
+          "household_abstraction_l_s": 5.0,
+          "free_resource_l_s": 2012.07,
+          "exploitation_index": 0.191992
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 2490.16,
+          "authorized_abstraction_l_s": 473.09,
+          "household_abstraction_l_s": 4.99,
+          "free_resource_l_s": 2012.08,
+          "exploitation_index": 0.191988
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 2490.16,
+          "authorized_abstraction_l_s": 473.09,
+          "household_abstraction_l_s": 4.99,
+          "free_resource_l_s": 2012.08,
+          "exploitation_index": 0.191988
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 2490.16,
+          "authorized_abstraction_l_s": 472.08,
+          "household_abstraction_l_s": 4.99,
+          "free_resource_l_s": 2013.08,
+          "exploitation_index": 0.191582
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 2490.16,
+          "authorized_abstraction_l_s": 477.23,
+          "household_abstraction_l_s": 4.99,
+          "free_resource_l_s": 2007.94,
+          "exploitation_index": 0.19365
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 9,
+        "active_permit_count": 8,
+        "active_permits_with_annual_limit": 8,
+        "active_annual_limit_m3_year": 1098427.0,
+        "active_annual_limit_equivalent_l_s": 34.830892,
+        "purpose_counts": {
+          "обществено питейно-битово водоснабдяване": 3,
+          "други": 1,
+          "питейно-битово водоснабдяване": 1,
+          "промишлено водоснабдяване водоснабдяване за други цели": 1,
+          "промишлено водоснабдяване; самостоятелно питейно-битово водоснабдяване, когато отнетата вода се ползва за питейно-битови цели; охлаждане на производствени машини и съоръжения в процеса на работата им; водоснабдяване за други цели": 1,
+          "самостоятелно питейно-битово водоснабдяване, когато отнетата вода се ползва за питейно-битови цели\"": 1
+        },
+        "earliest_expiry_date": "2028-01-16",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 244,
+        "active_permit_count": 83,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000J3K1041",
+      "gwb_name": "Карстови води в малм-валанж",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 6560.0,
+        "ecosystem_requirement_l_s": 6.76,
+        "available_resource_l_s": 6553.24,
+        "authorized_abstraction_l_s": 2924.74,
+        "household_abstraction_l_s": 5.66,
+        "free_resource_l_s": 3622.85,
+        "exploitation_index": 0.447168,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 6553.24,
+          "authorized_abstraction_l_s": 2927.63,
+          "household_abstraction_l_s": 5.64,
+          "free_resource_l_s": 3619.97,
+          "exploitation_index": 0.447606
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 6553.24,
+          "authorized_abstraction_l_s": 2926.44,
+          "household_abstraction_l_s": 5.64,
+          "free_resource_l_s": 3621.16,
+          "exploitation_index": 0.447424
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 6553.24,
+          "authorized_abstraction_l_s": 2920.62,
+          "household_abstraction_l_s": 5.64,
+          "free_resource_l_s": 3626.98,
+          "exploitation_index": 0.446536
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 6553.24,
+          "authorized_abstraction_l_s": 2934.76,
+          "household_abstraction_l_s": 5.65,
+          "free_resource_l_s": 3612.83,
+          "exploitation_index": 0.448696
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 6553.24,
+          "authorized_abstraction_l_s": 2920.87,
+          "household_abstraction_l_s": 5.65,
+          "free_resource_l_s": 3626.73,
+          "exploitation_index": 0.446576
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 6553.24,
+          "authorized_abstraction_l_s": 2932.53,
+          "household_abstraction_l_s": 5.66,
+          "free_resource_l_s": 3615.05,
+          "exploitation_index": 0.448357
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 6553.24,
+          "authorized_abstraction_l_s": 2926.51,
+          "household_abstraction_l_s": 5.66,
+          "free_resource_l_s": 3621.07,
+          "exploitation_index": 0.447438
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 6553.24,
+          "authorized_abstraction_l_s": 2924.74,
+          "household_abstraction_l_s": 5.66,
+          "free_resource_l_s": 3622.85,
+          "exploitation_index": 0.447168
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 168,
+        "active_permit_count": 91,
+        "active_permits_with_annual_limit": 91,
+        "active_annual_limit_m3_year": 91482613.83,
+        "active_annual_limit_equivalent_l_s": 2900.894655,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 26,
+          "напояване": 6,
+          "питейно-битово водоснабдяване промишлени цели охлаждане": 6,
+          "обществено питейно-битово водоснабдяване": 7,
+          "самостоятелно водоснабдяване за напояване на земеделски култури": 4,
+          "Промишлено водоснабдяване": 3,
+          "водоснабдяване за други цели": 3,
+          "напояване на земеделски култури": 2,
+          "питейно-битово водоснабдяване промишлени цели": 2,
+          "самостоятелно питейно-битово водоснабдяване": 2,
+          "\"самостоятелно питейно--битово водоснабдяване, когато отнетата вода се ползва за питейно-битови цели\" и \"охлаждане на производствени машини и съоръжения в процеса на работата им\"": 1,
+          "Промишлено водоснабдяване,охлаждане и ППН": 1,
+          "Самостоятелно водоснабдяваане за напояване на земеделски култури": 1,
+          "Самостоятелно водоснабдяваане за напояване на земеделски култури Водоснабдяване за други цели": 1,
+          "Самостоятелно водоснабдяване за напояване на земеделски култури Водоснабдяване за животновъдство": 1,
+          "Самостоятелно питейно-битово водоснабдяване Водоснабдяване за други цели": 1,
+          "водоснабдяване за животновъдство": 1,
+          "водоснабдяване за животновъдство и аквакултури": 1,
+          "други цели": 1,
+          "други цели - измиване на промишлени площадки, пълнене на тоалетни казанчета": 1,
+          "животновъдство и напояване": 1,
+          "напояване и ППН": 1,
+          "охлаждане": 1,
+          "охлаждане на производствени машини и съоръжения в процеса на работата им; промишлено водоснабдяване и самостоятелно питейно-битово водоснабдяване, когато отнетата вода се ползва за питейно-битови цели": 1,
+          "питейно-битово водоснабдяване охлаждане бутилиране": 1,
+          "питейно-битово водоснабдяване промишлени цели други цели": 1,
+          "промишлени и други цели (ПП)": 1,
+          "промишлени цели": 1,
+          "промишлени цели животновъдство питейно-битово водоснабдяване": 1,
+          "промишлени цели питейно-битово водоснабдяване": 1,
+          "промишлено водоснабдаване": 1,
+          "промишлено водоснабдяване - производство н минерални фуражни суровини самостоятелно питейно-битово водоснабдяване": 1,
+          "промишлено водоснабдяване и охлаждане": 1,
+          "промишлено водоснабдяване, охлаждане и ППН": 1,
+          "промишлено водоснабдяване; охлаждане на производствени машини и съоръжения в процеса на работата им, в т.ч. ППН": 1,
+          "самостоятелно водоснабдване, когато отнетата вода се ползва с цел производство на храни": 1,
+          "самостоятелно водоснабдяване за земеделски култури": 1,
+          "самостоятелно водоснабдяване на земеделски култури": 1,
+          "самостоятелно питейно-битово водоснабдяване и ППН": 1,
+          "самостоятелно питейно-битово водоснабдяване охлаждане промишлено водоснабдяване други цели": 1
+        },
+        "earliest_expiry_date": "2026-10-01",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 1,
+        "active_permit_count": 1,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000K1HB036",
+      "gwb_name": "Пукнатинни води в хотрив - барем - апт Каспичан, Тервел, Крушари",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 417.0,
+        "ecosystem_requirement_l_s": 24.0,
+        "available_resource_l_s": 393.0,
+        "authorized_abstraction_l_s": 59.24,
+        "household_abstraction_l_s": 34.5,
+        "free_resource_l_s": 299.26,
+        "exploitation_index": 0.238524,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 393.0,
+          "authorized_abstraction_l_s": 58.21,
+          "household_abstraction_l_s": 33.17,
+          "free_resource_l_s": 301.62,
+          "exploitation_index": 0.232519
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 393.0,
+          "authorized_abstraction_l_s": 58.82,
+          "household_abstraction_l_s": 33.22,
+          "free_resource_l_s": 300.96,
+          "exploitation_index": 0.234198
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 393.0,
+          "authorized_abstraction_l_s": 59.14,
+          "household_abstraction_l_s": 33.27,
+          "free_resource_l_s": 300.59,
+          "exploitation_index": 0.23514
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 393.0,
+          "authorized_abstraction_l_s": 59.24,
+          "household_abstraction_l_s": 34.1,
+          "free_resource_l_s": 299.66,
+          "exploitation_index": 0.237506
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 393.0,
+          "authorized_abstraction_l_s": 59.24,
+          "household_abstraction_l_s": 34.49,
+          "free_resource_l_s": 299.27,
+          "exploitation_index": 0.238499
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 393.0,
+          "authorized_abstraction_l_s": 59.24,
+          "household_abstraction_l_s": 34.49,
+          "free_resource_l_s": 299.27,
+          "exploitation_index": 0.238499
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 393.0,
+          "authorized_abstraction_l_s": 59.24,
+          "household_abstraction_l_s": 34.49,
+          "free_resource_l_s": 299.27,
+          "exploitation_index": 0.238499
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 393.0,
+          "authorized_abstraction_l_s": 59.24,
+          "household_abstraction_l_s": 34.5,
+          "free_resource_l_s": 299.26,
+          "exploitation_index": 0.238524
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 44,
+        "active_permit_count": 36,
+        "active_permits_with_annual_limit": 36,
+        "active_annual_limit_m3_year": 1749177.0,
+        "active_annual_limit_equivalent_l_s": 55.466039,
+        "purpose_counts": {
+          "обществено питейно-битово водоснабдяване": 24,
+          "питейно-битово водоснабдяване": 6,
+          "водоснабдяване за други цели": 1,
+          "водоснабдяване за други цели (за разреждане на препарати и торове за пръскане на земеделски култури)": 1,
+          "водоснабдяване за други цели, в т.ч. противопожарни нужди": 1,
+          "животновъдство питейно-битово водоснабдяване": 1,
+          "животновъдство, други цели и ППН": 1,
+          "охлаждане и други цели": 1
+        },
+        "earliest_expiry_date": "2026-12-20",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000K1HB037",
+      "gwb_name": "Пукнатинни води във Валанж- Хотрив - апт Шумен - Търговище",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 153.0,
+        "ecosystem_requirement_l_s": 43.2,
+        "available_resource_l_s": 109.8,
+        "authorized_abstraction_l_s": 46.48,
+        "household_abstraction_l_s": 52.75,
+        "free_resource_l_s": 10.57,
+        "exploitation_index": 0.903734,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 109.8,
+          "authorized_abstraction_l_s": 30.57,
+          "household_abstraction_l_s": 38.71,
+          "free_resource_l_s": 40.52,
+          "exploitation_index": 0.630965
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 109.8,
+          "authorized_abstraction_l_s": 29.87,
+          "household_abstraction_l_s": 38.71,
+          "free_resource_l_s": 41.22,
+          "exploitation_index": 0.62459
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 109.8,
+          "authorized_abstraction_l_s": 29.69,
+          "household_abstraction_l_s": 56.21,
+          "free_resource_l_s": 23.9,
+          "exploitation_index": 0.782332
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 109.8,
+          "authorized_abstraction_l_s": 43.37,
+          "household_abstraction_l_s": 52.84,
+          "free_resource_l_s": 13.59,
+          "exploitation_index": 0.87623
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 109.8,
+          "authorized_abstraction_l_s": 43.37,
+          "household_abstraction_l_s": 52.74,
+          "free_resource_l_s": 13.7,
+          "exploitation_index": 0.875319
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 109.8,
+          "authorized_abstraction_l_s": 43.37,
+          "household_abstraction_l_s": 52.75,
+          "free_resource_l_s": 13.69,
+          "exploitation_index": 0.87541
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 109.8,
+          "authorized_abstraction_l_s": 46.02,
+          "household_abstraction_l_s": 52.75,
+          "free_resource_l_s": 11.03,
+          "exploitation_index": 0.899545
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 109.8,
+          "authorized_abstraction_l_s": 46.48,
+          "household_abstraction_l_s": 52.75,
+          "free_resource_l_s": 10.57,
+          "exploitation_index": 0.903734
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 45,
+        "active_permit_count": 32,
+        "active_permits_with_annual_limit": 32,
+        "active_annual_limit_m3_year": 1461824.4,
+        "active_annual_limit_equivalent_l_s": 46.354148,
+        "purpose_counts": {
+          "обществено питейно-битово водоснабдяване": 11,
+          "водоснабдяване за други цели": 5,
+          "питейно-битово водоснабдяване": 5,
+          "\"други цели\"": 1,
+          "водоснабдяване за други цели (автомивка)": 1,
+          "водоснабдяване за други цели (напояване на тревни площи, измиване на тротоари, площадки и вътрешни помещения\"": 1,
+          "водоснабдяване за други цели - измиване на автомобили пране на килими": 1,
+          "водоснабдяване за други цели охлаждане": 1,
+          "други цели": 1,
+          "други цели ППН": 1,
+          "други цели охлаждане": 1,
+          "животновъдство": 1,
+          "питейно-битово водоснабдяване животновъдство": 1,
+          "промишлени цели": 1
+        },
+        "earliest_expiry_date": "2027-06-01",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000K1HB038",
+      "gwb_name": "Пукнатинни води в Предбалкан -Валанж- Хотрив - апт Конево",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 221.0,
+        "ecosystem_requirement_l_s": 28.4,
+        "available_resource_l_s": 192.6,
+        "authorized_abstraction_l_s": 20.99,
+        "household_abstraction_l_s": 14.37,
+        "free_resource_l_s": 157.24,
+        "exploitation_index": 0.183593,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 192.6,
+          "authorized_abstraction_l_s": 22.78,
+          "household_abstraction_l_s": 9.23,
+          "free_resource_l_s": 160.59,
+          "exploitation_index": 0.166199
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 192.6,
+          "authorized_abstraction_l_s": 20.99,
+          "household_abstraction_l_s": 9.27,
+          "free_resource_l_s": 162.34,
+          "exploitation_index": 0.157113
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 192.6,
+          "authorized_abstraction_l_s": 20.88,
+          "household_abstraction_l_s": 14.37,
+          "free_resource_l_s": 157.35,
+          "exploitation_index": 0.183022
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 192.6,
+          "authorized_abstraction_l_s": 20.99,
+          "household_abstraction_l_s": 14.37,
+          "free_resource_l_s": 157.24,
+          "exploitation_index": 0.183593
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 192.6,
+          "authorized_abstraction_l_s": 20.99,
+          "household_abstraction_l_s": 14.37,
+          "free_resource_l_s": 157.24,
+          "exploitation_index": 0.183593
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 192.6,
+          "authorized_abstraction_l_s": 20.99,
+          "household_abstraction_l_s": 14.37,
+          "free_resource_l_s": 157.24,
+          "exploitation_index": 0.183593
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 192.6,
+          "authorized_abstraction_l_s": 20.99,
+          "household_abstraction_l_s": 14.37,
+          "free_resource_l_s": 157.24,
+          "exploitation_index": 0.183593
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 192.6,
+          "authorized_abstraction_l_s": 20.99,
+          "household_abstraction_l_s": 14.37,
+          "free_resource_l_s": 157.24,
+          "exploitation_index": 0.183593
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 48,
+        "active_permit_count": 35,
+        "active_permits_with_annual_limit": 35,
+        "active_annual_limit_m3_year": 749139.0,
+        "active_annual_limit_equivalent_l_s": 23.755042,
+        "purpose_counts": {
+          "обществено питейно-битово водоснабдяване": 15,
+          "питейно-битово водоснабдяване": 15,
+          "други цели": 3,
+          "Водоснабдяване за други цели": 1,
+          "самостоятелно питейно-битово водоснабдяване, когато отнетата вода се ползва за питейно-битови цели": 1
+        },
+        "earliest_expiry_date": "2027-11-21",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000K1HB039",
+      "gwb_name": "Пукнатинни води в Предбалкан -Валанж- Хотрив-Риш",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 114.0,
+        "ecosystem_requirement_l_s": 3.2,
+        "available_resource_l_s": 110.8,
+        "authorized_abstraction_l_s": 4.2,
+        "household_abstraction_l_s": 2.44,
+        "free_resource_l_s": 104.16,
+        "exploitation_index": 0.059928,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 110.8,
+          "authorized_abstraction_l_s": 4.2,
+          "household_abstraction_l_s": 2.44,
+          "free_resource_l_s": 104.16,
+          "exploitation_index": 0.059928
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 110.8,
+          "authorized_abstraction_l_s": 4.2,
+          "household_abstraction_l_s": 2.44,
+          "free_resource_l_s": 104.16,
+          "exploitation_index": 0.059928
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 110.8,
+          "authorized_abstraction_l_s": 4.2,
+          "household_abstraction_l_s": 2.44,
+          "free_resource_l_s": 104.16,
+          "exploitation_index": 0.059928
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 110.8,
+          "authorized_abstraction_l_s": 4.2,
+          "household_abstraction_l_s": 2.44,
+          "free_resource_l_s": 104.16,
+          "exploitation_index": 0.059928
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 110.8,
+          "authorized_abstraction_l_s": 4.2,
+          "household_abstraction_l_s": 2.44,
+          "free_resource_l_s": 104.16,
+          "exploitation_index": 0.059928
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 110.8,
+          "authorized_abstraction_l_s": 4.2,
+          "household_abstraction_l_s": 2.44,
+          "free_resource_l_s": 104.16,
+          "exploitation_index": 0.059928
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 110.8,
+          "authorized_abstraction_l_s": 4.2,
+          "household_abstraction_l_s": 2.44,
+          "free_resource_l_s": 104.16,
+          "exploitation_index": 0.059928
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 110.8,
+          "authorized_abstraction_l_s": 4.2,
+          "household_abstraction_l_s": 2.44,
+          "free_resource_l_s": 104.16,
+          "exploitation_index": 0.059928
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 14,
+        "active_permit_count": 11,
+        "active_permits_with_annual_limit": 11,
+        "active_annual_limit_m3_year": 181583.0,
+        "active_annual_limit_equivalent_l_s": 5.757959,
+        "purpose_counts": {
+          "обществено питейно-битово водоснабдяване": 5,
+          "питейно-битово водоснабдяване": 4,
+          "промишлени цели": 1,
+          "самостоятелно питейно-битово водоснабдяване и водоснабдяване за други цели": 1
+        },
+        "earliest_expiry_date": "2030-07-02",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    },
+    {
+      "gwb_code": "BG2G000PTPZ043",
+      "gwb_name": "Пукнатинни води в палеозой- протерозой пукнатинна зона",
+      "current_resource": {
+        "month": 8,
+        "month_label_bg": "август",
+        "year": 2026,
+        "natural_resource_l_s": 1300.0,
+        "ecosystem_requirement_l_s": 28.0,
+        "available_resource_l_s": 1272.0,
+        "authorized_abstraction_l_s": 11.39,
+        "household_abstraction_l_s": 5.89,
+        "free_resource_l_s": 1254.72,
+        "exploitation_index": 0.013585,
+        "source_file": "МЕСЕЧНИ_РЕСУРСИ.xlsx"
+      },
+      "resource_history": [
+        {
+          "month": 1,
+          "month_label_bg": "януари",
+          "year": 2026,
+          "available_resource_l_s": 1272.0,
+          "authorized_abstraction_l_s": 11.29,
+          "household_abstraction_l_s": 5.71,
+          "free_resource_l_s": 1255.0,
+          "exploitation_index": 0.013365
+        },
+        {
+          "month": 2,
+          "month_label_bg": "февруари",
+          "year": 2026,
+          "available_resource_l_s": 1272.0,
+          "authorized_abstraction_l_s": 11.29,
+          "household_abstraction_l_s": 5.71,
+          "free_resource_l_s": 1.34,
+          "exploitation_index": 0.013365
+        },
+        {
+          "month": 3,
+          "month_label_bg": "март",
+          "year": 2026,
+          "available_resource_l_s": 1272.0,
+          "authorized_abstraction_l_s": 11.29,
+          "household_abstraction_l_s": 5.76,
+          "free_resource_l_s": 1254.95,
+          "exploitation_index": 0.013404
+        },
+        {
+          "month": 4,
+          "month_label_bg": "април",
+          "year": 2026,
+          "available_resource_l_s": 1272.0,
+          "authorized_abstraction_l_s": 11.29,
+          "household_abstraction_l_s": 5.89,
+          "free_resource_l_s": 1254.82,
+          "exploitation_index": 0.013506
+        },
+        {
+          "month": 5,
+          "month_label_bg": "май",
+          "year": 2026,
+          "available_resource_l_s": 1272.0,
+          "authorized_abstraction_l_s": 11.29,
+          "household_abstraction_l_s": 5.89,
+          "free_resource_l_s": 1254.82,
+          "exploitation_index": 0.013506
+        },
+        {
+          "month": 6,
+          "month_label_bg": "юни",
+          "year": 2026,
+          "available_resource_l_s": 1272.0,
+          "authorized_abstraction_l_s": 11.29,
+          "household_abstraction_l_s": 5.89,
+          "free_resource_l_s": 1254.82,
+          "exploitation_index": 0.013506
+        },
+        {
+          "month": 7,
+          "month_label_bg": "юли",
+          "year": 2026,
+          "available_resource_l_s": 1272.0,
+          "authorized_abstraction_l_s": 11.29,
+          "household_abstraction_l_s": 5.89,
+          "free_resource_l_s": 1254.82,
+          "exploitation_index": 0.013506
+        },
+        {
+          "month": 8,
+          "month_label_bg": "август",
+          "year": 2026,
+          "available_resource_l_s": 1272.0,
+          "authorized_abstraction_l_s": 11.39,
+          "household_abstraction_l_s": 5.89,
+          "free_resource_l_s": 1254.72,
+          "exploitation_index": 0.013585
+        }
+      ],
+      "ordinary_groundwater_permits": {
+        "all_recognized_register_rows": 20,
+        "active_permit_count": 18,
+        "active_permits_with_annual_limit": 18,
+        "active_annual_limit_m3_year": 512293.0,
+        "active_annual_limit_equivalent_l_s": 16.244704,
+        "purpose_counts": {
+          "питейно-битово водоснабдяване": 13,
+          "обществено питейно-битово водоснабдяване": 3,
+          "напояване на земеделски култури": 1,
+          "самостоятелно питейно-битово водоснабдяване други цели в т.ч. ППН": 1
+        },
+        "earliest_expiry_date": "2031-03-31",
+        "source_file": "Registyr_podzemni_vodi.xlsx"
+      },
+      "mineral_water_permits": {
+        "all_recognized_register_rows": 0,
+        "active_permit_count": 0,
+        "source_file": "Registyr_mineralni.xlsx"
+      }
+    }
+  ],
+  "quality_report": {
+    "monthly_code_corrections": [
+      {
+        "month": 1,
+        "row": 37,
+        "original": "BG2G000К1Hb036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "month": 1,
+        "row": 43,
+        "original": "BG2G00000TJ042",
+        "resolved": "BG2G00000JT042",
+        "method": "exact_name"
+      },
+      {
+        "month": 2,
+        "row": 37,
+        "original": "BG2G000К1HB036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "month": 2,
+        "row": 43,
+        "original": "BG2G00000TJ042",
+        "resolved": "BG2G00000JT042",
+        "method": "exact_name"
+      },
+      {
+        "month": 3,
+        "row": 37,
+        "original": "BG2G000К1HB036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "month": 3,
+        "row": 43,
+        "original": "BG2G00000TJ042",
+        "resolved": "BG2G00000JT042",
+        "method": "exact_name"
+      },
+      {
+        "month": 4,
+        "row": 37,
+        "original": "BG2G000К1HB036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "month": 4,
+        "row": 43,
+        "original": "BG2G00000TJ042",
+        "resolved": "BG2G00000JT042",
+        "method": "exact_name"
+      },
+      {
+        "month": 5,
+        "row": 37,
+        "original": "BG2G000К1HB036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "month": 5,
+        "row": 43,
+        "original": "BG2G00000TJ042",
+        "resolved": "BG2G00000JT042",
+        "method": "exact_name"
+      },
+      {
+        "month": 6,
+        "row": 37,
+        "original": "BG2G000К1HB036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "month": 6,
+        "row": 43,
+        "original": "BG2G00000TJ042",
+        "resolved": "BG2G00000JT042",
+        "method": "exact_name"
+      },
+      {
+        "month": 7,
+        "row": 38,
+        "original": "BG2G000К1HB036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "month": 7,
+        "row": 44,
+        "original": "BG2G00000TJ042",
+        "resolved": "BG2G00000JT042",
+        "method": "exact_name"
+      },
+      {
+        "month": 8,
+        "row": 38,
+        "original": "BG2G000К1HB036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "month": 8,
+        "row": 44,
+        "original": "BG2G00000TJ042",
+        "resolved": "BG2G00000JT042",
+        "method": "exact_name"
+      },
+      {
+        "month": 9,
+        "row": 40,
+        "original": "BG2G000К1HB036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "month": 9,
+        "row": 46,
+        "original": "BG2G00000TJ042",
+        "resolved": "BG2G00000JT042",
+        "method": "exact_name"
+      },
+      {
+        "month": 10,
+        "row": 39,
+        "original": "BG2G000К1HB036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "month": 10,
+        "row": 45,
+        "original": "BG2G00000TJ042",
+        "resolved": "BG2G00000JT042",
+        "method": "exact_name"
+      },
+      {
+        "month": 11,
+        "row": 39,
+        "original": "BG2G000К1HB036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "month": 11,
+        "row": 45,
+        "original": "BG2G00000TJ042",
+        "resolved": "BG2G00000JT042",
+        "method": "exact_name"
+      },
+      {
+        "month": 12,
+        "row": 39,
+        "original": "BG2G000К1HB036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "month": 12,
+        "row": 45,
+        "original": "BG2G00000TJ042",
+        "resolved": "BG2G00000JT042",
+        "method": "exact_name"
+      }
+    ],
+    "monthly_unresolved_rows": [],
+    "monthly_duplicate_body_rows": [],
+    "monthly_arithmetic_conflicts": [
+      {
+        "month": 2,
+        "gwb_code": "BG2G000000Q004",
+        "official_free_l_s": 98.0,
+        "calculated_free_l_s": 98.06,
+        "difference_l_s": 0.06
+      },
+      {
+        "month": 2,
+        "gwb_code": "BG2G00000JT042",
+        "official_free_l_s": 1.36,
+        "calculated_free_l_s": 1127.48,
+        "difference_l_s": 1126.12
+      },
+      {
+        "month": 2,
+        "gwb_code": "BG2G000PTPZ043",
+        "official_free_l_s": 1.34,
+        "calculated_free_l_s": 1255.0,
+        "difference_l_s": 1253.66
+      }
+    ],
+    "permit_code_corrections": [
+      {
+        "row": 1985,
+        "original": "BG2G00000К2030",
+        "resolved": "BG2G00000K2030",
+        "method": "normalized_characters"
+      },
+      {
+        "row": 2002,
+        "original": "BG2G000К1НВ038",
+        "resolved": "BG2G000K1HB038",
+        "method": "normalized_characters"
+      },
+      {
+        "row": 2003,
+        "original": "BG2G000К1НВ036",
+        "resolved": "BG2G000K1HB036",
+        "method": "normalized_characters"
+      },
+      {
+        "row": 2056,
+        "original": "BG2G000К1НВ037",
+        "resolved": "BG2G000K1HB037",
+        "method": "normalized_characters"
+      },
+      {
+        "row": 2059,
+        "original": "BG2G000РТРZ043",
+        "resolved": "BG2G000PTPZ043",
+        "method": "normalized_characters"
+      },
+      {
+        "row": 2125,
+        "original": "BG2G000PTRZ043",
+        "resolved": "BG2G000PTPZ043",
+        "method": "single_code_typo"
+      }
+    ],
+    "permit_unresolved_rows": [
+      {
+        "row": 2102,
+        "raw_code": "BG2G000000N04",
+        "reason": "unknown"
+      }
+    ],
+    "permit_multiple_body_rows": [
+      {
+        "row": 1490,
+        "raw_code": "BG2G00000K2032 BG2G00000Pg027",
+        "candidate_codes": [
+          "BG2G00000K2032",
+          "BG2G00000PG027"
+        ]
+      }
+    ],
+    "permit_duplicate_active_records": [],
+    "mineral_code_corrections": [],
+    "mineral_unresolved_rows": [
+      {
+        "row": 266,
+        "raw_code": "BG2G000J3K1042",
+        "reason": "unknown"
+      }
+    ],
+    "latest_month_missing_body_codes": []
+  }
+}
