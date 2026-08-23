@@ -534,6 +534,23 @@ function likelyDrillingMaterials(
     combined.includes("алувиал") ||
     combined.includes("речн");
 
+  const quaternary =
+    geologyCode.trim().toUpperCase() === "Q" ||
+    combined.includes("кватернер") ||
+    bodies.some((feature) => {
+      const properties = feature.properties || {};
+
+      const code = String(
+        properties.localId ||
+        properties.cod ||
+        properties.code ||
+        properties.gwb_code ||
+        ""
+      ).trim().toUpperCase();
+
+      return /^BG[23]G0+Q\d+$/.test(code);
+    });
+
   const depression =
     combined.includes("депрес") ||
     combined.includes("грабен");
@@ -545,9 +562,7 @@ function likelyDrillingMaterials(
     combined.includes("пукнат");
 
   if (
-    geologyCode === "Q" &&
-    pore &&
-    alluvial
+    quaternary && pore && alluvial
   ) {
     return {
       title:
@@ -564,8 +579,7 @@ function likelyDrillingMaterials(
   }
 
   if (
-    geologyCode === "Q" &&
-    pore
+    quaternary && pore
   ) {
     return {
       title:
@@ -599,7 +613,7 @@ function likelyDrillingMaterials(
     };
   }
 
-  if (karst) {
+  if (karst && geologyCode !== "Q") {
     return {
       title:
         "Вероятна твърда карстова скална среда",
@@ -702,7 +716,7 @@ function simpleGroundInterpretation(
   const isFractured =
     bodyText.includes("пукнат");
 
-  if (isKarst) {
+  if (isKarst && geologyCode !== "Q") {
     return {
       headline:
         "По-скоро твърда, напукана/карстова скална среда",
@@ -1761,6 +1775,42 @@ export default function GeologyReportPage() {
           }
         }
 
+        const maximumMonitoringDistanceKm = 25;
+
+        const monitoringProperties: any =
+          nearest?.feature?.properties || {};
+
+        const monitoringGroundwaterBodyCode = [
+          monitoringProperties.gwb_code,
+          monitoringProperties.groundwater_body_code,
+          monitoringProperties.groundwaterBodyCode,
+          monitoringProperties.water_body_code,
+          monitoringProperties.waterBodyCode,
+          monitoringProperties.gwbCode,
+          monitoringProperties.GWB_CODE,
+          monitoringProperties.GWBCode,
+          monitoringProperties.pvt_code,
+          monitoringProperties.PVT_CODE,
+        ]
+          .map((value: any) =>
+            String(value || "").trim().toUpperCase()
+          )
+          .find((value: string) =>
+            /^BG[23]G/.test(value)
+          ) || "";
+
+        const monitoringMatchesSelectedBody =
+          monitoringGroundwaterBodyCode
+            ? monitoringGroundwaterBodyCode === selectedGwbCode
+            : basinCode === "BG3";
+
+        const representativeMonitoring =
+          nearest &&
+          nearest.distanceKm <= maximumMonitoringDistanceKm &&
+          monitoringMatchesSelectedBody
+            ? nearest
+            : null;
+
         const basinSpecificGeology =
           basinCode === "BG3"
             ? geology
@@ -1800,7 +1850,7 @@ export default function GeologyReportPage() {
           lon,
           geology: basinSpecificGeology,
           bodies,
-          monitoring: nearest,
+          monitoring: representativeMonitoring,
         });
       } catch (e: any) {
         setError(
@@ -1867,7 +1917,7 @@ export default function GeologyReportPage() {
    .toLowerCase();
 
   const looseGround =
-    /пяс|чакъл|алув|нанос|рохк|льос/.test(
+    /пяс|чакъл|алув|нанос|рохк|льос|поров|кватернер|речн|грав|седимент/.test(
       lithologyText
     );
 
@@ -1951,17 +2001,22 @@ export default function GeologyReportPage() {
   const geologyCode =
     data.geology?.unit?.code || "";
 
+  const selectedInterpretationBodies =
+    data.bodies.length > 0
+      ? [data.bodies[0]]
+      : [];
+
   const simple =
     simpleGroundInterpretation(
       geologyCode,
-      data.bodies
+      selectedInterpretationBodies
     );
 
 
   const drillingMaterials =
     likelyDrillingMaterials(
       geologyCode,
-      data.bodies
+      selectedInterpretationBodies
     );
 
 
