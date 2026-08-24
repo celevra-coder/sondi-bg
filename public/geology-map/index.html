@@ -1373,10 +1373,18 @@ function wabdThematicRecordForFeature(feature) {
 }
 
 function wabdTextIsRisk(value) {
-  return String(value || "")
+  const text = String(value || "")
     .trim()
-    .toLowerCase()
-    .includes("\u0432 \u0440\u0438\u0441\u043a");
+    .toLowerCase();
+
+  if (
+    text.includes("\u043d\u0435 \u0435 \u0432 \u0440\u0438\u0441\u043a") ||
+    text.includes("\u043d\u0435 \u0432 \u0440\u0438\u0441\u043a")
+  ) {
+    return false;
+  }
+
+  return text.includes("\u0432 \u0440\u0438\u0441\u043a");
 }
 
 function wabdCurrentLoadColor(value) {
@@ -6497,30 +6505,87 @@ function tempColor(t){
  return '#d62728';
 }
 
+
+// WABD_MINERAL_SUPPLEMENT_20260824
+const wabdMineralSupplement20260824={"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[23.057194444444445,42.00608333333333]},"properties":{"basin_directorate":"Западнобеломорски район","district":"Благоевград","municipality":"Благоевград","settlement":"Зелен дол","deposit":"„Благоевград – р. Струма” №11","section":"","facility":"Сондаж 1ХГ","facility_type":"водовземно","year":"","depth_m":"","temperature_c":"","status":"","registry_number":"","source_date":"2026-08-24","source":"БДЗБР – официален хидрогеоложки документ","source_url":"https://wabd.bg/docs/dokladi/MINERALNIVODI/HidrogeodokladZelendol.pdf","coordinate_accuracy":"A – официални географски координати","mapped_status":"картографирано","display_category":"ÐÐ¸Ð½ÐµÑÐ°Ð»ÐµÐ½ ÑÐ¾Ð½Ð´Ð°Ð¶","temperature_class":"Без температура"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[23.05388888888889,42.004666666666665]},"properties":{"basin_directorate":"Западнобеломорски район","district":"Благоевград","municipality":"Благоевград","settlement":"Зелен дол","deposit":"„Благоевград – р. Струма” №11","section":"","facility":"Сондаж 14ХГ","facility_type":"водовземно","year":"","depth_m":"","temperature_c":"","status":"","registry_number":"","source_date":"2026-08-24","source":"БДЗБР – официален хидрогеоложки документ","source_url":"https://wabd.bg/docs/dokladi/MINERALNIVODI/HidrogeodokladZelendol.pdf","coordinate_accuracy":"A – официални географски координати","mapped_status":"картографирано","display_category":"ÐÐ¸Ð½ÐµÑÐ°Ð»ÐµÐ½ ÑÐ¾Ð½Ð´Ð°Ð¶","temperature_class":"Без температура"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[23.16713888888889,42.58611111111111]},"properties":{"basin_directorate":"Западнобеломорски район","district":"??????","municipality":"??????","settlement":"???????","deposit":"„Рударци” №62","section":"","facility":"Сондаж №7","facility_type":"водовземно","year":"","depth_m":"","temperature_c":"","status":"","registry_number":"","source_date":"2026-08-24","source":"БДЗБР – официален хидрогеоложки документ","source_url":"https://wabd.bg/docs/dokladi/MINERALNIVODI/HDRudarci.pdf","coordinate_accuracy":"A – официални географски координати","mapped_status":"картографирано","display_category":"ÐÐ¸Ð½ÐµÑÐ°Ð»ÐµÐ½ ÑÐ¾Ð½Ð´Ð°Ð¶","temperature_class":"Без температура"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[23.167055555555557,42.58625]},"properties":{"basin_directorate":"Западнобеломорски район","district":"??????","municipality":"??????","settlement":"???????","deposit":"„Рударци” №62","section":"","facility":"Сондаж №8","facility_type":"водовземно","year":"","depth_m":"","temperature_c":"","status":"","registry_number":"","source_date":"2026-08-24","source":"БДЗБР – официален хидрогеоложки документ","source_url":"https://wabd.bg/docs/dokladi/MINERALNIVODI/HDRudarci.pdf","coordinate_accuracy":"A – официални географски координати","mapped_status":"картографирано","display_category":"ÐÐ¸Ð½ÐµÑÐ°Ð»ÐµÐ½ ÑÐ¾Ð½Ð´Ð°Ð¶","temperature_class":"Без температура"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[23.166916666666665,42.58630555555556]},"properties":{"basin_directorate":"Западнобеломорски район","district":"??????","municipality":"??????","settlement":"???????","deposit":"„Рударци” №62","section":"","facility":"Сондаж №9","facility_type":"водовземно","year":"","depth_m":"","temperature_c":"","status":"","registry_number":"","source_date":"2026-08-24","source":"БДЗБР – официален хидрогеоложки документ","source_url":"https://wabd.bg/docs/dokladi/MINERALNIVODI/HDRudarci.pdf","coordinate_accuracy":"A – официални географски координати","mapped_status":"картографирано","display_category":"ÐÐ¸Ð½ÐµÑÐ°Ð»ÐµÐ½ ÑÐ¾Ð½Ð´Ð°Ð¶","temperature_class":"Без температура"}}]};
+if (data && Array.isArray(data.features)) {
+  data.features.push(...wabdMineralSupplement20260824.features);
+}
+
 function categoryLayer(cat){
- if(cat==='ÐœÐ¸Ð½ÐµÑ€Ð°Ð»ÐµÐ½ ÑÐ¾Ð½Ð´Ð°Ð¶') return 'layer-wells';
- if(cat==='ÐšÐ°Ð¿Ñ‚Ð°Ð¶/ÐµÑÑ‚ÐµÑÑ‚Ð²ÐµÐ½ Ð¸Ð·Ð²Ð¾Ñ€') return 'layer-springs';
- if(cat==='ÐœÐ¾Ð½Ð¸Ñ‚Ð¾Ñ€Ð¸Ð½Ð³Ð¾Ð² ÑÐ¾Ð½Ð´Ð°Ð¶') return 'layer-monitoring';
- if(cat==='Ð›Ð¸ÐºÐ²Ð¸Ð´Ð¸Ñ€Ð°Ð½/Ð·Ð°ÐºÑ€Ð¸Ñ‚' || cat==='ÐšÐ¾Ð½ÑÐµÑ€Ð²Ð¸Ñ€Ð°Ð½') return 'layer-inactive';
+ const normalized=repairFacilityText(cat);
+
+ if(normalized==='\u041c\u0438\u043d\u0435\u0440\u0430\u043b\u0435\u043d \u0441\u043e\u043d\u0434\u0430\u0436') return 'layer-wells';
+
+ if(normalized==='\u041a\u0430\u043f\u0442\u0430\u0436/\u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d \u0438\u0437\u0432\u043e\u0440') return 'layer-springs';
+
+ if(normalized==='\u041c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432 \u0441\u043e\u043d\u0434\u0430\u0436') return 'layer-monitoring';
+
+ if(
+   normalized==='\u041b\u0438\u043a\u0432\u0438\u0434\u0438\u0440\u0430\u043d/\u0437\u0430\u043a\u0440\u0438\u0442' ||
+   normalized==='\u041a\u043e\u043d\u0441\u0435\u0440\u0432\u0438\u0440\u0430\u043d'
+ ) return 'layer-inactive';
+
  return 'layer-other';
 }
 
 function makeMarker(lat,lon,p){
- const cat=p.display_category;
+ const cat=repairFacilityText(p.display_category);
  const t=num(p.temperature_c);
- if(cat==='ÐœÐ¸Ð½ÐµÑ€Ð°Ð»ÐµÐ½ ÑÐ¾Ð½Ð´Ð°Ð¶'){
-   return L.circleMarker([lat,lon],{radius:8,color:'#111',weight:1.3,fillColor:tempColor(t),fillOpacity:.95});
+
+ if(cat==='\u041c\u0438\u043d\u0435\u0440\u0430\u043b\u0435\u043d \u0441\u043e\u043d\u0434\u0430\u0436'){
+   return L.circleMarker([lat,lon],{
+     radius:8,
+     color:'#111',
+     weight:1.3,
+     fillColor:tempColor(t),
+     fillOpacity:.95
+   });
  }
- if(cat==='ÐšÐ°Ð¿Ñ‚Ð°Ð¶/ÐµÑÑ‚ÐµÑÑ‚Ð²ÐµÐ½ Ð¸Ð·Ð²Ð¾Ñ€'){
-   return L.circleMarker([lat,lon],{radius:5,color:'#0b4f6c',weight:1.2,fillColor:'#4db6e5',fillOpacity:.9});
+
+ if(cat==='\u041a\u0430\u043f\u0442\u0430\u0436/\u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d \u0438\u0437\u0432\u043e\u0440'){
+   return L.circleMarker([lat,lon],{
+     radius:5,
+     color:'#0b4f6c',
+     weight:1.2,
+     fillColor:'#4db6e5',
+     fillOpacity:.9
+   });
  }
- if(cat==='ÐœÐ¾Ð½Ð¸Ñ‚Ð¾Ñ€Ð¸Ð½Ð³Ð¾Ð² ÑÐ¾Ð½Ð´Ð°Ð¶'){
-   return L.marker([lat,lon],{icon:L.divIcon({className:'',html:'<div style="width:13px;height:13px;background:#8e44ad;border:2px solid #222;transform:rotate(45deg)"></div>',iconSize:[17,17],iconAnchor:[8,8]})});
+
+ if(cat==='\u041c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432 \u0441\u043e\u043d\u0434\u0430\u0436'){
+   return L.marker([lat,lon],{
+     icon:L.divIcon({
+       className:'',
+       html:'<div style="width:13px;height:13px;background:#8e44ad;border:2px solid #222;transform:rotate(45deg)"></div>',
+       iconSize:[17,17],
+       iconAnchor:[8,8]
+     })
+   });
  }
- if(cat==='Ð›Ð¸ÐºÐ²Ð¸Ð´Ð¸Ñ€Ð°Ð½/Ð·Ð°ÐºÑ€Ð¸Ñ‚' || cat==='ÐšÐ¾Ð½ÑÐµÑ€Ð²Ð¸Ñ€Ð°Ð½'){
-   return L.marker([lat,lon],{icon:L.divIcon({className:'',html:'<div style="font-size:20px;color:#444;font-weight:bold;line-height:20px">×</div>',iconSize:[20,20],iconAnchor:[10,10]})});
+
+ if(
+   cat==='\u041b\u0438\u043a\u0432\u0438\u0434\u0438\u0440\u0430\u043d/\u0437\u0430\u043a\u0440\u0438\u0442' ||
+   cat==='\u041a\u043e\u043d\u0441\u0435\u0440\u0432\u0438\u0440\u0430\u043d'
+ ){
+   return L.marker([lat,lon],{
+     icon:L.divIcon({
+       className:'',
+       html:'<div style="font-size:20px;color:#444;font-weight:bold;line-height:20px">\u00d7</div>',
+       iconSize:[20,20],
+       iconAnchor:[10,10]
+     })
+   });
  }
- return L.marker([lat,lon],{icon:L.divIcon({className:'',html:'<div style="font-size:17px;color:#666;line-height:17px">â—‡</div>',iconSize:[17,17],iconAnchor:[8,8]})});
+
+ return L.marker([lat,lon],{
+   icon:L.divIcon({
+     className:'',
+     html:'<div style="font-size:17px;color:#666;line-height:17px">\u25c7</div>',
+     iconSize:[17,17],
+     iconAnchor:[8,8]
+   })
+ });
 }
 
 addOptions('basin',data.features.map(f=>f.properties.basin_directorate));
@@ -12407,7 +12472,11 @@ async function loadSondiOrdinaryAnalysisData() {
           )
         : sondiFetchFeatureCollection(
             "/geology-map/data/bd_bs_ordinary_groundwater_wells.geojson"
-          )
+          ),
+
+      sondiFetchFeatureCollection(
+        "/geology-map/data/bd_wabd_active_groundwater_facilities.geojson"
+      )
     ])
       .then(results => {
         const features = [];

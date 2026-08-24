@@ -215,13 +215,14 @@ export function getSpatialProfile(
   const blackSeaOrdinaryFacilities: Feature[] =
     blackSeaOrdinaryData.features || [];
 
+  const westernAegeanActiveGroundwaterFacilities: Feature[] =
+    westernAegeanActiveGroundwaterData.features || [];
+
   const ordinaryFacilities: Feature[] = [
     ...eastOrdinaryFacilities,
     ...blackSeaOrdinaryFacilities,
+    ...westernAegeanActiveGroundwaterFacilities,
   ];
-
-  const westernAegeanActiveGroundwaterFacilities: Feature[] =
-    westernAegeanActiveGroundwaterData.features || [];
 
   const westernAegeanChemicalMonitoring: Feature[] =
     westernAegeanChemicalMonitoringData.features || [];

@@ -5244,6 +5244,30 @@ export default async function ProPage({
                       value={spatial.counts.springs.km10}
                     />
                   </div>
+
+                  <div style={{
+                    padding: 14,
+                    borderRadius: 12,
+                    background: "#f8fbfc",
+                    border: "1px solid #dce8eb",
+                  }}>
+                    <strong>
+                      Обикновени водовземни съоръжения
+                    </strong>
+
+                    <Row
+                      label="до 1 km"
+                      value={nearbyOrdinaryWellCount1Km}
+                    />
+                    <Row
+                      label="до 3 km"
+                      value={nearbyOrdinaryWellCount3Km}
+                    />
+                    <Row
+                      label="до 5 km"
+                      value={nearbyOrdinaryWellCount5Km}
+                    />
+                  </div>
                 </div>
 
                 {spatial.nearestWell && (

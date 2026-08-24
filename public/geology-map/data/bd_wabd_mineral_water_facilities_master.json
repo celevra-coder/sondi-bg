@@ -1,5 +1,9 @@
 {
-  "type": "FeatureCollection",
+  "schema_version": 1,
+  "description": "Curated BDZBR mineral-water facility master. Only facilities with official point coordinates are emitted to GeoJSON.",
+  "feature_count": 22,
+  "existing_feature_count": 17,
+  "new_curated_feature_count": 5,
   "features": [
     {
       "type": "Feature",
