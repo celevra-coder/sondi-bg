@@ -65,6 +65,11 @@ export default function AiduSharedAnalysis({
     useState(files.length > 0);
 
   const [
+    introReady,
+    setIntroReady,
+  ] = useState(false);
+
+  const [
     fadeIntro,
     setFadeIntro,
   ] = useState(false);
@@ -72,6 +77,7 @@ export default function AiduSharedAnalysis({
   useEffect(() => {
     if (
       !showIntro ||
+      !introReady ||
       files.length === 0
     ) {
       return;
@@ -99,6 +105,7 @@ export default function AiduSharedAnalysis({
     };
   }, [
     showIntro,
+    introReady,
     files.length,
   ]);
 
@@ -115,6 +122,19 @@ export default function AiduSharedAnalysis({
       <main
         style={{
           minHeight: "100vh",
+
+          opacity:
+            showIntro
+              ? 0
+              : 1,
+
+          visibility:
+            showIntro
+              ? "hidden"
+              : "visible",
+
+          transition:
+            "opacity 500ms ease",
 
           background:
             "linear-gradient(180deg, #07111f 0%, #0b1625 100%)",
@@ -324,13 +344,32 @@ export default function AiduSharedAnalysis({
 
             transition:
               "opacity 850ms ease",
+
+            background:
+              "#050d16",
           }}
         >
-          <AiduIntro3D
-            location={
-              shortLocation
-            }
-          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              opacity:
+                introReady
+                  ? 1
+                  : 0,
+              transition:
+                "opacity 450ms ease",
+            }}
+          >
+            <AiduIntro3D
+              location={
+                shortLocation
+              }
+              onReady={() =>
+                setIntroReady(true)
+              }
+            />
+          </div>
         </div>
       )}
 

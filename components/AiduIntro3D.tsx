@@ -16,6 +16,7 @@ const Plot = dynamic(
 
 type Props = {
   location: string;
+  onReady?: () => void;
 };
 
 const X = [
@@ -48,6 +49,7 @@ const VALUES = [
 
 export default function AiduIntro3D({
   location,
+  onReady,
 }: Props) {
   const graphRef =
     useRef<any>(null);
@@ -307,6 +309,7 @@ export default function AiduIntro3D({
           requestAnimationFrame(
             () => {
               setReady(true);
+              onReady?.();
             }
           );
         }}
