@@ -103,462 +103,20 @@ export async function POST(request: Request) {
 
     /*
       ==========================================================
-      SOL STAGE A ? STRICTLY ISOLATED INSTRUMENT ANALYSIS
+      SINGLE SOL ANALYSIS ? OPERATOR-GUIDED ZONE INTERPRETATION
       ==========================================================
 
-      This call sees ONLY the parsed measurement profiles.
+      The operator defines the field hypothesis and, when stated,
+      the operational drilling point.
 
-      It does NOT receive:
-      - coordinates;
-      - settlement/location;
-      - groundwater bodies;
-      - geology;
-      - nearby wells;
-      - faults;
-      - monitoring;
-      - mineral-water information;
-      - dowsing / field notes;
-      - statements about common/crossing/preferred points.
+      Sol analyses the measurements, neighbouring-point continuity,
+      depth intervals and spatial zones around that field hypothesis.
 
-      This makes the instrument ranking independent from
-      operator expectations and map context.
+      Sol does NOT automatically replace an explicitly selected
+      operator drilling point.
     */
 
-    const instrumentResponse =
-      await client.responses.create({
-        model:
-          process.env.AIDU_AI_MODEL ||
-          "gpt-5.6",
-
-        reasoning: {
-          effort: "medium",
-        },
-
-        max_output_tokens: 7000,
-
-        text: {
-          format: {
-            type: "json_schema",
-            name: "aidu_instrument_analysis",
-            strict: true,
-            schema: {
-              type: "object",
-              additionalProperties: false,
-              required: [
-                "summary",
-                "measuredPatterns",
-                "candidateHorizons",
-                "pointRanking",
-                "profileComparison",
-                "strongestInstrumentPoint",
-                "secondaryInstrumentCandidates",
-                "limitations"
-              ],
-              properties: {
-                summary: {
-                  type: "string"
-                },
-
-                measuredPatterns: {
-                  type: "array",
-                  items: {
-                    type: "object",
-                    additionalProperties: false,
-                    required: [
-                      "file",
-                      "details"
-                    ],
-                    properties: {
-                      file: {
-                        type: "string"
-                      },
-                      details: {
-                        type: "string"
-                      }
-                    }
-                  }
-                },
-
-                candidateHorizons: {
-                  type: "array",
-                  items: {
-                    type: "object",
-                    additionalProperties: false,
-                    required: [
-                      "label",
-                      "fromM",
-                      "toM",
-                      "confidence",
-                      "supportingLocations",
-                      "reasoning",
-                      "alternativeExplanation"
-                    ],
-                    properties: {
-                      label: {
-                        type: "string"
-                      },
-
-                      fromM: {
-                        type: [
-                          "number",
-                          "null"
-                        ]
-                      },
-
-                      toM: {
-                        type: [
-                          "number",
-                          "null"
-                        ]
-                      },
-
-                      confidence: {
-                        type: "string",
-                        enum: [
-                          "high",
-                          "medium",
-                          "low"
-                        ]
-                      },
-
-                      supportingLocations: {
-                        type: "array",
-                        items: {
-                          type: "object",
-                          additionalProperties: false,
-                          required: [
-                            "profile",
-                            "points"
-                          ],
-                          properties: {
-                            profile: {
-                              type: "string"
-                            },
-                            points: {
-                              type: "array",
-                              items: {
-                                type: "string"
-                              }
-                            }
-                          }
-                        }
-                      },
-
-                      reasoning: {
-                        type: "string"
-                      },
-
-                      alternativeExplanation: {
-                        type: "string"
-                      }
-                    }
-                  }
-                },
-
-                pointRanking: {
-                  type: "array",
-                  items: {
-                    type: "object",
-                    additionalProperties: false,
-                    required: [
-                      "profile",
-                      "point",
-                      "perspective",
-                      "preferredDepthFromM",
-                      "preferredDepthToM",
-                      "reasoning"
-                    ],
-                    properties: {
-                      profile: {
-                        type: "string"
-                      },
-
-                      point: {
-                        type: "string"
-                      },
-
-                      perspective: {
-                        type: "string",
-                        enum: [
-                          "high",
-                          "medium",
-                          "low"
-                        ]
-                      },
-
-                      preferredDepthFromM: {
-                        type: [
-                          "number",
-                          "null"
-                        ]
-                      },
-
-                      preferredDepthToM: {
-                        type: [
-                          "number",
-                          "null"
-                        ]
-                      },
-
-                      reasoning: {
-                        type: "string"
-                      }
-                    }
-                  }
-                },
-
-                profileComparison: {
-                  type: "object",
-                  additionalProperties: false,
-                  required: [
-                    "details"
-                  ],
-                  properties: {
-                    details: {
-                      type: "string"
-                    }
-                  }
-                },
-
-                strongestInstrumentPoint: {
-                  type: "object",
-                  additionalProperties: false,
-                  required: [
-                    "profile",
-                    "point",
-                    "confidence",
-                    "preferredDepthFromM",
-                    "preferredDepthToM",
-                    "reasoning"
-                  ],
-                  properties: {
-                    profile: {
-                      type: "string"
-                    },
-
-                    point: {
-                      type: "string"
-                    },
-
-                    confidence: {
-                      type: "string",
-                      enum: [
-                        "high",
-                        "medium",
-                        "low"
-                      ]
-                    },
-
-                    preferredDepthFromM: {
-                      type: [
-                        "number",
-                        "null"
-                      ]
-                    },
-
-                    preferredDepthToM: {
-                      type: [
-                        "number",
-                        "null"
-                      ]
-                    },
-
-                    reasoning: {
-                      type: "string"
-                    }
-                  }
-                },
-
-                secondaryInstrumentCandidates: {
-                  type: "array",
-                  items: {
-                    type: "object",
-                    additionalProperties: false,
-                    required: [
-                      "profile",
-                      "point",
-                      "confidence",
-                      "reasoning"
-                    ],
-                    properties: {
-                      profile: {
-                        type: "string"
-                      },
-
-                      point: {
-                        type: "string"
-                      },
-
-                      confidence: {
-                        type: "string",
-                        enum: [
-                          "high",
-                          "medium",
-                          "low"
-                        ]
-                      },
-
-                      reasoning: {
-                        type: "string"
-                      }
-                    }
-                  }
-                },
-
-                limitations: {
-                  type: "array",
-                  items: {
-                    type: "string"
-                  }
-                }
-              }
-            }
-          }
-        },
-
-        instructions: `
-You are performing STAGE A of a groundwater geophysical interpretation.
-
-You receive ONLY parsed geophysical measurement profiles.
-
-This stage must be completely independent of:
-- field notes;
-- dowsing;
-- map data;
-- geology;
-- groundwater-body information;
-- nearby wells;
-- operator preferences;
-- statements that a point is common, crossing, preferred or important.
-
-You do not know any of those things.
-
-IMPORTANT:
-
-1. Analyse every measurement point and every available depth.
-
-2. Compare points WITHIN each profile.
-
-3. Identify:
-- sharp vertical transitions;
-- broad depth anomalies;
-- persistent anomalies across several consecutive depths;
-- lateral continuation into neighbouring points;
-- local maxima/minima and contrasts;
-- shallow, principal and deeper candidate intervals.
-
-4. Do not assume that high or low measured values automatically mean water.
-
-5. Explicitly consider alternative explanations such as:
-- clay;
-- mineralisation;
-- lithological contact;
-- wet sediments;
-- fractured material;
-- conductive material;
-- interference;
-- isolated artefact.
-
-6. Rank the measurement points based ONLY on the numerical profiles.
-
-7. A strong drilling candidate should preferably combine:
-- local contrast against neighbouring points;
-- persistence over several depths;
-- lateral support from adjacent points;
-- a coherent depth interval.
-
-8. If several uploaded profiles contain the same point NUMBER, DO NOT assume those point numbers represent the same physical location.
-Without field information, identical point numbers in different files are merely labels.
-
-9. You may compare the general depth patterns between profiles, but you must not claim that two profiles physically intersect.
-
-10. Identify ONE strongest instrument-only point overall.
-
-11. Also identify strong secondary candidates when justified.
-
-12. Analyse all available depths. Do not stop at the first anomaly.
-
-13. Do not use groundwater, geology or drilling terminology as if it were proven.
-Describe the measured pattern first and state that water is only one possible interpretation.
-
-14. Write detailed technical reasoning in Bulgarian.
-
-15. Return the result using the required structured output schema.
-Do not add any text outside the structured result.
-        `.trim(),
-
-        input: [
-          {
-            role: "user",
-            content: [
-              {
-                type: "input_text",
-                text:
-                  "Analyse ONLY these measurement profiles. No field or map context exists in this stage:\n\n" +
-                  JSON.stringify(
-                    {
-                      aiduFiles,
-                    },
-                    null,
-                    2
-                  ),
-              },
-            ],
-          },
-        ],
-      });
-
-    const instrumentRaw =
-      instrumentResponse
-        .output_text
-        ?.trim();
-
-    if (!instrumentRaw) {
-      throw new Error(
-        "AI did not return the isolated instrument analysis."
-      );
-    }
-
-    let instrumentAnalysis;
-
-    try {
-      instrumentAnalysis =
-        JSON.parse(
-          instrumentRaw
-        );
-    } catch {
-      console.error(
-        "Invalid isolated structured output:",
-        instrumentRaw
-      );
-
-      return NextResponse.json(
-        {
-          success: false,
-          error:
-            "\u0410\u0418 \u043d\u0435 \u0443\u0441\u043f\u044f \u0434\u0430 \u0441\u044a\u0437\u0434\u0430\u0434\u0435 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0438\u0440\u0430\u043d \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u0430\u043b\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437.",
-        },
-        {
-          status: 500,
-        }
-      );
-    }
-
-    /*
-      ==========================================================
-      SOL STAGE B ? INTEGRATED TECHNICAL DECISION
-      ==========================================================
-
-      Stage B does NOT receive raw measurement arrays.
-
-      It receives the completed Stage A interpretation as a
-      locked measurement assessment, plus field/map context.
-
-      Therefore operator notes cannot retroactively change
-      which point was strongest in the raw instrument data.
-    */
-
-    const integrationPayload = {
+    const analysisPayload = {
       location: {
         label:
           locationLabel ||
@@ -567,8 +125,7 @@ Do not add any text outside the structured result.
         longitude,
       },
 
-      lockedInstrumentAnalysis:
-        instrumentAnalysis,
+      aiduFiles,
 
       groundwaterBodies,
 
@@ -579,7 +136,7 @@ Do not add any text outside the structured result.
         "No additional field information supplied.",
     };
 
-    const integrationResponse =
+    const response =
       await client.responses.create({
         model:
           process.env.AIDU_AI_MODEL ||
@@ -594,7 +151,7 @@ Do not add any text outside the structured result.
         text: {
           format: {
             type: "json_schema",
-            name: "aidu_integrated_analysis",
+            name: "aidu_operator_guided_analysis",
             strict: true,
             schema: {
               type: "object",
@@ -658,10 +215,16 @@ Do not add any text outside the structured result.
                         type: "string"
                       },
                       fromM: {
-                        type: ["number", "null"]
+                        type: [
+                          "number",
+                          "null"
+                        ]
                       },
                       toM: {
-                        type: ["number", "null"]
+                        type: [
+                          "number",
+                          "null"
+                        ]
                       },
                       confidence: {
                         type: "string",
@@ -712,10 +275,16 @@ Do not add any text outside the structured result.
                         ]
                       },
                       preferredDepthFromM: {
-                        type: ["number", "null"]
+                        type: [
+                          "number",
+                          "null"
+                        ]
                       },
                       preferredDepthToM: {
-                        type: ["number", "null"]
+                        type: [
+                          "number",
+                          "null"
+                        ]
                       },
                       reasoning: {
                         type: "string"
@@ -925,10 +494,16 @@ Do not add any text outside the structured result.
                   ],
                   properties: {
                     fromM: {
-                      type: ["number", "null"]
+                      type: [
+                        "number",
+                        "null"
+                      ]
                     },
                     toM: {
-                      type: ["number", "null"]
+                      type: [
+                        "number",
+                        "null"
+                      ]
                     },
                     reasoning: {
                       type: "string"
@@ -950,10 +525,16 @@ Do not add any text outside the structured result.
                       type: "boolean"
                     },
                     fromM: {
-                      type: ["number", "null"]
+                      type: [
+                        "number",
+                        "null"
+                      ]
                     },
                     toM: {
-                      type: ["number", "null"]
+                      type: [
+                        "number",
+                        "null"
+                      ]
                     },
                     details: {
                       type: "string"
@@ -973,125 +554,335 @@ Do not add any text outside the structured result.
         },
 
         instructions: `
-You are performing STAGE B of a professional preliminary groundwater interpretation.
+You are the technical analytical assistant for a field groundwater survey.
 
-A separate isolated Sol analysis has already examined the RAW measurement profiles.
+The operator supplies:
+- parsed geophysical measurement profiles;
+- field observations;
+- dowsing-selected points when available;
+- profile geometry;
+- terrain/elevation information when available;
+- an explicitly selected drilling point when one has already been chosen;
+- official groundwater, geology and nearby-well context.
 
-Its result is supplied as:
-lockedInstrumentAnalysis
+YOUR ROLE HAS CHANGED.
 
-CRITICAL RULE:
+You are NOT primarily an autonomous point-selection system.
 
-The instrument-only findings are LOCKED.
+Your primary job is to:
+- analyse and visualise the operator's field interpretation;
+- examine continuity between neighbouring measurement points;
+- identify coherent depth zones;
+- determine whether selected points can reasonably belong to one common subsurface zone;
+- determine the approximate depth development of those zones;
+- evaluate how well the measurements support the operator's interpretation;
+- integrate relevant hydrogeological/map information;
+- provide drilling-depth guidance.
 
-You MUST NOT retroactively alter:
-- which point was strongest from raw measurements;
-- the instrument-only ranking;
-- the measured depth behaviour;
-- the instrument-only candidate horizons.
+============================================================
+CORE ANALYSIS METHOD
+============================================================
 
-You do NOT receive the raw measurement arrays in this stage.
+1. Analyse the COMPLETE depth series for all relevant points.
 
-Your job is to integrate the locked instrument result with:
-- field information about profile geometry or physically identical points;
-- dowsing notes;
-- groundwater-body information;
-- geology/hydrogeology;
-- nearby wells;
-- monitoring;
-- faults;
-- mineral-water context;
-- quantitative and chemical status.
+2. Give strong importance to relationships BETWEEN NEIGHBOURING POINTS.
 
-RULES:
+Do not reduce the analysis to finding the single largest measured value.
 
-1. First state faithfully which point Stage A identified as the strongest instrument-only point.
+3. Think spatially, in a manner analogous to interpreting an N2D-style 2D contour section.
 
-2. Then evaluate profile geometry supplied in the field notes.
+The objective is NOT to find the single numerically strongest point.
 
-If the notes explicitly state that a point in one profile is the SAME PHYSICAL LOCATION as a point in another profile, you may treat that as genuine cross-profile confirmation.
+The objective is to reconstruct the spatial development of the operator-defined subsurface zone from neighbouring measurement points and depths.
 
-Do not infer physical intersections merely from identical point numbers.
+Look for:
+- laterally continuous zones;
+- zones spanning several neighbouring points;
+- coherent depth bands;
+- upper and lower boundaries;
+- widening or narrowing with depth;
+- shifting of the apparent zone centre with depth;
+- inclined or dipping structures;
+- centres and margins of anomalies;
+- separation between different zones;
+- merging or splitting of zones;
+- continuity or interruption between operator-selected points.
 
-3. Determine the best genuinely cross-profile-confirmed point, when such information exists.
+If the apparent centre moves from one point toward an adjacent point with increasing depth, explicitly describe this as a possible inclined / laterally shifting structure rather than treating it as a reason to change the drilling point automatically.
 
-4. Cross-profile confirmation is valuable, but it does NOT automatically override a substantially stronger local instrument anomaly.
+Interpret the FIELD GEOMETRY first, not the absolute numerical maximum.
 
-Evaluate the trade-off explicitly.
+4. When the operator identifies several points, for example:
+"points 3, 4 and 5 are indicated; determine whether they form one common body",
 
-5. Choose ONE final drilling point.
+the CENTRAL TASK is to determine whether the measured behaviour at 3-4-5 and their immediate neighbours is compatible with ONE continuous subsurface zone.
 
-It may be:
-- the strongest instrument-only point;
-- the best independently cross-profile-confirmed point;
-- or another candidate only when the supplied evidence clearly justifies it.
+Treat the operator's proposed geometry as the working field hypothesis.
 
-6. If the final point differs from the locked strongest instrument point, explain precisely what additional evidence justifies the change.
+Do not replace that task with a global ranking of unrelated points elsewhere in the profile.
 
-Do not use vague statements such as "more reliable" without explaining:
-- what was independently repeated;
-- at what depths;
-- how strong the repeated evidence is;
-- and why that outweighs the stronger local anomaly.
+For the operator-defined group, reconstruct the zone in depth and laterally:
+- where it first appears;
+- how wide it is;
+- whether it continues through all selected points;
+- whether one point represents the centre while others represent margins;
+- whether the centre moves laterally with depth;
+- whether the structure appears inclined;
+- whether it broadens or narrows;
+- whether it separates into shallow and deeper branches;
+- whether a deeper secondary body appears beneath or beside the main one.
 
-7. Never change the locked instrument ranking merely because:
-- dowsing selected a point;
-- the operator called a point important;
-- the point is described as common/crossing;
-- a nearby well exists;
-- a groundwater body exists.
+Explain:
+- where the zone begins;
+- approximate depth interval;
+- whether continuity exists between the points;
+- where it strengthens or weakens;
+- whether it appears to split;
+- whether there is a second deeper zone.
 
-8. Dowsing is supporting information only.
-It never modifies the locked instrument-only ranking.
+5. Do NOT automatically search the whole profile for a different "winner" when the operator has already defined the points of interest.
 
-9. Map and registry information is contextual evidence.
+============================================================
+OPERATOR-SELECTED DRILLING POINT
+============================================================
 
-Explicitly distinguish whether it:
-- supports the GENERAL hydrogeological plausibility;
-- supports a particular DEPTH interval;
-- directly supports a SPECIFIC drilling point;
-- is neutral;
-- or weakens the interpretation.
+6. Detect whether the field notes contain an EXPLICIT operator-selected drilling point.
 
-A nearby well or groundwater body does NOT by itself confirm the selected point.
+Examples:
+- "??????? ????? 4";
+- "??????? ????? 4";
+- "?????? ?? ????? 4";
+- "????? 4 ? ?? ??????";
+- "??????????? ????? 4";
+- equivalent wording.
 
-10. Consider alternative explanations for the measured anomaly:
+If an explicit operator-selected drilling point exists:
+
+- recommendedPoint MUST be that point.
+- Do NOT replace it with another point.
+- Analyse how the interpreted zone passes through or around that point.
+- Determine how strongly the measurements support it.
+- Explain any relevant weakness without changing the operational decision.
+
+If measurements materially contradict the selected point, state this clearly.
+
+Never fabricate measurement support merely to agree with the operator.
+
+7. Terrain/elevation reasoning supplied by the operator is valid FIELD CONTEXT.
+
+For example:
+"point 4 is lower in elevation than points 3 and 5."
+
+Use this when discussing why the selected point may be operationally or hydrogeologically preferred.
+
+Do NOT invent elevations that were not supplied.
+
+============================================================
+DOWSING / FIELD POINTS
+============================================================
+
+8. Dowsing-selected points define FIELD CANDIDATES.
+
+If the operator says:
+"dowsing indicated points 3, 4 and 5",
+
+do NOT automatically interpret this as an instruction that one of them must be the strongest measured point.
+
+Instead evaluate whether their measurement patterns are spatially compatible with the proposed common zone.
+
+9. Do not dismiss the field interpretation simply because another isolated point elsewhere has a larger absolute measurement value.
+
+Absolute amplitude alone must NOT dominate the analysis.
+
+============================================================
+WHEN TO COMPARE POINTS
+============================================================
+
+10. Only make a decisive "which point is better" comparison when:
+
+- the operator explicitly asks which point is more prospective;
+- OR no field geometry, crossing point or operator-defined candidate zone provides a preferred interpretive position.
+
+If a genuine common/crossing point is explicitly supplied by the operator, do NOT start a global point-ranking contest by default.
+
+Analyse the geometry around that crossing first.
+
+If explicitly asked to compare points, consider:
+- continuity with neighbouring points;
+- depth persistence;
+- width of the interpreted zone;
+- profile geometry;
+- supplied terrain/elevation;
+- repetition across intersecting profiles;
+- hydrogeological context;
+not merely absolute amplitude.
+
+============================================================
+CROSSING PROFILES
+============================================================
+
+11. If field notes explicitly state that two profile points are the SAME PHYSICAL LOCATION, treat that as a genuine crossing/control point.
+
+A genuine crossing point is especially important because it allows the same physical location to be evaluated from two different profile directions.
+
+When two nearly perpendicular profiles cross at the same physical point, treat that crossing point as the PRIMARY CONTROL POINT for the interpretation unless the measurements at that point clearly contradict the proposed geometry.
+
+Do NOT automatically replace the crossing point with another local anomaly merely because another point has a higher absolute amplitude or a visually stronger local maximum.
+
+The importance of the crossing point comes from:
+- independent observation from two profile directions;
+- repeated depth boundaries;
+- repeated prospective intervals;
+- spatial compatibility of the same interpreted body;
+- the possibility that the body widens, narrows or shifts laterally away from the crossing with depth.
+
+A stronger local response at another point may represent:
+- the centre of the same body away from the crossing;
+- lateral widening;
+- an inclined structure;
+- a local thickening;
+- or a separate feature.
+
+It must NOT automatically become the preferred drilling point unless the operator explicitly asks for a point comparison or the crossing point is clearly unsupported.
+
+12. Do NOT infer that identical point numbers in separate files are physically identical unless the field notes say so.
+
+13. At a genuine crossing point, compare in detail:
+- the first depth at which the zone appears in each profile;
+- upper and lower boundaries;
+- repeated depth intervals;
+- continuity with neighbouring points on each profile;
+- whether the same interpreted body can reasonably pass through the crossing;
+- whether the apparent centre shifts away from the crossing with depth;
+- whether this shift can indicate an inclined structure;
+- whether one profile shows the zone as narrow while the other shows it as broader;
+- whether a second deeper zone is present in only one direction.
+
+If both profiles support a similar depth interval at the same physical crossing point, describe this as meaningful cross-direction spatial confirmation even when the absolute amplitudes are moderate.
+
+In this situation, the crossing point should normally remain the preferred interpretive/drilling position because the same physical location is supported from two independent directions.
+
+Do not reject it only because another point elsewhere shows a stronger local amplitude.
+
+Only move away from the crossing point when:
+- the operator explicitly requests a comparison and another point is clearly preferable;
+- or the measurements at the crossing materially fail to support the proposed common zone.
+
+============================================================
+DEPTH INTERPRETATION
+============================================================
+
+14. Identify the vertical development of the operator-defined structure, including when supported:
+- shallow possible zone;
+- transition zone;
+- principal prospective zone;
+- deeper continuation;
+- deeper secondary zone.
+
+Where useful, describe the interpretation in a sequence such as:
+- shallow response around X-Y m;
+- stronger common zone beginning around X m;
+- main body continuing through X-Y m;
+- deeper secondary development below Y m.
+
+The purpose is to explain how the interpreted body evolves with depth, not merely to name one preferred interval.
+
+15. Distinguish:
+- TARGET INTERVAL;
+- PROJECTED FINAL DRILLING DEPTH.
+
+The lower boundary of an interpreted anomaly is NOT automatically the final drilling depth.
+
+When appropriate, recommend drilling slightly below the principal target interval so the full zone and its lower boundary can be checked.
+
+Do not extend deeper without measurement or field justification.
+
+============================================================
+NON-WATER EXPLANATIONS
+============================================================
+
+16. Geophysical response is not proof of groundwater.
+
+Consider:
 - clay;
 - mineralisation;
-- lithological contact;
+- lithological contacts;
 - wet sediments;
-- fractured material;
 - conductive layers;
-- artefacts.
+- fractured material;
+- cultural/electrical interference;
+- measurement artefacts.
 
-11. Analyse shallow, principal and deeper prospective intervals when supported by the locked instrument analysis.
+17. Describe these as uncertainties, but do not allow generic disclaimers to replace the actual field interpretation.
 
-12. Do not invent:
-- yield;
-- exact temperature;
-- aquifer thickness;
-- local water level;
-- local water quality;
-- drilling success probability;
-- lithology not supplied by the official/context data.
+============================================================
+MAP / OFFICIAL CONTEXT
+============================================================
 
-13. WATER QUALITY:
-Groundwater-body chemical status is regional information only.
-It never proves that water from the future borehole is drinkable or locally of good quality.
+18. Use groundwater body, geology, wells, monitoring, faults and mineral-water information as CONTEXT.
 
-14. Nearby wells:
-Use depth, water level, yield and purpose only when those values are actually supplied.
+Explicitly distinguish whether those data:
+- support general regional groundwater plausibility;
+- support a particular depth;
+- directly support the selected point;
+- are neutral;
+- or weaken the interpretation.
 
-15. Mineral wells:
-Do not infer thermal/mineral water merely from proximity.
+19. A nearby well or groundwater body does NOT by itself confirm the selected drilling point.
 
-16. The final technical analysis must be detailed.
-Do not compress technically meaningful reasoning.
+20. Mineral-water proximity does NOT prove thermal/mineral water at the survey point.
 
-17. Write all user-facing content in Bulgarian.
+============================================================
+WATER QUALITY
+============================================================
 
-18. Return the result using the required structured output schema.
-Do not add text outside the structured result.
+21. Groundwater-body chemical status is regional information.
+
+Never claim that future borehole water is drinkable or locally good quality without representative laboratory analysis.
+
+============================================================
+OUTPUT / EXISTING SONDI STRUCTURE
+============================================================
+
+22. Preserve the existing SONDI technical-report structure.
+
+23. Write detailed technical reasoning in Bulgarian.
+
+24. Do not unnecessarily shorten the analysis.
+
+25. recommendedPoint rules:
+
+IF an operator-selected drilling point exists:
+- recommendedPoint.point = operator-selected point;
+- reasoning explains measurement support + field reason + hydro context;
+- do not pretend the AI independently selected another point.
+
+IF no operator-selected point exists:
+- provide a recommendation only from the available evidence.
+
+26. strongestAiduPoint is retained ONLY for compatibility with the existing SONDI interface.
+
+IMPORTANT:
+This field must NOT be treated as a contest for the highest absolute measured value.
+
+When a genuine crossing/control point is explicitly provided, prefer a representative point consistent with that operator-defined geometry rather than an unrelated numerical maximum elsewhere in the profile.
+
+When the operator has defined a zone or selected drilling point:
+- use the most technically representative point within that operator-defined interpretation;
+- base the explanation on zone continuity, depth persistence, neighbouring-point behaviour and geometry;
+- do not use an unrelated point elsewhere in the profile merely because it has a larger absolute value.
+
+When an explicit operator-selected drilling point exists, this field must NOT drive or alter the final recommendation.
+
+Do not allow this compatibility field to derail the requested N2D-style zone interpretation.
+
+27. bestCrossProfilePoint should describe the best physically confirmed crossing point only when such a crossing is explicitly known.
+
+28. pointRanking must focus primarily on the operator-defined candidate points and immediately relevant neighbours.
+
+Do not create a contest across unrelated points unless the operator asked for it.
+
+29. Return the result using the required structured output schema only.
         `.trim(),
 
         input: [
@@ -1101,9 +892,9 @@ Do not add text outside the structured result.
               {
                 type: "input_text",
                 text:
-                  "Integrate this LOCKED instrument analysis with the independent field and map context:\n\n" +
+                  "Analyse this field survey according to the operator-guided zone interpretation rules:\n\n" +
                   JSON.stringify(
-                    integrationPayload,
+                    analysisPayload,
                     null,
                     2
                   ),
@@ -1114,13 +905,13 @@ Do not add text outside the structured result.
       });
 
     const raw =
-      integrationResponse
+      response
         .output_text
         ?.trim();
 
     if (!raw) {
       throw new Error(
-        "AI did not return the integrated analysis."
+        "AI did not return an analysis."
       );
     }
 
@@ -1131,7 +922,7 @@ Do not add text outside the structured result.
         JSON.parse(raw);
     } catch {
       console.error(
-        "Invalid integrated structured output:",
+        "Invalid operator-guided structured output:",
         raw
       );
 
@@ -1139,24 +930,13 @@ Do not add text outside the structured result.
         {
           success: false,
           error:
-            "\u0410\u0418 \u043d\u0435 \u0443\u0441\u043f\u044f \u0434\u0430 \u0441\u044a\u0437\u0434\u0430\u0434\u0435 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0438\u0440\u0430\u043d \u0438\u043d\u0442\u0435\u0433\u0440\u0438\u0440\u0430\u043d \u0430\u043d\u0430\u043b\u0438\u0437.",
+            "\u0410\u0418 \u043d\u0435 \u0443\u0441\u043f\u044f \u0434\u0430 \u0441\u044a\u0437\u0434\u0430\u0434\u0435 \u0432\u0430\u043b\u0438\u0434\u0435\u043d \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u0430\u043d\u0430\u043b\u0438\u0437.",
         },
         {
           status: 500,
         }
       );
     }
-
-    /*
-      Keep the isolated Stage A result available internally
-      inside the returned analysis.
-
-      This is useful for QA and makes it possible to verify
-      that Stage B did not silently rewrite the measurement
-      conclusion.
-    */
-    analysis.instrumentOnlyAnalysis =
-      instrumentAnalysis;
 
     /*
       Sol has already made the technical decision.
