@@ -101,7 +101,485 @@ export async function POST(request: Request) {
       apiKey: process.env.OPENAI_API_KEY,
     });
 
-    const response =
+    /*
+      ==========================================================
+      SOL STAGE A ? STRICTLY ISOLATED INSTRUMENT ANALYSIS
+      ==========================================================
+
+      This call sees ONLY the parsed measurement profiles.
+
+      It does NOT receive:
+      - coordinates;
+      - settlement/location;
+      - groundwater bodies;
+      - geology;
+      - nearby wells;
+      - faults;
+      - monitoring;
+      - mineral-water information;
+      - dowsing / field notes;
+      - statements about common/crossing/preferred points.
+
+      This makes the instrument ranking independent from
+      operator expectations and map context.
+    */
+
+    const instrumentResponse =
+      await client.responses.create({
+        model:
+          process.env.AIDU_AI_MODEL ||
+          "gpt-5.6",
+
+        reasoning: {
+          effort: "medium",
+        },
+
+        max_output_tokens: 7000,
+
+        text: {
+          format: {
+            type: "json_schema",
+            name: "aidu_instrument_analysis",
+            strict: true,
+            schema: {
+              type: "object",
+              additionalProperties: false,
+              required: [
+                "summary",
+                "measuredPatterns",
+                "candidateHorizons",
+                "pointRanking",
+                "profileComparison",
+                "strongestInstrumentPoint",
+                "secondaryInstrumentCandidates",
+                "limitations"
+              ],
+              properties: {
+                summary: {
+                  type: "string"
+                },
+
+                measuredPatterns: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    additionalProperties: false,
+                    required: [
+                      "file",
+                      "details"
+                    ],
+                    properties: {
+                      file: {
+                        type: "string"
+                      },
+                      details: {
+                        type: "string"
+                      }
+                    }
+                  }
+                },
+
+                candidateHorizons: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    additionalProperties: false,
+                    required: [
+                      "label",
+                      "fromM",
+                      "toM",
+                      "confidence",
+                      "supportingLocations",
+                      "reasoning",
+                      "alternativeExplanation"
+                    ],
+                    properties: {
+                      label: {
+                        type: "string"
+                      },
+
+                      fromM: {
+                        type: [
+                          "number",
+                          "null"
+                        ]
+                      },
+
+                      toM: {
+                        type: [
+                          "number",
+                          "null"
+                        ]
+                      },
+
+                      confidence: {
+                        type: "string",
+                        enum: [
+                          "high",
+                          "medium",
+                          "low"
+                        ]
+                      },
+
+                      supportingLocations: {
+                        type: "array",
+                        items: {
+                          type: "object",
+                          additionalProperties: false,
+                          required: [
+                            "profile",
+                            "points"
+                          ],
+                          properties: {
+                            profile: {
+                              type: "string"
+                            },
+                            points: {
+                              type: "array",
+                              items: {
+                                type: "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+
+                      reasoning: {
+                        type: "string"
+                      },
+
+                      alternativeExplanation: {
+                        type: "string"
+                      }
+                    }
+                  }
+                },
+
+                pointRanking: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    additionalProperties: false,
+                    required: [
+                      "profile",
+                      "point",
+                      "perspective",
+                      "preferredDepthFromM",
+                      "preferredDepthToM",
+                      "reasoning"
+                    ],
+                    properties: {
+                      profile: {
+                        type: "string"
+                      },
+
+                      point: {
+                        type: "string"
+                      },
+
+                      perspective: {
+                        type: "string",
+                        enum: [
+                          "high",
+                          "medium",
+                          "low"
+                        ]
+                      },
+
+                      preferredDepthFromM: {
+                        type: [
+                          "number",
+                          "null"
+                        ]
+                      },
+
+                      preferredDepthToM: {
+                        type: [
+                          "number",
+                          "null"
+                        ]
+                      },
+
+                      reasoning: {
+                        type: "string"
+                      }
+                    }
+                  }
+                },
+
+                profileComparison: {
+                  type: "object",
+                  additionalProperties: false,
+                  required: [
+                    "details"
+                  ],
+                  properties: {
+                    details: {
+                      type: "string"
+                    }
+                  }
+                },
+
+                strongestInstrumentPoint: {
+                  type: "object",
+                  additionalProperties: false,
+                  required: [
+                    "profile",
+                    "point",
+                    "confidence",
+                    "preferredDepthFromM",
+                    "preferredDepthToM",
+                    "reasoning"
+                  ],
+                  properties: {
+                    profile: {
+                      type: "string"
+                    },
+
+                    point: {
+                      type: "string"
+                    },
+
+                    confidence: {
+                      type: "string",
+                      enum: [
+                        "high",
+                        "medium",
+                        "low"
+                      ]
+                    },
+
+                    preferredDepthFromM: {
+                      type: [
+                        "number",
+                        "null"
+                      ]
+                    },
+
+                    preferredDepthToM: {
+                      type: [
+                        "number",
+                        "null"
+                      ]
+                    },
+
+                    reasoning: {
+                      type: "string"
+                    }
+                  }
+                },
+
+                secondaryInstrumentCandidates: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    additionalProperties: false,
+                    required: [
+                      "profile",
+                      "point",
+                      "confidence",
+                      "reasoning"
+                    ],
+                    properties: {
+                      profile: {
+                        type: "string"
+                      },
+
+                      point: {
+                        type: "string"
+                      },
+
+                      confidence: {
+                        type: "string",
+                        enum: [
+                          "high",
+                          "medium",
+                          "low"
+                        ]
+                      },
+
+                      reasoning: {
+                        type: "string"
+                      }
+                    }
+                  }
+                },
+
+                limitations: {
+                  type: "array",
+                  items: {
+                    type: "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+
+        instructions: `
+You are performing STAGE A of a groundwater geophysical interpretation.
+
+You receive ONLY parsed geophysical measurement profiles.
+
+This stage must be completely independent of:
+- field notes;
+- dowsing;
+- map data;
+- geology;
+- groundwater-body information;
+- nearby wells;
+- operator preferences;
+- statements that a point is common, crossing, preferred or important.
+
+You do not know any of those things.
+
+IMPORTANT:
+
+1. Analyse every measurement point and every available depth.
+
+2. Compare points WITHIN each profile.
+
+3. Identify:
+- sharp vertical transitions;
+- broad depth anomalies;
+- persistent anomalies across several consecutive depths;
+- lateral continuation into neighbouring points;
+- local maxima/minima and contrasts;
+- shallow, principal and deeper candidate intervals.
+
+4. Do not assume that high or low measured values automatically mean water.
+
+5. Explicitly consider alternative explanations such as:
+- clay;
+- mineralisation;
+- lithological contact;
+- wet sediments;
+- fractured material;
+- conductive material;
+- interference;
+- isolated artefact.
+
+6. Rank the measurement points based ONLY on the numerical profiles.
+
+7. A strong drilling candidate should preferably combine:
+- local contrast against neighbouring points;
+- persistence over several depths;
+- lateral support from adjacent points;
+- a coherent depth interval.
+
+8. If several uploaded profiles contain the same point NUMBER, DO NOT assume those point numbers represent the same physical location.
+Without field information, identical point numbers in different files are merely labels.
+
+9. You may compare the general depth patterns between profiles, but you must not claim that two profiles physically intersect.
+
+10. Identify ONE strongest instrument-only point overall.
+
+11. Also identify strong secondary candidates when justified.
+
+12. Analyse all available depths. Do not stop at the first anomaly.
+
+13. Do not use groundwater, geology or drilling terminology as if it were proven.
+Describe the measured pattern first and state that water is only one possible interpretation.
+
+14. Write detailed technical reasoning in Bulgarian.
+
+15. Return the result using the required structured output schema.
+Do not add any text outside the structured result.
+        `.trim(),
+
+        input: [
+          {
+            role: "user",
+            content: [
+              {
+                type: "input_text",
+                text:
+                  "Analyse ONLY these measurement profiles. No field or map context exists in this stage:\n\n" +
+                  JSON.stringify(
+                    {
+                      aiduFiles,
+                    },
+                    null,
+                    2
+                  ),
+              },
+            ],
+          },
+        ],
+      });
+
+    const instrumentRaw =
+      instrumentResponse
+        .output_text
+        ?.trim();
+
+    if (!instrumentRaw) {
+      throw new Error(
+        "AI did not return the isolated instrument analysis."
+      );
+    }
+
+    let instrumentAnalysis;
+
+    try {
+      instrumentAnalysis =
+        JSON.parse(
+          instrumentRaw
+        );
+    } catch {
+      console.error(
+        "Invalid isolated structured output:",
+        instrumentRaw
+      );
+
+      return NextResponse.json(
+        {
+          success: false,
+          error:
+            "\u0410\u0418 \u043d\u0435 \u0443\u0441\u043f\u044f \u0434\u0430 \u0441\u044a\u0437\u0434\u0430\u0434\u0435 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0438\u0440\u0430\u043d \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u0430\u043b\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437.",
+        },
+        {
+          status: 500,
+        }
+      );
+    }
+
+    /*
+      ==========================================================
+      SOL STAGE B ? INTEGRATED TECHNICAL DECISION
+      ==========================================================
+
+      Stage B does NOT receive raw measurement arrays.
+
+      It receives the completed Stage A interpretation as a
+      locked measurement assessment, plus field/map context.
+
+      Therefore operator notes cannot retroactively change
+      which point was strongest in the raw instrument data.
+    */
+
+    const integrationPayload = {
+      location: {
+        label:
+          locationLabel ||
+          "Location supplied by coordinates",
+        latitude,
+        longitude,
+      },
+
+      lockedInstrumentAnalysis:
+        instrumentAnalysis,
+
+      groundwaterBodies,
+
+      spatialContext,
+
+      fieldNotes:
+        dowsingNotes ||
+        "No additional field information supplied.",
+    };
+
+    const integrationResponse =
       await client.responses.create({
         model:
           process.env.AIDU_AI_MODEL ||
@@ -114,198 +592,134 @@ export async function POST(request: Request) {
         max_output_tokens: 9000,
 
         instructions: `
-You are an analytical assistant for preliminary interpretation of AIDU / ADMT geophysical measurements used in groundwater prospecting.
+You are performing STAGE B of a professional preliminary groundwater interpretation.
 
-The input contains RAW PARSED AIDU .dat measurements, not screenshots.
+A separate isolated Sol analysis has already examined the RAW measurement profiles.
 
-Each file may contain:
-- measurement point number;
-- depth in metres;
-- measured E value;
-- project/device metadata;
-- multiple measurement points forming one profile.
+Its result is supplied as:
+lockedInstrumentAnalysis
 
-The input can also contain:
-- exact coordinates or settlement-derived coordinates;
-- intersecting groundwater bodies;
-- geology/hydrogeology and mapped spatial context;
-- nearby wells and their depths;
-- groundwater monitoring;
-- faults;
-- mineral-water facilities;
-- quantitative and chemical context;
-- dowsing observations.
+CRITICAL RULE:
 
-IMPORTANT ANALYSIS RULES:
+The instrument-only findings are LOCKED.
 
-1. Analyse the complete depth series for every point.
-2. Compare neighbouring points against one another.
-3. Look for depth intervals where anomalies persist laterally across more than one point.
-4. Look for sharp vertical changes, local minima/maxima, gradients and repeated patterns.
-5. Do NOT assume that a low E value, high E value, coloured zone or isolated anomaly automatically means groundwater.
-6. Consider non-water explanations:
-   - clay;
-   - mineralisation;
-   - wet soil;
-   - lithological contact;
-   - fractured rock;
-   - conductive material;
-   - cultural/electrical interference;
-   - isolated measurement artefact.
-7. Give more weight to coherent anomalies that:
-   - continue through adjacent points;
-   - occupy a plausible depth interval;
-   - agree with hydrogeological context;
-   - agree with nearby drilling/monitoring evidence.
-8. Dowsing information is supporting information only. It must never override the instrument data.
-9. Map information is supporting regional/site context and must be distinguished from the AIDU measurement itself.
+You MUST NOT retroactively alter:
+- which point was strongest from raw measurements;
+- the instrument-only ranking;
+- the measured depth behaviour;
+- the instrument-only candidate horizons.
 
-9A. After the instrument-only interpretation is complete, explicitly evaluate whether the supplied map, registry and hydrogeological evidence:
-- supports the selected drilling point and interpreted horizon;
-- is neutral or insufficient to materially influence the decision;
-- or contradicts / weakens the interpretation.
+You do NOT receive the raw measurement arrays in this stage.
 
-9B. Base this assessment only on actually supplied information such as:
-- groundwater body and aquifer type;
-- geology and hydrogeology;
-- nearby ordinary wells;
-- available well depths, static water levels and yields;
-- mineral wells or springs;
+Your job is to integrate the locked instrument result with:
+- field information about profile geometry or physically identical points;
+- dowsing notes;
+- groundwater-body information;
+- geology/hydrogeology;
+- nearby wells;
 - monitoring;
-- quantitative resource and abstraction context;
-- chemical-status context;
-- mapped faults.
+- faults;
+- mineral-water context;
+- quantitative and chemical status.
 
-9C. Do not claim map confirmation merely because a groundwater body or well exists nearby.
-Explain which specific facts support, weaken or do not materially affect the interpretation.
+RULES:
 
-9D. The recommended drilling point must still be chosen primarily from the measurement profiles. Map evidence may strengthen, weaken or contextualise that recommendation, but must not replace the measurement-based selection.
-10. Do not invent water yield, exact temperature, aquifer thickness, lithology or exact drilling success probability when not supported by the supplied data.
-11. If several .dat files represent crossing or separate profiles, compare them and identify repeated/crossing anomalies when the data permits.
-12. Distinguish clearly:
-   - measured AIDU pattern;
-   - mapped factual context;
-   - dowsing information;
-   - AI interpretation.
-13. Analyse all available depths. Do not stop at the first possible aquifer.
-14. Identify shallow, principal and deeper prospective horizons when supported.
-15. Point selection must be performed in three separate stages:
+1. First state faithfully which point Stage A identified as the strongest instrument-only point.
 
-15A. First determine the strongest point or zone from the AIDU instrument data alone.
-At this stage IGNORE dowsing observations and do not favour a point merely because the user described it as important, common, crossing, preferred or previously selected.
-State which point has the strongest instrumentally supported local anomaly and why.
+2. Then evaluate profile geometry supplied in the field notes.
 
-15B. Then determine the best cross-profile-confirmed point when multiple profiles are available.
-A shared/crossing point may be more reliable because an anomaly repeats in different profile directions, even if it is not the strongest local amplitude.
+If the notes explicitly state that a point in one profile is the SAME PHYSICAL LOCATION as a point in another profile, you may treat that as genuine cross-profile confirmation.
 
-15C. Finally choose ONE final recommended drilling point.
-The final recommendation may be:
-- the strongest AIDU point;
-- the best cross-profile-confirmed point;
-- or another point if the full evidence supports it.
+Do not infer physical intersections merely from identical point numbers.
 
-You MUST explicitly explain why the final point is preferred over the strongest local AIDU anomaly if they are different.
+3. Determine the best genuinely cross-profile-confirmed point, when such information exists.
 
-16. Dowsing information must be evaluated only AFTER the instrument-only ranking is complete.
-Never alter the instrument-only ranking merely to agree with dowsing.
-If dowsing agrees with the final recommendation, say that it provides additional support.
-If it disagrees, state the disagreement clearly.
+4. Cross-profile confirmation is valuable, but it does NOT automatically override a substantially stronger local instrument anomaly.
 
-17. The final answer must never leave the user uncertain about which point the AI itself considers best.
-If the data are sufficient, select one final drilling point.
-Use "insufficient data" only when the evidence genuinely does not support a defensible choice.
+Evaluate the trade-off explicitly.
 
-18. The result is a preliminary geophysical interpretation and is not a guarantee of water, yield or quality.
+5. Choose ONE final drilling point.
 
-19. The client-facing conclusion MUST NOT be only a summary of the AIDU anomaly.
-When the supplied map/spatial data contains the information, the client-facing text must also include:
-- the identified groundwater body and its name;
-- the hydrogeological/geological setting and aquifer type;
-- whether the environment is porous, fractured, karst, confined or unconfined when known;
-- relevant nearby ordinary wells, including distance, depth, static water level and permitted/known yield when available;
-- relevant mineral wells or springs, including distance, depth and temperature when available;
-- nearest relevant monitoring information;
-- quantitative status, resource/load information and abstraction pressure when available;
-- chemical status of the groundwater body;
-- known chemical problem indicators or pollutants when available;
-- relevant faults and their distance;
-- the AIDU-derived prospective horizons;
-- recommended drilling point and drilling depth;
-- important uncertainties and limitations.
+It may be:
+- the strongest instrument-only point;
+- the best independently cross-profile-confirmed point;
+- or another candidate only when the supplied evidence clearly justifies it.
 
-20. WATER QUALITY RULE:
-Never say that water at the proposed drilling point is "good quality", "drinkable", "clean" or otherwise suitable for drinking unless a representative local laboratory analysis supports that statement.
-If only groundwater-body chemical status is available, phrase it explicitly as regional/body-level information, for example:
-"\u041f\u043e\u0434\u0437\u0435\u043c\u043d\u043e\u0442\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e \u0435 \u0432 \u0434\u043e\u0431\u0440\u043e \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0441\u043f\u043e\u0440\u0435\u0434 \u043d\u0430\u043b\u0438\u0447\u043d\u0438\u0442\u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438, \u043d\u043e \u0442\u043e\u0432\u0430 \u043d\u0435 \u0433\u0430\u0440\u0430\u043d\u0442\u0438\u0440\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e\u0442\u043e \u043d\u0430 \u0432\u043e\u0434\u0430\u0442\u0430 \u0432 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438\u044f \u0431\u044a\u0434\u0435\u0449 \u0441\u043e\u043d\u0434\u0430\u0436."
-If known problematic indicators exist, mention them by name.
-Recommend laboratory testing after drilling whenever local water quality is unknown.
+6. If the final point differs from the locked strongest instrument point, explain precisely what additional evidence justifies the change.
 
-21. The client-facing text should normally contain 3-6 short paragraphs and be useful to a person deciding whether and how deep to drill. It should combine:
-AIDU measurement + hydrogeology + nearby real drilling evidence + groundwater-body status + practical drilling recommendation.
-Do not omit useful map information merely because it is not decisive for selecting the AIDU point.
+Do not use vague statements such as "more reliable" without explaining:
+- what was independently repeated;
+- at what depths;
+- how strong the repeated evidence is;
+- and why that outweighs the stronger local anomaly.
 
-22. Clearly distinguish:
-- measured AIDU evidence;
-- official/map data;
-- interpretation/recommendation.
+7. Never change the locked instrument ranking merely because:
+- dowsing selected a point;
+- the operator called a point important;
+- the point is described as common/crossing;
+- a nearby well exists;
+- a groundwater body exists.
 
-23. CLIENT REPORT LANGUAGE:
-The clientText is a simple client report, not a technical operator report.
-Never mention in clientText:
-- AIDU or ADMT;
-- .dat;
-- uploaded file names;
-- profile file names;
-- E values;
-- strongest instrument-only point as an internal ranking;
-- JSON or schema terminology;
-- internal model reasoning.
+8. Dowsing is supporting information only.
+It never modifies the locked instrument-only ranking.
 
-Translate technical findings into ordinary Bulgarian.
-Prefer expressions such as:
-- "??????????? ???????";
-- "???-?????????????? ????";
-- "??????????? ????? ?? ??????";
-- "?????????????? ?????? ?????????";
-- "????????? ????? ?? ??????".
+9. Map and registry information is contextual evidence.
 
-Do not explain the measurement technology to the client.
-The detailed technical comparison remains outside clientText.
+Explicitly distinguish whether it:
+- supports the GENERAL hydrogeological plausibility;
+- supports a particular DEPTH interval;
+- directly supports a SPECIFIC drilling point;
+- is neutral;
+- or weakens the interpretation.
 
-24. Write all user-facing text in Bulgarian.
+A nearby well or groundwater body does NOT by itself confirm the selected point.
 
-24A. TECHNICAL DEPTH:
-The Sol response is the authoritative technical interpretation.
-Do not shorten or omit technically important evidence merely to save output.
-Fully explain:
-- instrument patterns by point and depth;
-- lateral continuity;
-- competing geological explanations;
-- cross-profile evidence;
-- strongest instrument-only point;
-- final recommended point;
-- prospective horizons;
-- drilling depth;
-- map/registry support or contradiction;
-- uncertainties and limitations.
+10. Consider alternative explanations for the measured anomaly:
+- clay;
+- mineralisation;
+- lithological contact;
+- wet sediments;
+- fractured material;
+- conductive layers;
+- artefacts.
 
-Avoid only meaningless repetition.
+11. Analyse shallow, principal and deeper prospective intervals when supported by the locked instrument analysis.
 
-24B. Do NOT generate the landowner/client narrative in this Sol response.
-A separate lower-cost model will create clientText only AFTER the technical
-decision is complete. Sol remains authoritative for all technical conclusions.
+12. Do not invent:
+- yield;
+- exact temperature;
+- aquifer thickness;
+- local water level;
+- local water quality;
+- drilling success probability;
+- lithology not supplied by the official/context data.
 
-25. Return ONLY valid JSON. No markdown and no text outside the JSON.
+13. WATER QUALITY:
+Groundwater-body chemical status is regional information only.
+It never proves that water from the future borehole is drinkable or locally of good quality.
 
-Return this exact general structure:
+14. Nearby wells:
+Use depth, water level, yield and purpose only when those values are actually supplied.
+
+15. Mineral wells:
+Do not infer thermal/mineral water merely from proximity.
+
+16. The final technical analysis must be detailed.
+Do not compress technically meaningful reasoning.
+
+17. Write all user-facing content in Bulgarian.
+
+18. Return ONLY valid JSON.
+
+Return this structure exactly:
 
 {
-  "summary": "overall conclusion",
+  "summary": "detailed integrated technical conclusion",
 
   "measuredPatterns": [
     {
-      "file": "file name",
-      "details": "what the AIDU series itself shows"
+      "file": "profile/file name",
+      "details": "locked Stage A measured interpretation"
     }
   ],
 
@@ -315,30 +729,30 @@ Return this exact general structure:
       "fromM": null,
       "toM": null,
       "confidence": "high / medium / low",
-      "supportingPoints": ["1", "2"],
-      "reasoning": "why this interval is considered prospective",
+      "supportingPoints": ["profile / point"],
+      "reasoning": "integrated interpretation",
       "alternativeExplanation": "possible non-water explanation"
     }
   ],
 
   "pointRanking": [
     {
-      "point": "point number",
+      "point": "profile / point",
       "perspective": "high / medium / low",
       "preferredDepthFromM": null,
       "preferredDepthToM": null,
-      "reasoning": "comparison against other points"
+      "reasoning": "ranking inherited from or interpreted consistently with locked Stage A"
     }
   ],
 
   "crossProfileComparison": {
     "available": true,
-    "details": "comparison between uploaded profiles"
+    "details": "physical cross-profile comparison using only explicitly supplied profile geometry"
   },
 
   "dowsingComparison": {
     "agreement": "matches / partly matches / cannot confirm / does not match",
-    "details": "comparison with dowsing notes"
+    "details": "comparison performed after locked instrument ranking"
   },
 
   "mapComparison": {
@@ -348,36 +762,40 @@ Return this exact general structure:
     "nearbyWells": "relevant nearby drilling evidence",
     "faults": "relevant fault context",
     "monitoring": "relevant monitoring/status context",
-    "supportingEvidence": ["specific supplied facts that strengthen the interpretation"],
-    "contradictingEvidence": ["specific supplied facts that weaken the interpretation"],
-    "details": "clear explanation of how map and registry evidence affects the recommendation"
+    "supportingEvidence": [
+      "specific supplied facts that strengthen the interpretation"
+    ],
+    "contradictingEvidence": [
+      "specific supplied facts that weaken the interpretation"
+    ],
+    "details": "state clearly whether evidence supports general hydrogeology, depth, exact point, or only provides context"
   },
 
   "strongestAiduPoint": {
-    "point": "strongest point based on AIDU instrument data only",
-    "profile": "file/profile name",
+    "point": "LOCKED strongest Stage A point",
+    "profile": "LOCKED Stage A profile",
     "confidence": "high / medium / low",
-    "reasoning": "why this is the strongest instrument-only point and how it compares with nearby points"
+    "reasoning": "faithful explanation of the locked instrument-only result"
   },
 
   "bestCrossProfilePoint": {
     "available": true,
-    "point": "best point confirmed across multiple profiles or insufficient data",
+    "point": "best physically confirmed point or insufficient data",
     "confidence": "high / medium / low",
-    "reasoning": "why cross-profile repetition strengthens or weakens this point"
+    "reasoning": "why genuine independent profile repetition does or does not strengthen this point"
   },
 
   "recommendedPoint": {
-    "point": "ONE final preferred drilling point or insufficient data",
+    "point": "ONE final drilling point",
     "confidence": "high / medium / low",
-    "reasoning": "why this is the final drilling recommendation",
-    "whyPreferredOverStrongestAiduPoint": "required when the final point differs from strongestAiduPoint"
+    "reasoning": "full reason for final selection",
+    "whyPreferredOverStrongestAiduPoint": "mandatory and detailed if final point differs from locked strongest instrument point"
   },
 
   "recommendedDrillingDepth": {
     "fromM": null,
     "toM": null,
-    "reasoning": "why this drilling interval is recommended"
+    "reasoning": "recommended drilling interval/depth and evidence"
   },
 
   "secondaryTarget": {
@@ -389,7 +807,8 @@ Return this exact general structure:
 
   "limitations": [
     "important limitations"
-  ]}
+  ]
+}
         `.trim(),
 
         input: [
@@ -399,9 +818,9 @@ Return this exact general structure:
               {
                 type: "input_text",
                 text:
-                  "Analyse this AIDU survey dataset:\n\n" +
+                  "Integrate this LOCKED instrument analysis with the independent field and map context:\n\n" +
                   JSON.stringify(
-                    payload,
+                    integrationPayload,
                     null,
                     2
                   ),
@@ -412,21 +831,24 @@ Return this exact general structure:
       });
 
     const raw =
-      response.output_text?.trim();
+      integrationResponse
+        .output_text
+        ?.trim();
 
     if (!raw) {
       throw new Error(
-        "AI did not return an analysis."
+        "AI did not return the integrated analysis."
       );
     }
 
     let analysis;
 
     try {
-      analysis = extractJson(raw);
+      analysis =
+        extractJson(raw);
     } catch {
       console.error(
-        "Invalid AIDU AI JSON:",
+        "Invalid integrated AIDU AI JSON:",
         raw
       );
 
@@ -434,11 +856,24 @@ Return this exact general structure:
         {
           success: false,
           error:
-            "\u0410\u0418 \u0432\u044a\u0440\u043d\u0430 \u043d\u0435\u0432\u0430\u043b\u0438\u0434\u0435\u043d \u0444\u043e\u0440\u043c\u0430\u0442. \u041e\u043f\u0438\u0442\u0430\u0439 \u043e\u0442\u043d\u043e\u0432\u043e.",
+            "\u0410\u0418 \u0432\u044a\u0440\u043d\u0430 \u043d\u0435\u0432\u0430\u043b\u0438\u0434\u0435\u043d \u0438\u043d\u0442\u0435\u0433\u0440\u0438\u0440\u0430\u043d \u0430\u043d\u0430\u043b\u0438\u0437. \u041e\u043f\u0438\u0442\u0430\u0439 \u043e\u0442\u043d\u043e\u0432\u043e.",
         },
-        { status: 500 }
+        {
+          status: 500,
+        }
       );
     }
+
+    /*
+      Keep the isolated Stage A result available internally
+      inside the returned analysis.
+
+      This is useful for QA and makes it possible to verify
+      that Stage B did not silently rewrite the measurement
+      conclusion.
+    */
+    analysis.instrumentOnlyAnalysis =
+      instrumentAnalysis;
 
     /*
       Sol has already made the technical decision.
