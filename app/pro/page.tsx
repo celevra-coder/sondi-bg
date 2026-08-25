@@ -8,6 +8,7 @@ type SearchParams = Promise<{
   gwbs?: string;
   lat?: string;
   lng?: string;
+  lon?: string;
 }>;
 
 function Card({
@@ -242,7 +243,10 @@ export default async function ProPage({
   );
 
   const lat = params.lat ?? null;
-  const lng = params.lng ?? null;
+  const lng =
+    params.lng ??
+    params.lon ??
+    null;
 
   const spatial =
     getSpatialProfile(lat, lng);

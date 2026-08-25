@@ -129,6 +129,15 @@ export function getSpatialProfile(
   latValue: string | null,
   lngValue: string | null
 ) {
+  if (
+    latValue == null ||
+    lngValue == null ||
+    String(latValue).trim() === "" ||
+    String(lngValue).trim() === ""
+  ) {
+    return null;
+  }
+
   const lat = Number(latValue);
   const lng = Number(lngValue);
 
