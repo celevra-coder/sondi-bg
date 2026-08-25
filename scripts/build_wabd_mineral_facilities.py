@@ -166,6 +166,168 @@ CURATED_OFFICIAL_COORDINATES = [
                 "https://wabd.bg/docs/dokladi/MINERALNIVODI/HDRudarci.pdf",
         },
     ),
+    feature(
+        23.16761111,
+        42.58638889,
+        "\u201e\u0420\u0443\u0434\u0430\u0440\u0446\u0438\u201d \u211662",
+        "\u0421\u043e\u043d\u0434\u0430\u0436 \u21161",
+        "\u0420\u0443\u0434\u0430\u0440\u0446\u0438",
+        "\u041f\u0435\u0440\u043d\u0438\u043a",
+        "\u041f\u0435\u0440\u043d\u0438\u043a",
+        "official WGS84 table",
+        "BDZBR HDRudarci.pdf",
+        extra={
+            "coordinate_source_url":
+                "https://wabd.bg/docs/dokladi/MINERALNIVODI/HDRudarci.pdf",
+        },
+    ),
+    feature(
+        23.16750000,
+        42.58652778,
+        "\u201e\u0420\u0443\u0434\u0430\u0440\u0446\u0438\u201d \u211662",
+        "\u0421\u043e\u043d\u0434\u0430\u0436 \u21162",
+        "\u0420\u0443\u0434\u0430\u0440\u0446\u0438",
+        "\u041f\u0435\u0440\u043d\u0438\u043a",
+        "\u041f\u0435\u0440\u043d\u0438\u043a",
+        "official WGS84 table",
+        "BDZBR HDRudarci.pdf",
+        extra={
+            "coordinate_source_url":
+                "https://wabd.bg/docs/dokladi/MINERALNIVODI/HDRudarci.pdf",
+        },
+    ),
+    feature(
+        23.16713889,
+        42.58644444,
+        "\u201e\u0420\u0443\u0434\u0430\u0440\u0446\u0438\u201d \u211662",
+        "\u0421\u043e\u043d\u0434\u0430\u0436 \u21163",
+        "\u0420\u0443\u0434\u0430\u0440\u0446\u0438",
+        "\u041f\u0435\u0440\u043d\u0438\u043a",
+        "\u041f\u0435\u0440\u043d\u0438\u043a",
+        "official WGS84 table",
+        "BDZBR HDRudarci.pdf",
+        extra={
+            "coordinate_source_url":
+                "https://wabd.bg/docs/dokladi/MINERALNIVODI/HDRudarci.pdf",
+        },
+    ),
+    feature(
+        23.16722222,
+        42.58638889,
+        "\u201e\u0420\u0443\u0434\u0430\u0440\u0446\u0438\u201d \u211662",
+        "\u0421\u043e\u043d\u0434\u0430\u0436 \u21164",
+        "\u0420\u0443\u0434\u0430\u0440\u0446\u0438",
+        "\u041f\u0435\u0440\u043d\u0438\u043a",
+        "\u041f\u0435\u0440\u043d\u0438\u043a",
+        "official WGS84 table",
+        "BDZBR HDRudarci.pdf",
+        extra={
+            "coordinate_source_url":
+                "https://wabd.bg/docs/dokladi/MINERALNIVODI/HDRudarci.pdf",
+        },
+    ),
+    feature(
+        23.16733333,
+        42.58630556,
+        "\u201e\u0420\u0443\u0434\u0430\u0440\u0446\u0438\u201d \u211662",
+        "\u0421\u043e\u043d\u0434\u0430\u0436 \u21165",
+        "\u0420\u0443\u0434\u0430\u0440\u0446\u0438",
+        "\u041f\u0435\u0440\u043d\u0438\u043a",
+        "\u041f\u0435\u0440\u043d\u0438\u043a",
+        "official WGS84 table",
+        "BDZBR HDRudarci.pdf",
+        extra={
+            "coordinate_source_url":
+                "https://wabd.bg/docs/dokladi/MINERALNIVODI/HDRudarci.pdf",
+        },
+    ),
+    feature(
+        23.16722222,
+        42.58622222,
+        "\u201e\u0420\u0443\u0434\u0430\u0440\u0446\u0438\u201d \u211662",
+        "\u0421\u043e\u043d\u0434\u0430\u0436 \u21166",
+        "\u0420\u0443\u0434\u0430\u0440\u0446\u0438",
+        "\u041f\u0435\u0440\u043d\u0438\u043a",
+        "\u041f\u0435\u0440\u043d\u0438\u043a",
+        "official WGS84 table",
+        "BDZBR HDRudarci.pdf",
+        extra={
+            "coordinate_source_url":
+                "https://wabd.bg/docs/dokladi/MINERALNIVODI/HDRudarci.pdf",
+        },
+    ),
+    feature(
+        23.11328333888889,
+        41.893722225,
+        "\u201e\u0421\u0438\u043c\u0438\u0442\u043b\u0438\u201d \u211670",
+        "\u0421\u043e\u043d\u0434\u0430\u0436 \u21162",
+        "\u0421\u0438\u043c\u0438\u0442\u043b\u0438",
+        "\u0421\u0438\u043c\u0438\u0442\u043b\u0438",
+        "\u0411\u043b\u0430\u0433\u043e\u0435\u0432\u0433\u0440\u0430\u0434",
+        "41\u00b053'37.40001\" 23\u00b006'47.82002\"",
+        "BDZBR OcenkaresSimitli.pdf",
+        extra={
+            "facility_role_source": "\u043b\u0438\u043a\u0432\u0438\u0434\u0438\u0440\u0430\u043d\u043e",
+            "facility_role_normalized": "inactive",
+            "facility_condition": "\u043b\u0438\u043a\u0432\u0438\u0434\u0438\u0440\u0430\u043d/\u043d\u0435\u0430\u043a\u0442\u0438\u0432\u0435\u043d",
+            "coordinate_source_url":
+                "https://wabd.bg/docs/dokladi/MINERALNIVODI/OcenkaresSimitli.pdf",
+        },
+    ),
+    feature(
+        23.3235628,
+        41.5115799,
+        "\u201e\u0421\u043f\u0430\u0442\u043e\u0432\u043e\u201d",
+        "\u0421\u043e\u043d\u0434\u0430\u0436 \u21161\u0445\u0433",
+        "\u0421\u043f\u0430\u0442\u043e\u0432\u043e",
+        "\u0421\u0430\u043d\u0434\u0430\u043d\u0441\u043a\u0438",
+        "\u0411\u043b\u0430\u0433\u043e\u0435\u0432\u0433\u0440\u0430\u0434",
+        "BGS1970 K9 X=4471853.95 Y=8498461.46",
+        "SOZ Spatovo",
+        coordinate_method="official_bgs1970_k9_transformed_to_wgs84",
+        extra={
+            "bgs1970_coordinates_raw":
+                "X=4471853.95; Y=8498461.46",
+            "transformation_note":
+                "BGS1970 K9 -> WGS84 geographic via GeoMapBG official transformation model",
+        },
+    ),
+    feature(
+        23.3246758,
+        41.5122356,
+        "\u201e\u0421\u043f\u0430\u0442\u043e\u0432\u043e\u201d",
+        "\u0421\u043e\u043d\u0434\u0430\u0436 \u21163\u0445\u0433",
+        "\u0421\u043f\u0430\u0442\u043e\u0432\u043e",
+        "\u0421\u0430\u043d\u0434\u0430\u043d\u0441\u043a\u0438",
+        "\u0411\u043b\u0430\u0433\u043e\u0435\u0432\u0433\u0440\u0430\u0434",
+        "BGS1970 K9 X=4471926.68 Y=8498554.47",
+        "SOZ Spatovo",
+        coordinate_method="official_bgs1970_k9_transformed_to_wgs84",
+        extra={
+            "bgs1970_coordinates_raw":
+                "X=4471926.68; Y=8498554.47",
+            "transformation_note":
+                "BGS1970 K9 -> WGS84 geographic via GeoMapBG official transformation model",
+        },
+    ),
+    feature(
+        23.3352885,
+        41.4987580,
+        "\u201e\u0425\u043e\u0442\u043e\u0432\u043e\u201d",
+        "\u0421\u043e\u043d\u0434\u0430\u0436 \u0421\u043d-7",
+        "\u0425\u043e\u0442\u043e\u0432\u043e",
+        "\u0421\u0430\u043d\u0434\u0430\u043d\u0441\u043a\u0438",
+        "\u0411\u043b\u0430\u0433\u043e\u0435\u0432\u0433\u0440\u0430\u0434",
+        "BGS1970 K9 X=4470428.76 Y=8499439.02",
+        "SOZ Hotovo",
+        coordinate_method="official_bgs1970_k9_transformed_to_wgs84",
+        extra={
+            "bgs1970_coordinates_raw":
+                "X=4470428.76; Y=8499439.02",
+            "transformation_note":
+                "BGS1970 K9 -> WGS84 geographic via GeoMapBG official transformation model",
+        },
+    )
 ]
 
 
@@ -226,3 +388,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
