@@ -246,10 +246,7 @@ function AiduPageContent() {
     useState("");
   const [analysisResult, setAnalysisResult] =
     useState<any>(null);
-  const [aiUsage, setAiUsage] =
-    useState<any>(null);
-
-  const [chatQuestion, setChatQuestion] =
+const [chatQuestion, setChatQuestion] =
     useState("");
 
   const [chatMessages, setChatMessages] =
@@ -260,11 +257,7 @@ function AiduPageContent() {
 
   const [chatError, setChatError] =
     useState("");
-
-  const [chatUsageTotalUsd, setChatUsageTotalUsd] =
-    useState(0);
-
-  const [shareLoading, setShareLoading] =
+const [shareLoading, setShareLoading] =
     useState(false);
 
   const [shareError, setShareError] =
@@ -547,11 +540,9 @@ function AiduPageContent() {
     setAnalysisLoading(true);
     setAnalysisError("");
     setAnalysisResult(null);
-    setAiUsage(null);
     setChatQuestion("");
     setChatMessages([]);
     setChatError("");
-    setChatUsageTotalUsd(0);
 
     try {
       const response = await fetch(
@@ -593,7 +584,6 @@ function AiduPageContent() {
       }
 
       setAnalysisResult(result.analysis);
-      setAiUsage(result.aiUsage ?? null);
     } catch (error) {
       setAnalysisError(
         error instanceof Error
@@ -728,24 +718,6 @@ function AiduPageContent() {
       ]
     );
 
-    const messageCost =
-      Number(
-        result?.aiUsage
-          ?.estimatedCostUsd ??
-          0
-      );
-
-    if (
-      Number.isFinite(
-        messageCost
-      )
-    ) {
-      setChatUsageTotalUsd(
-        current =>
-          current +
-          messageCost
-      );
-    }
   } catch (error) {
     setChatError(
       error instanceof Error
@@ -1623,51 +1595,6 @@ function AiduPageContent() {
               {"\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u0430\u043d\u0430\u043b\u0438\u0437 \u2014 \u0437\u0430 \u043e\u043f\u0435\u0440\u0430\u0442\u043e\u0440"}
             </h2>
 
-            {aiUsage && (
-              <div
-                style={{
-                  marginBottom: 16,
-                  padding: 12,
-                  borderRadius: 10,
-                  background: "#08121e",
-                  border: "1px solid #27415c",
-                  color: "#a9bdd2",
-                  fontSize: 13,
-                  lineHeight: 1.6,
-                }}
-              >
-                <div>
-                  <strong>
-                    {"\u041c\u043e\u0434\u0435\u043b: "}
-                  </strong>
-                  {aiUsage.model}
-                </div>
-
-                <div>
-                  <strong>
-                    {"\u0422\u043e\u043a\u0435\u043d\u0438: "}
-                  </strong>
-                  {aiUsage.inputTokens}
-                  {" input / "}
-                  {aiUsage.outputTokens}
-                  {" output"}
-                  {aiUsage.cachedInputTokens > 0
-                    ? ` / ${aiUsage.cachedInputTokens} cached`
-                    : ""}
-                </div>
-
-                <div>
-                  <strong>
-                    {"\u041e\u0440\u0438\u0435\u043d\u0442\u0438\u0440\u043e\u0432\u044a\u0447\u0435\u043d API \u0440\u0430\u0437\u0445\u043e\u0434: "}
-                  </strong>
-                  {"$"}
-                  {Number(
-                    aiUsage.estimatedCostUsd ?? 0
-                  ).toFixed(4)}
-                </div>
-              </div>
-            )}
-
             {analysisResult.summary && (
               <div
                 style={{
@@ -1696,7 +1623,9 @@ function AiduPageContent() {
                 </strong>
                 {analysisResult.recommendedPoint.point}
                 {analysisResult.recommendedPoint.confidence
-                  ? ` (${analysisResult.recommendedPoint.confidence})`
+                  ? ` (${confidenceLabelBg(
+                      analysisResult.recommendedPoint.confidence
+                    )})`
                   : ""}
                 <div
                   style={{
@@ -2524,53 +2453,7 @@ function AiduPageContent() {
                 </button>
               </div>
 
-              <div
-                style={{
-                  marginTop: 12,
-                  padding: 10,
-                  borderRadius: 9,
-                  background:
-                    "#07111d",
-                  color:
-                    "#91a8bc",
-                  fontSize: 12,
-                  lineHeight: 1.5,
-                }}
-              >
-                <strong>
-                  {
-                    "\u0420\u0430\u0437\u0445\u043e\u0434 \u0437\u0430 \u0440\u0430\u0437\u0433\u043e\u0432\u043e\u0440\u0430: "
-                  }
-                </strong>
-
-                {"$"}
-                {chatUsageTotalUsd.toFixed(
-                  4
-                )}
-
-                {aiUsage && (
-                  <>
-                    {" \u00b7 "}
-
-                    <strong>
-                      {
-                        "\u041e\u0431\u0449\u043e AI \u0437\u0430 \u043e\u0431\u0435\u043a\u0442\u0430: "
-                      }
-                    </strong>
-
-                    {"$"}
-
-                    {(
-                      Number(
-                        aiUsage
-                          .estimatedCostUsd ??
-                          0
-                      ) +
-                      chatUsageTotalUsd
-                    ).toFixed(4)}
-                  </>
-                )}
-              </div>
+              
             </div>
 
           </section>
@@ -2578,6 +2461,30 @@ function AiduPageContent() {
       </div>
     </main>
   );
+}
+
+
+function confidenceLabelBg(
+  value: unknown
+) {
+  const normalized =
+    String(value ?? "")
+      .trim()
+      .toLowerCase();
+
+  if (normalized === "high") {
+    return "\u0432\u0438\u0441\u043e\u043a\u0430";
+  }
+
+  if (normalized === "medium") {
+    return "\u0441\u0440\u0435\u0434\u043d\u0430";
+  }
+
+  if (normalized === "low") {
+    return "\u043d\u0438\u0441\u043a\u0430";
+  }
+
+  return String(value ?? "");
 }
 
 export default function AiduPage() {

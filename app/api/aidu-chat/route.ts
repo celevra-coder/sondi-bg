@@ -202,8 +202,18 @@ export async function POST(
     const response =
       await client.responses.create({
         model:
-          process.env.AIDU_AI_MODEL ||
-          "gpt-5.6",
+          process.env.AIDU_CHAT_MODEL ||
+          "gpt-5.6-luna",
+
+        reasoning: {
+          effort: "low",
+        },
+
+        text: {
+          verbosity: "medium",
+        },
+
+        max_output_tokens: 2500,
 
         instructions: `
 You are the follow-up analytical assistant for a completed AIDU groundwater-prospecting case in SONDI.BG.
@@ -222,12 +232,21 @@ IMPORTANT RULES:
 
 1. Answer the user's specific question about THIS case, not groundwater prospecting in general.
 
-2. Use the completed analysis as the starting point, but you may critically reassess it when the user asks why one point or depth was preferred.
+2. The completed technical analysis is authoritative for the current case.
+You may explain, compare and critically discuss why a point or depth was preferred, but do not silently replace the final technical recommendation.
+
+2A. If the completed technical analysis explicitly names a backup / secondary drilling point, preserve that backup point.
+Do NOT invent a different backup point from your own interpretation.
+If the user asks for an alternative, use the Sol-defined backup point first when one exists.
+
+2B. If the user explicitly requests a fresh technical re-interpretation that could change the final point or drilling depth, explain that this requires running a new full technical analysis.
+Do not pretend that ordinary follow-up chat is equivalent to a fresh Sol analysis.
 
 3. When comparing points, distinguish:
-- strongest AIDU instrument-only point;
+- strongest instrument-only point;
 - best cross-profile-confirmed point;
-- final recommended drilling point.
+- final recommended drilling point;
+- explicitly stated backup point, when the technical analysis contains one.
 
 4. Dowsing is supporting information only and never overrides instrument data.
 
@@ -243,7 +262,8 @@ IMPORTANT RULES:
 
 7. If the user challenges the original recommendation, answer directly. It is allowed to say that another point is stronger instrumentally while the final recommendation remains different because of cross-profile confirmation.
 
-8. If the evidence supports changing the recommendation, say so explicitly and explain why.
+8. Do not change the final recommendation or invent a new backup point during ordinary chat.
+If the user presents genuinely new measurement data or explicitly requests a fresh technical re-analysis, state that a new full technical analysis should be run.
 
 9. Keep answers practical and concise unless the user asks for a detailed explanation.
 
@@ -253,15 +273,20 @@ IMPORTANT RULES:
         `.trim(),
 
         input:
-          `???????? ?? ??:\n${JSON.stringify(
+          "\u041a\u043e\u043d\u0442\u0435\u043a\u0441\u0442 \u043d\u0430 \u043e\u0431\u0435\u043a\u0442\u0430:\n" +
+          JSON.stringify(
             caseContext
-          )}\n\n` +
+          ) +
+          "\n\n" +
           (
             conversationText
-              ? `???????? ????:\n${conversationText}\n\n`
+              ? "\u041f\u0440\u0435\u0434\u0438\u0448\u0435\u043d \u0440\u0430\u0437\u0433\u043e\u0432\u043e\u0440:\n" +
+                conversationText +
+                "\n\n"
               : ""
           ) +
-          `??? ?????? ?? ???????:\n${question.trim()}`,
+          "\u041d\u043e\u0432 \u0432\u044a\u043f\u0440\u043e\u0441 \u043e\u0442 \u043e\u043f\u0435\u0440\u0430\u0442\u043e\u0440\u0430:\n" +
+          question.trim(),
       });
 
     const answer =
@@ -276,10 +301,6 @@ IMPORTANT RULES:
     return NextResponse.json({
       success: true,
       answer,
-      aiUsage:
-        calculateUsageCost(
-          response
-        ),
     });
   } catch (error) {
     console.error(

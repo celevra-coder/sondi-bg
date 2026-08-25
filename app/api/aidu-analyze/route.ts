@@ -111,11 +111,7 @@ export async function POST(request: Request) {
           effort: "medium",
         },
 
-        text: {
-          verbosity: "low",
-        },
-
-        max_output_tokens: 6500,
+        max_output_tokens: 9000,
 
         instructions: `
 You are an analytical assistant for preliminary interpretation of AIDU / ADMT geophysical measurements used in groundwater prospecting.
@@ -278,11 +274,26 @@ The detailed technical comparison remains outside clientText.
 
 24. Write all user-facing text in Bulgarian.
 
-24A. Be concise.
-Do not repeat the same reasoning in multiple fields.
-Each reasoning/details field should normally be 1-3 concise sentences.
-Preserve all technically important distinctions and evidence, but avoid narrative repetition.
-The clientText should remain 3-5 short paragraphs.
+24A. TECHNICAL DEPTH:
+The Sol response is the authoritative technical interpretation.
+Do not shorten or omit technically important evidence merely to save output.
+Fully explain:
+- instrument patterns by point and depth;
+- lateral continuity;
+- competing geological explanations;
+- cross-profile evidence;
+- strongest instrument-only point;
+- final recommended point;
+- prospective horizons;
+- drilling depth;
+- map/registry support or contradiction;
+- uncertainties and limitations.
+
+Avoid only meaningless repetition.
+
+24B. Do NOT generate the landowner/client narrative in this Sol response.
+A separate lower-cost model will create clientText only AFTER the technical
+decision is complete. Sol remains authoritative for all technical conclusions.
 
 25. Return ONLY valid JSON. No markdown and no text outside the JSON.
 
@@ -378,10 +389,7 @@ Return this exact general structure:
 
   "limitations": [
     "important limitations"
-  ],
-
-  "clientText": "Write 3-5 short, clear Bulgarian paragraphs intended for the landowner/client, not for the technical operator. Do NOT mention AIDU, ADMT, .dat files, file names, profile file names, raw E values, instrument-only ranking, local anomaly terminology, cross-profile terminology, JSON fields or internal AI reasoning. The client does not need to know the measurement technology. Explain simply: where drilling is recommended, why that point is preferred, the main prospective depth interval, recommended final drilling depth, the general groundwater/geological setting, and only the most useful nearby real-world groundwater evidence. Do not overload the client with register codes or unnecessary technical details. Mention the groundwater-body name when useful, but normally omit its code. End with a short limitation that actual yield and local water quality are confirmed only by drilling, pumping test and laboratory analysis."
-}
+  ]}
         `.trim(),
 
         input: [
@@ -430,6 +438,148 @@ Return this exact general structure:
         },
         { status: 500 }
       );
+    }
+
+    /*
+      Sol has already made the technical decision.
+
+      Luna receives the finished technical interpretation and
+      selected contextual evidence only. It does NOT re-rank
+      survey points or choose a different drilling target.
+    */
+    try {
+      const clientReportResponse =
+        await client.responses.create({
+          model:
+            process.env.AIDU_CLIENT_MODEL ||
+            "gpt-5.6-luna",
+
+          reasoning: {
+            effort: "low",
+          },
+
+          text: {
+            verbosity: "medium",
+          },
+
+          max_output_tokens: 1800,
+
+          instructions: `
+You write the client-facing Bulgarian report for a groundwater survey.
+
+A separate frontier model has ALREADY completed the technical interpretation.
+Its technical conclusions are authoritative.
+
+STRICT RULES:
+
+1. Do not independently reinterpret or re-rank the raw measurements.
+2. Do not change the recommended drilling point.
+3. Do not change the recommended drilling depth.
+4. Do not invent yield, temperature, water quality, aquifer thickness or success probability.
+5. Use the supplied technical analysis as the source of truth.
+6. Convert technical findings into clear ordinary Bulgarian for the landowner.
+7. Write a useful and reasonably complete report, normally 4-7 short paragraphs.
+8. Explain:
+   - where drilling is recommended;
+   - why this location is preferred;
+   - the main prospective depth interval;
+   - recommended drilling depth;
+   - relevant groundwater/geological setting;
+   - useful nearby real wells, springs, monitoring or faults when supplied;
+   - whether official/map information supports, is neutral to, or weakens the interpretation;
+   - meaningful uncertainty and limitations.
+9. Do not overload the client with register codes or raw measurement terminology.
+
+9A. Never expose uploaded profile/file names such as HOTOVO1, HOTOVO2 or similar names in the client report.
+When a profile distinction is useful, translate it into ordinary Bulgarian, for example:
+- "??????? ???????????? ???????????";
+- "??????? ???????????? ???????????";
+- "?????? ???????? ?????";
+- "????????? ???????????? ?????".
+
+9B. When map, registry or official hydrogeological information proves only that groundwater is regionally plausible, do NOT describe it as confirmation of the exact drilling point.
+Distinguish clearly between:
+- support for the general hydrogeological setting;
+- support for a depth interval;
+- direct support for a specific drilling point.
+
+If the supplied technical analysis says that map evidence supports the general groundwater potential but does not distinguish between measurement points, phrase it accordingly.
+
+10. Never mention:
+   - AIDU;
+   - ADMT;
+   - .dat;
+   - uploaded file names;
+   - profile file names such as HOTOVO1 or HOTOVO2;
+   - E values;
+   - JSON;
+   - internal model reasoning;
+   - instrument-only ranking terminology.
+
+11. Do not state that local water is drinkable or good quality without a representative laboratory test.
+12. If groundwater-body chemical status is mentioned, clearly state that it is regional/body-level information and does not guarantee local borehole water quality.
+13. End with the practical limitation that actual yield and local quality are confirmed by drilling, pumping test and laboratory analysis.
+14. Output ONLY the Bulgarian client report as plain text. No JSON and no markdown headings.
+          `.trim(),
+
+          input: [
+            {
+              role: "user",
+              content: [
+                {
+                  type: "input_text",
+                  text:
+                    JSON.stringify(
+                      {
+                        location:
+                          payload.location,
+
+                        technicalAnalysis:
+                          analysis,
+
+                        groundwaterBodies,
+
+                        spatialContext,
+
+                        additionalSiteInformation:
+                          dowsingNotes ||
+                          null,
+                      },
+                      null,
+                      2
+                    ),
+                },
+              ],
+            },
+          ],
+        });
+
+      const clientText =
+        clientReportResponse
+          .output_text
+          ?.trim();
+
+      if (clientText) {
+        analysis.clientText =
+          clientText;
+      } else {
+        analysis.clientText =
+          analysis.summary ||
+          "\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u044f\u0442 \u0430\u043d\u0430\u043b\u0438\u0437 \u0435 \u0437\u0430\u0432\u044a\u0440\u0448\u0435\u043d.";
+      }
+    } catch (clientReportError) {
+      /*
+        A Luna formatting failure must never destroy an
+        already completed Sol technical interpretation.
+      */
+      console.error(
+        "AIDU Luna client report failed:",
+        clientReportError
+      );
+
+      analysis.clientText =
+        analysis.summary ||
+        "\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u044f\u0442 \u0430\u043d\u0430\u043b\u0438\u0437 \u0435 \u0437\u0430\u0432\u044a\u0440\u0448\u0435\u043d.";
     }
 
     return NextResponse.json({
