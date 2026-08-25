@@ -684,7 +684,7 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 <label class="layerrow"><input type="checkbox" id="layer-quant-monitoring"> 🟣 Количествен мониторинг – НИМХ 2019–2020</label>
 <div id="quant-monitoring-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-faults"> 🟤 Активни разломи (GEM)</label><div id="fault-load-status" class="small" style="margin-left:24px">изключено</div>
-<label class="layerrow future"><input type="checkbox" disabled> 📍 AIDU измервания — ще се добавят по-късно</label>
+<a href="/aidu" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;box-sizing:border-box;margin:8px 0 10px;padding:11px 14px;border-radius:10px;border:1px solid #1f7aa8;background:linear-gradient(135deg,#0b5f8a,#123f61);color:#fff;font-weight:700;font-size:14px;text-decoration:none;cursor:pointer;box-shadow:0 4px 14px rgba(0,70,110,.18);">&#10024; &#1040;&#1048; &#1072;&#1085;&#1072;&#1083;&#1080;&#1079; &#1085;&#1072; &#1090;&#1077;&#1088;&#1077;&#1085;</a>
 <label class="layerrow future"><input type="checkbox" disabled> ⭐ Потвърдени успешни сондажи — ще се добавят по-късно</label>
 <div class="small" style="margin-top:7px">
 Подземните водни тела се зареждат от официални източници. Активните разломи са пространствени данни от GEM. До всеки слой се показва дали е зареден успешно.
@@ -796,6 +796,7 @@ const geologyAgeLayer = L.imageOverlay(
 
 const quantitativeMonitoringLayer = L.layerGroup();
 const faultsLayer = L.layerGroup();
+
 let groundwaterLoaded=false;
 let bdIbrGroundwaterLoaded=false;
 let bdIbrGroundwaterLoading=false;
