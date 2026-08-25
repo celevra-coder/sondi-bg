@@ -107,6 +107,16 @@ export async function POST(request: Request) {
           process.env.AIDU_AI_MODEL ||
           "gpt-5.6",
 
+        reasoning: {
+          effort: "medium",
+        },
+
+        text: {
+          verbosity: "low",
+        },
+
+        max_output_tokens: 4000,
+
         instructions: `
 You are an analytical assistant for preliminary interpretation of AIDU / ADMT geophysical measurements used in groundwater prospecting.
 
@@ -267,6 +277,13 @@ Do not explain the measurement technology to the client.
 The detailed technical comparison remains outside clientText.
 
 24. Write all user-facing text in Bulgarian.
+
+24A. Be concise.
+Do not repeat the same reasoning in multiple fields.
+Each reasoning/details field should normally be 1-3 concise sentences.
+Preserve all technically important distinctions and evidence, but avoid narrative repetition.
+The clientText should remain 3-5 short paragraphs.
+
 25. Return ONLY valid JSON. No markdown and no text outside the JSON.
 
 Return this exact general structure:
@@ -415,66 +432,9 @@ Return this exact general structure:
       );
     }
 
-    const usage = response.usage;
-
-    const inputTokens =
-      usage?.input_tokens ?? 0;
-
-    const outputTokens =
-      usage?.output_tokens ?? 0;
-
-    const cachedInputTokens =
-      usage?.input_tokens_details?.cached_tokens ?? 0;
-
-    const uncachedInputTokens =
-      Math.max(
-        0,
-        inputTokens - cachedInputTokens
-      );
-
-    /*
-      GPT-5.6 Sol promotional API pricing
-      current at implementation time:
-      input: $4 / 1M tokens
-      cached input: $0.40 / 1M tokens
-      output: $20 / 1M tokens
-
-      This is an estimate based on token usage.
-      Tool fees / future pricing changes are not included.
-    */
-    const inputCostUsd =
-      (uncachedInputTokens / 1_000_000) * 4;
-
-    const cachedInputCostUsd =
-      (cachedInputTokens / 1_000_000) * 0.4;
-
-    const outputCostUsd =
-      (outputTokens / 1_000_000) * 20;
-
-    const estimatedCostUsd =
-      inputCostUsd +
-      cachedInputCostUsd +
-      outputCostUsd;
-
     return NextResponse.json({
       success: true,
       analysis,
-      aiUsage: {
-        model:
-          response.model ||
-          process.env.AIDU_AI_MODEL ||
-          "gpt-5.6",
-        inputTokens,
-        cachedInputTokens,
-        outputTokens,
-        totalTokens:
-          usage?.total_tokens ??
-          inputTokens + outputTokens,
-        estimatedCostUsd:
-          Number(
-            estimatedCostUsd.toFixed(6)
-          ),
-      },
     });
   } catch (error) {
     console.error(

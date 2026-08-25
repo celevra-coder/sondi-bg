@@ -828,8 +828,14 @@ function AiduPageContent() {
         );
       }
 
+      const shareOrigin =
+        process.env.NODE_ENV ===
+        "production"
+          ? "https://www.sondi.bg"
+          : window.location.origin;
+
       const url =
-        window.location.origin +
+        shareOrigin +
         result.path;
 
       setShareUrl(url);
