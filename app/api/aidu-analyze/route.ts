@@ -591,6 +591,387 @@ Do not add any text outside the structured result.
 
         max_output_tokens: 9000,
 
+        text: {
+          format: {
+            type: "json_schema",
+            name: "aidu_integrated_analysis",
+            strict: true,
+            schema: {
+              type: "object",
+              additionalProperties: false,
+              required: [
+                "summary",
+                "measuredPatterns",
+                "candidateHorizons",
+                "pointRanking",
+                "crossProfileComparison",
+                "dowsingComparison",
+                "mapComparison",
+                "strongestAiduPoint",
+                "bestCrossProfilePoint",
+                "recommendedPoint",
+                "recommendedDrillingDepth",
+                "secondaryTarget",
+                "limitations"
+              ],
+              properties: {
+                summary: {
+                  type: "string"
+                },
+
+                measuredPatterns: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    additionalProperties: false,
+                    required: [
+                      "file",
+                      "details"
+                    ],
+                    properties: {
+                      file: {
+                        type: "string"
+                      },
+                      details: {
+                        type: "string"
+                      }
+                    }
+                  }
+                },
+
+                candidateHorizons: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    additionalProperties: false,
+                    required: [
+                      "label",
+                      "fromM",
+                      "toM",
+                      "confidence",
+                      "supportingPoints",
+                      "reasoning",
+                      "alternativeExplanation"
+                    ],
+                    properties: {
+                      label: {
+                        type: "string"
+                      },
+                      fromM: {
+                        type: ["number", "null"]
+                      },
+                      toM: {
+                        type: ["number", "null"]
+                      },
+                      confidence: {
+                        type: "string",
+                        enum: [
+                          "high",
+                          "medium",
+                          "low"
+                        ]
+                      },
+                      supportingPoints: {
+                        type: "array",
+                        items: {
+                          type: "string"
+                        }
+                      },
+                      reasoning: {
+                        type: "string"
+                      },
+                      alternativeExplanation: {
+                        type: "string"
+                      }
+                    }
+                  }
+                },
+
+                pointRanking: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    additionalProperties: false,
+                    required: [
+                      "point",
+                      "perspective",
+                      "preferredDepthFromM",
+                      "preferredDepthToM",
+                      "reasoning"
+                    ],
+                    properties: {
+                      point: {
+                        type: "string"
+                      },
+                      perspective: {
+                        type: "string",
+                        enum: [
+                          "high",
+                          "medium",
+                          "low"
+                        ]
+                      },
+                      preferredDepthFromM: {
+                        type: ["number", "null"]
+                      },
+                      preferredDepthToM: {
+                        type: ["number", "null"]
+                      },
+                      reasoning: {
+                        type: "string"
+                      }
+                    }
+                  }
+                },
+
+                crossProfileComparison: {
+                  type: "object",
+                  additionalProperties: false,
+                  required: [
+                    "available",
+                    "details"
+                  ],
+                  properties: {
+                    available: {
+                      type: "boolean"
+                    },
+                    details: {
+                      type: "string"
+                    }
+                  }
+                },
+
+                dowsingComparison: {
+                  type: "object",
+                  additionalProperties: false,
+                  required: [
+                    "agreement",
+                    "details"
+                  ],
+                  properties: {
+                    agreement: {
+                      type: "string",
+                      enum: [
+                        "matches",
+                        "partly matches",
+                        "cannot confirm",
+                        "does not match"
+                      ]
+                    },
+                    details: {
+                      type: "string"
+                    }
+                  }
+                },
+
+                mapComparison: {
+                  type: "object",
+                  additionalProperties: false,
+                  required: [
+                    "confidence",
+                    "effectOnRecommendation",
+                    "groundwaterBodies",
+                    "nearbyWells",
+                    "faults",
+                    "monitoring",
+                    "supportingEvidence",
+                    "contradictingEvidence",
+                    "details"
+                  ],
+                  properties: {
+                    confidence: {
+                      type: "string",
+                      enum: [
+                        "high",
+                        "medium",
+                        "low"
+                      ]
+                    },
+                    effectOnRecommendation: {
+                      type: "string",
+                      enum: [
+                        "supports",
+                        "neutral",
+                        "contradicts"
+                      ]
+                    },
+                    groundwaterBodies: {
+                      type: "string"
+                    },
+                    nearbyWells: {
+                      type: "string"
+                    },
+                    faults: {
+                      type: "string"
+                    },
+                    monitoring: {
+                      type: "string"
+                    },
+                    supportingEvidence: {
+                      type: "array",
+                      items: {
+                        type: "string"
+                      }
+                    },
+                    contradictingEvidence: {
+                      type: "array",
+                      items: {
+                        type: "string"
+                      }
+                    },
+                    details: {
+                      type: "string"
+                    }
+                  }
+                },
+
+                strongestAiduPoint: {
+                  type: "object",
+                  additionalProperties: false,
+                  required: [
+                    "point",
+                    "profile",
+                    "confidence",
+                    "reasoning"
+                  ],
+                  properties: {
+                    point: {
+                      type: "string"
+                    },
+                    profile: {
+                      type: "string"
+                    },
+                    confidence: {
+                      type: "string",
+                      enum: [
+                        "high",
+                        "medium",
+                        "low"
+                      ]
+                    },
+                    reasoning: {
+                      type: "string"
+                    }
+                  }
+                },
+
+                bestCrossProfilePoint: {
+                  type: "object",
+                  additionalProperties: false,
+                  required: [
+                    "available",
+                    "point",
+                    "confidence",
+                    "reasoning"
+                  ],
+                  properties: {
+                    available: {
+                      type: "boolean"
+                    },
+                    point: {
+                      type: "string"
+                    },
+                    confidence: {
+                      type: "string",
+                      enum: [
+                        "high",
+                        "medium",
+                        "low"
+                      ]
+                    },
+                    reasoning: {
+                      type: "string"
+                    }
+                  }
+                },
+
+                recommendedPoint: {
+                  type: "object",
+                  additionalProperties: false,
+                  required: [
+                    "point",
+                    "confidence",
+                    "reasoning",
+                    "whyPreferredOverStrongestAiduPoint"
+                  ],
+                  properties: {
+                    point: {
+                      type: "string"
+                    },
+                    confidence: {
+                      type: "string",
+                      enum: [
+                        "high",
+                        "medium",
+                        "low"
+                      ]
+                    },
+                    reasoning: {
+                      type: "string"
+                    },
+                    whyPreferredOverStrongestAiduPoint: {
+                      type: "string"
+                    }
+                  }
+                },
+
+                recommendedDrillingDepth: {
+                  type: "object",
+                  additionalProperties: false,
+                  required: [
+                    "fromM",
+                    "toM",
+                    "reasoning"
+                  ],
+                  properties: {
+                    fromM: {
+                      type: ["number", "null"]
+                    },
+                    toM: {
+                      type: ["number", "null"]
+                    },
+                    reasoning: {
+                      type: "string"
+                    }
+                  }
+                },
+
+                secondaryTarget: {
+                  type: "object",
+                  additionalProperties: false,
+                  required: [
+                    "present",
+                    "fromM",
+                    "toM",
+                    "details"
+                  ],
+                  properties: {
+                    present: {
+                      type: "boolean"
+                    },
+                    fromM: {
+                      type: ["number", "null"]
+                    },
+                    toM: {
+                      type: ["number", "null"]
+                    },
+                    details: {
+                      type: "string"
+                    }
+                  }
+                },
+
+                limitations: {
+                  type: "array",
+                  items: {
+                    type: "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+
         instructions: `
 You are performing STAGE B of a professional preliminary groundwater interpretation.
 
@@ -709,106 +1090,8 @@ Do not compress technically meaningful reasoning.
 
 17. Write all user-facing content in Bulgarian.
 
-18. Return ONLY valid JSON.
-
-Return this structure exactly:
-
-{
-  "summary": "detailed integrated technical conclusion",
-
-  "measuredPatterns": [
-    {
-      "file": "profile/file name",
-      "details": "locked Stage A measured interpretation"
-    }
-  ],
-
-  "candidateHorizons": [
-    {
-      "label": "shallow / main / deep or descriptive label",
-      "fromM": null,
-      "toM": null,
-      "confidence": "high / medium / low",
-      "supportingPoints": ["profile / point"],
-      "reasoning": "integrated interpretation",
-      "alternativeExplanation": "possible non-water explanation"
-    }
-  ],
-
-  "pointRanking": [
-    {
-      "point": "profile / point",
-      "perspective": "high / medium / low",
-      "preferredDepthFromM": null,
-      "preferredDepthToM": null,
-      "reasoning": "ranking inherited from or interpreted consistently with locked Stage A"
-    }
-  ],
-
-  "crossProfileComparison": {
-    "available": true,
-    "details": "physical cross-profile comparison using only explicitly supplied profile geometry"
-  },
-
-  "dowsingComparison": {
-    "agreement": "matches / partly matches / cannot confirm / does not match",
-    "details": "comparison performed after locked instrument ranking"
-  },
-
-  "mapComparison": {
-    "confidence": "high / medium / low",
-    "effectOnRecommendation": "supports / neutral / contradicts",
-    "groundwaterBodies": "relevant groundwater-body interpretation",
-    "nearbyWells": "relevant nearby drilling evidence",
-    "faults": "relevant fault context",
-    "monitoring": "relevant monitoring/status context",
-    "supportingEvidence": [
-      "specific supplied facts that strengthen the interpretation"
-    ],
-    "contradictingEvidence": [
-      "specific supplied facts that weaken the interpretation"
-    ],
-    "details": "state clearly whether evidence supports general hydrogeology, depth, exact point, or only provides context"
-  },
-
-  "strongestAiduPoint": {
-    "point": "LOCKED strongest Stage A point",
-    "profile": "LOCKED Stage A profile",
-    "confidence": "high / medium / low",
-    "reasoning": "faithful explanation of the locked instrument-only result"
-  },
-
-  "bestCrossProfilePoint": {
-    "available": true,
-    "point": "best physically confirmed point or insufficient data",
-    "confidence": "high / medium / low",
-    "reasoning": "why genuine independent profile repetition does or does not strengthen this point"
-  },
-
-  "recommendedPoint": {
-    "point": "ONE final drilling point",
-    "confidence": "high / medium / low",
-    "reasoning": "full reason for final selection",
-    "whyPreferredOverStrongestAiduPoint": "mandatory and detailed if final point differs from locked strongest instrument point"
-  },
-
-  "recommendedDrillingDepth": {
-    "fromM": null,
-    "toM": null,
-    "reasoning": "recommended drilling interval/depth and evidence"
-  },
-
-  "secondaryTarget": {
-    "present": false,
-    "fromM": null,
-    "toM": null,
-    "details": ""
-  },
-
-  "limitations": [
-    "important limitations"
-  ]
-}
+18. Return the result using the required structured output schema.
+Do not add text outside the structured result.
         `.trim(),
 
         input: [
@@ -845,10 +1128,10 @@ Return this structure exactly:
 
     try {
       analysis =
-        extractJson(raw);
+        JSON.parse(raw);
     } catch {
       console.error(
-        "Invalid integrated AIDU AI JSON:",
+        "Invalid integrated structured output:",
         raw
       );
 
@@ -856,7 +1139,7 @@ Return this structure exactly:
         {
           success: false,
           error:
-            "\u0410\u0418 \u0432\u044a\u0440\u043d\u0430 \u043d\u0435\u0432\u0430\u043b\u0438\u0434\u0435\u043d \u0438\u043d\u0442\u0435\u0433\u0440\u0438\u0440\u0430\u043d \u0430\u043d\u0430\u043b\u0438\u0437. \u041e\u043f\u0438\u0442\u0430\u0439 \u043e\u0442\u043d\u043e\u0432\u043e.",
+            "\u0410\u0418 \u043d\u0435 \u0443\u0441\u043f\u044f \u0434\u0430 \u0441\u044a\u0437\u0434\u0430\u0434\u0435 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0438\u0440\u0430\u043d \u0438\u043d\u0442\u0435\u0433\u0440\u0438\u0440\u0430\u043d \u0430\u043d\u0430\u043b\u0438\u0437.",
         },
         {
           status: 500,
