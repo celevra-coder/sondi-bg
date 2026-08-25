@@ -115,7 +115,7 @@ export async function POST(request: Request) {
           verbosity: "low",
         },
 
-        max_output_tokens: 4000,
+        max_output_tokens: 6500,
 
         instructions: `
 You are an analytical assistant for preliminary interpretation of AIDU / ADMT geophysical measurements used in groundwater prospecting.
