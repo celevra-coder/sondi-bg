@@ -816,8 +816,12 @@ export default function GeologyReportPage() {
         const lat =
           Number(params.get("lat"));
 
+        const lonParam =
+          params.get("lon") ??
+          params.get("lng");
+
         const lon =
-          Number(params.get("lon"));
+          Number(lonParam);
 
         if (
           !Number.isFinite(lat) ||
@@ -3653,6 +3657,10 @@ export default function GeologyReportPage() {
                       ?.blackSeaOfficialSection4
                       ?.affected_area
                       ?.status_deteriorating_indicators ||
+                    professional
+                      ?.blackSeaOfficialSection2
+                      ?.chemical_risk
+                      ?.parameters_and_impact ||
                     professional
                       ?.blackSeaChemicalRisk
                       ?.parameters_and_impact ||
