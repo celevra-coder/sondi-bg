@@ -707,13 +707,102 @@ const [shareLoading, setShareLoading] =
       );
     }
 
+    let assistantAnswer =
+      result.answer;
+
+    if (
+      result.revisionRequested === true &&
+      typeof result.revisionInstruction === "string" &&
+      result.revisionInstruction.trim()
+    ) {
+      const revisedNotes = [
+        dowsingNotes.trim(),
+        "\u0423\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u0435 \u0441\u043b\u0435\u0434 \u0440\u0430\u0437\u0433\u043e\u0432\u043e\u0440 \u0441 \u043e\u043f\u0435\u0440\u0430\u0442\u043e\u0440\u0430:",
+        result.revisionInstruction.trim(),
+      ]
+        .filter(Boolean)
+        .join("\n\n");
+
+      const revisionResponse =
+        await fetch(
+          "/api/aidu-analyze",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type":
+                "application/json",
+            },
+            body: JSON.stringify({
+              latitude:
+                Number(lat),
+              longitude:
+                Number(lng),
+              locationLabel,
+              dowsingNotes:
+                revisedNotes,
+              groundwaterBodies:
+                groundwaterBodies.map(
+                  body => ({
+                    code:
+                      groundwaterBodyCode(
+                        body
+                      ),
+                    name:
+                      groundwaterBodyName(
+                        body
+                      ),
+                    properties:
+                      body.properties ??
+                      {},
+                  })
+                ),
+              spatialContext,
+              aiduFiles:
+                parsedAiduFiles,
+            }),
+          }
+        );
+
+      const revisionResult =
+        await revisionResponse.json();
+
+      if (
+        !revisionResponse.ok ||
+        !revisionResult?.success ||
+        !revisionResult?.analysis
+      ) {
+        throw new Error(
+          revisionResult?.error ||
+            "\u041d\u0435\u0443\u0441\u043f\u0435\u0448\u043d\u043e \u043e\u0431\u043d\u043e\u0432\u044f\u0432\u0430\u043d\u0435 \u043d\u0430 \u0430\u043d\u0430\u043b\u0438\u0437\u0430."
+        );
+      }
+
+      setAnalysisResult(
+        revisionResult.analysis
+      );
+
+      assistantAnswer =
+        (
+          result.answer +
+          "\n\n" +
+          "\u0410\u043d\u0430\u043b\u0438\u0437\u044a\u0442 \u0433\u043e\u0440\u0435 \u0435 \u043e\u0431\u043d\u043e\u0432\u0435\u043d \u0441\u043f\u043e\u0440\u0435\u0434 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u043e\u0442\u043e \u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u0435."
+        ).trim();
+
+      /*
+        Clear the previously generated public link.
+        A new share must contain the revised analysis.
+      */
+      setShareUrl("");
+      setShareError("");
+    }
+
     setChatMessages(
       current => [
         ...current,
         {
           role: "assistant",
           content:
-            result.answer,
+            assistantAnswer,
         },
       ]
     );

@@ -210,7 +210,31 @@ export async function POST(
         },
 
         text: {
-          verbosity: "medium",
+          format: {
+            type: "json_schema",
+            name: "aidu_followup_chat",
+            strict: true,
+            schema: {
+              type: "object",
+              additionalProperties: false,
+              required: [
+                "answer",
+                "revisionRequested",
+                "revisionInstruction"
+              ],
+              properties: {
+                answer: {
+                  type: "string"
+                },
+                revisionRequested: {
+                  type: "boolean"
+                },
+                revisionInstruction: {
+                  type: "string"
+                }
+              }
+            }
+          }
         },
 
         max_output_tokens: 2500,
@@ -232,44 +256,99 @@ IMPORTANT RULES:
 
 1. Answer the user's specific question about THIS case, not groundwater prospecting in general.
 
-2. The completed technical analysis is authoritative for the current case.
-You may explain, compare and critically discuss why a point or depth was preferred, but do not silently replace the final technical recommendation.
+2. The completed technical analysis is the CURRENT working conclusion.
+You may explain it, challenge it and discuss alternatives.
 
-2A. If the completed technical analysis explicitly names a backup / secondary drilling point, preserve that backup point.
-Do NOT invent a different backup point from your own interpretation.
-If the user asks for an alternative, use the Sol-defined backup point first when one exists.
+3. Distinguish carefully between:
 
-2B. If the user explicitly requests a fresh technical re-interpretation that could change the final point or drilling depth, explain that this requires running a new full technical analysis.
-Do not pretend that ordinary follow-up chat is equivalent to a fresh Sol analysis.
+A) HYPOTHETICAL DISCUSSION
 
-3. When comparing points, distinguish:
-- strongest instrument-only point;
-- best cross-profile-confirmed point;
-- final recommended drilling point;
-- explicitly stated backup point, when the technical analysis contains one.
+Examples:
+- "? ??? ?????????? ????? 4?"
+- "?? ? ?? ??-????? ????? 6?"
+- "????? ?? ????? ??? ????????? ?? 90 ??"
+- "???? ?? ???? ?? ? ????? ?????"
 
-4. Dowsing is supporting information only and never overrides instrument data.
+For hypothetical discussion:
+- revisionRequested = false.
+- Answer the question normally.
+- Do NOT change the analysis.
 
-5. Do not invent:
+B) FINALIZED CHANGE / NEW OPERATOR CONCLUSION
+
+Examples include wording equivalent to:
+- "?????, ???? ???? ????? 4."
+- "???????? ?? ????? 4."
+- "?????? ????? 4."
+- "?????? ????? 4 ? ?????????."
+- "??????? ???????????? ?????? ????."
+- "??????? ???????."
+- "?????? ???????."
+- "????????? ???????."
+- "????????? ???????????? ????."
+- "??????? ???????????."
+- "?????? ?????? ?????? ????."
+- "?????? ???? ? ???????."
+- "??????? ??????????."
+- "??????? ??????????? ?? 80 ?."
+- "???? ???????? ?????? ???? 90 ?."
+- "???? ????????, ?? ???? ? ???? ???? ????."
+- "???? ????????? ????????? ?? ????? ??????????."
+- or any semantically equivalent wording clearly showing that the operator has reached a NEW FINAL WORKING CONCLUSION.
+
+For a finalized change:
+- revisionRequested = true.
+- revisionInstruction must contain a concise, self-contained Bulgarian description of the NEW conclusion that the technical Sol analysis must use.
+- Include all necessary context from the recent conversation.
+- Do NOT include speculative alternatives that the operator rejected.
+- The instruction should be usable independently without rereading the whole conversation.
+
+Example revisionInstruction:
+"?????? ????? 4 ???? ??????? ??????? ?????. ?????????? ??????, ?? ?? ? ??-????? ?? ??????????? ?? ????? 3 ? 5. ?????????? ?????? ???? ????? 3-4-5 ?????? ???? ????????? ? ???????????? ???????? ?????????."
+
+4. A command such as:
+"??????? ???????????? ?????? ????"
+must use the PREVIOUS CONVERSATION to determine what conclusion has just been agreed.
+
+Do not require the operator to repeat the conclusion.
+
+5. If the operator clearly accepts a new conclusion with phrases such as:
+"??, ????",
+"????? ????",
+"?????, ???? ??????",
+"???? ? ????",
+"???????? ????",
+after discussing a concrete change, treat this as a finalized revision when the conversation makes the accepted change unambiguous.
+
+6. If it is genuinely unclear whether the operator is merely considering an alternative or actually changing the analysis:
+- revisionRequested = false;
+- ask briefly for confirmation.
+
+7. When revisionRequested = false:
+revisionInstruction MUST be an empty string.
+
+8. When revisionRequested = true:
+do not pretend the ordinary chat itself has technically recalculated the survey.
+Explain naturally that the analysis will be updated according to the newly reached conclusion.
+
+9. Dowsing, field geometry, denivelation, common/crossing points and operator interpretation are valid field context.
+Do not invent information that was not supplied.
+
+10. Do not invent:
 - yield;
 - water quality;
 - temperature;
 - lithology;
 - exact probability;
-- well depth or water level that is not present in the supplied data.
+- well depth or water level not present in the data.
 
-6. When discussing water quality, distinguish groundwater-body/regional chemical status from the actual future well. A future well requires laboratory testing.
+11. When discussing water quality, distinguish regional groundwater-body chemical status from the actual future well.
 
-7. If the user challenges the original recommendation, answer directly. It is allowed to say that another point is stronger instrumentally while the final recommendation remains different because of cross-profile confirmation.
+12. Keep ordinary chat answers practical and concise unless the operator asks for detail.
 
-8. Do not change the final recommendation or invent a new backup point during ordinary chat.
-If the user presents genuinely new measurement data or explicitly requests a fresh technical re-analysis, state that a new full technical analysis should be run.
+13. Write entirely in Bulgarian.
 
-9. Keep answers practical and concise unless the user asks for a detailed explanation.
-
-10. Write entirely in Bulgarian.
-
-11. Do not output JSON, field names, code, markdown tables or technical schema. Write normal readable Bulgarian prose suitable for an experienced field operator.
+14. Return ONLY the required structured output.
         `.trim(),
 
         input:
@@ -289,18 +368,45 @@ If the user presents genuinely new measurement data or explicitly requests a fre
           question.trim(),
       });
 
-    const answer =
+    const raw =
       response.output_text?.trim();
 
-    if (!answer) {
+    if (!raw) {
       throw new Error(
-        "AI ?? ????? ???????."
+        "AI did not return an answer."
+      );
+    }
+
+    let chatResult: {
+      answer: string;
+      revisionRequested: boolean;
+      revisionInstruction: string;
+    };
+
+    try {
+      chatResult =
+        JSON.parse(raw);
+    } catch {
+      console.error(
+        "Invalid AIDU chat structured output:",
+        raw
+      );
+
+      throw new Error(
+        "AI returned an invalid chat response."
       );
     }
 
     return NextResponse.json({
       success: true,
-      answer,
+      answer:
+        chatResult.answer,
+      revisionRequested:
+        chatResult.revisionRequested,
+      revisionInstruction:
+        chatResult.revisionRequested
+          ? chatResult.revisionInstruction
+          : "",
     });
   } catch (error) {
     console.error(
