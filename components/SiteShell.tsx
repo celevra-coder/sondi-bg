@@ -16,10 +16,10 @@ const menus = [
     ],
   },
   {
-    label: "ПРОФЕСИОНАЛИСТИ",
+    label: "SONDI EXPERT",
     items: [
       ["Анализ по координати", "/analysis"],
-      ["PRO карта", "/map"],
+      ["EXPERT карта", "/map"],
       ["Профили на водни тела", "/groundwater/bodies"],
       ["Мониторинг и данни", "/monitoring"],
       ["Професионални отчети", "/pro"],
@@ -27,6 +27,22 @@ const menus = [
     ],
   },
 ];
+
+
+const expertDescriptions: Record<string, string> = {
+  "/analysis":
+    "\u041f\u0440\u043e\u0444\u0435\u0441\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u043c\u044f\u0441\u0442\u043e\u0442\u043e, \u0433\u0435\u043e\u043b\u043e\u0433\u0438\u044f\u0442\u0430 \u0438 \u0443\u0441\u043b\u043e\u0432\u0438\u044f\u0442\u0430 \u0437\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435",
+  "/map":
+    "\u0420\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0438 \u0441\u043b\u043e\u0435\u0432\u0435 \u0437\u0430 \u0433\u0435\u043e\u043b\u043e\u0433\u0438\u044f, \u0432\u043e\u0434\u043d\u0438 \u0442\u0435\u043b\u0430, \u0441\u043e\u043d\u0434\u0430\u0436\u0438, \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433 \u0438 \u0440\u0438\u0441\u043a",
+  "/groundwater/bodies":
+    "\u041f\u043e\u0434\u0440\u043e\u0431\u043d\u0430 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430 \u043d\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430\u0442\u0430 \u0441\u0440\u0435\u0434\u0430, \u0440\u0435\u0441\u0443\u0440\u0441\u0430 \u0438 \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435\u0442\u043e",
+  "/monitoring":
+    "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0438\u0437\u043c\u0435\u0440\u0432\u0430\u043d\u0438\u044f, \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0432\u0430\u043d\u0438 \u0442\u043e\u0447\u043a\u0438 \u0438 \u0440\u0435\u0430\u043b\u0435\u043d \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442 \u0437\u0430 \u0440\u0430\u0439\u043e\u043d\u0430",
+  "/pro":
+    "\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0430\u043d\u0430\u043b\u0438\u0437, \u043e\u0446\u0435\u043d\u043a\u0430 \u043d\u0430 \u0442\u0435\u0440\u0435\u043d\u0430 \u0438 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438 \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438 \u0437\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435",
+  "/sources":
+    "\u041f\u0440\u043e\u0438\u0437\u0445\u043e\u0434 \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u0438\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u043d\u0438\u0442\u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438",
+};
 
 export default function SiteShell({
   children,
@@ -134,20 +150,60 @@ export default function SiteShell({
                   <span className="text-[8px]">▼</span>
                 </button>
 
-                <div className="pointer-events-none absolute left-0 top-[72px] w-[315px] translate-y-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="overflow-hidden border border-[#cde5eb] bg-[#f8fdfe] shadow-[0_22px_60px_rgba(29,77,90,.16)]">
-                    {menu.items.map(([label, href]) => (
-                      <Link
-                        key={label}
-                        href={href}
-                        className="flex items-center justify-between border-b border-[#e0eef2] px-5 py-4 text-sm text-[#355863] transition last:border-b-0 hover:bg-[#dff2f7] hover:pl-7 hover:text-[#137891]"
-                      >
-                        <span>{label}</span>
-                        <span className="text-[#7caab5]">→</span>
-                      </Link>
-                    ))}
+                {menu.label === "SONDI EXPERT" ? (
+                  <div className="pointer-events-none absolute left-1/2 top-[72px] w-[690px] -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+                    <div className="border border-[#cde5eb] bg-[#f8fdfe] p-3 shadow-[0_22px_60px_rgba(29,77,90,.16)]">
+                      <div className="mb-3 px-2 pt-1">
+                        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3f8898]">
+                          SONDI EXPERT
+                        </div>
+                        <div className="mt-1 text-[12px] text-[#718a91]">
+                          {"\u041f\u043e\u0432\u0435\u0447\u0435 \u0434\u0430\u043d\u043d\u0438 \u0438 \u043f\u043e-\u0434\u044a\u043b\u0431\u043e\u043a \u043f\u043e\u0433\u043b\u0435\u0434 \u0432\u044a\u0440\u0445\u0443 \u0438\u0437\u0431\u0440\u0430\u043d\u043e\u0442\u043e \u043c\u044f\u0441\u0442\u043e"}
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-2">
+                        {menu.items.map(([label, href], index) => (
+                          <div
+                            key={label}
+                            className="flex min-h-[104px] gap-4 border border-[#e1eef1] bg-white px-4 py-4"
+                          >
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#b9dae1] bg-[#e7f4f7] text-[11px] font-semibold text-[#28798b]">
+                              {String(index + 1).padStart(2, "0")}
+                            </div>
+
+                            <div className="min-w-0 flex-1">
+                              <span className="text-[14px] font-semibold leading-5 text-[#294e59]">
+                                {label}
+                              </span>
+
+                              <p className="mt-1.5 text-[12px] leading-[1.55] text-[#6b858c]">
+                                {expertDescriptions[href]}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="pointer-events-none absolute left-0 top-[72px] w-[315px] translate-y-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+                    <div className="overflow-hidden border border-[#cde5eb] bg-[#f8fdfe] shadow-[0_22px_60px_rgba(29,77,90,.16)]">
+                      {menu.items.map(([label, href]) => (
+                        <Link
+                          key={label}
+                          href={href}
+                          className="flex items-center justify-between border-b border-[#e0eef2] px-5 py-4 text-sm text-[#355863] transition last:border-b-0 hover:bg-[#dff2f7] hover:pl-7 hover:text-[#137891]"
+                        >
+                          <span>{label}</span>
+                          <span className="text-[#7caab5]">
+                            {"\u2192"}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
 
@@ -228,7 +284,7 @@ export default function SiteShell({
                 <Link href="/map">Интерактивна карта</Link>
                 <Link href="/analysis">Анализ на място</Link>
                 <Link href="/monitoring">Мониторинг</Link>
-                <Link href="/pro">Sondi PRO</Link>
+                <Link href="/pro">Sondi EXPERT</Link>
               </div>
             </div>
 
