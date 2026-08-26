@@ -6,17 +6,6 @@ import { useState } from "react";
 
 const menus = [
   {
-    label: "ПОДЗЕМНИ ВОДИ",
-    items: [
-      ["Какво са подземните води", "/groundwater"],
-      ["Подземни водни тела", "/groundwater/bodies"],
-      ["Водоносни хоризонти", "/groundwater/aquifers"],
-      ["Мониторинг", "/monitoring"],
-      ["Качество на водата", "/water-quality"],
-      ["Минерални води", "/mineral-water"],
-    ],
-  },
-  {
     label: "СОНДАЖИ",
     items: [
       ["Преди да направите сондаж", "/drilling"],
@@ -208,7 +197,6 @@ export default function SiteShell({
             <div className="grid gap-4 text-sm">
               <Link href="/explore">Начало</Link>
               <Link href="/map">Карта</Link>
-              <Link href="/groundwater">Подземни води</Link>
               <Link href="/drilling">Сондажи</Link>
               <Link href="/pro">Професионалисти</Link>
               <Link href="/knowledge">Знания</Link>
