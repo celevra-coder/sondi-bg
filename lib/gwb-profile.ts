@@ -45,6 +45,8 @@ export type GwbProfile = {
 
   blackSeaAdditionalRegisters?: any;
 
+  danubeSection1?: any;
+
   westernAegeanSection1?: any;
 
   westernAegeanSection2?: any;
@@ -207,6 +209,9 @@ const DATASETS = {
   blackSeaAdditionalRegisters:
     "bd_bs_additional_groundwater_registers.json",
 
+  danubeSection1:
+    "bd_danube_section1_profiles.json",
+
   westernAegeanSection1:
     "bd_wabd_section1_profiles.json",
 
@@ -342,6 +347,9 @@ export function getGwbProfile(
 
     blackSeaAdditionalRegisters:
       records.blackSeaAdditionalRegisters,
+
+    danubeSection1:
+      records.danubeSection1,
 
     westernAegeanSection1:
       records.westernAegeanSection1,
