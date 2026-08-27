@@ -1,0 +1,921 @@
+{
+  "metadata": {
+    "title": "BDDR PURB 2022-2027 Section 3 groundwater protected zones",
+    "generated_at": "2026-08-27T11:42:43.883450+00:00",
+    "basin_district": "Danube / BDDR",
+    "planning_period": "2022-2027",
+    "groundwater_body_count": 50,
+    "drinking_water_protection_body_count": 50,
+    "nitrate_vulnerable_body_count": 41,
+    "sources": [
+      "Pril_3121_final.xls",
+      "Pril_3311_final.xls"
+    ],
+    "note": "Protected-zone context linked to canonical BG1 groundwater body codes."
+  },
+  "profiles": [
+    {
+      "code": "BG1G000000N033",
+      "name": "Порови води в Неогена - Софийска котловина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW000000N033",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G000000N033",
+        "body_name": "Порови води в Неогена - Софийска котловина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": null
+    },
+    {
+      "code": "BG1G000000N049",
+      "name": "Карстово-порови води в Неоген - Сармат - Добруджа",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000N1049",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G000000N049",
+        "body_name": "Карстови-порови води в Неоген-Сармат-Добруджа",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G000000N049",
+        "body_name": "Карстово-порови води в неоген - Сармат - Добруджа",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G00000K1040",
+      "name": "Карстови води в Ловеч-Търново",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000K1040",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00000K1040",
+        "body_name": "Карстови води в Ловеч-Търновския масив",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G00000K1040",
+        "body_name": "Карстови води в Ловеч-Търновския масив",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G00000K2038",
+      "name": "Пукнатинни води в района на р.Ерма и р.Искър",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000K2038",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00000K2038",
+        "body_name": "Пукнатинни води в района на р.Ерма и р.Искър",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": null
+    },
+    {
+      "code": "BG1G00000K2039",
+      "name": "Карстови води в Горно-Малинския масив",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000K2039",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00000K2039",
+        "body_name": "Карстови води в Горно-Малинския масив",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": null
+    },
+    {
+      "code": "BG1G00000N1035",
+      "name": "Порови води в Неогена - район Русе - Силистра",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000N1035",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00000N1035",
+        "body_name": "Порови води в Неогена - район Русе - Силистра",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G00000N1035",
+        "body_name": "Порови води в Неогена - район Русе- Силистра",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G00000N2034",
+      "name": "Порови води в Неогена - Ломско-Плевенска депресия",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000N2034",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00000N2034",
+        "body_name": "Порови води в Неогена - Ломско-Плевенска депресия",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G00000N2034",
+        "body_name": "Порови води в Неогена - Ломско-Плевенска депресия",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G00000NQ028",
+      "name": "Порови води в Неоген-Кватернера - Ботевградска долина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000NQ028",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00000NQ028",
+        "body_name": "Порови води в Неоген-Кватернера - Ботевградска долина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": null
+    },
+    {
+      "code": "BG1G00000NQ029",
+      "name": "Порови води в Неоген-Кватернера - р. Нишава",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000NQ029",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00000NQ029",
+        "body_name": "Порови води в Неоген-Кватернера - р. Нишава",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G00000NQ029",
+        "body_name": "Порови води в Неоген-Кватернера - р. Нишава",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G00000NQ030",
+      "name": "Порови води в Неоген-Кватернера - Софийска долина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000NQ030",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00000NQ030",
+        "body_name": "Порови води в Неоген-Кватернера - Софийска долина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G00000NQ030",
+        "body_name": "Порови води в Неоген-Кватернера - Софийска долина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G00000NQ031",
+      "name": "Порови води в Неоген-Кватернера - Самоковска долина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000NQ031",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00000NQ031",
+        "body_name": "Порови води в Неоген-Кватернера - Самоковска долина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G00000NQ031",
+        "body_name": "Порови води в Неоген-Кватернера - Самоковска долина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G00000NQ032",
+      "name": "Порови води в Неоген-Кватернера - Знеполска долина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000NQ032",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00000NQ032",
+        "body_name": "Порови води в Неоген-Кватернера - Знеполска долина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": null
+    },
+    {
+      "code": "BG1G00000QP027",
+      "name": "Порови води в Кватернера - Врачански пороен конус",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000QP027",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00000QP027",
+        "body_name": "Порови води в Кватернера - Врачански пороен конус",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G00000QP027",
+        "body_name": "Порови води в Кватернера - Врачански пороен конус",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G00000TJ046",
+      "name": "Карстови води в Годечкия ма",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW00000TJ046",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00000TJ046",
+        "body_name": "Карстови води в Годечкия масив",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": null
+    },
+    {
+      "code": "BG1G0000J3K051",
+      "name": "Карстови води в Малм-Валанжския басейн",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000J3K051",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000J3K051",
+        "body_name": "Карстови води в Малм-Валанжския басейн",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000J3K051",
+        "body_name": "Карстови води в Малм-Валанжския басейн",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000K1B041",
+      "name": "Карстови води в Русенската формация",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000K1B041",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000K1B041",
+        "body_name": "Карстови води в Русенската формация",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000K1B041",
+        "body_name": "Карстови води в Русенската формация",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000K2M047",
+      "name": "Карстови води в Ломско-Плевеския басейн",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000K2M047",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000K2M047",
+        "body_name": "Карстови води в Ломско-Плевеския басейн",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000K2M047",
+        "body_name": "Карстови води в Ломско-Плевенския басейн",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000K2S037",
+      "name": "Карстови води в Предбалкана",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000K2S037",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000K2S037",
+        "body_name": "Карстови води в Предбалкана",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000K2S037",
+        "body_name": "Карстови води в Предбалкана",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL001",
+      "name": "Порови води в Кватернера - Брегово-Новоселска низина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL001",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL001",
+        "body_name": "Порови води в Кватернера - Брегово-Новоселска низина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL001",
+        "body_name": "Порови води в Кватернера - Брегово-Новоселска низина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL002",
+      "name": "Порови води в Кватернера - Видинска низина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL002",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL002",
+        "body_name": "Порови води в Кватернера - Видинска низина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL002",
+        "body_name": "Порови води в Кватернера - Видинска низина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL003",
+      "name": "Порови води в Кватернера - Арчар-Орсойска низина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL003",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL003",
+        "body_name": "Порови води в Кватернера - Арчар-Орсойска низина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": null
+    },
+    {
+      "code": "BG1G0000QAL004",
+      "name": "Порови води в Кватернера - Цибърска низина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL004",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL004",
+        "body_name": "Порови води в Кватернера - Цибърска низина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL004",
+        "body_name": "Порови води в Кватернера - Цибърска низина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL005",
+      "name": "Порови води в Кватернера - Козлодуйска низина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL005",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL005",
+        "body_name": "Порови води в Кватернера - Козлодуйска низина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL005",
+        "body_name": "Порови води в Кватернера - Козлодуйската низина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL006",
+      "name": "Порови води в Кватернера - Островска низина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL006",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL006",
+        "body_name": "Порови води в Кватернера - Островска низина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL006",
+        "body_name": "Порови води в Кватернера - Островска низина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL007",
+      "name": "Порови води в Кватернера - Карабоазка низина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL007",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL007",
+        "body_name": "Порови води в Кватернера - Карабоазка низина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL007",
+        "body_name": "Порови води в Кватернера - Карабоазка низина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL008",
+      "name": "Порови води в Кватернера - Беленско-Свищовска низина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL008",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL008",
+        "body_name": "Порови води в Кватернера - Беленско-Свищовска низина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL008",
+        "body_name": "Порови води в Кватернера - Беленско-Свищовска низина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL009",
+      "name": "Порови води в Кватернера - Вардим-Новградска низина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL009",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL009",
+        "body_name": "Порови води в Кватернера - Вардим-Новградска низина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": null
+    },
+    {
+      "code": "BG1G0000QAL010",
+      "name": "Порови води в Кватернера - Бръшлянска низина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL010",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL010",
+        "body_name": "Порови води в Кватернера - Бръшлянска низина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL010",
+        "body_name": "Порови води в Кватернера - Бръшлянска низина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL011",
+      "name": "Порови води в Кватернера - Попинско-Гарванска низина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL011",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL011",
+        "body_name": "Порови води в Кватернера - Попинско-Гарванска низина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL011",
+        "body_name": "Порови води в Кватернера - Попинско-Гарванска низина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL012",
+      "name": "Порови води в Кватернера - Айдемирска низина",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL012",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL012",
+        "body_name": "Порови води в Кватернера - Айдемирска низина",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL012",
+        "body_name": "Порови води в Кватернера - Айдемирска низина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL013",
+      "name": "Порови води в Кватернера - р. Лом",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL013",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL013",
+        "body_name": "Порови води в Кватернера - р. Лом",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL013",
+        "body_name": "Порови води в Кватернера - р. Лом",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL014",
+      "name": "Порови води в Кватернера - р. Цибрица",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL014",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL014",
+        "body_name": "Порови води в Кватернера - р. Цибрица",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": null
+    },
+    {
+      "code": "BG1G0000QAL015",
+      "name": "Порови води в Кватернера - р. Огоста",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL015",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL015",
+        "body_name": "Порови води в Кватернера - р. Огоста",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL015",
+        "body_name": "Порови води в Кватернера - р. Огоста",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL016",
+      "name": "Порови води в Кватернера - р. Скът",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL016",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL016",
+        "body_name": "Порови води в Кватернера - р. Скът",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL016",
+        "body_name": "Порови води в Кватернера - р. Скът",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL017",
+      "name": "Порови води в Кватернера - р. Искър",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL017",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL017",
+        "body_name": "Порови води в Кватернера - р. Искър",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL017",
+        "body_name": "Порови води в Кватернера - р. Искър",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL018",
+      "name": "Порови води в Кватернера - р. Вит",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL018",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL018",
+        "body_name": "Порови води в Кватернера - р. Вит",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL018",
+        "body_name": "Порови води в Кватернера - р. Вит",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL019",
+      "name": "Порови води в Кватернера - р. Осъм",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL019",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL019",
+        "body_name": "Порови води в Кватернера - р. Осъм",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL019",
+        "body_name": "Порови води в Кватернера - р. Осъм",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL020",
+      "name": "Порови води в Кватернера - р. Янтра",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL020",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL020",
+        "body_name": "Порови води в Кватернера - р. Янтра",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL020",
+        "body_name": "Порови води в Кватернера - р. Янтра",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL021",
+      "name": "Порови води в Кватернера - р. Русенски Лом и притоците м",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL021",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL021",
+        "body_name": "Порови води в Кватернера - р. Русенски Лом и притоците м",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL021",
+        "body_name": "Порови води в Кватернера - р. Русенски Лом и притоците му",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL022",
+      "name": "Порови води в Кватернера - р. Росица в Севлиевската кот",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL022",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL022",
+        "body_name": "Порови води в Кватернера - р. Росица в Севлиевската кот",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL022",
+        "body_name": "Порови води в Кватернера - р. Росица в Севлиевската котловина",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL052",
+      "name": "Порови води в Кватернера - р. Суха",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QAL052",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QAL052",
+        "body_name": "Порови води в Кватернера - р. Суха",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QAL052",
+        "body_name": "Порови води в Кватернера - р. Суха",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QPL023",
+      "name": "Порови води в Кватернера - между реките Лом и Искър",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QPL023",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QPL023",
+        "body_name": "Порови води в Кватернера - между реките Лом и Искър",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QPL023",
+        "body_name": "Порови води в Кватернера - между реките Лом и Искър",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QPL024",
+      "name": "Порови води в Кватернера - между реките Искър и Вит",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QPL024",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QPL024",
+        "body_name": "Порови води в Кватернера - между реките Искър и Вит",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QPL024",
+        "body_name": "Порови води в Кватернера - между реките Искър и Вит",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QPL025",
+      "name": "Порови води в Кватернера - между реките Вит и Осъм",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QPL025",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QPL025",
+        "body_name": "Порови води в Кватернера - между реките Вит и Осъм",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QPL025",
+        "body_name": "Порови води в Кватернера - между реките Вит и Осъм",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QPL026",
+      "name": "Порови води в Кватернера - между реките Осъм и Янтра",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000QPL026",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000QPL026",
+        "body_name": "Порови води в Кватернера - между реките Осъм и Янтра",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000QPL026",
+        "body_name": "Порови води в Кватернера - между реките Осъм и Янтра",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000TJK044",
+      "name": "Карстови води в Западния Балкан",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000TJK044",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000TJK044",
+        "body_name": "Карстови води в Западния Балкан",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000TJK044",
+        "body_name": "Карстови води в Западния Балкан",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G0000TJK045",
+      "name": "Карстови води в Централния Балкан",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW0000TJK045",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G0000TJK045",
+        "body_name": "Карстови води в Централния Балкан",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G0000TJK045",
+        "body_name": "Карстови води в Централния Балкан",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G000K1AP043",
+      "name": "Карстови води в Мраморенск",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW000K1AP043",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G000K1AP043",
+        "body_name": "Карстови води в Мраморенския масив",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G000K1AP043",
+        "body_name": "Карстови води в Мраморенския масив",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G000K1HB050",
+      "name": "Карстови води в Разградска формация",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW000K1HB50",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G000K1HB050",
+        "body_name": "Карстови води в Разградската формация",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G000K1HB050",
+        "body_name": "Карстови води в Разградската формация",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    },
+    {
+      "code": "BG1G00N1BP0036",
+      "name": "Карстови води в Ломско-Плевенската депресия",
+      "drinking_water_protection": {
+        "protected_zone_code": "BG1DGW000N1BP036",
+        "previous_plan_code_status": "без промяна",
+        "groundwater_body_code": "BG1G00N1BP0036",
+        "body_name": "Карстови води в Ломско-Плевенската депресия",
+        "designated_for_drinking_water_protection": true,
+        "source": "Pril_3121_final.xls"
+      },
+      "nitrate_vulnerable_zone": {
+        "groundwater_body_code": "BG1G00N1BP0036",
+        "body_name": "Карстови води в Ломско-Плевенската депресия",
+        "nitrate_vulnerable_or_at_risk": true,
+        "legal_basis": "Order RD-900/21.10.2024",
+        "source": "Pril_3311_final.xls"
+      }
+    }
+  ],
+  "quality_report": {
+    "master_count": 50,
+    "drinking_water_protection_count": 50,
+    "nitrate_vulnerable_count": 41,
+    "unexpected_codes": [],
+    "status": "PASS"
+  }
+}
