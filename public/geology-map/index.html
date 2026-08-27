@@ -679,6 +679,8 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 <div id="bd-bs-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-bd-wabd"> 💧 Подземни водни тела – БД Западнобеломорски район / ПУРБ3</label>
 <div id="bd-wabd-load-status" class="small" style="margin-left:24px">изключено</div>
+<label class="layerrow"><input type="checkbox" id="layer-bd-danube"> &#127754; &#1055;&#1086;&#1076;&#1079;&#1077;&#1084;&#1085;&#1080; &#1074;&#1086;&#1076;&#1085;&#1080; &#1090;&#1077;&#1083;&#1072; &#8211; &#1041;&#1044; &#1044;&#1091;&#1085;&#1072;&#1074;&#1089;&#1082;&#1080; &#1088;&#1072;&#1081;&#1086;&#1085; / &#1055;&#1059;&#1056;&#1041;3</label>
+<div id="bd-danube-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
 <label class="layerrow"><input type="checkbox" id="layer-geology-age"> 🪨 Геоложка възраст – БД ИБР</label>
 <div id="geology-age-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-quant-monitoring"> 🟣 Количествен мониторинг – НИМХ 2019–2020</label>
@@ -769,6 +771,7 @@ const groundwaterLayer = L.layerGroup();
 const bdIbrGroundwaterLayer = L.layerGroup();
 const bdBsGroundwaterLayer = L.layerGroup();
 const bdWabdGroundwaterLayer = L.layerGroup();
+const bdDanubeGroundwaterLayer = L.layerGroup();
 const ordinaryGroundwaterWellsLayer = L.layerGroup();
 const eastAegeanGroundwaterWellsLayer = L.layerGroup();
 const westernAegeanGroundwaterWellsLayer = L.layerGroup();
@@ -1891,7 +1894,7 @@ function sondiProTeaserHtml(url, items){
         color:#60756f;
         margin-bottom:2px;
       ">
-        \u041d\u0430\u043b\u0438\u0447\u043d\u043e \u0432 Sondi PRO
+        \u041d\u0430\u043b\u0438\u0447\u043d\u043e \u0432 Sondi EXPERT
       </div>
 
       ${rows}
@@ -1956,7 +1959,7 @@ function groundwaterFreeAnalysisButtonHtml(feature){
         line-height:1.35;
       ">
         Ще се покаже съкратен анализ.
-        Разширеният Sondi PRO анализ е достъпен
+        Разширеният Sondi EXPERT анализ е достъпен
         след него.
       </div>
     </div>
@@ -4195,6 +4198,117 @@ async function loadWesternAegeanGroundwaterWells() {
 
   } finally {
     westernAegeanGroundwaterWellsLoading = false;
+  }
+}
+
+
+
+let bdDanubeGroundwaterLoaded = false;
+let bdDanubeGroundwaterLoading = false;
+
+async function loadBdDanubeGroundwaterBodies() {
+  if (
+    bdDanubeGroundwaterLoaded ||
+    bdDanubeGroundwaterLoading
+  ) {
+    return;
+  }
+
+  bdDanubeGroundwaterLoading = true;
+
+  setLayerStatus(
+    "bd-danube-load-status",
+    "\u0437\u0430\u0440\u0435\u0436\u0434\u0430 \u0441\u0435\u2026",
+    "#a05a00"
+  );
+
+  try {
+    const response = await fetch(
+      "/geology-map/data/bd_danube_groundwater_bodies.geojson"
+    );
+
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+
+    const data = await response.json();
+
+    if (
+      !data ||
+      data.type !== "FeatureCollection" ||
+      !Array.isArray(data.features)
+    ) {
+      throw new Error("Invalid Danube groundwater GeoJSON");
+    }
+
+    const geoJsonLayer = L.geoJSON(data, {
+      style: function () {
+        return {
+          color: "#2563eb",
+          weight: 1.4,
+          opacity: 0.9,
+          fillColor: "#60a5fa",
+          fillOpacity: 0.18
+        };
+      },
+
+      onEachFeature: function (feature, layer) {
+        const props = feature.properties || {};
+
+        const code =
+          props.canonical_code ||
+          props.INSPIREID ||
+          props.source_code ||
+          "";
+
+        const name =
+          props.name_bg ||
+          props.NAME ||
+          props.name_en ||
+          "";
+
+        layer.bindTooltip(
+          code + (name ? " ? " + name : ""),
+          { sticky: true }
+        );
+      }
+    });
+
+    geoJsonLayer.addTo(
+      bdDanubeGroundwaterLayer
+    );
+
+    window.bdDanubeGroundwaterGeoJson = data;
+
+    bdDanubeGroundwaterLoaded = true;
+
+    setLayerStatus(
+      "bd-danube-load-status",
+      "\u0437\u0430\u0440\u0435\u0434\u0435\u043d\u0438: " +
+        data.features.length +
+        " \u041f\u0412\u0422",
+      "#166534"
+    );
+
+    console.log(
+      "[BD BDDR] Groundwater bodies:",
+      data.features.length
+    );
+
+  } catch (error) {
+    console.error(
+      "[BD BDDR] Groundwater bodies error:",
+      error
+    );
+
+    setLayerStatus(
+      "bd-danube-load-status",
+      "\u0433\u0440\u0435\u0448\u043a\u0430 \u043f\u0440\u0438 \u0437\u0430\u0440\u0435\u0436\u0434\u0430\u043d\u0435",
+      "#b91c1c"
+    );
+
+  } finally {
+    bdDanubeGroundwaterLoading = false;
   }
 }
 
@@ -6926,6 +7040,62 @@ map.on(
       document.getElementById(
         "layer-western-aegean-wells"
       );
+
+    if (checkbox) {
+      checkbox.checked = false;
+    }
+  }
+);
+
+
+
+document.getElementById(
+  "layer-bd-danube"
+).addEventListener(
+  "change",
+  event => {
+    if (event.target.checked) {
+      bdDanubeGroundwaterLayer.addTo(map);
+      loadBdDanubeGroundwaterBodies();
+    } else {
+      map.removeLayer(bdDanubeGroundwaterLayer);
+
+      setLayerStatus(
+        "bd-danube-load-status",
+        "\u0438\u0437\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
+        "#64748b"
+      );
+    }
+  }
+);
+
+map.on(
+  "layeradd",
+  event => {
+    if (event.layer !== bdDanubeGroundwaterLayer) {
+      return;
+    }
+
+    const checkbox =
+      document.getElementById("layer-bd-danube");
+
+    if (checkbox) {
+      checkbox.checked = true;
+    }
+
+    loadBdDanubeGroundwaterBodies();
+  }
+);
+
+map.on(
+  "layerremove",
+  event => {
+    if (event.layer !== bdDanubeGroundwaterLayer) {
+      return;
+    }
+
+    const checkbox =
+      document.getElementById("layer-bd-danube");
 
     if (checkbox) {
       checkbox.checked = false;
@@ -11576,7 +11746,7 @@ async function analyzeLocation(
 
   if (!resolvedGroundwaterCode) {
     console.warn(
-      "[Sondi PRO] Не е установено подземно водно тяло за избраната точка.",
+      "[Sondi EXPERT] Не е установено подземно водно тяло за избраната точка.",
       {
         lat: lat,
         lng: lon
@@ -11624,7 +11794,7 @@ async function analyzeLocation(
       "text-decoration:none;" +
       "border-radius:8px;" +
     "\">" +
-    "Отвори Sondi PRO анализ →" +
+    "Отвори Sondi EXPERT анализ →" +
     "</a>" +
     "</div>";
 
