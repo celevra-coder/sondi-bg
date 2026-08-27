@@ -1,0 +1,3130 @@
+{
+  "metadata": {
+    "title": "BDDR PURB 2022-2027 groundwater climate scenarios",
+    "generated_at": "2026-08-27T11:38:37.765912+00:00",
+    "basin_district": "Danube / BDDR",
+    "planning_period": "2022-2027",
+    "master_groundwater_body_count": 50,
+    "climate_covered_body_count": 40,
+    "without_published_climate_rows": 10,
+    "source": "Pril_2422_final.xls",
+    "scenarios": {
+      "RCP8.5": "pessimistic scenario, period 2021-2050",
+      "RCP4.5": "moderate scenario, period as published in the official table"
+    },
+    "note": "Scenario modelling context; not current measured groundwater status."
+  },
+  "profiles": [
+    {
+      "code": "BG1G000000N033",
+      "name": "Порови води в Неогена - Софийска котловина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 559.615,
+            "recharge_change_fraction": 0.046,
+            "water_column_height_m": 52.0,
+            "water_column_change_m": 2.392,
+            "projected_water_level_elevation_m": 557.223
+          },
+          {
+            "undisturbed_water_level_elevation_m": 530.173,
+            "recharge_change_fraction": 0.046,
+            "water_column_height_m": 295.05,
+            "water_column_change_m": 13.5723,
+            "projected_water_level_elevation_m": 516.6007
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 559.615,
+            "recharge_change_fraction": 0.087,
+            "water_column_height_m": 52.0,
+            "water_column_change_m": 4.524,
+            "projected_water_level_elevation_m": 555.091
+          },
+          {
+            "undisturbed_water_level_elevation_m": 530.173,
+            "recharge_change_fraction": 0.087,
+            "water_column_height_m": 295.05,
+            "water_column_change_m": 25.669349999999998,
+            "projected_water_level_elevation_m": 504.50365
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 559.615,
+            "rcp85_recharge_change_fraction": 0.046,
+            "water_column_height_m": 52.0,
+            "rcp85_water_column_change_m": 2.392,
+            "rcp85_projected_water_level_elevation_m": 557.223,
+            "rcp45_water_column_change_m": 4.524,
+            "rcp45_projected_water_level_elevation_m": 555.091,
+            "allowable_water_level_elevation_m": 527.095
+          },
+          {
+            "undisturbed_water_level_elevation_m": 530.173,
+            "rcp85_recharge_change_fraction": 0.046,
+            "water_column_height_m": 295.05,
+            "rcp85_water_column_change_m": 13.5723,
+            "rcp85_projected_water_level_elevation_m": 516.6007,
+            "rcp45_water_column_change_m": 18.878999999999998,
+            "rcp45_projected_water_level_elevation_m": 511.294,
+            "allowable_water_level_elevation_m": 452.123
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G000000N049",
+      "name": "Карстово-порови води в Неоген - Сармат - Добруджа",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 178.336,
+            "recharge_change_fraction": 0.0667,
+            "water_column_height_m": 2.3360000000000056,
+            "water_column_change_m": 0.15581120000000037,
+            "projected_water_level_elevation_m": 178.18018880000002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 176.493,
+            "recharge_change_fraction": 0.0667,
+            "water_column_height_m": 4.493,
+            "water_column_change_m": 0.2996831,
+            "projected_water_level_elevation_m": 176.19331689999999
+          },
+          {
+            "undisturbed_water_level_elevation_m": 155.762,
+            "recharge_change_fraction": 0.0667,
+            "water_column_height_m": 12.762,
+            "water_column_change_m": 0.8512254,
+            "projected_water_level_elevation_m": 154.9107746
+          },
+          {
+            "undisturbed_water_level_elevation_m": 162.7737,
+            "recharge_change_fraction": 0.0667,
+            "water_column_height_m": 17.773699999999998,
+            "water_column_change_m": 1.18550579,
+            "projected_water_level_elevation_m": 161.58819420999998
+          },
+          {
+            "undisturbed_water_level_elevation_m": 195.48,
+            "recharge_change_fraction": 0.0667,
+            "water_column_height_m": 14.479999999999997,
+            "water_column_change_m": 0.9658159999999997,
+            "projected_water_level_elevation_m": 194.514184
+          },
+          {
+            "undisturbed_water_level_elevation_m": 218.26,
+            "recharge_change_fraction": 0.0667,
+            "water_column_height_m": 59.260000000000005,
+            "water_column_change_m": 3.952642,
+            "projected_water_level_elevation_m": 214.307358
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 178.336,
+            "recharge_change_fraction": 0.0905,
+            "water_column_height_m": 2.3360000000000056,
+            "water_column_change_m": 0.2114080000000005,
+            "projected_water_level_elevation_m": 178.124592
+          },
+          {
+            "undisturbed_water_level_elevation_m": 176.493,
+            "recharge_change_fraction": 0.0905,
+            "water_column_height_m": 4.493,
+            "water_column_change_m": 0.4066165,
+            "projected_water_level_elevation_m": 176.08638349999998
+          },
+          {
+            "undisturbed_water_level_elevation_m": 155.762,
+            "recharge_change_fraction": 0.0905,
+            "water_column_height_m": 12.762,
+            "water_column_change_m": 1.154961,
+            "projected_water_level_elevation_m": 154.60703900000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": 162.7737,
+            "recharge_change_fraction": 0.0905,
+            "water_column_height_m": 17.773699999999998,
+            "water_column_change_m": 1.6085198499999998,
+            "projected_water_level_elevation_m": 161.16518015
+          },
+          {
+            "undisturbed_water_level_elevation_m": 195.48,
+            "recharge_change_fraction": 0.0905,
+            "water_column_height_m": 14.479999999999997,
+            "water_column_change_m": 1.3104399999999996,
+            "projected_water_level_elevation_m": 194.16956
+          },
+          {
+            "undisturbed_water_level_elevation_m": 218.26,
+            "recharge_change_fraction": 0.0905,
+            "water_column_height_m": 59.260000000000005,
+            "water_column_change_m": 5.36303,
+            "projected_water_level_elevation_m": 212.89696999999998
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 178.336,
+            "rcp85_recharge_change_fraction": 0.0667,
+            "water_column_height_m": 2.3360000000000056,
+            "rcp85_water_column_change_m": 0.15581120000000037,
+            "rcp85_projected_water_level_elevation_m": 178.18018880000002,
+            "rcp45_water_column_change_m": 0.2114080000000005,
+            "rcp45_projected_water_level_elevation_m": 178.124592,
+            "allowable_water_level_elevation_m": 176.9344
+          },
+          {
+            "undisturbed_water_level_elevation_m": 176.493,
+            "rcp85_recharge_change_fraction": 0.0667,
+            "water_column_height_m": 4.493,
+            "rcp85_water_column_change_m": 0.2996831,
+            "rcp85_projected_water_level_elevation_m": 176.19331689999999,
+            "rcp45_water_column_change_m": 0.4066165,
+            "rcp45_projected_water_level_elevation_m": 176.08638349999998,
+            "allowable_water_level_elevation_m": 173.7972
+          },
+          {
+            "undisturbed_water_level_elevation_m": 155.762,
+            "rcp85_recharge_change_fraction": 0.0667,
+            "water_column_height_m": 12.762,
+            "rcp85_water_column_change_m": 0.8512254,
+            "rcp85_projected_water_level_elevation_m": 154.9107746,
+            "rcp45_water_column_change_m": 1.154961,
+            "rcp45_projected_water_level_elevation_m": 154.60703900000001,
+            "allowable_water_level_elevation_m": 148.1048
+          },
+          {
+            "undisturbed_water_level_elevation_m": 162.7737,
+            "rcp85_recharge_change_fraction": 0.0667,
+            "water_column_height_m": 17.773699999999998,
+            "rcp85_water_column_change_m": 1.18550579,
+            "rcp85_projected_water_level_elevation_m": 161.58819420999998,
+            "rcp45_water_column_change_m": 1.6085198499999998,
+            "rcp45_projected_water_level_elevation_m": 161.16518015,
+            "allowable_water_level_elevation_m": 152.10948
+          },
+          {
+            "undisturbed_water_level_elevation_m": 195.48,
+            "rcp85_recharge_change_fraction": 0.0667,
+            "water_column_height_m": 14.479999999999997,
+            "rcp85_water_column_change_m": 0.9658159999999997,
+            "rcp85_projected_water_level_elevation_m": 194.514184,
+            "rcp45_water_column_change_m": 1.3104399999999996,
+            "rcp45_projected_water_level_elevation_m": 194.16956,
+            "allowable_water_level_elevation_m": 186.792
+          },
+          {
+            "undisturbed_water_level_elevation_m": 218.26,
+            "rcp85_recharge_change_fraction": 0.0667,
+            "water_column_height_m": 59.260000000000005,
+            "rcp85_water_column_change_m": 3.952642,
+            "rcp85_projected_water_level_elevation_m": 214.307358,
+            "rcp45_water_column_change_m": 5.36303,
+            "rcp45_projected_water_level_elevation_m": 212.89696999999998,
+            "allowable_water_level_elevation_m": 182.70399999999998
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G00000K1040",
+      "name": "Карстови води в Ловеч-Търново",
+      "climate": {
+        "has_published_rows": false,
+        "rcp85": [],
+        "rcp45": [],
+        "comparison": []
+      }
+    },
+    {
+      "code": "BG1G00000K2038",
+      "name": "Пукнатинни води в района на р.Ерма и р.Искър",
+      "climate": {
+        "has_published_rows": false,
+        "rcp85": [],
+        "rcp45": [],
+        "comparison": []
+      }
+    },
+    {
+      "code": "BG1G00000K2039",
+      "name": "Карстови води в Горно-Малинския масив",
+      "climate": {
+        "has_published_rows": false,
+        "rcp85": [],
+        "rcp45": [],
+        "comparison": []
+      }
+    },
+    {
+      "code": "BG1G00000N1035",
+      "name": "Порови води в Неогена - район Русе - Силистра",
+      "climate": {
+        "has_published_rows": false,
+        "rcp85": [],
+        "rcp45": [],
+        "comparison": []
+      }
+    },
+    {
+      "code": "BG1G00000N2034",
+      "name": "Порови води в Неогена - Ломско-Плевенска депресия",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 41.400000000000006,
+            "recharge_change_fraction": 0.0798,
+            "water_column_height_m": 103.2,
+            "water_column_change_m": 8.23536,
+            "projected_water_level_elevation_m": 33.164640000000006
+          },
+          {
+            "undisturbed_water_level_elevation_m": 30.16,
+            "recharge_change_fraction": 0.0798,
+            "water_column_height_m": 184.88,
+            "water_column_change_m": 14.753423999999999,
+            "projected_water_level_elevation_m": 15.406576000000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": 42.35,
+            "recharge_change_fraction": 0.0798,
+            "water_column_height_m": 158.04,
+            "water_column_change_m": 12.611591999999998,
+            "projected_water_level_elevation_m": 29.738408000000003
+          },
+          {
+            "undisturbed_water_level_elevation_m": 29.290000000000003,
+            "recharge_change_fraction": 0.0798,
+            "water_column_height_m": 146.77,
+            "water_column_change_m": 11.712246,
+            "projected_water_level_elevation_m": 17.577754000000002
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 41.400000000000006,
+            "recharge_change_fraction": 0.0491,
+            "water_column_height_m": 103.2,
+            "water_column_change_m": 5.06712,
+            "projected_water_level_elevation_m": 36.33288
+          },
+          {
+            "undisturbed_water_level_elevation_m": 30.16,
+            "recharge_change_fraction": 0.0491,
+            "water_column_height_m": 184.88,
+            "water_column_change_m": 9.077608,
+            "projected_water_level_elevation_m": 21.082392
+          },
+          {
+            "undisturbed_water_level_elevation_m": 42.35,
+            "recharge_change_fraction": 0.0491,
+            "water_column_height_m": 158.04,
+            "water_column_change_m": 7.759764,
+            "projected_water_level_elevation_m": 34.590236000000004
+          },
+          {
+            "undisturbed_water_level_elevation_m": 29.290000000000003,
+            "recharge_change_fraction": 0.0491,
+            "water_column_height_m": 146.77,
+            "water_column_change_m": 7.2064070000000005,
+            "projected_water_level_elevation_m": 22.083593
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 41.400000000000006,
+            "rcp85_recharge_change_fraction": 0.0798,
+            "water_column_height_m": 103.2,
+            "rcp85_water_column_change_m": 8.23536,
+            "rcp85_projected_water_level_elevation_m": 33.164640000000006,
+            "rcp45_water_column_change_m": 5.06712,
+            "rcp45_projected_water_level_elevation_m": 36.33288,
+            "allowable_water_level_elevation_m": -20.519999999999996
+          },
+          {
+            "undisturbed_water_level_elevation_m": 30.16,
+            "rcp85_recharge_change_fraction": 0.0798,
+            "water_column_height_m": 184.88,
+            "rcp85_water_column_change_m": 14.753423999999999,
+            "rcp85_projected_water_level_elevation_m": 15.406576000000001,
+            "rcp45_water_column_change_m": 9.077608,
+            "rcp45_projected_water_level_elevation_m": 21.082392,
+            "allowable_water_level_elevation_m": -80.768
+          },
+          {
+            "undisturbed_water_level_elevation_m": 42.35,
+            "rcp85_recharge_change_fraction": 0.0798,
+            "water_column_height_m": 158.04,
+            "rcp85_water_column_change_m": 12.611591999999998,
+            "rcp85_projected_water_level_elevation_m": 29.738408000000003,
+            "rcp45_water_column_change_m": 7.759764,
+            "rcp45_projected_water_level_elevation_m": 34.590236000000004,
+            "allowable_water_level_elevation_m": -52.474
+          },
+          {
+            "undisturbed_water_level_elevation_m": 29.290000000000003,
+            "rcp85_recharge_change_fraction": 0.0798,
+            "water_column_height_m": 146.77,
+            "rcp85_water_column_change_m": 11.712246,
+            "rcp85_projected_water_level_elevation_m": 17.577754000000002,
+            "rcp45_water_column_change_m": 7.2064070000000005,
+            "rcp45_projected_water_level_elevation_m": 22.083593,
+            "allowable_water_level_elevation_m": -58.77199999999999
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G00000NQ028",
+      "name": "Порови води в Неоген-Кватернера - Ботевградска долина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 383.8,
+            "recharge_change_fraction": 0.0579,
+            "water_column_height_m": 56.8,
+            "water_column_change_m": 3.2887199999999996,
+            "projected_water_level_elevation_m": 380.51128
+          },
+          {
+            "undisturbed_water_level_elevation_m": 328.45,
+            "recharge_change_fraction": 0.0579,
+            "water_column_height_m": 5.45,
+            "water_column_change_m": 0.31555500000000003,
+            "projected_water_level_elevation_m": 328.13444499999997
+          },
+          {
+            "undisturbed_water_level_elevation_m": 368.8,
+            "recharge_change_fraction": 0.0579,
+            "water_column_height_m": 57.8,
+            "water_column_change_m": 3.3466199999999997,
+            "projected_water_level_elevation_m": 365.45338000000004
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 383.8,
+            "recharge_change_fraction": 0.0579,
+            "water_column_height_m": 56.8,
+            "water_column_change_m": 3.2887199999999996,
+            "projected_water_level_elevation_m": 380.51128
+          },
+          {
+            "undisturbed_water_level_elevation_m": 328.45,
+            "recharge_change_fraction": 0.0579,
+            "water_column_height_m": 5.45,
+            "water_column_change_m": 0.31555500000000003,
+            "projected_water_level_elevation_m": 328.13444499999997
+          },
+          {
+            "undisturbed_water_level_elevation_m": 368.8,
+            "recharge_change_fraction": 0.0579,
+            "water_column_height_m": 57.8,
+            "water_column_change_m": 3.3466199999999997,
+            "projected_water_level_elevation_m": 365.45338000000004
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 383.8,
+            "rcp85_recharge_change_fraction": 0.0579,
+            "water_column_height_m": 56.8,
+            "rcp85_water_column_change_m": 3.2887199999999996,
+            "rcp85_projected_water_level_elevation_m": 380.51128,
+            "rcp45_water_column_change_m": 3.2887199999999996,
+            "rcp45_projected_water_level_elevation_m": 380.51128,
+            "allowable_water_level_elevation_m": 349.72
+          },
+          {
+            "undisturbed_water_level_elevation_m": 328.45,
+            "rcp85_recharge_change_fraction": 0.0579,
+            "water_column_height_m": 5.45,
+            "rcp85_water_column_change_m": 0.31555500000000003,
+            "rcp85_projected_water_level_elevation_m": 328.13444499999997,
+            "rcp45_water_column_change_m": 0.31555500000000003,
+            "rcp45_projected_water_level_elevation_m": 328.13444499999997,
+            "allowable_water_level_elevation_m": 325.18
+          },
+          {
+            "undisturbed_water_level_elevation_m": 368.8,
+            "rcp85_recharge_change_fraction": 0.0579,
+            "water_column_height_m": 57.8,
+            "rcp85_water_column_change_m": 3.3466199999999997,
+            "rcp85_projected_water_level_elevation_m": 365.45338000000004,
+            "rcp45_water_column_change_m": 3.3466199999999997,
+            "rcp45_projected_water_level_elevation_m": 365.45338000000004,
+            "allowable_water_level_elevation_m": 334.12
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G00000NQ029",
+      "name": "Порови води в Неоген-Кватернера - р. Нишава",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 752.57,
+            "recharge_change_fraction": 0.0652,
+            "water_column_height_m": 3.5700000000000003,
+            "water_column_change_m": 0.232764,
+            "projected_water_level_elevation_m": 752.3372360000001
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 752.57,
+            "recharge_change_fraction": 0.1,
+            "water_column_height_m": 3.5700000000000003,
+            "water_column_change_m": 0.35700000000000004,
+            "projected_water_level_elevation_m": 752.2130000000001
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 752.57,
+            "rcp85_recharge_change_fraction": 0.0652,
+            "water_column_height_m": 3.5700000000000003,
+            "rcp85_water_column_change_m": 0.232764,
+            "rcp85_projected_water_level_elevation_m": 752.3372360000001,
+            "rcp45_water_column_change_m": 0.35700000000000004,
+            "rcp45_projected_water_level_elevation_m": 752.2130000000001,
+            "allowable_water_level_elevation_m": 750.428
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G00000NQ030",
+      "name": "Порови води в Неоген-Кватернера - Софийска долина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 545.21,
+            "recharge_change_fraction": 0.0459,
+            "water_column_height_m": 3.59,
+            "water_column_change_m": 0.164781,
+            "projected_water_level_elevation_m": 545.0452190000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": 552.495,
+            "recharge_change_fraction": 0.0459,
+            "water_column_height_m": 8.209999999999999,
+            "water_column_change_m": 0.376839,
+            "projected_water_level_elevation_m": 552.118161
+          },
+          {
+            "undisturbed_water_level_elevation_m": 557.193,
+            "recharge_change_fraction": 0.0459,
+            "water_column_height_m": 1.5499999999999998,
+            "water_column_change_m": 0.071145,
+            "projected_water_level_elevation_m": 557.121855
+          },
+          {
+            "undisturbed_water_level_elevation_m": 553.6859999999999,
+            "recharge_change_fraction": 0.0459,
+            "water_column_height_m": 2.3899999999999997,
+            "water_column_change_m": 0.10970099999999999,
+            "projected_water_level_elevation_m": 553.576299
+          },
+          {
+            "undisturbed_water_level_elevation_m": 536.042,
+            "recharge_change_fraction": 0.0459,
+            "water_column_height_m": 4.13,
+            "water_column_change_m": 0.189567,
+            "projected_water_level_elevation_m": 535.852433
+          },
+          {
+            "undisturbed_water_level_elevation_m": 523.778,
+            "recharge_change_fraction": 0.0459,
+            "water_column_height_m": 2.84,
+            "water_column_change_m": 0.130356,
+            "projected_water_level_elevation_m": 523.647644
+          },
+          {
+            "undisturbed_water_level_elevation_m": 510.21299999999997,
+            "recharge_change_fraction": 0.0459,
+            "water_column_height_m": 3.8499999999999996,
+            "water_column_change_m": 0.17671499999999998,
+            "projected_water_level_elevation_m": 510.03628499999996
+          },
+          {
+            "undisturbed_water_level_elevation_m": 505.539,
+            "recharge_change_fraction": 0.0459,
+            "water_column_height_m": 8.0,
+            "water_column_change_m": 0.3672,
+            "projected_water_level_elevation_m": 505.17179999999996
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 545.21,
+            "recharge_change_fraction": 0.087,
+            "water_column_height_m": 3.59,
+            "water_column_change_m": 0.31232999999999994,
+            "projected_water_level_elevation_m": 544.8976700000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": 552.495,
+            "recharge_change_fraction": 0.087,
+            "water_column_height_m": 8.209999999999999,
+            "water_column_change_m": 0.7142699999999998,
+            "projected_water_level_elevation_m": 551.78073
+          },
+          {
+            "undisturbed_water_level_elevation_m": 557.193,
+            "recharge_change_fraction": 0.087,
+            "water_column_height_m": 1.5499999999999998,
+            "water_column_change_m": 0.13484999999999997,
+            "projected_water_level_elevation_m": 557.05815
+          },
+          {
+            "undisturbed_water_level_elevation_m": 553.6859999999999,
+            "recharge_change_fraction": 0.087,
+            "water_column_height_m": 2.3899999999999997,
+            "water_column_change_m": 0.20792999999999995,
+            "projected_water_level_elevation_m": 553.4780699999999
+          },
+          {
+            "undisturbed_water_level_elevation_m": 536.042,
+            "recharge_change_fraction": 0.087,
+            "water_column_height_m": 4.13,
+            "water_column_change_m": 0.35930999999999996,
+            "projected_water_level_elevation_m": 535.68269
+          },
+          {
+            "undisturbed_water_level_elevation_m": 523.778,
+            "recharge_change_fraction": 0.087,
+            "water_column_height_m": 2.84,
+            "water_column_change_m": 0.24707999999999997,
+            "projected_water_level_elevation_m": 523.53092
+          },
+          {
+            "undisturbed_water_level_elevation_m": 510.21299999999997,
+            "recharge_change_fraction": 0.087,
+            "water_column_height_m": 3.8499999999999996,
+            "water_column_change_m": 0.33494999999999997,
+            "projected_water_level_elevation_m": 509.87805
+          },
+          {
+            "undisturbed_water_level_elevation_m": 505.539,
+            "recharge_change_fraction": 0.087,
+            "water_column_height_m": 8.0,
+            "water_column_change_m": 0.696,
+            "projected_water_level_elevation_m": 504.84299999999996
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 545.21,
+            "rcp85_recharge_change_fraction": 0.0459,
+            "water_column_height_m": 3.59,
+            "rcp85_water_column_change_m": 0.164781,
+            "rcp85_projected_water_level_elevation_m": 545.0452190000001,
+            "rcp45_water_column_change_m": 0.31232999999999994,
+            "rcp45_projected_water_level_elevation_m": 544.8976700000001,
+            "allowable_water_level_elevation_m": 543.056
+          },
+          {
+            "undisturbed_water_level_elevation_m": 552.495,
+            "rcp85_recharge_change_fraction": 0.0459,
+            "water_column_height_m": 8.209999999999999,
+            "rcp85_water_column_change_m": 0.376839,
+            "rcp85_projected_water_level_elevation_m": 552.118161,
+            "rcp45_water_column_change_m": 0.7142699999999998,
+            "rcp45_projected_water_level_elevation_m": 551.78073,
+            "allowable_water_level_elevation_m": 547.569
+          },
+          {
+            "undisturbed_water_level_elevation_m": 557.193,
+            "rcp85_recharge_change_fraction": 0.0459,
+            "water_column_height_m": 1.5499999999999998,
+            "rcp85_water_column_change_m": 0.071145,
+            "rcp85_projected_water_level_elevation_m": 557.121855,
+            "rcp45_water_column_change_m": 0.13484999999999997,
+            "rcp45_projected_water_level_elevation_m": 557.05815,
+            "allowable_water_level_elevation_m": 556.263
+          },
+          {
+            "undisturbed_water_level_elevation_m": 553.6859999999999,
+            "rcp85_recharge_change_fraction": 0.0459,
+            "water_column_height_m": 2.3899999999999997,
+            "rcp85_water_column_change_m": 0.10970099999999999,
+            "rcp85_projected_water_level_elevation_m": 553.576299,
+            "rcp45_water_column_change_m": 3.87933,
+            "rcp45_projected_water_level_elevation_m": 549.8066699999999,
+            "allowable_water_level_elevation_m": 552.252
+          },
+          {
+            "undisturbed_water_level_elevation_m": 536.042,
+            "rcp85_recharge_change_fraction": 0.0459,
+            "water_column_height_m": 4.13,
+            "rcp85_water_column_change_m": 0.189567,
+            "rcp85_projected_water_level_elevation_m": 535.852433,
+            "rcp45_water_column_change_m": 0.35930999999999996,
+            "rcp45_projected_water_level_elevation_m": 535.68269,
+            "allowable_water_level_elevation_m": 533.5640000000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": 523.778,
+            "rcp85_recharge_change_fraction": 0.0459,
+            "water_column_height_m": 2.84,
+            "rcp85_water_column_change_m": 0.130356,
+            "rcp85_projected_water_level_elevation_m": 523.647644,
+            "rcp45_water_column_change_m": 0.24707999999999997,
+            "rcp45_projected_water_level_elevation_m": 523.53092,
+            "allowable_water_level_elevation_m": 522.0740000000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": 510.21299999999997,
+            "rcp85_recharge_change_fraction": 0.0459,
+            "water_column_height_m": 3.8499999999999996,
+            "rcp85_water_column_change_m": 0.17671499999999998,
+            "rcp85_projected_water_level_elevation_m": 510.03628499999996,
+            "rcp45_water_column_change_m": 0.33494999999999997,
+            "rcp45_projected_water_level_elevation_m": 509.87805,
+            "allowable_water_level_elevation_m": 507.90299999999996
+          },
+          {
+            "undisturbed_water_level_elevation_m": 505.539,
+            "rcp85_recharge_change_fraction": 0.0459,
+            "water_column_height_m": 8.0,
+            "rcp85_water_column_change_m": 0.3672,
+            "rcp85_projected_water_level_elevation_m": 505.17179999999996,
+            "rcp45_water_column_change_m": 0.696,
+            "rcp45_projected_water_level_elevation_m": 504.84299999999996,
+            "allowable_water_level_elevation_m": 500.739
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G00000NQ031",
+      "name": "Порови води в Неоген-Кватернера - Самоковска долина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 947.2,
+            "recharge_change_fraction": 0.0429,
+            "water_column_height_m": 3.2,
+            "water_column_change_m": 0.13728,
+            "projected_water_level_elevation_m": 947.06272
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 947.2,
+            "recharge_change_fraction": 0.0857,
+            "water_column_height_m": 3.2,
+            "water_column_change_m": 0.27424,
+            "projected_water_level_elevation_m": 946.9257600000001
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 947.2,
+            "rcp85_recharge_change_fraction": 0.0429,
+            "water_column_height_m": 3.2,
+            "rcp85_water_column_change_m": 0.13728,
+            "rcp85_projected_water_level_elevation_m": 947.06272,
+            "rcp45_water_column_change_m": 0.27424,
+            "rcp45_projected_water_level_elevation_m": 946.9257600000001,
+            "allowable_water_level_elevation_m": 945.2800000000001
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G00000NQ032",
+      "name": "Порови води в Неоген-Кватернера - Знеполска долина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 802.9,
+            "recharge_change_fraction": 0.0,
+            "water_column_height_m": 1.9,
+            "water_column_change_m": 0.0,
+            "projected_water_level_elevation_m": 802.9
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 802.9,
+            "recharge_change_fraction": 0.05,
+            "water_column_height_m": 1.9,
+            "water_column_change_m": 0.095,
+            "projected_water_level_elevation_m": 802.805
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 802.9,
+            "rcp85_recharge_change_fraction": 0.0,
+            "water_column_height_m": 1.9,
+            "rcp85_water_column_change_m": 0.0,
+            "rcp85_projected_water_level_elevation_m": 802.9,
+            "rcp45_water_column_change_m": 0.095,
+            "rcp45_projected_water_level_elevation_m": 802.805,
+            "allowable_water_level_elevation_m": 801.76
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G00000QP027",
+      "name": "Порови води в Кватернера - Врачански пороен конус",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 307.0,
+            "recharge_change_fraction": 0.0786,
+            "water_column_height_m": 32.5,
+            "water_column_change_m": 2.5545,
+            "projected_water_level_elevation_m": 304.4455
+          },
+          {
+            "undisturbed_water_level_elevation_m": 332.0,
+            "recharge_change_fraction": 0.0786,
+            "water_column_height_m": 48.5,
+            "water_column_change_m": 3.8121,
+            "projected_water_level_elevation_m": 328.1879
+          },
+          {
+            "undisturbed_water_level_elevation_m": 334.7,
+            "recharge_change_fraction": 0.0786,
+            "water_column_height_m": 67.0,
+            "water_column_change_m": 5.2662,
+            "projected_water_level_elevation_m": 329.43379999999996
+          },
+          {
+            "undisturbed_water_level_elevation_m": 352.8,
+            "recharge_change_fraction": 0.0786,
+            "water_column_height_m": 54.8,
+            "water_column_change_m": 4.3072799999999996,
+            "projected_water_level_elevation_m": 348.49272
+          },
+          {
+            "undisturbed_water_level_elevation_m": 362.15,
+            "recharge_change_fraction": 0.0786,
+            "water_column_height_m": 13.15,
+            "water_column_change_m": 1.03359,
+            "projected_water_level_elevation_m": 361.11641
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 307.0,
+            "recharge_change_fraction": 0.0571,
+            "water_column_height_m": 32.5,
+            "water_column_change_m": 1.85575,
+            "projected_water_level_elevation_m": 305.14425
+          },
+          {
+            "undisturbed_water_level_elevation_m": 332.0,
+            "recharge_change_fraction": 0.0571,
+            "water_column_height_m": 48.5,
+            "water_column_change_m": 2.7693499999999998,
+            "projected_water_level_elevation_m": 329.23065
+          },
+          {
+            "undisturbed_water_level_elevation_m": 334.7,
+            "recharge_change_fraction": 0.0571,
+            "water_column_height_m": 67.0,
+            "water_column_change_m": 3.8257,
+            "projected_water_level_elevation_m": 330.8743
+          },
+          {
+            "undisturbed_water_level_elevation_m": 352.8,
+            "recharge_change_fraction": 0.0571,
+            "water_column_height_m": 54.8,
+            "water_column_change_m": 3.1290799999999996,
+            "projected_water_level_elevation_m": 349.67092
+          },
+          {
+            "undisturbed_water_level_elevation_m": 362.15,
+            "recharge_change_fraction": 0.0571,
+            "water_column_height_m": 13.15,
+            "water_column_change_m": 0.750865,
+            "projected_water_level_elevation_m": 361.399135
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 307.0,
+            "rcp85_recharge_change_fraction": 0.0786,
+            "water_column_height_m": 32.5,
+            "rcp85_water_column_change_m": 2.5545,
+            "rcp85_projected_water_level_elevation_m": 304.4455,
+            "rcp45_water_column_change_m": 1.85575,
+            "rcp45_projected_water_level_elevation_m": 305.14425,
+            "allowable_water_level_elevation_m": 287.5
+          },
+          {
+            "undisturbed_water_level_elevation_m": 332.0,
+            "rcp85_recharge_change_fraction": 0.0786,
+            "water_column_height_m": 48.5,
+            "rcp85_water_column_change_m": 3.8121,
+            "rcp85_projected_water_level_elevation_m": 328.1879,
+            "rcp45_water_column_change_m": 2.7693499999999998,
+            "rcp45_projected_water_level_elevation_m": 329.23065,
+            "allowable_water_level_elevation_m": 302.9
+          },
+          {
+            "undisturbed_water_level_elevation_m": 334.7,
+            "rcp85_recharge_change_fraction": 0.0786,
+            "water_column_height_m": 67.0,
+            "rcp85_water_column_change_m": 5.2662,
+            "rcp85_projected_water_level_elevation_m": 329.43379999999996,
+            "rcp45_water_column_change_m": 3.8257,
+            "rcp45_projected_water_level_elevation_m": 330.8743,
+            "allowable_water_level_elevation_m": 294.5
+          },
+          {
+            "undisturbed_water_level_elevation_m": 352.8,
+            "rcp85_recharge_change_fraction": 0.0786,
+            "water_column_height_m": 54.8,
+            "rcp85_water_column_change_m": 4.3072799999999996,
+            "rcp85_projected_water_level_elevation_m": 348.49272,
+            "rcp45_water_column_change_m": 3.1290799999999996,
+            "rcp45_projected_water_level_elevation_m": 349.67092,
+            "allowable_water_level_elevation_m": 319.92
+          },
+          {
+            "undisturbed_water_level_elevation_m": 362.15,
+            "rcp85_recharge_change_fraction": 0.0786,
+            "water_column_height_m": 13.15,
+            "rcp85_water_column_change_m": 1.03359,
+            "rcp85_projected_water_level_elevation_m": 361.11641,
+            "rcp45_water_column_change_m": 0.750865,
+            "rcp45_projected_water_level_elevation_m": 361.399135,
+            "allowable_water_level_elevation_m": 354.26
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G00000TJ046",
+      "name": "Карстови води в Годечкия ма",
+      "climate": {
+        "has_published_rows": false,
+        "rcp85": [],
+        "rcp45": [],
+        "comparison": []
+      }
+    },
+    {
+      "code": "BG1G0000J3K051",
+      "name": "Карстови води в Малм-Валанжския басейн",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 87.78,
+            "recharge_change_fraction": -0.0679,
+            "water_column_height_m": 364.78,
+            "water_column_change_m": -24.768562,
+            "projected_water_level_elevation_m": 112.548562
+          },
+          {
+            "undisturbed_water_level_elevation_m": 45.150000000000006,
+            "recharge_change_fraction": -0.0679,
+            "water_column_height_m": 243.15,
+            "water_column_change_m": -16.509885,
+            "projected_water_level_elevation_m": 61.659885
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 87.78,
+            "recharge_change_fraction": 0.052,
+            "water_column_height_m": 364.78,
+            "water_column_change_m": 18.968559999999997,
+            "projected_water_level_elevation_m": 68.81144
+          },
+          {
+            "undisturbed_water_level_elevation_m": 45.150000000000006,
+            "recharge_change_fraction": 0.052,
+            "water_column_height_m": 243.15,
+            "water_column_change_m": 12.6438,
+            "projected_water_level_elevation_m": 32.50620000000001
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 87.78,
+            "rcp85_recharge_change_fraction": -0.0679,
+            "water_column_height_m": 364.78,
+            "rcp85_water_column_change_m": -24.768562,
+            "rcp85_projected_water_level_elevation_m": 112.548562,
+            "rcp45_water_column_change_m": 11.44,
+            "rcp45_projected_water_level_elevation_m": 76.34,
+            "allowable_water_level_elevation_m": -57.0
+          },
+          {
+            "undisturbed_water_level_elevation_m": 45.150000000000006,
+            "rcp85_recharge_change_fraction": -0.0679,
+            "water_column_height_m": 243.15,
+            "rcp85_water_column_change_m": -16.509885,
+            "rcp85_projected_water_level_elevation_m": 61.659885,
+            "rcp45_water_column_change_m": 11.959999999999999,
+            "rcp45_projected_water_level_elevation_m": 33.190000000000005,
+            "allowable_water_level_elevation_m": 32.0
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000K1B041",
+      "name": "Карстови води в Русенската формация",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 13.41,
+            "recharge_change_fraction": 0.0269,
+            "water_column_height_m": 321.69,
+            "water_column_change_m": 8.653461,
+            "projected_water_level_elevation_m": 4.756539
+          },
+          {
+            "undisturbed_water_level_elevation_m": 14.681999999999999,
+            "recharge_change_fraction": 0.0269,
+            "water_column_height_m": 153.2,
+            "water_column_change_m": 4.12108,
+            "projected_water_level_elevation_m": 10.56092
+          },
+          {
+            "undisturbed_water_level_elevation_m": 18.281999999999996,
+            "recharge_change_fraction": 0.0269,
+            "water_column_height_m": 1.6300000000000008,
+            "water_column_change_m": 0.043847000000000025,
+            "projected_water_level_elevation_m": 18.238152999999997
+          },
+          {
+            "undisturbed_water_level_elevation_m": 98.69200000000001,
+            "recharge_change_fraction": 0.0269,
+            "water_column_height_m": 4.139999999999999,
+            "water_column_change_m": 0.11136599999999997,
+            "projected_water_level_elevation_m": 98.580634
+          },
+          {
+            "undisturbed_water_level_elevation_m": -1.4400000000000013,
+            "recharge_change_fraction": 0.0269,
+            "water_column_height_m": 58.67,
+            "water_column_change_m": 1.5782230000000002,
+            "projected_water_level_elevation_m": -3.0182230000000017
+          },
+          {
+            "undisturbed_water_level_elevation_m": -2.950000000000001,
+            "recharge_change_fraction": 0.0269,
+            "water_column_height_m": 29.860000000000003,
+            "water_column_change_m": 0.8032340000000001,
+            "projected_water_level_elevation_m": -3.7532340000000013
+          },
+          {
+            "undisturbed_water_level_elevation_m": 10.75,
+            "recharge_change_fraction": 0.0269,
+            "water_column_height_m": 17.61,
+            "water_column_change_m": 0.473709,
+            "projected_water_level_elevation_m": 10.276291
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 13.41,
+            "recharge_change_fraction": 0.0371,
+            "water_column_height_m": 321.69,
+            "water_column_change_m": 11.934699,
+            "projected_water_level_elevation_m": 1.475301
+          },
+          {
+            "undisturbed_water_level_elevation_m": 14.681999999999999,
+            "recharge_change_fraction": 0.0371,
+            "water_column_height_m": 153.2,
+            "water_column_change_m": 5.68372,
+            "projected_water_level_elevation_m": 8.998279999999998
+          },
+          {
+            "undisturbed_water_level_elevation_m": 18.281999999999996,
+            "recharge_change_fraction": 0.0371,
+            "water_column_height_m": 1.6300000000000008,
+            "water_column_change_m": 0.060473000000000034,
+            "projected_water_level_elevation_m": 18.221526999999995
+          },
+          {
+            "undisturbed_water_level_elevation_m": 98.69200000000001,
+            "recharge_change_fraction": 0.0371,
+            "water_column_height_m": 4.139999999999999,
+            "water_column_change_m": 0.15359399999999995,
+            "projected_water_level_elevation_m": 98.53840600000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": -1.4400000000000013,
+            "recharge_change_fraction": 0.0371,
+            "water_column_height_m": 58.67,
+            "water_column_change_m": 2.176657,
+            "projected_water_level_elevation_m": -3.6166570000000013
+          },
+          {
+            "undisturbed_water_level_elevation_m": -2.950000000000001,
+            "recharge_change_fraction": 0.0371,
+            "water_column_height_m": 29.860000000000003,
+            "water_column_change_m": 1.107806,
+            "projected_water_level_elevation_m": -4.057806000000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": 10.75,
+            "recharge_change_fraction": 0.0371,
+            "water_column_height_m": 17.61,
+            "water_column_change_m": 0.653331,
+            "projected_water_level_elevation_m": 10.096669
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 13.41,
+            "rcp85_recharge_change_fraction": 0.0269,
+            "water_column_height_m": 321.69,
+            "rcp85_water_column_change_m": 8.653461,
+            "rcp85_projected_water_level_elevation_m": 4.756539,
+            "rcp45_water_column_change_m": 11.934699,
+            "rcp45_projected_water_level_elevation_m": 1.475301,
+            "allowable_water_level_elevation_m": -179.60399999999998
+          },
+          {
+            "undisturbed_water_level_elevation_m": 14.681999999999999,
+            "rcp85_recharge_change_fraction": 0.0269,
+            "water_column_height_m": 153.2,
+            "rcp85_water_column_change_m": 4.12108,
+            "rcp85_projected_water_level_elevation_m": 10.56092,
+            "rcp45_water_column_change_m": 5.68372,
+            "rcp45_projected_water_level_elevation_m": 8.998279999999998,
+            "allowable_water_level_elevation_m": -77.23799999999999
+          },
+          {
+            "undisturbed_water_level_elevation_m": 18.281999999999996,
+            "rcp85_recharge_change_fraction": 0.0269,
+            "water_column_height_m": 1.6300000000000008,
+            "rcp85_water_column_change_m": 0.043847000000000025,
+            "rcp85_projected_water_level_elevation_m": 18.238152999999997,
+            "rcp45_water_column_change_m": 0.060473000000000034,
+            "rcp45_projected_water_level_elevation_m": 18.221526999999995,
+            "allowable_water_level_elevation_m": 17.303999999999995
+          },
+          {
+            "undisturbed_water_level_elevation_m": 98.69200000000001,
+            "rcp85_recharge_change_fraction": 0.0269,
+            "water_column_height_m": 4.139999999999999,
+            "rcp85_water_column_change_m": 0.11136599999999997,
+            "rcp85_projected_water_level_elevation_m": 98.580634,
+            "rcp45_water_column_change_m": 0.15359399999999995,
+            "rcp45_projected_water_level_elevation_m": 98.53840600000001,
+            "allowable_water_level_elevation_m": 96.20800000000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": -1.4400000000000013,
+            "rcp85_recharge_change_fraction": 0.0269,
+            "water_column_height_m": 58.67,
+            "rcp85_water_column_change_m": 1.5782230000000002,
+            "rcp85_projected_water_level_elevation_m": -3.0182230000000017,
+            "rcp45_water_column_change_m": 2.176657,
+            "rcp45_projected_water_level_elevation_m": -3.6166570000000013,
+            "allowable_water_level_elevation_m": -36.641999999999996
+          },
+          {
+            "undisturbed_water_level_elevation_m": -2.950000000000001,
+            "rcp85_recharge_change_fraction": 0.0269,
+            "water_column_height_m": 29.860000000000003,
+            "rcp85_water_column_change_m": 0.8032340000000001,
+            "rcp85_projected_water_level_elevation_m": -3.7532340000000013,
+            "rcp45_water_column_change_m": 1.107806,
+            "rcp45_projected_water_level_elevation_m": -4.057806000000001,
+            "allowable_water_level_elevation_m": -20.866
+          },
+          {
+            "undisturbed_water_level_elevation_m": 10.75,
+            "rcp85_recharge_change_fraction": 0.0269,
+            "water_column_height_m": 17.61,
+            "rcp85_water_column_change_m": 0.473709,
+            "rcp85_projected_water_level_elevation_m": 10.276291,
+            "rcp45_water_column_change_m": 0.653331,
+            "rcp45_projected_water_level_elevation_m": 10.096669,
+            "allowable_water_level_elevation_m": 0.18400000000000105
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000K2M047",
+      "name": "Карстови води в Ломско-Плевеския басейн",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 74.43,
+            "recharge_change_fraction": 0.0286,
+            "water_column_height_m": 204.0,
+            "water_column_change_m": 5.8344000000000005,
+            "projected_water_level_elevation_m": 68.5956
+          },
+          {
+            "undisturbed_water_level_elevation_m": 50.0,
+            "recharge_change_fraction": 0.0286,
+            "water_column_height_m": 152.0,
+            "water_column_change_m": 4.3472,
+            "projected_water_level_elevation_m": 45.6528
+          },
+          {
+            "undisturbed_water_level_elevation_m": 65.0,
+            "recharge_change_fraction": 0.0286,
+            "water_column_height_m": 213.0,
+            "water_column_change_m": 6.0918,
+            "projected_water_level_elevation_m": 58.9082
+          },
+          {
+            "undisturbed_water_level_elevation_m": 72.0,
+            "recharge_change_fraction": 0.0286,
+            "water_column_height_m": 88.0,
+            "water_column_change_m": 2.5168,
+            "projected_water_level_elevation_m": 69.4832
+          },
+          {
+            "undisturbed_water_level_elevation_m": 137.2,
+            "recharge_change_fraction": 0.0286,
+            "water_column_height_m": 138.0,
+            "water_column_change_m": 3.9468,
+            "projected_water_level_elevation_m": 133.2532
+          },
+          {
+            "undisturbed_water_level_elevation_m": 215.0,
+            "recharge_change_fraction": 0.0286,
+            "water_column_height_m": 90.0,
+            "water_column_change_m": 2.574,
+            "projected_water_level_elevation_m": 212.426
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 74.43,
+            "recharge_change_fraction": 0.0305,
+            "water_column_height_m": 204.0,
+            "water_column_change_m": 6.2219999999999995,
+            "projected_water_level_elevation_m": 68.20800000000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": 50.0,
+            "recharge_change_fraction": 0.0305,
+            "water_column_height_m": 152.0,
+            "water_column_change_m": 4.636,
+            "projected_water_level_elevation_m": 45.364
+          },
+          {
+            "undisturbed_water_level_elevation_m": 65.0,
+            "recharge_change_fraction": 0.0305,
+            "water_column_height_m": 213.0,
+            "water_column_change_m": 6.4965,
+            "projected_water_level_elevation_m": 58.5035
+          },
+          {
+            "undisturbed_water_level_elevation_m": 72.0,
+            "recharge_change_fraction": 0.0305,
+            "water_column_height_m": 88.0,
+            "water_column_change_m": 2.684,
+            "projected_water_level_elevation_m": 69.316
+          },
+          {
+            "undisturbed_water_level_elevation_m": 137.2,
+            "recharge_change_fraction": 0.0305,
+            "water_column_height_m": 138.0,
+            "water_column_change_m": 4.209,
+            "projected_water_level_elevation_m": 132.99099999999999
+          },
+          {
+            "undisturbed_water_level_elevation_m": 215.0,
+            "recharge_change_fraction": 0.0305,
+            "water_column_height_m": 90.0,
+            "water_column_change_m": 2.745,
+            "projected_water_level_elevation_m": 212.255
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 74.43,
+            "rcp85_recharge_change_fraction": 0.0286,
+            "water_column_height_m": 204.0,
+            "rcp85_water_column_change_m": 5.8344000000000005,
+            "rcp85_projected_water_level_elevation_m": 68.5956,
+            "rcp45_water_column_change_m": 4.8495,
+            "rcp45_projected_water_level_elevation_m": 69.5805,
+            "allowable_water_level_elevation_m": 29.430000000000007
+          },
+          {
+            "undisturbed_water_level_elevation_m": 50.0,
+            "rcp85_recharge_change_fraction": 0.0286,
+            "water_column_height_m": 152.0,
+            "rcp85_water_column_change_m": 4.3472,
+            "rcp85_projected_water_level_elevation_m": 45.6528,
+            "rcp45_water_column_change_m": 4.27,
+            "rcp45_projected_water_level_elevation_m": 45.730000000000004,
+            "allowable_water_level_elevation_m": 38.0
+          },
+          {
+            "undisturbed_water_level_elevation_m": 65.0,
+            "rcp85_recharge_change_fraction": 0.0286,
+            "water_column_height_m": 213.0,
+            "rcp85_water_column_change_m": 6.0918,
+            "rcp85_projected_water_level_elevation_m": 58.9082,
+            "rcp45_water_column_change_m": 5.734,
+            "rcp45_projected_water_level_elevation_m": 59.266,
+            "allowable_water_level_elevation_m": 40.0
+          },
+          {
+            "undisturbed_water_level_elevation_m": 72.0,
+            "rcp85_recharge_change_fraction": 0.0286,
+            "water_column_height_m": 88.0,
+            "rcp85_water_column_change_m": 2.5168,
+            "rcp85_projected_water_level_elevation_m": 69.4832,
+            "rcp45_water_column_change_m": 1.4945,
+            "rcp45_projected_water_level_elevation_m": 70.5055,
+            "allowable_water_level_elevation_m": 33.0
+          },
+          {
+            "undisturbed_water_level_elevation_m": 137.2,
+            "rcp85_recharge_change_fraction": 0.0286,
+            "water_column_height_m": 138.0,
+            "rcp85_water_column_change_m": 3.9468,
+            "rcp85_projected_water_level_elevation_m": 133.2532,
+            "rcp45_water_column_change_m": 3.3855,
+            "rcp45_projected_water_level_elevation_m": 133.81449999999998,
+            "allowable_water_level_elevation_m": 110.19999999999999
+          },
+          {
+            "undisturbed_water_level_elevation_m": 215.0,
+            "rcp85_recharge_change_fraction": 0.0286,
+            "water_column_height_m": 90.0,
+            "rcp85_water_column_change_m": 2.574,
+            "rcp85_projected_water_level_elevation_m": 212.426,
+            "rcp45_water_column_change_m": 2.1959999999999997,
+            "rcp45_projected_water_level_elevation_m": 212.804,
+            "allowable_water_level_elevation_m": 197.0
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000K2S037",
+      "name": "Карстови води в Предбалкана",
+      "climate": {
+        "has_published_rows": false,
+        "rcp85": [],
+        "rcp45": [],
+        "comparison": []
+      }
+    },
+    {
+      "code": "BG1G0000QAL001",
+      "name": "Порови води в Кватернера - Брегово-Новоселска низина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 44.2,
+            "recharge_change_fraction": 0.0890909090909091,
+            "water_column_height_m": 10.5,
+            "water_column_change_m": 0.9354545454545455,
+            "projected_water_level_elevation_m": 43.264545454545456
+          },
+          {
+            "undisturbed_water_level_elevation_m": 34.5,
+            "recharge_change_fraction": 0.0890909090909091,
+            "water_column_height_m": 10.5,
+            "water_column_change_m": 0.9354545454545455,
+            "projected_water_level_elevation_m": 33.56454545454545
+          },
+          {
+            "undisturbed_water_level_elevation_m": 34.85,
+            "recharge_change_fraction": 0.0890909090909091,
+            "water_column_height_m": 21.85,
+            "water_column_change_m": 1.946636363636364,
+            "projected_water_level_elevation_m": 32.903363636363636
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 44.2,
+            "recharge_change_fraction": 0.0491,
+            "water_column_height_m": 10.5,
+            "water_column_change_m": 0.51555,
+            "projected_water_level_elevation_m": 43.684450000000005
+          },
+          {
+            "undisturbed_water_level_elevation_m": 34.5,
+            "recharge_change_fraction": 0.0491,
+            "water_column_height_m": 10.5,
+            "water_column_change_m": 0.51555,
+            "projected_water_level_elevation_m": 33.98445
+          },
+          {
+            "undisturbed_water_level_elevation_m": 34.85,
+            "recharge_change_fraction": 0.0491,
+            "water_column_height_m": 21.85,
+            "water_column_change_m": 1.072835,
+            "projected_water_level_elevation_m": 33.777165000000004
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 44.2,
+            "rcp85_recharge_change_fraction": 0.0890909090909091,
+            "water_column_height_m": 10.5,
+            "rcp85_water_column_change_m": 0.9354545454545455,
+            "rcp85_projected_water_level_elevation_m": 43.264545454545456,
+            "rcp45_water_column_change_m": 0.5351899999999999,
+            "rcp45_projected_water_level_elevation_m": 43.66481,
+            "allowable_water_level_elevation_m": 37.900000000000006
+          },
+          {
+            "undisturbed_water_level_elevation_m": 34.5,
+            "rcp85_recharge_change_fraction": 0.0890909090909091,
+            "water_column_height_m": 10.5,
+            "rcp85_water_column_change_m": 0.9354545454545455,
+            "rcp85_projected_water_level_elevation_m": 33.56454545454545,
+            "rcp45_water_column_change_m": 0.4157133333333333,
+            "rcp45_projected_water_level_elevation_m": 34.084286666666664,
+            "allowable_water_level_elevation_m": 28.2
+          },
+          {
+            "undisturbed_water_level_elevation_m": 34.85,
+            "rcp85_recharge_change_fraction": 0.0890909090909091,
+            "water_column_height_m": 21.85,
+            "rcp85_water_column_change_m": 1.946636363636364,
+            "rcp85_projected_water_level_elevation_m": 32.903363636363636,
+            "rcp45_water_column_change_m": 0.9459115,
+            "rcp45_projected_water_level_elevation_m": 33.9040885,
+            "allowable_water_level_elevation_m": 21.740000000000002
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL002",
+      "name": "Порови води в Кватернера - Видинска низина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 31.53,
+            "recharge_change_fraction": 0.0887500000000001,
+            "water_column_height_m": 12.58,
+            "water_column_change_m": 1.1164750000000014,
+            "projected_water_level_elevation_m": 30.413525
+          },
+          {
+            "undisturbed_water_level_elevation_m": 29.74,
+            "recharge_change_fraction": 0.0887500000000001,
+            "water_column_height_m": 11.719999999999999,
+            "water_column_change_m": 1.0401500000000012,
+            "projected_water_level_elevation_m": 28.699849999999998
+          },
+          {
+            "undisturbed_water_level_elevation_m": 30.9,
+            "recharge_change_fraction": 0.0887500000000001,
+            "water_column_height_m": 6.9,
+            "water_column_change_m": 0.6123750000000008,
+            "projected_water_level_elevation_m": 30.287625
+          },
+          {
+            "undisturbed_water_level_elevation_m": 33.5,
+            "recharge_change_fraction": 0.0887500000000001,
+            "water_column_height_m": 24.5,
+            "water_column_change_m": 2.1743750000000026,
+            "projected_water_level_elevation_m": 31.325625
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 31.53,
+            "recharge_change_fraction": 0.0438,
+            "water_column_height_m": 12.58,
+            "water_column_change_m": 0.5510039999999999,
+            "projected_water_level_elevation_m": 30.978996000000002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 29.74,
+            "recharge_change_fraction": 0.0438,
+            "water_column_height_m": 11.719999999999999,
+            "water_column_change_m": 0.5133359999999999,
+            "projected_water_level_elevation_m": 29.226664
+          },
+          {
+            "undisturbed_water_level_elevation_m": 30.9,
+            "recharge_change_fraction": 0.0438,
+            "water_column_height_m": 6.9,
+            "water_column_change_m": 0.30222,
+            "projected_water_level_elevation_m": 30.59778
+          },
+          {
+            "undisturbed_water_level_elevation_m": 33.5,
+            "recharge_change_fraction": 0.0438,
+            "water_column_height_m": 24.5,
+            "water_column_change_m": 1.0731,
+            "projected_water_level_elevation_m": 32.4269
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 31.53,
+            "rcp85_recharge_change_fraction": 0.0887500000000001,
+            "water_column_height_m": 12.58,
+            "rcp85_water_column_change_m": 1.1164750000000014,
+            "rcp85_projected_water_level_elevation_m": 30.413525,
+            "rcp45_water_column_change_m": 0.54260754,
+            "rcp45_projected_water_level_elevation_m": 30.987392460000002,
+            "allowable_water_level_elevation_m": 23.982
+          },
+          {
+            "undisturbed_water_level_elevation_m": 29.74,
+            "rcp85_recharge_change_fraction": 0.0887500000000001,
+            "water_column_height_m": 11.719999999999999,
+            "rcp85_water_column_change_m": 1.0401500000000012,
+            "rcp85_projected_water_level_elevation_m": 28.699849999999998,
+            "rcp45_water_column_change_m": 0.51047805,
+            "rcp45_projected_water_level_elevation_m": 29.22952195,
+            "allowable_water_level_elevation_m": 22.708000000000002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 30.9,
+            "rcp85_recharge_change_fraction": 0.0887500000000001,
+            "water_column_height_m": 6.9,
+            "rcp85_water_column_change_m": 0.6123750000000008,
+            "rcp85_projected_water_level_elevation_m": 30.287625,
+            "rcp45_water_column_change_m": 0.30222,
+            "rcp45_projected_water_level_elevation_m": 30.59778,
+            "allowable_water_level_elevation_m": 26.759999999999998
+          },
+          {
+            "undisturbed_water_level_elevation_m": 33.5,
+            "rcp85_recharge_change_fraction": 0.0887500000000001,
+            "water_column_height_m": 24.5,
+            "rcp85_water_column_change_m": 2.1743750000000026,
+            "rcp85_projected_water_level_elevation_m": 31.325625,
+            "rcp45_water_column_change_m": 1.07529,
+            "rcp45_projected_water_level_elevation_m": 32.42471,
+            "allowable_water_level_elevation_m": 18.8
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL003",
+      "name": "Порови води в Кватернера - Арчар-Орсойска низина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 28.84,
+            "recharge_change_fraction": 0.0866666666666667,
+            "water_column_height_m": 5.13,
+            "water_column_change_m": 4.566000000000001,
+            "projected_water_level_elevation_m": 24.554000000000002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 31.5,
+            "recharge_change_fraction": 0.0866666666666667,
+            "water_column_height_m": 8.0,
+            "water_column_change_m": 5.042000000000001,
+            "projected_water_level_elevation_m": 26.458
+          },
+          {
+            "undisturbed_water_level_elevation_m": 27.15,
+            "recharge_change_fraction": 0.0866666666666667,
+            "water_column_height_m": 18.650000000000002,
+            "water_column_change_m": 4.172,
+            "projected_water_level_elevation_m": 22.977999999999998
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 28.84,
+            "recharge_change_fraction": 0.0467,
+            "water_column_height_m": 5.13,
+            "water_column_change_m": 4.566000000000001,
+            "projected_water_level_elevation_m": 24.554000000000002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 31.5,
+            "recharge_change_fraction": 0.0467,
+            "water_column_height_m": 8.0,
+            "water_column_change_m": 5.042000000000001,
+            "projected_water_level_elevation_m": 26.458
+          },
+          {
+            "undisturbed_water_level_elevation_m": 27.15,
+            "recharge_change_fraction": 0.0467,
+            "water_column_height_m": 18.650000000000002,
+            "water_column_change_m": 4.172,
+            "projected_water_level_elevation_m": 22.977999999999998
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 28.84,
+            "rcp85_recharge_change_fraction": 0.0866666666666667,
+            "water_column_height_m": 5.13,
+            "rcp85_water_column_change_m": 4.566000000000001,
+            "rcp85_projected_water_level_elevation_m": 24.554000000000002,
+            "rcp45_water_column_change_m": 4.566000000000001,
+            "rcp45_projected_water_level_elevation_m": 24.554000000000002,
+            "allowable_water_level_elevation_m": 25.76
+          },
+          {
+            "undisturbed_water_level_elevation_m": 31.5,
+            "rcp85_recharge_change_fraction": 0.0866666666666667,
+            "water_column_height_m": 8.0,
+            "rcp85_water_column_change_m": 5.042000000000001,
+            "rcp85_projected_water_level_elevation_m": 26.458,
+            "rcp45_water_column_change_m": 5.042000000000001,
+            "rcp45_projected_water_level_elevation_m": 26.458,
+            "allowable_water_level_elevation_m": 26.7
+          },
+          {
+            "undisturbed_water_level_elevation_m": 27.15,
+            "rcp85_recharge_change_fraction": 0.0866666666666667,
+            "water_column_height_m": 18.650000000000002,
+            "rcp85_water_column_change_m": 4.172,
+            "rcp85_projected_water_level_elevation_m": 22.977999999999998,
+            "rcp45_water_column_change_m": 4.172,
+            "rcp45_projected_water_level_elevation_m": 22.977999999999998,
+            "allowable_water_level_elevation_m": 15.96
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL004",
+      "name": "Порови води в Кватернера - Цибърска низина",
+      "climate": {
+        "has_published_rows": false,
+        "rcp85": [],
+        "rcp45": [],
+        "comparison": []
+      }
+    },
+    {
+      "code": "BG1G0000QAL005",
+      "name": "Порови води в Кватернера - Козлодуйска низина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 25.23,
+            "recharge_change_fraction": 0.087499,
+            "water_column_height_m": 9.46,
+            "water_column_change_m": 3.7880000000000003,
+            "projected_water_level_elevation_m": 21.442
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 25.23,
+            "recharge_change_fraction": 0.05,
+            "water_column_height_m": 9.46,
+            "water_column_change_m": 3.7880000000000003,
+            "projected_water_level_elevation_m": 21.442
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 25.23,
+            "rcp85_recharge_change_fraction": 0.087499,
+            "water_column_height_m": 9.46,
+            "rcp85_water_column_change_m": 3.7880000000000003,
+            "rcp85_projected_water_level_elevation_m": 21.442,
+            "rcp45_water_column_change_m": 3.7880000000000003,
+            "rcp45_projected_water_level_elevation_m": 21.442,
+            "allowable_water_level_elevation_m": 19.554000000000002
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL006",
+      "name": "Порови води в Кватернера - Островска низина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 19.37,
+            "recharge_change_fraction": 0.024999,
+            "water_column_height_m": 6.47,
+            "water_column_change_m": 0.16174353,
+            "projected_water_level_elevation_m": 19.208256470000002
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 19.37,
+            "recharge_change_fraction": 0.025,
+            "water_column_height_m": 6.47,
+            "water_column_change_m": 0.16175,
+            "projected_water_level_elevation_m": 19.20825
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 19.37,
+            "rcp85_recharge_change_fraction": 0.024999,
+            "water_column_height_m": 6.47,
+            "rcp85_water_column_change_m": 0.16174353,
+            "rcp85_projected_water_level_elevation_m": 19.208256470000002,
+            "rcp45_water_column_change_m": 0.32700000000000007,
+            "rcp45_projected_water_level_elevation_m": 19.043,
+            "allowable_water_level_elevation_m": 15.487999999999998
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL007",
+      "name": "Порови води в Кватернера - Карабоазка низина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 21.16,
+            "recharge_change_fraction": 0.0315,
+            "water_column_height_m": 2.4099999999999997,
+            "water_column_change_m": 0.075915,
+            "projected_water_level_elevation_m": 21.084085
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 21.16,
+            "recharge_change_fraction": 0.0674,
+            "water_column_height_m": 2.4099999999999997,
+            "water_column_change_m": 0.162434,
+            "projected_water_level_elevation_m": 20.997566
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 21.16,
+            "rcp85_recharge_change_fraction": 0.0315,
+            "water_column_height_m": 2.4099999999999997,
+            "rcp85_water_column_change_m": 0.075915,
+            "rcp85_projected_water_level_elevation_m": 21.084085,
+            "rcp45_water_column_change_m": 1.0022380000000002,
+            "rcp45_projected_water_level_elevation_m": 20.157761999999998,
+            "allowable_water_level_elevation_m": 19.714
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL008",
+      "name": "Порови води в Кватернера - Беленско-Свищовска низина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 18.04,
+            "recharge_change_fraction": 0.0827,
+            "water_column_height_m": 11.75,
+            "water_column_change_m": 0.971725,
+            "projected_water_level_elevation_m": 17.068275
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 18.04,
+            "recharge_change_fraction": 0.1507,
+            "water_column_height_m": 11.75,
+            "water_column_change_m": 1.770725,
+            "projected_water_level_elevation_m": 16.269275
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 18.04,
+            "rcp85_recharge_change_fraction": 0.0827,
+            "water_column_height_m": 11.75,
+            "rcp85_water_column_change_m": 0.971725,
+            "rcp85_projected_water_level_elevation_m": 17.068275,
+            "rcp45_water_column_change_m": 1.770725,
+            "rcp45_projected_water_level_elevation_m": 16.269275,
+            "allowable_water_level_elevation_m": 11.355999999999998
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL009",
+      "name": "Порови води в Кватернера - Вардим-Новградска низина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 19.0,
+            "recharge_change_fraction": 0.0385,
+            "water_column_height_m": 14.0,
+            "water_column_change_m": 0.539,
+            "projected_water_level_elevation_m": 18.461
+          },
+          {
+            "undisturbed_water_level_elevation_m": 17.5,
+            "recharge_change_fraction": 0.0385,
+            "water_column_height_m": 16.5,
+            "water_column_change_m": 0.63525,
+            "projected_water_level_elevation_m": 16.86475
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 19.0,
+            "recharge_change_fraction": 0.1385,
+            "water_column_height_m": 14.0,
+            "water_column_change_m": 1.939,
+            "projected_water_level_elevation_m": 17.061
+          },
+          {
+            "undisturbed_water_level_elevation_m": 17.5,
+            "recharge_change_fraction": 0.1385,
+            "water_column_height_m": 16.5,
+            "water_column_change_m": 2.28525,
+            "projected_water_level_elevation_m": 15.21475
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 19.0,
+            "rcp85_recharge_change_fraction": 0.0385,
+            "water_column_height_m": 14.0,
+            "rcp85_water_column_change_m": 0.539,
+            "rcp85_projected_water_level_elevation_m": 18.461,
+            "rcp45_water_column_change_m": 1.939,
+            "rcp45_projected_water_level_elevation_m": 17.061,
+            "allowable_water_level_elevation_m": 10.6
+          },
+          {
+            "undisturbed_water_level_elevation_m": 17.5,
+            "rcp85_recharge_change_fraction": 0.0385,
+            "water_column_height_m": 16.5,
+            "rcp85_water_column_change_m": 0.63525,
+            "rcp85_projected_water_level_elevation_m": 16.86475,
+            "rcp45_water_column_change_m": 2.28525,
+            "rcp45_projected_water_level_elevation_m": 15.21475,
+            "allowable_water_level_elevation_m": 7.6
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL010",
+      "name": "Порови води в Кватернера - Бръшлянска низина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 14.0,
+            "recharge_change_fraction": -0.0701,
+            "water_column_height_m": 1.3000000000000007,
+            "water_column_change_m": -0.09113000000000004,
+            "projected_water_level_elevation_m": 14.09113
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 14.0,
+            "recharge_change_fraction": 0.0368,
+            "water_column_height_m": 1.3000000000000007,
+            "water_column_change_m": 0.04784000000000003,
+            "projected_water_level_elevation_m": 13.95216
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 14.0,
+            "rcp85_recharge_change_fraction": -0.0701,
+            "water_column_height_m": 1.3000000000000007,
+            "rcp85_water_column_change_m": -0.09113000000000004,
+            "rcp85_projected_water_level_elevation_m": 14.09113,
+            "rcp45_water_column_change_m": 0.283728,
+            "rcp45_projected_water_level_elevation_m": 13.716272,
+            "allowable_water_level_elevation_m": 13.219999999999999
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL011",
+      "name": "Порови води в Кватернера - Попинско-Гарванска низина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 10.5,
+            "recharge_change_fraction": -0.075,
+            "water_column_height_m": 5.5,
+            "water_column_change_m": -0.4125,
+            "projected_water_level_elevation_m": 10.9125
+          },
+          {
+            "undisturbed_water_level_elevation_m": 14.0,
+            "recharge_change_fraction": -0.075,
+            "water_column_height_m": 5.0,
+            "water_column_change_m": -0.375,
+            "projected_water_level_elevation_m": 14.375
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 10.5,
+            "recharge_change_fraction": 0.0375,
+            "water_column_height_m": 5.5,
+            "water_column_change_m": 0.20625,
+            "projected_water_level_elevation_m": 10.29375
+          },
+          {
+            "undisturbed_water_level_elevation_m": 14.0,
+            "recharge_change_fraction": 0.0375,
+            "water_column_height_m": 5.0,
+            "water_column_change_m": 0.1875,
+            "projected_water_level_elevation_m": 13.8125
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 10.5,
+            "rcp85_recharge_change_fraction": -0.075,
+            "water_column_height_m": 5.5,
+            "rcp85_water_column_change_m": -0.4125,
+            "rcp85_projected_water_level_elevation_m": 10.9125,
+            "rcp45_water_column_change_m": 0.403125,
+            "rcp45_projected_water_level_elevation_m": 10.096875,
+            "allowable_water_level_elevation_m": 7.2
+          },
+          {
+            "undisturbed_water_level_elevation_m": 14.0,
+            "rcp85_recharge_change_fraction": -0.075,
+            "water_column_height_m": 5.0,
+            "rcp85_water_column_change_m": -0.375,
+            "rcp85_projected_water_level_elevation_m": 14.375,
+            "rcp45_water_column_change_m": 0.48562500000000003,
+            "rcp45_projected_water_level_elevation_m": 13.514375,
+            "allowable_water_level_elevation_m": 11.0
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL012",
+      "name": "Порови води в Кватернера - Айдемирска низина",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 14.63,
+            "recharge_change_fraction": -0.0688,
+            "water_column_height_m": 5.85,
+            "water_column_change_m": 2.092,
+            "projected_water_level_elevation_m": 14.658
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 14.63,
+            "recharge_change_fraction": 0.0375,
+            "water_column_height_m": 5.85,
+            "water_column_change_m": 2.092,
+            "projected_water_level_elevation_m": 14.658
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 14.63,
+            "rcp85_recharge_change_fraction": -0.0688,
+            "water_column_height_m": 5.85,
+            "rcp85_water_column_change_m": 2.092,
+            "rcp85_projected_water_level_elevation_m": 14.658,
+            "rcp45_water_column_change_m": 2.092,
+            "rcp45_projected_water_level_elevation_m": 14.658,
+            "allowable_water_level_elevation_m": 11.120000000000001
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL013",
+      "name": "Порови води в Кватернера - р. Лом",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 79.98,
+            "recharge_change_fraction": 0.0851,
+            "water_column_height_m": 2.63,
+            "water_column_change_m": 0.22381299999999998,
+            "projected_water_level_elevation_m": 79.756187
+          },
+          {
+            "undisturbed_water_level_elevation_m": 67.3,
+            "recharge_change_fraction": 0.0851,
+            "water_column_height_m": 1.2999999999999998,
+            "water_column_change_m": 0.11062999999999998,
+            "projected_water_level_elevation_m": 67.18937
+          },
+          {
+            "undisturbed_water_level_elevation_m": 37.0,
+            "recharge_change_fraction": 0.0851,
+            "water_column_height_m": 4.0,
+            "water_column_change_m": 0.3404,
+            "projected_water_level_elevation_m": 36.6596
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 79.98,
+            "recharge_change_fraction": 0.0479,
+            "water_column_height_m": 2.63,
+            "water_column_change_m": 0.12597699999999998,
+            "projected_water_level_elevation_m": 79.854023
+          },
+          {
+            "undisturbed_water_level_elevation_m": 67.3,
+            "recharge_change_fraction": 0.0479,
+            "water_column_height_m": 1.2999999999999998,
+            "water_column_change_m": 0.06226999999999999,
+            "projected_water_level_elevation_m": 67.23773
+          },
+          {
+            "undisturbed_water_level_elevation_m": 37.0,
+            "recharge_change_fraction": 0.0479,
+            "water_column_height_m": 4.0,
+            "water_column_change_m": 0.1916,
+            "projected_water_level_elevation_m": 36.8084
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 79.98,
+            "rcp85_recharge_change_fraction": 0.0851,
+            "water_column_height_m": 2.63,
+            "rcp85_water_column_change_m": 0.22381299999999998,
+            "rcp85_projected_water_level_elevation_m": 79.756187,
+            "rcp45_water_column_change_m": 3.5297509999999996,
+            "rcp45_projected_water_level_elevation_m": 76.450249,
+            "allowable_water_level_elevation_m": 78.398
+          },
+          {
+            "undisturbed_water_level_elevation_m": 67.3,
+            "rcp85_recharge_change_fraction": 0.0851,
+            "water_column_height_m": 1.2999999999999998,
+            "rcp85_water_column_change_m": 0.11062999999999998,
+            "rcp85_projected_water_level_elevation_m": 67.18937,
+            "rcp45_water_column_change_m": 2.922379,
+            "rcp45_projected_water_level_elevation_m": 64.37762099999999,
+            "allowable_water_level_elevation_m": 66.52
+          },
+          {
+            "undisturbed_water_level_elevation_m": 37.0,
+            "rcp85_recharge_change_fraction": 0.0851,
+            "water_column_height_m": 4.0,
+            "rcp85_water_column_change_m": 0.3404,
+            "rcp85_projected_water_level_elevation_m": 36.6596,
+            "rcp45_water_column_change_m": 1.471009,
+            "rcp45_projected_water_level_elevation_m": 35.528991,
+            "allowable_water_level_elevation_m": 34.6
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL014",
+      "name": "Порови води в Кватернера - р. Цибрица",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 35.1,
+            "recharge_change_fraction": 0.0918,
+            "water_column_height_m": 0.8599999999999994,
+            "water_column_change_m": 0.07894799999999995,
+            "projected_water_level_elevation_m": 35.021052000000005
+          },
+          {
+            "undisturbed_water_level_elevation_m": 67.8,
+            "recharge_change_fraction": 0.0918,
+            "water_column_height_m": 2.8,
+            "water_column_change_m": 0.25704,
+            "projected_water_level_elevation_m": 67.54296
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 35.1,
+            "recharge_change_fraction": 0.051,
+            "water_column_height_m": 0.8599999999999994,
+            "water_column_change_m": 0.04385999999999997,
+            "projected_water_level_elevation_m": 35.05614
+          },
+          {
+            "undisturbed_water_level_elevation_m": 67.8,
+            "recharge_change_fraction": 0.051,
+            "water_column_height_m": 2.8,
+            "water_column_change_m": 0.14279999999999998,
+            "projected_water_level_elevation_m": 67.6572
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 35.1,
+            "rcp85_recharge_change_fraction": 0.0918,
+            "water_column_height_m": 0.8599999999999994,
+            "rcp85_water_column_change_m": 0.07894799999999995,
+            "rcp85_projected_water_level_elevation_m": 35.021052000000005,
+            "rcp45_water_column_change_m": 0.04385999999999997,
+            "rcp45_projected_water_level_elevation_m": 35.05614,
+            "allowable_water_level_elevation_m": 34.584
+          },
+          {
+            "undisturbed_water_level_elevation_m": 67.8,
+            "rcp85_recharge_change_fraction": 0.0918,
+            "water_column_height_m": 2.8,
+            "rcp85_water_column_change_m": 0.25704,
+            "rcp85_projected_water_level_elevation_m": 67.54296,
+            "rcp45_water_column_change_m": 0.14279999999999998,
+            "rcp45_projected_water_level_elevation_m": 67.6572,
+            "allowable_water_level_elevation_m": 66.11999999999999
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL015",
+      "name": "Порови води в Кватернера - р. Огоста",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 50.36,
+            "recharge_change_fraction": 0.088,
+            "water_column_height_m": 2.0000000000000004,
+            "water_column_change_m": 0.17600000000000002,
+            "projected_water_level_elevation_m": 50.184
+          },
+          {
+            "undisturbed_water_level_elevation_m": 80.36,
+            "recharge_change_fraction": 0.088,
+            "water_column_height_m": 4.79,
+            "water_column_change_m": 0.42152,
+            "projected_water_level_elevation_m": 79.93848
+          },
+          {
+            "undisturbed_water_level_elevation_m": 34.99,
+            "recharge_change_fraction": 0.088,
+            "water_column_height_m": 7.0,
+            "water_column_change_m": 0.616,
+            "projected_water_level_elevation_m": 34.374
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 50.36,
+            "recharge_change_fraction": 0.0496,
+            "water_column_height_m": 2.0000000000000004,
+            "water_column_change_m": 0.09920000000000002,
+            "projected_water_level_elevation_m": 50.260799999999996
+          },
+          {
+            "undisturbed_water_level_elevation_m": 80.36,
+            "recharge_change_fraction": 0.0496,
+            "water_column_height_m": 4.79,
+            "water_column_change_m": 0.237584,
+            "projected_water_level_elevation_m": 80.122416
+          },
+          {
+            "undisturbed_water_level_elevation_m": 34.99,
+            "recharge_change_fraction": 0.0496,
+            "water_column_height_m": 7.0,
+            "water_column_change_m": 0.3472,
+            "projected_water_level_elevation_m": 34.6428
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 50.36,
+            "rcp85_recharge_change_fraction": 0.088,
+            "water_column_height_m": 2.0000000000000004,
+            "rcp85_water_column_change_m": 0.17600000000000002,
+            "rcp85_projected_water_level_elevation_m": 50.184,
+            "rcp45_water_column_change_m": 2.185872,
+            "rcp45_projected_water_level_elevation_m": 48.174127999999996,
+            "allowable_water_level_elevation_m": 49.16
+          },
+          {
+            "undisturbed_water_level_elevation_m": 80.36,
+            "rcp85_recharge_change_fraction": 0.088,
+            "water_column_height_m": 4.79,
+            "rcp85_water_column_change_m": 0.42152,
+            "rcp85_projected_water_level_elevation_m": 79.93848,
+            "rcp45_water_column_change_m": 3.6738719999999994,
+            "rcp45_projected_water_level_elevation_m": 76.686128,
+            "allowable_water_level_elevation_m": 77.486
+          },
+          {
+            "undisturbed_water_level_elevation_m": 34.99,
+            "rcp85_recharge_change_fraction": 0.088,
+            "water_column_height_m": 7.0,
+            "rcp85_water_column_change_m": 0.616,
+            "rcp85_projected_water_level_elevation_m": 34.374,
+            "rcp45_water_column_change_m": 1.4235200000000001,
+            "rcp45_projected_water_level_elevation_m": 33.56648,
+            "allowable_water_level_elevation_m": 30.790000000000003
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL016",
+      "name": "Порови води в Кватернера - р. Скът",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 30.03,
+            "recharge_change_fraction": 0.0879,
+            "water_column_height_m": 2.8699999999999997,
+            "water_column_change_m": 0.25227299999999997,
+            "projected_water_level_elevation_m": 29.777727000000002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 114.37,
+            "recharge_change_fraction": 0.0879,
+            "water_column_height_m": 4.659999999999999,
+            "water_column_change_m": 0.409614,
+            "projected_water_level_elevation_m": 113.960386
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 30.03,
+            "recharge_change_fraction": 0.0485,
+            "water_column_height_m": 2.8699999999999997,
+            "water_column_change_m": 0.13919499999999999,
+            "projected_water_level_elevation_m": 29.890805
+          },
+          {
+            "undisturbed_water_level_elevation_m": 114.37,
+            "recharge_change_fraction": 0.0485,
+            "water_column_height_m": 4.659999999999999,
+            "water_column_change_m": 0.22600999999999996,
+            "projected_water_level_elevation_m": 114.14399
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 30.03,
+            "rcp85_recharge_change_fraction": 0.0879,
+            "water_column_height_m": 2.8699999999999997,
+            "rcp85_water_column_change_m": 0.25227299999999997,
+            "rcp85_projected_water_level_elevation_m": 29.777727000000002,
+            "rcp45_water_column_change_m": 1.1513900000000001,
+            "rcp45_projected_water_level_elevation_m": 28.878610000000002,
+            "allowable_water_level_elevation_m": 28.307999999999996
+          },
+          {
+            "undisturbed_water_level_elevation_m": 114.37,
+            "rcp85_recharge_change_fraction": 0.0879,
+            "water_column_height_m": 4.659999999999999,
+            "rcp85_water_column_change_m": 0.409614,
+            "rcp85_projected_water_level_elevation_m": 113.960386,
+            "rcp45_water_column_change_m": 5.24188,
+            "rcp45_projected_water_level_elevation_m": 109.12812000000001,
+            "allowable_water_level_elevation_m": 111.57399999999998
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL017",
+      "name": "Порови води в Кватернера - р. Искър",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 31.75,
+            "recharge_change_fraction": 0.0292,
+            "water_column_height_m": 6.840000000000001,
+            "water_column_change_m": 5.130000000000001,
+            "projected_water_level_elevation_m": 26.810000000000002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 64.16,
+            "recharge_change_fraction": 0.0292,
+            "water_column_height_m": 3.8,
+            "water_column_change_m": 11.574,
+            "projected_water_level_elevation_m": 52.586
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 31.75,
+            "recharge_change_fraction": 0.0308,
+            "water_column_height_m": 6.840000000000001,
+            "water_column_change_m": 5.130000000000001,
+            "projected_water_level_elevation_m": 26.810000000000002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 64.16,
+            "recharge_change_fraction": 0.0308,
+            "water_column_height_m": 3.8,
+            "water_column_change_m": 11.574,
+            "projected_water_level_elevation_m": 52.586
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 31.75,
+            "rcp85_recharge_change_fraction": 0.0292,
+            "water_column_height_m": 6.840000000000001,
+            "rcp85_water_column_change_m": 5.130000000000001,
+            "rcp85_projected_water_level_elevation_m": 26.810000000000002,
+            "rcp45_water_column_change_m": 5.130000000000001,
+            "rcp45_projected_water_level_elevation_m": 26.810000000000002,
+            "allowable_water_level_elevation_m": 29.470000000000002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 64.16,
+            "rcp85_recharge_change_fraction": 0.0292,
+            "water_column_height_m": 3.8,
+            "rcp85_water_column_change_m": 11.574,
+            "rcp85_projected_water_level_elevation_m": 52.586,
+            "rcp45_water_column_change_m": 11.574,
+            "rcp45_projected_water_level_elevation_m": 52.586,
+            "allowable_water_level_elevation_m": 60.056
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL018",
+      "name": "Порови води в Кватернера - р. Вит",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 65.49,
+            "recharge_change_fraction": 0.0314,
+            "water_column_height_m": 2.26,
+            "water_column_change_m": 0.07096399999999999,
+            "projected_water_level_elevation_m": 65.41903599999999
+          },
+          {
+            "undisturbed_water_level_elevation_m": 46.94,
+            "recharge_change_fraction": 0.0314,
+            "water_column_height_m": 6.2,
+            "water_column_change_m": 0.19468,
+            "projected_water_level_elevation_m": 46.74532
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 65.49,
+            "recharge_change_fraction": 0.0323,
+            "water_column_height_m": 2.26,
+            "water_column_change_m": 0.072998,
+            "projected_water_level_elevation_m": 65.417002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 46.94,
+            "recharge_change_fraction": 0.0323,
+            "water_column_height_m": 6.2,
+            "water_column_change_m": 0.20026000000000002,
+            "projected_water_level_elevation_m": 46.73974
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 65.49,
+            "rcp85_recharge_change_fraction": 0.0314,
+            "water_column_height_m": 2.26,
+            "rcp85_water_column_change_m": 0.07096399999999999,
+            "rcp85_projected_water_level_elevation_m": 65.41903599999999,
+            "rcp45_water_column_change_m": 0.072998,
+            "rcp45_projected_water_level_elevation_m": 65.417002,
+            "allowable_water_level_elevation_m": 64.116
+          },
+          {
+            "undisturbed_water_level_elevation_m": 46.94,
+            "rcp85_recharge_change_fraction": 0.0314,
+            "water_column_height_m": 6.2,
+            "rcp85_water_column_change_m": 0.19468,
+            "rcp85_projected_water_level_elevation_m": 46.74532,
+            "rcp45_water_column_change_m": 0.20026000000000002,
+            "rcp45_projected_water_level_elevation_m": 46.73974,
+            "allowable_water_level_elevation_m": 43.220000000000006
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL019",
+      "name": "Порови води в Кватернера - р. Осъм",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 55.98,
+            "recharge_change_fraction": 0.0828,
+            "water_column_height_m": 3.78,
+            "water_column_change_m": 0.312984,
+            "projected_water_level_elevation_m": 55.667016
+          },
+          {
+            "undisturbed_water_level_elevation_m": 151.8,
+            "recharge_change_fraction": 0.0828,
+            "water_column_height_m": 3.7,
+            "water_column_change_m": 0.30636,
+            "projected_water_level_elevation_m": 151.49364
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 55.98,
+            "recharge_change_fraction": 0.15,
+            "water_column_height_m": 3.78,
+            "water_column_change_m": 0.567,
+            "projected_water_level_elevation_m": 55.413
+          },
+          {
+            "undisturbed_water_level_elevation_m": 151.8,
+            "recharge_change_fraction": 0.15,
+            "water_column_height_m": 3.7,
+            "water_column_change_m": 0.555,
+            "projected_water_level_elevation_m": 151.245
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 55.98,
+            "rcp85_recharge_change_fraction": 0.0828,
+            "water_column_height_m": 3.78,
+            "rcp85_water_column_change_m": 0.312984,
+            "rcp85_projected_water_level_elevation_m": 55.667016,
+            "rcp45_water_column_change_m": 0.567,
+            "rcp45_projected_water_level_elevation_m": 55.413,
+            "allowable_water_level_elevation_m": 53.711999999999996
+          },
+          {
+            "undisturbed_water_level_elevation_m": 151.8,
+            "rcp85_recharge_change_fraction": 0.0828,
+            "water_column_height_m": 3.7,
+            "rcp85_water_column_change_m": 0.30636,
+            "rcp85_projected_water_level_elevation_m": 151.49364,
+            "rcp45_water_column_change_m": 0.21899999999999992,
+            "rcp45_projected_water_level_elevation_m": 151.58100000000002,
+            "allowable_water_level_elevation_m": 149.57999999999998
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL020",
+      "name": "Порови води в Кватернера - р. Янтра",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 53.55,
+            "recharge_change_fraction": 0.0058,
+            "water_column_height_m": 3.17,
+            "water_column_change_m": 0.018386,
+            "projected_water_level_elevation_m": 53.531614
+          },
+          {
+            "undisturbed_water_level_elevation_m": 41.66,
+            "recharge_change_fraction": 0.0058,
+            "water_column_height_m": 2.91,
+            "water_column_change_m": 0.016878,
+            "projected_water_level_elevation_m": 41.643122
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 53.55,
+            "recharge_change_fraction": 0.1068,
+            "water_column_height_m": 3.17,
+            "water_column_change_m": 0.338556,
+            "projected_water_level_elevation_m": 53.211444
+          },
+          {
+            "undisturbed_water_level_elevation_m": 41.66,
+            "recharge_change_fraction": 0.1068,
+            "water_column_height_m": 2.91,
+            "water_column_change_m": 0.310788,
+            "projected_water_level_elevation_m": 41.349211999999994
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 53.55,
+            "rcp85_recharge_change_fraction": 0.0058,
+            "water_column_height_m": 3.17,
+            "rcp85_water_column_change_m": 0.018386,
+            "rcp85_projected_water_level_elevation_m": 53.531614,
+            "rcp45_water_column_change_m": 0.243504,
+            "rcp45_projected_water_level_elevation_m": 53.306495999999996,
+            "allowable_water_level_elevation_m": 51.647999999999996
+          },
+          {
+            "undisturbed_water_level_elevation_m": 41.66,
+            "rcp85_recharge_change_fraction": 0.0058,
+            "water_column_height_m": 2.91,
+            "rcp85_water_column_change_m": 0.016878,
+            "rcp85_projected_water_level_elevation_m": 41.643122,
+            "rcp45_water_column_change_m": 0.310788,
+            "rcp45_projected_water_level_elevation_m": 41.349211999999994,
+            "allowable_water_level_elevation_m": 39.913999999999994
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL021",
+      "name": "Порови води в Кватернера - р. Русенски Лом и притоците м",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 178.977,
+            "recharge_change_fraction": 0.0268,
+            "water_column_height_m": 3.8,
+            "water_column_change_m": 0.10184,
+            "projected_water_level_elevation_m": 178.87516
+          },
+          {
+            "undisturbed_water_level_elevation_m": 217.49,
+            "recharge_change_fraction": 0.0268,
+            "water_column_height_m": 8.93,
+            "water_column_change_m": 0.239324,
+            "projected_water_level_elevation_m": 217.250676
+          },
+          {
+            "undisturbed_water_level_elevation_m": 176.2,
+            "recharge_change_fraction": 0.0268,
+            "water_column_height_m": 0.64,
+            "water_column_change_m": 0.017152,
+            "projected_water_level_elevation_m": 176.18284799999998
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 178.977,
+            "recharge_change_fraction": 0.061,
+            "water_column_height_m": 3.8,
+            "water_column_change_m": 0.23179999999999998,
+            "projected_water_level_elevation_m": 178.7452
+          },
+          {
+            "undisturbed_water_level_elevation_m": 217.49,
+            "recharge_change_fraction": 0.061,
+            "water_column_height_m": 8.93,
+            "water_column_change_m": 0.5447299999999999,
+            "projected_water_level_elevation_m": 216.94527000000002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 176.2,
+            "recharge_change_fraction": 0.061,
+            "water_column_height_m": 0.64,
+            "water_column_change_m": 0.03904,
+            "projected_water_level_elevation_m": 176.16096
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 178.977,
+            "rcp85_recharge_change_fraction": 0.0268,
+            "water_column_height_m": 3.8,
+            "rcp85_water_column_change_m": 0.10184,
+            "rcp85_projected_water_level_elevation_m": 178.87516,
+            "rcp45_water_column_change_m": 0.03904,
+            "rcp45_projected_water_level_elevation_m": 178.93796,
+            "allowable_water_level_elevation_m": 173.14
+          },
+          {
+            "undisturbed_water_level_elevation_m": 217.49,
+            "rcp85_recharge_change_fraction": 0.0268,
+            "water_column_height_m": 8.93,
+            "rcp85_water_column_change_m": 0.239324,
+            "rcp85_projected_water_level_elevation_m": 217.250676,
+            "rcp45_water_column_change_m": 0.23179999999999998,
+            "rcp45_projected_water_level_elevation_m": 217.25820000000002,
+            "allowable_water_level_elevation_m": 212.125
+          },
+          {
+            "undisturbed_water_level_elevation_m": 176.2,
+            "rcp85_recharge_change_fraction": 0.0268,
+            "water_column_height_m": 0.64,
+            "rcp85_water_column_change_m": 0.017152,
+            "rcp85_projected_water_level_elevation_m": 176.18284799999998,
+            "rcp45_water_column_change_m": 0.5447299999999999,
+            "rcp45_projected_water_level_elevation_m": 175.65527,
+            "allowable_water_level_elevation_m": 173.92
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL022",
+      "name": "Порови води в Кватернера - р. Росица в Севлиевската кот",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 197.52,
+            "recharge_change_fraction": 0.0071,
+            "water_column_height_m": 2.36,
+            "water_column_change_m": 0.016756,
+            "projected_water_level_elevation_m": 197.50324400000002
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 197.52,
+            "recharge_change_fraction": 0.1071,
+            "water_column_height_m": 2.36,
+            "water_column_change_m": 0.252756,
+            "projected_water_level_elevation_m": 197.267244
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 197.52,
+            "rcp85_recharge_change_fraction": 0.0071,
+            "water_column_height_m": 2.36,
+            "rcp85_water_column_change_m": 0.016756,
+            "rcp85_projected_water_level_elevation_m": 197.50324400000002,
+            "rcp45_water_column_change_m": 0.252756,
+            "rcp45_projected_water_level_elevation_m": 197.267244,
+            "allowable_water_level_elevation_m": 196.104
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QAL052",
+      "name": "Порови води в Кватернера - р. Суха",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 197.24,
+            "recharge_change_fraction": 0.075,
+            "water_column_height_m": 8.79,
+            "water_column_change_m": 0.6592499999999999,
+            "projected_water_level_elevation_m": 196.58075000000002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 193.95999999999998,
+            "recharge_change_fraction": 0.075,
+            "water_column_height_m": 5.220000000000001,
+            "water_column_change_m": 0.3915,
+            "projected_water_level_elevation_m": 193.56849999999997
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 197.24,
+            "recharge_change_fraction": 0.1,
+            "water_column_height_m": 8.79,
+            "water_column_change_m": 0.879,
+            "projected_water_level_elevation_m": 196.36100000000002
+          },
+          {
+            "undisturbed_water_level_elevation_m": 193.95999999999998,
+            "recharge_change_fraction": 0.1,
+            "water_column_height_m": 5.220000000000001,
+            "water_column_change_m": 0.5220000000000001,
+            "projected_water_level_elevation_m": 193.438
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 197.24,
+            "rcp85_recharge_change_fraction": 0.075,
+            "water_column_height_m": 8.79,
+            "rcp85_water_column_change_m": 0.6592499999999999,
+            "rcp85_projected_water_level_elevation_m": 196.58075000000002,
+            "rcp45_water_column_change_m": 0.24000000000000005,
+            "rcp45_projected_water_level_elevation_m": 197.0,
+            "allowable_water_level_elevation_m": 151.516
+          },
+          {
+            "undisturbed_water_level_elevation_m": 193.95999999999998,
+            "rcp85_recharge_change_fraction": 0.075,
+            "water_column_height_m": 5.220000000000001,
+            "rcp85_water_column_change_m": 0.3915,
+            "rcp85_projected_water_level_elevation_m": 193.56849999999997,
+            "rcp45_water_column_change_m": 0.5220000000000001,
+            "rcp45_projected_water_level_elevation_m": 193.438,
+            "allowable_water_level_elevation_m": 190.82799999999997
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QPL023",
+      "name": "Порови води в Кватернера - между реките Лом и Искър",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 66.06,
+            "recharge_change_fraction": 0.0892,
+            "water_column_height_m": 3.0,
+            "water_column_change_m": 0.2676,
+            "projected_water_level_elevation_m": 65.7924
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 66.06,
+            "recharge_change_fraction": 0.0489,
+            "water_column_height_m": 3.0,
+            "water_column_change_m": 0.1467,
+            "projected_water_level_elevation_m": 65.9133
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 66.06,
+            "rcp85_recharge_change_fraction": 0.0892,
+            "water_column_height_m": 3.0,
+            "rcp85_water_column_change_m": 0.2676,
+            "rcp85_projected_water_level_elevation_m": 65.7924,
+            "rcp45_water_column_change_m": 0.1467,
+            "rcp45_projected_water_level_elevation_m": 65.9133,
+            "allowable_water_level_elevation_m": 64.26
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QPL024",
+      "name": "Порови води в Кватернера - между реките Искър и Вит",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 40.739999999999995,
+            "recharge_change_fraction": 0.0312,
+            "water_column_height_m": 1.8800000000000008,
+            "water_column_change_m": 0.05865600000000002,
+            "projected_water_level_elevation_m": 40.681343999999996
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 40.739999999999995,
+            "recharge_change_fraction": 0.0675,
+            "water_column_height_m": 1.8800000000000008,
+            "water_column_change_m": 0.12690000000000007,
+            "projected_water_level_elevation_m": 40.613099999999996
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 40.739999999999995,
+            "rcp85_recharge_change_fraction": 0.0312,
+            "water_column_height_m": 1.8800000000000008,
+            "rcp85_water_column_change_m": 0.05865600000000002,
+            "rcp85_projected_water_level_elevation_m": 40.681343999999996,
+            "rcp45_water_column_change_m": 0.12690000000000007,
+            "rcp45_projected_water_level_elevation_m": 40.613099999999996,
+            "allowable_water_level_elevation_m": 39.611999999999995
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QPL025",
+      "name": "Порови води в Кватернера - между реките Вит и Осъм",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 66.02000000000001,
+            "recharge_change_fraction": 0.0832,
+            "water_column_height_m": 6.440000000000001,
+            "water_column_change_m": 0.5358080000000001,
+            "projected_water_level_elevation_m": 65.48419200000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": 118.3,
+            "recharge_change_fraction": 0.0832,
+            "water_column_height_m": 7.8,
+            "water_column_change_m": 0.64896,
+            "projected_water_level_elevation_m": 117.65104
+          },
+          {
+            "undisturbed_water_level_elevation_m": 199.01999999999998,
+            "recharge_change_fraction": 0.0832,
+            "water_column_height_m": 7.92,
+            "water_column_change_m": 0.658944,
+            "projected_water_level_elevation_m": 198.361056
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 66.02000000000001,
+            "recharge_change_fraction": 0.1496,
+            "water_column_height_m": 6.440000000000001,
+            "water_column_change_m": 0.9634240000000003,
+            "projected_water_level_elevation_m": 65.056576
+          },
+          {
+            "undisturbed_water_level_elevation_m": 118.3,
+            "recharge_change_fraction": 0.1496,
+            "water_column_height_m": 7.8,
+            "water_column_change_m": 1.1668800000000001,
+            "projected_water_level_elevation_m": 117.13311999999999
+          },
+          {
+            "undisturbed_water_level_elevation_m": 199.01999999999998,
+            "recharge_change_fraction": 0.1496,
+            "water_column_height_m": 7.92,
+            "water_column_change_m": 1.184832,
+            "projected_water_level_elevation_m": 197.83516799999998
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 66.02000000000001,
+            "rcp85_recharge_change_fraction": 0.0832,
+            "water_column_height_m": 6.440000000000001,
+            "rcp85_water_column_change_m": 0.5358080000000001,
+            "rcp85_projected_water_level_elevation_m": 65.48419200000001,
+            "rcp45_water_column_change_m": 0.9634240000000003,
+            "rcp45_projected_water_level_elevation_m": 65.056576,
+            "allowable_water_level_elevation_m": 62.156000000000006
+          },
+          {
+            "undisturbed_water_level_elevation_m": 118.3,
+            "rcp85_recharge_change_fraction": 0.0832,
+            "water_column_height_m": 7.8,
+            "rcp85_water_column_change_m": 0.64896,
+            "rcp85_projected_water_level_elevation_m": 117.65104,
+            "rcp45_water_column_change_m": 1.1668800000000001,
+            "rcp45_projected_water_level_elevation_m": 117.13311999999999,
+            "allowable_water_level_elevation_m": 113.62
+          },
+          {
+            "undisturbed_water_level_elevation_m": 199.01999999999998,
+            "rcp85_recharge_change_fraction": 0.0832,
+            "water_column_height_m": 7.92,
+            "rcp85_water_column_change_m": 0.658944,
+            "rcp85_projected_water_level_elevation_m": 198.361056,
+            "rcp45_water_column_change_m": 1.184832,
+            "rcp45_projected_water_level_elevation_m": 197.83516799999998,
+            "allowable_water_level_elevation_m": 194.26799999999997
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000QPL026",
+      "name": "Порови води в Кватернера - между реките Осъм и Янтра",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 111.35,
+            "recharge_change_fraction": 0.0374,
+            "water_column_height_m": 3.5,
+            "water_column_change_m": 0.13090000000000002,
+            "projected_water_level_elevation_m": 111.2191
+          },
+          {
+            "undisturbed_water_level_elevation_m": 146.0,
+            "recharge_change_fraction": 0.0374,
+            "water_column_height_m": 15.1,
+            "water_column_change_m": 0.56474,
+            "projected_water_level_elevation_m": 145.43526
+          },
+          {
+            "undisturbed_water_level_elevation_m": 103.2,
+            "recharge_change_fraction": 0.0374,
+            "water_column_height_m": 4.2,
+            "water_column_change_m": 0.15708000000000003,
+            "projected_water_level_elevation_m": 103.04292000000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": 107.3,
+            "recharge_change_fraction": 0.0374,
+            "water_column_height_m": 4.6,
+            "water_column_change_m": 0.17204,
+            "projected_water_level_elevation_m": 107.12796
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 111.35,
+            "recharge_change_fraction": 0.1072,
+            "water_column_height_m": 3.5,
+            "water_column_change_m": 0.37520000000000003,
+            "projected_water_level_elevation_m": 110.97479999999999
+          },
+          {
+            "undisturbed_water_level_elevation_m": 146.0,
+            "recharge_change_fraction": 0.1072,
+            "water_column_height_m": 15.1,
+            "water_column_change_m": 1.61872,
+            "projected_water_level_elevation_m": 144.38128
+          },
+          {
+            "undisturbed_water_level_elevation_m": 103.2,
+            "recharge_change_fraction": 0.1072,
+            "water_column_height_m": 4.2,
+            "water_column_change_m": 0.45024000000000003,
+            "projected_water_level_elevation_m": 102.74976000000001
+          },
+          {
+            "undisturbed_water_level_elevation_m": 107.3,
+            "recharge_change_fraction": 0.1072,
+            "water_column_height_m": 4.6,
+            "water_column_change_m": 0.49312,
+            "projected_water_level_elevation_m": 106.80687999999999
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 111.35,
+            "rcp85_recharge_change_fraction": 0.0374,
+            "water_column_height_m": 3.5,
+            "rcp85_water_column_change_m": 0.13090000000000002,
+            "rcp85_projected_water_level_elevation_m": 111.2191,
+            "rcp45_water_column_change_m": 0.37520000000000003,
+            "rcp45_projected_water_level_elevation_m": 110.97479999999999,
+            "allowable_water_level_elevation_m": 109.25
+          },
+          {
+            "undisturbed_water_level_elevation_m": 146.0,
+            "rcp85_recharge_change_fraction": 0.0374,
+            "water_column_height_m": 15.1,
+            "rcp85_water_column_change_m": 0.56474,
+            "rcp85_projected_water_level_elevation_m": 145.43526,
+            "rcp45_water_column_change_m": 1.61872,
+            "rcp45_projected_water_level_elevation_m": 144.38128,
+            "allowable_water_level_elevation_m": 136.94
+          },
+          {
+            "undisturbed_water_level_elevation_m": 103.2,
+            "rcp85_recharge_change_fraction": 0.0374,
+            "water_column_height_m": 4.2,
+            "rcp85_water_column_change_m": 0.15708000000000003,
+            "rcp85_projected_water_level_elevation_m": 103.04292000000001,
+            "rcp45_water_column_change_m": 0.45024000000000003,
+            "rcp45_projected_water_level_elevation_m": 102.74976000000001,
+            "allowable_water_level_elevation_m": 100.68
+          },
+          {
+            "undisturbed_water_level_elevation_m": 107.3,
+            "rcp85_recharge_change_fraction": 0.0374,
+            "water_column_height_m": 4.6,
+            "rcp85_water_column_change_m": 0.17204,
+            "rcp85_projected_water_level_elevation_m": 107.12796,
+            "rcp45_water_column_change_m": 0.49312,
+            "rcp45_projected_water_level_elevation_m": 106.80687999999999,
+            "allowable_water_level_elevation_m": 104.53999999999999
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G0000TJK044",
+      "name": "Карстови води в Западния Балкан",
+      "climate": {
+        "has_published_rows": false,
+        "rcp85": [],
+        "rcp45": [],
+        "comparison": []
+      }
+    },
+    {
+      "code": "BG1G0000TJK045",
+      "name": "Карстови води в Централния Балкан",
+      "climate": {
+        "has_published_rows": false,
+        "rcp85": [],
+        "rcp45": [],
+        "comparison": []
+      }
+    },
+    {
+      "code": "BG1G000K1AP043",
+      "name": "Карстови води в Мраморенск",
+      "climate": {
+        "has_published_rows": false,
+        "rcp85": [],
+        "rcp45": [],
+        "comparison": []
+      }
+    },
+    {
+      "code": "BG1G000K1HB050",
+      "name": "Карстови води в Разградска формация",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 220.71,
+            "recharge_change_fraction": 0.0302,
+            "water_column_height_m": 1.87,
+            "water_column_change_m": 0.056474,
+            "projected_water_level_elevation_m": 220.653526
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 220.71,
+            "recharge_change_fraction": 0.0613,
+            "water_column_height_m": 1.87,
+            "water_column_change_m": 0.11463100000000001,
+            "projected_water_level_elevation_m": 220.595369
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 220.71,
+            "rcp85_recharge_change_fraction": 0.0302,
+            "water_column_height_m": 1.87,
+            "rcp85_water_column_change_m": 0.056474,
+            "rcp85_projected_water_level_elevation_m": 220.653526,
+            "rcp45_water_column_change_m": 0.11463100000000001,
+            "rcp45_projected_water_level_elevation_m": 220.595369,
+            "allowable_water_level_elevation_m": 219.588
+          }
+        ]
+      }
+    },
+    {
+      "code": "BG1G00N1BP0036",
+      "name": "Карстови води в Ломско-Плевенската депресия",
+      "climate": {
+        "has_published_rows": true,
+        "rcp85": [
+          {
+            "undisturbed_water_level_elevation_m": 104.0,
+            "recharge_change_fraction": 0.089,
+            "water_column_height_m": 87.0,
+            "water_column_change_m": 7.742999999999999,
+            "projected_water_level_elevation_m": 96.257
+          },
+          {
+            "undisturbed_water_level_elevation_m": 194.7,
+            "recharge_change_fraction": 0.089,
+            "water_column_height_m": 96.0,
+            "water_column_change_m": 8.544,
+            "projected_water_level_elevation_m": 186.15599999999998
+          },
+          {
+            "undisturbed_water_level_elevation_m": 74.6,
+            "recharge_change_fraction": 0.089,
+            "water_column_height_m": 97.1,
+            "water_column_change_m": 8.6419,
+            "projected_water_level_elevation_m": 65.9581
+          }
+        ],
+        "rcp45": [
+          {
+            "undisturbed_water_level_elevation_m": 104.0,
+            "recharge_change_fraction": 0.0493,
+            "water_column_height_m": 87.0,
+            "water_column_change_m": 4.2890999999999995,
+            "projected_water_level_elevation_m": 99.7109
+          },
+          {
+            "undisturbed_water_level_elevation_m": 194.7,
+            "recharge_change_fraction": 0.0493,
+            "water_column_height_m": 96.0,
+            "water_column_change_m": 4.732799999999999,
+            "projected_water_level_elevation_m": 189.9672
+          },
+          {
+            "undisturbed_water_level_elevation_m": 74.6,
+            "recharge_change_fraction": 0.0493,
+            "water_column_height_m": 97.1,
+            "water_column_change_m": 4.78703,
+            "projected_water_level_elevation_m": 69.81296999999999
+          }
+        ],
+        "comparison": [
+          {
+            "undisturbed_water_level_elevation_m": 104.0,
+            "rcp85_recharge_change_fraction": 0.089,
+            "water_column_height_m": 87.0,
+            "rcp85_water_column_change_m": 7.742999999999999,
+            "rcp85_projected_water_level_elevation_m": 96.257,
+            "rcp45_water_column_change_m": 4.2890999999999995,
+            "rcp45_projected_water_level_elevation_m": 99.7109,
+            "allowable_water_level_elevation_m": 51.800000000000004
+          },
+          {
+            "undisturbed_water_level_elevation_m": 194.7,
+            "rcp85_recharge_change_fraction": 0.089,
+            "water_column_height_m": 96.0,
+            "rcp85_water_column_change_m": 8.544,
+            "rcp85_projected_water_level_elevation_m": 186.15599999999998,
+            "rcp45_water_column_change_m": 4.732799999999999,
+            "rcp45_projected_water_level_elevation_m": 189.9672,
+            "allowable_water_level_elevation_m": 161.0
+          },
+          {
+            "undisturbed_water_level_elevation_m": 74.6,
+            "rcp85_recharge_change_fraction": 0.089,
+            "water_column_height_m": 97.1,
+            "rcp85_water_column_change_m": 8.6419,
+            "rcp85_projected_water_level_elevation_m": 65.9581,
+            "rcp45_water_column_change_m": 4.78703,
+            "rcp45_projected_water_level_elevation_m": 69.81296999999999,
+            "allowable_water_level_elevation_m": 63.4
+          }
+        ]
+      }
+    }
+  ],
+  "quality_report": {
+    "master_count": 50,
+    "covered_count": 40,
+    "missing_count": 10,
+    "missing_codes": [
+      "BG1G00000K1040",
+      "BG1G00000K2038",
+      "BG1G00000K2039",
+      "BG1G00000N1035",
+      "BG1G00000TJ046",
+      "BG1G0000K2S037",
+      "BG1G0000QAL004",
+      "BG1G0000TJK044",
+      "BG1G0000TJK045",
+      "BG1G000K1AP043"
+    ],
+    "unexpected_codes": [],
+    "status": "PASS"
+  }
+}
