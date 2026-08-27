@@ -838,13 +838,15 @@ export default function GeologyReportPage() {
             .toUpperCase();
 
         const requestedBasinForGeology =
-          requestedGwbParam.startsWith("BG4")
-            ? "BG4"
-            : requestedGwbParam.startsWith("BG3")
-              ? "BG3"
-              : requestedGwbParam.startsWith("BG2")
-                ? "BG2"
-                : "";
+          requestedGwbParam.startsWith("BG1")
+            ? "BG1"
+            : requestedGwbParam.startsWith("BG4")
+              ? "BG4"
+              : requestedGwbParam.startsWith("BG3")
+                ? "BG3"
+                : requestedGwbParam.startsWith("BG2")
+                  ? "BG2"
+                  : "";
 
         const [
           geology,
@@ -883,6 +885,17 @@ export default function GeologyReportPage() {
           westernAegeanInvestigationFeaturesData,
           westernAegeanQuantitativeMonitoringData,
           westernAegeanChemicalMonitoringData,
+
+          danubeBodiesData,
+          danubeOrdinaryData,
+          danubeSection1Data,
+          danubeSection2Data,
+          danubeSection3Data,
+          danubeSection4Data,
+          danubeSection5Data,
+          danubeSection7Data,
+          danubeCurrentRegistersData,
+          danubeClimateData,
         ] = await Promise.all([
           requestedBasinForGeology === "BG3"
             ? geologyAt(lat, lon)
@@ -1023,6 +1036,47 @@ export default function GeologyReportPage() {
           fetch(
             "/geology-map/data/bd_wabd_chemical_monitoring.geojson"
           ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_danube_groundwater_bodies.geojson"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_danube_active_groundwater_facilities.geojson"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_danube_section1_profiles.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_danube_section2_pressure_risk.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_danube_section3_protected_zones.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_danube_section4_monitoring_status.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_danube_section5_objectives.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_danube_section7_measures.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_danube_current_groundwater_resource.json"
+          ).then(r => r.json()),
+
+          fetch(
+            "/geology-map/data/bd_danube_climate_scenarios.json"
+          ).then(r => r.json()),
+
         ]);
 
         const requestedGwb =
@@ -1030,20 +1084,31 @@ export default function GeologyReportPage() {
             .trim()
             .toUpperCase();
 
+        const requestedGwbs =
+          String(params.get("gwbs") || "")
+            .split(",")
+            .map(code =>
+              code.trim().toUpperCase()
+            )
+            .filter(Boolean);
+
+
         const allBodies = [
+          ...(danubeBodiesData.features || []),
           ...(eastBodiesData.features || []),
           ...(blackSeaBodiesData.features || []),
           ...(westernAegeanBodiesData.features || []),
         ];
 
-        const intersectingBodies = allBodies.filter(
-          (feature: AnyFeature) =>
-            pointInPolygonGeometry(
-              lon,
-              lat,
-              feature.geometry
-            )
-        );
+        const spatiallyIntersectingBodies =
+          allBodies.filter(
+            (feature: AnyFeature) =>
+              pointInPolygonGeometry(
+                lon,
+                lat,
+                feature.geometry
+              )
+          );
 
         const bodyCode = (
           feature: AnyFeature
@@ -1056,6 +1121,35 @@ export default function GeologyReportPage() {
             feature.properties?.gwb_code ||
             ""
           ).trim().toUpperCase();
+
+        const requestedCodes =
+          new Set([
+            requestedGwb,
+            ...requestedGwbs,
+          ].filter(Boolean));
+
+        const requestedBodies =
+          allBodies.filter(
+            (feature: AnyFeature) =>
+              requestedCodes.has(
+                bodyCode(feature)
+              )
+          );
+
+        const intersectingBodies =
+          Array.from(
+            new Map(
+              [
+                ...spatiallyIntersectingBodies,
+                ...requestedBodies,
+              ].map(
+                (feature: AnyFeature) => [
+                  bodyCode(feature),
+                  feature,
+                ]
+              )
+            ).values()
+          );
 
         const selectedBody =
           (
@@ -1079,17 +1173,21 @@ export default function GeologyReportPage() {
             : requestedGwb;
 
         const basinCode =
-          selectedGwbCode.startsWith("BG4")
-            ? "BG4"
-            : selectedGwbCode.startsWith("BG2")
-              ? "BG2"
-              : selectedGwbCode.startsWith("BG3")
-                ? "BG3"
-                : "";
+          selectedGwbCode.startsWith("BG1")
+            ? "BG1"
+            : selectedGwbCode.startsWith("BG4")
+              ? "BG4"
+              : selectedGwbCode.startsWith("BG2")
+                ? "BG2"
+                : selectedGwbCode.startsWith("BG3")
+                  ? "BG3"
+                  : "";
 
         const basinName =
-          basinCode === "BG4"
-            ? "\u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d"
+          basinCode === "BG1"
+            ? "\u0414\u0443\u043d\u0430\u0432\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d"
+            : basinCode === "BG4"
+              ? "\u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d"
             : basinCode === "BG2"
               ? "\u0427\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d"
               : basinCode === "BG3"
@@ -1535,6 +1633,62 @@ export default function GeologyReportPage() {
           basinCode === "BG4"
             ? findOfficialProfile(
                 westernAegeanSection1Data
+              )
+            : null;
+
+        const danubeOfficialSection1 =
+          basinCode === "BG1"
+            ? findOfficialProfile(
+                danubeSection1Data
+              )
+            : null;
+
+        const danubeOfficialSection2 =
+          basinCode === "BG1"
+            ? findOfficialProfile(
+                danubeSection2Data
+              )
+            : null;
+
+        const danubeOfficialSection3 =
+          basinCode === "BG1"
+            ? findOfficialProfile(
+                danubeSection3Data
+              )
+            : null;
+
+        const danubeOfficialSection4 =
+          basinCode === "BG1"
+            ? findOfficialProfile(
+                danubeSection4Data
+              )
+            : null;
+
+        const danubeOfficialSection5 =
+          basinCode === "BG1"
+            ? findOfficialProfile(
+                danubeSection5Data
+              )
+            : null;
+
+        const danubeOfficialSection7 =
+          basinCode === "BG1"
+            ? findOfficialProfile(
+                danubeSection7Data
+              )
+            : null;
+
+        const danubeCurrentRegisters =
+          basinCode === "BG1"
+            ? findOfficialProfile(
+                danubeCurrentRegistersData
+              )
+            : null;
+
+        const danubeClimate =
+          basinCode === "BG1"
+            ? findOfficialProfile(
+                danubeClimateData
               )
             : null;
 
@@ -2021,6 +2175,15 @@ export default function GeologyReportPage() {
         const professionalDrilling = {
           basinCode,
 
+          danubeOfficialSection1,
+          danubeOfficialSection2,
+          danubeOfficialSection3,
+          danubeOfficialSection4,
+          danubeOfficialSection5,
+          danubeOfficialSection7,
+          danubeCurrentRegisters,
+          danubeClimate,
+
           westernAegeanOfficialSection1,
           westernAegeanOfficialSection2,
           westernAegeanOfficialSection3,
@@ -2037,7 +2200,9 @@ export default function GeologyReportPage() {
           additionalGroundwaterRegisters:
             basinCode === "BG4"
               ? westernAegeanAdditionalRegisters
-              : blackSeaAdditionalProfile,
+              : basinCode === "BG2"
+                ? blackSeaAdditionalProfile
+                : null,
 
           blackSeaOfficialSection1,
 

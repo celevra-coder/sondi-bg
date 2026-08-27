@@ -256,6 +256,9 @@ export default async function ProPage({
   const normalizedGwbCode =
     gwb.toUpperCase();
 
+  const isDanubeGwb =
+    normalizedGwbCode.startsWith("BG1G");
+
   const isBlackSeaGwb =
     normalizedGwbCode.startsWith("BG2G");
 
@@ -277,6 +280,46 @@ export default async function ProPage({
         item.gwbCode.toUpperCase() !==
         gwb.toUpperCase()
     );
+
+  const danubeSection1 =
+    isDanubeGwb
+      ? profile.danubeSection1
+      : undefined;
+
+  const danubeSection2 =
+    isDanubeGwb
+      ? profile.danubeSection2
+      : undefined;
+
+  const danubeSection3 =
+    isDanubeGwb
+      ? profile.danubeSection3
+      : undefined;
+
+  const danubeSection4 =
+    isDanubeGwb
+      ? profile.danubeSection4
+      : undefined;
+
+  const danubeSection5 =
+    isDanubeGwb
+      ? profile.danubeSection5
+      : undefined;
+
+  const danubeSection7 =
+    isDanubeGwb
+      ? profile.danubeSection7
+      : undefined;
+
+  const danubeCurrentRegisters =
+    isDanubeGwb
+      ? profile.danubeCurrentRegisters ?? null
+      : null;
+
+  const danubeClimate =
+    isDanubeGwb
+      ? profile.danubeClimate ?? null
+      : null;
 
   const blackSeaSection1 =
     profile.blackSeaSection1;
@@ -888,25 +931,31 @@ export default async function ProPage({
       : undefined;
 
   const section4 =
-    isWesternAegeanGwb
-      ? normalizedWesternAegeanSection4
-      : isBlackSeaGwb
-        ? normalizedBlackSeaSection4
-        : profile.section4;
+    isDanubeGwb
+      ? danubeSection4
+      : isWesternAegeanGwb
+        ? normalizedWesternAegeanSection4
+        : isBlackSeaGwb
+          ? normalizedBlackSeaSection4
+          : profile.section4;
 
   const section5 =
-    isWesternAegeanGwb
-      ? westernAegeanSection5
-      : isBlackSeaGwb
-        ? blackSeaSection5
-        : profile.section5;
+    isDanubeGwb
+      ? danubeSection5
+      : isWesternAegeanGwb
+        ? westernAegeanSection5
+        : isBlackSeaGwb
+          ? blackSeaSection5
+          : profile.section5;
 
   const section7 =
-    isWesternAegeanGwb
-      ? westernAegeanSection7
-      : isBlackSeaGwb
-        ? blackSeaSection7
-        : profile.section7;
+    isDanubeGwb
+      ? danubeSection7
+      : isWesternAegeanGwb
+        ? westernAegeanSection7
+        : isBlackSeaGwb
+          ? blackSeaSection7
+          : profile.section7;
 
   const section7Measures: any[] =
     Array.isArray(section7?.measures)
@@ -996,6 +1045,74 @@ export default async function ProPage({
   const comparison =
     section4?.comparison;
 
+  const danubeRegisterResource =
+    danubeCurrentRegisters
+      ?.current_resource ?? null;
+
+  const danubeWaterBalance =
+    danubeRegisterResource
+      ? {
+          natural_resource_l_s:
+            danubeRegisterResource
+              .natural_resource_l_s,
+
+          ecosystem_requirement_l_s:
+            danubeRegisterResource
+              .ecological_requirement_l_s,
+
+          available_resource_l_s:
+            danubeRegisterResource
+              .available_resource_l_s,
+
+          permitted_abstraction_l_s:
+            Number(
+              danubeRegisterResource
+                .permitted_drinking_domestic_l_s ?? 0
+            ) +
+            Number(
+              danubeRegisterResource
+                .permitted_other_uses_l_s ?? 0
+            ),
+
+          total_abstraction_l_s:
+            Number(
+              danubeRegisterResource
+                .permitted_drinking_domestic_l_s ?? 0
+            ) +
+            Number(
+              danubeRegisterResource
+                .permitted_other_uses_l_s ?? 0
+            ),
+
+          free_resource_l_s:
+            danubeRegisterResource
+              .free_quantity_l_s,
+
+          exploitation_index:
+            danubeRegisterResource
+                .exploitation_index_percent != null
+              ? Number(
+                  danubeRegisterResource
+                    .exploitation_index_percent
+                ) / 100
+              : undefined,
+
+          quantitative_status:
+            danubeSection4
+              ?.quantitative_status,
+
+          reference:
+            danubeRegisterResource
+              .reference_date ||
+            "01.08.2026",
+
+          source:
+            danubeRegisterResource
+              .source,
+        }
+      : danubeSection4
+          ?.water_balance;
+
   const westernAegeanRegisterResource =
     westernAegeanCurrentRegisters
       ?.current_resource ?? null;
@@ -1052,9 +1169,11 @@ export default async function ProPage({
           ?.water_balance;
 
   const waterBalance =
-    isWesternAegeanGwb
-      ? westernAegeanWaterBalance
-      : isBlackSeaGwb
+    isDanubeGwb
+      ? danubeWaterBalance
+      : isWesternAegeanGwb
+        ? westernAegeanWaterBalance
+        : isBlackSeaGwb
         ? (
             (
               blackSeaRegisterResource
@@ -2207,7 +2326,7 @@ export default async function ProPage({
               letterSpacing: ".12em",
               color: "#16825c",
             }}>
-              SONDI PRO
+              SONDI EXPERT
             </div>
 
             <h1 style={{
@@ -6005,7 +6124,7 @@ export default async function ProPage({
                 </details>
 
                 <Link
-                  href={`/geology/report?lat=${encodeURIComponent(lat!)}&lon=${encodeURIComponent(lng!)}&gwb=${encodeURIComponent(profile.gwbCode)}`}
+                  href={`/geology/report?lat=${encodeURIComponent(lat!)}&lon=${encodeURIComponent(lng!)}&gwb=${encodeURIComponent(profile.gwbCode)}${groundwaterCodes.length > 1 ? `&gwbs=${encodeURIComponent(groundwaterCodes.filter((code) => code !== profile.gwbCode.toUpperCase()).join(","))}` : ""}`}
                   style={{
                     display: "block",
                     marginTop: 12,

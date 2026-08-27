@@ -1,0 +1,1474 @@
+{
+  "metadata": {
+    "title": "BDDR current free groundwater quantities",
+    "basin_district": "Danube / BDDR",
+    "reference_date": "2026-08-01",
+    "unit": "l/s",
+    "groundwater_body_count": 50,
+    "source": "???????? ????? ?????????? 08-2026.pdf",
+    "source_title": "???????? ?? ?????????? ????? ?????????? ?? ?????????? ????? ???? ??? 01.08.2026 ?.",
+    "generated_at": "2026-08-27T12:30:17.823788+00:00",
+    "rounding_note": "The official register publishes resource and abstraction values as rounded whole l/s and the exploitation index as a whole percent. Derived arithmetic from displayed values can therefore differ slightly from the official published free quantity or exploitation index. Official published values are preserved unchanged.",
+    "note": "Current register. Must not be confused with PURB 2022-2027 planning-cycle resource values.",
+    "active_abstraction_register": {
+      "reference_date": "2026-08-01",
+      "active_facility_rows": 3341,
+      "active_unique_permits_global": 2397,
+      "groundwater_bodies_with_active_abstraction": 49,
+      "located_active_facilities": 3321,
+      "unlocated_active_facilities": 20,
+      "groundwater_body_without_active_abstraction": "BG1G00000NQ029",
+      "source": "RV_BDDR_*sl_01-08-2026.xls"
+    }
+  },
+  "profiles": [
+    {
+      "code": "BG1G0000QAL001",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 521,
+        "ecological_requirement_l_s": 0,
+        "available_resource_l_s": 521,
+        "permitted_drinking_domestic_l_s": 21,
+        "permitted_other_uses_l_s": 76,
+        "permitted_total_displayed_l_s": 97,
+        "free_quantity_l_s": 424,
+        "exploitation_index": 0.19,
+        "exploitation_index_percent": 19,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 16,
+        "active_unique_permits": 7,
+        "located_active_facilities": 16,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL002",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 1175,
+        "ecological_requirement_l_s": 5,
+        "available_resource_l_s": 1169,
+        "permitted_drinking_domestic_l_s": 67,
+        "permitted_other_uses_l_s": 282,
+        "permitted_total_displayed_l_s": 349,
+        "free_quantity_l_s": 820,
+        "exploitation_index": 0.3,
+        "exploitation_index_percent": 30,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 54,
+        "active_unique_permits": 25,
+        "located_active_facilities": 54,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL003",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 406,
+        "ecological_requirement_l_s": 0,
+        "available_resource_l_s": 406,
+        "permitted_drinking_domestic_l_s": 4,
+        "permitted_other_uses_l_s": 186,
+        "permitted_total_displayed_l_s": 190,
+        "free_quantity_l_s": 216,
+        "exploitation_index": 0.47,
+        "exploitation_index_percent": 47,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 4,
+        "active_unique_permits": 2,
+        "located_active_facilities": 4,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL004",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 138,
+        "ecological_requirement_l_s": 0,
+        "available_resource_l_s": 138,
+        "permitted_drinking_domestic_l_s": 1,
+        "permitted_other_uses_l_s": 4,
+        "permitted_total_displayed_l_s": 5,
+        "free_quantity_l_s": 133,
+        "exploitation_index": 0.04,
+        "exploitation_index_percent": 4,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 2,
+        "active_unique_permits": 1,
+        "located_active_facilities": 2,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL005",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 224,
+        "ecological_requirement_l_s": 0,
+        "available_resource_l_s": 224,
+        "permitted_drinking_domestic_l_s": 12,
+        "permitted_other_uses_l_s": 130,
+        "permitted_total_displayed_l_s": 142,
+        "free_quantity_l_s": 82,
+        "exploitation_index": 0.63,
+        "exploitation_index_percent": 63,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 14,
+        "active_unique_permits": 6,
+        "located_active_facilities": 14,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL006",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 146,
+        "ecological_requirement_l_s": 0,
+        "available_resource_l_s": 146,
+        "permitted_drinking_domestic_l_s": 1,
+        "permitted_other_uses_l_s": 44,
+        "permitted_total_displayed_l_s": 45,
+        "free_quantity_l_s": 101,
+        "exploitation_index": 0.31,
+        "exploitation_index_percent": 31,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 2,
+        "active_unique_permits": 2,
+        "located_active_facilities": 2,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL007",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 711,
+        "ecological_requirement_l_s": 4,
+        "available_resource_l_s": 708,
+        "permitted_drinking_domestic_l_s": 32,
+        "permitted_other_uses_l_s": 70,
+        "permitted_total_displayed_l_s": 102,
+        "free_quantity_l_s": 606,
+        "exploitation_index": 0.14,
+        "exploitation_index_percent": 14,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 10,
+        "active_unique_permits": 5,
+        "located_active_facilities": 10,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL008",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 924,
+        "ecological_requirement_l_s": 0,
+        "available_resource_l_s": 924,
+        "permitted_drinking_domestic_l_s": 24,
+        "permitted_other_uses_l_s": 595,
+        "permitted_total_displayed_l_s": 619,
+        "free_quantity_l_s": 305,
+        "exploitation_index": 0.67,
+        "exploitation_index_percent": 67,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 44,
+        "active_unique_permits": 18,
+        "located_active_facilities": 43,
+        "unlocated_active_facilities": 1,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL009",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 324,
+        "ecological_requirement_l_s": 0,
+        "available_resource_l_s": 324,
+        "permitted_drinking_domestic_l_s": 2,
+        "permitted_other_uses_l_s": 191,
+        "permitted_total_displayed_l_s": 193,
+        "free_quantity_l_s": 132,
+        "exploitation_index": 0.59,
+        "exploitation_index_percent": 59,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 29,
+        "active_unique_permits": 3,
+        "located_active_facilities": 29,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL010",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 1160,
+        "ecological_requirement_l_s": 1,
+        "available_resource_l_s": 1159,
+        "permitted_drinking_domestic_l_s": 59,
+        "permitted_other_uses_l_s": 864,
+        "permitted_total_displayed_l_s": 923,
+        "free_quantity_l_s": 237,
+        "exploitation_index": 0.8,
+        "exploitation_index_percent": 80,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 25,
+        "active_unique_permits": 10,
+        "located_active_facilities": 25,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL011",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 112,
+        "ecological_requirement_l_s": 0,
+        "available_resource_l_s": 112,
+        "permitted_drinking_domestic_l_s": 6,
+        "permitted_other_uses_l_s": 31,
+        "permitted_total_displayed_l_s": 37,
+        "free_quantity_l_s": 75,
+        "exploitation_index": 0.33,
+        "exploitation_index_percent": 33,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 1,
+        "active_unique_permits": 1,
+        "located_active_facilities": 1,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL012",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 756,
+        "ecological_requirement_l_s": 0,
+        "available_resource_l_s": 756,
+        "permitted_drinking_domestic_l_s": 21,
+        "permitted_other_uses_l_s": 312,
+        "permitted_total_displayed_l_s": 333,
+        "free_quantity_l_s": 424,
+        "exploitation_index": 0.44,
+        "exploitation_index_percent": 44,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 17,
+        "active_unique_permits": 10,
+        "located_active_facilities": 17,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL013",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 481,
+        "ecological_requirement_l_s": 31,
+        "available_resource_l_s": 451,
+        "permitted_drinking_domestic_l_s": 58,
+        "permitted_other_uses_l_s": 26,
+        "permitted_total_displayed_l_s": 84,
+        "free_quantity_l_s": 367,
+        "exploitation_index": 0.19,
+        "exploitation_index_percent": 19,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 22,
+        "active_unique_permits": 14,
+        "located_active_facilities": 22,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL014",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 136,
+        "ecological_requirement_l_s": 0,
+        "available_resource_l_s": 136,
+        "permitted_drinking_domestic_l_s": 29,
+        "permitted_other_uses_l_s": 1,
+        "permitted_total_displayed_l_s": 30,
+        "free_quantity_l_s": 106,
+        "exploitation_index": 0.22,
+        "exploitation_index_percent": 22,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 1,
+        "active_unique_permits": 1,
+        "located_active_facilities": 1,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL015",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 806,
+        "ecological_requirement_l_s": 45,
+        "available_resource_l_s": 761,
+        "permitted_drinking_domestic_l_s": 53,
+        "permitted_other_uses_l_s": 35,
+        "permitted_total_displayed_l_s": 88,
+        "free_quantity_l_s": 673,
+        "exploitation_index": 0.12,
+        "exploitation_index_percent": 12,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 28,
+        "active_unique_permits": 23,
+        "located_active_facilities": 27,
+        "unlocated_active_facilities": 1,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL016",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 254,
+        "ecological_requirement_l_s": 12,
+        "available_resource_l_s": 241,
+        "permitted_drinking_domestic_l_s": 30,
+        "permitted_other_uses_l_s": 19,
+        "permitted_total_displayed_l_s": 49,
+        "free_quantity_l_s": 192,
+        "exploitation_index": 0.2,
+        "exploitation_index_percent": 20,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 29,
+        "active_unique_permits": 10,
+        "located_active_facilities": 29,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL017",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 1516,
+        "ecological_requirement_l_s": 249,
+        "available_resource_l_s": 1267,
+        "permitted_drinking_domestic_l_s": 66,
+        "permitted_other_uses_l_s": 129,
+        "permitted_total_displayed_l_s": 195,
+        "free_quantity_l_s": 1071,
+        "exploitation_index": 0.15,
+        "exploitation_index_percent": 15,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 44,
+        "active_unique_permits": 27,
+        "located_active_facilities": 44,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL018",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 640,
+        "ecological_requirement_l_s": 81,
+        "available_resource_l_s": 559,
+        "permitted_drinking_domestic_l_s": 43,
+        "permitted_other_uses_l_s": 318,
+        "permitted_total_displayed_l_s": 361,
+        "free_quantity_l_s": 198,
+        "exploitation_index": 0.65,
+        "exploitation_index_percent": 65,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 135,
+        "active_unique_permits": 31,
+        "located_active_facilities": 135,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL019",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 1012,
+        "ecological_requirement_l_s": 211,
+        "available_resource_l_s": 801,
+        "permitted_drinking_domestic_l_s": 76,
+        "permitted_other_uses_l_s": 137,
+        "permitted_total_displayed_l_s": 213,
+        "free_quantity_l_s": 589,
+        "exploitation_index": 0.27,
+        "exploitation_index_percent": 27,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 65,
+        "active_unique_permits": 36,
+        "located_active_facilities": 65,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL020",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 968,
+        "ecological_requirement_l_s": 101,
+        "available_resource_l_s": 867,
+        "permitted_drinking_domestic_l_s": 119,
+        "permitted_other_uses_l_s": 157,
+        "permitted_total_displayed_l_s": 276,
+        "free_quantity_l_s": 591,
+        "exploitation_index": 0.32,
+        "exploitation_index_percent": 32,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 60,
+        "active_unique_permits": 47,
+        "located_active_facilities": 60,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL021",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 392,
+        "ecological_requirement_l_s": 42,
+        "available_resource_l_s": 350,
+        "permitted_drinking_domestic_l_s": 16,
+        "permitted_other_uses_l_s": 140,
+        "permitted_total_displayed_l_s": 156,
+        "free_quantity_l_s": 194,
+        "exploitation_index": 0.44,
+        "exploitation_index_percent": 44,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 43,
+        "active_unique_permits": 21,
+        "located_active_facilities": 43,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL052",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 58,
+        "ecological_requirement_l_s": 2,
+        "available_resource_l_s": 56,
+        "permitted_drinking_domestic_l_s": 3,
+        "permitted_other_uses_l_s": 5,
+        "permitted_total_displayed_l_s": 8,
+        "free_quantity_l_s": 48,
+        "exploitation_index": 0.13,
+        "exploitation_index_percent": 13,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 4,
+        "active_unique_permits": 1,
+        "located_active_facilities": 4,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QAL022",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 105,
+        "ecological_requirement_l_s": 17,
+        "available_resource_l_s": 88,
+        "permitted_drinking_domestic_l_s": 27,
+        "permitted_other_uses_l_s": 23,
+        "permitted_total_displayed_l_s": 50,
+        "free_quantity_l_s": 38,
+        "exploitation_index": 0.57,
+        "exploitation_index_percent": 57,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 21,
+        "active_unique_permits": 15,
+        "located_active_facilities": 21,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QPL023",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 2022,
+        "ecological_requirement_l_s": 478,
+        "available_resource_l_s": 1544,
+        "permitted_drinking_domestic_l_s": 118,
+        "permitted_other_uses_l_s": 36,
+        "permitted_total_displayed_l_s": 154,
+        "free_quantity_l_s": 1390,
+        "exploitation_index": 0.1,
+        "exploitation_index_percent": 10,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 16,
+        "active_unique_permits": 15,
+        "located_active_facilities": 15,
+        "unlocated_active_facilities": 1,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QPL024",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 385,
+        "ecological_requirement_l_s": 185,
+        "available_resource_l_s": 200,
+        "permitted_drinking_domestic_l_s": 43,
+        "permitted_other_uses_l_s": 66,
+        "permitted_total_displayed_l_s": 109,
+        "free_quantity_l_s": 90,
+        "exploitation_index": 0.55,
+        "exploitation_index_percent": 55,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 36,
+        "active_unique_permits": 14,
+        "located_active_facilities": 33,
+        "unlocated_active_facilities": 3,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QPL025",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 880,
+        "ecological_requirement_l_s": 362,
+        "available_resource_l_s": 518,
+        "permitted_drinking_domestic_l_s": 28,
+        "permitted_other_uses_l_s": 148,
+        "permitted_total_displayed_l_s": 176,
+        "free_quantity_l_s": 342,
+        "exploitation_index": 0.34,
+        "exploitation_index_percent": 34,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 45,
+        "active_unique_permits": 22,
+        "located_active_facilities": 45,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000QPL026",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 1613,
+        "ecological_requirement_l_s": 277,
+        "available_resource_l_s": 1336,
+        "permitted_drinking_domestic_l_s": 99,
+        "permitted_other_uses_l_s": 103,
+        "permitted_total_displayed_l_s": 202,
+        "free_quantity_l_s": 1134,
+        "exploitation_index": 0.15,
+        "exploitation_index_percent": 15,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 19,
+        "active_unique_permits": 16,
+        "located_active_facilities": 19,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00000QP027",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 140,
+        "ecological_requirement_l_s": 12,
+        "available_resource_l_s": 128,
+        "permitted_drinking_domestic_l_s": 30,
+        "permitted_other_uses_l_s": 27,
+        "permitted_total_displayed_l_s": 57,
+        "free_quantity_l_s": 71,
+        "exploitation_index": 0.45,
+        "exploitation_index_percent": 45,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 33,
+        "active_unique_permits": 30,
+        "located_active_facilities": 33,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00000NQ028",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 228,
+        "ecological_requirement_l_s": 70,
+        "available_resource_l_s": 158,
+        "permitted_drinking_domestic_l_s": 27,
+        "permitted_other_uses_l_s": 8,
+        "permitted_total_displayed_l_s": 35,
+        "free_quantity_l_s": 123,
+        "exploitation_index": 0.22,
+        "exploitation_index_percent": 22,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 8,
+        "active_unique_permits": 5,
+        "located_active_facilities": 8,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00000NQ029",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 167,
+        "ecological_requirement_l_s": 17,
+        "available_resource_l_s": 150,
+        "permitted_drinking_domestic_l_s": 11,
+        "permitted_other_uses_l_s": 1,
+        "permitted_total_displayed_l_s": 12,
+        "free_quantity_l_s": 138,
+        "exploitation_index": 0.08,
+        "exploitation_index_percent": 8,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 0,
+        "active_unique_permits": 0,
+        "located_active_facilities": 0,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": false,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00000NQ030",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 1393,
+        "ecological_requirement_l_s": 258,
+        "available_resource_l_s": 1135,
+        "permitted_drinking_domestic_l_s": 234,
+        "permitted_other_uses_l_s": 425,
+        "permitted_total_displayed_l_s": 659,
+        "free_quantity_l_s": 476,
+        "exploitation_index": 0.58,
+        "exploitation_index_percent": 58,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 524,
+        "active_unique_permits": 466,
+        "located_active_facilities": 520,
+        "unlocated_active_facilities": 4,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00000NQ031",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 389,
+        "ecological_requirement_l_s": 27,
+        "available_resource_l_s": 362,
+        "permitted_drinking_domestic_l_s": 21,
+        "permitted_other_uses_l_s": 31,
+        "permitted_total_displayed_l_s": 52,
+        "free_quantity_l_s": 309,
+        "exploitation_index": 0.14,
+        "exploitation_index_percent": 14,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 8,
+        "active_unique_permits": 7,
+        "located_active_facilities": 8,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00000NQ032",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 96,
+        "ecological_requirement_l_s": 27,
+        "available_resource_l_s": 69,
+        "permitted_drinking_domestic_l_s": 3,
+        "permitted_other_uses_l_s": 0,
+        "permitted_total_displayed_l_s": 3,
+        "free_quantity_l_s": 66,
+        "exploitation_index": 0.04,
+        "exploitation_index_percent": 4,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 1,
+        "active_unique_permits": 1,
+        "located_active_facilities": 1,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G000000N033",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 400,
+        "ecological_requirement_l_s": 0,
+        "available_resource_l_s": 400,
+        "permitted_drinking_domestic_l_s": 0,
+        "permitted_other_uses_l_s": 123,
+        "permitted_total_displayed_l_s": 123,
+        "free_quantity_l_s": 277,
+        "exploitation_index": 0.31,
+        "exploitation_index_percent": 31,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 64,
+        "active_unique_permits": 47,
+        "located_active_facilities": 64,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00000N2034",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 1777,
+        "ecological_requirement_l_s": 49,
+        "available_resource_l_s": 1728,
+        "permitted_drinking_domestic_l_s": 62,
+        "permitted_other_uses_l_s": 243,
+        "permitted_total_displayed_l_s": 305,
+        "free_quantity_l_s": 1423,
+        "exploitation_index": 0.18,
+        "exploitation_index_percent": 18,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 73,
+        "active_unique_permits": 54,
+        "located_active_facilities": 73,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00000N1035",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 915,
+        "ecological_requirement_l_s": 25,
+        "available_resource_l_s": 890,
+        "permitted_drinking_domestic_l_s": 38,
+        "permitted_other_uses_l_s": 20,
+        "permitted_total_displayed_l_s": 58,
+        "free_quantity_l_s": 832,
+        "exploitation_index": 0.07,
+        "exploitation_index_percent": 7,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 16,
+        "active_unique_permits": 15,
+        "located_active_facilities": 16,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00N1BP0036",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 4431,
+        "ecological_requirement_l_s": 140,
+        "available_resource_l_s": 4291,
+        "permitted_drinking_domestic_l_s": 110,
+        "permitted_other_uses_l_s": 406,
+        "permitted_total_displayed_l_s": 516,
+        "free_quantity_l_s": 3775,
+        "exploitation_index": 0.12,
+        "exploitation_index_percent": 12,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 155,
+        "active_unique_permits": 114,
+        "located_active_facilities": 152,
+        "unlocated_active_facilities": 3,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G000000N049",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 4666,
+        "ecological_requirement_l_s": 7,
+        "available_resource_l_s": 4659,
+        "permitted_drinking_domestic_l_s": 273,
+        "permitted_other_uses_l_s": 103,
+        "permitted_total_displayed_l_s": 376,
+        "free_quantity_l_s": 4283,
+        "exploitation_index": 0.08,
+        "exploitation_index_percent": 8,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 67,
+        "active_unique_permits": 60,
+        "located_active_facilities": 67,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000K2M047",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 1019,
+        "ecological_requirement_l_s": 68,
+        "available_resource_l_s": 951,
+        "permitted_drinking_domestic_l_s": 51,
+        "permitted_other_uses_l_s": 353,
+        "permitted_total_displayed_l_s": 404,
+        "free_quantity_l_s": 547,
+        "exploitation_index": 0.43,
+        "exploitation_index_percent": 43,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 47,
+        "active_unique_permits": 42,
+        "located_active_facilities": 47,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000K2S037",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 5236,
+        "ecological_requirement_l_s": 393,
+        "available_resource_l_s": 4843,
+        "permitted_drinking_domestic_l_s": 113,
+        "permitted_other_uses_l_s": 103,
+        "permitted_total_displayed_l_s": 216,
+        "free_quantity_l_s": 4627,
+        "exploitation_index": 0.04,
+        "exploitation_index_percent": 4,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 27,
+        "active_unique_permits": 24,
+        "located_active_facilities": 26,
+        "unlocated_active_facilities": 1,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00000K2038",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 848,
+        "ecological_requirement_l_s": 311,
+        "available_resource_l_s": 537,
+        "permitted_drinking_domestic_l_s": 49,
+        "permitted_other_uses_l_s": 121,
+        "permitted_total_displayed_l_s": 170,
+        "free_quantity_l_s": 367,
+        "exploitation_index": 0.32,
+        "exploitation_index_percent": 32,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 114,
+        "active_unique_permits": 101,
+        "located_active_facilities": 113,
+        "unlocated_active_facilities": 1,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00000K2039",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 76,
+        "ecological_requirement_l_s": 15,
+        "available_resource_l_s": 61,
+        "permitted_drinking_domestic_l_s": 8,
+        "permitted_other_uses_l_s": 8,
+        "permitted_total_displayed_l_s": 16,
+        "free_quantity_l_s": 45,
+        "exploitation_index": 0.27,
+        "exploitation_index_percent": 27,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 4,
+        "active_unique_permits": 4,
+        "located_active_facilities": 4,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00000K1040",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 2691,
+        "ecological_requirement_l_s": 255,
+        "available_resource_l_s": 2436,
+        "permitted_drinking_domestic_l_s": 72,
+        "permitted_other_uses_l_s": 80,
+        "permitted_total_displayed_l_s": 152,
+        "free_quantity_l_s": 2284,
+        "exploitation_index": 0.06,
+        "exploitation_index_percent": 6,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 69,
+        "active_unique_permits": 49,
+        "located_active_facilities": 69,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000K1B041",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 11198,
+        "ecological_requirement_l_s": 168,
+        "available_resource_l_s": 11030,
+        "permitted_drinking_domestic_l_s": 264,
+        "permitted_other_uses_l_s": 1912,
+        "permitted_total_displayed_l_s": 2176,
+        "free_quantity_l_s": 8854,
+        "exploitation_index": 0.2,
+        "exploitation_index_percent": 20,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 353,
+        "active_unique_permits": 263,
+        "located_active_facilities": 351,
+        "unlocated_active_facilities": 2,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G000K1HB050",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 3767,
+        "ecological_requirement_l_s": 197,
+        "available_resource_l_s": 3570,
+        "permitted_drinking_domestic_l_s": 143,
+        "permitted_other_uses_l_s": 381,
+        "permitted_total_displayed_l_s": 524,
+        "free_quantity_l_s": 3046,
+        "exploitation_index": 0.15,
+        "exploitation_index_percent": 15,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 126,
+        "active_unique_permits": 96,
+        "located_active_facilities": 125,
+        "unlocated_active_facilities": 1,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G000K1AP043",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 207,
+        "ecological_requirement_l_s": 6,
+        "available_resource_l_s": 201,
+        "permitted_drinking_domestic_l_s": 5,
+        "permitted_other_uses_l_s": 11,
+        "permitted_total_displayed_l_s": 16,
+        "free_quantity_l_s": 185,
+        "exploitation_index": 0.08,
+        "exploitation_index_percent": 8,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 9,
+        "active_unique_permits": 7,
+        "located_active_facilities": 9,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000TJK044",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 6029,
+        "ecological_requirement_l_s": 342,
+        "available_resource_l_s": 5687,
+        "permitted_drinking_domestic_l_s": 66,
+        "permitted_other_uses_l_s": 331,
+        "permitted_total_displayed_l_s": 397,
+        "free_quantity_l_s": 5290,
+        "exploitation_index": 0.07,
+        "exploitation_index_percent": 7,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 136,
+        "active_unique_permits": 97,
+        "located_active_facilities": 136,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000TJK045",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 10521,
+        "ecological_requirement_l_s": 1877,
+        "available_resource_l_s": 8644,
+        "permitted_drinking_domestic_l_s": 192,
+        "permitted_other_uses_l_s": 1375,
+        "permitted_total_displayed_l_s": 1567,
+        "free_quantity_l_s": 7077,
+        "exploitation_index": 0.18,
+        "exploitation_index_percent": 18,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 485,
+        "active_unique_permits": 340,
+        "located_active_facilities": 484,
+        "unlocated_active_facilities": 1,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G00000TJ046",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 4913,
+        "ecological_requirement_l_s": 308,
+        "available_resource_l_s": 4605,
+        "permitted_drinking_domestic_l_s": 91,
+        "permitted_other_uses_l_s": 276,
+        "permitted_total_displayed_l_s": 367,
+        "free_quantity_l_s": 4238,
+        "exploitation_index": 0.08,
+        "exploitation_index_percent": 8,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 41,
+        "active_unique_permits": 40,
+        "located_active_facilities": 40,
+        "unlocated_active_facilities": 1,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    },
+    {
+      "code": "BG1G0000J3K051",
+      "current_resource": {
+        "reference_date": "2026-08-01",
+        "unit": "l/s",
+        "natural_resource_l_s": 4249,
+        "ecological_requirement_l_s": 100,
+        "available_resource_l_s": 4149,
+        "permitted_drinking_domestic_l_s": 92,
+        "permitted_other_uses_l_s": 1645,
+        "permitted_total_displayed_l_s": 1737,
+        "free_quantity_l_s": 2412,
+        "exploitation_index": 0.42,
+        "exploitation_index_percent": 42,
+        "values_are_official_published": true,
+        "source": "???????? ????? ?????????? 08-2026.pdf"
+      },
+      "active_abstraction_permits": {
+        "reference_date": "2026-08-01",
+        "active_facility_rows": 195,
+        "active_unique_permits": 159,
+        "located_active_facilities": 195,
+        "unlocated_active_facilities": 0,
+        "has_active_abstraction": true,
+        "source": "RV_BDDR_*sl_01-08-2026.xls"
+      }
+    }
+  ],
+  "quality_report": {
+    "body_count": 50,
+    "duplicate_codes": 0,
+    "official_values_preserved": true,
+    "display_rounding_difference_count": 11,
+    "display_rounding_differences": [
+      {
+        "code": "BG1G0000QAL009",
+        "official_free_l_s": 132,
+        "calculated_from_displayed_values_l_s": 131,
+        "free_difference_l_s": 1,
+        "official_exploitation_index_percent": 59,
+        "calculated_from_displayed_values_percent": 59.57
+      },
+      {
+        "code": "BG1G0000QAL010",
+        "official_free_l_s": 237,
+        "calculated_from_displayed_values_l_s": 236,
+        "free_difference_l_s": 1,
+        "official_exploitation_index_percent": 80,
+        "calculated_from_displayed_values_percent": 79.64
+      },
+      {
+        "code": "BG1G0000QAL012",
+        "official_free_l_s": 424,
+        "calculated_from_displayed_values_l_s": 423,
+        "free_difference_l_s": 1,
+        "official_exploitation_index_percent": 44,
+        "calculated_from_displayed_values_percent": 44.05
+      },
+      {
+        "code": "BG1G0000QAL017",
+        "official_free_l_s": 1071,
+        "calculated_from_displayed_values_l_s": 1072,
+        "free_difference_l_s": -1,
+        "official_exploitation_index_percent": 15,
+        "calculated_from_displayed_values_percent": 15.39
+      },
+      {
+        "code": "BG1G0000QAL019",
+        "official_free_l_s": 589,
+        "calculated_from_displayed_values_l_s": 588,
+        "free_difference_l_s": 1,
+        "official_exploitation_index_percent": 27,
+        "calculated_from_displayed_values_percent": 26.59
+      },
+      {
+        "code": "BG1G0000QAL021",
+        "official_free_l_s": 194,
+        "calculated_from_displayed_values_l_s": 194,
+        "free_difference_l_s": 0,
+        "official_exploitation_index_percent": 44,
+        "calculated_from_displayed_values_percent": 44.57
+      },
+      {
+        "code": "BG1G0000QAL052",
+        "official_free_l_s": 48,
+        "calculated_from_displayed_values_l_s": 48,
+        "free_difference_l_s": 0,
+        "official_exploitation_index_percent": 13,
+        "calculated_from_displayed_values_percent": 14.29
+      },
+      {
+        "code": "BG1G0000QPL024",
+        "official_free_l_s": 90,
+        "calculated_from_displayed_values_l_s": 91,
+        "free_difference_l_s": -1,
+        "official_exploitation_index_percent": 55,
+        "calculated_from_displayed_values_percent": 54.5
+      },
+      {
+        "code": "BG1G00000NQ031",
+        "official_free_l_s": 309,
+        "calculated_from_displayed_values_l_s": 310,
+        "free_difference_l_s": -1,
+        "official_exploitation_index_percent": 14,
+        "calculated_from_displayed_values_percent": 14.36
+      },
+      {
+        "code": "BG1G0000K2M047",
+        "official_free_l_s": 547,
+        "calculated_from_displayed_values_l_s": 547,
+        "free_difference_l_s": 0,
+        "official_exploitation_index_percent": 43,
+        "calculated_from_displayed_values_percent": 42.48
+      },
+      {
+        "code": "BG1G00000K2039",
+        "official_free_l_s": 45,
+        "calculated_from_displayed_values_l_s": 45,
+        "free_difference_l_s": 0,
+        "official_exploitation_index_percent": 27,
+        "calculated_from_displayed_values_percent": 26.23
+      }
+    ],
+    "status": "PASS",
+    "active_abstraction_permits_status": "PASS"
+  }
+}

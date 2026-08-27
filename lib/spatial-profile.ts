@@ -187,6 +187,11 @@ export function getSpatialProfile(
       "bd_wabd_active_groundwater_facilities.geojson"
     );
 
+  const danubeActiveGroundwaterData =
+    readGeoJson(
+      "bd_danube_active_groundwater_facilities.geojson"
+    );
+
   const westernAegeanChemicalMonitoringData =
     readGeoJson(
       "bd_wabd_chemical_monitoring.geojson"
@@ -227,10 +232,14 @@ export function getSpatialProfile(
   const westernAegeanActiveGroundwaterFacilities: Feature[] =
     westernAegeanActiveGroundwaterData.features || [];
 
+  const danubeActiveGroundwaterFacilities: Feature[] =
+    danubeActiveGroundwaterData.features || [];
+
   const ordinaryFacilities: Feature[] = [
     ...eastOrdinaryFacilities,
     ...blackSeaOrdinaryFacilities,
     ...westernAegeanActiveGroundwaterFacilities,
+    ...danubeActiveGroundwaterFacilities,
   ];
 
   const westernAegeanChemicalMonitoring: Feature[] =
