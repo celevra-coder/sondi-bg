@@ -1,0 +1,2939 @@
+{
+  "metadata": {
+    "title": "BDDR PURB 2022-2027 Section 2 groundwater pressure and risk",
+    "generated_at": "2026-08-27T11:33:44.261575+00:00",
+    "basin_district": "Danube / BDDR",
+    "planning_period": "2022-2027",
+    "groundwater_body_count": 50,
+    "significant_pressure_body_count": 10,
+    "abstraction_pressure_body_count": 50,
+    "significant_abstraction_body_count": 26,
+    "chemical_risk_body_count": 50,
+    "quantitative_risk_body_count": 50,
+    "sources": [
+      "Pril_2311_final.xls",
+      "Pril_2331_final.xls",
+      "Pril_2332_final.xls",
+      "Pril_2421_final.xls",
+      "Pril_2423_final.xls"
+    ],
+    "note": "PURB planning-cycle pressure/risk data. Not a substitute for current live abstraction/resource registers."
+  },
+  "profiles": [
+    {
+      "code": "BG1G000000N033",
+      "significant_pressure": {
+        "source": "Pril_2311_final.xls",
+        "raw": [
+          "BG1G000000N033",
+          "Порови води в Неогена - Софийска котловина",
+          "Добро",
+          "лошо",
+          "желязо, манган, амониеви йони",
+          "Замърсяване с хранителни вещества и Химическо замърсяване",
+          "×",
+          "×",
+          "×",
+          "×",
+          "×",
+          "×",
+          "×",
+          "×",
+          "×",
+          "×"
+        ]
+      },
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G000000N033",
+          "Порови води в Неогена - Софийска котловина",
+          "18.05013318112633",
+          "0.04512546324086731",
+          "6.685407153729071",
+          "0.016713566140402713",
+          "111.03874936580415",
+          "0.2775976749056766",
+          "36.56674911212583",
+          "0.09141713672354662",
+          "1",
+          "0.002500007218121339",
+          "14.347000253678335",
+          "0.035867604192584515",
+          "93.68872907153728",
+          "0.23422249893545774",
+          "281.376768138001",
+          "399.99884510392025",
+          "0.7034439513566569"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Неогена - Софийска котловина",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни, точкови",
+        "parameters_exceeding_standard": "желязо, манган, амониеви йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Неогена - Софийска котловина",
+        "total_area_km2": 1089.89692081,
+        "outcrop_area_km2": 0.0,
+        "recharge_cover_characteristics": "песъчливи глини",
+        "natural_resources_l_s": 400.0,
+        "available_resources_l_s": 399.99884510392025,
+        "permitted_abstraction_l_s": 281.0,
+        "exploitation_index": 0.7025020282920962,
+        "risk_assessment": "да"
+      }
+    },
+    {
+      "code": "BG1G000000N049",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000N1049",
+          "Карстово-порови води в Неоген - Сармат - Добруджа",
+          "3.4880771182141044",
+          "0.0007386854289173875",
+          "31.97266615930999",
+          "0.006770992101119205",
+          "9.494958143074582",
+          "0.0020107890367001826",
+          "7.29077879249112",
+          "0.0015440002835231232",
+          null,
+          null,
+          "16.925735667174024",
+          "0.003584437467211218",
+          "5.0194698122780315",
+          "0.0010629951935004448",
+          "74.19168569254185",
+          "4722.006122858288",
+          "0.01571189951097156"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Добрич",
+          "total_discharge_l_s": 40.94,
+          "available_resource_l_s": 172.0923225672883,
+          "exploitation_index": 0.23789556320266644
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Генерал Тошево",
+          "total_discharge_l_s": 4.5,
+          "available_resource_l_s": 37.91864734533471,
+          "exploitation_index": 0.11867511936850916
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстово-порови води в Неоген - Сармат Добруджа",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстово-порови води в Неоген - Сармат - Добруджа",
+        "total_area_km2": 3237.77792167,
+        "outcrop_area_km2": 3222.528125,
+        "recharge_cover_characteristics": "льос, льосовидни глини и глини",
+        "natural_resources_l_s": 4729.006122858288,
+        "available_resources_l_s": 4722.006122858288,
+        "permitted_abstraction_l_s": 74.0,
+        "exploitation_index": 0.01567130538899151,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G00000K1040",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000K1040",
+          "Карстови води в Ловеч-Търновския масив",
+          "53.576156456113644",
+          "0.021939458008236545",
+          "3.900082445459158",
+          "0.0015970853585008835",
+          "5.12113140537798",
+          "0.0020971054076076904",
+          null,
+          null,
+          null,
+          null,
+          "29.762937595129376",
+          "0.012187935133140612",
+          "7.742706747843734",
+          "0.003170641583883593",
+          "100.10301464992389",
+          "2442",
+          "0.04099222549136933"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Ловеч",
+          "total_discharge_l_s": 28.76,
+          "available_resource_l_s": 101.70208532131892,
+          "exploitation_index": 0.2827867286018303
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстови води в Ловеч-Търновския масив",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстови води в Ловеч-Търново",
+        "total_area_km2": 1380.65015635,
+        "outcrop_area_km2": 1379.858673,
+        "recharge_cover_characteristics": "повърхностни и подземни карстови форми",
+        "natural_resources_l_s": 2697.0,
+        "available_resources_l_s": 2442.0,
+        "permitted_abstraction_l_s": 100.0,
+        "exploitation_index": 0.04095004095004095,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G00000K2038",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000K2038",
+          "Пукнатинни води в района на р.Ерма и р.Искър",
+          "124.21316717402337",
+          "0.23588989727761972",
+          "4.303532470826991",
+          "0.00817272319489314",
+          "6.404870624048706",
+          "0.012163318172755323",
+          "4.428304160324708",
+          "0.008409673766949132",
+          null,
+          null,
+          "49.42793949771689",
+          "0.09386727539461047",
+          "6.432153190005095",
+          "0.012215129762680457",
+          "195.20996711694573",
+          "526.5726451516337",
+          "0.37071801756950823"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Пукнатинни води в района на р.Ерма и р.Искър",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Пукнатинни води в района на р.Ерма и р.Искър",
+        "total_area_km2": 2114.68073482,
+        "outcrop_area_km2": 2104.091293,
+        "recharge_cover_characteristics": "почвен слой",
+        "natural_resources_l_s": 837.2210135914576,
+        "available_resources_l_s": 526.5726451516337,
+        "permitted_abstraction_l_s": 195.0,
+        "exploitation_index": 0.3703192746441417,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G00000K2039",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000K2039",
+          "Карстови води в Горно-Малинския масив",
+          "9.137874175545408",
+          "0.1499776381940715",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "0.6722475900558091",
+          "0.011033431178998363",
+          "0.12037037037037036",
+          "0.001975608714881028",
+          "9.930492135971587",
+          "60.928244274129526",
+          "0.1629866780879509"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстови води в Горно-Малинския масив",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстови води в Горно-Малинския масив",
+        "total_area_km2": 49.4208603299,
+        "outcrop_area_km2": 48.976058,
+        "recharge_cover_characteristics": "почвен слой",
+        "natural_resources_l_s": 75.82866422406605,
+        "available_resources_l_s": 60.928244274129526,
+        "permitted_abstraction_l_s": 10.0,
+        "exploitation_index": 0.16412749323627,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G00000N1035",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000N1035",
+          "Порови води в Неогена - район Русе - Силистра",
+          "18.143169710806696",
+          "0.020164495173441644",
+          "1.108035261288686",
+          "0.0012314811598190924",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "9.008117706747843",
+          "0.010011709580786073",
+          "0.11574074074074073",
+          "0.0001286353842926963",
+          "28.375063419583963",
+          "899.7581915515939",
+          "0.0315363212983395"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Неогена - район Русе - Силистра",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Неогена - район Русе - Силистра",
+        "total_area_km2": 1806.77198144,
+        "outcrop_area_km2": 1732.625722,
+        "recharge_cover_characteristics": "льос и льосовидни отложения",
+        "natural_resources_l_s": 924.7581915515939,
+        "available_resources_l_s": 899.7581915515939,
+        "permitted_abstraction_l_s": 28.0,
+        "exploitation_index": 0.031119472168089093,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G00000N2034",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000N2034",
+          "Порови води в Неогена - Ломско-Плевенска депресия",
+          "112.72666159309995",
+          "0.06500379352745927",
+          "40.790398274987325",
+          "0.023521770181939003",
+          "0.7060185185185185",
+          "0.0004071253539823594",
+          "4.9342021816336885",
+          "0.0028453061175129145",
+          null,
+          null,
+          "33.99083587011669",
+          "0.019600804685429168",
+          "11.11574074074074",
+          "0.00640988836007636",
+          "204.26385717909687",
+          "1734.1551235080044",
+          "0.11778868822639905"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Лом",
+          "total_discharge_l_s": 48.03,
+          "available_resource_l_s": 60.48518508369605,
+          "exploitation_index": 0.7940787472756964
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Вълчедръм-Якимово",
+          "total_discharge_l_s": 22.13,
+          "available_resource_l_s": 97.57303975932045,
+          "exploitation_index": 0.22680445392074688
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Неогена - Ломско-Плевенска депресия",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Неогена - Ломско-Плевенска депресия",
+        "total_area_km2": 3090.7059647,
+        "outcrop_area_km2": 717.290956,
+        "recharge_cover_characteristics": "песъчливи глини и льос",
+        "natural_resources_l_s": 1783.1551235080044,
+        "available_resources_l_s": 1734.1551235080044,
+        "permitted_abstraction_l_s": 204.0,
+        "exploitation_index": 0.11763653506805695,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G00000NQ028",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000NQ028",
+          "Порови води в Неоген-Кватернера - Ботевградска долина",
+          null,
+          null,
+          null,
+          null,
+          "1.2557077625570776",
+          "0.008078070804879834",
+          "2.3",
+          "0.014796088234247171",
+          null,
+          null,
+          "22.63089802130898",
+          "0.14558641910588582",
+          "2.9000126839167932",
+          "0.018656018935508185",
+          "29.08661846778285",
+          "155.44649123383823",
+          "0.187116597080521"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Неоген-Кватернера - Ботевградска долина",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Неоген-Кватернера - Ботевградска долина",
+        "total_area_km2": 147.98520684,
+        "outcrop_area_km2": 147.98520684,
+        "recharge_cover_characteristics": "песъчливи глини",
+        "natural_resources_l_s": 225.35665527337963,
+        "available_resources_l_s": 155.44649123383823,
+        "permitted_abstraction_l_s": 29.0,
+        "exploitation_index": 0.18655937338833392,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G00000NQ029",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000NQ029",
+          "Порови води в Неоген-Кватернера - р. Нишава",
+          null,
+          null,
+          "0.6000126839167935",
+          "0.004016195974680582",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "4.504058853373921",
+          "0.0301480010698462",
+          "0.6157407407407407",
+          "0.004121472013336198",
+          "5.719812278031456",
+          "149.39825837670037",
+          "0.03828566905786298"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Неоген-Кватернера - р. Нишава",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Неоген-Кватернера - р. Нишава",
+        "total_area_km2": 67.1520788446,
+        "outcrop_area_km2": 67.1520788446,
+        "recharge_cover_characteristics": "песъчливи глини",
+        "natural_resources_l_s": 166.77044826257898,
+        "available_resources_l_s": 149.39825837670037,
+        "permitted_abstraction_l_s": 6.0,
+        "exploitation_index": 0.040161110746494075,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G00000NQ030",
+      "significant_pressure": {
+        "source": "Pril_2311_final.xls",
+        "raw": [
+          "BG1G00000NQ030",
+          "Порови води в Неоген-Кватернера - Софийска долина",
+          "Добро",
+          "лошо",
+          "желязо, манган",
+          "Химическо замърсяване",
+          "×",
+          "×",
+          "×",
+          "×",
+          "×",
+          "неприложимо",
+          "×",
+          "×",
+          "×",
+          "×"
+        ]
+      },
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000NQ030",
+          "Порови води в Неоген-Кватернера - Софийска долина",
+          "154.32279934043632",
+          "0.13543360343780378",
+          "0.5999809741248097",
+          "0.0005265429714023806",
+          "57.780067224759",
+          "0.05070775507295518",
+          "35.170947488584474",
+          "0.030866004084029487",
+          "0.30000634195839676",
+          "0.000263285399949153",
+          "268.02165144596654",
+          "0.23521565322698915",
+          "87.31720605022831",
+          "0.07662953178691469",
+          "603.5126588660578",
+          "1139.4720026873329",
+          "0.5296423759800437"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Неоген-Кватернера - Софийска долина",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни, точкови",
+        "parameters_exceeding_standard": "желязо, манган"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Неоген-Кватернера - Софийска долина",
+        "total_area_km2": 1089.89692173,
+        "outcrop_area_km2": 1089.89692173,
+        "recharge_cover_characteristics": "песъчливи глини",
+        "natural_resources_l_s": 1397.3725397414046,
+        "available_resources_l_s": 1139.4720026873329,
+        "permitted_abstraction_l_s": 604.0,
+        "exploitation_index": 0.5300700662899355,
+        "risk_assessment": "да"
+      }
+    },
+    {
+      "code": "BG1G00000NQ031",
+      "significant_pressure": {
+        "source": "Pril_2311_final.xls",
+        "raw": [
+          "BG1G00000NQ031",
+          "Порови води в Неоген-Кватернера - Самоковска долина",
+          "Добро",
+          "лошо",
+          "манган",
+          "Химическо замърсяване",
+          "×",
+          "неприложимо",
+          "×",
+          "×",
+          "×",
+          "неприложимо",
+          "×",
+          "×",
+          "×",
+          "неприложимо"
+        ]
+      },
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000NQ031",
+          "Порови води в Неоген-Кватернера - Самоковска долина",
+          "1.4999999999999998",
+          "0.004214893087598155",
+          null,
+          null,
+          "4.4499936580416035",
+          "0.012504165006090124",
+          null,
+          null,
+          "5",
+          "0.014049643625327186",
+          "7.1799213597158795",
+          "0.020175067272376543",
+          "2.2333206494165396",
+          "0.006275471845077331",
+          "20.363235667174024",
+          "355.8809129497447",
+          "0.05721924083646934"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Неоген-Кватернера - Самоковска долина",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "точкови",
+        "parameters_exceeding_standard": "манган"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Неоген-Кватернера - Самоковска долина",
+        "total_area_km2": 170.637510015,
+        "outcrop_area_km2": 170.637510015,
+        "recharge_cover_characteristics": "песъчливи глини",
+        "natural_resources_l_s": 383.07748256671323,
+        "available_resources_l_s": 355.8809129497447,
+        "permitted_abstraction_l_s": 20.0,
+        "exploitation_index": 0.056198574501308746,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G00000NQ032",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000NQ032",
+          "Порови води в Неоген-Кватернера - Знеполска долина",
+          "0.01591831557584982",
+          "0.00023802148685261057",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "0.8571156773211567",
+          "0.012816176871765067",
+          null,
+          null,
+          "0.8730339928970065",
+          "66.87764111694202",
+          "0.013054198358617675"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Неоген-Кватернера - Знеполска долина",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Неоген-Кватернера - Знеполска долина",
+        "total_area_km2": 42.0823238397,
+        "outcrop_area_km2": 42.0823238397,
+        "recharge_cover_characteristics": "песъчливи глини",
+        "natural_resources_l_s": 93.60375672418563,
+        "available_resources_l_s": 66.87764111694202,
+        "permitted_abstraction_l_s": 1.0,
+        "exploitation_index": 0.01495268049678073,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G00000QP027",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000QP027",
+          "Порови води в Кватернера - Врачански пороен конус",
+          null,
+          null,
+          "0.290271435819381",
+          "0.0022534476188185554",
+          "15.663559107052256",
+          "0.12160001163178137",
+          "0.21007737189244036",
+          "0.0016308816336763087",
+          null,
+          null,
+          "4.62281202435312",
+          "0.03588801191932086",
+          "10.869767884322679",
+          "0.08438464669075747",
+          "31.656487823439875",
+          "128.8121513876437",
+          "0.24575699949435456"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Враца",
+          "total_discharge_l_s": 27.0,
+          "available_resource_l_s": 23.894989182236284,
+          "exploitation_index": 1.1299440143740265
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - Врачански пороен конус",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Врачански пороен конус",
+        "total_area_km2": 70.1280920121,
+        "outcrop_area_km2": 70.1280920121,
+        "recharge_cover_characteristics": "песъчливи глини",
+        "natural_resources_l_s": 140.54297968741622,
+        "available_resources_l_s": 128.8121513876437,
+        "permitted_abstraction_l_s": 32.0,
+        "exploitation_index": 0.24842376790757956,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G00000TJ046",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G00000TJ046",
+          "Карстови води в Годечкия масив",
+          "268.83425291730083",
+          "0.057863592965411284",
+          "6.663115169964485",
+          "0.0014341616810082834",
+          "1.4061707255200404",
+          "0.00030266266154111934",
+          "0.047913495687468284",
+          "1.0312848835012545e-05",
+          null,
+          null,
+          "17.30812404870624",
+          "0.003725381844319036",
+          "2.9931950786402837",
+          "0.0006442520616961437",
+          "297.25277143581934",
+          "4646",
+          "0.06398036406281088"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстови води в Годечкия масив",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстови води в Годечкия ма",
+        "total_area_km2": 1844.81266783,
+        "outcrop_area_km2": 1764.519642,
+        "recharge_cover_characteristics": "напукани седименти",
+        "natural_resources_l_s": 4954.0,
+        "available_resources_l_s": 4646.0,
+        "permitted_abstraction_l_s": 297.0,
+        "exploitation_index": 0.06392595781317262,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000J3K051",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000J3K051",
+          "Карстови води в Малм-Валанжския басейн",
+          "684.7773528665653",
+          "0.16230797650309675",
+          "443.1879375951294",
+          "0.10504573064591832",
+          "112.08707508878742",
+          "0.02656721381578275",
+          "8.207762557077624",
+          "0.0019454284325853576",
+          "45.662100456621005",
+          "0.010822967636079877",
+          "33.13996702181633",
+          "0.00785493411277941",
+          "4.807521562658549",
+          "0.001139493141184771",
+          "1331.8697171486556",
+          "4219",
+          "0.31568374428742724"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстови води в Малм-Валанжския басеин",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстови води в Малм-Валанжския басейн",
+        "total_area_km2": 13144.1693216,
+        "outcrop_area_km2": 634.465586,
+        "recharge_cover_characteristics": "льосови отложения в разкритите части",
+        "natural_resources_l_s": 4319.2070977207,
+        "available_resources_l_s": 4218.815882754174,
+        "permitted_abstraction_l_s": 1332.0,
+        "exploitation_index": 0.31572840271247604,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000K1B041",
+      "significant_pressure": {
+        "source": "Pril_2311_final.xls",
+        "raw": [
+          "BG1G0000K1B041",
+          "Карстови води в Русенската формация",
+          "Добро",
+          "лошо",
+          "ортофосфати",
+          "Замърсяване с хранителни вещества",
+          "×",
+          "неприложимо",
+          "неприложимо",
+          "×",
+          "×",
+          "×",
+          "×",
+          "неприложимо",
+          "неприложимо",
+          "×"
+        ]
+      },
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000K1b041",
+          "Карстови води в Русенската формация",
+          "732.1707160071029",
+          "0.06575131792085868",
+          "372.9551623541349",
+          "0.033492589793681804",
+          "95.82042744799594",
+          "0.008604986857169844",
+          "159.87506341958397",
+          "0.01435730205087379",
+          null,
+          null,
+          "53.34912480974125",
+          "0.004790925380483036",
+          "18.810190163622526",
+          "0.0016892164171014936",
+          "1432.9806842021815",
+          "11135.453085341609",
+          "0.12868633842016866"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Русе-Тръстеник",
+          "total_discharge_l_s": 5347.0,
+          "available_resource_l_s": 589.2048943019569,
+          "exploitation_index": 9.07494158943588
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Силистра",
+          "total_discharge_l_s": 36.77,
+          "available_resource_l_s": 201.49123942571777,
+          "exploitation_index": 0.18248932362915818
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстови води в Русенската формация",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни, точкови",
+        "parameters_exceeding_standard": "ортофосфати"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстови води в Русенската формация",
+        "total_area_km2": 6614.42231334,
+        "outcrop_area_km2": 3695.341826,
+        "recharge_cover_characteristics": "льос, алувиални толожения и плиоценски глини, пясъци и варовици",
+        "natural_resources_l_s": 11303.453085341609,
+        "available_resources_l_s": 11135.453085341609,
+        "permitted_abstraction_l_s": 1433.0,
+        "exploitation_index": 0.12868807304180196,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000K2M047",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000K2M047",
+          "Карстови води в Ломско-Плевеския басейн",
+          "250.9874429223744",
+          "0.262820025624344",
+          "7.656582952815829",
+          "0.00801754583585418",
+          "9.971461187214611",
+          "0.01044155697281807",
+          "16.077023084728566",
+          "0.016834960227067437",
+          null,
+          null,
+          "5.613267376966006",
+          "0.0058778999406228286",
+          "22.561504629629628",
+          "0.023625146962897782",
+          "312.8672821537291",
+          "954.9783823593327",
+          "0.32761713556360433"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Плевен",
+          "total_discharge_l_s": 63.36,
+          "available_resource_l_s": 14.801151327340602,
+          "exploitation_index": 4.280748071466696
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстови води в Ломско-Плевенския басейн",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстови води в Ломско-Плевеския басейн",
+        "total_area_km2": 2007.92487981,
+        "outcrop_area_km2": 381.54387,
+        "recharge_cover_characteristics": "терциерни отложения",
+        "natural_resources_l_s": 1023.1287842280982,
+        "available_resources_l_s": 954.9783823593327,
+        "permitted_abstraction_l_s": 313.0,
+        "exploitation_index": 0.3277561102762497,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000K2S037",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000K2S037",
+          "Карстови води в Предбалкана",
+          "67.76359715880263",
+          "0.013954612264992304",
+          null,
+          null,
+          "1.1574074074074074",
+          "0.00023834584172310698",
+          null,
+          null,
+          null,
+          null,
+          "39.12734652460679",
+          "0.008057526055314413",
+          null,
+          "0",
+          "108.04835109081682",
+          "4856",
+          "0.022250484162029825"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстови води в Предбалкана",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстови води в Предбалкана",
+        "total_area_km2": 1488.26759958,
+        "outcrop_area_km2": 1302.741313,
+        "recharge_cover_characteristics": "повърхностни и подземни карстови форми",
+        "natural_resources_l_s": 5249.0,
+        "available_resources_l_s": 4856.0,
+        "permitted_abstraction_l_s": 108.0,
+        "exploitation_index": 0.022240527182866558,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL001",
+      "significant_pressure": {
+        "source": "Pril_2311_final.xls",
+        "raw": [
+          "BG1G0000QAL001",
+          "Порови води в Кватернера - Брегово-Новоселска низина",
+          "Добро",
+          "лошо",
+          "нитратни йони",
+          "Замърсяване с хранителни вещества",
+          "неприложимо",
+          "неприложимо",
+          "неприложимо",
+          "неприложимо",
+          "×",
+          "×",
+          "×",
+          "неприложимо",
+          "неприложимо",
+          "×"
+        ]
+      },
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL001",
+          "Порови води в Кватернера - Брегово-Новоселска низина",
+          "72.00475646879755",
+          "0.13722761315152457",
+          "1.6000126839167932",
+          "0.0030493252445234318",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "16.16755454084221",
+          "0.030812338364039737",
+          null,
+          null,
+          "89.77232369355656",
+          "524.7104049626735",
+          "0.17108927676008776"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Брегово-Косово",
+          "total_discharge_l_s": 72.65,
+          "available_resource_l_s": 80.17037349213895,
+          "exploitation_index": 0.9061951046931775
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера-Брегово - Новоселската низина",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Брегово-Новоселска низина",
+        "total_area_km2": 144.068182508,
+        "outcrop_area_km2": 144.068182508,
+        "recharge_cover_characteristics": "льосови отложения",
+        "natural_resources_l_s": 524.7104049626735,
+        "available_resources_l_s": 524.7104049626735,
+        "permitted_abstraction_l_s": 90.0,
+        "exploitation_index": 0.1715231852633118,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL002",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL002",
+          "Порови води в Кватернера - Видинска низина",
+          "260.548737950279",
+          "0.2214983464430493",
+          null,
+          null,
+          "6.710774987316083",
+          "0.005704980859763538",
+          "65.388635210553",
+          "0.05558835052990796",
+          null,
+          null,
+          "21.438958650431253",
+          "0.01822574128698191",
+          "24.858859715880264",
+          "0.021133076156285072",
+          "378.9459665144596",
+          "1176.3010520589605",
+          "0.32215049527598777"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Видин - Покрайна",
+          "total_discharge_l_s": 362.89396245560624,
+          "available_resource_l_s": 317.77386450951974,
+          "exploitation_index": 1.1419880707172971
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - Видинска низина",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Видинска низина",
+        "total_area_km2": 222.044692407,
+        "outcrop_area_km2": 222.044692407,
+        "recharge_cover_characteristics": "глинести отложения",
+        "natural_resources_l_s": 1181.7963229769184,
+        "available_resources_l_s": 1176.3010520589605,
+        "permitted_abstraction_l_s": 379.0,
+        "exploitation_index": 0.32219643035820655,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL003",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL003",
+          "Порови води в Кватернера - Арчар-Орсойска низина",
+          "175.99999999999997",
+          "0.4331210907992073",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "3.260400811770675",
+          "0.008023570204754181",
+          null,
+          null,
+          "179.26040081177064",
+          "406.35287391625235",
+          "0.44114466100396144"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Добри дол - Арчар",
+          "total_discharge_l_s": 175.99999999999997,
+          "available_resource_l_s": 6.285471282743661,
+          "exploitation_index": 28.001082509627583
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - Арчар-Орсойска низина",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Арчар-Орсойска низина",
+        "total_area_km2": 64.5934062438,
+        "outcrop_area_km2": 64.5934062438,
+        "recharge_cover_characteristics": "пясъци, песъчливи глини и глини",
+        "natural_resources_l_s": 406.44664949523326,
+        "available_resources_l_s": 406.35287391625235,
+        "permitted_abstraction_l_s": 179.0,
+        "exploitation_index": 0.44050383666510295,
+        "risk_assessment": "да"
+      }
+    },
+    {
+      "code": "BG1G0000QAL004",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL004",
+          "Порови води в Кватернера - Цибърска низина",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "0",
+          "138.0954666867123",
+          "0"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - Цибърска низина",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Цибърска низина",
+        "total_area_km2": 25.6059027212,
+        "outcrop_area_km2": 25.6059027212,
+        "recharge_cover_characteristics": "глинесто-песъчливи отложения",
+        "natural_resources_l_s": 138.0954666867123,
+        "available_resources_l_s": 138.0954666867123,
+        "permitted_abstraction_l_s": 0.1,
+        "exploitation_index": 0.0007241367323582253,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL005",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL005",
+          "Порови води в Кватернера - Козлодуйска низина",
+          "111.2997843734145",
+          "0.49624852338150477",
+          null,
+          null,
+          null,
+          null,
+          "8.200025367833588",
+          "0.03656117128516464",
+          null,
+          null,
+          "3.991470065956367",
+          "0.01779663040232679",
+          "6.5",
+          "0.028981326604890206",
+          "129.99127980720445",
+          "224.2823487211663",
+          "0.5795876516738864"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "АЕЦ - Козлодуй",
+          "total_discharge_l_s": 249.99999999999997,
+          "available_resource_l_s": 14.376409366869039,
+          "exploitation_index": 17.389599420849418
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - Козлодуйска низина",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Козлодуйска низина",
+        "total_area_km2": 57.6471104491,
+        "outcrop_area_km2": 57.6471104491,
+        "recharge_cover_characteristics": "песъчливи глини и глини",
+        "natural_resources_l_s": 224.2823487211663,
+        "available_resources_l_s": 224.2823487211663,
+        "permitted_abstraction_l_s": 130.0,
+        "exploitation_index": 0.5796265320978041,
+        "risk_assessment": "да"
+      }
+    },
+    {
+      "code": "BG1G0000QAL006",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL006",
+          "Порови води в Кватернера - Островска низина",
+          "42.98449391171994",
+          "0.29233223145387005",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "0",
+          "0",
+          "1",
+          "0.006800876428933928",
+          "43.98449391171994",
+          "147.0398720590715",
+          "0.299133107882804"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - Островска низина",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Островска низина",
+        "total_area_km2": 34.9021911725,
+        "outcrop_area_km2": 34.9021911725,
+        "recharge_cover_characteristics": "глинесто-песъчливи отложения",
+        "natural_resources_l_s": 147.0398720590715,
+        "available_resources_l_s": 147.0398720590715,
+        "permitted_abstraction_l_s": 43.98449391171994,
+        "exploitation_index": 0.299133107882804,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL007",
+      "significant_pressure": {
+        "source": "Pril_2311_final.xls",
+        "raw": [
+          "BG1G0000QAL007",
+          "Порови води в Кватернера - Карабоазка низина",
+          "Добро",
+          "лошо",
+          "нитратни йони, хром",
+          "Замърсяване с хранителни вещества и Химическо замърсяване",
+          "неприложимо",
+          "неприложимо",
+          "неприложимо",
+          "×",
+          "неприложимо",
+          "×",
+          "×",
+          "неприложимо",
+          "×",
+          "неприложимо"
+        ]
+      },
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL007",
+          "Порови води в Кватернера - Карабоазка низина",
+          "70.0986174530695",
+          "0.09780428632449199",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "18.50361491628615",
+          "0.025816954985199165",
+          null,
+          null,
+          "88.60223236935565",
+          "716.7233675270478",
+          "0.12362124130969117"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - Карабоазка низина",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни, неизвестен",
+        "parameters_exceeding_standard": "нитратни йони, хром"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Карабоазка низина",
+        "total_area_km2": 244.703515466,
+        "outcrop_area_km2": 244.703515466,
+        "recharge_cover_characteristics": "прахово-песъчлива глина и делувиално-пролувиални отложения",
+        "natural_resources_l_s": 720.4084706148907,
+        "available_resources_l_s": 716.7233675270478,
+        "permitted_abstraction_l_s": 89.0,
+        "exploitation_index": 0.12417622200191666,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL008",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL008",
+          "Порови води в Кватернера - Беленско-Свищовска низина",
+          "338.93987823439875",
+          "0.3645519537020337",
+          "1.1104480593607304",
+          "0.001194359340757861",
+          "0.19999365804160324",
+          "0.00021510622812185667",
+          "246",
+          "0.26458905065364113",
+          null,
+          null,
+          "1.786153919330289",
+          "0.0019211250806377297",
+          "5.686802384576357",
+          "0.006116527008902117",
+          "593.7232762557078",
+          "929.7436889103358",
+          "0.6385881220140944"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Белене",
+          "total_discharge_l_s": 326.52111872146116,
+          "available_resource_l_s": 92.16937549079783,
+          "exploitation_index": 3.54262049604601
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "АЕЦ - Белене",
+          "total_discharge_l_s": 199.2074137493658,
+          "available_resource_l_s": 770.6531887135206,
+          "exploitation_index": 0.25849164924874957
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - Беленско-Свищовска низина",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Беленско-Свищовска низина",
+        "total_area_km2": 272.318483382,
+        "outcrop_area_km2": 272.318483382,
+        "recharge_cover_characteristics": "песъчливи глини и глини, блатни глини",
+        "natural_resources_l_s": 929.7436889103358,
+        "available_resources_l_s": 929.7436889103358,
+        "permitted_abstraction_l_s": 594.0,
+        "exploitation_index": 0.638885756456353,
+        "risk_assessment": "да"
+      }
+    },
+    {
+      "code": "BG1G0000QAL009",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL009",
+          "Порови води в Кватернера - Вардим-Новградска низина",
+          "44.907407407407405",
+          "0.13800774021924903",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "0.02520928462709284",
+          "7.747221682975778e-05",
+          null,
+          null,
+          "44.9326166920345",
+          "325.3977446197167",
+          "0.1380852124360788"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - Вардим-Новградска низина",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Вардим-Новградска низина",
+        "total_area_km2": 57.5129105764,
+        "outcrop_area_km2": 57.5129105764,
+        "recharge_cover_characteristics": "песъчливо-глинести отложения",
+        "natural_resources_l_s": 325.3977446197167,
+        "available_resources_l_s": 325.3977446197167,
+        "permitted_abstraction_l_s": 44.907407407407405,
+        "exploitation_index": 0.13800774021924903,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL010",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL010",
+          "Порови води в Кватернера - Бръшлянска низина",
+          "257.36234779299843",
+          "0.22007854441270472",
+          "2.1554731100963975",
+          "0.0018432120652407498",
+          "0.3287671232876712",
+          "0.00028113898775161596",
+          "0.01902587519025875",
+          "1.6269617346737034e-05",
+          "0.01902587519025875",
+          "1.6269617346737034e-05",
+          "9.97447361745307",
+          "0.008529482474171448",
+          "0.024353120243531198",
+          "2.08251102038234e-05",
+          "269.8834665144596",
+          "1169.4113502967234",
+          "0.2307857422847658"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Ряхово",
+          "total_discharge_l_s": 195.0,
+          "available_resource_l_s": 137.43064331244815,
+          "exploitation_index": 1.418897527508971
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Тутракан",
+          "total_discharge_l_s": 49.0,
+          "available_resource_l_s": 33.33139303714246,
+          "exploitation_index": 1.4700855720430708
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - Бръшлянска низина",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Бръшлянска низина",
+        "total_area_km2": 262.080339006,
+        "outcrop_area_km2": 262.080339006,
+        "recharge_cover_characteristics": "песъчливи глини,глини и льос",
+        "natural_resources_l_s": 1170.1611972203727,
+        "available_resources_l_s": 1169.4113502967234,
+        "permitted_abstraction_l_s": 270.0,
+        "exploitation_index": 0.23088539369101463,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL011",
+      "significant_pressure": {
+        "source": "Pril_2311_final.xls",
+        "raw": [
+          "BG1G0000QAL011",
+          "Порови води в Кватернера - Попинско-Гарванска низина",
+          "Добро",
+          "лошо",
+          "нитратни йони",
+          "Замърсяване с хранителни вещества",
+          "неприложимо",
+          "неприложимо",
+          "неприложимо",
+          "неприложимо",
+          "×",
+          "×",
+          "×",
+          "неприложимо",
+          "неприложимо",
+          "×"
+        ]
+      },
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL011",
+          "Порови води в Кватернера - Попинско-Гарванска низина",
+          "31",
+          "0.27452355204941103",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "0.2268835616438356",
+          "0.002009189717551202",
+          null,
+          null,
+          "31.226883561643834",
+          "112.92291597050428",
+          "0.27653274176696224"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - Попинско-Гарванска низина",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Попинско-Гарванска низина",
+        "total_area_km2": 27.2645028117,
+        "outcrop_area_km2": 27.2645028117,
+        "recharge_cover_characteristics": "песъчливо-глинести отложения",
+        "natural_resources_l_s": 112.92291597050428,
+        "available_resources_l_s": 112.92291597050428,
+        "permitted_abstraction_l_s": 31.2,
+        "exploitation_index": 0.2762946717400524,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL012",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL012",
+          "Порови води в Кватернера - Айдемирска низина",
+          "250.11586757990867",
+          "0.33028022482745056",
+          "0.14779934043632673",
+          "0.00019517034189389483",
+          "27.80536529680365",
+          "0.036717231859364846",
+          "30.709030948756972",
+          "0.04055154814497393",
+          null,
+          null,
+          "6.331747843734145",
+          "0.00836112927026156",
+          "1.6521752917300863",
+          "0.002181712148401116",
+          "316.76198630136986",
+          "757.2838116801499",
+          "0.41828701659234596"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Силистра",
+          "total_discharge_l_s": 310.93023845763565,
+          "available_resource_l_s": 271.8537711891713,
+          "exploitation_index": 1.1437407584876678
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - Айдемирска низина",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - Айдемирска низина",
+        "total_area_km2": 49.0087003087,
+        "outcrop_area_km2": 49.0087003087,
+        "recharge_cover_characteristics": "глинесто-песъчливи отложения",
+        "natural_resources_l_s": 757.2838116801499,
+        "available_resources_l_s": 757.2838116801499,
+        "permitted_abstraction_l_s": 317.0,
+        "exploitation_index": 0.4186013157955761,
+        "risk_assessment": "да"
+      }
+    },
+    {
+      "code": "BG1G0000QAL013",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL013",
+          "Порови води в Кватернера - р. Лом",
+          "22.467032280568237",
+          "0.049762151365893445",
+          "0.30000634195839676",
+          "0.000664482999482482",
+          "0.6413622526636225",
+          "0.0014205510144311045",
+          "1.9586504312531707",
+          "0.004338208002540317",
+          null,
+          null,
+          "57.7712772704211",
+          "0.1279574003469133",
+          "5.839770421106037",
+          "0.01293448711908808",
+          "88.97809899797056",
+          "451.48836342246545",
+          "0.19707728084834872"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Крива бара",
+          "total_discharge_l_s": 13.47,
+          "available_resource_l_s": 19.999271948246466,
+          "exploitation_index": 0.6735245180353202
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Лом",
+          "total_discharge_l_s": 8.7,
+          "available_resource_l_s": 70.52684431161033,
+          "exploitation_index": 0.1233572845193611
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - р. Лом",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - р. Лом",
+        "total_area_km2": 153.345582176,
+        "outcrop_area_km2": 153.345582176,
+        "recharge_cover_characteristics": "песъчливо-глинести отложения",
+        "natural_resources_l_s": 482.0742200262702,
+        "available_resources_l_s": 451.48836342246545,
+        "permitted_abstraction_l_s": 89.0,
+        "exploitation_index": 0.1971257893012874,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL014",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL014",
+          "Порови води в Кватернера - р. Цибрица",
+          null,
+          "0",
+          null,
+          null,
+          "0.5",
+          "0.003685626571560328",
+          null,
+          null,
+          null,
+          null,
+          "29.62931253170979",
+          "0.21840516312787003",
+          null,
+          null,
+          "30.12931253170979",
+          "135.6621432725135",
+          "0.22209078969943039"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - р. Цибрица",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - р. Цибрица",
+        "total_area_km2": 63.0446908315,
+        "outcrop_area_km2": 63.0446908315,
+        "recharge_cover_characteristics": "песъчливо-глинести отложения",
+        "natural_resources_l_s": 135.6621432725135,
+        "available_resources_l_s": 135.6621432725135,
+        "permitted_abstraction_l_s": 30.0,
+        "exploitation_index": 0.2211375942936197,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL015",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL015",
+          "Порови води в Кватернера - р. Огоста",
+          "36.94197108066971",
+          "0.04840222350064239",
+          "3.0900240994419073",
+          "0.004048620923798499",
+          "8.363362506341957",
+          "0.010957870665993644",
+          "7.057870370370369",
+          "0.00924738472560775",
+          null,
+          null,
+          "47.81028031456113",
+          "0.06264213320833445",
+          "3.5582508878741756",
+          "0.004662102473367071",
+          "106.82175925925925",
+          "763.2288024986997",
+          "0.1399603354977438"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Монтана - град",
+          "total_discharge_l_s": 14.3,
+          "available_resource_l_s": 102.242,
+          "exploitation_index": 0.13986424365720546
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - р. Огоста",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - р. Огоста",
+        "total_area_km2": 250.504011059,
+        "outcrop_area_km2": 250.504011059,
+        "recharge_cover_characteristics": "песъчливи глини, глини и глинести пясъци",
+        "natural_resources_l_s": 808.1785551815015,
+        "available_resources_l_s": 763.2288024986997,
+        "permitted_abstraction_l_s": 107.0,
+        "exploitation_index": 0.1401938706318441,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL016",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL016",
+          "Порови води в Кватернера - р. Скът",
+          "16.830479452054792",
+          "0.069103927112216",
+          null,
+          null,
+          "0.35369101978691014",
+          "0.001452212845226818",
+          null,
+          null,
+          null,
+          null,
+          "13.302099188229324",
+          "0.054616821544596024",
+          "14.560121765601217",
+          "0.059782111145517985",
+          "45.04639142567224",
+          "243.55315472482818",
+          "0.1849550726475568"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Б.Слатина - град",
+          "total_discharge_l_s": 20.044266869609334,
+          "available_resource_l_s": 32.96218181818182,
+          "exploitation_index": 0.6080989110542734
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - р. Скът",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - р. Скът",
+        "total_area_km2": 109.904374567,
+        "outcrop_area_km2": 109.904374567,
+        "recharge_cover_characteristics": "песъчливо-глинести отложения",
+        "natural_resources_l_s": 255.9161212476665,
+        "available_resources_l_s": 243.55315472482818,
+        "permitted_abstraction_l_s": 45.0,
+        "exploitation_index": 0.18476459502584563,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL017",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL017",
+          "Порови води в Кватернера - р. Искър",
+          "95.04848427194318",
+          "0.07473982511882421",
+          "9.19996194824962",
+          "0.007234240002657082",
+          "4.623002283105023",
+          "0.0036352224321076023",
+          "0.7876712328767123",
+          "0.0006193724250025916",
+          null,
+          null,
+          "29.015886605783862",
+          "0.022816169107749452",
+          "6.332952815829527",
+          "0.004979814139767213",
+          "145.00795915778792",
+          "1271.7247347158157",
+          "0.11402464322610815"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Д.Луковит - Искър",
+          "total_discharge_l_s": 31.0,
+          "available_resource_l_s": 144.20940170940173,
+          "exploitation_index": 0.2149651800266706
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Червен бряг",
+          "total_discharge_l_s": 0.7,
+          "available_resource_l_s": 48.31196581196581,
+          "exploitation_index": 0.014489164086687305
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - р. Искър",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - р. Искър",
+        "total_area_km2": 351.044128961,
+        "outcrop_area_km2": 351.044128961,
+        "recharge_cover_characteristics": "глинесто-песъчливи и глинести отложения",
+        "natural_resources_l_s": 1520.799234656136,
+        "available_resources_l_s": 1271.7247347158157,
+        "permitted_abstraction_l_s": 145.0,
+        "exploitation_index": 0.11401838467221623,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL018",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL018",
+          "Порови води в Кватернера - р. Вит",
+          "264.79994292237444",
+          "0.4707330197129194",
+          "0.19999365804160324",
+          "0.00035552733710730026",
+          "5.812595129375951",
+          "0.010333009997747071",
+          "8.399987316083205",
+          "0.014932599120722697",
+          null,
+          null,
+          "25.29331557584982",
+          "0.044963751457687974",
+          "1.6318810248604767",
+          "0.002900983565808307",
+          "306.1377156265855",
+          "562.526807836563",
+          "0.5442188911919927"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Биволаре",
+          "total_discharge_l_s": 111.0,
+          "available_resource_l_s": 113.06517555353018,
+          "exploitation_index": 0.9817346451423282
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Крушовица",
+          "total_discharge_l_s": 110.0,
+          "available_resource_l_s": 113.45330528212695,
+          "exploitation_index": 0.9695618803388801
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - р. Вит",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - р. Вит",
+        "total_area_km2": 188.570971527,
+        "outcrop_area_km2": 188.570971527,
+        "recharge_cover_characteristics": "песъчливо-глинести отложения",
+        "natural_resources_l_s": 643.2315703939728,
+        "available_resources_l_s": 562.526807836563,
+        "permitted_abstraction_l_s": 306.0,
+        "exploitation_index": 0.5439740750789347,
+        "risk_assessment": "да"
+      }
+    },
+    {
+      "code": "BG1G0000QAL019",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL019",
+          "Порови води в Кватернера - р. Осъм",
+          "99.95116184677828",
+          "0.12397802490595818",
+          "9.910324708269913",
+          "0.012292628327737877",
+          "1.8085362760020294",
+          "0.002243283132748653",
+          "9.871416793505833",
+          "0.012244367493781244",
+          null,
+          null,
+          "56.527619228817855",
+          "0.07011606923957728",
+          "5.246797311009639",
+          "0.0065080540904371145",
+          "183.31585616438355",
+          "806.2006304955645",
+          "0.22738242719024035"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Ловеч -Дойренци",
+          "total_discharge_l_s": 15.98,
+          "available_resource_l_s": 167.8376816528278,
+          "exploitation_index": 0.09521103868113852
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Летница-Левски",
+          "total_discharge_l_s": 64.63,
+          "available_resource_l_s": 166.3059166312244,
+          "exploitation_index": 0.38862117060641926
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - р. Осъм",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - р. Осъм",
+        "total_area_km2": 368.333257414,
+        "outcrop_area_km2": 368.333257414,
+        "recharge_cover_characteristics": "глинесто-песъчливи оложения",
+        "natural_resources_l_s": 1017.3272706081319,
+        "available_resources_l_s": 806.2006304955645,
+        "permitted_abstraction_l_s": 183.0,
+        "exploitation_index": 0.22699064361623172,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL020",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL020",
+          "Порови води в Кватернера - р. Янтра",
+          "99.81418061897514",
+          "0.11495148823287471",
+          "16.558250887874177",
+          "0.019069390444233246",
+          "18.106544901065448",
+          "0.02085249080066248",
+          "19.988521055301877",
+          "0.023019877823294947",
+          null,
+          null,
+          "58.309075342465746",
+          "0.06715193118386466",
+          "5.947425164890919",
+          "0.006849381216358885",
+          "218.72399797057332",
+          "868.3156882385583",
+          "0.25189455970128893"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Горна Оряховица",
+          "total_discharge_l_s": 12.4,
+          "available_resource_l_s": 55.71933843270089,
+          "exploitation_index": 0.22254392009655694
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Павликени",
+          "total_discharge_l_s": 16.4,
+          "available_resource_l_s": 55.113094394362896,
+          "exploitation_index": 0.2975699365136252
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - р. Янтра",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - р. Янтра",
+        "total_area_km2": 472.482996757,
+        "outcrop_area_km2": 472.482996757,
+        "recharge_cover_characteristics": "песъчливо-глинести отложения",
+        "natural_resources_l_s": 969.3970395751911,
+        "available_resources_l_s": 868.3156882385583,
+        "permitted_abstraction_l_s": 219.0,
+        "exploitation_index": 0.2522124187854506,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL021",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL021",
+          "Порови води в Кватернера - р. Русенски Лом и притоците му",
+          "32.36472602739726",
+          "0.16022141597721415",
+          "0.2790144596651446",
+          "0.001381259701312597",
+          "4.741755454084221",
+          "0.023474036901407036",
+          "38.0517503805175",
+          "0.18837500188374998",
+          "0.4946727549467275",
+          "0.00244887502448875",
+          "0.9915651953323185",
+          "0.004908738590754052",
+          "0.4127346524606798",
+          "0.0020432408537657417",
+          "77.33621892440385",
+          "202",
+          "0.3828525689326923"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Разград - Ушинци",
+          "total_discharge_l_s": 84.48,
+          "available_resource_l_s": 79.36840216237431,
+          "exploitation_index": 1.0644034363595758
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - р. Русенски Лом и притоците му",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - р. Русенски Лом и притоците м",
+        "total_area_km2": 143.797779583,
+        "outcrop_area_km2": 143.797779583,
+        "recharge_cover_characteristics": "глинесто-песъчливи отложения",
+        "natural_resources_l_s": 387.0,
+        "available_resources_l_s": 202.0,
+        "permitted_abstraction_l_s": 77.0,
+        "exploitation_index": 0.3811881188118812,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL022",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL022",
+          "Порови води в Кватернера - р. Росица в Севлиевската котловина",
+          "13.529934043632673",
+          "0.15387667892677553",
+          null,
+          "0",
+          "11.336117453069507",
+          "0.12892628300897807",
+          "4.0538178589548455",
+          "0.046104291942471405",
+          null,
+          null,
+          "4.058694824961948",
+          "0.04615975794326576",
+          "1.106544901065449",
+          "0.012584795602861064",
+          "34.08510908168442",
+          "87.92712539676717",
+          "0.38765180742435185"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Севлиево",
+          "total_discharge_l_s": 26.3,
+          "available_resource_l_s": 20.785654987831926,
+          "exploitation_index": 1.265295705879666
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - р. Росица в Севлиевската котловина",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - р. Росица в Севлиевската кот",
+        "total_area_km2": 55.8846955114,
+        "outcrop_area_km2": 55.8846955114,
+        "recharge_cover_characteristics": "песъчливо-глинести отложения",
+        "natural_resources_l_s": 105.25104980126551,
+        "available_resources_l_s": 87.92712539676717,
+        "permitted_abstraction_l_s": 34.0,
+        "exploitation_index": 0.38668385718942294,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QAL052",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QAL052",
+          "Порови води в Кватернера - р. Суха",
+          "4.5027904616945715",
+          "0.08186891748535585",
+          null,
+          "0",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "0.7394723490613901",
+          "0.013444951801116184",
+          null,
+          null,
+          "5.242262810755962",
+          "55",
+          "0.09531386928647204"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера на р. Суха",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - р. Суха",
+        "total_area_km2": 42.8595936742,
+        "outcrop_area_km2": 42.8595936742,
+        "recharge_cover_characteristics": "льос, деградирал",
+        "natural_resources_l_s": 57.662529109403884,
+        "available_resources_l_s": 55.332745277156604,
+        "permitted_abstraction_l_s": 5.2,
+        "exploitation_index": 0.1,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QPL023",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QPL023",
+          "Порови води в Кватернера - между реките Лом и Искър",
+          "36.74806570268899",
+          "0.023681944090990847",
+          null,
+          "0",
+          null,
+          "0",
+          "5.945205479452054",
+          "0.003831331556684725",
+          null,
+          null,
+          "40.956684424150176",
+          "0.026394148702474602",
+          "6.772513952308473",
+          "0.004364482693364964",
+          "90.4224695585997",
+          "1551.73348782074",
+          "0.05827190704351514"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - между реките Лом и Искър",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - между реките Лом и Искър",
+        "total_area_km2": 2923.08010475,
+        "outcrop_area_km2": 2923.08010475,
+        "recharge_cover_characteristics": "льосови отложения",
+        "natural_resources_l_s": 2029.8169990382191,
+        "available_resources_l_s": 1551.73348782074,
+        "permitted_abstraction_l_s": 90.0,
+        "exploitation_index": 0.0579996505240061,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QPL024",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QPL024",
+          "Порови води в Кватернера - между реките Искър и Вит",
+          "77.74356291222729",
+          "0.38464154476761847",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "0.02552638254693049",
+          "0.0001262935071070211",
+          "0.19999365804160324",
+          "0.0009894821730732696",
+          "77.96908295281582",
+          "202.11951613078128",
+          "0.38575732044779876"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Долни Дъбник",
+          "total_discharge_l_s": 7.8,
+          "available_resource_l_s": 2.6234451072272327,
+          "exploitation_index": 2.9731897109308925
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Долна Митрополия",
+          "total_discharge_l_s": 16.0,
+          "available_resource_l_s": 2.6840875569420333,
+          "exploitation_index": 5.961057402400358
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Тръстеник",
+          "total_discharge_l_s": 16.0,
+          "available_resource_l_s": 1.212848994296007,
+          "exploitation_index": 13.192079207920795
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - между реките Искър и Вит",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - между реките Искър и Вит",
+        "total_area_km2": 766.129231997,
+        "outcrop_area_km2": 766.129231997,
+        "recharge_cover_characteristics": "льосови отложения",
+        "natural_resources_l_s": 387.3705241697029,
+        "available_resources_l_s": 202.11951613078128,
+        "permitted_abstraction_l_s": 78.0,
+        "exploitation_index": 0.3859102846334253,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QPL025",
+      "significant_pressure": {
+        "source": "Pril_2311_final.xls",
+        "raw": [
+          "BG1G0000QPL025",
+          "Порови води в Кватернера - между реките Вит и Осъм",
+          "Добро",
+          "лошо",
+          "нитратни йони",
+          "Замърсяване с хранителни вещества",
+          "неприложимо",
+          "неприложимо",
+          "неприложимо",
+          "×",
+          "×",
+          "×",
+          "×",
+          "неприложимо",
+          "неприложимо",
+          "×"
+        ]
+      },
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QPL025",
+          "Порови води в Кватернера - между реките Вит и Осъм",
+          "113.24397513952307",
+          "0.21465782632041935",
+          "11.614916286149162",
+          "0.022016470896633673",
+          "0.028475393201420597",
+          "5.3976081294437815e-05",
+          "0.28370750887874174",
+          "0.0005377772821172997",
+          null,
+          null,
+          "11.04220573313039",
+          "0.02093087846427416",
+          "0.5459791983764586",
+          "0.001034922235776871",
+          "136.75925925925927",
+          "527.5557713441298",
+          "0.25923185128051585"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Плевен",
+          "total_discharge_l_s": 0.235,
+          "available_resource_l_s": 5.642750075188482,
+          "exploitation_index": 0.04164635981900198
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Левски",
+          "total_discharge_l_s": 14.48,
+          "available_resource_l_s": 5.642750075188482,
+          "exploitation_index": 2.5661246390602073
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - между реките Вит и Осъм",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - между реките Вит и Осъм",
+        "total_area_km2": 998.501716872,
+        "outcrop_area_km2": 998.501716872,
+        "recharge_cover_characteristics": "льосови отложения",
+        "natural_resources_l_s": 889.6578299613885,
+        "available_resources_l_s": 527.5557713441298,
+        "permitted_abstraction_l_s": 137.0,
+        "exploitation_index": 0.2596881835847334,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000QPL026",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000QPL026",
+          "Порови води в Кватернера - между реките Осъм и Янтра",
+          "74.51137113140537",
+          "0.05586644828251077",
+          "5.219970826991374",
+          "0.00391378155862998",
+          "3.362379502790461",
+          "0.0025210138767617473",
+          "1.2849441907661086",
+          "0.0009634135983452746",
+          "0.679540842212075",
+          "0.0005094998621129074",
+          "102.98560375443937",
+          "0.07721559566853213",
+          "2.6000126839167934",
+          "0.0019494135181561236",
+          "190.64382293252154",
+          "1333.7409737345245",
+          "0.14293916636504894"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Павликени-Обединение",
+          "total_discharge_l_s": 40.31,
+          "available_resource_l_s": 64.61791545985318,
+          "exploitation_index": 0.6238208043873594
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Порови води в Кватернера - между реките Осъм и Янтра",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Порови води в Кватернера - между реките Осъм и Янтра",
+        "total_area_km2": 1981.48040783,
+        "outcrop_area_km2": 1981.48040783,
+        "recharge_cover_characteristics": "льосови отложения",
+        "natural_resources_l_s": 1610.4200773106882,
+        "available_resources_l_s": 1333.7409737345245,
+        "permitted_abstraction_l_s": 191.0,
+        "exploitation_index": 0.1432062175200278,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000TJK044",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000TJK044",
+          "Карстови води в Западния Балкан",
+          "121.55492135971588",
+          "0.021314206796373115",
+          "7.440131912734652",
+          "0.0013045996690749873",
+          "48.41159309994926",
+          "0.008488794160959014",
+          "35.29813546423135",
+          "0.0061893977668299755",
+          null,
+          null,
+          "40.265918315575846",
+          "0.0070604801535289925",
+          "1.2327181633688482",
+          "0.0002161525799349199",
+          "254.20341831557582",
+          "5703",
+          "0.044573631126701"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстови води в Западния Балкан",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстови води в Западния Балкан",
+        "total_area_km2": 3374.64816828,
+        "outcrop_area_km2": 3326.612398,
+        "recharge_cover_characteristics": "почвен слой",
+        "natural_resources_l_s": 6045.0,
+        "available_resources_l_s": 5703.0,
+        "permitted_abstraction_l_s": 254.0,
+        "exploitation_index": 0.04453796247588988,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G0000TJK045",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G0000TJK045",
+          "Карстови води в Централния Балкан",
+          "1296.340959474886",
+          "0.1496238411212934",
+          "10.149670218163369",
+          "0.0011714762486338146",
+          "17.40341197361745",
+          "0.0020087040597434732",
+          "4.559614408929477",
+          "0.0005262712845024789",
+          null,
+          null,
+          "18.926204972095384",
+          "0.002184465024480077",
+          "45.92391387620497",
+          "0.005300544076200943",
+          "1393.3037749238968",
+          "8664",
+          "0.1608153018148542"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстови води в Централния Балкан",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстови води в Централния Балкан",
+        "total_area_km2": 9391.13157755,
+        "outcrop_area_km2": 9230.180336,
+        "recharge_cover_characteristics": "мергелно-песъчливи материали, повърхностни и подземни карстови форми",
+        "natural_resources_l_s": 10541.0,
+        "available_resources_l_s": 8664.0,
+        "permitted_abstraction_l_s": 1393.0,
+        "exploitation_index": 0.16078024007386887,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G000K1AP043",
+      "significant_pressure": {
+        "source": "Pril_2311_final.xls",
+        "raw": [
+          "BG1G000K1AP043",
+          "Карстови води в Мраморенския масив",
+          "Добро",
+          "лошо",
+          "нитратни йони",
+          "Замърсяване с хранителни вещества",
+          "неприложимо",
+          "неприложимо",
+          "неприложимо",
+          "неприложимо",
+          "неприложимо",
+          "×",
+          "×",
+          "неприложимо",
+          "неприложимо",
+          "×"
+        ]
+      },
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G000K1AP043",
+          "Карстови води в Мраморенския масив",
+          "1.699993658041603",
+          "0.008429376037064845",
+          null,
+          "0",
+          null,
+          null,
+          null,
+          "0",
+          null,
+          null,
+          "0.9915651953323185",
+          "0.004916651222305454",
+          null,
+          "0",
+          "2.6915588533739214",
+          "201.67491052321714",
+          "0.013346027259370296"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстови води в Мраморенския масив",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстови води в Мраморенск",
+        "total_area_km2": 71.9339947706,
+        "outcrop_area_km2": 71.796556,
+        "recharge_cover_characteristics": "повърхностни и подземни карстови форми",
+        "natural_resources_l_s": 207.8175629294565,
+        "available_resources_l_s": 201.67491052321714,
+        "permitted_abstraction_l_s": 3.0,
+        "exploitation_index": 0.014875424970894608,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G000K1HB050",
+      "significant_pressure": {
+        "source": "Pril_2311_final.xls",
+        "raw": [
+          "BG1G000K1HB050",
+          "Карстови води в Разградска формация",
+          "Добро",
+          "лошо",
+          "нитратни йони",
+          "Замърсяване с хранителни вещества",
+          "×",
+          "неприложимо",
+          "неприложимо",
+          "×",
+          "×",
+          "×",
+          "×",
+          "неприложимо",
+          "неприложимо",
+          "×"
+        ]
+      },
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G000K1HB050",
+          "Карстови води в Разградската формация",
+          "346.55238584474887",
+          "0.09589856138994579",
+          "31.58970700152207",
+          "0.008741557062986146",
+          "0.5358954845256214",
+          "0.00014829390337655284",
+          "1.6348617453069507",
+          "0.0004524017027446708",
+          null,
+          null,
+          "1.5246067985794014",
+          "0.0004218917677127019",
+          "0.4328386605783866",
+          "0.0001197758450349081",
+          "382.2702955352613",
+          "3613.739151264079",
+          "0.10578248167180078"
+        ]
+      },
+      "significant_abstraction_areas": [
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Разград - Островче",
+          "total_discharge_l_s": 25.78,
+          "available_resource_l_s": 95.35139795649879,
+          "exploitation_index": 0.27036834857692754
+        },
+        {
+          "source": "Pril_2332_final.xls",
+          "area_name": "Хърсово-Самуил",
+          "total_discharge_l_s": 9.4,
+          "available_resource_l_s": 98.50351028563924,
+          "exploitation_index": 0.09542807127118616
+        }
+      ],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстови води в Разградската формация",
+        "risk_assessment": "в риск",
+        "pollution_source_type": "дифузни",
+        "parameters_exceeding_standard": "нитратни йони"
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстови води в Разградска формация",
+        "total_area_km2": 4839.92904027,
+        "outcrop_area_km2": 3432.754114,
+        "recharge_cover_characteristics": "почвен слой",
+        "natural_resources_l_s": 3810.933050806752,
+        "available_resources_l_s": 3613.739151264079,
+        "permitted_abstraction_l_s": 382.333429731101,
+        "exploitation_index": 0.10579995227308023,
+        "risk_assessment": "не"
+      }
+    },
+    {
+      "code": "BG1G00N1BP0036",
+      "significant_pressure": null,
+      "abstraction_pressure": {
+        "source": "Pril_2331_final.xls",
+        "raw_lps": [
+          "BG1G000N1BP036",
+          "Карстови води в Ломско-Плевенската депресия-Видински район",
+          "353.65649606798576",
+          "0.08232227562103951",
+          "16.54423515981735",
+          "0.0038510789478159568",
+          "4.765537798072044",
+          "0.001109296507931109",
+          "9.186612125824455",
+          "0.002138410643813886",
+          null,
+          null,
+          "24.238711314053777",
+          "0.00564215812710749",
+          "8.612753678335869",
+          "0.0020048309307113287",
+          "417.00434614408925",
+          "4296",
+          "0.09706805077841929"
+        ]
+      },
+      "significant_abstraction_areas": [],
+      "chemical_risk": {
+        "source": "Pril_2421_final.xls",
+        "body_name": "Карстови води в Ломско-Плевенската депресия",
+        "risk_assessment": "не е в риск",
+        "pollution_source_type": null,
+        "parameters_exceeding_standard": null
+      },
+      "quantitative_risk": {
+        "source": "Pril_2423_final.xls",
+        "body_name": "Карстови води в Ломско-Плевенската депресия",
+        "total_area_km2": 6563.33892884,
+        "outcrop_area_km2": 2004.943188,
+        "recharge_cover_characteristics": "льосови отложения в разкритите части",
+        "natural_resources_l_s": 4436.0,
+        "available_resources_l_s": 4296.0,
+        "permitted_abstraction_l_s": 417.0,
+        "exploitation_index": 0.09706703910614525,
+        "risk_assessment": "не"
+      }
+    }
+  ],
+  "quality_report": {
+    "master_count": 50,
+    "significant_pressure_count": 10,
+    "abstraction_pressure_count": 50,
+    "significant_abstraction_count": 26,
+    "chemical_risk_count": 50,
+    "quantitative_risk_count": 50,
+    "status": "PASS"
+  }
+}
