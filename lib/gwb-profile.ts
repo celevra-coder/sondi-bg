@@ -53,6 +53,8 @@ export type GwbProfile = {
 
   danubeSection4?: any;
 
+  danubeSection5?: any;
+
   danubeClimate?: any;
 
   westernAegeanSection1?: any;
@@ -229,6 +231,9 @@ const DATASETS = {
   danubeSection4:
     "bd_danube_section4_monitoring_status.json",
 
+  danubeSection5:
+    "bd_danube_section5_objectives.json",
+
   danubeClimate:
     "bd_danube_climate_scenarios.json",
 
@@ -379,6 +384,9 @@ export function getGwbProfile(
 
     danubeSection4:
       records.danubeSection4,
+
+    danubeSection5:
+      records.danubeSection5,
 
     danubeClimate:
       records.danubeClimate,
