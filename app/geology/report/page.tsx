@@ -2257,6 +2257,8 @@ export default function GeologyReportPage() {
         const professionalDrilling = {
           basinCode,
 
+          nearestFault: null as any,
+
           danubeOfficialSection1,
           danubeOfficialSection2,
           danubeOfficialSection3,
@@ -3221,14 +3223,14 @@ export default function GeologyReportPage() {
           </section>
 
 
-          
+
         </div>
 
 
-        
 
 
-        
+
+
 
 
         <section style={styles.card}>
@@ -3332,7 +3334,7 @@ export default function GeologyReportPage() {
         </section>
 
 
-                
+
 
 
         {professional?.isInsideExactProtectionZone && (
@@ -4305,9 +4307,9 @@ export default function GeologyReportPage() {
           </div>
         </section>
 
-        
 
-        
+
+
 
 
         <section style={styles.card}>
