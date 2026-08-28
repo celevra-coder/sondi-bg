@@ -287,7 +287,8 @@ export function getSpatialProfile(
     .filter(
       (item) =>
         item.distanceKm !== null &&
-        Number.isFinite(item.distanceKm)
+        Number.isFinite(item.distanceKm) &&
+        Number(item.distanceKm) > 0.01
     )
     .map((item) => ({
       distanceKm: Number(item.distanceKm),

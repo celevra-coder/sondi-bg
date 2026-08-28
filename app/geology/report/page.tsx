@@ -1067,7 +1067,33 @@ export default function GeologyReportPage() {
 
           fetch(
             "/geology-map/data/bd_danube_section7_measures.json"
-          ).then(r => r.json()),
+          ).then(async r => {
+            if (!r.ok) {
+              console.warn(
+                "[SONDI] Optional Danube Section 7 file missing:",
+                r.status
+              );
+
+              return {};
+            }
+
+            const contentType =
+              r.headers.get("content-type") || "";
+
+            if (
+              !contentType
+                .toLowerCase()
+                .includes("application/json")
+            ) {
+              console.warn(
+                "[SONDI] Danube Section 7 returned non-JSON content"
+              );
+
+              return {};
+            }
+
+            return r.json();
+          }),
 
           fetch(
             "/geology-map/data/bd_danube_current_groundwater_resource.json"
@@ -1091,6 +1117,61 @@ export default function GeologyReportPage() {
               code.trim().toUpperCase()
             )
             .filter(Boolean);
+
+
+        /*
+          Common source with Sondi EXPERT.
+
+          Spatial information used in drilling
+          recommendations must come from the same
+          canonical server-side context as /pro.
+        */
+        let expertContext: any = null;
+
+        try {
+          const expertContextUrl =
+            "/api/expert-context" +
+            "?lat=" +
+            encodeURIComponent(String(lat)) +
+            "&lng=" +
+            encodeURIComponent(String(lon)) +
+            (
+              requestedGwb
+                ? "&gwb=" +
+                  encodeURIComponent(
+                    requestedGwb
+                  )
+                : ""
+            );
+
+          const expertContextResponse =
+            await fetch(
+              expertContextUrl,
+              {
+                cache: "no-store",
+              }
+            );
+
+          if (expertContextResponse.ok) {
+            const payload =
+              await expertContextResponse.json();
+
+            if (payload?.success) {
+              expertContext = payload;
+            }
+          } else {
+            console.warn(
+              "[SONDI DRILLING] EXPERT context HTTP:",
+              expertContextResponse.status
+            );
+          }
+
+        } catch (expertContextError) {
+          console.warn(
+            "[SONDI DRILLING] EXPERT context unavailable:",
+            expertContextError
+          );
+        }
 
 
         const allBodies = [
@@ -1334,7 +1415,8 @@ export default function GeologyReportPage() {
             )
             .filter(
               (item: any) =>
-                Number.isFinite(item.distanceKm)
+                Number.isFinite(item.distanceKm) &&
+                Number(item.distanceKm) > 0.01
             )
             .sort(
               (first: any, second: any) =>
@@ -2324,6 +2406,79 @@ export default function GeologyReportPage() {
           section7,
         };
 
+        /*
+          Synchronise drilling spatial evidence
+          with the canonical EXPERT spatial profile.
+        */
+        const expertSpatial =
+          expertContext?.spatial || null;
+
+        if (expertSpatial) {
+
+          professionalDrilling.nearestOrdinary =
+            expertSpatial.nearestOrdinaryWell ??
+            null;
+
+          professionalDrilling.nearestFault =
+            expertSpatial.nearestFault ??
+            null;
+
+          professionalDrilling.ordinaryCount1Km =
+            expertSpatial.counts
+              ?.ordinaryWells?.km1 ??
+            0;
+
+          professionalDrilling.ordinaryCount3Km =
+            expertSpatial.counts
+              ?.ordinaryWells?.km3 ??
+            0;
+
+          professionalDrilling.ordinaryCount5Km =
+            expertSpatial.counts
+              ?.ordinaryWells?.km5 ??
+            0;
+
+          const expertOrdinaryStatistics =
+            expertSpatial.ordinaryStatistics ||
+            null;
+
+          if (expertOrdinaryStatistics) {
+
+            professionalDrilling.depthMin =
+              expertOrdinaryStatistics.depthMin ??
+              null;
+
+            professionalDrilling.depthMax =
+              expertOrdinaryStatistics.depthMax ??
+              null;
+
+            professionalDrilling.depthMedian =
+              expertOrdinaryStatistics.depthMedian ??
+              null;
+
+            professionalDrilling.depthCount =
+              expertOrdinaryStatistics.depthCount ??
+              0;
+
+            professionalDrilling.staticMin =
+              expertOrdinaryStatistics.staticLevelMin ??
+              null;
+
+            professionalDrilling.staticMax =
+              expertOrdinaryStatistics.staticLevelMax ??
+              null;
+
+            professionalDrilling.staticMedian =
+              expertOrdinaryStatistics.staticLevelMedian ??
+              null;
+
+            professionalDrilling.staticCount =
+              expertOrdinaryStatistics.staticLevelCount ??
+              0;
+          }
+        }
+
+
         let nearest = null as
           | {
               feature: AnyFeature;
@@ -2610,6 +2765,178 @@ export default function GeologyReportPage() {
       ? "Да се прецени изолиране на плитките води и разделяне на водоносните интервали чрез подходящо обсаждане и циментация. Точните дълбочини се определят само по реалния сондажен разрез."
       : "Да се предвиди санитарно уплътняване на горната част и да се оцени необходимостта от изолиране на плитки или замърсени води.";
 
+  const drillingNearestFault =
+    professional?.nearestFault || null;
+
+  const drillingLithologyText =
+    String(
+      geologyProfile?.lithology ||
+      geologyProfile?.main_lithology ||
+      geologyProfile?.description ||
+      ""
+    ).trim();
+
+  const drillingHydroEnvironmentText =
+    String(
+      geologyProfile?.aquifer_type ||
+      geologyProfile?.water_bearing_environment ||
+      geologyProfile?.hydrogeological_environment ||
+      geologyProfile?.aquifer_environment ||
+      ""
+    ).trim();
+
+  const drillingGeologyContextText =
+    [
+      drillingLithologyText,
+      drillingHydroEnvironmentText,
+    ]
+      .filter(Boolean)
+      .join(" / ");
+
+  const drillingRiskItems: string[] = [];
+
+  if (looseGround) {
+    drillingRiskItems.push(
+      "\u0417\u0430 \u0442\u0430\u0437\u0438 \u0442\u043e\u0447\u043a\u0430 \u0434\u0430\u043d\u043d\u0438\u0442\u0435 \u043d\u0430\u0441\u043e\u0447\u0432\u0430\u0442 \u043a\u044a\u043c \u0440\u043e\u0445\u043a\u0430\u0432\u0430 \u0438\u043b\u0438 \u043d\u0435\u0441\u0442\u0430\u0431\u0438\u043b\u043d\u0430 \u0441\u0440\u0435\u0434\u0430" +
+      (
+        drillingGeologyContextText
+          ? " (" + drillingGeologyContextText + ")"
+          : ""
+      ) +
+      ". \u041f\u0440\u0438 \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u043d\u0435 \u043e\u0441\u043d\u043e\u0432\u043d\u0438\u044f\u0442 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u0440\u0438\u0441\u043a \u0435 \u043d\u0435\u0441\u0442\u0430\u0431\u0438\u043b\u043d\u043e\u0441\u0442 \u043d\u0430 \u0441\u0442\u0435\u043d\u0438\u0442\u0435 \u0438 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e\u0441\u0442 \u043e\u0442 \u043d\u0430\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u043e\u0431\u0441\u0430\u0436\u0434\u0430\u043d\u0435."
+    );
+  }
+
+  if (rockGround) {
+    drillingRiskItems.push(
+      "\u0412 \u0438\u0437\u0431\u0440\u0430\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430 \u0435 \u043e\u0447\u0430\u043a\u0432\u0430\u043d\u0430 \u0441\u043a\u0430\u043b\u043d\u0430 / \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0441\u0440\u0435\u0434\u0430" +
+      (
+        drillingGeologyContextText
+          ? " (" + drillingGeologyContextText + ")"
+          : ""
+      ) +
+      ". \u041f\u043e-\u0432\u0430\u0436\u043d\u043e \u0435 \u0434\u0430 \u0441\u0435 \u043e\u0442\u0431\u0435\u043b\u044f\u0437\u0432\u0430\u0442 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0438\u0442\u0435 \u043d\u0430 \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438 \u0438 \u0440\u0430\u0437\u0434\u0440\u043e\u0431\u0435\u043d\u0438 \u0437\u043e\u043d\u0438, \u0437\u0430\u0449\u043e\u0442\u043e \u0438\u043c\u0435\u043d\u043d\u043e \u0442\u0430\u043c \u043c\u043e\u0436\u0435 \u0434\u0430 \u0431\u044a\u0434\u0435 \u0441\u044a\u0441\u0440\u0435\u0434\u043e\u0442\u043e\u0447\u0435\u043d \u043e\u0441\u043d\u043e\u0432\u043d\u0438\u044f\u0442 \u0432\u043e\u0434\u043e\u043f\u0440\u0438\u0442\u043e\u043a."
+    );
+  }
+
+  if (mixedGround) {
+    drillingRiskItems.push(
+      "\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u0441\u043c\u0435\u0441\u0435\u043d\u0430 \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0441\u0440\u0435\u0434\u0430. \u041f\u0440\u0438 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u043e\u0447\u0430\u043a\u0432\u0430 \u043f\u0440\u0435\u0445\u043e\u0434 \u043e\u0442 \u043f\u043e-\u043d\u0435\u0441\u0442\u0430\u0431\u0438\u043b\u043d\u0438 \u0433\u043e\u0440\u043d\u0438 \u043f\u043b\u0430\u0441\u0442\u043e\u0432\u0435 \u043a\u044a\u043c \u043f\u043e-\u0442\u0432\u044a\u0440\u0434\u0430 \u043e\u0441\u043d\u043e\u0432\u0430, \u043a\u043e\u0435\u0442\u043e \u043c\u043e\u0436\u0435 \u0434\u0430 \u043d\u0430\u043b\u043e\u0436\u0438 \u043f\u0440\u043e\u043c\u044f\u043d\u0430 \u043d\u0430 \u0440\u0435\u0436\u0438\u043c\u0430 \u0438 \u043a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044f\u0442\u0430."
+    );
+  }
+
+  if (
+    drillingNearestFault?.distanceKm != null &&
+    Number.isFinite(
+      Number(drillingNearestFault.distanceKm)
+    )
+  ) {
+    const faultDistance =
+      Number(drillingNearestFault.distanceKm);
+
+    if (faultDistance <= 5) {
+      drillingRiskItems.push(
+        "\u041d\u0430\u0439-\u0431\u043b\u0438\u0437\u043a\u0438\u044f\u0442 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d \u0440\u0430\u0437\u043b\u043e\u043c \u0435 \u043d\u0430 " +
+        (
+          faultDistance < 1
+            ? Math.round(
+                faultDistance * 1000
+              ) + " m"
+            : faultDistance.toFixed(2) +
+              " km"
+        ) +
+        ". \u0422\u043e\u0432\u0430 \u043d\u0435 \u0434\u043e\u043a\u0430\u0437\u0432\u0430 \u0432\u043e\u0434\u0430 \u0432 \u0441\u0430\u043c\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430, \u043d\u043e \u043f\u043e\u0432\u0438\u0448\u0430\u0432\u0430 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0430 \u043a\u044a\u043c \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u0438 \u0438 \u0440\u0430\u0437\u0434\u0440\u043e\u0431\u0435\u043d\u0438 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0438 \u043f\u043e \u0432\u0440\u0435\u043c\u0435 \u043d\u0430 \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u043d\u0435."
+      );
+    }
+  }
+
+  if (
+    professional?.depthMedian != null &&
+    professional?.depthMin != null &&
+    professional?.depthMax != null
+  ) {
+    drillingRiskItems.push(
+      "\u0412 \u0441\u044a\u0441\u0435\u0434\u043d\u0438\u0442\u0435 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u043d\u0438 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u044f \u0441 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0438\u0442\u0435 \u0441\u0430 \u043c\u0435\u0436\u0434\u0443 " +
+      Number(professional.depthMin).toFixed(0) +
+      " \u0438 " +
+      Number(professional.depthMax).toFixed(0) +
+      " m, \u0430 \u043c\u0435\u0434\u0438\u0430\u043d\u0430\u0442\u0430 \u0435 " +
+      Number(professional.depthMedian).toFixed(0) +
+      " m. \u0422\u043e\u0432\u0430 \u0435 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440, \u0430 \u043d\u0435 \u043f\u0440\u0435\u0434\u043f\u0438\u0441\u0430\u043d\u0430 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430 \u0437\u0430 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438\u044f \u0441\u043e\u043d\u0434\u0430\u0436."
+    );
+  }
+
+  if (drillingRiskItems.length === 0) {
+    drillingRiskItems.push(
+      "\u0417\u0430 \u0442\u043e\u0447\u043a\u0430\u0442\u0430 \u043d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438 \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u043d\u0438 \u0434\u0430\u043d\u043d\u0438, \u0437\u0430 \u0434\u0430 \u0441\u0435 \u0434\u0430\u0434\u0435 \u0441\u043f\u0435\u0446\u0438\u0444\u0438\u0447\u0435\u043d \u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0447\u0435\u043d \u0440\u0438\u0441\u043a."
+    );
+  }
+
+  const drillingFieldControlItems: string[] = [];
+
+  if (looseGround) {
+    drillingFieldControlItems.push(
+      "\u041f\u0440\u0438 \u043f\u0440\u0435\u043c\u0438\u043d\u0430\u0432\u0430\u043d\u0435 \u043f\u0440\u0435\u0437 \u043f\u044f\u0441\u044a\u0446\u0438 \u0438 \u0447\u0430\u043a\u044a\u043b\u0438 \u0434\u0430 \u0441\u0435 \u043e\u0442\u0431\u0435\u043b\u044f\u0437\u0432\u0430 \u043d\u0430 \u043a\u043e\u044f \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430 \u0437\u0430\u043f\u043e\u0447\u0432\u0430 \u0438 \u0437\u0430\u0432\u044a\u0440\u0448\u0432\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0438\u044f\u0442 \u0433\u0440\u0430\u043d\u0443\u043b\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u0435\u043d \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b. \u0422\u043e\u0432\u0430 \u0435 \u0432\u0430\u0436\u043d\u043e \u0437\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u0432\u0430\u0449\u043e\u0442\u043e \u0440\u0430\u0437\u043f\u043e\u043b\u0430\u0433\u0430\u043d\u0435 \u043d\u0430 \u0444\u0438\u043b\u0442\u044a\u0440\u0430."
+    );
+  }
+
+  if (rockGround) {
+    drillingFieldControlItems.push(
+      "\u0414\u0430 \u0441\u0435 \u0437\u0430\u043f\u0438\u0441\u0432\u0430\u0442 \u0442\u043e\u0447\u043d\u0438\u0442\u0435 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0438, \u043d\u0430 \u043a\u043e\u0438\u0442\u043e \u0441\u0435 \u043f\u0440\u043e\u043c\u0435\u043d\u044f \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u0442\u0430 \u043d\u0430 \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u043d\u0435, \u043f\u043e\u044f\u0432\u044f\u0432\u0430\u0442 \u0441\u0435 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438 \u0438\u043b\u0438 \u0437\u0430\u043f\u043e\u0447\u0432\u0430 \u043f\u0440\u0438\u0442\u043e\u043a. \u0422\u043e\u0432\u0430 \u0434\u0430\u0432\u0430 \u0440\u0435\u0430\u043b\u043d\u0438\u044f \u0441\u043e\u043d\u0434\u0430\u0436\u0435\u043d \u043f\u0440\u043e\u0444\u0438\u043b \u043d\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0438\u0442\u0435 \u0437\u043e\u043d\u0438."
+    );
+  }
+
+  if (
+    professional?.staticMedian != null &&
+    professional?.staticMin != null &&
+    professional?.staticMax != null
+  ) {
+    drillingFieldControlItems.push(
+      "\u0421\u044a\u0441\u0435\u0434\u043d\u0438\u0442\u0435 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u044f \u0441 \u043d\u0430\u043b\u0438\u0447\u043d\u0438 \u0438\u0437\u043c\u0435\u0440\u0432\u0430\u043d\u0438\u044f \u0438\u043c\u0430\u0442 \u0441\u0442\u0430\u0442\u0438\u0447\u043d\u0438 \u043d\u0438\u0432\u0430 \u0432 \u0434\u0438\u0430\u043f\u0430\u0437\u043e\u043d " +
+      Number(professional.staticMin).toFixed(1) +
+      "\u2013" +
+      Number(professional.staticMax).toFixed(1) +
+      " m, \u0441 \u043c\u0435\u0434\u0438\u0430\u043d\u0430 " +
+      Number(professional.staticMedian).toFixed(1) +
+      " m. \u041f\u0440\u0438 \u043d\u043e\u0432\u0438\u044f \u0441\u043e\u043d\u0434\u0430\u0436 \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u043e\u0442\u043e \u043d\u0438\u0432\u043e \u0441\u043b\u0435\u0434 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0432\u0430\u043d\u0435 \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0441\u0435 \u0441\u0440\u0430\u0432\u043d\u0438 \u0441 \u0442\u043e\u0437\u0438 \u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440."
+    );
+  }
+
+  if (drillingFieldControlItems.length === 0) {
+    drillingFieldControlItems.push(
+      "\u041f\u043e \u0432\u0440\u0435\u043c\u0435 \u043d\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435\u0442\u043e \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0441\u0435 \u0438\u0437\u0433\u0440\u0430\u0434\u0438 \u0440\u0435\u0430\u043b\u0435\u043d \u0440\u0430\u0437\u0440\u0435\u0437 \u043d\u0430 \u043f\u043b\u0430\u0441\u0442\u043e\u0432\u0435\u0442\u0435 \u0438 \u0432\u043e\u0434\u043e\u043f\u0440\u043e\u044f\u0432\u0438\u0442\u0435, \u0442\u044a\u0439 \u043a\u0430\u0442\u043e \u0437\u0430 \u0442\u043e\u0447\u043a\u0430\u0442\u0430 \u043d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438 \u0441\u044a\u0441\u0435\u0434\u043d\u0438 \u0438\u0437\u043c\u0435\u0440\u0432\u0430\u043d\u0438\u044f."
+    );
+  }
+
+  const drillingCompletionItems: string[] = [];
+
+  if (
+    professional?.staticMedian != null
+  ) {
+    drillingCompletionItems.push(
+      "\u0421\u043b\u0435\u0434 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0432\u0430\u043d\u0435 \u0434\u0430 \u0441\u0435 \u0438\u0437\u043c\u0435\u0440\u0438 \u0441\u0442\u0430\u0442\u0438\u0447\u043d\u043e\u0442\u043e \u043d\u0438\u0432\u043e \u0438 \u0434\u0430 \u0441\u0435 \u0441\u0440\u0430\u0432\u043d\u0438 \u0441 \u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440\u0430 \u043e\u0442 \u043e\u043a\u043e\u043b\u043d\u0438\u0442\u0435 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u044f \u2014 \u043c\u0435\u0434\u0438\u0430\u043d\u0430 \u043e\u043a\u043e\u043b\u043e " +
+      Number(professional.staticMedian).toFixed(1) +
+      " m. \u0421\u044a\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043e \u043e\u0442\u043a\u043b\u043e\u043d\u0435\u043d\u0438\u0435 \u0435 \u043f\u043e\u043b\u0435\u0437\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0437\u0430 \u043b\u043e\u043a\u0430\u043b\u043d\u0438\u0442\u0435 \u0443\u0441\u043b\u043e\u0432\u0438\u044f."
+    );
+  }
+
+  drillingCompletionItems.push(
+    "\u041f\u0440\u043e\u0431\u043d\u043e\u0442\u043e \u0432\u043e\u0434\u043e\u0447\u0435\u0440\u043f\u0435\u043d\u0435 \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0438 \u0443\u0441\u0442\u043e\u0439\u0447\u0438\u0432\u0438\u044f \u0434\u0435\u0431\u0438\u0442 \u0438 \u043f\u043e\u043d\u0438\u0436\u0435\u043d\u0438\u0435\u0442\u043e \u043d\u0430 \u0432\u043e\u0434\u043d\u043e\u0442\u043e \u043d\u0438\u0432\u043e. \u0418\u043c\u0435\u043d\u043d\u043e \u0442\u0435\u0437\u0438 \u0434\u0432\u0435 \u0441\u0442\u043e\u0439\u043d\u043e\u0441\u0442\u0438, \u0430 \u043d\u0435 \u043f\u0440\u0438\u0442\u043e\u043a\u044a\u0442 \u043f\u043e \u0432\u0440\u0435\u043c\u0435 \u043d\u0430 \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u043d\u0435, \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0441\u0430 \u043e\u0441\u043d\u043e\u0432\u0430\u0442\u0430 \u0437\u0430 \u0438\u0437\u0431\u043e\u0440 \u043d\u0430 \u043f\u043e\u043c\u043f\u0430."
+  );
+
+  if (looseGround) {
+    drillingCompletionItems.push(
+      "\u041f\u0440\u0438 \u0444\u0438\u043b\u0442\u0440\u043e\u0432 \u0441\u043e\u043d\u0434\u0430\u0436 \u0441\u0435 \u043e\u0446\u0435\u043d\u044f\u0432\u0430 \u0434\u0430\u043b\u0438 \u043f\u0440\u0438 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0432\u0430\u043d\u0435\u0442\u043e \u043f\u0440\u043e\u0434\u044a\u043b\u0436\u0430\u0432\u0430 \u0438\u0437\u043d\u0430\u0441\u044f\u043d\u0435 \u043d\u0430 \u043f\u044f\u0441\u044a\u043a. \u0410\u043a\u043e \u0434\u0430, \u0442\u043e\u0432\u0430 \u0435 \u0441\u0438\u0433\u043d\u0430\u043b \u0434\u0430 \u0441\u0435 \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0442 \u0444\u0438\u043b\u0442\u044a\u0440\u044a\u0442, \u0447\u0430\u043a\u044a\u043b\u0435\u0441\u0442\u0430\u0442\u0430 \u0437\u0430\u0441\u0438\u043f\u043a\u0430 \u0438 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0432\u0430\u043d\u0435\u0442\u043e."
+    );
+  }
+
+  if (rockGround) {
+    drillingCompletionItems.push(
+      "\u041f\u0440\u0438 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0435\u043d \u0441\u043e\u043d\u0434\u0430\u0436 \u0435 \u0432\u0430\u0436\u043d\u043e \u0434\u0430 \u0441\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0438 \u0434\u0430\u043b\u0438 \u0434\u0435\u0431\u0438\u0442\u044a\u0442 \u0441\u0435 \u0437\u0430\u043f\u0430\u0437\u0432\u0430 \u043f\u0440\u0438 \u043f\u0440\u043e\u0434\u044a\u043b\u0436\u0438\u0442\u0435\u043b\u043d\u043e \u0432\u043e\u0434\u043e\u0447\u0435\u0440\u043f\u0435\u043d\u0435 \u0438 \u043a\u043e\u043b\u043a\u043e \u0431\u044a\u0440\u0437\u043e \u0441\u0435 \u0432\u044a\u0437\u0441\u0442\u0430\u043d\u043e\u0432\u044f\u0432\u0430 \u043d\u0438\u0432\u043e\u0442\u043e \u0441\u043b\u0435\u0434 \u0441\u043f\u0438\u0440\u0430\u043d\u0435."
+    );
+  }
+
+
   const nearestOrdinary =
     professional?.nearestOrdinary || null;
 
@@ -2761,7 +3088,7 @@ export default function GeologyReportPage() {
               AISMM GEOLOGY
             </div>
             <h1 style={styles.h1}>
-              Подробен анализ на точка
+              Препоръки за сондиране
             </h1>
             <div style={styles.coords}>
               {data.lat.toFixed(6)},{" "}
@@ -2894,376 +3221,14 @@ export default function GeologyReportPage() {
           </section>
 
 
-          <section style={styles.card}>
-            <div style={styles.sectionLabel}>
-              НАЙ-БЛИЗКО РЕАЛНО НАБЛЮДЕНИЕ
-            </div>
-
-            {data.monitoring ? (
-              <>
-                <h2 style={styles.h2}>
-                  {mp.station_no ||
-                    mp.eu_point_code ||
-                    mp.nimh_code ||
-                    "\u041c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432 \u043f\u0443\u043d\u043a\u0442"}
-                  {(mp.location || mp.settlement)
-                    ? ` \u2013 ${mp.location || mp.settlement}`
-                    : ""}
-                </h2>
-
-                <p>
-                  Разстояние от точката:{" "}
-                  <strong>
-                    {data.monitoring.distanceKm < 1
-                      ? `${Math.round(
-                          data.monitoring.distanceKm *
-                            1000
-                        )} m`
-                      : `${data.monitoring.distanceKm.toFixed(
-                          2
-                        )} km`}
-                  </strong>
-                </p>
-
-                <p>
-                  Следи се:{" "}
-                  <strong>
-                    {monitoringType}
-                  </strong>
-                </p>
-
-                <div style={styles.note}>
-                  <strong>{"\u041a\u0430\u043a\u0432\u043e \u043f\u043e\u043a\u0430\u0437\u0432\u0430\u0442 \u043d\u0430\u043b\u0438\u0447\u043d\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u0438?"}</strong>
-                  <div style={{marginTop:6}}>
-                    {monitoringExplanation}
-                  </div>
-                </div>
-
-                {(mp.mean_2019 != null ||
-                  mp.mean_2020 != null) && (
-                  <div style={styles.measureRow}>
-                    {mp.mean_2019 != null && (
-                      <div>
-                        <span style={styles.measureYear}>
-                          2019
-                        </span>
-                        <strong>
-                          {mp.mean_2019}
-                          {unit}
-                        </strong>
-                      </div>
-                    )}
-
-                    {mp.mean_2020 != null && (
-                      <div>
-                        <span style={styles.measureYear}>
-                          2020
-                        </span>
-                        <strong>
-                          {mp.mean_2020}
-                          {unit}
-                        </strong>
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                <div style={styles.explainBox}>
-                  <strong>
-                    Какво означава „{monitoringType}“?
-                  </strong>
-
-                  <div style={{marginTop:6}}>
-                    {monitoringMeaning(
-                      mp.measurement_type || ""
-                    )}
-                  </div>
-                </div>
-              </>
-            ) : (
-              <p>
-                Няма намерен количествен
-                мониторингов пункт.
-              </p>
-            )}
-          </section>
+          
         </div>
 
 
-        <section style={styles.card}>
-          <div style={styles.sectionLabel}>
-            ПОДЗЕМНИ ВОДИ
-          </div>
-
-          <h2 style={styles.h2}>
-            Картографирани ПВТ в точката:{" "}
-            {data.bodies.length}
-          </h2>
-
-          <div style={styles.bodyGrid}>
-            {data.bodies.map(
-              (feature, index) => {
-                const p =
-                  feature.properties || {};
-
-                const code =
-                  p.localId ||
-                  p.canonical_code ||
-                  (
-                    professional?.basinCode === "BG4" &&
-                    index === 0
-                      ? professional?.groundwaterBodyCode
-                      : ""
-                  ) ||
-                  "?";
-
-                return (
-                  <div
-                    key={
-                      code + "-" + index
-                    }
-                    style={styles.bodyCard}
-                  >
-                    <div style={styles.bodyNumber}>
-                      ПВТ {index + 1}
-                    </div>
-
-                    <strong>
-                      {code}
-                    </strong>
-
-                    <div style={styles.bodyName}>
-                      {p.nameText ||
-                        p.nameTxtInt ||
-                        "Подземно водно тяло"}
-                    </div>
-
-                    {p.horizon_bg && (
-                      <div>
-                        Хоризонт:{" "}
-                        <strong>
-                          {p.horizon_bg}
-                        </strong>
-                      </div>
-                    )}
-
-                    {p.water_type_bg && (
-                      <div>
-                        Води:{" "}
-                        <strong>
-                          {p.water_type_bg}
-                        </strong>
-                      </div>
-                    )}
-
-                    {p.gwb_type_name_bg && (
-                      <div>
-                        Среда:{" "}
-                        <strong>
-                          {p.gwb_type_name_bg}
-                        </strong>
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-            )}
-          </div>
-
-          {primaryWaterType && (
-            <div style={styles.explainBox}>
-              <strong>
-                Какво означава „{primaryWaterType}“?
-              </strong>
-
-              <div style={{marginTop:6}}>
-                {waterTypeExplanation(
-                  primaryWaterType
-                )}
-              </div>
-            </div>
-          )}
-
-          {data.bodies.length > 1 && (
-            <div style={styles.note}>
-              <strong>
-                Защо са повече от едно?
-              </strong>{" "}
-              В една координата могат да се
-              припокриват различни регионални
-              водоносни системи. От тази карта
-              не можем надеждно да кажем коя е
-              по-плитка и коя по-дълбока.
-            </div>
-          )}
-        </section>
+        
 
 
-        <section style={styles.card}>
-          <div style={styles.sectionLabel}>
-            ВИЗУАЛНА СХЕМА
-          </div>
-
-          <h2 style={styles.h2}>
-            Как да си представим данните
-          </h2>
-
-          <div style={styles.diagramWrap}>
-
-            <div style={styles.diagramSurface}>
-              <strong>
-                ПОВЪРХНОСТ / ТЕРЕН
-              </strong>
-
-              <span>
-                {data.lat.toFixed(5)},{" "}
-                {data.lon.toFixed(5)}
-              </span>
-            </div>
-
-
-            <div style={styles.diagramGround}>
-              <div style={styles.diagramTitle}>
-                🪨{" "}
-                {data.geology?.unit
-                  ? `${data.geology.unit.code} – ${data.geology.unit.name_bg}`
-                  : "Геоложка среда"}
-              </div>
-
-              <div style={styles.diagramText}>
-                {simple.headline}
-              </div>
-
-              <div style={styles.drillLine}>
-                <div style={styles.drillHead}>
-                  СОНДАЖ
-                </div>
-
-                <div style={styles.drillPipe}>
-                  ↓
-                  <br />
-                  ↓
-                  <br />
-                  ↓
-                </div>
-              </div>
-            </div>
-
-
-            <div style={styles.aquiferStack}>
-              {data.bodies.map(
-                (feature, index) => {
-                  const p =
-                    feature.properties || {};
-
-                  return (
-                    <div
-                      key={
-                        bodyShortName(
-                          feature,
-                          index
-                        ) + "-diagram"
-                      }
-                      style={{
-                        ...styles.aquiferLayer,
-                        opacity:
-                          index === 0
-                            ? 1
-                            : 0.88,
-                      }}
-                    >
-                      <div style={styles.aquiferNumber}>
-                        КАРТОГРАФИРАНО ПВТ {index + 1}
-                      </div>
-
-                      <div style={styles.diagramBodyCode}>
-                        {bodyShortName(
-                          feature,
-                          index
-                        )}
-                      </div>
-
-                      {p.horizon_bg && (
-                        <div>
-                          {p.horizon_bg}
-                        </div>
-                      )}
-
-                      {p.water_type_bg && (
-                        <div style={styles.aquiferType}>
-                          💧 {p.water_type_bg}
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
-              )}
-            </div>
-
-
-            {data.monitoring && (
-              <div style={styles.monitoringDiagram}>
-                <div style={styles.monitoringIcon}>
-                  ◉
-                </div>
-
-                <div>
-                  <strong>
-                    Реално наблюдение:
-                  </strong>{" "}
-
-                  {mp.station_no ||
-                    mp.eu_point_code ||
-                    mp.nimh_code ||
-                    "\u041f\u0443\u043d\u043a\u0442"}
-
-                  {(mp.location || mp.settlement)
-                    ? ` \u2013 ${mp.location || mp.settlement}`
-                    : ""}
-
-                  <div>
-                    {data.monitoring.distanceKm < 1
-                      ? `${Math.round(
-                          data.monitoring.distanceKm *
-                            1000
-                        )} m`
-                      : `${data.monitoring.distanceKm.toFixed(
-                          2
-                        )} km`}{" "}
-                    от избраната точка
-                  </div>
-                </div>
-              </div>
-            )}
-
-
-            <div style={styles.diagramLegend}>
-              <div>
-                <strong>🟫 Кафяво:</strong>{" "}
-                геоложка среда
-              </div>
-
-              <div>
-                <strong>🟦 Синьо:</strong>{" "}
-                картографирани подземни
-                водни тела
-              </div>
-
-              <div>
-                <strong>◉:</strong>{" "}
-                реален мониторингов пункт
-              </div>
-            </div>
-          </div>
-
-          <div style={styles.warning}>
-            ⚠ Това е обяснителна схема,
-            а не реален вертикален разрез.
-            Сините полета не показват
-            действителни дълбочини или
-            дебелини на водоносните пластове.
-          </div>
-        </section>
+        
 
 
         <section style={styles.card}>
@@ -3367,201 +3332,7 @@ export default function GeologyReportPage() {
         </section>
 
 
-                <section style={styles.card}>
-          <div style={styles.sectionLabel}>
-            РЕАЛНИ РЕГИСТРИРАНИ СЪОРЪЖЕНИЯ
-          </div>
-
-          <h2 style={styles.h2}>
-            Обикновени сондажи и кладенци около точката
-          </h2>
-
-          <div style={styles.recommendGrid}>
-            <div style={styles.recommendItem}>
-              <strong>Район</strong>
-              <span>{professional.basinName}</span>
-            </div>
-
-            <div style={styles.recommendItem}>
-              <strong>Подземно водно тяло</strong>
-              <span>
-                {professional.groundwaterBodyCode ||
-                  "Не е определено"}
-              </span>
-            </div>
-
-            <div style={styles.recommendItem}>
-              <strong>Съоръжения до 1 km</strong>
-              <span>{professional.ordinaryCount1Km}</span>
-            </div>
-
-            <div style={styles.recommendItem}>
-              <strong>Съоръжения до 3 km</strong>
-              <span>{professional.ordinaryCount3Km}</span>
-            </div>
-
-            <div style={styles.recommendItem}>
-              <strong>Съоръжения до 5 km</strong>
-              <span>{professional.ordinaryCount5Km}</span>
-            </div>
-
-            <div style={styles.recommendItem}>
-              <strong>
-                Съоръжения в същото водно тяло до 5 km
-              </strong>
-              <span>
-                {professional.ordinarySameBodyCount}
-              </span>
-            </div>
-          </div>
-
-          {nearestOrdinary ? (
-            <div style={styles.note}>
-              <strong>
-                Най-близко обикновено съоръжение:
-              </strong>{" "}
-
-              {fmt(nearestOrdinary.distanceKm, 2)} km.
-
-              {" "}Населено място:{" "}
-              {nearestOrdinary.properties?.settlement ||
-                "Няма данни"}.
-
-              {" "}Дълбочина:{" "}
-              {fmt(nearestOrdinary.properties?.depth_m)} m.
-
-              {" "}Статично водно ниво:{" "}
-              {fmt(
-                nearestOrdinary.properties
-                  ?.static_water_level_m
-              )} m.
-            </div>
-          ) : (
-            <div style={styles.warning}>
-              Няма намерени регистрирани обикновени
-              водовземни съоръжения.
-            </div>
-          )}
-
-          {professional.ordinaryWithin5Km.length > 0 && (
-            <details style={{ marginTop: 16 }}>
-              <summary style={{
-                cursor: "pointer",
-                fontWeight: 800,
-                color: "#173f32",
-              }}>
-                Виж близките регистрирани съоръжения
-              </summary>
-
-              <div style={{
-                overflowX: "auto",
-                marginTop: 12,
-              }}>
-                <table style={{
-                  width: "100%",
-                  borderCollapse: "collapse",
-                  fontSize: 14,
-                }}>
-                  <thead>
-                    <tr>
-                      <th style={{
-                        textAlign: "left",
-                        padding: 8,
-                      }}>
-                        Населено място
-                      </th>
-
-                      <th style={{ padding: 8 }}>
-                        Разстояние
-                      </th>
-
-                      <th style={{ padding: 8 }}>
-                        Дълбочина
-                      </th>
-
-                      <th style={{ padding: 8 }}>
-                        Статично ниво
-                      </th>
-
-                      <th style={{ padding: 8 }}>
-                        Водно тяло
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    {professional.ordinaryWithin5Km.map(
-                      (item: any, index: number) => (
-                        <tr key={
-                          String(
-                            item.properties
-                              ?.registration_number ||
-                            index
-                          ) +
-                          "-" +
-                          index
-                        }>
-                          <td style={{
-                            padding: 8,
-                            borderTop:
-                              "1px solid #e2e9e5",
-                          }}>
-                            {item.properties?.settlement ||
-                              "Няма данни"}
-                          </td>
-
-                          <td style={{
-                            padding: 8,
-                            borderTop:
-                              "1px solid #e2e9e5",
-                          }}>
-                            {fmt(item.distanceKm, 2)} km
-                          </td>
-
-                          <td style={{
-                            padding: 8,
-                            borderTop:
-                              "1px solid #e2e9e5",
-                          }}>
-                            {item.properties?.depth_m != null
-                              ? `${fmt(
-                                  item.properties.depth_m
-                                )} m`
-                              : "Няма данни"}
-                          </td>
-
-                          <td style={{
-                            padding: 8,
-                            borderTop:
-                              "1px solid #e2e9e5",
-                          }}>
-                            {item.properties
-                              ?.static_water_level_m != null
-                              ? `${fmt(
-                                  item.properties
-                                    .static_water_level_m
-                                )} m`
-                              : "Няма данни"}
-                          </td>
-
-                          <td style={{
-                            padding: 8,
-                            borderTop:
-                              "1px solid #e2e9e5",
-                          }}>
-                            {item.properties
-                              ?.groundwater_body_code ||
-                              "Няма данни"}
-                          </td>
-                        </tr>
-                      )
-                    )}
-                  </tbody>
-                </table>
-              </div>
-            </details>
-          )}
-        </section>
+                
 
 
         {professional?.isInsideExactProtectionZone && (
@@ -4534,328 +4305,102 @@ export default function GeologyReportPage() {
           </div>
         </section>
 
-        <section style={styles.card}>
-          <div style={styles.sectionLabel}>
-            КАЧЕСТВО, РЕСУРС И ОГРАНИЧЕНИЯ
-          </div>
+        
 
-          <h2 style={styles.h2}>
-            Официални данни за избраното водно тяло
-          </h2>
+        
 
-          {section4 ? (
-            <>
-              <div style={styles.recommendGrid}>
-                <div style={styles.recommendItem}>
-                  <strong>
-                    Химично състояние
-                  </strong>
-
-                  <span>
-                    {section4.chemical_status ||
-                      "Няма данни"}
-                  </span>
-                </div>
-                <div style={styles.recommendItem}>
-                  <strong>
-                    {"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435"}
-                  </strong>
-
-                  <span>
-                    {section4.quantitative_status ||
-                      section4.water_balance
-                        ?.quantitative_status ||
-                      "\u041d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438"}
-                  </span>
-                </div>
-
-                <div style={styles.recommendItem}>
-                  <strong>
-                    Проблемни показатели
-                  </strong>
-
-                  <span>
-                    {Array.isArray(
-                      section4.pollutants
-                    )
-                      ? section4.pollutants.join(", ")
-                      : section4.pollutants ||
-                        "Няма посочени"}
-                  </span>
-                </div>
-
-                <div style={styles.recommendItem}>
-                  <strong>
-                    Експлоатационен индекс
-                  </strong>
-
-                  <span>
-                    {section4.water_balance
-                      ?.derived_load_percent != null
-                      ? `${fmt(
-                          Number(
-                            section4.water_balance
-                              .derived_load_percent
-                          )
-                        )}%`
-                      : section4.water_balance
-                          ?.exploitation_index != null
-                        ? `${fmt(
-                            Number(
-                              section4.water_balance
-                                .exploitation_index
-                            ) * 100
-                          )}%`
-                        : "\u041d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438"}
-                  </span>
-                </div>
-
-                <div style={styles.recommendItem}>
-                  <strong>
-                    Официална екологична цел
-                  </strong>
-
-                  <span>
-                    {professional?.basinCode === "BG4"
-                      ? (
-                          section5?.objectives?.quantitative ||
-                          section5?.objectives?.chemical ||
-                          "\u041d\u044f\u043c\u0430 \u0432\u044a\u0432\u0435\u0434\u0435\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"
-                        )
-                      : section5?.goal_label_bg ||
-                        "\u041d\u044f\u043c\u0430 \u0432\u044a\u0432\u0435\u0434\u0435\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"}
-                  </span>
-                </div>
-
-                <div style={styles.recommendItem}>
-                  <strong>
-                    Предвидени индивидуални мерки
-                  </strong>
-
-                  <span>
-                    {Array.isArray(
-                      section7?.measures
-                    )
-                      ? section7.measures.length
-                      : "Няма въведени данни"}
-                  </span>
-                </div>
-              </div>
-
-              <div style={styles.warning}>
-                Оценката се отнася за цялото подземно
-                водно тяло. Качеството на водата от
-                конкретен сондаж се установява чрез
-                лабораторно изследване.
-              </div>
-            </>
-          ) : (
-            <div style={styles.note}>
-              За този район все още няма въведени
-              подробни официални данни за химичен
-              състав, мониторинг, екологични цели
-              и мерки. Не се използват данни от
-              друг басейнов район.
-            </div>
-          )}
-        </section>
 
         <section style={styles.card}>
           <div style={styles.sectionLabel}>
-            МИНЕРАЛНИ ВОДИ
+            {"\u0420\u0418\u0421\u041a\u041e\u0412\u0415 \u041f\u0420\u0418 \u041f\u0420\u041e\u0411\u0418\u0412\u0410\u041d\u0415"}
           </div>
 
           <h2 style={styles.h2}>
-            Минерални сондажи в района
+            {"\u041a\u0430\u043a\u0432\u043e \u0434\u0430 \u0441\u0435 \u0438\u043c\u0430 \u043f\u0440\u0435\u0434\u0432\u0438\u0434 \u043d\u0430 \u0442\u0435\u0440\u0435\u043d"}
           </h2>
 
-          {nearestMineral ? (
-            <>
-              <div style={styles.recommendGrid}>
-                <div style={styles.recommendItem}>
-                  <strong>
-                    Най-близък минерален сондаж
-                  </strong>
-
-                  <span>
-                    {fmt(
-                      nearestMineral.distanceKm,
-                      2
-                    )} km
-                  </span>
-                </div>
-
-                <div style={styles.recommendItem}>
-                  <strong>
-                    Наименование
-                  </strong>
-
-                  <span>
-                    {nearestMineral.properties
-                      ?.facility ||
-                      "Няма данни"}
-                  </span>
-                </div>
-
-                <div style={styles.recommendItem}>
-                  <strong>
-                    Находище
-                  </strong>
-
-                  <span>
-                    {nearestMineral.properties
-                      ?.deposit ||
-                      "Няма данни"}
-                  </span>
-                </div>
-
-                <div style={styles.recommendItem}>
-                  <strong>
-                    Дълбочина на минералния сондаж
-                  </strong>
-
-                  <span>
-                    {nearestMineral.properties
-                      ?.depth_m != null &&
-                    String(
-                      nearestMineral.properties
-                        .depth_m
-                    ).trim() !== ""
-                      ? `${fmt(
-                          nearestMineral.properties
-                            .depth_m
-                        )} m`
-                      : "Няма данни"}
-                  </span>
-                </div>
-
-                <div style={styles.recommendItem}>
-                  <strong>
-                    Температура
-                  </strong>
-
-                  <span>
-                    {nearestMineral.properties
-                      ?.temperature_c != null &&
-                    String(
-                      nearestMineral.properties
-                        .temperature_c
-                    ).trim() !== ""
-                      ? `${fmt(
-                          nearestMineral.properties
-                            .temperature_c
-                        )} °C`
-                      : "Няма публикувана температура"}
-                  </span>
-                </div>
-
-                {nearestMineral.properties
-                  ?.technical_possible_flow_l_s != null &&
-                  String(
-                    nearestMineral.properties
-                      .technical_possible_flow_l_s
-                  ).trim() !== "" && (
-                  <div style={styles.recommendItem}>
-                    <strong>
-                      Технически възможен дебит
-                    </strong>
-
-                    <span>
-                      {fmt(
-                        nearestMineral.properties
-                          .technical_possible_flow_l_s
-                      )} l/s
-                    </span>
-                  </div>
-                )}
-
-                {nearestMineral.properties
-                  ?.ownership_regime && (
-                  <div style={styles.recommendItem}>
-                    <strong>
-                      Собственост
-                    </strong>
-
-                    <span>
-                      {nearestMineral.properties
-                        .ownership_regime ===
-                      "exclusive_state_property"
-                        ? "Изключителна държавна собственост"
-                        : nearestMineral.properties
-                            .ownership_regime ===
-                          "public_municipal_property"
-                          ? "Публична общинска собственост"
-                          : String(
-                              nearestMineral.properties
-                                .ownership_regime
-                            )}
-                    </span>
-                  </div>
-                )}
-
-                {nearestMineral.properties
-                  ?.bddr_permit_reference
-                  ?.permit_number && (
-                  <div style={styles.recommendItem}>
-                    <strong>
-                      Разрешително
-                    </strong>
-
-                    <span>
-                      {String(
-                        nearestMineral.properties
-                          .bddr_permit_reference
-                          .permit_number
-                      )}
-                    </span>
-                  </div>
-                )}
-
-                {nearestMineral.properties
-                  ?.bddr_permit_reference
-                  ?.end_date_raw && (
-                  <div style={styles.recommendItem}>
-                    <strong>
-                      Срок на разрешителното
-                    </strong>
-
-                    <span>
-                      {String(
-                        nearestMineral.properties
-                          .bddr_permit_reference
-                          .end_date_raw
-                      ).slice(0, 10)}
-                    </span>
-                  </div>
-                )}
-
-                <div style={styles.recommendItem}>
-                  <strong>
-                    Минерални сондажи до 10 km
-                  </strong>
-
-                  <span>
-                    {professional
-                      .mineralsWithin10Km.length}
-                  </span>
-                </div>
-              </div>
-
-              <div style={styles.warning}>
-                Близък минерален сондаж не доказва
-                наличие на минерална вода в конкретния
-                имот. Проучването на минерални води
-                изисква самостоятелна хидрогеоложка
-                оценка и проверка на приложимия
-                разрешителен режим.
-              </div>
-            </>
-          ) : (
-            <div style={styles.note}>
-              Няма намерен регистриран минерален сондаж.
-            </div>
-          )}
+          <div style={styles.note}>
+            {drillingRiskItems.map(
+              (item, index) => (
+                <p
+                  key={index}
+                  style={{
+                    margin:
+                      index === 0
+                        ? 0
+                        : "10px 0 0",
+                  }}
+                >
+                  ? {item}
+                </p>
+              )
+            )}
+          </div>
         </section>
+
+
+        <section style={styles.card}>
+          <div style={styles.sectionLabel}>
+            {"\u041a\u041e\u041d\u0422\u0420\u041e\u041b \u041f\u041e \u0412\u0420\u0415\u041c\u0415 \u041d\u0410 \u0421\u041e\u041d\u0414\u0418\u0420\u0410\u041d\u0415"}
+          </div>
+
+          <h2 style={styles.h2}>
+            {"\u041a\u0430\u043a\u0432\u043e \u0434\u0430 \u0441\u0435 \u043e\u0442\u0431\u0435\u043b\u044f\u0437\u0432\u0430 \u043f\u043e \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430"}
+          </h2>
+
+          <div style={styles.recommendGrid}>
+            {drillingFieldControlItems.map(
+              (item, index) => (
+                <div
+                  key={index}
+                  style={styles.recommendItem}
+                >
+                  <strong>
+                    {index + 1}.
+                  </strong>{" "}
+                  {item}
+                </div>
+              )
+            )}
+          </div>
+        </section>
+
+
+        <section style={styles.card}>
+          <div style={styles.sectionLabel}>
+            {"\u0421\u041b\u0415\u0414 \u0414\u041e\u0421\u0422\u0418\u0413\u0410\u041d\u0415 \u041d\u0410 \u0412\u041e\u0414\u0410"}
+          </div>
+
+          <h2 style={styles.h2}>
+            {"\u041a\u0430\u043a \u0441\u0435 \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0432\u0430 \u0434\u0430\u043b\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u044a\u0442 \u0435 \u0443\u0441\u043f\u0435\u0448\u0435\u043d"}
+          </h2>
+
+          <div style={styles.recommendGrid}>
+            {drillingCompletionItems.map(
+              (item, index) => (
+                <div
+                  key={index}
+                  style={styles.recommendItem}
+                >
+                  <strong>
+                    {index + 1}.
+                  </strong>{" "}
+                  {item}
+                </div>
+              )
+            )}
+          </div>
+
+          <div
+            style={{
+              ...styles.warning,
+              marginTop: 16,
+            }}
+          >
+            {"\u041c\u043e\u043c\u0435\u043d\u0442\u043d\u0438\u044f\u0442 \u043f\u0440\u0438\u0442\u043e\u043a \u043f\u043e \u0432\u0440\u0435\u043c\u0435 \u043d\u0430 \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u043d\u0435 \u043d\u0435 \u0435 \u0440\u0430\u0432\u0435\u043d \u043d\u0430 \u0443\u0441\u0442\u043e\u0439\u0447\u0438\u0432 \u0434\u0435\u0431\u0438\u0442. \u041e\u043a\u043e\u043d\u0447\u0430\u0442\u0435\u043b\u043d\u0430\u0442\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0441\u0435 \u043f\u0440\u0430\u0432\u0438 \u0441\u043b\u0435\u0434 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0432\u0430\u043d\u0435 \u0438 \u043f\u0440\u043e\u0431\u043d\u043e \u0432\u043e\u0434\u043e\u0447\u0435\u0440\u043f\u0435\u043d\u0435."}
+          </div>
+        </section>
+
 
         <div style={styles.footer}>
           Източници: официални регистри на басейновите дирекции, ПУРБ 2022–2027, геоложки и хидрогеоложки данни, регистрирани водовземни съоръжения и наличен официален мониторинг.
