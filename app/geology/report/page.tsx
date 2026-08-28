@@ -4749,6 +4749,86 @@ export default function GeologyReportPage() {
                   </span>
                 </div>
 
+                {nearestMineral.properties
+                  ?.technical_possible_flow_l_s != null &&
+                  String(
+                    nearestMineral.properties
+                      .technical_possible_flow_l_s
+                  ).trim() !== "" && (
+                  <div style={styles.recommendItem}>
+                    <strong>
+                      Технически възможен дебит
+                    </strong>
+
+                    <span>
+                      {fmt(
+                        nearestMineral.properties
+                          .technical_possible_flow_l_s
+                      )} l/s
+                    </span>
+                  </div>
+                )}
+
+                {nearestMineral.properties
+                  ?.ownership_regime && (
+                  <div style={styles.recommendItem}>
+                    <strong>
+                      Собственост
+                    </strong>
+
+                    <span>
+                      {nearestMineral.properties
+                        .ownership_regime ===
+                      "exclusive_state_property"
+                        ? "Изключителна държавна собственост"
+                        : nearestMineral.properties
+                            .ownership_regime ===
+                          "public_municipal_property"
+                          ? "Публична общинска собственост"
+                          : String(
+                              nearestMineral.properties
+                                .ownership_regime
+                            )}
+                    </span>
+                  </div>
+                )}
+
+                {nearestMineral.properties
+                  ?.bddr_permit_reference
+                  ?.permit_number && (
+                  <div style={styles.recommendItem}>
+                    <strong>
+                      Разрешително
+                    </strong>
+
+                    <span>
+                      {String(
+                        nearestMineral.properties
+                          .bddr_permit_reference
+                          .permit_number
+                      )}
+                    </span>
+                  </div>
+                )}
+
+                {nearestMineral.properties
+                  ?.bddr_permit_reference
+                  ?.end_date_raw && (
+                  <div style={styles.recommendItem}>
+                    <strong>
+                      Срок на разрешителното
+                    </strong>
+
+                    <span>
+                      {String(
+                        nearestMineral.properties
+                          .bddr_permit_reference
+                          .end_date_raw
+                      ).slice(0, 10)}
+                    </span>
+                  </div>
+                )}
+
                 <div style={styles.recommendItem}>
                   <strong>
                     Минерални сондажи до 10 km

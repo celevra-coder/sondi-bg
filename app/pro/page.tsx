@@ -5454,6 +5454,74 @@ export default async function ProPage({
                         "—"
                       }
                     />
+
+                    {spatial.nearestWell.properties
+                      .technical_possible_flow_l_s != null &&
+                      String(
+                        spatial.nearestWell.properties
+                          .technical_possible_flow_l_s
+                      ).trim() !== "" && (
+                      <Row
+                        label="Технически възможен дебит"
+                        value={
+                          String(
+                            spatial.nearestWell.properties
+                              .technical_possible_flow_l_s
+                          ) + " l/s"
+                        }
+                      />
+                    )}
+
+                    {spatial.nearestWell.properties
+                      .ownership_regime && (
+                      <Row
+                        label="Собственост"
+                        value={
+                          spatial.nearestWell.properties
+                            .ownership_regime ===
+                          "exclusive_state_property"
+                            ? "Изключителна държавна собственост"
+                            : spatial.nearestWell.properties
+                                .ownership_regime ===
+                              "public_municipal_property"
+                              ? "Публична общинска собственост"
+                              : String(
+                                  spatial.nearestWell.properties
+                                    .ownership_regime
+                                )
+                        }
+                      />
+                    )}
+
+                    {spatial.nearestWell.properties
+                      .bddr_permit_reference
+                      ?.permit_number && (
+                      <Row
+                        label="Разрешително"
+                        value={
+                          String(
+                            spatial.nearestWell.properties
+                              .bddr_permit_reference
+                              .permit_number
+                          )
+                        }
+                      />
+                    )}
+
+                    {spatial.nearestWell.properties
+                      .bddr_permit_reference
+                      ?.end_date_raw && (
+                      <Row
+                        label="Срок на разрешителното"
+                        value={
+                          String(
+                            spatial.nearestWell.properties
+                              .bddr_permit_reference
+                              .end_date_raw
+                          ).slice(0, 10)
+                        }
+                      />
+                    )}
                   </div>
                 )}
 
