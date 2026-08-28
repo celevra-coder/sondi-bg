@@ -614,15 +614,11 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 <div class="small">Символът показва типа на съоръжението, а цветът при минералните сондажи показва температурата.</div>
 
 <div class="grid">
-<div class="full"><input id="search" placeholder="Населено място или координати">
-<button
-  type="button"
-  id="coordinate-search-button"
-  onclick="searchCoordinates()"
-  style="margin-top:8px;width:100%;padding:9px;cursor:pointer;"
+<div class="full"><input
+  id="search"
+  placeholder="Населено място или координати"
+  onkeydown="if(event.key==='Enter'){event.preventDefault();searchCoordinates();}"
 >
-  Търси място или координати
-</button>
 
 <div
   id="coordinate-search-status"
@@ -651,38 +647,100 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
   ></div>
 </div>
 </div>
-<div><select id="basin"><option value="">Всички дирекции</option></select></div>
-<div><select id="category"><option value="">Всички категории</option></select></div>
-<div><input id="tempMin" type="number" step="0.1" placeholder="Температура от °C"></div>
-<div><input id="depthMax" type="number" step="1" placeholder="Дълбочина до m"></div>
-<div><button onclick="resetFilters()">Изчисти</button></div>
-<div><button onclick="fitVisible()">Покажи точките</button></div>
+<div class="full"><select id="basin"><option value="">Всички дирекции</option></select></div>
+<div style="display:none"><select id="category"><option value=""></option></select></div>
+<div style="display:none"><input id="tempMin" type="number" step="0.1" value=""></div>
+<div style="display:none"><input id="depthMax" type="number" step="1" value=""></div>
+
+<div class="full" style="display:flex;gap:8px;">
+  <button
+    onclick="searchCoordinates()"
+    style="
+      flex:1;
+      background:#2563eb;
+      color:#ffffff;
+      border:1px solid #1d4ed8;
+      border-radius:8px;
+      padding:9px;
+      font-weight:600;
+      cursor:pointer;
+    "
+  >Покажи</button>
+
+  <button
+    onclick="resetFilters()"
+    style="
+      flex:1;
+      background:#2563eb;
+      color:#ffffff;
+      border:1px solid #1d4ed8;
+      border-radius:8px;
+      padding:9px;
+      font-weight:600;
+      cursor:pointer;
+    "
+  >Изчисти</button>
+</div>
 </div>
 
 <div class="layerbox">
 <b>Слоеве</b>
-<label class="layerrow"><input type="checkbox" id="layer-east-aegean-wells"> 🟢 Обикновени сондажи и кладенци – БД Източнобеломорски район</label>
-<div id="east-aegean-wells-load-status" class="small" style="margin-left:24px">изключено</div>
-<label class="layerrow"><input type="checkbox" id="layer-ordinary-wells"> 🟢 Обикновени сондажи и кладенци – БД Черноморски район</label>
-<div id="ordinary-wells-load-status" class="small" style="margin-left:24px">изключено</div>
-<label class="layerrow"><input type="checkbox" id="layer-western-aegean-wells"> 🟢 Обикновени сондажи и кладенци – БД Западнобеломорски район</label>
-<div id="western-aegean-wells-load-status" class="small" style="margin-left:24px">изключено</div>
-<label class="layerrow"><input type="checkbox" id="layer-danube-wells"> &#128994; Обикновени сондажи и кладенци – БД Дунавски район</label>
-<div id="danube-wells-load-status" class="small" style="margin-left:24px">изключено</div>
-<label class="layerrow"><input type="checkbox" id="layer-wells"> 🔴 Минерални водовземни сондажи</label>
-<label class="layerrow"><input type="checkbox" id="layer-springs"> 🔵 Минерални каптажи и извори</label>
-<label class="layerrow"><input type="checkbox" id="layer-monitoring"> 🟣 Минерални мониторингови сондажи</label>
-<label class="layerrow"><input type="checkbox" id="layer-inactive"> ⚫ Закрити и консервирани минерални съоръжения</label>
-<label class="layerrow"><input type="checkbox" id="layer-other"> ◇ Други минерални съоръжения</label>
-<label class="layerrow"><input type="checkbox" id="layer-groundwater"> 🟦 Подземни водни тела (EEA/WFD)</label><div id="gw-load-status" class="small" style="margin-left:24px">изключено</div>
-<label class="layerrow"><input type="checkbox" id="layer-bd-ibr"> 🔷 Подземни водни тела – БД ИБР / ПУРБ3</label>
-<div id="bd-ibr-load-status" class="small" style="margin-left:24px">изключено</div>
-<label class="layerrow"><input type="checkbox" id="layer-bd-bs"> 🔹 Подземни водни тела – БД Черноморски район / ПУРБ3</label>
-<div id="bd-bs-load-status" class="small" style="margin-left:24px">изключено</div>
-<label class="layerrow"><input type="checkbox" id="layer-bd-wabd"> 💧 Подземни водни тела – БД Западнобеломорски район / ПУРБ3</label>
-<div id="bd-wabd-load-status" class="small" style="margin-left:24px">изключено</div>
-<label class="layerrow"><input type="checkbox" id="layer-bd-danube"> &#127754; &#1055;&#1086;&#1076;&#1079;&#1077;&#1084;&#1085;&#1080; &#1074;&#1086;&#1076;&#1085;&#1080; &#1090;&#1077;&#1083;&#1072; &#8211; &#1041;&#1044; &#1044;&#1091;&#1085;&#1072;&#1074;&#1089;&#1082;&#1080; &#1088;&#1072;&#1081;&#1086;&#1085; / &#1055;&#1059;&#1056;&#1041;3</label>
-<div id="bd-danube-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
+<details style="margin:7px 0;border:1px solid #dbe7ef;border-radius:9px;background:#f8fbfd">
+  <summary style="cursor:pointer;padding:9px 10px;font-weight:700;color:#16384f;user-select:none">
+    &#128994; &#1054;&#1073;&#1080;&#1082;&#1085;&#1086;&#1074;&#1077;&#1085;&#1080; &#1089;&#1086;&#1085;&#1076;&#1072;&#1078;&#1080; &#1080; &#1082;&#1083;&#1072;&#1076;&#1077;&#1085;&#1094;&#1080;
+  </summary>
+
+  <div style="padding:2px 8px 8px 12px">
+    <label class="layerrow"><input type="checkbox" id="layer-danube-wells"> &#1044;&#1091;&#1085;&#1072;&#1074;&#1089;&#1082;&#1080; &#1088;&#1072;&#1081;&#1086;&#1085;</label>
+    <div id="danube-wells-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
+
+    <label class="layerrow"><input type="checkbox" id="layer-ordinary-wells"> &#1063;&#1077;&#1088;&#1085;&#1086;&#1084;&#1086;&#1088;&#1089;&#1082;&#1080; &#1088;&#1072;&#1081;&#1086;&#1085;</label>
+    <div id="ordinary-wells-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
+
+    <label class="layerrow"><input type="checkbox" id="layer-east-aegean-wells"> &#1048;&#1079;&#1090;&#1086;&#1095;&#1085;&#1086;&#1073;&#1077;&#1083;&#1086;&#1084;&#1086;&#1088;&#1089;&#1082;&#1080; &#1088;&#1072;&#1081;&#1086;&#1085;</label>
+    <div id="east-aegean-wells-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
+
+    <label class="layerrow"><input type="checkbox" id="layer-western-aegean-wells"> &#1047;&#1072;&#1087;&#1072;&#1076;&#1085;&#1086;&#1073;&#1077;&#1083;&#1086;&#1084;&#1086;&#1088;&#1089;&#1082;&#1080; &#1088;&#1072;&#1081;&#1086;&#1085;</label>
+    <div id="western-aegean-wells-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
+  </div>
+</details>
+
+<details style="margin:7px 0;border:1px solid #dbe7ef;border-radius:9px;background:#f8fbfd">
+  <summary style="cursor:pointer;padding:9px 10px;font-weight:700;color:#16384f;user-select:none">
+    &#128167; &#1052;&#1080;&#1085;&#1077;&#1088;&#1072;&#1083;&#1085;&#1080; &#1074;&#1086;&#1076;&#1080;
+  </summary>
+
+  <div style="padding:2px 8px 8px 12px">
+    <label class="layerrow"><input type="checkbox" id="layer-wells"> &#128308; &#1052;&#1080;&#1085;&#1077;&#1088;&#1072;&#1083;&#1085;&#1080; &#1074;&#1086;&#1076;&#1086;&#1074;&#1079;&#1077;&#1084;&#1085;&#1080; &#1089;&#1086;&#1085;&#1076;&#1072;&#1078;&#1080;</label>
+    <label class="layerrow"><input type="checkbox" id="layer-springs"> &#128309; &#1050;&#1072;&#1087;&#1090;&#1072;&#1078;&#1080; &#1080; &#1077;&#1089;&#1090;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1080; &#1080;&#1079;&#1074;&#1086;&#1088;&#1080;</label>
+    <label class="layerrow"><input type="checkbox" id="layer-monitoring"> &#128994; &#1052;&#1086;&#1085;&#1080;&#1090;&#1086;&#1088;&#1080;&#1085;&#1075;&#1086;&#1074;&#1080; &#1089;&#1086;&#1085;&#1076;&#1072;&#1078;&#1080;</label>
+    <label class="layerrow"><input type="checkbox" id="layer-inactive"> &#9899; &#1047;&#1072;&#1082;&#1088;&#1080;&#1090;&#1080; &#1080; &#1082;&#1086;&#1085;&#1089;&#1077;&#1088;&#1074;&#1080;&#1088;&#1072;&#1085;&#1080; &#1089;&#1098;&#1086;&#1088;&#1098;&#1078;&#1077;&#1085;&#1080;&#1103;</label>
+    <label class="layerrow"><input type="checkbox" id="layer-other"> &#9671; &#1044;&#1088;&#1091;&#1075;&#1080; &#1084;&#1080;&#1085;&#1077;&#1088;&#1072;&#1083;&#1085;&#1080; &#1089;&#1098;&#1086;&#1088;&#1098;&#1078;&#1077;&#1085;&#1080;&#1103;</label>
+  </div>
+</details>
+
+<details style="margin:7px 0;border:1px solid #dbe7ef;border-radius:9px;background:#f8fbfd">
+  <summary style="cursor:pointer;padding:9px 10px;font-weight:700;color:#16384f;user-select:none">
+    &#127754; &#1055;&#1086;&#1076;&#1079;&#1077;&#1084;&#1085;&#1080; &#1074;&#1086;&#1076;&#1085;&#1080; &#1090;&#1077;&#1083;&#1072;
+  </summary>
+
+  <div style="padding:2px 8px 8px 12px">
+    <label class="layerrow"><input type="checkbox" id="layer-bd-danube"> &#1044;&#1091;&#1085;&#1072;&#1074;&#1089;&#1082;&#1080; &#1088;&#1072;&#1081;&#1086;&#1085; / &#1055;&#1059;&#1056;&#1041;3</label>
+    <div id="bd-danube-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
+
+    <label class="layerrow"><input type="checkbox" id="layer-bd-bs"> &#1063;&#1077;&#1088;&#1085;&#1086;&#1084;&#1086;&#1088;&#1089;&#1082;&#1080; &#1088;&#1072;&#1081;&#1086;&#1085; / &#1055;&#1059;&#1056;&#1041;3</label>
+    <div id="bd-bs-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
+
+    <label class="layerrow"><input type="checkbox" id="layer-bd-ibr"> &#1048;&#1079;&#1090;&#1086;&#1095;&#1085;&#1086;&#1073;&#1077;&#1083;&#1086;&#1084;&#1086;&#1088;&#1089;&#1082;&#1080; &#1088;&#1072;&#1081;&#1086;&#1085; / &#1055;&#1059;&#1056;&#1041;3</label>
+    <div id="bd-ibr-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
+
+    <label class="layerrow"><input type="checkbox" id="layer-bd-wabd"> &#1047;&#1072;&#1087;&#1072;&#1076;&#1085;&#1086;&#1073;&#1077;&#1083;&#1086;&#1084;&#1086;&#1088;&#1089;&#1082;&#1080; &#1088;&#1072;&#1081;&#1086;&#1085; / &#1055;&#1059;&#1056;&#1041;3</label>
+    <div id="bd-wabd-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
+
+    <label class="layerrow"><input type="checkbox" id="layer-groundwater"> EEA / WFD &#1087;&#1086;&#1076;&#1079;&#1077;&#1084;&#1085;&#1080; &#1074;&#1086;&#1076;&#1085;&#1080; &#1090;&#1077;&#1083;&#1072;</label>
+    <div id="gw-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
+  </div>
+</details>
 <label class="layerrow"><input type="checkbox" id="layer-geology-age"> 🪨 Геоложка възраст – БД ИБР</label>
 <div id="geology-age-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-quant-monitoring"> 🟣 Количествен мониторинг – НИМХ 2019–2020</label>
@@ -845,188 +903,16 @@ let faultsLoaded=false;
 let faultsLoading=false;
 
 const rightLayerControl = L.control.layers(
- {'Карта':osm,'Релеф':topo},
- {
-   '🟢 Обикновени сондажи – БД Източнобеломорски район':eastAegeanGroundwaterWellsLayer,
-   '🟢 Обикновени сондажи – БД Черноморски район':ordinaryGroundwaterWellsLayer,
-   '🟢 Обикновени сондажи – БД Западнобеломорски район':westernAegeanGroundwaterWellsLayer,
-   '🟦 Подземни водни тела (EEA/WFD)':groundwaterLayer,
-   '🔷 Подземни водни тела – БД ИБР / ПУРБ3':bdIbrGroundwaterLayer,
-   '🔹 Подземни водни тела – БД Черноморски район / ПУРБ3':bdBsGroundwaterLayer,
-   '💧 Подземни водни тела – БД Западнобеломорски район / ПУРБ3':bdWabdGroundwaterLayer,
-   '🪨 Геоложка възраст – БД ИБР':geologyAgeLayer,
-   '🟣 Количествен мониторинг – НИМХ 2019–2020':quantitativeMonitoringLayer,
-   'ðŸŸ¤ Ðктивни разломи (GEM)':faultsLayer
- },
- {collapsed:false}
+  {
+    '\u041a\u0430\u0440\u0442\u0430': osm,
+    '\u0420\u0435\u043b\u0435\u0444': topo
+  },
+  null,
+  {
+    collapsed: false,
+    position: 'bottomright'
+  }
 ).addTo(map);
-
-const rightLayerControlContainer =
-  rightLayerControl.getContainer();
-
-function installRightLayerControlClose() {
-  if (!rightLayerControlContainer) {
-    return;
-  }
-
-  if (
-    rightLayerControlContainer.querySelector(
-      ".sondi-right-layer-close"
-    )
-  ) {
-    return;
-  }
-
-  const closeButton =
-    document.createElement("button");
-
-  closeButton.type = "button";
-  closeButton.className =
-    "sondi-right-layer-close";
-
-  closeButton.innerHTML = "&times;";
-
-  closeButton.title =
-    "\u0417\u0430\u0442\u0432\u043e\u0440\u0438 \u043c\u0435\u043d\u044e\u0442\u043e \u0437\u0430 \u0441\u043b\u043e\u0435\u0432\u0435";
-
-  closeButton.setAttribute(
-    "aria-label",
-    "\u0417\u0430\u0442\u0432\u043e\u0440\u0438 \u043c\u0435\u043d\u044e\u0442\u043e \u0437\u0430 \u0441\u043b\u043e\u0435\u0432\u0435"
-  );
-
-  const reopenButton =
-    document.createElement("button");
-
-  reopenButton.type = "button";
-  reopenButton.className =
-    "sondi-layer-reopen";
-
-  reopenButton.textContent =
-    "\u0421\u043b\u043e\u0435\u0432\u0435";
-
-  reopenButton.title =
-    "\u041e\u0442\u0432\u043e\u0440\u0438 \u043c\u0435\u043d\u044e\u0442\u043e \u0437\u0430 \u0441\u043b\u043e\u0435\u0432\u0435";
-
-  document.body.appendChild(
-    reopenButton
-  );
-
-  L.DomEvent.disableClickPropagation(
-    closeButton
-  );
-
-  L.DomEvent.disableScrollPropagation(
-    closeButton
-  );
-
-  closeButton.addEventListener(
-    "click",
-    function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-
-      rightLayerControlContainer.style.display =
-        "none";
-
-      reopenButton.classList.add(
-        "is-visible"
-      );
-    }
-  );
-
-  reopenButton.addEventListener(
-    "click",
-    function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-
-      rightLayerControlContainer.style.display =
-        "";
-
-      reopenButton.classList.remove(
-        "is-visible"
-      );
-    }
-  );
-
-  rightLayerControlContainer.appendChild(
-    closeButton
-  );
-}
-
-installRightLayerControlClose();
-
-
-
-function updateRightLayerControlVisibility() {
-  if (!rightLayerControlContainer) return;
-
-  const layerIds = [
-    'layer-western-aegean-wells',
-    'layer-danube-wells',
-  'layer-wells',
-    'layer-springs',
-    'layer-monitoring',
-    'layer-inactive',
-    'layer-other',
-    'layer-groundwater',
-    'layer-bd-ibr',
-    'layer-bd-bs',
-    'layer-bd-wabd',
-    'layer-geology-age',
-    'layer-quant-monitoring',
-    'layer-faults'
-  ];
-
-  const anyLayerSelected =
-    layerIds.some(id => {
-      const el = document.getElementById(id);
-      return el && el.checked;
-    });
-
-  const thematicSelected =
-    Array.from(
-      document.querySelectorAll(
-        'input[name="thematic-mode"]'
-      )
-    ).some(el => el.checked);
-
-  rightLayerControlContainer.style.display =
-    (anyLayerSelected || thematicSelected)
-      ? ''
-      : 'none';
-}
-
-[
-  'layer-wells',
-  'layer-springs',
-  'layer-monitoring',
-  'layer-inactive',
-  'layer-other',
-  'layer-groundwater',
-  'layer-bd-ibr',
-  'layer-geology-age',
-  'layer-quant-monitoring',
-  'layer-faults'
-].forEach(id => {
-  const el = document.getElementById(id);
-
-  if (el) {
-    el.addEventListener(
-      'change',
-      updateRightLayerControlVisibility
-    );
-  }
-});
-
-document
-  .querySelectorAll('input[name="thematic-mode"]')
-  .forEach(el => {
-    el.addEventListener(
-      'change',
-      updateRightLayerControlVisibility
-    );
-  });
 
 
 async function loadBlackSeaThematicPressureData() {
@@ -2055,9 +1941,6 @@ async function activateThematicMode(mode){
 
   zoomOutForRegionalLayer(9);
 
-  setTimeout(function(){
-    updateRightLayerControlVisibility();
-  }, 0);
 }
 
 
@@ -2071,16 +1954,6 @@ document
       activateThematicMode(radio.value);
     });
   });
-
-map.on(
-  'overlayadd overlayremove',
-  () => setTimeout(
-    updateRightLayerControlVisibility,
-    0
-  )
-);
-
-updateRightLayerControlVisibility();
 
 
 function setLayerStatus(id,text,color){
@@ -6332,16 +6205,6 @@ function buildQuantitativeMonitoringPopup(feature) {
 
     qaHtml +
 
-    sondiProTeaserHtml(
-      sondiProUrlForPopup(feature, gwb),
-      [
-        "\u0418\u0437\u0441\u043b\u0435\u0434\u0432\u0430\u043d\u0438 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438",
-        "\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d\u0438 \u043f\u0440\u0435\u0432\u0438\u0448\u0435\u043d\u0438\u044f",
-        "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438 \u0440\u0435\u0437\u0443\u043b\u0442\u0430\u0442\u0438",
-        "\u0422\u0435\u043d\u0434\u0435\u043d\u0446\u0438\u044f \u043d\u0430 \u0432\u043e\u0434\u0430\u0442\u0430"
-      ]
-    ) +
-
     '<div style="margin-top:7px;font-size:11px;color:#666">' +
     'Източник: БД ИБР / НИМХ – ПУРБ 2022–2027, ' +
     'Приложение 1.3.1.1; средногодишни стойности 2019–2020' +
@@ -6794,15 +6657,6 @@ function buildGemFaultPopup(feature) {
       "</button>";
   }
 
-  html += sondiProTeaserHtml(
-    sondiProUrlForPopup(feature),
-    [
-      "\u0412\u043b\u0438\u044f\u043d\u0438\u0435 \u0432\u044a\u0440\u0445\u0443 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u0438",
-      "\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u0437\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435",
-      "\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0437\u0430 \u0442\u043e\u0447\u043a\u0430\u0442\u0430"
-    ]
-  );
-
   html += "</div>";
 
   return html;
@@ -6810,6 +6664,233 @@ function buildGemFaultPopup(feature) {
 
 let gemFaultAnalysisBufferLayer = null;
 let gemFaultNearbyObjectsLayer = null;
+let gemFaultOrdinaryRegionalDataPromise = null;
+
+async function loadGemFaultOrdinaryRegionalData() {
+  if (gemFaultOrdinaryRegionalDataPromise) {
+    return gemFaultOrdinaryRegionalDataPromise;
+  }
+
+  const sources = [
+    {
+      code: "BG1",
+      label: "\u0414\u0443\u043d\u0430\u0432\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+      url: "/geology-map/data/bd_danube_active_groundwater_facilities.geojson"
+    },
+    {
+      code: "BG2",
+      label: "\u0427\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+      url: "/geology-map/data/bd_bs_ordinary_groundwater_wells.geojson"
+    },
+    {
+      code: "BG3",
+      label: "\u0418\u0437\u0442\u043e\u0447\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+      url: "/geology-map/data/bd_ibr_ordinary_groundwater_wells.geojson"
+    },
+    {
+      code: "BG4",
+      label: "\u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+      url: "/geology-map/data/bd_wabd_active_groundwater_facilities.geojson"
+    }
+  ];
+
+  gemFaultOrdinaryRegionalDataPromise =
+    Promise.allSettled(
+      sources.map(async source => {
+        const response = await fetch(source.url);
+
+        if (!response.ok) {
+          throw new Error(
+            source.code + " HTTP " + response.status
+          );
+        }
+
+        const data = await response.json();
+
+        if (
+          data?.type !== "FeatureCollection" ||
+          !Array.isArray(data.features)
+        ) {
+          throw new Error(
+            source.code + " invalid GeoJSON"
+          );
+        }
+
+        return {
+          code: source.code,
+          label: source.label,
+          features: data.features.filter(feature =>
+            feature?.geometry?.type === "Point" &&
+            Array.isArray(feature.geometry.coordinates) &&
+            Number.isFinite(
+              Number(feature.geometry.coordinates[0])
+            ) &&
+            Number.isFinite(
+              Number(feature.geometry.coordinates[1])
+            )
+          )
+        };
+      })
+    ).then(results => {
+      const regions = [];
+      const errors = [];
+
+      results.forEach((result, index) => {
+        if (result.status === "fulfilled") {
+          regions.push(result.value);
+        } else {
+          errors.push(sources[index].code);
+
+          console.error(
+            "[GEM fault analysis] Ordinary facilities error:",
+            sources[index].code,
+            result.reason
+          );
+        }
+      });
+
+      return {
+        regions,
+        errors
+      };
+    });
+
+  return gemFaultOrdinaryRegionalDataPromise;
+}
+
+function gemFaultOrdinaryFacilityName(feature) {
+  const p = feature?.properties || {};
+
+  return (
+    p.facility_name ||
+    p.facility_type ||
+    p.registration_number ||
+    p.facility_registration ||
+    p.settlement ||
+    p.locality ||
+    "\u041e\u0431\u0438\u043a\u043d\u043e\u0432\u0435\u043d\u043e \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435"
+  );
+}
+
+function getGemFaultNearbyOrdinaryByBasin(
+  faultFeature,
+  regionalData,
+  maximumDistanceKm = 5
+) {
+  const result = {};
+
+  for (const region of regionalData.regions || []) {
+    const objects = [];
+
+    for (const feature of region.features || []) {
+      const distanceKm =
+        gemFaultObjectDistance(
+          feature,
+          faultFeature
+        );
+
+      if (
+        distanceKm === null ||
+        distanceKm > maximumDistanceKm
+      ) {
+        continue;
+      }
+
+      objects.push({
+        feature,
+        properties: feature.properties || {},
+        category:
+          "\u041e\u0431\u0438\u043a\u043d\u043e\u0432\u0435\u043d \u0441\u043e\u043d\u0434\u0430\u0436/\u043a\u043b\u0430\u0434\u0435\u043d\u0435\u0446",
+        distanceKm,
+        sourceBasinCode: region.code,
+        sourceBasinLabel: region.label
+      });
+    }
+
+    objects.sort(
+      (a, b) => a.distanceKm - b.distanceKm
+    );
+
+    result[region.code] = {
+      label: region.label,
+      objects
+    };
+  }
+
+  return result;
+}
+
+function renderGemFaultOrdinaryByBasin(
+  ordinaryByBasin
+) {
+  const order = ["BG1", "BG2", "BG3", "BG4"];
+  let html = "";
+
+  for (const code of order) {
+    const group = ordinaryByBasin[code];
+
+    if (
+      !group ||
+      !Array.isArray(group.objects) ||
+      !group.objects.length
+    ) {
+      continue;
+    }
+
+    const wells = group.objects.filter(
+      item =>
+        sondiOrdinaryFacilityKind(
+          item.feature
+        ) === "well"
+    );
+
+    const springs = group.objects.filter(
+      item =>
+        sondiOrdinaryFacilityKind(
+          item.feature
+        ) === "spring"
+    );
+
+    html +=
+      "<div style=\"margin-top:10px;padding-top:7px;" +
+      "border-top:1px solid #d7dde3\">" +
+      "<strong>" +
+      esc(code + " \u2013 " + group.label) +
+      "</strong><br>" +
+      "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u0438 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u044f \u0434\u043e 5 km: <strong>" +
+      group.objects.length +
+      "</strong><br>" +
+      "\u0421\u043e\u043d\u0434\u0430\u0436\u0438/\u043a\u043b\u0430\u0434\u0435\u043d\u0446\u0438: <strong>" +
+      wells.length +
+      "</strong><br>" +
+      "\u0418\u0437\u0432\u043e\u0440\u0438/\u043a\u0430\u043f\u0442\u0430\u0436\u0438: <strong>" +
+      springs.length +
+      "</strong>";
+
+    for (const item of group.objects.slice(0, 8)) {
+      html +=
+        "<div style=\"margin-top:5px;padding:5px;" +
+        "border-left:3px solid #2563eb;background:#fff\">" +
+        "<strong>" +
+        esc(
+          gemFaultOrdinaryFacilityName(
+            item.feature
+          )
+        ) +
+        "</strong><br>" +
+        esc(
+          gemFaultDistanceLabel(
+            item.distanceKm
+          )
+        ) +
+        "</div>";
+    }
+
+    html += "</div>";
+  }
+
+  return html;
+}
 
 function gemFaultObjectDistance(feature, faultFeature) {
   try {
@@ -7101,6 +7182,103 @@ function gemHydroClassification(score) {
   };
 }
 
+function gemFaultSimpleTypeExplanation(slipType) {
+  const explanations = {
+    "Normal":
+      "\u041d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c \u2013 \u0441\u043a\u0430\u043b\u043d\u0438\u0442\u0435 \u0431\u043b\u043e\u043a\u043e\u0432\u0435 \u0441\u0435 \u0440\u0430\u0437\u0434\u0430\u043b\u0435\u0447\u0430\u0432\u0430\u0442 \u0438 \u0435\u0434\u0438\u043d\u0438\u044f\u0442 \u0431\u043b\u043e\u043a \u0441\u0435 \u0441\u043f\u0443\u0441\u043a\u0430 \u0441\u043f\u0440\u044f\u043c\u043e \u0434\u0440\u0443\u0433\u0438\u044f.",
+    "Reverse":
+      "\u041e\u0431\u0440\u0430\u0442\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c \u2013 \u0441\u043a\u0430\u043b\u043d\u0438\u0442\u0435 \u0431\u043b\u043e\u043a\u043e\u0432\u0435 \u0441\u0435 \u043f\u0440\u0438\u0442\u0438\u0441\u043a\u0430\u0442 \u0438 \u0435\u0434\u0438\u043d\u0438\u044f\u0442 \u0441\u0435 \u0438\u0437\u0434\u0438\u0433\u0430 \u0441\u043f\u0440\u044f\u043c\u043e \u0434\u0440\u0443\u0433\u0438\u044f.",
+    "Dextral":
+      "\u0414\u044f\u0441\u043d\u043e \u0441\u0442\u0440\u0430\u043d\u0438\u0447\u043d\u043e \u0440\u0430\u0437\u043c\u0435\u0441\u0442\u0432\u0430\u043d\u0435 \u2013 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435\u0442\u043e \u0435 \u043f\u0440\u0435\u0434\u0438\u043c\u043d\u043e \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0430\u043b\u043d\u043e \u043d\u0430\u0434\u044f\u0441\u043d\u043e.",
+    "Sinistral":
+      "\u041b\u044f\u0432\u043e \u0441\u0442\u0440\u0430\u043d\u0438\u0447\u043d\u043e \u0440\u0430\u0437\u043c\u0435\u0441\u0442\u0432\u0430\u043d\u0435 \u2013 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435\u0442\u043e \u0435 \u043f\u0440\u0435\u0434\u0438\u043c\u043d\u043e \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0430\u043b\u043d\u043e \u043d\u0430\u043b\u044f\u0432\u043e.",
+    "Dextral-Normal":
+      "\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d \u0440\u0430\u0437\u043b\u043e\u043c \u2013 \u0438\u043c\u0430 \u0435\u0434\u043d\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u0434\u044f\u0441\u043d\u043e \u0441\u0442\u0440\u0430\u043d\u0438\u0447\u043d\u043e \u0438 \u043d\u043e\u0440\u043c\u0430\u043b\u043d\u043e \u0440\u0430\u0437\u043c\u0435\u0441\u0442\u0432\u0430\u043d\u0435.",
+    "Sinistral-Normal":
+      "\u041a\u043e\u043c\u0431\u0438\u043d\u0438\u0440\u0430\u043d \u0440\u0430\u0437\u043b\u043e\u043c \u2013 \u0438\u043c\u0430 \u0435\u0434\u043d\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u043b\u044f\u0432\u043e \u0441\u0442\u0440\u0430\u043d\u0438\u0447\u043d\u043e \u0438 \u043d\u043e\u0440\u043c\u0430\u043b\u043d\u043e \u0440\u0430\u0437\u043c\u0435\u0441\u0442\u0432\u0430\u043d\u0435."
+  };
+
+  return explanations[slipType] ||
+    "\u0422\u0438\u043f\u044a\u0442 \u043d\u0430 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435 \u0435 \u043e\u043f\u0438\u0441\u0430\u043d \u0432 GEM, \u043d\u043e \u043d\u044f\u043c\u0430 \u0434\u043e\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u043d\u043e \u0442\u044a\u043b\u043a\u0443\u0432\u0430\u043d\u0435.";
+}
+
+function gemFaultSimpleTypeLabel(slipType) {
+  const labels = {
+    "Normal":
+      "\u041d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c",
+    "Reverse":
+      "\u041e\u0431\u0440\u0430\u0442\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c",
+    "Dextral":
+      "\u0414\u044f\u0441\u043d\u043e\u0441\u0442\u0440\u0430\u043d\u0438\u0447\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c",
+    "Sinistral":
+      "\u041b\u044f\u0432\u043e\u0441\u0442\u0440\u0430\u043d\u0438\u0447\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c",
+    "Dextral-Normal":
+      "\u0414\u044f\u0441\u043d\u043e\u0441\u0442\u0440\u0430\u043d\u0438\u0447\u0435\u043d + \u043d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c",
+    "Sinistral-Normal":
+      "\u041b\u044f\u0432\u043e\u0441\u0442\u0440\u0430\u043d\u0438\u0447\u0435\u043d + \u043d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c"
+  };
+
+  return labels[slipType] || slipType;
+}
+
+function gemFaultRakeSimpleExplanation(slipType) {
+  const explanations = {
+    "Normal":
+      "\u041f\u0440\u0438 \u043d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c \u0441\u0442\u043e\u0439\u043d\u043e\u0441\u0442 \u0431\u043b\u0438\u0437\u043a\u0430 \u0434\u043e -90\u00b0 \u043e\u043f\u0438\u0441\u0432\u0430 \u043f\u0440\u0435\u0434\u0438\u043c\u043d\u043e \u0441\u043f\u0443\u0441\u043a\u0430\u043d\u0435 \u043d\u0430 \u0435\u0434\u0438\u043d\u0438\u044f \u0441\u043a\u0430\u043b\u0435\u043d \u0431\u043b\u043e\u043a.",
+    "Reverse":
+      "\u041f\u0440\u0438 \u043e\u0431\u0440\u0430\u0442\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c \u0440\u0435\u0439\u043a\u044a\u0442 \u043e\u043f\u0438\u0441\u0432\u0430 \u043f\u043e\u0441\u043e\u043a\u0430\u0442\u0430, \u0432 \u043a\u043e\u044f\u0442\u043e \u0435\u0434\u0438\u043d\u0438\u044f\u0442 \u0441\u043a\u0430\u043b\u0435\u043d \u0431\u043b\u043e\u043a \u0441\u0435 \u0438\u0437\u0434\u0438\u0433\u0430 \u0441\u043f\u0440\u044f\u043c\u043e \u0434\u0440\u0443\u0433\u0438\u044f.",
+    "Dextral":
+      "\u0420\u0435\u0439\u043a\u044a\u0442 \u043e\u043f\u0438\u0441\u0432\u0430 \u043f\u043e\u0441\u043e\u043a\u0430\u0442\u0430 \u043d\u0430 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435 \u043f\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u0440\u0430\u0432\u043d\u0438\u043d\u0430; \u0442\u0443\u043a \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435\u0442\u043e \u0435 \u043f\u0440\u0435\u0434\u0438\u043c\u043d\u043e \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0430\u043b\u043d\u043e \u043d\u0430\u0434\u044f\u0441\u043d\u043e.",
+    "Sinistral":
+      "\u0420\u0435\u0439\u043a\u044a\u0442 \u043e\u043f\u0438\u0441\u0432\u0430 \u043f\u043e\u0441\u043e\u043a\u0430\u0442\u0430 \u043d\u0430 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435 \u043f\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u0440\u0430\u0432\u043d\u0438\u043d\u0430; \u0442\u0443\u043a \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435\u0442\u043e \u0435 \u043f\u0440\u0435\u0434\u0438\u043c\u043d\u043e \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0430\u043b\u043d\u043e \u043d\u0430\u043b\u044f\u0432\u043e.",
+    "Dextral-Normal":
+      "\u0420\u0435\u0439\u043a\u044a\u0442 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f \u043e\u0442 \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0430\u043b\u043d\u043e \u0434\u044f\u0441\u043d\u043e \u0440\u0430\u0437\u043c\u0435\u0441\u0442\u0432\u0430\u043d\u0435 \u0438 \u0441\u043f\u0443\u0441\u043a\u0430\u043d\u0435 \u043d\u0430 \u0441\u043a\u0430\u043b\u0435\u043d \u0431\u043b\u043e\u043a.",
+    "Sinistral-Normal":
+      "\u0420\u0435\u0439\u043a\u044a\u0442 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0446\u0438\u044f \u043e\u0442 \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0430\u043b\u043d\u043e \u043b\u044f\u0432\u043e \u0440\u0430\u0437\u043c\u0435\u0441\u0442\u0432\u0430\u043d\u0435 \u0438 \u0441\u043f\u0443\u0441\u043a\u0430\u043d\u0435 \u043d\u0430 \u0441\u043a\u0430\u043b\u0435\u043d \u0431\u043b\u043e\u043a."
+  };
+
+  return explanations[slipType] ||
+    "\u0420\u0435\u0439\u043a\u044a\u0442 \u043e\u043f\u0438\u0441\u0432\u0430 \u043f\u043e\u0441\u043e\u043a\u0430\u0442\u0430 \u043d\u0430 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435 \u043d\u0430 \u0441\u043a\u0430\u043b\u043d\u0438\u0442\u0435 \u0431\u043b\u043e\u043a\u043e\u0432\u0435 \u043f\u043e \u0441\u0430\u043c\u0430\u0442\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0440\u0430\u0432\u043d\u0438\u043d\u0430.";
+}
+
+function gemHydroConfidenceReason(
+  nearbyObjects,
+  intersections
+) {
+  const closeObjects = nearbyObjects.filter(
+    item => item.distanceKm <= 2
+  ).length;
+
+  if (closeObjects >= 5 && intersections.length >= 1) {
+    return (
+      "\u041e\u0446\u0435\u043d\u043a\u0430\u0442\u0430 \u0441\u0435 \u043f\u043e\u0434\u043a\u0440\u0435\u043f\u044f \u043e\u0442 " +
+      closeObjects +
+      " \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0430 \u043d\u0430 \u0434\u043e 2 km \u0438 " +
+      intersections.length +
+      " \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u043d\u0435/\u043f\u0440\u0435\u0441\u0438\u0447\u0430\u043d\u0438\u044f \u0441 \u0434\u0440\u0443\u0433\u0438 GEM \u0440\u0430\u0437\u043b\u043e\u043c\u0438."
+    );
+  }
+
+  if (closeObjects >= 2) {
+    return (
+      "\u041e\u0446\u0435\u043d\u043a\u0430\u0442\u0430 \u0441\u0435 \u043f\u043e\u0434\u043a\u0440\u0435\u043f\u044f \u043e\u0442 " +
+      closeObjects +
+      " \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0430 \u043d\u0430 \u0434\u043e 2 km. " +
+      "\u041f\u0440\u0435\u0441\u0438\u0447\u0430\u043d\u0438\u044f \u0441 \u0434\u0440\u0443\u0433\u0438 GEM \u0440\u0430\u0437\u043b\u043e\u043c\u0438: " +
+      intersections.length +
+      "."
+    );
+  }
+
+  return (
+    "\u041d\u0430\u043b\u0438\u0447\u043d\u0438\u0442\u0435 \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u0438 \u0434\u0430\u043d\u043d\u0438 \u0441\u0430 \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u0438: " +
+    closeObjects +
+    " \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0430 \u043d\u0430 \u0434\u043e 2 km \u0438 " +
+    intersections.length +
+    " \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u043d\u0435/\u043f\u0440\u0435\u0441\u0438\u0447\u0430\u043d\u0438\u044f \u0441 \u0434\u0440\u0443\u0433\u0438 GEM \u0440\u0430\u0437\u043b\u043e\u043c\u0438."
+  );
+}
+
 function gemHydroConfidence(
   nearbyObjects,
   intersections
@@ -7131,7 +7309,7 @@ function renderGemFaultNearbyObjects(
   if (!nearest.length) {
     return (
       "<div style=\"margin-top:8px;color:#666\">" +
-      "\u041d\u044f\u043c\u0430 \u043e\u0442\u043a\u0440\u0438\u0442\u0438 \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0438 \u0434\u043e 5 km \u043e\u0442 \u043b\u0438\u043d\u0438\u044f\u0442\u0430." +
+      "\u041d\u044f\u043c\u0430 \u043e\u0431\u0435\u043a\u0442\u0438 \u043e\u0442 \u0442\u043e\u0437\u0438 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u043d \u043d\u0430\u0431\u043e\u0440, \u043a\u043e\u0438\u0442\u043e \u0434\u0430 \u0443\u0447\u0430\u0441\u0442\u0432\u0430\u0442 \u0432 \u0442\u0435\u043a\u0443\u0449\u0438\u044f \u0438\u043d\u0434\u0435\u043a\u0441." +
       "</div>"
     );
   }
@@ -7192,30 +7370,7 @@ function showGemFaultAnalysisLayers(
     );
   }
 
-  try {
-    const buffer = turf.buffer(
-      faultFeature,
-      2,
-      {
-        units: "kilometers"
-      }
-    );
-
-    gemFaultAnalysisBufferLayer = L.geoJSON(
-      buffer,
-      {
-        style: {
-          color: "#1769aa",
-          weight: 2,
-          dashArray: "6,5",
-          fillColor: "#1769aa",
-          fillOpacity: 0.06
-        }
-      }
-    ).addTo(map);
-  } catch (error) {
-    gemFaultAnalysisBufferLayer = null;
-  }
+  gemFaultAnalysisBufferLayer = null;
 
   gemFaultNearbyObjectsLayer = L.layerGroup();
 
@@ -7259,7 +7414,7 @@ function showGemFaultAnalysisLayers(
   gemFaultNearbyObjectsLayer.addTo(map);
 }
 
-function analyzeGemFault(encodedCatalogId) {
+async function analyzeGemFault(encodedCatalogId) {
   const catalogId = decodeURIComponent(
     encodedCatalogId
   );
@@ -7303,9 +7458,42 @@ function analyzeGemFault(encodedCatalogId) {
   const properties =
     entry.feature.properties || {};
 
+  const faultSlipType =
+    properties.slip_type || "";
+
+  const faultDip = formatGemTuple(
+    properties.average_dip,
+    "°"
+  );
+
+  const faultRake = formatGemTuple(
+    properties.average_rake,
+    "°"
+  );
+
+  const faultUpperDepth = formatGemTuple(
+    properties.upper_seis_depth,
+    " km"
+  );
+
+  const faultLowerDepth = formatGemTuple(
+    properties.lower_seis_depth,
+    " km"
+  );
+
   const nearbyObjects =
     getGemFaultNearbyObjects(
       entry.feature,
+      5
+    );
+
+  const ordinaryRegionalData =
+    await loadGemFaultOrdinaryRegionalData();
+
+  const ordinaryByBasin =
+    getGemFaultNearbyOrdinaryByBasin(
+      entry.feature,
+      ordinaryRegionalData,
       5
     );
 
@@ -7383,68 +7571,70 @@ function analyzeGemFault(encodedCatalogId) {
     let html =
       "<div style=\"margin-top:9px\">" +
       "<strong style=\"font-size:14px\">" +
-      "\u0425\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u043e\u0446\u0435\u043d\u043a\u0430" +
+      "\u041a\u0430\u043a\u0432\u043e \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u044f\u0432\u0430 \u0442\u043e\u0437\u0438 \u0440\u0430\u0437\u043b\u043e\u043c" +
       "</strong>" +
       "<div style=\"margin-top:7px;padding:8px;" +
-      "background:#eef7f2;border-left:4px solid #0b6b43\">" +
+      "background:#f5f7fa;border-left:4px solid #7a2f19\">" +
       "<strong>" +
-      esc(classification.label) +
+      esc(gemFaultSimpleTypeLabel(faultSlipType)) +
       "</strong><br>" +
-      "\u0418\u043d\u0434\u0435\u043a\u0441: <strong>" +
-      scoreResult.score +
-      "/100</strong><br>" +
-      "\u0423\u0432\u0435\u0440\u0435\u043d\u043e\u0441\u0442: <strong>" +
-      esc(confidence) +
+      esc(gemFaultSimpleTypeExplanation(faultSlipType)) +
+
+      "<div style=\"margin-top:9px\">" +
+      "<strong>\u041d\u0430\u043a\u043b\u043e\u043d: " +
+      esc(faultDip) +
+      "</strong><br>" +
+      "\u0420\u0430\u0437\u043b\u043e\u043c\u044a\u0442 \u043d\u0435 \u0441\u043b\u0438\u0437\u0430 \u0432\u0435\u0440\u0442\u0438\u043a\u0430\u043b\u043d\u043e \u043d\u0430\u0434\u043e\u043b\u0443, \u0430 \u0435 \u043d\u0430\u043a\u043b\u043e\u043d\u0435\u043d. " +
+      "\u0421\u0442\u043e\u0439\u043d\u043e\u0441\u0442\u0438\u0442\u0435 \u0432 \u0441\u043a\u043e\u0431\u0438 \u0441\u0430 \u043f\u0440\u0438\u0431\u043b\u0438\u0437\u0438\u0442\u0435\u043b\u043d\u0438\u044f\u0442 \u0434\u0438\u0430\u043f\u0430\u0437\u043e\u043d, \u0434\u0430\u0434\u0435\u043d \u043e\u0442 GEM." +
+      "</div>" +
+
+      "<div style=\"margin-top:9px\">" +
+      "<strong>\u041f\u043e\u0441\u043e\u043a\u0430 \u043d\u0430 \u0440\u0430\u0437\u043c\u0435\u0441\u0442\u0432\u0430\u043d\u0435: " +
+      esc(faultRake) +
+      "</strong><br>" +
+      esc(gemFaultRakeSimpleExplanation(faultSlipType)) +
+      "</div>" +
+
+      "<div style=\"margin-top:9px\">" +
+      "<strong>\u0410\u043a\u0442\u0438\u0432\u043d\u0430 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u043d\u0430 \u0437\u043e\u043d\u0430: \u043e\u043a\u043e\u043b\u043e " +
+      esc(faultUpperDepth) +
+      " \u2013 " +
+      esc(faultLowerDepth) +
+      "</strong><br>" +
+      "\u0412 \u0442\u043e\u0437\u0438 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0435\u043d \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b \u0440\u0430\u0437\u043b\u043e\u043c\u044a\u0442 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u0440\u0430\u0437\u0434\u0432\u0438\u0436\u0432\u0430 \u0438 \u0434\u0430 \u0435 \u0441\u0432\u044a\u0440\u0437\u0430\u043d \u0441\u044a\u0441 \u0437\u0435\u043c\u0435\u0442\u0440\u044a\u0441\u043d\u0430 \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442 " +
+      "(\u0440\u0430\u0437\u043c\u0435\u0441\u0442\u0432\u0430\u043d\u0435 \u043d\u0430 \u0441\u043a\u0430\u043b\u043d\u0438\u0442\u0435 \u0431\u043b\u043e\u043a\u043e\u0432\u0435 \u0438 \u043e\u0441\u0432\u043e\u0431\u043e\u0436\u0434\u0430\u0432\u0430\u043d\u0435 \u043d\u0430 \u043d\u0430\u0442\u0440\u0443\u043f\u0430\u043d\u043e \u043d\u0430\u043f\u0440\u0435\u0436\u0435\u043d\u0438\u0435 \u0432 \u0437\u0435\u043c\u043d\u0430\u0442\u0430 \u043a\u043e\u0440\u0430). " +
+      "\u0422\u043e\u0432\u0430 \u043d\u0435 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u043d\u0430 \u043a\u0430\u043a\u0432\u0430 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430 \u0438\u043c\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0430 \u0432\u043e\u0434\u0430." +
+      "</div></div>" +
+      "</div>";
+
+
+
+    html +=
+      "<div style=\"margin-top:10px;padding:8px;" +
+      "background:#f7f7f7;border-left:4px solid #7a2f19\">" +
+      "<strong>\u0421\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f</strong><br>" +
+      "\u041f\u0440\u0435\u0441\u0438\u0447\u0430\u043d\u0438\u044f \u0441 \u0434\u0440\u0443\u0433\u0438 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 GEM \u0430\u043a\u0442\u0438\u0432\u043d\u0438 \u0440\u0430\u0437\u043b\u043e\u043c\u0438: <strong>" +
+      intersections.length +
       "</strong>" +
       "</div>";
 
-    html +=
-      "<div style=\"margin-top:8px\">" +
-      esc(classification.explanation) +
-      "</div>";
-
-    html +=
-      "<div style=\"margin-top:9px\">" +
-      "<strong>\u0414\u0430\u043d\u043d\u0438 \u0434\u043e 5 km \u043e\u0442 \u0440\u0430\u0437\u043b\u043e\u043c\u0430</strong><br>" +
-      "\u0418\u0437\u0432\u043e\u0440\u0438/\u043a\u0430\u043f\u0442\u0430\u0436\u0438: " +
-      springs.length +
-      "<br>" +
-      "\u041c\u0438\u043d\u0435\u0440\u0430\u043b\u043d\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u0438: " +
-      mineralWells.length +
-      "<br>" +
-      "\u041c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u0438: " +
-      monitoringWells.length +
-      "<br>" +
-      "\u041f\u0440\u0435\u0441\u0438\u0447\u0430\u043d\u0438\u044f \u0441 \u0434\u0440\u0443\u0433\u0438 GEM \u0440\u0430\u0437\u043b\u043e\u043c\u0438: " +
-      intersections.length;
-
-    if (maximumTemperature !== null) {
-      html +=
-        "<br>\u041c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u043d\u0430 \u0438\u0437\u0432\u0435\u0441\u0442\u043d\u0430 \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430: <strong>" +
-        maximumTemperature.toFixed(1) +
-        "\u00b0C</strong>";
-    }
-
-    html += "</div>";
-
-    html += renderGemFaultNearbyObjects(
-      nearbyObjects
+    html += renderGemFaultOrdinaryByBasin(
+      ordinaryByBasin
     );
 
-    html +=
-      "<div style=\"margin-top:10px;padding:7px;" +
-      "background:#fff7e6;border:1px solid #e2c079;" +
-      "font-size:11px\">" +
-      "<strong>\u0412\u0430\u0436\u043d\u043e:</strong> " +
-      "\u041e\u0446\u0435\u043d\u043a\u0430\u0442\u0430 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u0430 \u0438 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u043f\u0435\u0440\u0441\u043f\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442, \u0430 \u043d\u0435 \u0434\u043e\u043a\u0430\u0437\u0430\u043d \u0434\u0435\u0431\u0438\u0442. " +
-      "\u0412 \u0431\u0430\u0437\u0430\u0442\u0430 \u0432\u0441\u0435 \u043e\u0449\u0435 \u043d\u044f\u043c\u0430 \u043f\u044a\u043b\u0435\u043d \u0441\u043b\u043e\u0439 \u0441 \u043e\u0431\u0438\u043a\u043d\u043e\u0432\u0435\u043d\u0438 \u0441\u0442\u0443\u0434\u0435\u043d\u0438, \u0441\u0443\u0445\u0438 \u0438 \u0443\u0441\u043f\u0435\u0448\u043d\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u0438." +
-      "</div></div>";
+    html += "</div>";
 
   
 
 
   result.innerHTML = html;
   }
+
+  openAnalysisCurtain(
+    NaN,
+    NaN,
+    "\u0410\u043a\u0442\u0438\u0432\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c: " + catalogId
+  );
 
   map.closePopup();
 }
@@ -7992,8 +8182,21 @@ function applyFilters(){
 }
 
 function fitVisible(){
- const pts=markers.filter(matches).map(x=>x.marker.getLatLng());
- if(pts.length) map.fitBounds(L.latLngBounds(pts).pad(.08));
+  if (!coordinateSearchMarker) {
+    return;
+  }
+
+  const latLng = coordinateSearchMarker.getLatLng();
+
+  if (!map.hasLayer(coordinateSearchMarker)) {
+    coordinateSearchMarker.addTo(map);
+  }
+
+  map.setView(latLng, 15);
+
+  if (typeof coordinateSearchMarker.openPopup === 'function') {
+    coordinateSearchMarker.openPopup();
+  }
 }
 
 function resetFilters(){
