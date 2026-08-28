@@ -814,6 +814,11 @@ let bdIbrGroundwaterLeafletLayer = null;
 let bdIbrChemicalStatusByCode = new Map();
 let bdBsGroundwaterLeafletLayer = null;
 let bdWabdGroundwaterLeafletLayer = null;
+
+let bdDanubeGroundwaterLeafletLayer = null;
+let danubeThematicPressureData = null;
+let danubeThematicPressureLoading = false;
+
 let blackSeaThematicPressureData = null;
 let wabdThematicPressureData = null;
 let wabdThematicPressureLoading = false;
@@ -1584,6 +1589,358 @@ async function loadWabdThematicPressureData() {
 }
 
 
+
+function danubeThematicFeatureCode(feature) {
+  const p =
+    feature && feature.properties
+      ? feature.properties
+      : {};
+
+  return gwbCompactCode(
+    p.canonical_code ||
+    p.gwb_code ||
+    p.INSPIREID ||
+    p.source_code ||
+    p.code ||
+    ""
+  );
+}
+
+
+function danubeThematicRecordForFeature(feature) {
+  if (
+    !danubeThematicPressureData ||
+    !Array.isArray(
+      danubeThematicPressureData.profiles
+    )
+  ) {
+    return null;
+  }
+
+  const code =
+    danubeThematicFeatureCode(feature);
+
+  if (!code) {
+    return null;
+  }
+
+  return (
+    danubeThematicPressureData.profiles.find(
+      record =>
+        gwbCompactCode(record && record.code) ===
+        code
+    ) || null
+  );
+}
+
+
+function danubePressureMarker(value) {
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return false;
+  }
+
+  const raw =
+    String(value)
+      .trim()
+      .toLocaleLowerCase("bg-BG");
+
+  if (!raw) {
+    return false;
+  }
+
+  /*
+    Official Pril_2311_final.xls:
+    X / × marks an identified pressure.
+    "неприложимо" is not pressure.
+  */
+  if (
+    raw.includes("\u043d\u0435\u043f\u0440\u0438\u043b\u043e\u0436")
+  ) {
+    return false;
+  }
+
+  return (
+    raw === "x" ||
+    raw === "\u00d7" ||
+    raw === "\u251c\u00f9"
+  );
+}
+
+
+function danubeHasPointPressure(record) {
+  const raw =
+    record &&
+    record.significant_pressure &&
+    Array.isArray(
+      record.significant_pressure.raw
+    )
+      ? record.significant_pressure.raw
+      : null;
+
+  if (!raw) {
+    return false;
+  }
+
+  /*
+    Pril_2311_final.xls:
+    indexes 6-10 = pressure from point sources
+  */
+  return raw
+    .slice(6, 11)
+    .some(danubePressureMarker);
+}
+
+
+function danubeHasDiffusePressure(record) {
+  const raw =
+    record &&
+    record.significant_pressure &&
+    Array.isArray(
+      record.significant_pressure.raw
+    )
+      ? record.significant_pressure.raw
+      : null;
+
+  if (!raw) {
+    return false;
+  }
+
+  /*
+    Pril_2311_final.xls:
+    indexes 11-13 = pressure from diffuse sources
+  */
+  return raw
+    .slice(11, 14)
+    .some(danubePressureMarker);
+}
+
+
+function danubeChemicalAtRisk(record) {
+  const risk =
+    record &&
+    record.chemical_risk
+      ? record.chemical_risk
+      : null;
+
+  if (!risk) {
+    return false;
+  }
+
+  /*
+    In the official BG1 dataset the 18 at-risk
+    bodies are exactly the records with a stated
+    pollution source type.
+  */
+  return Boolean(
+    risk.pollution_source_type
+  );
+}
+
+
+function danubeQuantitativeAtRisk(record) {
+  const risk =
+    record &&
+    record.quantitative_risk
+      ? record.quantitative_risk
+      : null;
+
+  if (!risk) {
+    return false;
+  }
+
+  const value =
+    String(
+      risk.risk_assessment || ""
+    )
+      .trim()
+      .toLocaleLowerCase("bg-BG");
+
+  return (
+    value === "\u0434\u0430" ||
+    value.includes("\u0434\u0430")
+  );
+}
+
+
+function danubeThematicStyle(feature) {
+  const record =
+    danubeThematicRecordForFeature(feature);
+
+  if (!record) {
+    return {
+      color: "#8da1a6",
+      weight: 1,
+      opacity: 0.65,
+      fillColor: "#c9d2d4",
+      fillOpacity: 0.30
+    };
+  }
+
+  let color = "#62ad70";
+
+  if (
+    activeThematicMode ===
+    "point-pressure"
+  ) {
+    color =
+      danubeHasPointPressure(record)
+        ? "#d94d4d"
+        : "#62ad70";
+  }
+
+  else if (
+    activeThematicMode ===
+    "diffuse-pressure"
+  ) {
+    color =
+      danubeHasDiffusePressure(record)
+        ? "#d94d4d"
+        : "#62ad70";
+  }
+
+  else if (
+    activeThematicMode ===
+    "pollution-risk"
+  ) {
+    color =
+      danubeChemicalAtRisk(record)
+        ? "#d94d4d"
+        : "#62ad70";
+  }
+
+  else if (
+    activeThematicMode ===
+    "abstraction-pressure"
+  ) {
+    const quantitative =
+      record.quantitative_risk || {};
+
+    const exploitation =
+      Number(
+        quantitative.exploitation_index
+      );
+
+    if (
+      danubeQuantitativeAtRisk(record) ||
+      (
+        Number.isFinite(exploitation) &&
+        exploitation >= 0.75
+      )
+    ) {
+      color = "#b91c1c";
+    }
+
+    else if (
+      Number.isFinite(exploitation) &&
+      exploitation >= 0.50
+    ) {
+      color = "#ea580c";
+    }
+
+    else if (
+      Number.isFinite(exploitation) &&
+      exploitation >= 0.25
+    ) {
+      color = "#eab308";
+    }
+
+    else {
+      color = "#16a34a";
+    }
+  }
+
+  return {
+    color: color,
+    weight: 1.4,
+    opacity: 0.9,
+    fillColor: color,
+    fillOpacity: 0.52
+  };
+}
+
+
+function applyBdDanubeThematicStyle() {
+  if (!bdDanubeGroundwaterLeafletLayer) {
+    return;
+  }
+
+  if (
+    activeThematicMode === "point-pressure" ||
+    activeThematicMode === "diffuse-pressure" ||
+    activeThematicMode === "pollution-risk" ||
+    activeThematicMode === "abstraction-pressure"
+  ) {
+    bdDanubeGroundwaterLeafletLayer.setStyle(
+      danubeThematicStyle
+    );
+  }
+
+  else {
+    /*
+      resetStyle restores the existing BG1 default:
+      bad chemical status = red,
+      remaining bodies = blue.
+    */
+    bdDanubeGroundwaterLeafletLayer.resetStyle();
+  }
+}
+
+
+async function loadDanubeThematicPressureData() {
+  if (
+    danubeThematicPressureData ||
+    danubeThematicPressureLoading
+  ) {
+    return danubeThematicPressureData;
+  }
+
+  danubeThematicPressureLoading = true;
+
+  try {
+    const response = await fetch(
+      "/geology-map/data/bd_danube_section2_pressure_risk.json"
+    );
+
+    if (!response.ok) {
+      throw new Error(
+        "HTTP " + response.status
+      );
+    }
+
+    const data =
+      await response.json();
+
+    if (
+      !data ||
+      !Array.isArray(data.profiles)
+    ) {
+      throw new Error(
+        "Invalid Danube thematic pressure data"
+      );
+    }
+
+    danubeThematicPressureData =
+      data;
+
+    return danubeThematicPressureData;
+
+  } catch (error) {
+    console.error(
+      "[BD BDDR] thematic data load error:",
+      error
+    );
+
+    return null;
+
+  } finally {
+    danubeThematicPressureLoading = false;
+  }
+}
+
+
 async function activateThematicMode(mode){
   activeThematicMode =
     mode === "default"
@@ -1598,6 +1955,9 @@ async function activateThematicMode(mode){
 
   const westernAegeanCheckbox =
     document.getElementById("layer-bd-wabd");
+
+  const danubeCheckbox =
+    document.getElementById("layer-bd-danube");
 
   const eeaCheckbox =
     document.getElementById("layer-groundwater");
@@ -1622,6 +1982,10 @@ async function activateThematicMode(mode){
     westernAegeanCheckbox.checked = true;
   }
 
+  if (danubeCheckbox) {
+    danubeCheckbox.checked = true;
+  }
+
   if (!map.hasLayer(bdIbrGroundwaterLayer)) {
     bdIbrGroundwaterLayer.addTo(map);
   }
@@ -1634,12 +1998,18 @@ async function activateThematicMode(mode){
     bdWabdGroundwaterLayer.addTo(map);
   }
 
+  if (!map.hasLayer(bdDanubeGroundwaterLayer)) {
+    bdDanubeGroundwaterLayer.addTo(map);
+  }
+
   await Promise.all([
     loadBdIbrGroundwaterBodies(),
     loadBdBsGroundwaterBodies(),
     loadBdWabdGroundwaterBodies(),
+    loadBdDanubeGroundwaterBodies(),
     loadBlackSeaThematicPressureData(),
-    loadWabdThematicPressureData()
+    loadWabdThematicPressureData(),
+    loadDanubeThematicPressureData()
   ]);
 
   if (activeThematicMode === "point-pressure") {
@@ -1665,6 +2035,7 @@ async function activateThematicMode(mode){
   applyBdIbrThematicStyle();
   applyBdBsThematicStyle();
   applyBdWabdThematicStyle();
+  applyBdDanubeThematicStyle();
 
   if (typeof updatePointPressureLegend === "function") {
     updatePointPressureLegend();
@@ -5114,11 +5485,12 @@ async function loadBdDanubeGroundwaterBodies() {
           "mouseover",
           function() {
             this.setStyle({
-              color: "#1d4ed8",
               weight: 3,
               opacity: 1,
-              fillColor: "#3b82f6",
-              fillOpacity: 0.32
+              fillOpacity:
+                activeThematicMode
+                  ? 0.60
+                  : 0.30
             });
 
             if (this.bringToFront) {
@@ -5130,7 +5502,13 @@ async function loadBdDanubeGroundwaterBodies() {
         layer.on(
           "mouseout",
           function() {
-            geoJsonLayer.resetStyle(this);
+            if (activeThematicMode) {
+              this.setStyle(
+                danubeThematicStyle(feature)
+              );
+            } else {
+              geoJsonLayer.resetStyle(this);
+            }
           }
         );
         // DANUBE_GWB_HOVER_END
@@ -5246,9 +5624,16 @@ async function loadBdDanubeGroundwaterBodies() {
       }
     });
 
+    bdDanubeGroundwaterLeafletLayer =
+      geoJsonLayer;
+
     geoJsonLayer.addTo(
       bdDanubeGroundwaterLayer
     );
+
+    if (activeThematicMode) {
+      applyBdDanubeThematicStyle();
+    }
 
     window.bdDanubeGroundwaterGeoJson = data;
 
