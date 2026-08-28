@@ -620,6 +620,25 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
   onkeydown="if(event.key==='Enter'){event.preventDefault();searchCoordinates();}"
 >
 
+<button
+  id="use-my-location"
+  type="button"
+  onclick="document.getElementById('user-location-trigger')?.click()"
+  style="
+    display:inline-block;
+    margin-top:5px;
+    padding:2px 0;
+    border:0;
+    background:transparent;
+    color:#2563eb;
+    font-size:12px;
+    line-height:1.3;
+    font-weight:600;
+    cursor:pointer;
+    text-align:left;
+  "
+>&#9673; &#1048;&#1079;&#1087;&#1086;&#1083;&#1079;&#1074;&#1072;&#1081; &#1084;&#1086;&#1103;&#1090;&#1072; &#1083;&#1086;&#1082;&#1072;&#1094;&#1080;&#1103;</button>
+
 <div
   id="coordinate-search-status"
   style="margin-top:6px;font-size:12px;"
@@ -913,6 +932,214 @@ const rightLayerControl = L.control.layers(
     position: 'bottomright'
   }
 ).addTo(map);
+
+
+let userLocationMarker = null;
+let userLocationAccuracyCircle = null;
+
+const userLocationControl = L.control({
+  position: 'bottomleft'
+});
+
+userLocationControl.onAdd = function() {
+  const container = L.DomUtil.create(
+    'div',
+    'leaflet-bar user-location-control'
+  );
+
+  container.style.display = 'none';
+
+  const button = L.DomUtil.create(
+    'button',
+    '',
+    container
+  );
+
+  button.type = 'button';
+  button.id = 'user-location-trigger';
+  button.innerHTML = '&#9678;';
+  button.title =
+    '\u041c\u043e\u044f\u0442\u0430 \u043b\u043e\u043a\u0430\u0446\u0438\u044f';
+  button.setAttribute(
+    'aria-label',
+    '\u041c\u043e\u044f\u0442\u0430 \u043b\u043e\u043a\u0430\u0446\u0438\u044f'
+  );
+
+  button.style.width = '38px';
+  button.style.height = '38px';
+  button.style.border = '0';
+  button.style.background = '#ffffff';
+  button.style.color = '#1f2937';
+  button.style.fontSize = '24px';
+  button.style.fontWeight = '700';
+  button.style.lineHeight = '38px';
+  button.style.textAlign = 'center';
+  button.style.padding = '0';
+  button.style.cursor = 'pointer';
+
+  L.DomEvent.disableClickPropagation(container);
+  L.DomEvent.disableScrollPropagation(container);
+
+  L.DomEvent.on(
+    button,
+    'click',
+    function(event) {
+      L.DomEvent.stop(event);
+
+      if (
+        !navigator.geolocation ||
+        typeof navigator.geolocation.getCurrentPosition !== 'function'
+      ) {
+        L.popup({
+          maxWidth: 300
+        })
+          .setLatLng(map.getCenter())
+          .setContent(
+            '<strong>\u041c\u043e\u044f\u0442\u0430 \u043b\u043e\u043a\u0430\u0446\u0438\u044f</strong><br>' +
+            '\u0422\u043e\u0437\u0438 \u0431\u0440\u0430\u0443\u0437\u044a\u0440 \u043d\u0435 \u043f\u043e\u0434\u0434\u044a\u0440\u0436\u0430 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f\u043d\u0435 \u043d\u0430 \u043c\u0435\u0441\u0442\u043e\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435.'
+          )
+          .openOn(map);
+
+        return;
+      }
+
+      button.disabled = true;
+      button.style.opacity = '0.55';
+
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          button.disabled = false;
+          button.style.opacity = '1';
+
+          const latitude =
+            position.coords.latitude;
+
+          const longitude =
+            position.coords.longitude;
+
+          const accuracy =
+            Number(position.coords.accuracy) || 0;
+
+          const latlng = [
+            latitude,
+            longitude
+          ];
+
+          if (userLocationMarker) {
+            map.removeLayer(
+              userLocationMarker
+            );
+          }
+
+          if (userLocationAccuracyCircle) {
+            map.removeLayer(
+              userLocationAccuracyCircle
+            );
+          }
+
+          userLocationAccuracyCircle =
+            L.circle(
+              latlng,
+              {
+                radius: accuracy,
+                color: '#2563eb',
+                weight: 1,
+                opacity: 0.55,
+                fillColor: '#60a5fa',
+                fillOpacity: 0.10,
+                interactive: false
+              }
+            ).addTo(map);
+
+          userLocationMarker =
+            L.circleMarker(
+              latlng,
+              {
+                radius: 7,
+                color: '#ffffff',
+                weight: 3,
+                fillColor: '#2563eb',
+                fillOpacity: 1
+              }
+            ).addTo(map);
+
+          const accuracyText =
+            accuracy > 0
+              ? (
+                  '<br><span style="font-size:11px">' +
+                  '\u041f\u0440\u0438\u0431\u043b\u0438\u0437\u0438\u0442\u0435\u043b\u043d\u0430 \u0442\u043e\u0447\u043d\u043e\u0441\u0442: ' +
+                  Math.round(accuracy) +
+                  ' m</span>'
+                )
+              : '';
+
+          userLocationMarker
+            .bindPopup(
+              '<strong>\u041c\u043e\u044f\u0442\u0430 \u043b\u043e\u043a\u0430\u0446\u0438\u044f</strong>' +
+              accuracyText
+            )
+            .openPopup();
+
+          map.setView(
+            latlng,
+            Math.max(
+              map.getZoom(),
+              15
+            ),
+            {
+              animate: true
+            }
+          );
+        },
+        function(error) {
+          button.disabled = false;
+          button.style.opacity = '1';
+
+          let message =
+            '\u041c\u0435\u0441\u0442\u043e\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435\u0442\u043e \u043d\u0435 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0431\u044a\u0434\u0435 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043e.';
+
+          if (error && error.code === 1) {
+            message =
+              '\u0414\u043e\u0441\u0442\u044a\u043f\u044a\u0442 \u0434\u043e \u043c\u0435\u0441\u0442\u043e\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435\u0442\u043e \u0435 \u043e\u0442\u043a\u0430\u0437\u0430\u043d. \u0420\u0430\u0437\u0440\u0435\u0448\u0435\u0442\u0435 \u0434\u043e\u0441\u0442\u044a\u043f \u0434\u043e \u043b\u043e\u043a\u0430\u0446\u0438\u044f\u0442\u0430 \u0437\u0430 Sondi.bg \u043e\u0442 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438\u0442\u0435 \u043d\u0430 \u0431\u0440\u0430\u0443\u0437\u044a\u0440\u0430.';
+          } else if (
+            error &&
+            error.code === 2
+          ) {
+            message =
+              '\u0412 \u043c\u043e\u043c\u0435\u043d\u0442\u0430 \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u043e\u0442\u043e \u043d\u0435 \u043c\u043e\u0436\u0435 \u0434\u0430 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0438 \u0442\u0435\u043a\u0443\u0449\u0430\u0442\u0430 \u043b\u043e\u043a\u0430\u0446\u0438\u044f.';
+          } else if (
+            error &&
+            error.code === 3
+          ) {
+            message =
+              '\u041e\u043f\u0440\u0435\u0434\u0435\u043b\u044f\u043d\u0435\u0442\u043e \u043d\u0430 \u043b\u043e\u043a\u0430\u0446\u0438\u044f\u0442\u0430 \u043e\u0442\u043d\u0435 \u0442\u0432\u044a\u0440\u0434\u0435 \u043c\u043d\u043e\u0433\u043e \u0432\u0440\u0435\u043c\u0435. \u041e\u043f\u0438\u0442\u0430\u0439\u0442\u0435 \u043e\u0442\u043d\u043e\u0432\u043e.';
+          }
+
+          L.popup({
+            maxWidth: 320
+          })
+            .setLatLng(
+              map.getCenter()
+            )
+            .setContent(
+              '<strong>\u041c\u043e\u044f\u0442\u0430 \u043b\u043e\u043a\u0430\u0446\u0438\u044f</strong><br>' +
+              message
+            )
+            .openOn(map);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 12000,
+          maximumAge: 15000
+        }
+      );
+    }
+  );
+
+  return container;
+};
+
+userLocationControl.addTo(map);
 
 
 async function loadBlackSeaThematicPressureData() {
@@ -7701,95 +7928,7 @@ async function loadFaults(){
       }),
 
       onEachFeature: (feature, featureLayer) => {
-        // GEM_HYPOTHESIS_POPUP_BUTTON_START
 
-        featureLayer.on("click", event => {
-          selectedGemFaultForHypothesis = {
-            feature: feature,
-            layer: featureLayer,
-            latlng: event.latlng
-          };
-        });
-
-        featureLayer.on("popupopen", () => {
-          const popup = featureLayer.getPopup();
-
-          if (!popup) {
-            return;
-          }
-
-          const popupElement = popup.getElement();
-
-          if (!popupElement) {
-            return;
-          }
-
-          const popupContent =
-            popupElement.querySelector(
-              ".leaflet-popup-content"
-            );
-
-          if (!popupContent) {
-            return;
-          }
-
-          if (
-            popupContent.querySelector(
-              ".gem-hypothesis-button"
-            )
-          ) {
-            return;
-          }
-
-          const button =
-            document.createElement("button");
-
-          button.type = "button";
-
-          button.className =
-            "analysis-btn gem-hypothesis-button";
-
-          button.style.width = "100%";
-          button.style.marginTop = "7px";
-          button.style.padding = "8px";
-          button.style.border = "0";
-          button.style.borderRadius = "6px";
-          button.style.background = "#b85c00";
-          button.style.color = "#ffffff";
-          button.style.fontWeight = "bold";
-          button.style.cursor = "pointer";
-
-          button.textContent =
-            "\u041f\u0440\u043e\u0433\u043d\u043e\u0437\u0438\u0440\u0430\u0439 \u0440\u0430\u0437\u043a\u043b\u043e\u043d\u0435\u043d\u0438\u044f \u0438 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0438 \u0437\u043e\u043d\u0438";
-
-          button.addEventListener(
-            "click",
-            event => {
-              event.preventDefault();
-              event.stopPropagation();
-
-              if (
-                !selectedGemFaultForHypothesis
-              ) {
-                const center =
-                  featureLayer.getBounds()
-                    .getCenter();
-
-                selectedGemFaultForHypothesis = {
-                  feature: feature,
-                  layer: featureLayer,
-                  latlng: center
-                };
-              }
-
-              analyzeSelectedGemFaultHypothesis();
-            }
-          );
-
-          popupContent.appendChild(button);
-        });
-
-        // GEM_HYPOTHESIS_POPUP_BUTTON_END
 
         const p = feature.properties || {};
         const catalogId = gemHasValue(p.catalog_id)
@@ -9961,8 +10100,7 @@ function hypothesisConfidence(
 function drawHypothesisBranch(
   originPoint,
   bearing,
-  lengthKm,
-  confidence
+  lengthKm
 ) {
   const destination =
     turf.destination(
@@ -9989,14 +10127,8 @@ function drawHypothesisBranch(
     {
       pane: "faultHypothesisPane",
       color: "#f28e2b",
-      weight:
-        confidence.score >= 70
-          ? 5
-          : 4,
-      opacity:
-        confidence.score >= 70
-          ? 0.9
-          : 0.75,
+      weight: 4,
+      opacity: 0.8,
       dashArray: "10,8",
       interactive: false
     }
@@ -10005,40 +10137,6 @@ function drawHypothesisBranch(
   line.addTo(
     ensureFaultHypothesisLayer()
   );
-
-  /*
-    ????????????? ??????????????
-    ?????????? ??????? ????? ???????.
-  */
-  try {
-    const buffered = turf.buffer(
-      turf.lineString(coordinates),
-      confidence.score >= 70
-        ? 0.18
-        : 0.12,
-      {
-        units: "kilometers"
-      }
-    );
-
-    L.geoJSON(
-      buffered,
-      {
-        pane: "faultHypothesisPane",
-        interactive: false,
-        style: {
-          color: "#f28e2b",
-          weight: 1,
-          opacity: 0.35,
-          fillOpacity: 0.08
-        }
-      }
-    ).addTo(
-      ensureFaultHypothesisLayer()
-    );
-  } catch (error) {
-    // ??????? ? ???? ???????? ?????.
-  }
 
   return destination;
 }
@@ -10078,17 +10176,7 @@ function showGemFaultHypothesisPopup(
           "<br>"
         : ""
     ) +
-    "<button type=\"button\"" +
-    " style=\"width:100%;margin-top:9px;" +
-    "padding:8px;border:0;border-radius:6px;" +
-    "background:#a64b00;color:white;" +
-    "font-weight:bold;cursor:pointer\"" +
-    " onclick=\"analyzeSelectedGemFaultHypothesis()\">" +
-    "\u041f\u0440\u043e\u0433\u043d\u043e\u0437\u0438\u0440\u0430\u0439 \u0440\u0430\u0437\u043a\u043b\u043e\u043d\u0435\u043d\u0438\u044f \u0438 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0438 \u0437\u043e\u043d\u0438" +
-    "</button>" +
-    "<div style=\"font-size:11px;margin-top:6px\">" +
-    "\u0420\u0435\u0437\u0443\u043b\u0442\u0430\u0442\u044a\u0442 \u0435 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u043e-\u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0445\u0438\u043f\u043e\u0442\u0435\u0437\u0430." +
-    "</div>" +
+
     "</div>";
 
   /*
@@ -10140,12 +10228,10 @@ function analyzeGemFaultHypothesis(
       "analysis-status"
     );
 
-  if (!result || !status) {
-    return;
+  if (status) {
+    status.textContent =
+      "\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u043c \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u0438\u0442\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f\u2026";
   }
-
-  status.textContent =
-    "\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u043c \u0433\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u044f\u0442\u0430 \u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u0430 \u0438 \u0431\u043b\u0438\u0437\u043a\u0438\u0442\u0435 \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0438\u2026";
 
   const clickedPoint =
     turf.point([
@@ -10160,8 +10246,20 @@ function analyzeGemFaultHypothesis(
     );
 
   if (!segment) {
-    status.textContent =
-      "\u0420\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u0433\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u044f \u043d\u0435 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u0430\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430.";
+    if (status) {
+      status.textContent =
+        "\u0420\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u0433\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u044f \u043d\u0435 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u0430\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430.";
+    }
+
+    L.popup({
+      maxWidth: 330
+    })
+      .setLatLng(latlng)
+      .setContent(
+        "<strong>\u041f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437</strong><br>" +
+        "\u0417\u0430 \u0442\u0430\u0437\u0438 \u0442\u043e\u0447\u043a\u0430 \u043d\u0435 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0438 \u043d\u0430\u0434\u0435\u0436\u0434\u043d\u043e \u043b\u043e\u043a\u0430\u043b\u043d\u0430\u0442\u0430 \u0433\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u044f \u043d\u0430 GEM \u0440\u0430\u0437\u043b\u043e\u043c\u0430."
+      )
+      .openOn(map);
 
     return;
   }
@@ -10204,13 +10302,6 @@ function analyzeGemFaultHypothesis(
           )
         : null;
 
-    const confidence =
-      hypothesisConfidence(
-        cluster.objects.length,
-        intersections.length,
-        nearestDistance
-      );
-
     const lengthKm = Math.min(
       5,
       Math.max(
@@ -10229,16 +10320,35 @@ function analyzeGemFaultHypothesis(
     drawHypothesisBranch(
       originPoint,
       cluster.bearing,
-      lengthKm,
-      confidence
+      lengthKm
     );
 
     candidates.push({
       bearing: cluster.bearing,
       objects: cluster.objects,
-      confidence,
       lengthKm
     });
+  }
+
+  if (candidates.length) {
+    const originLatLng = [
+      originPoint.geometry.coordinates[1],
+      originPoint.geometry.coordinates[0]
+    ];
+
+    const currentZoom = map.getZoom();
+    const targetZoom = Math.max(
+      currentZoom,
+      13
+    );
+
+    map.setView(
+      originLatLng,
+      targetZoom,
+      {
+        animate: true
+      }
+    );
   }
 
   /*
@@ -10258,7 +10368,7 @@ function analyzeGemFaultHypothesis(
   let html =
     "<hr>" +
     "<strong style=\"font-size:15px\">" +
-    "\u0425\u0438\u043f\u043e\u0442\u0435\u0437\u0430 \u0437\u0430 \u0440\u0430\u0437\u043a\u043b\u043e\u043d\u0435\u043d\u0438\u044f \u043d\u0430 GEM \u0440\u0430\u0437\u043b\u043e\u043c" +
+    "\u041f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437 \u043e\u043a\u043e\u043b\u043e GEM \u0440\u0430\u0437\u043b\u043e\u043c" +
     "</strong><br>" +
     "\u041a\u043e\u0434: <strong>" +
     esc(code) +
@@ -10276,7 +10386,7 @@ function analyzeGemFaultHypothesis(
 
   html +=
     "<div style=\"margin-top:10px\">" +
-    "<strong>\u0418\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u043d\u0438 \u0438\u043d\u0434\u0438\u043a\u0430\u0442\u043e\u0440\u0438</strong><br>" +
+    "<strong>\u041a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 \u0434\u0430\u043d\u043d\u0438 \u0432 \u0440\u0430\u0434\u0438\u0443\u0441 7 km</strong><br>" +
     "\u0412\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0438 \u0434\u043e 7 km: <strong>" +
     waterObjects.length +
     "</strong><br>" +
@@ -10290,13 +10400,13 @@ function analyzeGemFaultHypothesis(
       "<div style=\"margin-top:10px;" +
       "padding:8px;background:#fff4e5;" +
       "border-left:4px solid #c66b00\">" +
-      "<strong>\u041d\u0435\u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0438\u043d\u0434\u0438\u043a\u0430\u0442\u043e\u0440\u0438</strong><br>" +
-      "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0433\u0440\u0443\u043f\u0438\u0440\u0430\u043d\u0438 \u0438\u0437\u0432\u043e\u0440\u0438 \u0438\u043b\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u0438, \u0437\u0430 \u0434\u0430 \u0441\u0435 \u043d\u0430\u0447\u0435\u0440\u0442\u0430\u0435 \u0432\u0435\u0440\u043e\u044f\u0442\u043d\u043e \u0432\u0442\u043e\u0440\u0438\u0447\u043d\u043e \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435." +
+      "<strong>\u041d\u044f\u043c\u0430 \u044f\u0441\u043d\u043e \u043e\u0442\u043a\u0440\u043e\u044f\u0432\u0430\u0449\u043e \u0441\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435</strong><br>" +
+      "\u0412 \u043d\u0430\u043b\u0438\u0447\u043d\u0438\u0442\u0435 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0438 \u043e\u043a\u043e\u043b\u043e \u0442\u0430\u0437\u0438 \u0442\u043e\u0447\u043a\u0430 \u043d\u0435 \u0441\u0435 \u043e\u0442\u043a\u0440\u043e\u044f\u0432\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u044f\u0441\u043d\u043e \u043e\u0431\u0449\u043e \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u043e \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435." +
       "</div>";
   } else {
     html +=
       "<div style=\"margin-top:11px\">" +
-      "<strong>\u0412\u0435\u0440\u043e\u044f\u0442\u043d\u0438 \u0432\u0442\u043e\u0440\u0438\u0447\u043d\u0438 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u0438 \u0437\u043e\u043d\u0438</strong>";
+      "<strong>\u041e\u0442\u043a\u0440\u043e\u044f\u0432\u0430\u0449\u0438 \u0441\u0435 \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u0438 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f</strong>";
 
     candidates.forEach(
       (candidate, index) => {
@@ -10304,7 +10414,7 @@ function analyzeGemFaultHypothesis(
           "<div style=\"margin-top:7px;" +
           "padding:8px;background:#fff8ed;" +
           "border-left:4px dashed #e87912\">" +
-          "<strong>\u0425\u0438\u043f\u043e\u0442\u0435\u0437\u0430 " +
+          "<strong>\u041d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 " +
           (index + 1) +
           "</strong><br>" +
           "\u041f\u043e\u0441\u043e\u043a\u0430: <strong>" +
@@ -10312,19 +10422,11 @@ function analyzeGemFaultHypothesis(
             candidate.bearing
           ) +
           "\u00b0</strong><br>" +
-          "\u0414\u044a\u043b\u0436\u0438\u043d\u0430 \u043d\u0430 \u0432\u0438\u0437\u0443\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u043d\u0430\u0442\u0430 \u0437\u043e\u043d\u0430: " +
+          "\u0412\u0438\u0437\u0443\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u043d\u0430 \u0434\u044a\u043b\u0436\u0438\u043d\u0430: " +
           candidate.lengthKm.toFixed(1) +
           " km<br>" +
-          "\u0412\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0438 \u043f\u043e \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435\u0442\u043e: " +
+          "\u041a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0438 \u0432 \u0442\u043e\u0432\u0430 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435: " +
           candidate.objects.length +
-          "<br>" +
-          "\u0423\u0432\u0435\u0440\u0435\u043d\u043e\u0441\u0442: <strong>" +
-          esc(
-            candidate.confidence.label
-          ) +
-          " (" +
-          candidate.confidence.score +
-          "/100)</strong>" +
           "</div>";
       }
     );
@@ -10336,7 +10438,7 @@ function analyzeGemFaultHypothesis(
     html +=
       "<div style=\"margin-top:11px\">" +
       "<strong>\u0417\u043e\u043d\u0438 \u043d\u0430 \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u043d\u0435</strong><br>" +
-      "\u041f\u0440\u0435\u0441\u0438\u0447\u0430\u043d\u0438\u044f\u0442\u0430 \u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u0438 \u043c\u043e\u0433\u0430\u0442 \u0434\u0430 \u0438\u043c\u0430\u0442 \u043f\u043e-\u0433\u043e\u043b\u044f\u043c\u0430 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u0430 \u0441\u0432\u044a\u0440\u0437\u0430\u043d\u043e\u0441\u0442, \u043d\u043e \u043d\u0435 \u0435 \u0437\u0430\u0434\u044a\u043b\u0436\u0438\u0442\u0435\u043b\u043d\u043e \u0434\u0430 \u0441\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0438." +
+      "\u0422\u0443\u043a \u0438\u0437\u0431\u0440\u0430\u043d\u0438\u044f\u0442 GEM \u0440\u0430\u0437\u043b\u043e\u043c \u0441\u0435 \u043f\u0440\u0435\u0441\u0438\u0447\u0430 \u0441 \u0434\u0440\u0443\u0433\u0438 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 GEM \u0440\u0430\u0437\u043b\u043e\u043c\u0438. \u0422\u043e\u0432\u0430 \u0441\u0435 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u0441\u0430\u043c\u043e \u043a\u0430\u0442\u043e \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0435\u043d \u0444\u0430\u043a\u0442." +
       "</div>";
 
     for (
@@ -10373,13 +10475,54 @@ function analyzeGemFaultHypothesis(
     "border:1px solid #c7ccd1;" +
     "font-size:11px\">" +
     "<strong>\u0412\u0430\u0436\u043d\u043e:</strong> " +
-    "\u041f\u0440\u0435\u043a\u044a\u0441\u043d\u0430\u0442\u0438\u0442\u0435 \u043e\u0440\u0430\u043d\u0436\u0435\u0432\u0438 \u043b\u0438\u043d\u0438\u0438 \u043d\u0435 \u0441\u0430 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 \u0440\u0430\u0437\u043b\u043e\u043c\u0438 \u0438 \u043d\u0435 \u0434\u043e\u043a\u0430\u0437\u0432\u0430\u0442 \u0432\u043e\u0434\u043d\u0430 \u0436\u0438\u043b\u0430. \u0422\u0435 \u043f\u043e\u043a\u0430\u0437\u0432\u0430\u0442 \u0432\u0435\u0440\u043e\u044f\u0442\u043d\u0438 \u0432\u0442\u043e\u0440\u0438\u0447\u043d\u0438 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u0438 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f, \u043a\u043e\u0438\u0442\u043e \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0441\u0435 \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0442 \u0441 \u0442\u0435\u0440\u0435\u043d\u043d\u0430 \u0433\u0435\u043e\u0444\u0438\u0437\u0438\u043a\u0430." +
+    "\u041e\u0440\u0430\u043d\u0436\u0435\u0432\u0438\u0442\u0435 \u043f\u0443\u043d\u043a\u0442\u0438\u0440\u043d\u0438 \u043b\u0438\u043d\u0438\u0438 \u043f\u043e\u043a\u0430\u0437\u0432\u0430\u0442 \u0441\u0430\u043c\u043e \u043f\u043e\u0441\u043e\u043a\u0438, \u0432 \u043a\u043e\u0438\u0442\u043e \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0438 \u0441\u0435 \u0433\u0440\u0443\u043f\u0438\u0440\u0430\u0442 \u043e\u043a\u043e\u043b\u043e \u0438\u0437\u0431\u0440\u0430\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430. \u0422\u0435 \u043d\u0435 \u0441\u0430 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 GEM \u0440\u0430\u0437\u043b\u043e\u043c\u0438 \u0438 \u043d\u0435 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u044f\u0432\u0430\u0442 \u0434\u043e\u043a\u0430\u0437\u0430\u043d\u0438 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0438 \u0437\u043e\u043d\u0438." +
     "</div>";
 
-  result.innerHTML = html;
+  if (result) {
+    result.innerHTML = html;
+  }
 
-  status.textContent =
-    "\u0421\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u043e-\u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430\u0442\u0430 \u0445\u0438\u043f\u043e\u0442\u0435\u0437\u0430 \u0435 \u0433\u043e\u0442\u043e\u0432\u0430.";
+  if (status) {
+    status.textContent =
+      "\u041f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u0438\u044f\u0442 \u0430\u043d\u0430\u043b\u0438\u0437 \u0435 \u0433\u043e\u0442\u043e\u0432.";
+  }
+
+  const directionSummary =
+    candidates.length
+      ? (
+          "\u041e\u0442\u043a\u0440\u043e\u0435\u043d\u0438 \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u0438 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f: <strong>" +
+          candidates.length +
+          "</strong>."
+        )
+      : (
+          "\u0412 \u043d\u0430\u043b\u0438\u0447\u043d\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u0438 \u043d\u0435 \u0441\u0435 \u043e\u0442\u043a\u0440\u043e\u044f\u0432\u0430 \u044f\u0441\u043d\u043e \u043e\u0431\u0449\u043e \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u043e \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435."
+        );
+
+  const popupHtml =
+    "<div style=\"min-width:260px;max-width:340px;font-size:12px;line-height:1.45\">" +
+    "<strong style=\"font-size:14px\">\u041f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437</strong><br>" +
+    directionSummary +
+    "<div style=\"margin-top:8px\">" +
+    "<strong>\u041a\u0430\u043a \u0435 \u0438\u0437\u0447\u0438\u0441\u043b\u0435\u043d\u043e:</strong><br>" +
+    "\u041d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f\u0442\u0430 \u0441\u0430 \u0438\u0437\u0447\u0438\u0441\u043b\u0435\u043d\u0438 \u0447\u0440\u0435\u0437 \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u043e \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u043c\u0435\u0436\u0434\u0443 \u043b\u043e\u043a\u0430\u043b\u043d\u0430\u0442\u0430 \u043f\u043e\u0441\u043e\u043a\u0430 \u043d\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u0438\u044f GEM \u0440\u0430\u0437\u043b\u043e\u043c \u0438 \u0440\u0430\u0437\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435\u0442\u043e \u043d\u0430 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0438 \u0432 \u0440\u0430\u0434\u0438\u0443\u0441 7 km. " +
+    "\u041e\u0431\u0435\u043a\u0442\u0438\u0442\u0435 \u0441\u0435 \u0433\u0440\u0443\u043f\u0438\u0440\u0430\u0442 \u0441\u043f\u043e\u0440\u0435\u0434 \u043f\u043e\u0441\u043e\u043a\u0430\u0442\u0430 \u0438\u043c \u0441\u043f\u0440\u044f\u043c\u043e \u0438\u0437\u0431\u0440\u0430\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430. " +
+    "\u0414\u043e\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u043d\u043e \u0441\u0435 \u043e\u0442\u0447\u0438\u0442\u0430\u0442 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438\u0442\u0435 \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u043d\u0438\u044f \u0441 \u0434\u0440\u0443\u0433\u0438 GEM \u0440\u0430\u0437\u043b\u043e\u043c\u0438." +
+    "</div>" +
+    "<div style=\"margin-top:8px;padding-top:7px;border-top:1px solid #ddd\">" +
+    "<strong>\u0412\u0430\u0436\u043d\u043e:</strong> " +
+    "\u041e\u0440\u0430\u043d\u0436\u0435\u0432\u0438\u0442\u0435 \u043f\u0443\u043d\u043a\u0442\u0438\u0440\u043d\u0438 \u043b\u0438\u043d\u0438\u0438 \u0441\u0430 \u0440\u0435\u0437\u0443\u043b\u0442\u0430\u0442 \u043e\u0442 \u0442\u043e\u0432\u0430 \u0433\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u0447\u043d\u043e \u0438\u0437\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u0435. " +
+    "\u0422\u0435 \u043d\u0435 \u0441\u0430 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 GEM \u0440\u0430\u0437\u043b\u043e\u043c\u0438 \u0438 \u043d\u0435 \u0434\u043e\u043a\u0430\u0437\u0432\u0430\u0442 \u043d\u0430\u043b\u0438\u0447\u0438\u0435 \u043d\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0437\u043e\u043d\u0430." +
+    "</div>" +
+    "</div>";
+
+  L.popup({
+    maxWidth: 370,
+    closeButton: true,
+    autoPan: true
+  })
+    .setLatLng(latlng)
+    .setContent(popupHtml)
+    .openOn(map);
 
   /*
     ????????? ??????????? GEM ???????
@@ -13297,11 +13440,20 @@ async function analyzeLocation(
 
 
 
+let facilityLegendDismissed = false;
+
 const legend=L.control({position:'bottomright'});
 legend.onAdd=()=>{
  const d=L.DomUtil.create('div','legend facility-legend');
  d.style.display='none';
- d.innerHTML=`<b>Водовземни съоръжения</b><br>
+ d.style.position='relative';
+ d.innerHTML=`<button type="button"
+ style="position:absolute;top:6px;right:7px;z-index:20;width:26px;height:26px;border:1px solid #999;border-radius:50%;background:#fff;color:#222;font-size:22px;line-height:22px;font-weight:bold;cursor:pointer;padding:0;text-align:center"
+ aria-label="Close legend"
+ title="Close legend"
+ onclick="facilityLegendDismissed=true;this.parentElement.style.display='none'">&times;</button>
+ <div style="padding-right:22px">
+ <b>Водовземни съоръжения</b><br>
  <span class="symbol dot" style="background:#22c55e;border:1px solid #14532d"></span>Обикновен сондаж/кладенец<br>
  <span class="symbol dot" style="background:#0ea5e9;border:1px solid #075985"></span>Каптаж на обикновена вода<br>
  <span class="symbol dot" style="background:#a855f7;border:1px solid #6b21a8"></span>Дренажно съоръжение<br>
@@ -13319,7 +13471,8 @@ legend.onAdd=()=>{
  <span class="symbol dot" style="background:#f0c419"></span>40–60°C<br>
  <span class="symbol dot" style="background:#f28e2b"></span>60–80°C<br>
  <span class="symbol dot" style="background:#d62728"></span>≥ 80°C<br>
- <span class="symbol dot" style="background:#c51b8a"></span>Без температура`;
+ <span class="symbol dot" style="background:#c51b8a"></span>Без температура
+ </div>`;
  return d;
 };
 
@@ -13341,6 +13494,11 @@ function updateFacilityLegend(){
     const checkbox = document.getElementById(id);
     return checkbox && checkbox.checked;
   });
+
+  if (facilityLegendDismissed) {
+    el.style.display = 'none';
+    return;
+  }
 
   el.style.display = visible ? 'block' : 'none';
 }
