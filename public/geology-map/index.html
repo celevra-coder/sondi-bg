@@ -3618,6 +3618,393 @@ function eastAegeanFacilityColor(category) {
   return "#64748b";
 }
 
+
+// UNIFIED_ORDINARY_GROUNDWATER_POPUP_BEGIN
+
+function ordinaryFacilityFirst(...values) {
+  for (const value of values) {
+    if (
+      value !== undefined &&
+      value !== null &&
+      String(value).trim() !== ""
+    ) {
+      return value;
+    }
+  }
+
+  return null;
+}
+
+function ordinaryGroundwaterStartFreeAnalysis(
+  lat,
+  lon
+) {
+  if (
+    !Number.isFinite(Number(lat)) ||
+    !Number.isFinite(Number(lon))
+  ) {
+    return;
+  }
+
+  if (
+    typeof map !== "undefined" &&
+    map &&
+    typeof map.closePopup === "function"
+  ) {
+    map.closePopup();
+  }
+
+  startLocationAnalysis(
+    Number(lat),
+    Number(lon),
+    "\u0418\u0437\u0431\u0440\u0430\u043d\u043e \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435"
+  );
+}
+
+
+function ordinaryGroundwaterFacilityPopupHtml(
+  feature,
+  options = {}
+) {
+  const p = feature?.properties || {};
+  const coords =
+    feature?.geometry?.coordinates || [];
+
+  const lng = Number(coords[0]);
+  const lat = Number(coords[1]);
+
+  const facilityType =
+    ordinaryFacilityFirst(
+      p.facility_type,
+      p.facility_kind,
+      p.type,
+      p.facility_category,
+      p.category
+    );
+
+  const facilityName =
+    ordinaryFacilityFirst(
+      p.facility_name,
+      p.facility,
+      p.name,
+      p.display_name
+    );
+
+  const gwb =
+    ordinaryFacilityFirst(
+      p.groundwater_body_code,
+      p.gwb_code,
+      p.canonical_code,
+      p.water_body_code
+    );
+
+  const aquifer =
+    ordinaryFacilityFirst(
+      p.aquifer,
+      p.aquifer_name,
+      p.water_horizon,
+      p.aquifer_horizon
+    );
+
+  const depth =
+    ordinaryFacilityFirst(
+      p.depth_m,
+      p.depth,
+      p.facility_depth_m
+    );
+
+  const staticLevel =
+    ordinaryFacilityFirst(
+      p.static_water_level_m,
+      p.static_level_m,
+      p.static_water_level,
+      p.static_level
+    );
+
+  const holder =
+    ordinaryFacilityFirst(
+      p.holder,
+      p.permit_holder,
+      p.owner_name,
+      p.user_name
+    );
+
+  let permit =
+    ordinaryFacilityFirst(
+      p.permit_number_date,
+      p.permit_number,
+      p.permit
+    );
+
+  if (
+    permit &&
+    p.end_date_resolved &&
+    !String(permit).includes(
+      String(p.end_date_resolved)
+    )
+  ) {
+    permit =
+      String(permit) +
+      " / \u0432\u0430\u043b\u0438\u0434\u043d\u043e \u0434\u043e " +
+      String(p.end_date_resolved);
+  }
+
+  const purpose =
+    ordinaryFacilityFirst(
+      p.water_use_purpose,
+      p.purpose,
+      p.use_purpose,
+      p.intended_use
+    );
+
+  const averageFlow =
+    ordinaryFacilityFirst(
+      p.average_flow_l_s,
+      p.mean_discharge_lps,
+      p.mean_flow_l_s,
+      p.average_discharge_l_s
+    );
+
+  const maximumFlow =
+    ordinaryFacilityFirst(
+      p.maximum_flow_l_s,
+      p.max_discharge_lps,
+      p.max_flow_l_s,
+      p.maximum_discharge_l_s
+    );
+
+  const annualVolume =
+    ordinaryFacilityFirst(
+      p.annual_volume_m3,
+      p.annual_authorized_volume_m3,
+      p.permitted_volume_m3,
+      p.authorized_annual_volume_m3
+    );
+
+  const constructionYear =
+    ordinaryFacilityFirst(
+      p.construction_year,
+      p.year_built,
+      p.year
+    );
+
+  const status =
+    ordinaryFacilityFirst(
+      p.facility_status,
+      p.status
+    );
+
+  const registrationNumber =
+    ordinaryFacilityFirst(
+      p.registration_number,
+      p.registry_number,
+      p.register_number
+    );
+
+  const referenceDate =
+    ordinaryFacilityFirst(
+      p.reference_date,
+      p.current_as_of,
+      p.source_date
+    );
+
+  const settlement =
+    ordinaryFacilityFirst(
+      p.settlement,
+      p.locality
+    );
+
+  const municipality =
+    ordinaryFacilityFirst(
+      p.municipality
+    );
+
+  const district =
+    ordinaryFacilityFirst(
+      p.district,
+      p.region
+    );
+
+  const basinName =
+    options.basinName ||
+    ordinaryFacilityFirst(
+      p.basin_directorate
+    );
+
+  const proUrl =
+    options.proUrl ||
+    sondiProUrlForPopup(feature);
+
+  const sourceText =
+    options.sourceText ||
+    "\u043e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u0431\u0430\u0441\u0435\u0439\u043d\u043e\u0432\u0430 \u0434\u0438\u0440\u0435\u043a\u0446\u0438\u044f";
+
+  const title =
+    "\u041e\u0431\u0438\u043a\u043d\u043e\u0432\u0435\u043d\u043e \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435";
+
+  const typeText =
+    ordinaryFacilityFirst(
+      facilityType,
+      facilityName
+    );
+
+  const coordHtml =
+    Number.isFinite(lat) &&
+    Number.isFinite(lng)
+      ? (
+          '<b>\u041a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u0438:</b><br>' +
+          '<span class="coord">' +
+          lat.toFixed(7) +
+          ', ' +
+          lng.toFixed(7) +
+          '</span><br>'
+        )
+      : (
+          '<b>\u041a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u0438:</b> ' +
+          ordinaryWellValue(null) +
+          '<br>'
+        );
+
+  return (
+    '<div style="min-width:295px;max-width:390px;line-height:1.48">' +
+
+    '<div style="font-size:16px;font-weight:800;color:#14532d;margin-bottom:9px">' +
+    ordinaryWellEscape(title) +
+    '</div>' +
+
+    '<b>\u0412\u0438\u0434 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435:</b> ' +
+    ordinaryWellValue(typeText) +
+    '<br>' +
+
+    '<b>\u0411\u0430\u0441\u0435\u0439\u043d\u043e\u0432\u0430 \u0434\u0438\u0440\u0435\u043a\u0446\u0438\u044f:</b> ' +
+    ordinaryWellValue(basinName) +
+    '<br>' +
+
+    '<b>\u041d\u0430\u0441\u0435\u043b\u0435\u043d\u043e \u043c\u044f\u0441\u0442\u043e:</b> ' +
+    ordinaryWellValue(settlement) +
+    '<br>' +
+
+    '<b>\u041e\u0431\u0449\u0438\u043d\u0430:</b> ' +
+    ordinaryWellValue(municipality) +
+    '<br>' +
+
+    '<b>\u041e\u0431\u043b\u0430\u0441\u0442:</b> ' +
+    ordinaryWellValue(district) +
+    '<br>' +
+
+    '<b>\u041f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e:</b> ' +
+    ordinaryWellValue(gwb) +
+    '<br>' +
+
+    '<b>\u0412\u043e\u0434\u043e\u043d\u043e\u0441\u0435\u043d \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442:</b> ' +
+    ordinaryWellValue(aquifer) +
+    '<br>' +
+
+    '<b>\u0414\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430:</b> ' +
+    ordinaryWellValue(
+      depth,
+      ' m'
+    ) +
+    '<br>' +
+
+    '<b>\u0421\u0442\u0430\u0442\u0438\u0447\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u043d\u0438\u0432\u043e:</b> ' +
+    ordinaryWellValue(
+      staticLevel,
+      ' m'
+    ) +
+    '<br>' +
+
+    '<b>\u0422\u0438\u0442\u0443\u043b\u044f\u0440:</b> ' +
+    ordinaryWellValue(holder) +
+    '<br>' +
+
+    '<b>\u0420\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u0435\u043b\u043d\u043e:</b> ' +
+    ordinaryWellValue(permit) +
+    '<br>' +
+
+    '<b>\u041f\u0440\u0435\u0434\u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435:</b> ' +
+    ordinaryWellValue(purpose) +
+    '<br>' +
+
+    '<b>\u0421\u0440\u0435\u0434\u0435\u043d \u0434\u0435\u0431\u0438\u0442:</b> ' +
+    ordinaryWellValue(
+      averageFlow,
+      ' l/s'
+    ) +
+    '<br>' +
+
+    '<b>\u041c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u0435\u043d \u0434\u0435\u0431\u0438\u0442:</b> ' +
+    ordinaryWellValue(
+      maximumFlow,
+      ' l/s'
+    ) +
+    '<br>' +
+
+    '<b>\u0413\u043e\u0434\u0438\u0448\u043d\u043e \u0440\u0430\u0437\u0440\u0435\u0448\u0435\u043d\u043e \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e:</b> ' +
+    ordinaryWellValue(
+      annualVolume,
+      ' m\u00b3'
+    ) +
+    '<br>' +
+
+    '<b>\u0413\u043e\u0434\u0438\u043d\u0430 \u043d\u0430 \u0438\u0437\u0433\u0440\u0430\u0436\u0434\u0430\u043d\u0435:</b> ' +
+    ordinaryWellValue(
+      constructionYear
+    ) +
+    '<br>' +
+
+    '<b>\u0421\u0442\u0430\u0442\u0443\u0441:</b> ' +
+    ordinaryWellValue(
+      status
+    ) +
+    '<br>' +
+
+    '<b>\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u043e\u043d\u0435\u043d \u043d\u043e\u043c\u0435\u0440:</b> ' +
+    ordinaryWellValue(
+      registrationNumber
+    ) +
+    '<br>' +
+
+    '<b>\u0410\u043a\u0442\u0443\u0430\u043b\u043d\u043e \u043a\u044a\u043c:</b> ' +
+    ordinaryWellValue(
+      referenceDate
+    ) +
+    '<br>' +
+
+    coordHtml +
+
+    '<div style="margin-top:11px">' +
+    '<button type="button" ' +
+    'onclick="ordinaryGroundwaterStartFreeAnalysis(' +
+    (
+      Number.isFinite(lat)
+        ? String(lat)
+        : 'NaN'
+    ) +
+    ',' +
+    (
+      Number.isFinite(lng)
+        ? String(lng)
+        : 'NaN'
+    ) +
+    ')" ' +
+    'style="width:100%;border:0;cursor:pointer;text-align:center;padding:10px 12px;border-radius:8px;background:#166534;color:#fff;font-weight:700">' +
+    '\u041a\u0440\u0430\u0442\u044a\u043a \u0430\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u043c\u044f\u0441\u0442\u043e\u0442\u043e' +
+    '</button>' +
+    '</div>' +
+'<div style="margin-top:9px;font-size:11px;color:#64748b">' +
+    '\u0418\u0437\u0442\u043e\u0447\u043d\u0438\u043a: ' +
+    ordinaryWellEscape(sourceText) +
+    '.' +
+    '</div>' +
+
+    '</div>'
+  );
+}
+
+// UNIFIED_ORDINARY_GROUNDWATER_POPUP_END
+
+
 async function loadEastAegeanGroundwaterWells() {
   if (
     eastAegeanGroundwaterWellsLoaded ||
@@ -3742,120 +4129,16 @@ async function loadEastAegeanGroundwaterWells() {
             params.toString();
 
           const popupHtml =
-            '<div style="min-width:275px;max-width:360px;line-height:1.48">' +
-
-            '<div style="font-size:15px;font-weight:800;color:#14532d;margin-bottom:8px">' +
-
-            ordinaryWellValue(
-              p.display_category
-            ) +
-
-            "</div>" +
-
-            "<b>Вид съоръжение:</b> " +
-
-            ordinaryWellValue(
-              p.facility_type
-            ) +
-
-            "<br>" +
-
-            "<b>Населено място:</b> " +
-
-            ordinaryWellValue(
-              p.settlement
-            ) +
-
-            "<br>" +
-
-            "<b>Община:</b> " +
-
-            ordinaryWellValue(
-              p.municipality
-            ) +
-
-            "<br>" +
-
-            "<b>Област:</b> " +
-
-            ordinaryWellValue(
-              p.district
-            ) +
-
-            "<br>" +
-
-            "<b>Дълбочина:</b> " +
-
-            ordinaryWellValue(
-              p.depth_m,
-              " m"
-            ) +
-
-            "<br>" +
-
-            "<b>Статично водно ниво:</b> " +
-
-            ordinaryWellValue(
-              p.static_water_level_m,
-              " m"
-            ) +
-
-            "<br>" +
-
-            "<b>Подземно водно тяло:</b> " +
-
-            ordinaryWellValue(
-              p.groundwater_body_code
-            ) +
-
-            "<br>" +
-
-            "<b>Година на изграждане:</b> " +
-
-            ordinaryWellValue(
-              p.construction_year
-            ) +
-
-            "<br>" +
-
-            "<b>Статус:</b> " +
-
-            ordinaryWellValue(
-              p.facility_status
-            ) +
-
-            "<br>" +
-
-            "<b>Регистрационен номер:</b> " +
-
-            ordinaryWellValue(
-              p.registration_number
-            ) +
-
-            '<div style="margin-top:10px">' +
-
-            '<a href="' +
-
-            ordinaryWellEscape(
-              proUrl
-            ) +
-
-            '" style="display:block;text-align:center;padding:9px 12px;border-radius:8px;background:#166534;color:#fff;text-decoration:none;font-weight:700">' +
-
-            "Анализирай точката" +
-
-            "</a>" +
-
-            "</div>" +
-
-            '<div style="margin-top:8px;font-size:11px;color:#64748b">' +
-
-            "Източник: официален регистър на БД Източнобеломорски район." +
-
-            "</div>" +
-
-            "</div>";
-
+            ordinaryGroundwaterFacilityPopupHtml(
+              feature,
+              {
+                basinName:
+                  "\u0418\u0437\u0442\u043e\u0447\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+                proUrl,
+                sourceText:
+                  "\u043e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u0411\u0414 \u0418\u0437\u0442\u043e\u0447\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d"
+              }
+            );
           layer.bindPopup(
             popupHtml,
             {
@@ -3993,83 +4276,16 @@ async function loadOrdinaryGroundwaterWells() {
           "/pro?" + params.toString();
 
         const popupHtml =
-          '<div style="min-width:275px;max-width:360px;line-height:1.48">' +
-
-          '<div style="font-size:15px;font-weight:800;color:#14532d;margin-bottom:8px">' +
-          "Обикновено водовземно съоръжение" +
-          "</div>" +
-
-          "<b>Населено място:</b> " +
-          ordinaryWellValue(p.settlement) +
-          "<br>" +
-
-          "<b>Община:</b> " +
-          ordinaryWellValue(p.municipality) +
-          "<br>" +
-
-          "<b>Област:</b> " +
-          ordinaryWellValue(p.district) +
-          "<br>" +
-
-          "<b>Дълбочина:</b> " +
-          ordinaryWellValue(p.depth_m, " m") +
-          "<br>" +
-
-          "<b>Статично водно ниво:</b> " +
-          ordinaryWellValue(
-            p.static_water_level_m,
-            " m"
-          ) +
-          "<br>" +
-
-          "<b>Водоносен хоризонт:</b> " +
-          ordinaryWellValue(p.aquifer) +
-          "<br>" +
-
-          "<b>Подземно водно тяло:</b> " +
-          ordinaryWellValue(
-            p.groundwater_body_code
-          ) +
-          "<br>" +
-
-          "<b>Предназначение:</b> " +
-          ordinaryWellValue(p.purpose) +
-          "<br>" +
-
-          "<b>Статус:</b> " +
-          ordinaryWellValue(
-            p.facility_status
-          ) +
-          "<br>" +
-
-          "<b>Разрешено количество:</b> " +
-          ordinaryWellValue(
-            p.permitted_volume_m3,
-            " m³"
-          ) +
-          "<br>" +
-
-          "<b>Регистрационен номер:</b> " +
-          ordinaryWellValue(
-            p.registration_number
-          ) +
-
-          '<div style="margin-top:10px">' +
-
-          '<a href="' +
-          ordinaryWellEscape(proUrl) +
-          '" style="display:block;text-align:center;padding:9px 12px;border-radius:8px;background:#166534;color:#fff;text-decoration:none;font-weight:700">' +
-          "Анализирай точката" +
-          "</a>" +
-
-          "</div>" +
-
-          '<div style="margin-top:8px;font-size:11px;color:#64748b">' +
-          "Източник: официален регистър на БД Черноморски район." +
-          "</div>" +
-
-          "</div>";
-
+          ordinaryGroundwaterFacilityPopupHtml(
+            feature,
+            {
+              basinName:
+                "\u0427\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+              proUrl,
+              sourceText:
+                "\u043e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u0411\u0414 \u0427\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d"
+            }
+          );
         layer.bindPopup(
           popupHtml,
           {
@@ -4182,100 +4398,24 @@ async function loadWesternAegeanGroundwaterWells() {
           const lng = Number(coordinates[0]);
           const lat = Number(coordinates[1]);
 
+          const proUrl =
+            sondiProUrlForPopup(feature);
+
           const facility =
             p.facility_name ||
             "\u0412\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435";
 
           const popupHtml =
-            '<div style="min-width:280px;line-height:1.45">' +
-
-            '<b>' +
-            ordinaryWellEscape(facility) +
-            '</b><br>' +
-
-            '<b>\u0411\u0414:</b> ' +
-            '\u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d<br>' +
-
-            '<b>\u041f\u0412\u0422:</b> ' +
-            ordinaryWellEscape(
-              p.canonical_code || "\u2014"
-            ) +
-            '<br>' +
-
-            '<b>\u0422\u0438\u0442\u0443\u043b\u044f\u0440:</b> ' +
-            ordinaryWellEscape(
-              p.holder || "\u2014"
-            ) +
-            '<br>' +
-
-            '<b>\u0420\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u0435\u043b\u043d\u043e:</b> ' +
-            ordinaryWellEscape(
-              p.permit_number_date || "\u2014"
-            ) +
-            '<br>' +
-
-            '<b>\u0426\u0435\u043b:</b> ' +
-            ordinaryWellEscape(
-              p.water_use_purpose || "\u2014"
-            ) +
-            '<br>' +
-
-            '<b>\u0421\u0440\u0435\u0434\u0435\u043d \u0434\u0435\u0431\u0438\u0442:</b> ' +
-            ordinaryWellValue(
-              p.mean_discharge_lps,
-              " l/s"
-            ) +
-            '<br>' +
-
-            '<b>\u041c\u0430\u043a\u0441. \u0434\u0435\u0431\u0438\u0442:</b> ' +
-            ordinaryWellValue(
-              p.max_discharge_lps,
-              " l/s"
-            ) +
-            '<br>' +
-
-            '<b>\u0413\u043e\u0434\u0438\u0448\u043d\u043e \u0440\u0430\u0437\u0440\u0435\u0448\u0435\u043d\u043e:</b> ' +
-            ordinaryWellValue(
-              p.annual_authorized_volume_m3,
-              " m\u00b3"
-            ) +
-            '<br>' +
-
-            '<b>\u0421\u0442\u0430\u0442\u0443\u0441:</b> ' +
-            ordinaryWellEscape(
-              p.status || "\u2014"
-            ) +
-            '<br>' +
-
-            '<b>\u0410\u043a\u0442\u0443\u0430\u043b\u043d\u043e \u043a\u044a\u043c:</b> ' +
-            ordinaryWellEscape(
-              p.reference_date || "\u2014"
-            ) +
-            '<br>' +
-
-            (
-              Number.isFinite(lat) &&
-              Number.isFinite(lng)
-                ? '<b>\u041a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u0438:</b><br>' +
-                  '<span class="coord">' +
-                  lat.toFixed(7) +
-                  ', ' +
-                  lng.toFixed(7) +
-                  '</span><br>'
-                : ''
-            ) +
-
-            sondiProTeaserHtml(
-              sondiProUrlForPopup(feature),
-              [
-                "\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e\u0442\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e",
-                "\u0411\u043b\u0438\u0437\u043a\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u0438 \u0438 \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u0430\u043d\u0435",
-                "\u0420\u0435\u0441\u0443\u0440\u0441 \u0438 \u043d\u0430\u0442\u043e\u0432\u0430\u0440\u0432\u0430\u043d\u0435"
-              ]
-            ) +
-
-            '</div>';
-
+            ordinaryGroundwaterFacilityPopupHtml(
+              feature,
+              {
+                basinName:
+                  "\u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+                proUrl,
+                sourceText:
+                  "\u043e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u0411\u0414 \u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d"
+              }
+            );
           layer.bindPopup(
             popupHtml,
             {
@@ -4448,109 +4588,16 @@ async function loadDanubeGroundwaterWells() {
               );
 
             const popupHtml =
-              '<div style="min-width:290px;line-height:1.45">' +
-
-              '<b>' +
-              ordinaryWellEscape(
-                facility
-              ) +
-              '</b><br>' +
-
-              '<b>\u0411\u0414:</b> ' +
-              '\u0414\u0443\u043d\u0430\u0432\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d<br>' +
-
-              '<b>\u041f\u0412\u0422:</b> ' +
-              ordinaryWellEscape(
-                p.gwb_code || "\u2014"
-              ) +
-              '<br>' +
-
-              '<b>\u0422\u0438\u0442\u0443\u043b\u044f\u0440:</b> ' +
-              ordinaryWellEscape(
-                p.holder || "\u2014"
-              ) +
-              '<br>' +
-
-              '<b>\u0420\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u0435\u043b\u043d\u043e:</b> ' +
-              ordinaryWellEscape(
-                permitText
-              ) +
-              '<br>' +
-
-              '<b>\u0426\u0435\u043b:</b> ' +
-              ordinaryWellEscape(
-                p.purpose || "\u2014"
-              ) +
-              '<br>' +
-
-              '<b>\u041c\u044f\u0441\u0442\u043e:</b> ' +
-              ordinaryWellEscape(
-                location
-              ) +
-              '<br>' +
-
-              '<b>\u0421\u0440\u0435\u0434\u0435\u043d \u0434\u0435\u0431\u0438\u0442:</b> ' +
-              ordinaryWellValue(
-                p.average_flow_l_s,
-                " l/s"
-              ) +
-              '<br>' +
-
-              '<b>\u041c\u0430\u043a\u0441. \u0434\u0435\u0431\u0438\u0442:</b> ' +
-              ordinaryWellValue(
-                p.maximum_flow_l_s,
-                " l/s"
-              ) +
-              '<br>' +
-
-              '<b>\u0413\u043e\u0434\u0438\u0448\u043d\u043e \u0440\u0430\u0437\u0440\u0435\u0448\u0435\u043d\u043e:</b> ' +
-              ordinaryWellValue(
-                p.annual_volume_m3,
-                " m\u00b3"
-              ) +
-              '<br>' +
-
-              '<b>\u0421\u0442\u0430\u0442\u0443\u0441:</b> ' +
-              '\u0414\u0435\u0439\u0441\u0442\u0432\u0430\u0449\u043e \u043a\u044a\u043c 01.08.2026<br>' +
-
-              (
-                Number.isFinite(lat) &&
-                Number.isFinite(lng)
-                  ? '<b>\u041a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u0438:</b><br>' +
-                    '<span class="coord">' +
-                    lat.toFixed(7) +
-                    ', ' +
-                    lng.toFixed(7) +
-                    '</span><br>'
-                  : ''
-              ) +
-
-              '<div style="margin-top:10px">' +
-
-              '<a href="' +
-              ordinaryWellEscape(
-                proUrl
-              ) +
-              '" style="display:block;text-align:center;padding:9px 12px;border-radius:8px;background:#166534;color:#fff;text-decoration:none;font-weight:700">' +
-
-              "Анализирай точката" +
-
-              "</a>" +
-              "</div>" +
-
-              sondiProTeaserHtml(
-                sondiProUrlForPopup(
-                  feature
-                ),
-                [
-                  "\u0410\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e\u0442\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e",
-                  "\u0411\u043b\u0438\u0437\u043a\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u0438 \u0438 \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u0430\u043d\u0435",
-                  "\u0420\u0435\u0441\u0443\u0440\u0441 \u0438 \u043d\u0430\u0442\u043e\u0432\u0430\u0440\u0432\u0430\u043d\u0435"
-                ]
-              ) +
-
-              '</div>';
-
+              ordinaryGroundwaterFacilityPopupHtml(
+                feature,
+                {
+                  basinName:
+                    "\u0414\u0443\u043d\u0430\u0432\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+                  proUrl,
+                  sourceText:
+                    "\u043e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u0411\u0414 \u0414\u0443\u043d\u0430\u0432\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d"
+                }
+              );
             layer.bindPopup(
               popupHtml,
               {
@@ -11421,214 +11468,501 @@ async function analyzeLocation(
 
   /* SONDI_FREE_CHEMICAL_STATUS_START */
 
-  let freeChemicalStatus = "";
-  let freeChemicalSource = "";
-  let freeChemicalFeature = null;
-
-  const freeEastFeature =
-    (
-      officialBdIbrResult &&
-      officialBdIbrResult.primary
-    )
-      ? officialBdIbrResult.primary
-      : (
-          humanBodies.length > 0
-            ? humanBodies[0]
-            : null
-        );
-
-  if (freeEastFeature) {
-    freeChemicalFeature =
-      freeEastFeature;
-
+  function freeChemicalNormalize(value) {
     if (
-      typeof significantPressureRecordForFeature ===
-      "function"
+      value === null ||
+      value === undefined
     ) {
-      const freeEastStatusRecord =
-        significantPressureRecordForFeature(
-          freeEastFeature
-        );
-
-      if (freeEastStatusRecord) {
-        freeChemicalStatus =
-          String(
-            freeEastStatusRecord.chemical_status ||
-            ""
-          ).trim();
-
-        freeChemicalSource =
-          "БД Източнобеломорски район";
-      }
+      return "";
     }
 
-    if (!freeChemicalStatus) {
-      const freeEastProperties =
-        freeEastFeature.properties || {};
-
-      freeChemicalStatus =
-        String(
-          freeEastProperties.chemical_status ||
-          freeEastProperties.ch_s ||
-          ""
-        ).trim();
-
-      if (freeChemicalStatus) {
-        freeChemicalSource =
-          "БД Източнобеломорски район";
+    /*
+      ???????? ?????:
+      chemical_status ? ?????:
+      [???, ???, ??????? ?????????, ...]
+    */
+    if (Array.isArray(value)) {
+      if (value.length >= 3) {
+        return freeChemicalNormalize(
+          value[2]
+        );
       }
+
+      return "";
+    }
+
+    const raw =
+      String(value)
+        .trim()
+        .toLocaleLowerCase("bg-BG");
+
+    if (raw.includes("\u043b\u043e\u0448")) {
+      return "\u043b\u043e\u0448\u043e";
+    }
+
+    if (raw.includes("\u0434\u043e\u0431\u0440")) {
+      return "\u0434\u043e\u0431\u0440\u043e";
+    }
+
+    return "";
+  }
+
+
+  function freeChemicalFeatureCode(feature) {
+    const p =
+      feature?.properties || {};
+
+    return String(
+      p.canonical_code ||
+      p.gwb_code ||
+      p.groundwater_body_code ||
+      p.water_body_code ||
+      p.localId ||
+      p.localID ||
+      p.code ||
+      ""
+    )
+      .trim()
+      .toUpperCase();
+  }
+
+
+  function freeChemicalFindRecord(
+    data,
+    wantedCode
+  ) {
+    if (!wantedCode) {
+      return null;
+    }
+
+    let result = null;
+
+    function walk(value) {
+      if (
+        result ||
+        value === null ||
+        value === undefined
+      ) {
+        return;
+      }
+
+      if (Array.isArray(value)) {
+        value.forEach(walk);
+        return;
+      }
+
+      if (
+        typeof value !== "object"
+      ) {
+        return;
+      }
+
+      const code =
+        String(
+          value.code ||
+          value.gwb_code ||
+          value.canonical_code ||
+          value.groundwater_body_code ||
+          value.water_body_code ||
+          value.localId ||
+          value.localID ||
+          ""
+        )
+          .trim()
+          .toUpperCase();
+
+      if (
+        code &&
+        code === wantedCode &&
+        (
+          value.chemical_status !== undefined ||
+          value.ch_s !== undefined
+        )
+      ) {
+        result = value;
+        return;
+      }
+
+      Object.values(value)
+        .forEach(walk);
+    }
+
+    walk(data);
+
+    return result;
+  }
+
+
+  async function freeChemicalLoadStatus(
+    url,
+    code
+  ) {
+    if (!code) {
+      return "";
+    }
+
+    try {
+      const response =
+        await fetch(url);
+
+      if (!response.ok) {
+        return "";
+      }
+
+      const data =
+        await response.json();
+
+      const record =
+        freeChemicalFindRecord(
+          data,
+          code
+        );
+
+      if (!record) {
+        return "";
+      }
+
+      return freeChemicalNormalize(
+        record.chemical_status !== undefined
+          ? record.chemical_status
+          : record.ch_s
+      );
+
+    } catch (error) {
+      console.warn(
+        "[Sondi FREE] chemical status load:",
+        url,
+        error
+      );
+
+      return "";
     }
   }
 
-  if (!freeChemicalStatus) {
 
-    const freeWabdFeature =
-      officialBdWabdResult &&
-      officialBdWabdResult.primary
-        ? officialBdWabdResult.primary
-        : (
-            humanWabdBodies.length > 0
-              ? humanWabdBodies[0]
-              : null
+  async function freeChemicalFindPolygonCode(
+    data,
+    lat,
+    lon
+  ) {
+    if (
+      !data ||
+      !Array.isArray(data.features) ||
+      typeof turf === "undefined"
+    ) {
+      return "";
+    }
+
+    const point =
+      turf.point([
+        Number(lon),
+        Number(lat)
+      ]);
+
+    const matches =
+      data.features.filter(
+        feature => {
+          try {
+            return (
+              feature &&
+              feature.geometry &&
+              (
+                feature.geometry.type === "Polygon" ||
+                feature.geometry.type === "MultiPolygon"
+              ) &&
+              turf.booleanPointInPolygon(
+                point,
+                feature
+              )
+            );
+          } catch (error) {
+            return false;
+          }
+        }
+      );
+
+    if (!matches.length) {
+      return "";
+    }
+
+    return freeChemicalFeatureCode(
+      matches[0]
+    );
+  }
+
+
+  let freeChemicalStatus = "";
+  let freeChemicalCode = "";
+  let freeChemicalBasin = "";
+
+  async function freeChemicalCodeFromGeoJson(
+    url,
+    expectedPrefix
+  ) {
+    try {
+      const response =
+        await fetch(url);
+
+      if (!response.ok) {
+        return "";
+      }
+
+      const data =
+        await response.json();
+
+      if (
+        !data ||
+        !Array.isArray(data.features) ||
+        typeof turf === "undefined"
+      ) {
+        return "";
+      }
+
+      const point =
+        turf.point([
+          Number(lon),
+          Number(lat)
+        ]);
+
+      const matches =
+        data.features.filter(
+          feature => {
+            try {
+              if (
+                !feature ||
+                !feature.geometry ||
+                (
+                  feature.geometry.type !== "Polygon" &&
+                  feature.geometry.type !== "MultiPolygon"
+                )
+              ) {
+                return false;
+              }
+
+              return turf.booleanPointInPolygon(
+                point,
+                feature
+              );
+
+            } catch (error) {
+              return false;
+            }
+          }
+        );
+
+      for (const feature of matches) {
+        const code =
+          freeChemicalFeatureCode(
+            feature
           );
 
-    if (freeWabdFeature) {
-
-      const freeWabdProperties =
-        freeWabdFeature.properties || {};
-
-      freeChemicalFeature =
-        freeWabdFeature;
-
-      freeChemicalStatus =
-        String(
-          freeWabdProperties.chemical_status ||
-          freeWabdProperties.ch_s ||
-          ""
-        ).trim();
-
-      if (freeChemicalStatus) {
-        freeChemicalSource =
-          "\u0411\u0414 \u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d";
+        if (
+          code &&
+          code.startsWith(
+            expectedPrefix
+          )
+        ) {
+          return code;
+        }
       }
+
+      return "";
+
+    } catch (error) {
+      console.warn(
+        "[Sondi FREE] GWB coordinate resolve failed:",
+        url,
+        error
+      );
+
+      return "";
     }
   }
 
-  if (!freeChemicalStatus) {
-    let freeBlackSeaData =
-      window.bdBsGroundwaterGeoJson || null;
 
-    if (!freeBlackSeaData) {
-      try {
-        const freeBlackSeaResponse =
+  /*
+    BG3 ? ?????????????????
+  */
+  if (
+    officialBdIbrResult &&
+    officialBdIbrResult.primary
+  ) {
+    freeChemicalCode =
+      freeChemicalFeatureCode(
+        officialBdIbrResult.primary
+      );
+
+    if (freeChemicalCode) {
+      freeChemicalBasin = "BG3";
+    }
+  }
+
+
+  /*
+    BG4 ? ?????????????????
+    ?????????? ??? ???????? ?? ????????????.
+  */
+  if (!freeChemicalCode) {
+    const resolvedBg4Code =
+      await freeChemicalCodeFromGeoJson(
+        "/geology-map/data/bd_wabd_groundwater_bodies.geojson",
+        "BG4"
+      );
+
+    if (resolvedBg4Code) {
+      freeChemicalCode =
+        resolvedBg4Code;
+
+      freeChemicalBasin =
+        "BG4";
+    }
+  }
+
+
+  /*
+    BG1 ? ????????
+    ?????????? ??? ???????? ?? ????????????,
+    ?????????? ???? ????? ? ??? ??????? ?? ???????.
+  */
+  if (!freeChemicalCode) {
+    const resolvedBg1Code =
+      await freeChemicalCodeFromGeoJson(
+        "/geology-map/data/bd_danube_groundwater_bodies.geojson",
+        "BG1"
+      );
+
+    if (resolvedBg1Code) {
+      freeChemicalCode =
+        resolvedBg1Code;
+
+      freeChemicalBasin =
+        "BG1";
+    }
+  }
+
+
+  /*
+    BG2 ? ???????????
+  */
+  if (!freeChemicalCode) {
+    try {
+      let bsData =
+        window.bdBsGroundwaterGeoJson ||
+        null;
+
+      if (!bsData) {
+        const response =
           await fetch(
             "/geology-map/data/bd_bs_groundwater_bodies.geojson"
           );
 
-        if (freeBlackSeaResponse.ok) {
-          freeBlackSeaData =
-            await freeBlackSeaResponse.json();
+        if (response.ok) {
+          bsData =
+            await response.json();
 
-          if (
-            freeBlackSeaData &&
-            freeBlackSeaData.type ===
-              "FeatureCollection" &&
-            Array.isArray(
-              freeBlackSeaData.features
-            )
-          ) {
-            window.bdBsGroundwaterGeoJson =
-              freeBlackSeaData;
-          } else {
-            freeBlackSeaData = null;
-          }
+          window.bdBsGroundwaterGeoJson =
+            bsData;
         }
-      } catch (freeBlackSeaError) {
-        console.error(
-          "[Sondi FREE] Black Sea chemical status:",
-          freeBlackSeaError
-        );
       }
-    }
+
+      freeChemicalCode =
+        await freeChemicalFindPolygonCode(
+          bsData,
+          lat,
+          lon
+        );
+
+      if (freeChemicalCode) {
+        freeChemicalBasin = "BG2";
+      }
+
+    } catch (error) {}
+  }
+
+
+  /*
+    ???????? fallback:
+    ??? ???? ????? ?????????? ??? ??
+    ????? ??????.
+  */
+  if (
+    !freeChemicalCode &&
+    groundwaterBody
+  ) {
+    freeChemicalCode =
+      freeChemicalFeatureCode(
+        groundwaterBody
+      );
 
     if (
-      freeBlackSeaData &&
-      Array.isArray(
-        freeBlackSeaData.features
-      )
+      freeChemicalCode.startsWith("BG1")
     ) {
-      const freeBlackSeaBodies =
-        freeBlackSeaData.features
-          .filter(feature => {
-            try {
-              return (
-                feature &&
-                feature.geometry &&
-                turf.booleanPointInPolygon(
-                  point,
-                  feature
-                )
-              );
-            } catch (error) {
-              return false;
-            }
-          })
-          .sort((first, second) => {
-            const firstArea =
-              Number(
-                first?.properties?.Shape_Area
-              );
-
-            const secondArea =
-              Number(
-                second?.properties?.Shape_Area
-              );
-
-            const safeFirstArea =
-              Number.isFinite(firstArea)
-                ? firstArea
-                : Number.MAX_SAFE_INTEGER;
-
-            const safeSecondArea =
-              Number.isFinite(secondArea)
-                ? secondArea
-                : Number.MAX_SAFE_INTEGER;
-
-            return (
-              safeFirstArea -
-              safeSecondArea
-            );
-          });
-
-      if (freeBlackSeaBodies.length > 0) {
-        freeChemicalFeature =
-          freeBlackSeaBodies[0];
-
-        const freeBlackSeaProperties =
-          freeChemicalFeature.properties || {};
-
-        freeChemicalStatus =
-          String(
-            freeBlackSeaProperties.ch_s ||
-            freeBlackSeaProperties.chemical_status ||
-            ""
-          ).trim();
-
-        if (freeChemicalStatus) {
-          freeChemicalSource =
-            "БД Черноморски район";
-        }
-      }
+      freeChemicalBasin = "BG1";
+    } else if (
+      freeChemicalCode.startsWith("BG2")
+    ) {
+      freeChemicalBasin = "BG2";
+    } else if (
+      freeChemicalCode.startsWith("BG3")
+    ) {
+      freeChemicalBasin = "BG3";
+    } else if (
+      freeChemicalCode.startsWith("BG4")
+    ) {
+      freeChemicalBasin = "BG4";
     }
   }
 
-  const freeChemicalNormalized =
-    freeChemicalStatus
-      .toLocaleLowerCase("bg-BG")
-      .trim();
+
+  /*
+    ????? ?????? ????????? Section 4
+    ???????, ????? ????? ?????? EXPERT.
+  */
+
+  if (
+    freeChemicalBasin === "BG1"
+  ) {
+    freeChemicalStatus =
+      await freeChemicalLoadStatus(
+        "/geology-map/data/bd_danube_section4_monitoring_status.json",
+        freeChemicalCode
+      );
+  }
+
+  else if (
+    freeChemicalBasin === "BG2"
+  ) {
+    freeChemicalStatus =
+      await freeChemicalLoadStatus(
+        "/geology-map/data/bd_bs_section4_monitoring_status.json",
+        freeChemicalCode
+      );
+  }
+
+  else if (
+    freeChemicalBasin === "BG3"
+  ) {
+    freeChemicalStatus =
+      await freeChemicalLoadStatus(
+        "/geology-map/data/bd_ibr_section4_pro_profiles.json",
+        freeChemicalCode
+      );
+  }
+
+  else if (
+    freeChemicalBasin === "BG4"
+  ) {
+    freeChemicalStatus =
+      await freeChemicalLoadStatus(
+        "/geology-map/data/bd_wabd_section4_monitoring_status.json",
+        freeChemicalCode
+      );
+  }
+
 
   let freeChemicalLabel =
-    "Няма данни";
+    freeChemicalStatus ||
+    "\u041d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438";
 
   let freeChemicalColor =
     "#64748b";
@@ -11639,14 +11973,11 @@ async function analyzeLocation(
   let freeChemicalBorder =
     "#cbd5e1";
 
-  if (
-    freeChemicalNormalized.includes(
-      "лош"
-    )
-  ) {
-    freeChemicalLabel =
-      "лошо";
 
+  if (
+    freeChemicalStatus ===
+    "\u043b\u043e\u0448\u043e"
+  ) {
     freeChemicalColor =
       "#b42318";
 
@@ -11655,14 +11986,13 @@ async function analyzeLocation(
 
     freeChemicalBorder =
       "#f0b7b7";
-  } else if (
-    freeChemicalNormalized.includes(
-      "добр"
-    )
-  ) {
-    freeChemicalLabel =
-      "добро";
+  }
 
+
+  if (
+    freeChemicalStatus ===
+    "\u0434\u043e\u0431\u0440\u043e"
+  ) {
     freeChemicalColor =
       "#067647";
 
@@ -11673,48 +12003,44 @@ async function analyzeLocation(
       "#a6e3c1";
   }
 
+
   humanHtml +=
     "<div style=\"" +
       "margin-top:10px;" +
       "padding:10px 12px;" +
       "border-radius:8px;" +
       "background:" +
-        freeChemicalBackground +
-        ";" +
+      freeChemicalBackground +
+      ";" +
       "border:1px solid " +
-        freeChemicalBorder +
-        ";" +
+      freeChemicalBorder +
+      ";" +
     "\">" +
-      "<span style=\"" +
-        "font-size:12px;" +
-        "font-weight:700;" +
-        "color:#52656c;" +
-        "text-transform:uppercase;" +
-        "letter-spacing:.03em" +
-      "\">" +
-        "Химично състояние" +
-      "</span><br>" +
-      "<strong style=\"" +
-        "display:inline-block;" +
-        "margin-top:3px;" +
-        "font-size:18px;" +
-        "color:" +
-          freeChemicalColor +
-      "\">" +
-        esc(freeChemicalLabel) +
-      "</strong>";
 
-  if (
-    freeChemicalSource &&
-    freeChemicalLabel !== "Няма данни"
-  ) {
-    humanHtml +=
-      "<br><span class=\"small\">" +
-        "Официална обща оценка за подземното водно тяло." +
-      "</span>";
-  }
+    "<span style=\"" +
+      "font-size:12px;" +
+      "font-weight:700;" +
+      "color:#52656c;" +
+      "text-transform:uppercase;" +
+      "letter-spacing:.03em" +
+    "\">" +
 
-  humanHtml +=
+    "\u0425\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435" +
+
+    "</span><br>" +
+
+    "<strong style=\"" +
+      "display:inline-block;" +
+      "margin-top:3px;" +
+      "font-size:18px;" +
+      "color:" +
+      freeChemicalColor +
+    "\">" +
+
+    esc(freeChemicalLabel) +
+
+    "</strong>" +
+
     "</div>";
 
   /* SONDI_FREE_CHEMICAL_STATUS_END */
@@ -11823,65 +12149,6 @@ async function analyzeLocation(
 
   humanHtml += "</div>";
 
-
-  // --------------------------------------------------
-  // 3. ГЕОЛОЖКА СРЕДА
-  // --------------------------------------------------
-
-  humanHtml +=
-    "<div style=\"" +
-    "margin-top:10px;" +
-    "padding:10px;" +
-    "background:#f6f3ed;" +
-    "border-left:4px solid #7c6b4f;" +
-    "border-radius:4px" +
-    "\">" +
-    "<strong>🪨 Геоложка среда</strong><br>";
-
-  if (
-    geologyResult &&
-    geologyResult.unit
-  ) {
-
-    humanHtml +=
-      "Районът попада в геоложка единица <strong>" +
-      esc(geologyResult.unit.name_bg) +
-      "</strong>";
-
-    if (geologyResult.unit.code) {
-      humanHtml +=
-        " (" +
-        esc(geologyResult.unit.code) +
-        ")";
-    }
-
-    humanHtml += ".";
-
-    if (
-      String(geologyResult.unit.code)
-        .toUpperCase() === "Q"
-    ) {
-
-      humanHtml +=
-        " Това са <strong>кватернерни наслаги</strong>, " +
-        "характерни за сравнително млади седиментни терени.";
-    }
-
-    humanHtml +=
-      "<br><span class=\"small\">" +
-      "Картата показва общата геоложка среда. " +
-      "Тя не определя точната литология или " +
-      "дълбочината на водоносния слой в конкретната точка." +
-      "</span>";
-
-  } else {
-
-    humanHtml +=
-      "За точката не може надеждно да се определи " +
-      "геоложка единица от използваната регионална карта.";
-  }
-
-  humanHtml += "</div>";
 
 
   // --------------------------------------------------
@@ -12005,8 +12272,19 @@ async function analyzeLocation(
         ) === "spring"
     );
 
+  /*
+    ??? ??????, ????????? ?? ?????? ??????????,
+    ??????? ???????? ? ?????? ?????????? ?? 0 m.
+    ?? ?? ?????? ?? ?? ????????? ???? "???-??????".
+  */
   const nearestOrdinary =
-    ordinaryNearby[0] || null;
+    ordinaryNearby.find(
+      item =>
+        Number.isFinite(
+          Number(item.distanceKm)
+        ) &&
+        Number(item.distanceKm) > 0.01
+    ) || null;
 
   humanHtml +=
     "<div style=\"" +
@@ -12273,133 +12551,16 @@ async function analyzeLocation(
     "cursor:pointer;" +
     "font-weight:700" +
     "\">" +
-    "Покажи техническите данни" +
+    "\u041f\u043e\u043a\u0430\u0436\u0438 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u0438" +
     "</summary>" +
     "<div style=\"margin-top:9px;font-size:12px\">";
 
   humanHtml +=
-    "Координати: <strong>" +
+    "\u041a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u0438: <strong>" +
     lat.toFixed(7) +
     ", " +
     lon.toFixed(7) +
     "</strong><br>";
-
-  if (humanBodies.length) {
-
-    humanBodies.forEach((f, index) => {
-
-      const tp =
-        f.properties || {};
-
-      const tCode =
-        tp.localId ||
-        tp.localID ||
-        tp.canonical_code ||
-        tp.gwb_code ||
-        tp.code ||
-        "—";
-
-      humanHtml +=
-        "ПВТ " +
-        (index + 1) +
-        ": <strong>" +
-        esc(tCode) +
-        "</strong>";
-
-      const technicalBodyName =
-        tp.nameText ||
-        tp.nameTxtInt ||
-        tp.gwb_name ||
-        tp.name ||
-        tp.name_bg ||
-        "";
-
-      if (technicalBodyName) {
-        humanHtml +=
-          " – " +
-          esc(technicalBodyName);
-      }
-
-      humanHtml += "<br>";
-
-      if (tp.horizon_bg) {
-        humanHtml +=
-          "Хоризонт: " +
-          esc(tp.horizon_bg) +
-          "<br>";
-      }
-
-      if (tp.water_type_bg) {
-        humanHtml +=
-          "Тип води: " +
-          esc(tp.water_type_bg) +
-          "<br>";
-      }
-
-      if (tp.horizons) {
-        humanHtml +=
-          "GIS хоризонт: " +
-          esc(tp.horizons) +
-          "<br>";
-      }
-
-      if (tp.Type) {
-        humanHtml +=
-          "GIS тип: " +
-          esc(tp.Type) +
-          "<br>";
-      }
-
-      humanHtml += "<br>";
-    });
-  }
-
-  if (
-    nearestMonitoring &&
-    nearestMonitoring.feature
-  ) {
-
-    const tMp =
-      nearestMonitoring.feature.properties ||
-      {};
-
-    humanHtml +=
-      "Мониторингов пункт: <strong>" +
-      esc(tMp.station_no || "—") +
-      "</strong><br>";
-
-    if (tMp.gwb_code) {
-      humanHtml +=
-        "ПВТ на пункта: " +
-        esc(tMp.gwb_code) +
-        "<br>";
-    }
-
-    if (tMp.geological_index) {
-      humanHtml +=
-        "Геоложки индекс: " +
-        esc(tMp.geological_index) +
-        "<br>";
-    }
-  }
-
-  if (
-    geologyResult &&
-    geologyResult.unit
-  ) {
-
-    humanHtml +=
-      "Геоложки код: <strong>" +
-      esc(geologyResult.unit.code) +
-      "</strong><br>" +
-      "Статус на класификацията: " +
-      esc(
-        geologyStatusText(
-          geologyResult.status
-        )
-      ) +
-      "<br>";
-  }
 
   if (nearestFault) {
 
@@ -12409,14 +12570,14 @@ async function analyzeLocation(
 
     if (tFp.catalog_id) {
       humanHtml +=
-        "GEM разлом: <strong>" +
+        "GEM \u0440\u0430\u0437\u043b\u043e\u043c: <strong>" +
         esc(tFp.catalog_id) +
         "</strong><br>";
     }
 
     if (tFp.slip_type) {
       humanHtml +=
-        "Тип разлом: " +
+        "\u0422\u0438\u043f \u0440\u0430\u0437\u043b\u043e\u043c: " +
         esc(
           typeof translateGemSlipType ===
             "function"
@@ -12430,12 +12591,6 @@ async function analyzeLocation(
   }
 
   humanHtml +=
-    "Вътрешна картова оценка: " +
-    "<strong>" +
-    esc(assessment.label) +
-    "</strong> (" +
-    assessment.score +
-    "/100)" +
     "</div>" +
     "</details>";
 
@@ -12573,6 +12728,45 @@ async function analyzeLocation(
       }
     );
   }
+
+
+  // FREE_EXPERT_OFFER_BEGIN
+
+  humanHtml +=
+    "<div style=\"" +
+      "margin-top:16px;" +
+      "padding:11px 12px;" +
+      "border:1px solid #cddbd7;" +
+      "border-radius:9px;" +
+      "background:#f7faf9;" +
+      "color:#29443d" +
+    "\">" +
+
+    "<strong style=\"" +
+      "display:block;" +
+      "font-size:14px;" +
+      "color:#173f32;" +
+      "margin-bottom:8px" +
+    "\">" +
+    "\u0412 Sondi EXPERT \u0449\u0435 \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u0435:" +
+    "</strong>" +
+
+    "<div style=\"margin-top:5px\">" +
+    "\u2713 \u0413\u0435\u043e\u043b\u043e\u0433\u0438\u044f \u0438 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0433\u0438\u044f" +
+    "</div>" +
+
+    "<div style=\"margin-top:5px\">" +
+    "\u2713 \u041f\u043e\u0434\u0440\u043e\u0431\u0435\u043d \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433 \u043d\u0430 \u0442\u043e\u0447\u043a\u0430\u0442\u0430" +
+    "</div>" +
+
+    "<div style=\"margin-top:5px\">" +
+    "\u2713 \u041f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438 \u0437\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435" +
+    "</div>" +
+
+    "</div>";
+
+  // FREE_EXPERT_OFFER_END
+
 
   humanHtml +=
     "<div style=\"margin-top:14px\">" +
@@ -13963,6 +14157,7 @@ function toggleLayersPanel(){
   });
 })();
  /* MOBILE_LEGEND_BEHAVIOR_END */
+
 </script>
 
 </body>
