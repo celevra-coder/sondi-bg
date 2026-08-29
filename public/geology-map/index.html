@@ -14085,6 +14085,7 @@ let coordinateSearchMarker = null;
 /* SONDI_ANALYSIS_CURTAIN_FUNCTIONS_START */
 
 let sondiAnalysisPreviousFocus = null;
+let mobileAnalysisHistoryActive = false;
 
 function openAnalysisCurtain(
   latitude,
@@ -14173,11 +14174,96 @@ function openAnalysisCurtain(
     "false"
   );
 
-  if (
-    window.innerWidth <= 700 &&
-    typeof closeMobilePanel === "function"
-  ) {
-    closeMobilePanel();
+  if (window.innerWidth <= 700) {
+
+    const mobilePanel =
+      document.querySelector(".panel");
+
+    const cameFromMobilePanel =
+      mobilePanel &&
+      mobilePanel.classList.contains(
+        "mobile-open"
+      ) &&
+      history.state &&
+      history.state.sondiMobilePanel === true;
+
+    const cameFromMobilePopup =
+      history.state &&
+      history.state.sondiLeafletPopup === true;
+
+    if (mobilePanel) {
+      mobilePanel.classList.remove(
+        "mobile-open"
+      );
+    }
+
+    if (cameFromMobilePopup) {
+
+      /*
+        Reuse the popup history entry for the analysis.
+        Back will close the analysis and return to the map.
+      */
+      if (
+        typeof mobilePopupHistoryActive !==
+        "undefined"
+      ) {
+        mobilePopupHistoryActive = false;
+      }
+
+      history.replaceState(
+        {
+          ...(history.state || {}),
+          sondiLeafletPopup: false,
+          sondiAnalysisCurtain: true
+        },
+        "",
+        window.location.href
+      );
+
+      mobileAnalysisHistoryActive = true;
+
+    } else if (cameFromMobilePanel) {
+
+      /*
+        Reuse the artificial menu history entry.
+        Back from the analysis will therefore
+        return to the base map, not leave /map.
+      */
+      if (
+        typeof mobilePanelHistoryActive !==
+        "undefined"
+      ) {
+        mobilePanelHistoryActive = false;
+      }
+
+      history.replaceState(
+        {
+          ...(history.state || {}),
+          sondiMobilePanel: false,
+          sondiAnalysisCurtain: true
+        },
+        "",
+        window.location.href
+      );
+
+      mobileAnalysisHistoryActive = true;
+
+    } else if (
+      !history.state ||
+      history.state.sondiAnalysisCurtain !== true
+    ) {
+
+      history.pushState(
+        {
+          ...(history.state || {}),
+          sondiAnalysisCurtain: true
+        },
+        "",
+        window.location.href
+      );
+
+      mobileAnalysisHistoryActive = true;
+    }
   }
 
   const closeButton = document.getElementById(
@@ -14195,7 +14281,7 @@ function openAnalysisCurtain(
   return true;
 }
 
-function closeAnalysisCurtain() {
+function closeAnalysisCurtain(fromHistory = false) {
   const curtain = document.getElementById(
     "sondi-analysis-curtain"
   );
@@ -14251,6 +14337,24 @@ function closeAnalysisCurtain() {
     setTimeout(function() {
       map.invalidateSize();
     }, 180);
+  }
+
+  /*
+    X / backdrop / Escape:
+    remove only the artificial analysis history entry.
+
+    Browser Back calls this function with fromHistory=true,
+    so we must not call history.back() a second time.
+  */
+  if (
+    window.innerWidth <= 700 &&
+    !fromHistory &&
+    mobileAnalysisHistoryActive &&
+    history.state &&
+    history.state.sondiAnalysisCurtain === true
+  ) {
+    mobileAnalysisHistoryActive = false;
+    history.back();
   }
 }
 
@@ -14847,6 +14951,7 @@ document
 /* MOBILE_PANEL_HISTORY_START */
 
 let mobilePanelHistoryActive = false;
+let mobilePopupHistoryActive = false;
 
 function openMobilePanel(){
   const panel = document.querySelector('.panel');
@@ -14902,11 +15007,156 @@ function closeMobilePanel(){
   }
 }
 
+/*
+  Every Leaflet popup becomes an internal mobile navigation step.
+  This applies to wells, mineral facilities, groundwater bodies,
+  GEM faults, geology-age popup and other Leaflet popups.
+*/
+map.on("popupopen", function () {
+
+  if (window.innerWidth > 700) {
+    return;
+  }
+
+  const curtain =
+    document.getElementById(
+      "sondi-analysis-curtain"
+    );
+
+  /*
+    A popup opened while the full analysis is already visible
+    must not create another browser-history step.
+  */
+  if (
+    curtain &&
+    curtain.classList.contains(
+      "is-open"
+    )
+  ) {
+    return;
+  }
+
+  if (
+    mobilePopupHistoryActive ||
+    (
+      history.state &&
+      history.state.sondiLeafletPopup === true
+    )
+  ) {
+    mobilePopupHistoryActive = true;
+    return;
+  }
+
+  history.pushState(
+    {
+      ...(history.state || {}),
+      sondiLeafletPopup: true
+    },
+    "",
+    window.location.href
+  );
+
+  mobilePopupHistoryActive = true;
+});
+
+
+map.on("popupclose", function () {
+
+  if (
+    window.innerWidth > 700 ||
+    !mobilePopupHistoryActive
+  ) {
+    return;
+  }
+
+  /*
+    Wait until the current click workflow finishes.
+    This is important when "Analyze point" closes a popup
+    and immediately opens the analysis curtain.
+  */
+  setTimeout(function () {
+
+    const curtain =
+      document.getElementById(
+        "sondi-analysis-curtain"
+      );
+
+    /*
+      If analysis replaced this popup as the active internal view,
+      openAnalysisCurtain() owns the same history entry.
+    */
+    if (
+      curtain &&
+      curtain.classList.contains(
+        "is-open"
+      )
+    ) {
+      mobilePopupHistoryActive = false;
+      return;
+    }
+
+    /*
+      Leaflet may close one popup while opening another.
+      In that case keep the existing popup history entry.
+    */
+    if (
+      map._popup &&
+      map.hasLayer(map._popup)
+    ) {
+      return;
+    }
+
+    if (
+      mobilePopupHistoryActive &&
+      history.state &&
+      history.state.sondiLeafletPopup === true
+    ) {
+      mobilePopupHistoryActive = false;
+      history.back();
+    }
+
+  }, 0);
+});
+
+
 window.addEventListener(
   "popstate",
   function () {
 
     if (window.innerWidth > 700) {
+      return;
+    }
+
+    const curtain =
+      document.getElementById(
+        "sondi-analysis-curtain"
+      );
+
+    /*
+      Analysis is the top-level mobile view.
+      Browser Back closes it first.
+    */
+    if (
+      curtain &&
+      curtain.classList.contains(
+        "is-open"
+      )
+    ) {
+      mobileAnalysisHistoryActive = false;
+      closeAnalysisCurtain(true);
+      return;
+    }
+
+    /*
+      If a Leaflet popup is currently open,
+      Back closes only that popup.
+    */
+    if (
+      map._popup &&
+      map.hasLayer(map._popup)
+    ) {
+      mobilePopupHistoryActive = false;
+      map.closePopup();
       return;
     }
 
