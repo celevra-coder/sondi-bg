@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getGwbProfile } from "@/lib/gwb-profile";
 import { getSpatialProfile } from "@/lib/spatial-profile";
+import { resolveGroundwaterBodiesAtPoint } from "@/lib/gwb-spatial-resolver";
 import { getBlackSeaGisAnalysis } from "@/lib/black-sea-gis";
 
 type SearchParams = Promise<{
@@ -223,9 +224,48 @@ export default async function ProPage({
 }) {
   const params = await searchParams;
 
+  const lat = params.lat ?? null;
+  const lng =
+    params.lng ??
+    params.lon ??
+    null;
+
+  const explicitGwb =
+    params.gwb?.trim().toUpperCase() || "";
+
+  const hasValidCoordinates =
+    lat != null &&
+    lng != null &&
+    Number.isFinite(Number(lat)) &&
+    Number.isFinite(Number(lng));
+
+  const resolvedGroundwaterBodies =
+    hasValidCoordinates
+      ? resolveGroundwaterBodiesAtPoint(
+          Number(lat),
+          Number(lng)
+        )
+      : [];
+
+  const spatialGwbCodes = new Set(
+    resolvedGroundwaterBodies.map(
+      (item) => item.code
+    )
+  );
+
+  const validatedExplicitGwb =
+    explicitGwb &&
+    (
+      !hasValidCoordinates ||
+      spatialGwbCodes.has(explicitGwb)
+    )
+      ? explicitGwb
+      : "";
+
   const gwb =
-    params.gwb?.trim().toUpperCase() ||
-    "BG3G00000NQ018";
+    validatedExplicitGwb ||
+    resolvedGroundwaterBodies[0]?.code ||
+    "";
 
   const gwbsFromParams =
     String(params.gwbs || "")
@@ -233,20 +273,25 @@ export default async function ProPage({
       .map((code) =>
         code.trim().toUpperCase()
       )
-      .filter(Boolean);
+      .filter(Boolean)
+      .filter(
+        (code) =>
+          !hasValidCoordinates ||
+          spatialGwbCodes.has(code)
+      );
+
+  const resolvedAdditionalGwbs =
+    resolvedGroundwaterBodies
+      .map((item) => item.code)
+      .filter((code) => code !== gwb);
 
   const groundwaterCodes = Array.from(
     new Set([
       gwb,
       ...gwbsFromParams,
-    ])
+      ...resolvedAdditionalGwbs,
+    ].filter(Boolean))
   );
-
-  const lat = params.lat ?? null;
-  const lng =
-    params.lng ??
-    params.lon ??
-    null;
 
   const spatial =
     getSpatialProfile(lat, lng);
@@ -638,8 +683,86 @@ export default async function ProPage({
         }
       : profile.geology;
 
+  const danubeDetailed =
+    danubeSection1?.detailed ?? null;
+
+  const danubeInitial =
+    danubeSection1?.initial ?? null;
+
+  const danubeTypology =
+    danubeSection1?.typology ?? null;
+
+  const danubeGeology =
+    isDanubeGwb && danubeSection1
+      ? {
+          ...profile.geology,
+
+          aquifer_type_name:
+            danubeDetailed?.aquifer_type ??
+            danubeTypology?.groundwater_body_type ??
+            profile.geology?.aquifer_type_name,
+
+          water_type:
+            danubeTypology?.groundwater_body_type ??
+            profile.geology?.water_type,
+
+          collector_type:
+            danubeTypology?.collector_type ??
+            danubeDetailed?.collector_type ??
+            profile.geology?.collector_type,
+
+          hydrogeological_horizon:
+            danubeTypology?.vertical_horizon ??
+            danubeInitial?.vertical_horizon ??
+            profile.geology?.hydrogeological_horizon,
+
+          aquifer_pressure_type:
+            danubeDetailed?.pressure_condition ??
+            danubeInitial?.pressure_condition ??
+            profile.geology?.aquifer_pressure_type,
+
+          lithology:
+            danubeDetailed?.lithology ??
+            danubeInitial?.covering_geology_recharge_zone ??
+            profile.geology?.lithology,
+
+          stratigraphy:
+            danubeDetailed?.stratigraphy,
+
+          aquifer_thickness_m:
+            danubeDetailed?.average_aquifer_thickness_m,
+
+          hydraulic_conductivity_m_day:
+            danubeDetailed?.hydraulic_conductivity_m_day,
+
+          transmissivity_m2_day:
+            danubeDetailed?.transmissivity_m2_day,
+
+          porosity_percent:
+            danubeDetailed?.porosity_percent,
+
+          total_area_km2:
+            danubeInitial?.total_area_km2 ??
+            danubeSection1?.official?.total_area_km2,
+
+          river_basin:
+            danubeInitial?.main_river_basins ??
+            danubeSection1?.official?.river_basins,
+
+          location:
+            danubeInitial?.location_and_boundaries,
+
+          source:
+            "BDDR PURB3 Section 1",
+
+          is_detailed_point_geology: false,
+        }
+      : profile.geology;
+
   const geology =
-    isWesternAegeanGwb
+    isDanubeGwb
+      ? danubeGeology
+      : isWesternAegeanGwb
       ? westernAegeanGeology
       : isBlackSeaGwb &&
         blackSeaRegionalGeology
@@ -719,7 +842,96 @@ export default async function ProPage({
         )
       : null;
 
-  const climate = profile.climate;
+  const climate =
+    isDanubeGwb
+      ? danubeClimate?.climate ?? null
+      : profile.climate;
+
+  const danubeClimateRcp45 =
+    isDanubeGwb &&
+    Array.isArray(climate?.rcp45)
+      ? climate.rcp45
+      : [];
+
+  const danubeClimateRcp85 =
+    isDanubeGwb &&
+    Array.isArray(climate?.rcp85)
+      ? climate.rcp85
+      : [];
+
+  const danubeClimateRecharge45 =
+    danubeClimateRcp45.length > 0 &&
+    Number.isFinite(
+      Number(
+        danubeClimateRcp45[0]
+          ?.recharge_change_fraction
+      )
+    )
+      ? Number(
+          danubeClimateRcp45[0]
+            .recharge_change_fraction
+        ) * 100
+      : null;
+
+  const danubeClimateRecharge85 =
+    danubeClimateRcp85.length > 0 &&
+    Number.isFinite(
+      Number(
+        danubeClimateRcp85[0]
+          ?.recharge_change_fraction
+      )
+    )
+      ? Number(
+          danubeClimateRcp85[0]
+            .recharge_change_fraction
+        ) * 100
+      : null;
+
+  const danubeProjectedLevels45 =
+    danubeClimateRcp45
+      .map(
+        (row: any) =>
+          Number(
+            row?.projected_water_level_elevation_m
+          )
+      )
+      .filter(
+        (value: number) =>
+          Number.isFinite(value)
+      );
+
+  const danubeProjectedLevels85 =
+    danubeClimateRcp85
+      .map(
+        (row: any) =>
+          Number(
+            row?.projected_water_level_elevation_m
+          )
+      )
+      .filter(
+        (value: number) =>
+          Number.isFinite(value)
+      );
+
+  const danubeProjectedLevel45Min =
+    danubeProjectedLevels45.length > 0
+      ? Math.min(...danubeProjectedLevels45)
+      : null;
+
+  const danubeProjectedLevel45Max =
+    danubeProjectedLevels45.length > 0
+      ? Math.max(...danubeProjectedLevels45)
+      : null;
+
+  const danubeProjectedLevel85Min =
+    danubeProjectedLevels85.length > 0
+      ? Math.min(...danubeProjectedLevels85)
+      : null;
+
+  const danubeProjectedLevel85Max =
+    danubeProjectedLevels85.length > 0
+      ? Math.max(...danubeProjectedLevels85)
+      : null;
 
   const formatClimatePercent = (
     value: unknown
@@ -734,25 +946,51 @@ export default async function ProPage({
   };
 
   const climateLongTerm45 =
-    Number(climate?.rcp45?.["2071_2100"]);
+    isDanubeGwb
+      ? danubeClimateRecharge45
+      : Number(
+          climate?.rcp45?.["2071_2100"]
+        );
 
   const climateLongTerm85 =
-    Number(climate?.rcp85?.["2071_2100"]);
+    isDanubeGwb
+      ? danubeClimateRecharge85
+      : Number(
+          climate?.rcp85?.["2071_2100"]
+        );
 
   const climateConclusion =
-    Number.isFinite(climateLongTerm45) &&
-    Number.isFinite(climateLongTerm85)
+    isDanubeGwb
       ? (
-          climateLongTerm45 < 0 &&
-          climateLongTerm85 < 0
-            ? "В дългосрочен план и двата климатични сценария прогнозират намаляване на естествения ресурс на подземното водно тяло."
-            : climateLongTerm45 > 0 &&
-              climateLongTerm85 > 0
-              ? "В дългосрочен план и двата климатични сценария прогнозират увеличение на естествения ресурс на подземното водно тяло."
-              : "Двата климатични сценария дават различна посока на дългосрочната промяна на естествения ресурс."
+          danubeClimateRecharge45 != null &&
+          danubeClimateRecharge85 != null
+            ? (
+                danubeClimateRecharge45 > 0 &&
+                danubeClimateRecharge85 > 0
+                  ? "\u0418 \u0434\u0432\u0430\u0442\u0430 \u043a\u043b\u0438\u043c\u0430\u0442\u0438\u0447\u043d\u0438 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u044f \u043f\u043e\u043a\u0430\u0437\u0432\u0430\u0442 \u043f\u043e\u043b\u043e\u0436\u0438\u0442\u0435\u043b\u043d\u0430 \u043f\u0440\u043e\u043c\u044f\u043d\u0430 \u043d\u0430 \u043f\u043e\u0434\u0445\u0440\u0430\u043d\u0432\u0430\u043d\u0435\u0442\u043e. \u0422\u043e\u0432\u0430 \u0435 \u043c\u043e\u0434\u0435\u043b\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0437\u0430 \u0446\u044f\u043b\u043e\u0442\u043e \u041f\u0412\u0422, \u0430 \u043d\u0435 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430 \u0437\u0430 \u0434\u0435\u0431\u0438\u0442 \u0432 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430."
+                  : danubeClimateRecharge45 < 0 &&
+                    danubeClimateRecharge85 < 0
+                    ? "\u0418 \u0434\u0432\u0430\u0442\u0430 \u043a\u043b\u0438\u043c\u0430\u0442\u0438\u0447\u043d\u0438 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u044f \u043f\u043e\u043a\u0430\u0437\u0432\u0430\u0442 \u043d\u0430\u043c\u0430\u043b\u0435\u043d\u0438\u0435 \u043d\u0430 \u043f\u043e\u0434\u0445\u0440\u0430\u043d\u0432\u0430\u043d\u0435\u0442\u043e."
+                    : "\u0414\u0432\u0430\u0442\u0430 \u043a\u043b\u0438\u043c\u0430\u0442\u0438\u0447\u043d\u0438 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u044f \u0434\u0430\u0432\u0430\u0442 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u0430 \u043f\u043e\u0441\u043e\u043a\u0430 \u043d\u0430 \u043f\u0440\u043e\u043c\u044f\u043d\u0430\u0442\u0430."
+              )
+            : "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043a\u043b\u0438\u043c\u0430\u0442\u0438\u0447\u043d\u043e \u0437\u0430\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435."
         )
-      : "Няма достатъчно данни за дългосрочно заключение.";
-
+      : (
+          typeof climateLongTerm45 === "number" &&
+          typeof climateLongTerm85 === "number" &&
+          Number.isFinite(climateLongTerm45) &&
+          Number.isFinite(climateLongTerm85)
+            ? (
+                climateLongTerm45 < 0 &&
+                climateLongTerm85 < 0
+                  ? "? ??????????? ???? ? ????? ?????????? ???????? ??????????? ?????????? ?? ??????????? ?????? ?? ?????????? ????? ????."
+                  : climateLongTerm45 > 0 &&
+                    climateLongTerm85 > 0
+                    ? "? ??????????? ???? ? ????? ?????????? ???????? ??????????? ?????????? ?? ??????????? ?????? ?? ?????????? ????? ????."
+                    : "????? ?????????? ???????? ????? ???????? ?????? ?? ????????????? ??????? ?? ??????????? ??????."
+              )
+            : "???? ?????????? ????? ?? ??????????? ??????????."
+        );
 
   const climateUnavailableText =
     isWesternAegeanGwb
@@ -770,6 +1008,48 @@ export default async function ProPage({
 
   const integrated =
     profile.integratedRisk;
+
+  const danubeChemicalStatus =
+    danubeSection5
+      ?.environmental_objectives
+      ?.chemical_status ?? null;
+
+  const danubeQuantitativeStatus =
+    danubeSection5
+      ?.environmental_objectives
+      ?.quantitative_status ?? null;
+
+  const normalizedDanubeSection4 =
+    danubeSection4
+      ? {
+          ...danubeSection4,
+
+          chemical_status:
+            danubeChemicalStatus,
+
+          quantitative_status:
+            danubeQuantitativeStatus,
+
+          chemical_risk:
+            danubeSection2
+              ?.chemical_risk
+              ?.risk_assessment ?? null,
+
+          quantitative_risk:
+            danubeSection2
+              ?.quantitative_risk
+              ?.risk_assessment ?? null,
+
+          thresholds:
+            Array.isArray(
+              danubeSection4?.chemistry_thresholds
+            )
+              ? danubeSection4.chemistry_thresholds
+              : [],
+
+          trend_series: [],
+        }
+      : undefined;
 
   const normalizedWesternAegeanSection4 =
     westernAegeanSection4
@@ -932,7 +1212,7 @@ export default async function ProPage({
 
   const section4 =
     isDanubeGwb
-      ? danubeSection4
+      ? normalizedDanubeSection4
       : isWesternAegeanGwb
         ? normalizedWesternAegeanSection4
         : isBlackSeaGwb
@@ -977,8 +1257,65 @@ export default async function ProPage({
       ? `За това подземно водно тяло са предвидени ${section7MeasureCount} конкретни мерки за опазване и подобряване на състоянието му.`
       : "За това подземно водно тяло няма отделно посочени индивидуални мерки. Това не означава, че за района не се прилагат общи басейнови мерки.";
 
+  const danubeEnvironmentalObjectives =
+    isDanubeGwb
+      ? section5?.environmental_objectives ?? null
+      : null;
+
+  const danubePlannedException =
+    isDanubeGwb
+      ? section5?.planned_exception ?? null
+      : null;
+
+  const danubeDrinkingObjectives =
+    isDanubeGwb
+      ? section5?.drinking_water_protection_objectives ?? null
+      : null;
+
+  const danubeObjective2027 =
+    danubeEnvironmentalObjectives?.objective_2027 ?? null;
+
+  const danubeObjectiveAfter2027 =
+    danubeEnvironmentalObjectives?.objective_after_2027 ?? null;
+
+  const danubeObjectiveAssessment =
+    danubeEnvironmentalObjectives
+      ?.assessment_of_goal_achievement ?? null;
+
+  const danubeProblemIndicator =
+    danubeEnvironmentalObjectives
+      ?.parameter_exceeding_standard ?? null;
+
+  const danubeExceptionBasis =
+    danubePlannedException?.exception_basis ?? null;
+
+  const danubeExceptionJustification =
+    danubePlannedException?.justification ?? null;
+
+  const danubeHasPlannedException =
+    danubePlannedException?.has_planned_exception === true;
+
   const section5GoalCategory =
-    isWesternAegeanGwb
+    isDanubeGwb
+      ? (
+          danubeHasPlannedException
+            ? "exception_until_2027"
+            : (
+                String(
+                  danubeEnvironmentalObjectives
+                    ?.quantitative_status ?? ""
+                ).toLowerCase() ===
+                  "\u0434\u043e\u0431\u0440\u043e" &&
+                String(
+                  danubeEnvironmentalObjectives
+                    ?.chemical_status ?? ""
+                ).toLowerCase() ===
+                  "\u0434\u043e\u0431\u0440\u043e"
+                  ? "maintain_good_status"
+                  : "restore_good_status"
+              )
+        )
+      : (isWesternAegeanGwb
       ? (
           String(section5?.quantitative_status).toLowerCase() ===
             "?????" &&
@@ -987,7 +1324,7 @@ export default async function ProPage({
             ? "maintain_good_status"
             : String(section5?.goal_category ?? "")
         )
-      : String(section5?.goal_category ?? "");
+      : String(section5?.goal_category ?? ""));
 
   const section5GoalTone =
     section5GoalCategory === "goal_achieved" ||
@@ -1001,27 +1338,57 @@ export default async function ProPage({
         : "neutral";
 
   const section5GoalTitle =
-    isWesternAegeanGwb
+    isDanubeGwb
+      ? (
+          danubeHasPlannedException
+            ? "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0446\u0435\u043b \u0441 \u0438\u0437\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u0434\u043e 2027 \u0433."
+            : "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0435\u043a\u043e\u043b\u043e\u0433\u0438\u0447\u043d\u0438 \u0446\u0435\u043b\u0438 \u0434\u043e 2027 \u0433."
+        )
+      : (isWesternAegeanGwb
       ? (
           section5?.objectives?.quantitative ||
           section5?.objectives?.chemical ||
           "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0446\u0435\u043b"
         )
       : section5?.goal_label_bg ??
-        "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0446\u0435\u043b";
+        "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0446\u0435\u043b");
 
   const section5ProblemIndicators =
-    isWesternAegeanGwb
+    isDanubeGwb
+      ? (
+          danubeProblemIndicator ??
+          "\u041d\u044f\u043c\u0430 \u043f\u043e\u0441\u043e\u0447\u0435\u043d\u0438"
+        )
+      : (isWesternAegeanGwb
       ? (
           section5?.problem_indicators ??
           section5?.purb3?.chemical_deviation_indicators ??
           "\u041d\u044f\u043c\u0430 \u043f\u043e\u0441\u043e\u0447\u0435\u043d\u0438"
         )
       : section5?.purb3?.parameters_outside_standard ??
-        "\u041d\u044f\u043c\u0430 \u043f\u043e\u0441\u043e\u0447\u0435\u043d\u0438";
+        "\u041d\u044f\u043c\u0430 \u043f\u043e\u0441\u043e\u0447\u0435\u043d\u0438");
 
   const section5GoalSummary =
-    isWesternAegeanGwb
+    isDanubeGwb
+      ? (
+          [
+            danubeObjective2027
+              ? `\u0426\u0435\u043b\u0438 \u0434\u043e 2027 \u0433.: ${danubeObjective2027}`
+              : null,
+
+            danubeProblemIndicator
+              ? `\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b \u0441 \u043e\u0442\u043a\u043b\u043e\u043d\u0435\u043d\u0438\u0435: ${danubeProblemIndicator}.`
+              : null,
+
+            danubeExceptionBasis
+              ? `\u041e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0435 \u0437\u0430 \u0438\u0437\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435\u0442\u043e: ${danubeExceptionBasis}`
+              : null,
+          ]
+            .filter(Boolean)
+            .join(" ")
+        ) ||
+        "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0435\u043a\u043e\u043b\u043e\u0433\u0438\u0447\u043d\u0430 \u0446\u0435\u043b."
+      : (isWesternAegeanGwb
       ? (
           section5GoalCategory ===
             "maintain_good_status"
@@ -1040,7 +1407,7 @@ export default async function ProPage({
                 ? `\u0417\u0430 \u043f\u043e\u0441\u0442\u0438\u0433\u0430\u043d\u0435\u0442\u043e \u043d\u0430 \u0434\u043e\u0431\u0440\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u043e \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u043e \u043e\u0431\u043e\u0441\u043d\u043e\u0432\u0430\u043d\u043e \u0438\u0437\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435. \u041f\u0440\u043e\u0431\u043b\u0435\u043c\u043d\u0438 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438: ${section5ProblemIndicators}.`
                 : section5GoalCategory === "maintain_good_status"
                   ? "\u0425\u0438\u043c\u0438\u0447\u043d\u043e\u0442\u043e \u0438 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043e\u0442\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0441\u0430 \u043e\u0446\u0435\u043d\u0435\u043d\u0438 \u043a\u0430\u0442\u043e \u0434\u043e\u0431\u0440\u0438. \u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0446\u0435\u043b \u0435 \u0437\u0430\u043f\u0430\u0437\u0432\u0430\u043d\u0435 \u043d\u0430 \u0434\u043e\u0431\u0440\u043e\u0442\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435."
-                  : "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0435\u043a\u043e\u043b\u043e\u0433\u0438\u0447\u043d\u0430 \u0446\u0435\u043b.";
+                  : "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0435\u043a\u043e\u043b\u043e\u0433\u0438\u0447\u043d\u0430 \u0446\u0435\u043b.");
 
   const comparison =
     section4?.comparison;
@@ -1098,7 +1465,7 @@ export default async function ProPage({
               : undefined,
 
           quantitative_status:
-            danubeSection4
+            normalizedDanubeSection4
               ?.quantitative_status,
 
           reference:
@@ -1333,7 +1700,37 @@ export default async function ProPage({
       .toLowerCase() === "да";
 
   const monitoringSummary =
-    blackSeaSection4
+    isDanubeGwb && normalizedDanubeSection4
+      ? (
+          `\u0417\u0430 \u0432\u043e\u0434\u043d\u043e\u0442\u043e \u0442\u044f\u043b\u043e \u0441\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0438 ${
+            Array.isArray(
+              danubeSection4?.chemical_monitoring
+            )
+              ? danubeSection4.chemical_monitoring.length
+              : 0
+          } \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u043f\u0443\u043d\u043a\u0442\u0430 \u0437\u0430 \u0445\u0438\u043c\u0438\u0447\u0435\u043d \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433 \u0438 ${
+            Array.isArray(
+              danubeSection4?.quantitative_monitoring
+            )
+              ? danubeSection4.quantitative_monitoring.length
+              : 0
+          } \u043f\u0443\u043d\u043a\u0442\u0430 \u0437\u0430 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433. ` +
+          (
+            danubeChemicalStatus
+              ? `\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u043e\u0442\u043e \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0435 \u043e\u0446\u0435\u043d\u0435\u043d\u043e \u043a\u0430\u0442\u043e ${String(
+                  danubeChemicalStatus
+                ).toLowerCase()}. `
+              : ""
+          ) +
+          (
+            danubeQuantitativeStatus
+              ? `\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043e\u0442\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0435 \u043e\u0446\u0435\u043d\u0435\u043d\u043e \u043a\u0430\u0442\u043e ${String(
+                  danubeQuantitativeStatus
+                ).toLowerCase()}.`
+              : ""
+          )
+        )
+      : blackSeaSection4
       ? (
           blackSeaAffectedArea
             ? (
@@ -1974,6 +2371,40 @@ export default async function ProPage({
       ? Number(nearestOrdinaryWaterLevelRaw)
       : null;
 
+  const nearestOrdinaryProperties =
+    nearestOrdinaryWell?.properties ?? {};
+
+  const nearestOrdinaryAverageFlow =
+    nearestOrdinaryProperties?.average_flow_l_s;
+
+  const nearestOrdinaryMaximumFlow =
+    nearestOrdinaryProperties?.maximum_flow_l_s;
+
+  const nearestOrdinaryDailyVolume =
+    nearestOrdinaryProperties?.daily_volume_m3;
+
+  const nearestOrdinaryAnnualVolume =
+    nearestOrdinaryProperties?.annual_volume_m3;
+
+  const nearestOrdinaryPermitNumber =
+    nearestOrdinaryProperties?.permit_number;
+
+  const nearestOrdinaryPermitEnd =
+    nearestOrdinaryProperties?.end_date_resolved;
+
+  const nearestOrdinaryPurpose =
+    nearestOrdinaryProperties?.purpose;
+
+  const nearestOrdinaryFacilityName =
+    nearestOrdinaryProperties?.facility_name;
+
+  const nearestOrdinaryFacilityGwb =
+    String(
+      nearestOrdinaryProperties?.canonical_code ||
+      nearestOrdinaryProperties?.gwb_code ||
+      ""
+    ).trim().toUpperCase();
+
   const ordinaryStatistics =
     spatial?.ordinaryStatistics ?? null;
 
@@ -2118,6 +2549,36 @@ export default async function ProPage({
   if (nearestOrdinaryWaterLevel != null) {
     drillingRecommendationParts.push(
       `Регистрираното статично водно ниво е ${formatNumber(nearestOrdinaryWaterLevel, 1)} m. Това е установеното ниво на водата в съществуващото съоръжение, а не гарантирана дълбочина до вода за конкретния имот.`
+    );
+  }
+
+  if (nearestOrdinaryAverageFlow != null) {
+    drillingRecommendationParts.push(
+      `\u0417\u0430 \u043d\u0430\u0439-\u0431\u043b\u0438\u0437\u043a\u043e\u0442\u043e \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u043d\u043e \u043e\u0431\u0438\u043a\u043d\u043e\u0432\u0435\u043d\u043e \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435 \u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u0441\u0440\u0435\u0434\u0435\u043d \u0434\u0435\u0431\u0438\u0442 ${formatNumber(
+        nearestOrdinaryAverageFlow,
+        2
+      )} l/s.`
+    );
+  }
+
+  if (nearestOrdinaryMaximumFlow != null) {
+    drillingRecommendationParts.push(
+      `\u041c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u043d\u0438\u044f\u0442 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u0434\u0435\u0431\u0438\u0442 \u043d\u0430 \u0441\u044a\u0449\u043e\u0442\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435 \u0435 ${formatNumber(
+        nearestOrdinaryMaximumFlow,
+        2
+      )} l/s. \u0422\u043e\u0432\u0430 \u0435 \u043c\u0435\u0441\u0442\u0435\u043d \u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440, \u0430 \u043d\u0435 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0430 \u0437\u0430 \u0434\u0435\u0431\u0438\u0442\u0430 \u0432 \u0438\u0437\u0431\u0440\u0430\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430.`
+    );
+  }
+
+  if (
+    nearestOrdinaryFacilityGwb &&
+    nearestOrdinaryFacilityGwb !==
+      String(profile.gwbCode || "")
+        .trim()
+        .toUpperCase()
+  ) {
+    drillingRecommendationParts.push(
+      `\u0411\u043b\u0438\u0437\u043a\u043e\u0442\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435 \u0435 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u043d\u043e \u043a\u044a\u043c \u041f\u0412\u0422 ${nearestOrdinaryFacilityGwb}. \u0414\u0430\u043d\u043d\u0438\u0442\u0435 \u043c\u0443 \u0441\u0435 \u0438\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u0442 \u0441\u0430\u043c\u043e \u043a\u0430\u0442\u043e \u043c\u0435\u0441\u0442\u0435\u043d \u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440 \u0438 \u043d\u0435 \u0441\u0435 \u0441\u043c\u0435\u0441\u0432\u0430\u0442 \u0441 \u0434\u0430\u043d\u043d\u0438\u0442\u0435 \u043d\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u043e\u0442\u043e \u041f\u0412\u0422.`
     );
   }
 
@@ -2838,7 +3299,7 @@ export default async function ProPage({
                 Няма налични официални геоложки данни.
               </div>
             )}
-          
+
             {blackSeaGis?.isInsideProtectionZone && (
               <div style={{
                 marginTop: 16,
@@ -3681,7 +4142,7 @@ export default async function ProPage({
                 ) : null}
               </div>
             </details>
-          
+
             {blackSeaSection3 ? (
               <section style={{
                 marginTop: 14,
@@ -4405,7 +4866,7 @@ export default async function ProPage({
                 </section>
               </div>
             </details>
-          
+
             {blackSeaSection4 ? (
               <details style={{
                 marginTop: 12,
@@ -4772,22 +5233,56 @@ export default async function ProPage({
                     </div>
 
                     <Row
-                      label="2013–2042"
-                      value={formatClimatePercent(
-                        climate.rcp45?.["2013_2042"]
-                      )}
+                      label={
+                        isDanubeGwb
+                          ? "\u041f\u0440\u043e\u043c\u044f\u043d\u0430 \u043d\u0430 \u043f\u043e\u0434\u0445\u0440\u0430\u043d\u0432\u0430\u043d\u0435\u0442\u043e"
+                          : "2013\u20132042"
+                      }
+                      value={
+                        isDanubeGwb
+                          ? formatClimatePercent(
+                              danubeClimateRecharge45
+                            )
+                          : formatClimatePercent(
+                              climate.rcp45?.["2013_2042"]
+                            )
+                      }
                     />
                     <Row
-                      label="2021–2050"
-                      value={formatClimatePercent(
-                        climate.rcp45?.["2021_2050"]
-                      )}
+                      label={
+                        isDanubeGwb
+                          ? "\u0411\u0440\u043e\u0439 \u043c\u043e\u0434\u0435\u043b\u043d\u0438 \u0442\u043e\u0447\u043a\u0438"
+                          : "2021\u20132050"
+                      }
+                      value={
+                        isDanubeGwb
+                          ? danubeClimateRcp45.length
+                          : formatClimatePercent(
+                              climate.rcp45?.["2021_2050"]
+                            )
+                      }
                     />
                     <Row
-                      label="2071–2100"
-                      value={formatClimatePercent(
-                        climate.rcp45?.["2071_2100"]
-                      )}
+                      label={
+                        isDanubeGwb
+                          ? "\u041f\u0440\u043e\u0433\u043d\u043e\u0437\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u043d\u0438\u0432\u043e"
+                          : "2071\u20132100"
+                      }
+                      value={
+                        isDanubeGwb &&
+                        danubeProjectedLevel45Min != null &&
+                        danubeProjectedLevel45Max != null
+                          ? `${formatNumber(
+                              danubeProjectedLevel45Min,
+                              2
+                            )} \u2013 ${formatNumber(
+                              danubeProjectedLevel45Max,
+                              2
+                            )} m`
+                          : formatClimatePercent(
+                              climate.rcp45?.["2071_2100"]
+                            )
+                      }
                     />
                   </div>
 
@@ -4806,22 +5301,56 @@ export default async function ProPage({
                     </div>
 
                     <Row
-                      label="2013–2042"
-                      value={formatClimatePercent(
-                        climate.rcp85?.["2013_2042"]
-                      )}
+                      label={
+                        isDanubeGwb
+                          ? "\u041f\u0440\u043e\u043c\u044f\u043d\u0430 \u043d\u0430 \u043f\u043e\u0434\u0445\u0440\u0430\u043d\u0432\u0430\u043d\u0435\u0442\u043e"
+                          : "2013\u20132042"
+                      }
+                      value={
+                        isDanubeGwb
+                          ? formatClimatePercent(
+                              danubeClimateRecharge85
+                            )
+                          : formatClimatePercent(
+                              climate.rcp85?.["2013_2042"]
+                            )
+                      }
                     />
                     <Row
-                      label="2021–2050"
-                      value={formatClimatePercent(
-                        climate.rcp85?.["2021_2050"]
-                      )}
+                      label={
+                        isDanubeGwb
+                          ? "\u0411\u0440\u043e\u0439 \u043c\u043e\u0434\u0435\u043b\u043d\u0438 \u0442\u043e\u0447\u043a\u0438"
+                          : "2021\u20132050"
+                      }
+                      value={
+                        isDanubeGwb
+                          ? danubeClimateRcp85.length
+                          : formatClimatePercent(
+                              climate.rcp85?.["2021_2050"]
+                            )
+                      }
                     />
                     <Row
-                      label="2071–2100"
-                      value={formatClimatePercent(
-                        climate.rcp85?.["2071_2100"]
-                      )}
+                      label={
+                        isDanubeGwb
+                          ? "\u041f\u0440\u043e\u0433\u043d\u043e\u0437\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u043d\u0438\u0432\u043e"
+                          : "2071\u20132100"
+                      }
+                      value={
+                        isDanubeGwb &&
+                        danubeProjectedLevel85Min != null &&
+                        danubeProjectedLevel85Max != null
+                          ? `${formatNumber(
+                              danubeProjectedLevel85Min,
+                              2
+                            )} \u2013 ${formatNumber(
+                              danubeProjectedLevel85Max,
+                              2
+                            )} m`
+                          : formatClimatePercent(
+                              climate.rcp85?.["2071_2100"]
+                            )
+                      }
                     />
                   </div>
                 </div>
@@ -4845,8 +5374,9 @@ export default async function ProPage({
                   color: "#7b8b90",
                   fontSize: 11,
                 }}>
-                  Източник: Приложение 2.3.4.1 —
-                  Източнобеломорски район.
+                  {isDanubeGwb
+                    ? "\u0418\u0437\u0442\u043e\u0447\u043d\u0438\u043a: \u0411\u0430\u0441\u0435\u0439\u043d\u043e\u0432\u0430 \u0434\u0438\u0440\u0435\u043a\u0446\u0438\u044f \u201e\u0414\u0443\u043d\u0430\u0432\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d\u201c \u2014 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u043a\u043b\u0438\u043c\u0430\u0442\u0438\u0447\u043d\u0438 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u0438."
+                    : "\u0418\u0437\u0442\u043e\u0447\u043d\u0438\u043a: \u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 2.3.4.1 \u2014 \u0418\u0437\u0442\u043e\u0447\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d."}
                 </div>
               </>
             ) : (
@@ -5190,7 +5720,7 @@ export default async function ProPage({
                 Няма налични данни от Раздел 5.
               </div>
             )}
-          
+
             {blackSeaSection3 ? (
               <section style={{
                 marginTop: 14,
@@ -6117,6 +6647,87 @@ export default async function ProPage({
                               1
                             )} m`
                           : "Няма налични данни"
+                      }
+                    />
+
+                    <Row
+                      label={"\u0421\u0440\u0435\u0434\u0435\u043d \u0434\u0435\u0431\u0438\u0442 \u043d\u0430 \u0431\u043b\u0438\u0437\u043a\u043e\u0442\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435"}
+                      value={
+                        nearestOrdinaryAverageFlow != null
+                          ? `${formatNumber(
+                              nearestOrdinaryAverageFlow,
+                              2
+                            )} l/s`
+                          : "\u041d\u044f\u043c\u0430 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"
+                      }
+                    />
+
+                    <Row
+                      label={"\u041c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u0435\u043d \u0434\u0435\u0431\u0438\u0442"}
+                      value={
+                        nearestOrdinaryMaximumFlow != null
+                          ? `${formatNumber(
+                              nearestOrdinaryMaximumFlow,
+                              2
+                            )} l/s`
+                          : "\u041d\u044f\u043c\u0430 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"
+                      }
+                    />
+
+                    <Row
+                      label={"\u0420\u0430\u0437\u0440\u0435\u0448\u0435\u043d \u0434\u043d\u0435\u0432\u0435\u043d \u043e\u0431\u0435\u043c"}
+                      value={
+                        nearestOrdinaryDailyVolume != null
+                          ? `${formatNumber(
+                              nearestOrdinaryDailyVolume,
+                              1
+                            )} m\u00b3/\u0434\u0435\u043d`
+                          : "\u041d\u044f\u043c\u0430 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"
+                      }
+                    />
+
+                    <Row
+                      label={"\u0420\u0430\u0437\u0440\u0435\u0448\u0435\u043d \u0433\u043e\u0434\u0438\u0448\u0435\u043d \u043e\u0431\u0435\u043c"}
+                      value={
+                        nearestOrdinaryAnnualVolume != null
+                          ? `${formatNumber(
+                              nearestOrdinaryAnnualVolume,
+                              0
+                            )} m\u00b3/\u0433\u043e\u0434.`
+                          : "\u041d\u044f\u043c\u0430 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"
+                      }
+                    />
+
+                    <Row
+                      label={"\u0420\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u0435\u043b\u043d\u043e"}
+                      value={
+                        nearestOrdinaryPermitNumber
+                          ? `\u2116 ${String(
+                              nearestOrdinaryPermitNumber
+                            )}${
+                              nearestOrdinaryPermitEnd
+                                ? `, \u0434\u043e ${String(
+                                    nearestOrdinaryPermitEnd
+                                  )}`
+                                : ""
+                            }`
+                          : "\u041d\u044f\u043c\u0430 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"
+                      }
+                    />
+
+                    <Row
+                      label={"\u041f\u0440\u0435\u0434\u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435"}
+                      value={
+                        nearestOrdinaryPurpose ||
+                        "\u041d\u044f\u043c\u0430 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"
+                      }
+                    />
+
+                    <Row
+                      label={"\u041f\u0412\u0422 \u043d\u0430 \u0431\u043b\u0438\u0437\u043a\u043e\u0442\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435"}
+                      value={
+                        nearestOrdinaryFacilityGwb ||
+                        "\u041d\u044f\u043c\u0430 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"
                       }
                     />
 

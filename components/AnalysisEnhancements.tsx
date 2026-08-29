@@ -62,6 +62,20 @@ export default function AnalysisEnhancements() {
           return false;
         }
 
+        /*
+          Only leaf text notes may be muted.
+
+          Parent layout containers can inherit warning phrases from
+          descendant text via textContent. Hiding such a parent would
+          remove complete report blocks instead of only the warning.
+        */
+        if (
+          element.tagName === "DIV" &&
+          element.querySelector("div, p")
+        ) {
+          return false;
+        }
+
         const text = normalizeText(
           element.textContent || ""
         );

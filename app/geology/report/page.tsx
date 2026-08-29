@@ -832,22 +832,6 @@ export default function GeologyReportPage() {
           );
         }
 
-        const requestedGwbParam =
-          String(params.get("gwb") || "")
-            .trim()
-            .toUpperCase();
-
-        const requestedBasinForGeology =
-          requestedGwbParam.startsWith("BG1")
-            ? "BG1"
-            : requestedGwbParam.startsWith("BG4")
-              ? "BG4"
-              : requestedGwbParam.startsWith("BG3")
-                ? "BG3"
-                : requestedGwbParam.startsWith("BG2")
-                  ? "BG2"
-                  : "";
-
         const [
           geology,
           eastBodiesData,
@@ -897,9 +881,7 @@ export default function GeologyReportPage() {
           danubeCurrentRegistersData,
           danubeClimateData,
         ] = await Promise.all([
-          requestedBasinForGeology === "BG3"
-            ? geologyAt(lat, lon)
-            : Promise.resolve(null),
+          geologyAt(lat, lon),
 
           fetch(
             "/geology-map/data/bd_ibr_groundwater_bodies_enriched.geojson"
@@ -1203,27 +1185,10 @@ export default function GeologyReportPage() {
             ""
           ).trim().toUpperCase();
 
-        const requestedCodes =
-          new Set([
-            requestedGwb,
-            ...requestedGwbs,
-          ].filter(Boolean));
-
-        const requestedBodies =
-          allBodies.filter(
-            (feature: AnyFeature) =>
-              requestedCodes.has(
-                bodyCode(feature)
-              )
-          );
-
         const intersectingBodies =
           Array.from(
             new Map(
-              [
-                ...spatiallyIntersectingBodies,
-                ...requestedBodies,
-              ].map(
+              spatiallyIntersectingBodies.map(
                 (feature: AnyFeature) => [
                   bodyCode(feature),
                   feature,
@@ -1232,16 +1197,28 @@ export default function GeologyReportPage() {
             ).values()
           );
 
+        const canonicalContextGwb =
+          String(
+            expertContext?.gwb || ""
+          )
+            .trim()
+            .toUpperCase();
+
         const selectedBody =
           (
             requestedGwb
               ? intersectingBodies.find(
                   (feature: AnyFeature) =>
                     bodyCode(feature) === requestedGwb
-                ) ||
-                allBodies.find(
+                )
+              : null
+          ) ||
+          (
+            canonicalContextGwb
+              ? intersectingBodies.find(
                   (feature: AnyFeature) =>
-                    bodyCode(feature) === requestedGwb
+                    bodyCode(feature) ===
+                    canonicalContextGwb
                 )
               : null
           ) ||
@@ -1251,7 +1228,7 @@ export default function GeologyReportPage() {
         const selectedGwbCode =
           selectedBody
             ? bodyCode(selectedBody)
-            : requestedGwb;
+            : "";
 
         const basinCode =
           selectedGwbCode.startsWith("BG1")
@@ -2181,7 +2158,88 @@ export default function GeologyReportPage() {
               }
             : null;
 
+        const danubeGeologyProfile =
+          basinCode === "BG1" &&
+          danubeOfficialSection1
+            ? {
+                ...selectedGeologyProfile,
+
+                code:
+                  danubeOfficialSection1.code ||
+                  selectedGwbCode,
+
+                name:
+                  danubeOfficialSection1.name ||
+                  selectedGeologyProfile?.name,
+
+                aquifer_type_name:
+                  danubeOfficialSection1
+                    ?.detailed
+                    ?.aquifer_type,
+
+                water_type:
+                  danubeOfficialSection1
+                    ?.typology
+                    ?.groundwater_body_type,
+
+                collector_type:
+                  danubeOfficialSection1
+                    ?.typology
+                    ?.collector_type ||
+                  danubeOfficialSection1
+                    ?.detailed
+                    ?.collector_type,
+
+                hydrogeological_horizon:
+                  danubeOfficialSection1
+                    ?.typology
+                    ?.vertical_horizon,
+
+                lithology:
+                  danubeOfficialSection1
+                    ?.detailed
+                    ?.lithology,
+
+                stratigraphy:
+                  danubeOfficialSection1
+                    ?.detailed
+                    ?.stratigraphy,
+
+                aquifer_thickness_m:
+                  danubeOfficialSection1
+                    ?.detailed
+                    ?.aquifer_thickness_m ??
+                  danubeOfficialSection1
+                    ?.detailed
+                    ?.average_aquifer_thickness_m,
+
+                filtration_coefficient_m_day:
+                  danubeOfficialSection1
+                    ?.detailed
+                    ?.hydraulic_conductivity_m_day,
+
+                hydraulic_conductivity_m_day:
+                  danubeOfficialSection1
+                    ?.detailed
+                    ?.hydraulic_conductivity_m_day,
+
+                transmissivity_m2_day:
+                  danubeOfficialSection1
+                    ?.detailed
+                    ?.transmissivity_m2_day,
+
+                pressure_condition:
+                  danubeOfficialSection1
+                    ?.detailed
+                    ?.pressure_condition,
+
+                is_detailed_point_geology:
+                  false,
+              }
+            : null;
+
         const effectiveGeologyProfile =
+          danubeGeologyProfile ||
           westernAegeanGeologyProfile ||
           (
             blackSeaRegionalGeology
@@ -2597,6 +2655,7 @@ export default function GeologyReportPage() {
           basinCode === "BG3"
             ? geology
             : (
+                basinCode === "BG1" ||
                 basinCode === "BG2" ||
                 basinCode === "BG4"
               ) &&
@@ -2640,9 +2699,11 @@ export default function GeologyReportPage() {
                   },
 
                   source:
-                    basinCode === "BG4"
-                      ? "BDZBR PURB3 Section 1"
-                      : "\u0411\u0414 \u0427\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d \u2014 \u043f\u0440\u043e\u0444\u0438\u043b \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e",
+                    basinCode === "BG1"
+                      ? "BDDR PURB3 Section 1"
+                      : basinCode === "BG4"
+                        ? "BDZBR PURB3 Section 1"
+                        : "\u0411\u0414 \u0427\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d \u2014 \u043f\u0440\u043e\u0444\u0438\u043b \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e",
 
                   is_groundwater_body_profile:
                     true,
@@ -2721,13 +2782,31 @@ export default function GeologyReportPage() {
    .join(" ")
    .toLowerCase();
 
+  const bg1OfficialKarstProfile =
+    professional?.basinCode === "BG1" &&
+    (
+      /\u043a\u0430\u0440\u0441\u0442/.test(
+        lithologyText
+      ) ||
+      String(
+        geologyProfile?.aquifer_type_name ||
+        geologyProfile?.water_type ||
+        geologyProfile?.collector_type ||
+        ""
+      )
+        .toLowerCase()
+        .includes("\u043a\u0430\u0440\u0441\u0442")
+    );
+
   const looseGround =
-    /пяс|чакъл|алув|нанос|рохк|льос|поров|кватернер|речн|грав|седимент/.test(
+    !bg1OfficialKarstProfile &&
+    /\u043f\u044f\u0441|\u0447\u0430\u043a\u044a\u043b|\u0430\u043b\u0443\u0432|\u043d\u0430\u043d\u043e\u0441|\u0440\u043e\u0445\u043a|\u043b\u044c\u043e\u0441|\u043f\u043e\u0440\u043e\u0432|\u043a\u0432\u0430\u0442\u0435\u0440\u043d\u0435\u0440|\u0440\u0435\u0447\u043d|\u0433\u0440\u0430\u0432|\u0441\u0435\u0434\u0438\u043c\u0435\u043d\u0442/.test(
       lithologyText
     );
 
   const rockGround =
-    /варов|доломит|гранит|гнайс|скал|пукнат|карст/.test(
+    bg1OfficialKarstProfile ||
+    /\u0432\u0430\u0440\u043e\u0432|\u0434\u043e\u043b\u043e\u043c\u0438\u0442|\u0433\u0440\u0430\u043d\u0438\u0442|\u0433\u043d\u0430\u0439\u0441|\u0441\u043a\u0430\u043b|\u043f\u0443\u043a\u043d\u0430\u0442|\u043a\u0430\u0440\u0441\u0442/.test(
       lithologyText
     );
 
@@ -2983,39 +3062,80 @@ export default function GeologyReportPage() {
       ? [data.bodies[0]]
       : [];
 
+  const bg1KarstProfile =
+    bg1OfficialKarstProfile;
+
   const simple =
-    professional?.basinCode === "BG4" &&
-    String(
-      geologyProfile?.water_type ||
-      geologyProfile?.aquifer_type_name ||
-      ""
-    ).toLowerCase().includes("\u043f\u0443\u043a\u043d\u0430\u0442")
+    bg1KarstProfile
       ? {
           headline:
-            "\u041f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u0430 \u0441\u043a\u0430\u043b\u043d\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0441\u0440\u0435\u0434\u0430",
+            "\u041a\u0430\u0440\u0441\u0442\u043e\u0432\u0430 \u0441\u043a\u0430\u043b\u043d\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0441\u0440\u0435\u0434\u0430",
+
           hardness:
             "\u0421\u0440\u0435\u0434\u043d\u0430 \u0434\u043e \u0432\u0438\u0441\u043e\u043a\u0430",
+
           looseness:
-            "\u041d\u0438\u0441\u043a\u0430 \u0434\u043e \u0441\u0440\u0435\u0434\u043d\u0430",
+            "\u041d\u0438\u0441\u043a\u0430; \u0432\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u0441\u0430 \u043d\u0430\u0440\u0443\u0448\u0435\u043d\u0438 \u0437\u043e\u043d\u0438",
+
           collapse:
-            "\u041d\u0438\u0441\u044a\u043a \u0434\u043e \u0441\u0440\u0435\u0434\u0435\u043d; \u0432\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u0441\u0430 \u043d\u0430\u0440\u0443\u0448\u0435\u043d\u0438 \u0438 \u0438\u0437\u0432\u0435\u0442\u0440\u0435\u043b\u0438 \u0437\u043e\u043d\u0438",
+            "\u041d\u0438\u0441\u044a\u043a \u0434\u043e \u0441\u0440\u0435\u0434\u0435\u043d; \u043b\u043e\u043a\u0430\u043b\u043d\u043e \u0441\u0430 \u0432\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438, \u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0438 \u043a\u0443\u0445\u0438\u043d\u0438 \u0438 \u043d\u0430\u0440\u0443\u0448\u0435\u043d\u0438 \u0443\u0447\u0430\u0441\u0442\u044a\u0446\u0438",
+
           drilling:
-            "\u041e\u0447\u0430\u043a\u0432\u0430 \u0441\u0435 \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u043d\u0435 \u0432 \u0441\u043a\u0430\u043b\u043d\u0430 \u0441\u0440\u0435\u0434\u0430. \u041f\u0440\u0438 \u043f\u0440\u0435\u043c\u0438\u043d\u0430\u0432\u0430\u043d\u0435 \u043f\u0440\u0435\u0437 \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d\u0438 \u0438\u043b\u0438 \u0438\u0437\u0432\u0435\u0442\u0440\u0435\u043b\u0438 \u0443\u0447\u0430\u0441\u0442\u044a\u0446\u0438 \u043f\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435\u0442\u043e \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u043f\u0440\u043e\u043c\u0435\u043d\u0438 \u0440\u044f\u0437\u043a\u043e.",
+            "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438\u044f\u0442 \u043f\u0440\u043e\u0444\u0438\u043b \u043e\u043f\u0438\u0441\u0432\u0430 \u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0441\u0440\u0435\u0434\u0430. \u041f\u0440\u0438 \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u043d\u0435 \u043c\u043e\u0433\u0430\u0442 \u0434\u0430 \u0441\u0435 \u0441\u0440\u0435\u0449\u043d\u0430\u0442 \u0440\u0435\u0437\u043a\u0438 \u043f\u0440\u0435\u0445\u043e\u0434\u0438 \u043c\u0435\u0436\u0434\u0443 \u0437\u0434\u0440\u0430\u0432\u0430 \u0441\u043a\u0430\u043b\u0430, \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438 \u0437\u043e\u043d\u0438 \u0438 \u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0438 \u043a\u0443\u0445\u0438\u043d\u0438.",
+
           water:
-            "\u0412\u043e\u0434\u0430\u0442\u0430 \u0441\u0435 \u0434\u0432\u0438\u0436\u0438 \u0433\u043b\u0430\u0432\u043d\u043e \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438, \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0438 \u0438 \u0438\u0437\u0432\u0435\u0442\u0440\u0435\u043b\u0438 \u0437\u043e\u043d\u0438. \u0422\u043e\u0447\u043d\u0430\u0442\u0430 \u043f\u043e\u0437\u0438\u0446\u0438\u044f \u0438 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430 \u043d\u0435 \u0441\u0435 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f\u0442 \u0441\u0430\u043c\u043e \u043e\u0442 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0438\u044f \u043f\u0440\u043e\u0444\u0438\u043b.",
+            "\u0412 \u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0430 \u0441\u0440\u0435\u0434\u0430 \u0432\u043e\u0434\u0430\u0442\u0430 \u0441\u0435 \u0434\u0432\u0438\u0436\u0438 \u043f\u0440\u0435\u0434\u0438\u043c\u043d\u043e \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438, \u0440\u0430\u0437\u0442\u0432\u043e\u0440\u0435\u043d\u0438 \u043a\u0430\u043d\u0430\u043b\u0438 \u0438 \u043a\u0443\u0445\u0438\u043d\u0438. \u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0438\u044f\u0442 \u043f\u0440\u043e\u0444\u0438\u043b \u043d\u0435 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f \u0442\u043e\u0447\u043d\u0430\u0442\u0430 \u0438\u043c \u043f\u043e\u0437\u0438\u0446\u0438\u044f \u0438 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430.",
         }
-      : simpleGroundInterpretation(
+
+      : professional?.basinCode === "BG4" &&
+        String(
+          geologyProfile?.water_type ||
+          geologyProfile?.aquifer_type_name ||
+          ""
+        ).toLowerCase().includes("\u043f\u0443\u043a\u043d\u0430\u0442")
+        ? {
+            headline:
+              "\u041f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u0430 \u0441\u043a\u0430\u043b\u043d\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0441\u0440\u0435\u0434\u0430",
+            hardness:
+              "\u0421\u0440\u0435\u0434\u043d\u0430 \u0434\u043e \u0432\u0438\u0441\u043e\u043a\u0430",
+            looseness:
+              "\u041d\u0438\u0441\u043a\u0430 \u0434\u043e \u0441\u0440\u0435\u0434\u043d\u0430",
+            collapse:
+              "\u041d\u0438\u0441\u044a\u043a \u0434\u043e \u0441\u0440\u0435\u0434\u0435\u043d; \u0432\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u0441\u0430 \u043d\u0430\u0440\u0443\u0448\u0435\u043d\u0438 \u0438 \u0438\u0437\u0432\u0435\u0442\u0440\u0435\u043b\u0438 \u0437\u043e\u043d\u0438",
+            drilling:
+              "\u041e\u0447\u0430\u043a\u0432\u0430 \u0441\u0435 \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u043d\u0435 \u0432 \u0441\u043a\u0430\u043b\u043d\u0430 \u0441\u0440\u0435\u0434\u0430. \u041f\u0440\u0438 \u043f\u0440\u0435\u043c\u0438\u043d\u0430\u0432\u0430\u043d\u0435 \u043f\u0440\u0435\u0437 \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d\u0438 \u0438\u043b\u0438 \u0438\u0437\u0432\u0435\u0442\u0440\u0435\u043b\u0438 \u0443\u0447\u0430\u0441\u0442\u044a\u0446\u0438 \u043f\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435\u0442\u043e \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u043f\u0440\u043e\u043c\u0435\u043d\u0438 \u0440\u044f\u0437\u043a\u043e.",
+            water:
+              "\u0412\u043e\u0434\u0430\u0442\u0430 \u0441\u0435 \u0434\u0432\u0438\u0436\u0438 \u0433\u043b\u0430\u0432\u043d\u043e \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438, \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0438 \u0438 \u0438\u0437\u0432\u0435\u0442\u0440\u0435\u043b\u0438 \u0437\u043e\u043d\u0438. \u0422\u043e\u0447\u043d\u0430\u0442\u0430 \u043f\u043e\u0437\u0438\u0446\u0438\u044f \u0438 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430 \u043d\u0435 \u0441\u0435 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f\u0442 \u0441\u0430\u043c\u043e \u043e\u0442 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0438\u044f \u043f\u0440\u043e\u0444\u0438\u043b.",
+          }
+        : simpleGroundInterpretation(
+            geologyCode,
+            selectedInterpretationBodies
+          );
+
+  const drillingMaterials =
+    bg1KarstProfile
+      ? {
+          title:
+            "\u0412\u0435\u0440\u043e\u044f\u0442\u043d\u0430 \u0442\u0432\u044a\u0440\u0434\u0430 \u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0430 \u0441\u043a\u0430\u043b\u043d\u0430 \u0441\u0440\u0435\u0434\u0430",
+
+          short:
+            "\u041e\u0447\u0430\u043a\u0432\u0430\u0442 \u0441\u0435 \u043a\u043e\u043c\u043f\u0430\u043a\u0442\u043d\u0438 \u0441\u043a\u0430\u043b\u0438 \u0441 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438 \u0438 \u0432\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0438 \u043a\u0443\u0445\u0438\u043d\u0438.",
+
+          details:
+            geologyProfile?.lithology
+              ? `\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u043e \u043e\u043f\u0438\u0441\u0430\u043d\u0430 \u043b\u0438\u0442\u043e\u043b\u043e\u0433\u0438\u044f: ${geologyProfile.lithology}. \u0422\u043e\u0432\u0430 \u0435 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u043f\u0440\u043e\u0444\u0438\u043b \u0438 \u043d\u0435 \u0435 \u0442\u043e\u0447\u0435\u043d \u0441\u043e\u043d\u0434\u0430\u0436\u0435\u043d \u0440\u0430\u0437\u0440\u0435\u0437 \u0437\u0430 \u0438\u043c\u043e\u0442\u0430.`
+              : "\u041a\u0430\u0440\u0441\u0442\u043e\u0432\u0438\u044f\u0442 \u0442\u0438\u043f \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0441\u0440\u0435\u0434\u0430 \u043d\u0430\u0441\u043e\u0447\u0432\u0430 \u043a\u044a\u043c \u0442\u0432\u044a\u0440\u0434\u0430 \u0440\u0430\u0437\u0442\u0432\u043e\u0440\u0438\u043c\u0430 \u0441\u043a\u0430\u043b\u0430 \u0441 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438, \u043a\u0430\u043d\u0430\u043b\u0438 \u0438 \u0432\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u043a\u0443\u0445\u0438\u043d\u0438.",
+
+          behavior:
+            "\u0412\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u0441\u0430 \u0440\u0435\u0437\u043a\u0438 \u043f\u0440\u0435\u0445\u043e\u0434\u0438 \u043e\u0442 \u0437\u0434\u0440\u0430\u0432\u0430 \u0441\u043a\u0430\u043b\u0430 \u043a\u044a\u043c \u0441\u0438\u043b\u043d\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0430 \u0437\u043e\u043d\u0430 \u0438\u043b\u0438 \u043a\u0443\u0445\u0438\u043d\u0430.",
+
+          confidence:
+            "\u0414\u043e\u0431\u0440\u0430 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0430 \u0438\u043d\u0442\u0435\u0440\u043f\u0440\u0435\u0442\u0430\u0446\u0438\u044f; \u043d\u0443\u0436\u043d\u0430 \u0435 \u043b\u043e\u043a\u0430\u043b\u043d\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430",
+        }
+      : likelyDrillingMaterials(
           geologyCode,
           selectedInterpretationBodies
         );
-
-
-  const drillingMaterials =
-    likelyDrillingMaterials(
-      geologyCode,
-      selectedInterpretationBodies
-    );
-
 
   const mp =
     data.monitoring?.feature
@@ -3195,7 +3315,9 @@ export default function GeologyReportPage() {
             </h2>
 
             <p style={{marginBottom:10}}>
-              {professional?.basinCode === "BG4"
+              {professional?.basinCode === "BG1"
+                ? "\u0422\u043e\u0432\u0430 \u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0430 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430 \u043d\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u043e\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e \u0432 \u0414\u0443\u043d\u0430\u0432\u0441\u043a\u0438\u044f \u0440\u0430\u0439\u043e\u043d. \u0422\u043e\u0432\u0430 \u043d\u0435 \u0435 \u0442\u043e\u0447\u0435\u043d \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0440\u0430\u0437\u0440\u0435\u0437 \u043d\u0430 \u0438\u043c\u043e\u0442\u0430."
+                : professional?.basinCode === "BG4"
                 ? "\u0422\u043e\u0432\u0430 \u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0430 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430 \u043d\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u043e\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e \u0432 \u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438\u044f \u0440\u0430\u0439\u043e\u043d. \u0422\u043e\u0432\u0430 \u043d\u0435 \u0435 \u0442\u043e\u0447\u0435\u043d \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0440\u0430\u0437\u0440\u0435\u0437 \u043d\u0430 \u0438\u043c\u043e\u0442\u0430."
                 : professional?.basinCode === "BG2"
                   ? "\u0422\u043e\u0432\u0430 \u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0430 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430 \u043d\u0430 \u0447\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u043e\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e. \u0422\u044f \u043d\u0435 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u044f\u0432\u0430 \u0442\u043e\u0447\u0435\u043d \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0440\u0430\u0437\u0440\u0435\u0437 \u043d\u0430 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438\u044f \u0438\u043c\u043e\u0442."
@@ -3204,7 +3326,13 @@ export default function GeologyReportPage() {
 
             <div style={styles.note}>
               <strong>{"\u041d\u0430\u0434\u0435\u0436\u0434\u043d\u043e\u0441\u0442:"}</strong>{" "}
-              {professional?.basinCode === "BG4"
+              {professional?.basinCode === "BG1"
+                ? (
+                    data.geology?.unit
+                      ? "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u043f\u0440\u043e\u0444\u0438\u043b \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e\u0442\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e \u043e\u0442 \u0411\u0430\u0441\u0435\u0439\u043d\u043e\u0432\u0430 \u0434\u0438\u0440\u0435\u043a\u0446\u0438\u044f \u201e\u0414\u0443\u043d\u0430\u0432\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d\u201c."
+                      : "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u0435\u043d \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d \u043f\u0440\u043e\u0444\u0438\u043b \u0437\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u043e\u0442\u043e \u041f\u0412\u0422."
+                  )
+                : professional?.basinCode === "BG4"
                 ? (
                     data.geology?.unit
                       ? "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u043f\u0440\u043e\u0444\u0438\u043b \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e\u0442\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e; \u043d\u0435 \u0435 \u043b\u043e\u043a\u0430\u043b\u0435\u043d \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0440\u0430\u0437\u0440\u0435\u0437 \u043d\u0430 \u0438\u043c\u043e\u0442\u0430."
@@ -3242,7 +3370,76 @@ export default function GeologyReportPage() {
             Какво може да излиза от отвора
           </h2>
 
-          <div style={styles.materialDetailGrid}>
+          {/* BG1_DIRECT_MATERIAL_RENDER */}
+          {professional?.basinCode === "BG1" ? (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fit,minmax(280px,1fr))",
+                gap: 15,
+                width: "100%",
+                marginTop: 12,
+              }}
+            >
+              <div
+                style={{
+                  padding: 16,
+                  background: "#f7f5ef",
+                  border: "1px solid #e3ded0",
+                  borderRadius: 8,
+                  color: "#18363d",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 20,
+                    fontWeight: 900,
+                    marginBottom: 8,
+                  }}
+                >
+                  {drillingMaterials.title}
+                </div>
+
+                <div
+                  style={{
+                    lineHeight: 1.55,
+                  }}
+                >
+                  {drillingMaterials.details}
+                </div>
+              </div>
+
+              <div
+                style={{
+                  padding: 16,
+                  background: "#eef6f2",
+                  borderRadius: 8,
+                  borderLeft: "4px solid #0b6b43",
+                  color: "#18363d",
+                }}
+              >
+                <strong>
+                  {"\u041f\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u043f\u0440\u0438 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435"}
+                </strong>
+
+                <div
+                  style={{
+                    marginTop: 7,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  {drillingMaterials.behavior}
+                </div>
+              </div>
+            </div>
+          ) : (
+          <div
+            style={{
+              ...styles.materialDetailGrid,
+              color: "#18363d",
+            }}
+          >
             <div style={styles.materialDetailMain}>
               <div style={styles.materialDetailTitle}>
                 {drillingMaterials.title}
@@ -3263,6 +3460,8 @@ export default function GeologyReportPage() {
               </div>
             </div>
           </div>
+
+          )}
 
           <div style={styles.interpretationBadge}>
             <strong>
@@ -3291,7 +3490,56 @@ export default function GeologyReportPage() {
             Какво означава това за сондирането
           </h2>
 
-          <div style={styles.recommendGrid}>
+          {/* BG1_DIRECT_PRACTICAL_RENDER */}
+          {professional?.basinCode === "BG1" ? (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fit,minmax(240px,1fr))",
+                gap: 12,
+                width: "100%",
+                marginTop: 12,
+                color: "#18363d",
+              }}
+            >
+              <div style={styles.recommendItem}>
+                <strong>
+                  {"\u041a\u0430\u043a\u0432\u043e \u0434\u0430 \u0441\u0435 \u043e\u0447\u0430\u043a\u0432\u0430"}
+                </strong>
+
+                <span>
+                  {"\u041f\u0440\u043e\u0431\u0438\u0432\u0430\u043d\u0435\u0442\u043e \u043c\u043e\u0436\u0435 \u0434\u0430 \u0435 \u043d\u0435\u0440\u0430\u0432\u043d\u043e\u043c\u0435\u0440\u043d\u043e: \u0437\u0434\u0440\u0430\u0432\u0430 \u0441\u043a\u0430\u043b\u0430 \u043c\u043e\u0436\u0435 \u0440\u044f\u0437\u043a\u043e \u0434\u0430 \u043f\u0440\u0435\u043c\u0438\u043d\u0435 \u0432 \u0441\u0438\u043b\u043d\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d \u0443\u0447\u0430\u0441\u0442\u044a\u043a \u0438\u043b\u0438 \u043a\u0443\u0445\u0438\u043d\u0430."}
+                </span>
+              </div>
+
+              <div style={styles.recommendItem}>
+                <strong>
+                  {"\u041f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0440\u0438\u0441\u043a"}
+                </strong>
+
+                <span>
+                  {"\u0412\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u0441\u0430 \u0432\u043d\u0435\u0437\u0430\u043f\u043d\u0438 \u043f\u0440\u043e\u043c\u0435\u043d\u0438 \u0432 \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u0442\u0430 \u043d\u0430 \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u043d\u0435, \u043d\u0435\u0441\u0442\u0430\u0431\u0438\u043b\u043d\u0438 \u0437\u043e\u043d\u0438 \u0438 \u0440\u044f\u0437\u043a\u0430 \u043f\u043e\u044f\u0432\u0430 \u043d\u0430 \u0432\u043e\u0434\u043e\u043f\u0440\u0438\u0442\u043e\u043a. \u0412\u043e\u0434\u0430\u0442\u0430 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0435 \u0441\u044a\u0441\u0440\u0435\u0434\u043e\u0442\u043e\u0447\u0435\u043d\u0430 \u0432 \u043e\u0442\u0434\u0435\u043b\u043d\u0438 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438 \u0438 \u043a\u0443\u0445\u0438\u043d\u0438, \u0430 \u043d\u0435 \u0440\u0430\u0432\u043d\u043e\u043c\u0435\u0440\u043d\u043e \u043f\u043e \u0446\u0435\u043b\u0438\u044f \u0440\u0430\u0437\u0440\u0435\u0437."}
+                </span>
+              </div>
+
+              <div style={styles.recommendItem}>
+                <strong>
+                  {"\u0421\u043b\u0435\u0434\u0432\u0430\u0449\u0430 \u0440\u0430\u0437\u0443\u043c\u043d\u0430 \u0441\u0442\u044a\u043f\u043a\u0430"}
+                </strong>
+
+                <span>
+                  {"\u0422\u0435\u0440\u0435\u043d\u043d\u043e \u0433\u0435\u043e\u0444\u0438\u0437\u0438\u0447\u043d\u043e \u043f\u0440\u043e\u0443\u0447\u0432\u0430\u043d\u0435 \u0437\u0430 \u043b\u043e\u043a\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u043d\u0435 \u043d\u0430 \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438\u0442\u0435 \u0438 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0438\u0442\u0435 \u0437\u043e\u043d\u0438 \u043f\u0440\u0435\u0434\u0438 \u0438\u0437\u0431\u043e\u0440 \u043d\u0430 \u0442\u043e\u0447\u043d\u0430 \u0441\u043e\u043d\u0434\u0430\u0436\u043d\u0430 \u0442\u043e\u0447\u043a\u0430 \u0438 \u0446\u0435\u043b\u0435\u0432\u0430 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430."}
+                </span>
+              </div>
+            </div>
+          ) : (
+          <div
+            style={{
+              ...styles.recommendGrid,
+              color: "#18363d",
+            }}
+          >
             <div style={styles.recommendItem}>
               <strong>
                 Вероятна среда
@@ -3330,7 +3578,8 @@ export default function GeologyReportPage() {
                 развитие по дълбочина.
               </span>
             </div>
-          </div>
+          </div>          )}
+
         </section>
 
 
@@ -3741,6 +3990,17 @@ export default function GeologyReportPage() {
           </h2>
 
           <div style={styles.recommendGrid}>
+
+            <div style={styles.recommendItem}>
+              <strong>
+                {"\u041e\u0431\u0449\u043e \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u043d\u0438 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u044f \u0434\u043e 5 km"}
+              </strong>
+
+              <span>
+                {professional.ordinaryCount5Km ?? 0}
+              </span>
+            </div>
+
             <div style={styles.recommendItem}>
               <strong>
                 Регистрирани дълбочини до 5 km
@@ -3822,7 +4082,21 @@ export default function GeologyReportPage() {
             </div>
           </div>
 
-          <div style={styles.warning}>
+                    {professional.ordinaryCount5Km > 0 &&
+          professional.depthCount === 0 &&
+          professional.staticCount === 0 ? (
+            <div
+              style={{
+                ...styles.note,
+                marginTop: 12,
+                color: "#18363d",
+              }}
+            >
+              {"\u0412 \u0440\u0430\u0434\u0438\u0443\u0441 \u0434\u043e 5 km \u0438\u043c\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u043d\u043e \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435, \u043d\u043e \u0437\u0430 \u043d\u0435\u0433\u043e \u0432 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438\u044f \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u044f\u043c\u0430 \u043f\u043e\u0441\u043e\u0447\u0435\u043d\u0438 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430 \u0438 \u0441\u0442\u0430\u0442\u0438\u0447\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u043d\u0438\u0432\u043e. \u041d\u0443\u043b\u0430\u0442\u0430 \u043f\u043e-\u0433\u043e\u0440\u0435 \u043e\u0437\u043d\u0430\u0447\u0430\u0432\u0430 \u043b\u0438\u043f\u0441\u0430 \u043d\u0430 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438 \u0438\u0437\u043c\u0435\u0440\u0432\u0430\u043d\u0438\u044f, \u0430 \u043d\u0435 \u043b\u0438\u043f\u0441\u0430 \u043d\u0430 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435."}
+            </div>
+          ) : null}
+
+<div style={styles.warning}>
             Статичното водно ниво е установеното ниво на
             водата в съществуващо съоръжение. То не е
             гарантирана дълбочина до първата вода.
@@ -3994,7 +4268,7 @@ export default function GeologyReportPage() {
                         : "10px 0 0",
                   }}
                 >
-                  ? {item}
+                  {"\u2022 "}{item}
                 </p>
               )
             )}

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getGwbProfile } from "@/lib/gwb-profile";
 import { getSpatialProfile } from "@/lib/spatial-profile";
+import { resolveGroundwaterBodiesAtPoint } from "@/lib/gwb-spatial-resolver";
 
 export async function GET(request: Request) {
   try {
@@ -13,7 +14,7 @@ export async function GET(request: Request) {
       url.searchParams.get("lng") ??
       url.searchParams.get("lon");
 
-    const gwb =
+    const requestedGwb =
       String(
         url.searchParams.get("gwb") || ""
       )
@@ -43,6 +44,29 @@ export async function GET(request: Request) {
         lng
       );
 
+    const resolvedGroundwaterBodies =
+      resolveGroundwaterBodiesAtPoint(
+        Number(lat),
+        Number(lng)
+      );
+
+    const spatialGwbCodes = new Set(
+      resolvedGroundwaterBodies.map(
+        (item) => item.code
+      )
+    );
+
+    const validatedRequestedGwb =
+      requestedGwb &&
+      spatialGwbCodes.has(requestedGwb)
+        ? requestedGwb
+        : "";
+
+    const gwb =
+      validatedRequestedGwb ||
+      resolvedGroundwaterBodies[0]?.code ||
+      "";
+
     const profile =
       gwb
         ? getGwbProfile(gwb)
@@ -55,6 +79,12 @@ export async function GET(request: Request) {
         lng: Number(lng),
       },
       gwb: gwb || null,
+      gwbs: resolvedGroundwaterBodies.map(
+        (item) => item.code
+      ),
+      requestedGwb: requestedGwb || null,
+      requestedGwbAccepted:
+        Boolean(validatedRequestedGwb),
       profile,
       spatial,
     });
