@@ -8005,6 +8005,38 @@ async function loadFaults(){
 
     layer.addTo(faultsLayer);
 
+    /*
+      MOBILE_GEM_TOUCH_TARGET_START
+
+      On phones the visible GEM fault line remains unchanged.
+      A nearly invisible, wider interactive copy is added only
+      to make touch selection reliable.
+    */
+    if (window.innerWidth <= 700) {
+      const mobileGemTouchLayer = L.geoJSON(bgFc, {
+        pane: gemFaultPaneName,
+
+        style: () => ({
+          color: "#7a2f19",
+          weight: 20,
+          opacity: 0.001,
+          interactive: true
+        }),
+
+        onEachFeature: (feature, touchLayer) => {
+          touchLayer.bindPopup(
+            buildGemFaultPopup(feature),
+            {
+              maxWidth: 350
+            }
+          );
+        }
+      });
+
+      mobileGemTouchLayer.addTo(faultsLayer);
+    }
+    /* MOBILE_GEM_TOUCH_TARGET_END */
+
     faultsLoaded = true;
 
     setLayerStatus(
