@@ -8308,16 +8308,7 @@ data.features.forEach((f,featureIndex)=>{
    <button class="analysis-btn" onclick="analyzeFeature(${featureIndex})">
      Анализирай точката
    </button>
-
-   ${sondiProTeaserHtml(
-     sondiProUrlForPopup(f),
-     [
-       "\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u0441 \u0438\u0437\u0431\u0440\u0430\u043d\u0438\u044f \u0438\u043c\u043e\u0442",
-       "\u0410\u043d\u0430\u043b\u043e\u0433 \u0437\u0430 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430",
-       "\u0412\u0440\u044a\u0437\u043a\u0430 \u0441 \u0433\u0435\u043e\u043b\u043e\u0433\u0438\u044f\u0442\u0430",
-       "\u041f\u0440\u043e\u0444\u0435\u0441\u0438\u043e\u043d\u0430\u043b\u043d\u0430 \u0438\u043d\u0442\u0435\u0440\u043f\u0440\u0435\u0442\u0430\u0446\u0438\u044f"
-     ]
-   )}`
+`
  );
  markers.push({marker:m,p,text:Object.values(p).join(' ').toLowerCase(),layer:categoryLayer(p.display_category)});
 });
