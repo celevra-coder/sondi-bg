@@ -4771,7 +4771,8 @@ async function loadEastAegeanGroundwaterWells() {
 
     const canvasRenderer =
       L.canvas({
-        padding: 0.5
+        padding: 0.5,
+        tolerance: 10
       });
 
     const facilitiesLayer = L.geoJSON(
@@ -4956,7 +4957,8 @@ async function loadOrdinaryGroundwaterWells() {
     }
 
     const canvasRenderer = L.canvas({
-      padding: 0.5
+      padding: 0.5,
+        tolerance: 10
     });
 
     const ordinaryLayer = L.geoJSON(ordinaryData, {
@@ -5095,7 +5097,8 @@ async function loadWesternAegeanGroundwaterWells() {
     }
 
     const canvasRenderer = L.canvas({
-      padding: 0.5
+      padding: 0.5,
+        tolerance: 10
     });
 
     const facilitiesLayer = L.geoJSON(
@@ -5244,7 +5247,8 @@ async function loadDanubeGroundwaterWells() {
 
     const canvasRenderer =
       L.canvas({
-        padding: 0.5
+        padding: 0.5,
+        tolerance: 10
       });
 
     const facilitiesLayer =
