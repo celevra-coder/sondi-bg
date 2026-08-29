@@ -14844,12 +14844,33 @@ document
 <script src="/geology-map/geology-ai-multibatch.js"></script>
 <script>
 
+/* MOBILE_PANEL_HISTORY_START */
+
+let mobilePanelHistoryActive = false;
+
 function openMobilePanel(){
   const panel = document.querySelector('.panel');
   if (!panel) return;
 
   if (window.innerWidth <= 700) {
+
+    if (
+      !mobilePanelHistoryActive
+    ) {
+      history.pushState(
+        {
+          ...(history.state || {}),
+          sondiMobilePanel: true
+        },
+        "",
+        window.location.href
+      );
+
+      mobilePanelHistoryActive = true;
+    }
+
     panel.classList.add('mobile-open');
+
   } else {
     panel.style.display = 'block';
   }
@@ -14860,11 +14881,235 @@ function closeMobilePanel(){
   if (!panel) return;
 
   if (window.innerWidth <= 700) {
+
     panel.classList.remove('mobile-open');
+
+    /*
+      If this panel created the current history entry,
+      consume only that artificial entry.
+    */
+    if (
+      mobilePanelHistoryActive &&
+      history.state &&
+      history.state.sondiMobilePanel === true
+    ) {
+      mobilePanelHistoryActive = false;
+      history.back();
+    }
+
   } else {
     panel.style.display = 'none';
   }
 }
+
+window.addEventListener(
+  "popstate",
+  function () {
+
+    if (window.innerWidth > 700) {
+      return;
+    }
+
+    const panel =
+      document.querySelector(".panel");
+
+    if (
+      panel &&
+      panel.classList.contains(
+        "mobile-open"
+      )
+    ) {
+      mobilePanelHistoryActive = false;
+
+      panel.classList.remove(
+        "mobile-open"
+      );
+
+      if (
+        typeof map !== "undefined"
+      ) {
+        setTimeout(function () {
+          map.invalidateSize();
+        }, 80);
+      }
+    }
+  }
+);
+
+/* MOBILE_PANEL_HISTORY_END */
+
+
+/* MOBILE_PULL_REFRESH_START */
+
+(function () {
+
+  let tracking = false;
+  let startY = 0;
+  let currentY = 0;
+  let mapDraggingWasEnabled = false;
+
+  function resetPullRefresh() {
+
+    tracking = false;
+    startY = 0;
+    currentY = 0;
+
+    if (
+      typeof map !== "undefined" &&
+      mapDraggingWasEnabled &&
+      map.dragging
+    ) {
+      map.dragging.enable();
+    }
+
+    mapDraggingWasEnabled = false;
+  }
+
+  function setupMobilePullRefresh() {
+
+    const mapElement =
+      document.getElementById("map");
+
+    if (
+      !mapElement ||
+      mapElement.dataset.pullRefreshReady === "1"
+    ) {
+      return;
+    }
+
+    mapElement.dataset.pullRefreshReady = "1";
+
+    mapElement.addEventListener(
+      "touchstart",
+      function (event) {
+
+        if (
+          window.innerWidth > 700 ||
+          !event.touches ||
+          event.touches.length !== 1
+        ) {
+          return;
+        }
+
+        const panel =
+          document.querySelector(".panel");
+
+        if (
+          panel &&
+          panel.classList.contains(
+            "mobile-open"
+          )
+        ) {
+          return;
+        }
+
+        const y =
+          event.touches[0].clientY;
+
+        /*
+          Refresh gesture must begin at the
+          very top of the visible map.
+        */
+        if (y > 42) {
+          return;
+        }
+
+        tracking = true;
+        startY = y;
+        currentY = y;
+
+        if (
+          typeof map !== "undefined" &&
+          map.dragging &&
+          map.dragging.enabled()
+        ) {
+          mapDraggingWasEnabled = true;
+          map.dragging.disable();
+        }
+
+      },
+      {
+        passive: true
+      }
+    );
+
+    mapElement.addEventListener(
+      "touchmove",
+      function (event) {
+
+        if (
+          !tracking ||
+          !event.touches ||
+          event.touches.length !== 1
+        ) {
+          return;
+        }
+
+        currentY =
+          event.touches[0].clientY;
+
+        const distance =
+          currentY - startY;
+
+        if (distance > 0) {
+          event.preventDefault();
+        }
+
+      },
+      {
+        passive: false
+      }
+    );
+
+    mapElement.addEventListener(
+      "touchend",
+      function () {
+
+        if (!tracking) {
+          return;
+        }
+
+        const distance =
+          currentY - startY;
+
+        resetPullRefresh();
+
+        /*
+          Deliberate downward pull from
+          the top edge reloads the map.
+        */
+        if (distance >= 110) {
+          window.location.reload();
+        }
+      },
+      {
+        passive: true
+      }
+    );
+
+    mapElement.addEventListener(
+      "touchcancel",
+      resetPullRefresh,
+      {
+        passive: true
+      }
+    );
+  }
+
+  if (
+    document.readyState === "loading"
+  ) {
+    document.addEventListener(
+      "DOMContentLoaded",
+      setupMobilePullRefresh
+    );
+  } else {
+    setupMobilePullRefresh();
+  }
+
+})();
+
+/* MOBILE_PULL_REFRESH_END */
 
 
 function closeMobilePanelAfterMapAction(delay = 180){
