@@ -1076,20 +1076,48 @@ userLocationControl.onAdd = function() {
           userLocationMarker
             .bindPopup(
               '<strong>\u041c\u043e\u044f\u0442\u0430 \u043b\u043e\u043a\u0430\u0446\u0438\u044f</strong>' +
-              accuracyText
+              accuracyText +
+              '<br><button type="button" class="analysis-btn" ' +
+              'style="margin-top:8px;width:100%" ' +
+              'onclick="startLocationAnalysis(' +
+              latitude +
+              ',' +
+              longitude +
+              ',\'\u041c\u043e\u044f\u0442\u0430 \u043b\u043e\u043a\u0430\u0446\u0438\u044f\')">' +
+              '\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u0439 \u0442\u043e\u0447\u043a\u0430' +
+              '</button>'
             )
             .openPopup();
 
-          map.setView(
-            latlng,
-            Math.max(
-              map.getZoom(),
-              15
-            ),
-            {
-              animate: true
-            }
-          );
+          if (
+            window.innerWidth <= 700 &&
+            typeof closeMobilePanel === 'function'
+          ) {
+            closeMobilePanel();
+
+            setTimeout(function() {
+              map.invalidateSize();
+
+              map.setView(
+                latlng,
+                17,
+                {
+                  animate: true
+                }
+              );
+            }, 180);
+          } else {
+            map.setView(
+              latlng,
+              Math.max(
+                map.getZoom(),
+                15
+              ),
+              {
+                animate: true
+              }
+            );
+          }
         },
         function(error) {
           button.disabled = false;
