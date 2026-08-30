@@ -1325,7 +1325,7 @@ export default async function ProPage({
             : String(section5?.goal_category ?? "")
         )
       : String(section5?.goal_category ?? ""));
-
+ 
   const section5GoalTone =
     section5GoalCategory === "goal_achieved" ||
     section5GoalCategory === "maintain_good_status"
@@ -1352,7 +1352,7 @@ export default async function ProPage({
         )
       : section5?.goal_label_bg ??
         "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0446\u0435\u043b");
-
+ 
   const section5ProblemIndicators =
     isDanubeGwb
       ? (
@@ -1367,7 +1367,7 @@ export default async function ProPage({
         )
       : section5?.purb3?.parameters_outside_standard ??
         "\u041d\u044f\u043c\u0430 \u043f\u043e\u0441\u043e\u0447\u0435\u043d\u0438");
-
+ 
   const section5GoalSummary =
     isDanubeGwb
       ? (
@@ -1408,7 +1408,7 @@ export default async function ProPage({
                 : section5GoalCategory === "maintain_good_status"
                   ? "\u0425\u0438\u043c\u0438\u0447\u043d\u043e\u0442\u043e \u0438 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043e\u0442\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0441\u0430 \u043e\u0446\u0435\u043d\u0435\u043d\u0438 \u043a\u0430\u0442\u043e \u0434\u043e\u0431\u0440\u0438. \u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0446\u0435\u043b \u0435 \u0437\u0430\u043f\u0430\u0437\u0432\u0430\u043d\u0435 \u043d\u0430 \u0434\u043e\u0431\u0440\u043e\u0442\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435."
                   : "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0435\u043a\u043e\u043b\u043e\u0433\u0438\u0447\u043d\u0430 \u0446\u0435\u043b.");
-
+ 
   const comparison =
     section4?.comparison;
 
@@ -2052,6 +2052,11 @@ export default async function ProPage({
     abstraction?.exploitation_index;
 
   const pollutants =
+    (
+      isDanubeGwb && danubeProblemIndicator
+        ? danubeProblemIndicator
+        : null
+    ) ??
     section4?.pollutants ??
     blackSeaSection2Chemical?.parameters_and_impact ??
     blackSeaDetailed
@@ -2075,6 +2080,12 @@ export default async function ProPage({
       maximumFractionDigits,
     });
   };
+
+  const chemicalIndicatorDisplay =
+    String(pollutants)
+      .replace(/\bPO4\b/gi, "\u0444\u043e\u0441\u0444\u0430\u0442\u0438 (PO\u2084)")
+      .replace(/\bNO3\b/gi, "\u043d\u0438\u0442\u0440\u0430\u0442\u0438 (NO\u2083)")
+      .replace(/\bSO4\b/gi, "\u0441\u0443\u043b\u0444\u0430\u0442\u0438 (SO\u2084)");
 
   const chemicalIsBad =
     String(chemical).toLowerCase() === "лошо";
@@ -2115,9 +2126,7 @@ export default async function ProPage({
           (
             String(pollutants) !==
             "Няма посочени"
-              ? `. Посочени проблемни показатели: ${String(
-                  pollutants
-                )}.`
+              ? `. \u041f\u0440\u0438\u0447\u0438\u043d\u0430 \u0441\u043f\u043e\u0440\u0435\u0434 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u043e\u0446\u0435\u043d\u043a\u0430: \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b \u0441 \u043e\u0442\u043a\u043b\u043e\u043d\u0435\u043d\u0438\u0435: ${chemicalIndicatorDisplay}.`
               : "."
           )
         )
@@ -3299,7 +3308,7 @@ export default async function ProPage({
                 Няма налични официални геоложки данни.
               </div>
             )}
-
+          
             {blackSeaGis?.isInsideProtectionZone && (
               <div style={{
                 marginTop: 16,
@@ -4142,7 +4151,7 @@ export default async function ProPage({
                 ) : null}
               </div>
             </details>
-
+          
             {blackSeaSection3 ? (
               <section style={{
                 marginTop: 14,
@@ -4603,13 +4612,25 @@ export default async function ProPage({
                   : section4
                     ? exceedances.length > 0
                       ? "Има данни за проблем с качеството"
-                      : "Няма установени превишения"
+                      : chemicalIsBad
+                        ? "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0445\u0438\u043c\u0438\u0447\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0435 \u043b\u043e\u0448\u0430"
+                        : "\u041d\u044f\u043c\u0430 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d\u0438 \u043f\u0440\u0435\u0432\u0438\u0448\u0435\u043d\u0438\u044f"
                     : blackSeaSection2
                       ? "Химичният мониторинг предстои да бъде добавен"
                       : "Няма налични данни от химичен мониторинг"}
               </div>
 
-              {monitoringSummary}
+              {
+                chemicalIsBad &&
+                String(pollutants) !== "\u041d\u044f\u043c\u0430 \u043f\u043e\u0441\u043e\u0447\u0435\u043d\u0438"
+                  ? (
+                      monitoringSummary +
+                      " \u0412 \u043f\u043e\u043a\u0430\u0437\u0430\u043d\u0438\u0442\u0435 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432\u0438 \u0437\u0430\u043f\u0438\u0441\u0438 \u043d\u044f\u043c\u0430 \u043e\u0442\u0434\u0435\u043b\u043d\u043e \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u043e \u0447\u0438\u0441\u043b\u043e\u0432\u043e \u043f\u0440\u0435\u0432\u0438\u0448\u0435\u043d\u0438\u0435, \u043d\u043e \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0437\u0430 \u0446\u044f\u043b\u043e\u0442\u043e \u041f\u0412\u0422 \u043e\u0441\u0442\u0430\u0432\u0430 \u043b\u043e\u0448\u043e \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435. \u041f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b \u0441 \u043e\u0442\u043a\u043b\u043e\u043d\u0435\u043d\u0438\u0435: " +
+                      chemicalIndicatorDisplay +
+                      "."
+                    )
+                  : monitoringSummary
+              }
             </div>
 
             <div style={{
@@ -4866,7 +4887,7 @@ export default async function ProPage({
                 </section>
               </div>
             </details>
-
+          
             {blackSeaSection4 ? (
               <details style={{
                 marginTop: 12,
@@ -5720,7 +5741,7 @@ export default async function ProPage({
                 Няма налични данни от Раздел 5.
               </div>
             )}
-
+          
             {blackSeaSection3 ? (
               <section style={{
                 marginTop: 14,
@@ -5922,8 +5943,7 @@ export default async function ProPage({
                     />
                   </div>
                 </div>
-
-                {spatial.nearestWell && (
+{spatial.nearestWell && (
                   <div style={{
                     marginTop: 14,
                     padding: 14,
@@ -6802,22 +6822,7 @@ export default async function ProPage({
                   </div>
                 </details>
 
-                <Link
-                  href={`/geology/report?lat=${encodeURIComponent(lat!)}&lon=${encodeURIComponent(lng!)}&gwb=${encodeURIComponent(profile.gwbCode)}${groundwaterCodes.length > 1 ? `&gwbs=${encodeURIComponent(groundwaterCodes.filter((code) => code !== profile.gwbCode.toUpperCase()).join(","))}` : ""}`}
-                  style={{
-                    display: "block",
-                    marginTop: 12,
-                    padding: "12px 14px",
-                    borderRadius: 10,
-                    background: "#173f32",
-                    color: "#ffffff",
-                    textDecoration: "none",
-                    textAlign: "center",
-                    fontWeight: 800,
-                  }}
-                >
-                  Отвори препоръките за сондиране →
-                </Link>
+                
               </>
             ) : (
               <div style={{
@@ -6849,6 +6854,8 @@ export default async function ProPage({
               </div>
             )}
           </Card>
+
+
 
           <Card
             title="12. Професионално заключение"
@@ -6960,6 +6967,244 @@ export default async function ProPage({
               информация и не замества проучване на място.
             </div>
           </Card>
+
+          {lat && lng && (
+            <Card
+              title={""}
+              knowledgeHref="/knowledge"
+            >
+              <div
+                style={{
+                  position: "relative",
+                  height: "100%",
+                  minHeight: 620,
+                  margin: -20,
+                  overflow: "hidden",
+                  borderRadius: 18,
+                  background:
+                    "linear-gradient(180deg,#dceee8 0%,#edf5f2 62%,#d6c092 62%,#b89a68 100%)",
+                }}
+              >
+                <svg
+                  viewBox="0 0 420 360"
+                  width="100%"
+                  height="100%"
+                  role="img"
+                  aria-label={"\u0421\u043e\u043d\u0434\u0430\u0436\u043d\u0430 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430"}
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                >
+                  <rect
+                    x="0"
+                    y="0"
+                    width="420"
+                    height="225"
+                    fill="#dceee8"
+                  />
+
+                  <rect
+                    x="0"
+                    y="225"
+                    width="420"
+                    height="135"
+                    fill="#c5aa78"
+                  />
+
+                  <path
+                    d="M0 250 C90 225,170 270,260 240 C330 217,380 230,420 220 L420 360 L0 360 Z"
+                    fill="#ad8b57"
+                  />
+
+                  <rect
+                    x="65"
+                    y="195"
+                    width="190"
+                    height="42"
+                    rx="8"
+                    fill="#23483e"
+                  />
+
+                  <rect
+                    x="87"
+                    y="151"
+                    width="74"
+                    height="46"
+                    rx="5"
+                    fill="#3f7b69"
+                  />
+
+                  <rect
+                    x="101"
+                    y="163"
+                    width="25"
+                    height="14"
+                    rx="3"
+                    fill="#d9eee7"
+                  />
+
+                  <circle
+                    cx="100"
+                    cy="244"
+                    r="25"
+                    fill="#273b37"
+                  />
+
+                  <circle
+                    cx="218"
+                    cy="244"
+                    r="25"
+                    fill="#273b37"
+                  />
+
+                  <circle
+                    cx="100"
+                    cy="244"
+                    r="11"
+                    fill="#647872"
+                  />
+
+                  <circle
+                    cx="218"
+                    cy="244"
+                    r="11"
+                    fill="#647872"
+                  />
+
+                  <line
+                    x1="180"
+                    y1="195"
+                    x2="260"
+                    y2="55"
+                    stroke="#173f32"
+                    strokeWidth="11"
+                  />
+
+                  <line
+                    x1="260"
+                    y1="55"
+                    x2="302"
+                    y2="195"
+                    stroke="#173f32"
+                    strokeWidth="11"
+                  />
+
+                  <line
+                    x1="260"
+                    y1="55"
+                    x2="260"
+                    y2="305"
+                    stroke="#536e65"
+                    strokeWidth="5"
+                  />
+
+                  <line
+                    x1="260"
+                    y1="305"
+                    x2="260"
+                    y2="360"
+                    stroke="#173f32"
+                    strokeWidth="7"
+                  />
+
+                  <path
+                    d="M249 305 L271 305 L260 327 Z"
+                    fill="#173f32"
+                  />
+
+                  <circle
+                    cx="340"
+                    cy="58"
+                    r="26"
+                    fill="#f4d37a"
+                    opacity="0.9"
+                  />
+                </svg>
+
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(180deg,rgba(8,35,29,.08) 0%,rgba(8,35,29,.18) 40%,rgba(8,35,29,.80) 100%)",
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: "absolute",
+                    left: 22,
+                    right: 22,
+                    bottom: 22,
+                    zIndex: 2,
+                  }}
+                >
+                  <div
+                    style={{
+                      color: "#ffffff",
+                      fontSize: 23,
+                      lineHeight: 1.15,
+                      fontWeight: 900,
+                      marginBottom: 8,
+                      textShadow:
+                        "0 2px 8px rgba(0,0,0,.28)",
+                    }}
+                  >
+                    {"\u041f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438 \u0437\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435"}
+                  </div>
+
+                  <div
+                    style={{
+                      color: "rgba(255,255,255,.88)",
+                      fontSize: 13,
+                      lineHeight: 1.5,
+                      marginBottom: 14,
+                      maxWidth: 360,
+                    }}
+                  >
+                    {"\u0414\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430, \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0441\u0440\u0435\u0434\u0430, \u043a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044f \u0438 \u0440\u0438\u0441\u043a\u043e\u0432\u0435 \u0437\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430."}
+                  </div>
+
+                  <Link
+                    href={`/geology/report?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lng)}&gwb=${encodeURIComponent(profile.gwbCode)}${groundwaterCodes.length > 1 ? `&gwbs=${encodeURIComponent(
+                  groundwaterCodes
+                    .filter(
+                      (code) =>
+                        code !==
+                        profile.gwbCode.toUpperCase()
+                    )
+                    .join(",")
+                )}` : ""}`}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "100%",
+                      minHeight: 52,
+                      padding: "14px 18px",
+                      borderRadius: 12,
+                      background: "#ffffff",
+                      color: "#173f32",
+                      textDecoration: "none",
+                      textAlign: "center",
+                      fontSize: 15,
+                      fontWeight: 900,
+                      boxShadow:
+                        "0 8px 22px rgba(0,0,0,.18)",
+                    }}
+                  >
+                    {"\u0412\u0438\u0436 \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438\u0442\u0435 \u0437\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435 \u2192"}
+                  </Link>
+                </div>
+              </div>
+            </Card>
+          )}
+
         </div>
 
         <div style={{
