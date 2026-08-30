@@ -3065,30 +3065,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35200203967",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 6.3,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 120
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           24.830625,
           42.537867
         ]
@@ -3839,7 +3815,7 @@
         "type": "Point",
         "coordinates": [
           24.580047,
-          42.016978
+          42.716978
         ]
       },
       "properties": {
@@ -3855,7 +3831,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 149
+        "source_row": 149,
+        "coordinate_note": "SONDI-derived coordinate correction: latitude digit error 42.016978 -> 42.716978; validated against registered BG3 GWB."
       }
     },
     {
@@ -5956,7 +5933,7 @@
         "type": "Point",
         "coordinates": [
           25.539558,
-          41.578264
+          42.578264
         ]
       },
       "properties": {
@@ -5973,7 +5950,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 230
+        "source_row": 230,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -7524,32 +7502,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 291
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.566083,
-          42.051225
-        ]
-      },
-      "properties": {
-        "registration_number": "35200302118",
-        "district": "Стара Загора",
-        "municipality": "Мъглиж",
-        "settlement": "с. Тулово",
-        "groundwater_body_code": "BG3G00000NQ003",
-        "facility_type": "Шахтов кладенец",
-        "display_category": "Шахтов кладенец",
-        "category": "shaft_well",
-        "depth_m": 11.0,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 292
       }
     },
     {
@@ -9876,33 +9828,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35200303969",
-        "district": "Стара Загора",
-        "municipality": "Казанлък",
-        "settlement": "с. Копринка",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 15.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 385
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           25.381944,
           42.592958
         ]
@@ -10076,33 +10001,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 392
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.420417,
-          41.711583
-        ]
-      },
-      "properties": {
-        "registration_number": "35200304195",
-        "district": "Стара Загора",
-        "municipality": "Казанлък",
-        "settlement": "гр. Казанлък",
-        "groundwater_body_code": "BG3G00000NQ003",
-        "facility_type": "Тръбен кладенец",
-        "display_category": "Обикновен сондаж",
-        "category": "ordinary_borehole",
-        "depth_m": 83.0,
-        "static_water_level_m": 8.88,
-        "facility_status": "Необорудвани за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 393
       }
     },
     {
@@ -13704,59 +13602,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35200503970",
-        "district": "Бургас",
-        "municipality": "Сунгурларе",
-        "settlement": "гр. Сунгурларе",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 529
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35200503972",
-        "district": "Бургас",
-        "municipality": "Карнобат",
-        "settlement": "гр. Карнобат",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 25.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 530
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           26.96925,
           42.649389
         ]
@@ -14657,87 +14502,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 565
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35200603974",
-        "district": "София",
-        "municipality": "Ихтиман",
-        "settlement": "с. Боерица",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 11.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 566
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35200603975",
-        "district": "София",
-        "municipality": "Ихтиман",
-        "settlement": "с. Боерица",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 16.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 567
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35200603977",
-        "district": "София",
-        "municipality": "Ихтиман",
-        "settlement": "с. Борика",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 8.1,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 568
       }
     },
     {
@@ -23288,60 +23052,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35200903979",
-        "district": "Хасково",
-        "municipality": "Минерални бани",
-        "settlement": "с. Татарево",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 11.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 901
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35200903980",
-        "district": "Хасково",
-        "municipality": "Димитровград",
-        "settlement": "с. Горски извор",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 10.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 902
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           25.514806,
           41.928694
         ]
@@ -23362,33 +23072,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 903
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35200903982",
-        "district": "Хасково",
-        "municipality": "Стамболово",
-        "settlement": "с. Стамболово",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 54.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 904
       }
     },
     {
@@ -26887,7 +26570,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.783611,
+          25.783611,
           42.404194
         ]
       },
@@ -26904,7 +26587,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 1039
+        "source_row": 1039,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -31092,33 +30776,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201203902",
-        "district": "Стара Загора",
-        "municipality": "Стара Загора",
-        "settlement": "с. Калояновец",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 28.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 1203
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           25.667711,
           42.427742
         ]
@@ -31140,33 +30797,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 1204
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201203904",
-        "district": "Стара Загора",
-        "municipality": "Стара Загора",
-        "settlement": "с. Памукчии",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 15.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 1205
       }
     },
     {
@@ -33297,7 +32927,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.734639,
+          25.734639,
           42.442833
         ]
       },
@@ -33317,7 +32947,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 1286
+        "source_row": 1286,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -37304,31 +36935,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.750889,
-          42.490194
-        ]
-      },
-      "properties": {
-        "registration_number": "35201300469",
-        "district": "Пловдив",
-        "municipality": "Пловдив",
-        "settlement": "гр. Пловдив",
-        "groundwater_body_code": "BG3G000000Q013",
-        "facility_type": "Тръбен кладенец",
-        "display_category": "Обикновен сондаж",
-        "category": "ordinary_borehole",
-        "depth_m": 20.0,
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 1438
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           24.75525,
           42.157194
         ]
@@ -41155,7 +40761,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.766494,
+          24.766494,
           42.121861
         ]
       },
@@ -41172,7 +40778,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 1587
+        "source_row": 1587,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -55971,33 +55578,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303905",
-        "district": "Пловдив",
-        "municipality": "Пловдив",
-        "settlement": "гр. Пловдив",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 18.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2158
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           24.737933,
           42.18045
         ]
@@ -56109,114 +55689,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303910",
-        "district": "Пловдив",
-        "municipality": "Асеновград",
-        "settlement": "гр. Асеновград",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 6.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2163
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303911",
-        "district": "Пловдив",
-        "municipality": "Съединение",
-        "settlement": "с. Царимир",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 15.5,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2164
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303912",
-        "district": "Пловдив",
-        "municipality": "Пловдив",
-        "settlement": "гр. Пловдив",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 20.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2165
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303913",
-        "district": "Пловдив",
-        "municipality": "Пловдив",
-        "settlement": "гр. Пловдив",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 17.3,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2166
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           24.786353,
           42.120164
         ]
@@ -56237,33 +55709,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 2167
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303915",
-        "district": "Пловдив",
-        "municipality": "Пловдив",
-        "settlement": "гр. Пловдив",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 22.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2168
       }
     },
     {
@@ -56383,33 +55828,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303920",
-        "district": "Пловдив",
-        "municipality": "Пловдив",
-        "settlement": "гр. Пловдив",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 15.5,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2173
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           24.83425,
           42.116611
         ]
@@ -56431,33 +55849,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 2174
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303922",
-        "district": "Пловдив",
-        "municipality": "Пловдив",
-        "settlement": "гр. Пловдив",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 12.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2175
       }
     },
     {
@@ -56493,32 +55884,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303924",
-        "district": "Пловдив",
-        "municipality": "Първомай",
-        "settlement": "гр. Първомай",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2177
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           25.105956,
           42.153064
         ]
@@ -56540,33 +55905,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 2178
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303926",
-        "district": "Пловдив",
-        "municipality": "Пловдив",
-        "settlement": "гр. Пловдив",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 15.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2179
       }
     },
     {
@@ -56630,33 +55968,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303929",
-        "district": "Пловдив",
-        "municipality": "Родопи",
-        "settlement": "с. Ягодово",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 20.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2182
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           24.210417,
           42.218028
         ]
@@ -56706,54 +56017,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 2184
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303932",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 10.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2185
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303933",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 12.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2186
       }
     },
     {
@@ -56897,54 +56160,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303941",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 8.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2192
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303942",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 20.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2193
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           25.620111,
           42.063583
         ]
@@ -56964,53 +56179,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 2194
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303944",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 28.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2195
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303945",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2196
       }
     },
     {
@@ -57039,57 +56207,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 2197
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303947",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 27.5,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2198
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303948",
-        "district": "Пловдив",
-        "municipality": "Пловдив",
-        "settlement": "гр. Пловдив",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 12.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2199
       }
     },
     {
@@ -57229,84 +56346,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 2204
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303954",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 15.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2205
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303955",
-        "district": "Пловдив",
-        "municipality": "Кричим",
-        "settlement": "гр. Кричим",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 20.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2206
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201303956",
-        "district": "Пловдив",
-        "municipality": "Пловдив",
-        "settlement": "гр. Пловдив",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 12.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2207
       }
     },
     {
@@ -59246,32 +58285,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.382389,
-          42.593472
-        ]
-      },
-      "properties": {
-        "registration_number": "35201304102",
-        "district": "Пловдив",
-        "municipality": "Пловдив",
-        "settlement": "гр. Пловдив",
-        "groundwater_body_code": "BG3G000000Q013",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "1960-1963",
-        "depth_m": 6.0,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2282
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           24.869722,
           42.050333
         ]
@@ -59328,7 +58341,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.8569,
+          24.8569,
           42.117789
         ]
       },
@@ -59345,7 +58358,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2285
+        "source_row": 2285,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -66828,7 +65842,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.236722,
+          25.236722,
           42.090556
         ]
       },
@@ -66847,7 +65861,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2563
+        "source_row": 2563,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -66855,7 +65870,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.237833,
+          25.237833,
           42.089861
         ]
       },
@@ -66874,7 +65889,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2564
+        "source_row": 2564,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -75335,7 +74351,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.646528,
+          24.646528,
           42.154765
         ]
       },
@@ -75353,7 +74369,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2880
+        "source_row": 2880,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -76142,7 +75159,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.648517,
+          24.648517,
           42.193647
         ]
       },
@@ -76160,7 +75177,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2911
+        "source_row": 2911,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -77228,7 +76246,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.235586,
+          25.235586,
           42.101225
         ]
       },
@@ -77246,7 +76264,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 2953
+        "source_row": 2953,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -94569,60 +93588,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201403900",
-        "district": "Ямбол",
-        "municipality": "Тунджа",
-        "settlement": "с. Безмер",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 59.6,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 3588
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201403901",
-        "district": "Ямбол",
-        "municipality": "Тунджа",
-        "settlement": "с. Безмер",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 50.8,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 3589
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           26.261417,
           42.448528
         ]
@@ -98687,7 +97652,7 @@
         "type": "Point",
         "coordinates": [
           26.320278,
-          42.323333
+          42.623333
         ]
       },
       "properties": {
@@ -98703,7 +97668,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 3747
+        "source_row": 3747,
+        "coordinate_note": "SONDI-derived latitude digit correction 42.323333 -> 42.623333; validated against registered BG3 GWB and same-settlement spatial cluster."
       }
     },
     {
@@ -104601,59 +103567,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201703957",
-        "district": "Ямбол",
-        "municipality": "Ямбол",
-        "settlement": "гр. Ямбол",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 6.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 3972
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201703958",
-        "district": "Ямбол",
-        "municipality": "Ямбол",
-        "settlement": "гр. Ямбол",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 3973
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           26.514222,
           42.468472
         ]
@@ -106410,7 +105323,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.079167,
+          25.079167,
           42.355
         ]
       },
@@ -106426,7 +105339,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4040
+        "source_row": 4040,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -106590,7 +105504,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.238889,
+          25.238889,
           42.095833
         ]
       },
@@ -106607,7 +105521,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4047
+        "source_row": 4047,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -108884,7 +107799,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.983222,
+          24.983222,
           42.22275
         ]
       },
@@ -108900,7 +107815,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4138
+        "source_row": 4138,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -110982,7 +109898,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.655783,
+          24.655783,
           42.196824
         ]
       },
@@ -111001,7 +109917,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4220
+        "source_row": 4220,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -113806,7 +112723,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.974972,
+          24.974972,
           42.134444
         ]
       },
@@ -113823,7 +112740,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4333
+        "source_row": 4333,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -115662,7 +114580,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.846556,
+          24.846556,
           42.079444
         ]
       },
@@ -115678,7 +114596,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4408
+        "source_row": 4408,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -117150,60 +116069,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201803983",
-        "district": "Пловдив",
-        "municipality": "Марица",
-        "settlement": "с. Желязно",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 48.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4466
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201803984",
-        "district": "Пловдив",
-        "municipality": "Марица",
-        "settlement": "с. Калековец",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 48.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4467
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           24.545611,
           42.137361
         ]
@@ -117232,135 +116097,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201803986",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 56.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4469
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201803987",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 54.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4470
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201803988",
-        "district": "Хасково",
-        "municipality": "Димитровград",
-        "settlement": "с. Горски извор",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 3.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4471
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201803989",
-        "district": "Пловдив",
-        "municipality": "Родопи",
-        "settlement": "с. Белащица",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 48.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4472
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201803990",
-        "district": "Хасково",
-        "municipality": "Хасково",
-        "settlement": "гр. Хасково",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 50.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4473
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           24.769772,
           42.0969
         ]
@@ -117382,33 +116118,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 4474
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201803992",
-        "district": "Пловдив",
-        "municipality": "Марица",
-        "settlement": "с. Царацово",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 50.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4475
       }
     },
     {
@@ -120120,7 +118829,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.234167,
+          25.234167,
           42.099167
         ]
       },
@@ -120139,7 +118848,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4575
+        "source_row": 4575,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -120147,7 +118857,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.241944,
+          25.241944,
           42.099722
         ]
       },
@@ -120166,7 +118876,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4576
+        "source_row": 4576,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -121027,7 +119738,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.704277,
+          24.704277,
           42.510325
         ]
       },
@@ -121046,7 +119757,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4608
+        "source_row": 4608,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -124243,7 +122955,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.632483,
+          25.632483,
           42.399906
         ]
       },
@@ -124261,7 +122973,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4729
+        "source_row": 4729,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -124764,30 +123477,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 4748
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35201903995",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 140.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4749
       }
     },
     {
@@ -126438,34 +125127,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 4811
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.758789,
-          42.107625
-        ]
-      },
-      "properties": {
-        "registration_number": "35202006540",
-        "district": "Пазарджик",
-        "municipality": "Пещера",
-        "settlement": "гр. Пещера",
-        "groundwater_body_code": "BG3G0000PGN020",
-        "facility_type": "Тръбен кладенец",
-        "display_category": "Обикновен сондаж",
-        "category": "ordinary_borehole",
-        "construction_year": "2016",
-        "depth_m": 84.0,
-        "static_water_level_m": 38.6,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4812
       }
     },
     {
@@ -129793,29 +128454,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35202803994",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4940
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           25.330556,
           41.839944
         ]
@@ -130028,7 +128666,7 @@
         "type": "Point",
         "coordinates": [
           25.525167,
-          42.773222
+          41.773222
         ]
       },
       "properties": {
@@ -130047,7 +128685,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4949
+        "source_row": 4949,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -130353,33 +128992,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 4961
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35202903962",
-        "district": "Пазарджик",
-        "municipality": "Панагюрище",
-        "settlement": "гр. Панагюрище",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 20.0,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 4962
       }
     },
     {
@@ -133037,33 +131649,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.380653,
-          41.744739
-        ]
-      },
-      "properties": {
-        "registration_number": "35203103964",
-        "district": "Бургас",
-        "municipality": "Карнобат",
-        "settlement": "с. Венец",
-        "groundwater_body_code": "BG3G00000PT046",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "03.07.2011",
-        "depth_m": 29.5,
-        "static_water_level_m": 1.67,
-        "facility_status": "Оборудвано за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 5063
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           26.322667,
           42.65475
         ]
@@ -134018,31 +132603,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 5100
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.486222,
-          42.521489
-        ]
-      },
-      "properties": {
-        "registration_number": "35204102521",
-        "district": "Пловдив",
-        "municipality": "Кричим",
-        "settlement": "гр. Кричим",
-        "groundwater_body_code": "BG3G000000Q013",
-        "facility_type": "Шахтов кладенец",
-        "display_category": "Шахтов кладенец",
-        "category": "shaft_well",
-        "depth_m": 9.0,
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 5101
       }
     },
     {
@@ -138032,7 +136592,7 @@
         "type": "Point",
         "coordinates": [
           26.104778,
-          42.498972
+          41.498972
         ]
       },
       "properties": {
@@ -138050,7 +136610,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 5253
+        "source_row": 5253,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -140671,60 +139232,6 @@
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
         "source_row": 5355
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.711389,
-          42.144833
-        ]
-      },
-      "properties": {
-        "registration_number": "35204804666",
-        "district": "Хасково",
-        "municipality": "Свиленград",
-        "settlement": "гр. Свиленград",
-        "groundwater_body_code": "BG3G000000Q048",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "нд",
-        "depth_m": 10.0,
-        "static_water_level_m": 2.5,
-        "facility_status": "Необорудвани за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 5356
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.711389,
-          42.144833
-        ]
-      },
-      "properties": {
-        "registration_number": "35204804667",
-        "district": "Хасково",
-        "municipality": "Свиленград",
-        "settlement": "гр. Свиленград",
-        "groundwater_body_code": "BG3G000000Q048",
-        "display_category": "Друго водовземно съоръжение",
-        "category": "other_groundwater_facility",
-        "construction_year": "нд",
-        "depth_m": 10.0,
-        "static_water_level_m": 3.5,
-        "facility_status": "Необорудвани за експлоатация",
-        "source_region": "Източнобеломорски район",
-        "source_register": "Официален регистър на водовземните съоръжения",
-        "coordinate_accuracy": "Официални географски координати",
-        "source_row": 5357
       }
     },
     {
@@ -144715,7 +143222,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.791069,
+          25.791069,
           41.811606
         ]
       },
@@ -144734,7 +143241,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 5510
+        "source_row": 5510,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -155855,7 +154363,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.902722,
+          25.902722,
           42.74975
         ]
       },
@@ -155872,7 +154380,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 5954
+        "source_row": 5954,
+        "coordinate_note": "SONDI-derived one-degree coordinate correction; validated against same-settlement cluster and registered BG3 GWB polygon."
       }
     },
     {
@@ -159562,7 +158071,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.028894,
+          26.028894,
           42.630103
         ]
       },
@@ -159579,7 +158088,8 @@
         "source_region": "Източнобеломорски район",
         "source_register": "Официален регистър на водовземните съоръжения",
         "coordinate_accuracy": "Официални географски координати",
-        "source_row": 6107
+        "source_row": 6107,
+        "coordinate_note": "SONDI-derived coordinate correction: longitude +2 degrees; validated against same-settlement cluster and registered BG3 GWB."
       }
     },
     {
