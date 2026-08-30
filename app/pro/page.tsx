@@ -1923,9 +1923,8 @@ export default async function ProPage({
   const danubeIsAtRisk =
     isDanubeGwb &&
     (
-      danubeChemicalRiskText.includes("\u0432 \u0440\u0438\u0441\u043a") ||
-      danubeChemicalRiskText == "\u0440\u0438\u0441\u043a" ||
-      danubeChemicalRiskText == "\u0432 \u0440\u0438\u0441\u043a"
+      danubeChemicalRiskText == "\u0432 \u0440\u0438\u0441\u043a" ||
+      danubeChemicalRiskText == "\u0440\u0438\u0441\u043a"
     );
 
   const hasPressureInformation =
@@ -5362,7 +5361,11 @@ export default async function ProPage({
             knowledgeHref="/knowledge/water-quality/water-balance"
             subtitle="Прогнозна промяна на естествения ресурс на подземното водно тяло — PRO."
           >
-            {climate ? (
+            {climate &&
+            (
+              !isDanubeGwb ||
+              climate?.has_published_rows === true
+            ) ? (
               <>
                 <div style={{
                   display: "grid",
