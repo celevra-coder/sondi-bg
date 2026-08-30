@@ -3059,7 +3059,27 @@ export default function GeologyReportPage() {
 
   const selectedInterpretationBodies =
     data.bodies.length > 0
-      ? [data.bodies[0]]
+      ? [
+          professional?.basinCode === "BG1" &&
+          geologyProfile
+            ? {
+                ...data.bodies[0],
+                properties: {
+                  ...(data.bodies[0].properties || {}),
+                  water_type_bg:
+                    geologyProfile.water_type ||
+                    geologyProfile.collector_type ||
+                    data.bodies[0].properties?.water_type_bg ||
+                    "",
+                  gwb_type_name_bg:
+                    geologyProfile.aquifer_type_name ||
+                    geologyProfile.collector_type ||
+                    data.bodies[0].properties?.gwb_type_name_bg ||
+                    "",
+                },
+              }
+            : data.bodies[0],
+        ]
       : [];
 
   const bg1KarstProfile =

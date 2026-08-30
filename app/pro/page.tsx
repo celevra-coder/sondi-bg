@@ -2082,6 +2082,13 @@ export default async function ProPage({
     "???? ?????";
 
   const quantRisk =
+    (
+      isDanubeGwb
+        ? danubeSection2
+            ?.quantitative_risk
+            ?.risk_assessment
+        : undefined
+    ) ??
     section4?.quantitative_risk ??
     (
       isWesternAegeanGwb
@@ -2285,6 +2292,7 @@ export default async function ProPage({
     quantitativeIsAtRisk
       ? "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d \u0440\u0438\u0441\u043a."
       : (
+          quantitativeRiskText === "\u043d\u0435" ||
           quantitativeRiskText.includes("\u043d\u0435 \u0432 \u0440\u0438\u0441\u043a") ||
           quantitativeRiskText.includes("\u043d\u0435 \u0435 \u0432 \u0440\u0438\u0441\u043a")
         )
