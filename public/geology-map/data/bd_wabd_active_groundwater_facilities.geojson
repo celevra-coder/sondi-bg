@@ -2527,7 +2527,7 @@
         "type": "Point",
         "coordinates": [
           23.1695,
-          42.70741667
+          41.70741667
         ]
       },
       "properties": {
@@ -2547,9 +2547,9 @@
         "aquifer_thickness_m": null,
         "coordinate_method": "official_local",
         "national_register_row": null,
-        "latitude_raw": "42°42'26.7\"",
+        "latitude_raw": "41°42'26.7\"",
         "longitude_raw": "23°10'10.2\"",
-        "coordinate_note": null,
+        "coordinate_note": "SONDI-derived correction: latitude degree corrected 42->41 based on same-permit facility cluster (TK-1/TK-2/TK-3), official GWB assignment BG4G000000Q002, and spatial validation.",
         "status": "active",
         "reference_date": "2026-08-04"
       }
@@ -3351,7 +3351,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.11556667,
+          23.11556667,
           41.88909722
         ]
       },
@@ -3373,8 +3373,8 @@
         "coordinate_method": "official_local",
         "national_register_row": null,
         "latitude_raw": "41°53'20,75''",
-        "longitude_raw": "22°06'56.04''",
-        "coordinate_note": null,
+        "longitude_raw": "23°06'56.04''",
+        "coordinate_note": "SONDI-derived correction: one-degree coordinate correction validated by official GWB assignment and unique +/-1 degree spatial match.",
         "status": "active",
         "reference_date": "2026-08-04"
       }
@@ -8565,39 +8565,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          23.67488333,
-          41.29086111
-        ]
-      },
-      "properties": {
-        "permit_number_date": "41590224/26.03.2019",
-        "permit_number": 41590224.0,
-        "canonical_code": "BG4G00000QN006",
-        "holder": "МАРБО 2010 АД",
-        "facility_name": "ТК",
-        "facility_registration": "1251/23.02.2023",
-        "water_use_purpose": "За други цели",
-        "mean_discharge_lps": 0.001,
-        "max_discharge_lps": 2.0,
-        "daily_authorized_volume_m3": null,
-        "annual_authorized_volume_m3": 300.0,
-        "hydraulic_conductivity_m_day": null,
-        "transmissivity_m2_day": null,
-        "aquifer_thickness_m": null,
-        "coordinate_method": "official_local",
-        "national_register_row": null,
-        "latitude_raw": "41°17'27.1\"",
-        "longitude_raw": "23°40'29.58\"",
-        "coordinate_note": null,
-        "status": "active",
-        "reference_date": "2026-08-04"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           22.648258,
           42.289306
         ]
@@ -8632,7 +8599,7 @@
         "type": "Point",
         "coordinates": [
           22.65993889,
-          41.26750278
+          42.26750278
         ]
       },
       "properties": {
@@ -8652,9 +8619,9 @@
         "aquifer_thickness_m": null,
         "coordinate_method": "official_local",
         "national_register_row": null,
-        "latitude_raw": "41°16'3.01\"",
+        "latitude_raw": "42°16'3.01\"",
         "longitude_raw": "22°39'35.78\"",
-        "coordinate_note": null,
+        "coordinate_note": "SONDI-derived correction: one-degree coordinate correction validated by official GWB assignment and unique +/-1 degree spatial match.",
         "status": "active",
         "reference_date": "2026-08-04"
       }
@@ -8753,39 +8720,6 @@
         "national_register_row": null,
         "latitude_raw": "42°18'14.64\"",
         "longitude_raw": "22°38'51.29\"",
-        "coordinate_note": null,
-        "status": "active",
-        "reference_date": "2026-08-04"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          22.643675,
-          42.30161389
-        ]
-      },
-      "properties": {
-        "permit_number_date": "41590264/03.05.2022",
-        "permit_number": 41590264.0,
-        "canonical_code": "BG4G00000QN006",
-        "holder": "Ахелой ОПМ ООД",
-        "facility_name": "ТК-2",
-        "facility_registration": "1110/26.03.2021",
-        "water_use_purpose": "други цели-противопожарни нужди",
-        "mean_discharge_lps": 0.1,
-        "max_discharge_lps": 0.8,
-        "daily_authorized_volume_m3": null,
-        "annual_authorized_volume_m3": 3154.0,
-        "hydraulic_conductivity_m_day": null,
-        "transmissivity_m2_day": null,
-        "aquifer_thickness_m": null,
-        "coordinate_method": "official_local",
-        "national_register_row": null,
-        "latitude_raw": "42°18'5.81\"",
-        "longitude_raw": "22°38'37.23\"",
         "coordinate_note": null,
         "status": "active",
         "reference_date": "2026-08-04"
@@ -10733,39 +10667,6 @@
         "national_register_row": null,
         "latitude_raw": "41° 32' 40,022\"",
         "longitude_raw": "23° 47' 55,806\"",
-        "coordinate_note": null,
-        "status": "active",
-        "reference_date": "2026-08-04"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.81663271,
-          41.22649289
-        ]
-      },
-      "properties": {
-        "permit_number_date": "41510239/30.06.2008",
-        "permit_number": 41510239.0,
-        "canonical_code": "BG4G000000Q009",
-        "holder": "В и К ЕООД Благоевград",
-        "facility_name": "СК\"Дъбница\"",
-        "facility_registration": "706/30.06.2008",
-        "water_use_purpose": "питейно-битови",
-        "mean_discharge_lps": 1.05,
-        "max_discharge_lps": 6.3,
-        "daily_authorized_volume_m3": null,
-        "annual_authorized_volume_m3": 33000.0,
-        "hydraulic_conductivity_m_day": null,
-        "transmissivity_m2_day": null,
-        "aquifer_thickness_m": null,
-        "coordinate_method": "official_local",
-        "national_register_row": null,
-        "latitude_raw": "41°13'35,37441\"",
-        "longitude_raw": "23°48'59,87774\"",
         "coordinate_note": null,
         "status": "active",
         "reference_date": "2026-08-04"
@@ -14704,7 +14605,7 @@
         "type": "Point",
         "coordinates": [
           23.47831111,
-          42.84674444
+          41.84674444
         ]
       },
       "properties": {
@@ -14724,9 +14625,9 @@
         "aquifer_thickness_m": null,
         "coordinate_method": "official_local",
         "national_register_row": null,
-        "latitude_raw": "42°50'48.28\"",
+        "latitude_raw": "41°50'48.28\"",
         "longitude_raw": "23°28'41.92\"",
-        "coordinate_note": null,
+        "coordinate_note": "SONDI-derived correction: one-degree coordinate correction validated by official GWB assignment and unique +/-1 degree spatial match.",
         "status": "active",
         "reference_date": "2026-08-04"
       }
@@ -21402,7 +21303,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          23.86401667,
+          22.86401667,
           42.60133333
         ]
       },
@@ -21424,8 +21325,8 @@
         "coordinate_method": "official_local",
         "national_register_row": null,
         "latitude_raw": "42°36'04.8\"",
-        "longitude_raw": "23°51'50.46\"",
-        "coordinate_note": null,
+        "longitude_raw": "22°51'50.46\"",
+        "coordinate_note": "SONDI-derived correction: one-degree coordinate correction validated by official GWB assignment and unique +/-1 degree spatial match.",
         "status": "active",
         "reference_date": "2026-08-04"
       }
@@ -25759,7 +25660,7 @@
         "type": "Point",
         "coordinates": [
           22.57681111,
-          41.45511389
+          42.45511389
         ]
       },
       "properties": {
@@ -25779,9 +25680,9 @@
         "aquifer_thickness_m": null,
         "coordinate_method": "official_local",
         "national_register_row": null,
-        "latitude_raw": "41°27'18.41\"",
+        "latitude_raw": "42°27'18.41\"",
         "longitude_raw": "22°34'36.52\"",
-        "coordinate_note": null,
+        "coordinate_note": "SONDI-derived correction: one-degree coordinate correction validated by official GWB assignment and unique +/-1 degree spatial match.",
         "status": "active",
         "reference_date": "2026-08-04"
       }
@@ -29058,39 +28959,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.93036111,
-          41.96952778
-        ]
-      },
-      "properties": {
-        "permit_number_date": "41530086/23.09.2014",
-        "permit_number": 41530086.0,
-        "canonical_code": "BG4G00T1T2033",
-        "holder": "Пиринстройинженеринг ЕАД",
-        "facility_name": "Каптаж \"ТСИ Станке Лисичково\"",
-        "facility_registration": "689/23.06.2008",
-        "water_use_purpose": "промишлени цели",
-        "mean_discharge_lps": 0.1,
-        "max_discharge_lps": null,
-        "daily_authorized_volume_m3": 8.64,
-        "annual_authorized_volume_m3": 3150.0,
-        "hydraulic_conductivity_m_day": null,
-        "transmissivity_m2_day": null,
-        "aquifer_thickness_m": null,
-        "coordinate_method": "official_local",
-        "national_register_row": null,
-        "latitude_raw": "41° 58' 10,300\"",
-        "longitude_raw": "22° 55' 49,300\"",
-        "coordinate_note": null,
-        "status": "active",
-        "reference_date": "2026-08-04"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           23.13088889,
           42.50788889
         ]
@@ -29586,7 +29454,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.20530556,
+          23.20530556,
           42.52052778
         ]
       },
@@ -29608,8 +29476,8 @@
         "coordinate_method": "official_local",
         "national_register_row": null,
         "latitude_raw": "Извор- 42°31'13.9\"",
-        "longitude_raw": "Извор- 22°12'19.1\"",
-        "coordinate_note": null,
+        "longitude_raw": "Извор- 23°12'19.1\"",
+        "coordinate_note": "SONDI-derived correction: one-degree coordinate correction validated by official GWB assignment and unique +/-1 degree spatial match.",
         "status": "active",
         "reference_date": "2026-08-04"
       }
