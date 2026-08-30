@@ -4613,6 +4613,7 @@ export default function GeologyReportPage() {
               (item, index) => (
                 <p
                   key={index}
+                  data-sondi-keep-note="true"
                   style={{
                     margin:
                       index === 0
