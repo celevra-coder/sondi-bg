@@ -1047,35 +1047,7 @@ export default function GeologyReportPage() {
             "/geology-map/data/bd_danube_section5_objectives.json"
           ).then(r => r.json()),
 
-          fetch(
-            "/geology-map/data/bd_danube_section7_measures.json"
-          ).then(async r => {
-            if (!r.ok) {
-              console.warn(
-                "[SONDI] Optional Danube Section 7 file missing:",
-                r.status
-              );
-
-              return {};
-            }
-
-            const contentType =
-              r.headers.get("content-type") || "";
-
-            if (
-              !contentType
-                .toLowerCase()
-                .includes("application/json")
-            ) {
-              console.warn(
-                "[SONDI] Danube Section 7 returned non-JSON content"
-              );
-
-              return {};
-            }
-
-            return r.json();
-          }),
+          Promise.resolve({}),
 
           fetch(
             "/geology-map/data/bd_danube_current_groundwater_resource.json"
