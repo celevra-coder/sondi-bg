@@ -49,7 +49,10 @@ export default function AnalysisEnhancements() {
         if (
           element.closest(
             "[data-sondi-warning-summary='true']"
-          )
+          ) ||
+          element.getAttribute(
+            "data-sondi-keep-note"
+          ) === "true"
         ) {
           return false;
         }

@@ -2210,43 +2210,151 @@ export default function GeologyReportPage() {
               }
             : null;
 
+        const blackSeaGeologyProfile =
+          basinCode === "BG2" &&
+          blackSeaOfficialSection1
+            ? {
+                ...selectedGeologyProfile,
+
+                code:
+                  blackSeaOfficialSection1.code ||
+                  selectedGwbCode,
+
+                name:
+                  blackSeaOfficialSection1.name ||
+                  blackSeaRegionalGeology
+                    ?.groundwater_body_name ||
+                  selectedGeologyProfile?.name,
+
+                aquifer_type_name:
+                  blackSeaOfficialSection1
+                    ?.detailed
+                    ?.aquifer_type ||
+                  blackSeaOfficialSection1
+                    ?.typology
+                    ?.collector_type ||
+                  blackSeaRegionalGeology
+                    ?.aquifer_environment,
+
+                water_type:
+                  blackSeaOfficialSection1
+                    ?.typology
+                    ?.groundwater_body_type ||
+                  blackSeaOfficialSection1
+                    ?.typology
+                    ?.collector_type ||
+                  (
+                    blackSeaRegionalGeology
+                      ?.aquifer_environment
+                      ? `${blackSeaRegionalGeology.aquifer_environment} \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0441\u0440\u0435\u0434\u0430`
+                      : null
+                  ),
+
+                collector_type:
+                  blackSeaOfficialSection1
+                    ?.typology
+                    ?.collector_type ||
+                  blackSeaOfficialSection1
+                    ?.detailed
+                    ?.collector_type,
+
+                hydrogeological_horizon:
+                  blackSeaOfficialSection1
+                    ?.typology
+                    ?.vertical_horizon ||
+                  blackSeaRegionalGeology
+                    ?.hydrogeological_horizons,
+
+                lithology:
+                  blackSeaOfficialSection1
+                    ?.detailed
+                    ?.lithology ||
+                  null,
+
+                stratigraphy:
+                  blackSeaOfficialSection1
+                    ?.detailed
+                    ?.stratigraphy,
+
+                aquifer_thickness_m:
+                  blackSeaOfficialSection1
+                    ?.detailed
+                    ?.aquifer_thickness_m ??
+                  blackSeaOfficialSection1
+                    ?.detailed
+                    ?.average_aquifer_thickness_m,
+
+                filtration_coefficient_m_day:
+                  blackSeaOfficialSection1
+                    ?.detailed
+                    ?.hydraulic_conductivity_m_day,
+
+                hydraulic_conductivity_m_day:
+                  blackSeaOfficialSection1
+                    ?.detailed
+                    ?.hydraulic_conductivity_m_day,
+
+                transmissivity_m2_day:
+                  blackSeaOfficialSection1
+                    ?.detailed
+                    ?.transmissivity_m2_day,
+
+                pressure_condition:
+                  blackSeaOfficialSection1
+                    ?.detailed
+                    ?.pressure_condition,
+
+                regional_geological_age:
+                  blackSeaRegionalGeology
+                    ?.geological_age_label,
+
+                regional_explanation:
+                  blackSeaRegionalGeology
+                    ?.regional_explanation,
+
+                is_detailed_point_geology:
+                  false,
+              }
+            : null;
+
         const effectiveGeologyProfile =
           danubeGeologyProfile ||
           westernAegeanGeologyProfile ||
+          blackSeaGeologyProfile ||
           (
             blackSeaRegionalGeology
               ? {
-                ...selectedGeologyProfile,
-                code:
-                  blackSeaRegionalGeology
-                    .groundwater_body_code,
-                name:
-                  blackSeaRegionalGeology
-                    .groundwater_body_name,
-                aquifer_type_name:
-                  blackSeaRegionalGeology
-                    .aquifer_environment,
-                water_type:
-                  blackSeaRegionalGeology
-                    .aquifer_environment
-                    ? `${blackSeaRegionalGeology.aquifer_environment} водоносна среда`
-                    : null,
-                hydrogeological_horizon:
-                  blackSeaRegionalGeology
-                    .hydrogeological_horizons,
-                lithology:
-                  blackSeaRegionalGeology
-                    .geological_age_label
-                    ? `Регионална геоложка възраст: ${blackSeaRegionalGeology.geological_age_label}`
-                    : null,
-                regional_geological_age:
-                  blackSeaRegionalGeology
-                    .geological_age_label,
-                regional_explanation:
-                  blackSeaRegionalGeology
-                    .regional_explanation,
-                is_detailed_point_geology:
-                  false,
+                  ...selectedGeologyProfile,
+                  code:
+                    blackSeaRegionalGeology
+                      .groundwater_body_code,
+                  name:
+                    blackSeaRegionalGeology
+                      .groundwater_body_name,
+                  aquifer_type_name:
+                    blackSeaRegionalGeology
+                      .aquifer_environment,
+                  water_type:
+                    blackSeaRegionalGeology
+                      .aquifer_environment
+                      ? `${blackSeaRegionalGeology.aquifer_environment} \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0441\u0440\u0435\u0434\u0430`
+                      : null,
+                  hydrogeological_horizon:
+                    blackSeaRegionalGeology
+                      .hydrogeological_horizons,
+                  lithology:
+                    blackSeaRegionalGeology
+                      .geological_age_label
+                      ? `\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0430 \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0432\u044a\u0437\u0440\u0430\u0441\u0442: ${blackSeaRegionalGeology.geological_age_label}`
+                      : null,
+                  regional_geological_age:
+                    blackSeaRegionalGeology
+                      .geological_age_label,
+                  regional_explanation:
+                    blackSeaRegionalGeology
+                      .regional_explanation,
+                  is_detailed_point_geology:
+                    false,
                 }
               : selectedGeologyProfile
           );
@@ -2779,23 +2887,123 @@ export default function GeologyReportPage() {
       .toLowerCase()
       .includes("\u043a\u0430\u0440\u0441\u0442\u043e\u0432\u043e-\u043f\u043e\u0440\u043e\u0432");
 
-  const looseGround =
+  const bg2OfficialTypeText =
+    professional?.basinCode === "BG2"
+      ? [
+          geologyProfile?.name,
+          geologyProfile?.aquifer_type_name,
+          geologyProfile?.water_type,
+          geologyProfile?.collector_type,
+        ]
+          .filter(Boolean)
+          .join(" | ")
+          .toLowerCase()
+      : "";
+
+  const bg2BodyTypeText =
+    professional?.basinCode === "BG2"
+      ? [
+          geologyProfile?.name,
+          geologyProfile?.aquifer_type_name,
+          geologyProfile?.water_type,
+        ]
+          .filter(Boolean)
+          .join(" | ")
+          .toLowerCase()
+      : "";
+
+  const bg2CollectorTypeText =
+    professional?.basinCode === "BG2"
+      ? String(
+          geologyProfile?.collector_type || ""
+        ).toLowerCase()
+      : "";
+
+  const bg2BodyFracturedKarst =
+    bg2BodyTypeText.includes("\u043a\u0430\u0440\u0441\u0442") &&
     (
-      !bg1OfficialKarstProfile ||
-      bg1MixedKarstPoreProfile
-    ) &&
-    /\u043f\u044f\u0441|\u0447\u0430\u043a\u044a\u043b|\u0430\u043b\u0443\u0432|\u043d\u0430\u043d\u043e\u0441|\u0440\u043e\u0445\u043a|\u043b\u044c\u043e\u0441|\u043f\u043e\u0440\u043e\u0432|\u043a\u0432\u0430\u0442\u0435\u0440\u043d\u0435\u0440|\u0440\u0435\u0447\u043d|\u0433\u0440\u0430\u0432|\u0441\u0435\u0434\u0438\u043c\u0435\u043d\u0442/.test(
-      lithologyText
+      bg2BodyTypeText.includes("\u043f\u0443\u043a\u043d\u0430\u0442") ||
+      bg2BodyTypeText.includes("\u043d\u0430\u043f\u0443\u043a\u0430\u043d")
     );
+
+  const bg2CollectorFracturedKarst =
+    bg2CollectorTypeText.includes("\u043a\u0430\u0440\u0441\u0442") &&
+    bg2CollectorTypeText.includes("\u043f\u0443\u043a\u043d\u0430\u0442");
+
+  const bg2FracturedKarstProfile =
+    professional?.basinCode === "BG2" &&
+    (
+      bg2BodyFracturedKarst ||
+      bg2CollectorFracturedKarst
+    );
+
+  const bg2KarstPoreProfile =
+    professional?.basinCode === "BG2" &&
+    !bg2FracturedKarstProfile &&
+    (
+      bg2OfficialTypeText.includes("\u043a\u0430\u0440\u0441\u0442\u043e\u0432\u043e-\u043f\u043e\u0440\u043e\u0432") ||
+      bg2OfficialTypeText.includes("\u043a\u0430\u0440\u0441\u0442\u043e\u0432\u043e -\u043f\u043e\u0440\u043e\u0432") ||
+      (
+        bg2CollectorTypeText.includes("\u043a\u0430\u0440\u0441\u0442") &&
+        bg2CollectorTypeText.includes("\u043f\u043e\u0440\u043e\u0432")
+      )
+    );
+
+  const bg2KarstProfile =
+    professional?.basinCode === "BG2" &&
+    !bg2KarstPoreProfile &&
+    !bg2FracturedKarstProfile &&
+    bg2OfficialTypeText.includes("\u043a\u0430\u0440\u0441\u0442");
+
+  const bg2FracturedProfile =
+    professional?.basinCode === "BG2" &&
+    !bg2KarstPoreProfile &&
+    !bg2FracturedKarstProfile &&
+    bg2OfficialTypeText.includes("\u043f\u0443\u043a\u043d\u0430\u0442");
+
+  const bg2PoreProfile =
+    professional?.basinCode === "BG2" &&
+    !bg2KarstPoreProfile &&
+    !bg2FracturedKarstProfile &&
+    !bg2KarstProfile &&
+    !bg2FracturedProfile &&
+    bg2OfficialTypeText.includes("\u043f\u043e\u0440\u043e\u0432");
+
+  const looseGround =
+    professional?.basinCode === "BG2"
+      ? (
+          bg2PoreProfile ||
+          bg2KarstPoreProfile
+        )
+      : (
+          (
+            !bg1OfficialKarstProfile ||
+            bg1MixedKarstPoreProfile
+          ) &&
+          /\u043f\u044f\u0441|\u0447\u0430\u043a\u044a\u043b|\u0430\u043b\u0443\u0432|\u043d\u0430\u043d\u043e\u0441|\u0440\u043e\u0445\u043a|\u043b\u044c\u043e\u0441|\u043f\u043e\u0440\u043e\u0432|\u043a\u0432\u0430\u0442\u0435\u0440\u043d\u0435\u0440|\u0440\u0435\u0447\u043d|\u0433\u0440\u0430\u0432|\u0441\u0435\u0434\u0438\u043c\u0435\u043d\u0442/.test(
+            lithologyText
+          )
+        );
 
   const rockGround =
-    bg1OfficialKarstProfile ||
-    /\u0432\u0430\u0440\u043e\u0432|\u0434\u043e\u043b\u043e\u043c\u0438\u0442|\u0433\u0440\u0430\u043d\u0438\u0442|\u0433\u043d\u0430\u0439\u0441|\u0441\u043a\u0430\u043b|\u043f\u0443\u043a\u043d\u0430\u0442|\u043a\u0430\u0440\u0441\u0442/.test(
-      lithologyText
-    );
+    professional?.basinCode === "BG2"
+      ? (
+          bg2KarstProfile ||
+          bg2FracturedProfile ||
+          bg2FracturedKarstProfile ||
+          bg2KarstPoreProfile
+        )
+      : (
+          bg1OfficialKarstProfile ||
+          /\u0432\u0430\u0440\u043e\u0432|\u0434\u043e\u043b\u043e\u043c\u0438\u0442|\u0433\u0440\u0430\u043d\u0438\u0442|\u0433\u043d\u0430\u0439\u0441|\u0441\u043a\u0430\u043b|\u043f\u0443\u043a\u043d\u0430\u0442|\u043a\u0430\u0440\u0441\u0442/.test(
+            lithologyText
+          )
+        );
 
   const mixedGround =
-    looseGround && rockGround;
+    professional?.basinCode === "BG2"
+      ? bg2KarstPoreProfile
+      : looseGround && rockGround;
 
   const drillingTechnology =
     mixedGround
@@ -3044,7 +3252,10 @@ export default function GeologyReportPage() {
   const selectedInterpretationBodies =
     data.bodies.length > 0
       ? [
-          professional?.basinCode === "BG1" &&
+          (
+            professional?.basinCode === "BG1" ||
+            professional?.basinCode === "BG2"
+          ) &&
           geologyProfile
             ? {
                 ...data.bodies[0],
@@ -3075,7 +3286,25 @@ export default function GeologyReportPage() {
     !bg1MixedKarstPoreProfile;
 
   const simple =
-    bg1MixedKarstPoreProfile
+    bg2FracturedKarstProfile
+      ? {
+          headline:
+            "\u041f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u043e-\u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0430 \u0441\u043a\u0430\u043b\u043d\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0441\u0440\u0435\u0434\u0430",
+          hardness:
+            "\u0421\u0440\u0435\u0434\u043d\u0430 \u0434\u043e \u0432\u0438\u0441\u043e\u043a\u0430",
+          looseness:
+            "\u041d\u0438\u0441\u043a\u0430; \u0432\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u0441\u0430 \u0441\u0438\u043b\u043d\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0440\u0430\u0437\u0434\u0440\u043e\u0431\u0435\u043d\u0438 \u0438 \u043a\u0430\u0440\u0441\u0442\u0438\u0444\u0438\u0446\u0438\u0440\u0430\u043d\u0438 \u0437\u043e\u043d\u0438",
+          collapse:
+            "\u041d\u0438\u0441\u044a\u043a \u0434\u043e \u0441\u0440\u0435\u0434\u0435\u043d; \u043b\u043e\u043a\u0430\u043b\u043d\u043e \u0441\u0430 \u0432\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u043a\u0443\u0445\u0438\u043d\u0438 \u0438 \u0441\u0438\u043b\u043d\u043e \u043d\u0430\u0440\u0443\u0448\u0435\u043d\u0438 \u0443\u0447\u0430\u0441\u0442\u044a\u0446\u0438",
+          drilling:
+            "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438\u044f\u0442 \u043f\u0440\u043e\u0444\u0438\u043b \u043e\u043f\u0438\u0441\u0432\u0430 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u043e-\u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0430 \u0441\u043a\u0430\u043b\u043d\u0430 \u0441\u0440\u0435\u0434\u0430. \u041f\u0440\u0438 \u043f\u0440\u043e\u0431\u0438\u0432\u0430\u043d\u0435 \u0441\u0430 \u0432\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u0440\u0435\u0437\u043a\u0438 \u043f\u0440\u0435\u0445\u043e\u0434\u0438 \u043c\u0435\u0436\u0434\u0443 \u0437\u0434\u0440\u0430\u0432\u0430 \u0441\u043a\u0430\u043b\u0430, \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438 \u0443\u0447\u0430\u0441\u0442\u044a\u0446\u0438 \u0438 \u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0438 \u043f\u0440\u0430\u0437\u043d\u0438\u043d\u0438.",
+          water:
+            "\u0412\u043e\u0434\u0430\u0442\u0430 \u0441\u0435 \u0434\u0432\u0438\u0436\u0438 \u0433\u043b\u0430\u0432\u043d\u043e \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438, \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0438 \u0437\u043e\u043d\u0438 \u0438 \u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0438 \u043a\u0430\u043d\u0430\u043b\u0438 \u0438 \u043f\u0440\u0430\u0437\u043d\u0438\u043d\u0438.",
+        }
+      : (
+          bg1MixedKarstPoreProfile ||
+          bg2KarstPoreProfile
+        )
       ? {
           headline:
             "\u0421\u043c\u0435\u0441\u0435\u043d\u0430 \u043a\u0430\u0440\u0441\u0442\u043e\u0432\u043e-\u043f\u043e\u0440\u043e\u0432\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0441\u0440\u0435\u0434\u0430",
@@ -3142,8 +3371,54 @@ export default function GeologyReportPage() {
             selectedInterpretationBodies
           );
 
+  const bg2PoreWithoutOfficialLithology =
+    professional?.basinCode === "BG2" &&
+    !geologyProfile?.lithology &&
+    (
+      String(
+        geologyProfile?.water_type ||
+        geologyProfile?.collector_type ||
+        geologyProfile?.aquifer_type_name ||
+        geologyProfile?.name ||
+        ""
+      )
+        .toLowerCase()
+        .includes("\u043f\u043e\u0440\u043e\u0432")
+    );
+
   const drillingMaterials =
-    bg1MixedKarstPoreProfile
+    bg2FracturedKarstProfile
+      ? {
+          title:
+            "\u041f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u043e-\u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0430 \u0441\u043a\u0430\u043b\u043d\u0430 \u0441\u0440\u0435\u0434\u0430",
+          short:
+            geologyProfile?.lithology
+              ? `\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u043e \u043e\u043f\u0438\u0441\u0430\u043d\u0430 \u043b\u0438\u0442\u043e\u043b\u043e\u0433\u0438\u044f: ${geologyProfile.lithology}.`
+              : "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438\u044f\u0442 \u043f\u0440\u043e\u0444\u0438\u043b \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f \u0441\u0440\u0435\u0434\u0430\u0442\u0430 \u043a\u0430\u0442\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u043e-\u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0430.",
+          details:
+            "\u041e\u0447\u0430\u043a\u0432\u0430 \u0441\u0435 \u0441\u043a\u0430\u043b\u043d\u0430 \u0441\u0440\u0435\u0434\u0430 \u0441 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438, \u043d\u0430\u0440\u0443\u0448\u0435\u043d\u0438 \u0437\u043e\u043d\u0438 \u0438 \u0432\u044a\u0437\u043c\u043e\u0436\u043d\u043e \u043a\u0430\u0440\u0441\u0442\u043e\u0432\u043e \u0440\u0430\u0437\u0432\u0438\u0442\u0438\u0435.",
+          behavior:
+            "\u0412\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u0441\u0430 \u0440\u0435\u0437\u043a\u0438 \u043f\u0440\u0435\u0445\u043e\u0434\u0438 \u043e\u0442 \u043a\u043e\u043c\u043f\u0430\u043a\u0442\u043d\u0430 \u0441\u043a\u0430\u043b\u0430 \u043a\u044a\u043c \u0441\u0438\u043b\u043d\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0440\u0430\u0437\u0434\u0440\u043e\u0431\u0435\u043d\u0438 \u0438\u043b\u0438 \u043a\u0430\u0440\u0441\u0442\u0438\u0444\u0438\u0446\u0438\u0440\u0430\u043d\u0438 \u0437\u043e\u043d\u0438.",
+          confidence:
+            "\u0421\u0440\u0435\u0434\u043d\u0430 \u0438\u043d\u0442\u0435\u0440\u043f\u0440\u0435\u0442\u0430\u0446\u0438\u044f \u2013 \u043d\u0443\u0436\u0434\u0430\u0435 \u0441\u0435 \u043e\u0442 \u043b\u043e\u043a\u0430\u043b\u043d\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430",
+        }
+      : bg2PoreWithoutOfficialLithology
+      ? {
+          title:
+            "\u041f\u043e\u0440\u043e\u0432\u0430 \u0441\u0435\u0434\u0438\u043c\u0435\u043d\u0442\u043d\u0430 \u0441\u0440\u0435\u0434\u0430 \u2013 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438\u044f\u0442 \u043b\u0438\u0442\u043e\u043b\u043e\u0436\u043a\u0438 \u0441\u044a\u0441\u0442\u0430\u0432 \u043d\u0435 \u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d",
+          short:
+            "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438\u044f\u0442 \u043f\u0440\u043e\u0444\u0438\u043b \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430\u0442\u0430 \u0441\u0440\u0435\u0434\u0430 \u043a\u0430\u0442\u043e \u043f\u043e\u0440\u043e\u0432\u0430, \u043d\u043e \u043d\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0430 \u043b\u0438\u0442\u043e\u043b\u043e\u0433\u0438\u044f.",
+          details:
+            "\u0417\u0430\u0442\u043e\u0432\u0430 \u043d\u0435 \u0435 \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u043e \u0434\u0430 \u0441\u0435 \u0442\u0432\u044a\u0440\u0434\u0438 \u0434\u0430\u043b\u0438 \u043d\u0430 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430 \u0449\u0435 \u0438\u0437\u043b\u0438\u0437\u0430\u0442 \u043f\u044f\u0441\u044a\u0446\u0438, \u0447\u0430\u043a\u044a\u043b\u0438, \u0433\u043b\u0438\u043d\u0438 \u0438\u043b\u0438 \u0434\u0440\u0443\u0433\u0438 \u0441\u0435\u0434\u0438\u043c\u0435\u043d\u0442\u0438 \u0431\u0435\u0437 \u0442\u0435\u0440\u0435\u043d\u043d\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430.",
+          behavior:
+            "\u0421\u043e\u043d\u0434\u0430\u0436\u043d\u0430\u0442\u0430 \u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u044f \u0438 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e\u0441\u0442\u0442\u0430 \u043e\u0442 \u043e\u0431\u0441\u0430\u0436\u0434\u0430\u043d\u0435 \u0441\u0435 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f\u0442 \u0441\u043b\u0435\u0434 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u044f\u0432\u0430\u043d\u0435 \u043d\u0430 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u043d\u0438\u044f \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b \u043d\u0430 \u0442\u0435\u0440\u0435\u043d.",
+          confidence:
+            "\u0421\u0440\u0435\u0434\u043d\u0430 \u0437\u0430 \u0442\u0438\u043f\u0430 \u043d\u0430 \u0441\u0440\u0435\u0434\u0430\u0442\u0430; \u043d\u0438\u0441\u043a\u0430 \u0437\u0430 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438\u044f \u043b\u0438\u0442\u043e\u043b\u043e\u0436\u043a\u0438 \u0441\u044a\u0441\u0442\u0430\u0432",
+        }
+      : (
+          bg1MixedKarstPoreProfile ||
+          bg2KarstPoreProfile
+        )
       ? {
           title:
             "\u0421\u043c\u0435\u0441\u0435\u043d\u0438 \u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0438 \u0438 \u043f\u043e\u0440\u043e\u0432\u0438 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u0438",
@@ -3910,10 +4185,13 @@ export default function GeologyReportPage() {
                   Какво означава това за планирания сондаж?
                 </strong>
 
-                <p style={{
-                  marginTop: 8,
-                  marginBottom: 0,
-                }}>
+                <p
+                  data-sondi-keep-note="true"
+                  style={{
+                    marginTop: 8,
+                    marginBottom: 0,
+                  }}
+                >
                   В същото подземно водно тяло има официално
                   регистрирано хидрогеоложко проучване на{" "}
                   {fmt(
@@ -3964,10 +4242,13 @@ export default function GeologyReportPage() {
                   Какво означава това за планирания сондаж?
                 </strong>
 
-                <p style={{
-                  marginTop: 8,
-                  marginBottom: 0,
-                }}>
+                <p
+                  data-sondi-keep-note="true"
+                  style={{
+                    marginTop: 8,
+                    marginBottom: 0,
+                  }}
+                >
                   В използвания официален регистър няма
                   картографирано хидрогеоложко проучване,
                   което да предоставя подходящ сравнителен
@@ -4195,8 +4476,10 @@ export default function GeologyReportPage() {
               </strong>
 
               <span>
-                {geologyProfile?.water_type ||
-                  geologyProfile?.collector_type ||
+                {bg2FracturedKarstProfile
+                  ? "\u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u043e-\u043a\u0430\u0440\u0441\u0442\u043e\u0432\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430 \u0441\u0440\u0435\u0434\u0430"
+                  : geologyProfile?.water_type ||
+                    geologyProfile?.collector_type ||
                   "Няма налични данни"}
               </span>
             </div>
