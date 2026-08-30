@@ -1878,16 +1878,68 @@ export default async function ProPage({
   const hasSignificantPressure =
     significantPressureItems.length > 0;
 
+  const danubeChemicalRiskText =
+    String(
+      danubeSection2?.chemical_risk?.risk_assessment ?? ""
+    ).toLowerCase();
+
+  const danubeQuantitativeRiskText =
+    String(
+      danubeSection2?.quantitative_risk?.risk_assessment ?? ""
+    ).toLowerCase();
+
+  const danubePollutionSourceType =
+    String(
+      danubeSection2?.chemical_risk?.pollution_source_type ?? ""
+    );
+
+  const danubePollutionSourceTypeLower =
+    danubePollutionSourceType.toLowerCase();
+
+  const danubeHasPointSource =
+    danubePollutionSourceTypeLower.includes("\u0442\u043e\u0447\u043a\u043e\u0432");
+
+  const danubeHasDiffuseSource =
+    danubePollutionSourceTypeLower.includes("\u0434\u0438\u0444\u0443\u0437");
+
+  const danubePressureParameter =
+    danubeSection2?.chemical_risk
+      ?.parameters_exceeding_standard ?? null;
+
+  const danubeSignificantPressure =
+    Array.isArray(
+      danubeSection2?.significant_pressure?.raw
+    )
+      ? danubeSection2.significant_pressure.raw[5] ?? null
+      : null;
+
+  const danubeHasRiskAssessment =
+    isDanubeGwb &&
+    (
+      danubeChemicalRiskText.length > 0 ||
+      danubeQuantitativeRiskText.length > 0
+    );
+
+  const danubeIsAtRisk =
+    isDanubeGwb &&
+    (
+      danubeChemicalRiskText.includes("\u0432 \u0440\u0438\u0441\u043a") ||
+      danubeChemicalRiskText == "\u0440\u0438\u0441\u043a" ||
+      danubeChemicalRiskText == "\u0432 \u0440\u0438\u0441\u043a"
+    );
+
   const hasPressureInformation =
     Number.isFinite(pointPressurePercent) ||
     Number.isFinite(diffusePressurePercent) ||
     hasSignificantPressure ||
-    Boolean(profile.pollutionRisk);
+    Boolean(profile.pollutionRisk) ||
+    danubeHasRiskAssessment;
 
   const pressureNeedsAttention =
     hasPointPressure ||
     hasDiffusePressure ||
-    hasSignificantPressure;
+    hasSignificantPressure ||
+    danubeIsAtRisk;
 
   const westernAegeanChemicalRiskText =
     String(
@@ -1936,11 +1988,19 @@ export default async function ProPage({
               ? "good"
               : "neutral"
         )
-      : pressureNeedsAttention
-        ? "warn"
-        : hasPressureInformation
-          ? "good"
-          : "neutral";
+      : isDanubeGwb
+        ? (
+            danubeIsAtRisk
+              ? "warn"
+              : danubeHasRiskAssessment
+                ? "good"
+                : "neutral"
+          )
+        : pressureNeedsAttention
+          ? "warn"
+          : hasPressureInformation
+            ? "good"
+            : "neutral";
 
   const pressureSummaryTitle =
     isWesternAegeanGwb
@@ -1951,7 +2011,15 @@ export default async function ProPage({
               ? "\u0412\u043e\u0434\u043d\u043e\u0442\u043e \u0442\u044f\u043b\u043e \u043d\u0435 \u0435 \u043e\u0446\u0435\u043d\u0435\u043d\u043e \u043a\u0430\u0442\u043e \u0432 \u0440\u0438\u0441\u043a"
               : "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u043d\u0430 \u0440\u0438\u0441\u043a\u0430"
         )
-      : pressureNeedsAttention
+      : isDanubeGwb
+        ? (
+            danubeIsAtRisk
+              ? "\u0418\u043c\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u043e \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d \u0440\u0438\u0441\u043a \u0437\u0430 \u0432\u043e\u0434\u043d\u043e\u0442\u043e \u0442\u044f\u043b\u043e"
+              : danubeHasRiskAssessment
+                ? "\u0412\u043e\u0434\u043d\u043e\u0442\u043e \u0442\u044f\u043b\u043e \u043d\u0435 \u0435 \u043e\u0446\u0435\u043d\u0435\u043d\u043e \u043a\u0430\u0442\u043e \u0432 \u0440\u0438\u0441\u043a"
+                : "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u043d\u0430 \u0440\u0438\u0441\u043a\u0430"
+          )
+        : pressureNeedsAttention
         ? "\u0418\u043c\u0430 \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043d\u0430\u0442\u0438\u0441\u043a \u0432\u044a\u0440\u0445\u0443 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e\u0442\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e"
         : hasPressureInformation
           ? "\u041d\u0435 \u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d \u0441\u044a\u0449\u0435\u0441\u0442\u0432\u0435\u043d \u043d\u0430\u0442\u0438\u0441\u043a \u0432 \u043f\u043e\u043a\u0430\u0437\u0430\u043d\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u0438"
@@ -1983,7 +2051,17 @@ export default async function ProPage({
               )
             : "\u041b\u0438\u043f\u0441\u0432\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0437\u0430 \u043d\u0430\u0434\u0435\u0436\u0434\u043d\u043e \u0437\u0430\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435."
         )
-      : pressureNeedsAttention
+      : isDanubeGwb
+        ? (
+            danubeHasRiskAssessment
+              ? (
+                  danubeIsAtRisk
+                    ? "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f \u0432\u043e\u0434\u043d\u043e\u0442\u043e \u0442\u044f\u043b\u043e \u043a\u0430\u0442\u043e \u0432 \u0445\u0438\u043c\u0438\u0447\u0435\u043d \u0440\u0438\u0441\u043a. \u041f\u043e\u0441\u043e\u0447\u0435\u043d\u0438 \u0441\u0430 \u0434\u0438\u0444\u0443\u0437\u043d\u0438 \u0438 \u0442\u043e\u0447\u043a\u043e\u0432\u0438 \u0438\u0437\u0442\u043e\u0447\u043d\u0438\u0446\u0438 \u043d\u0430 \u0437\u0430\u043c\u044a\u0440\u0441\u044f\u0432\u0430\u043d\u0435. \u041e\u0446\u0435\u043d\u043a\u0430\u0442\u0430 \u0441\u0435 \u043e\u0442\u043d\u0430\u0441\u044f \u0437\u0430 \u0446\u044f\u043b\u043e\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e, \u0430 \u043d\u0435 \u0434\u043e\u043a\u0430\u0437\u0432\u0430 \u0437\u0430\u043c\u044a\u0440\u0441\u044f\u0432\u0430\u043d\u0435 \u0432 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430."
+                    : "\u0417\u0430 \u0432\u043e\u0434\u043d\u043e\u0442\u043e \u0442\u044f\u043b\u043e \u0438\u043c\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0437\u0430 \u0445\u0438\u043c\u0438\u0447\u0435\u043d \u0438 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d \u0440\u0438\u0441\u043a. \u041e\u0446\u0435\u043d\u043a\u0430\u0442\u0430 \u0435 \u0437\u0430 \u0446\u044f\u043b\u043e\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u043e \u0432\u043e\u0434\u043d\u043e \u0442\u044f\u043b\u043e."
+                )
+              : "\u041b\u0438\u043f\u0441\u0432\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0437\u0430 \u043d\u0430\u0434\u0435\u0436\u0434\u043d\u043e \u0437\u0430\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435."
+          )
+        : pressureNeedsAttention
         ? (
             "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u0438 \u043f\u043e\u043a\u0430\u0437\u0432\u0430\u0442 " +
             pressureTypes.join(", ") +
@@ -3941,7 +4019,13 @@ export default async function ProPage({
                 <Row
                   label="Точков натиск"
                   value={
-                    blackSeaSection2
+                    isDanubeGwb && danubeSection2
+                      ? (
+                          danubeHasPointSource
+                            ? "\u041f\u043e\u0441\u043e\u0447\u0435\u043d \u0432 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u043e\u0446\u0435\u043d\u043a\u0430"
+                            : "\u041d\u0435 \u0435 \u043f\u043e\u0441\u043e\u0447\u0435\u043d"
+                        )
+                      : blackSeaSection2
                       ? `${blackSeaPointSourceCount} потенциални източника`
                       : Number.isFinite(
                           pointPressurePercent
@@ -3956,7 +4040,13 @@ export default async function ProPage({
                 <Row
                   label="Дифузен натиск"
                   value={
-                    blackSeaSection2
+                    isDanubeGwb && danubeSection2
+                      ? (
+                          danubeHasDiffuseSource
+                            ? "\u041f\u043e\u0441\u043e\u0447\u0435\u043d \u0432 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u043e\u0446\u0435\u043d\u043a\u0430"
+                            : "\u041d\u0435 \u0435 \u043f\u043e\u0441\u043e\u0447\u0435\u043d"
+                        )
+                      : blackSeaSection2
                       ? `${blackSeaDiffuseSourceCount} потенциални източника`
                       : Number.isFinite(
                           diffusePressurePercent
@@ -3971,9 +4061,16 @@ export default async function ProPage({
                 <Row
                   label="Риск от замърсяване"
                   value={
-                    blackSeaSection2Chemical
-                      ? blackSeaChemicalRiskLabel
-                      : profile.pollutionRisk
+                    isDanubeGwb && danubeSection2
+                      ? (
+                          danubeSection2
+                            ?.chemical_risk
+                            ?.risk_assessment ??
+                          "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430"
+                        )
+                      : blackSeaSection2Chemical
+                        ? blackSeaChemicalRiskLabel
+                        : profile.pollutionRisk
                         ? "Налична официална оценка"
                         : "Няма налична оценка"
                   }
@@ -3982,8 +4079,12 @@ export default async function ProPage({
                 <Row
                   label="Значим натиск"
                   value={
-                    blackSeaSection2Chemical
-                      ?.significant_pressure ??
+                    (
+                      isDanubeGwb && danubeSection2
+                        ? danubeSignificantPressure
+                        : blackSeaSection2Chemical
+                            ?.significant_pressure
+                    ) ??
                     (
                       hasSignificantPressure
                         ? significantPressureItems.join(", ")
@@ -3991,6 +4092,36 @@ export default async function ProPage({
                     )
                   }
                 />
+
+                {isDanubeGwb && danubeSection2 ? (
+                  <>
+                    <Row
+                      label="\u0422\u0438\u043f \u0438\u0437\u0442\u043e\u0447\u043d\u0438\u0446\u0438 \u043d\u0430 \u0437\u0430\u043c\u044a\u0440\u0441\u044f\u0432\u0430\u043d\u0435"
+                      value={
+                        danubePollutionSourceType ||
+                        "\u041d\u0435 \u0435 \u043f\u043e\u0441\u043e\u0447\u0435\u043d"
+                      }
+                    />
+
+                    <Row
+                      label="\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b \u0441 \u043e\u0442\u043a\u043b\u043e\u043d\u0435\u043d\u0438\u0435"
+                      value={
+                        danubePressureParameter ??
+                        "\u041d\u0435 \u0435 \u043f\u043e\u0441\u043e\u0447\u0435\u043d"
+                      }
+                    />
+
+                    <Row
+                      label="\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d \u0440\u0438\u0441\u043a"
+                      value={
+                        danubeSection2
+                          ?.quantitative_risk
+                          ?.risk_assessment ??
+                        "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430"
+                      }
+                    />
+                  </>
+                ) : null}
 
                 {blackSeaSection2 ? (
                   <>
