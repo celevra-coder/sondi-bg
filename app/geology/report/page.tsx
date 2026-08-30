@@ -3076,6 +3076,10 @@ export default function GeologyReportPage() {
                     geologyProfile.collector_type ||
                     data.bodies[0].properties?.gwb_type_name_bg ||
                     "",
+                  nameText:
+                    geologyProfile.name ||
+                    data.bodies[0].properties?.nameText ||
+                    "",
                 },
               }
             : data.bodies[0],
@@ -3391,7 +3395,7 @@ export default function GeologyReportPage() {
           </h2>
 
           {/* BG1_DIRECT_MATERIAL_RENDER */}
-          {professional?.basinCode === "BG1" ? (
+          {bg1KarstProfile ? (
             <div
               style={{
                 display: "grid",
@@ -3511,7 +3515,7 @@ export default function GeologyReportPage() {
           </h2>
 
           {/* BG1_DIRECT_PRACTICAL_RENDER */}
-          {professional?.basinCode === "BG1" ? (
+          {bg1KarstProfile ? (
             <div
               style={{
                 display: "grid",
