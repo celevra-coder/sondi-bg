@@ -1,0 +1,551 @@
+{
+  "schema_version": 1,
+  "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
+  "record_count": 19,
+  "generated_date": "2026-09-01",
+  "records": [
+    {
+      "fault_id": "FLT-KRUPNIK",
+      "mrrb": {
+        "record": 47,
+        "name": "\u041a\u0440\u0443\u043f\u043d\u0438\u043a"
+      },
+      "scientific": {
+        "name": "Krupnik fault",
+        "system": null,
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS036"
+      },
+      "correspondence": {
+        "type": "local_scientific_and_regional_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GANAS-2005",
+        "SRC-GEM-SONDI"
+      ],
+      "notes": [
+        "MRRB corridor corresponds strongly to scientific Krupnik fault and BGCS036."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-PREDELA",
+      "mrrb": {
+        "record": 45,
+        "name": "\u041f\u0440\u0435\u0434\u0435\u043b\u0430"
+      },
+      "scientific": {
+        "name": "Predela fault",
+        "system": null,
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS034"
+      },
+      "correspondence": {
+        "type": "local_scientific_and_regional_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GANAS-2005",
+        "SRC-GEM-SONDI"
+      ],
+      "notes": [
+        "Northwestern part has an inactivity caveat in the scientific segmentation."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-DOBRINISHTE",
+      "mrrb": {
+        "record": 46,
+        "name": "\u0411\u0430\u043d\u0441\u043a\u043e_\u0434\u043e\u0431\u0440\u0438\u043d\u0438\u0449\u0435"
+      },
+      "scientific": {
+        "name": "Dobrinishte fault",
+        "system": null,
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_scientific_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GANAS-2005"
+      ],
+      "notes": [],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-RAZLOG-MRRB",
+      "mrrb": {
+        "record": 51,
+        "name": "\u0420\u0430\u0437\u043b\u043e\u0433"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Razlog basin fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "distinct_from_Ganas_scientific_Razlog_segment",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GANAS-2005"
+      ],
+      "notes": [
+        "MRRB Razlog record is not the ~4 km scientific Razlog fault segment described by Ganas et al."
+      ],
+      "open_items": [
+        "Exact scientific identity of MRRB REC51 remains open."
+      ]
+    },
+    {
+      "fault_id": "FLT-RILA-STOB",
+      "mrrb": {
+        "record": 52,
+        "name": "\u0420\u0438\u043b\u0430-\u0421\u0442\u043e\u0431"
+      },
+      "scientific": {
+        "name": "Stob / Rila fault",
+        "system": "Northern Rila fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_scientific_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-MGU-RILA"
+      ],
+      "notes": [
+        "Identity is strong; modern activity interpretation remains contested."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-N-RILA-STOB",
+      "mrrb": {
+        "record": 53,
+        "name": "N \u0420\u0438\u043b\u0430-\u0421\u0442\u043e\u0431"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Northern Rila fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "parallel_related_corridor",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-MGU-RILA"
+      ],
+      "notes": [
+        "Separate parallel MRRB corridor; do not merge with REC52."
+      ],
+      "open_items": [
+        "Exact scientific segment name remains open."
+      ]
+    },
+    {
+      "fault_id": "FLT-DZHERMAN",
+      "mrrb": {
+        "record": 32,
+        "name": "Dzherman"
+      },
+      "scientific": {
+        "name": "Dzherman fault",
+        "system": "North Rila extensional system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS047"
+      },
+      "correspondence": {
+        "type": "regional_spatial_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-MGU-RILA",
+        "SRC-GEM-SONDI"
+      ],
+      "notes": [
+        "Do not equate Dzherman with Saparevo fault."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-GOVEDARTSI",
+      "mrrb": {
+        "record": 28,
+        "name": "Govedarci"
+      },
+      "scientific": {
+        "name": "Govedartsi normal fault",
+        "system": "North Rila extensional system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_scientific_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-MGU-RILA"
+      ],
+      "notes": [
+        "No demonstrated international counterpart yet."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-BELCHIN",
+      "mrrb": {
+        "record": 25,
+        "name": "Palakaria W"
+      },
+      "scientific": {
+        "name": "Belchin fault",
+        "system": "Palakaria graben",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS028"
+      },
+      "correspondence": {
+        "type": "partial_local_and_regional_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEORGIEV-NAKOV-2014",
+        "SRC-GEM-SONDI"
+      ],
+      "notes": [
+        "Only the local principal segment corresponds to BGCS028; do not equate the entire BGCS source with the MRRB corridor."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-YARLOVO",
+      "mrrb": {
+        "record": 34,
+        "name": "Yarlovo"
+      },
+      "scientific": {
+        "name": "Yarlovo fault",
+        "system": "Palakaria graben",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_scientific_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEORGIEV-NAKOV-2014"
+      ],
+      "notes": [],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-POPOVIANE",
+      "mrrb": {
+        "record": 104,
+        "name": "Popoviane"
+      },
+      "scientific": {
+        "name": "Kovachevtsi-Relyovo fault system",
+        "system": "Kovachevsko-Alinski system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_scientific_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEORGIEV-NAKOV-2014"
+      ],
+      "notes": [],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-SAMOKOV-MRRB",
+      "mrrb": {
+        "record": 59,
+        "name": "\u0421\u0430\u043c\u043e\u043a\u043e\u0432"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Samokov area faulting",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "unresolved_local_identity",
+        "confidence": "OPEN",
+        "exact_trace_identity": null
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEORGIEV-NAKOV-2014",
+        "SRC-MGU-RILA"
+      ],
+      "notes": [],
+      "open_items": [
+        "Exact scientific identity and continuation remain open."
+      ]
+    },
+    {
+      "fault_id": "FLT-MAR-HASKOVO",
+      "mrrb": null,
+      "scientific": {
+        "name": null,
+        "system": "Maritsa fault zone northern active branch",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GERDJIKOV-GEORGIEV-2006"
+      ],
+      "notes": [
+        "Includes Popovitsa sector in the working crosswalk."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-CHIRPAN",
+      "mrrb": null,
+      "scientific": {
+        "name": null,
+        "system": "Krushevo-Chirpan transverse corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025"
+      ],
+      "notes": [],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-MARITSA-UNRESOLVED",
+      "mrrb": null,
+      "scientific": {
+        "name": null,
+        "system": "Maritsa fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "unresolved",
+        "confidence": "LOW",
+        "exact_trace_identity": null
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GERDJIKOV-GEORGIEV-2006",
+        "SRC-NAYDENOV-2013"
+      ],
+      "notes": [
+        "MRRB corridor length approximately 68.73 km."
+      ],
+      "open_items": [
+        "Exact modern structural identity remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-BELOVO-REC18",
+      "mrrb": {
+        "record": 18,
+        "name": "Belovo"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Kostenets-Belovo regional faulting",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS005"
+      },
+      "correspondence": {
+        "type": "partial_regional_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GERDJIKOV-GEORGIEV-2006"
+      ],
+      "notes": [
+        "Strong partial correspondence to eastern BGCS005; not a one-to-one source identity."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-DOLNA-BANYA-REC77",
+      "mrrb": {
+        "record": 77,
+        "name": "D Banya"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Kostenets-Dolna Banya parallel fault corridors",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS005"
+      },
+      "correspondence": {
+        "type": "adjacent_parallel_regional_crosswalk",
+        "confidence": "LOW_MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-PENCHEV-ZAHARIEV-DENEVA-2003"
+      ],
+      "notes": [
+        "Nearest BGCS005 approach about 1.54 km; treated as adjacent parallel corridor, not the main BGCS005 surface representation."
+      ],
+      "open_items": [
+        "Exact scientific fault name remains open."
+      ]
+    },
+    {
+      "fault_id": "FLT-KOSTENETS-REC78",
+      "mrrb": {
+        "record": 78,
+        "name": "Kostenec"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Kostenets-Pchelin regional active belt",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS027"
+      },
+      "correspondence": {
+        "type": "partial_regional_spatial_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-PENCHEV-ZAHARIEV-DENEVA-2003"
+      ],
+      "notes": [
+        "BGCS027 is the closest regional modeled source.",
+        "Near Pchelin local orientation differs by about 4.63 degrees.",
+        "Exact same trace or genetic identity is not demonstrated."
+      ],
+      "open_items": [
+        "Exact scientific fault name remains open."
+      ]
+    },
+    {
+      "fault_id": "FLT-SESTRIMO-REC103",
+      "mrrb": {
+        "record": 103,
+        "name": "D Bania - Kostenec"
+      },
+      "scientific": {
+        "name": "Sestrimo normal fault",
+        "system": "North Rhodopean Extensional System / Kostenets-Sestrimo basin",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS005"
+      },
+      "correspondence": {
+        "type": "partial_local_scientific_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-KOUNOV-2023",
+        "SRC-VALKOVA-SPIRIDONOV-1979",
+        "SRC-GERDJIKOV-GEORGIEV-2006",
+        "SRC-GEM-SONDI"
+      ],
+      "notes": [
+        "Kounov et al. describe the Sestrimo fault as Miocene-Quaternary normal faulting related to development of the Kostenets-Sestrimo basin.",
+        "Scientific Fig. 3 normal-fault baseline was reconstructed from vector primitives.",
+        "Reconstructed baseline: 35 points; distance to REC103 min 415.4 m, mean 635.8 m, max 936.9 m; all 35 points within 1 km.",
+        "REC103 is therefore the strongest MRRB local corridor correspondence, but is not treated as an identical one-to-one trace."
+      ],
+      "open_items": [
+        "Retrieve original Valkova and Spiridonov 1979 paper for primary-source detail."
+      ]
+    }
+  ]
+}

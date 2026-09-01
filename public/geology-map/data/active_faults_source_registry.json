@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "description": "Source and provenance registry for SONDI.BG active-fault research.",
+  "source_count": 13,
+  "generated_date": "2026-09-01",
+  "sources": [
+    {
+      "source_id": "SRC-MRRB-2025",
+      "title": "Active fault hazard dataset, Bulgaria",
+      "title_bg": "\u0410\u043a\u0442\u0438\u0432\u043d\u0438 \u0440\u0430\u0437\u043b\u043e\u043c\u0438 2025",
+      "authors": null,
+      "year": 2025,
+      "institution": "\u041c\u0420\u0420\u0411",
+      "source_type": "official_gis_dataset",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\\u041c\u0420\u0420\u0411\\\u0410\u043a\u0442\u0438\u0432\u043d\u0438 \u0440\u0430\u0437\u043b\u043e\u043c\u0438\\faults2_buffered.shp",
+      "url": null,
+      "access_date": "2026-09-01",
+      "supports": [
+        "official_local_fault_corridors",
+        "hazard_classification"
+      ],
+      "limitations": [
+        "polygon_buffer_corridors_not_fault_traces",
+        "not_a_complete_risk_model"
+      ]
+    },
+    {
+      "source_id": "SRC-GEM-SONDI",
+      "title": "GEM active faults Bulgaria subset",
+      "authors": null,
+      "year": null,
+      "institution": "GEM",
+      "source_type": "international_fault_catalog",
+      "local_path": "public/geology-map/data/gem_active_faults_bulgaria.geojson",
+      "url": null,
+      "access_date": "2026-09-01",
+      "supports": [
+        "BGCS_crosswalk",
+        "regional_fault_geometry",
+        "kinematic_metadata"
+      ],
+      "limitations": [
+        "regional_catalog_not_local_surface_mapping",
+        "local_names_often_absent"
+      ]
+    },
+    {
+      "source_id": "SRC-EFSM20",
+      "title": "European Fault-Source Model 2020",
+      "authors": null,
+      "year": 2020,
+      "institution": "EFEHR",
+      "source_type": "seismogenic_source_model",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\EFSM20\\EFSM20_CF_TOP.geojson",
+      "url": null,
+      "access_date": "2026-09-01",
+      "supports": [
+        "regional_seismogenic_geometry"
+      ],
+      "limitations": [
+        "modeled_upper_fault_plane_edge",
+        "not_local_surface_trace"
+      ]
+    },
+    {
+      "source_id": "SRC-AFG-2025",
+      "title": "Active Faults of Greece 2025",
+      "authors": null,
+      "year": 2025,
+      "institution": null,
+      "source_type": "active_fault_database",
+      "local_path": null,
+      "url": null,
+      "access_date": "2026-09-01",
+      "supports": [
+        "southern_cross_border_fault_traces"
+      ],
+      "limitations": [
+        "only_small_number_of_traces_intersect_Bulgaria"
+      ]
+    },
+    {
+      "source_id": "SRC-GANAS-2005",
+      "title": "Ganas et al. 2005 SW Bulgaria fault segmentation",
+      "authors": [
+        "Ganas et al."
+      ],
+      "year": 2005,
+      "institution": null,
+      "source_type": "scientific_paper",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\SW_Bulgaria_Active_Faults\\Ganas_et_al_2005_SW_Bulgaria_fault_segmentation.pdf",
+      "url": null,
+      "access_date": "2026-09-01",
+      "supports": [
+        "Krupnik_fault",
+        "Predela_fault",
+        "Dobrinishte_fault",
+        "SW_Bulgaria_segmentation"
+      ],
+      "limitations": [
+        "scientific_segmentation_not_identical_to_MRRB_corridors"
+      ]
+    },
+    {
+      "source_id": "SRC-GEORGIEV-NAKOV-2014",
+      "title": "Georgiev and Nakov 2014 Palakaria graben",
+      "authors": [
+        "Georgiev",
+        "Nakov"
+      ],
+      "year": 2014,
+      "institution": null,
+      "source_type": "scientific_paper",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\North_Rila_Palakaria_Active_Faults\\Georgiev_Nakov_2014_Palakaria_graben.pdf",
+      "url": null,
+      "access_date": "2026-09-01",
+      "supports": [
+        "Belchin_fault",
+        "Yarlovo_fault",
+        "Kovachevtsi_Relyovo_system"
+      ],
+      "limitations": []
+    },
+    {
+      "source_id": "SRC-MGU-RILA",
+      "title": "Rila geology, MGU publication",
+      "authors": null,
+      "year": null,
+      "institution": "MGU",
+      "source_type": "scientific_geological_publication",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\North_Rila_Palakaria_Active_Faults\\MGU_Rila_geology_msg75.pdf",
+      "url": null,
+      "access_date": "2026-09-01",
+      "supports": [
+        "North_Rila_regional_structure",
+        "Dzherman_detachment_context",
+        "Kostenets_basin_context"
+      ],
+      "limitations": [
+        "does_not_map_specific_MRRB_records_to_Raduyl"
+      ]
+    },
+    {
+      "source_id": "SRC-PENCHEV-ZAHARIEV-DENEVA-2003",
+      "title": "Hydrogeology of the Dolna Banya Thermal Water Basin",
+      "authors": [
+        "P. Penchev",
+        "V. Zahariev",
+        "B. Deneva"
+      ],
+      "year": 2003,
+      "institution": "MGU",
+      "source_type": "scientific_paper",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\Zahariev_Deneva_Pchelinski_Bani.pdf",
+      "url": null,
+      "access_date": "2026-09-01",
+      "supports": [
+        "Dolna_Banya_Kostenets_thermal_basin",
+        "Pchelinski_Bani_local_fault_zone",
+        "Kostenets_hydrogeology"
+      ],
+      "limitations": [
+        "hydrogeology_source_not_modern_active_fault_catalog"
+      ]
+    },
+    {
+      "source_id": "SRC-GERDJIKOV-GEORGIEV-2006",
+      "title": "\u041c\u0430\u0440\u0438\u0448\u043a\u0430\u0442\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u2013 \u043e\u0442\u0441\u0435\u0434\u043d\u0430 \u0437\u043e\u043d\u0430 \u043f\u043e \u0441\u0435\u0432\u0435\u0440\u043d\u0438\u044f \u0440\u044a\u0431 \u043d\u0430 \u0420\u043e\u0434\u043e\u043f\u0438\u0442\u0435",
+      "authors": [
+        "Yanko Gerdjikov",
+        "Neven Georgiev"
+      ],
+      "year": 2006,
+      "institution": "MGU",
+      "source_type": "scientific_paper",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\Gerdjikov_Georgiev_2006_Maritsa_fault_system.pdf",
+      "url": null,
+      "access_date": "2026-09-01",
+      "supports": [
+        "Maritsa_fault_system",
+        "Kostenets_regional_structure"
+      ],
+      "limitations": [
+        "authors_state_modern_strike_slip_activity_not_demonstrated",
+        "many_historical_trace_assignments_are_interpretive"
+      ]
+    },
+    {
+      "source_id": "SRC-VALKOVA-SPIRIDONOV-1979",
+      "title": "\u041c\u0430\u0440\u0438\u0448\u043a\u0438\u044f\u0442 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c \u043f\u0440\u0435\u0437 \u043d\u0435\u043e\u0437\u043e\u044f \u0432 \u0443\u0447\u0430\u0441\u0442\u044a\u043a\u0430 \u043c\u0435\u0436\u0434\u0443 \u0441. \u0412\u0430\u0440\u0432\u0430\u0440\u0430, \u041f\u0430\u0437\u0430\u0440\u0434\u0436\u0438\u0448\u043a\u043e \u0438 \u0433\u0440. \u041a\u043e\u0441\u0442\u0435\u043d\u0435\u0446",
+      "authors": [
+        "N. Valkova",
+        "H. Spiridonov"
+      ],
+      "year": 1979,
+      "institution": "\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u043e \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u043e \u0434\u0440\u0443\u0436\u0435\u0441\u0442\u0432\u043e",
+      "source_type": "scientific_paper",
+      "local_path": null,
+      "url": null,
+      "access_date": null,
+      "supports": [
+        "Sestrimo_fault_historical_source"
+      ],
+      "limitations": [
+        "original_paper_not_yet_retrieved_locally",
+        "currently_known_through_later_citations"
+      ]
+    },
+    {
+      "source_id": "SRC-STRAHILOV-DIMITROV-2021",
+      "title": "Structural geological complications for tunnel construction in the Kostenets's section of the Maritsa fault zone in Central Bulgaria",
+      "authors": [
+        "Strahilov",
+        "Dimitrov"
+      ],
+      "year": 2021,
+      "institution": null,
+      "source_type": "scientific_paper",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\Strahilov_Dimitrov_2021_Kostenets_Maritsa_fault_zone.pdf",
+      "url": null,
+      "access_date": "2026-09-01",
+      "supports": [
+        "Kostenets_Maritsa_structural_zone"
+      ],
+      "limitations": [
+        "does_not_prove_specific_MRRB_record_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-NAYDENOV-2013",
+      "title": "The Maritsa strike-slip shear zone between Kostenets and Krichim towns, South Bulgaria",
+      "authors": [
+        "Naydenov et al."
+      ],
+      "year": 2013,
+      "institution": null,
+      "source_type": "scientific_paper",
+      "local_path": null,
+      "url": "https://doi.org/10.1016/j.tecto.2012.08.005",
+      "access_date": "2026-09-01",
+      "supports": [
+        "regional_Maritsa_shear_zone"
+      ],
+      "limitations": [
+        "full_text_not_locally_available",
+        "regional_context_not_direct_MRRB_crosswalk"
+      ]
+    },
+    {
+      "source_id": "SRC-KOUNOV-2023",
+      "title": "Cenozoic extension and exhumation along the northern Rila Mountains",
+      "authors": [
+        "Kounov et al."
+      ],
+      "year": 2023,
+      "institution": null,
+      "source_type": "peer_reviewed_scientific_paper",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\Kounov_et_al_2023_Sestrimo_fault.pdf",
+      "url": "https://doi.org/10.1007/s00531-023-02321-6",
+      "access_date": "2026-09-01",
+      "supports": [
+        "Sestrimo_normal_fault",
+        "Kostenets_Sestrimo_basin",
+        "North_Rhodopean_Extensional_System"
+      ],
+      "limitations": [
+        "figure_trace_is_scientific_map_geometry_not_official_MRRB_geometry"
+      ]
+    }
+  ]
+}
