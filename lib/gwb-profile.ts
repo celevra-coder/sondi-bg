@@ -297,25 +297,28 @@ export function getGwbProfile(
   const candidates = Object.values(records);
 
   const nameBg =
-    candidates.find(
-      (r: any) =>
-        r?.name_bg ||
-        r?.nameBg ||
-        r?.name
-    )?.name_bg ??
-    candidates.find(
-      (r: any) =>
-        r?.name_bg ||
-        r?.nameBg ||
-        r?.name
-    )?.nameBg ??
-    candidates.find(
-      (r: any) =>
-        r?.name_bg ||
-        r?.nameBg ||
-        r?.name
-    )?.name ??
-    null;
+    gwbCode.toUpperCase().startsWith("BG3") &&
+    records.section4?.name
+      ? records.section4.name
+      : candidates.find(
+          (r: any) =>
+            r?.name_bg ||
+            r?.nameBg ||
+            r?.name
+        )?.name_bg ??
+        candidates.find(
+          (r: any) =>
+            r?.name_bg ||
+            r?.nameBg ||
+            r?.name
+        )?.nameBg ??
+        candidates.find(
+          (r: any) =>
+            r?.name_bg ||
+            r?.nameBg ||
+            r?.name
+        )?.name ??
+        null;
 
   return {
     gwbCode,
