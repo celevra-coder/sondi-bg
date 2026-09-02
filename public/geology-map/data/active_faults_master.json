@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 32,
+  "record_count": 38,
   "generated_date": "2026-09-02",
   "records": [
     {
@@ -1018,6 +1018,211 @@
       ],
       "open_items": [
         "Find independent Quaternary or neotectonic evidence for the REC115 corridor before assigning an active scientific fault identity."
+      ]
+    },
+    {
+      "fault_id": "FLT-ELIN-PELIN-REC23",
+      "mrrb": {
+        "record": 23,
+        "name": "El Pel"
+      },
+      "scientific": {
+        "name": "Elin Pelin fault",
+        "system": "Sofia graben eastern fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS025"
+      },
+      "correspondence": {
+        "type": "regional_local_scientific_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-SOFIAPLAN-FAULTS",
+        "SRC-MATOVA-SOFIA",
+        "SRC-GERDJIKOV-VANGELOV-KOUNOV-2019"
+      ],
+      "notes": [
+        "Matova explicitly identifies an Elin Pelin fault within the Sofia graben fault network.",
+        "REC23 intersects multiple SofiaPlan fault traces but the nearest individual trace has poor whole-corridor orientation agreement.",
+        "EUR_BGCS025 intersects REC23, supporting regional spatial association but not exact trace identity."
+      ],
+      "open_items": [
+        "Digitize the published Elin Pelin fault trace for direct quantitative comparison with REC23."
+      ]
+    },
+    {
+      "fault_id": "FLT-NOVI-HAN-REC109",
+      "mrrb": {
+        "record": 109,
+        "name": "???? ???"
+      },
+      "scientific": {
+        "name": "Novi Han fault",
+        "system": "Maritsa fault zone / Novi Han-Gabra block fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS026"
+      },
+      "correspondence": {
+        "type": "local_scientific_fault_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-SOFIAPLAN-FAULTS",
+        "SRC-ANTONOV-VARBANOV-2013"
+      ],
+      "notes": [
+        "Antonov and Varbanov explicitly describe the Novi Han fault as an important longitudinal fault in the Novi Han-Gabra structural network.",
+        "The published longitudinal system trends approximately 100-130 degrees; REC109 has a PCA strike of approximately 108.71 degrees.",
+        "Nearest SofiaPlan fault trace is approximately 630 m away with approximately 15.26 degree orientation difference.",
+        "EUR_BGCS026 is retained as a regional spatial crosswalk rather than exact surface-trace identity."
+      ],
+      "open_items": [
+        "Digitize the published Novi Han fault from the scientific map for direct trace comparison."
+      ]
+    },
+    {
+      "fault_id": "FLT-GRIGOREVO-REC110",
+      "mrrb": {
+        "record": 110,
+        "name": "?????????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Eastern Sofia graben fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS025"
+      },
+      "correspondence": {
+        "type": "regional_structural_corridor_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-SOFIAPLAN-FAULTS",
+        "SRC-MATOVA-SOFIA",
+        "SRC-GERDJIKOV-VANGELOV-KOUNOV-2019"
+      ],
+      "notes": [
+        "REC110 intersects EUR_BGCS025 in the machine regional analysis.",
+        "A SofiaPlan active-fault trace lies approximately 824 m away.",
+        "Scientific mapping east of Sofia demonstrates a complex fault-zone architecture; current evidence does not justify assigning REC110 one individual scientific fault name."
+      ],
+      "open_items": [
+        "Resolve the individual scientific identity of REC110 using detailed Elin Pelin-area mapping."
+      ]
+    },
+    {
+      "fault_id": "FLT-SOFIA-SOUTHPARK-PODUYANE-REC114",
+      "mrrb": {
+        "record": 114,
+        "name": "?. ???? - ???????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Sofia graben internal transverse and oblique fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_network_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-SOFIAPLAN-FAULTS",
+        "SRC-MATOVA-SOFIA"
+      ],
+      "notes": [
+        "REC114 intersects a SofiaPlan mapped active-fault line and has five SofiaPlan traces within 500 m.",
+        "The nearest intersecting trace differs strongly in whole-feature orientation, indicating cross-cutting or multi-trace fault-zone geometry rather than a simple one-to-one line.",
+        "Matova documents numerous transverse and oblique faults inside the Sofia graben."
+      ],
+      "open_items": [
+        "Exact individual fault identity and kinematics remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-NORTH-SOFIA-REC116",
+      "mrrb": {
+        "record": 116,
+        "name": "????? - ?????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "North-Sofia fault system / northern Sofia graben",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_regional_fault_system_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-SOFIAPLAN-FAULTS",
+        "SRC-RADULOV-2023-NORTH-SOFIA",
+        "SRC-MATOVA-SOFIA"
+      ],
+      "notes": [
+        "REC116 intersects a SofiaPlan Middle-Late Pleistocene and Holocene mapped active-fault trace.",
+        "Four SofiaPlan traces occur within 500 m.",
+        "Radulov et al. show that the North-Sofia fault contains bifurcating and overlapping segments, so REC116 is retained at fault-system level rather than assigned as an exact North-Sofia trace."
+      ],
+      "open_items": [
+        "Quantitatively compare REC116 with published North-Sofia fault segments."
+      ]
+    },
+    {
+      "fault_id": "FLT-SOFIA-OPALCHENSKA-REC117",
+      "mrrb": {
+        "record": 117,
+        "name": "?????????? -?. ?????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Sofia graben internal transverse and oblique fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_network_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-SOFIAPLAN-FAULTS",
+        "SRC-MATOVA-SOFIA"
+      ],
+      "notes": [
+        "REC117 passes approximately 140 m from the nearest SofiaPlan mapped active-fault trace and three mapped traces occur within 500 m.",
+        "The orientation mismatch to the nearest whole SofiaPlan feature indicates a multi-trace or crossing relationship rather than exact trace correspondence.",
+        "The corridor is retained as part of the documented internal transverse-oblique Sofia graben network."
+      ],
+      "open_items": [
+        "Exact individual fault identity and kinematics remain unresolved."
       ]
     }
   ]

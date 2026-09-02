@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 22,
+  "source_count": 24,
   "generated_date": "2026-09-02",
   "sources": [
     {
@@ -510,6 +510,58 @@
       "limitations": [
         "regional_scale",
         "does_not_prove_exact_MRRB_surface_trace"
+      ]
+    },
+    {
+      "source_id": "SRC-ANTONOV-VARBANOV-2013",
+      "title": "Geological and engineering geological settings of the radioactive waste repository Novi Han, Lozen Mountain, Bulgaria",
+      "authors": [
+        "Dimitar Antonov",
+        "Radoslav Varbanov"
+      ],
+      "year": 2013,
+      "institution": "Geological Institute BAS / UACEG",
+      "source_type": "peer_reviewed_scientific_paper",
+      "local_path": null,
+      "url": "https://doi.org/10.52321/GeolBalc.42.1-3.75",
+      "access_date": "2026-09-02",
+      "supports": [
+        "Novi_Han_fault",
+        "Novi_Han_Gabra_fault_network",
+        "Maritsa_fault_zone_context",
+        "longitudinal_100_130_degree_fault_system",
+        "transverse_15_45_degree_fault_system"
+      ],
+      "limitations": [
+        "local_study_centered_on_RAW_Novi_Han",
+        "not_an_active_fault_inventory",
+        "does_not_prove_exact_MRRB_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GERDJIKOV-VANGELOV-KOUNOV-2019",
+      "title": "Main fault zones controlling the Late Alpine structure in the area east of Sofia (Srednogorie Zone, Western Bulgaria)",
+      "authors": [
+        "Ianko Gerdjikov",
+        "Dian Vangelov",
+        "Alexandre Kounov"
+      ],
+      "year": 2019,
+      "institution": "Sofia University / University of Basel",
+      "source_type": "scientific_paper",
+      "local_path": null,
+      "url": null,
+      "access_date": "2026-09-02",
+      "supports": [
+        "Negushevo_fault_zone",
+        "Kamenitsa_Rakovishki_fault_zone",
+        "eastern_Sofia_graben_structure",
+        "Elin_Pelin_geological_map_context"
+      ],
+      "limitations": [
+        "Late_Alpine_structural_study_not_active_fault_inventory",
+        "poor_outcrop_conditions_in_parts_of_study_area",
+        "does_not_prove_exact_MRRB_corridor_identity"
       ]
     }
   ]
