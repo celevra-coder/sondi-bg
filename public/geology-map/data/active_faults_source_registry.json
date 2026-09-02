@@ -264,10 +264,12 @@
       "supports": [
         "Sestrimo_normal_fault",
         "Kostenets_Sestrimo_basin",
-        "North_Rhodopean_Extensional_System"
+        "North_Rhodopean_Extensional_System",
+        "Izvor_Peshtera_Basin_ancient_extensional_context"
       ],
       "limitations": [
-        "figure_trace_is_scientific_map_geometry_not_official_MRRB_geometry"
+        "figure_trace_is_scientific_map_geometry_not_official_MRRB_geometry",
+        "North_Rhodopean_Detachment_became_inactive_in_early_Oligocene_and_is_not_REC76_modern_identity"
       ]
     },
     {
@@ -284,13 +286,15 @@
       "supports": [
         "Belovo_Septemvri_local_geological_structure",
         "mapped_fault_segments",
-        "REC18_regional_local_structural_correspondence"
+        "REC18_regional_local_structural_correspondence",
+        "REC76_Peshtera_geological_map_cross_check"
       ],
       "limitations": [
         "geological_fault_mapping_not_active_fault_inventory",
         "legacy_map_does_not_by_itself_prove_present_day_activity",
         "georeferenced_from_scanned_map_with_approximately_108m_RMS_control_error",
-        "not_suitable_for_exact_trace_identity"
+        "not_suitable_for_exact_trace_identity",
+        "does_not_show_one_continuous_east_west_mapped_fault_along_REC76"
       ]
     },
     {
@@ -310,12 +314,15 @@
       "supports": [
         "Upper_Thracian_Rift_System",
         "Belovo_Septemvri_Pazardzhik_fault_network",
+        "Peshtera_Bratsigovo_lineament_fault_network",
         "faults_beneath_Quaternary_sediments",
         "regional_tectonic_context"
       ],
       "limitations": [
         "regional_fault_network_interpretation_not_MRRB_inventory",
         "does_not_assign_REC79_to_one_named_individual_fault",
+        "does_not_assign_REC76_to_one_named_individual_fault",
+        "red_ASTER_lineaments_are_interpreted_structures_not_exact_verified_fault_traces",
         "does_not_prove_exact_surface_trace_identity"
       ]
     }
