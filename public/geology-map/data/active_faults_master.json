@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 22,
+  "record_count": 23,
   "generated_date": "2026-09-02",
   "records": [
     {
@@ -657,6 +657,45 @@
         "No GEM/BGCS source intersects REC76. EUR_BGCS005 is nearest at approximately 3353.5 m, followed by EUR_BGCS029 at 7041.5 m and EUR_BGCS046 at 14194.6 m; no BGCS crosswalk is assigned.",
         "REC122 Stamboliyski is the nearest MRRB corridor at approximately 4816.8 m and has a similar regional orientation, but the two corridors remain separate and are not merged.",
         "Kounov et al. 2023 place the ancient Izvor-Peshtera Basin in the hanging wall of the North Rhodopean Detachment, but that detachment became inactive in the early Oligocene and is not used as a modern REC76 identity."
+      ],
+      "open_items": [
+        "Exact individual scientific fault name remains unresolved.",
+        "Modern fault kinematics and exact surface trace remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-STAMBOLIYSKI-REC122",
+      "mrrb": {
+        "record": 122,
+        "name": "????????????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Upper Thracian Rift System / southern basin-margin lineament and fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_fault_network_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-POPOV-VELICHKOV-POPOV-2015"
+      ],
+      "notes": [
+        "REC122 is a 29.100 km medium-class MRRB corridor with a PCA strike of approximately 98.84 degrees.",
+        "Affine georeferencing of Popov et al. 2015 Fig. 3 produced 3.25 px RMS and 5.286 px maximum control residual.",
+        "A reconstructed REC122 corridor centreline differs from the MRRB length by only 0.33 percent; 74.45 percent of its samples lie within 5 px and 93.21 percent within 10 px of the red ASTER-interpreted lineament network.",
+        "Correspondence to the orange faults established from field, well and seismic-geophysical evidence is weak: 0 percent within 5 px, 4.79 percent within 10 px and 14.97 percent within 20 px.",
+        "No GEM/BGCS modeled source intersects REC122. EUR_BGCS005 is nearest at approximately 381.3 m from the western end, while EUR_BGCS046 is approximately 1017.3 m from the eastern part; no BGCS crosswalk is assigned.",
+        "REC122 is the nearest MRRB owner for the final approximately 2.989 km of EUR_BGCS005, but the median separation is approximately 1864.1 m and only 0.20 percent of the full modeled source is both REC122-owned and within 500 m.",
+        "REC122 is the nearest MRRB owner for approximately 2.176 km of EUR_BGCS046, but that interval remains approximately 1017.3 to 1478.6 m away and has a local orientation difference of approximately 28.55 degrees.",
+        "REC76 Peshtera is the nearest MRRB corridor at approximately 4816.8 m and has a similar regional orientation, but REC76 and REC122 remain separate and are not merged."
       ],
       "open_items": [
         "Exact individual scientific fault name remains unresolved.",
