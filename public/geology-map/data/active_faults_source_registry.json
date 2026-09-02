@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 13,
-  "generated_date": "2026-09-01",
+  "source_count": 14,
+  "generated_date": "2026-09-02",
   "sources": [
     {
       "source_id": "SRC-MRRB-2025",
@@ -195,15 +195,18 @@
       "year": 1979,
       "institution": "\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u043e \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u043e \u0434\u0440\u0443\u0436\u0435\u0441\u0442\u0432\u043e",
       "source_type": "scientific_paper",
-      "local_path": null,
-      "url": null,
-      "access_date": null,
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\Valkova_Spiridonov_1979_Maritsa_deep_fault.pdf",
+      "url": "http://bgd.bg/REVIEW_BGS/REVIEW_BGD_1979_2/PDF/05_Valkova_1979_40_2.pdf",
+      "access_date": "2026-09-02",
       "supports": [
-        "Sestrimo_fault_historical_source"
+        "historical_Maritsa_deep_fault_system",
+        "Varvara_Kostenets_regional_structural_context",
+        "historical_primary_source"
       ],
       "limitations": [
-        "original_paper_not_yet_retrieved_locally",
-        "currently_known_through_later_citations"
+        "image_scan_without_searchable_text_layer",
+        "historical_geological_interpretation_not_modern_active_fault_inventory",
+        "not_sufficient_alone_for_exact_MRRB_trace_identity"
       ]
     },
     {
@@ -265,6 +268,29 @@
       ],
       "limitations": [
         "figure_trace_is_scientific_map_geometry_not_official_MRRB_geometry"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-061-PAZARDZHIK",
+      "title": "Geological Map of Bulgaria, K-35-061 Pazardzhik, 1:100000",
+      "title_bg": "\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u043a\u0430\u0440\u0442\u0430 \u043d\u0430 \u041d\u0420 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f, \u041f\u0430\u0437\u0430\u0440\u0434\u0436\u0438\u043a, K-35-061, 1:100000",
+      "authors": null,
+      "year": null,
+      "institution": "\u041a\u043e\u043c\u0438\u0442\u0435\u0442 \u043f\u043e \u0433\u0435\u043e\u043b\u043e\u0433\u0438\u044f",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\K-35-061_Pazardzhik_geological_map.jpg",
+      "url": null,
+      "access_date": "2026-09-02",
+      "supports": [
+        "Belovo_Septemvri_local_geological_structure",
+        "mapped_fault_segments",
+        "REC18_regional_local_structural_correspondence"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_map_does_not_by_itself_prove_present_day_activity",
+        "georeferenced_from_scanned_map_with_approximately_108m_RMS_control_error",
+        "not_suitable_for_exact_trace_identity"
       ]
     }
   ]

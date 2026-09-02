@@ -2,7 +2,7 @@
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
   "record_count": 19,
-  "generated_date": "2026-09-01",
+  "generated_date": "2026-09-02",
   "records": [
     {
       "fault_id": "FLT-KRUPNIK",
@@ -440,10 +440,13 @@
       "source_ids": [
         "SRC-MRRB-2025",
         "SRC-GEM-SONDI",
-        "SRC-GERDJIKOV-GEORGIEV-2006"
+        "SRC-GERDJIKOV-GEORGIEV-2006",
+        "SRC-GEO-MAP-K35-061-PAZARDZHIK"
       ],
       "notes": [
-        "Strong partial correspondence to eastern BGCS005; not a one-to-one source identity."
+        "Strong partial correspondence to eastern BGCS005; not a one-to-one source identity.",
+        "Geological map K-35-061 Pazardzhik shows a segmented NW-SE structural/fault system along the northern Rhodope margin and southern Maritsa basin margin within the REC18 corridor; it does not support a single continuous exact trace.",
+        "Six-control affine georeferencing of K-35-061 produced approximately 108 m RMS and 188 m maximum control residual; suitable for regional/local correspondence, not exact trace identity."
       ],
       "open_items": []
     },
