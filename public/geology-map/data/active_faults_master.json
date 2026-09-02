@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 38,
+  "record_count": 45,
   "generated_date": "2026-09-02",
   "records": [
     {
@@ -1223,6 +1223,229 @@
       ],
       "open_items": [
         "Exact individual fault identity and kinematics remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-MIRKOVO-REC19",
+      "mrrb": {
+        "record": 19,
+        "name": "Mirkovo"
+      },
+      "scientific": {
+        "name": "Mirkovo fault zone",
+        "system": "Eastern Sofia / Western Srednogorie structural system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS025"
+      },
+      "correspondence": {
+        "type": "regional_scientific_fault_zone_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GERDJIKOV-VANGELOV-KOUNOV-2019-EAST-SOFIA"
+      ],
+      "notes": [
+        "A Mirkovo fault zone is explicitly mapped in scientific structural work east of Sofia.",
+        "REC19 is retained as regional correspondence only; SofiaPlan has no close local trace and the scientific source does not establish modern activity of the exact MRRB corridor."
+      ],
+      "open_items": [
+        "Digitize the published Mirkovo fault-zone trace and compare it quantitatively with REC19.",
+        "Find independent Quaternary or active-tectonic evidence for the REC19 corridor."
+      ]
+    },
+    {
+      "fault_id": "FLT-APRILOVO-SOUTH-REC107",
+      "mrrb": {
+        "record": 107,
+        "name": "????????-??"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Eastern Sofia graben / Negushevo-Kamenitsa-Rakovishki structural domain",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS025"
+      },
+      "correspondence": {
+        "type": "regional_structural_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GERDJIKOV-VANGELOV-KOUNOV-2019-EAST-SOFIA"
+      ],
+      "notes": [
+        "REC107 lies within the broader eastern Sofia structural region where the Negushevo and Kamenitsa-Rakovishki fault zones are documented.",
+        "No close SofiaPlan trace was found; an individual scientific fault identity is not assigned."
+      ],
+      "open_items": [
+        "Resolve exact relation to the mapped eastern Sofia fault zones using detailed geological-map geometry."
+      ]
+    },
+    {
+      "fault_id": "FLT-DOLNA-MALINA-REC108",
+      "mrrb": {
+        "record": 108,
+        "name": "????? ??????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Eastern Sofia graben / Negushevo-Kamenitsa-Rakovishki structural domain",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS025"
+      },
+      "correspondence": {
+        "type": "regional_structural_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GERDJIKOV-VANGELOV-KOUNOV-2019-EAST-SOFIA"
+      ],
+      "notes": [
+        "REC108 has compatible regional orientation with the eastern Sofia structural belt.",
+        "No close SofiaPlan trace was found; current evidence does not justify one named scientific fault."
+      ],
+      "open_items": [
+        "Quantitatively compare REC108 with Negushevo and adjacent mapped fault-zone segments."
+      ]
+    },
+    {
+      "fault_id": "FLT-GARA-ELIN-PELIN-REC111",
+      "mrrb": {
+        "record": 111,
+        "name": "???? ???? ?????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Eastern Sofia graben / Elin Pelin regional fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS025"
+      },
+      "correspondence": {
+        "type": "regional_fault_network_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-MATOVA-SOFIA",
+        "SRC-GERDJIKOV-VANGELOV-KOUNOV-2019-EAST-SOFIA"
+      ],
+      "notes": [
+        "REC111 lies in the eastern Sofia graben fault network near the Elin Pelin structural domain.",
+        "Its nearest SofiaPlan trace is several kilometres away despite good orientation similarity; exact identity remains unresolved."
+      ],
+      "open_items": [
+        "Resolve whether REC111 represents an Elin Pelin system continuation or a separate parallel corridor."
+      ]
+    },
+    {
+      "fault_id": "FLT-GABER-REC86",
+      "mrrb": {
+        "record": 86,
+        "name": "?????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Western Sofia regional structural domain",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS031"
+      },
+      "correspondence": {
+        "type": "unresolved_regional_spatial_relation",
+        "confidence": "OPEN",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI"
+      ],
+      "notes": [
+        "REC86 is regionally associated with EUR_BGCS031 by the machine spatial analysis.",
+        "No sufficiently strong independent local scientific identity has yet been established."
+      ],
+      "open_items": [
+        "Find detailed geological and neotectonic mapping for the Gaber sector."
+      ]
+    },
+    {
+      "fault_id": "FLT-BRATUSHKOVO-NORTH-REC106",
+      "mrrb": {
+        "record": 106,
+        "name": "?????????? - ?????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Western Sofia regional structural domain",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS031"
+      },
+      "correspondence": {
+        "type": "unresolved_regional_spatial_relation",
+        "confidence": "OPEN",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI"
+      ],
+      "notes": [
+        "REC106 has similar regional orientation to EUR_BGCS031 but lacks a close SofiaPlan trace.",
+        "No individual scientific fault identity is assigned."
+      ],
+      "open_items": [
+        "Find detailed mapping for the Bratushkovo sector and test continuity toward neighbouring western Sofia structures."
+      ]
+    },
+    {
+      "fault_id": "FLT-HRABARSKO-HERAKOVO-REC118",
+      "mrrb": {
+        "record": 118,
+        "name": "?????????-????????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Western Sofia graben marginal structural domain",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS026"
+      },
+      "correspondence": {
+        "type": "unresolved_regional_spatial_relation",
+        "confidence": "OPEN",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI"
+      ],
+      "notes": [
+        "REC118 is spatially related to the broader Sofia regional fault network but has no SofiaPlan trace within 2 km.",
+        "Current evidence is insufficient for an individual scientific identity."
+      ],
+      "open_items": [
+        "Find local Quaternary, neotectonic or geological mapping for the Hrabarsko-Herakovo sector."
       ]
     }
   ]

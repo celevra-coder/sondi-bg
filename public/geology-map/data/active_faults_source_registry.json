@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 24,
+  "source_count": 25,
   "generated_date": "2026-09-02",
   "sources": [
     {
@@ -562,6 +562,32 @@
         "Late_Alpine_structural_study_not_active_fault_inventory",
         "poor_outcrop_conditions_in_parts_of_study_area",
         "does_not_prove_exact_MRRB_corridor_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GERDJIKOV-VANGELOV-KOUNOV-2019-EAST-SOFIA",
+      "title": "Main fault zones controlling the Late Alpine structure in the area east of Sofia (Srednogorie Zone, Western Bulgaria)",
+      "authors": [
+        "Ianko Gerdjikov",
+        "Dian Vangelov",
+        "Alexandre Kounov"
+      ],
+      "year": 2019,
+      "institution": "University of Mining and Geology / Sofia University / University of Basel",
+      "source_type": "scientific_paper",
+      "local_path": null,
+      "url": null,
+      "access_date": "2026-09-02",
+      "supports": [
+        "Mirkovo_fault_zone",
+        "Negushevo_fault_zone",
+        "Kamenitsa_Rakovishki_fault_zone",
+        "eastern_Sofia_graben_structure"
+      ],
+      "limitations": [
+        "Late_Alpine_structural_study_not_active_fault_inventory",
+        "precise_fault_zone_geometry_and_kinematics_are_locally_poorly_constrained",
+        "does_not_prove_exact_MRRB_trace_identity"
       ]
     }
   ]
