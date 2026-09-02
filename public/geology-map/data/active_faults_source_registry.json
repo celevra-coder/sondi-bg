@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 18,
+  "source_count": 22,
   "generated_date": "2026-09-02",
   "sources": [
     {
       "source_id": "SRC-MRRB-2025",
       "title": "Active fault hazard dataset, Bulgaria",
-      "title_bg": "\u0410\u043a\u0442\u0438\u0432\u043d\u0438 \u0440\u0430\u0437\u043b\u043e\u043c\u0438 2025",
+      "title_bg": "Активни разломи 2025",
       "authors": null,
       "year": 2025,
-      "institution": "\u041c\u0420\u0420\u0411",
+      "institution": "МРРБ",
       "source_type": "official_gis_dataset",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\\u041c\u0420\u0420\u0411\\\u0410\u043a\u0442\u0438\u0432\u043d\u0438 \u0440\u0430\u0437\u043b\u043e\u043c\u0438\\faults2_buffered.shp",
+      "local_path": "C:\\Геоложки институт\\МРРБ\\Активни разломи\\faults2_buffered.shp",
       "url": null,
       "access_date": "2026-09-01",
       "supports": [
@@ -51,7 +51,7 @@
       "year": 2020,
       "institution": "EFEHR",
       "source_type": "seismogenic_source_model",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\EFSM20\\EFSM20_CF_TOP.geojson",
+      "local_path": "C:\\Геоложки институт\\EFSM20\\EFSM20_CF_TOP.geojson",
       "url": null,
       "access_date": "2026-09-01",
       "supports": [
@@ -88,7 +88,7 @@
       "year": 2005,
       "institution": null,
       "source_type": "scientific_paper",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\SW_Bulgaria_Active_Faults\\Ganas_et_al_2005_SW_Bulgaria_fault_segmentation.pdf",
+      "local_path": "C:\\Геоложки институт\\SW_Bulgaria_Active_Faults\\Ganas_et_al_2005_SW_Bulgaria_fault_segmentation.pdf",
       "url": null,
       "access_date": "2026-09-01",
       "supports": [
@@ -111,7 +111,7 @@
       "year": 2014,
       "institution": null,
       "source_type": "scientific_paper",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\North_Rila_Palakaria_Active_Faults\\Georgiev_Nakov_2014_Palakaria_graben.pdf",
+      "local_path": "C:\\Геоложки институт\\North_Rila_Palakaria_Active_Faults\\Georgiev_Nakov_2014_Palakaria_graben.pdf",
       "url": null,
       "access_date": "2026-09-01",
       "supports": [
@@ -128,7 +128,7 @@
       "year": null,
       "institution": "MGU",
       "source_type": "scientific_geological_publication",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\North_Rila_Palakaria_Active_Faults\\MGU_Rila_geology_msg75.pdf",
+      "local_path": "C:\\Геоложки институт\\North_Rila_Palakaria_Active_Faults\\MGU_Rila_geology_msg75.pdf",
       "url": null,
       "access_date": "2026-09-01",
       "supports": [
@@ -151,7 +151,7 @@
       "year": 2003,
       "institution": "MGU",
       "source_type": "scientific_paper",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\Zahariev_Deneva_Pchelinski_Bani.pdf",
+      "local_path": "C:\\Геоложки институт\\Kostenets_Dolna_Banya_Active_Faults\\Zahariev_Deneva_Pchelinski_Bani.pdf",
       "url": null,
       "access_date": "2026-09-01",
       "supports": [
@@ -165,7 +165,7 @@
     },
     {
       "source_id": "SRC-GERDJIKOV-GEORGIEV-2006",
-      "title": "\u041c\u0430\u0440\u0438\u0448\u043a\u0430\u0442\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u2013 \u043e\u0442\u0441\u0435\u0434\u043d\u0430 \u0437\u043e\u043d\u0430 \u043f\u043e \u0441\u0435\u0432\u0435\u0440\u043d\u0438\u044f \u0440\u044a\u0431 \u043d\u0430 \u0420\u043e\u0434\u043e\u043f\u0438\u0442\u0435",
+      "title": "Маришката разломна система – отседна зона по северния ръб на Родопите",
       "authors": [
         "Yanko Gerdjikov",
         "Neven Georgiev"
@@ -173,7 +173,7 @@
       "year": 2006,
       "institution": "MGU",
       "source_type": "scientific_paper",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\Gerdjikov_Georgiev_2006_Maritsa_fault_system.pdf",
+      "local_path": "C:\\Геоложки институт\\Kostenets_Dolna_Banya_Active_Faults\\Gerdjikov_Georgiev_2006_Maritsa_fault_system.pdf",
       "url": null,
       "access_date": "2026-09-01",
       "supports": [
@@ -187,15 +187,15 @@
     },
     {
       "source_id": "SRC-VALKOVA-SPIRIDONOV-1979",
-      "title": "\u041c\u0430\u0440\u0438\u0448\u043a\u0438\u044f\u0442 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c \u043f\u0440\u0435\u0437 \u043d\u0435\u043e\u0437\u043e\u044f \u0432 \u0443\u0447\u0430\u0441\u0442\u044a\u043a\u0430 \u043c\u0435\u0436\u0434\u0443 \u0441. \u0412\u0430\u0440\u0432\u0430\u0440\u0430, \u041f\u0430\u0437\u0430\u0440\u0434\u0436\u0438\u0448\u043a\u043e \u0438 \u0433\u0440. \u041a\u043e\u0441\u0442\u0435\u043d\u0435\u0446",
+      "title": "Маришкият дълбочинен разлом през неозоя в участъка между с. Варвара, Пазарджишко и гр. Костенец",
       "authors": [
         "N. Valkova",
         "H. Spiridonov"
       ],
       "year": 1979,
-      "institution": "\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u043e \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u043e \u0434\u0440\u0443\u0436\u0435\u0441\u0442\u0432\u043e",
+      "institution": "Българско геоложко дружество",
       "source_type": "scientific_paper",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\Valkova_Spiridonov_1979_Maritsa_deep_fault.pdf",
+      "local_path": "C:\\Геоложки институт\\Kostenets_Dolna_Banya_Active_Faults\\Valkova_Spiridonov_1979_Maritsa_deep_fault.pdf",
       "url": "http://bgd.bg/REVIEW_BGS/REVIEW_BGD_1979_2/PDF/05_Valkova_1979_40_2.pdf",
       "access_date": "2026-09-02",
       "supports": [
@@ -219,7 +219,7 @@
       "year": 2021,
       "institution": null,
       "source_type": "scientific_paper",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\Strahilov_Dimitrov_2021_Kostenets_Maritsa_fault_zone.pdf",
+      "local_path": "C:\\Геоложки институт\\Kostenets_Dolna_Banya_Active_Faults\\Strahilov_Dimitrov_2021_Kostenets_Maritsa_fault_zone.pdf",
       "url": null,
       "access_date": "2026-09-01",
       "supports": [
@@ -258,7 +258,7 @@
       "year": 2023,
       "institution": null,
       "source_type": "peer_reviewed_scientific_paper",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\Kounov_et_al_2023_Sestrimo_fault.pdf",
+      "local_path": "C:\\Геоложки институт\\Kostenets_Dolna_Banya_Active_Faults\\Kounov_et_al_2023_Sestrimo_fault.pdf",
       "url": "https://doi.org/10.1007/s00531-023-02321-6",
       "access_date": "2026-09-01",
       "supports": [
@@ -275,12 +275,12 @@
     {
       "source_id": "SRC-GEO-MAP-K35-061-PAZARDZHIK",
       "title": "Geological Map of Bulgaria, K-35-061 Pazardzhik, 1:100000",
-      "title_bg": "\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u043a\u0430\u0440\u0442\u0430 \u043d\u0430 \u041d\u0420 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f, \u041f\u0430\u0437\u0430\u0440\u0434\u0436\u0438\u043a, K-35-061, 1:100000",
+      "title_bg": "Геоложка карта на НР България, Пазарджик, K-35-061, 1:100000",
       "authors": null,
       "year": null,
-      "institution": "\u041a\u043e\u043c\u0438\u0442\u0435\u0442 \u043f\u043e \u0433\u0435\u043e\u043b\u043e\u0433\u0438\u044f",
+      "institution": "Комитет по геология",
       "source_type": "official_geological_map",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\K-35-061_Pazardzhik_geological_map.jpg",
+      "local_path": "C:\\Геоложки институт\\Kostenets_Dolna_Banya_Active_Faults\\K-35-061_Pazardzhik_geological_map.jpg",
       "url": null,
       "access_date": "2026-09-02",
       "supports": [
@@ -308,7 +308,7 @@
       "year": 2015,
       "institution": "University of Mining and Geology St. Ivan Rilski",
       "source_type": "peer_reviewed_scientific_paper",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\Popov_Velichkov_Popov_2015_Upper_Thracian_Rift_System_Part1.pdf",
+      "local_path": "C:\\Геоложки институт\\Kostenets_Dolna_Banya_Active_Faults\\Popov_Velichkov_Popov_2015_Upper_Thracian_Rift_System_Part1.pdf",
       "url": "https://www.bgd.bg/REVIEW_BGS/REVIEW_BGD_2015_2-3/PDF/02_Popov_Review_2015-2-3.pdf",
       "access_date": "2026-09-02",
       "supports": [
@@ -333,7 +333,7 @@
     {
       "source_id": "SRC-RADULOV-ET-AL-2015",
       "title": "Paleoseismicity of the South Ihtiman fault from a trench at Polyantsi village - seismic hazard assessment",
-      "title_bg": "\u041f\u0430\u043b\u0435\u043e\u0441\u0435\u0438\u0437\u043c\u0438\u0447\u043d\u043e\u0441\u0442 \u043d\u0430 \u042e\u0436\u043d\u043e\u0438\u0445\u0442\u0438\u043c\u0430\u043d\u0441\u043a\u0438\u044f \u0440\u0430\u0437\u043b\u043e\u043c \u043e\u0442 \u043a\u0430\u043d\u0430\u0432\u0430 \u043f\u0440\u0438 \u0441. \u041f\u043e\u043b\u044f\u043d\u0446\u0438 - \u043e\u0446\u0435\u043d\u043a\u0430 \u043d\u0430 \u0441\u0435\u0438\u0437\u043c\u0438\u0447\u043d\u0430\u0442\u0430 \u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442",
+      "title_bg": "Палеосеизмичност на Южноихтиманския разлом от канава при с. Полянци - оценка на сеизмичната опасност",
       "authors": [
         "Alexander Radulov",
         "Marlena Yaneva",
@@ -345,7 +345,7 @@
       "year": 2015,
       "institution": "Bulgarian Geological Society / Geological Institute, BAS",
       "source_type": "scientific_conference_paper",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\REC17_Ihtiman_QA\\Radulov_et_al_2015_South_Ihtiman_fault.pdf",
+      "local_path": "C:\\Геоложки институт\\Kostenets_Dolna_Banya_Active_Faults\\REC17_Ihtiman_QA\\Radulov_et_al_2015_South_Ihtiman_fault.pdf",
       "url": "https://www.bgd.bg/CONFERENCES/Geonauki_2015/Sbornik/pdf/41_Radulov_GEOSCIENCES_2015.pdf",
       "access_date": "2026-09-02",
       "supports": [
@@ -365,7 +365,7 @@
     {
       "source_id": "SRC-GEO-MAP-K34-060-IHTIMAN",
       "title": "Geological Map of Bulgaria, K-34-060 Ihtiman, 1:100000",
-      "title_bg": "\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u043a\u0430\u0440\u0442\u0430 \u043d\u0430 \u041d\u0420 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f, \u0418\u0445\u0442\u0438\u043c\u0430\u043d, K-34-060, 1:100000",
+      "title_bg": "Геоложка карта на НР България, Ихтиман, K-34-060, 1:100000",
       "authors": [
         "K. Iliev",
         "N. Katskov"
@@ -373,7 +373,7 @@
       "year": 1990,
       "institution": "Committee of Geology",
       "source_type": "official_geological_map",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\K-34-060_Ihtiman_geological_map.jpg",
+      "local_path": "C:\\Геоложки институт\\Kostenets_Dolna_Banya_Active_Faults\\K-34-060_Ihtiman_geological_map.jpg",
       "url": "https://www.geokniga.org/maps/1045",
       "access_date": "2026-09-02",
       "supports": [
@@ -400,7 +400,7 @@
       "year": 2015,
       "institution": "Bulgarian Geological Society",
       "source_type": "scientific_conference_paper",
-      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\REC67_Ihtiman_North_QA\\Gerdjikov_et_al_2015_Maritsa_fault_system.pdf",
+      "local_path": "C:\\Геоложки институт\\Kostenets_Dolna_Banya_Active_Faults\\REC67_Ihtiman_North_QA\\Gerdjikov_et_al_2015_Maritsa_fault_system.pdf",
       "url": "https://www.bgd.bg/CONFERENCES/Geonauki_2015/Sbornik/pdf/37_Gerdjikov_GEOSCIENCES_2015.pdf",
       "access_date": "2026-09-02",
       "supports": [
@@ -414,6 +414,102 @@
         "does_not_identify_REC67_as_a_named_fault",
         "poorly_exposed_domain_between_IFZ_and_YSZ_remains_unresolved",
         "published_map_not_an_active_fault_inventory"
+      ]
+    },
+    {
+      "source_id": "SRC-SOFIAPLAN-FAULTS",
+      "title": "Faults in Sofia and surroundings",
+      "title_bg": "??????? ? ????? ? ???????????",
+      "authors": null,
+      "year": 2009,
+      "institution": "?? ????????? / ???????? ??????",
+      "source_type": "municipal_geospatial_dataset",
+      "local_path": "_research/active_faults_network/sofiaplan_faults.geojson",
+      "url": "https://urbandata.sofia.bg/",
+      "access_date": "2026-09-02",
+      "supports": [
+        "Sofia_local_fault_geometry",
+        "fault_age_classification",
+        "local_fault_crosscheck"
+      ],
+      "limitations": [
+        "dataset_geometry_is_not_by_itself_exact_MRRB_identity",
+        "legacy_content",
+        "fault_age_attribute_must_not_be_automatically_equated_with_present_day_activity"
+      ]
+    },
+    {
+      "source_id": "SRC-RADULOV-2023-NORTH-SOFIA",
+      "title": "Multiple ruptures on the North-Sofia fault at Gorni Bogrov from scarp profile and shallow geophysics",
+      "authors": [
+        "Alexander Radulov",
+        "Yordanka Donkova",
+        "Marlena Yaneva",
+        "Nikolay Nikolov"
+      ],
+      "year": 2023,
+      "institution": "Geological Institute, Bulgarian Academy of Sciences",
+      "source_type": "peer_reviewed_scientific_paper",
+      "local_path": null,
+      "url": "https://doi.org/10.52321/GeolBalc.52.2.65",
+      "access_date": "2026-09-02",
+      "supports": [
+        "North_Sofia_fault",
+        "Gorni_Bogrov_recent_fault_displacement",
+        "Sofia_graben_northern_boundary",
+        "segmented_bifurcating_fault_geometry"
+      ],
+      "limitations": [
+        "study_site_is_local",
+        "authors_state_complete_fault_trace_requires_additional_mapping",
+        "does_not_prove_exact_MRRB_corridor_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-MATOVA-SOFIA",
+      "title": "Seismotectonic danger for three cultural monuments in Sofia city (Bulgaria)",
+      "authors": [
+        "Margarita Matova"
+      ],
+      "year": null,
+      "institution": "Geological Institute, Bulgarian Academy of Sciences",
+      "source_type": "scientific_conference_paper",
+      "local_path": null,
+      "url": "https://www.bgd.bg/CONFERENCES/80_godini_BGD/pdf_files/matova.pdf",
+      "access_date": "2026-09-02",
+      "supports": [
+        "Sofia_graben_active_structure",
+        "Vitosha_fault_zone",
+        "Negushevo_fault_zone",
+        "Chepintsi_fault",
+        "Elin_Pelin_fault",
+        "transverse_fault_network"
+      ],
+      "limitations": [
+        "regional_seismotectonic_model",
+        "not_exact_MRRB_geometry"
+      ]
+    },
+    {
+      "source_id": "SRC-KOTZEV-2006",
+      "title": "Active tectonics of Bulgaria and surrounding regions derived from GPS measurements and geological data",
+      "authors": [
+        "Kotzev et al."
+      ],
+      "year": 2006,
+      "institution": null,
+      "source_type": "peer_reviewed_scientific_paper",
+      "local_path": null,
+      "url": null,
+      "access_date": "2026-09-02",
+      "supports": [
+        "North_Vitosha_fault",
+        "Sofia_graben",
+        "regional_extensional_tectonics"
+      ],
+      "limitations": [
+        "regional_scale",
+        "does_not_prove_exact_MRRB_surface_trace"
       ]
     }
   ]

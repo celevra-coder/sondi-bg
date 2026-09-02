@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 26,
+  "record_count": 32,
   "generated_date": "2026-09-02",
   "records": [
     {
       "fault_id": "FLT-KRUPNIK",
       "mrrb": {
         "record": 47,
-        "name": "\u041a\u0440\u0443\u043f\u043d\u0438\u043a"
+        "name": "Крупник"
       },
       "scientific": {
         "name": "Krupnik fault",
@@ -37,7 +37,7 @@
       "fault_id": "FLT-PREDELA",
       "mrrb": {
         "record": 45,
-        "name": "\u041f\u0440\u0435\u0434\u0435\u043b\u0430"
+        "name": "Предела"
       },
       "scientific": {
         "name": "Predela fault",
@@ -66,7 +66,7 @@
       "fault_id": "FLT-DOBRINISHTE",
       "mrrb": {
         "record": 46,
-        "name": "\u0411\u0430\u043d\u0441\u043a\u043e_\u0434\u043e\u0431\u0440\u0438\u043d\u0438\u0449\u0435"
+        "name": "Банско_добринище"
       },
       "scientific": {
         "name": "Dobrinishte fault",
@@ -92,7 +92,7 @@
       "fault_id": "FLT-RAZLOG-MRRB",
       "mrrb": {
         "record": 51,
-        "name": "\u0420\u0430\u0437\u043b\u043e\u0433"
+        "name": "Разлог"
       },
       "scientific": {
         "name": null,
@@ -122,7 +122,7 @@
       "fault_id": "FLT-RILA-STOB",
       "mrrb": {
         "record": 52,
-        "name": "\u0420\u0438\u043b\u0430-\u0421\u0442\u043e\u0431"
+        "name": "Рила-Стоб"
       },
       "scientific": {
         "name": "Stob / Rila fault",
@@ -150,7 +150,7 @@
       "fault_id": "FLT-N-RILA-STOB",
       "mrrb": {
         "record": 53,
-        "name": "N \u0420\u0438\u043b\u0430-\u0421\u0442\u043e\u0431"
+        "name": "N Рила-Стоб"
       },
       "scientific": {
         "name": null,
@@ -318,7 +318,7 @@
       "fault_id": "FLT-SAMOKOV-MRRB",
       "mrrb": {
         "record": 59,
-        "name": "\u0421\u0430\u043c\u043e\u043a\u043e\u0432"
+        "name": "Самоков"
       },
       "scientific": {
         "name": null,
@@ -785,7 +785,7 @@
       "fault_id": "FLT-IHTIMAN-NORTH-REC67",
       "mrrb": {
         "record": 67,
-        "name": "\u0418\u0445\u0442\u0438\u043c\u0430\u043d \u0421"
+        "name": "Ихтиман С"
       },
       "scientific": {
         "name": null,
@@ -819,6 +819,205 @@
       "open_items": [
         "Locate detailed field mapping or technical reports that resolve the poorly exposed structural domain north and northwest of Ihtiman.",
         "Digitize and georeference the published Gerdjikov et al. 2015 structural zones for quantitative comparison with REC67."
+      ]
+    },
+    {
+      "fault_id": "FLT-NORTH-SOFIA-REC20",
+      "mrrb": {
+        "record": 20,
+        "name": "N Sofia"
+      },
+      "scientific": {
+        "name": "North-Sofia fault",
+        "system": "Sofia graben northern boundary fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS025"
+      },
+      "correspondence": {
+        "type": "partial_local_scientific_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-SOFIAPLAN-FAULTS",
+        "SRC-RADULOV-2023-NORTH-SOFIA",
+        "SRC-MATOVA-SOFIA"
+      ],
+      "notes": [
+        "REC20 has strong local SofiaPlan fault-trace support and lies approximately 248 m from EUR_BGCS025.",
+        "Radulov et al. identify the North-Sofia fault as the northern boundary fault of the Sofia graben.",
+        "Published and field evidence indicate bifurcating and overlapping segments; REC20 is not treated as one exact continuous scientific trace."
+      ],
+      "open_items": [
+        "Digitize the complete published North-Sofia fault interpretation for quantitative segment-by-segment comparison."
+      ]
+    },
+    {
+      "fault_id": "FLT-VITOSHA-REC21",
+      "mrrb": {
+        "record": 21,
+        "name": "Vitosha"
+      },
+      "scientific": {
+        "name": "North Vitosha fault / Vitosha fault zone",
+        "system": "Sofia graben southern boundary fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS026"
+      },
+      "correspondence": {
+        "type": "partial_local_scientific_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-SOFIAPLAN-FAULTS",
+        "SRC-MATOVA-SOFIA",
+        "SRC-KOTZEV-2006"
+      ],
+      "notes": [
+        "REC21 intersects a SofiaPlan mapped fault trace with strong orientation compatibility.",
+        "Scientific literature recognizes the Vitosha / North Vitosha fault zone along the southern margin of the Sofia graben.",
+        "Different publications use broader Vitosha and Iskar fault-zone concepts; kinematics are therefore not inherited automatically into the MRRB record."
+      ],
+      "open_items": [
+        "Resolve local North Vitosha versus Iskar fault-zone nomenclature and segment kinematics."
+      ]
+    },
+    {
+      "fault_id": "FLT-PLANA-REC22",
+      "mrrb": {
+        "record": 22,
+        "name": "Plana"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Sofia graben southern boundary / Vitosha-Plana-Lozen structural domain",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS026"
+      },
+      "correspondence": {
+        "type": "local_fault_zone_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-SOFIAPLAN-FAULTS",
+        "SRC-MATOVA-SOFIA"
+      ],
+      "notes": [
+        "REC22 intersects SofiaPlan fault traces and has strong local orientation agreement.",
+        "Current evidence supports the southern Sofia-graben structural domain but not an individual scientific fault name."
+      ],
+      "open_items": [
+        "Identify a primary geological-map or scientific source assigning an individual modern fault name to the REC22 corridor."
+      ]
+    },
+    {
+      "fault_id": "FLT-SOFIA-KNYAZHEVO-REC112",
+      "mrrb": {
+        "record": 112,
+        "name": "??????? -?. ????????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Sofia graben transverse and oblique fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_transverse_fault_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-SOFIAPLAN-FAULTS",
+        "SRC-MATOVA-SOFIA"
+      ],
+      "notes": [
+        "REC112 strongly intersects a SofiaPlan mapped fault with approximately 3.83 degree orientation difference.",
+        "Its orientation is oblique to the dominant BGCS026 trend and is consistent with the documented transverse fault network of the Sofia graben."
+      ],
+      "open_items": [
+        "Exact scientific fault name and kinematics remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-SOFIA-SLATINA-DRUZHBA-REC113",
+      "mrrb": {
+        "record": 113,
+        "name": "??????? - ??????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Sofia graben transverse and oblique fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_transverse_fault_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-SOFIAPLAN-FAULTS",
+        "SRC-MATOVA-SOFIA"
+      ],
+      "notes": [
+        "REC113 strongly intersects a SofiaPlan mapped fault with approximately 3.71 degree orientation difference.",
+        "Its oblique orientation is compatible with the documented cross-cutting fault network inside the Sofia graben."
+      ],
+      "open_items": [
+        "Exact scientific fault name and kinematics remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-SOFIA-LYULIN-REC115",
+      "mrrb": {
+        "record": 115,
+        "name": "?????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Sofia graben southwestern / southern marginal structural domain",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_geological_fault_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-SOFIAPLAN-FAULTS",
+        "SRC-MATOVA-SOFIA"
+      ],
+      "notes": [
+        "REC115 intersects a SofiaPlan fault trace with approximately 2.5 degree orientation difference.",
+        "The nearest SofiaPlan trace is classified as pre-Quaternary; this geometry alone is not used to infer present-day activity."
+      ],
+      "open_items": [
+        "Find independent Quaternary or neotectonic evidence for the REC115 corridor before assigning an active scientific fault identity."
       ]
     }
   ]
