@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 45,
+  "record_count": 56,
   "generated_date": "2026-09-02",
   "records": [
     {
@@ -1446,6 +1446,361 @@
       ],
       "open_items": [
         "Find local Quaternary, neotectonic or geological mapping for the Hrabarsko-Herakovo sector."
+      ]
+    },
+    {
+      "fault_id": "FLT-STRALDZHA-REC5",
+      "mrrb": {
+        "record": 5,
+        "name": "Straldja"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Straldzha-Sliven regional fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS010"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-041-SLIVEN"
+      ],
+      "notes": [
+        "REC5 lies within the principal E-W to WNW-ESE Straldzha-Sliven structural belt.",
+        "Strong spatial correspondence with EUR_BGCS010 is retained as a regional system crosswalk, not exact surface-trace identity."
+      ],
+      "open_items": [
+        "Individual scientific fault name and segment-level published identity remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-STRALDZHA2-REC39",
+      "mrrb": {
+        "record": 39,
+        "name": "Стракджа 2"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Straldzha-Sliven regional fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS010"
+      },
+      "correspondence": {
+        "type": "regional_parallel_fault_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-055-BURGAS"
+      ],
+      "notes": [
+        "REC39 is subparallel to the regional EUR_BGCS010 trend.",
+        "The Burgas geological sheet supports a faulted regional structural belt but not a one-to-one exact trace."
+      ],
+      "open_items": [
+        "Individual scientific fault name and segment-level published identity remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-TVARDITSA-SBORISHTE-REC42",
+      "mrrb": {
+        "record": 42,
+        "name": "Твърдица_Сборище"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Tvarditsa-Sborishte regional fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS038"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-040-TVARDITSA",
+        "SRC-GEO-MAP-K35-041-SLIVEN"
+      ],
+      "notes": [
+        "REC42 occupies a strongly faulted regional structural zone across the Tvarditsa-Sliven sheet boundary.",
+        "EUR_BGCS038 provides a strong regional modeled-source correspondence.",
+        "MRRB corridor, geological-map faults and GEM geometry are not treated as one exact trace."
+      ],
+      "open_items": [
+        "Individual scientific fault name and segment-level published identity remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-SBORISHTE-BYALA-REC43",
+      "mrrb": {
+        "record": 43,
+        "name": "Сборище-Шосето Бяла"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Tvarditsa-Sborishte regional fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS038"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-041-SLIVEN"
+      ],
+      "notes": [
+        "REC43 belongs to the same broad structural subgroup as REC42.",
+        "Regional correspondence with EUR_BGCS038 is supported, while individual exact fault identity remains unresolved."
+      ],
+      "open_items": [
+        "Individual scientific fault name and segment-level published identity remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-BINKOS-SELIMINOVO-REC44",
+      "mrrb": {
+        "record": 44,
+        "name": "Бинкос_Селиминово"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Straldzha-Sliven regional fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS010"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-054-YAMBOL"
+      ],
+      "notes": [
+        "REC44 is compatible with the western part of the broader EUR_BGCS010 structural corridor.",
+        "The geological-map comparison supports regional structural correspondence rather than exact trace identity."
+      ],
+      "open_items": [
+        "Individual scientific fault name and segment-level published identity remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-KRUMOVO-GRADISHTE-REC119",
+      "mrrb": {
+        "record": 119,
+        "name": "Крумово Градище"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Straldzha-Sliven regional fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS010"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-055-BURGAS"
+      ],
+      "notes": [
+        "REC119 follows the dominant regional fault-system orientation and has strong regional correspondence with EUR_BGCS010.",
+        "The relationship is interpreted at system scale, not as exact line identity."
+      ],
+      "open_items": [
+        "Individual scientific fault name and segment-level published identity remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-BALD-MOGILA-REC123",
+      "mrrb": {
+        "record": 123,
+        "name": "Балд Могила"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Straldzha-Sliven regional fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS010"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-041-SLIVEN"
+      ],
+      "notes": [
+        "REC123 lies within the principal Straldzha-Sliven fault belt and strongly corresponds regionally with EUR_BGCS010.",
+        "Exact surface-trace identity is not asserted."
+      ],
+      "open_items": [
+        "Individual scientific fault name and segment-level published identity remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-GLUSHNIK-REC124",
+      "mrrb": {
+        "record": 124,
+        "name": "Глушник"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Straldzha-Sliven regional fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS010"
+      },
+      "correspondence": {
+        "type": "regional_parallel_fault_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-054-YAMBOL",
+        "SRC-GEO-MAP-K35-055-BURGAS"
+      ],
+      "notes": [
+        "REC124 is a secondary or parallel corridor within the broader EUR_BGCS010 structural belt.",
+        "It is spatially offset from the GEM modeled line and is not treated as the same exact trace."
+      ],
+      "open_items": [
+        "Individual scientific fault name and segment-level published identity remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-BARMUKA-REC125",
+      "mrrb": {
+        "record": 125,
+        "name": "Бармука"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Straldzha-Sliven regional fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS010"
+      },
+      "correspondence": {
+        "type": "regional_parallel_fault_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-041-SLIVEN"
+      ],
+      "notes": [
+        "REC125 is interpreted as a secondary subparallel structural corridor in the broader Straldzha-Sliven system.",
+        "Proximity to EUR_BGCS010 does not establish exact fault identity."
+      ],
+      "open_items": [
+        "Individual scientific fault name and segment-level published identity remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-SLIVEN-TRANSVERSE-REC126",
+      "mrrb": {
+        "record": 126,
+        "name": "Сливен"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Sliven transverse fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "transverse_fault_network_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEO-MAP-K35-041-SLIVEN"
+      ],
+      "notes": [
+        "REC126 has a markedly different orientation from the dominant E-W to WNW-ESE Straldzha-Sliven system.",
+        "It is retained as a transverse structural corridor rather than a continuation of EUR_BGCS010.",
+        "Spatial intersection with EUR_BGCS010 is not treated as identity."
+      ],
+      "open_items": [
+        "Individual scientific fault name and segment-level published identity remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-KLUTSOHOR-REC127",
+      "mrrb": {
+        "record": 127,
+        "name": "Клуцохор"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Straldzha-Sliven regional fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS010"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-041-SLIVEN"
+      ],
+      "notes": [
+        "REC127 has strong regional structural compatibility with the principal Straldzha-Sliven fault belt.",
+        "Individual scientific fault-name identity remains unresolved."
+      ],
+      "open_items": [
+        "Individual scientific fault name and segment-level published identity remain unresolved."
       ]
     }
   ]

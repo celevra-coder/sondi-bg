@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 25,
+  "source_count": 29,
   "generated_date": "2026-09-02",
   "sources": [
     {
@@ -588,6 +588,98 @@
         "Late_Alpine_structural_study_not_active_fault_inventory",
         "precise_fault_zone_geometry_and_kinematics_are_locally_poorly_constrained",
         "does_not_prove_exact_MRRB_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-040-TVARDITSA",
+      "title": "Geological Map of Bulgaria, K-35-040 Tvarditsa, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ????????, K-35-040, 1:100000",
+      "authors": null,
+      "year": 1994,
+      "institution": "Committee of Geology / Bulgarian geological mapping programme",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region3_maps\\K-35-040_Tvarditsa.jpg",
+      "url": null,
+      "access_date": "2026-09-02",
+      "supports": [
+        "Tvarditsa_Sborishte_regional_geological_structure",
+        "mapped_fault_segments",
+        "REC42_regional_structural_cross_check"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_geological_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate_not_rigorous_georeferencing",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-041-SLIVEN",
+      "title": "Geological Map of Bulgaria, K-35-041 Sliven, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ??????, K-35-041, 1:100000",
+      "authors": null,
+      "year": 1995,
+      "institution": "Committee of Geology / Bulgarian geological mapping programme",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region3_maps\\K-35-041_Sliven.jpg",
+      "url": null,
+      "access_date": "2026-09-02",
+      "supports": [
+        "Sliven_regional_fault_network",
+        "mapped_fault_segments",
+        "REC5_REC42_REC43_REC123_REC125_REC126_REC127_structural_cross_check"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_geological_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate_not_rigorous_georeferencing",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-054-YAMBOL",
+      "title": "Geological Map of Bulgaria, K-35-054 Yambol, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ?????, K-35-054, 1:100000",
+      "authors": null,
+      "year": 1988,
+      "institution": "Committee of Geology / Bulgarian geological mapping programme",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region3_maps\\K-35-054_Yambol.jpg",
+      "url": null,
+      "access_date": "2026-09-02",
+      "supports": [
+        "western_Straldzha_regional_structure",
+        "mapped_fault_segments",
+        "REC44_REC124_structural_cross_check"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_geological_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate_not_rigorous_georeferencing",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-055-BURGAS",
+      "title": "Geological Map of Bulgaria, K-35-055 Burgas, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ??????, K-35-055, 1:100000",
+      "authors": null,
+      "year": 1988,
+      "institution": "Committee of Geology / Bulgarian geological mapping programme",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region3_maps\\K-35-055_Burgas.jpg",
+      "url": null,
+      "access_date": "2026-09-02",
+      "supports": [
+        "eastern_Straldzha_regional_structure",
+        "mapped_fault_segments",
+        "REC39_REC119_REC124_structural_cross_check"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_geological_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate_not_rigorous_georeferencing",
+        "not_suitable_for_exact_trace_identity"
       ]
     }
   ]
