@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 17,
+  "source_count": 18,
   "generated_date": "2026-09-02",
   "sources": [
     {
@@ -387,6 +387,33 @@
         "legacy_map_does_not_by_itself_prove_present_day_activity",
         "combined_affine_georeferencing_has_approximately_26px_RMS_and_39px_maximum_control_error",
         "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GERDJIKOV-RADULOV-METODIEV-2015",
+      "title": "Cretaceous-Tertiary deformations along a part of the Maritsa fault system between Pazardzhik and Sofia",
+      "authors": [
+        "Ianko Gerdjikov",
+        "Alexander Radulov",
+        "Lubomir Metodiev"
+      ],
+      "year": 2015,
+      "institution": "Bulgarian Geological Society",
+      "source_type": "scientific_conference_paper",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\REC67_Ihtiman_North_QA\\Gerdjikov_et_al_2015_Maritsa_fault_system.pdf",
+      "url": "https://www.bgd.bg/CONFERENCES/Geonauki_2015/Sbornik/pdf/37_Gerdjikov_GEOSCIENCES_2015.pdf",
+      "access_date": "2026-09-02",
+      "supports": [
+        "Maritsa_fault_system_regional_context",
+        "Iskar_fault_zone",
+        "Yavornishka_shear_zone",
+        "REC67_intervening_structural_domain_assessment"
+      ],
+      "limitations": [
+        "conference_extended_abstract",
+        "does_not_identify_REC67_as_a_named_fault",
+        "poorly_exposed_domain_between_IFZ_and_YSZ_remains_unresolved",
+        "published_map_not_an_active_fault_inventory"
       ]
     }
   ]

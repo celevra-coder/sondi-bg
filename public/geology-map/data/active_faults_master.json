@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 25,
+  "record_count": 26,
   "generated_date": "2026-09-02",
   "records": [
     {
@@ -779,6 +779,46 @@
       "open_items": [
         "Digitize the complete published South Ihtiman surface trace and reconcile its individual segments with REC17 and EUR_BGCS027.",
         "Retrieve the cited Hristov 1974 and Boyadjiev 1971 primary sources for additional local structural history."
+      ]
+    },
+    {
+      "fault_id": "FLT-IHTIMAN-NORTH-REC67",
+      "mrrb": {
+        "record": 67,
+        "name": "\u0418\u0445\u0442\u0438\u043c\u0430\u043d \u0421"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Maritsa fault system / Ihtiman basin intervening structural domain",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_structural_corridor_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-060-IHTIMAN",
+        "SRC-GERDJIKOV-RADULOV-METODIEV-2015"
+      ],
+      "notes": [
+        "REC67 is a 23.007 km medium-class MRRB corridor with a PCA strike of approximately 142.18 degrees.",
+        "REC67 is separated from REC17 South Ihtiman by approximately 1121.4 m and the two MRRB polygons do not intersect.",
+        "No GEM/BGCS modeled source intersects REC67. EUR_BGCS027 is nearest at approximately 1279.2 m, with a local orientation difference of approximately 23.60 degrees; no BGCS crosswalk is assigned.",
+        "REC67 owns none of the 4001 sampled points along EUR_BGCS027; no samples lie within 1 km, while only 6.95 percent lie within 2 km of REC67.",
+        "The K-34-060 Ihtiman geological-map overlay places REC67 across the northern and eastern Ihtiman basin structural domain, but does not demonstrate one continuous identical mapped fault trace.",
+        "Gerdjikov et al. 2015 demonstrate that the historical Iskar-Yavornishki fault concept comprises two separate structures: the Yavornishka shear zone and the Iskar fault zone.",
+        "The Yavornishka shear zone extends from the Pazardzhik area to Polyantsi south of Ihtiman and is spatially associated more closely with REC17, while the Iskar fault zone extends from Pancharevo to the northeastern Iskar Dam margin and is not identified with REC67.",
+        "REC67 lies mainly within the poorly exposed intervening domain between those published structures; current evidence does not establish an individual scientific name, kinematics, age, or exact surface-trace identity."
+      ],
+      "open_items": [
+        "Locate detailed field mapping or technical reports that resolve the poorly exposed structural domain north and northwest of Ihtiman.",
+        "Digitize and georeference the published Gerdjikov et al. 2015 structural zones for quantitative comparison with REC67."
       ]
     }
   ]
