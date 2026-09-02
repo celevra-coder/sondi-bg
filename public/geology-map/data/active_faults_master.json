@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 20,
+  "record_count": 21,
   "generated_date": "2026-09-02",
   "records": [
     {
@@ -583,6 +583,43 @@
       ],
       "open_items": [
         "Exact individual scientific fault name remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-PAZAR-PLO-REC15",
+      "mrrb": {
+        "record": 15,
+        "name": "Pazar_Plo"
+      },
+      "scientific": {
+        "name": null,
+        "system": "North Rhodopean fault system / southern Upper Thracian basin-margin faulting",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS046"
+      },
+      "correspondence": {
+        "type": "partial_regional_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-POPOV-VELICHKOV-POPOV-2015",
+        "SRC-GERDJIKOV-GEORGIEV-2006"
+      ],
+      "notes": [
+        "REC15 is the nearest MRRB corridor for 83.35 percent of EUR_BGCS046 and for 72.13 percent of the modeled source within a 2 km proximity threshold.",
+        "The main REC15 and BGCS046 axes differ by approximately 6.58 degrees.",
+        "Dense ownership analysis identifies two major REC15-controlled BGCS046 intervals of approximately 30.97 km and 17.38 km; the eastern end is locally closer to REC121 Novakovo and a short intermediate interval to REC122 Stamboliyski.",
+        "Popov et al. 2015 describe the North Rhodopean fault as the best expressed structure separating the Upper Thracian Rift System from the northern Rhodope slopes between Belovo and Asenovgrad.",
+        "Affine georeferencing of Popov et al. 2015 Fig. 3 produced 3.25 px RMS and 5.286 px maximum control residual; BGCS046 follows the same southern basin-margin fault belt but corresponds to several established fault segments rather than one exact mapped trace.",
+        "BGCS046 is not identified with the historical dextral Maritsa strike-slip fault system; Gerdjikov and Georgiev 2006 state that modern activity of that strike-slip system is not demonstrated."
+      ],
+      "open_items": [
+        "Exact one-to-one scientific fault name remains unresolved; North Rhodopean fault system is retained as the regional scientific system rather than exact trace identity."
       ]
     }
   ]
