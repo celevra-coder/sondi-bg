@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 19,
+  "record_count": 20,
   "generated_date": "2026-09-02",
   "records": [
     {
@@ -548,6 +548,41 @@
       ],
       "open_items": [
         "Retrieve original Valkova and Spiridonov 1979 paper for primary-source detail."
+      ]
+    },
+    {
+      "fault_id": "FLT-SEPTEMVRI-REC79",
+      "mrrb": {
+        "record": 79,
+        "name": "Septemvri"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Upper Thracian Rift System / Belovo-Septemvri-Pazardzhik fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_fault_network_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEO-MAP-K35-061-PAZARDZHIK",
+        "SRC-POPOV-VELICHKOV-POPOV-2015"
+      ],
+      "notes": [
+        "Popov et al. 2015 describe numerous faults most likely developed from the Belovo and Septemvri areas toward Pazardzhik beneath Quaternary sediments.",
+        "K-35-061 supports a segmented structural/fault network rather than one continuous exact fault trace along REC79.",
+        "REC79 is approximately parallel to REC18 Belovo but is retained as a separate MRRB corridor.",
+        "EUR_BGCS005 is the nearest GEM/BGCS modeled source at approximately 2267.5 m from REC79 and does not intersect the MRRB corridor; no BGCS crosswalk is assigned.",
+        "EUR_BGCS027 is approximately 7744.1 m from REC79 and also does not intersect."
+      ],
+      "open_items": [
+        "Exact individual scientific fault name remains unresolved."
       ]
     }
   ]

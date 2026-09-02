@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 14,
+  "source_count": 15,
   "generated_date": "2026-09-02",
   "sources": [
     {
@@ -291,6 +291,32 @@
         "legacy_map_does_not_by_itself_prove_present_day_activity",
         "georeferenced_from_scanned_map_with_approximately_108m_RMS_control_error",
         "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-POPOV-VELICHKOV-POPOV-2015",
+      "title": "The post-collisional Upper Thracian rift system (Bulgaria) and the formed exogenous uranium deposits. Part 1 - Lithostratigraphy and tectonic",
+      "authors": [
+        "Kamen Popov",
+        "Dimitar Velichkov",
+        "Petko Popov"
+      ],
+      "year": 2015,
+      "institution": "University of Mining and Geology St. Ivan Rilski",
+      "source_type": "peer_reviewed_scientific_paper",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\Popov_Velichkov_Popov_2015_Upper_Thracian_Rift_System_Part1.pdf",
+      "url": "https://www.bgd.bg/REVIEW_BGS/REVIEW_BGD_2015_2-3/PDF/02_Popov_Review_2015-2-3.pdf",
+      "access_date": "2026-09-02",
+      "supports": [
+        "Upper_Thracian_Rift_System",
+        "Belovo_Septemvri_Pazardzhik_fault_network",
+        "faults_beneath_Quaternary_sediments",
+        "regional_tectonic_context"
+      ],
+      "limitations": [
+        "regional_fault_network_interpretation_not_MRRB_inventory",
+        "does_not_assign_REC79_to_one_named_individual_fault",
+        "does_not_prove_exact_surface_trace_identity"
       ]
     }
   ]
