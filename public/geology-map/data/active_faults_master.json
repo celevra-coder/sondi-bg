@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 24,
+  "record_count": 25,
   "generated_date": "2026-09-02",
   "records": [
     {
@@ -739,6 +739,46 @@
       "open_items": [
         "Exact individual scientific fault name remains unresolved.",
         "Modern fault kinematics and exact surface trace remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-SOUTH-IHTIMAN-REC17",
+      "mrrb": {
+        "record": 17,
+        "name": "Ihtiman"
+      },
+      "scientific": {
+        "name": "South Ihtiman normal fault",
+        "system": "Maritsa fault system / southern Ihtiman basin margin",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS027"
+      },
+      "correspondence": {
+        "type": "partial_local_scientific_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-RADULOV-ET-AL-2015",
+        "SRC-GEO-MAP-K34-060-IHTIMAN"
+      ],
+      "notes": [
+        "REC17 is a 39.636 km high-class MRRB corridor with a PCA strike of approximately 120.21 degrees.",
+        "EUR_BGCS027 intersects REC17 for approximately 1273.1 m, representing about 2.804 percent of the modeled source; the local orientation difference at the nearest sector is approximately 0.01 degrees.",
+        "REC17 is the nearest MRRB owner for approximately 90.63 percent or 41.142 km of EUR_BGCS027; 75.48 percent of the complete modeled source lies within 1 km of REC17.",
+        "Radulov et al. 2015 identify the South Ihtiman fault as a mountain-bounding normal fault along the northeastern Cherni Rid foothill that controls Neogene-Quaternary deposition in the Ihtiman basin; its mapped length is 18.35 +/- 0.95 km.",
+        "The Radulov et al. paleoseismic trench at 23.73317861 E, 42.41691889 N lies approximately 716.6 m outside REC17 but only approximately 118.1 m from EUR_BGCS027.",
+        "Affine georeferencing of geological map K-34-060 Ihtiman produced 26.104 px RMS and 38.995 px maximum control residual; the overlay supports a shared southern basin-margin structural belt but is not accurate enough for exact trace identity.",
+        "REC17 is substantially longer than the published 18.35 km South Ihtiman fault and is therefore retained as a partial local scientific correspondence rather than a one-to-one fault trace.",
+        "The normal-fault kinematics of the scientific South Ihtiman fault and EUR_BGCS027 are consistent with the regional relation, but the MRRB polygon remains an official hazard corridor rather than the scientific surface trace."
+      ],
+      "open_items": [
+        "Digitize the complete published South Ihtiman surface trace and reconcile its individual segments with REC17 and EUR_BGCS027.",
+        "Retrieve the cited Hristov 1974 and Boyadjiev 1971 primary sources for additional local structural history."
       ]
     }
   ]

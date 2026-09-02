@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 15,
+  "source_count": 17,
   "generated_date": "2026-09-02",
   "sources": [
     {
@@ -328,6 +328,65 @@
         "does_not_assign_REC121_to_one_named_individual_fault",
         "red_ASTER_lineaments_are_interpreted_structures_not_exact_verified_fault_traces",
         "does_not_prove_exact_surface_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-RADULOV-ET-AL-2015",
+      "title": "Paleoseismicity of the South Ihtiman fault from a trench at Polyantsi village - seismic hazard assessment",
+      "title_bg": "\u041f\u0430\u043b\u0435\u043e\u0441\u0435\u0438\u0437\u043c\u0438\u0447\u043d\u043e\u0441\u0442 \u043d\u0430 \u042e\u0436\u043d\u043e\u0438\u0445\u0442\u0438\u043c\u0430\u043d\u0441\u043a\u0438\u044f \u0440\u0430\u0437\u043b\u043e\u043c \u043e\u0442 \u043a\u0430\u043d\u0430\u0432\u0430 \u043f\u0440\u0438 \u0441. \u041f\u043e\u043b\u044f\u043d\u0446\u0438 - \u043e\u0446\u0435\u043d\u043a\u0430 \u043d\u0430 \u0441\u0435\u0438\u0437\u043c\u0438\u0447\u043d\u0430\u0442\u0430 \u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442",
+      "authors": [
+        "Alexander Radulov",
+        "Marlena Yaneva",
+        "Lubomir Metodiev",
+        "Gabriel Nikolov",
+        "Hristo Kiselinov",
+        "Nikolay Nikolov"
+      ],
+      "year": 2015,
+      "institution": "Bulgarian Geological Society / Geological Institute, BAS",
+      "source_type": "scientific_conference_paper",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\REC17_Ihtiman_QA\\Radulov_et_al_2015_South_Ihtiman_fault.pdf",
+      "url": "https://www.bgd.bg/CONFERENCES/Geonauki_2015/Sbornik/pdf/41_Radulov_GEOSCIENCES_2015.pdf",
+      "access_date": "2026-09-02",
+      "supports": [
+        "South_Ihtiman_normal_fault",
+        "Polyantsi_paleoseismic_trench",
+        "Ihtiman_basin_southern_margin",
+        "Maritsa_fault_system_context",
+        "Holocene_surface_rupturing_events"
+      ],
+      "limitations": [
+        "two_page_conference_summary",
+        "figure_geometry_is_a_schematic_scientific_trace_not_official_MRRB_geometry",
+        "published_fault_length_is_substantially_shorter_than_REC17_corridor",
+        "does_not_prove_exact_REC17_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-060-IHTIMAN",
+      "title": "Geological Map of Bulgaria, K-34-060 Ihtiman, 1:100000",
+      "title_bg": "\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u043a\u0430\u0440\u0442\u0430 \u043d\u0430 \u041d\u0420 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f, \u0418\u0445\u0442\u0438\u043c\u0430\u043d, K-34-060, 1:100000",
+      "authors": [
+        "K. Iliev",
+        "N. Katskov"
+      ],
+      "year": 1990,
+      "institution": "Committee of Geology",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0442\\Kostenets_Dolna_Banya_Active_Faults\\K-34-060_Ihtiman_geological_map.jpg",
+      "url": "https://www.geokniga.org/maps/1045",
+      "access_date": "2026-09-02",
+      "supports": [
+        "Ihtiman_local_geological_structure",
+        "mapped_faults_and_structural_boundaries",
+        "REC17_southern_basin_margin_cross_check",
+        "BGCS027_regional_geometry_cross_check"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_map_does_not_by_itself_prove_present_day_activity",
+        "combined_affine_georeferencing_has_approximately_26px_RMS_and_39px_maximum_control_error",
+        "not_suitable_for_exact_trace_identity"
       ]
     }
   ]
