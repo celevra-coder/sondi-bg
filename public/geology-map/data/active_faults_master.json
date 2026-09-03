@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 114,
+  "record_count": 115,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3854,6 +3854,43 @@
         "EUR_BGCS011, EUR_BGCS010 and EUR_BGCS013 are nearby regional structures but do not provide a stronger overall correspondence.",
         "The crosswalk is regional/system-level and does not assert exact surface-trace identity.",
         "The normal-fault kinematic type is inherited from the accepted EUR_BGCS012 international crosswalk."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-SUNGURLARE-REC8",
+      "mrrb": {
+        "record": 8,
+        "name": "sungurlare"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Sungurlare regional active fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS011"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-042-SUNGURLARE",
+        "SRC-GEO-MAP-K35-043-AYTOS"
+      ],
+      "notes": [
+        "REC8 has a principal strike of approximately 83.22 degrees.",
+        "Nearest GEM EUR_BGCS011 lies approximately 0.47 km from REC8 with approximately 1.02 degrees local strike difference.",
+        "EFSM20 independently gives approximately 0.42 km separation and approximately 1.06 degrees local strike difference.",
+        "K-35-042 Sungurlare shows REC8 and EUR_BGCS011 running nearly parallel within the same regional structural corridor.",
+        "K-35-043 Aytos provides eastern continuation and regional control.",
+        "EUR_BGCS012, EUR_BGCS010 and EUR_BGCS014 are nearby structures but do not provide a stronger overall correspondence.",
+        "The correspondence is regional/system-level and does not assert exact surface-trace identity.",
+        "The normal-fault kinematic type is inherited from the accepted EUR_BGCS011 international crosswalk."
       ],
       "open_items": []
     }
