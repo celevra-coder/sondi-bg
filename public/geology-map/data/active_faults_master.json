@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 109,
+  "record_count": 110,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3673,6 +3673,41 @@
         "K-35-062 and K-35-063 act as southern control sheets and show the regional separation from EUR_BGCS003.",
         "No direct BGCS crosswalk is assigned.",
         "Fault kinematics remain unspecified because the available evidence does not independently establish a kinematic type for REC80."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-VRACHANSKA-VERIGA-BUTOV-DOL-REC1",
+      "mrrb": {
+        "record": 1,
+        "name": "Vrachanska veriga (Butov Dol)"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Vrachanska veriga regional active fault system",
+        "fault_type": "sinistral_normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS024"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-035-BERKOVITSA",
+        "SRC-GEO-MAP-K34-036-VRATSA"
+      ],
+      "notes": [
+        "REC1 has a principal strike of approximately 130.11 degrees.",
+        "REC1 geometrically intersects GEM EUR_BGCS024.",
+        "Nearest GEM EUR_BGCS024 has approximately 2.96 degrees local strike difference from REC1.",
+        "EFSM20 independently intersects REC1 at the same regional fault representation and gives approximately 3.22 degrees local strike difference.",
+        "K-34-035 Berkovitsa and K-34-036 Vratsa support continuation of REC1 and EUR_BGCS024 within the same regional structural corridor.",
+        "The correspondence is regional/system-level and does not assert exact surface-trace identity."
       ],
       "open_items": []
     }
