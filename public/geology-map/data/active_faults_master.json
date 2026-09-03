@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 84,
+  "record_count": 88,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -2797,6 +2797,141 @@
       ],
       "open_items": [
         "Scientific naming and kinematics remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-VELIKO-TARNOVO-REC75",
+      "mrrb": {
+        "record": 75,
+        "name": "В Търново"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Veliko Tarnovo regional normal fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS018"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-028-VELIKO-TARNOVO",
+        "SRC-GEO-MAP-K35-029-OMURTAG"
+      ],
+      "notes": [
+        "REC75 intersects EUR_BGCS018 directly.",
+        "Strike difference is approximately 0.55 degrees against GEM and approximately 4 degrees against EFSM20.",
+        "K-35-028 and K-35-029 support the same regional east-west structural corridor.",
+        "The crosswalk is regional/system-level and does not imply exact trace identity."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-SOUTH-TARNOVO-REC98",
+      "mrrb": {
+        "record": 98,
+        "name": "С Търново"
+      },
+      "scientific": {
+        "name": null,
+        "system": "South Veliko Tarnovo parallel structural corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "southern_parallel_fault_corridor_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-028-VELIKO-TARNOVO",
+        "SRC-GEO-MAP-K35-029-OMURTAG"
+      ],
+      "notes": [
+        "REC98 is strongly subparallel to REC75 with approximately 1.5 degrees strike difference.",
+        "It remains about 9.3 km south of EUR_BGCS018 and does not intersect it.",
+        "No direct BGCS crosswalk is assigned."
+      ],
+      "open_items": [
+        "Exact scientific fault name remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-KILIFAREVO-REC100",
+      "mrrb": {
+        "record": 100,
+        "name": "Килифарево"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Kilifarevo southern parallel structural corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "southern_parallel_structural_segment_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEO-MAP-K35-029-OMURTAG",
+        "SRC-GEO-MAP-K35-040-TVARDITSA"
+      ],
+      "notes": [
+        "REC100 is subparallel to the Veliko Tarnovo regional fault trend.",
+        "It lies approximately 14.5 km from EUR_BGCS018 and does not intersect it.",
+        "K-35-029 and K-35-040 support a separate southern structural corridor."
+      ],
+      "open_items": [
+        "Exact scientific fault name and kinematics remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-SLIVOVITSA-REC101",
+      "mrrb": {
+        "record": 101,
+        "name": "Сливовица"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Slivovitsa eastern parallel structural corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "eastern_parallel_structural_segment_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-029-OMURTAG",
+        "SRC-GEO-MAP-K35-030-SHUMEN"
+      ],
+      "notes": [
+        "REC101 is subparallel to REC75, REC98 and REC100.",
+        "It lies approximately 10.5 km from EUR_BGCS018 and does not intersect it.",
+        "K-35-029 and K-35-030 support continuation of the eastern structural corridor.",
+        "No direct BGCS crosswalk is assigned."
+      ],
+      "open_items": [
+        "Exact scientific fault name remains unresolved."
       ]
     }
   ]
