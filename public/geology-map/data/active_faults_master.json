@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 115,
+  "record_count": 116,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3891,6 +3891,44 @@
         "EUR_BGCS012, EUR_BGCS010 and EUR_BGCS014 are nearby structures but do not provide a stronger overall correspondence.",
         "The correspondence is regional/system-level and does not assert exact surface-trace identity.",
         "The normal-fault kinematic type is inherited from the accepted EUR_BGCS011 international crosswalk."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-GERATA-REC12",
+      "mrrb": {
+        "record": 12,
+        "name": "Gerata"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Gerata regional active fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS006"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-076-HASKOVO",
+        "SRC-GEO-MAP-K35-077-SVILENGRAD"
+      ],
+      "notes": [
+        "REC12 has a principal strike of approximately 93.39 degrees.",
+        "REC12 geometrically intersects GEM EUR_BGCS006.",
+        "Nearest GEM EUR_BGCS006 has approximately 4.88 degrees local strike difference from REC12.",
+        "EFSM20 independently intersects REC12 and gives approximately 2.12 degrees local strike difference.",
+        "K-35-076 Haskovo shows REC12 and EUR_BGCS006 within the same southern regional structural corridor.",
+        "K-35-077 Svilengrad confirms the eastern continuation of the same broad corridor.",
+        "EUR_BGCS001 is a separate northern regional structure and does not provide a stronger correspondence.",
+        "The crosswalk is regional/system-level and does not assert exact surface-trace identity.",
+        "The normal-fault kinematic type is inherited from the accepted EUR_BGCS006 international crosswalk."
       ],
       "open_items": []
     }
