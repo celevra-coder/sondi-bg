@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 101,
+  "record_count": 103,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3384,6 +3384,77 @@
         "K-35-021 Balchik and Shabla supports the local structural correspondence.",
         "No direct BGCS crosswalk is assigned.",
         "Fault kinematics remain unspecified because the available evidence does not independently establish them for REC36."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-STRUMESHNITSA-SOUTH-REC48",
+      "mrrb": {
+        "record": 48,
+        "name": "Струмешница юг"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Strumeshnitsa regional active fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_MKCS013"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-095-STRUMICA-PETRICH",
+        "SRC-GEO-MAP-K34-096-GOTSE-DELCHEV"
+      ],
+      "notes": [
+        "REC48 has a principal strike of approximately 78.64 degrees.",
+        "REC48 directly intersects EUR_MKCS013 in the comparative geometry.",
+        "Nearest GEM EUR_MKCS013 has approximately 1.92 degrees local strike difference.",
+        "EFSM20 independently gives approximately 2.50 degrees local strike difference and also intersects REC48.",
+        "K-34-095 Strumica-Petrich and K-34-096 Gotse Delchev show REC48 and EUR_MKCS013 continuing within the same regional structural corridor.",
+        "The correspondence is regional/system-level and does not assert exact surface-trace identity."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-STRUMESHNITSA-NORTH-REC49",
+      "mrrb": {
+        "record": 49,
+        "name": "Струмешница Север"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Strumeshnitsa regional active fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "northern_parallel_fault_segment_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-095-STRUMICA-PETRICH",
+        "SRC-GEO-MAP-K34-096-GOTSE-DELCHEV"
+      ],
+      "notes": [
+        "REC49 has a principal strike of approximately 69.60 degrees.",
+        "REC49 lies approximately 3.1 km from EUR_MKCS013 and does not intersect the modeled trace.",
+        "Local strike difference to the nearest GEM EUR_MKCS013 segment is approximately 14.91 degrees; EFSM20 gives approximately 11.54 degrees.",
+        "REC49 lies approximately 3.43 km north of REC48 and differs from REC48 in principal strike by approximately 9.04 degrees.",
+        "The geological-map overlays show REC49 as a distinct northern approximately parallel segment rather than the direct modeled EUR_MKCS013 trace.",
+        "No direct MKCS crosswalk is assigned.",
+        "Fault kinematics remain unspecified because the available evidence does not independently establish a kinematic type for REC49."
       ],
       "open_items": []
     }

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 60,
+  "source_count": 61,
   "generated_date": "2026-09-03",
   "sources": [
     {
@@ -1376,6 +1376,32 @@
       ],
       "notes": [
         "Used as structural support only; the geological map does not by itself establish present-day activity, kinematics, or exact trace identity."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-096-GOTSE-DELCHEV",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-34-096 Gotse Delchev",
+      "authors": [
+        "Кожухаров Д."
+      ],
+      "year": 1989,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1066",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region18_maps/K-34-096_Gotse_Delchev.jpg",
+      "supports": [
+        "REC48 Strumeshnitsa south regional structural correspondence",
+        "REC49 Strumeshnitsa north local parallel structural segment",
+        "EUR_MKCS013 regional structural corridor"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."
       ]
     }
   ]
