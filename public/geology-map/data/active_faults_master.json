@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 56,
-  "generated_date": "2026-09-02",
+  "record_count": 59,
+  "generated_date": "2026-09-03",
   "records": [
     {
       "fault_id": "FLT-KRUPNIK",
@@ -1801,6 +1801,110 @@
       ],
       "open_items": [
         "Individual scientific fault name and segment-level published identity remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-KLISURA-REC26",
+      "mrrb": {
+        "record": 26,
+        "name": "Klisura"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Palakaria graben / Palakaria regional fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS028"
+      },
+      "correspondence": {
+        "type": "regional_parallel_fault_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEORGIEV-NAKOV-2014",
+        "SRC-GEO-MAP-K34-059-PERNIK",
+        "SRC-GEO-MAP-K34-071-BLAGOEVGRAD",
+        "SRC-GEO-MAP-K34-072-VELINGRAD"
+      ],
+      "notes": [
+        "REC26 has a PCA strike of approximately 128.76 degrees and is strongly subparallel to the principal BGCS028 regional trend.",
+        "The corridor is approximately 1.1 km from the modeled GEM source in the regional inventory.",
+        "Geological-map cross-checks across Pernik, Blagoevgrad and Velingrad support a NW-SE fault-network context.",
+        "EUR_BGCS028 is retained as a regional crosswalk rather than exact surface-trace identity."
+      ],
+      "open_items": [
+        "Individual published scientific fault name for REC26 remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-KLISURA-TRANSVERSE-REC27",
+      "mrrb": {
+        "record": 27,
+        "name": "Klisura"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Palakaria graben transverse fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "transverse_fault_network_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEORGIEV-NAKOV-2014",
+        "SRC-GEO-MAP-K34-059-PERNIK",
+        "SRC-GEO-MAP-K34-060-IHTIMAN"
+      ],
+      "notes": [
+        "REC27 has a strike of approximately 56.36 degrees, about 72.4 degrees from the dominant Palakaria/BGCS028 system orientation.",
+        "REC27 geometrically intersects EUR_BGCS028, but this intersection is not treated as fault identity.",
+        "The geological-map context supports a transverse fault-network interpretation."
+      ],
+      "open_items": [
+        "Individual published scientific fault name and kinematics remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-PALA2-REC33",
+      "mrrb": {
+        "record": 33,
+        "name": "Pala2"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Palakaria graben oblique fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "oblique_branch_fault_network_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEORGIEV-NAKOV-2014",
+        "SRC-GEO-MAP-K34-059-PERNIK"
+      ],
+      "notes": [
+        "REC33 has a strike of approximately 95.54 degrees and differs by about 33.22 degrees from the dominant regional system trend.",
+        "Although REC33 lies approximately 304 m from EUR_BGCS028 in the machine inventory, proximity alone is insufficient for BGCS identity.",
+        "The geological-map context is consistent with an oblique branch within the broader Palakaria fault network."
+      ],
+      "open_items": [
+        "Individual published scientific fault name and precise branch relationship remain unresolved."
       ]
     }
   ]

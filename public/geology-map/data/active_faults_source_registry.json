@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 29,
-  "generated_date": "2026-09-02",
+  "source_count": 32,
+  "generated_date": "2026-09-03",
   "sources": [
     {
       "source_id": "SRC-MRRB-2025",
@@ -679,6 +679,74 @@
         "geological_fault_mapping_not_active_fault_inventory",
         "legacy_geological_map_does_not_by_itself_prove_present_day_activity",
         "four_corner_linear_overlay_is_approximate_not_rigorous_georeferencing",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-059-PERNIK",
+      "title": "Geological Map of Bulgaria, K-34-059 Pernik, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ??????, K-34-059, 1:100000",
+      "authors": null,
+      "year": 1989,
+      "institution": "Committee of Geology",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region4_maps\\K-34-059_Pernik.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "Palakaria_Samokov_regional_structure",
+        "REC27_transverse_structural_cross_check",
+        "REC33_oblique_structural_cross_check",
+        "REC25_REC34_REC104_control_cross_check"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-071-BLAGOEVGRAD",
+      "title": "Geological Map of Bulgaria, K-34-071 Blagoevgrad, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ???????????, K-34-071, 1:100000",
+      "authors": null,
+      "year": 1989,
+      "institution": "Committee of Geology",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region4_maps\\K-34-071_Blagoevgrad.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "REC26_western_segment_structural_cross_check",
+        "southern_Palakaria_structural_context"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "covers_only_part_of_REC26",
+        "four_corner_linear_overlay_is_approximate",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-072-VELINGRAD",
+      "title": "Geological Map of Bulgaria, K-34-072 Velingrad, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ?????????, K-34-072, 1:100000",
+      "authors": null,
+      "year": 1988,
+      "institution": "Committee of Geology",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region4_maps\\K-34-072_Velingrad.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "REC26_eastern_segment_structural_cross_check",
+        "BGCS028_parallel_regional_context"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate",
         "not_suitable_for_exact_trace_identity"
       ]
     }
