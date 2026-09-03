@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 118,
+  "record_count": 119,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -4002,6 +4002,43 @@
         "REC16 is therefore retained as a distinct local fault corridor with no accepted BGCS crosswalk.",
         "HIGH confidence refers to the local structural correspondence of REC16, not to international trace identity.",
         "No kinematic fault type is assigned because no international crosswalk or independent scientific kinematic source is accepted for REC16."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-E-PIRIN-REC29",
+      "mrrb": {
+        "record": 29,
+        "name": "E Pirin"
+      },
+      "scientific": {
+        "name": null,
+        "system": "East Pirin local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_corridor_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-072-VELINGRAD",
+        "SRC-GEO-MAP-K34-084-BELICA"
+      ],
+      "notes": [
+        "REC29 has a principal strike of approximately 172.04 degrees.",
+        "Nearest GEM EUR_BGCS034 lies approximately 4.18 km from REC29 but differs by approximately 71.27 degrees in local strike.",
+        "EFSM20 independently gives approximately 4.19 km separation and approximately 70.75 degrees local strike difference.",
+        "K-34-072 Velingrad shows REC29 as a distinct near north-south to NNW-SSE local structural corridor, strongly oblique to EUR_BGCS034 and separate from EUR_BGCS035.",
+        "K-34-084 Belica confirms the southward continuation of the same local structural corridor without a nearby GEM candidate.",
+        "No direct BGCS crosswalk is accepted because proximity to EUR_BGCS034 is contradicted by the strongly incompatible orientation.",
+        "HIGH confidence refers to the local structural correspondence of REC29, not to international trace identity.",
+        "No kinematic fault type is assigned because no accepted international crosswalk or independent scientific kinematic source is available for REC29."
       ],
       "open_items": []
     }

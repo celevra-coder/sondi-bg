@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 74,
+  "source_count": 75,
   "generated_date": "2026-09-03",
   "sources": [
     {
@@ -1719,6 +1719,30 @@
       "supports": [
         "REC14 Maritsa eastern structural segment",
         "EUR_BGCS002 regional structural corridor"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as regional structural support only; the geological map does not by itself establish present-day activity or exact trace identity."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-084-BELICA",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-34-084 Belica",
+      "authors": [
+        "Кацков Н."
+      ],
+      "year": 1988,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1061",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region31_maps/k-34-084-belica-geolozhka-karta-na-blgariya.jpg",
+      "supports": [
+        "REC29 E Pirin southern structural segment"
       ],
       "information_used": [
         "regional geological structure",
