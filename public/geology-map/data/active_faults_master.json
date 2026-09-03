@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 80,
+  "record_count": 84,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -2668,6 +2668,135 @@
       ],
       "open_items": [
         "Resolve detailed correspondence with named Stara Kresna / Struma-Kraishte fault segments."
+      ]
+    },
+    {
+      "fault_id": "FLT-DEVETAKI-REC64",
+      "mrrb": {
+        "record": 64,
+        "name": "Деветаки"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Devetaki - Cherven Bryag regional fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS021"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-027-SEVLIEVO",
+        "SRC-GEO-MAP-K35-028-VELIKO-TARNOVO"
+      ],
+      "notes": [
+        "REC64 intersects EUR_BGCS021 with strong strike compatibility.",
+        "K-35-027 Sevlievo and K-35-028 Veliko Tarnovo support the same east-west to ENE-WSW regional structural corridor.",
+        "The correspondence is treated as a strong regional/local crosswalk rather than exact trace identity."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-CHERVEN-BRYAG-REC73",
+      "mrrb": {
+        "record": 73,
+        "name": "Cherven Bryag"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Devetaki - Cherven Bryag regional fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS021"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-025-CHERVEN-BRYAG",
+        "SRC-GEO-MAP-K35-026-LOVECH"
+      ],
+      "notes": [
+        "REC73 intersects EUR_BGCS021 with good strike compatibility.",
+        "K-35-025 Cherven Bryag and K-35-026 Lovech support continuation of the mapped regional structural corridor.",
+        "The corridor is retained as a regional crosswalk, not as exact trace identity."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-DEVETAKI-SOUTH-REC96",
+      "mrrb": {
+        "record": 96,
+        "name": "Devetaki Sud"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Southern Devetaki parallel fault corridor",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "southern_parallel_fault_corridor_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEO-MAP-K35-027-SEVLIEVO",
+        "SRC-GEO-MAP-K35-028-VELIKO-TARNOVO"
+      ],
+      "notes": [
+        "REC96 does not intersect EUR_BGCS021 but is subparallel to the Devetaki regional fault trend.",
+        "K-35-027 Sevlievo and K-35-028 Veliko Tarnovo support a southern parallel structural corridor.",
+        "REC96 is retained as a separate MRRB corridor, not merged conceptually into REC64."
+      ],
+      "open_items": [
+        "Exact scientific fault name remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-ROSITSA-REC97",
+      "mrrb": {
+        "record": 97,
+        "name": "р. Росица"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Rositsa local transverse branch near the Devetaki South corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_transverse_branch_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEO-MAP-K35-028-VELIKO-TARNOVO"
+      ],
+      "notes": [
+        "REC97 lies very close to REC96 but has strongly different strike, indicating a local transverse branch/crossing structure.",
+        "No direct BGCS crosswalk is assigned.",
+        "K-35-028 Veliko Tarnovo provides local geometric support for preserving REC97 as an individual structure."
+      ],
+      "open_items": [
+        "Scientific naming and kinematics remain unresolved."
       ]
     }
   ]
