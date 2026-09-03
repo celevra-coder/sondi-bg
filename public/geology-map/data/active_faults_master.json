@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 99,
+  "record_count": 101,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3314,6 +3314,76 @@
         "K-35-075 Iskra shows REC120 as a distinct local structural segment rather than a direct continuation of the REC13 / EUR_BGCS001 modeled trace.",
         "No direct BGCS crosswalk is assigned.",
         "Fault kinematics are left unspecified because the available evidence does not independently establish a kinematic type for REC120."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-KALIAKRA-REC35",
+      "mrrb": {
+        "record": 35,
+        "name": "Kaliakra"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Kaliakra-Yaila coastal fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_coastal_transverse_fault_system_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-021-BALCHIK-SHABLA"
+      ],
+      "notes": [
+        "REC35 has a principal strike of approximately 33.20 degrees.",
+        "REC35 intersects EUR_BGCS041 geometrically, but the local strike difference is approximately 67.80 degrees.",
+        "The intersection is therefore interpreted as a transverse crossing rather than trace identity.",
+        "REC35 and REC36 are approximately 3.33 km apart and differ in principal strike by only approximately 2.88 degrees.",
+        "K-35-021 Balchik and Shabla supports REC35 as part of a local NE-SW coastal structural system.",
+        "No direct BGCS crosswalk is assigned.",
+        "Fault kinematics remain unspecified because the available evidence does not independently establish them for REC35."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-YAILA-REC36",
+      "mrrb": {
+        "record": 36,
+        "name": "Yaila"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Kaliakra-Yaila coastal fault system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_parallel_coastal_fault_segment_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-021-BALCHIK-SHABLA"
+      ],
+      "notes": [
+        "REC36 has a principal strike of approximately 36.07 degrees.",
+        "Nearest GEM EUR_BGCS045 lies approximately 0.47 km away, but the local strike difference is approximately 72.74 degrees.",
+        "The proximity therefore does not support direct trace identity.",
+        "REC36 runs subparallel to REC35 and is interpreted as a separate segment within the same local coastal structural system.",
+        "K-35-021 Balchik and Shabla supports the local structural correspondence.",
+        "No direct BGCS crosswalk is assigned.",
+        "Fault kinematics remain unspecified because the available evidence does not independently establish them for REC36."
       ],
       "open_items": []
     }
