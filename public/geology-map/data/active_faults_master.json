@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 112,
+  "record_count": 113,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3780,6 +3780,43 @@
         "The official geological maps support the local structural correspondence but do not independently establish present-day kinematics.",
         "No direct BGCS crosswalk is assigned.",
         "Fault kinematics remain unspecified."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-KARLOVO-REC4",
+      "mrrb": {
+        "record": 4,
+        "name": "Karlovo"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Karlovo local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_corridor_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-049-PANAGYURISHTE",
+        "SRC-GEO-MAP-K35-050-KARLOVO"
+      ],
+      "notes": [
+        "REC4 has a principal strike of approximately 101.28 degrees.",
+        "REC4 geometrically intersects GEM EUR_BGCS043, but the local strike difference is approximately 19.17 degrees.",
+        "EFSM20 independently shows the same intersection geometry with approximately 19.27 degrees local strike difference.",
+        "EUR_BGCS040 lies approximately 3.20 km from REC4 but has approximately 13.55 degrees local strike difference and does not represent a continuous trace match.",
+        "K-35-050 Karlovo shows REC4 following its own local structural corridor while EUR_BGCS043 and EUR_BGCS040 remain separate intersecting or adjacent regional structures.",
+        "K-35-049 Panagyurishte provides western regional geological control for the corridor.",
+        "No direct BGCS crosswalk is assigned.",
+        "Fault kinematics remain unspecified because the available evidence does not independently establish a kinematic type for REC4."
       ],
       "open_items": []
     }
