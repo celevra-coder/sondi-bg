@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 116,
+  "record_count": 117,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3929,6 +3929,43 @@
         "EUR_BGCS001 is a separate northern regional structure and does not provide a stronger correspondence.",
         "The crosswalk is regional/system-level and does not assert exact surface-trace identity.",
         "The normal-fault kinematic type is inherited from the accepted EUR_BGCS006 international crosswalk."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-MARITSA-REC14",
+      "mrrb": {
+        "record": 14,
+        "name": "Maritsa"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Maritsa regional active fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS002"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-063-CHIRPAN",
+        "SRC-GEO-MAP-K35-064-DIMITROVGRAD"
+      ],
+      "notes": [
+        "REC14 has a principal strike of approximately 94.52 degrees.",
+        "Nearest GEM EUR_BGCS002 lies approximately 3.52 km from REC14 with approximately 0.17 degrees local strike difference.",
+        "EFSM20 independently gives approximately 3.52 km separation and approximately 0.14 degrees local strike difference.",
+        "K-35-063 Chirpan shows REC14 and EUR_BGCS002 as closely parallel elements within the same broad east-west regional structural corridor.",
+        "K-35-064 Dimitrovgrad confirms continuation of the same regional relationship eastward.",
+        "EUR_BGCS001, EUR_BGCS003 and EUR_BGCS048 are nearby regional structures but do not provide a stronger overall correspondence.",
+        "The crosswalk is regional/system-level and does not assert exact surface-trace identity.",
+        "The normal-fault kinematic type is inherited from the accepted EUR_BGCS002 international crosswalk."
       ],
       "open_items": []
     }
