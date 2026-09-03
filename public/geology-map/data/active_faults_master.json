@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 94,
+  "record_count": 95,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3141,6 +3141,41 @@
         "REC66 is the eastern/southern parallel Omurtag segment and is clearly supported on K-35-030 Shumen.",
         "REC65 and REC66 are close parallel members of the same local structural corridor, separated by approximately 2.556 km with approximately 3.39 degree strike difference.",
         "Despite regional similarity to EUR_BGCS016, the offset and geometry do not support a direct BGCS crosswalk."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-KRUPNIK-WEST-REC62",
+      "mrrb": {
+        "record": 62,
+        "name": "Крупник З"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Krupnik regional active normal-fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS032"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-070-KYUSTENDIL",
+        "SRC-GEO-MAP-K34-071-BLAGOEVGRAD"
+      ],
+      "notes": [
+        "REC62 has a NE-SW strike of approximately 43.23 degrees.",
+        "EUR_BGCS032 lies approximately 1.73 km from REC62.",
+        "Local GEM strike is approximately 45.32 degrees, giving approximately 2.09 degrees strike difference.",
+        "EFSM20 independently gives approximately 1.73 km separation and approximately 3.34 degrees local strike difference.",
+        "Both K-34-070 Kyustendil and K-34-071 Blagoevgrad contain REC62 and EUR_BGCS032 in the same regional structural corridor.",
+        "The evidence supports a high-confidence regional/system crosswalk, but not exact trace identity."
       ],
       "open_items": []
     }
