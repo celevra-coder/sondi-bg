@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 107,
+  "record_count": 109,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3593,6 +3593,86 @@
         "K-34-024 Byala Slatina supports interpretation of REC87 as a local transverse branch rather than a direct continuation of EUR_BGCS023.",
         "No direct BGCS crosswalk is assigned.",
         "Fault kinematics remain unspecified because the available evidence does not independently establish a kinematic type for REC87."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-SAEDINENIE-REC71",
+      "mrrb": {
+        "record": 71,
+        "name": "Съединение"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Saedinenie-Hisaria local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "western_parallel_fault_segment_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-049-PANAGYURISHTE",
+        "SRC-GEO-MAP-K35-050-KARLOVO",
+        "SRC-GEO-MAP-K35-062-PLOVDIV",
+        "SRC-GEO-MAP-K35-063-CHIRPAN"
+      ],
+      "notes": [
+        "REC71 has a principal strike of approximately 103.91 degrees.",
+        "REC71 and REC80 are separated by approximately 3.0 km and have only approximately 0.53 degrees principal-strike difference.",
+        "Nearest GEM EUR_BGCS003 lies approximately 7.24 km from REC71 with approximately 5.21 degrees local strike difference.",
+        "EFSM20 independently gives approximately 7.24 km separation and approximately 4.64 degrees local strike difference.",
+        "Despite directional similarity, EUR_BGCS003 lies in the adjacent southern map row and forms a spatially separate southern corridor.",
+        "K-35-049 and K-35-050 support REC71 as the western segment of the Saedinenie-Hisaria local structural corridor.",
+        "K-35-062 and K-35-063 are used as southern control sheets showing that EUR_BGCS003 should not be assigned as a direct crosswalk.",
+        "No direct BGCS crosswalk is assigned.",
+        "Fault kinematics remain unspecified because the available evidence does not independently establish a kinematic type for REC71."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-HISARIA-REC80",
+      "mrrb": {
+        "record": 80,
+        "name": "Hisaria"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Saedinenie-Hisaria local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "eastern_parallel_fault_corridor_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-050-KARLOVO",
+        "SRC-GEO-MAP-K35-051-KAZANLAK",
+        "SRC-GEO-MAP-K35-062-PLOVDIV",
+        "SRC-GEO-MAP-K35-063-CHIRPAN"
+      ],
+      "notes": [
+        "REC80 has a principal strike of approximately 103.38 degrees.",
+        "REC71 and REC80 are separated by approximately 3.0 km and have only approximately 0.53 degrees principal-strike difference.",
+        "Nearest GEM EUR_BGCS003 lies approximately 11.61 km from REC80 with approximately 0.53 degrees local strike difference.",
+        "EFSM20 independently gives approximately 11.61 km separation and approximately 0.51 degrees local strike difference.",
+        "The excellent directional similarity to EUR_BGCS003 is not sufficient for a direct crosswalk because EUR_BGCS003 occupies a separate southern structural corridor.",
+        "K-35-050 and K-35-051 support REC80 as the eastern segment of the Saedinenie-Hisaria local structural corridor.",
+        "K-35-062 and K-35-063 act as southern control sheets and show the regional separation from EUR_BGCS003.",
+        "No direct BGCS crosswalk is assigned.",
+        "Fault kinematics remain unspecified because the available evidence does not independently establish a kinematic type for REC80."
       ],
       "open_items": []
     }

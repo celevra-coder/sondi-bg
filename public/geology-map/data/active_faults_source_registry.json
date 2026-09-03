@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 65,
+  "source_count": 69,
   "generated_date": "2026-09-03",
   "sources": [
     {
@@ -1501,6 +1501,106 @@
       "information_used": [
         "regional geological structure",
         "local fault geometry",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-049-PANAGYURISHTE",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-35-049 Panagyurishte",
+      "authors": [
+        "Кацков Н."
+      ],
+      "year": 1989,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1098",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region21_maps/K-35-049_Panagyurishte.jpg",
+      "supports": [
+        "REC71 Saedinenie western structural segment"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-050-KARLOVO",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-35-050 Karlovo",
+      "authors": [
+        "Русева М."
+      ],
+      "year": 1989,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1099",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region21_maps/K-35-050_Karlovo.jpg",
+      "supports": [
+        "REC71 Saedinenie eastern continuation",
+        "REC80 Hisaria western continuation",
+        "shared northern structural corridor"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-051-KAZANLAK",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-35-051 Kazanlak",
+      "authors": [
+        "Филипов Л.",
+        "Цанков Ц."
+      ],
+      "year": 1995,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1100",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region21_maps/K-35-051_Kazanlak.jpg",
+      "supports": [
+        "REC80 Hisaria eastern structural segment"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-062-PLOVDIV",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-35-062 Plovdiv",
+      "authors": [
+        "Кожухаров Д."
+      ],
+      "year": 1988,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/taxonomy/term/2439",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region21_maps/K-35-062_Plovdiv.jpg",
+      "supports": [
+        "EUR_BGCS003 southern control corridor",
+        "spatial separation from REC71 and REC80"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
         "visual structural correspondence"
       ],
       "notes": [
