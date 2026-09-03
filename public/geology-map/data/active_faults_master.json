@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 103,
+  "record_count": 105,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3455,6 +3455,75 @@
         "The geological-map overlays show REC49 as a distinct northern approximately parallel segment rather than the direct modeled EUR_MKCS013 trace.",
         "No direct MKCS crosswalk is assigned.",
         "Fault kinematics remain unspecified because the available evidence does not independently establish a kinematic type for REC49."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-DULOVO-REC60",
+      "mrrb": {
+        "record": 60,
+        "name": "Dulovo"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Dulovo regional active fault system",
+        "fault_type": "sinistral_normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS017"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-018-RAZGRAD",
+        "SRC-GEO-MAP-K35-019-NOVI-PAZAR"
+      ],
+      "notes": [
+        "REC60 has a principal strike of approximately 112.78 degrees.",
+        "Nearest GEM EUR_BGCS017 lies approximately 0.08 km from REC60 with approximately 3.65 degrees local strike difference.",
+        "EFSM20 independently gives approximately 0.09 km separation and approximately 0.59 degrees local strike difference.",
+        "K-35-018 Razgrad and K-35-019 Novi Pazar show REC60 and EUR_BGCS017 continuing in the same regional structural corridor.",
+        "The correspondence is regional/system-level and does not assert exact surface-trace identity."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-GLAVINITSA-REC61",
+      "mrrb": {
+        "record": 61,
+        "name": "Главиница"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Dulovo-Glavinitsa regional fault zone",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "northern_parallel_fault_segment_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-018-RAZGRAD"
+      ],
+      "notes": [
+        "REC61 has a principal strike of approximately 94.45 degrees.",
+        "Nearest GEM EUR_BGCS017 lies approximately 1.98 km away with approximately 2.72 degrees local strike difference.",
+        "EFSM20 independently gives approximately 1.98 km separation and approximately 2.61 degrees local strike difference.",
+        "REC61 lies approximately 5.62 km from REC60 and the two records do not intersect.",
+        "K-35-018 Razgrad shows REC61 as a distinct northern segment rather than the direct continuation of the modeled EUR_BGCS017 trace.",
+        "No direct BGCS crosswalk is assigned.",
+        "Fault kinematics remain unspecified because the available evidence does not independently establish a kinematic type for REC61."
       ],
       "open_items": []
     }
