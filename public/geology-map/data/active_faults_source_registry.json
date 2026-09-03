@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 57,
+  "source_count": 59,
   "generated_date": "2026-09-03",
   "sources": [
     {
@@ -1299,6 +1299,57 @@
       ],
       "notes": [
         "Used as regional structural support only; the geological map does not by itself establish present-day fault activity or exact trace identity."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-063-CHIRPAN",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-35-063 Chirpan",
+      "authors": [
+        "Боянов И."
+      ],
+      "year": 1988,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1108",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region15_maps/K-35-063_Chirpan.jpg",
+      "supports": [
+        "REC13 Mar_Haskovo regional structural correspondence",
+        "EUR_BGCS001 regional structural corridor"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as regional structural support only; the geological map does not by itself establish present-day activity or exact trace identity."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-075-ISKRA",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-35-075 Iskra",
+      "authors": [
+        "Боянов И."
+      ],
+      "year": 1988,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1116",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region15_maps/K-35-075_Iskra.jpg",
+      "supports": [
+        "REC13 Mar_Haskovo regional structural correspondence",
+        "REC120 Bryagovo-Dragoynovo local structural segment",
+        "EUR_BGCS001 regional structural corridor"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "local fault geometry",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as structural support only; it does not establish exact active-fault trace identity."
       ]
     }
   ]
