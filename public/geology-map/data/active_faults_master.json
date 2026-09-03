@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 77,
+  "record_count": 80,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -2554,6 +2554,120 @@
       ],
       "open_items": [
         "Future scientific control may clarify whether REC83 belongs to a named Sveta Iliya or adjacent eastern branch."
+      ]
+    },
+    {
+      "fault_id": "FLT-WEST-PIRIN-REC69",
+      "mrrb": {
+        "record": 69,
+        "name": "Пирин Зап 1"
+      },
+      "scientific": {
+        "name": null,
+        "system": "West Pirin / Struma-Kraishte regional structural system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_west_pirin_structural_corridor_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GANAS-2005",
+        "SRC-KRAISHTE-STRUMA-REGIONAL",
+        "SRC-WEST-PIRIN-FAULT-SCIENCE",
+        "SRC-GEO-MAP-K34-083-RAZLOG"
+      ],
+      "notes": [
+        "REC69 is a NNW-SSE MRRB corridor with strike approximately 166.15 degrees.",
+        "REC69 lies approximately 1.7 km from EUR_BGCS036 but differs strongly in orientation, by approximately 55 to 65 degrees.",
+        "REC69 and REC105 are nearly parallel, with approximately 5 degrees strike difference.",
+        "The Razlog geological-map overlay supports a distinct NNW-SSE corridor separate from the oblique BGCS036 trace.",
+        "No direct BGCS crosswalk is assigned."
+      ],
+      "open_items": [
+        "Resolve whether REC69 corresponds to a named segment of the West Pirin fault zone.",
+        "Digitize published West Pirin fault traces for quantitative comparison."
+      ]
+    },
+    {
+      "fault_id": "FLT-WEST-PIRIN-SOUTH-REC70",
+      "mrrb": {
+        "record": 70,
+        "name": "Пирин З_ 2"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Southern West Pirin structural domain",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "southern_west_pirin_oblique_segment_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GANAS-2005",
+        "SRC-KRAISHTE-STRUMA-REGIONAL",
+        "SRC-WEST-PIRIN-FAULT-SCIENCE",
+        "SRC-GEO-MAP-K34-083-RAZLOG",
+        "SRC-GEO-MAP-K34-095-STRUMICA-PETRICH"
+      ],
+      "notes": [
+        "REC70 has strike approximately 140.92 degrees and forms a more oblique southern segment than REC69 and REC105.",
+        "Its nearest strong orientation similarity is to EUR_BGCS034, but the modeled trace is approximately 24 km away.",
+        "No direct GEM or EFSM20 crosswalk is supported.",
+        "The Razlog and Strumica-Petrich sheets support continuation of a distinct regional structure through the southern sector."
+      ],
+      "open_items": [
+        "Resolve detailed segment name and kinematics from West Pirin literature.",
+        "Test whether REC70 belongs to the same mapped fault strand as REC69 or a separate oblique branch."
+      ]
+    },
+    {
+      "fault_id": "FLT-STARA-KRESNA-REC105",
+      "mrrb": {
+        "record": 105,
+        "name": "Стара Кресна"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Struma-Kraishte / West Pirin NNW-SSE structural corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_struma_kraishte_structural_corridor_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GANAS-2005",
+        "SRC-KRAISHTE-STRUMA-REGIONAL",
+        "SRC-GEO-MAP-K34-083-RAZLOG"
+      ],
+      "notes": [
+        "REC105 has strike approximately 171.11 degrees and is nearly parallel to REC69.",
+        "It lies approximately 3.4 km from EUR_BGCS036, but differs in orientation by more than 70 degrees.",
+        "The Razlog geological-map overlay supports an independent NNW-SSE structural corridor.",
+        "No direct BGCS crosswalk is assigned."
+      ],
+      "open_items": [
+        "Resolve detailed correspondence with named Stara Kresna / Struma-Kraishte fault segments."
       ]
     }
   ]

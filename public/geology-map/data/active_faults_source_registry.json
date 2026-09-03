@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 45,
+  "source_count": 48,
   "generated_date": "2026-09-03",
   "sources": [
     {
@@ -1037,6 +1037,81 @@
         "geological_fault_mapping_not_active_fault_inventory",
         "legacy_map_does_not_by_itself_prove_present_day_activity",
         "sheet_overlay_used_for local_structural_correspondence_not_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-WEST-PIRIN-FAULT-SCIENCE",
+      "title": "Asynchronous timing of extension and basin formation in the South Rhodope core complex, SW Bulgaria, and northern Greece",
+      "title_bg": "?????????? ???????? ?? ??????????? ? ??????????????????? ? ????????????? ?????????? ????? ????????, ?????????? ???????? ? ??????? ??????",
+      "authors": [
+        "Konstanze St?bner",
+        "Kerstin Drost",
+        "Ronny Schoenberg",
+        "Madelaine B?hme",
+        "Jessica Starke",
+        "Todd A. Ehlers"
+      ],
+      "year": 2016,
+      "institution": "Tectonics, American Geophysical Union / Wiley",
+      "source_type": "peer_reviewed_scientific_publication",
+      "local_path": null,
+      "url": "https://doi.org/10.1002/2015TC004044",
+      "doi": "10.1002/2015TC004044",
+      "access_date": "2026-09-03",
+      "supports": [
+        "West_Pirin_normal_fault",
+        "late_Miocene_West_Pirin_fault_activity",
+        "Sandanski_basin_formation",
+        "western_Pirin_margin_extension",
+        "REC69_REC70_scientific_context"
+      ],
+      "limitations": [
+        "MRRB_corridors_not_directly_digitized_from_publication",
+        "published_fault_geometry_not_quantitatively_matched_in_current_workflow",
+        "does_not_establish_exact_MRRB_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-083-RAZLOG",
+      "title": "Geological Map of Bulgaria, K-34-083 Razlog, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, K-34-083 ??????, 1:100000",
+      "authors": null,
+      "year": null,
+      "institution": "Geological Survey / GeoKniga copy",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region8_maps\\K-34-083_Razlog.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "REC69_REC70_REC105_local_geological_crosscheck",
+        "BGCS036_BGCS034_regional_overlay_context"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-095-STRUMICA-PETRICH",
+      "title": "Geological Map of Bulgaria, K-34-095 Strumica, Petrich, Gevgeli and Sidirokastron, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, K-34-095 ????????, ??????, ??????? ? ?????????????, 1:100000",
+      "authors": null,
+      "year": 1988,
+      "institution": "Geological Survey / GeoKniga copy",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region8_maps\\K-34-095_Strumica_Petrich_Gevgeli_Sidirokastron.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "REC70_southern_structural_crosscheck"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate",
+        "not_suitable_for_exact_trace_identity"
       ]
     }
   ]
