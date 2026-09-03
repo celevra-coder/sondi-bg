@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 75,
+  "source_count": 77,
   "generated_date": "2026-09-03",
   "sources": [
     {
@@ -1751,6 +1751,54 @@
       ],
       "notes": [
         "Used as regional structural support only; the geological map does not by itself establish present-day activity or exact trace identity."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-073-RAKITOVO",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-35-073 Rakitovo",
+      "authors": [
+        "????????? ?. (???.)"
+      ],
+      "year": 1988,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1114",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region37_maps/k-35-073-rakitovo-geolozhka-karta-na-blgariya.jpg",
+      "supports": [
+        "REC50 Dospat northeastern structural segment"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as regional structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-085-DOSPAT",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-35-085 Dospat",
+      "authors": [
+        "????????? ?. (???.)"
+      ],
+      "year": 1988,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1121",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region37_maps/k-35-085-dospat-geolozhka-karta-na-blgariya.jpg",
+      "supports": [
+        "REC50 Dospat southeastern structural segment"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as regional structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."
       ]
     }
   ]

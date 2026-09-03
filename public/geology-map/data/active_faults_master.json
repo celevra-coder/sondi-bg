@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 123,
+  "record_count": 124,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -4192,6 +4192,47 @@
         "The correspondence supports a regional fault-system crosswalk but not exact surface-trace identity.",
         "Normal-fault kinematics are inherited from the accepted EUR_BGCS015 crosswalk.",
         "HIGH confidence refers to regional structural correspondence supported jointly by MRRB geometry, GEM, EFSM20 and geological-map context."
+      ],
+      "open_items": [
+        "Exact surface-trace identity remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-DOSPAT-REC50",
+      "mrrb": {
+        "record": 50,
+        "name": "Доспат"
+      },
+      "scientific": {
+        "name": "Dospat active fault corridor",
+        "system": "Dospat regional active fault system",
+        "fault_type": "sinistral_normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS035"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-073-RAKITOVO",
+        "SRC-GEO-MAP-K35-085-DOSPAT"
+      ],
+      "notes": [
+        "MRRB REC50 strike is approximately 125.00 degrees.",
+        "EUR_BGCS035 geometrically intersects REC50.",
+        "The local GEM strike of EUR_BGCS035 is approximately 136.17 degrees, differing from REC50 by approximately 11.17 degrees.",
+        "The corresponding EFSM20 representation also intersects REC50 and differs in local strike by approximately 11.11 degrees.",
+        "Visual comparison on K-35-085 Dospat shows REC50 and EUR_BGCS035 occupying the same northwest-southeast regional structural corridor.",
+        "Visual comparison on K-35-073 Rakitovo independently supports continuation of the same regional corridor.",
+        "The local MRRB and GEM traces remain offset and therefore exact surface-trace identity is not claimed.",
+        "EUR_BGCS029 and EUR_BGCS034 were evaluated as regional controls and were not accepted as crosswalks.",
+        "Sinistral-normal kinematics are inherited from the accepted EUR_BGCS035 regional crosswalk.",
+        "HIGH confidence refers to regional fault-system correspondence supported jointly by MRRB, GEM, EFSM20 and geological-map context."
       ],
       "open_items": [
         "Exact surface-trace identity remains unresolved."
