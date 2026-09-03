@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 113,
+  "record_count": 114,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3817,6 +3817,43 @@
         "K-35-049 Panagyurishte provides western regional geological control for the corridor.",
         "No direct BGCS crosswalk is assigned.",
         "Fault kinematics remain unspecified because the available evidence does not independently establish a kinematic type for REC4."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-AITOS-REC7",
+      "mrrb": {
+        "record": 7,
+        "name": "Aitos"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Aitos regional active fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS012"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-042-SUNGURLARE",
+        "SRC-GEO-MAP-K35-043-AYTOS"
+      ],
+      "notes": [
+        "REC7 has a principal strike of approximately 102.45 degrees.",
+        "REC7 geometrically intersects GEM EUR_BGCS012.",
+        "Nearest GEM EUR_BGCS012 has approximately 13.62 degrees local strike difference from REC7.",
+        "EFSM20 independently intersects REC7 and gives approximately 14.02 degrees local strike difference.",
+        "K-35-042 Sungurlare and K-35-043 Aytos show REC7 and EUR_BGCS012 within the same broad regional structural corridor.",
+        "EUR_BGCS011, EUR_BGCS010 and EUR_BGCS013 are nearby regional structures but do not provide a stronger overall correspondence.",
+        "The crosswalk is regional/system-level and does not assert exact surface-trace identity.",
+        "The normal-fault kinematic type is inherited from the accepted EUR_BGCS012 international crosswalk."
       ],
       "open_items": []
     }
