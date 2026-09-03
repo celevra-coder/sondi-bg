@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 73,
+  "record_count": 77,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -2424,6 +2424,136 @@
       "open_items": [
         "Individual scientific fault name and kinematics remain unresolved.",
         "Test the corridor against detailed Kraishte structural mapping."
+      ]
+    },
+    {
+      "fault_id": "FLT-SURNENA-GORA-REC9",
+      "mrrb": {
+        "record": 9,
+        "name": "Surnena gora"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Surnena Gora - Stara Zagora regional fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_oblique_fault_network_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-053-NOVA-ZAGORA"
+      ],
+      "notes": [
+        "REC9 lies close to EUR_BGCS004 at approximately 2.1 km but does not intersect the modeled trace.",
+        "Orientation difference to the nearest BGCS004 segment is approximately 31 degrees, so no direct BGCS crosswalk is assigned.",
+        "K-35-053 Nova Zagora supports local structural correspondence within the same regional fault network."
+      ],
+      "open_items": [
+        "Targeted scientific literature search could clarify whether REC9 belongs to a named Surnena Gora branch."
+      ]
+    },
+    {
+      "fault_id": "FLT-KORTEN-REC10",
+      "mrrb": {
+        "record": 10,
+        "name": "Korten"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Stara Zagora - Korten transverse structural zone",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "transverse_fault_crossing_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-052-STARA-ZAGORA",
+        "SRC-GEO-MAP-K35-053-NOVA-ZAGORA"
+      ],
+      "notes": [
+        "REC10 intersects EUR_BGCS004 spatially, but its strike differs by approximately 73 degrees, indicating a transverse crossing rather than identity.",
+        "Both K-35-052 Stara Zagora and K-35-053 Nova Zagora overlays support a short transverse structure crossing the regional fault system."
+      ],
+      "open_items": [
+        "Short length and transverse geometry warrant later local literature control if available."
+      ]
+    },
+    {
+      "fault_id": "FLT-STARA-ZAGORA-REC11",
+      "mrrb": {
+        "record": 11,
+        "name": "Stara Zagora"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Stara Zagora / Surnena Gora active fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS004"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-052-STARA-ZAGORA"
+      ],
+      "notes": [
+        "REC11 intersects EUR_BGCS004 directly and shows good orientation compatibility with approximately 13.75 degree strike difference.",
+        "K-35-052 Stara Zagora overlay supports direct regional/local structural correspondence with the BGCS004 fault system.",
+        "The correspondence is treated as a system-level crosswalk rather than one exact published trace identity."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-SV-ILIA-N-REC83",
+      "mrrb": {
+        "record": 83,
+        "name": "Sv Ilia N"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Eastern Surnena Gora - Sveta Iliya parallel fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "eastern_parallel_fault_network_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-053-NOVA-ZAGORA"
+      ],
+      "notes": [
+        "REC83 is drawn on K-35-053 Nova Zagora but remains approximately 10 km from the nearest EUR_BGCS004 segment.",
+        "Its orientation is closer to a separate eastern parallel structural branch than to the main BGCS004 trace.",
+        "No direct BGCS crosswalk is assigned at this stage."
+      ],
+      "open_items": [
+        "Future scientific control may clarify whether REC83 belongs to a named Sveta Iliya or adjacent eastern branch."
       ]
     }
   ]
