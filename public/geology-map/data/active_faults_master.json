@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 121,
+  "record_count": 122,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -4114,6 +4114,48 @@
         "The sinistral-normal fault type is inherited from the accepted EUR_BGCS039 international crosswalk."
       ],
       "open_items": []
+    },
+    {
+      "fault_id": "FLT-KARLOVO-KALOFER-REC40",
+      "mrrb": {
+        "record": 40,
+        "name": "Карлово_Калофер"
+      },
+      "scientific": {
+        "name": "Karlovo-Kalofer active fault corridor",
+        "system": "Karlovo-Kalofer local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_corridor_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-039-GABROVO",
+        "SRC-GEO-MAP-K35-051-KAZANLAK"
+      ],
+      "notes": [
+        "MRRB REC40 strike is approximately 92.35 degrees.",
+        "MRRB REC40 bounds are approximately 25.057447-25.507972 E and 42.634075-42.714780 N.",
+        "EUR_BGCS040 geometrically intersects REC40, but the local GEM strike differs by approximately 22.25 degrees.",
+        "The corresponding EFSM20 feature also intersects REC40 but differs in local strike by approximately 16.49 degrees.",
+        "Visual comparison on K-35-051 Kazanlak does not demonstrate a coherent shared trace between REC40 and EUR_BGCS040.",
+        "Visual comparison on K-35-039 Gabrovo shows REC40 and EUR_BGCS040 following distinct local trajectories rather than the same mapped corridor.",
+        "EUR_BGCS040 is retained only as the nearest international comparison candidate and is not accepted as a crosswalk.",
+        "EUR_BGCS015 is retained as a secondary regional control and is not accepted as a crosswalk.",
+        "HIGH confidence refers to the local MRRB structural corridor supported by geological-map correspondence, not to international trace identity.",
+        "No fault kinematics are assigned because no independent accepted scientific crosswalk supports inheritance of GEM slip type."
+      ],
+      "open_items": [
+        "No accepted international BGCS crosswalk.",
+        "Exact surface trace identity remains unresolved."
+      ]
     }
   ]
 }
