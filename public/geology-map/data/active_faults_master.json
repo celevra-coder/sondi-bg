@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 120,
+  "record_count": 121,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -4076,6 +4076,42 @@
         "No direct BGCS crosswalk is accepted because the closest directional analogue is regionally too distant.",
         "HIGH confidence refers to the local structural correspondence of REC30, not to international trace identity.",
         "No kinematic fault type is assigned because no accepted international crosswalk or independent scientific kinematic source is available for REC30."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-VARNA-LAKE-REC37",
+      "mrrb": {
+        "record": 37,
+        "name": "Varna_lake"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Varna Lake regional active fault system",
+        "fault_type": "sinistral_normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS039"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-032-VARNA"
+      ],
+      "notes": [
+        "REC37 has a principal strike of approximately 92.21 degrees.",
+        "Nearest GEM EUR_BGCS039 intersects REC37 with approximately 0.00 km separation and approximately 6.16 degrees local strike difference.",
+        "EFSM20 independently confirms the same alignment with approximately 0.00 km separation and approximately 5.69 degrees local strike difference.",
+        "K-35-032 Varna shows REC37 and EUR_BGCS039 within the same Varna Lake east-west structural corridor.",
+        "EUR_BGCS016 appears as a nearby control structure but does not provide a stronger correspondence than EUR_BGCS039.",
+        "EUR_BGCS041 was reviewed as a wider regional control and was not required for the adopted crosswalk.",
+        "The crosswalk is regional/system-level and does not assert exact surface-trace identity.",
+        "The sinistral-normal fault type is inherited from the accepted EUR_BGCS039 international crosswalk."
       ],
       "open_items": []
     }
