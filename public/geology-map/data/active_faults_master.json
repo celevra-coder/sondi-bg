@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 111,
+  "record_count": 112,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3743,6 +3743,43 @@
         "EFSM20 independently intersects REC2 and gives approximately 2.00 degrees local strike difference.",
         "K-34-048 Botevgrad and K-34-036 Vratsa support continuation of REC2 and EUR_BGCS022 within the same regional structural corridor.",
         "The correspondence is regional/system-level and does not assert exact surface-trace identity."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-ZL-PIRDOP-REC3",
+      "mrrb": {
+        "record": 3,
+        "name": "Zl_Pirdop"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Zlatitsa-Pirdop local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_corridor_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-048-BOTEVGRAD",
+        "SRC-GEO-MAP-K35-037-TETEVEN"
+      ],
+      "notes": [
+        "REC3 has a principal strike of approximately 87.81 degrees.",
+        "Nearest GEM EUR_BGCS022 lies approximately 11.46 km from REC3 with approximately 33.42 degrees local strike difference.",
+        "EFSM20 independently gives approximately 11.47 km separation and approximately 33.33 degrees local strike difference.",
+        "Other nearby GEM candidates also show substantial directional or spatial mismatch and do not justify a direct international crosswalk.",
+        "K-34-048 Botevgrad and K-35-037 Teteven show REC3 continuing along its own approximately east-west local structural corridor.",
+        "The official geological maps support the local structural correspondence but do not independently establish present-day kinematics.",
+        "No direct BGCS crosswalk is assigned.",
+        "Fault kinematics remain unspecified."
       ],
       "open_items": []
     }
