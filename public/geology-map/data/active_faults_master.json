@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 95,
+  "record_count": 97,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3176,6 +3176,75 @@
         "EFSM20 independently gives approximately 1.73 km separation and approximately 3.34 degrees local strike difference.",
         "Both K-34-070 Kyustendil and K-34-071 Blagoevgrad contain REC62 and EUR_BGCS032 in the same regional structural corridor.",
         "The evidence supports a high-confidence regional/system crosswalk, but not exact trace identity."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-PROSENIK-REC6",
+      "mrrb": {
+        "record": 6,
+        "name": "Prosenik"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Prosenik-Emine regional active fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS013"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-043-AYTOS",
+        "SRC-GEO-MAP-K35-044-DOLNI-CHIFLIK"
+      ],
+      "notes": [
+        "REC6 has an approximately E-W to WNW-ESE strike of 105.90 degrees.",
+        "Nearest GEM EUR_BGCS013 is approximately 0.53 km away with approximately 6.08 degrees local strike difference.",
+        "EFSM20 independently places the corresponding modeled structure approximately 0.34 km from REC6 with approximately 6.18 degrees strike difference.",
+        "K-35-043 Aytos and K-35-044 Dolni Chiflik show REC6 and EUR_BGCS013 occupying the same long regional structural corridor.",
+        "REC6 intersects REC31 in the MRRB geometry and differs from REC31 in strike by only approximately 3.61 degrees.",
+        "The crosswalk is regional/system-level and does not assert exact surface-trace identity."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-EMINE-REC31",
+      "mrrb": {
+        "record": 31,
+        "name": "Emine"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Prosenik-Emine regional active fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS013"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-044-DOLNI-CHIFLIK"
+      ],
+      "notes": [
+        "REC31 has an approximately E-W to WNW-ESE strike of 102.29 degrees.",
+        "Nearest GEM EUR_BGCS013 is approximately 0.52 km away with only approximately 1.48 degrees local strike difference.",
+        "EFSM20 independently gives approximately 0.52 km separation and approximately 1.52 degrees local strike difference.",
+        "On K-35-044 Dolni Chiflik, REC31 continues within the same regional structural corridor represented by EUR_BGCS013.",
+        "REC31 geometrically connects with REC6; their principal strikes differ by only approximately 3.61 degrees.",
+        "The crosswalk is regional/system-level and does not assert exact surface-trace identity."
       ],
       "open_items": []
     }

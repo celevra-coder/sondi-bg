@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 56,
+  "source_count": 57,
   "generated_date": "2026-09-03",
   "sources": [
     {
@@ -1275,6 +1275,31 @@
       "editor": "Кънчев И.",
       "source_type": "official_geological_map",
       "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping"
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-043-AYTOS",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-35-043 Aytos",
+      "authors": [
+        "Кънчев И."
+      ],
+      "year": 1993,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1096",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region14_maps/K-35-043_Aytos.jpg",
+      "supports": [
+        "REC6 Prosenik regional structural correspondence",
+        "EUR_BGCS013 regional structural corridor"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as regional structural support only; the geological map does not by itself establish present-day fault activity or exact trace identity."
+      ]
     }
   ]
 }
