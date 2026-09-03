@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 119,
+  "record_count": 120,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -4039,6 +4039,43 @@
         "No direct BGCS crosswalk is accepted because proximity to EUR_BGCS034 is contradicted by the strongly incompatible orientation.",
         "HIGH confidence refers to the local structural correspondence of REC29, not to international trace identity.",
         "No kinematic fault type is assigned because no accepted international crosswalk or independent scientific kinematic source is available for REC29."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-LESKI-REC30",
+      "mrrb": {
+        "record": 30,
+        "name": "Leski"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Leski local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_corridor_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-084-BELICA"
+      ],
+      "notes": [
+        "REC30 has a principal strike of approximately 138.92 degrees.",
+        "EUR_BGCS035 provides the closest directional match, with approximately 3.96 degrees local strike difference, but lies approximately 33.11 km from REC30.",
+        "EFSM20 independently gives approximately 33.11 km separation and approximately 3.15 degrees local strike difference for the corresponding candidate.",
+        "The nearest overall GEM structure EUR_GRCS140 lies approximately 32.61 km away and differs by approximately 53.36 degrees in local strike.",
+        "No relevant GEM candidate occurs within the local extent of K-34-084 Belica.",
+        "Visual inspection of K-34-084 Belica shows REC30 following a distinct local NW-SE structural element.",
+        "No direct BGCS crosswalk is accepted because the closest directional analogue is regionally too distant.",
+        "HIGH confidence refers to the local structural correspondence of REC30, not to international trace identity.",
+        "No kinematic fault type is assigned because no accepted international crosswalk or independent scientific kinematic source is available for REC30."
       ],
       "open_items": []
     }
