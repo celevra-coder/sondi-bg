@@ -2693,12 +2693,12 @@
         "SRC-MRRB-2025",
         "SRC-GEM-SONDI",
         "SRC-GEO-MAP-K35-027-SEVLIEVO",
-        "SRC-GEO-MAP-K35-028-VELIKO-TARNOVO"
+        "SRC-GEO-MAP-K35-026-LOVECH"
       ],
       "notes": [
         "REC64 intersects EUR_BGCS021 with strong strike compatibility.",
-        "K-35-027 Sevlievo and K-35-028 Veliko Tarnovo support the same east-west to ENE-WSW regional structural corridor.",
-        "The correspondence is treated as a strong regional/local crosswalk rather than exact trace identity."
+        "The correspondence is treated as a strong regional/local crosswalk rather than exact trace identity.",
+        "K-35-026 Lovech and K-35-027 Sevlievo provide the valid geological-map cross-check for the REC64 corridor."
       ],
       "open_items": []
     },
@@ -2725,12 +2725,14 @@
         "SRC-MRRB-2025",
         "SRC-GEM-SONDI",
         "SRC-GEO-MAP-K35-025-CHERVEN-BRYAG",
-        "SRC-GEO-MAP-K35-026-LOVECH"
+        "SRC-GEO-MAP-K34-036-VRATSA"
       ],
       "notes": [
         "REC73 intersects EUR_BGCS021 with good strike compatibility.",
         "K-35-025 Cherven Bryag and K-35-026 Lovech support continuation of the mapped regional structural corridor.",
-        "The corridor is retained as a regional crosswalk, not as exact trace identity."
+        "The corridor is retained as a regional crosswalk, not as exact trace identity.",
+        "K-34-036 Vratsa covers the western end of REC73.",
+        "K-35-025 Cherven Bryag contains both REC73 and EUR_BGCS021 and provides the relevant map cross-check."
       ],
       "open_items": []
     },
@@ -2756,12 +2758,12 @@
       "source_ids": [
         "SRC-MRRB-2025",
         "SRC-GEO-MAP-K35-027-SEVLIEVO",
-        "SRC-GEO-MAP-K35-028-VELIKO-TARNOVO"
+        "SRC-GEO-MAP-K35-026-LOVECH"
       ],
       "notes": [
         "REC96 does not intersect EUR_BGCS021 but is subparallel to the Devetaki regional fault trend.",
-        "K-35-027 Sevlievo and K-35-028 Veliko Tarnovo support a southern parallel structural corridor.",
-        "REC96 is retained as a separate MRRB corridor, not merged conceptually into REC64."
+        "REC96 is retained as a separate MRRB corridor, not merged conceptually into REC64.",
+        "K-35-026 Lovech and K-35-027 Sevlievo provide the valid geological-map cross-check for REC96."
       ],
       "open_items": [
         "Exact scientific fault name remains unresolved."
@@ -2788,12 +2790,13 @@
       },
       "source_ids": [
         "SRC-MRRB-2025",
-        "SRC-GEO-MAP-K35-028-VELIKO-TARNOVO"
+        "SRC-GEO-MAP-K35-027-SEVLIEVO"
       ],
       "notes": [
         "REC97 lies very close to REC96 but has strongly different strike, indicating a local transverse branch/crossing structure.",
         "No direct BGCS crosswalk is assigned.",
-        "K-35-028 Veliko Tarnovo provides local geometric support for preserving REC97 as an individual structure."
+        "K-35-028 Veliko Tarnovo provides local geometric support for preserving REC97 as an individual structure.",
+        "REC97 is geographically covered by K-35-027 Sevlievo; K-35-028 Veliko Tarnovo is not used for this record."
       ],
       "open_items": [
         "Scientific naming and kinematics remain unresolved."
@@ -2822,13 +2825,13 @@
         "SRC-MRRB-2025",
         "SRC-GEM-SONDI",
         "SRC-GEO-MAP-K35-028-VELIKO-TARNOVO",
-        "SRC-GEO-MAP-K35-029-OMURTAG"
+        "SRC-GEO-MAP-K35-027-SEVLIEVO"
       ],
       "notes": [
         "REC75 intersects EUR_BGCS018 directly.",
         "Strike difference is approximately 0.55 degrees against GEM and approximately 4 degrees against EFSM20.",
-        "K-35-028 and K-35-029 support the same regional east-west structural corridor.",
-        "The crosswalk is regional/system-level and does not imply exact trace identity."
+        "The crosswalk is regional/system-level and does not imply exact trace identity.",
+        "REC75 is covered by K-35-027 Sevlievo and K-35-028 Veliko Tarnovo; K-35-029 Omurtag is not used for this record."
       ],
       "open_items": []
     },
@@ -2855,12 +2858,14 @@
         "SRC-MRRB-2025",
         "SRC-GEM-SONDI",
         "SRC-GEO-MAP-K35-028-VELIKO-TARNOVO",
-        "SRC-GEO-MAP-K35-029-OMURTAG"
+        "SRC-GEO-MAP-K35-026-LOVECH",
+        "SRC-GEO-MAP-K35-027-SEVLIEVO"
       ],
       "notes": [
         "REC98 is strongly subparallel to REC75 with approximately 1.5 degrees strike difference.",
         "It remains about 9.3 km south of EUR_BGCS018 and does not intersect it.",
-        "No direct BGCS crosswalk is assigned."
+        "No direct BGCS crosswalk is assigned.",
+        "REC98 spans K-35-026 Lovech, K-35-027 Sevlievo and K-35-028 Veliko Tarnovo."
       ],
       "open_items": [
         "Exact scientific fault name remains unresolved."
@@ -2887,13 +2892,13 @@
       },
       "source_ids": [
         "SRC-MRRB-2025",
-        "SRC-GEO-MAP-K35-029-OMURTAG",
-        "SRC-GEO-MAP-K35-040-TVARDITSA"
+        "SRC-GEO-MAP-K35-040-TVARDITSA",
+        "SRC-GEO-MAP-K35-028-VELIKO-TARNOVO"
       ],
       "notes": [
         "REC100 is subparallel to the Veliko Tarnovo regional fault trend.",
         "It lies approximately 14.5 km from EUR_BGCS018 and does not intersect it.",
-        "K-35-029 and K-35-040 support a separate southern structural corridor."
+        "REC100 is covered by K-35-028 Veliko Tarnovo and K-35-040 Tvarditsa."
       ],
       "open_items": [
         "Exact scientific fault name and kinematics remain unresolved."
@@ -2922,13 +2927,13 @@
         "SRC-MRRB-2025",
         "SRC-GEM-SONDI",
         "SRC-GEO-MAP-K35-029-OMURTAG",
-        "SRC-GEO-MAP-K35-030-SHUMEN"
+        "SRC-GEO-MAP-K35-028-VELIKO-TARNOVO"
       ],
       "notes": [
         "REC101 is subparallel to REC75, REC98 and REC100.",
         "It lies approximately 10.5 km from EUR_BGCS018 and does not intersect it.",
-        "K-35-029 and K-35-030 support continuation of the eastern structural corridor.",
-        "No direct BGCS crosswalk is assigned."
+        "No direct BGCS crosswalk is assigned.",
+        "REC101 is covered by K-35-028 Veliko Tarnovo and K-35-029 Omurtag; K-35-030 Shumen is not used for this record."
       ],
       "open_items": [
         "Exact scientific fault name remains unresolved."

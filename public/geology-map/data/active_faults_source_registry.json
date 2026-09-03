@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 53,
+  "source_count": 54,
   "generated_date": "2026-09-03",
   "sources": [
     {
@@ -1215,6 +1215,23 @@
       "supports": [
         "REC24_northern_structural_cross_check",
         "BGCS026_regional_overlay_context"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-036-VRATSA",
+      "title": "Geological Map of Bulgaria, K-34-036 Vratsa, 1:100000",
+      "authors": null,
+      "year": 1990,
+      "institution": "Committee of Geology / GeoKniga copy",
+      "source_type": "official_geological_map",
+      "url": null,
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region9_correction_maps\\K-34-036_Vratsa.jpg",
+      "supports": [
+        "REC73_western_structural_cross_check"
       ],
       "limitations": [
         "geological_fault_mapping_not_active_fault_inventory",
