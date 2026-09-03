@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 63,
+  "source_count": 65,
   "generated_date": "2026-09-03",
   "sources": [
     {
@@ -1450,6 +1450,57 @@
       "information_used": [
         "regional geological structure",
         "fault-corridor continuation",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-023-MONTANA",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-34-023 Montana",
+      "authors": [
+        "Филипов Л."
+      ],
+      "year": 1995,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1022",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region20_maps/K-34-023_Montana.jpg",
+      "supports": [
+        "REC63 Devene western structural correspondence",
+        "EUR_BGCS023 regional structural corridor"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
+        "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-024-BYALA-SLATINA",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-34-024 Byala Slatina",
+      "authors": [
+        "Филипов Л."
+      ],
+      "year": 1993,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1023",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region20_maps/K-34-024_Byala_Slatina.jpg",
+      "supports": [
+        "REC63 Devene eastern structural continuation",
+        "REC87 Nuvyanin local transverse branch",
+        "EUR_BGCS023 regional structural corridor"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "local fault geometry",
         "visual structural correspondence"
       ],
       "notes": [
