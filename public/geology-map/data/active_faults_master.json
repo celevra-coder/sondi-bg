@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 68,
+  "record_count": 73,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -2236,6 +2236,194 @@
       "open_items": [
         "Individual scientific fault name and kinematics remain unresolved.",
         "Find detailed neotectonic or structural mapping for the Zlatna Panega-Bulgarian Izvor corridor."
+      ]
+    },
+    {
+      "fault_id": "FLT-KYUSTENDIL-REC54",
+      "mrrb": {
+        "record": 54,
+        "name": "Кюстендил"
+      },
+      "scientific": {
+        "name": "Kyustendil normal fault",
+        "system": "Kyustendil fault zone",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_MKCS012"
+      },
+      "correspondence": {
+        "type": "partial_local_scientific_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-WESTAWAY-KYUSTENDIL",
+        "SRC-GEO-MAP-K34-070-KYUSTENDIL"
+      ],
+      "notes": [
+        "REC54 is a 25.304 km MRRB corridor with a PCA strike of approximately 74.15 degrees.",
+        "EUR_MKCS012 is approximately 671 m away in GEM and approximately 644 m away in EFSM20.",
+        "The orientation difference is approximately 2.93 degrees against GEM and approximately 0.15 degrees against EFSM20.",
+        "Independent scientific literature describes the Kyustendil normal fault as an ENE-WSW to approximately east-west active normal-fault zone with young deformation.",
+        "The geological-map overlay supports the same regional structural belt.",
+        "EUR_MKCS012 is retained as a regional scientific crosswalk, but the MRRB polygon is not treated as the exact published surface trace."
+      ],
+      "open_items": [
+        "Digitize the published Kyustendil fault surface trace for quantitative comparison with REC54 and MKCS012.",
+        "Resolve segment-level correspondence within the Kyustendil fault zone."
+      ]
+    },
+    {
+      "fault_id": "FLT-KONYAVO-REC55",
+      "mrrb": {
+        "record": 55,
+        "name": "КонявскаL"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Konyavo-Kyustendil oblique structural domain",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_oblique_branch_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-KRAISHTE-STRUMA-REGIONAL",
+        "SRC-GEO-MAP-K34-070-KYUSTENDIL",
+        "SRC-GEO-MAP-K34-058-BOSILEGRAD-RADOMIR"
+      ],
+      "notes": [
+        "REC55 has a PCA strike of approximately 107.45 degrees.",
+        "It lies approximately 357 m from EUR_MKCS012 in GEM but differs by approximately 30 to 33 degrees in orientation.",
+        "REC55 lies approximately 373 m from REC131 but differs by approximately 39.95 degrees in orientation.",
+        "The two geological-map sheets support an oblique structural position between the Kyustendil and NNW-SSE regional structural sets.",
+        "No BGCS identity is assigned because proximity alone does not establish fault identity."
+      ],
+      "open_items": [
+        "Resolve whether REC55 corresponds to a named Konyavo fault or another oblique local structure.",
+        "Determine kinematics and age from detailed local mapping."
+      ]
+    },
+    {
+      "fault_id": "FLT-KYUSTENDIL-TRANSVERSE-REC129",
+      "mrrb": {
+        "record": 129,
+        "name": ""
+      },
+      "scientific": {
+        "name": null,
+        "system": "Struma-Kraishte transverse structural system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_transverse_structural_corridor_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-KRAISHTE-STRUMA-REGIONAL",
+        "SRC-GEO-MAP-K34-070-KYUSTENDIL"
+      ],
+      "notes": [
+        "REC129 is a 25.755 km MRRB corridor with a PCA strike of approximately 160.32 degrees.",
+        "Its orientation differs from MKCS012 by approximately 83 to 86 degrees, indicating a transverse rather than parallel relation.",
+        "REC129 lies approximately 595 m from REC54 but the two corridors do not intersect.",
+        "The geological-map overlay supports a distinct NNW-SSE structural corridor crossing the broader Kyustendil region.",
+        "No MKCS012 crosswalk is assigned."
+      ],
+      "open_items": [
+        "Resolve the individual scientific fault name and kinematics.",
+        "Test correspondence with published Struma-Kraishte fault segments."
+      ]
+    },
+    {
+      "fault_id": "FLT-KRAISHTE-REC130",
+      "mrrb": {
+        "record": 130,
+        "name": ""
+      },
+      "scientific": {
+        "name": null,
+        "system": "Struma-Kraishte transverse structural system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_transverse_structural_segment_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-KRAISHTE-STRUMA-REGIONAL",
+        "SRC-GEO-MAP-K34-070-KYUSTENDIL",
+        "SRC-GEO-MAP-K34-058-BOSILEGRAD-RADOMIR"
+      ],
+      "notes": [
+        "REC130 is a short approximately NNW-SSE MRRB corridor with a PCA strike of approximately 150.14 degrees.",
+        "It lies approximately 5.44 km from MKCS012 and has no GEM or EFSM20 source within 5 km.",
+        "Its orientation differs from MKCS012 by approximately 73 to 76 degrees.",
+        "REC130 lies approximately 3.51 km from REC131 and approximately 3.63 km from REC55.",
+        "Current evidence supports a regional transverse structural interpretation but not an individual scientific identity."
+      ],
+      "open_items": [
+        "Individual scientific fault name, kinematics and age remain unresolved.",
+        "Find detailed structural mapping for the REC130 sector."
+      ]
+    },
+    {
+      "fault_id": "FLT-KRAISHTE-REC131",
+      "mrrb": {
+        "record": 131,
+        "name": ""
+      },
+      "scientific": {
+        "name": null,
+        "system": "Struma-Kraishte transverse structural system",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_transverse_structural_segment_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-KRAISHTE-STRUMA-REGIONAL",
+        "SRC-GEO-MAP-K34-058-BOSILEGRAD-RADOMIR"
+      ],
+      "notes": [
+        "REC131 is a short NNW-SSE MRRB corridor with a PCA strike of approximately 147.40 degrees.",
+        "It lies approximately 1.82 km from MKCS012 but differs by approximately 70 to 73 degrees in orientation.",
+        "REC131 lies approximately 373 m from REC55, but their approximately 40 degree orientation difference does not support one-to-one identity.",
+        "The Bosilegrad-Radomir geological-map overlay supports an independent NNW-SSE structural corridor.",
+        "No MKCS012 crosswalk is assigned."
+      ],
+      "open_items": [
+        "Individual scientific fault name and kinematics remain unresolved.",
+        "Test the corridor against detailed Kraishte structural mapping."
       ]
     }
   ]

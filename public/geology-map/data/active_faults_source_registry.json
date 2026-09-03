@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 39,
+  "source_count": 43,
   "generated_date": "2026-09-03",
   "sources": [
     {
@@ -897,6 +897,98 @@
       "limitations": [
         "geological_fault_mapping_not_active_fault_inventory",
         "limited_target_coverage",
+        "four_corner_linear_overlay_is_approximate",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-WESTAWAY-KYUSTENDIL",
+      "title": "Late Cenozoic extension in the vicinity of Kyustendil, southwest Bulgaria",
+      "title_bg": "???????????????? ????????? ? ?????? ?? ?????????, ?????????? ????????",
+      "authors": [
+        "Rob Westaway"
+      ],
+      "year": null,
+      "institution": null,
+      "source_type": "peer_reviewed_scientific_publication",
+      "local_path": null,
+      "url": "https://repository.geologyscience.ru/bitstream/handle/123456789/47374/West_06.pdf",
+      "access_date": "2026-09-03",
+      "supports": [
+        "Kyustendil_normal_fault",
+        "ENE_WSW_to_E_W_fault_orientation",
+        "active_normal_faulting_and_young_deformation",
+        "REC54_scientific_context"
+      ],
+      "limitations": [
+        "published_surface_trace_not_digitized_in_current_workflow",
+        "does_not_establish_exact_MRRB_corridor_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-KRAISHTE-STRUMA-REGIONAL",
+      "title": "Regional structural context of the Kyustendil area: Struma/Kraishte and Kyustendil fault systems",
+      "title_bg": "?????????? ?????????? ???????? ?? ????????????? ?????: ????????/?????????? ? ???????????? ???????? ???????",
+      "authors": null,
+      "year": null,
+      "institution": null,
+      "source_type": "regional_scientific_context",
+      "local_path": null,
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "NNW_SSE_Struma_Kraishte_fault_orientation",
+        "WSW_ENE_Kyustendil_fault_orientation",
+        "REC129_REC130_REC131_regional_structural_context",
+        "REC55_oblique_structural_context"
+      ],
+      "limitations": [
+        "regional_context_only",
+        "individual_REC_scientific_fault_names_not_resolved",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-070-KYUSTENDIL",
+      "title": "Geological Map of Bulgaria, K-34-070 Kriva Palanka and Kyustendil, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ????? ??????? ? ?????????, K-34-070, 1:100000",
+      "authors": null,
+      "year": 1988,
+      "institution": "Committee of Geology",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region6_maps\\K-34-070_Kyustendil.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "REC54_REC55_REC129_REC130_structural_cross_check",
+        "Kyustendil_regional_structural_context",
+        "MKCS012_regional_overlay_context"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-058-BOSILEGRAD-RADOMIR",
+      "title": "Geological Map of Bulgaria, K-34-058 Bosilegrad and Radomir, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ?????????? ? ???????, K-34-058, 1:100000",
+      "authors": null,
+      "year": 1989,
+      "institution": "Committee of Geology",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region6_maps\\K-34-058_Bosilegrad_Radomir.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "REC55_REC130_REC131_structural_cross_check",
+        "northern_Region6_structural_context"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_map_does_not_by_itself_prove_present_day_activity",
         "four_corner_linear_overlay_is_approximate",
         "not_suitable_for_exact_trace_identity"
       ]
