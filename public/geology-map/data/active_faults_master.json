@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 122,
+  "record_count": 123,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -4155,6 +4155,46 @@
       "open_items": [
         "No accepted international BGCS crosswalk.",
         "Exact surface trace identity remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-KAZANLAK-NIKOLAEVO-REC41",
+      "mrrb": {
+        "record": 41,
+        "name": "Казанлък_Николаево"
+      },
+      "scientific": {
+        "name": "Kazanlak-Nikolaevo active fault corridor",
+        "system": "Kazanlak-Nikolaevo regional active fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS015"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-051-KAZANLAK",
+        "SRC-GEO-MAP-K35-052-STARA-ZAGORA"
+      ],
+      "notes": [
+        "MRRB REC41 strike is approximately 85.09 degrees.",
+        "EUR_BGCS015 geometrically intersects REC41.",
+        "The local GEM strike of EUR_BGCS015 is approximately 85.80 degrees, differing from REC41 by only approximately 0.71 degrees.",
+        "The corresponding EFSM20 representation also intersects REC41 and has a local strike of approximately 83.44 degrees, differing by approximately 1.65 degrees.",
+        "Visual comparison on K-35-052 Stara Zagora shows REC41 and EUR_BGCS015 following the same regional east-west structural corridor near Nikolaevo.",
+        "K-35-051 Kazanlak provides additional western-sheet context for continuation of the same regional corridor.",
+        "The correspondence supports a regional fault-system crosswalk but not exact surface-trace identity.",
+        "Normal-fault kinematics are inherited from the accepted EUR_BGCS015 crosswalk.",
+        "HIGH confidence refers to regional structural correspondence supported jointly by MRRB geometry, GEM, EFSM20 and geological-map context."
+      ],
+      "open_items": [
+        "Exact surface-trace identity remains unresolved."
       ]
     }
   ]
