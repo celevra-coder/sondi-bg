@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 60,
+  "record_count": 68,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -1944,6 +1944,298 @@
       "open_items": [
         "Locate detailed field mapping or technical reports that specifically resolve the near north-south structure represented by REC128.",
         "Individual scientific fault name, kinematics and age remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-BORIMA-REC88",
+      "mrrb": {
+        "record": 88,
+        "name": "Borima"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Borima-Dobrodan local fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_network_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-038-TROYAN"
+      ],
+      "notes": [
+        "REC88 is a short approximately east-west MRRB corridor with a PCA strike of approximately 94.93 degrees.",
+        "REC88 intersects REC91 and lies approximately 769 m from REC90, supporting membership in a connected local Borima-Dobrodan structural network.",
+        "The nearest GEM source is EUR_BGCS043 at approximately 26.6 km; no GEM or EFSM20 source intersects or approaches REC88 within 5 km.",
+        "No BGCS crosswalk is assigned because regional proximity and orientation are insufficient for identity.",
+        "The Troyan geological-map overlay supports a local structural corridor but not an exact one-to-one mapped fault trace."
+      ],
+      "open_items": [
+        "Individual scientific fault name, kinematics and age remain unresolved.",
+        "Find local neotectonic or Quaternary structural studies for the Borima sector."
+      ]
+    },
+    {
+      "fault_id": "FLT-SOPOT-REC89",
+      "mrrb": {
+        "record": 89,
+        "name": "Yaz Sopot"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Sopot-Borima regional structural corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_structural_corridor_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-025-CHERVEN-BRYAG",
+        "SRC-GEO-MAP-K35-037-TETEVEN",
+        "SRC-GEO-MAP-K35-038-TROYAN"
+      ],
+      "notes": [
+        "REC89 has a PCA strike of approximately 112.42 degrees and forms the western to central part of the Region 5 structural belt.",
+        "REC89 lies approximately 1.38 km from REC94, 1.60 km from REC90, 1.76 km from REC88 and 2.83 km from REC95, but does not intersect those corridors.",
+        "The nearest GEM source is EUR_BGCS043 at approximately 25.6 km and no BGCS source lies within 5 km.",
+        "Cross-sheet geological-map checks show a persistent regional structural setting but do not demonstrate exact trace identity."
+      ],
+      "open_items": [
+        "Individual scientific fault name and kinematics remain unresolved.",
+        "Resolve whether REC89 is a single corridor or a composite of multiple local structures."
+      ]
+    },
+    {
+      "fault_id": "FLT-BORIMA-DOBRODAN-REC90",
+      "mrrb": {
+        "record": 90,
+        "name": "Borima - Dobrodan"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Borima-Dobrodan-Berievo local fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_main_fault_corridor_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-038-TROYAN"
+      ],
+      "notes": [
+        "REC90 is an approximately east-west MRRB corridor with a PCA strike of approximately 89.61 degrees.",
+        "REC90 geometrically intersects REC93 and lies approximately 769 m from REC88 and approximately 898 m from REC91.",
+        "The REC90-REC93 intersection is treated as evidence for local fault-network topology rather than proof that both corridors are the same fault.",
+        "The nearest modeled GEM source is approximately 24.3 km away; no BGCS identity is assigned.",
+        "The Troyan geological map supports a dense local structural network in the corridor area."
+      ],
+      "open_items": [
+        "Individual scientific fault name and kinematics remain unresolved.",
+        "Detailed local mapping is needed to resolve the REC90-REC93 intersection geometry."
+      ]
+    },
+    {
+      "fault_id": "FLT-BORIMA-DOBRODAN-REC91",
+      "mrrb": {
+        "record": 91,
+        "name": "Borima - Dobrodan"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Borima-Dobrodan local fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_connecting_branch_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-026-LOVECH",
+        "SRC-GEO-MAP-K35-038-TROYAN"
+      ],
+      "notes": [
+        "REC91 has a PCA strike of approximately 73.99 degrees and is oblique to the dominant east-west orientation of much of Region 5.",
+        "REC91 intersects REC88 and REC92 and lies approximately 898 m from REC90 and approximately 1.15 km from REC93.",
+        "Its geometry is consistent with a connecting or oblique branch within the local Borima-Dobrodan network.",
+        "The nearest GEM source is EUR_BGCS021 at approximately 26.4 km; no BGCS identity is assigned.",
+        "Lovech and Troyan geological-map overlays support regional structural complexity but not exact trace identity."
+      ],
+      "open_items": [
+        "Individual scientific fault name and kinematics remain unresolved.",
+        "Resolve whether REC91 is a transfer structure, oblique branch or composite corridor."
+      ]
+    },
+    {
+      "fault_id": "FLT-DOBRODAN-EAST-REC92",
+      "mrrb": {
+        "record": 92,
+        "name": "Borima - Dobrodan-iztok"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Borima-Dobrodan eastern fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "eastern_fault_branch_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-026-LOVECH",
+        "SRC-GEO-MAP-K35-027-SEVLIEVO",
+        "SRC-GEO-MAP-K35-039-GABROVO"
+      ],
+      "notes": [
+        "REC92 has a PCA strike of approximately 95.10 degrees and represents an east-west eastern branch of the Region 5 network.",
+        "REC92 geometrically intersects REC91, supporting a direct network connection.",
+        "The nearest modeled source is EUR_BGCS021 at approximately 26.5 km despite a similar regional orientation; this distance is too large to support identity.",
+        "Cross-sheet checks on Lovech, Sevlievo and Gabrovo support the regional structural context but not exact one-to-one trace correspondence."
+      ],
+      "open_items": [
+        "Individual scientific fault name and kinematics remain unresolved.",
+        "Detailed mapping is required to resolve the eastern termination of the REC92 corridor."
+      ]
+    },
+    {
+      "fault_id": "FLT-BERIEVO-REC93",
+      "mrrb": {
+        "record": 93,
+        "name": "Berievo"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Borima-Dobrodan-Berievo local fault network",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_parallel_branch_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-038-TROYAN",
+        "SRC-GEO-MAP-K35-039-GABROVO"
+      ],
+      "notes": [
+        "REC93 has a PCA strike of approximately 98.45 degrees and is broadly parallel to REC90.",
+        "REC93 geometrically intersects REC90 and lies approximately 1.15 km from REC91.",
+        "The intersection with REC90 is interpreted as local fault-network topology rather than one-to-one trace identity.",
+        "The nearest GEM source is approximately 29.4 km away; no BGCS crosswalk is assigned.",
+        "Troyan and Gabrovo map checks support an east-west local structural network."
+      ],
+      "open_items": [
+        "Individual scientific fault name and kinematics remain unresolved.",
+        "Resolve whether REC93 is a southern parallel branch or a separate crossing fault."
+      ]
+    },
+    {
+      "fault_id": "FLT-BULGARIAN-IZVOR-ABLANITSA-REC94",
+      "mrrb": {
+        "record": 94,
+        "name": "???? ????? - ????????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Bulgarian Izvor-Ablanitsa regional structural corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_structural_corridor_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-025-CHERVEN-BRYAG",
+        "SRC-GEO-MAP-K35-026-LOVECH"
+      ],
+      "notes": [
+        "REC94 is a long approximately east-west MRRB corridor with a PCA strike of approximately 90.20 degrees.",
+        "REC94 lies approximately 1.38 km from REC89 but does not intersect it.",
+        "The nearest GEM source is EUR_BGCS021 at approximately 22.8 km; no BGCS identity is assigned.",
+        "Cherven Bryag and Lovech geological-map overlays support a broad regional structural corridor but do not establish an exact mapped fault identity."
+      ],
+      "open_items": [
+        "Individual scientific fault name and kinematics remain unresolved.",
+        "Find local neotectonic and Quaternary mapping for the Bulgarian Izvor-Ablanitsa sector."
+      ]
+    },
+    {
+      "fault_id": "FLT-ZLATNA-PANEGA-BULGARIAN-IZVOR-REC95",
+      "mrrb": {
+        "record": 95,
+        "name": "?? ?????? - ? ?????"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Zlatna Panega-Bulgarian Izvor regional structural corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_structural_corridor_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-025-CHERVEN-BRYAG"
+      ],
+      "notes": [
+        "REC95 has a PCA strike of approximately 109.17 degrees and forms the western WNW-ESE part of the Region 5 structural domain.",
+        "REC95 lies approximately 2.83 km from REC89 and approximately 4.51 km from REC94 but does not intersect either corridor.",
+        "The nearest modeled source is EUR_BGCS022 at approximately 21.6 km; similarity of orientation is not sufficient for identity.",
+        "No BGCS crosswalk is assigned.",
+        "The Cherven Bryag geological-map overlay supports regional structural context but not an exact one-to-one fault trace."
+      ],
+      "open_items": [
+        "Individual scientific fault name and kinematics remain unresolved.",
+        "Find detailed neotectonic or structural mapping for the Zlatna Panega-Bulgarian Izvor corridor."
       ]
     }
   ]

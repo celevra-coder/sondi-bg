@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 33,
+  "source_count": 39,
   "generated_date": "2026-09-03",
   "sources": [
     {
@@ -768,6 +768,135 @@
       "limitations": [
         "geological_fault_mapping_not_active_fault_inventory",
         "legacy_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-025-CHERVEN-BRYAG",
+      "title": "Geological Map of Bulgaria, K-35-025 Cherven Bryag, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ?????? ????, K-35-025, 1:100000",
+      "authors": null,
+      "year": null,
+      "institution": "Committee of Geology / Bulgarian geological mapping programme",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region5_maps\\K-35-025_Cherven_Bryag.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "REC89_REC94_REC95_structural_cross_check",
+        "western_Region5_structural_context"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_geological_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-026-LOVECH",
+      "title": "Geological Map of Bulgaria, K-35-026 Lovech, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ?????, K-35-026, 1:100000",
+      "authors": null,
+      "year": null,
+      "institution": "Committee of Geology / Bulgarian geological mapping programme",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region5_maps\\K-35-026_Lovech.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "REC91_REC92_REC94_structural_cross_check",
+        "central_eastern_Region5_structural_context"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_geological_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-027-SEVLIEVO",
+      "title": "Geological Map of Bulgaria, K-35-027 Sevlievo, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ????????, K-35-027, 1:100000",
+      "authors": null,
+      "year": null,
+      "institution": "Committee of Geology / Bulgarian geological mapping programme",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region5_maps\\K-35-027_Sevlievo.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "REC92_eastern_segment_structural_cross_check"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "limited_target_coverage",
+        "four_corner_linear_overlay_is_approximate",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-037-TETEVEN",
+      "title": "Geological Map of Bulgaria, K-35-037 Teteven, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ???????, K-35-037, 1:100000",
+      "authors": null,
+      "year": null,
+      "institution": "Committee of Geology / Bulgarian geological mapping programme",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region5_maps\\K-35-037_Teteven.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "REC89_western_segment_structural_cross_check"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "limited_target_coverage",
+        "four_corner_linear_overlay_is_approximate",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-038-TROYAN",
+      "title": "Geological Map of Bulgaria, K-35-038 Troyan, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ?????, K-35-038, 1:100000",
+      "authors": null,
+      "year": null,
+      "institution": "Committee of Geology / Bulgarian geological mapping programme",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region5_maps\\K-35-038_Troyan.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "REC88_REC89_REC90_REC91_REC93_structural_cross_check",
+        "Borima_Dobrodan_Berievo_local_fault_network_context"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "legacy_geological_map_does_not_by_itself_prove_present_day_activity",
+        "four_corner_linear_overlay_is_approximate",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K35-039-GABROVO",
+      "title": "Geological Map of Bulgaria, K-35-039 Gabrovo, 1:100000",
+      "title_bg": "???????? ????? ?? ????????, ???????, K-35-039, 1:100000",
+      "authors": null,
+      "year": null,
+      "institution": "Committee of Geology / Bulgarian geological mapping programme",
+      "source_type": "official_geological_map",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region5_maps\\K-35-039_Gabrovo.jpg",
+      "url": null,
+      "access_date": "2026-09-03",
+      "supports": [
+        "REC92_REC93_eastern_boundary_cross_check"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "limited_target_coverage",
         "four_corner_linear_overlay_is_approximate",
         "not_suitable_for_exact_trace_identity"
       ]
