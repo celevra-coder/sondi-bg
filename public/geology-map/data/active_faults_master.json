@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 88,
+  "record_count": 91,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -2932,6 +2932,116 @@
       ],
       "open_items": [
         "Exact scientific fault name remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-PERNIK-REC24",
+      "mrrb": {
+        "record": 24,
+        "name": "Pernik"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Pernik regional NW-SE fault zone",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_pernik_fault_zone_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-059-PERNIK",
+        "SRC-RADULOV-ET-AL-2014-PERNIK",
+        "SRC-GEO-MAP-K34-047-SOFIA"
+      ],
+      "notes": [
+        "REC24 has a NW-SE strike of approximately 145 degrees.",
+        "The northern end was additionally checked on geological sheet K-34-047 Sofia.",
+        "EUR_BGCS026 is approximately 9.7 km away and has a broadly compatible orientation, but no direct crosswalk is assigned.",
+        "The Pernik scientific literature supports an active regional fault context but does not establish exact identity of REC24 with the Meshtitsa fault.",
+        "The northern end of REC24 was cross-checked on geological sheet K-34-047 Sofia."
+      ],
+      "open_items": [
+        "Exact named scientific fault correspondence remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-RADOMIR-REC56",
+      "mrrb": {
+        "record": 56,
+        "name": "Radomir"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Pernik-Radomir NW-SE active normal-fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "pernik_radomir_active_fault_system_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-058-BOSILEGRAD-RADOMIR",
+        "SRC-GEO-MAP-K34-059-PERNIK",
+        "SRC-RADULOV-ET-AL-2014-PERNIK"
+      ],
+      "notes": [
+        "REC56 has a NW-SE strike of approximately 125.5 degrees.",
+        "It intersects EUR_BGCS037 geometrically, but the local strike difference is approximately 63-65 degrees, so the intersection is treated as a crossing rather than identity.",
+        "Its orientation is compatible with the NW-SE active normal-fault framework documented for the Pernik basin and Meshtitsa fault.",
+        "No BGCS crosswalk is assigned."
+      ],
+      "open_items": [
+        "Exact identity with the named Meshtitsa fault is not claimed."
+      ]
+    },
+    {
+      "fault_id": "FLT-RADOMIR-REC57",
+      "mrrb": {
+        "record": 57,
+        "name": "Radomir"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Pernik-Radomir NW-SE active normal-fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "pernik_radomir_active_fault_system_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-058-BOSILEGRAD-RADOMIR",
+        "SRC-GEO-MAP-K34-059-PERNIK",
+        "SRC-RADULOV-ET-AL-2014-PERNIK"
+      ],
+      "notes": [
+        "REC57 has a NW-SE strike of approximately 131.6 degrees.",
+        "It lies approximately 1.6-1.9 km from EUR_BGCS037, but the local orientation differs by roughly 59-67 degrees, so no identity is assigned.",
+        "REC56 and REC57 are approximately 5.5 km apart and differ in strike by only about 6 degrees.",
+        "The geometry is compatible with the NW-SE active normal-fault framework documented in the Pernik-Radomir area.",
+        "No BGCS crosswalk is assigned."
+      ],
+      "open_items": [
+        "Exact identity with the named Meshtitsa fault is not claimed."
       ]
     }
   ]

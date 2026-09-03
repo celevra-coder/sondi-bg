@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 51,
+  "source_count": 53,
   "generated_date": "2026-09-03",
   "sources": [
     {
@@ -1169,6 +1169,52 @@
       "access_date": "2026-09-03",
       "supports": [
         "REC101_eastern_structural_crosscheck"
+      ],
+      "limitations": [
+        "geological_fault_mapping_not_active_fault_inventory",
+        "not_suitable_for_exact_trace_identity"
+      ]
+    },
+    {
+      "source_id": "SRC-RADULOV-ET-AL-2014-PERNIK",
+      "title": "Geological data on the source of the 2012 Mw 5.6 Pernik earthquake, SW Bulgaria",
+      "authors": [
+        "Alexander Radulov",
+        "Marlena Yaneva",
+        "Nikolay Nikolov",
+        "Hristo Kiselinov",
+        "Yordanka Donkova",
+        "Gabriel Nikolov"
+      ],
+      "year": 2014,
+      "institution": "Geological Institute - Bulgarian Academy of Sciences",
+      "source_type": "scientific_conference_paper",
+      "url": "https://gsa.gov.al/Artikujt/buletinet/%2710/1_2014.pdf",
+      "local_path": null,
+      "supports": [
+        "Meshtitsa_fault",
+        "Pernik_basin_NW_boundary_fault",
+        "2012_Pernik_earthquake_source",
+        "Holocene_recurrent_normal_faulting",
+        "REC56_REC57_scientific_context"
+      ],
+      "limitations": [
+        "scientific_context_does_not_establish_exact_MRRB_trace_identity",
+        "Meshtitsa_mapping_should_not_be_extended_automatically_to_all_Pernik_Radomir_faults"
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-047-SOFIA",
+      "title": "Geological Map of Bulgaria, K-34-047 Sofia, 1:100000",
+      "authors": null,
+      "year": null,
+      "institution": "Committee of Geology / GeoKniga copy",
+      "source_type": "official_geological_map",
+      "url": "https://www.geokniga.org/maps/1041",
+      "local_path": "C:\\Users\\Micron\\sondi-bg\\_research\\active_faults_network\\region11_maps\\K-34-047_Sofia.jpg",
+      "supports": [
+        "REC24_northern_structural_cross_check",
+        "BGCS026_regional_overlay_context"
       ],
       "limitations": [
         "geological_fault_mapping_not_active_fault_inventory",
