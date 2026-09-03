@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 59,
+  "record_count": 60,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -1905,6 +1905,45 @@
       ],
       "open_items": [
         "Individual published scientific fault name and precise branch relationship remain unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-IHTIMAN-TRANSVERSE-REC128",
+      "mrrb": {
+        "record": 128,
+        "name": ""
+      },
+      "scientific": {
+        "name": null,
+        "system": "Ihtiman regional transverse structural domain",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "regional_transverse_structural_corridor_correspondence",
+        "confidence": "MEDIUM",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-060-IHTIMAN",
+        "SRC-GEO-MAP-K34-048-BOTEVGRAD"
+      ],
+      "notes": [
+        "REC128 is a 26.208 km MRRB corridor with a PCA strike of approximately 1.4 degrees, representing a near north-south orientation.",
+        "The nearest modeled source is EUR_BGCS025 at approximately 1.69 km, but the local orientation difference is approximately 62.66 degrees against GEM and approximately 66.4 degrees against EFSM20.",
+        "REC128 does not intersect EUR_BGCS025 in either GEM or EFSM20 and no BGCS identity is assigned.",
+        "REC128 lies approximately 740 m from REC67, but differs from REC67 by approximately 39.22 degrees in orientation; current evidence does not establish continuation or one-to-one identity.",
+        "Geological-map overlays on K-34-060 Ihtiman and K-34-048 Botevgrad show REC128 crossing the regional geology in a near north-south direction while the dominant mapped structural grain is oblique to it.",
+        "The geological maps do not demonstrate a continuous mapped fault trace identical to the complete REC128 corridor.",
+        "REC128 is retained as an independent transverse regional structural corridor with unresolved individual scientific fault name and kinematics."
+      ],
+      "open_items": [
+        "Locate detailed field mapping or technical reports that specifically resolve the near north-south structure represented by REC128.",
+        "Individual scientific fault name, kinematics and age remain unresolved."
       ]
     }
   ]
