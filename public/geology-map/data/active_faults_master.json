@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 91,
+  "record_count": 94,
   "generated_date": "2026-09-03",
   "records": [
     {
@@ -3048,6 +3048,101 @@
       "open_items": [
         "Exact identity with the named Meshtitsa fault is not claimed."
       ]
+    },
+    {
+      "fault_id": "FLT-KAMCHIYA-REC38",
+      "mrrb": {
+        "record": 38,
+        "name": "Камчия"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Kamchiya regional fault system",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS016"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-032-VARNA",
+        "SRC-GEO-MAP-K35-044-DOLNI-CHIFLIK"
+      ],
+      "notes": [
+        "K-35-032 Varna and K-35-044 Dolni Chiflik both support a strong E-W to WNW-ESE structural corridor correspondence.",
+        "Nearest GEM source is EUR_BGCS016 at approximately 0.472 km with approximately 4.57 degree strike difference.",
+        "Regional/system correspondence is strong, but exact trace identity is not asserted."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-OMURTAG-C-REC65",
+      "mrrb": {
+        "record": 65,
+        "name": "Омуртаг С"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Omurtag parallel fault corridor",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "western_parallel_fault_corridor_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-029-OMURTAG",
+        "SRC-GEO-MAP-K35-030-SHUMEN"
+      ],
+      "notes": [
+        "REC65 is expressed on both K-35-029 Omurtag and K-35-030 Shumen as the western/northwestern member of the Omurtag parallel corridor.",
+        "It is subparallel to EUR_BGCS016 but offset from the main modeled trace and therefore is retained without a BGCS crosswalk.",
+        "Nearest GEM source is EUR_BGCS016 at approximately 1.233 km with approximately 19.10 degree strike difference."
+      ],
+      "open_items": []
+    },
+    {
+      "fault_id": "FLT-OMURTAG-YUG-REC66",
+      "mrrb": {
+        "record": 66,
+        "name": "Омуртаг Юг"
+      },
+      "scientific": {
+        "name": null,
+        "system": "Omurtag parallel fault corridor",
+        "fault_type": "normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "eastern_parallel_fault_segment_correspondence",
+        "confidence": "MEDIUM_HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-030-SHUMEN"
+      ],
+      "notes": [
+        "REC66 is the eastern/southern parallel Omurtag segment and is clearly supported on K-35-030 Shumen.",
+        "REC65 and REC66 are close parallel members of the same local structural corridor, separated by approximately 2.556 km with approximately 3.39 degree strike difference.",
+        "Despite regional similarity to EUR_BGCS016, the offset and geometry do not support a direct BGCS crosswalk."
+      ],
+      "open_items": []
     }
   ]
 }
