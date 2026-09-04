@@ -3768,9 +3768,6 @@ export default function GeologyReportPage() {
 
         <div style={styles.topbar}>
           <div>
-            <div style={styles.eyebrow}>
-              AISMM GEOLOGY
-            </div>
             <h1 style={styles.h1}>
               Препоръки за сондиране
             </h1>
@@ -3789,9 +3786,6 @@ export default function GeologyReportPage() {
         </div>
 
         <section style={styles.heroCard}>
-          <div style={styles.sectionLabel}>
-            С ДВЕ ДУМИ ЗА СОНДАЖИСТА
-          </div>
 
           <h2 style={styles.heroTitle}>
             {simple.headline}
