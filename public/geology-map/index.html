@@ -2356,6 +2356,285 @@ function danubeGroundwaterCodesAtPoint(lat, lng) {
 }
 
 
+
+function groundwaterFeaturesAtPoint(data, lat, lng, prefix) {
+  if (
+    !data ||
+    !Array.isArray(data.features) ||
+    !Number.isFinite(Number(lat)) ||
+    !Number.isFinite(Number(lng)) ||
+    typeof turf === "undefined"
+  ) {
+    return [];
+  }
+
+  const point = turf.point([
+    Number(lng),
+    Number(lat)
+  ]);
+
+  const result = [];
+  const seen = new Set();
+
+  data.features.forEach(feature => {
+    try {
+      if (
+        !feature ||
+        !feature.geometry ||
+        !turf.booleanPointInPolygon(
+          point,
+          feature
+        )
+      ) {
+        return;
+      }
+
+      const props =
+        feature.properties || {};
+
+      const code =
+        normalizeGwbCode(
+          props.localId ||
+          props.localID ||
+          props.canonical_code ||
+          props.gwb_code ||
+          props.gwb_code_original ||
+          props.source_code ||
+          props.euCode ||
+          props.EU_CD ||
+          props.cod ||
+          props.code ||
+          props.Code ||
+          props.WB_CODE ||
+          ""
+        );
+
+      if (
+        !code ||
+        (
+          prefix &&
+          !code.startsWith(prefix)
+        ) ||
+        seen.has(code)
+      ) {
+        return;
+      }
+
+      seen.add(code);
+
+      result.push({
+        code,
+        feature,
+        properties: props
+      });
+
+    } catch (error) {
+      // Ignore invalid individual geometry.
+    }
+  });
+
+  return result;
+}
+
+
+function groundwaterAggregateChemicalStatus(items) {
+  const statuses =
+    (Array.isArray(items) ? items : [])
+      .map(item =>
+        gwbCompactStatus(
+          item && item.chemical
+        )
+      );
+
+  const known =
+    statuses.filter(
+      status =>
+        status === "\u0414\u043e\u0431\u0440\u043e" ||
+        status === "\u041b\u043e\u0448\u043e"
+    );
+
+  const hasGood =
+    known.includes(
+      "\u0414\u043e\u0431\u0440\u043e"
+    );
+
+  const hasBad =
+    known.includes(
+      "\u041b\u043e\u0448\u043e"
+    );
+
+  if (hasGood && hasBad) {
+    return "\u0421\u043c\u0435\u0441\u0435\u043d\u043e";
+  }
+
+  if (known.length < statuses.length) {
+    return "\u041d\u0435\u043f\u044a\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438";
+  }
+
+  if (
+    known.length &&
+    known.every(
+      status =>
+        status === "\u041b\u043e\u0448\u043e"
+    )
+  ) {
+    return "\u041b\u043e\u0448\u043e";
+  }
+
+  if (
+    known.length &&
+    known.every(
+      status =>
+        status === "\u0414\u043e\u0431\u0440\u043e"
+    )
+  ) {
+    return "\u0414\u043e\u0431\u0440\u043e";
+  }
+
+  return "\u041d\u0435\u043f\u044a\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438";
+}
+
+
+function groundwaterMultiStatusHtml(items) {
+  if (
+    !Array.isArray(items) ||
+    items.length <= 1
+  ) {
+    return "";
+  }
+
+  const aggregate =
+    groundwaterAggregateChemicalStatus(
+      items
+    );
+
+  const aggregateColor =
+    aggregate === "\u0414\u043e\u0431\u0440\u043e"
+      ? "#0b6b43"
+      : aggregate === "\u041b\u043e\u0448\u043e"
+        ? "#b42318"
+        : aggregate === "\u0421\u043c\u0435\u0441\u0435\u043d\u043e"
+          ? "#b7791f"
+          : "#64748b";
+
+  const rows =
+    items.map(item => {
+      const chemical =
+        gwbCompactStatus(
+          item.chemical
+        );
+
+      const quantitative =
+        gwbCompactStatus(
+          item.quantitative
+        );
+
+      const chemicalColor =
+        chemical === "\u0414\u043e\u0431\u0440\u043e"
+          ? "#0b6b43"
+          : chemical === "\u041b\u043e\u0448\u043e"
+            ? "#b42318"
+            : "#64748b";
+
+      const quantitativeColor =
+        quantitative === "\u0414\u043e\u0431\u0440\u043e"
+          ? "#0b6b43"
+          : quantitative === "\u041b\u043e\u0448\u043e"
+            ? "#b42318"
+            : "#64748b";
+
+      const problem =
+        item.problemIndicators
+          ? (
+              '<div style="margin-top:3px">' +
+              '<b>\u041f\u0440\u043e\u0431\u043b\u0435\u043c\u043d\u0438 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438:</b> ' +
+              esc(item.problemIndicators) +
+              '</div>'
+            )
+          : "";
+
+      const risk =
+        item.chemicalRisk
+          ? (
+              '<div style="margin-top:3px">' +
+              '<b>\u0425\u0438\u043c\u0438\u0447\u0435\u043d \u0440\u0438\u0441\u043a:</b> ' +
+              esc(item.chemicalRisk) +
+              '</div>'
+            )
+          : "";
+
+      return (
+        '<div style="margin-top:7px;padding:8px 9px;background:#fff;border:1px solid #dbe5e8;border-radius:7px">' +
+
+        '<div style="font-weight:700">' +
+        esc(
+          item.name ||
+          item.code
+        ) +
+        '</div>' +
+
+        '<div style="font-family:monospace;font-size:11px;color:#64748b">' +
+        esc(item.code) +
+        '</div>' +
+
+        '<div style="margin-top:5px">' +
+        '<b>\u0425\u0438\u043c\u0438\u0447\u043d\u043e:</b> ' +
+        '<span style="font-weight:700;color:' +
+        chemicalColor +
+        '">' +
+        esc(chemical) +
+        '</span>' +
+        '</div>' +
+
+        '<div>' +
+        '<b>\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043e:</b> ' +
+        '<span style="font-weight:700;color:' +
+        quantitativeColor +
+        '">' +
+        esc(quantitative) +
+        '</span>' +
+        '</div>' +
+
+        problem +
+        risk +
+
+        '</div>'
+      );
+    }).join("");
+
+  return (
+    '<div style="margin-top:10px;padding:9px 10px;border-radius:8px;background:#f4f7f8;border:1px solid #d4dfe2">' +
+
+    '<div style="font-weight:800">' +
+    '\u041f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u043d\u0438 \u0442\u0435\u043b\u0430' +
+    '</div>' +
+
+    '<div style="margin-top:4px;font-size:12px;color:#52656a">' +
+    '\u0412 \u0438\u0437\u0431\u0440\u0430\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430 \u0441\u0435 \u043f\u0440\u0438\u043f\u043e\u043a\u0440\u0438\u0432\u0430\u0442 ' +
+    esc(items.length) +
+    ' \u041f\u0412\u0422. \u041e\u0446\u0435\u043d\u043a\u0430\u0442\u0430 \u0435 \u0437\u0430 \u0432\u0441\u044f\u043a\u043e \u0442\u044f\u043b\u043e \u043f\u043e\u043e\u0442\u0434\u0435\u043b\u043d\u043e.' +
+    '</div>' +
+
+    '<div style="margin-top:6px">' +
+    '<b>\u041e\u0431\u0449\u043e \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435:</b> ' +
+    '<span style="font-weight:800;color:' +
+    aggregateColor +
+    '">' +
+    esc(aggregate) +
+    '</span>' +
+    '</div>' +
+
+    rows +
+
+    '<div style="margin-top:7px;font-size:11px;color:#64748b">' +
+    '\u0421\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435\u0442\u043e \u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0437\u0430 \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u043d\u043e\u0442\u043e \u041f\u0412\u0422, \u0430 \u043d\u0435 \u0438\u0437\u043c\u0435\u0440\u0432\u0430\u043d\u0435 \u0432 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430.' +
+    '</div>' +
+
+    '</div>'
+  );
+}
+
+
 function sondiProUrlForPopup(feature, codeOverride){
   const props =
     feature && feature.properties
@@ -2448,20 +2727,45 @@ function sondiProUrlForPopup(feature, codeOverride){
       lng.toFixed(7)
     );
 
-    // BG1 is vertically multilayered.
-    // Pass every official GWB intersecting the clicked point.
-    if (
-      code &&
-      code.startsWith("BG1G")
-    ) {
-      const allDanubeCodes =
-        danubeGroundwaterCodesAtPoint(
+    const basinConfig =
+      code && code.startsWith("BG1G")
+        ? {
+            prefix: "BG1G",
+            data:
+              window.bdDanubeGroundwaterGeoJson
+          }
+        : code && code.startsWith("BG2G")
+          ? {
+              prefix: "BG2G",
+              data:
+                window.bdBsGroundwaterGeoJson
+            }
+          : code && code.startsWith("BG3G")
+            ? {
+                prefix: "BG3G",
+                data:
+                  window.bdIbrGroundwaterGeoJson
+              }
+            : code && code.startsWith("BG4G")
+              ? {
+                  prefix: "BG4G",
+                  data:
+                    window.bdWabdGroundwaterGeoJson
+                }
+              : null;
+
+    if (basinConfig) {
+      const allCodes =
+        groundwaterFeaturesAtPoint(
+          basinConfig.data,
           lat,
-          lng
-        );
+          lng,
+          basinConfig.prefix
+        )
+          .map(item => item.code);
 
       const additionalCodes =
-        allDanubeCodes.filter(
+        allCodes.filter(
           item => item !== code
         );
 
@@ -4274,19 +4578,81 @@ async function loadBdIbrGroundwaterBodies(){
             p.water_type_bg
           );
 
-        const popupHtml =
-          gwbCompactBaseHtml(
-            name,
-            code,
-            "\u0418\u0437\u0442\u043e\u0447\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
-            medium,
-            chemical,
-            quantitative
-          ) +
-          '</div>';
-
         featureLayer.bindPopup(
-          popupHtml,
+          function() {
+            let popupHtml =
+              gwbCompactBaseHtml(
+                name,
+                code,
+                "\u0418\u0437\u0442\u043e\u0447\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+                medium,
+                chemical,
+                quantitative
+              );
+
+            if (
+              lastGroundwaterClickLatLng
+            ) {
+              const intersecting =
+                groundwaterFeaturesAtPoint(
+                  data,
+                  lastGroundwaterClickLatLng.lat,
+                  lastGroundwaterClickLatLng.lng,
+                  "BG3G"
+                )
+                  .map(item => {
+                    const itemStatus =
+                      bg3GwbStatusByCode.get(
+                        item.code
+                      ) || null;
+
+                    const itemProps =
+                      item.properties || {};
+
+                    return {
+                      code: item.code,
+
+                      name:
+                        itemProps.nameText ||
+                        itemProps.nameTxtInt ||
+                        item.code,
+
+                      chemical:
+                        itemStatus
+                          ? itemStatus.chemical_status
+                          : null,
+
+                      quantitative:
+                        itemStatus &&
+                        itemStatus.water_balance
+                          ? itemStatus.water_balance
+                              .quantitative_status
+                          : null,
+
+                      problemIndicators:
+                        itemStatus
+                          ? itemStatus.pollutants
+                          : null,
+
+                      chemicalRisk:
+                        itemStatus &&
+                        itemStatus.comparison
+                          ? itemStatus.comparison
+                              .risk_2022_2027
+                          : null
+                    };
+                  });
+
+              popupHtml +=
+                groundwaterMultiStatusHtml(
+                  intersecting
+                );
+            }
+
+            popupHtml += '</div>';
+
+            return popupHtml;
+          },
           {maxWidth:390}
         );
 
@@ -5750,27 +6116,66 @@ async function loadBdDanubeGroundwaterBodies() {
               );
           }
 
-          const additional =
-            Array.from(
-              new Set(
-                codes
-                  .map(gwbCompactCode)
-                  .filter(Boolean)
-              )
+          const intersecting =
+            groundwaterFeaturesAtPoint(
+              data,
+              lat,
+              lng,
+              "BG1G"
             )
-            .filter(
-              item => item !== code
-            );
+              .map(item => {
+                const itemStatus =
+                  bg1GwbStatusByCode.get(
+                    item.code
+                  ) || null;
 
-          if (additional.length) {
-            popupHtml +=
-              '<div style="margin-top:9px;padding:9px 10px;border-radius:8px;background:#eef6ff;border:1px solid #bfdbfe">' +
-              '<b>\u0414\u043e\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u043d\u0438 \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438 \u041f\u0412\u0422 / \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0438:</b><br>' +
-              additional
-                .map(item => esc(item))
-                .join("<br>") +
-              '</div>';
-          }
+                const itemProps =
+                  item.properties || {};
+
+                return {
+                  code: item.code,
+
+                  name:
+                    itemProps.gwb_name ||
+                    itemProps.name ||
+                    itemProps.name_bg ||
+                    itemProps.NAME ||
+                    itemProps.name_en ||
+                    item.code,
+
+                  chemical:
+                    itemStatus
+                      ? itemStatus.chemical_status
+                      : null,
+
+                  quantitative:
+                    itemStatus
+                      ? itemStatus.quantitative_status
+                      : null,
+
+                  problemIndicators:
+                    itemStatus
+                      ? (
+                          itemStatus.problem_indicators ||
+                          itemStatus.pollutants ||
+                          null
+                        )
+                      : null,
+
+                  chemicalRisk:
+                    itemStatus
+                      ? (
+                          itemStatus.chemical_risk ||
+                          null
+                        )
+                      : null
+                };
+              });
+
+          popupHtml +=
+            groundwaterMultiStatusHtml(
+              intersecting
+            );
 
           popupHtml += '</div>';
 
@@ -5859,6 +6264,11 @@ async function loadBdWabdGroundwaterBodies() {
         "/geology-map/data/bd_wabd_current_groundwater_registers.json"
       );
 
+    const bg4GwbStatusByCode =
+      await gwbCompactProfiles(
+        "/geology-map/data/bd_wabd_section4_monitoring_status.json"
+      );
+
 
     if (
       !data ||
@@ -5945,45 +6355,129 @@ async function loadBdWabdGroundwaterBodies() {
               p.aquifer_type
             );
 
-          let popupHtml =
-            gwbCompactBaseHtml(
-              name,
-              code,
-              "\u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
-              medium,
-              p.chemical_status || p.ch_s,
-              p.quantitative_status || p.q_s
-            );
-
-          popupHtml +=
-            gwbCompactNumberHtml(
-              "\u0421\u0432\u043e\u0431\u043e\u0434\u0435\u043d \u0440\u0435\u0441\u0443\u0440\u0441",
-              resource
-                ? resource.free_water_lps
-                : p.free_water_lps,
-              " l/s"
-            );
-
-          popupHtml +=
-            gwbCompactNumberHtml(
-              "\u0415\u043a\u0441\u043f\u043b\u043e\u0430\u0442\u0430\u0446\u0438\u043e\u043d\u0435\u043d \u0438\u043d\u0434\u0435\u043a\u0441",
-              resource
-                ? resource.derived_load_percent
-                : null,
-              "%"
-            );
-
-          popupHtml += '</div>';
-
-          featureLayer.bindPopup(
-            popupHtml,
-            {maxWidth:390}
-          );
-
           featureLayer.on("click", function(event){
             lastGroundwaterClickLatLng =
               event.latlng;
           });
+
+featureLayer.bindPopup(
+            function() {
+              const selectedStatus =
+                bg4GwbStatusByCode.get(
+                  code
+                ) || null;
+
+              let popupHtml =
+                gwbCompactBaseHtml(
+                  name,
+                  code,
+                  "\u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+                  medium,
+                  selectedStatus
+                    ? selectedStatus.chemical_status
+                    : (
+                        p.chemical_status ||
+                        p.ch_s
+                      ),
+                  selectedStatus
+                    ? selectedStatus.quantitative_status
+                    : (
+                        p.quantitative_status ||
+                        p.q_s
+                      )
+                );
+
+              popupHtml +=
+                gwbCompactNumberHtml(
+                  "\u0421\u0432\u043e\u0431\u043e\u0434\u0435\u043d \u0440\u0435\u0441\u0443\u0440\u0441",
+                  resource
+                    ? resource.free_water_lps
+                    : p.free_water_lps,
+                  " l/s"
+                );
+
+              popupHtml +=
+                gwbCompactNumberHtml(
+                  "\u0415\u043a\u0441\u043f\u043b\u043e\u0430\u0442\u0430\u0446\u0438\u043e\u043d\u0435\u043d \u0438\u043d\u0434\u0435\u043a\u0441",
+                  resource
+                    ? resource.derived_load_percent
+                    : null,
+                  "%"
+                );
+
+              if (
+                lastGroundwaterClickLatLng
+              ) {
+                const intersecting =
+                  groundwaterFeaturesAtPoint(
+                    data,
+                    lastGroundwaterClickLatLng.lat,
+                    lastGroundwaterClickLatLng.lng,
+                    "BG4G"
+                  )
+                    .map(item => {
+                      const itemStatus =
+                        bg4GwbStatusByCode.get(
+                          item.code
+                        ) || null;
+
+                      const itemProps =
+                        item.properties || {};
+
+                      return {
+                        code: item.code,
+
+                        name:
+                          itemProps.gwb_name ||
+                          itemProps.name ||
+                          itemProps.name_bg ||
+                          itemProps.NAME ||
+                          item.code,
+
+                        chemical:
+                          itemStatus
+                            ? itemStatus.chemical_status
+                            : (
+                                itemProps.chemical_status ||
+                                itemProps.ch_s ||
+                                null
+                              ),
+
+                        quantitative:
+                          itemStatus
+                            ? itemStatus.quantitative_status
+                            : (
+                                itemProps.quantitative_status ||
+                                itemProps.q_s ||
+                                null
+                              ),
+
+                        problemIndicators:
+                          itemStatus
+                            ? itemStatus.pollutants
+                            : null,
+
+                        chemicalRisk:
+                          itemStatus
+                            ? itemStatus.chemical_risk
+                            : null
+                      };
+                    });
+
+                popupHtml +=
+                  groundwaterMultiStatusHtml(
+                    intersecting
+                  );
+              }
+
+              popupHtml += '</div>';
+
+              return popupHtml;
+            },
+            {maxWidth:390}
+          );
+
+
 
           featureLayer.on("mouseover", function(){
             this.setStyle({
@@ -6070,6 +6564,11 @@ async function loadBdBsGroundwaterBodies() {
     const bg2GwbCurrentByCode =
       await gwbCompactProfiles(
         "/geology-map/data/bd_bs_current_groundwater_registers.json"
+      );
+
+    const bg2GwbStatusByCode =
+      await gwbCompactProfiles(
+        "/geology-map/data/bd_bs_section4_monitoring_status.json"
       );
 
 
@@ -6243,49 +6742,125 @@ async function loadBdBsGroundwaterBodies() {
             p.horizons
           );
 
-        let popupHtml =
-          gwbCompactBaseHtml(
-            name,
-            code,
-            "\u0427\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
-            medium,
-            p.ch_s,
-            p.q_s
-          );
-
-        popupHtml +=
-          gwbCompactNumberHtml(
-            "\u0421\u0432\u043e\u0431\u043e\u0434\u0435\u043d \u0440\u0435\u0441\u0443\u0440\u0441",
-            resource
-              ? resource.free_resource_l_s
-              : null,
-            " l/s"
-          );
-
-        popupHtml +=
-          gwbCompactNumberHtml(
-            "\u0415\u043a\u0441\u043f\u043b\u043e\u0430\u0442\u0430\u0446\u0438\u043e\u043d\u0435\u043d \u0438\u043d\u0434\u0435\u043a\u0441",
-            resource &&
-            resource.exploitation_index !==
-              undefined
-              ? Number(
-                  resource.exploitation_index
-                ) * 100
-              : null,
-            "%"
-          );
-
-        popupHtml += '</div>';
-
-        featureLayer.bindPopup(
-          popupHtml,
-          {maxWidth:390}
-        );
-
         featureLayer.on("click", function(event){
           lastGroundwaterClickLatLng =
             event.latlng;
         });
+
+featureLayer.bindPopup(
+          function() {
+            const selectedStatus =
+              bg2GwbStatusByCode.get(
+                code
+              ) || null;
+
+            let popupHtml =
+              gwbCompactBaseHtml(
+                name,
+                code,
+                "\u0427\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+                medium,
+                selectedStatus
+                  ? selectedStatus.chemical_status
+                  : p.ch_s,
+                selectedStatus
+                  ? selectedStatus.quantitative_status
+                  : p.q_s
+              );
+
+            popupHtml +=
+              gwbCompactNumberHtml(
+                "\u0421\u0432\u043e\u0431\u043e\u0434\u0435\u043d \u0440\u0435\u0441\u0443\u0440\u0441",
+                resource
+                  ? resource.free_resource_l_s
+                  : null,
+                " l/s"
+              );
+
+            popupHtml +=
+              gwbCompactNumberHtml(
+                "\u0415\u043a\u0441\u043f\u043b\u043e\u0430\u0442\u0430\u0446\u0438\u043e\u043d\u0435\u043d \u0438\u043d\u0434\u0435\u043a\u0441",
+                resource &&
+                resource.exploitation_index !==
+                  undefined
+                  ? Number(
+                      resource.exploitation_index
+                    ) * 100
+                  : null,
+                "%"
+              );
+
+            if (
+              lastGroundwaterClickLatLng
+            ) {
+              const intersecting =
+                groundwaterFeaturesAtPoint(
+                  data,
+                  lastGroundwaterClickLatLng.lat,
+                  lastGroundwaterClickLatLng.lng,
+                  "BG2G"
+                )
+                  .map(item => {
+                    const itemStatus =
+                      bg2GwbStatusByCode.get(
+                        item.code
+                      ) || null;
+
+                    const itemProps =
+                      item.properties || {};
+
+                    return {
+                      code: item.code,
+
+                      name:
+                        itemProps.gwb_name ||
+                        itemProps.ime ||
+                        itemProps.nameText ||
+                        itemProps.nameTxtInt ||
+                        item.code,
+
+                      chemical:
+                        itemStatus
+                          ? itemStatus.chemical_status
+                          : (
+                              itemProps.ch_s ||
+                              null
+                            ),
+
+                      quantitative:
+                        itemStatus
+                          ? itemStatus.quantitative_status
+                          : (
+                              itemProps.q_s ||
+                              null
+                            ),
+
+                      problemIndicators:
+                        itemStatus
+                          ? itemStatus.pollutants
+                          : null,
+
+                      chemicalRisk:
+                        itemStatus
+                          ? itemStatus.chemical_risk
+                          : null
+                    };
+                  });
+
+              popupHtml +=
+                groundwaterMultiStatusHtml(
+                  intersecting
+                );
+            }
+
+            popupHtml += '</div>';
+
+            return popupHtml;
+          },
+          {maxWidth:390}
+        );
+
+
 
         featureLayer.on("mouseover", function(){
           this.setStyle({
@@ -14204,6 +14779,128 @@ async function analyzeLocation(
   let freeChemicalBg3Details = [];
   let freeChemicalBg3Summary = "";
 
+  let freeChemicalOtherCodes = [];
+  let freeChemicalOtherDetails = [];
+  let freeChemicalOtherSummary = "";
+
+  async function freeChemicalCodesFromGeoJson(
+    url,
+    expectedPrefix
+  ) {
+    try {
+      let data = null;
+
+      if (
+        expectedPrefix === "BG1" &&
+        window.bdDanubeGroundwaterGeoJson
+      ) {
+        data =
+          window.bdDanubeGroundwaterGeoJson;
+      }
+
+      else if (
+        expectedPrefix === "BG2" &&
+        window.bdBsGroundwaterGeoJson
+      ) {
+        data =
+          window.bdBsGroundwaterGeoJson;
+      }
+
+      else if (
+        expectedPrefix === "BG3" &&
+        window.bdIbrGroundwaterGeoJson
+      ) {
+        data =
+          window.bdIbrGroundwaterGeoJson;
+      }
+
+      else if (
+        expectedPrefix === "BG4" &&
+        window.bdWabdGroundwaterGeoJson
+      ) {
+        data =
+          window.bdWabdGroundwaterGeoJson;
+      }
+
+      if (!data) {
+        const response =
+          await fetch(url);
+
+        if (!response.ok) {
+          return [];
+        }
+
+        data =
+          await response.json();
+      }
+
+      if (
+        !data ||
+        !Array.isArray(data.features) ||
+        typeof turf === "undefined"
+      ) {
+        return [];
+      }
+
+      const point =
+        turf.point([
+          Number(lon),
+          Number(lat)
+        ]);
+
+      const codes = [];
+
+      for (const feature of data.features) {
+        try {
+          if (
+            !feature ||
+            !feature.geometry ||
+            (
+              feature.geometry.type !== "Polygon" &&
+              feature.geometry.type !== "MultiPolygon"
+            ) ||
+            !turf.booleanPointInPolygon(
+              point,
+              feature
+            )
+          ) {
+            continue;
+          }
+
+          const code =
+            freeChemicalFeatureCode(
+              feature
+            );
+
+          if (
+            code &&
+            code.startsWith(
+              expectedPrefix
+            ) &&
+            !codes.includes(code)
+          ) {
+            codes.push(code);
+          }
+
+        } catch (error) {
+          // Ignore an invalid individual geometry.
+        }
+      }
+
+      return codes;
+
+    } catch (error) {
+      console.warn(
+        "[Sondi FREE] multi GWB resolve failed:",
+        url,
+        error
+      );
+
+      return [];
+    }
+  }
+
+
   async function freeChemicalCodeFromGeoJson(
     url,
     expectedPrefix
@@ -14329,15 +15026,18 @@ async function analyzeLocation(
     ?????????? ??? ???????? ?? ????????????.
   */
   if (!freeChemicalCode) {
-    const resolvedBg4Code =
-      await freeChemicalCodeFromGeoJson(
+    const resolvedBg4Codes =
+      await freeChemicalCodesFromGeoJson(
         "/geology-map/data/bd_wabd_groundwater_bodies.geojson",
         "BG4"
       );
 
-    if (resolvedBg4Code) {
+    if (resolvedBg4Codes.length) {
+      freeChemicalOtherCodes =
+        resolvedBg4Codes;
+
       freeChemicalCode =
-        resolvedBg4Code;
+        resolvedBg4Codes[0];
 
       freeChemicalBasin =
         "BG4";
@@ -14351,15 +15051,18 @@ async function analyzeLocation(
     ?????????? ???? ????? ? ??? ??????? ?? ???????.
   */
   if (!freeChemicalCode) {
-    const resolvedBg1Code =
-      await freeChemicalCodeFromGeoJson(
+    const resolvedBg1Codes =
+      await freeChemicalCodesFromGeoJson(
         "/geology-map/data/bd_danube_groundwater_bodies.geojson",
         "BG1"
       );
 
-    if (resolvedBg1Code) {
+    if (resolvedBg1Codes.length) {
+      freeChemicalOtherCodes =
+        resolvedBg1Codes;
+
       freeChemicalCode =
-        resolvedBg1Code;
+        resolvedBg1Codes[0];
 
       freeChemicalBasin =
         "BG1";
@@ -14391,15 +15094,59 @@ async function analyzeLocation(
         }
       }
 
-      freeChemicalCode =
-        await freeChemicalFindPolygonCode(
-          bsData,
-          lat,
-          lon
-        );
+      const bg2Point =
+        turf.point([
+          Number(lon),
+          Number(lat)
+        ]);
 
-      if (freeChemicalCode) {
-        freeChemicalBasin = "BG2";
+      const bg2Codes = [];
+
+      if (
+        bsData &&
+        Array.isArray(bsData.features)
+      ) {
+        bsData.features.forEach(
+          function(feature) {
+            try {
+              if (
+                !feature ||
+                !feature.geometry ||
+                !turf.booleanPointInPolygon(
+                  bg2Point,
+                  feature
+                )
+              ) {
+                return;
+              }
+
+              const code =
+                freeChemicalFeatureCode(
+                  feature
+                );
+
+              if (
+                code &&
+                code.startsWith("BG2") &&
+                !bg2Codes.includes(code)
+              ) {
+                bg2Codes.push(code);
+              }
+
+            } catch (error) {}
+          }
+        );
+      }
+
+      if (bg2Codes.length) {
+        freeChemicalOtherCodes =
+          bg2Codes;
+
+        freeChemicalCode =
+          bg2Codes[0];
+
+        freeChemicalBasin =
+          "BG2";
       }
 
     } catch (error) {}
@@ -14440,6 +15187,186 @@ async function analyzeLocation(
   }
 
 
+  async function freeChemicalEvaluateOtherBodies(
+    codes,
+    statusUrl
+  ) {
+    const uniqueCodes =
+      Array.from(
+        new Set(
+          (Array.isArray(codes) ? codes : [])
+            .filter(Boolean)
+        )
+      );
+
+    if (!uniqueCodes.length) {
+      return {
+        status: "",
+        details: [],
+        summary: ""
+      };
+    }
+
+    let sourceData = null;
+
+    try {
+      const response =
+        await fetch(statusUrl);
+
+      if (response.ok) {
+        sourceData =
+          await response.json();
+      }
+    } catch (error) {
+      console.warn(
+        "[Sondi FREE] multi status source load:",
+        statusUrl,
+        error
+      );
+    }
+
+    const details =
+      uniqueCodes.map(
+        function(code) {
+          const record =
+            sourceData
+              ? freeChemicalFindRecord(
+                  sourceData,
+                  code
+                )
+              : null;
+
+          const status =
+            freeChemicalNormalize(
+              record &&
+              record.chemical_status !== undefined
+                ? record.chemical_status
+                : (
+                    record &&
+                    record.ch_s !== undefined
+                      ? record.ch_s
+                      : null
+                  )
+            );
+
+          const pollutants =
+            record
+              ? (
+                  record.pollutants ||
+                  record.problem_indicators ||
+                  record.problem_indicator ||
+                  record.quality_parameters_outside_standard ||
+                  null
+                )
+              : null;
+
+          return {
+            code: code,
+            status: status,
+            pollutants: pollutants
+          };
+        }
+      );
+
+    const normalized =
+      details.map(
+        function(item) {
+          return item.status;
+        }
+      );
+
+    const known =
+      normalized.filter(Boolean);
+
+    const hasGood =
+      known.includes(
+        "\u0434\u043e\u0431\u0440\u043e"
+      );
+
+    const hasBad =
+      known.includes(
+        "\u043b\u043e\u0448\u043e"
+      );
+
+    const hasMissing =
+      known.length <
+      uniqueCodes.length;
+
+    let status = "";
+
+    if (
+      hasGood &&
+      hasBad
+    ) {
+      status =
+        "\u0441\u043c\u0435\u0441\u0435\u043d\u043e";
+    }
+
+    else if (hasMissing) {
+      status =
+        "\u043d\u0435\u043f\u044a\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438";
+    }
+
+    else if (
+      known.length &&
+      known.every(
+        function(value) {
+          return value ===
+            "\u043b\u043e\u0448\u043e";
+        }
+      )
+    ) {
+      status =
+        "\u043b\u043e\u0448\u043e";
+    }
+
+    else if (
+      known.length &&
+      known.every(
+        function(value) {
+          return value ===
+            "\u0434\u043e\u0431\u0440\u043e";
+        }
+      )
+    ) {
+      status =
+        "\u0434\u043e\u0431\u0440\u043e";
+    }
+
+    let summary = "";
+
+    if (uniqueCodes.length > 1) {
+      if (
+        hasGood &&
+        hasBad
+      ) {
+        summary =
+          "\u0412 \u0442\u043e\u0447\u043a\u0430\u0442\u0430 \u0441\u0435 \u043f\u0440\u0438\u043f\u043e\u043a\u0440\u0438\u0432\u0430\u0442 " +
+          uniqueCodes.length +
+          " \u041f\u0412\u0422 \u0441 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u043e \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435.";
+      }
+
+      else if (hasMissing) {
+        summary =
+          "\u0417\u0430 \u0447\u0430\u0441\u0442 \u043e\u0442 \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438\u0442\u0435 \u041f\u0412\u0422 \u043b\u0438\u043f\u0441\u0432\u0430 \u043f\u044a\u043b\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430.";
+      }
+
+      else {
+        summary =
+          "\u0412 \u0442\u043e\u0447\u043a\u0430\u0442\u0430 \u0441\u0435 \u043f\u0440\u0438\u043f\u043e\u043a\u0440\u0438\u0432\u0430\u0442 " +
+          uniqueCodes.length +
+          " \u041f\u0412\u0422. \u0425\u0438\u043c\u0438\u0447\u043d\u043e\u0442\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0435 \u043e\u0446\u0435\u043d\u0435\u043d\u043e \u043f\u043e\u043e\u0442\u0434\u0435\u043b\u043d\u043e \u0437\u0430 \u0432\u0441\u044f\u043a\u043e \u041f\u0412\u0422.";
+      }
+    }
+
+    return {
+      status: status,
+      details: details,
+      summary: summary
+    };
+  }
+
+
   /*
     ????? ?????? ????????? Section 4
     ???????, ????? ????? ?????? EXPERT.
@@ -14448,21 +15375,51 @@ async function analyzeLocation(
   if (
     freeChemicalBasin === "BG1"
   ) {
-    freeChemicalStatus =
-      await freeChemicalLoadStatus(
-        "/geology-map/data/bd_danube_section4_monitoring_status.json",
-        freeChemicalCode
+    const result =
+      await freeChemicalEvaluateOtherBodies(
+        freeChemicalOtherCodes.length
+          ? freeChemicalOtherCodes
+          : (
+              freeChemicalCode
+                ? [freeChemicalCode]
+                : []
+            ),
+        "/geology-map/data/bd_danube_section4_monitoring_status.json"
       );
+
+    freeChemicalStatus =
+      result.status;
+
+    freeChemicalOtherDetails =
+      result.details;
+
+    freeChemicalOtherSummary =
+      result.summary;
   }
 
   else if (
     freeChemicalBasin === "BG2"
   ) {
-    freeChemicalStatus =
-      await freeChemicalLoadStatus(
-        "/geology-map/data/bd_bs_section4_monitoring_status.json",
-        freeChemicalCode
+    const result =
+      await freeChemicalEvaluateOtherBodies(
+        freeChemicalOtherCodes.length
+          ? freeChemicalOtherCodes
+          : (
+              freeChemicalCode
+                ? [freeChemicalCode]
+                : []
+            ),
+        "/geology-map/data/bd_bs_section4_monitoring_status.json"
       );
+
+    freeChemicalStatus =
+      result.status;
+
+    freeChemicalOtherDetails =
+      result.details;
+
+    freeChemicalOtherSummary =
+      result.summary;
   }
 
   else if (
@@ -14615,11 +15572,26 @@ async function analyzeLocation(
   else if (
     freeChemicalBasin === "BG4"
   ) {
-    freeChemicalStatus =
-      await freeChemicalLoadStatus(
-        "/geology-map/data/bd_wabd_section4_monitoring_status.json",
-        freeChemicalCode
+    const result =
+      await freeChemicalEvaluateOtherBodies(
+        freeChemicalOtherCodes.length
+          ? freeChemicalOtherCodes
+          : (
+              freeChemicalCode
+                ? [freeChemicalCode]
+                : []
+            ),
+        "/geology-map/data/bd_wabd_section4_monitoring_status.json"
       );
+
+    freeChemicalStatus =
+      result.status;
+
+    freeChemicalOtherDetails =
+      result.details;
+
+    freeChemicalOtherSummary =
+      result.summary;
   }
 
 
@@ -14788,6 +15760,67 @@ async function analyzeLocation(
                   })
                   .join("<br>")
                 + "</div>"
+              : ""
+          )
+        : ""
+    ) +
+
+    (
+      freeChemicalBasin !== "BG3" &&
+      freeChemicalOtherSummary
+        ? "<div style=\"margin-top:6px;font-size:12px;line-height:1.45;color:#52656c;\">" +
+          esc(freeChemicalOtherSummary) +
+          "</div>"
+        : ""
+    ) +
+
+    (
+      freeChemicalBasin !== "BG3" &&
+      freeChemicalOtherDetails.length > 1
+        ? "<div style=\"margin-top:6px;font-size:11px;line-height:1.5;color:#64748b;\">" +
+          freeChemicalOtherDetails
+            .map(function(item) {
+              return (
+                esc(item.code) +
+                " \u2014 " +
+                esc(
+                  item.status ||
+                  "\u043d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438"
+                )
+              );
+            })
+            .join("<br>") +
+          "</div>" +
+
+          (
+            freeChemicalOtherDetails.some(
+              function(item) {
+                return (
+                  item.status ===
+                    "\u043b\u043e\u0448\u043e" &&
+                  item.pollutants
+                );
+              }
+            )
+              ? "<div style=\"margin-top:6px;font-size:12px;font-weight:700;color:#9a6700;\">" +
+                freeChemicalOtherDetails
+                  .filter(function(item) {
+                    return (
+                      item.status ===
+                        "\u043b\u043e\u0448\u043e" &&
+                      item.pollutants
+                    );
+                  })
+                  .map(function(item) {
+                    return (
+                      "\u041f\u0440\u043e\u0431\u043b\u0435\u043c\u043d\u043e \u041f\u0412\u0422: " +
+                      esc(item.code) +
+                      " \u2014 " +
+                      esc(String(item.pollutants))
+                    );
+                  })
+                  .join("<br>") +
+                "</div>"
               : ""
           )
         : ""
