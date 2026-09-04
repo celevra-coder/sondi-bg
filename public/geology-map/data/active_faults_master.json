@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 132,
+  "record_count": 133,
   "generated_date": "2026-09-04",
   "records": [
     {
@@ -4554,6 +4554,45 @@
         "The dextral-normal fault type is inherited from the accepted EUR_BGCS020 international crosswalk."
       ],
       "open_items": [
+        "Exact surface-trace identity remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-STRAZHATA-REC99",
+      "mrrb": {
+        "record": 99,
+        "name": "????????"
+      },
+      "scientific": {
+        "name": "Strazhata active fault corridor",
+        "system": "Strazhata local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_corridor_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-039-GABROVO"
+      ],
+      "notes": [
+        "MRRB REC99 has a principal strike of approximately 92.50 degrees.",
+        "EUR_BGCS018 is the nearest GEM comparison feature at approximately 19.84 km from REC99, with a local strike of approximately 91.57 degrees and a strike difference of approximately 0.93 degrees.",
+        "EFSM20 independently reproduces the same regional relationship at approximately 19.82 km separation and approximately 0.97 degrees strike difference.",
+        "EUR_BGCS021 lies approximately 26.70 km away with a strike difference of approximately 7.63 degrees.",
+        "Geological-map comparison on K-35-039 Gabrovo supports REC99 as a distinct local east-west structural corridor.",
+        "The near-parallel EUR_BGCS018 and EUR_BGCS021 structures are too distant to justify an accepted international crosswalk for REC99.",
+        "HIGH confidence refers to the local MRRB structural corridor supported by geological-map context, not to international fault identity.",
+        "No fault kinematics are assigned because no accepted international crosswalk supports inheritance of GEM slip type."
+      ],
+      "open_items": [
+        "No accepted international BGCS crosswalk.",
         "Exact surface-trace identity remains unresolved."
       ]
     }
