@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 125,
+  "record_count": 126,
   "generated_date": "2026-09-04",
   "records": [
     {
@@ -4278,6 +4278,47 @@
         "No accepted international BGCS crosswalk.",
         "Exact surface-trace identity remains unresolved.",
         "Westernmost short segment on adjacent K-34-045 has not been used as primary map evidence."
+      ]
+    },
+    {
+      "fault_id": "FLT-BELOGRAD-ANT-REC68",
+      "mrrb": {
+        "record": 68,
+        "name": "Белогр Ант"
+      },
+      "scientific": {
+        "name": "Belograd Ant active fault corridor",
+        "system": "Belograd regional active fault system",
+        "fault_type": "sinistral_normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS042"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-022-BELOGRADCHIK",
+        "SRC-GEO-MAP-K34-023-MONTANA"
+      ],
+      "notes": [
+        "MRRB REC68 strike is approximately 116.37 degrees.",
+        "EUR_BGCS042 geometrically intersects REC68.",
+        "The local GEM strike of EUR_BGCS042 is approximately 114.31 degrees, differing from REC68 by approximately 2.06 degrees.",
+        "The corresponding EFSM20 representation also intersects REC68 and has a local strike of approximately 114.28 degrees, differing by approximately 2.09 degrees.",
+        "Visual comparison on K-34-022 Belogradchik shows REC68 and EUR_BGCS042 following the same northwest-southeast regional structural corridor.",
+        "K-34-023 Montana supports continuation of the same regional corridor toward the east.",
+        "EUR_BGCS024 is a close parallel regional control but does not geometrically intersect REC68 and is not accepted as the crosswalk.",
+        "EUR_BGCS023 was evaluated as a wider regional control and was not accepted as the crosswalk.",
+        "Sinistral-normal kinematics are inherited from the accepted EUR_BGCS042 regional crosswalk.",
+        "The local traces remain offset and therefore exact surface-trace identity is not claimed."
+      ],
+      "open_items": [
+        "Exact surface-trace identity remains unresolved."
       ]
     }
   ]

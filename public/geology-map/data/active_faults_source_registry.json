@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 78,
+  "source_count": 79,
   "generated_date": "2026-09-04",
   "sources": [
     {
@@ -1822,6 +1822,30 @@
         "fault-corridor geometry",
         "visual structural correspondence",
         "crossing relationship with EUR_BGCS030"
+      ],
+      "notes": [
+        "Used as regional structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-022-BELOGRADCHIK",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-34-022 Belogradchik",
+      "authors": [
+        "???????? ?. (???.)"
+      ],
+      "year": 1995,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1021",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region39_maps/K-34-022_Belogradchik.jpg",
+      "supports": [
+        "REC68 Belograd Ant western structural segment"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
+        "visual structural correspondence"
       ],
       "notes": [
         "Used as regional structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."
