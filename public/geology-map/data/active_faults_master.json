@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 128,
+  "record_count": 129,
   "generated_date": "2026-09-04",
   "records": [
     {
@@ -4398,6 +4398,46 @@
         "HIGH confidence refers to regional fault-system correspondence supported jointly by MRRB geometry, GEM, EFSM20 and geological-map context."
       ],
       "open_items": [
+        "Exact surface-trace identity remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-CHIRPAN-REC81",
+      "mrrb": {
+        "record": 81,
+        "name": "Chirpan"
+      },
+      "scientific": {
+        "name": "Chirpan active fault corridor",
+        "system": "Chirpan local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_corridor_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-063-CHIRPAN"
+      ],
+      "notes": [
+        "MRRB REC81 strike is approximately 45.77 degrees.",
+        "EUR_BGCS002 geometrically intersects REC81 but is strongly oblique, with a local GEM strike of approximately 94.34 degrees and a strike difference of approximately 48.57 degrees.",
+        "The corresponding EFSM20 representation also intersects REC81 with a strike difference of approximately 48.60 degrees.",
+        "EUR_BGCS048 lies only approximately 0.32 km away but is also strongly oblique, with a strike difference of approximately 43.44 degrees.",
+        "EUR_BGCS004 has a more compatible orientation, differing by approximately 7.12 degrees, but lies approximately 7.38 km away and does not intersect REC81.",
+        "Visual comparison on K-35-063 Chirpan shows REC81 as a distinct diagonal local structural corridor crossing the near east-west regional GEM structures.",
+        "EUR_BGCS002 and EUR_BGCS048 are therefore retained only as regional comparison structures and are not accepted as crosswalks.",
+        "HIGH confidence refers to the local MRRB structural corridor supported by geological-map context, not to international fault identity.",
+        "No fault kinematics are assigned because no accepted international crosswalk supports inheritance of GEM slip type."
+      ],
+      "open_items": [
+        "No accepted international BGCS crosswalk.",
         "Exact surface-trace identity remains unresolved."
       ]
     }
