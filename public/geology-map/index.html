@@ -764,7 +764,14 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 <div id="geology-age-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-quant-monitoring"> 🟣 Количествен мониторинг – НИМХ 2019–2020</label>
 <div id="quant-monitoring-load-status" class="small" style="margin-left:24px">изключено</div>
-<label class="layerrow"><input type="checkbox" id="layer-faults"> 🟤 Активни разломи (GEM)</label><div id="fault-load-status" class="small" style="margin-left:24px">изключено</div>
+<label class="layerrow"><input type="checkbox" id="layer-faults"> &#128996; &#1040;&#1082;&#1090;&#1080;&#1074;&#1085;&#1080; &#1088;&#1072;&#1079;&#1083;&#1086;&#1084;&#1080;</label>
+<div id="fault-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
+
+<label class="layerrow" id="fault-corridors-row" style="margin-left:24px;font-size:13px">
+  <input type="checkbox" id="layer-fault-corridors">
+  &#9646; &#1056;&#1072;&#1079;&#1083;&#1086;&#1084;&#1085;&#1080; &#1082;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088;&#1080;
+</label>
+<div id="fault-corridor-load-status" class="small" style="margin-left:48px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
 <a href="/aidu" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;box-sizing:border-box;margin:8px 0 10px;padding:11px 14px;border-radius:10px;border:1px solid #1f7aa8;background:linear-gradient(135deg,#0b5f8a,#123f61);color:#fff;font-weight:700;font-size:14px;text-decoration:none;cursor:pointer;box-shadow:0 4px 14px rgba(0,70,110,.18);">&#10024; &#1040;&#1048; &#1072;&#1085;&#1072;&#1083;&#1080;&#1079; &#1085;&#1072; &#1090;&#1077;&#1088;&#1077;&#1085;</a>
 <label class="layerrow future"><input type="checkbox" disabled> ⭐ Потвърдени успешни сондажи — ще се добавят по-късно</label>
 <div class="small" style="margin-top:7px">
@@ -843,6 +850,21 @@ if (!map.getPane(gemFaultPaneName)) {
   ).style.pointerEvents = "auto";
 }
 
+
+const mrrbFaultPaneName = "mrrbFaultPane";
+
+if (!map.getPane(mrrbFaultPaneName)) {
+  map.createPane(mrrbFaultPaneName);
+
+  map.getPane(
+    mrrbFaultPaneName
+  ).style.zIndex = "640";
+
+  map.getPane(
+    mrrbFaultPaneName
+  ).style.pointerEvents = "auto";
+}
+
 const osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(map);
 const topo=L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'© OpenTopoMap'});
 
@@ -878,6 +900,7 @@ const geologyAgeLayer = L.imageOverlay(
 
 const quantitativeMonitoringLayer = L.layerGroup();
 const faultsLayer = L.layerGroup();
+const mrrbFaultsLayer = L.layerGroup();
 
 let groundwaterLoaded=false;
 let bdIbrGroundwaterLoaded=false;
@@ -1431,7 +1454,7 @@ function blackSeaThematicStyle(feature) {
 
   return {
     color: color,
-    weight: 1.4,
+    weight: 2.0,
     opacity: 0.9,
     fillColor: color,
     fillOpacity: 0.52
@@ -1664,7 +1687,7 @@ function wabdThematicStyle(feature) {
 
     return {
       color: color,
-      weight: 1.4,
+      weight: 2.0,
       opacity: 0.9,
       fillColor: color,
       fillOpacity: 0.52
@@ -1995,7 +2018,7 @@ function danubeThematicStyle(feature) {
 
   return {
     color: color,
-    weight: 1.4,
+    weight: 2.0,
     opacity: 0.9,
     fillColor: color,
     fillOpacity: 0.52
@@ -2815,7 +2838,7 @@ function diffusePressureStyle(feature){
 
   return {
     color: category.color,
-    weight: 1.4,
+    weight: 2.0,
     opacity: 0.9,
     fillColor: category.color,
     fillOpacity: 0.52
@@ -3428,7 +3451,7 @@ function abstractionPressureStyle(feature){
 
   return {
     color: category.color,
-    weight: 1.4,
+    weight: 2.0,
     opacity: 0.9,
     fillColor: category.color,
     fillOpacity: 0.52
@@ -3743,7 +3766,7 @@ function pointPressureStyle(feature){
 
   return {
     color: category.color,
-    weight: 1.4,
+    weight: 2.0,
     opacity: 0.9,
     fillColor: category.color,
     fillOpacity: 0.52
@@ -5573,7 +5596,7 @@ async function loadBdDanubeGroundwaterBodies() {
 
         return {
           color: color,
-          weight: 1.4,
+          weight: 2.0,
           opacity: 0.9,
           fillColor:
             bad
@@ -6696,6 +6719,8 @@ async function loadGroundwaterBodies(){
 // GEM_FAULT_POPUP_START
 
 const gemFaultIndex = new Map();
+const mrrbFaultIndexByBgcs = new Map();
+const mrrbFaultSourceIndex = new Map();
 let selectedGemFaultLayer = null;
 
 function gemHasValue(value) {
@@ -7079,73 +7104,220 @@ function getGemFaultNearbyOrdinaryByBasin(
   return result;
 }
 
+function gemFaultOrdinaryGroups(data) {
+  if (!data) {
+    return [];
+  }
+
+  if (Array.isArray(data)) {
+    return data;
+  }
+
+  if (typeof data === "object") {
+    return Object.entries(data).map(
+      ([key, value]) => ({
+        basinCode: key,
+        items: Array.isArray(value)
+          ? value
+          : (
+              value &&
+              (
+                value.objects ||
+                value.items ||
+                value.facilities ||
+                value.records
+              )
+            ) || [],
+        source: value
+      })
+    );
+  }
+
+  return [];
+}
+
+function gemFaultOrdinaryGroupItems(group) {
+  if (Array.isArray(group)) {
+    return group;
+  }
+
+  if (!group) {
+    return [];
+  }
+
+  return (
+    group.objects ||
+    group.items ||
+    group.facilities ||
+    group.records ||
+    group.features ||
+    []
+  );
+}
+
+function gemFaultOrdinaryBasinCode(group) {
+  return String(
+    (
+      group &&
+      (
+        group.basinCode ||
+        group.basin_code ||
+        group.code ||
+        group.basin ||
+        group.region
+      )
+    ) ||
+    ""
+  ).toUpperCase();
+}
+
+function gemFaultOrdinaryBasinLabel(code) {
+  const labels = {
+    "BG1":
+      "BG1 \u2013 \u0414\u0443\u043d\u0430\u0432\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+
+    "BG2":
+      "BG2 \u2013 \u0427\u0435\u0440\u043d\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+
+    "BG3":
+      "BG3 \u2013 \u0418\u0437\u0442\u043e\u0447\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d",
+
+    "BG4":
+      "BG4 \u2013 \u0417\u0430\u043f\u0430\u0434\u043d\u043e\u0431\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0438 \u0440\u0430\u0439\u043e\u043d"
+  };
+
+  return labels[code] || code;
+}
+
+function gemFaultOrdinaryIsSpring(item) {
+  const feature =
+    item && item.feature
+      ? item.feature
+      : item;
+
+  const p =
+    feature &&
+    feature.properties
+      ? feature.properties
+      : {};
+
+  const text = [
+    p.display_category,
+    p.facility_type,
+    p.type,
+    p.category,
+    p.object_type,
+    p.facility
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+
+  return (
+    text.includes("\u0438\u0437\u0432\u043e\u0440") ||
+    text.includes("\u043a\u0430\u043f\u0442\u0430\u0436") ||
+    text.includes("spring")
+  );
+}
+
 function renderGemFaultOrdinaryByBasin(
   ordinaryByBasin
 ) {
-  const order = ["BG1", "BG2", "BG3", "BG4"];
+  const groups =
+    gemFaultOrdinaryGroups(
+      ordinaryByBasin
+    );
+
+  if (!groups.length) {
+    return "";
+  }
+
   let html = "";
 
-  for (const code of order) {
-    const group = ordinaryByBasin[code];
+  for (const group of groups) {
+    const items =
+      gemFaultOrdinaryGroupItems(
+        group
+      );
 
-    if (
-      !group ||
-      !Array.isArray(group.objects) ||
-      !group.objects.length
-    ) {
+    if (!items.length) {
       continue;
     }
 
-    const wells = group.objects.filter(
-      item =>
-        sondiOrdinaryFacilityKind(
-          item.feature
-        ) === "well"
+    const code =
+      gemFaultOrdinaryBasinCode(
+        group
+      );
+
+    const source =
+      group &&
+      group.source &&
+      typeof group.source === "object"
+        ? group.source
+        : group;
+
+    const explicitTotal = Number(
+      source.total ??
+      source.count ??
+      source.totalCount
     );
 
-    const springs = group.objects.filter(
-      item =>
-        sondiOrdinaryFacilityKind(
-          item.feature
-        ) === "spring"
+    const total =
+      Number.isFinite(explicitTotal)
+        ? explicitTotal
+        : items.length;
+
+    const explicitSprings = Number(
+      source.springs ??
+      source.springCount ??
+      source.spring_count
     );
+
+    const springs =
+      Number.isFinite(
+        explicitSprings
+      )
+        ? explicitSprings
+        : items.filter(
+            gemFaultOrdinaryIsSpring
+          ).length;
+
+    const explicitWells = Number(
+      source.wells ??
+      source.wellCount ??
+      source.well_count
+    );
+
+    const wells =
+      Number.isFinite(
+        explicitWells
+      )
+        ? explicitWells
+        : Math.max(
+            0,
+            total - springs
+          );
 
     html +=
-      "<div style=\"margin-top:10px;padding-top:7px;" +
-      "border-top:1px solid #d7dde3\">" +
+      "<div style=\"margin-top:10px;padding:8px;" +
+      "background:#f7f9fb;border-left:4px solid #1769aa\">" +
       "<strong>" +
-      esc(code + " \u2013 " + group.label) +
+      esc(
+        gemFaultOrdinaryBasinLabel(
+          code
+        )
+      ) +
       "</strong><br>" +
       "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u0438 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u044f \u0434\u043e 5 km: <strong>" +
-      group.objects.length +
+      total +
       "</strong><br>" +
       "\u0421\u043e\u043d\u0434\u0430\u0436\u0438/\u043a\u043b\u0430\u0434\u0435\u043d\u0446\u0438: <strong>" +
-      wells.length +
+      wells +
       "</strong><br>" +
       "\u0418\u0437\u0432\u043e\u0440\u0438/\u043a\u0430\u043f\u0442\u0430\u0436\u0438: <strong>" +
-      springs.length +
-      "</strong>";
-
-    for (const item of group.objects.slice(0, 8)) {
-      html +=
-        "<div style=\"margin-top:5px;padding:5px;" +
-        "border-left:3px solid #2563eb;background:#fff\">" +
-        "<strong>" +
-        esc(
-          gemFaultOrdinaryFacilityName(
-            item.feature
-          )
-        ) +
-        "</strong><br>" +
-        esc(
-          gemFaultDistanceLabel(
-            item.distanceKm
-          )
-        ) +
-        "</div>";
-    }
-
-    html += "</div>";
+      springs +
+      "</strong>" +
+      "</div>";
   }
 
   return html;
@@ -7673,6 +7845,1095 @@ function showGemFaultAnalysisLayers(
   gemFaultNearbyObjectsLayer.addTo(map);
 }
 
+
+function faultAnalysisArray(value) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return value.filter(item => {
+    if (
+      item === null ||
+      item === undefined
+    ) {
+      return false;
+    }
+
+    const cleaned =
+      String(item).trim();
+
+    return (
+      cleaned !== "" &&
+      cleaned !== "-" &&
+      cleaned !== "\u2013" &&
+      cleaned !== "\u2014"
+    );
+  });
+}
+
+function faultAnalysisText(value) {
+  if (
+    value === undefined ||
+    value === null ||
+    value === ""
+  ) {
+    return "";
+  }
+
+  return String(value);
+}
+
+function humanizeFaultCorrespondence(value) {
+  const translations = {
+    "adjacent_parallel_regional_crosswalk":
+      "\u0421\u044a\u0441\u0435\u0434\u043d\u043e \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u043d\u043e \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "distinct_from_Ganas_scientific_Razlog_segment":
+      "\u0420\u0430\u0437\u043b\u0438\u0447\u0435\u043d \u043e\u0442 \u043d\u0430\u0443\u0447\u043d\u043e \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u044f \u0441\u0435\u0433\u043c\u0435\u043d\u0442 \u0420\u0430\u0437\u043b\u043e\u0433 \u043d\u0430 Ganas",
+
+    "eastern_fault_branch_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0438\u0437\u0442\u043e\u0447\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d \u043a\u043b\u043e\u043d",
+
+    "eastern_parallel_fault_corridor_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0438\u0437\u0442\u043e\u0447\u0435\u043d \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d \u043a\u043e\u0440\u0438\u0434\u043e\u0440",
+
+    "eastern_parallel_fault_network_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0438\u0437\u0442\u043e\u0447\u043d\u0430 \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u043c\u0440\u0435\u0436\u0430",
+
+    "eastern_parallel_fault_segment_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0438\u0437\u0442\u043e\u0447\u0435\u043d \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d \u0441\u0435\u0433\u043c\u0435\u043d\u0442",
+
+    "eastern_parallel_structural_segment_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0438\u0437\u0442\u043e\u0447\u0435\u043d \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0435\u043d \u0441\u0435\u0433\u043c\u0435\u043d\u0442",
+
+    "local_coastal_transverse_fault_system_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u043a\u0440\u0430\u0439\u0431\u0440\u0435\u0436\u043d\u0430 \u043d\u0430\u043f\u0440\u0435\u0447\u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430",
+
+    "local_connecting_branch_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441\u044a\u0441 \u0441\u0432\u044a\u0440\u0437\u0432\u0430\u0449 \u043a\u043b\u043e\u043d",
+
+    "local_fault_corridor_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "local_fault_network_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u043c\u0440\u0435\u0436\u0430",
+
+    "local_fault_zone_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0437\u043e\u043d\u0430",
+
+    "local_geological_fault_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "local_main_fault_corridor_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0433\u043b\u0430\u0432\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d \u043a\u043e\u0440\u0438\u0434\u043e\u0440",
+
+    "local_parallel_branch_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u043a\u043b\u043e\u043d",
+
+    "local_parallel_coastal_fault_segment_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u043a\u0440\u0430\u0439\u0431\u0440\u0435\u0436\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d \u0441\u0435\u0433\u043c\u0435\u043d\u0442",
+
+    "local_parallel_fault_segment_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d \u0441\u0435\u0433\u043c\u0435\u043d\u0442",
+
+    "local_regional_fault_system_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430",
+
+    "local_scientific_and_regional_crosswalk":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u043d\u0430\u0443\u0447\u043d\u043e \u0438 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "local_scientific_crosswalk":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u043d\u0430\u0443\u0447\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "local_scientific_fault_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u043d\u0430\u0443\u0447\u043d\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "local_scientific_system_crosswalk":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u043d\u0430\u0443\u0447\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u043a\u044a\u043c \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430",
+
+    "local_transverse_branch_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u043d\u0430\u043f\u0440\u0435\u0447\u0435\u043d \u043a\u043b\u043e\u043d",
+
+    "local_transverse_fault_correspondence":
+      "\u041b\u043e\u043a\u0430\u043b\u043d\u043e \u043d\u0430\u043f\u0440\u0435\u0447\u043d\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "northern_parallel_fault_segment_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0441\u0435\u0432\u0435\u0440\u0435\u043d \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d \u0441\u0435\u0433\u043c\u0435\u043d\u0442",
+
+    "oblique_branch_fault_network_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u043a\u043e\u0441 \u043a\u043b\u043e\u043d \u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u043c\u0440\u0435\u0436\u0430",
+
+    "parallel_related_corridor":
+      "\u0421\u0432\u044a\u0440\u0437\u0430\u043d \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u043a\u043e\u0440\u0438\u0434\u043e\u0440",
+
+    "partial_local_and_regional_crosswalk":
+      "\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u043e \u043b\u043e\u043a\u0430\u043b\u043d\u043e \u0438 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "partial_local_scientific_correspondence":
+      "\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u043e \u043b\u043e\u043a\u0430\u043b\u043d\u043e \u043d\u0430\u0443\u0447\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "partial_regional_crosswalk":
+      "\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u043e \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "partial_regional_spatial_correspondence":
+      "\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u043e \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "pernik_radomir_active_fault_system_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u043a\u0442\u0438\u0432\u043d\u0430\u0442\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u041f\u0435\u0440\u043d\u0438\u043a\u2013\u0420\u0430\u0434\u043e\u043c\u0438\u0440",
+
+    "regional_fault_network_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "regional_fault_system_crosswalk":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u043a\u044a\u043c \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430",
+
+    "regional_local_scientific_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u043b\u043e\u043a\u0430\u043b\u043d\u043e \u043d\u0430\u0443\u0447\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "regional_oblique_branch_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u043a\u043e\u0441 \u043a\u043b\u043e\u043d",
+
+    "regional_oblique_fault_network_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u043a\u043e\u0441\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u043c\u0440\u0435\u0436\u0430",
+
+    "regional_parallel_fault_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c",
+
+    "regional_pernik_fault_zone_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u041f\u0435\u0440\u043d\u0438\u0448\u043a\u0430\u0442\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0437\u043e\u043d\u0430",
+
+    "regional_scientific_fault_zone_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u043d\u0430\u0443\u0447\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0437\u043e\u043d\u0430",
+
+    "regional_spatial_crosswalk":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "regional_structural_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "regional_structural_corridor_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u043e \u043a\u043e\u0440\u0438\u0434\u043e\u0440\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "regional_struma_kraishte_structural_corridor_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0432 \u0437\u043e\u043d\u0430\u0442\u0430 \u0421\u0442\u0440\u0443\u043c\u0430\u2013\u041a\u0440\u0430\u0438\u0449\u0435",
+
+    "regional_transverse_structural_corridor_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u043d\u0430\u043f\u0440\u0435\u0447\u043d\u043e \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u043e \u043a\u043e\u0440\u0438\u0434\u043e\u0440\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "regional_transverse_structural_segment_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u043d\u0430\u043f\u0440\u0435\u0447\u043d\u043e \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u043e \u0441\u0435\u0433\u043c\u0435\u043d\u0442\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+
+    "regional_west_pirin_structural_corridor_correspondence":
+      "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u043e \u043a\u043e\u0440\u0438\u0434\u043e\u0440\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0432 \u0417\u0430\u043f\u0430\u0434\u0435\u043d \u041f\u0438\u0440\u0438\u043d",
+
+    "southern_parallel_fault_corridor_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u044e\u0436\u0435\u043d \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d \u043a\u043e\u0440\u0438\u0434\u043e\u0440",
+
+    "southern_parallel_structural_segment_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u044e\u0436\u0435\u043d \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0435\u043d \u0441\u0435\u0433\u043c\u0435\u043d\u0442",
+
+    "southern_west_pirin_oblique_segment_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u044e\u0436\u0435\u043d \u043a\u043e\u0441 \u0441\u0435\u0433\u043c\u0435\u043d\u0442 \u0432 \u0417\u0430\u043f\u0430\u0434\u0435\u043d \u041f\u0438\u0440\u0438\u043d",
+
+    "spatial_relation":
+      "\u041f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u0430 \u0432\u0440\u044a\u0437\u043a\u0430",
+
+    "transverse_fault_crossing_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u0449 \u043d\u0430\u043f\u0440\u0435\u0447\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c",
+
+    "transverse_fault_network_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u043d\u0430\u043f\u0440\u0435\u0447\u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u043c\u0440\u0435\u0436\u0430",
+
+    "unresolved_local_identity":
+      "\u041d\u0435\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0430 \u043b\u043e\u043a\u0430\u043b\u043d\u0430 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f",
+
+    "unresolved_regional_spatial_relation":
+      "\u041d\u0435\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0430 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0430 \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d\u0430 \u0432\u0440\u044a\u0437\u043a\u0430",
+
+    "western_parallel_fault_corridor_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0437\u0430\u043f\u0430\u0434\u0435\u043d \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d \u043a\u043e\u0440\u0438\u0434\u043e\u0440",
+
+    "western_parallel_fault_segment_correspondence":
+      "\u0421\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0441 \u0437\u0430\u043f\u0430\u0434\u0435\u043d \u043f\u0430\u0440\u0430\u043b\u0435\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d \u0441\u0435\u0433\u043c\u0435\u043d\u0442"
+  };
+
+  if (!value) {
+    return "";
+  }
+
+  return (
+    translations[value] ||
+    "\u0421\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435"
+  );
+}
+
+function renderMrrbSourceDetails(sourceIds) {
+  const ids = faultAnalysisArray(sourceIds);
+
+  if (!ids.length) {
+    return "";
+  }
+
+  let html =
+    "<details style=\"margin-top:8px\">" +
+    "<summary style=\"cursor:pointer;font-weight:600\">" +
+    "\u0418\u0437\u0442\u043e\u0447\u043d\u0438\u0446\u0438" +
+    "</summary>";
+
+  for (const sourceId of ids) {
+    const source =
+      mrrbFaultSourceIndex.get(
+        String(sourceId)
+      );
+
+    if (!source) {
+      html +=
+        "<div style=\"margin-top:5px;font-size:12px\">" +
+        esc(String(sourceId)) +
+        "</div>";
+      continue;
+    }
+
+    const title =
+      source.title_bg ||
+      source.title ||
+      source.name ||
+      source.source_title ||
+      sourceId;
+
+    const year =
+      source.year ||
+      source.publication_year ||
+      "";
+
+    const institution =
+      source.publisher ||
+      source.institution ||
+      source.organization ||
+      "";
+
+    const url =
+      source.url ||
+      source.source_url ||
+      "";
+
+    html +=
+      "<div style=\"margin-top:7px;font-size:12px\">" +
+      "<strong>" +
+      esc(String(title)) +
+      "</strong>";
+
+    if (year) {
+      html +=
+        " (" +
+        esc(String(year)) +
+        ")";
+    }
+
+    if (institution) {
+      html +=
+        "<br>" +
+        esc(String(institution));
+    }
+
+    if (url) {
+      html +=
+        "<br><a href=\"" +
+        esc(String(url)) +
+        "\" target=\"_blank\" rel=\"noopener noreferrer\">" +
+        "\u041e\u0442\u0432\u043e\u0440\u0438 \u0438\u0437\u0442\u043e\u0447\u043d\u0438\u043a\u0430" +
+        "</a>";
+    }
+
+    html += "</div>";
+  }
+
+  html += "</details>";
+
+  return html;
+}
+
+function renderMrrbAnalysisForGem(catalogId) {
+  const related =
+    mrrbFaultIndexByBgcs.get(
+      String(catalogId)
+    ) || [];
+
+  let html =
+    "<div style=\"margin-top:12px;padding:10px;" +
+    "background:#fff8ef;border-left:4px solid #b86b2b;" +
+    "border-radius:4px\">" +
+    "<strong style=\"font-size:14px\">" +
+    "\u0420\u0430\u0437\u043b\u043e\u043c\u043d\u0438 \u043a\u043e\u0440\u0438\u0434\u043e\u0440\u0438 \u0438 \u043d\u0430\u0443\u0447\u043d\u0430 \u0432\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f" +
+    "</strong>";
+
+  if (!related.length) {
+    html +=
+      "<div style=\"margin-top:7px;font-size:12px\">" +
+      "\u0417\u0430 \u0442\u043e\u0437\u0438 GEM \u0440\u0430\u0437\u043b\u043e\u043c " +
+      "\u043d\u044f\u043c\u0430 \u043f\u0440\u0438\u0435\u0442 \u0434\u0438\u0440\u0435\u043a\u0442\u0435\u043d " +
+      "MRRB crosswalk." +
+      "</div></div>";
+
+    return html;
+  }
+
+  html +=
+    "<div style=\"margin-top:6px;font-size:12px;color:#555\">" +
+    "\u0421\u0432\u044a\u0440\u0437\u0430\u043d\u0438 \u043a\u043e\u0440\u0438\u0434\u043e\u0440\u0438: <strong>" +
+    related.length +
+    "</strong>" +
+    "</div>";
+
+  related.forEach((feature, index) => {
+    const p = feature.properties || {};
+
+    const rec =
+      faultAnalysisText(
+        p.mrrb_record
+      );
+
+    const mrrbName =
+      faultAnalysisText(
+        p.mrrb_name
+      );
+
+    const scientificName =
+      faultAnalysisText(
+        p.scientific_name
+      );
+
+    const system =
+      faultAnalysisText(
+        p.fault_system
+      );
+
+    const faultType =
+      translateMrrbFaultType(
+        p.fault_type
+      );
+
+    const confidence =
+      translateMrrbConfidence(
+        p.confidence
+      );
+
+    const correspondence =
+      humanizeFaultCorrespondence(
+        p.correspondence_type
+      );
+
+    const notes =
+      faultAnalysisArray(
+        p.notes
+      );
+
+    const openItems =
+      faultAnalysisArray(
+        p.open_items
+      );
+
+    html +=
+      "<div style=\"margin-top:10px;padding:9px;" +
+      "background:#fff;border:1px solid #ead8c4;" +
+      "border-radius:6px\">";
+
+    html +=
+      "<strong>" +
+      "\u041a\u043e\u0440\u0438\u0434\u043e\u0440 " +
+      (index + 1);
+
+    if (rec) {
+      html +=
+        " \u00b7 REC " +
+        esc(rec);
+    }
+
+    html += "</strong>";
+
+    if (mrrbName) {
+      html +=
+        "<div style=\"margin-top:5px\">" +
+        "<strong>\u0418\u043c\u0435 MRRB:</strong> " +
+        esc(mrrbName) +
+        "</div>";
+    }
+
+    if (scientificName) {
+      html +=
+        "<div style=\"margin-top:4px\">" +
+        "<strong>\u041d\u0430\u0443\u0447\u043d\u043e \u0438\u043c\u0435:</strong> " +
+        esc(scientificName) +
+        "</div>";
+    }
+
+    if (system) {
+      html +=
+        "<div style=\"margin-top:4px\">" +
+        "<strong>\u0420\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430:</strong> " +
+        esc(system) +
+        "</div>";
+    }
+
+    if (faultType) {
+      html +=
+        "<div style=\"margin-top:4px\">" +
+        "<strong>\u0422\u0438\u043f:</strong> " +
+        esc(faultType) +
+        "</div>";
+    }
+
+    if (confidence) {
+      html +=
+        "<div style=\"margin-top:4px\">" +
+        "<strong>\u041d\u0438\u0432\u043e \u043d\u0430 \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435:</strong> " +
+        esc(confidence) +
+        "</div>";
+    }
+
+    if (correspondence) {
+      html +=
+        "<div style=\"margin-top:4px\">" +
+        "<strong>\u0425\u0430\u0440\u0430\u043a\u0442\u0435\u0440 \u043d\u0430 \u0432\u0440\u044a\u0437\u043a\u0430\u0442\u0430:</strong> " +
+        esc(correspondence) +
+        "</div>";
+    }
+
+    if (notes.length) {
+      html +=
+        "<details style=\"margin-top:7px\">" +
+        "<summary style=\"cursor:pointer;font-weight:600\">" +
+        "\u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u043e\u043d\u043d\u0438 \u0431\u0435\u043b\u0435\u0436\u043a\u0438" +
+        "</summary>" +
+        "<ul style=\"margin:6px 0 0 18px;padding:0\">";
+
+      for (const note of notes) {
+        html +=
+          "<li style=\"margin-top:4px\">" +
+          esc(String(note)) +
+          "</li>";
+      }
+
+      html +=
+        "</ul></details>";
+    }
+
+    if (openItems.length) {
+      html +=
+        "<details style=\"margin-top:7px\">" +
+        "<summary style=\"cursor:pointer;font-weight:600\">" +
+        "\u041e\u0442\u0432\u043e\u0440\u0435\u043d\u0438 \u0432\u044a\u043f\u0440\u043e\u0441\u0438" +
+        "</summary>" +
+        "<ul style=\"margin:6px 0 0 18px;padding:0\">";
+
+      for (const item of openItems) {
+        html +=
+          "<li style=\"margin-top:4px\">" +
+          esc(String(item)) +
+          "</li>";
+      }
+
+      html +=
+        "</ul></details>";
+    }
+
+    html +=
+      renderMrrbSourceDetails(
+        p.source_ids
+      );
+
+    html +=
+      "<div style=\"margin-top:8px;font-size:11px;color:#6b5a48\">" +
+      "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d MRRB " +
+      "\u0431\u0443\u0444\u0435\u0440\u0438\u0440\u0430\u043d " +
+      "\u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d " +
+      "\u043a\u043e\u0440\u0438\u0434\u043e\u0440." +
+      "</div>";
+
+    html += "</div>";
+  });
+
+  html += "</div>";
+
+  return html;
+}
+
+
+function renderGemFaultHumanSummary(
+  catalogId,
+  slipType,
+  faultDip,
+  faultRake,
+  upperDepth,
+  lowerDepth,
+  intersections,
+  ordinaryByBasin,
+  nearbyObjects,
+  springs,
+  mineralWells,
+  monitoringWells,
+  maximumTemperature
+) {
+  const related =
+    mrrbFaultIndexByBgcs.get(
+      String(catalogId)
+    ) || [];
+
+  const groups =
+    gemFaultOrdinaryGroups(
+      ordinaryByBasin
+    );
+
+  let facilityTotal = 0;
+  let basinCount = 0;
+  const ordinaryNearbyItems = [];
+
+  for (const group of groups) {
+    const items =
+      gemFaultOrdinaryGroupItems(
+        group
+      );
+
+    if (items.length) {
+      facilityTotal += items.length;
+      basinCount += 1;
+
+      for (const item of items) {
+        ordinaryNearbyItems.push(item);
+      }
+    }
+  }
+
+  const ordinaryWithin250m =
+    ordinaryNearbyItems.filter(
+      item =>
+        Number.isFinite(
+          Number(item.distanceKm)
+        ) &&
+        Number(item.distanceKm) <= 0.25
+    );
+
+  const ordinaryWithin1km =
+    ordinaryNearbyItems.filter(
+      item =>
+        Number.isFinite(
+          Number(item.distanceKm)
+        ) &&
+        Number(item.distanceKm) <= 1
+    );
+
+  const ordinaryDistanceValues =
+    ordinaryNearbyItems
+      .map(
+        item =>
+          Number(item.distanceKm)
+      )
+      .filter(
+        value =>
+          Number.isFinite(value)
+      );
+
+  const nearestOrdinaryDistance =
+    ordinaryDistanceValues.length
+      ? Math.min(
+          ...ordinaryDistanceValues
+        )
+      : null;
+
+  const allNearby =
+    Array.isArray(nearbyObjects)
+      ? nearbyObjects
+      : [];
+
+  const springItems =
+    Array.isArray(springs)
+      ? springs
+      : [];
+
+  const mineralItems =
+    Array.isArray(mineralWells)
+      ? mineralWells
+      : [];
+
+  const monitoringItems =
+    Array.isArray(monitoringWells)
+      ? monitoringWells
+      : [];
+
+  const within250m =
+    allNearby.filter(
+      item =>
+        Number.isFinite(
+          Number(item.distanceKm)
+        ) &&
+        Number(item.distanceKm) <= 0.25
+    );
+
+  const within1km =
+    allNearby.filter(
+      item =>
+        Number.isFinite(
+          Number(item.distanceKm)
+        ) &&
+        Number(item.distanceKm) <= 1
+    );
+
+  const within2km =
+    allNearby.filter(
+      item =>
+        Number.isFinite(
+          Number(item.distanceKm)
+        ) &&
+        Number(item.distanceKm) <= 2
+    );
+
+  const distanceValues =
+    allNearby
+      .map(
+        item =>
+          Number(item.distanceKm)
+      )
+      .filter(
+        value =>
+          Number.isFinite(value)
+      );
+
+  const nearestWaterDistance =
+    distanceValues.length
+      ? Math.min(...distanceValues)
+      : null;
+
+  const systems = [
+    ...new Set(
+      related
+        .map(feature => {
+          const p =
+            feature.properties || {};
+
+          return p.fault_system || "";
+        })
+        .filter(Boolean)
+    )
+  ];
+
+  const scientificNames = [
+    ...new Set(
+      related
+        .map(feature => {
+          const p =
+            feature.properties || {};
+
+          return p.scientific_name || "";
+        })
+        .filter(Boolean)
+    )
+  ];
+
+  const mrrbNames = [
+    ...new Set(
+      related
+        .map(feature => {
+          const p =
+            feature.properties || {};
+
+          return p.mrrb_name || "";
+        })
+        .filter(Boolean)
+    )
+  ];
+
+  const confidenceLabels = [
+    ...new Set(
+      related
+        .map(feature => {
+          const p =
+            feature.properties || {};
+
+          return translateMrrbConfidence(
+            p.confidence
+          );
+        })
+        .filter(Boolean)
+    )
+  ];
+
+  function formatWaterDistance(distanceKm) {
+    if (
+      distanceKm === null ||
+      !Number.isFinite(distanceKm)
+    ) {
+      return "";
+    }
+
+    if (distanceKm < 0.05) {
+      return "\u043d\u0435\u043f\u043e\u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0435\u043d\u043e \u0432\u044a\u0440\u0445\u0443/\u0434\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u0437\u043e\u043d\u0430";
+    }
+
+    if (distanceKm < 1) {
+      return (
+        Math.round(
+          distanceKm * 1000
+        ) +
+        " m"
+      );
+    }
+
+    return (
+      distanceKm.toFixed(2) +
+      " km"
+    );
+  }
+
+  let html =
+    "<div style=\"margin-top:14px;padding:12px;" +
+    "background:#f3f7f4;border-left:4px solid #2f6d4f;" +
+    "border-radius:5px\">" +
+    "<strong style=\"font-size:14px\">" +
+    "\u041e\u0431\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u0437\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u0430" +
+    "</strong>" +
+    "<div style=\"margin-top:8px;line-height:1.58\">";
+
+  // ----------------------------------------------------------
+  // Structural character
+  // ----------------------------------------------------------
+
+  html +=
+    "<strong>\u0421\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0435\u043d \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440.</strong> " +
+    "\u0418\u0437\u0431\u0440\u0430\u043d\u0438\u044f\u0442 \u0430\u043a\u0442\u0438\u0432\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c \u0435 \u0447\u0430\u0441\u0442 \u043e\u0442 \u0440\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0430\u0442\u0430 \u0430\u043a\u0442\u0438\u0432\u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u043c\u0440\u0435\u0436\u0430, \u043a\u0430\u0442\u0430\u043b\u043e\u0433\u0438\u0437\u0438\u0440\u0430\u043d\u0430 \u0432 GEM";
+
+  if (slipType) {
+    html +=
+      ". \u0422\u0438\u043f\u044a\u0442 \u043d\u0430 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435 \u0435 <strong>" +
+      esc(
+        gemFaultSimpleTypeLabel(
+          slipType
+        )
+      ) +
+      "</strong>. " +
+      esc(
+        gemFaultSimpleTypeExplanation(
+          slipType
+        )
+      );
+  } else {
+    html += ".";
+  }
+
+  if (faultDip) {
+    html +=
+      " <strong>\u041d\u0430\u043a\u043b\u043e\u043d\u044a\u0442 " +
+      esc(faultDip) +
+      "</strong> \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u043f\u043e\u0434 \u043a\u0430\u043a\u044a\u0432 \u044a\u0433\u044a\u043b \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u043f\u043e\u0432\u044a\u0440\u0445\u043d\u0438\u043d\u0430 \u043d\u0430\u0432\u043b\u0438\u0437\u0430 \u0432 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430.";
+  }
+
+  if (faultRake) {
+    html +=
+      " <strong>\u041f\u043e\u0441\u043e\u043a\u0430\u0442\u0430 \u043d\u0430 \u0440\u0430\u0437\u043c\u0435\u0441\u0442\u0432\u0430\u043d\u0435 " +
+      esc(faultRake) +
+      "</strong> \u043e\u043f\u0438\u0441\u0432\u0430 \u043f\u043e\u0441\u043e\u043a\u0430\u0442\u0430, \u0432 \u043a\u043e\u044f\u0442\u043e \u0441\u043a\u0430\u043b\u043d\u0438\u0442\u0435 \u0431\u043b\u043e\u043a\u043e\u0432\u0435 \u0441\u0435 \u043f\u0440\u0435\u043c\u0435\u0441\u0442\u0432\u0430\u0442 \u043f\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u043f\u043e\u0432\u044a\u0440\u0445\u043d\u0438\u043d\u0430. " +
+      esc(
+        gemFaultRakeSimpleExplanation(
+          slipType
+        )
+      );
+  }
+
+  if (upperDepth || lowerDepth) {
+    html +=
+      " <strong>\u0410\u043a\u0442\u0438\u0432\u043d\u0430\u0442\u0430 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u043d\u0430 \u0437\u043e\u043d\u0430 \u0435 \u043e\u043a\u043e\u043b\u043e " +
+      esc(upperDepth) +
+      " \u2013 " +
+      esc(lowerDepth) +
+      "</strong>. \u0422\u043e\u0432\u0430 \u0435 \u0434\u044a\u043b\u043e\u0447\u0438\u043d\u043d\u0438\u044f\u0442 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b, \u0432 \u043a\u043e\u0439\u0442\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u0435 \u0442\u0435\u043a\u0442\u043e\u043d\u0441\u043a\u0438 \u0430\u043a\u0442\u0438\u0432\u043d\u0430.";
+  }
+
+  // ----------------------------------------------------------
+  // Local fault system
+  // ----------------------------------------------------------
+
+  if (related.length) {
+    html +=
+      "</div><div style=\"margin-top:9px;line-height:1.58\">" +
+      "<strong>\u041b\u043e\u043a\u0430\u043b\u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430.</strong> " +
+      "\u041a\u044a\u043c \u0442\u043e\u0437\u0438 GEM \u0440\u0430\u0437\u043b\u043e\u043c \u0441\u0430 \u0432\u0430\u043b\u0438\u0434\u0438\u0440\u0430\u043d\u0438 <strong>" +
+      related.length +
+      " MRRB \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0438 \u043a\u043e\u0440\u0438\u0434\u043e\u0440\u0430</strong>";
+
+    if (mrrbNames.length) {
+      html +=
+        ": " +
+        esc(
+          mrrbNames.join(", ")
+        );
+    }
+
+    html += ".";
+
+    if (scientificNames.length) {
+      html +=
+        " \u0412 \u043d\u0430\u0443\u0447\u043d\u0430\u0442\u0430 \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430 \u0441\u0430 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d\u0438 \u0432\u0440\u044a\u0437\u043a\u0438 \u0441 <strong>" +
+        esc(
+          scientificNames.join("; ")
+        ) +
+        "</strong>.";
+    }
+
+    if (systems.length) {
+      html +=
+        " \u0421\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u043e \u0442\u0435 \u043f\u043e\u043f\u0430\u0434\u0430\u0442 \u0432/\u0441\u0430 \u0441\u0432\u044a\u0440\u0437\u0430\u043d\u0438 \u0441 <strong>" +
+        esc(
+          systems.join("; ")
+        ) +
+        "</strong>.";
+    }
+
+    if (confidenceLabels.length) {
+      html +=
+        " \u0412\u0430\u043b\u0438\u0434\u0438\u0440\u0430\u043d\u043e\u0442\u043e \u043d\u0438\u0432\u043e \u043d\u0430 \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0432\u043a\u043b\u044e\u0447\u0432\u0430: <strong>" +
+        esc(
+          confidenceLabels.join(", ")
+        ) +
+        "</strong>.";
+    }
+  }
+
+  // ----------------------------------------------------------
+  // Crossing structures
+  // ----------------------------------------------------------
+
+  if (
+    Array.isArray(intersections) &&
+    intersections.length
+  ) {
+    html +=
+      "</div><div style=\"margin-top:9px;line-height:1.58\">" +
+      "<strong>\u041f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0438.</strong> " +
+      "\u041a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 \u0441\u0430 <strong>" +
+      intersections.length +
+      " \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u043d\u0438\u044f</strong> \u0441 \u0434\u0440\u0443\u0433\u0438 GEM \u0430\u043a\u0442\u0438\u0432\u043d\u0438 \u0440\u0430\u0437\u043b\u043e\u043c\u0438. \u041f\u0440\u0438 \u0442\u0430\u043a\u0438\u0432\u0430 \u0432\u044a\u0437\u043b\u0438 \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u043e\u0441\u0442\u0442\u0430 \u043e\u0431\u0438\u043a\u043d\u043e\u0432\u0435\u043d\u043e \u0435 \u043f\u043e-\u0441\u043b\u043e\u0436\u043d\u0430 \u0438 \u0441\u0435 \u0444\u043e\u0440\u043c\u0438\u0440\u0430\u0442 \u043d\u044f\u043a\u043e\u043b\u043a\u043e \u0432\u044a\u0437\u043c\u043e\u0436\u043d\u0438 \u043f\u043e\u0441\u043e\u043a\u0438 \u0437\u0430 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435 \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0430\u0442\u0430 \u0432\u043e\u0434\u0430.";
+  }
+
+  // ----------------------------------------------------------
+  // SPECIFIC GROUNDWATER INTERPRETATION
+  // ----------------------------------------------------------
+
+  html +=
+    "</div><div style=\"margin-top:11px;padding:10px;" +
+    "background:#eef6fb;border-left:4px solid #1769aa;" +
+    "border-radius:4px;line-height:1.6\">" +
+    "<strong style=\"font-size:14px\">" +
+    "\u0412\u0440\u044a\u0437\u043a\u0430 \u0441 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u0438" +
+    "</strong><br>";
+
+  if (facilityTotal) {
+    html +=
+      "\u0412 \u043a\u043e\u0440\u0438\u0434\u043e\u0440 \u0434\u043e 5 km \u043e\u043a\u043e\u043b\u043e \u0442\u043e\u0437\u0438 \u0440\u0430\u0437\u043b\u043e\u043c \u0441\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u043d\u0438 <strong>" +
+      facilityTotal +
+      " \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u0438 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u044f</strong>";
+
+    if (basinCount > 1) {
+      html +=
+        " \u0432 " +
+        basinCount +
+        " \u0431\u0430\u0441\u0435\u0439\u043d\u043e\u0432\u0438 \u0440\u0430\u0439\u043e\u043d\u0430";
+    }
+
+    html += ". ";
+  }
+
+  if (allNearby.length) {
+    html +=
+      "\u0414\u043e\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u043d\u0438\u0442\u0435 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u043e\u0431\u0435\u043a\u0442\u0438 \u0432 \u0441\u044a\u0449\u0438\u044f \u0440\u0430\u0434\u0438\u0443\u0441 \u0441\u0430 <strong>" +
+      allNearby.length +
+      "</strong>. ";
+  }
+
+  if (within250m.length) {
+    html +=
+      "<strong>" +
+      within250m.length +
+      "</strong> \u043e\u0442 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0438 \u0441\u0430 \u043d\u0430 \u0434\u043e 250 m \u043e\u0442 \u0440\u0430\u0437\u043b\u043e\u043c\u0430, \u0430 <strong>" +
+      within1km.length +
+      "</strong> \u0441\u0430 \u0432 \u0440\u0430\u043c\u043a\u0438\u0442\u0435 \u043d\u0430 1 km. ";
+  } else if (within1km.length) {
+    html +=
+      "<strong>" +
+      within1km.length +
+      "</strong> \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0430 \u0441\u0430 \u043d\u0430 \u0434\u043e 1 km \u043e\u0442 \u0440\u0430\u0437\u043b\u043e\u043c\u0430. ";
+  } else if (within2km.length) {
+    html +=
+      "<strong>" +
+      within2km.length +
+      "</strong> \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0430 \u0441\u0430 \u043d\u0430 \u0434\u043e 2 km \u043e\u0442 \u0440\u0430\u0437\u043b\u043e\u043c\u0430. ";
+  }
+
+  if (nearestWaterDistance !== null) {
+    html +=
+      "\u041d\u0430\u0439-\u0431\u043b\u0438\u0437\u043a\u0438\u044f\u0442 \u0442\u0430\u043a\u044a\u0432 \u043e\u0431\u0435\u043a\u0442 \u0435 <strong>" +
+      esc(
+        formatWaterDistance(
+          nearestWaterDistance
+        )
+      ) +
+      "</strong>. ";
+  }
+
+  if (springItems.length) {
+    html +=
+      "\u041e\u043a\u043e\u043b\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u0430 \u0441\u0430 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 <strong>" +
+      springItems.length +
+      " \u0438\u0437\u0432\u043e\u0440\u0430/\u043a\u0430\u043f\u0442\u0430\u0436\u0430</strong>. " +
+      "\u0422\u043e\u0432\u0430 \u0435 \u0432\u0430\u0436\u0435\u043d \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0431\u0435\u043b\u0435\u0433, \u0437\u0430\u0449\u043e\u0442\u043e \u0438\u0437\u0432\u043e\u0440\u0438\u0442\u0435 \u043c\u0430\u0440\u043a\u0438\u0440\u0430\u0442 \u043c\u0435\u0441\u0442\u0430, \u043a\u044a\u0434\u0435\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438\u044f\u0442 \u043f\u043e\u0442\u043e\u043a \u0434\u043e\u0441\u0442\u0438\u0433\u0430 \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043e \u0434\u043e \u043f\u043e\u0432\u044a\u0440\u0445\u043d\u043e\u0441\u0442\u0442\u0430. ";
+  }
+
+  if (mineralItems.length) {
+    html +=
+      "\u041d\u0430\u043b\u0438\u0447\u043d\u0438 \u0441\u0430 \u0438 <strong>" +
+      mineralItems.length +
+      " \u043c\u0438\u043d\u0435\u0440\u0430\u043b\u043d\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u0430</strong>";
+
+    if (
+      maximumTemperature !== null &&
+      Number.isFinite(
+        Number(maximumTemperature)
+      )
+    ) {
+      html +=
+        ", \u043a\u0430\u0442\u043e \u043d\u0430\u0439-\u0432\u0438\u0441\u043e\u043a\u0430\u0442\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u043d\u0430 \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430 \u0435 <strong>" +
+        Number(
+          maximumTemperature
+        ).toFixed(1) +
+        "\u00b0C</strong>";
+    }
+
+    html +=
+      ". \u041c\u0438\u043d\u0435\u0440\u0430\u043b\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u0438 \u0432 \u0431\u043b\u0438\u0437\u043e\u0441\u0442 \u0434\u043e \u0430\u043a\u0442\u0438\u0432\u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u0441\u0430 \u043e\u0441\u043e\u0431\u0435\u043d\u043e \u0432\u0430\u0436\u043d\u0438 \u0437\u0430 \u0440\u0430\u0437\u0431\u0438\u0440\u0430\u043d\u0435\u0442\u043e \u043d\u0430 \u043f\u043e-\u0434\u044a\u043b\u0431\u043e\u043a\u0430\u0442\u0430 \u0446\u0438\u0440\u043a\u0443\u043b\u0430\u0446\u0438\u044f, \u0442\u044a\u0439 \u043a\u0430\u0442\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438\u0442\u0435 \u0437\u043e\u043d\u0438 \u043c\u043e\u0433\u0430\u0442 \u0434\u0430 \u0441\u0432\u044a\u0440\u0437\u0432\u0430\u0442 \u0432\u043e\u0434\u0438 \u043e\u0442 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u0438 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0438. ";
+  }
+
+  if (monitoringItems.length) {
+    html +=
+      "\u0412 \u0437\u043e\u043d\u0430\u0442\u0430 \u0438\u043c\u0430 \u0438 <strong>" +
+      monitoringItems.length +
+      " \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u0430</strong>, \u043a\u043e\u0438\u0442\u043e \u0434\u0430\u0432\u0430\u0442 \u0434\u043e\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0437\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u0438 \u0432 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043d\u043e\u0442\u043e \u043e\u0431\u043a\u0440\u044a\u0436\u0435\u043d\u0438\u0435. ";
+  }
+
+  html +=
+    "</div><div style=\"margin-top:9px;line-height:1.62\">" +
+    "<strong>\u0425\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0438\u043d\u0442\u0435\u0440\u043f\u0440\u0435\u0442\u0430\u0446\u0438\u044f.</strong> ";
+
+  if (facilityTotal > 0) {
+    html +=
+      "\u0412 \u0440\u0430\u0434\u0438\u0443\u0441 \u0434\u043e 5 km \u043e\u043a\u043e\u043b\u043e \u0442\u043e\u0437\u0438 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c \u0441\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u043d\u0438 <strong>" +
+      facilityTotal +
+      " \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u0438 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u044f</strong>. ";
+
+    if (within1km.length > 0) {
+      html +=
+        "\u041e\u0442 \u0434\u043e\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u043d\u043e \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438\u0442\u0435 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u043e\u0431\u0435\u043a\u0442\u0438 <strong>" +
+        within1km.length +
+        "</strong> \u0441\u0430 \u043d\u0430 \u0434\u043e 1 km \u043e\u0442 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430. ";
+    }
+
+    if (within250m.length > 0) {
+      html +=
+        "<strong>" +
+        within250m.length +
+        "</strong> \u043e\u0442 \u0442\u044f\u0445 \u0441\u0430 \u043d\u0430 \u0434\u043e 250 m \u043e\u0442 \u0440\u0430\u0437\u043b\u043e\u043c\u0430. ";
+    }
+
+    if (ordinaryWithin1km.length > 0) {
+      html +=
+        "\u041e\u0442 \u0442\u0435\u0437\u0438 \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u0438 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u044f <strong>" +
+        ordinaryWithin1km.length +
+        "</strong> \u0441\u0430 \u043d\u0430 \u0434\u043e 1 km \u043e\u0442 \u0440\u0430\u0437\u043b\u043e\u043c\u0430";
+
+      if (ordinaryWithin250m.length > 0) {
+        html +=
+          ", \u043a\u0430\u0442\u043e <strong>" +
+          ordinaryWithin250m.length +
+          "</strong> \u0441\u0430 \u043d\u0430 \u0434\u043e 250 m";
+      }
+
+      html += ". ";
+    }
+
+    if (nearestOrdinaryDistance !== null) {
+      html +=
+        "\u041d\u0430\u0439-\u0431\u043b\u0438\u0437\u043a\u043e\u0442\u043e \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u043e \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435 \u0435 <strong>" +
+        esc(
+          formatWaterDistance(
+            nearestOrdinaryDistance
+          )
+        ) +
+        "</strong>. ";
+    }
+
+    html +=
+      "\u0420\u0430\u0437\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435\u0442\u043e \u043d\u0430 \u0442\u0435\u0437\u0438 \u0440\u0435\u0430\u043b\u043d\u043e \u0435\u043a\u0441\u043f\u043b\u043e\u0430\u0442\u0438\u0440\u0430\u043d\u0438 \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0438 \u0441\u043f\u0440\u044f\u043c\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u0430 \u0435 \u0432\u0430\u0436\u0435\u043d \u043f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0431\u0435\u043b\u0435\u0433. " +
+      "\u041a\u043e\u0433\u0430\u0442\u043e \u043c\u043d\u043e\u0436\u0435\u0441\u0442\u0432\u043e \u0441\u043e\u043d\u0434\u0430\u0436\u0438 \u0438 \u043a\u043b\u0430\u0434\u0435\u043d\u0446\u0438 \u0441\u0430 \u0441\u044a\u0441\u0440\u0435\u0434\u043e\u0442\u043e\u0447\u0435\u043d\u0438 \u0432 \u043d\u0435\u043f\u043e\u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0435\u043d\u0430 \u0431\u043b\u0438\u0437\u043e\u0441\u0442 \u0434\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u0437\u043e\u043d\u0430, \u0442\u043e\u0432\u0430 \u0435 \u0441\u044a\u0432\u043c\u0435\u0441\u0442\u0438\u043c\u043e \u0441 \u043f\u043e\u0432\u0438\u0448\u0435\u043d\u0430 \u0444\u0440\u0430\u043a\u0442\u0443\u0440\u043d\u0430 \u043f\u0440\u043e\u043f\u0443\u0441\u043a\u043b\u0438\u0432\u043e\u0441\u0442 \u0438 \u0441 \u043a\u043e\u043d\u0446\u0435\u043d\u0442\u0440\u0438\u0440\u0430\u043d\u0435 \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438\u044f \u043f\u043e\u0442\u043e\u043a \u0432 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438 \u0441\u0435\u043a\u0442\u043e\u0440\u0438 \u043d\u0430 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430\u0442\u0430. ";
+  }
+
+  if (springItems.length > 0) {
+    html +=
+      "\u0412 \u0431\u043b\u0438\u0437\u043e\u0441\u0442 \u0441\u0430 \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d\u0438 \u0438 <strong>" +
+      springItems.length +
+      " \u0438\u0437\u0432\u043e\u0440\u0430/\u043a\u0430\u043f\u0442\u0430\u0436\u0430</strong>, \u043a\u043e\u0438\u0442\u043e \u043f\u043e\u043a\u0430\u0437\u0432\u0430\u0442 \u043c\u0435\u0441\u0442\u0430, \u043a\u044a\u0434\u0435\u0442\u043e \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438\u044f\u0442 \u043f\u043e\u0442\u043e\u043a \u0435 \u0434\u043e\u0441\u0442\u0438\u0433\u043d\u0430\u043b \u043f\u043e\u0432\u044a\u0440\u0445\u043d\u043e\u0441\u0442\u0442\u0430. ";
+  }
+
+  if (mineralItems.length > 0) {
+    html +=
+      "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u043d\u0438 \u0441\u0430 \u0438 <strong>" +
+      mineralItems.length +
+      " \u043c\u0438\u043d\u0435\u0440\u0430\u043b\u043d\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u0430</strong>";
+
+    if (
+      maximumTemperature !== null &&
+      Number.isFinite(Number(maximumTemperature))
+    ) {
+      html +=
+        ", \u0441 \u043c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u043d\u043e \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u043d\u0430 \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430 <strong>" +
+        Number(maximumTemperature).toFixed(1) +
+        "\u00b0C</strong>";
+    }
+
+    html +=
+      ". \u041d\u0430\u043b\u0438\u0447\u0438\u0435\u0442\u043e \u0438\u043c \u0435 \u043e\u0441\u043e\u0431\u0435\u043d\u043e \u0432\u0430\u0436\u043d\u043e \u0437\u0430 \u043e\u0446\u0435\u043d\u043a\u0430\u0442\u0430 \u043d\u0430 \u043f\u043e-\u0434\u044a\u043b\u0431\u043e\u043a\u0430\u0442\u0430 \u0446\u0438\u0440\u043a\u0443\u043b\u0430\u0446\u0438\u044f \u043f\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430. ";
+  }
+
+  html +=
+    "\u0420\u0430\u0437\u043b\u043e\u043c\u044a\u0442 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u044f\u0432\u0430 \u0437\u043e\u043d\u0430 \u043e\u0442 \u0433\u043b\u0430\u0432\u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u043f\u043e\u0432\u044a\u0440\u0445\u043d\u0438\u043d\u0430, \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438, \u0440\u0430\u0437\u0434\u0440\u043e\u0431\u0435\u043d\u0438 \u0441\u043a\u0430\u043b\u0438 \u0438 \u0441\u044a\u043f\u044a\u0442\u0441\u0442\u0432\u0430\u0449\u0438 \u043a\u043b\u043e\u043d\u043e\u0432\u0435. " +
+    "\u0422\u0430\u0437\u0438 \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0430 \u0437\u043e\u043d\u0430 \u0441\u044a\u0437\u0434\u0430\u0432\u0430 \u0432\u0442\u043e\u0440\u0438\u0447\u043d\u0430 \u043f\u0440\u043e\u043f\u0443\u0441\u043a\u043b\u0438\u0432\u043e\u0441\u0442 \u0438 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u044a\u0431\u0438\u0440\u0430, \u043d\u0430\u0441\u043e\u0447\u0432\u0430 \u0438 \u043f\u0440\u0435\u0440\u0430\u0437\u043f\u0440\u0435\u0434\u0435\u043b\u044f \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438\u044f \u043f\u043e\u0442\u043e\u043a. " +
+    "\u041a\u043e\u0433\u0430\u0442\u043e \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u043d\u0438 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u044f, \u0438\u0437\u0432\u043e\u0440\u0438\u0442\u0435 \u0438\u043b\u0438 \u043c\u0438\u043d\u0435\u0440\u0430\u043b\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u0438 \u0441\u0435 \u043a\u043e\u043d\u0446\u0435\u043d\u0442\u0440\u0438\u0440\u0430\u0442 \u043e\u043a\u043e\u043b\u043e \u0442\u0430\u043a\u0430\u0432\u0430 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430, \u0442\u043e\u0432\u0430 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u043f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0442\u043e \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u043e \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u0437\u043e\u043d\u0430. ";
+
+  if (
+    related.length > 1 ||
+    (
+      Array.isArray(intersections) &&
+      intersections.length
+    )
+  ) {
+    html +=
+      "\u0417\u0430 \u0442\u043e\u0437\u0438 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c \u0434\u0430\u043d\u043d\u0438\u0442\u0435 \u043f\u043e\u043a\u0430\u0437\u0432\u0430\u0442 \u043f\u043e-\u0441\u043b\u043e\u0436\u043d\u0430 \u043c\u0440\u0435\u0436\u0430 \u043e\u0442 \u0441\u044a\u043f\u044a\u0442\u0441\u0442\u0432\u0430\u0449\u0438 \u0438/\u0438\u043b\u0438 \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0438. \u0422\u0430\u043a\u0430\u0432\u0430 \u0433\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u044f \u0441\u044a\u0437\u0434\u0430\u0432\u0430 \u043f\u043e\u0432\u0435\u0447\u0435 \u043f\u043e\u0441\u043e\u043a\u0438 \u043d\u0430 \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u043e\u0441\u0442 \u0438 \u0435 \u043e\u0441\u043e\u0431\u0435\u043d\u043e \u0432\u0430\u0436\u043d\u0430 \u0437\u0430 \u043b\u043e\u043a\u0430\u043b\u043d\u0430\u0442\u0430 \u0446\u0438\u0440\u043a\u0443\u043b\u0430\u0446\u0438\u044f \u043d\u0430 \u0432\u043e\u0434\u0438\u0442\u0435. ";
+  }
+
+  if (
+    within250m.length ||
+    within1km.length ||
+    springItems.length ||
+    mineralItems.length
+  ) {
+    html +=
+      "\u041a\u043e\u043d\u0446\u0435\u043d\u0442\u0440\u0430\u0446\u0438\u044f\u0442\u0430 \u043d\u0430 \u0432\u043e\u0434\u043d\u0438 \u043e\u0431\u0435\u043a\u0442\u0438 \u0432 \u043d\u0435\u043f\u043e\u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0435\u043d\u0430 \u0431\u043b\u0438\u0437\u043e\u0441\u0442 \u0434\u043e \u0442\u0430\u0437\u0438 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430 \u043f\u043e\u043a\u0430\u0437\u0432\u0430, \u0447\u0435 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u043e\u0442\u043e \u043e\u0431\u043a\u0440\u044a\u0436\u0435\u043d\u0438\u0435 \u0435 \u0440\u0435\u0430\u043b\u043d\u043e \u0430\u043a\u0442\u0438\u0432\u043d\u0430 \u0447\u0430\u0441\u0442 \u043e\u0442 \u043c\u0435\u0441\u0442\u043d\u0430\u0442\u0430 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0441\u0440\u0435\u0434\u0430. ";
+  }
+
+  html +=
+    "\u041d\u0430 \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0430 \u043d\u0430\u0439-\u043f\u0435\u0440\u0441\u043f\u0435\u043a\u0442\u0438\u0432\u043d\u0438\u0442\u0435 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0443\u0447\u0430\u0441\u0442\u044a\u0446\u0438 \u043e\u0431\u0438\u043a\u043d\u043e\u0432\u0435\u043d\u043e \u0441\u0430 \u0442\u0430\u043c, \u043a\u044a\u0434\u0435\u0442\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u043e\u0441\u0442 \u0441\u0435 \u0441\u044a\u0447\u0435\u0442\u0430\u0432\u0430 \u0441 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0438 \u043f\u043b\u0430\u0441\u0442\u043e\u0432\u0435, \u043b\u0438\u0442\u043e\u043b\u043e\u0436\u043a\u0438 \u043a\u043e\u043d\u0442\u0430\u043a\u0442\u0438, \u0441\u044a\u043f\u044a\u0442\u0441\u0442\u0432\u0430\u0449\u0438 \u043a\u043b\u043e\u043d\u043e\u0432\u0435 \u0438 \u043d\u0430\u043f\u0440\u0435\u0447\u043d\u0438 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0438. " +
+    "\u0412 \u0442\u0430\u043a\u0438\u0432\u0430 \u043c\u0435\u0441\u0442\u0430 \u0444\u0440\u0430\u043a\u0442\u0443\u0440\u043d\u0430\u0442\u0430 \u043c\u0440\u0435\u0436\u0430 \u043c\u043e\u0436\u0435 \u0434\u0430 \u043e\u0441\u0438\u0433\u0443\u0440\u0438 \u043f\u043e-\u0434\u043e\u0431\u0440\u0430 \u0445\u0438\u0434\u0440\u0430\u0432\u043b\u0438\u0447\u043d\u0430 \u0432\u0440\u044a\u0437\u043a\u0430 \u043c\u0435\u0436\u0434\u0443 \u043e\u0442\u0434\u0435\u043b\u043d\u0438 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0438 \u043d\u0438\u0432\u0430 \u0438 \u0434\u0430 \u043a\u043e\u043d\u0446\u0435\u043d\u0442\u0440\u0438\u0440\u0430 \u043f\u043e\u0442\u043e\u043a\u0430 \u0432 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438 \u0441\u0435\u043a\u0442\u043e\u0440\u0438 \u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430\u0442\u0430 \u0437\u043e\u043d\u0430." +
+    "</div></div>";
+
+  return html;
+}
+
 async function analyzeGemFault(encodedCatalogId) {
   const catalogId = decodeURIComponent(
     encodedCatalogId
@@ -7862,7 +9123,7 @@ async function analyzeGemFault(encodedCatalogId) {
       "</strong><br>" +
       "\u0412 \u0442\u043e\u0437\u0438 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0435\u043d \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b \u0440\u0430\u0437\u043b\u043e\u043c\u044a\u0442 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0435 \u0440\u0430\u0437\u0434\u0432\u0438\u0436\u0432\u0430 \u0438 \u0434\u0430 \u0435 \u0441\u0432\u044a\u0440\u0437\u0430\u043d \u0441\u044a\u0441 \u0437\u0435\u043c\u0435\u0442\u0440\u044a\u0441\u043d\u0430 \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442 " +
       "(\u0440\u0430\u0437\u043c\u0435\u0441\u0442\u0432\u0430\u043d\u0435 \u043d\u0430 \u0441\u043a\u0430\u043b\u043d\u0438\u0442\u0435 \u0431\u043b\u043e\u043a\u043e\u0432\u0435 \u0438 \u043e\u0441\u0432\u043e\u0431\u043e\u0436\u0434\u0430\u0432\u0430\u043d\u0435 \u043d\u0430 \u043d\u0430\u0442\u0440\u0443\u043f\u0430\u043d\u043e \u043d\u0430\u043f\u0440\u0435\u0436\u0435\u043d\u0438\u0435 \u0432 \u0437\u0435\u043c\u043d\u0430\u0442\u0430 \u043a\u043e\u0440\u0430). " +
-      "\u0422\u043e\u0432\u0430 \u043d\u0435 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u043d\u0430 \u043a\u0430\u043a\u0432\u0430 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430 \u0438\u043c\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0430 \u0432\u043e\u0434\u0430." +
+      "" +
       "</div></div>" +
       "</div>";
 
@@ -7877,8 +9138,28 @@ async function analyzeGemFault(encodedCatalogId) {
       "</strong>" +
       "</div>";
 
+    html += renderMrrbAnalysisForGem(
+      catalogId
+    );
+
     html += renderGemFaultOrdinaryByBasin(
       ordinaryByBasin
+    );
+
+    html += renderGemFaultHumanSummary(
+      catalogId,
+      faultSlipType,
+      faultDip,
+      faultRake,
+      faultUpperDepth,
+      faultLowerDepth,
+      intersections,
+      ordinaryByBasin,
+      nearbyObjects,
+      springs,
+      mineralWells,
+      monitoringWells,
+      maximumTemperature
     );
 
     html += "</div>";
@@ -7898,6 +9179,122 @@ async function analyzeGemFault(encodedCatalogId) {
   map.closePopup();
 }
 
+
+function mrrbFaultValue(value) {
+  return !(
+    value === undefined ||
+    value === null ||
+    value === ""
+  );
+}
+
+function mrrbFaultPopupRow(label, value) {
+  if (!mrrbFaultValue(value)) return "";
+
+  return (
+    "<div style=\"margin-top:4px\">" +
+    "<strong>" + esc(label) + ":</strong> " +
+    esc(String(value)) +
+    "</div>"
+  );
+}
+
+function translateMrrbFaultType(value) {
+  const translations = {
+    "normal_fault": "\u041d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c",
+    "reverse_fault": "\u041e\u0431\u0440\u0430\u0442\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c",
+    "thrust_fault": "\u041d\u0430\u0432\u043b\u0430\u043a",
+    "dextral_fault": "\u0414\u0435\u0441\u0435\u043d \u043e\u0442\u0441\u0435\u0434",
+    "sinistral_fault": "\u041b\u044f\u0432 \u043e\u0442\u0441\u0435\u0434",
+    "dextral_normal_fault": "\u0414\u0435\u0441\u0435\u043d \u043d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u043e\u0442\u0441\u0435\u0434",
+    "sinistral_normal_fault": "\u041b\u044f\u0432 \u043d\u043e\u0440\u043c\u0430\u043b\u0435\u043d \u043e\u0442\u0441\u0435\u0434"
+  };
+
+  return translations[value] || value || "";
+}
+
+function translateMrrbConfidence(value) {
+  const translations = {
+    "HIGH": "\u0412\u0438\u0441\u043e\u043a\u0430",
+    "MEDIUM_HIGH": "\u0421\u0440\u0435\u0434\u043d\u043e \u0432\u0438\u0441\u043e\u043a\u0430",
+    "MEDIUM": "\u0421\u0440\u0435\u0434\u043d\u0430",
+    "LOW_MEDIUM": "\u041d\u0438\u0441\u043a\u0430 \u0434\u043e \u0441\u0440\u0435\u0434\u043d\u0430",
+    "LOW": "\u041d\u0438\u0441\u043a\u0430",
+    "OPEN": "\u041d\u0435\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0430"
+  };
+
+  return translations[value] || value || "";
+}
+
+function buildMrrbFaultPopup(feature) {
+  const p = feature.properties || {};
+
+  const rec = p.mrrb_record;
+
+  const title =
+    p.scientific_name ||
+    p.mrrb_name ||
+    (mrrbFaultValue(rec)
+      ? "MRRB REC " + rec
+      : "\u0410\u043a\u0442\u0438\u0432\u0435\u043d \u0440\u0430\u0437\u043b\u043e\u043c");
+
+  let html =
+    "<div style=\"min-width:245px;max-width:330px\">" +
+    "<div style=\"font-size:15px;font-weight:bold;margin-bottom:7px\">" +
+    esc(title) +
+    "</div>";
+
+  html += mrrbFaultPopupRow("MRRB REC", rec);
+
+  if (p.mrrb_name && p.mrrb_name !== title) {
+    html += mrrbFaultPopupRow(
+      "\u0418\u043c\u0435 \u0432 MRRB",
+      p.mrrb_name
+    );
+  }
+
+  if (p.scientific_name && p.scientific_name !== title) {
+    html += mrrbFaultPopupRow(
+      "\u041d\u0430\u0443\u0447\u043d\u043e \u0438\u043c\u0435",
+      p.scientific_name
+    );
+  }
+
+  html += mrrbFaultPopupRow(
+    "\u0422\u0438\u043f",
+    translateMrrbFaultType(p.fault_type)
+  );
+
+  html += mrrbFaultPopupRow(
+    "\u041c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u0435\u043d \u043a\u043e\u0434",
+    p.bgcs
+  );
+
+  html += mrrbFaultPopupRow(
+    "\u041d\u0438\u0432\u043e \u043d\u0430 \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435",
+    translateMrrbConfidence(p.confidence)
+  );
+
+  html +=
+    "<div style=\"margin-top:9px;padding:8px;" +
+    "border-radius:6px;background:#f5efe9;" +
+    "font-size:11px;line-height:1.35;color:#5b4636\">" +
+    "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d MRRB " +
+    "\u0431\u0443\u0444\u0435\u0440\u0438\u0440\u0430\u043d " +
+    "\u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d " +
+    "\u043a\u043e\u0440\u0438\u0434\u043e\u0440." +
+    "</div>";
+
+  html +=
+    "<div style=\"margin-top:7px;font-size:11px;color:#666\">" +
+    "\u0418\u0437\u0442\u043e\u0447\u043d\u0438\u0446\u0438: MRRB + SONDI" +
+    "</div>";
+
+  html += "</div>";
+
+  return html;
+}
+
 async function loadFaults(){
   if(faultsLoaded || faultsLoading) return;
 
@@ -7910,18 +9307,46 @@ async function loadFaults(){
   );
 
   try {
-    const url =
+    const gemUrl =
       "/geology-map/data/gem_active_faults_bulgaria.geojson";
 
-    const fc = await fetch(url).then(response => {
-      if (!response.ok) {
-        throw new Error(
-          "GEM GeoJSON HTTP " + response.status
-        );
-      }
+    const mrrbUrl =
+      "/geology-map/data/mrrb_active_faults_master.geojson";
 
-      return response.json();
-    });
+    const [gemFc, mrrbFc, sourceRegistry] = await Promise.all([
+      fetch(gemUrl).then(response => {
+        if (!response.ok) {
+          throw new Error(
+            "GEM GeoJSON HTTP " + response.status
+          );
+        }
+
+        return response.json();
+      }),
+
+      fetch(mrrbUrl).then(response => {
+        if (!response.ok) {
+          throw new Error(
+            "MRRB GeoJSON HTTP " + response.status
+          );
+        }
+
+        return response.json();
+      }),
+
+      fetch(
+        "/geology-map/data/active_faults_source_registry.json"
+      ).then(response => {
+        if (!response.ok) {
+          throw new Error(
+            "Fault source registry HTTP " +
+            response.status
+          );
+        }
+
+        return response.json();
+      })
+    ]);
 
     const bgBox = [22.0, 40.8, 29.2, 44.4];
 
@@ -7940,117 +9365,225 @@ async function loadFaults(){
       }
     };
 
-    const bgFeatures = (fc.features || []).filter(
-      intersectsBg
-    );
+    const gemFeatures =
+      (gemFc.features || []).filter(intersectsBg);
 
-    const bgFc = {
+    const mrrbFeatures =
+      (mrrbFc.features || []).filter(intersectsBg);
+
+    const gemBgFc = {
       type: "FeatureCollection",
-      features: bgFeatures
+      features: gemFeatures
+    };
+
+    const mrrbBgFc = {
+      type: "FeatureCollection",
+      features: mrrbFeatures
     };
 
     gemFaultIndex.clear();
+    mrrbFaultIndexByBgcs.clear();
+    mrrbFaultSourceIndex.clear();
 
-    const layer = L.geoJSON(bgFc, {
-      pane: gemFaultPaneName,
-      style: () => ({
-        color: "#7a2f19",
-        weight: 3,
-        opacity: 0.9
-      }),
+    for (const source of (
+      sourceRegistry.sources || []
+    )) {
+      const sourceId =
+        source.source_id ||
+        source.id ||
+        "";
 
-      onEachFeature: (feature, featureLayer) => {
-
-
-        const p = feature.properties || {};
-        const catalogId = gemHasValue(p.catalog_id)
-          ? String(p.catalog_id)
-          : "";
-
-        featureLayer.bindPopup(
-          buildGemFaultPopup(feature),
-          {
-            maxWidth: 350
-          }
+      if (sourceId) {
+        mrrbFaultSourceIndex.set(
+          String(sourceId),
+          source
         );
+      }
+    }
 
-        featureLayer.on("mouseover", function() {
-          if (this !== selectedGemFaultLayer) {
-            this.setStyle({
-              color: "#b94722",
-              weight: 5,
-              opacity: 1
-            });
+    for (const feature of mrrbFeatures) {
+      const p =
+        feature.properties || {};
+
+      if (!p.bgcs) {
+        continue;
+      }
+
+      const key =
+        String(p.bgcs);
+
+      if (
+        !mrrbFaultIndexByBgcs.has(key)
+      ) {
+        mrrbFaultIndexByBgcs.set(
+          key,
+          []
+        );
+      }
+
+      mrrbFaultIndexByBgcs
+        .get(key)
+        .push(feature);
+    }
+
+
+    const mrrbLayer = L.geoJSON(
+      mrrbBgFc,
+      {
+        pane: mrrbFaultPaneName,
+
+        style: feature => {
+          const confidence =
+            String((feature.properties || {}).confidence || "");
+
+          let fillOpacity = 0.18;
+          let opacity = 0.62;
+
+          if (confidence === "HIGH") {
+            fillOpacity = 0.25;
+            opacity = 0.72;
+          } else if (confidence === "MEDIUM_HIGH") {
+            fillOpacity = 0.22;
+            opacity = 0.68;
+          } else if (confidence === "OPEN") {
+            fillOpacity = 0.12;
+            opacity = 0.48;
           }
-        });
 
-        featureLayer.on("mouseout", function() {
-          if (this !== selectedGemFaultLayer) {
+          return {
+            color: "#b86b2b",
+            weight: 2.0,
+            opacity: opacity,
+            fillColor: "#d99a58",
+            fillOpacity: fillOpacity,
+            fill: true,
+            interactive: true
+          };
+        },
+
+        onEachFeature: (feature, featureLayer) => {
+          featureLayer.bindPopup(
+            buildMrrbFaultPopup(feature),
+            { maxWidth: 360 }
+          );
+
+          featureLayer.options.interactive = true;
+
+          featureLayer.on("mouseover", function() {
             this.setStyle({
-              color: "#7a2f19",
-              weight: 3,
-              opacity: 0.9
+              color: "#7a4a21",
+              weight: 2.3,
+              fillOpacity: 0.20
             });
-          }
-        });
+          });
 
-        if (catalogId) {
-          gemFaultIndex.set(catalogId, {
-            feature: feature,
-            layer: featureLayer
+          featureLayer.on("mouseout", function() {
+            mrrbLayer.resetStyle(this);
           });
         }
       }
-    });
+    );
 
-    layer.addTo(faultsLayer);
+    mrrbLayer.addTo(mrrbFaultsLayer);
 
-    /*
-      MOBILE_GEM_TOUCH_TARGET_START
-
-      On phones the visible GEM fault line remains unchanged.
-      A nearly invisible, wider interactive copy is added only
-      to make touch selection reliable.
-    */
-    if (window.innerWidth <= 700) {
-      const mobileGemTouchLayer = L.geoJSON(bgFc, {
+    const gemLayer = L.geoJSON(
+      gemBgFc,
+      {
         pane: gemFaultPaneName,
 
         style: () => ({
           color: "#7a2f19",
-          weight: 20,
-          opacity: 0.001,
-          interactive: true
+          weight: 3,
+          opacity: 0.9
         }),
 
-        onEachFeature: (feature, touchLayer) => {
-          touchLayer.bindPopup(
+        onEachFeature: (feature, featureLayer) => {
+          const p = feature.properties || {};
+
+          const catalogId =
+            gemHasValue(p.catalog_id)
+              ? String(p.catalog_id)
+              : "";
+
+          featureLayer.bindPopup(
             buildGemFaultPopup(feature),
-            {
-              maxWidth: 350
-            }
+            { maxWidth: 350 }
           );
+
+          featureLayer.on("mouseover", function() {
+            if (this !== selectedGemFaultLayer) {
+              this.setStyle({
+                color: "#b94722",
+                weight: 5,
+                opacity: 1
+              });
+            }
+          });
+
+          featureLayer.on("mouseout", function() {
+            if (this !== selectedGemFaultLayer) {
+              this.setStyle({
+                color: "#7a2f19",
+                weight: 3,
+                opacity: 0.9
+              });
+            }
+          });
+
+          if (catalogId) {
+            gemFaultIndex.set(
+              catalogId,
+              {
+                feature: feature,
+                layer: featureLayer
+              }
+            );
+          }
         }
-      });
+      }
+    );
+
+    gemLayer.addTo(faultsLayer);
+
+    if (window.innerWidth <= 700) {
+      const mobileGemTouchLayer =
+        L.geoJSON(
+          gemBgFc,
+          {
+            pane: gemFaultPaneName,
+
+            style: () => ({
+              color: "#7a2f19",
+              weight: 20,
+              opacity: 0.001,
+              interactive: true
+            }),
+
+            onEachFeature: (feature, touchLayer) => {
+              touchLayer.bindPopup(
+                buildGemFaultPopup(feature),
+                { maxWidth: 350 }
+              );
+            }
+          }
+        );
 
       mobileGemTouchLayer.addTo(faultsLayer);
     }
-    /* MOBILE_GEM_TOUCH_TARGET_END */
 
     faultsLoaded = true;
 
     setLayerStatus(
       "fault-load-status",
       "\u0437\u0430\u0440\u0435\u0434\u0435\u043d\u043e \u2713 (" +
-        bgFeatures.length +
-        " \u043b\u0438\u043d\u0438\u0438)",
+        gemFeatures.length +
+        " GEM + " +
+        mrrbFeatures.length +
+        " MRRB)",
       "#0b6b43"
     );
   } catch (error) {
-    console.error(
-      "Fault load error",
-      error
-    );
+    console.error("Fault load error", error);
 
     setLayerStatus(
       "fault-load-status",
@@ -8777,12 +10310,100 @@ document.getElementById('layer-groundwater').addEventListener('change',e=>{
    zoomOutForRegionalLayer(9);
  }else map.removeLayer(groundwaterLayer);
 });
-document.getElementById('layer-faults').addEventListener('change',e=>{
- if(e.target.checked){
-   faultsLayer.addTo(map);
-   loadFaults();
- }else map.removeLayer(faultsLayer);
-});
+document.getElementById(
+  "layer-faults"
+).addEventListener(
+  "change",
+  event => {
+    const corridorCheckbox =
+      document.getElementById(
+        "layer-fault-corridors"
+      );
+
+    if (event.target.checked) {
+      faultsLayer.addTo(map);
+      loadFaults();
+
+      if (
+        corridorCheckbox &&
+        corridorCheckbox.checked
+      ) {
+        mrrbFaultsLayer.addTo(map);
+      }
+    } else {
+      if (
+        map.hasLayer(faultsLayer)
+      ) {
+        map.removeLayer(faultsLayer);
+      }
+
+      if (
+        map.hasLayer(mrrbFaultsLayer)
+      ) {
+        map.removeLayer(
+          mrrbFaultsLayer
+        );
+      }
+
+      if (corridorCheckbox) {
+        corridorCheckbox.checked =
+          false;
+      }
+
+      setLayerStatus(
+        "fault-corridor-load-status",
+        "\u0438\u0437\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
+        "#64748b"
+      );
+    }
+  }
+);
+
+document.getElementById(
+  "layer-fault-corridors"
+).addEventListener(
+  "change",
+  async event => {
+    const mainCheckbox =
+      document.getElementById(
+        "layer-faults"
+      );
+
+    if (event.target.checked) {
+      if (
+        mainCheckbox &&
+        !mainCheckbox.checked
+      ) {
+        mainCheckbox.checked = true;
+        faultsLayer.addTo(map);
+      }
+
+      await loadFaults();
+
+      mrrbFaultsLayer.addTo(map);
+
+      setLayerStatus(
+        "fault-corridor-load-status",
+        "\u0437\u0430\u0440\u0435\u0434\u0435\u043d\u043e \u2713 (132)",
+        "#0b6b43"
+      );
+    } else {
+      if (
+        map.hasLayer(mrrbFaultsLayer)
+      ) {
+        map.removeLayer(
+          mrrbFaultsLayer
+        );
+      }
+
+      setLayerStatus(
+        "fault-corridor-load-status",
+        "\u0438\u0437\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
+        "#64748b"
+      );
+    }
+  }
+);
 map.on('overlayadd',e=>{
  if(e.layer===geologyAgeLayer){
    document.getElementById('layer-geology-age').checked=true;
