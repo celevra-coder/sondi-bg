@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 126,
+  "record_count": 127,
   "generated_date": "2026-09-04",
   "records": [
     {
@@ -4318,6 +4318,45 @@
         "The local traces remain offset and therefore exact surface-trace identity is not claimed."
       ],
       "open_items": [
+        "Exact surface-trace identity remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-KAMENO-REC72",
+      "mrrb": {
+        "record": 72,
+        "name": "Kameno"
+      },
+      "scientific": {
+        "name": "Kameno active fault corridor",
+        "system": "Kameno local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_corridor_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-055-BURGAS"
+      ],
+      "notes": [
+        "MRRB REC72 strike is approximately 70.09 degrees.",
+        "EUR_BGCS044 is the nearest regional candidate at approximately 2.15 km separation but does not geometrically intersect REC72.",
+        "The local GEM strike of EUR_BGCS044 is approximately 75.40 degrees, differing from REC72 by approximately 5.31 degrees.",
+        "The corresponding EFSM20 representation is approximately 2.05 km away and differs in local strike by approximately 8.79 degrees.",
+        "Visual comparison on K-35-055 Burgas shows REC72 and EUR_BGCS044 as separate subparallel traces rather than the same local fault corridor.",
+        "EUR_BGCS013 and EUR_BGCS012 were evaluated as regional controls and were not accepted as crosswalks.",
+        "HIGH confidence refers to the local MRRB structural corridor supported by geological-map context, not to international trace identity.",
+        "No fault kinematics are assigned because no accepted international crosswalk supports inheritance of GEM slip type."
+      ],
+      "open_items": [
+        "No accepted international BGCS crosswalk.",
         "Exact surface-trace identity remains unresolved."
       ]
     }
