@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 81,
+  "source_count": 82,
   "generated_date": "2026-09-04",
   "sources": [
     {
@@ -1895,6 +1895,31 @@
         "regional geological structure",
         "local fault geometry",
         "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as structural support only; the geological map does not by itself establish present-day activity, kinematics, or exact trace identity."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-034-PIROT",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-34-034 Pirot",
+      "authors": [
+        "???????? ?. (???.)"
+      ],
+      "year": 1992,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1025",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region48_maps/K-34-034_Pirot.jpg",
+      "supports": [
+        "REC132 local and regional structural corridor"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "local fault geometry",
+        "visual structural correspondence",
+        "regional comparison with EUR_RSCS006"
       ],
       "notes": [
         "Used as structural support only; the geological map does not by itself establish present-day activity, kinematics, or exact trace identity."

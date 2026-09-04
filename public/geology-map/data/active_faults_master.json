@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 134,
+  "record_count": 135,
   "generated_date": "2026-09-04",
   "records": [
     {
@@ -4632,6 +4632,47 @@
       ],
       "open_items": [
         "No accepted international BGCS crosswalk.",
+        "Exact surface-trace identity remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-REC132-UNNAMED",
+      "mrrb": {
+        "record": 132,
+        "name": null
+      },
+      "scientific": {
+        "name": null,
+        "system": "REC132 local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_corridor_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-034-PIROT"
+      ],
+      "notes": [
+        "MRRB REC132 has no supplied descriptive name in the source inventory.",
+        "MRRB REC132 has a principal strike of approximately 119.59 degrees.",
+        "EUR_RSCS006 directly intersects REC132 and has a local strike of approximately 112.91 degrees, giving a strike difference of approximately 6.68 degrees.",
+        "EFSM20 independently reproduces the same intersection and orientation relationship, with a local strike of approximately 112.81 degrees and a strike difference of approximately 6.78 degrees.",
+        "EUR_BGCS025 lies approximately 20.07 km away and is retained only as a regional comparison feature.",
+        "Geological-map comparison on K-34-034 Pirot supports REC132 as a distinct NW-SE regional structural corridor.",
+        "EUR_RSCS006 is considered a strong regional correspondence candidate, but the current production schema provides only the international_crosswalk.bgcs field and contains no established RSCS crosswalk convention.",
+        "EUR_RSCS006 is therefore documented in notes rather than inserted into the BGCS-only crosswalk field.",
+        "HIGH confidence refers to the MRRB corridor and its strong structural correspondence with EUR_RSCS006, not to exact surface-trace identity.",
+        "No fault kinematics are assigned in the master record because no schema-valid accepted BGCS crosswalk is available for inheritance."
+      ],
+      "open_items": [
+        "Strong regional correspondence with EUR_RSCS006 should be migrated to a generic international catalog crosswalk if the schema is extended beyond BGCS.",
         "Exact surface-trace identity remains unresolved."
       ]
     }
