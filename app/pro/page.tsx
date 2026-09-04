@@ -334,6 +334,162 @@ export default async function ProPage({
         gwb.toUpperCase()
     );
 
+  const eastAegeanGroundwaterAssessments =
+    groundwaterProfiles
+      .filter(
+        (item) =>
+          String(item.gwbCode || "")
+            .toUpperCase()
+            .startsWith("BG3G")
+      )
+      .map((item) => {
+        const section =
+          item.section4 ?? null;
+
+        const chemicalStatus =
+          section?.chemical_status ?? null;
+
+        const quantitativeStatus =
+          section?.water_balance
+            ?.quantitative_status ??
+          section?.quantitative_status ??
+          null;
+
+        const problemIndicators =
+          section?.pollutants ?? null;
+
+        const chemicalRisk =
+          section?.comparison
+            ?.risk_2022_2027 ??
+          null;
+
+        const upwardTrend =
+          section?.upward_trend ?? null;
+
+        const trendSeries =
+          Array.isArray(section?.trend_series)
+            ? section.trend_series
+            : [];
+
+        const drinkingMonitoring =
+          Array.isArray(section?.drinking_monitoring)
+            ? section.drinking_monitoring
+            : [];
+
+        const thresholds =
+          Array.isArray(section?.thresholds)
+            ? section.thresholds
+            : [];
+
+        const exceedances =
+          drinkingMonitoring.flatMap(
+            (station: any) =>
+              Array.isArray(station?.indicators)
+                ? station.indicators
+                    .filter(
+                      (indicator: any) =>
+                        indicator?.exceeds_standard === true
+                    )
+                    .map((indicator: any) => ({
+                      stationCode:
+                        station?.station_code ?? null,
+                      stationName:
+                        station?.station_name ?? null,
+                      indicator:
+                        indicator?.indicator ?? null,
+                    }))
+                : []
+          );
+
+        const exceedanceStationCount =
+          new Set(
+            exceedances
+              .map((entry: any) =>
+                entry.stationCode
+              )
+              .filter(Boolean)
+          ).size;
+
+        const exceedanceIndicators =
+          Array.from(
+            new Set(
+              exceedances
+                .map((entry: any) =>
+                  String(
+                    entry.indicator || ""
+                  ).trim()
+                )
+                .filter(Boolean)
+            )
+          );
+
+        return {
+          code: item.gwbCode,
+          name:
+            item.identity?.nameBg ??
+            section?.name ??
+            item.gwbCode,
+
+          chemicalStatus,
+          quantitativeStatus,
+          problemIndicators,
+          chemicalRisk,
+          upwardTrend,
+
+          trendSeries,
+          drinkingMonitoring,
+          thresholds,
+          exceedances,
+          exceedanceStationCount,
+          exceedanceIndicators,
+        };
+      });
+
+  const eastAegeanKnownChemicalStatuses =
+    eastAegeanGroundwaterAssessments
+      .map((item) =>
+        String(item.chemicalStatus || "")
+          .trim()
+          .toLowerCase()
+      )
+      .filter(Boolean);
+
+  const eastAegeanHasGoodChemicalStatus =
+    eastAegeanKnownChemicalStatuses.includes(
+      "\u0434\u043e\u0431\u0440\u043e"
+    );
+
+  const eastAegeanHasBadChemicalStatus =
+    eastAegeanKnownChemicalStatuses.includes(
+      "\u043b\u043e\u0448\u043e"
+    );
+
+  const eastAegeanHasMissingChemicalStatus =
+    eastAegeanKnownChemicalStatuses.length <
+    eastAegeanGroundwaterAssessments.length;
+
+  const eastAegeanAggregateChemicalStatus =
+    eastAegeanHasGoodChemicalStatus &&
+    eastAegeanHasBadChemicalStatus
+      ? "\u0421\u043c\u0435\u0441\u0435\u043d\u043e"
+      : eastAegeanHasMissingChemicalStatus
+        ? "\u041d\u0435\u043f\u044a\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"
+        : eastAegeanKnownChemicalStatuses.length > 0 &&
+          eastAegeanKnownChemicalStatuses.every(
+            (value) =>
+              value ===
+              "\u043b\u043e\u0448\u043e"
+          )
+          ? "\u041b\u043e\u0448\u043e"
+          : eastAegeanKnownChemicalStatuses.length > 0 &&
+            eastAegeanKnownChemicalStatuses.every(
+              (value) =>
+                value ===
+                "\u0434\u043e\u0431\u0440\u043e"
+            )
+            ? "\u0414\u043e\u0431\u0440\u043e"
+            : null;
+
   const danubeSection1 =
     isDanubeGwb
       ? profile.danubeSection1
@@ -1726,7 +1882,56 @@ export default async function ProPage({
     String(section4?.upward_trend)
       .toLowerCase() === "да";
 
+  const eastAegeanMonitoringSummary =
+    isEastAegeanGwb &&
+    eastAegeanGroundwaterAssessments.length > 1
+      ? (
+          `\u0412 \u0438\u0437\u0431\u0440\u0430\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430 \u0441\u0435 \u043f\u0440\u0438\u043f\u043e\u043a\u0440\u0438\u0432\u0430\u0442 ${eastAegeanGroundwaterAssessments.length} \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u043d\u0438 \u0442\u0435\u043b\u0430. \u041c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u0438 \u0441\u0435 \u043e\u0442\u043d\u0430\u0441\u044f\u0442 \u043a\u044a\u043c \u0432\u0441\u044f\u043a\u043e \u041f\u0412\u0422 \u043f\u043e\u043e\u0442\u0434\u0435\u043b\u043d\u043e. ` +
+          eastAegeanGroundwaterAssessments
+            .map((item) => {
+              const parts = [];
+
+              parts.push(
+                `${item.code}: ${item.drinkingMonitoring.length} \u043f\u0438\u0442\u0435\u0439\u043d\u0438 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432\u0438 \u043f\u0443\u043d\u043a\u0442\u0430`
+              );
+
+              if (item.exceedanceStationCount > 0) {
+                parts.push(
+                  `${item.exceedanceStationCount} \u043f\u0443\u043d\u043a\u0442\u0430 \u0441 \u043f\u0440\u0435\u0432\u0438\u0448\u0435\u043d\u0438\u044f`
+                );
+              }
+
+              if (
+                Array.isArray(
+                  item.exceedanceIndicators
+                ) &&
+                item.exceedanceIndicators.length > 0
+              ) {
+                parts.push(
+                  `\u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438: ${item.exceedanceIndicators.join(", ")}`
+                );
+              }
+
+              if (
+                String(item.upwardTrend || "")
+                  .trim()
+                  .toLowerCase() ===
+                "\u0434\u0430"
+              ) {
+                parts.push(
+                  "\u043e\u0442\u0447\u0435\u0442\u0435\u043d\u0430 \u0435 \u0432\u044a\u0437\u0445\u043e\u0434\u044f\u0449\u0430 \u0442\u0435\u043d\u0434\u0435\u043d\u0446\u0438\u044f"
+                );
+              }
+
+              return parts.join(", ") + ".";
+            })
+            .join(" ")
+        )
+      : null;
+
   const monitoringSummary =
+    eastAegeanMonitoringSummary ??
+    (
     isDanubeGwb && normalizedDanubeSection4
       ? (
           `\u0417\u0430 \u0432\u043e\u0434\u043d\u043e\u0442\u043e \u0442\u044f\u043b\u043e \u0441\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0438 ${
@@ -1813,8 +2018,14 @@ export default async function ProPage({
                 ? "Въпреки това е отчетена възходяща тенденция."
                 : "Не е отчетена възходяща тенденция."
             )
-          );
+          )
+    );
   const chemical =
+    (
+      isEastAegeanGwb
+        ? eastAegeanAggregateChemicalStatus
+        : undefined
+    ) ??
     section4?.chemical_status ??
     (
       isBlackSeaGwb
@@ -2198,6 +2409,12 @@ export default async function ProPage({
       .replace(/\bNO3\b/gi, "\u043d\u0438\u0442\u0440\u0430\u0442\u0438 (NO\u2083)")
       .replace(/\bSO4\b/gi, "\u0441\u0443\u043b\u0444\u0430\u0442\u0438 (SO\u2084)");
 
+  const chemicalIsMixed =
+    String(chemical)
+      .trim()
+      .toLowerCase() ===
+    "\u0441\u043c\u0435\u0441\u0435\u043d\u043e";
+
   const chemicalIsBad =
     String(chemical).toLowerCase() === "лошо";
 
@@ -2210,6 +2427,7 @@ export default async function ProPage({
     !chemicalRiskText.includes("\u043d\u0435 \u0435 \u0432 \u0440\u0438\u0441\u043a");
 
   const chemicalSummaryTone =
+    chemicalIsMixed ||
     chemicalIsBad ||
     chemicalIsAtRisk ||
     hasUpwardTrend ||
@@ -2221,7 +2439,9 @@ export default async function ProPage({
         : "neutral";
 
   const chemicalSummaryTitle =
-    chemicalIsBad
+    chemicalIsMixed
+      ? "\u0421\u043c\u0435\u0441\u0435\u043d\u043e \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u043d\u0430 \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438\u0442\u0435 \u041f\u0412\u0422"
+      : chemicalIsBad
       ? "Необходимо е внимание към качеството на водата"
       : chemicalIsAtRisk
         ? "Има риск за бъдещото химично състояние"
@@ -2231,7 +2451,31 @@ export default async function ProPage({
           : "Няма достатъчно данни за химична оценка";
 
   const chemicalSummaryText =
-    chemicalIsBad
+    chemicalIsMixed
+      ? (
+          `\u0412 \u0438\u0437\u0431\u0440\u0430\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430 \u0441\u0435 \u043f\u0440\u0438\u043f\u043e\u043a\u0440\u0438\u0432\u0430\u0442 ${eastAegeanGroundwaterAssessments.length} \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u043d\u0438 \u0442\u0435\u043b\u0430 \u0441 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u043e \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435. ` +
+          eastAegeanGroundwaterAssessments
+            .filter(
+              (item) =>
+                String(
+                  item.chemicalStatus || ""
+                )
+                  .trim()
+                  .toLowerCase() ===
+                "\u043b\u043e\u0448\u043e"
+            )
+            .map(
+              (item) =>
+                `\u041f\u0440\u043e\u0431\u043b\u0435\u043c\u043d\u043e \u041f\u0412\u0422: ${item.code}${
+                  item.problemIndicators
+                    ? ` \u2014 ${item.problemIndicators}`
+                    : ""
+                }.`
+            )
+            .join(" ") +
+          " \u041e\u0446\u0435\u043d\u043a\u0430\u0442\u0430 \u0441\u043b\u0435\u0434\u0432\u0430 \u0434\u0430 \u0441\u0435 \u0440\u0430\u0437\u0433\u043b\u0435\u0436\u0434\u0430 \u043f\u043e\u043e\u0442\u0434\u0435\u043b\u043d\u043e \u0437\u0430 \u0432\u0441\u0435\u043a\u0438 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u0435\u043d \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442."
+        )
+      : chemicalIsBad
       ? (
           "Подземното водно тяло е с лошо химично състояние" +
           (
@@ -2756,6 +3000,33 @@ export default async function ProPage({
 
   const professionalConclusionParts: string[] = [];
 
+  if (
+    isEastAegeanGwb &&
+    eastAegeanGroundwaterAssessments.length > 1
+  ) {
+    if (
+      eastAegeanAggregateChemicalStatus ===
+      "\u0421\u043c\u0435\u0441\u0435\u043d\u043e"
+    ) {
+      professionalConclusionParts.push(
+        `\u0412 \u0438\u0437\u0431\u0440\u0430\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430 \u0441\u0435 \u043f\u0440\u0438\u043f\u043e\u043a\u0440\u0438\u0432\u0430\u0442 ${eastAegeanGroundwaterAssessments.length} \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u043d\u0438 \u0442\u0435\u043b\u0430 \u0441 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u043e \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435. \u041e\u0431\u0449\u0430\u0442\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0437\u0430 \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u0430 \u0435 \u0441\u043c\u0435\u0441\u0435\u043d\u0430 \u0438 \u0441\u043b\u0435\u0434\u0432\u0430 \u0434\u0430 \u0441\u0435 \u0438\u043d\u0442\u0435\u0440\u043f\u0440\u0435\u0442\u0438\u0440\u0430 \u043f\u043e \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0438 \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0438.`
+      );
+
+      for (
+        const item of
+        eastAegeanGroundwaterAssessments
+      ) {
+        professionalConclusionParts.push(
+          `${item.code}: \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 ${item.chemicalStatus ?? "\u043d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438"}${
+            item.problemIndicators
+              ? `; \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0435\u043d \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b: ${item.problemIndicators}`
+              : ""
+          }.`
+        );
+      }
+    }
+  }
+
   if (profile.identity.nameBg) {
     professionalConclusionParts.push(
       `Анализираната точка попада в подземно водно тяло ${profile.identity.nameBg}.`
@@ -3106,6 +3377,147 @@ export default async function ProPage({
           }}>
             {profile.gwbCode}
           </div>
+
+          {isEastAegeanGwb &&
+          eastAegeanGroundwaterAssessments.length > 1 ? (
+            <div style={{
+              marginTop: 18,
+              padding: "13px 14px",
+              borderRadius: 12,
+              background: "rgba(255,255,255,.08)",
+              border: "1px solid rgba(255,255,255,.18)",
+            }}>
+              <div style={{
+                fontSize: 12,
+                fontWeight: 900,
+              }}>
+                {"\u041f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u043d\u0438 \u0442\u0435\u043b\u0430"}
+              </div>
+
+              <div style={{
+                marginTop: 6,
+                fontSize: 13,
+                lineHeight: 1.55,
+                opacity: .92,
+              }}>
+                {`\u0412 \u0438\u0437\u0431\u0440\u0430\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430 \u0441\u0435 \u043f\u0440\u0438\u043f\u043e\u043a\u0440\u0438\u0432\u0430\u0442 ${eastAegeanGroundwaterAssessments.length} \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u043d\u0438 \u0442\u0435\u043b\u0430. \u0421\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435\u0442\u043e \u0441\u0435 \u043e\u0446\u0435\u043d\u044f\u0432\u0430 \u0437\u0430 \u0432\u0441\u044f\u043a\u043e \u0442\u044f\u043b\u043e \u043f\u043e\u043e\u0442\u0434\u0435\u043b\u043d\u043e.`}
+              </div>
+
+              <div style={{
+                display: "grid",
+                gap: 9,
+                marginTop: 11,
+              }}>
+                {eastAegeanGroundwaterAssessments.map(
+                  (item) => (
+                    <div
+                      key={item.code}
+                      style={{
+                        padding: "10px 11px",
+                        borderRadius: 9,
+                        background: "rgba(0,0,0,.14)",
+                      }}
+                    >
+                      <div style={{
+                        fontWeight: 800,
+                        fontSize: 13,
+                      }}>
+                        {item.name}
+                      </div>
+
+                      <div style={{
+                        marginTop: 2,
+                        fontSize: 11,
+                        fontFamily: "monospace",
+                        opacity: .75,
+                      }}>
+                        {item.code}
+                      </div>
+
+                      <div style={{
+                        marginTop: 7,
+                        fontSize: 12,
+                        lineHeight: 1.55,
+                      }}>
+                        {"\u0425\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435: "}
+                        <strong>
+                          {item.chemicalStatus ??
+                            "\u041d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438"}
+                        </strong>
+
+                        <br />
+
+                        {"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435: "}
+                        <strong>
+                          {item.quantitativeStatus ??
+                            "\u041d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438"}
+                        </strong>
+
+                        {item.problemIndicators ? (
+                          <>
+                            <br />
+                            {"\u041f\u0440\u043e\u0431\u043b\u0435\u043c\u043d\u0438 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438: "}
+                            <strong>
+                              {String(
+                                item.problemIndicators
+                              )}
+                            </strong>
+                          </>
+                        ) : null}
+
+
+                        {item.chemicalRisk ? (
+                          <>
+                            <br />
+                            {"\u0425\u0438\u043c\u0438\u0447\u0435\u043d \u0440\u0438\u0441\u043a: "}
+                            <strong>
+                              {String(
+                                item.chemicalRisk
+                              )}
+                            </strong>
+                          </>
+                        ) : null}
+
+                        {item.upwardTrend ? (
+                          <>
+                            <br />
+                            {"\u0412\u044a\u0437\u0445\u043e\u0434\u044f\u0449\u0430 \u0442\u0435\u043d\u0434\u0435\u043d\u0446\u0438\u044f: "}
+                            <strong>
+                              {String(
+                                item.upwardTrend
+                              )}
+                            </strong>
+                          </>
+                        ) : null}
+                      </div>
+                    </div>
+                  )
+                )}
+              </div>
+
+              <div style={{
+                marginTop: 11,
+                padding: "9px 10px",
+                borderRadius: 9,
+                background: "rgba(255,255,255,.07)",
+                border: "1px solid rgba(255,255,255,.13)",
+                fontSize: 12,
+                lineHeight: 1.55,
+              }}>
+                <strong>
+                  {"\u041e\u0431\u0449\u0430 \u0438\u043d\u0442\u0435\u0440\u043f\u0440\u0435\u0442\u0430\u0446\u0438\u044f: "}
+                </strong>
+
+                {eastAegeanAggregateChemicalStatus ===
+                "\u0421\u043c\u0435\u0441\u0435\u043d\u043e"
+                  ? "\u043f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438\u0442\u0435 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u043d\u0438 \u0442\u0435\u043b\u0430 \u0441\u0430 \u0441 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u043e \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435. \u041d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u0430 \u0435 \u0434\u0438\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0440\u0430\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0441\u043f\u043e\u0440\u0435\u0434 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438\u044f \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u0435\u043d \u0445\u043e\u0440\u0438\u0437\u043e\u043d\u0442."
+                  : eastAegeanAggregateChemicalStatus ===
+                    "\u041d\u0435\u043f\u044a\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"
+                    ? "\u0437\u0430 \u0447\u0430\u0441\u0442 \u043e\u0442 \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438\u0442\u0435 \u0442\u0435\u043b\u0430 \u043b\u0438\u043f\u0441\u0432\u0430 \u043f\u044a\u043b\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430."
+                    : `\u043f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438\u0442\u0435 \u0442\u0435\u043b\u0430 \u0441\u0430 \u0441 \u0435\u0434\u043d\u0430\u043a\u0432\u0430 \u043e\u0431\u043e\u0431\u0449\u0435\u043d\u0430 \u0445\u0438\u043c\u0438\u0447\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430: ${eastAegeanAggregateChemicalStatus ?? "\u043d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438"}.`}
+              </div>
+            </div>
+          ) : null}
 
           {additionalGroundwaterProfiles.length > 0 ? (
             <div style={{
@@ -4906,7 +5318,15 @@ export default async function ProPage({
                 fontWeight: 900,
                 marginBottom: 6,
               }}>
-                {blackSeaSection4
+                {isEastAegeanGwb &&
+                eastAegeanGroundwaterAssessments.length > 1
+                  ? eastAegeanGroundwaterAssessments.some(
+                      (item) =>
+                        item.exceedanceStationCount > 0
+                    )
+                    ? "\u041c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u044a\u0442 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u0438 \u0440\u0435\u0437\u0443\u043b\u0442\u0430\u0442\u0438 \u0437\u0430 \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438\u0442\u0435 \u041f\u0412\u0422"
+                    : "\u041d\u0430\u043b\u0438\u0447\u043d\u0438 \u0441\u0430 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432\u0438 \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438\u0442\u0435 \u041f\u0412\u0422"
+                  : blackSeaSection4
                   ? blackSeaAffectedArea
                     ? "Има официално установени проблемни показатели"
                     : "Налична е официална програма за мониторинг"
@@ -4922,8 +5342,11 @@ export default async function ProPage({
               </div>
 
               {
-                chemicalIsBad &&
-                String(pollutants) !== "\u041d\u044f\u043c\u0430 \u043f\u043e\u0441\u043e\u0447\u0435\u043d\u0438"
+                isEastAegeanGwb &&
+                eastAegeanGroundwaterAssessments.length > 1
+                  ? monitoringSummary
+                  : chemicalIsBad &&
+                    String(pollutants) !== "\u041d\u044f\u043c\u0430 \u043f\u043e\u0441\u043e\u0447\u0435\u043d\u0438"
                   ? (
                       monitoringSummary +
                       " \u0412 \u043f\u043e\u043a\u0430\u0437\u0430\u043d\u0438\u0442\u0435 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432\u0438 \u0437\u0430\u043f\u0438\u0441\u0438 \u043d\u044f\u043c\u0430 \u043e\u0442\u0434\u0435\u043b\u043d\u043e \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u043e \u0447\u0438\u0441\u043b\u043e\u0432\u043e \u043f\u0440\u0435\u0432\u0438\u0448\u0435\u043d\u0438\u0435, \u043d\u043e \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u043e\u0446\u0435\u043d\u043a\u0430 \u0437\u0430 \u0446\u044f\u043b\u043e\u0442\u043e \u041f\u0412\u0422 \u043e\u0441\u0442\u0430\u0432\u0430 \u043b\u043e\u0448\u043e \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435. \u041f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b \u0441 \u043e\u0442\u043a\u043b\u043e\u043d\u0435\u043d\u0438\u0435: " +
@@ -4933,6 +5356,96 @@ export default async function ProPage({
                   : monitoringSummary
               }
             </div>
+
+            {isEastAegeanGwb &&
+            eastAegeanGroundwaterAssessments.length > 1 ? (
+              <div style={{
+                marginTop: 12,
+                display: "grid",
+                gap: 9,
+              }}>
+                {eastAegeanGroundwaterAssessments.map(
+                  (item) => (
+                    <div
+                      key={`monitoring-${item.code}`}
+                      style={{
+                        padding: "11px 12px",
+                        borderRadius: 10,
+                        background: "#f7fafb",
+                        border: "1px solid #dce7ea",
+                        fontSize: 12,
+                        lineHeight: 1.55,
+                      }}
+                    >
+                      <div style={{
+                        fontWeight: 900,
+                        fontSize: 13,
+                        color: "#204951",
+                      }}>
+                        {item.name}
+                      </div>
+
+                      <div style={{
+                        fontFamily: "monospace",
+                        marginTop: 2,
+                        color: "#64767c",
+                      }}>
+                        {item.code}
+                      </div>
+
+                      <div style={{ marginTop: 7 }}>
+                        {"\u041f\u0438\u0442\u0435\u0439\u043d\u0438 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432\u0438 \u043f\u0443\u043d\u043a\u0442\u043e\u0432\u0435: "}
+                        <strong>
+                          {item.drinkingMonitoring.length}
+                        </strong>
+                        <br />
+
+                        {"\u0412\u0440\u0435\u043c\u0435\u0432\u0438 \u0441\u0435\u0440\u0438\u0438: "}
+                        <strong>
+                          {item.trendSeries.length}
+                        </strong>
+                        <br />
+
+                        {"\u041f\u0443\u043d\u043a\u0442\u043e\u0432\u0435 \u0441 \u043f\u0440\u0435\u0432\u0438\u0448\u0435\u043d\u0438\u044f: "}
+                        <strong>
+                          {item.exceedanceStationCount}
+                        </strong>
+                        <br />
+
+                        {"\u0411\u0440\u043e\u0439 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0435\u043d\u0438 \u043f\u0440\u0435\u0432\u0438\u0448\u0435\u043d\u0438\u044f: "}
+                        <strong>
+                          {item.exceedances.length}
+                        </strong>
+
+                        {item.exceedanceIndicators.length > 0 ? (
+                          <>
+                            <br />
+                            {"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438 \u0441 \u043f\u0440\u0435\u0432\u0438\u0448\u0435\u043d\u0438\u044f: "}
+                            <strong>
+                              {item.exceedanceIndicators.join(
+                                ", "
+                              )}
+                            </strong>
+                          </>
+                        ) : null}
+
+                        {String(item.upwardTrend || "")
+                          .trim()
+                          .toLowerCase() ===
+                        "\u0434\u0430" ? (
+                          <>
+                            <br />
+                            <strong>
+                              {"\u041e\u0442\u0447\u0435\u0442\u0435\u043d\u0430 \u0435 \u0432\u044a\u0437\u0445\u043e\u0434\u044f\u0449\u0430 \u0442\u0435\u043d\u0434\u0435\u043d\u0446\u0438\u044f."}
+                            </strong>
+                          </>
+                        ) : null}
+                      </div>
+                    </div>
+                  )
+                )}
+              </div>
+            ) : null}
 
             <div style={{
               marginTop: 12,

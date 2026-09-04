@@ -616,8 +616,8 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 <div class="grid">
 <div class="full"><input
   id="search"
-  placeholder="Населено място или координати"
-  onkeydown="if(event.key==='Enter'){event.preventDefault();searchCoordinates();}"
+  placeholder="Адрес, място, обект или координати"
+  autocomplete="off"
 >
 
 <button
@@ -10542,11 +10542,58 @@ function analyzeFeature(index){
   );
 }
 
-map.on('click',e=>{
- if(!analysisPickMode)return;
- analysisPickMode=false;
- map.getContainer().style.cursor='';
- analyzeLocation(e.latlng.lat,e.latlng.lng,'Ð˜Ð·Ð±Ñ€Ð°Ð½Ð° Ñ‚Ð¾Ñ‡ÐºÐ° Ð¾Ñ‚ ÐºÐ°Ñ€Ñ‚Ð°Ñ‚Ð°');
+map.on('click', function(e) {
+  if (
+    !e ||
+    !e.latlng ||
+    !Number.isFinite(Number(e.latlng.lat)) ||
+    !Number.isFinite(Number(e.latlng.lng))
+  ) {
+    return;
+  }
+
+  /*
+    Ignore clicks propagated from interactive Leaflet layers.
+    Their existing popup/click behaviour remains authoritative.
+  */
+  if (
+    e.sourceTarget &&
+    e.sourceTarget !== map
+  ) {
+    return;
+  }
+
+  const latitude = Number(e.latlng.lat);
+  const longitude = Number(e.latlng.lng);
+
+  if (analysisPickMode) {
+    analysisPickMode = false;
+    map.getContainer().style.cursor = '';
+
+    analyzeLocation(
+      latitude,
+      longitude,
+      "\u0418\u0437\u0431\u0440\u0430\u043d\u0430 \u0442\u043e\u0447\u043a\u0430 \u043e\u0442 \u043a\u0430\u0440\u0442\u0430"
+    );
+
+    return;
+  }
+
+  lastGroundwaterClickLatLng =
+    L.latLng(latitude, longitude);
+
+  const status =
+    document.getElementById(
+      "coordinate-search-status"
+    );
+
+  showSearchedCoordinates(
+    latitude,
+    longitude,
+    status,
+    "\u0418\u0437\u0431\u0440\u0430\u043d\u0430 \u0442\u043e\u0447\u043a\u0430 \u043e\u0442 \u043a\u0430\u0440\u0442\u0430",
+    false
+  );
 });
 
 function safeText(v){
@@ -14012,6 +14059,46 @@ async function analyzeLocation(
   }
 
 
+  async function freeChemicalLoadBg3Records(
+    codes
+  ) {
+    try {
+      const response =
+        await fetch(
+          "/geology-map/data/bd_ibr_section4_pro_profiles.json"
+        );
+
+      if (!response.ok) {
+        return [];
+      }
+
+      const data =
+        await response.json();
+
+      return (
+        Array.isArray(codes)
+          ? codes
+          : []
+      )
+        .map(function(code) {
+          return freeChemicalFindRecord(
+            data,
+            code
+          );
+        })
+        .filter(Boolean);
+
+    } catch (error) {
+      console.warn(
+        "[Sondi FREE] BG3 Section 4 detail load failed:",
+        error
+      );
+
+      return [];
+    }
+  }
+
+
   async function freeChemicalLoadStatus(
     url,
     code
@@ -14113,6 +14200,9 @@ async function analyzeLocation(
   let freeChemicalStatus = "";
   let freeChemicalCode = "";
   let freeChemicalBasin = "";
+  let freeChemicalBg3Codes = [];
+  let freeChemicalBg3Details = [];
+  let freeChemicalBg3Summary = "";
 
   async function freeChemicalCodeFromGeoJson(
     url,
@@ -14204,14 +14294,31 @@ async function analyzeLocation(
   */
   if (
     officialBdIbrResult &&
-    officialBdIbrResult.primary
+    Array.isArray(officialBdIbrResult.all) &&
+    officialBdIbrResult.all.length
   ) {
-    freeChemicalCode =
-      freeChemicalFeatureCode(
-        officialBdIbrResult.primary
+    freeChemicalBg3Codes =
+      Array.from(
+        new Set(
+          officialBdIbrResult.all
+            .map(function(feature) {
+              return freeChemicalFeatureCode(
+                feature
+              );
+            })
+            .filter(function(code) {
+              return (
+                code &&
+                code.startsWith("BG3")
+              );
+            })
+        )
       );
 
-    if (freeChemicalCode) {
+    if (freeChemicalBg3Codes.length) {
+      freeChemicalCode =
+        freeChemicalBg3Codes[0];
+
       freeChemicalBasin = "BG3";
     }
   }
@@ -14361,11 +14468,148 @@ async function analyzeLocation(
   else if (
     freeChemicalBasin === "BG3"
   ) {
-    freeChemicalStatus =
-      await freeChemicalLoadStatus(
-        "/geology-map/data/bd_ibr_section4_pro_profiles.json",
-        freeChemicalCode
+    const bg3CodesForChemicalStatus =
+      freeChemicalBg3Codes.length
+        ? freeChemicalBg3Codes
+        : (
+            freeChemicalCode
+              ? [freeChemicalCode]
+              : []
+          );
+
+    const bg3ChemicalStatuses =
+      await Promise.all(
+        bg3CodesForChemicalStatus.map(
+          function(code) {
+            return freeChemicalLoadStatus(
+              "/geology-map/data/bd_ibr_section4_pro_profiles.json",
+              code
+            );
+          }
+        )
       );
+
+    const bg3Section4Records =
+      await freeChemicalLoadBg3Records(
+        bg3CodesForChemicalStatus
+      );
+
+    freeChemicalBg3Details =
+      bg3CodesForChemicalStatus.map(
+        function(code, index) {
+          const record =
+            bg3Section4Records.find(
+              function(item) {
+                return (
+                  String(
+                    item?.code ||
+                    item?.gwb_code ||
+                    ""
+                  )
+                    .trim()
+                    .toUpperCase() ===
+                  String(code)
+                    .trim()
+                    .toUpperCase()
+                );
+              }
+            ) || null;
+
+          return {
+            code: code,
+            status:
+              String(
+                record?.chemical_status ||
+                bg3ChemicalStatuses[index] ||
+                ""
+              )
+                .trim()
+                .toLowerCase(),
+
+            pollutants:
+              record?.pollutants || null
+          };
+        }
+      );
+
+    const normalizedBg3ChemicalStatuses =
+      freeChemicalBg3Details.map(
+        function(item) {
+          return item.status;
+        }
+      );
+
+    const knownBg3ChemicalStatuses =
+      normalizedBg3ChemicalStatuses.filter(
+        Boolean
+      );
+
+    const hasBg3Good =
+      knownBg3ChemicalStatuses.includes(
+        "\u0434\u043e\u0431\u0440\u043e"
+      );
+
+    const hasBg3Bad =
+      knownBg3ChemicalStatuses.includes(
+        "\u043b\u043e\u0448\u043e"
+      );
+
+    const hasBg3Missing =
+      knownBg3ChemicalStatuses.length <
+      bg3CodesForChemicalStatus.length;
+
+    if (
+      hasBg3Good &&
+      hasBg3Bad
+    ) {
+      freeChemicalStatus =
+        "\u0441\u043c\u0435\u0441\u0435\u043d\u043e";
+
+      freeChemicalBg3Summary =
+        "\u0412 \u0442\u043e\u0447\u043a\u0430\u0442\u0430 \u0441\u0435 \u043f\u0440\u0438\u043f\u043e\u043a\u0440\u0438\u0432\u0430\u0442 " +
+        bg3CodesForChemicalStatus.length +
+        " \u041f\u0412\u0422 \u0441 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u043e \u0445\u0438\u043c\u0438\u0447\u043d\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435.";
+    }
+
+    else if (
+      hasBg3Missing
+    ) {
+      freeChemicalStatus =
+        "\u043d\u0435\u043f\u044a\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438";
+
+      freeChemicalBg3Summary =
+        "\u0417\u0430 \u0447\u0430\u0441\u0442 \u043e\u0442 \u043f\u0440\u0435\u0441\u0438\u0447\u0430\u0449\u0438\u0442\u0435 \u041f\u0412\u0422 \u043b\u0438\u043f\u0441\u0432\u0430 \u043f\u044a\u043b\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430.";
+    }
+
+    else if (
+      knownBg3ChemicalStatuses.length > 0 &&
+      knownBg3ChemicalStatuses.every(
+        function(value) {
+          return value ===
+            "\u043b\u043e\u0448\u043e";
+        }
+      )
+    ) {
+      freeChemicalStatus =
+        "\u043b\u043e\u0448\u043e";
+    }
+
+    else if (
+      knownBg3ChemicalStatuses.length > 0 &&
+      knownBg3ChemicalStatuses.every(
+        function(value) {
+          return value ===
+            "\u0434\u043e\u0431\u0440\u043e";
+        }
+      )
+    ) {
+      freeChemicalStatus =
+        "\u0434\u043e\u0431\u0440\u043e";
+    }
+
+    else {
+      freeChemicalStatus = "";
+    }
   }
 
   else if (
@@ -14422,6 +14666,34 @@ async function analyzeLocation(
       "#a6e3c1";
   }
 
+  if (
+    freeChemicalStatus ===
+    "\u0441\u043c\u0435\u0441\u0435\u043d\u043e"
+  ) {
+    freeChemicalColor =
+      "#9a6700";
+
+    freeChemicalBackground =
+      "#fff8e1";
+
+    freeChemicalBorder =
+      "#e8cd78";
+  }
+
+  if (
+    freeChemicalStatus ===
+    "\u043d\u0435\u043f\u044a\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"
+  ) {
+    freeChemicalColor =
+      "#475569";
+
+    freeChemicalBackground =
+      "#f8fafc";
+
+    freeChemicalBorder =
+      "#cbd5e1";
+  }
+
 
   humanHtml +=
     "<div style=\"" +
@@ -14459,6 +14731,67 @@ async function analyzeLocation(
     esc(freeChemicalLabel) +
 
     "</strong>" +
+
+    (
+      freeChemicalBg3Summary
+        ? "<div style=\"margin-top:6px;font-size:12px;line-height:1.45;color:#52656c;\">" +
+          esc(freeChemicalBg3Summary) +
+          "</div>"
+        : ""
+    ) +
+
+    (
+      freeChemicalBasin === "BG3" &&
+      freeChemicalBg3Details.length > 1
+        ? "<div style=\"margin-top:6px;font-size:11px;line-height:1.5;color:#64748b;\">" +
+          freeChemicalBg3Details
+            .map(function(item) {
+              const statusLabel =
+                item.status ||
+                "\u043d\u044f\u043c\u0430 \u0434\u0430\u043d\u043d\u0438";
+
+              return (
+                esc(item.code) +
+                " \u2014 " +
+                esc(statusLabel)
+              );
+            })
+            .join("<br>")
+          + "</div>" +
+
+          (
+            freeChemicalBg3Details.some(
+              function(item) {
+                return (
+                  item.status ===
+                    "\u043b\u043e\u0448\u043e" &&
+                  item.pollutants
+                );
+              }
+            )
+              ? "<div style=\"margin-top:6px;font-size:12px;font-weight:700;color:#9a6700;\">" +
+                freeChemicalBg3Details
+                  .filter(function(item) {
+                    return (
+                      item.status ===
+                        "\u043b\u043e\u0448\u043e" &&
+                      item.pollutants
+                    );
+                  })
+                  .map(function(item) {
+                    return (
+                      "\u041f\u0440\u043e\u0431\u043b\u0435\u043c\u043d\u043e \u041f\u0412\u0422: " +
+                      esc(item.code) +
+                      " \u2014 " +
+                      esc(String(item.pollutants))
+                    );
+                  })
+                  .join("<br>")
+                + "</div>"
+              : ""
+          )
+        : ""
+    ) +
 
     "</div>";
 
@@ -16398,7 +16731,8 @@ function showSearchedCoordinates(
   latitude,
   longitude,
   status,
-  label = "Търсена локация"
+  label = "Търсена локация",
+  zoomToPoint = true
 ) {
   if (coordinateSearchMarker) {
     map.removeLayer(coordinateSearchMarker);
@@ -16435,10 +16769,12 @@ function showSearchedCoordinates(
     .bindPopup(popupHtml)
     .openPopup();
 
-  map.setView(
-    [latitude, longitude],
-    15
-  );
+  if (zoomToPoint) {
+    map.setView(
+      [latitude, longitude],
+      15
+    );
+  }
 
   if (status) {
     status.textContent =
@@ -16458,6 +16794,96 @@ function showSearchedCoordinates(
     }, 150);
   }
 }
+let sondiPlaceSearchResults = [];
+
+function sondiSearchEscape(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function selectSondiPlaceResult(index) {
+  const result = sondiPlaceSearchResults[index];
+
+  if (!result) {
+    return;
+  }
+
+  const latitude = Number(result.lat);
+  const longitude = Number(result.lon);
+
+  if (
+    !Number.isFinite(latitude) ||
+    !Number.isFinite(longitude)
+  ) {
+    return;
+  }
+
+  const status = document.getElementById(
+    "coordinate-search-status"
+  );
+
+  const label =
+    result.display_name ||
+    "\u0422\u044a\u0440\u0441\u0435\u043d\u0430 \u043b\u043e\u043a\u0430\u0446\u0438\u044f";
+
+  showSearchedCoordinates(
+    latitude,
+    longitude,
+    status,
+    label
+  );
+
+  if (status) {
+    status.textContent =
+      "\u041d\u0430\u043c\u0435\u0440\u0435\u043d\u043e: " +
+      label;
+  }
+
+  if (window.innerWidth <= 700) {
+    closeMobilePanel();
+
+    setTimeout(function () {
+      if (typeof map !== "undefined") {
+        map.invalidateSize();
+      }
+    }, 150);
+  }
+}
+
+function renderSondiPlaceResults(results, status) {
+  if (results.length === 1) {
+    selectSondiPlaceResult(0);
+    return;
+  }
+
+  let html =
+    '<div style="margin-bottom:6px;font-weight:700;color:#334155">' +
+    "\u0418\u0437\u0431\u0435\u0440\u0438 \u043f\u0440\u0430\u0432\u0438\u043b\u043d\u043e\u0442\u043e \u043c\u044f\u0441\u0442\u043e:" +
+    "</div>";
+
+  results.forEach(function (result, index) {
+    const label =
+      result.display_name ||
+      "\u041c\u044f\u0441\u0442\u043e";
+
+    html +=
+      '<button type="button" ' +
+      'onclick="selectSondiPlaceResult(' + index + ')" ' +
+      'style="display:block;width:100%;margin:5px 0;padding:8px 9px;' +
+      'border:1px solid #d7e0e5;border-radius:8px;background:#fff;' +
+      'color:#1f2937;text-align:left;font-size:12px;line-height:1.35;' +
+      'cursor:pointer">' +
+      sondiSearchEscape(label) +
+      "</button>";
+  });
+
+  status.innerHTML = html;
+}
+
 async function searchCoordinates() {
   const input = document.getElementById("search");
 
@@ -16469,90 +16895,233 @@ async function searchCoordinates() {
 
   if (!query) {
     status.textContent =
-      "\u0412\u044a\u0432\u0435\u0434\u0438 \u043d\u0430\u0441\u0435\u043b\u0435\u043d\u043e \u043c\u044f\u0441\u0442\u043e \u0438\u043b\u0438 \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u0438.";
+      "\u0412\u044a\u0432\u0435\u0434\u0438 \u0430\u0434\u0440\u0435\u0441, \u043d\u0430\u0441\u0435\u043b\u0435\u043d\u043e \u043c\u044f\u0441\u0442\u043e, \u043e\u0431\u0435\u043a\u0442, \u043c\u0435\u0441\u0442\u043d\u043e\u0441\u0442 \u0438\u043b\u0438 \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u0438.";
     return;
   }
 
   const coordinates = parseCoordinates(query);
 
   if (coordinates) {
+    sondiPlaceSearchResults = [];
+
     showSearchedCoordinates(
       coordinates.latitude,
       coordinates.longitude,
       status
     );
+
     return;
   }
 
   status.textContent =
-    "\u0422\u044a\u0440\u0441\u0435\u043d\u0435 \u043d\u0430 \u043c\u044f\u0441\u0442\u043e...";
+    "\u0422\u044a\u0440\u0441\u0435\u043d\u0435 \u043d\u0430 \u0430\u0434\u0440\u0435\u0441 \u0438\u043b\u0438 \u043c\u044f\u0441\u0442\u043e...";
 
   try {
-    const url =
-      "https://nominatim.openstreetmap.org/search" +
-      "?format=jsonv2" +
-      "&countrycodes=bg" +
-      "&limit=5" +
-      "&q=" +
-      encodeURIComponent(query);
+    async function runNominatimSearch(searchQuery) {
+      const params = new URLSearchParams({
+        format: "jsonv2",
+        countrycodes: "bg",
+        limit: "6",
+        addressdetails: "1",
+        namedetails: "1",
+        extratags: "1",
+        dedupe: "1",
+        q: searchQuery
+      });
 
-    const response = await fetch(url, {
-      headers: {
-        "Accept-Language": "bg"
+      const url =
+        "https://nominatim.openstreetmap.org/search?" +
+        params.toString();
+
+      const response = await fetch(url, {
+        headers: {
+          "Accept-Language": "bg"
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error("Place search failed.");
       }
-    });
 
-    if (!response.ok) {
-      throw new Error("Place search failed.");
+      const rawResults = await response.json();
+
+      return Array.isArray(rawResults)
+        ? rawResults.filter(function (result) {
+            return (
+              result &&
+              Number.isFinite(Number(result.lat)) &&
+              Number.isFinite(Number(result.lon))
+            );
+          })
+        : [];
     }
 
-    const results = await response.json();
+    const fallbackQueries = [];
+    const normalizedQuery = query.trim();
 
-    if (!Array.isArray(results) || results.length === 0) {
+    fallbackQueries.push(normalizedQuery);
+
+    const strippedQuery = normalizedQuery
+      .replace(/^\s*(\u044f\u0437\u043e\u0432\u0438\u0440|\u044f\u0437\.|\u0435\u0437\u0435\u0440\u043e|\u0432\u0440\u044a\u0445|\u0440\u0435\u043a\u0430|\u043c\u0435\u0441\u0442\u043d\u043e\u0441\u0442)\s+/i, "")
+      .trim();
+
+    if (
+      strippedQuery &&
+      strippedQuery.toLowerCase() !==
+        normalizedQuery.toLowerCase()
+    ) {
+      fallbackQueries.push(strippedQuery);
+    }
+
+    if (strippedQuery) {
+      fallbackQueries.push(
+        strippedQuery + ", ????????"
+      );
+    }
+
+    const lower = normalizedQuery.toLowerCase();
+
+    if (
+      lower.startsWith("?????? ") ||
+      lower.startsWith("??. ")
+    ) {
+      if (strippedQuery) {
+        fallbackQueries.push(
+          strippedQuery + " Reservoir"
+        );
+      }
+    }
+
+    const uniqueQueries =
+      Array.from(new Set(fallbackQueries));
+
+    let results = [];
+
+    for (const searchQuery of uniqueQueries) {
+      results =
+        await runNominatimSearch(searchQuery);
+
+      if (results.length) {
+        break;
+      }
+    }
+
+    if (results.length > 1) {
+      const settlementTypes =
+        new Set([
+          "city",
+          "town",
+          "village",
+          "hamlet"
+        ]);
+
+      const administrativeTypes =
+        new Set([
+          "state",
+          "state_district",
+          "county"
+        ]);
+
+      const settlementNames =
+        new Set(
+          results
+            .filter(function(result) {
+              const type =
+                String(
+                  result?.addresstype ||
+                  result?.type ||
+                  ""
+                )
+                  .trim()
+                  .toLowerCase();
+
+              return settlementTypes.has(type);
+            })
+            .map(function(result) {
+              const address =
+                result?.address || {};
+
+              return String(
+                address.city ||
+                address.town ||
+                address.village ||
+                address.hamlet ||
+                result?.namedetails?.name ||
+                String(
+                  result?.display_name || ""
+                ).split(",")[0] ||
+                ""
+              )
+                .trim()
+                .toLocaleLowerCase("bg-BG");
+            })
+            .filter(Boolean)
+        );
+
+      if (settlementNames.size > 0) {
+        results =
+          results.filter(function(result) {
+            const type =
+              String(
+                result?.addresstype ||
+                result?.type ||
+                ""
+              )
+                .trim()
+                .toLowerCase();
+
+            if (
+              !administrativeTypes.has(type)
+            ) {
+              return true;
+            }
+
+            const address =
+              result?.address || {};
+
+            const name =
+              String(
+                address.state ||
+                address.county ||
+                address.municipality ||
+                result?.namedetails?.name ||
+                String(
+                  result?.display_name || ""
+                ).split(",")[0] ||
+                ""
+              )
+                .trim()
+                .toLocaleLowerCase("bg-BG");
+
+            return !settlementNames.has(name);
+          });
+      }
+    }
+
+    if (!results.length) {
+      sondiPlaceSearchResults = [];
+
       status.textContent =
-        "\u041d\u0435 \u0435 \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u043e \u0442\u0430\u043a\u043e\u0432\u0430 \u043c\u044f\u0441\u0442\u043e \u0432 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f.";
+        "\u041d\u0435 \u0435 \u043d\u0430\u043c\u0435\u0440\u0435\u043d \u0442\u0430\u043a\u044a\u0432 \u0430\u0434\u0440\u0435\u0441, \u043e\u0431\u0435\u043a\u0442 \u0438\u043b\u0438 \u043c\u044f\u0441\u0442\u043e \u0432 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f.";
       return;
     }
 
-    const result = results[0];
+    sondiPlaceSearchResults = results;
 
-    const latitude = Number(result.lat);
-    const longitude = Number(result.lon);
-
-    if (
-      !Number.isFinite(latitude) ||
-      !Number.isFinite(longitude)
-    ) {
-      throw new Error("Invalid place coordinates.");
-    }
-
-    showSearchedCoordinates(
-      latitude,
-      longitude,
-      status,
-      result.display_name || query
+    renderSondiPlaceResults(
+      sondiPlaceSearchResults,
+      status
     );
-
-    status.textContent =
-      "\u041d\u0430\u043c\u0435\u0440\u0435\u043d\u043e: " +
-      (result.display_name || query);
-
-    if (window.innerWidth <= 700) {
-      closeMobilePanel();
-
-      setTimeout(function () {
-        if (typeof map !== "undefined") {
-          map.invalidateSize();
-        }
-      }, 150);
-    }
   } catch (error) {
     console.error("[Place search]", error);
 
+    sondiPlaceSearchResults = [];
+
     status.textContent =
-      "\u0413\u0440\u0435\u0448\u043a\u0430 \u043f\u0440\u0438 \u0442\u044a\u0440\u0441\u0435\u043d\u0435 \u043d\u0430 \u043d\u0430\u0441\u0435\u043b\u0435\u043d\u043e\u0442\u043e \u043c\u044f\u0441\u0442\u043e.";
+      "\u0412\u044a\u0437\u043d\u0438\u043a\u043d\u0430 \u0433\u0440\u0435\u0448\u043a\u0430 \u043f\u0440\u0438 \u0442\u044a\u0440\u0441\u0435\u043d\u0435\u0442\u043e \u043d\u0430 \u043c\u044f\u0441\u0442\u043e. \u041e\u043f\u0438\u0442\u0430\u0439\u0442\u0435 \u043e\u0442\u043d\u043e\u0432\u043e.";
   }
 }
+
 document
   .getElementById("search")
   .addEventListener("keydown", function (event) {
