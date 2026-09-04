@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 131,
+  "record_count": 132,
   "generated_date": "2026-09-04",
   "records": [
     {
@@ -4514,6 +4514,44 @@
         "Geological-map comparison on K-35-021 Balchik and Shabla supports REC84 and EUR_BGCS041 as closely spaced elements of the same regional structural corridor.",
         "The accepted correspondence is at regional fault-system level and does not assert exact surface-trace identity.",
         "The sinistral-normal fault type is inherited from the accepted EUR_BGCS041 international crosswalk."
+      ],
+      "open_items": [
+        "Exact surface-trace identity remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-OPAKA-REC85",
+      "mrrb": {
+        "record": 85,
+        "name": "Opaka"
+      },
+      "scientific": {
+        "name": "Opaka active fault corridor",
+        "system": "Opaka regional active fault system",
+        "fault_type": "dextral_normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS020"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-029-OMURTAG"
+      ],
+      "notes": [
+        "MRRB REC85 has a principal strike of approximately 60.59 degrees.",
+        "EUR_BGCS020 is the nearest strong international candidate at approximately 1.59 km from REC85, with a local strike of approximately 61.81 degrees and a strike difference of approximately 1.21 degrees.",
+        "EFSM20 independently reproduces the same regional relationship at approximately 1.63 km separation and approximately 1.65 degrees strike difference.",
+        "EUR_BGCS019 is a secondary nearby comparison feature at approximately 4.98 km, with a strike difference of approximately 3.95 degrees.",
+        "Geological-map comparison on K-35-029 Omurtag supports REC85 and EUR_BGCS020 as closely spaced elements of the same NE-SW regional structural corridor.",
+        "K-35-017 Popovo does not contain the REC85 trace and is therefore not used as a supporting source for this proposal.",
+        "The accepted correspondence is at regional fault-system level and does not assert exact surface-trace identity.",
+        "The dextral-normal fault type is inherited from the accepted EUR_BGCS020 international crosswalk."
       ],
       "open_items": [
         "Exact surface-trace identity remains unresolved."
