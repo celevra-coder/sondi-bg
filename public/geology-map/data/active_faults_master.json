@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 127,
+  "record_count": 128,
   "generated_date": "2026-09-04",
   "records": [
     {
@@ -4357,6 +4357,47 @@
       ],
       "open_items": [
         "No accepted international BGCS crosswalk.",
+        "Exact surface-trace identity remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-STRAZHITSA-REC74",
+      "mrrb": {
+        "record": 74,
+        "name": "Стражица"
+      },
+      "scientific": {
+        "name": "Strazhitsa active fault corridor",
+        "system": "Strazhitsa regional active fault system",
+        "fault_type": "dextral_normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS019"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-029-OMURTAG"
+      ],
+      "notes": [
+        "MRRB REC74 strike is approximately 51.54 degrees.",
+        "EUR_BGCS019 is the nearest regional candidate at approximately 1.18 km separation.",
+        "The local GEM strike of EUR_BGCS019 is approximately 60.21 degrees, differing from REC74 by approximately 8.67 degrees.",
+        "The corresponding EFSM20 representation is approximately 1.18 km away and differs in local strike by approximately 8.40 degrees.",
+        "Neither GEM nor EFSM20 geometrically intersects REC74.",
+        "Visual comparison on K-35-029 Omurtag shows REC74 and EUR_BGCS019 as closely spaced subparallel traces following the same northeast-southwest regional structural corridor.",
+        "The offset between the MRRB and GEM traces means exact surface-trace identity is not claimed.",
+        "EUR_BGCS020 was evaluated as a secondary regional control and was not accepted as the crosswalk.",
+        "EUR_BGCS018 was evaluated as a wider regional control and was not accepted as the crosswalk.",
+        "Dextral-normal kinematics are inherited from the accepted EUR_BGCS019 regional crosswalk.",
+        "HIGH confidence refers to regional fault-system correspondence supported jointly by MRRB geometry, GEM, EFSM20 and geological-map context."
+      ],
+      "open_items": [
         "Exact surface-trace identity remains unresolved."
       ]
     }
