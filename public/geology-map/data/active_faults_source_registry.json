@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "description": "Source and provenance registry for SONDI.BG active-fault research.",
-  "source_count": 77,
-  "generated_date": "2026-09-03",
+  "source_count": 78,
+  "generated_date": "2026-09-04",
   "sources": [
     {
       "source_id": "SRC-MRRB-2025",
@@ -1796,6 +1796,32 @@
         "regional geological structure",
         "fault-corridor geometry",
         "visual structural correspondence"
+      ],
+      "notes": [
+        "Used as regional structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."
+      ]
+    },
+    {
+      "source_id": "SRC-GEO-MAP-K34-046-VLASOTINTSE-BREZNIK",
+      "title": "Geological Map of Bulgaria 1:100 000, Sheet K-34-046 Vlasotintse and Breznik",
+      "authors": [
+        "???????? ?. (???.)",
+        "?????????? ?. (???.)"
+      ],
+      "year": 1990,
+      "publisher": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "institution": "Committee of Geology - Enterprise for Geophysical Surveys and Geological Mapping",
+      "url": "https://www.geokniga.org/maps/1040",
+      "source_type": "official_geological_map",
+      "local_path": "_research/active_faults_network/region38_maps/k-34-046-vlasotince-i-breznik-geolozhka-karta-na-blgariya.jpg",
+      "supports": [
+        "REC58 Tran local structural corridor"
+      ],
+      "information_used": [
+        "regional geological structure",
+        "fault-corridor geometry",
+        "visual structural correspondence",
+        "crossing relationship with EUR_BGCS030"
       ],
       "notes": [
         "Used as regional structural support only; the geological map does not by itself establish present-day activity, exact trace identity, or kinematics."

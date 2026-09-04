@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 124,
-  "generated_date": "2026-09-03",
+  "record_count": 125,
+  "generated_date": "2026-09-04",
   "records": [
     {
       "fault_id": "FLT-KRUPNIK",
@@ -4236,6 +4236,48 @@
       ],
       "open_items": [
         "Exact surface-trace identity remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-TRAN-REC58",
+      "mrrb": {
+        "record": 58,
+        "name": "Трън"
+      },
+      "scientific": {
+        "name": "Tran active fault corridor",
+        "system": "Tran local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_corridor_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K34-046-VLASOTINTSE-BREZNIK"
+      ],
+      "notes": [
+        "MRRB REC58 strike is approximately 87.92 degrees.",
+        "EUR_BGCS030 geometrically intersects REC58 but is not accepted as an international crosswalk.",
+        "The local GEM strike of EUR_BGCS030 is approximately 59.38 degrees, differing from REC58 by approximately 28.54 degrees.",
+        "The corresponding EFSM20 representation also intersects REC58 but has a local strike of approximately 53.81 degrees, differing by approximately 34.11 degrees.",
+        "Visual comparison on K-34-046 Vlasotintse and Breznik shows REC58 following a predominantly east-west local structural corridor.",
+        "The EUR_BGCS030 model crosses the REC58 corridor obliquely rather than following the same local trajectory.",
+        "EUR_BGCS031 and EUR_RSCS016 were evaluated as regional controls and were not accepted as crosswalks.",
+        "HIGH confidence refers to the local MRRB structural corridor supported by geological-map correspondence, not to an international fault identity.",
+        "No fault kinematics are assigned because there is no accepted scientific crosswalk from which kinematics can be inherited.",
+        "The small westernmost REC58 segment outside K-34-046 does not alter the observed crossing relationship with EUR_BGCS030."
+      ],
+      "open_items": [
+        "No accepted international BGCS crosswalk.",
+        "Exact surface-trace identity remains unresolved.",
+        "Westernmost short segment on adjacent K-34-045 has not been used as primary map evidence."
       ]
     }
   ]
