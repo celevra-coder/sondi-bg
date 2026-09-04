@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 129,
+  "record_count": 130,
   "generated_date": "2026-09-04",
   "records": [
     {
@@ -4434,6 +4434,47 @@
         "Visual comparison on K-35-063 Chirpan shows REC81 as a distinct diagonal local structural corridor crossing the near east-west regional GEM structures.",
         "EUR_BGCS002 and EUR_BGCS048 are therefore retained only as regional comparison structures and are not accepted as crosswalks.",
         "HIGH confidence refers to the local MRRB structural corridor supported by geological-map context, not to international fault identity.",
+        "No fault kinematics are assigned because no accepted international crosswalk supports inheritance of GEM slip type."
+      ],
+      "open_items": [
+        "No accepted international BGCS crosswalk.",
+        "Exact surface-trace identity remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-SV-ILIA-SOUTH-REC82",
+      "mrrb": {
+        "record": 82,
+        "name": "Sv Ilia South"
+      },
+      "scientific": {
+        "name": "Sv Ilia South active fault corridor",
+        "system": "Sv Ilia South local active fault corridor",
+        "fault_type": null
+      },
+      "international_crosswalk": {
+        "bgcs": null
+      },
+      "correspondence": {
+        "type": "local_fault_corridor_correspondence",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-053-NOVA-ZAGORA",
+        "SRC-GEO-MAP-K35-065-TOPOLOVGRAD"
+      ],
+      "notes": [
+        "MRRB REC82 strike is approximately 114.75 degrees.",
+        "No GEM or EFSM20 feature intersects REC82.",
+        "EUR_BGCS048 is the nearest GEM structure at approximately 11.61 km, with a strike difference of approximately 19.64 degrees.",
+        "EUR_BGCS007 lies approximately 18.64 km away, with a strike difference of approximately 17.88 degrees.",
+        "EUR_BGCS002 lies approximately 21.65 km away, with a strike difference of approximately 20.62 degrees.",
+        "The nearest structures are therefore treated as regional comparison features only and are not accepted as international crosswalks.",
+        "Geological-map comparison on K-35-053 Nova Zagora and K-35-065 Topolovgrad supports REC82 as a distinct NW-SE local structural corridor.",
+        "HIGH confidence refers to the local MRRB structural correspondence supported by geological-map context, not to international fault identity.",
         "No fault kinematics are assigned because no accepted international crosswalk supports inheritance of GEM slip type."
       ],
       "open_items": [
