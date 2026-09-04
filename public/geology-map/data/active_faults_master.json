@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Curated SONDI.BG active-fault knowledge master. MRRB local corridors, scientific identities and international seismic-source crosswalks are kept distinct.",
-  "record_count": 130,
+  "record_count": 131,
   "generated_date": "2026-09-04",
   "records": [
     {
@@ -4479,6 +4479,43 @@
       ],
       "open_items": [
         "No accepted international BGCS crosswalk.",
+        "Exact surface-trace identity remains unresolved."
+      ]
+    },
+    {
+      "fault_id": "FLT-BALCHIK-REC84",
+      "mrrb": {
+        "record": 84,
+        "name": "Balchik"
+      },
+      "scientific": {
+        "name": "Balchik active fault corridor",
+        "system": "Balchik regional active fault system",
+        "fault_type": "sinistral_normal_fault"
+      },
+      "international_crosswalk": {
+        "bgcs": "EUR_BGCS041"
+      },
+      "correspondence": {
+        "type": "regional_fault_system_crosswalk",
+        "confidence": "HIGH",
+        "exact_trace_identity": false
+      },
+      "source_ids": [
+        "SRC-MRRB-2025",
+        "SRC-GEM-SONDI",
+        "SRC-GEO-MAP-K35-021-BALCHIK-SHABLA"
+      ],
+      "notes": [
+        "MRRB REC84 has a principal strike of approximately 97.72 degrees.",
+        "EUR_BGCS041 is the nearest strong international candidate at approximately 1.84 km from REC84, with a local strike of approximately 106.78 degrees and a strike difference of approximately 9.06 degrees.",
+        "EFSM20 independently reproduces the same regional relationship at approximately 1.85 km separation and approximately 9.09 degrees strike difference.",
+        "EUR_BGCS039 is nearly parallel to REC84 but lies approximately 23.95 km away and is retained only as a regional comparison feature.",
+        "Geological-map comparison on K-35-021 Balchik and Shabla supports REC84 and EUR_BGCS041 as closely spaced elements of the same regional structural corridor.",
+        "The accepted correspondence is at regional fault-system level and does not assert exact surface-trace identity.",
+        "The sinistral-normal fault type is inherited from the accepted EUR_BGCS041 international crosswalk."
+      ],
+      "open_items": [
         "Exact surface-trace identity remains unresolved."
       ]
     }
