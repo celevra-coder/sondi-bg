@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getGwbProfile } from "@/lib/gwb-profile";
 import { getSpatialProfile } from "@/lib/spatial-profile";
+import { getFaultSpatialProfile } from "@/lib/fault-spatial-profile";
+import FaultActivityMap from "./FaultActivityMap";
 import { resolveGroundwaterBodiesAtPoint } from "@/lib/gwb-spatial-resolver";
 import { getBlackSeaGisAnalysis } from "@/lib/black-sea-gis";
 
@@ -295,6 +297,12 @@ export default async function ProPage({
 
   const spatial =
     getSpatialProfile(lat, lng);
+
+  const faultSpatial =
+    getFaultSpatialProfile(
+      lat,
+      lng
+    );
 
   const profile = getGwbProfile(gwb);
 
@@ -2829,6 +2837,128 @@ export default async function ProPage({
       } действащи разрешителни за минерална вода, което само по себе си не доказва минерална вода в конкретния имот.`
     );
   }
+
+  // PRO_FAULT_CONCLUSION_INLINE_V1
+  if (faultSpatial) {
+    const conclusionNearestGem =
+      faultSpatial?.nearestGem ?? null;
+
+    const conclusionNearestGemId =
+      String(
+        conclusionNearestGem
+          ?.properties
+          ?.catalog_id ??
+        ""
+      ).trim();
+
+    const conclusionNearestGemDistanceKm =
+      Number(
+        conclusionNearestGem
+          ?.distanceKm
+      );
+
+    const conclusionMrrbAtPoint =
+      Array.isArray(
+        faultSpatial?.mrrbAtPoint
+      )
+        ? faultSpatial.mrrbAtPoint
+        : [];
+
+    const conclusionMrrbNames =
+      Array.from(
+        new Set(
+          conclusionMrrbAtPoint
+            .map(
+              (item: any) =>
+                item
+                  ?.properties
+                  ?.mrrb_name
+            )
+            .filter(Boolean)
+        )
+      );
+
+    const conclusionSameBgcs =
+      conclusionMrrbAtPoint.some(
+        (item: any) =>
+          conclusionNearestGemId &&
+          String(
+            item
+              ?.properties
+              ?.bgcs ??
+            ""
+          )
+            .trim()
+            .toUpperCase() ===
+          conclusionNearestGemId
+            .toUpperCase()
+      );
+
+    const conclusionDistanceText =
+      Number.isFinite(
+        conclusionNearestGemDistanceKm
+      )
+        ? conclusionNearestGemDistanceKm < 1
+          ? `${Math.round(
+              conclusionNearestGemDistanceKm *
+              1000
+            )} m`
+          : `${conclusionNearestGemDistanceKm.toFixed(
+              2
+            )} km`
+        : null;
+
+    if (
+      conclusionMrrbAtPoint.length > 0
+    ) {
+      let faultSentence =
+        "\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430 \u043f\u043e\u043f\u0430\u0434\u0430 \u0432 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u043e \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d MRRB \u0431\u0443\u0444\u0435\u0440\u0438\u0440\u0430\u043d \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d \u043a\u043e\u0440\u0438\u0434\u043e\u0440.";
+
+      if (
+        conclusionMrrbNames.length > 0
+      ) {
+        faultSentence +=
+          " \u041a\u043e\u0440\u0438\u0434\u043e\u0440\u044a\u0442 \u0435 " +
+          conclusionMrrbNames.join(", ") +
+          ".";
+      }
+
+      if (
+        conclusionNearestGemId &&
+        conclusionDistanceText
+      ) {
+        faultSentence +=
+          " \u041d\u0430\u0439-\u0431\u043b\u0438\u0437\u043a\u0430\u0442\u0430 GEM \u0430\u043a\u0442\u0438\u0432\u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0433\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u044f \u0435 " +
+          conclusionNearestGemId +
+          " \u043d\u0430 \u043e\u043a\u043e\u043b\u043e " +
+          conclusionDistanceText +
+          ".";
+
+        if (conclusionSameBgcs) {
+          faultSentence +=
+            " \u041c\u0435\u0436\u0434\u0443 MRRB \u043a\u043e\u0440\u0438\u0434\u043e\u0440\u0430 \u0438 \u0442\u043e\u0437\u0438 GEM \u043a\u043e\u0434 \u0438\u043c\u0430 \u0432\u0430\u043b\u0438\u0434\u0438\u0440\u0430\u043d\u043e \u043a\u0430\u0442\u0430\u043b\u043e\u0433\u043e\u0432\u043e \u0441\u044a\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435.";
+        }
+      }
+
+      faultSentence +=
+        " \u0422\u043e\u0432\u0430 \u0435 \u0432\u0430\u0436\u0435\u043d \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0435\u043d \u0444\u0430\u043a\u0442\u043e\u0440 \u0437\u0430 \u043b\u043e\u043a\u0430\u043b\u043d\u0430\u0442\u0430 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u043e\u0431\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430, \u0442\u044a\u0439 \u043a\u0430\u0442\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0438\u0442\u0435 \u0438 \u0441\u044a\u043f\u044a\u0442\u0441\u0442\u0432\u0430\u0449\u0438\u0442\u0435 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u0438 \u0437\u043e\u043d\u0438 \u043c\u043e\u0433\u0430\u0442 \u0434\u0430 \u0441\u044a\u0437\u0434\u0430\u0432\u0430\u0442 \u0432\u0442\u043e\u0440\u0438\u0447\u043d\u0430 \u043f\u0440\u043e\u043f\u0443\u0441\u043a\u043b\u0438\u0432\u043e\u0441\u0442 \u0438 \u043f\u0440\u0435\u0434\u043f\u043e\u0447\u0438\u0442\u0430\u043d\u0438 \u043f\u044a\u0442\u0438\u0449\u0430 \u0437\u0430 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435 \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u0438.";
+
+      professionalConclusionParts.push(
+        faultSentence
+      );
+    } else if (
+      conclusionNearestGemId &&
+      conclusionDistanceText
+    ) {
+      professionalConclusionParts.push(
+        "\u041d\u0430\u0439-\u0431\u0438\u0437\u043a\u0430\u0442\u0430 GEM \u0430\u043a\u0442\u0438\u0432\u043d\u0430 \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0433\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u044f \u0435 " +
+        conclusionNearestGemId +
+        " \u043d\u0430 \u043e\u043a\u043e\u043b\u043e " +
+        conclusionDistanceText +
+        ". \u0422\u043e\u0447\u043a\u0430\u0442\u0430 \u043d\u0435 \u043f\u043e\u043f\u0430\u0434\u0430 \u0432 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u043e \u043a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0440\u0430\u043d MRRB \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d \u043a\u043e\u0440\u0438\u0434\u043e\u0440. \u0411\u043b\u0438\u0437\u043e\u0441\u0442\u0442\u0430 \u0434\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430 \u0435 \u0434\u043e\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u0435\u043d \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0444\u0430\u043a\u0442\u043e\u0440, \u0442\u044a\u0439 \u043a\u0430\u0442\u043e \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0438\u0442\u0435 \u0438 \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u043d\u0438\u0442\u0435 \u0437\u043e\u043d\u0438 \u043c\u043e\u0433\u0430\u0442 \u0434\u0430 \u0432\u043b\u0438\u044f\u044f\u0442 \u0432\u044a\u0440\u0445\u0443 \u043b\u043e\u043a\u0430\u043b\u043d\u0430\u0442\u0430 \u043f\u0440\u043e\u043f\u0443\u0441\u043a\u043b\u0438\u0432\u043e\u0441\u0442 \u0438 \u0446\u0438\u0440\u043a\u0443\u043b\u0430\u0446\u0438\u044f\u0442\u0430 \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u0438."
+      );
+    }
+  }
   const professionalConclusionText =
     professionalConclusionParts.length > 0
       ? professionalConclusionParts.join(" ")
@@ -3663,6 +3793,20 @@ export default async function ProPage({
               </div>
             )}
           </Card>
+
+          {faultSpatial && lat && lng && (
+            <Card
+              title={"\u0032\u0041\u002e \u0420\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0434\u0435\u0439\u043d\u043e\u0441\u0442"}
+              knowledgeHref="/knowledge/groundwater/active-faults"
+              subtitle={"\u0410\u043a\u0442\u0438\u0432\u043d\u0438 GEM \u0440\u0430\u0437\u043b\u043e\u043c\u0438 \u0438 MRRB \u0440\u0430\u0437\u043b\u043e\u043c\u043d\u0438 \u043a\u043e\u0440\u0438\u0434\u043e\u0440\u0438 \u043e\u043a\u043e\u043b\u043e \u0438\u0437\u0431\u0440\u0430\u043d\u0430\u0442\u0430 \u0442\u043e\u0447\u043a\u0430."}
+            >
+              <FaultActivityMap
+                faultSpatial={faultSpatial}
+                lat={Number(lat)}
+                lng={Number(lng)}
+              />
+            </Card>
+          )}
 
           <Card
             title="3. Количествен ресурс"
@@ -7000,7 +7144,7 @@ export default async function ProPage({
 
 
           <Card
-            title="12. Професионално заключение"
+            title={"\u0031\u0032\u002e \u0417\u0430\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435"}
             knowledgeHref="/knowledge/water-quality/rbmp-comparison"
             subtitle="Обобщение на официалните данни за ресурса, качеството и локалната ситуация."
           >
