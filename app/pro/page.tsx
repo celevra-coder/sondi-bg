@@ -838,6 +838,25 @@ export default async function ProPage({
     geology?.lithology ??
     null;
 
+  const geologyAquiferThickness = (() => {
+    const value = geology?.aquifer_thickness_m;
+
+    if (value == null) {
+      return null;
+    }
+
+    const text = String(value).trim();
+
+    if (
+      !text ||
+      /^\d{4}-\d{2}-\d{2}(?:[ T].*)?$/.test(text)
+    ) {
+      return null;
+    }
+
+    return value;
+  })();
+
   const geologySummary =
     geologyAvailable
       ? (
@@ -3328,10 +3347,10 @@ export default async function ProPage({
                     />
                   )}
 
-                  {geology?.aquifer_thickness_m != null && (
+                  {geologyAquiferThickness != null && (
                     <Row
                       label="Дебелина на водоносния пласт"
-                      value={`${geology.aquifer_thickness_m} m`}
+                      value={`${geologyAquiferThickness} m`}
                     />
                   )}
                 </div>

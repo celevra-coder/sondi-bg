@@ -2838,6 +2838,25 @@ export default function GeologyReportPage() {
   const geologyProfile =
     professional?.geologyProfile || null;
 
+  const geologyAquiferThickness = (() => {
+    const value = geologyProfile?.aquifer_thickness_m;
+
+    if (value == null) {
+      return null;
+    }
+
+    const text = String(value).trim();
+
+    if (
+      !text ||
+      /^\d{4}-\d{2}-\d{2}(?:[ T].*)?$/.test(text)
+    ) {
+      return null;
+    }
+
+    return value;
+  })();
+
   const additionalGroundwaterRegisters =
     professional?.additionalGroundwaterRegisters || null;
 
@@ -4707,8 +4726,8 @@ export default function GeologyReportPage() {
               </strong>
 
               <span>
-                {geologyProfile?.aquifer_thickness_m
-                  ? `${geologyProfile.aquifer_thickness_m} m`
+                {geologyAquiferThickness != null
+                  ? `${geologyAquiferThickness} m`
                   : "Няма налични данни"}
               </span>
             </div>
