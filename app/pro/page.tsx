@@ -4,6 +4,7 @@ import { getSpatialProfile } from "@/lib/spatial-profile";
 import { getFaultSpatialProfile } from "@/lib/fault-spatial-profile";
 import FaultActivityMap from "./FaultActivityMap";
 import MonitoringBodyDetails from "./MonitoringBodyDetails";
+import ProPrintReport from "./ProPrintReport";
 import { resolveGroundwaterBodiesAtPoint } from "@/lib/gwb-spatial-resolver";
 import { getBlackSeaGisAnalysis } from "@/lib/black-sea-gis";
 
@@ -3425,7 +3426,7 @@ export default async function ProPage({
 
   if (drillingHasCoordinates) {
     drillingRecommendationParts.push(
-      "Оценката се отнася за същите координати, избрани в PRO анализа."
+      ""
     );
   }
 
@@ -3805,8 +3806,29 @@ export default async function ProPage({
     finalCardColors[drillingPerspectiveTone];
 
   return (
-    <main style={{
-      minHeight: "100vh",
+    <>
+      <ProPrintReport
+        lat={lat}
+        lng={lng}
+        profile={profile}
+        assessments={activeGroundwaterAssessments}
+        faultSpatial={faultSpatial}
+        spatial={spatial}
+        exploitation={exploitation}
+        quantitySummaryTitle={quantitySummaryTitle}
+        quantitySummaryText={quantitySummaryText}
+        chemicalSummaryTitle={chemicalSummaryTitle}
+        chemicalSummaryText={chemicalSummaryText}
+        monitoringSummary={monitoringSummary}
+        drillingPerspectiveTitle={drillingPerspectiveTitle}
+        drillingPerspectiveText={drillingPerspectiveText}
+        drillingRecommendationTitle={drillingRecommendationTitle}
+        drillingRecommendationParts={drillingRecommendationParts}
+        professionalConclusionText={professionalConclusionText}
+      />
+
+      <main className="sondi-pro-screen" style={{
+        minHeight: "100vh",
       background:
         "linear-gradient(180deg,#edf7f8 0,#f8fbfc 340px)",
       padding: "34px 18px 70px",
@@ -8364,5 +8386,6 @@ export default async function ProPage({
         </div>
       </div>
     </main>
+    </>
   );
 }

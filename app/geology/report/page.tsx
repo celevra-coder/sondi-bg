@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import DrillingPrintReport from "./DrillingPrintReport";
 
 type AnyFeature = {
   type?: string;
@@ -3748,8 +3749,22 @@ export default function GeologyReportPage() {
 
 
   return (
-    <main style={styles.page}>
-      <div style={styles.shell}>
+    <>
+      <DrillingPrintReport
+        data={data}
+        professional={professional}
+        geologyProfile={geologyProfile}
+        drillingRiskItems={drillingRiskItems}
+        drillingFieldControlItems={drillingFieldControlItems}
+        filterRecommendation={filterRecommendation}
+        cementationRecommendation={cementationRecommendation}
+      />
+
+      <main
+        className="sondi-drilling-screen"
+        style={styles.page}
+      >
+        <div style={styles.shell}>
 
         <div style={styles.topbar}>
           <div>
@@ -4915,6 +4930,7 @@ export default function GeologyReportPage() {
 
       </div>
     </main>
+    </>
   );
 }
 
