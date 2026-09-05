@@ -446,30 +446,18 @@ const [authReady, setAuthReady] = useState(false);
               <div className="text-sm font-semibold">ПЛАТФОРМА</div>
               <div className="mt-5 flex flex-col gap-3 text-sm text-white/55">
                 <Link href="/map">Интерактивна карта</Link>
-                <Link href="/analysis">Анализ на място</Link>
-                <Link href="/monitoring">Мониторинг</Link>
-                <Link href="/pro">Sondi EXPERT</Link>
+                <Link href="/expert">Sondi EXPERT</Link>
+                <Link href="/contact">Контакти</Link>
               </div>
             </div>
 
             <div>
               <div className="text-sm font-semibold">ИНФОРМАЦИЯ</div>
               <div className="mt-5 flex flex-col gap-3 text-sm text-white/55">
-                <Link href="/groundwater">Подземни води</Link>
-                <Link href="/drilling">Сондажи</Link>
-                <Link href="/knowledge">Знания</Link>
                 <Link href="/sources">Източници на данни</Link>
               </div>
             </div>
 
-            <div>
-              <div className="text-sm font-semibold">SONDI.BG</div>
-              <div className="mt-5 flex flex-col gap-3 text-sm text-white/55">
-                <Link href="/about">За платформата</Link>
-                <Link href="/contact">Контакти</Link>
-                <Link href="/sources">Произход на данните</Link>
-              </div>
-            </div>
 
             <div>
               <div className="text-sm font-semibold">ПРАВНА ИНФОРМАЦИЯ</div>

@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 export const metadata = {
   title: "Политика за поверителност | SONDI.BG",
@@ -50,9 +50,7 @@ export default function PrivacyPage() {
 
         <Section title="1. Администратор на личните данни">
           <p>
-            Администратор на личните данни, обработвани чрез SONDI.BG, е
-            Радосвета Димитрова, създател и оператор на платформата
-            SONDI.BG.
+            Администратор на личните данни, обработвани чрез платформата, е`r`n            SONDI.BG.
           </p>
 
           <div className="rounded-2xl border border-[#d9e9e5] bg-[#f6faf9] p-5">
@@ -62,10 +60,10 @@ export default function PrivacyPage() {
             <div className="mt-3">
               Имейл:{" "}
               <a
-                href="mailto:radosvetabcvarova@gmail.com"
+                href="mailto:info@sondi.bg"
                 className="font-semibold text-[#167454] underline"
               >
-                radosvetabcvarova@gmail.com
+                info@sondi.bg
               </a>
             </div>
           </div>
@@ -341,10 +339,10 @@ export default function PrivacyPage() {
           <p>
             Искания могат да бъдат изпращани на{" "}
             <a
-              href="mailto:radosvetabcvarova@gmail.com"
+              href="mailto:info@sondi.bg"
               className="font-semibold text-[#167454] underline"
             >
-              radosvetabcvarova@gmail.com
+              info@sondi.bg
             </a>
             .
           </p>
@@ -396,10 +394,10 @@ export default function PrivacyPage() {
           </p>
           <p>
             <a
-              href="mailto:radosvetabcvarova@gmail.com"
+              href="mailto:info@sondi.bg"
               className="font-semibold text-[#167454] underline"
             >
-              radosvetabcvarova@gmail.com
+              info@sondi.bg
             </a>
           </p>
         </Section>
