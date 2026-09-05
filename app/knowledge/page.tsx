@@ -23,8 +23,8 @@ const sections = [
     href: "/knowledge/water-quality",
   },
   {
+    count: "9 материала",
     title: "Мониторинг",
-    count: "8 материала",
     description:
       "Наблюдателни пунктове, водни нива, дебити и правилно тълкуване на измерванията.",
     href: "/knowledge/monitoring",
