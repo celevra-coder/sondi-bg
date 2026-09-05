@@ -1914,7 +1914,7 @@ export default async function ProPage({
             : String(section5?.goal_category ?? "")
         )
       : String(section5?.goal_category ?? ""));
- 
+
   const section5GoalTone =
     section5GoalCategory === "goal_achieved" ||
     section5GoalCategory === "maintain_good_status"
@@ -1941,7 +1941,7 @@ export default async function ProPage({
         )
       : section5?.goal_label_bg ??
         "\u041d\u044f\u043c\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430 \u0446\u0435\u043b");
- 
+
   const section5ProblemIndicators =
     isDanubeGwb
       ? (
@@ -1956,7 +1956,7 @@ export default async function ProPage({
         )
       : section5?.purb3?.parameters_outside_standard ??
         "\u041d\u044f\u043c\u0430 \u043f\u043e\u0441\u043e\u0447\u0435\u043d\u0438");
- 
+
   const section5GoalSummary =
     isDanubeGwb
       ? (
@@ -1997,7 +1997,7 @@ export default async function ProPage({
                 : section5GoalCategory === "maintain_good_status"
                   ? "\u0425\u0438\u043c\u0438\u0447\u043d\u043e\u0442\u043e \u0438 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043e\u0442\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0441\u0430 \u043e\u0446\u0435\u043d\u0435\u043d\u0438 \u043a\u0430\u0442\u043e \u0434\u043e\u0431\u0440\u0438. \u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0446\u0435\u043b \u0435 \u0437\u0430\u043f\u0430\u0437\u0432\u0430\u043d\u0435 \u043d\u0430 \u0434\u043e\u0431\u0440\u043e\u0442\u043e \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435."
                   : "\u041d\u044f\u043c\u0430 \u0434\u043e\u0441\u0442\u0430\u0442\u044a\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0430\u0442\u0430 \u0435\u043a\u043e\u043b\u043e\u0433\u0438\u0447\u043d\u0430 \u0446\u0435\u043b.");
- 
+
   const comparison =
     section4?.comparison;
 
@@ -4250,7 +4250,7 @@ export default async function ProPage({
 
           <Card
             title="2. Геология и хидрогеология"
-            knowledgeHref="/knowledge/water-quality"
+            knowledgeHref="/knowledge/geology"
             subtitle={
               geologyAvailable
                 ? "Разбираема характеристика на водоносния хоризонт и геоложките условия."
@@ -4504,7 +4504,7 @@ export default async function ProPage({
                 Няма налични официални геоложки данни.
               </div>
             )}
-          
+
             {blackSeaGis?.isInsideProtectionZone && (
               <div style={{
                 marginTop: 16,
@@ -5414,7 +5414,7 @@ export default async function ProPage({
                 ) : null}
               </div>
             </details>
-          
+
             {blackSeaSection3 ? (
               <section style={{
                 marginTop: 14,
@@ -6900,7 +6900,7 @@ export default async function ProPage({
                 Няма налични данни от Раздел 5.
               </div>
             )}
-          
+
             {blackSeaSection3 ? (
               <section style={{
                 marginTop: 14,
@@ -7981,7 +7981,7 @@ export default async function ProPage({
                   </div>
                 </details>
 
-                
+
               </>
             ) : (
               <div style={{
