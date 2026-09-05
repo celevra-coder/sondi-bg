@@ -1,12 +1,16 @@
 "use client";
 
 import {
+  useEffect,
   useMemo,
   useState,
+  type FormEvent,
   type InputHTMLAttributes,
   type ReactNode,
   type SelectHTMLAttributes,
 } from "react";
+
+import { createClient } from "@/lib/supabase-browser";
 
 const REGIONS = [
   "\u0411\u043b\u0430\u0433\u043e\u0435\u0432\u0433\u0440\u0430\u0434",
@@ -135,6 +139,23 @@ const T = {
 
 type Tab = "find" | "request" | "provider";
 
+type ProviderRecord = {
+  id: string;
+  company_name: string;
+  phone: string;
+  email: string | null;
+  website_or_facebook: string | null;
+  services: string[];
+  work_regions: string[];
+  works_nationwide: boolean;
+  max_depth: string | null;
+  diameters: string | null;
+  drilling_method: string | null;
+  equipment: string | null;
+  presentation: string | null;
+  created_at: string;
+};
+
 function FieldLabel({
   children,
 }: {
@@ -193,6 +214,38 @@ export default function ServicesPage() {
   const [service, setService] =
     useState("");
 
+  const supabase = useMemo(
+    () => createClient(),
+    []
+  );
+
+  const [providers, setProviders] =
+    useState<ProviderRecord[]>([]);
+
+  const [providersLoading, setProvidersLoading] =
+    useState(true);
+
+  const [providersError, setProvidersError] =
+    useState("");
+
+  const [requestSubmitting, setRequestSubmitting] =
+    useState(false);
+
+  const [requestMessage, setRequestMessage] =
+    useState("");
+
+  const [providerSubmitting, setProviderSubmitting] =
+    useState(false);
+
+  const [providerMessage, setProviderMessage] =
+    useState("");
+
+  const [successPopup, setSuccessPopup] =
+    useState<{
+      title: string;
+      text: string;
+    } | null>(null);
+
   const [allBulgaria, setAllBulgaria] =
     useState(false);
 
@@ -218,6 +271,261 @@ export default function ServicesPage() {
       allBulgaria,
       providerRegions,
     ]);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadProviders() {
+      setProvidersLoading(true);
+      setProvidersError("");
+
+      const { data, error } = await supabase
+        .from("service_providers")
+        .select("*")
+        .eq("status", "approved")
+        .order("created_at", {
+          ascending: false,
+        });
+
+      if (!active) return;
+
+      if (error) {
+        console.error("service_providers load error", error);
+        setProviders([]);
+        setProvidersError(
+          "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u0437\u0430\u0440\u0435\u0434\u0438\u043c \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u0438\u0442\u0435."
+        );
+      } else {
+        setProviders((data || []) as ProviderRecord[]);
+      }
+
+      setProvidersLoading(false);
+    }
+
+    void loadProviders();
+
+    return () => {
+      active = false;
+    };
+  }, [supabase]);
+
+  const filteredProviders = useMemo(() => {
+    return providers.filter(item => {
+      const regionMatches =
+        !region ||
+        (
+          region === "all"
+            ? item.works_nationwide
+            : item.works_nationwide ||
+              item.work_regions.includes(region)
+        );
+
+      const serviceMatches =
+        !service ||
+        item.services.includes(service);
+
+      return regionMatches && serviceMatches;
+    });
+  }, [providers, region, service]);
+
+  async function submitRequest(
+    event: FormEvent<HTMLFormElement>
+  ) {
+    event.preventDefault();
+
+    if (requestSubmitting) return;
+
+    setRequestMessage("");
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    const requestedService = String(
+      data.get("service") || ""
+    ).trim();
+
+    const requestedRegion = String(
+      data.get("region") || ""
+    ).trim();
+
+    const description = String(
+      data.get("description") || ""
+    ).trim();
+
+    const phone = String(
+      data.get("contact_phone") || ""
+    ).trim();
+
+    const email = String(
+      data.get("contact_email") || ""
+    ).trim();
+
+    if (!requestedService) {
+      setRequestMessage(
+        "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u0443\u0441\u043b\u0443\u0433\u0430."
+      );
+      return;
+    }
+
+    if (!requestedRegion) {
+      setRequestMessage(
+        "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043e\u0431\u043b\u0430\u0441\u0442."
+      );
+      return;
+    }
+
+    if (description.length < 10) {
+      setRequestMessage(
+        "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435\u0442\u043e \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0435 \u043f\u043e\u043d\u0435 10 \u0441\u0438\u043c\u0432\u043e\u043b\u0430."
+      );
+      return;
+    }
+
+    if (!phone && !email) {
+      setRequestMessage(
+        "\u0412\u044a\u0432\u0435\u0434\u0435\u0442\u0435 \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u0438\u043b\u0438 \u0438\u043c\u0435\u0439\u043b \u0437\u0430 \u043a\u043e\u043d\u0442\u0430\u043a\u0442."
+      );
+      return;
+    }
+
+    setRequestSubmitting(true);
+    setRequestMessage("");
+
+    const { error } = await supabase
+      .from("service_requests")
+      .insert({
+        service: requestedService,
+        region: requestedRegion,
+        locality:
+          String(data.get("locality") || "").trim() || null,
+        desired_period:
+          String(data.get("desired_period") || "").trim() || null,
+        estimated_depth:
+          String(data.get("estimated_depth") || "").trim() || null,
+        machine_access:
+          String(data.get("machine_access") || "unknown"),
+        description,
+        contact_phone: phone || null,
+        contact_email: email || null,
+        status: "pending",
+      });
+
+    setRequestSubmitting(false);
+
+    if (error) {
+      console.error("service request insert error", error);
+      setRequestMessage(
+        "\u0413\u0440\u0435\u0448\u043a\u0430: " + error.message
+      );
+      return;
+    }
+
+    form.reset();
+
+    setRequestMessage(
+      "\u0417\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d\u0430 \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0438 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430 \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
+    );
+
+    setSuccessPopup({
+      title:
+        "\u0417\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d\u0430",
+      text:
+        "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u0438\u043c! \u0412\u0430\u0448\u0430\u0442\u0430 \u0437\u0430\u044f\u0432\u043a\u0430 \u0435 \u043f\u0440\u0438\u0435\u0442\u0430 \u0438 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430 \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
+    });
+  }
+
+  async function submitProvider(
+    event: FormEvent<HTMLFormElement>
+  ) {
+    event.preventDefault();
+
+    if (providerSubmitting) return;
+
+    setProviderMessage("");
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    const selectedServices = data
+      .getAll("services")
+      .map(value => String(value))
+      .filter(Boolean);
+
+    if (selectedServices.length === 0) {
+      setProviderMessage(
+        "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043f\u043e\u043d\u0435 \u0435\u0434\u043d\u0430 \u0443\u0441\u043b\u0443\u0433\u0430."
+      );
+      return;
+    }
+
+    if (
+      !allBulgaria &&
+      providerRegions.length === 0
+    ) {
+      setProviderMessage(
+        "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043f\u043e\u043d\u0435 \u0435\u0434\u043d\u0430 \u043e\u0431\u043b\u0430\u0441\u0442 \u0438\u043b\u0438 \u201e\u0420\u0430\u0431\u043e\u0442\u044f \u0432 \u0446\u044f\u043b\u0430 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f\u201c."
+      );
+      return;
+    }
+
+    setProviderSubmitting(true);
+    setProviderMessage("");
+
+    const { error } = await supabase
+      .from("service_providers")
+      .insert({
+        company_name:
+          String(data.get("company_name") || "").trim(),
+        phone:
+          String(data.get("phone") || "").trim(),
+        email:
+          String(data.get("email") || "").trim() || null,
+        website_or_facebook:
+          String(
+            data.get("website_or_facebook") || ""
+          ).trim() || null,
+        services: selectedServices,
+        work_regions:
+          allBulgaria ? [] : providerRegions,
+        works_nationwide: allBulgaria,
+        max_depth:
+          String(data.get("max_depth") || "").trim() || null,
+        diameters:
+          String(data.get("diameters") || "").trim() || null,
+        drilling_method:
+          String(data.get("drilling_method") || "").trim() || null,
+        equipment:
+          String(data.get("equipment") || "").trim() || null,
+        presentation:
+          String(data.get("presentation") || "").trim() || null,
+        status: "pending",
+      });
+
+    setProviderSubmitting(false);
+
+    if (error) {
+      console.error("service provider insert error", error);
+      setProviderMessage(
+        "\u0413\u0440\u0435\u0448\u043a\u0430: " + error.message
+      );
+      return;
+    }
+
+    form.reset();
+    setAllBulgaria(false);
+    setProviderRegions([]);
+
+    setProviderMessage(
+      "\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0438 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
+    );
+
+    setSuccessPopup({
+      title:
+        "\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d",
+      text:
+        "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u0438\u043c! \u0412\u0430\u0448\u0438\u044f\u0442 \u043f\u0440\u043e\u0444\u0438\u043b \u0435 \u043f\u0440\u0438\u0435\u0442 \u0438 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
+    });
+  }
 
   function toggleProviderRegion(
     item: string
@@ -396,25 +704,103 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 rounded-[22px] border border-dashed border-[#bfd6d9] bg-[#f7fbfb] px-6 py-12 text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#e4f3ef] text-2xl">
-                    {"\u26cf"}
+                {providersLoading ? (
+                  <div className="mt-8 rounded-[22px] border border-[#d9e7e9] bg-[#f7fbfb] px-6 py-12 text-center text-sm text-[#6a8187]">
+                    {"\u0417\u0430\u0440\u0435\u0436\u0434\u0430\u043d\u0435 \u043d\u0430 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u0438..."}
                   </div>
+                ) : providersError ? (
+                  <div className="mt-8 rounded-[22px] border border-[#efd6d6] bg-[#fff8f8] px-6 py-8 text-center text-sm text-[#934b4b]">
+                    {providersError}
+                  </div>
+                ) : filteredProviders.length > 0 ? (
+                  <div className="mt-8 grid gap-4">
+                    {filteredProviders.map(item => (
+                      <article
+                        key={item.id}
+                        className="rounded-[22px] border border-[#d9e7e9] bg-[#fbfdfd] p-5 sm:p-6"
+                      >
+                        <div className="flex flex-wrap items-start justify-between gap-4">
+                          <div>
+                            <h3 className="text-xl font-bold text-[#173f48]">
+                              {item.company_name}
+                            </h3>
 
-                  <h3 className="mt-5 text-xl font-bold text-[#234951]">
-                    {T.waiting}
-                  </h3>
+                            <div className="mt-2 text-sm font-semibold text-[#397061]">
+                              {item.works_nationwide
+                                ? T.wholeCountry
+                                : item.work_regions.join(", ")}
+                            </div>
+                          </div>
 
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setTab("provider")
-                    }
-                    className="mt-6 rounded-2xl border border-[#bddbd2] bg-white px-5 py-3 font-bold text-[#187356]"
-                  >
-                    {T.addFree}
-                  </button>
-                </div>
+                          {item.max_depth && (
+                            <div className="rounded-xl bg-[#edf7f4] px-3 py-2 text-xs font-bold text-[#28634f]">
+                              {T.maxDepth}: {item.max_depth}
+                            </div>
+                          )}
+                        </div>
+
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {item.services.map((s, index) => (
+                            <span
+                              key={`${item.id}-${index}`}
+                              className="rounded-full border border-[#d4e5e1] bg-white px-3 py-1.5 text-xs font-semibold text-[#456761]"
+                            >
+                              {s}
+                            </span>
+                          ))}
+                        </div>
+
+                        {item.presentation && (
+                          <p className="mt-4 text-sm leading-6 text-[#597278]">
+                            {item.presentation}
+                          </p>
+                        )}
+
+                        <div className="mt-5 flex flex-wrap gap-4 border-t border-[#e2ecee] pt-4 text-sm">
+                          <a
+                            href={`tel:${item.phone}`}
+                            className="font-bold text-[#167454]"
+                          >
+                            {item.phone}
+                          </a>
+
+                          {item.email && (
+                            <a
+                              href={`mailto:${item.email}`}
+                              className="font-semibold text-[#356b76]"
+                            >
+                              {item.email}
+                            </a>
+                          )}
+
+                          {item.website_or_facebook && (
+                            <span className="font-semibold text-[#356b76]">
+                              {item.website_or_facebook}
+                            </span>
+                          )}
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="mt-8 rounded-[22px] border border-dashed border-[#bfd6d9] bg-[#f7fbfb] px-6 py-12 text-center">
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#e4f3ef] text-2xl">
+                      {"\u26cf"}
+                    </div>
+
+                    <h3 className="mt-5 text-xl font-bold text-[#234951]">
+                      {T.waiting}
+                    </h3>
+
+                    <button
+                      type="button"
+                      onClick={() => setTab("provider")}
+                      className="mt-6 rounded-2xl border border-[#bddbd2] bg-white px-5 py-3 font-bold text-[#187356]"
+                    >
+                      {T.addFree}
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </section>
@@ -435,18 +821,32 @@ export default function ServicesPage() {
                 {T.requestHelp}
               </p>
 
+              {requestMessage && (
+                <div
+                  className={
+                    "mt-6 rounded-2xl border px-5 py-4 text-sm font-semibold " +
+                    (
+                      requestMessage.startsWith("\u0417\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0435")
+                        ? "border-[#b9ddcf] bg-[#eef8f4] text-[#176344]"
+                        : "border-[#efcccc] bg-[#fff5f5] text-[#9a4242]"
+                    )
+                  }
+                >
+                  {requestMessage}
+                </div>
+              )}
+
               <form
                 className="mt-8 grid gap-5 sm:grid-cols-2"
-                onSubmit={event =>
-                  event.preventDefault()
-                }
+                onSubmit={submitRequest}
+                noValidate
               >
                 <div>
                   <FieldLabel>
                     {T.whatService}
                   </FieldLabel>
 
-                  <Select required>
+                  <Select required name="service">
                     <option value="">
                       {T.chooseService}
                     </option>
@@ -472,7 +872,7 @@ export default function ServicesPage() {
                     {T.province}
                   </FieldLabel>
 
-                  <Select required>
+                  <Select required name="region">
                     <option value="">
                       {T.chooseProvince}
                     </option>
@@ -498,6 +898,7 @@ export default function ServicesPage() {
                     {T.town}
                   </FieldLabel>
                   <Input
+                    name="locality"
                     placeholder={
                       T.townExample
                     }
@@ -509,6 +910,7 @@ export default function ServicesPage() {
                     {T.period}
                   </FieldLabel>
                   <Input
+                    name="desired_period"
                     placeholder={
                       T.periodExample
                     }
@@ -520,6 +922,7 @@ export default function ServicesPage() {
                     {T.depth}
                   </FieldLabel>
                   <Input
+                    name="estimated_depth"
                     placeholder={
                       T.depthHelp
                     }
@@ -531,14 +934,17 @@ export default function ServicesPage() {
                     {T.machineAccess}
                   </FieldLabel>
 
-                  <Select>
-                    <option>
+                  <Select
+                    name="machine_access"
+                    defaultValue="unknown"
+                  >
+                    <option value="unknown">
                       {T.unknown}
                     </option>
-                    <option>
+                    <option value="yes">
                       {T.yes}
                     </option>
-                    <option>
+                    <option value="limited">
                       {T.limited}
                     </option>
                   </Select>
@@ -550,6 +956,9 @@ export default function ServicesPage() {
                   </FieldLabel>
 
                   <textarea
+                    name="description"
+                    required
+                    minLength={10}
                     rows={5}
                     placeholder={
                       T.descriptionHelp
@@ -563,6 +972,7 @@ export default function ServicesPage() {
                     {T.phone}
                   </FieldLabel>
                   <Input
+                    name="contact_phone"
                     type="tel"
                     placeholder={
                       T.phoneHelp
@@ -575,6 +985,7 @@ export default function ServicesPage() {
                     {T.email}
                   </FieldLabel>
                   <Input
+                    name="contact_email"
                     type="email"
                     placeholder={
                       T.emailHelp
@@ -585,14 +996,16 @@ export default function ServicesPage() {
                 <div className="sm:col-span-2">
                   <button
                     type="submit"
-                    disabled
-                    className="rounded-2xl bg-[#173f48] px-6 py-3.5 font-bold text-white opacity-60"
+                    disabled={requestSubmitting}
+                    className="rounded-2xl bg-[#173f48] px-6 py-3.5 font-bold text-white transition hover:bg-[#0f333b] disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    {T.publishRequest}
+                    {requestSubmitting
+                      ? "\u0418\u0437\u043f\u0440\u0430\u0449\u0430\u043d\u0435..."
+                      : T.publishRequest}
                   </button>
 
                   <div className="mt-3 text-xs leading-5 text-[#789096]">
-                    {T.pendingForm}
+                    {"\u0417\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430 \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."}
                   </div>
                 </div>
               </form>
@@ -616,11 +1029,26 @@ export default function ServicesPage() {
                 {T.providerHelp}
               </p>
 
+              {providerMessage && (
+                <div
+                  className={
+                    "mt-6 rounded-2xl border px-5 py-4 text-sm font-semibold " +
+                    (
+                      providerMessage.startsWith("\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0435")
+                        ? "border-[#b9ddcf] bg-[#eef8f4] text-[#176344]"
+                        : "border-[#efcccc] bg-[#fff5f5] text-[#9a4242]"
+                    )
+                  }
+                >
+                  {providerMessage}
+                </div>
+              )}
+
               <form
+                id="provider-form"
                 className="mt-8"
-                onSubmit={event =>
-                  event.preventDefault()
-                }
+                onSubmit={submitProvider}
+                noValidate
               >
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
@@ -628,6 +1056,9 @@ export default function ServicesPage() {
                       {T.company}
                     </FieldLabel>
                     <Input
+                      name="company_name"
+                      required
+                      minLength={2}
                       placeholder={
                         T.companyHelp
                       }
@@ -639,6 +1070,8 @@ export default function ServicesPage() {
                       {T.phone}
                     </FieldLabel>
                     <Input
+                      name="phone"
+                      required
                       type="tel"
                       placeholder={
                         T.phoneHelp
@@ -651,6 +1084,7 @@ export default function ServicesPage() {
                       {T.email}
                     </FieldLabel>
                     <Input
+                      name="email"
                       type="email"
                       placeholder={
                         T.emailHelp
@@ -663,6 +1097,7 @@ export default function ServicesPage() {
                       {T.site}
                     </FieldLabel>
                     <Input
+                      name="website_or_facebook"
                       placeholder={T.optional}
                     />
                   </div>
@@ -713,6 +1148,8 @@ export default function ServicesPage() {
                           >
                             <input
                               type="checkbox"
+                              name="work_regions"
+                              value={item}
                               checked={providerRegions.includes(
                                 item
                               )}
@@ -753,6 +1190,8 @@ export default function ServicesPage() {
                         >
                           <input
                             type="checkbox"
+                            name="services"
+                            value={item}
                             className="mt-0.5"
                           />
                           {item}
@@ -768,6 +1207,7 @@ export default function ServicesPage() {
                       {T.maxDepth}
                     </FieldLabel>
                     <Input
+                      name="max_depth"
                       placeholder={
                         T.maxDepthHelp
                       }
@@ -779,6 +1219,7 @@ export default function ServicesPage() {
                       {T.diameters}
                     </FieldLabel>
                     <Input
+                      name="diameters"
                       placeholder={
                         T.diametersHelp
                       }
@@ -790,6 +1231,7 @@ export default function ServicesPage() {
                       {T.method}
                     </FieldLabel>
                     <Input
+                      name="drilling_method"
                       placeholder={
                         T.methodHelp
                       }
@@ -801,6 +1243,7 @@ export default function ServicesPage() {
                       {T.equipment}
                     </FieldLabel>
                     <Input
+                      name="equipment"
                       placeholder={
                         T.equipmentHelp
                       }
@@ -814,6 +1257,7 @@ export default function ServicesPage() {
                   </FieldLabel>
 
                   <textarea
+                    name="presentation"
                     rows={5}
                     placeholder={
                       T.presentationHelp
@@ -897,21 +1341,57 @@ export default function ServicesPage() {
 
             <div className="lg:col-span-2 flex flex-col items-center pt-2">
               <button
-                type="button"
-                disabled
-                className="min-w-[280px] rounded-2xl bg-[#16825c] px-8 py-3.5 font-bold text-white opacity-60"
+                type="submit"
+                form="provider-form"
+                disabled={providerSubmitting}
+                className="min-w-[280px] rounded-2xl bg-[#16825c] px-8 py-3.5 font-bold text-white transition hover:bg-[#126d4d] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {T.sendApproval}
+                {providerSubmitting
+                  ? "\u0418\u0437\u043f\u0440\u0430\u0449\u0430\u043d\u0435..."
+                  : T.sendApproval}
               </button>
 
               <div className="mt-3 max-w-2xl text-center text-xs leading-5 text-[#789096]">
-                {T.providerPending}
+                {providerMessage ||
+                  "\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."}
               </div>
             </div>
 
           </section>
         )}
       </div>
+
+      {successPopup && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#102f36]/45 px-4 backdrop-blur-[2px]"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="w-full max-w-md rounded-[28px] border border-[#d6e8e5] bg-white p-7 text-center shadow-[0_30px_90px_rgba(17,57,66,.28)] sm:p-8">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#e5f6ef] text-3xl text-[#16825c]">
+              {"\u2713"}
+            </div>
+
+            <h3 className="mt-5 text-2xl font-bold text-[#173f48]">
+              {successPopup.title}
+            </h3>
+
+            <p className="mt-3 text-sm leading-6 text-[#617a80]">
+              {successPopup.text}
+            </p>
+
+            <button
+              type="button"
+              onClick={() =>
+                setSuccessPopup(null)
+              }
+              className="mt-7 min-w-[140px] rounded-2xl bg-[#16825c] px-7 py-3 font-bold text-white transition hover:bg-[#126d4d]"
+            >
+              {"OK"}
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
