@@ -95,7 +95,15 @@ export default function SiteShell({
 
   const keepHeaderVisible = pathname === "/explore";
 
-  if (pathname === "/") {
+  const shellFreeRoutes = [
+    "/",
+    "/login",
+    "/register",
+    "/forgot-password",
+    "/reset-password",
+  ];
+
+  if (shellFreeRoutes.includes(pathname)) {
     return <>{children}</>;
   }
 
