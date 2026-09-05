@@ -37,13 +37,6 @@ const sections = [
     href: "/knowledge/resources",
   },
   {
-    title: "Сондажи",
-    count: "14 материала",
-    description:
-      "Избор на място, дълбочина, конструкция, обсадни тръби, филтри и дебит.",
-    href: "/knowledge/drilling",
-  },
-  {
     title: "Проучване за вода",
     count: "10 материала",
     description:
