@@ -208,6 +208,45 @@ export default function ServicesPage() {
   const [tab, setTab] =
     useState<Tab>("find");
 
+  useEffect(() => {
+    function syncTabFromUrl() {
+      const value =
+        new URLSearchParams(window.location.search).get("tab");
+
+      if (value === "request" || value === "provider") {
+        setTab(value);
+      } else {
+        setTab("find");
+      }
+    }
+
+    syncTabFromUrl();
+
+    window.addEventListener("popstate", syncTabFromUrl);
+
+    return () => {
+      window.removeEventListener("popstate", syncTabFromUrl);
+    };
+  }, []);
+
+  function changeTab(nextTab: Tab) {
+    setTab(nextTab);
+
+    const url = new URL(window.location.href);
+
+    if (nextTab === "find") {
+      url.searchParams.delete("tab");
+    } else {
+      url.searchParams.set("tab", nextTab);
+    }
+
+    window.history.pushState(
+      {},
+      "",
+      `${url.pathname}${url.search}${url.hash}`
+    );
+  }
+
   const [region, setRegion] =
     useState("");
 
@@ -241,6 +280,12 @@ export default function ServicesPage() {
     useState("");
 
   const [successPopup, setSuccessPopup] =
+    useState<{
+      title: string;
+      text: string;
+    } | null>(null);
+
+  const [authPopup, setAuthPopup] =
     useState<{
       title: string;
       text: string;
@@ -328,6 +373,37 @@ export default function ServicesPage() {
     });
   }, [providers, region, service]);
 
+  function goToAuth(path: "/login" | "/register") {
+    const returnTo =
+      `${window.location.pathname}${window.location.search}${window.location.hash}`;
+
+    document.cookie =
+      `ai_smm_auth_next=${encodeURIComponent(returnTo)}; path=/; max-age=3600; samesite=lax`;
+
+    window.location.href = path;
+  }
+
+  async function requireUser(
+    title: string,
+    text: string
+  ) {
+    const {
+      data: { user },
+      error,
+    } = await supabase.auth.getUser();
+
+    if (error || !user) {
+      setAuthPopup({
+        title,
+        text,
+      });
+
+      return null;
+    }
+
+    return user;
+  }
+
   async function submitRequest(
     event: FormEvent<HTMLFormElement>
   ) {
@@ -335,9 +411,17 @@ export default function ServicesPage() {
 
     if (requestSubmitting) return;
 
+    const form = event.currentTarget;
+
     setRequestMessage("");
 
-    const form = event.currentTarget;
+    const user = await requireUser(
+      "Необходима е регистрация",
+      "За да публикувате заявка за услуга, трябва да имате акаунт в SONDI.BG."
+    );
+
+    if (!user) return;
+
     const data = new FormData(form);
 
     const requestedService = String(
@@ -394,6 +478,7 @@ export default function ServicesPage() {
     const { error } = await supabase
       .from("service_requests")
       .insert({
+        owner_id: user.id,
         service: requestedService,
         region: requestedRegion,
         locality:
@@ -441,9 +526,17 @@ export default function ServicesPage() {
 
     if (providerSubmitting) return;
 
+    const form = event.currentTarget;
+
     setProviderMessage("");
 
-    const form = event.currentTarget;
+    const user = await requireUser(
+      "Необходима е регистрация",
+      "За да публикувате профил на изпълнител, трябва да имате акаунт в SONDI.BG."
+    );
+
+    if (!user) return;
+
     const data = new FormData(form);
 
     const selectedServices = data
@@ -474,6 +567,7 @@ export default function ServicesPage() {
     const { error } = await supabase
       .from("service_providers")
       .insert({
+        owner_id: user.id,
         company_name:
           String(data.get("company_name") || "").trim(),
         phone:
@@ -546,7 +640,7 @@ export default function ServicesPage() {
     return (
       <button
         type="button"
-        onClick={() => setTab(value)}
+        onClick={() => changeTab(value)}
         className={
           "rounded-2xl px-5 py-3 text-sm font-bold transition " +
           (
@@ -794,7 +888,7 @@ export default function ServicesPage() {
 
                     <button
                       type="button"
-                      onClick={() => setTab("provider")}
+                      onClick={() => changeTab("provider")}
                       className="mt-6 rounded-2xl border border-[#bddbd2] bg-white px-5 py-3 font-bold text-[#187356]"
                     >
                       {T.addFree}
@@ -1360,6 +1454,58 @@ export default function ServicesPage() {
           </section>
         )}
       </div>
+
+      {authPopup && (
+        <div
+          className="fixed inset-0 z-[110] flex items-center justify-center bg-[#102f36]/50 px-4 backdrop-blur-[2px]"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="auth-popup-title"
+        >
+          <div className="w-full max-w-md rounded-[28px] border border-[#d6e8e5] bg-white p-7 text-center shadow-[0_30px_90px_rgba(17,57,66,.30)] sm:p-8">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#e9f5f6] text-3xl text-[#297784]">
+              {"→"}
+            </div>
+
+            <h3
+              id="auth-popup-title"
+              className="mt-5 text-2xl font-bold text-[#173f48]"
+            >
+              {authPopup.title}
+            </h3>
+
+            <p className="mt-3 text-sm leading-6 text-[#617a80]">
+              {authPopup.text}
+            </p>
+
+            <div className="mt-7 grid gap-3 sm:grid-cols-2">
+              <button
+                type="button"
+                onClick={() => goToAuth("/register")}
+                className="rounded-2xl bg-[#16825c] px-5 py-3.5 font-bold text-white transition hover:bg-[#126d4d]"
+              >
+                {"Регистрация"}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => goToAuth("/login")}
+                className="rounded-2xl bg-[#173f48] px-5 py-3.5 font-bold text-white transition hover:bg-[#102f36]"
+              >
+                {"Вход"}
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setAuthPopup(null)}
+              className="mt-4 px-5 py-2 text-sm font-semibold text-[#72898f] transition hover:text-[#173f48]"
+            >
+              {"Отказ"}
+            </button>
+          </div>
+        </div>
+      )}
 
       {successPopup && (
         <div

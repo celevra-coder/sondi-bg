@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { createClient } from "@/lib/supabase-browser";
+import { useEffect, useState } from "react";
 
 const menus = [
   {
@@ -52,6 +53,37 @@ export default function SiteShell({
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [headerOpen, setHeaderOpen] = useState(false);
+  const [supabase] = useState(() => createClient());
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authReady, setAuthReady] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+
+    void supabase.auth.getSession().then(({ data }) => {
+      if (!active) return;
+      setIsAuthenticated(Boolean(data.session));
+      setAuthReady(true);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (!active) return;
+      setIsAuthenticated(Boolean(session));
+      setAuthReady(true);
+    });
+
+    return () => {
+      active = false;
+      subscription.unsubscribe();
+    };
+  }, [supabase]);
+
+  async function handleSignOut() {
+    await supabase.auth.signOut();
+    window.location.href = "/explore";
+  }
 
   const keepHeaderVisible = pathname === "/explore";
 
@@ -223,19 +255,42 @@ export default function SiteShell({
 
             <div className="ml-3 h-7 w-px bg-[#bfdde5]" />
 
-            <Link
-              href="/login"
-              className="px-3 py-3 text-[13px] font-medium text-[#294e59]"
-            >
-              ВХОД
-            </Link>
+            {authReady && (
+              isAuthenticated ? (
+                <>
+                  <Link
+                    href="/account"
+                    className="px-3 py-3 text-[13px] font-medium text-[#294e59] transition hover:text-[#15809a]"
+                  >
+                    {"ПРОФИЛ"}
+                  </Link>
 
-            <Link
-              href="/register"
-              className="ml-1 rounded-full bg-[#177f98] px-5 py-3 text-xs font-semibold text-white transition hover:bg-[#126a80]"
-            >
-              РЕГИСТРАЦИЯ
-            </Link>
+                  <button
+                    type="button"
+                    onClick={() => void handleSignOut()}
+                    className="ml-1 rounded-full bg-[#177f98] px-5 py-3 text-xs font-semibold text-white transition hover:bg-[#126a80]"
+                  >
+                    {"ИЗХОД"}
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/login"
+                    className="px-3 py-3 text-[13px] font-medium text-[#294e59]"
+                  >
+                    {"ВХОД"}
+                  </Link>
+
+                  <Link
+                    href="/register"
+                    className="ml-1 rounded-full bg-[#177f98] px-5 py-3 text-xs font-semibold text-white transition hover:bg-[#126a80]"
+                  >
+                    {"РЕГИСТРАЦИЯ"}
+                  </Link>
+                </>
+              )
+            )}
           </nav>
 
           <button
@@ -257,7 +312,42 @@ export default function SiteShell({
               <Link href="/pro">Професионалисти</Link>
               <Link href="/knowledge">Знания</Link>
               <Link href="/about">За нас</Link>
-              <Link href="/login">Вход</Link>
+              {authReady && (
+                isAuthenticated ? (
+                  <>
+                    <Link
+                      href="/account"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {"Профил"}
+                    </Link>
+
+                    <button
+                      type="button"
+                      onClick={() => void handleSignOut()}
+                      className="text-left"
+                    >
+                      {"Изход"}
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/login"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {"Вход"}
+                    </Link>
+
+                    <Link
+                      href="/register"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {"Регистрация"}
+                    </Link>
+                  </>
+                )
+              )}
             </div>
           </div>
         )}
