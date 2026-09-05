@@ -37,8 +37,8 @@ const sections = [
     href: "/knowledge/resources",
   },
   {
-    title: "Проучване за вода",
-    count: "10 материала",
+    title: "\u041f\u0440\u043e\u0443\u0447\u0432\u0430\u043d\u0435 \u0437\u0430 \u0432\u043e\u0434\u0430",
+    count: "8 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u0430",
     description:
       "Геофизика, VES, профилиране, радиестезия и комбиниране на методи.",
     href: "/knowledge/exploration",
