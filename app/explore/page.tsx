@@ -37,13 +37,6 @@ export default function ExplorePage() {
                 href="/map"
                 className="rounded-full bg-[#153943] px-7 py-3.5 text-sm font-medium text-white transition hover:bg-[#1f6170]"
               >
-                Отвори картата
-              </Link>
-
-              <Link
-                href="/analysis"
-                className="rounded-full border border-[#8fc5d1] bg-white/55 px-7 py-3.5 text-sm font-medium text-[#245965] backdrop-blur transition hover:bg-white"
-              >
                 Провери място
               </Link>
             </div>
@@ -148,7 +141,7 @@ export default function ExplorePage() {
                   </span>
 
                   <span className="font-medium text-[#1c7488]">
-                    Подробен анализ →
+                    Пространствен анализ
                   </span>
                 </div>
               </div>
@@ -166,12 +159,12 @@ export default function ExplorePage() {
 
       <section className="mx-auto max-w-[1320px] px-7 pb-20 pt-20 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[1.25fr_.75fr]">
-          <div className="relative min-h-[330px] overflow-hidden bg-[#153d47] p-10 text-white">
-            <div className="absolute -right-16 -top-24 h-72 w-72 rounded-full border-[42px] border-white/5" />
+          <div className="group relative min-h-[330px] overflow-hidden rounded-[28px] border border-[#2a5d68]/45 bg-[#153d47] p-10 text-white shadow-[0_22px_65px_rgba(24,70,82,.16)] transition duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_30px_85px_rgba(24,70,82,.24)]">
+            <div className="absolute -right-16 -top-24 h-72 w-72 rounded-full border-[42px] border-white/5 transition duration-700 group-hover:scale-110" />            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-0 shadow-[0_0_14px_rgba(255,255,255,.75)] transition-all duration-700 ease-out group-hover:translate-y-[329px] group-hover:opacity-90" />
 
             <div className="relative">
               <div className="text-xs uppercase tracking-[0.25em] text-[#8ac7d3]">
-                Sondi PRO
+                Sondi EXPERT
               </div>
 
               <h2 className="mt-5 max-w-2xl text-4xl font-semibold leading-tight tracking-[-0.04em]">
@@ -179,21 +172,19 @@ export default function ExplorePage() {
               </h2>
 
               <p className="mt-5 max-w-xl leading-7 text-white/60">
-                Геология, водни тела, мониторинг и пространствени данни
-                за конкретна точка.
+                След избор на точка SONDI EXPERT свързва наличните данни
+                за геология, подземни водни тела, ресурс, мониторинг,
+                разломи и пространствен контекст в един подробен анализ.
               </p>
 
-              <Link
-                href="/pro"
-                className="mt-8 inline-flex bg-white px-6 py-3 text-sm font-medium text-[#153d47]"
-              >
-                Разгледай Sondi PRO →
-              </Link>
+              <div className="mt-8 border-t border-white/15 pt-5 text-sm leading-6 text-white/50">
+                SONDI EXPERT се създава след избор на конкретна точка от картата.
+              </div>
             </div>
           </div>
 
-          <div className="bg-[#edf8fa] p-9">
-            <div className="text-xs uppercase tracking-[0.25em] text-[#5d909c]">
+          <div className="group relative overflow-hidden rounded-[28px] border border-[#d2e6eb] bg-[#edf8fa] p-9 shadow-[0_22px_65px_rgba(24,70,82,.12)] transition duration-500 ease-out hover:-translate-y-1 hover:border-[#a8d3dc] hover:shadow-[0_30px_85px_rgba(24,70,82,.18)]">
+            <div className="pointer-events-none absolute -right-14 -top-14 h-32 w-32 rounded-full bg-[#8ed3df]/15 blur-2xl transition duration-700 group-hover:scale-150" />            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent opacity-0 shadow-[0_0_12px_rgba(255,255,255,.85)] transition-all duration-700 ease-out group-hover:translate-y-[329px] group-hover:opacity-90" />            <div className="relative text-xs uppercase tracking-[0.25em] text-[#5d909c]">
               Знания
             </div>
 
@@ -201,31 +192,46 @@ export default function ExplorePage() {
               Водата под земята, обяснена ясно.
             </h2>
 
-            <div className="mt-8 divide-y divide-[#cce2e7]">
-              <Link
-                href="/knowledge"
-                className="flex justify-between py-4 text-sm"
-              >
-                Как се образуват подземните води?
-                <span>→</span>
-              </Link>
+            <p className="mt-5 leading-7 text-[#607b82]">
+              Практични материали за подземните води, геологията,
+              мониторинга, проучванията и сондажите.
+            </p>
 
-              <Link
-                href="/knowledge"
-                className="flex justify-between py-4 text-sm"
-              >
-                Как се избира място за сондаж?
-                <span>→</span>
-              </Link>
+            <Link
+              href="/knowledge"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-[#1d788f] transition hover:gap-3"
+            >
+              Разгледай знанията <span>→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
-              <Link
-                href="/knowledge"
-                className="flex justify-between py-4 text-sm"
-              >
-                Какво означава водно ниво?
-                <span>→</span>
-              </Link>
+      <section className="mx-auto max-w-[1320px] px-7 pb-24 lg:px-10">
+        <div className="relative overflow-hidden rounded-[28px] border border-[#d7e8eb] bg-[#f4fafb] px-8 py-9 sm:px-10">
+          <div className="absolute -right-16 -top-20 h-52 w-52 rounded-full border-[34px] border-[#8ecbd7]/10" />
+
+          <div className="relative max-w-3xl">
+            <div className="text-xs uppercase tracking-[0.25em] text-[#5d909c]">
+              Източници и прозрачност
             </div>
+
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#153943]">
+              Данни с проследим произход.
+            </h2>
+
+            <p className="mt-4 max-w-2xl leading-7 text-[#607b82]">
+              SONDI.BG обединява официални публични данни, геоложки карти,
+              научни публикации и европейски пространствени източници,
+              като източникът и интерпретацията се разграничават.
+            </p>
+
+            <Link
+              href="/sources"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#1d788f] transition hover:gap-3"
+            >
+              Източници на данни <span>→</span>
+            </Link>
           </div>
         </div>
       </section>

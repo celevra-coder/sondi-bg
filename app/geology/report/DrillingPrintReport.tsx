@@ -195,13 +195,28 @@ export default function DrillingPrintReport({
       <article className="sondi-drilling-print-report">
         <header>
           <div style={{
-            fontWeight: 800,
-            letterSpacing: ".12em",
-            color: "#16825c",
-            fontSize: "9pt",
-            marginBottom: "2mm",
+            display: "flex",
+            alignItems: "center",
+            gap: "4mm",
+            marginBottom: "4mm",
           }}>
-            SONDI EXPERT
+            <img
+              src="/sondi-mark.png"
+              alt="SONDI.BG"
+              style={{
+                width: "22mm",
+                height: "22mm",
+                objectFit: "contain",
+              }}
+            />
+            <div style={{
+              fontWeight: 800,
+              letterSpacing: ".12em",
+              color: "#167d96",
+              fontSize: "9pt",
+            }}>
+              SONDI EXPERT
+            </div>
           </div>
 
           <h1>

@@ -341,9 +341,9 @@ export default function AnalysisEnhancements() {
           }
 
           .sondi-analysis-toolbar,
-          header,
-          nav,
-          footer,
+          body > div > header,
+          body > div > nav,
+          body > div > footer,
           body > div > button {
             display: none !important;
           }

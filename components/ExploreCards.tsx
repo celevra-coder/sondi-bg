@@ -1,85 +1,54 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const cards = [
   {
     number: "01",
-    title: "Провери място",
-    text: "Геология, водни тела и мониторинг за конкретни координати.",
-    href: "/analysis",
-    type: "analysis",
+    title: "Геология",
+    text: "Геоложки единици, литология и строеж на терена.",
+    type: "geology",
   },
   {
     number: "02",
-    title: "Интерактивна карта",
-    text: "Официални пространствени данни върху реалната карта.",
-    href: "/map",
-    type: "map",
-  },
-  {
-    number: "03",
     title: "Подземни води",
-    text: "Водни тела, водоносни хоризонти и подземна структура.",
-    href: "/groundwater",
+    text: "Подземни водни тела, водоносни хоризонти и хидрогеоложки контекст.",
     type: "groundwater",
   },
   {
-    number: "04",
-    title: "Сондажи",
-    text: "Дълбочини, водни нива, дебит и подготовка за сондиране.",
-    href: "/drilling",
-    type: "drilling",
+    number: "03",
+    title: "Количествен ресурс",
+    text: "Ресурс, водовземане и натиск върху подземните води.",
+    type: "resource",
   },
   {
-    number: "05",
+    number: "04",
     title: "Мониторинг",
-    text: "Наблюдателни точки, нива, дебити и исторически измервания.",
-    href: "/monitoring",
+    text: "Наблюдателни точки, състояние и налични измервания.",
     type: "monitoring",
   },
   {
+    number: "05",
+    title: "Активни разломи",
+    text: "Разломни структури и структурен контекст около избраното място.",
+    type: "faults",
+  },
+  {
     number: "06",
-    title: "Sondi PRO",
-    text: "Професионални анализи, слоеве и подробни отчети.",
-    href: "/pro",
-    type: "pro",
+    title: "Сондажен контекст",
+    text: "Данни и фактори, които подпомагат предварителната оценка за сондиране.",
+    type: "drilling",
   },
 ];
 
 function Preview({ type }: { type: string }) {
-  if (type === "map") {
+  if (type === "geology") {
     return (
-      <div className="relative h-32 overflow-hidden bg-[#143d47]">
-        <div className="absolute inset-0 opacity-40">
-          <div className="absolute left-[10%] top-[22%] h-px w-[70%] rotate-[-9deg] bg-[#76c9d8]" />
-          <div className="absolute left-[17%] top-[52%] h-px w-[65%] rotate-[7deg] bg-[#76c9d8]" />
-          <div className="absolute left-[30%] top-[12%] h-[75%] w-px rotate-[16deg] bg-[#76c9d8]" />
-        </div>
-        <span className="absolute left-[24%] top-[38%] h-3 w-3 rounded-full bg-[#75d7e5]" />
-        <span className="absolute right-[29%] top-[29%] h-3 w-3 rounded-full bg-[#75d7e5]" />
-        <span className="absolute bottom-[20%] left-[55%] h-3 w-3 rounded-full bg-[#75d7e5]" />
-      </div>
-    );
-  }
-
-  if (type === "analysis") {
-    return (
-      <div className="h-32 bg-[#edf8fa] p-5">
-        <div className="text-[9px] uppercase tracking-[0.2em] text-[#77939b]">
-          Анализ на точка
-        </div>
-        <div className="mt-2 text-lg font-semibold text-[#163b44]">
-          42.1354, 24.7453
-        </div>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {["Геология", "Водни тела", "Мониторинг"].map((x) => (
-            <span key={x} className="rounded-full bg-white px-2.5 py-1 text-[10px] text-[#56757e]">
-              {x}
-            </span>
-          ))}
-        </div>
+      <div className="relative h-32 overflow-hidden bg-[#dfecef]">
+        <div className="absolute inset-x-0 top-[10%] h-7 rotate-[-3deg] bg-[#c89e73]/70" />
+        <div className="absolute inset-x-0 top-[34%] h-8 rotate-[2deg] bg-[#8d8a72]/65" />
+        <div className="absolute inset-x-0 top-[61%] h-9 rotate-[-2deg] bg-[#687a75]/70" />
+        <div className="absolute left-[64%] top-0 h-full w-[2px] rotate-[13deg] bg-[#3b6670]/60" />
       </div>
     );
   }
@@ -95,13 +64,32 @@ function Preview({ type }: { type: string }) {
     );
   }
 
-  if (type === "drilling") {
+  if (type === "resource") {
     return (
-      <div className="relative h-32 bg-[#eef7f9]">
-        <div className="absolute left-1/2 top-0 h-full w-[4px] -translate-x-1/2 bg-[#294f59]" />
-        <div className="absolute left-1/2 top-[18%] h-3 w-20 -translate-x-1/2 bg-[#b7dce4]" />
-        <div className="absolute left-1/2 top-[48%] h-3 w-28 -translate-x-1/2 bg-[#7fbecd]" />
-        <div className="absolute left-1/2 top-[74%] h-3 w-16 -translate-x-1/2 bg-[#55a7b9]" />
+      <div className="h-32 bg-[#edf8fa] p-5">
+        <div className="text-[9px] uppercase tracking-[0.2em] text-[#77939b]">
+          Количествен баланс
+        </div>
+        <div className="mt-4 space-y-3">
+          <div>
+            <div className="mb-1 flex justify-between text-[10px] text-[#67838b]">
+              <span>Ресурс</span>
+              <span>82%</span>
+            </div>
+            <div className="h-2 rounded-full bg-white">
+              <div className="h-2 w-[82%] rounded-full bg-[#5aaec0]" />
+            </div>
+          </div>
+          <div>
+            <div className="mb-1 flex justify-between text-[10px] text-[#67838b]">
+              <span>Натиск</span>
+              <span>46%</span>
+            </div>
+            <div className="h-2 rounded-full bg-white">
+              <div className="h-2 w-[46%] rounded-full bg-[#86c9d5]" />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -121,14 +109,23 @@ function Preview({ type }: { type: string }) {
     );
   }
 
-  return (
-    <div className="h-32 bg-[#153d47] p-5 text-white">
-      <div className="text-[9px] uppercase tracking-[0.2em] text-white/50">
-        Sondi PRO
+  if (type === "faults") {
+    return (
+      <div className="relative h-32 overflow-hidden bg-[#173f49]">
+        <div className="absolute left-[8%] top-[30%] h-[2px] w-[82%] rotate-[-11deg] bg-[#76c9d8]" />
+        <div className="absolute left-[15%] top-[58%] h-[2px] w-[70%] rotate-[7deg] bg-[#9bd9e3]/80" />
+        <div className="absolute left-[48%] top-[5%] h-[90%] w-[2px] rotate-[18deg] bg-white/35" />
+        <span className="absolute left-[44%] top-[45%] h-3 w-3 rounded-full bg-[#7ad3df]" />
       </div>
-      <div className="mt-3 text-sm">Координати → Геология → Води → Отчет</div>
-      <div className="mt-5 h-2 w-[80%] rounded-full bg-[#65bdcf]" />
-      <div className="mt-2 h-2 w-[60%] rounded-full bg-white/25" />
+    );
+  }
+
+  return (
+    <div className="relative h-32 bg-[#eef7f9]">
+      <div className="absolute left-1/2 top-0 h-full w-[4px] -translate-x-1/2 bg-[#294f59]" />
+      <div className="absolute left-1/2 top-[18%] h-3 w-20 -translate-x-1/2 bg-[#b7dce4]" />
+      <div className="absolute left-1/2 top-[48%] h-3 w-28 -translate-x-1/2 bg-[#7fbecd]" />
+      <div className="absolute left-1/2 top-[74%] h-3 w-16 -translate-x-1/2 bg-[#55a7b9]" />
     </div>
   );
 }
@@ -159,17 +156,23 @@ export default function ExploreCards() {
       <div className="overflow-hidden">
         <div className="grid gap-5 md:grid-cols-3">
           {visible.map((card, index) => (
-            <Link
+            <article
               key={`${start}-${card.number}`}
-              href={card.href}
-              className={`sondi-carousel-card group overflow-hidden bg-white shadow-[0_18px_55px_rgba(24,70,82,.15)] ${
+              className={`sondi-carousel-card group relative overflow-hidden rounded-[28px] border border-[#d2e6eb] bg-white/95 shadow-[0_22px_65px_rgba(24,70,82,.13)] backdrop-blur transition duration-500 ease-out hover:scale-[1.015] hover:border-[#a8d3dc] hover:shadow-[0_30px_85px_rgba(24,70,82,.20)] ${
                 index === 1 ? "md:-translate-y-8" : ""
               }`}
             >
-              <Preview type={card.type} />
+              <div className="pointer-events-none absolute -right-16 -top-16 z-20 h-36 w-36 rounded-full bg-[#8ed3df]/15 blur-2xl transition duration-700 group-hover:scale-150" />
+              <div className="pointer-events-none absolute left-7 right-7 top-0 z-30 h-px bg-gradient-to-r from-transparent via-[#65b6c6]/70 to-transparent" />
 
-              <div className="p-7">
-                <div className="text-[10px] tracking-[0.2em] text-[#8fa6ac]">
+              <div className="relative overflow-hidden">
+                <Preview type={card.type} />
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent opacity-0 shadow-[0_0_12px_rgba(255,255,255,.85)] transition-all duration-700 ease-out group-hover:translate-y-[127px] group-hover:opacity-90" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-[#153943]/5" />
+              </div>
+
+              <div className="relative p-7">
+                <div className="inline-flex rounded-full border border-[#d5e8ec] bg-[#f4fafb] px-3 py-1 text-[9px] font-semibold tracking-[0.22em] text-[#72949c] shadow-sm">
                   {card.number}
                 </div>
 
@@ -177,18 +180,15 @@ export default function ExploreCards() {
                   {card.title}
                 </h3>
 
-                <p className="mt-3 min-h-[48px] text-sm leading-6 text-[#657e85]">
+                <p className="mt-3 min-h-[72px] text-sm leading-6 text-[#657e85]">
                   {card.text}
                 </p>
 
-                <div className="mt-6 text-sm text-[#1d788f]">
-                  Научи повече
-                  <span className="ml-2 inline-block transition group-hover:translate-x-2">
-                    →
-                  </span>
+                <div className="pointer-events-none absolute bottom-5 right-6 h-7 w-7 rounded-full border border-[#b8dbe2]/60 opacity-40 transition duration-500 group-hover:scale-125 group-hover:opacity-80">
+                  <div className="absolute inset-[7px] rounded-full bg-[#6bb7c7]/70" />
                 </div>
               </div>
-            </Link>
+            </article>
           ))}
         </div>
       </div>
@@ -196,6 +196,7 @@ export default function ExploreCards() {
       <button
         type="button"
         onClick={prev}
+        aria-label="Предишни карти"
         className="absolute left-[-22px] top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-[#153943] text-white shadow-lg lg:flex"
       >
         ←
@@ -204,6 +205,7 @@ export default function ExploreCards() {
       <button
         type="button"
         onClick={next}
+        aria-label="Следващи карти"
         className="absolute right-[-22px] top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-[#153943] text-white shadow-lg lg:flex"
       >
         →

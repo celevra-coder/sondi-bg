@@ -199,20 +199,25 @@ const [authReady, setAuthReady] = useState(false);
         ].join(" ")}
       >
         <div className="mx-auto flex h-[86px] max-w-[1540px] items-center px-7 lg:px-10">
-          <Link href="/explore" className="flex shrink-0 items-center gap-3">
-            <div className="relative h-12 w-12">
-              <div className="absolute left-[13px] top-[5px] h-7 w-5 rotate-45 rounded-[70%_35%_70%_35%] border-[3px] border-[#167d96]" />
-              <div className="absolute bottom-[7px] left-[5px] h-[3px] w-10 rounded-full bg-[#71bacb]" />
-              <div className="absolute bottom-[1px] left-[10px] h-[2px] w-8 rounded-full bg-[#9bd0db]" />
+          <Link href="/explore" className="group flex shrink-0 items-center gap-3">
+            <div className="relative h-14 w-14 overflow-hidden">
+              <img
+                src="/sondi-mark.png"
+                alt=""
+                aria-hidden="true"
+                className="h-full w-full object-contain mix-blend-multiply transition duration-500 group-hover:scale-[1.04]"
+              />
+              <div className="pointer-events-none absolute -left-8 top-[-20%] h-[140%] w-5 rotate-[22deg] bg-white/50 blur-[3px] opacity-0 transition-all duration-700 ease-out group-hover:left-[110%] group-hover:opacity-70" />
             </div>
 
-            <div>
-              <div className="text-[25px] font-semibold tracking-[-0.05em]">
+            <div className="relative overflow-hidden">
+              <div className="relative text-[25px] font-semibold tracking-[-0.05em]">
                 Sondi<span className="text-[#19839c]">.bg</span>
               </div>
               <div className="-mt-1 text-[8px] uppercase tracking-[0.3em] text-[#648894]">
                 Underground Water
               </div>
+              <div className="pointer-events-none absolute -left-10 top-[-30%] h-[160%] w-6 rotate-[22deg] bg-white/60 blur-[4px] opacity-0 transition-all duration-700 ease-out group-hover:left-[115%] group-hover:opacity-80" />
             </div>
           </Link>
 

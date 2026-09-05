@@ -289,13 +289,28 @@ export default function ProPrintReport({
       <article className="sondi-print-report">
         <header>
           <div style={{
-            fontSize: "9pt",
-            fontWeight: 800,
-            letterSpacing: ".12em",
-            color: "#16825c",
-            marginBottom: "2mm",
+            display: "flex",
+            alignItems: "center",
+            gap: "4mm",
+            marginBottom: "4mm",
           }}>
-            SONDI EXPERT
+            <img
+              src="/sondi-mark.png"
+              alt="SONDI.BG"
+              style={{
+                width: "22mm",
+                height: "22mm",
+                objectFit: "contain",
+              }}
+            />
+            <div style={{
+              fontSize: "9pt",
+              fontWeight: 800,
+              letterSpacing: ".12em",
+              color: "#167d96",
+            }}>
+              SONDI EXPERT
+            </div>
           </div>
 
           <h1>
