@@ -85,6 +85,14 @@ export default function SiteShell({
     window.location.href = "/explore";
   }
 
+  function rememberAuthReturn() {
+    const target =
+      `${window.location.pathname}${window.location.search}${window.location.hash}`;
+
+    document.cookie =
+      `ai_smm_auth_next=${encodeURIComponent(target)}; path=/; max-age=3600; samesite=lax`;
+  }
+
   const keepHeaderVisible = pathname === "/explore";
 
   if (pathname === "/") {
@@ -277,6 +285,7 @@ export default function SiteShell({
                 <>
                   <Link
                     href="/login"
+                    onClick={rememberAuthReturn}
                     className="px-3 py-3 text-[13px] font-medium text-[#294e59]"
                   >
                     {"ВХОД"}
@@ -284,6 +293,7 @@ export default function SiteShell({
 
                   <Link
                     href="/register"
+                    onClick={rememberAuthReturn}
                     className="ml-1 rounded-full bg-[#177f98] px-5 py-3 text-xs font-semibold text-white transition hover:bg-[#126a80]"
                   >
                     {"РЕГИСТРАЦИЯ"}
@@ -334,14 +344,20 @@ export default function SiteShell({
                   <>
                     <Link
                       href="/login"
-                      onClick={() => setMobileOpen(false)}
+                      onClick={() => {
+                        rememberAuthReturn();
+                        setMobileOpen(false);
+                      }}
                     >
                       {"Вход"}
                     </Link>
 
                     <Link
                       href="/register"
-                      onClick={() => setMobileOpen(false)}
+                      onClick={() => {
+                        rememberAuthReturn();
+                        setMobileOpen(false);
+                      }}
                     >
                       {"Регистрация"}
                     </Link>

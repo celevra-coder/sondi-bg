@@ -135,6 +135,9 @@ export default function LoginPage() {
       return;
     }
 
+    document.cookie =
+      "ai_smm_auth_next=; path=/; max-age=0; samesite=lax";
+
     window.location.href =
       returnTo;
   }
@@ -160,8 +163,24 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#f2f8f8] px-4 py-12">
-      <section className="w-full max-w-md rounded-[30px] border border-[#d9e7e9] bg-white p-7 shadow-[0_24px_80px_rgba(20,63,73,.10)] sm:p-9">
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black px-4 py-12">
+      <video
+        className="absolute inset-0 h-full w-full object-cover object-[52%_center] sm:object-center"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      >
+        <source
+          src="/videos/sondi-hero.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      <div className="absolute inset-0 bg-black/45" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/60" />
+      <section className="relative z-10 w-full max-w-md rounded-[30px] border border-white/70 bg-white/95 p-7 shadow-[0_28px_90px_rgba(0,0,0,.30)] backdrop-blur-sm sm:p-9">
         <div className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#56858e]">
           {T.eyebrow}
         </div>
@@ -290,6 +309,15 @@ export default function LoginPage() {
                 )}
               </button>
             </div>
+          </div>
+
+          <div className="flex justify-end">
+            <a
+              href="/forgot-password"
+              className="text-sm font-semibold text-[#167454] transition hover:text-[#0f5b40]"
+            >
+              {"\u0417\u0430\u0431\u0440\u0430\u0432\u0435\u043d\u0430 \u043f\u0430\u0440\u043e\u043b\u0430?"}
+            </a>
           </div>
 
           <button

@@ -61,6 +61,9 @@ export default function RegisterPage() {
   const [message, setMessage] =
     useState("");
 
+  const [messageType, setMessageType] =
+    useState<"error" | "success" | "">("");
+
   const [returnTo, setReturnTo] =
     useState("/explore");
 
@@ -143,6 +146,7 @@ export default function RegisterPage() {
 
     setLoading(true);
     setMessage("");
+    setMessageType("");
 
     const { data: result, error } =
       await supabase.auth.signUp({
@@ -161,16 +165,34 @@ export default function RegisterPage() {
     setLoading(false);
 
     if (error) {
-      setMessage(error.message);
+      setMessageType("error");
+
+      if (
+        error.message.toLowerCase().includes(
+          "user already registered"
+        )
+      ) {
+        setMessage(
+          "\u0422\u043e\u0437\u0438 \u0438\u043c\u0435\u0439\u043b \u0432\u0435\u0447\u0435 \u0435 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u043d. " +
+          "\u0412\u043b\u0435\u0437\u0442\u0435 \u0432 \u043f\u0440\u043e\u0444\u0438\u043b\u0430 \u0441\u0438."
+        );
+      } else {
+        setMessage(error.message);
+      }
+
       return;
     }
 
     if (result.session) {
+      document.cookie =
+        "ai_smm_auth_next=; path=/; max-age=0; samesite=lax";
+
       window.location.href =
         returnTo;
       return;
     }
 
+    setMessageType("success");
     setMessage(
       T.success +
         " " +
@@ -180,6 +202,7 @@ export default function RegisterPage() {
 
   async function registerWithGoogle() {
     setMessage("");
+    setMessageType("");
 
     document.cookie =
       `ai_smm_auth_next=${encodeURIComponent(returnTo)}; path=/; max-age=3600; samesite=lax`;
@@ -197,13 +220,30 @@ export default function RegisterPage() {
       });
 
     if (error) {
+      setMessageType("error");
       setMessage(error.message);
     }
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#f2f8f8] px-4 py-12">
-      <section className="w-full max-w-lg rounded-[30px] border border-[#d9e7e9] bg-white p-7 shadow-[0_24px_80px_rgba(20,63,73,.10)] sm:p-9">
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black px-4 py-12">
+      <video
+        className="absolute inset-0 h-full w-full object-cover object-[52%_center] sm:object-center"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      >
+        <source
+          src="/videos/sondi-hero.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      <div className="absolute inset-0 bg-black/45" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/60" />
+      <section className="relative z-10 w-full max-w-lg rounded-[30px] border border-white/70 bg-white/95 p-7 shadow-[0_28px_90px_rgba(0,0,0,.30)] backdrop-blur-sm sm:p-9">
         <div className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#56858e]">
           {T.eyebrow}
         </div>
@@ -251,7 +291,14 @@ export default function RegisterPage() {
         </div>
 
         {message && (
-          <div className="mt-6 rounded-2xl border border-[#d7e5e8] bg-[#f7fbfb] px-4 py-3 text-sm text-[#46636a]">
+          <div
+            className={
+              "mt-6 rounded-2xl border px-4 py-3 text-sm font-semibold " +
+              (messageType === "error"
+                ? "border-[#efb5b5] bg-[#fff1f1] text-[#a12626]"
+                : "border-[#b7dfcf] bg-[#effaf5] text-[#176247]")
+            }
+          >
             {message}
           </div>
         )}
