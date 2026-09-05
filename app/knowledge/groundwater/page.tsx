@@ -99,10 +99,6 @@ const groups = [
         title: "Какво показват официалните карти?",
         href: "/knowledge/groundwater/official-maps",
       },
-      {
-        title: "Какво не може да се определи само от картата?",
-        href: "/knowledge/groundwater/map-limitations",
-      },
     ],
   },
 ];
