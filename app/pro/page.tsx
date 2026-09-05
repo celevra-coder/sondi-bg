@@ -24,7 +24,7 @@ function Card({
 }: {
   title: string;
   subtitle?: string;
-  knowledgeHref: string;
+  knowledgeHref?: string;
   children?: React.ReactNode;
 }) {
   return (
@@ -36,6 +36,7 @@ function Card({
       padding: 20,
       boxShadow: "0 8px 28px rgba(16,62,73,.05)",
     }}>
+      {knowledgeHref && (
       <Link
         href={knowledgeHref}
         aria-label={`Прочети повече за ${title} в Знания`}
@@ -62,6 +63,7 @@ function Card({
       >
         !
       </Link>
+      )}
 
       <h2 style={{
         margin: 0,
@@ -4227,7 +4229,7 @@ export default async function ProPage({
         }}>
           <Card
             title="1. Местоположение и подземно водно тяло"
-            knowledgeHref="/knowledge/water-quality/regional-vs-water-sample"
+            knowledgeHref="/knowledge/groundwater/groundwater-body"
             subtitle="Основна идентификация на анализираната точка."
           >
             <Row
@@ -4791,7 +4793,7 @@ export default async function ProPage({
 
           <Card
             title="3. Количествен ресурс"
-            knowledgeHref="/knowledge/water-quality/quantitative-status"
+            knowledgeHref="/knowledge/resources/quantitative-resource"
             subtitle="Разбираемо обобщение на водния баланс и използването на ресурса."
           >
             <div style={{
@@ -4802,7 +4804,7 @@ export default async function ProPage({
               border:
                 `1px solid ${quantitySummaryColors.border}`,
               color: "#38535b",
-              fontSize: 14,
+                fontSize: 14,
               lineHeight: 1.65,
             }}>
               <div style={{
@@ -5776,7 +5778,7 @@ export default async function ProPage({
 
           <Card
             title="6. Мониторинг"
-            knowledgeHref="/knowledge/water-quality/monitoring-exceedances"
+            knowledgeHref="/knowledge/monitoring/what-is-groundwater-monitoring"
             subtitle="Разбираемо обобщение на официалните данни за качеството на водата."
           >
             <section style={{
@@ -5787,7 +5789,7 @@ export default async function ProPage({
                 proConclusionColors.background,
               border:
                 `1px solid ${proConclusionColors.border}`,
-            }}>
+       }}>
               <div style={{
                 display: "flex",
                 alignItems: "center",
@@ -7019,7 +7021,7 @@ export default async function ProPage({
           </div>
           <Card
             title="9. Какво има около точката"
-            knowledgeHref="/knowledge/water-quality/drinking-water-protection-zones"
+            knowledgeHref="/knowledge/practice/property-conclusions"
             subtitle="Официални сондажи, извори и мониторингови пунктове около избраните координати."
           >
             {spatial ? (
@@ -7541,7 +7543,7 @@ export default async function ProPage({
 
           <Card
             title="10. Сондажна перспектива"
-            knowledgeHref="/knowledge/water-quality/exploitation-index"
+            knowledgeHref="/knowledge/exploration/combined-methods"
             subtitle="Разбираема оценка на наличните геоложки, ресурсни и локални данни."
           >
             <div style={{
@@ -7646,7 +7648,6 @@ export default async function ProPage({
 
           <Card
             title="11. Препоръка за сондаж"
-            knowledgeHref="/knowledge/water-quality/quantitative-status"
             subtitle="Практическа интерпретация на официалните и пространствените данни."
           >
             <div style={{
@@ -8018,7 +8019,6 @@ export default async function ProPage({
 
           <Card
             title={"\u0031\u0032\u002e \u0417\u0430\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435"}
-            knowledgeHref="/knowledge/water-quality/rbmp-comparison"
             subtitle="Обобщение на официалните данни за ресурса, качеството и локалната ситуация."
           >
             <div style={{

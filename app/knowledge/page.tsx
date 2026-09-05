@@ -73,14 +73,6 @@ export default function KnowledgePage() {
               Съдържанието е организирано от основните понятия към
               практическото им приложение.
             </p>
-
-            <div className="mt-9 max-w-2xl">
-              <input
-                type="search"
-                placeholder="Какво искаш да разбереш?"
-                className="w-full rounded-full border border-[#b9dce3] bg-white px-6 py-4 text-sm text-[#173d47] outline-none placeholder:text-[#7d9aa1]"
-              />
-            </div>
           </div>
         </div>
       </section>
