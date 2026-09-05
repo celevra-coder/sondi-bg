@@ -142,11 +142,30 @@ export default function LoginPage() {
       return;
     }
 
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    let isAdmin = false;
+
+    if (user) {
+      const { data: adminRow } =
+        await supabase
+          .from("admin_users")
+          .select("user_id")
+          .eq("user_id", user.id)
+          .maybeSingle();
+
+      isAdmin = Boolean(adminRow);
+    }
+
     document.cookie =
       "sondi_auth_next=; path=/; max-age=0; samesite=lax";
 
     window.location.href =
-      returnTo;
+      isAdmin
+        ? "/admin/services"
+        : returnTo;
   }
 
   async function loginWithGoogle() {

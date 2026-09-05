@@ -57,9 +57,30 @@ type ProviderMedia = {
   preview_url: string;
 };
 
+type AdminAction =
+  | "approved"
+  | "hidden"
+  | "rejected"
+  | "deleted";
+
+type AdminHistoryRecord = {
+  id: string;
+  entity_type:
+    | "request"
+    | "provider"
+    | "media";
+  entity_id: string;
+  action: AdminAction;
+  previous_status: string | null;
+  performed_by: string | null;
+  snapshot: Record<string, unknown>;
+  created_at: string;
+};
+
 type Tab =
   | "requests"
-  | "providers";
+  | "providers"
+  | "history";
 
 const T = {
   eyebrow:
@@ -72,6 +93,8 @@ const T = {
     "\u0417\u0430\u044f\u0432\u043a\u0438 \u043e\u0442 \u043a\u043b\u0438\u0435\u043d\u0442\u0438",
   providers:
     "\u041f\u0440\u043e\u0444\u0438\u043b\u0438 \u043d\u0430 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u0438",
+  history:
+    "\u0418\u0441\u0442\u043e\u0440\u0438\u044f",
   logout:
     "\u0418\u0437\u0445\u043e\u0434",
   pending:
@@ -88,12 +111,18 @@ const T = {
     "\u0421\u043a\u0440\u0438\u0439",
   reject:
     "\u041e\u0442\u0445\u0432\u044a\u0440\u043b\u0438",
+  delete:
+    "\u0418\u0437\u0442\u0440\u0438\u0439",
+  deleted:
+    "\u0418\u0437\u0442\u0440\u0438\u0442\u043e",
   processing:
     "\u041e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0430...",
   noRequests:
-    "\u041d\u044f\u043c\u0430 \u043f\u043e\u0434\u0430\u0434\u0435\u043d\u0438 \u0437\u0430\u044f\u0432\u043a\u0438.",
+    "\u041d\u044f\u043c\u0430 \u0447\u0430\u043a\u0430\u0449\u0438 \u0437\u0430\u044f\u0432\u043a\u0438.",
   noProviders:
-    "\u041d\u044f\u043c\u0430 \u043f\u043e\u0434\u0430\u0434\u0435\u043d\u0438 \u043f\u0440\u043e\u0444\u0438\u043b\u0438.",
+    "\u041d\u044f\u043c\u0430 \u0447\u0430\u043a\u0430\u0449\u0438 \u043f\u0440\u043e\u0444\u0438\u043b\u0438 \u0438\u043b\u0438 \u043c\u0435\u0434\u0438\u0438.",
+  noHistory:
+    "\u0412\u0441\u0435 \u043e\u0449\u0435 \u043d\u044f\u043c\u0430 \u0437\u0430\u043f\u0438\u0441\u0430\u043d\u0438 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440\u0441\u043a\u0438 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f.",
   region:
     "\u041e\u0431\u043b\u0430\u0441\u0442",
   locality:
@@ -172,11 +201,13 @@ export default function AdminServicesClient({
   initialRequests,
   initialProviders,
   initialMedia,
+  initialHistory,
   initialError,
 }: {
   initialRequests: ServiceRequest[];
   initialProviders: ServiceProvider[];
   initialMedia: ProviderMedia[];
+  initialHistory: AdminHistoryRecord[];
   initialError: string;
 }) {
   const supabase = useMemo(
@@ -199,44 +230,84 @@ export default function AdminServicesClient({
   const [media, setMedia] =
     useState(initialMedia);
 
+  const [history, setHistory] =
+    useState(initialHistory);
+
   const [error, setError] =
     useState(initialError);
 
-  const pendingRequests =
+  const visibleRequests =
     requests.filter(
       item =>
         item.status === "pending"
-    ).length;
+    );
+
+  const visibleProviders =
+    providers.filter(
+      provider =>
+        provider.status === "pending" ||
+        media.some(
+          mediaItem =>
+            mediaItem.provider_id ===
+              provider.id &&
+            mediaItem.status === "pending"
+        )
+    );
+
+  const pendingRequests =
+    visibleRequests.length;
 
   const pendingProviders =
-    providers.filter(
-      item =>
-        item.status === "pending"
-    ).length;
+    visibleProviders.length;
+
+  async function refreshHistory() {
+    const { data, error } =
+      await supabase
+        .from("admin_services_action_log")
+        .select(
+          "id, entity_type, entity_id, action, previous_status, performed_by, snapshot, created_at"
+        )
+        .order("created_at", {
+          ascending: false,
+        })
+        .limit(500);
+
+    if (error) {
+      console.error(
+        "admin history refresh error",
+        error
+      );
+      return;
+    }
+
+    setHistory(
+      (data || []) as AdminHistoryRecord[]
+    );
+  }
 
   async function updateStatus(
     kind: "request" | "provider",
     id: string,
-    status: Status
+    action: AdminAction
   ) {
     setBusyId(id);
     setError("");
 
-    const table =
-      kind === "request"
-        ? "service_requests"
-        : "service_providers";
-
-    const { error } = await supabase
-      .from(table)
-      .update({ status })
-      .eq("id", id);
+    const { error } =
+      await supabase.rpc(
+        "admin_apply_service_action",
+        {
+          p_entity_type: kind,
+          p_entity_id: id,
+          p_action: action,
+        }
+      );
 
     setBusyId("");
 
     if (error) {
       console.error(
-        "admin services update error",
+        "admin service action error",
         error
       );
       setError(error.message);
@@ -244,56 +315,106 @@ export default function AdminServicesClient({
     }
 
     if (kind === "request") {
-      setRequests(current =>
-        current.map(item =>
-          item.id === id
-            ? { ...item, status }
-            : item
-        )
-      );
+      if (action === "deleted") {
+        setRequests(current =>
+          current.filter(
+            item => item.id !== id
+          )
+        );
+      } else {
+        setRequests(current =>
+          current.map(item =>
+            item.id === id
+              ? {
+                  ...item,
+                  status:
+                    action as Status,
+                }
+              : item
+          )
+        );
+      }
     } else {
-      setProviders(current =>
-        current.map(item =>
-          item.id === id
-            ? { ...item, status }
-            : item
-        )
-      );
+      if (action === "deleted") {
+        setProviders(current =>
+          current.filter(
+            item => item.id !== id
+          )
+        );
+
+        setMedia(current =>
+          current.filter(
+            item =>
+              item.provider_id !== id
+          )
+        );
+      } else {
+        setProviders(current =>
+          current.map(item =>
+            item.id === id
+              ? {
+                  ...item,
+                  status:
+                    action as Status,
+                }
+              : item
+          )
+        );
+      }
     }
+
+    await refreshHistory();
   }
 
   async function updateMediaStatus(
     id: string,
-    status: Status
+    action: AdminAction
   ) {
     setBusyId(id);
     setError("");
 
     const { error } =
-      await supabase
-        .from("service_provider_media")
-        .update({ status })
-        .eq("id", id);
+      await supabase.rpc(
+        "admin_apply_service_action",
+        {
+          p_entity_type: "media",
+          p_entity_id: id,
+          p_action: action,
+        }
+      );
 
     setBusyId("");
 
     if (error) {
       console.error(
-        "admin provider media update error",
+        "admin provider media action error",
         error
       );
-
       setError(error.message);
       return;
     }
 
-    setMedia(current =>
-      current.map(item =>
-        item.id === id
-          ? { ...item, status }
-          : item
-      )
-    );
+    if (action === "deleted") {
+      setMedia(current =>
+        current.filter(
+          item => item.id !== id
+        )
+      );
+    } else {
+      setMedia(current =>
+        current.map(item =>
+          item.id === id
+            ? {
+                ...item,
+                status:
+                  action as Status,
+              }
+            : item
+        )
+      );
+    }
+
+    await refreshHistory();
   }
 
   function mediaActions(
@@ -356,6 +477,21 @@ export default function AdminServicesClient({
           className="rounded-lg border border-[#eccccc] bg-[#fffafa] px-3 py-2 text-xs font-bold text-[#a34242] disabled:cursor-not-allowed disabled:opacity-40"
         >
           {T.reject}
+        </button>
+
+
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={() =>
+            void updateMediaStatus(
+              id,
+              "deleted"
+            )
+          }
+          className="rounded-lg border border-[#d9b6b6] bg-[#fff4f4] px-3 py-2 text-xs font-bold text-[#8f2f2f] disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          {T.delete}
         </button>
       </div>
     );
@@ -432,7 +568,83 @@ export default function AdminServicesClient({
         >
           {T.reject}
         </button>
+
+
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={() =>
+            void updateStatus(
+              kind,
+              id,
+              "deleted"
+            )
+          }
+          className="rounded-xl border border-[#d9b6b6] bg-[#fff4f4] px-4 py-2.5 text-sm font-bold text-[#8f2f2f] transition hover:bg-[#ffeaea] disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          {T.delete}
+        </button>
       </div>
+    );
+  }
+
+  function historyActionLabel(
+    action: AdminAction
+  ) {
+    if (action === "approved") {
+      return T.approved;
+    }
+
+    if (action === "hidden") {
+      return T.hidden;
+    }
+
+    if (action === "rejected") {
+      return T.rejected;
+    }
+
+    return T.deleted;
+  }
+
+  function historyEntityLabel(
+    entityType:
+      AdminHistoryRecord["entity_type"]
+  ) {
+    if (entityType === "request") {
+      return "\u0417\u0430\u044f\u0432\u043a\u0430";
+    }
+
+    if (entityType === "provider") {
+      return "\u041f\u0440\u043e\u0444\u0438\u043b";
+    }
+
+    return "\u041c\u0435\u0434\u0438\u044f";
+  }
+
+  function historyTitle(
+    item: AdminHistoryRecord
+  ) {
+    const snapshot =
+      item.snapshot || {};
+
+    if (item.entity_type === "request") {
+      return String(
+        snapshot.service ||
+          "\u0417\u0430\u044f\u0432\u043a\u0430"
+      );
+    }
+
+    if (item.entity_type === "provider") {
+      return String(
+        snapshot.company_name ||
+          "\u041f\u0440\u043e\u0444\u0438\u043b"
+      );
+    }
+
+    return String(
+      snapshot.caption ||
+        snapshot.media_type ||
+        "\u041c\u0435\u0434\u0438\u044f"
     );
   }
 
@@ -506,6 +718,27 @@ export default function AdminServicesClient({
               {pendingProviders}
               {")"}
             </button>
+
+
+            <button
+              type="button"
+              onClick={() =>
+                setTab("history")
+              }
+              className={
+                "rounded-2xl px-5 py-3 text-sm font-bold transition " +
+                (
+                  tab === "history"
+                    ? "bg-[#173f48] text-white"
+                    : "bg-[#f5f9fa] text-[#45616a]"
+                )
+              }
+            >
+              {T.history}
+              {" ("}
+              {history.length}
+              {")"}
+            </button>
           </div>
         </header>
 
@@ -519,7 +752,7 @@ export default function AdminServicesClient({
 
         {tab === "requests" && (
           <section className="mt-6 grid gap-5">
-            {requests.length === 0 ? (
+            {visibleRequests.length === 0 ? (
               <div className="rounded-[26px] border border-[#d9e7e9] bg-white p-10 text-center text-[#6a8187]">
                 {T.noRequests}
               </div>
@@ -653,7 +886,7 @@ export default function AdminServicesClient({
 
         {tab === "providers" && (
           <section className="mt-6 grid gap-5">
-            {providers.length === 0 ? (
+            {visibleProviders.length === 0 ? (
               <div className="rounded-[26px] border border-[#d9e7e9] bg-white p-10 text-center text-[#6a8187]">
                 {T.noProviders}
               </div>
@@ -818,7 +1051,9 @@ export default function AdminServicesClient({
                           .filter(
                             mediaItem =>
                               mediaItem.provider_id ===
-                              item.id
+                              item.id &&
+                              mediaItem.status ===
+                                "pending"
                           )
                           .map(
                             mediaItem => (
@@ -906,6 +1141,102 @@ export default function AdminServicesClient({
                     item.id,
                     item.status
                   )}
+                </article>
+              ))
+            )}
+          </section>
+        )}
+
+        {tab === "history" && (
+          <section className="mt-6 grid gap-4">
+            {history.length === 0 ? (
+              <div className="rounded-[26px] border border-[#d9e7e9] bg-white p-10 text-center text-[#6a8187]">
+                {T.noHistory}
+              </div>
+            ) : (
+              history.map(item => (
+                <article
+                  key={item.id}
+                  className="rounded-[24px] border border-[#d9e7e9] bg-white p-5 shadow-sm sm:p-6"
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-4">
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-[0.12em] text-[#789096]">
+                        {historyEntityLabel(
+                          item.entity_type
+                        )}
+                      </div>
+
+                      <h2 className="mt-1 text-lg font-bold text-[#173f48]">
+                        {historyTitle(item)}
+                      </h2>
+                    </div>
+
+                    <span
+                      className={
+                        "rounded-full border px-3 py-1.5 text-xs font-bold " +
+                        (
+                          item.action ===
+                          "deleted"
+                            ? "border-[#eccccc] bg-[#fff5f5] text-[#974646]"
+                            : statusClass(
+                                item.action as Status
+                              )
+                        )
+                      }
+                    >
+                      {historyActionLabel(
+                        item.action
+                      )}
+                    </span>
+                  </div>
+
+                  <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                    <div className="rounded-xl bg-[#f6fafb] p-3 text-sm">
+                      <div className="text-xs font-bold uppercase tracking-[0.08em] text-[#789096]">
+                        {"\u0414\u0430\u0442\u0430"}
+                      </div>
+                      <div className="mt-1 text-[#405c63]">
+                        {formatDate(
+                          item.created_at
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="rounded-xl bg-[#f6fafb] p-3 text-sm">
+                      <div className="text-xs font-bold uppercase tracking-[0.08em] text-[#789096]">
+                        {"\u041f\u0440\u0435\u0434\u0438\u0448\u0435\u043d \u0441\u0442\u0430\u0442\u0443\u0441"}
+                      </div>
+                      <div className="mt-1 text-[#405c63]">
+                        {item.previous_status ||
+                          "\u2014"}
+                      </div>
+                    </div>
+
+                    <div className="rounded-xl bg-[#f6fafb] p-3 text-sm">
+                      <div className="text-xs font-bold uppercase tracking-[0.08em] text-[#789096]">
+                        {"\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440"}
+                      </div>
+                      <div className="mt-1 break-all text-[#405c63]">
+                        {item.performed_by ||
+                          "\u2014"}
+                      </div>
+                    </div>
+                  </div>
+
+                  <details className="mt-4 rounded-xl border border-[#dde8ea] bg-[#fbfdfd]">
+                    <summary className="cursor-pointer px-4 py-3 text-sm font-bold text-[#45616a]">
+                      {"\u041f\u044a\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438"}
+                    </summary>
+
+                    <pre className="overflow-x-auto border-t border-[#e2ecee] p-4 text-xs leading-5 text-[#536d74]">
+                      {JSON.stringify(
+                        item.snapshot,
+                        null,
+                        2
+                      )}
+                    </pre>
+                  </details>
                 </article>
               ))
             )}

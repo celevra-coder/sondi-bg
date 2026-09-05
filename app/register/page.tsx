@@ -9,8 +9,7 @@ import { createClient } from "@/lib/supabase-browser";
 
 type AccountType =
   | "client"
-  | "provider"
-  | "both";
+  | "provider";
 
 const T = {
   eyebrow:
@@ -25,8 +24,6 @@ const T = {
     "\u0422\u044a\u0440\u0441\u044f \u0443\u0441\u043b\u0443\u0433\u0438",
   provider:
     "\u041f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u043c \u0443\u0441\u043b\u0443\u0433\u0438",
-  both:
-    "\u0418 \u0434\u0432\u0435\u0442\u0435",
   email:
     "\u0418\u043c\u0435\u0439\u043b",
   password:
@@ -264,11 +261,10 @@ export default function RegisterPage() {
             {T.who}
           </div>
 
-          <div className="grid gap-2 sm:grid-cols-3">
+          <div className="grid gap-2 sm:grid-cols-2">
             {([
               ["client", T.client],
               ["provider", T.provider],
-              ["both", T.both],
             ] as const).map(
               ([value, label]) => (
                 <button

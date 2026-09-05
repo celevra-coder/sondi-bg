@@ -97,6 +97,23 @@ export async function GET(request: NextRequest) {
       } = await supabase.auth.getUser();
 
       if (user) {
+        const { data: adminRow } =
+          await supabase
+            .from("admin_users")
+            .select("user_id")
+            .eq("user_id", user.id)
+            .maybeSingle();
+
+        if (adminRow) {
+          response.headers.set(
+            "location",
+            new URL(
+              "/admin/services",
+              request.url
+            ).toString()
+          );
+        }
+
         const allowedAccountType =
           accountTypeCookie === "client" ||
           accountTypeCookie === "provider" ||

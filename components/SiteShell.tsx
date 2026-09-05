@@ -55,7 +55,11 @@ export default function SiteShell({
   const [headerOpen, setHeaderOpen] = useState(false);
   const [supabase] = useState(() => createClient());
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [authReady, setAuthReady] = useState(false);
+
+  const [isAdmin, setIsAdmin] =
+    useState(false);
+
+const [authReady, setAuthReady] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -77,6 +81,52 @@ export default function SiteShell({
     return () => {
       active = false;
       subscription.unsubscribe();
+    };
+  }, [supabase]);
+
+  useEffect(() => {
+    let active = true;
+
+    async function syncAdminState() {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      if (!active) return;
+
+      if (!user) {
+        setIsAdmin(false);
+        return;
+      }
+
+      const { data: adminRow } =
+        await supabase
+          .from("admin_users")
+          .select("user_id")
+          .eq("user_id", user.id)
+          .maybeSingle();
+
+      if (!active) return;
+
+      setIsAdmin(Boolean(adminRow));
+    }
+
+    void syncAdminState();
+
+    const {
+      data: {
+        subscription:
+          adminSubscription,
+      },
+    } = supabase.auth.onAuthStateChange(
+      () => {
+        void syncAdminState();
+      }
+    );
+
+    return () => {
+      active = false;
+      adminSubscription.unsubscribe();
     };
   }, [supabase]);
 
@@ -275,7 +325,7 @@ export default function SiteShell({
               isAuthenticated ? (
                 <>
                   <Link
-                    href="/account"
+                    href={isAdmin ? "/admin/services" : "/account"}
                     className="px-3 py-3 text-[13px] font-medium text-[#294e59] transition hover:text-[#15809a]"
                   >
                     {"ПРОФИЛ"}
@@ -334,7 +384,7 @@ export default function SiteShell({
                 isAuthenticated ? (
                   <>
                     <Link
-                      href="/account"
+                      href={isAdmin ? "/admin/services" : "/account"}
                       onClick={() => setMobileOpen(false)}
                     >
                       {"Профил"}
