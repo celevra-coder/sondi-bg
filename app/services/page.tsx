@@ -963,10 +963,6 @@ export default function ServicesPage() {
                     <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#6a9299]">
                       {T.providers}
                     </div>
-
-                    <h2 className="mt-2 text-2xl font-bold text-[#173f48]">
-                      {T.providersTitle}
-                    </h2>
                   </div>
 
                   <div className="text-sm text-[#73898e]">
