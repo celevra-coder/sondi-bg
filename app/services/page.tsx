@@ -142,9 +142,6 @@ type Tab = "find" | "request" | "provider";
 type ProviderRecord = {
   id: string;
   company_name: string;
-  phone: string;
-  email: string | null;
-  website_or_facebook: string | null;
   services: string[];
   work_regions: string[];
   works_nationwide: boolean;
@@ -154,6 +151,22 @@ type ProviderRecord = {
   equipment: string | null;
   presentation: string | null;
   created_at: string;
+};
+
+type ProviderContacts = {
+  phone: string;
+  email: string | null;
+  website_or_facebook: string | null;
+};
+
+
+type PublicProviderMedia = {
+  id: string;
+  media_type: "image" | "video";
+  storage_path: string;
+  caption: string | null;
+  sort_order: number;
+  preview_url?: string;
 };
 
 function FieldLabel({
@@ -209,24 +222,19 @@ export default function ServicesPage() {
     useState<Tab>("find");
 
   useEffect(() => {
-    function syncTabFromUrl() {
-      const value =
-        new URLSearchParams(window.location.search).get("tab");
+    const value =
+      new URLSearchParams(
+        window.location.search
+      ).get("tab");
 
-      if (value === "request" || value === "provider") {
-        setTab(value);
-      } else {
-        setTab("find");
-      }
+    if (
+      value === "request" ||
+      value === "provider"
+    ) {
+      setTab(value);
+    } else {
+      setTab("find");
     }
-
-    syncTabFromUrl();
-
-    window.addEventListener("popstate", syncTabFromUrl);
-
-    return () => {
-      window.removeEventListener("popstate", syncTabFromUrl);
-    };
   }, []);
 
   function changeTab(nextTab: Tab) {
@@ -253,6 +261,15 @@ export default function ServicesPage() {
   const [service, setService] =
     useState("");
 
+  const [searchedRegion, setSearchedRegion] =
+    useState("");
+
+  const [searchedService, setSearchedService] =
+    useState("");
+
+  const [hasSearched, setHasSearched] =
+    useState(false);
+
   const supabase = useMemo(
     () => createClient(),
     []
@@ -260,6 +277,42 @@ export default function ServicesPage() {
 
   const [providers, setProviders] =
     useState<ProviderRecord[]>([]);
+
+
+  const [
+    selectedProvider,
+    setSelectedProvider,
+  ] = useState<ProviderRecord | null>(
+    null
+  );
+
+  const [
+    selectedProviderMedia,
+    setSelectedProviderMedia,
+  ] = useState<PublicProviderMedia[]>([]);
+
+  const [
+    selectedProviderMediaLoading,
+    setSelectedProviderMediaLoading,
+  ] = useState(false);
+
+  const [
+    selectedProviderMediaError,
+    setSelectedProviderMediaError,
+  ] = useState("");
+
+  const [
+    selectedProviderAuthenticated,
+    setSelectedProviderAuthenticated,
+  ] = useState(false);
+
+
+  const [
+    selectedProviderContacts,
+    setSelectedProviderContacts,
+  ] = useState<ProviderContacts | null>(
+    null
+  );
 
   const [providersLoading, setProvidersLoading] =
     useState(true);
@@ -324,13 +377,10 @@ export default function ServicesPage() {
       setProvidersLoading(true);
       setProvidersError("");
 
-      const { data, error } = await supabase
-        .from("service_providers")
-        .select("*")
-        .eq("status", "approved")
-        .order("created_at", {
-          ascending: false,
-        });
+      const { data, error } =
+        await supabase.rpc(
+          "get_public_service_providers"
+        );
 
       if (!active) return;
 
@@ -355,23 +405,148 @@ export default function ServicesPage() {
   }, [supabase]);
 
   const filteredProviders = useMemo(() => {
+    if (!hasSearched) {
+      return [];
+    }
+
     return providers.filter(item => {
       const regionMatches =
-        !region ||
+        !searchedRegion ||
         (
-          region === "all"
+          searchedRegion === "all"
             ? item.works_nationwide
             : item.works_nationwide ||
-              item.work_regions.includes(region)
+              item.work_regions.includes(searchedRegion)
         );
 
       const serviceMatches =
-        !service ||
-        item.services.includes(service);
+        !searchedService ||
+        item.services.includes(searchedService);
 
       return regionMatches && serviceMatches;
     });
-  }, [providers, region, service]);
+  }, [
+    providers,
+    searchedRegion,
+    searchedService,
+    hasSearched,
+  ]);
+
+  async function openProviderProfile(
+    provider: ProviderRecord
+  ) {
+    setSelectedProvider(provider);
+    setSelectedProviderMedia([]);
+    setSelectedProviderMediaError("");
+    setSelectedProviderMediaLoading(true);
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    setSelectedProviderAuthenticated(
+      Boolean(user)
+    );
+
+    setSelectedProviderContacts(null);
+
+    if (user) {
+      const {
+        data: contactsData,
+        error: contactsError,
+      } = await supabase.rpc(
+        "get_service_provider_contacts",
+        {
+          provider_uuid: provider.id,
+        }
+      );
+
+      if (contactsError) {
+        console.error(
+          "provider contacts load error",
+          contactsError
+        );
+      } else {
+        const contacts =
+          Array.isArray(contactsData) &&
+          contactsData.length > 0
+            ? contactsData[0]
+            : null;
+
+        setSelectedProviderContacts(
+          contacts as ProviderContacts | null
+        );
+      }
+    }
+
+    const { data, error } =
+      await supabase
+        .from("service_provider_media")
+        .select(
+          "id, media_type, storage_path, caption, sort_order"
+        )
+        .eq("provider_id", provider.id)
+        .eq("status", "approved")
+        .order("sort_order", {
+          ascending: true,
+        });
+
+    if (error) {
+      console.error(
+        "provider media load error",
+        error
+      );
+
+      setSelectedProviderMediaError(
+        "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u0437\u0430\u0440\u0435\u0434\u0438\u043c \u0441\u043d\u0438\u043c\u043a\u0438\u0442\u0435 \u0438 \u0432\u0438\u0434\u0435\u043e\u0442\u043e."
+      );
+
+      setSelectedProviderMediaLoading(
+        false
+      );
+
+      return;
+    }
+
+    const rows =
+      (data || []) as PublicProviderMedia[];
+
+    const withUrls =
+      await Promise.all(
+        rows.map(async item => {
+          const { data: signed } =
+            await supabase.storage
+              .from("provider-media")
+              .createSignedUrl(
+                item.storage_path,
+                3600
+              );
+
+          return {
+            ...item,
+            preview_url:
+              signed?.signedUrl || "",
+          };
+        })
+      );
+
+    setSelectedProviderMedia(
+      withUrls
+    );
+
+    setSelectedProviderMediaLoading(
+      false
+    );
+  }
+
+  function closeProviderProfile() {
+    setSelectedProvider(null);
+    setSelectedProviderMedia([]);
+    setSelectedProviderMediaError("");
+    setSelectedProviderMediaLoading(false);
+    setSelectedProviderAuthenticated(false);
+    setSelectedProviderContacts(null);
+  }
 
   function goToAuth(path: "/login" | "/register") {
     const returnTo =
@@ -771,6 +946,11 @@ export default function ServicesPage() {
 
                 <button
                   type="button"
+                  onClick={() => {
+                    setSearchedRegion(region);
+                    setSearchedService(service);
+                    setHasSearched(true);
+                  }}
                   className="mt-6 w-full rounded-2xl bg-[#16825c] px-5 py-3.5 font-bold text-white transition hover:bg-[#126d4d]"
                 >
                   {T.search}
@@ -790,15 +970,26 @@ export default function ServicesPage() {
                   </div>
 
                   <div className="text-sm text-[#73898e]">
-                    {region === "all"
-                      ? T.wholeCountry
-                      : region
-                        ? `${T.region}: ${region}`
-                        : T.allRegions}
+                    {!hasSearched
+                      ? "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u0438"
+                      : searchedRegion === "all"
+                        ? T.wholeCountry
+                        : searchedRegion
+                          ? `${T.region}: ${searchedRegion}`
+                          : T.allRegions}
                   </div>
                 </div>
 
-                {providersLoading ? (
+                {!hasSearched ? (
+                  <div className="mt-8 rounded-[22px] border border-dashed border-[#bfd6d9] bg-[#f7fbfb] px-6 py-12 text-center">
+                    <h3 className="text-xl font-bold text-[#234951]">
+                      {"\u041d\u0430\u043c\u0435\u0440\u0435\u0442\u0435 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b"}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-[#6a8187]">
+                      {"\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u0440\u0435\u0433\u0438\u043e\u043d \u0438/\u0438\u043b\u0438 \u0443\u0441\u043b\u0443\u0433\u0430 \u0438 \u043d\u0430\u0442\u0438\u0441\u043d\u0435\u0442\u0435 \u201e\u0422\u044a\u0440\u0441\u0438\u201c."}
+                    </p>
+                  </div>
+                ) : providersLoading ? (
                   <div className="mt-8 rounded-[22px] border border-[#d9e7e9] bg-[#f7fbfb] px-6 py-12 text-center text-sm text-[#6a8187]">
                     {"\u0417\u0430\u0440\u0435\u0436\u0434\u0430\u043d\u0435 \u043d\u0430 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u0438..."}
                   </div>
@@ -850,28 +1041,19 @@ export default function ServicesPage() {
                           </p>
                         )}
 
-                        <div className="mt-5 flex flex-wrap gap-4 border-t border-[#e2ecee] pt-4 text-sm">
-                          <a
-                            href={`tel:${item.phone}`}
-                            className="font-bold text-[#167454]"
+                        <div className="mt-5 flex flex-wrap items-center justify-end gap-4 border-t border-[#e2ecee] pt-4 text-sm">
+
+                          <button
+                            type="button"
+                            onClick={() => {
+                              void openProviderProfile(
+                                item
+                              );
+                            }}
+                            className="inline-flex items-center justify-center rounded-xl bg-[#173f48] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#225764]"
                           >
-                            {item.phone}
-                          </a>
-
-                          {item.email && (
-                            <a
-                              href={`mailto:${item.email}`}
-                              className="font-semibold text-[#356b76]"
-                            >
-                              {item.email}
-                            </a>
-                          )}
-
-                          {item.website_or_facebook && (
-                            <span className="font-semibold text-[#356b76]">
-                              {item.website_or_facebook}
-                            </span>
-                          )}
+                            {"\u0412\u0438\u0436 \u043f\u0440\u043e\u0444\u0438\u043b"}
+                          </button>
                         </div>
                       </article>
                     ))}
@@ -1538,6 +1720,277 @@ export default function ServicesPage() {
           </div>
         </div>
       )}
+
+      {selectedProvider && (
+        <div
+          className="fixed inset-0 z-[120] overflow-y-auto bg-[#102f36]/70 px-3 py-4 backdrop-blur-sm sm:px-6 sm:py-8"
+          role="dialog"
+          aria-modal="true"
+          onMouseDown={event => {
+            if (
+              event.target ===
+              event.currentTarget
+            ) {
+              closeProviderProfile();
+            }
+          }}
+        >
+          <div className="mx-auto max-w-5xl">
+            <div className="mb-3 flex justify-end">
+              <button
+                type="button"
+                onClick={closeProviderProfile}
+                className="rounded-xl border border-white/30 bg-white px-4 py-2.5 text-sm font-bold text-[#34545c] shadow-lg"
+              >
+                {"\u2715 \u0417\u0430\u0442\u0432\u043e\u0440\u0438"}
+              </button>
+            </div>
+
+            <section className="overflow-hidden rounded-[30px] border border-[#d9e7e9] bg-white shadow-[0_24px_90px_rgba(8,35,42,.25)]">
+              <header className="border-b border-[#e2ecee] bg-[#f7fbfb] p-6 sm:p-8">
+                <div className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#56858e]">
+                  {"\u0418\u0417\u041f\u042a\u041b\u041d\u0418\u0422\u0415\u041b"}
+                </div>
+
+                <h2 className="mt-2 text-3xl font-bold text-[#173f48] sm:text-4xl">
+                  {selectedProvider.company_name}
+                </h2>
+
+                <div className="mt-3 inline-flex rounded-full border border-[#b9ddcf] bg-[#eef8f4] px-3 py-1.5 text-xs font-bold text-[#176344]">
+                  {"\u041e\u0434\u043e\u0431\u0440\u0435\u043d \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b"}
+                </div>
+              </header>
+
+              <div className="p-6 sm:p-8">
+                <div>
+                  <div className="text-xs font-bold uppercase tracking-[0.12em] text-[#789096]">
+                    {"\u0423\u0441\u043b\u0443\u0433\u0438"}
+                  </div>
+
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {selectedProvider.services.map(
+                      (
+                        providerService,
+                        index
+                      ) => (
+                        <span
+                          key={index}
+                          className="rounded-full border border-[#d4e5e1] bg-[#f7fbfa] px-3 py-1.5 text-sm font-semibold text-[#456761]"
+                        >
+                          {providerService}
+                        </span>
+                      )
+                    )}
+                  </div>
+                </div>
+
+                <div className="mt-7 grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-2xl bg-[#f6fafb] p-4">
+                    <div className="text-xs font-bold uppercase tracking-[0.12em] text-[#789096]">
+                      {"\u0420\u0430\u0439\u043e\u043d \u043d\u0430 \u0440\u0430\u0431\u043e\u0442\u0430"}
+                    </div>
+
+                    <div className="mt-2 font-semibold text-[#405c63]">
+                      {selectedProvider.works_nationwide
+                        ? "\u0426\u044f\u043b\u0430 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f"
+                        : selectedProvider.work_regions.join(
+                            ", "
+                          )}
+                    </div>
+                  </div>
+
+                  {selectedProvider.max_depth && (
+                    <div className="rounded-2xl bg-[#f6fafb] p-4">
+                      <div className="text-xs font-bold uppercase tracking-[0.12em] text-[#789096]">
+                        {"\u041c\u0430\u043a\u0441. \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430"}
+                      </div>
+
+                      <div className="mt-2 font-semibold text-[#405c63]">
+                        {selectedProvider.max_depth}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedProvider.diameters && (
+                    <div className="rounded-2xl bg-[#f6fafb] p-4">
+                      <div className="text-xs font-bold uppercase tracking-[0.12em] text-[#789096]">
+                        {"\u0414\u0438\u0430\u043c\u0435\u0442\u0440\u0438"}
+                      </div>
+
+                      <div className="mt-2 font-semibold text-[#405c63]">
+                        {selectedProvider.diameters}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedProvider.drilling_method && (
+                    <div className="rounded-2xl bg-[#f6fafb] p-4">
+                      <div className="text-xs font-bold uppercase tracking-[0.12em] text-[#789096]">
+                        {"\u041c\u0435\u0442\u043e\u0434 \u043d\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435"}
+                      </div>
+
+                      <div className="mt-2 font-semibold text-[#405c63]">
+                        {selectedProvider.drilling_method}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {selectedProvider.equipment && (
+                  <div className="mt-7">
+                    <div className="text-xs font-bold uppercase tracking-[0.12em] text-[#789096]">
+                      {"\u0422\u0435\u0445\u043d\u0438\u043a\u0430"}
+                    </div>
+
+                    <p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-[#4d686f]">
+                      {selectedProvider.equipment}
+                    </p>
+                  </div>
+                )}
+
+                {selectedProvider.presentation && (
+                  <div className="mt-7">
+                    <div className="text-xs font-bold uppercase tracking-[0.12em] text-[#789096]">
+                      {"\u041f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044f\u043d\u0435"}
+                    </div>
+
+                    <p className="mt-2 whitespace-pre-wrap text-sm leading-7 text-[#4d686f]">
+                      {selectedProvider.presentation}
+                    </p>
+                  </div>
+                )}
+
+                <div className="mt-8 border-t border-[#e2ecee] pt-7">
+                  <div className="text-xs font-bold uppercase tracking-[0.12em] text-[#789096]">
+                    {"\u0421\u043d\u0438\u043c\u043a\u0438 \u0438 \u0432\u0438\u0434\u0435\u043e"}
+                  </div>
+
+                  {selectedProviderMediaLoading ? (
+                    <div className="mt-4 rounded-2xl bg-[#f6fafb] p-5 text-sm text-[#607980]">
+                      {"\u0417\u0430\u0440\u0435\u0436\u0434\u0430\u043d\u0435..."}
+                    </div>
+                  ) : selectedProviderMediaError ? (
+                    <div className="mt-4 rounded-2xl border border-[#efd6d6] bg-[#fff8f8] p-5 text-sm text-[#934b4b]">
+                      {selectedProviderMediaError}
+                    </div>
+                  ) : selectedProviderMedia.length > 0 ? (
+                    <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                      {selectedProviderMedia.map(
+                        item => (
+                          <div
+                            key={item.id}
+                            className="overflow-hidden rounded-2xl border border-[#d9e7e9] bg-[#f7fafb]"
+                          >
+                            <div className="aspect-video bg-[#dfeaec]">
+                              {item.preview_url ? (
+                                item.media_type ===
+                                "image" ? (
+                                  <img
+                                    src={
+                                      item.preview_url
+                                    }
+                                    alt=""
+                                    className="h-full w-full object-cover"
+                                  />
+                                ) : (
+                                  <video
+                                    src={
+                                      item.preview_url
+                                    }
+                                    controls
+                                    preload="metadata"
+                                    className="h-full w-full bg-black object-contain"
+                                  />
+                                )
+                              ) : null}
+                            </div>
+
+                            {item.caption && (
+                              <div className="p-3 text-sm text-[#526d74]">
+                                {item.caption}
+                              </div>
+                            )}
+                          </div>
+                        )
+                      )}
+                    </div>
+                  ) : (
+                    <div className="mt-4 text-sm text-[#71878d]">
+                      {"\u041d\u044f\u043c\u0430 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438 \u0441\u043d\u0438\u043c\u043a\u0438 \u0438\u043b\u0438 \u0432\u0438\u0434\u0435\u043e."}
+                    </div>
+                  )}
+                </div>
+
+                <div className="mt-8 border-t border-[#e2ecee] pt-7">
+                  <div className="text-xs font-bold uppercase tracking-[0.12em] text-[#789096]">
+                    {"\u041a\u043e\u043d\u0442\u0430\u043a\u0442"}
+                  </div>
+
+                  {selectedProviderAuthenticated &&
+                  selectedProviderContacts ? (
+                    <div className="mt-4 rounded-2xl bg-[#eef7f4] p-5">
+                      <div className="flex flex-wrap gap-5 text-sm">
+                        <a
+                          href={`tel:${selectedProviderContacts?.phone || ""}`}
+                          className="font-bold text-[#167454]"
+                        >
+                          {selectedProviderContacts?.phone}
+                        </a>
+
+                        {selectedProviderContacts?.email && (
+                          <a
+                            href={`mailto:${selectedProviderContacts.email}`}
+                            className="font-semibold text-[#356b76]"
+                          >
+                            {selectedProviderContacts.email}
+                          </a>
+                        )}
+
+                        {selectedProviderContacts?.website_or_facebook && (
+                          <span className="font-semibold text-[#356b76]">
+                            {
+                              selectedProviderContacts.website_or_facebook
+                            }
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="mt-4 rounded-2xl border border-[#d9e7e9] bg-[#f7fbfb] p-5 text-sm text-[#607980]">
+                      {"\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0438\u0442\u0435 \u0441\u0430 \u0434\u043e\u0441\u0442\u044a\u043f\u043d\u0438 \u0441\u043b\u0435\u0434 \u0432\u0445\u043e\u0434 \u0432 SONDI.BG."}
+
+                      <div className="mt-4">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            goToAuth("/login")
+                          }
+                          className="inline-flex rounded-xl bg-[#173f48] px-4 py-2.5 font-bold text-white"
+                        >
+                          {"\u0412\u043b\u0435\u0437 \u0438\u043b\u0438 \u0441\u0435 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u0439"}
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="mt-8 flex justify-end border-t border-[#e2ecee] pt-7">
+                  <button
+                    type="button"
+                    onClick={
+                      closeProviderProfile
+                    }
+                    className="rounded-xl bg-[#173f48] px-5 py-3 text-sm font-bold text-white"
+                  >
+                    {"\u0417\u0430\u0442\u0432\u043e\u0440\u0438 \u043f\u0440\u043e\u0444\u0438\u043b\u0430"}
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      )}
+
     </main>
   );
 }

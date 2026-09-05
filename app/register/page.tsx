@@ -86,7 +86,7 @@ export default function RegisterPage() {
     let target = readReturnCookie();
 
     try {
-      if (document.referrer) {
+      if (!target && document.referrer) {
         const referrer =
           new URL(document.referrer);
 
