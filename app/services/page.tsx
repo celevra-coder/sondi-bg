@@ -553,7 +553,7 @@ export default function ServicesPage() {
       `${window.location.pathname}${window.location.search}${window.location.hash}`;
 
     document.cookie =
-      `ai_smm_auth_next=${encodeURIComponent(returnTo)}; path=/; max-age=3600; samesite=lax`;
+      `sondi_auth_next=${encodeURIComponent(returnTo)}; path=/; max-age=3600; samesite=lax`;
 
     window.location.href = path;
   }

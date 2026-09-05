@@ -48,7 +48,7 @@ export default function LoginPage() {
     function readReturnCookie() {
       const match =
         document.cookie.match(
-          /(?:^|; )ai_smm_auth_next=([^;]*)/
+          /(?:^|; )sondi_auth_next=([^;]*)/
         );
 
       if (!match) return "";
@@ -63,7 +63,7 @@ export default function LoginPage() {
     let target = readReturnCookie();
 
     try {
-      if (document.referrer) {
+      if (!target && document.referrer) {
         const referrer =
           new URL(document.referrer);
 
@@ -72,6 +72,8 @@ export default function LoginPage() {
             window.location.origin &&
           referrer.pathname !== "/login" &&
           referrer.pathname !== "/register" &&
+          referrer.pathname !== "/forgot-password" &&
+          referrer.pathname !== "/reset-password" &&
           referrer.pathname !== "/auth/callback"
         ) {
           target =
@@ -89,6 +91,8 @@ export default function LoginPage() {
       target.startsWith("//") ||
       target === "/login" ||
       target === "/register" ||
+      target === "/forgot-password" ||
+      target === "/reset-password" ||
       target.startsWith("/auth/callback")
     ) {
       target = "/explore";
@@ -97,7 +101,10 @@ export default function LoginPage() {
     setReturnTo(target);
 
     document.cookie =
-      `ai_smm_auth_next=${encodeURIComponent(target)}; path=/; max-age=3600; samesite=lax`;
+      `sondi_auth_next=${encodeURIComponent(target)}; path=/; max-age=3600; samesite=lax`;
+
+    document.cookie =
+      "ai_smm_auth_next=; path=/; max-age=0; samesite=lax";
   }, []);
 
   const [showPassword, setShowPassword] =
@@ -136,7 +143,7 @@ export default function LoginPage() {
     }
 
     document.cookie =
-      "ai_smm_auth_next=; path=/; max-age=0; samesite=lax";
+      "sondi_auth_next=; path=/; max-age=0; samesite=lax";
 
     window.location.href =
       returnTo;
@@ -146,7 +153,7 @@ export default function LoginPage() {
     setMessage("");
 
     document.cookie =
-      `ai_smm_auth_next=${encodeURIComponent(returnTo)}; path=/; max-age=3600; samesite=lax`;
+      `sondi_auth_next=${encodeURIComponent(returnTo)}; path=/; max-age=3600; samesite=lax`;
 
     const { error } =
       await supabase.auth.signInWithOAuth({

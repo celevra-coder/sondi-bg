@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
 
   const nextCookie =
     request.cookies.get(
-      "ai_smm_auth_next"
+      "sondi_auth_next"
     )?.value;
 
   const accountTypeCookie =
@@ -39,7 +39,7 @@ export async function GET(request: NextRequest) {
     );
 
   response.cookies.set(
-    "ai_smm_auth_next",
+    "sondi_auth_next",
     "",
     {
       path: "/",

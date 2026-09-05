@@ -207,7 +207,7 @@ export default function AccountPage() {
 
       if (!user) {
         document.cookie =
-          `ai_smm_auth_next=${encodeURIComponent("/account")}; path=/; max-age=3600; samesite=lax`;
+          `sondi_auth_next=${encodeURIComponent("/account")}; path=/; max-age=3600; samesite=lax`;
 
         window.location.href = "/login";
         return;
