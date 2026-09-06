@@ -787,11 +787,6 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
   <b>Тематични режими</b>
 
   <label class="layerrow">
-    <input type="radio" name="thematic-mode" value="default">
-    Основен изглед
-  </label>
-
-  <label class="layerrow">
     <input type="radio" name="thematic-mode" value="point-pressure">
     Натиск от точкови източници
   </label>
@@ -1026,6 +1021,7 @@ let abstractionPressureLoading = false;
 let quantitativeRiskData = null;
 let quantitativeRiskLoading = false;
 let activeThematicMode = "";
+let thematicPreviousLayerState = null;
 let lastGroundwaterClickLatLng = null;
 
 let quantitativeMonitoringLoaded=false;
@@ -2196,10 +2192,8 @@ async function loadDanubeThematicPressureData() {
 
 
 async function activateThematicMode(mode){
-  activeThematicMode =
-    mode === "default"
-      ? ""
-      : mode;
+  const nextMode =
+    mode === "default" ? "" : mode;
 
   const bdCheckbox =
     document.getElementById("layer-bd-ibr");
@@ -2216,7 +2210,154 @@ async function activateThematicMode(mode){
   const eeaCheckbox =
     document.getElementById("layer-groundwater");
 
-  if (eeaCheckbox && eeaCheckbox.checked) {
+  if (!nextMode) {
+    activeThematicMode = "";
+
+    applyBdIbrThematicStyle();
+    applyBdBsThematicStyle();
+    applyBdWabdThematicStyle();
+    applyBdDanubeThematicStyle();
+
+    if (thematicPreviousLayerState) {
+      const state =
+        thematicPreviousLayerState;
+
+      if (bdCheckbox) {
+        bdCheckbox.checked =
+          state.bdChecked;
+      }
+
+      if (blackSeaCheckbox) {
+        blackSeaCheckbox.checked =
+          state.bsChecked;
+      }
+
+      if (westernAegeanCheckbox) {
+        westernAegeanCheckbox.checked =
+          state.wabdChecked;
+      }
+
+      if (danubeCheckbox) {
+        danubeCheckbox.checked =
+          state.danubeChecked;
+      }
+
+      if (eeaCheckbox) {
+        eeaCheckbox.checked =
+          state.eeaChecked;
+      }
+
+      if (state.bdLayer) {
+        if (!map.hasLayer(bdIbrGroundwaterLayer)) {
+          bdIbrGroundwaterLayer.addTo(map);
+        }
+      } else if (map.hasLayer(bdIbrGroundwaterLayer)) {
+        map.removeLayer(bdIbrGroundwaterLayer);
+      }
+
+      if (state.bsLayer) {
+        if (!map.hasLayer(bdBsGroundwaterLayer)) {
+          bdBsGroundwaterLayer.addTo(map);
+        }
+      } else if (map.hasLayer(bdBsGroundwaterLayer)) {
+        map.removeLayer(bdBsGroundwaterLayer);
+      }
+
+      if (state.wabdLayer) {
+        if (!map.hasLayer(bdWabdGroundwaterLayer)) {
+          bdWabdGroundwaterLayer.addTo(map);
+        }
+      } else if (map.hasLayer(bdWabdGroundwaterLayer)) {
+        map.removeLayer(bdWabdGroundwaterLayer);
+      }
+
+      if (state.danubeLayer) {
+        if (!map.hasLayer(bdDanubeGroundwaterLayer)) {
+          bdDanubeGroundwaterLayer.addTo(map);
+        }
+      } else if (map.hasLayer(bdDanubeGroundwaterLayer)) {
+        map.removeLayer(bdDanubeGroundwaterLayer);
+      }
+
+      if (state.eeaLayer) {
+        if (!map.hasLayer(groundwaterLayer)) {
+          groundwaterLayer.addTo(map);
+        }
+      } else if (map.hasLayer(groundwaterLayer)) {
+        map.removeLayer(groundwaterLayer);
+      }
+
+      thematicPreviousLayerState = null;
+    }
+
+    if (typeof updatePointPressureLegend === "function") {
+      updatePointPressureLegend();
+    }
+
+    if (typeof updateDiffusePressureLegend === "function") {
+      updateDiffusePressureLegend();
+    }
+
+    if (typeof updatePollutionRiskLegend === "function") {
+      updatePollutionRiskLegend();
+    }
+
+    if (typeof updateAbstractionPressureLegend === "function") {
+      updateAbstractionPressureLegend();
+    }
+
+    return;
+  }
+
+  if (!activeThematicMode) {
+    thematicPreviousLayerState = {
+      bdChecked: Boolean(
+        bdCheckbox && bdCheckbox.checked
+      ),
+      bsChecked: Boolean(
+        blackSeaCheckbox &&
+        blackSeaCheckbox.checked
+      ),
+      wabdChecked: Boolean(
+        westernAegeanCheckbox &&
+        westernAegeanCheckbox.checked
+      ),
+      danubeChecked: Boolean(
+        danubeCheckbox &&
+        danubeCheckbox.checked
+      ),
+      eeaChecked: Boolean(
+        eeaCheckbox && eeaCheckbox.checked
+      ),
+      bdLayer:
+        map.hasLayer(
+          bdIbrGroundwaterLayer
+        ),
+      bsLayer:
+        map.hasLayer(
+          bdBsGroundwaterLayer
+        ),
+      wabdLayer:
+        map.hasLayer(
+          bdWabdGroundwaterLayer
+        ),
+      danubeLayer:
+        map.hasLayer(
+          bdDanubeGroundwaterLayer
+        ),
+      eeaLayer:
+        map.hasLayer(
+          groundwaterLayer
+        )
+    };
+  }
+
+  activeThematicMode = nextMode;
+
+  if (
+    eeaCheckbox &&
+    eeaCheckbox.checked
+  ) {
     eeaCheckbox.checked = false;
 
     if (map.hasLayer(groundwaterLayer)) {
@@ -2281,7 +2422,10 @@ async function activateThematicMode(mode){
   if (activeThematicMode === "abstraction-pressure") {
     await loadAbstractionPressureData();
 
-    if (typeof loadQuantitativeRiskData === "function") {
+    if (
+      typeof loadQuantitativeRiskData ===
+      "function"
+    ) {
       await loadQuantitativeRiskData();
     }
   }
@@ -2308,18 +2452,27 @@ async function activateThematicMode(mode){
   }
 
   zoomOutForRegionalLayer(9);
-
 }
-
 
 
 document
   .querySelectorAll('input[name="thematic-mode"]')
   .forEach(function(radio){
-    radio.addEventListener("change", function(){
+    radio.addEventListener("click", function(){
+      const mode = radio.value;
+
+      if (
+        mode !== "default" &&
+        activeThematicMode === mode
+      ) {
+        radio.checked = false;
+        activateThematicMode("default");
+        return;
+      }
+
       if (!radio.checked) return;
 
-      activateThematicMode(radio.value);
+      activateThematicMode(mode);
     });
   });
 
