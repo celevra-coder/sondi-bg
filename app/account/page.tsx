@@ -8,6 +8,36 @@ import {
 
 import { createClient } from "@/lib/supabase-browser";
 
+type ExpertAnalysis = {
+  id: string;
+  analysis_key: string;
+  latitude: number;
+  longitude: number;
+  primary_gwb: string | null;
+  groundwater_bodies: string[];
+  query_params: Record<string, unknown>;
+  payment_type: string;
+  charged_cents: number;
+  analysis_version: number;
+  location_label: string | null;
+  pdf_storage_path: string | null;
+  pdf_generated_at: string | null;
+  driller_pdf_storage_path: string | null;
+  driller_pdf_generated_at: string | null;
+  created_at: string;
+};
+
+type ExpertAccountData = {
+  admin: boolean;
+  unlimited: boolean;
+  free_analyses_remaining: number;
+  paid_balance_cents: number;
+  analysis_price_cents: number;
+  remaining_paid_analyses: number;
+  can_top_up: boolean;
+  analyses: ExpertAnalysis[];
+};
+
 type AccountType =
   | "client"
   | "provider"
@@ -195,6 +225,18 @@ export default function AccountPage() {
   const [mediaDeletingId, setMediaDeletingId] =
     useState<string | null>(null);
 
+  const [expertData, setExpertData] =
+    useState<ExpertAccountData | null>(null);
+
+  const [expertError, setExpertError] =
+    useState("");
+
+  const [expertCheckoutTier, setExpertCheckoutTier] =
+    useState<string | null>(null);
+
+  const [expertTopupOpen, setExpertTopupOpen] =
+    useState(false);
+
   useEffect(() => {
     let active = true;
 
@@ -219,6 +261,7 @@ export default function AccountPage() {
       const [
         profileResult,
         requestsResult,
+        expertResponse,
       ] = await Promise.all([
         supabase
           .from("user_profiles")
@@ -235,9 +278,34 @@ export default function AccountPage() {
           .order("created_at", {
             ascending: false,
           }),
+
+        fetch("/api/expert-account", {
+          cache: "no-store",
+        }),
       ]);
 
       if (!active) return;
+
+      if (expertResponse.ok) {
+        const data = await expertResponse.json();
+
+        if (active) {
+          setExpertData(data as ExpertAccountData);
+          setExpertError("");
+        }
+      } else {
+        console.error(
+          "EXPERT account load error",
+          expertResponse.status
+        );
+
+        if (active) {
+          setExpertData(null);
+          setExpertError(
+            "Не успяхме да заредим данните за SONDI EXPERT."
+          );
+        }
+      }
 
       const profile =
         profileResult.data;
@@ -894,9 +962,47 @@ export default function AccountPage() {
           {"\u0410\u041a\u0410\u0423\u041d\u0422"}
         </div>
 
-        <h1 className="mt-3 text-3xl font-bold tracking-[-0.03em] text-[#173f48]">
-          {"\u041c\u043e\u044f\u0442 \u043f\u0440\u043e\u0444\u0438\u043b"}
-        </h1>
+        <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <h1 className="text-3xl font-bold tracking-[-0.03em] text-[#173f48]">
+            {"\u041c\u043e\u044f\u0442 \u043f\u0440\u043e\u0444\u0438\u043b"}
+          </h1>
+
+          {!loading && expertData && !expertData.admin && (
+            <div className="w-full rounded-2xl border border-[#d6e6e8] bg-[#f7fbfb] p-4 shadow-[0_8px_24px_rgba(20,63,73,.06)] sm:w-auto sm:min-w-[310px]">
+              <div className="flex items-center justify-between gap-5">
+                <div>
+                  <div className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#789096]">
+                    SONDI EXPERT
+                  </div>
+                  <div className="mt-1 text-xl font-bold text-[#173f48]">
+                    Баланс: {(expertData.paid_balance_cents / 100).toFixed(2).replace(".", ",")} €
+                  </div>
+                  <div className="mt-1 text-xs text-[#6b8187]">
+                    Безплатни: {expertData.free_analyses_remaining}
+                    {expertData.analysis_price_cents > 0
+                      ? ` · Ставка: ${(expertData.analysis_price_cents / 100).toFixed(2).replace(".", ",")} €`
+                      : ""}
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setExpertTopupOpen(true)}
+                  disabled={!expertData.can_top_up}
+                  className="shrink-0 rounded-xl bg-[#173f48] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#102f36] disabled:cursor-not-allowed disabled:opacity-45"
+                >
+                  Презареди
+                </button>
+              </div>
+
+              {!expertData.can_top_up && expertData.paid_balance_cents > 0 && (
+                <div className="mt-2 text-[11px] leading-4 text-[#87661c]">
+                  Ново зареждане е възможно след изчерпване на текущия баланс.
+                </div>
+              )}
+            </div>
+          )}
+        </div>
 
         {loading ? (
           <div className="mt-8 text-sm text-[#6b8187]">
@@ -925,6 +1031,188 @@ export default function AccountPage() {
                 </div>
               </div>
             </div>
+            {expertData && !expertData.admin && (
+              <div className="mt-8 border-t border-[#e1ecee] pt-7">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#56858e]">
+                      SONDI EXPERT
+                    </div>
+                    <h2 className="mt-1 text-xl font-bold text-[#173f48]">
+                      Запазени анализи
+                    </h2>
+                  </div>
+
+                  <a
+                    href="/map"
+                    className="rounded-xl border border-[#b9d7dc] bg-[#eef8f9] px-4 py-2.5 text-sm font-bold text-[#245d68]"
+                  >
+                    Нов анализ
+                  </a>
+                </div>
+
+                {expertData.analyses.length === 0 ? (
+                  <div className="mt-4 rounded-2xl border border-dashed border-[#cfdfe2] bg-[#f8fbfb] px-5 py-8 text-center text-sm text-[#789096]">
+                    Все още нямате запазени SONDI EXPERT анализи.
+                  </div>
+                ) : (
+                <div className="mt-4 grid gap-3">
+                  {expertData.analyses.map(item => {
+                    const query =
+                      item.query_params &&
+                      typeof item.query_params === "object"
+                        ? item.query_params
+                        : {};
+
+                    const params =
+                      new URLSearchParams();
+
+                    params.set(
+                      "lat",
+                      String(item.latitude)
+                    );
+                    params.set(
+                      "lng",
+                      String(item.longitude)
+                    );
+
+                    if (
+                      typeof query.gwb === "string" &&
+                      query.gwb
+                    ) {
+                      params.set("gwb", query.gwb);
+                    } else if (item.primary_gwb) {
+                      params.set(
+                        "gwb",
+                        item.primary_gwb
+                      );
+                    }
+
+                    if (
+                      typeof query.gwbs === "string" &&
+                      query.gwbs
+                    ) {
+                      params.set(
+                        "gwbs",
+                        query.gwbs
+                      );
+                    }
+
+                    params.set(
+                      "analysis_id",
+                      item.id
+                    );
+
+                    const openSavedPdf = async (
+                      kind: "expert" | "driller"
+                    ) => {
+                      const popup =
+                        window.open("", "_blank");
+
+                      try {
+                        const response =
+                          await fetch(
+                            `/api/expert-pdf?analysis_id=${encodeURIComponent(item.id)}&kind=${kind}`
+                          );
+
+                        const result =
+                          await response.json();
+
+                        if (!response.ok || !result?.url) {
+                          throw new Error(
+                            result?.error || "PDF unavailable"
+                          );
+                        }
+
+                        if (popup) {
+                          popup.location.href = result.url;
+                        } else {
+                          window.location.href = result.url;
+                        }
+                      } catch (error) {
+                        popup?.close();
+
+                        console.error(
+                          "Open archived PDF error",
+                          error
+                        );
+
+                        window.alert(
+                          "\u0410\u0440\u0445\u0438\u0432\u0438\u0440\u0430\u043d\u0438\u044f\u0442 PDF \u0444\u0430\u0439\u043b \u043d\u0435 \u043c\u043e\u0436\u0430 \u0434\u0430 \u0431\u044a\u0434\u0435 \u043e\u0442\u0432\u043e\u0440\u0435\u043d."
+                        );
+                      }
+                    };
+                    return (
+                      <div
+                        key={item.id}
+                        className="flex flex-col gap-3 rounded-xl border border-[#d9e7e9] bg-[#f8fbfb] px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <div>
+                          {item.location_label ? (
+                            <div className="text-sm font-bold text-[#173f48]">
+                              {item.location_label}
+                            </div>
+                          ) : null}
+
+                          <div className={`${item.location_label ? "mt-1 " : ""}text-xs font-semibold text-[#5f7b82]`}>
+                            {Number(item.latitude).toFixed(6)}, {Number(item.longitude).toFixed(6)}
+                          </div>
+                          <div className="mt-1 text-xs text-[#789096]">
+                            {new Intl.DateTimeFormat(
+                              "bg-BG",
+                              {
+                                day: "2-digit",
+                                month: "2-digit",
+                                year: "numeric",
+                                hour: "2-digit",
+                                minute: "2-digit",
+                              }
+                            ).format(
+                              new Date(
+                                item.created_at
+                              )
+                            )}
+                          </div>
+                        </div>
+                        <div className="flex shrink-0 flex-wrap gap-2">
+                          {item.pdf_storage_path ? (
+                            <button
+                              type="button"
+                              onClick={() =>
+                                void openSavedPdf("expert")
+                              }
+                              className="rounded-xl bg-[#14596a] px-4 py-2 text-sm font-bold text-white"
+                            >
+                              EXPERT PDF
+                            </button>
+                          ) : null}
+
+                          {item.driller_pdf_storage_path ? (
+                            <button
+                              type="button"
+                              onClick={() =>
+                                void openSavedPdf("driller")
+                              }
+                              className="rounded-xl bg-[#267363] px-4 py-2 text-sm font-bold text-white"
+                            >
+                              DRILLER PDF
+                            </button>
+                          ) : null}
+
+                          {!item.pdf_storage_path &&
+                          !item.driller_pdf_storage_path ? (
+                            <span className="text-xs font-semibold text-[#789096]">
+                              {"\u041d\u044f\u043c\u0430 \u0437\u0430\u043f\u0430\u0437\u0435\u043d PDF"}
+                            </span>
+                          ) : null}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                )}
+              </div>
+            )}
 
             {(accountType === "client" ||
               accountType === "both") && (
@@ -1545,6 +1833,139 @@ export default function AccountPage() {
         )}
       </section>
 
+      {expertTopupOpen && expertData && !expertData.admin && (
+        <div
+          className="fixed inset-0 z-[230] flex items-center justify-center bg-[#0b2630]/55 px-4 backdrop-blur-[2px]"
+          onClick={() => {
+            if (!expertCheckoutTier) {
+              setExpertTopupOpen(false);
+            }
+          }}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            className="w-full max-w-2xl rounded-[26px] border border-white/60 bg-white p-6 shadow-[0_30px_90px_rgba(0,0,0,.25)] sm:p-7"
+            onClick={event =>
+              event.stopPropagation()
+            }
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#56858e]">
+                  SONDI EXPERT
+                </div>
+                <h2 className="mt-1 text-2xl font-bold text-[#173f48]">
+                  Презареждане на баланс
+                </h2>
+                <p className="mt-2 text-sm leading-6 text-[#6b8187]">
+                  Изберете сума. По-голямото зареждане намалява цената на един анализ.
+                </p>
+              </div>
+
+              <button
+                type="button"
+                disabled={Boolean(expertCheckoutTier)}
+                onClick={() =>
+                  setExpertTopupOpen(false)
+                }
+                className="rounded-xl border border-[#d7e4e6] bg-white px-3 py-2 text-sm font-bold text-[#45636b] disabled:opacity-50"
+              >
+                Затвори
+              </button>
+            </div>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {[
+                ["199", "1,99 €", "1,99 € / анализ", "1 анализ"],
+                ["500", "5,00 €", "1,25 € / анализ", "4 анализа"],
+                ["1000", "10,00 €", "1,00 € / анализ", "10 анализа"],
+                ["2000", "20,00 €", "0,80 € / анализ", "25 анализа"],
+              ].map(([tier, amount, rate, count]) => (
+                <button
+                  key={tier}
+                  type="button"
+                  disabled={Boolean(expertCheckoutTier)}
+                  onClick={async () => {
+                    setExpertCheckoutTier(tier);
+                    setExpertError("");
+
+                    try {
+                      const response =
+                        await fetch(
+                          "/api/stripe/checkout",
+                          {
+                            method: "POST",
+                            headers: {
+                              "Content-Type":
+                                "application/json",
+                            },
+                            body: JSON.stringify({
+                              tier,
+                            }),
+                          }
+                        );
+
+                      const data =
+                        await response.json();
+
+                      if (
+                        !response.ok ||
+                        !data?.url
+                      ) {
+                        throw new Error(
+                          data?.message ||
+                            data?.error ||
+                            "Неуспешно стартиране на плащането."
+                        );
+                      }
+
+                      window.location.href =
+                        data.url;
+                    } catch (error) {
+                      setExpertError(
+                        error instanceof Error
+                          ? error.message
+                          : "Възникна грешка при плащането."
+                      );
+                      setExpertCheckoutTier(
+                        null
+                      );
+                    }
+                  }}
+                  className="rounded-2xl border border-[#d9e7e9] bg-[#f7fbfb] p-5 text-left transition hover:border-[#9fc9c1] hover:bg-[#f1f8f6] disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  <div className="text-xl font-bold text-[#173f48]">
+                    {amount}
+                  </div>
+                  <div className="mt-2 text-sm font-semibold text-[#28634f]">
+                    {rate}
+                  </div>
+                  <div className="mt-1 text-xs text-[#789096]">
+                    {count}
+                  </div>
+                  {expertCheckoutTier ===
+                    tier && (
+                    <div className="mt-3 text-xs font-bold text-[#56858e]">
+                      Отваряне на плащането...
+                    </div>
+                  )}
+                </button>
+              ))}
+            </div>
+
+            <div className="mt-5 border-t border-[#e3edef] pt-4 text-xs leading-5 text-[#6b8187]">
+              За професионален неограничен достъп:{" "}
+              <a
+                href="mailto:info@sondi.bg"
+                className="font-bold text-[#177f98]"
+              >
+                info@sondi.bg
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
       {confirmMediaDeleteId && (
         <div
           className="fixed inset-0 z-[220] flex items-center justify-center bg-[#0b2630]/55 px-4 backdrop-blur-[2px]"

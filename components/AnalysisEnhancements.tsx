@@ -228,6 +228,113 @@ export default function AnalysisEnhancements() {
     );
   };
 
+  const saveToProfile = async (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    const button = event.currentTarget;
+
+    const parameters =
+      new URLSearchParams(
+        window.location.search
+      );
+
+    const analysisId =
+      parameters.get("analysis_id")?.trim() || "";
+
+    if (!analysisId) {
+      window.alert(
+        "\u041b\u0438\u043f\u0441\u0432\u0430 analysis_id \u0437\u0430 \u0442\u043e\u0437\u0438 \u0430\u043d\u0430\u043b\u0438\u0437."
+      );
+      return;
+    }
+
+    const kind =
+      isPro ? "expert" : "driller";
+
+    const selector =
+      isPro
+        ? ".sondi-print-report"
+        : ".sondi-drilling-print-report";
+
+    const report =
+      document.querySelector(
+        selector
+      ) as HTMLElement | null;
+
+    if (!report) {
+      window.alert(
+        "\u041d\u0435 \u0435 \u043d\u0430\u043c\u0435\u0440\u0435\u043d PDF \u043e\u0442\u0447\u0435\u0442\u044a\u0442."
+      );
+      return;
+    }
+
+    const originalText =
+      button.textContent;
+
+    button.disabled = true;
+    button.textContent =
+      "\u0417\u0430\u043f\u0430\u0437\u0432\u0430\u043d\u0435...";
+
+    try {
+      let html =
+        "<!DOCTYPE html>" +
+        document.documentElement.outerHTML;
+
+      const base =
+        `<base href="${window.location.origin}/">`;
+
+      html = html.replace(
+        /<head([^>]*)>/i,
+        `<head$1>${base}`
+      );
+
+      const response =
+        await fetch(
+          "/api/expert-pdf/render-save",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type":
+                "application/json",
+            },
+            body: JSON.stringify({
+              analysis_id:
+                analysisId,
+              kind,
+              html,
+            }),
+          }
+        );
+
+      const result =
+        await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result?.error ||
+          "PDF render failed"
+        );
+      }
+
+      button.textContent =
+        "\u0417\u0430\u043f\u0430\u0437\u0435\u043d\u043e \u0432 \u043f\u0440\u043e\u0444\u0438\u043b\u0430 \u2713";
+    } catch (error) {
+      console.error(
+        "Save analysis PDF error",
+        error
+      );
+
+      button.disabled = false;
+      button.textContent =
+        originalText ||
+        "\u0417\u0430\u043f\u0430\u0437\u0438 \u0432 \u043f\u0440\u043e\u0444\u0438\u043b\u0430";
+
+      window.alert(
+        "PDF \u0444\u0430\u0439\u043b\u044a\u0442 \u043d\u0435 \u043c\u043e\u0436\u0430 \u0434\u0430 \u0431\u044a\u0434\u0435 \u0437\u0430\u043f\u0430\u0437\u0435\u043d \u0432 \u043f\u0440\u043e\u0444\u0438\u043b\u0430."
+      );
+    }
+  };
+
   return (
     <>
       <style>{`
@@ -406,7 +513,7 @@ export default function AnalysisEnhancements() {
           document.querySelector("main") as Element
         )}
 
-      <aside className="sondi-analysis-toolbar">
+      <aside key={pathname} className="sondi-analysis-toolbar">
         <button
           type="button"
           className="sondi-analysis-pdf-button"
@@ -414,6 +521,17 @@ export default function AnalysisEnhancements() {
         >
           <span aria-hidden="true">↓</span>
           Свали PDF
+        </button>
+        <button
+          type="button"
+          className="sondi-analysis-pdf-button"
+          onClick={saveToProfile}
+          style={{
+            background: "#14596a",
+          }}
+        >
+          <span aria-hidden="true">♡</span>
+          {"\u0417\u0430\u043f\u0430\u0437\u0438 \u0432 \u043f\u0440\u043e\u0444\u0438\u043b\u0430"}
         </button>
       </aside>
     </>

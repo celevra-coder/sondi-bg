@@ -2278,7 +2278,7 @@ function buildSondiProUrl(feature){
     );
   }
 
-  return "/pro?" + params.toString();
+  return "/expert-access?" + params.toString();
 }
 
 
@@ -2781,8 +2781,8 @@ function sondiProUrlForPopup(feature, codeOverride){
   const query = params.toString();
 
   return query
-    ? "/pro?" + query
-    : "/pro";
+    ? "/expert-access?" + query
+    : "/expert-access";
 }
 
 
@@ -5268,7 +5268,7 @@ async function loadEastAegeanGroundwaterWells() {
           }
 
           const proUrl =
-            "/pro?" +
+            "/expert-access?" +
             params.toString();
 
           const popupHtml =
@@ -5417,7 +5417,7 @@ async function loadOrdinaryGroundwaterWells() {
         }
 
         const proUrl =
-          "/pro?" + params.toString();
+          "/expert-access?" + params.toString();
 
         const popupHtml =
           ordinaryGroundwaterFacilityPopupHtml(
@@ -16556,7 +16556,7 @@ async function analyzeLocation(
   humanHtml +=
     "<div style=\"margin-top:14px\">" +
     "<a " +
-    "href=\"/pro?lat=" +
+    "href=\"/expert-access?lat=" +
     encodeURIComponent(
       lat.toFixed(7)
     ) +
@@ -16578,6 +16578,12 @@ async function analyzeLocation(
           encodeURIComponent(
             resolvedGroundwaterCodes.join(",")
           )
+        : ""
+    ) +
+    (
+      label
+        ? "&location_label=" +
+          encodeURIComponent(label)
         : ""
     ) +
     "\" " +
@@ -17788,13 +17794,14 @@ function showSearchedCoordinates(
     "<button type=\"button\"" +
     " style=\"margin-top:9px;width:100%;padding:8px;" +
     "border:0;border-radius:6px;background:#087849;" +
-    "color:#fff;font-weight:bold;cursor:pointer\"" +
-    " onclick=\"analyzeSearchedLocation(" +
+    "color:#fff;font-weight:bold;cursor:pointer\"" +    " onclick=\"analyzeSearchedLocation(" +
     latitude +
     "," +
     longitude +
-    ",'Търсена локация')\">" +
-    "Анализирай тази локация" +
+    ",decodeURIComponent('" +
+    encodeURIComponent(label) +
+    "'))\">" +
+    "\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u0439 \u0442\u0430\u0437\u0438 \u043b\u043e\u043a\u0430\u0446\u0438\u044f" +
     "</button>" +
     "</div>";
 

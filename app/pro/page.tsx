@@ -7,6 +7,8 @@ import MonitoringBodyDetails from "./MonitoringBodyDetails";
 import ProPrintReport from "./ProPrintReport";
 import { resolveGroundwaterBodiesAtPoint } from "@/lib/gwb-spatial-resolver";
 import { getBlackSeaGisAnalysis } from "@/lib/black-sea-gis";
+import { redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase-server";
 
 type SearchParams = Promise<{
   gwb?: string;
@@ -14,6 +16,7 @@ type SearchParams = Promise<{
   lat?: string;
   lng?: string;
   lon?: string;
+  analysis_id?: string;
 }>;
 
 function Card({
@@ -229,6 +232,125 @@ export default async function ProPage({
   searchParams: SearchParams;
 }) {
   const params = await searchParams;
+
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  const analysisId =
+    params.analysis_id?.trim() || "";
+
+  let hasExpertAccess = false;
+
+  if (user) {
+    const { data: adminRow } =
+      await supabase
+        .from("admin_users")
+        .select("user_id")
+        .eq("user_id", user.id)
+        .maybeSingle();
+
+    if (adminRow) {
+      hasExpertAccess = true;
+    } else if (analysisId) {
+      const { data: analysisRow } =
+        await supabase
+          .from("expert_analyses")
+          .select("id, latitude, longitude, primary_gwb, query_params")
+          .eq("id", analysisId)
+          .eq("user_id", user.id)
+          .maybeSingle();
+
+      if (analysisRow) {
+        const requestedLat = Number(params.lat);
+        const requestedLng = Number(
+          params.lng ?? params.lon
+        );
+
+        const savedLat = Number(
+          analysisRow.latitude
+        );
+        const savedLng = Number(
+          analysisRow.longitude
+        );
+
+        const coordinatesMatch =
+          Number.isFinite(requestedLat) &&
+          Number.isFinite(requestedLng) &&
+          Number.isFinite(savedLat) &&
+          Number.isFinite(savedLng) &&
+          requestedLat.toFixed(6) ===
+            savedLat.toFixed(6) &&
+          requestedLng.toFixed(6) ===
+            savedLng.toFixed(6);
+
+        const savedQueryParams =
+          analysisRow.query_params &&
+          typeof analysisRow.query_params === "object" &&
+          !Array.isArray(analysisRow.query_params)
+            ? analysisRow.query_params as Record<string, unknown>
+            : {};
+
+        const savedGwb =
+          typeof savedQueryParams.gwb === "string"
+            ? savedQueryParams.gwb
+            : analysisRow.primary_gwb || "";
+
+        const savedGwbs =
+          typeof savedQueryParams.gwbs === "string"
+            ? savedQueryParams.gwbs
+            : "";
+
+        const gwbMatches =
+          (params.gwb || "") === savedGwb;
+
+        const gwbsMatch =
+          (params.gwbs || "") === savedGwbs;
+
+        if (
+          coordinatesMatch &&
+          gwbMatches &&
+          gwbsMatch
+        ) {
+          hasExpertAccess = true;
+        }
+      }
+    }
+  }
+
+  if (!hasExpertAccess) {
+    const accessParams =
+      new URLSearchParams();
+
+    if (params.lat) {
+      accessParams.set("lat", params.lat);
+    }
+
+    if (params.lng || params.lon) {
+      accessParams.set(
+        "lng",
+        params.lng || params.lon || ""
+      );
+    }
+
+    if (params.gwb) {
+      accessParams.set("gwb", params.gwb);
+    }
+
+    if (params.gwbs) {
+      accessParams.set("gwbs", params.gwbs);
+    }
+
+    const query = accessParams.toString();
+
+    redirect(
+      query
+        ? `/expert-access?${query}`
+        : "/expert-access"
+    );
+  }
 
   const lat = params.lat ?? null;
   const lng =
@@ -8338,7 +8460,7 @@ export default async function ProPage({
                         profile.gwbCode.toUpperCase()
                     )
                     .join(",")
-                )}` : ""}`}
+                )}` : ""}${analysisId ? `&analysis_id=${encodeURIComponent(analysisId)}` : ""}`}
                     style={{
                       display: "flex",
                       alignItems: "center",
