@@ -276,17 +276,35 @@ export default function AnalysisEnhancements() {
       "\u0417\u0430\u043f\u0430\u0437\u0432\u0430\u043d\u0435...";
 
     try {
-      let html =
+      const styles =
+        Array.from(
+          document.querySelectorAll(
+            'style, link[rel="stylesheet"]'
+          )
+        )
+          .map((node) => node.outerHTML)
+          .join("\n");
+
+      const reportHtml =
+        report.outerHTML;
+
+      const html =
         "<!DOCTYPE html>" +
-        document.documentElement.outerHTML;
-
-      const base =
-        `<base href="${window.location.origin}/">`;
-
-      html = html.replace(
-        /<head([^>]*)>/i,
-        `<head$1>${base}`
-      );
+        "<html>" +
+        "<head>" +
+        '<meta charset="utf-8">' +
+        `<base href="${window.location.origin}/">` +
+        styles +
+        "<style>" +
+        "html,body{margin:0!important;padding:0!important;background:#fff!important;}" +
+        `${selector}{display:block!important;visibility:visible!important;position:static!important;inset:auto!important;width:100%!important;}` +
+        `${selector},${selector} *{visibility:visible!important;}` +
+        "</style>" +
+        "</head>" +
+        "<body>" +
+        reportHtml +
+        "</body>" +
+        "</html>";
 
       const response =
         await fetch(
