@@ -2477,6 +2477,49 @@ document
   });
 
 
+/*
+  Thematic modes are temporary analytical views.
+  Any normal map-layer checkbox interaction exits thematic mode first.
+*/
+function exitThematicModeForMapInteraction(target) {
+  if (!activeThematicMode) return;
+
+  if (
+    target &&
+    target.matches &&
+    target.matches('input[name="thematic-mode"]')
+  ) {
+    return;
+  }
+
+  document
+    .querySelectorAll('input[name="thematic-mode"]')
+    .forEach(function(radio){
+      radio.checked = false;
+    });
+
+  activateThematicMode("default");
+}
+
+document.addEventListener(
+  "click",
+  function(event){
+    const target = event.target;
+
+    if (
+      !target ||
+      !target.matches ||
+      !target.matches('input[type="checkbox"]')
+    ) {
+      return;
+    }
+
+    exitThematicModeForMapInteraction(target);
+  },
+  true
+);
+
+
 function setLayerStatus(id,text,color){
  const el=document.getElementById(id);
  if(el){
