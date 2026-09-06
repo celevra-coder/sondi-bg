@@ -772,8 +772,10 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
   &#9646; &#1056;&#1072;&#1079;&#1083;&#1086;&#1084;&#1085;&#1080; &#1082;&#1086;&#1088;&#1080;&#1076;&#1086;&#1088;&#1080;
 </label>
 <div id="fault-corridor-load-status" class="small" style="margin-left:48px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
-<a href="/aidu" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;box-sizing:border-box;margin:8px 0 10px;padding:11px 14px;border-radius:10px;border:1px solid #1f7aa8;background:linear-gradient(135deg,#0b5f8a,#123f61);color:#fff;font-weight:700;font-size:14px;text-decoration:none;cursor:pointer;box-shadow:0 4px 14px rgba(0,70,110,.18);">&#10024; &#1040;&#1048; &#1072;&#1085;&#1072;&#1083;&#1080;&#1079; &#1085;&#1072; &#1090;&#1077;&#1088;&#1077;&#1085;</a>
-<label class="layerrow future"><input type="checkbox" disabled> ⭐ Потвърдени успешни сондажи — ще се добавят по-късно</label>
+<div id="sondi-admin-map-tools" style="display:none">
+  <a href="/aidu" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;box-sizing:border-box;margin:8px 0 10px;padding:11px 14px;border-radius:10px;border:1px solid #1f7aa8;background:linear-gradient(135deg,#0b5f8a,#123f61);color:#fff;font-weight:700;font-size:14px;text-decoration:none;cursor:pointer;box-shadow:0 4px 14px rgba(0,70,110,.18);">&#10024; &#1040;&#1048; &#1072;&#1085;&#1072;&#1083;&#1080;&#1079; &#1085;&#1072; &#1090;&#1077;&#1088;&#1077;&#1085;</a>
+  <label class="layerrow future"><input type="checkbox" id="layer-confirmed-success">&#11088; &#1055;&#1086;&#1090;&#1074;&#1098;&#1088;&#1076;&#1077;&#1085;&#1080; &#1091;&#1089;&#1087;&#1077;&#1096;&#1085;&#1080; &#1089;&#1086;&#1085;&#1076;&#1072;&#1078;&#1080;</label>
+</div>
 <div class="small" style="margin-top:7px">
 Подземните водни тела се зареждат от официални източници. Активните разломи са пространствени данни от GEM. До всеки слой се показва дали е зареден успешно.
 </div>
@@ -815,18 +817,7 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 </div>
 
 
-<div id="count" class="count"></div>
-<button style="margin-top:9px" onclick="toggleUnmapped()">Официални записи без координати</button>
-<div id="unmapped" class="list"></div>
 
-<div class="small" style="margin-top:8px">
-Минерални сондажи: 306<br>
-Каптажи/извори: 42<br>
-Мониторингови: 41<br>
-Ликвидирани/закрити: 34<br>
-Консервирани: 8<br>
-Общо официални записи: 432
-</div>
 </div>
 
 <div id="map"></div>
@@ -835,6 +826,40 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 <script src="https://unpkg.com/esri-leaflet@3.0.15/dist/esri-leaflet.js"></script>
 <script>
 const map=L.map('map').setView([42.72,25.35],7);
+(async function initAdminMapTools(){
+  try {
+    const response = await fetch(
+      "/api/expert-account",
+      {
+        credentials: "same-origin",
+        cache: "no-store"
+      }
+    );
+
+    if (!response.ok) {
+      return;
+    }
+
+    const data = await response.json();
+
+    if (data && data.admin === true) {
+      const tools =
+        document.getElementById(
+          "sondi-admin-map-tools"
+        );
+
+      if (tools) {
+        tools.style.display = "block";
+      }
+    }
+  } catch (error) {
+    console.warn(
+      "[Map admin tools]",
+      error
+    );
+  }
+})();
+
 
 const gemFaultPaneName = "gemFaultPane";
 
