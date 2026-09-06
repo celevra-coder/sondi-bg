@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Cormorant_Garamond } from "next/font/google";
 
 const heroFont = Cormorant_Garamond({
@@ -96,28 +97,26 @@ export default function Home() {
           </p>
 
           <div className="mt-8 sm:mt-9 md:mt-11">
-            <button
-              type="button"
-              disabled
-              aria-disabled="true"
+            <Link
+              href="/explore"
               className="
                 inline-flex min-w-[150px]
-                cursor-default
                 items-center justify-center
-                rounded-full border border-white/30
+                rounded-full border border-white/40
                 bg-white/10
                 px-7 py-3.5
                 text-sm font-light tracking-[0.13em]
-                text-white/70
                 backdrop-blur-md
+                transition duration-500
+                hover:bg-white hover:text-black
 
                 sm:min-w-[165px]
                 sm:px-9 sm:py-4
                 sm:text-base
               "
             >
-              Скоро...
-            </button>
+              {"\u0418\u0437\u0441\u043b\u0435\u0434\u0432\u0430\u0439"}
+            </Link>
           </div>
 
         </div>

@@ -473,6 +473,37 @@ const [authReady, setAuthReady] = useState(false);
                 <Link href="/disclaimer">Отказ от отговорност</Link>
               </div>
             </div>
+            <div>
+              <div className="text-sm font-semibold">
+                {"\u041e\u0411\u0429\u041d\u041e\u0421\u0422"}
+              </div>
+
+              <div className="mt-5 flex flex-col gap-3">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61594073405125"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/15 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/15"
+                >
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-[15px] font-black leading-none text-[#1877F2]">f</span>
+                  <span>
+                    {"Facebook \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430"}
+                  </span>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/groups/1384411913062426"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/15 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/15"
+                >
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-[15px] font-black leading-none text-[#1877F2]">f</span>
+                  <span>
+                    {"Facebook \u0433\u0440\u0443\u043f\u0430"}
+                  </span>
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/40 md:flex-row md:justify-between">
