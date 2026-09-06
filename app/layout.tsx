@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SiteShell from "@/components/SiteShell";
 import AnalysisEnhancements from "@/components/AnalysisEnhancements";
+import AnalyticsConsent from "@/components/AnalyticsConsent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -69,6 +70,7 @@ export default function RootLayout({
       <body className="min-h-full">
         <SiteShell>{children}</SiteShell>
         <AnalysisEnhancements />
+        <AnalyticsConsent />
       </body>
     </html>
   );

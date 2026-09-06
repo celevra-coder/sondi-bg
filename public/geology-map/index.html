@@ -825,6 +825,71 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
 <script src="https://unpkg.com/esri-leaflet@3.0.15/dist/esri-leaflet.js"></script>
 <script>
+(function initMapClarityConsent(){
+  const STORAGE_KEY = "sondi_analytics_consent";
+  const CLARITY_ID = "ye4vsbb4fe";
+
+  function loadClarity(){
+    if (
+      document.getElementById(
+        "sondi-map-clarity-script"
+      )
+    ) {
+      return;
+    }
+
+    window.clarity =
+      window.clarity ||
+      function(){
+        (
+          window.clarity.q =
+            window.clarity.q || []
+        ).push(arguments);
+      };
+
+    const script =
+      document.createElement("script");
+
+    script.id =
+      "sondi-map-clarity-script";
+
+    script.async = true;
+
+    script.src =
+      "https://www.clarity.ms/tag/" +
+      CLARITY_ID;
+
+    document.head.appendChild(script);
+  }
+
+  try {
+    if (
+      window.localStorage.getItem(
+        STORAGE_KEY
+      ) === "granted"
+    ) {
+      loadClarity();
+    }
+  } catch (error) {
+    console.warn(
+      "[Map Clarity consent]",
+      error
+    );
+  }
+
+  window.addEventListener(
+    "storage",
+    function(event){
+      if (
+        event.key === STORAGE_KEY &&
+        event.newValue === "granted"
+      ) {
+        loadClarity();
+      }
+    }
+  );
+})();
+
 const map=L.map('map').setView([42.72,25.35],7);
 (async function initAdminMapTools(){
   try {
