@@ -10766,7 +10766,7 @@ function applyFilters(){
    if(matches(x)){if(!map.hasLayer(x.marker))x.marker.addTo(map);c++}
    else if(map.hasLayer(x.marker))map.removeLayer(x.marker);
  });
- document.getElementById('count').textContent='ÐŸÐ¾ÐºÐ°Ð·Ð°Ð½Ð¸ Ñ‚Ð¾Ñ‡ÐºÐ¸: '+c;
+ const countEl=document.getElementById('count'); if(countEl) countEl.textContent='ÐŸÐ¾ÐºÐ°Ð·Ð°Ð½Ð¸ Ñ‚Ð¾Ñ‡ÐºÐ¸: '+c;
 }
 
 function fitVisible(){
@@ -16873,7 +16873,7 @@ async function analyzeLocation(
         : ""
     ) +
     "\" " +
-    "target=\"_blank\" " +
+    "target=\"_top\"   " +
     "rel=\"noopener noreferrer\" " +
     "style=\"" +
       "display:block;" +
@@ -18983,6 +18983,5 @@ function toggleLayersPanel(){
  /* MOBILE_LEGEND_BEHAVIOR_END */
 
 </script>
-
 </body>
 </html>
