@@ -1,3 +1,4 @@
+import KnowledgeArticleJsonLd from "@/components/KnowledgeArticleJsonLd";
 export const metadata = {
   alternates: { canonical: "/knowledge/water-quality/drinking-water-protection-zones" },
 
@@ -10,6 +11,13 @@ import Link from "next/link";
 export default function DrinkingWaterProtectionZonesPage() {
   return (
     <main className="min-h-screen bg-white text-[#173d47]">
+        <KnowledgeArticleJsonLd
+          title={metadata.title}
+          description={metadata.description}
+          path={metadata.alternates.canonical}
+          sectionName="Качество на водите"
+          sectionPath="/knowledge/water-quality"
+        />
       <section className="bg-[#e5f5f8]">
         <div className="mx-auto max-w-[980px] px-7 pb-16 pt-16">
           <Link

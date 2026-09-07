@@ -1,3 +1,4 @@
+import KnowledgeArticleJsonLd from "@/components/KnowledgeArticleJsonLd";
 export const metadata = {
   alternates: { canonical: "/knowledge/geology/lithology" },
 
@@ -10,6 +11,13 @@ import Link from "next/link";
 export default function ArticlePage() {
   return (
     <main className="min-h-screen bg-white">
+        <KnowledgeArticleJsonLd
+          title={metadata.title}
+          description={metadata.description}
+          path={metadata.alternates.canonical}
+          sectionName="Геология"
+          sectionPath="/knowledge/geology"
+        />
       <section className="border-b border-[#dce8eb] bg-[#eaf6f8]">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8 lg:px-12">
           <div className="text-xs font-bold uppercase tracking-[0.22em] text-[#5b8d97]">

@@ -1,3 +1,4 @@
+import KnowledgeArticleJsonLd from "@/components/KnowledgeArticleJsonLd";
 export const metadata = {
   alternates: { canonical: "/knowledge/groundwater/active-faults" },
 
@@ -120,6 +121,13 @@ export default function ActiveFaultsKnowledgePage() {
 
   return (
     <main className="min-h-screen bg-white text-[#173d47]">
+        <KnowledgeArticleJsonLd
+          title={metadata.title}
+          description={metadata.description}
+          path={metadata.alternates.canonical}
+          sectionName="Подземни води"
+          sectionPath="/knowledge/groundwater"
+        />
       <section className="bg-[#e5f5f8]">
         <div className="mx-auto max-w-[980px] px-7 pb-16 pt-16">
           <Link
