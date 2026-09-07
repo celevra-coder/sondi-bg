@@ -157,6 +157,79 @@ export default function GroundwaterTypesPage() {
           </div>
         </section>
 
+        <section className="mt-14">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em]">
+            Как типът на подземните води влияе върху сондажа?
+          </h2>
+
+          <div className="mt-6 space-y-5 text-[17px] leading-8 text-[#536f76]">
+            <p>
+              При поровите води целта обикновено е водоносен слой с достатъчна
+              дебелина и добра пропускливост. Затова важни са не само
+              дълбочината, но и съставът и мощността на пясъчните или
+              чакълестите пластове.
+            </p>
+
+            <p>
+              При пукнатинните води резултатът е по-силно зависим от конкретното
+              място. Сондажът трябва да пресече пукнатини или нарушени скални
+              зони, които действително са свързани и водопроводящи.
+            </p>
+
+            <p>
+              При карстовите води условията могат да се променят рязко на малко
+              разстояние заради кухини, разширени пукнатини и канали. Поради
+              това регионалната геология е важна, но не може сама да определи
+              точния локален резултат.
+            </p>
+
+            <p>
+              Виж още за{" "}
+              <Link
+                href="/knowledge/geology/faults-fractures-groundwater"
+                className="font-semibold text-[#257589]"
+              >
+                разломите, пукнатините и подземните води
+              </Link>
+              {" "}и за{" "}
+              <Link
+                href="/knowledge/geology/karst"
+                className="font-semibold text-[#257589]"
+              >
+                карстовата геоложка среда
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-[#dce8ea] pt-8">
+          <h2 className="text-xl font-semibold">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607b82]">
+            <li>
+              <a
+                href="https://www.usgs.gov/water-science-school/science/aquifers-and-groundwater"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — Aquifers and Groundwater
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://pubs.usgs.gov/circ/circ1186/html/gen_facts.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — General Facts and Concepts about Ground Water
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-14 border-l-4 border-[#2c8498] bg-[#edf8fa] p-7">
           <strong>Затова геологията има значение</strong>
           <p className="mt-2 leading-7 text-[#5b767d]">

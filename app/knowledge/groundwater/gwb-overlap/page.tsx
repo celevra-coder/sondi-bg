@@ -124,6 +124,78 @@ export default function GwbOverlapPage() {
           </p>
         </section>
 
+        <section className="mt-14">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em]">
+            Как се тълкува припокриване на ПВТ за конкретен имот?
+          </h2>
+
+          <div className="mt-6 space-y-5 text-[17px] leading-8 text-[#536f76]">
+            <p>
+              Припокриването трябва да се разглежда като регионален
+              хидрогеоложки контекст, а не като доказателство, че всеки
+              водоносен хоризонт присъства еднакво под целия имот.
+            </p>
+
+            <p>
+              За конкретна точка значение имат дълбочината, геоложките
+              пластове, разположението на водоносните среди и данните от
+              сондажи или мониторингови пунктове в района.
+            </p>
+
+            <p>
+              Ако няколко ПВТ се пресичат пространствено, техните показатели
+              за химично и количествено състояние също трябва да се разглеждат
+              поотделно. Едно тяло може да има различен статус или натиск
+              спрямо друго тяло на същата координата.
+            </p>
+
+            <p>
+              Виж още за{" "}
+              <Link
+                href="/knowledge/monitoring/multiple-groundwater-bodies"
+                className="font-semibold text-[#257589]"
+              >
+                анализ при няколко подземни водни тела
+              </Link>
+              {" "}и за{" "}
+              <Link
+                href="/knowledge/practice/property-conclusions"
+                className="font-semibold text-[#257589]"
+              >
+                изводите за конкретен имот
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-[#dce8ea] pt-8">
+          <h2 className="text-xl font-semibold">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607b82]">
+            <li>
+              <a
+                href="https://water.europa.eu/freshwater/europe-freshwater/water-framework-directive/characterisation-of-water-bodies"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                WISE Freshwater — Characterisation of water bodies
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=celex%3A32000L0060"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                EUR-Lex — Water Framework Directive
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-14 border-l-4 border-[#2c8498] bg-[#edf8fa] p-7">
           <strong>Припокриване не означава грешка в картата</strong>
           <p className="mt-2 leading-7 text-[#5b767d]">

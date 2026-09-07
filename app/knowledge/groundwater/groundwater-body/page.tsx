@@ -143,6 +143,78 @@ export default function GroundwaterBodyPage() {
           </p>
         </section>
 
+        <section className="mt-14">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em]">
+            Каква е разликата между ПВТ и водоносен пласт под конкретен имот?
+          </h2>
+
+          <div className="mt-6 space-y-5 text-[17px] leading-8 text-[#536f76]">
+            <p>
+              Подземното водно тяло е единица за регионална оценка и управление,
+              докато водоносният пласт е реална геоложка среда, в която водата
+              се съхранява и движи. Едно ПВТ може да включва един или повече
+              водоносни пласта или части от тях.
+            </p>
+
+            <p>
+              Затова информацията за ПВТ е много важна за общото състояние,
+              ресурса, натиска от водовземане и мониторинга, но не може сама
+              да покаже точната дълбочина или продуктивност на конкретен сондаж.
+            </p>
+
+            <p>
+              При оценка на имот регионалната информация трябва да се съпостави
+              с локалната геология, релефа, близките сондажи и наличните данни
+              за водоносните хоризонти.
+            </p>
+
+            <p>
+              Виж още за{" "}
+              <Link
+                href="/knowledge/groundwater/gwb-vs-aquifer"
+                className="font-semibold text-[#257589]"
+              >
+                разликата между ПВТ и водоносен пласт
+              </Link>
+              {" "}и за{" "}
+              <Link
+                href="/knowledge/groundwater/gwb-overlap"
+                className="font-semibold text-[#257589]"
+              >
+                припокриването на няколко подземни водни тела
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-[#dce8ea] pt-8">
+          <h2 className="text-xl font-semibold">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607b82]">
+            <li>
+              <a
+                href="https://water.europa.eu/freshwater/europe-freshwater/water-framework-directive/characterisation-of-water-bodies"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                WISE Freshwater — Characterisation of water bodies
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=celex%3A32000L0060"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                EUR-Lex — Water Framework Directive
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-14 border-l-4 border-[#2c8498] bg-[#edf8fa] p-7">
           <strong>Какво означава това за конкретен имот?</strong>
           <p className="mt-2 leading-7 text-[#5b767d]">

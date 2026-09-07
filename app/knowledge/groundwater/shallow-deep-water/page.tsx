@@ -116,6 +116,79 @@ export default function ShallowDeepWaterPage() {
           </p>
         </section>
 
+        <section className="mt-14">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em]">
+            Кое е по-важно при сондаж — дълбочината или водоносната среда?
+          </h2>
+
+          <div className="mt-6 space-y-5 text-[17px] leading-8 text-[#536f76]">
+            <p>
+              Самата дълбочина не показва дали един водоносен хоризонт
+              ще бъде подходящ за сондаж. По-важно е каква геоложка среда
+              се пресича, каква е нейната пропускливост и дали може устойчиво
+              да подава вода към сондажа.
+            </p>
+
+            <p>
+              Плитък водоносен хоризонт може да има добър дебит, но да реагира
+              по-бързо на суша, сезонни промени или повърхностни влияния.
+              По-дълбок хоризонт може да бъде по-слабо зависим от краткосрочни
+              промени, но това не означава автоматично по-голям ресурс.
+            </p>
+
+            <p>
+              Затова при оценка на конкретно място е важно да се разглеждат
+              заедно дълбочината, типът на водоносната среда, нивото на водата,
+              геоложката структура и данните от близки сондажи.
+            </p>
+
+            <p>
+              Виж още за{" "}
+              <Link
+                href="/knowledge/groundwater/aquifer"
+                className="font-semibold text-[#257589]"
+              >
+                водоносните пластове
+              </Link>
+              {" "}и за{" "}
+              <Link
+                href="/knowledge/groundwater/water-level"
+                className="font-semibold text-[#257589]"
+              >
+                разликата между водно ниво и дълбочина на водоносния хоризонт
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-[#dce8ea] pt-8">
+          <h2 className="text-xl font-semibold">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607b82]">
+            <li>
+              <a
+                href="https://www.usgs.gov/water-science-school/science/aquifers-and-groundwater"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — Aquifers and Groundwater
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.usgs.gov/water-science-school/groundwater"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — Groundwater
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-14 border-l-4 border-[#2c8498] bg-[#edf8fa] p-7">
           <strong>Важно за сондажите</strong>
           <p className="mt-2 leading-7 text-[#5b767d]">
