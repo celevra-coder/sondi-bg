@@ -15,6 +15,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin", "cyrillic"],
 });
 
+
+const siteStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.sondi.bg/#organization",
+      name: "SONDI.BG",
+      alternateName: "Sondi.bg",
+      url: "https://www.sondi.bg/",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.sondi.bg/#website",
+      url: "https://www.sondi.bg/",
+      name: "SONDI.BG",
+      alternateName: "Sondi.bg",
+      inLanguage: "bg-BG",
+      publisher: {
+        "@id": "https://www.sondi.bg/#organization",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sondi.bg"),
 
@@ -64,6 +89,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(siteStructuredData).replace(/</g, "\u003c"),
+          }}
+        />
         <SiteShell>{children}</SiteShell>
         <AnalysisEnhancements />
         <AnalyticsConsent />
