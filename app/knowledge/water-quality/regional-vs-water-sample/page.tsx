@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/regional-vs-water-sample" },
+
   title:
     "Регионална оценка и водна проба от конкретен сондаж",
   description:

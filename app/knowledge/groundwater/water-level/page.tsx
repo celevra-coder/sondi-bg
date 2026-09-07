@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/groundwater/water-level" },
+
   title: "Какво е водно ниво?",
   description: "Водното ниво показва докъде се установява водата в кладенец, сондаж или наблюдателен пункт. То не е непременно същото като дълбочината, на която е пресечен.",
 };

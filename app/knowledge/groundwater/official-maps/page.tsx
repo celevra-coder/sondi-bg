@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/groundwater/official-maps" },
+
   title: "Какво показват официалните карти?",
   description: "Официалните карти дават регионален контекст за подземните води, геологията, мониторинга и състоянието на водните ресурси.",
 };

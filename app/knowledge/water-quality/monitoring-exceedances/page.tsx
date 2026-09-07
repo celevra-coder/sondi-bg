@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/monitoring-exceedances" },
+
   title:
     "Как се четат мониторинговите данни и превишенията?",
   description:

@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/geology/porosity-permeability" },
+
   title: "Порьозност и пропускливост",
   description: "Порьозността показва колко празно пространство има в една скала или седимент, а пропускливостта — доколко тези пространства са свързани и позволяват движение на.",
 };

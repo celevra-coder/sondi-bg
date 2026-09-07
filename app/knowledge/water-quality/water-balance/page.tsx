@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/water-balance" },
+
   title:
     "Какво показва официалният воден баланс?",
   description:

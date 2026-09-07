@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/groundwater/artesian-water" },
+
   title: "Какво е артезианска вода?",
   description: "Артезианската вода е свързана с напорен водоносен хоризонт – система, в която водата се намира под налягане между по-слабо пропускливи пластове.",
 };

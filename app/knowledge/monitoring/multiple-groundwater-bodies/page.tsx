@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/monitoring/multiple-groundwater-bodies" },
+
   title: "Мониторинг при няколко подземни водни тела",
   description:
     "Разбираемо обяснение как се тълкуват мониторинговите данни, когато една координата попада в повече от едно подземно водно тяло.",

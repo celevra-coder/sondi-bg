@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/threshold-background-standard" },
+
   title:
     "Прагови, фонови стойности и стандарт за качество",
   description:

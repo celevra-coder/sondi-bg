@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/groundwater-public-concerns" },
+
   title:
     "Проблеми с подземните води в обществените консултации",
   description:

@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/resources/abstraction" },
+
   title: "Общо и разрешено водовземане",
   description:
     "Разбираемо обяснение какво означават общо, разрешено и отчетено водовземане и как да се тълкуват тези стойности в анализите на SONDI.BG.",

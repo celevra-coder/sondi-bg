@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/groundwater/springs" },
+
   title: "Как възникват естествените извори?",
   description: "Изворът е място, където подземната вода достига естествено до земната повърхност.",
 };

@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/drilling/location" },
+
   title:
     "\u0418\u0437\u0431\u043e\u0440 \u043d\u0430 \u043c\u044f\u0441\u0442\u043e \u0437\u0430 \u0441\u043e\u043d\u0434\u0430\u0436",
   description:

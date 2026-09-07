@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/resources/resource-load" },
+
   title: "Какво означава натоварване на ресурса?",
   description:
     "Разбираемо обяснение какво означава ниско, умерено и високо натоварване на подземния воден ресурс и как се тълкува в SONDI.BG.",

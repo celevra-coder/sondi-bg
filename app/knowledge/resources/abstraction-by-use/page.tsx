@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/resources/abstraction-by-use" },
+
   title: "Водовземане по предназначение",
   description:
     "Разбираемо обяснение как се разпределя водовземането по предназначение и как се тълкуват категориите в анализите на SONDI.BG.",

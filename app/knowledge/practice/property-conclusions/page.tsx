@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/practice/property-conclusions" },
+
   title: "Какво може да се заключи за конкретен имот",
   description:
     "Кратко обяснение кои изводи могат да се направят за конкретен имот от наличните официални и пространствени данни.",

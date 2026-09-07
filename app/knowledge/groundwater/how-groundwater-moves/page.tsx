@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/groundwater/how-groundwater-moves" },
+
   title: "Как се движи водата под земята?",
   description: "Подземната вода обикновено не стои неподвижно. Тя се движи през пори, пукнатини и кухини, но често много по-бавно от водата в една река.",
 };

@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/geology/stratigraphy-geological-age" },
+
   title: "Геоложка възраст и стратиграфия",
   description: "Стратиграфията подрежда геоложките единици във времето и помага да се разбере кои пластове са по-стари, кои са по-млади и как са се натрупвали или променяли един.",
 };

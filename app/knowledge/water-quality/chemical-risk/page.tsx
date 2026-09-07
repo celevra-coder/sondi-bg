@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/chemical-risk" },
+
   title:
     "Какво означава подземно водно тяло в риск?",
   description:

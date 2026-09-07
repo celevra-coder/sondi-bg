@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/practice/before-drilling" },
+
   title: "Какво трябва да се провери преди сондаж",
   description:
     "Кратък практически списък с основните проверки преди сондаж за подземна вода.",

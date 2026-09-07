@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/geology/geology-drilling-assessment" },
+
   title: "Как геологията участва в оценката на място за сондаж",
   description: "Добрата оценка на една точка за сондаж не се основава на един единствен признак. Необходимо е да се съберат и сравнят геологията, литологията, водоносните среди.",
 };

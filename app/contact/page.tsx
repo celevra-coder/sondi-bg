@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/contact" },
+
   title: "Контакти",
   description: "Контакти за въпроси относно платформата SONDI.BG, данните и техническата поддръжка.",
 };

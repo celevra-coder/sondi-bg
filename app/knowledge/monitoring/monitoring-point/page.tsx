@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/monitoring/monitoring-point" },
+
   title: "Какво е мониторингов пункт?",
   description:
     "Разбираемо обяснение какво представлява мониторинговият пункт, какви данни се събират от него и как да се тълкува в анализите на SONDI.BG.",

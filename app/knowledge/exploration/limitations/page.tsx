@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/exploration/limitations" },
+
   title: "Какво може и какво не може да предвиди едно проучване",
   description:
     "Какви изводи могат разумно да се направят преди сондиране и кои параметри могат да се потвърдят едва след изпълнение и изпитване на сондажа.",

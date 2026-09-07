@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/geology/reading-geological-map" },
+
   title: "Как се чете геоложка карта",
   description: "Геоложката карта показва какви скали и геоложки единици изграждат дадена територия, каква е тяхната възраст, как се разполагат една спрямо друга и къде са основните.",
 };

@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/groundwater/aquifer" },
+
   title: "Какво е водоносен пласт?",
   description: "Водоносният пласт е геоложка среда, която може едновременно да съдържа вода и да позволява тя да се движи през нея.",
 };

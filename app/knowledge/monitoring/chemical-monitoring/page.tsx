@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/monitoring/chemical-monitoring" },
+
   title: "Какво показва химичният мониторинг?",
   description:
     "Разбираемо обяснение какво се измерва при химичния мониторинг на подземните води и как да се тълкуват резултатите в анализите на SONDI.BG.",

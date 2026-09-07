@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/monitoring/exceedances" },
+
   title: "Какво означава превишение в мониторингов пункт?",
   description:
     "Разбираемо обяснение как се тълкуват превишенията в мониторинговите пунктове и какво означават те за подземното водно тяло и конкретния имот.",

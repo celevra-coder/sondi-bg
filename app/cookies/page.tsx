@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/cookies" },
+
   title: "Политика за бисквитки",
   description:
     "Информация за използваните бисквитки и сходни технологии в SONDI.BG.",

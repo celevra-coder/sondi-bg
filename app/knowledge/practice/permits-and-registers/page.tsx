@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/practice/permits-and-registers" },
+
   title: "Какво показват разрешителните и регистрите",
   description:
     "Кратко обяснение каква информация дават официалните разрешителни и регистри и как да се използват правилно.",

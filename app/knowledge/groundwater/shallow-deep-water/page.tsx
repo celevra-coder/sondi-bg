@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/groundwater/shallow-deep-water" },
+
   title: "Плитки и дълбоки подземни води",
   description: "Дълбочината има значение, но не е единственият фактор. Плитките и дълбоките водоносни системи могат да се подхранват различно и да реагират различно на суша.",
 };

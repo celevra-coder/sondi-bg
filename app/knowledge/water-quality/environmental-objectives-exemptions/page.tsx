@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/environmental-objectives-exemptions" },
+
   title:
     "Екологични цели, срокове и изключения за подземните води",
   description:

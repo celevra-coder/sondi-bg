@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/expert" },
+
   title:
     "SONDI EXPERT | \u0420\u0430\u0437\u0448\u0438\u0440\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437 \u0437\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u0438",
   description:

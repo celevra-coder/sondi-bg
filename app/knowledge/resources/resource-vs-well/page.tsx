@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/resources/resource-vs-well" },
+
   title: "Как ресурсът на ПВТ се отнася към конкретен сондаж",
   description:
     "Разбираемо обяснение защо ресурсът на подземното водно тяло не е прогноза за дебита на конкретен сондаж и как правилно да се използва тази информация.",

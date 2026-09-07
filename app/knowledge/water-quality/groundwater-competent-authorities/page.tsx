@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/groundwater-competent-authorities" },
+
   title:
     "Коя институция отговаря за сондажите и подземните води?",
   description:

@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/practice/protection-zones" },
+
   title: "Какво представляват защитените и санитарно-охранителните зони",
   description:
     "Кратко обяснение какво представляват защитените и санитарно-охранителните зони и защо са важни при планиране на сондаж.",

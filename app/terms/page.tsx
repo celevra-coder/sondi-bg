@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/terms" },
+
   title: "Условия за ползване",
   description:
     "Условия за използване на SONDI.BG, услугите, картите и marketplace платформата.",

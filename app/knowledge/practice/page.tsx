@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/practice" },
+
   title: "Практика и регулации",
   description: "Кратък практически ориентир какво е важно да се провери преди сондаж и кога наличните данни трябва да се потвърдят официално.",
 };

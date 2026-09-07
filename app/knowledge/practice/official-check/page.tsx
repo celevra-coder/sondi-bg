@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/practice/official-check" },
+
   title: "Кога е нужна допълнителна официална проверка",
   description:
     "Кратък ориентир кога наличните данни трябва да бъдат потвърдени чрез актуален официален източник.",

@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/monitoring/upward-trend" },
+
   title: "Какво е възходяща тенденция?",
   description:
     "Разбираемо обяснение какво означава възходяща тенденция в мониторинга на подземните води и как да се тълкува в анализите на SONDI.BG.",

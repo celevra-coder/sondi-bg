@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/upward-trend" },
+
   title:
     "Какво означава възходяща тенденция във водите?",
   description:

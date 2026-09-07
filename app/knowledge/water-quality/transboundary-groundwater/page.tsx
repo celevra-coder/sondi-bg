@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/transboundary-groundwater" },
+
   title:
     "Какво означава трансгранично подземно водно тяло?",
   description:

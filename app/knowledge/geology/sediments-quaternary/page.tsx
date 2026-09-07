@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/geology/sediments-quaternary" },
+
   title: "Седименти и кватернерни наслаги",
   description: "Младите наслаги в речни долини, котловини и подножия често са едни от най-важните среди за плитките подземни води, но тяхната водоносност може да се изменя силно на.",
 };

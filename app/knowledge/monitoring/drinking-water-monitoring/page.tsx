@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/monitoring/drinking-water-monitoring" },
+
   title: "Мониторинг за питейни води и защитни зони",
   description:
     "Разбираемо обяснение какво представлява мониторингът на подземни води за питейни цели и как се тълкуват данните за защитни зони в анализите на SONDI.BG.",

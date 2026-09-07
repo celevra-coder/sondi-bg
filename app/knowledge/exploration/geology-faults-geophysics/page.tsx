@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/exploration/geology-faults-geophysics" },
+
   title: "Как се съчетават геология, разломи и геофизични данни",
   description:
     "Как геоложкият строеж, разломните структури и геофизичните измервания се използват заедно при оценка на сондажна перспектива.",

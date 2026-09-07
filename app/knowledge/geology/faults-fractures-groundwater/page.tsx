@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/geology/faults-fractures-groundwater" },
+
   title: "Разломи, пукнатини и движението на подземните води",
   description: "Разломите и пукнатините могат силно да влияят върху движението и натрупването на подземната вода. В зависимост от вида на скалите и строежа на самата зона те могат.",
 };

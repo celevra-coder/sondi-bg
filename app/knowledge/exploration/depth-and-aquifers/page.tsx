@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/exploration/depth-and-aquifers" },
+
   title: "Как се оценяват дълбочина и водоносни хоризонти",
   description:
     "Как се използват геология, близки сондажи, водни нива и геофизични данни за оценка на целеви дълбочини и водоносни хоризонти.",

@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/public-consultations" },
+
   title:
     "Как обществените консултации променят ПУРБ",
   description:

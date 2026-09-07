@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/disclaimer" },
+
   title: "Отказ от отговорност",
   description:
     "Ограничения и отказ от отговорност при използване на информацията и анализите в SONDI.BG.",

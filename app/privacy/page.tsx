@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/privacy" },
+
   title: "Политика за поверителност",
   description:
     "Политика за поверителност и защита на личните данни при използване на SONDI.BG.",

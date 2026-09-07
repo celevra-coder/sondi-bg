@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/exploration/geophysical-investigation" },
+
   title: "Какво показва геофизичното проучване",
   description:
     "Как геофизичните измервания помагат да се откриват контрасти в подземния строеж, възможни водоносни зони и структурни изменения.",

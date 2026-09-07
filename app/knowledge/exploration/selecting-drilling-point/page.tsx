@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/exploration/selecting-drilling-point" },
+
   title: "Как се избира място за сондаж",
   description:
     "Разбираемо обяснение как се избира перспективно място за сондаж чрез геология, близки водоизточници, разломи и локално проучване.",

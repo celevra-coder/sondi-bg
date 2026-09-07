@@ -1,3 +1,7 @@
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 import Link from "next/link";
 import { Cormorant_Garamond } from "next/font/google";
 

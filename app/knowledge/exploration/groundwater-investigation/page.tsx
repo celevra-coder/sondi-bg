@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/exploration/groundwater-investigation" },
+
   title: "Какво представлява проучването за подземна вода",
   description:
     "Разбираемо обяснение какво представлява проучването за подземна вода и какви данни се използват преди избор на място за сондаж.",

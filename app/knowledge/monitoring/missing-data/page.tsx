@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/monitoring/missing-data" },
+
   title: "Какво означава „няма данни“?",
   description:
     "Разбираемо обяснение как да се тълкува липсата на мониторингови данни в анализите на SONDI.BG и какво не може да се заключи от нея.",

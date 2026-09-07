@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/groundwater/what-is-groundwater" },
+
   title: "Какво е подземна вода?",
   description: "Подземната вода е вода, която се намира под земната повърхност и запълва порите, пукнатините и кухините в почвите и скалите.",
 };

@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/exploration/dowsing" },
+
   title: "Радиестезия при търсене на подземна вода",
   description:
     "Как се използва радиестезията като допълващ метод при търсене на подземна вода и защо резултатът трябва да се проверява с други независими данни.",

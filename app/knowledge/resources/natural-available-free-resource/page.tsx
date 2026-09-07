@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/resources/natural-available-free-resource" },
+
   title: "Естествен, разполагаем и свободен ресурс",
   description:
     "Разбираемо обяснение каква е разликата между естествен, разполагаем и свободен ресурс на подземните води.",

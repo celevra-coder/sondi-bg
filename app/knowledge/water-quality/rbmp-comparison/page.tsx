@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/rbmp-comparison" },
+
   title:
     "Как се сравняват оценките от ПУРБ 2 и ПУРБ 3?",
   description:

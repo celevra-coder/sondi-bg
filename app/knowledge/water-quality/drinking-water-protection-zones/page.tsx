@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/water-quality/drinking-water-protection-zones" },
+
   title: "Зони за защита на подземни води за питейни нужди",
   description: "Тези зони показват кои подземни води имат важно значение за питейно-битовото водоснабдяване и са включени в официалната система за защита и наблюдение.",
 };

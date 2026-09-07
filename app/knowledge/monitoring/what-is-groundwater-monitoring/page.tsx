@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/monitoring/what-is-groundwater-monitoring" },
+
   title: "Какво е мониторинг на подземните води?",
   description:
     "Разбираемо обяснение какво представлява мониторингът на подземните води, какви данни се събират и как да се четат тези данни в анализите на SONDI.BG.",

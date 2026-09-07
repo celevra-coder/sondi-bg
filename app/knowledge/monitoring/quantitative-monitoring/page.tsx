@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/monitoring/quantitative-monitoring" },
+
   title: "Количествен мониторинг и водни нива",
   description:
     "Разбираемо обяснение какво показва количественият мониторинг на подземните води, как се следят водните нива и как да се тълкуват тези данни в SONDI.BG.",

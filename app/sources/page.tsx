@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/sources" },
+
   title:
     "\u0418\u0437\u0442\u043e\u0447\u043d\u0438\u0446\u0438 \u043d\u0430 \u0434\u0430\u043d\u043d\u0438",
   description:

@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/groundwater/map-limitations" },
+
   title: "Какво не може да се определи само от картата?",
   description: "Картата може да даде много ценен контекст, но има въпроси, за които регионалните данни не са достатъчни.",
 };

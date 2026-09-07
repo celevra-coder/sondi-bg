@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/resources/permits" },
+
   title: "Разрешителни за водовземане",
   description:
     "Разбираемо обяснение какво показват разрешителните за водовземане, сроковете и разрешените количества и как да се тълкуват в SONDI.BG.",

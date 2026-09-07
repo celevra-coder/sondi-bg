@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/resources/quantitative-resource" },
+
   title: "Какво е количествен ресурс на подземните води?",
   description:
     "Разбираемо обяснение какво означава количественият ресурс на едно подземно водно тяло и как да се тълкува в анализите на SONDI.BG.",

@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/exploration/combined-methods" },
+
   title: "Комбиниране на методи за по-надеждно проучване",
   description:
     "Защо най-надеждната оценка при търсене на подземна вода идва от съпоставяне на независими методи и различни източници на данни.",

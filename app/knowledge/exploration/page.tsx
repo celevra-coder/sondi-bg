@@ -1,4 +1,6 @@
 export const metadata = {
+  alternates: { canonical: "/knowledge/exploration" },
+
   title: "Проучване за вода",
   description: "Как се съчетават геология, геофизика, структурни данни, локални наблюдения и допълващи методи при избора на перспективна точка за сондаж.",
 };

@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/knowledge/resources/free-resource-new-abstraction" },
+
   title: "Свободен ресурс и ново водовземане",
   description:
     "Разбираемо обяснение какво означава свободният ресурс на подземно водно тяло и как се отнася към възможността за ново водовземане.",
