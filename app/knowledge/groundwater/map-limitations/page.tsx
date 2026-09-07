@@ -140,6 +140,80 @@ export default function MapLimitationsPage() {
           </p>
         </section>
 
+        <section className="mt-14">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em]">
+            Защо регионалните данни имат ограничения?
+          </h2>
+
+          <div className="mt-6 space-y-5 text-[17px] leading-8 text-[#536f76]">
+            <p>
+              Геоложките, хидрогеоложките и мониторинговите карти обобщават
+              информация за определен мащаб. Това означава, че една карта може
+              да показва правилно регионалната среда и едновременно с това да не
+              улавя малка локална промяна под конкретен имот.
+            </p>
+
+            <p>
+              Подземните водни тела също са регионални единици за оценка и
+              управление. Данните за тях са много полезни за статуса, ресурсите,
+              мониторинга и общия хидрогеоложки контекст, но не представляват
+              директно измерване във всяка отделна точка.
+            </p>
+
+            <p>
+              Затова при оценка на конкретен имот е важно да се разграничават
+              регионалните факти от локалната интерпретация. Колкото повече
+              независими данни съвпадат около една точка, толкова по-добре може
+              да се оцени геоложката и хидрогеоложката обстановка.
+            </p>
+
+            <p>
+              Виж още{" "}
+              <Link
+                href="/knowledge/groundwater/groundwater-body"
+                className="font-semibold text-[#257589]"
+              >
+                какво е подземно водно тяло
+              </Link>
+              {" "}и{" "}
+              <Link
+                href="/knowledge/practice/property-conclusions"
+                className="font-semibold text-[#257589]"
+              >
+                какви изводи могат да се правят за конкретен имот
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-[#dce8ea] pt-8">
+          <h2 className="text-xl font-semibold">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607b82]">
+            <li>
+              <a
+                href="https://water.europa.eu/freshwater/europe-freshwater/water-framework-directive/characterisation-of-water-bodies"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                WISE Freshwater — Characterisation of water bodies
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://environment.ec.europa.eu/topics/water/groundwater_en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                European Commission — Groundwater
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-14 bg-[#153d47] p-8 text-white">
           <strong className="text-lg">
             Регионалната карта и теренното проучване не са конкуренти.

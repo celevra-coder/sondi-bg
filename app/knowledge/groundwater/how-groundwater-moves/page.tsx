@@ -147,6 +147,81 @@ export default function HowGroundwaterMovesPage() {
           </p>
         </section>
 
+        <section className="mt-14">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em]">
+            Колко бързо се движи подземната вода?
+          </h2>
+
+          <div className="mt-6 space-y-5 text-[17px] leading-8 text-[#536f76]">
+            <p>
+              Няма една скорост, която да е валидна за всички подземни води.
+              Движението зависи от пропускливостта на средата, разликата в
+              хидравличния потенциал и начина, по който са свързани порите,
+              пукнатините или карстовите кухини.
+            </p>
+
+            <p>
+              В добре свързани пясъци и чакъли водата може да се движи по-лесно,
+              докато при слабо пропускливи материали движението е много по-бавно.
+              В напукани скали потокът често се концентрира в отделни проводящи
+              пукнатини, а в карстови системи локално може да бъде значително
+              по-бърз.
+            </p>
+
+            <p>
+              Това е една от причините поведението на два близки сондажа да е
+              различно. Пространствената близост сама по себе си не означава,
+              че двата сондажа пресичат еднакво пропускливи и еднакво свързани
+              водоносни структури.
+            </p>
+
+            <p>
+              Виж още за{" "}
+              <Link
+                href="/knowledge/groundwater/types"
+                className="font-semibold text-[#257589]"
+              >
+                поровите, пукнатинните и карстовите води
+              </Link>
+              {" "}и за{" "}
+              <Link
+                href="/knowledge/groundwater/depth-differences"
+                className="font-semibold text-[#257589]"
+              >
+                разликите в дълбочината между близки точки
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-[#dce8ea] pt-8">
+          <h2 className="text-xl font-semibold">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607b82]">
+            <li>
+              <a
+                href="https://www.usgs.gov/water-science-school/science/aquifers-and-groundwater"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — Aquifers and Groundwater
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://pubs.usgs.gov/circ/circ1186/html/gen_facts.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — General Facts and Concepts about Ground Water
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-14 border-l-4 border-[#2c8498] bg-[#f3fafb] p-7">
           <strong>Най-просто казано</strong>
           <p className="mt-2 leading-7 text-[#5b767d]">

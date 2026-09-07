@@ -3,7 +3,7 @@ export const metadata = {
   alternates: { canonical: "/knowledge/groundwater/depth-differences" },
 
   title: "Защо водата може да е на 15 m тук, а на 60 m съвсем наблизо?",
-  description: "Подземните води не образуват идеално равна хоризонтална повърхност. Геологията, релефът и разположението на водоносните пластове могат да се променят дори на.",
+  description: "Защо водата може да бъде на различна дълбочина в близки точки? Геологията, релефът, наклонът на пластовете и пукнатинните зони могат да променят дълбочината значително.",
 };
 
 import Link from "next/link";
@@ -129,6 +129,81 @@ export default function DepthDifferencesPage() {
           </p>
         </section>
 
+        <section className="mt-14">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em]">
+            Може ли дълбочината от съседен сондаж да се използва като прогноза?
+          </h2>
+
+          <div className="mt-6 space-y-5 text-[17px] leading-8 text-[#536f76]">
+            <p>
+              Данните от съседен сондаж са един от най-полезните ориентири,
+              но трябва да се използват като локална референция, а не като
+              точна прогноза. Дори при малко разстояние между две точки
+              водоносният пласт може да промени дълбочината, дебелината или
+              пропускливостта си.
+            </p>
+
+            <p>
+              При порови водоносни среди разликата може да идва от промяна в
+              дебелината и наклона на седиментните пластове. При скални терени
+              резултатът често зависи от това дали конкретната точка пресича
+              водопроводяща пукнатина или разломна зона.
+            </p>
+
+            <p>
+              Затова няколко близки сондажа са по-информативни от един.
+              Когато техните данни се сравнят с геологията и релефа, може да
+              се очертае по-реалистичен диапазон на вероятните дълбочини,
+              без да се твърди точна стойност за неизследвана точка.
+            </p>
+
+            <p>
+              Виж още за{" "}
+              <Link
+                href="/knowledge/exploration/depth-and-aquifers"
+                className="font-semibold text-[#257589]"
+              >
+                оценката на дълбочина и водоносни хоризонти
+              </Link>
+              {" "}и за{" "}
+              <Link
+                href="/knowledge/groundwater/water-level"
+                className="font-semibold text-[#257589]"
+              >
+                разликата между водно ниво и дълбочина на пласта
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-[#dce8ea] pt-8">
+          <h2 className="text-xl font-semibold">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607b82]">
+            <li>
+              <a
+                href="https://www.usgs.gov/water-science-school/science/aquifers-and-groundwater"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — Aquifers and Groundwater
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://pubs.usgs.gov/circ/circ1186/html/gen_facts.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — General Facts and Concepts about Ground Water
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-14 border-l-4 border-[#2c8498] bg-[#edf8fa] p-7">
           <strong>Затова няма „универсална дълбочина за района“</strong>
           <p className="mt-2 leading-7 text-[#5b767d]">

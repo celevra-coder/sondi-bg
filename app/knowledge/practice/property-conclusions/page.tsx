@@ -114,6 +114,80 @@ export default function PropertyConclusionsKnowledgePage() {
           </p>
         </section>
 
+        <section className="mt-6 border-t border-[#dce8eb] py-8">
+          <h2 className="text-2xl font-bold text-[#173f48]">
+            Как да се различи факт от интерпретация?
+          </h2>
+
+          <div className="mt-4 max-w-4xl space-y-4 text-base leading-8 text-[#58747c]">
+            <p>
+              При оценка на конкретен имот е важно да се разделят официално
+              публикуваните данни от изводите, които се правят чрез тяхното
+              пространствено съпоставяне. Например границата на подземно водно
+              тяло, мониторингов пункт или защитена зона е факт от съответния
+              източник, докато оценката как тези данни влияят върху конкретната
+              точка е интерпретация.
+            </p>
+
+            <p>
+              Същото важи и за близките сондажи. Те могат да покажат реално
+              достигнати дълбочини, водни нива или геоложки материали в района,
+              но не доказват автоматично същите условия в съседен имот.
+            </p>
+
+            <p>
+              Най-надеждният подход е да се търси съвпадение между няколко
+              независими вида информация: геология, водни тела, близки обекти,
+              релеф, мониторинг и при необходимост локално теренно проучване.
+            </p>
+
+            <p>
+              Полезно продължение са статиите{" "}
+              <Link
+                href="/knowledge/groundwater/map-limitations"
+                className="font-semibold text-[#177f98]"
+              >
+                какво не може да се определи само от картата
+              </Link>
+              {" "}и{" "}
+              <Link
+                href="/knowledge/practice/official-check"
+                className="font-semibold text-[#177f98]"
+              >
+                как се прави проверка по официални данни
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-6 border-t border-[#dce8eb] py-8">
+          <h2 className="text-xl font-bold text-[#173f48]">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 max-w-4xl space-y-2 text-sm leading-6 text-[#58747c]">
+            <li>
+              <a
+                href="https://water.europa.eu/freshwater/europe-freshwater/water-framework-directive/characterisation-of-water-bodies"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#177f98] underline"
+              >
+                WISE Freshwater — Characterisation of water bodies
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://environment.ec.europa.eu/topics/water/groundwater_en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#177f98] underline"
+              >
+                European Commission — Groundwater
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-[#dce8eb] pt-8">
           <Link
             href="/knowledge/practice"
