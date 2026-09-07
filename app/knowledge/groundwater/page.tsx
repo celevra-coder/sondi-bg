@@ -106,6 +106,14 @@ const groups = [
         title: "Какво показват официалните карти?",
         href: "/knowledge/groundwater/official-maps",
       },
+      {
+        title: "Какво не може да покаже картата?",
+        href: "/knowledge/groundwater/map-limitations",
+      },
+      {
+        title: "Как показваме активните разломи?",
+        href: "/knowledge/groundwater/active-faults",
+      },
     ],
   },
 ];

@@ -202,6 +202,15 @@ export default function GroundwaterTypesPage() {
           </div>
         </section>
 
+        <p className="mt-8 text-[17px] leading-8 text-[#536f76]">
+          При пукнатинните води е полезно да се разгледа и темата за{" "}
+          <Link
+            href="/knowledge/groundwater/active-faults"
+            className="font-semibold text-[#257589]"
+          >
+            активните разломи и тяхното картографиране
+          </Link>.
+        </p>
         <section className="mt-14 border-t border-[#dce8ea] pt-8">
           <h2 className="text-xl font-semibold">
             Източници и допълнително четене

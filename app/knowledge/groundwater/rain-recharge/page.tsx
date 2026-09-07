@@ -111,6 +111,16 @@ export default function RainRechargePage() {
           </p>
         </section>
 
+        <p className="mt-8 text-[17px] leading-8 text-[#536f76]">
+          Виж още{" "}
+          <Link
+            href="/knowledge/groundwater/how-groundwater-forms"
+            className="font-semibold text-[#257589]"
+          >
+            как се образуват подземните води
+          </Link>
+          {" "}и как подхранването се включва в по-големия воден цикъл.
+        </p>
         <div className="mt-14 border-l-4 border-[#2c8498] bg-[#edf8fa] p-7">
           <strong>Затова един дъждовен месец не решава дълга суша</strong>
           <p className="mt-2 leading-7 text-[#5b767d]">
