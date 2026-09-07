@@ -125,6 +125,70 @@ export default function Home() {
 
         </div>
       </section>
+
+      <section className="relative z-10 bg-[#081418] px-5 py-16 sm:px-7 sm:py-20 md:px-10 lg:px-12">
+        <div className="mx-auto max-w-[1180px]">
+          <div className="max-w-[880px]">
+            <div className="text-xs font-medium uppercase tracking-[0.24em] text-[#a0c2ca]">
+              SONDI.BG · ИНФОРМАЦИЯ ЗА ПОДЗЕМНИ ВОДИ
+            </div>
+
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
+              Подземни води, геология и сондажи в България
+            </h2>
+
+            <p className="mt-6 max-w-[840px] text-base leading-8 text-white/65">
+              SONDI.BG събира на едно място данни за подземните води,
+              геологията, мониторинга, разломите и сондажите в България.
+              Картата позволява да се съпоставят официални източници,
+              геоложки и хидрогеоложки понятия в един пространствен контекст.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <Link
+              href="/map"
+              className="rounded-[20px] border border-white/10 bg-white/[0.03] p-5 transition hover:border-white/25"
+            >
+              <strong className="block text-white">Карта на подземните води</strong>
+              <span className="mt-2 block text-sm leading-6 text-white/55">
+                Разгледай водни тела, геология, разломи и мониторинг.
+              </span>
+            </Link>
+
+            <Link
+              href="/knowledge"
+              className="rounded-[20px] border border-white/10 bg-white/[0.03] p-5 transition hover:border-white/25"
+            >
+              <strong className="block text-white">База знания</strong>
+              <span className="mt-2 block text-sm leading-6 text-white/55">
+                Основни понятия и практически материали за подземните води.
+              </span>
+            </Link>
+
+            <Link
+              href="/drilling"
+              className="rounded-[20px] border border-white/10 bg-white/[0.03] p-5 transition hover:border-white/25"
+            >
+              <strong className="block text-white">Сондажи за вода</strong>
+              <span className="mt-2 block text-sm leading-6 text-white/55">
+                Подготовка, дълбочина, дебит, водни нива и практически насоки.
+              </span>
+            </Link>
+
+            <Link
+              href="/services"
+              className="rounded-[20px] border border-white/10 bg-white/[0.03] p-5 transition hover:border-white/25"
+            >
+              <strong className="block text-white">Сондажни услуги</strong>
+              <span className="mt-2 block text-sm leading-6 text-white/55">
+                Намери изпълнител или публикувай заявка за сондажна услуга.
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
+
   );
 }
