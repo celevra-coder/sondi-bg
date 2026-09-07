@@ -389,6 +389,36 @@ export default function GroundwaterCompetentAuthoritiesKnowledgePage() {
           </p>
         </section>
 
+        <section className="mt-14 border-t border-[#dce8ea] pt-8">
+          <h2 className="text-2xl font-bold text-[#173d47]">
+            Свързани теми
+          </h2>
+
+          <p className="mt-3 max-w-4xl text-sm leading-6 text-[#637c82]">
+            Продължете с теми, които допълват оценката на състоянието, мониторинга и управлението на подземните води.
+          </p>
+
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            <Link
+              href="/knowledge/water-quality/environmental-objectives-exemptions"
+              className="rounded-[18px] border border-[#dce8ea] bg-white px-5 py-4 text-sm font-semibold leading-6 text-[#257589] transition hover:border-[#a9cfd6] hover:shadow-[0_10px_30px_rgba(23,63,72,.06)]"
+            >
+              Екологични цели и срокове →
+            </Link>
+            <Link
+              href="/knowledge/water-quality/public-consultations"
+              className="rounded-[18px] border border-[#dce8ea] bg-white px-5 py-4 text-sm font-semibold leading-6 text-[#257589] transition hover:border-[#a9cfd6] hover:shadow-[0_10px_30px_rgba(23,63,72,.06)]"
+            >
+              Обществени консултации →
+            </Link>
+            <Link
+              href="/knowledge/water-quality/transboundary-groundwater"
+              className="rounded-[18px] border border-[#dce8ea] bg-white px-5 py-4 text-sm font-semibold leading-6 text-[#257589] transition hover:border-[#a9cfd6] hover:shadow-[0_10px_30px_rgba(23,63,72,.06)]"
+            >
+              Трансгранични подземни води →
+            </Link>
+          </div>
+        </section>
         <div className="mt-16 flex items-center justify-between gap-6 border-t border-[#dce8ea] pt-8">
           <Link
             href="/knowledge/water-quality/environmental-objectives-exemptions"
