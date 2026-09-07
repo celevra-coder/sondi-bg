@@ -133,6 +133,36 @@ export default function GeophysicalInvestigationKnowledgePage() {
           </p>
         </section>
 
+        <section className="border-t border-[#dce8eb] py-8">
+          <h2 className="text-2xl font-bold text-[#173f48]">
+            Свързани теми
+          </h2>
+
+          <p className="mt-3 max-w-4xl text-sm leading-6 text-[#637f87]">
+            Продължете с теми, които допълват тази част от проучването за подземна вода.
+          </p>
+
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            <Link
+              href="/knowledge/exploration/geology-faults-geophysics"
+              className="rounded-[18px] border border-[#dce8eb] bg-white px-5 py-4 text-sm font-semibold leading-6 text-[#177f98] transition hover:border-[#a9cfd6] hover:shadow-[0_10px_30px_rgba(23,63,72,.06)]"
+            >
+              Как се съчетават геология, разломи и геофизични данни →
+            </Link>
+            <Link
+              href="/knowledge/exploration/depth-and-aquifers"
+              className="rounded-[18px] border border-[#dce8eb] bg-white px-5 py-4 text-sm font-semibold leading-6 text-[#177f98] transition hover:border-[#a9cfd6] hover:shadow-[0_10px_30px_rgba(23,63,72,.06)]"
+            >
+              Как се оценяват дълбочина и водоносни хоризонти →
+            </Link>
+            <Link
+              href="/knowledge/exploration/selecting-drilling-point"
+              className="rounded-[18px] border border-[#dce8eb] bg-white px-5 py-4 text-sm font-semibold leading-6 text-[#177f98] transition hover:border-[#a9cfd6] hover:shadow-[0_10px_30px_rgba(23,63,72,.06)]"
+            >
+              Как се избира място за сондаж →
+            </Link>
+          </div>
+        </section>
         <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-[#dce8eb] pt-8">
           <Link
             href="/knowledge/exploration"
