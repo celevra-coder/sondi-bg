@@ -182,6 +182,36 @@ export default function BeforeDrillingKnowledgePage() {
             </li>
           </ul>
         </section>
+        <section className="border-t border-[#dce8eb] py-8">
+          <h2 className="text-2xl font-bold text-[#173f48]">
+            Свързани теми
+          </h2>
+
+          <p className="mt-3 max-w-4xl text-sm leading-6 text-[#637f87]">
+            Продължете с практическите проверки, които са важни преди решение за сондаж или водовземане.
+          </p>
+
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            <Link
+              href="/knowledge/practice/permits-and-registers"
+              className="rounded-[18px] border border-[#dce8eb] bg-white px-5 py-4 text-sm font-semibold leading-6 text-[#177f98] transition hover:border-[#a9cfd6] hover:shadow-[0_10px_30px_rgba(23,63,72,.06)]"
+            >
+              Разрешителни и официални регистри →
+            </Link>
+            <Link
+              href="/knowledge/practice/protection-zones"
+              className="rounded-[18px] border border-[#dce8eb] bg-white px-5 py-4 text-sm font-semibold leading-6 text-[#177f98] transition hover:border-[#a9cfd6] hover:shadow-[0_10px_30px_rgba(23,63,72,.06)]"
+            >
+              Защитени и санитарно-охранителни зони →
+            </Link>
+            <Link
+              href="/knowledge/practice/property-conclusions"
+              className="rounded-[18px] border border-[#dce8eb] bg-white px-5 py-4 text-sm font-semibold leading-6 text-[#177f98] transition hover:border-[#a9cfd6] hover:shadow-[0_10px_30px_rgba(23,63,72,.06)]"
+            >
+              Какво може да се заключи за конкретен имот →
+            </Link>
+          </div>
+        </section>
         <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-[#dce8eb] pt-8">
           <Link
             href="/knowledge/practice"
