@@ -26,10 +26,6 @@ export const metadata: Metadata = {
   description:
     "Информационна и професионална платформа за подземни води, геология, мониторинг и сондажи в България.",
 
-  alternates: {
-    canonical: "https://www.sondi.bg",
-  },
-
   openGraph: {
     type: "website",
     locale: "bg_BG",
