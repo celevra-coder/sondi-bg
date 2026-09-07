@@ -7,16 +7,22 @@ export const metadata = {
 
 export default function GeologyPage() {
   return (
-    <iframe
-      src="/geology-map/index.html"
-      title="Карта на подземните води"
-      style={{
-        position: "fixed",
-        inset: 0,
-        width: "100vw",
-        height: "100vh",
-        border: 0,
-      }}
-    />
+    <>
+      <h1 className="sr-only">
+        Карта на подземните води в България
+      </h1>
+
+      <iframe
+        src="/geology-map/index.html"
+        title="Карта на подземните води"
+        style={{
+          position: "fixed",
+          inset: 0,
+          width: "100vw",
+          height: "100vh",
+          border: 0,
+        }}
+      />
+    </>
   );
 }
