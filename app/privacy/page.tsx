@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Политика за поверителност | SONDI.BG",
+  title: "Политика за поверителност",
   description:
     "Политика за поверителност и защита на личните данни при използване на SONDI.BG.",
 };

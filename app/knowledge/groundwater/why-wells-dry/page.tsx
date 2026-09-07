@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Защо сондаж или кладенец може да пресъхне?",
+  description: "„Пресъхнал“ водоизточник не винаги означава, че водата под земята е изчезнала. Причината може да бъде спад на нивото, недостатъчно подхранване, прекомерно.",
+};
+
 import Link from "next/link";
 
 export default function WhyWellsDryPage() {

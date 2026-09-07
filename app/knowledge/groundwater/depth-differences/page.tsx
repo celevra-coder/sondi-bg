@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Защо водата може да е на 15 m тук, а на 60 m съвсем наблизо?",
+  description: "Подземните води не образуват идеално равна хоризонтална повърхност. Геологията, релефът и разположението на водоносните пластове могат да се променят дори на.",
+};
+
 import Link from "next/link";
 
 export default function DepthDifferencesPage() {

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Какво е артезианска вода?",
+  description: "Артезианската вода е свързана с напорен водоносен хоризонт – система, в която водата се намира под налягане между по-слабо пропускливи пластове.",
+};
+
 import Link from "next/link";
 
 export default function ArtesianWaterPage() {

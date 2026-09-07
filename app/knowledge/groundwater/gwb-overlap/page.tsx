@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Защо няколко ПВТ могат да се припокриват?",
+  description: "Картата е двуизмерна, но подземната геология е триизмерна. На една и съща координата могат да съществуват различни водоносни системи на различна дълбочина.",
+};
+
 import Link from "next/link";
 
 export default function GwbOverlapPage() {

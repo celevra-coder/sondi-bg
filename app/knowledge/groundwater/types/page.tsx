@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Порови, пукнатинни и карстови води",
+  description: "Водата може да се намира под земята по различен начин. Геоложката среда определя къде се съхранява, как се движи и как може да бъде достигната със сондаж.",
+};
+
 import Link from "next/link";
 
 export default function GroundwaterTypesPage() {

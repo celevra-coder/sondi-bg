@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Откъде идва водата в един сондаж?",
+  description: "Сондажът не създава вода. Той пресича геоложка среда, която вече съдържа и пропуска подземна вода, и създава възможност тя да постъпва към сондажния ствол.",
+};
+
 import Link from "next/link";
 
 export default function WaterInWellPage() {

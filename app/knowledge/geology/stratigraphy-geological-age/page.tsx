@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Геоложка възраст и стратиграфия",
+  description: "Стратиграфията подрежда геоложките единици във времето и помага да се разбере кои пластове са по-стари, кои са по-млади и как са се натрупвали или променяли един.",
+};
+
 import Link from "next/link";
 
 export default function ArticlePage() {

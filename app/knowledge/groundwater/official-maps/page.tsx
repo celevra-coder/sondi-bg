@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Какво показват официалните карти?",
+  description: "Официалните карти дават регионален контекст за подземните води, геологията, мониторинга и състоянието на водните ресурси.",
+};
+
 import Link from "next/link";
 
 export default function OfficialMapsPage() {

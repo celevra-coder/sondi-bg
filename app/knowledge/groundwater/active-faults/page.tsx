@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Активните разломи и подземните води",
+  description: "Разломите са едни от най-важните структурни елементи в земната кора. Те могат да влияят върху това къде се натрупва вода, по какви пътища се движи и къде могат да.",
+};
+
 import fs from "fs";
 import path from "path";
 import Link from "next/link";

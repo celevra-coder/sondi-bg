@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 
@@ -18,6 +19,59 @@ type Provider = {
   presentation: string | null;
 };
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const supabase = await createClient();
+
+  const { data } = await supabase
+    .from("service_providers")
+    .select("company_name, services, work_regions, works_nationwide")
+    .eq("id", id)
+    .eq("status", "approved")
+    .maybeSingle();
+
+  if (!data) {
+    return {
+      title: "\u0418\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  const services =
+    Array.isArray(data.services) && data.services.length > 0
+      ? data.services.slice(0, 4).join(", ")
+      : "\u0441\u043e\u043d\u0434\u0430\u0436\u043d\u0438 \u0443\u0441\u043b\u0443\u0433\u0438";
+
+  const regions =
+    data.works_nationwide
+      ? "\u0446\u044f\u043b\u0430 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f"
+      : Array.isArray(data.work_regions) && data.work_regions.length > 0
+        ? data.work_regions.slice(0, 5).join(", ")
+        : "\u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f";
+
+  const description =
+    `\u0418\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b ${data.company_name}. ` +
+    `\u0423\u0441\u043b\u0443\u0433\u0438: ${services}. ` +
+    `\u0420\u0430\u0439\u043e\u043d \u043d\u0430 \u0440\u0430\u0431\u043e\u0442\u0430: ${regions}.`;
+
+  return {
+    title: `${data.company_name} \u2013 \u0441\u043e\u043d\u0434\u0430\u0436\u043d\u0438 \u0443\u0441\u043b\u0443\u0433\u0438`,
+    description:
+      description.length > 165
+        ? description.slice(0, 162).trimEnd() + "..."
+        : description,
+    alternates: {
+      canonical: `/services/provider/${id}`,
+    },
+  };
+}
 type ProviderMedia = {
   id: string;
   media_type: "image" | "video";

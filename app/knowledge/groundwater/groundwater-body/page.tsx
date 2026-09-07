@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Какво е подземно водно тяло?",
+  description: "Подземното водно тяло, или ПВТ, е регионална единица, чрез която подземните води се описват, наблюдават и управляват.",
+};
+
 import Link from "next/link";
 
 export default function GroundwaterBodyPage() {

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Подземният свят вече е видим.",
+  description: "Карти, официални данни и професионални инструменти за подземните води, геологията и сондажите.",
+};
+
 import Link from "next/link";
 import ExploreCards from "@/components/ExploreCards";
 

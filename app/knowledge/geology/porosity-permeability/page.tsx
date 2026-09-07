@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Порьозност и пропускливост",
+  description: "Порьозността показва колко празно пространство има в една скала или седимент, а пропускливостта — доколко тези пространства са свързани и позволяват движение на.",
+};
+
 import Link from "next/link";
 
 export default function ArticlePage() {

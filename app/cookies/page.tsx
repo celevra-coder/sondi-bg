@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Политика за бисквитки | SONDI.BG",
+  title: "Политика за бисквитки",
   description:
     "Информация за използваните бисквитки и сходни технологии в SONDI.BG.",
 };

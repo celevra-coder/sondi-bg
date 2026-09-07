@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Как се образуват подземните води?",
+  description: "Водата под земята е част от естествения воден кръговрат. Тя започва пътя си най-често като дъжд или сняг, преминава през почвата и постепенно достига до.",
+};
+
 import Link from "next/link";
 
 export default function HowGroundwaterFormsPage() {

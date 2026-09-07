@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Как възникват естествените извори?",
+  description: "Изворът е място, където подземната вода достига естествено до земната повърхност.",
+};
+
 import Link from "next/link";
 
 export default function SpringsPage() {

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Карта на подземните води в България",
+  description: "Интерактивна карта с данни за подземни водни тела, геология, мониторинг, водовземане, сондажи и разломи в България.",
+};
+
 export default function GeologyPage() {
   return (
     <iframe

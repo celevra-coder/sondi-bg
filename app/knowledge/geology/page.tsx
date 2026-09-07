@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Геология и хидрогеология",
+  description: "Как скалите, литологията, геоложките структури и водоносните среди определят движението и натрупването на подземната вода.",
+};
+
 import Link from "next/link";
 
 export default function GeologyKnowledgePage() {

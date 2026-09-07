@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Какво е водно ниво?",
+  description: "Водното ниво показва докъде се установява водата в кладенец, сондаж или наблюдателен пункт. То не е непременно същото като дълбочината, на която е пресечен.",
+};
+
 import Link from "next/link";
 
 export default function WaterLevelPage() {

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Плитки и дълбоки подземни води",
+  description: "Дълбочината има значение, но не е единственият фактор. Плитките и дълбоките водоносни системи могат да се подхранват различно и да реагират различно на суша.",
+};
+
 import Link from "next/link";
 
 export default function ShallowDeepWaterPage() {

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Как валежите стигат до подземните води?",
+  description: "Валежът е важен източник на подхранване, но само част от падналата вода достига до водоносните хоризонти.",
+};
+
 import Link from "next/link";
 
 export default function RainRechargePage() {

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Подземната вода стои ли на едно място?",
+  description: "Обикновено не. Подземната вода е част от водния кръговрат и в повечето водоносни системи постепенно се движи от зоните на подхранване към местата, където се оттича.",
+};
+
 import Link from "next/link";
 
 export default function IsGroundwaterStaticPage() {

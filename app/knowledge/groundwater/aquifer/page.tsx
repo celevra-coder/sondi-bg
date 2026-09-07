@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Какво е водоносен пласт?",
+  description: "Водоносният пласт е геоложка среда, която може едновременно да съдържа вода и да позволява тя да се движи през нея.",
+};
+
 import Link from "next/link";
 
 export default function AquiferPage() {

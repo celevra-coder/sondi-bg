@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Контакти | SONDI.BG",
+  title: "Контакти",
   description: "Контакти за въпроси относно платформата SONDI.BG, данните и техническата поддръжка.",
 };
 

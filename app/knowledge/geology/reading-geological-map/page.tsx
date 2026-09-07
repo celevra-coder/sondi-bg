@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Как се чете геоложка карта",
+  description: "Геоложката карта показва какви скали и геоложки единици изграждат дадена територия, каква е тяхната възраст, как се разполагат една спрямо друга и къде са основните.",
+};
+
 import Link from "next/link";
 
 export default function ArticlePage() {

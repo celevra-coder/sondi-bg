@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Зони за защита на подземни води за питейни нужди",
+  description: "Тези зони показват кои подземни води имат важно значение за питейно-битовото водоснабдяване и са включени в официалната система за защита и наблюдение.",
+};
+
 import Link from "next/link";
 
 export default function DrinkingWaterProtectionZonesPage() {

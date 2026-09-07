@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Как се движи водата под земята?",
+  description: "Подземната вода обикновено не стои неподвижно. Тя се движи през пори, пукнатини и кухини, но често много по-бавно от водата в една река.",
+};
+
 import Link from "next/link";
 
 export default function HowGroundwaterMovesPage() {

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "ПВТ и водоносен пласт – каква е разликата?",
+  description: "Двете понятия са свързани, но описват различни неща. Водоносният пласт е реалната геоложка среда, а ПВТ е регионална единица, използвана за управление и наблюдение.",
+};
+
 import Link from "next/link";
 
 export default function GwbVsAquiferPage() {

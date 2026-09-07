@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Карст и карстови води",
+  description: "Карстът се развива главно в разтворими карбонатни скали и може да създаде много продуктивни, но силно нееднородни водоносни системи, в които водата се движи по.",
+};
+
 import Link from "next/link";
 
 export default function ArticlePage() {

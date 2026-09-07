@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Какво е подземна вода?",
+  description: "Подземната вода е вода, която се намира под земната повърхност и запълва порите, пукнатините и кухините в почвите и скалите.",
+};
+
 import Link from "next/link";
 
 export default function WhatIsGroundwaterPage() {

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Какво не може да се определи само от картата?",
+  description: "Картата може да даде много ценен контекст, но има въпроси, за които регионалните данни не са достатъчни.",
+};
+
 import Link from "next/link";
 
 export default function MapLimitationsPage() {
