@@ -118,6 +118,79 @@ export default function GwbVsAquiferPage() {
           </p>
         </section>
 
+        <section className="mt-14">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em]">
+            Как се използват ПВТ и водоносният пласт заедно при оценка на място?
+          </h2>
+
+          <div className="mt-6 space-y-5 text-[17px] leading-8 text-[#536f76]">
+            <p>
+              ПВТ дава регионалната рамка: към коя система принадлежи районът,
+              какво е нейното химично и количествено състояние, какъв натиск
+              от водовземане има и как се наблюдава във времето.
+            </p>
+
+            <p>
+              Водоносният пласт описва физическата среда, която реално може
+              да бъде пресечена от сондаж. Неговата дълбочина, дебелина,
+              пропускливост и пукнатинност определят локалното поведение
+              на подземната вода.
+            </p>
+
+            <p>
+              Затова надеждната оценка не трябва да използва само едното
+              понятие. Регионалните данни за ПВТ трябва да се съпоставят
+              с геологията, релефа, близките сондажи и данните за конкретните
+              водоносни хоризонти.
+            </p>
+
+            <p>
+              Виж още за{" "}
+              <Link
+                href="/knowledge/groundwater/groundwater-body"
+                className="font-semibold text-[#257589]"
+              >
+                подземните водни тела
+              </Link>
+              {" "}и за{" "}
+              <Link
+                href="/knowledge/geology/aquifer-aquitard"
+                className="font-semibold text-[#257589]"
+              >
+                водоносните и слабопропускливите пластове
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-[#dce8ea] pt-8">
+          <h2 className="text-xl font-semibold">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607b82]">
+            <li>
+              <a
+                href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=celex%3A32000L0060"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                EUR-Lex — Water Framework Directive
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://water.europa.eu/freshwater/europe-freshwater/water-framework-directive/characterisation-of-water-bodies"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                WISE Freshwater — Characterisation of water bodies
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-14 border-l-4 border-[#2c8498] bg-[#edf8fa] p-7">
           <strong>Най-просто казано</strong>
           <p className="mt-2 leading-7 text-[#5b767d]">

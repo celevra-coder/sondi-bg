@@ -122,6 +122,79 @@ export default function WaterLevelPage() {
           </p>
         </section>
 
+        <section className="mt-14">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em]">
+            Как се тълкува водното ниво при реален сондаж?
+          </h2>
+
+          <div className="mt-6 space-y-5 text-[17px] leading-8 text-[#536f76]">
+            <p>
+              Водното ниво показва хидравличното състояние на системата
+              в момента на измерването, но само по себе си не показва
+              какъв дебит може устойчиво да осигурява сондажът.
+            </p>
+
+            <p>
+              За практическа оценка е важно да се разглеждат заедно
+              статичното ниво, динамичното ниво, понижението при водочерпене,
+              продължителността на изпитването и възстановяването след
+              спиране на помпата.
+            </p>
+
+            <p>
+              Малко понижение при даден дебит може да е признак за добра
+              реакция на водоносната среда, докато силно понижение може
+              да показва по-ограничено подхранване или по-ниска
+              пропускливост около сондажа.
+            </p>
+
+            <p>
+              Виж още за{" "}
+              <Link
+                href="/knowledge/resources/resource-vs-well"
+                className="font-semibold text-[#257589]"
+              >
+                разликата между ресурс и конкретен сондаж
+              </Link>
+              {" "}и за{" "}
+              <Link
+                href="/knowledge/monitoring/quantitative-monitoring"
+                className="font-semibold text-[#257589]"
+              >
+                количествения мониторинг на подземните води
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-[#dce8ea] pt-8">
+          <h2 className="text-xl font-semibold">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607b82]">
+            <li>
+              <a
+                href="https://www.usgs.gov/water-science-school/science/aquifers-and-groundwater"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — Aquifers and Groundwater
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://pubs.usgs.gov/circ/circ1186/html/gen_facts.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — General Facts and Concepts about Ground Water
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-14 border-l-4 border-[#2c8498] bg-[#edf8fa] p-7">
           <strong>Не бъркай водно ниво с дълбочина на сондажа</strong>
           <p className="mt-2 leading-7 text-[#5b767d]">

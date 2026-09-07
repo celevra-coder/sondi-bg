@@ -108,6 +108,80 @@ export default function BeforeDrillingKnowledgePage() {
           </p>
         </section>
 
+        <section className="border-t border-[#dce8eb] py-8">
+          <h2 className="text-2xl font-bold text-[#173f48]">
+            В какъв ред е разумно да се направят проверките преди сондаж?
+          </h2>
+
+          <div className="mt-4 max-w-4xl space-y-5 text-base leading-8 text-[#58747c]">
+            <p>
+              Добра отправна точка е първо да се установи местоположението
+              спрямо подземните водни тела, след което да се прегледат
+              ресурсът, състоянието, близките водовземни съоръжения и
+              приложимите ограничения.
+            </p>
+
+            <p>
+              След регионалната проверка трябва да се разгледат локалните
+              фактори — геология, водоносни хоризонти, разломи, релеф и
+              налични данни от близки сондажи. Те са по-пряко свързани
+              с избора на конкретна сондажна точка.
+            </p>
+
+            <p>
+              Когато има противоречие между различни източници или когато
+              се засягат разрешителни, защитени зони или друг специален режим,
+              актуалната информация трябва да се потвърди в съответния
+              официален регистър или компетентна институция.
+            </p>
+
+            <p>
+              Виж още за{" "}
+              <Link
+                href="/knowledge/practice/official-check"
+                className="font-semibold text-[#177f98]"
+              >
+                проверката в официални източници
+              </Link>
+              {" "}и за{" "}
+              <Link
+                href="/knowledge/practice/property-conclusions"
+                className="font-semibold text-[#177f98]"
+              >
+                изводите за конкретен имот
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="border-t border-[#dce8eb] py-8">
+          <h2 className="text-xl font-bold text-[#173f48]">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 max-w-4xl space-y-2 text-sm leading-6 text-[#607b82]">
+            <li>
+              <a
+                href="https://www.moew.government.bg/bg/vodi/planove-za-upravlenie/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#177f98] underline"
+              >
+                МОСВ — Планове за управление на водите
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=celex%3A32000L0060"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#177f98] underline"
+              >
+                EUR-Lex — Water Framework Directive
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-[#dce8eb] pt-8">
           <Link
             href="/knowledge/practice"

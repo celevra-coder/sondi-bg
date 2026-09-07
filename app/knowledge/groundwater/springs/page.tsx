@@ -110,6 +110,79 @@ export default function SpringsPage() {
           </p>
         </section>
 
+        <section className="mt-14">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em]">
+            Какво може да покаже един извор за подземните води в района?
+          </h2>
+
+          <div className="mt-6 space-y-5 text-[17px] leading-8 text-[#536f76]">
+            <p>
+              Наличието на извор показва, че на това място подземният поток
+              достига естествено до повърхността. Това може да даде информация
+              за посоката на движение на водата, контакта между различни
+              геоложки пластове или наличието на пукнатинна и карстова проводимост.
+            </p>
+
+            <p>
+              Самият извор обаче не доказва, че навсякъде около него има
+              еднакво водонасищане или че близък сондаж ще има същия дебит.
+              Подземната система може да бъде силно нееднородна, особено
+              в пукнатинни и карстови терени.
+            </p>
+
+            <p>
+              За по-надеждна оценка трябва да се разглеждат заедно дебитът
+              и сезонното поведение на извора, релефът, геоложката среда,
+              разломите, карстът и наличните данни от сондажи в района.
+            </p>
+
+            <p>
+              Виж още за{" "}
+              <Link
+                href="/knowledge/geology/faults-fractures-groundwater"
+                className="font-semibold text-[#257589]"
+              >
+                разломите и пукнатините като пътища за подземната вода
+              </Link>
+              {" "}и за{" "}
+              <Link
+                href="/knowledge/geology/karst"
+                className="font-semibold text-[#257589]"
+              >
+                карстовите водоносни системи
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-[#dce8ea] pt-8">
+          <h2 className="text-xl font-semibold">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607b82]">
+            <li>
+              <a
+                href="https://www.usgs.gov/water-science-school/science/aquifers-and-groundwater"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — Aquifers and Groundwater
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://pubs.usgs.gov/circ/circ1186/html/gen_facts.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — General Facts and Concepts about Ground Water
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-14 border-l-4 border-[#2c8498] bg-[#edf8fa] p-7">
           <strong>Изворът е естествен прозорец към подземната система</strong>
           <p className="mt-2 leading-7 text-[#5b767d]">

@@ -97,6 +97,79 @@ export default function ArtesianWaterPage() {
           </p>
         </section>
 
+        <section className="mt-14">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em]">
+            Какво означава артезианският напор при сондаж?
+          </h2>
+
+          <div className="mt-6 space-y-5 text-[17px] leading-8 text-[#536f76]">
+            <p>
+              Напорът показва, че водата в пресечения водоносен хоризонт
+              се намира под хидравлично налягане. След достигането му
+              водното ниво в сондажа може да се установи значително
+              по-високо от самата дълбочина на водоносния пласт.
+            </p>
+
+            <p>
+              Това обаче не означава автоматично висок дебит. Количеството
+              вода, което сондажът може устойчиво да отдава, зависи и от
+              пропускливостта, дебелината и пространствената свързаност
+              на водоносната среда.
+            </p>
+
+            <p>
+              Затова при оценка на напорен хоризонт трябва да се разграничават
+              дълбочината на пласта, установеното водно ниво и реалната
+              продуктивност на сондажа.
+            </p>
+
+            <p>
+              Виж още за{" "}
+              <Link
+                href="/knowledge/groundwater/water-level"
+                className="font-semibold text-[#257589]"
+              >
+                водното ниво в сондаж
+              </Link>
+              {" "}и за{" "}
+              <Link
+                href="/knowledge/groundwater/aquifer"
+                className="font-semibold text-[#257589]"
+              >
+                водоносните пластове
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-[#dce8ea] pt-8">
+          <h2 className="text-xl font-semibold">
+            Източници и допълнително четене
+          </h2>
+
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607b82]">
+            <li>
+              <a
+                href="https://www.usgs.gov/water-science-school/science/artesian-water-and-artesian-wells"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — Artesian Water and Artesian Wells
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.usgs.gov/water-science-school/science/aquifers-and-groundwater"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#257589] underline"
+              >
+                USGS — Aquifers and Groundwater
+              </a>
+            </li>
+          </ul>
+        </section>
         <div className="mt-14 border-l-4 border-[#2c8498] bg-[#edf8fa] p-7">
           <strong>Артезианска ≠ минерална</strong>
           <p className="mt-2 leading-7 text-[#5b767d]">
