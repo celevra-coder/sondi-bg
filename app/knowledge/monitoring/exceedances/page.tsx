@@ -139,6 +139,36 @@ export default function MonitoringExceedancesPage() {
           </p>
         </section>
 
+        <section className="border-t border-[#dce8eb] py-8">
+          <h2 className="text-2xl font-bold text-[#173f48]">
+            Свързани теми
+          </h2>
+
+          <p className="mt-3 max-w-4xl text-sm leading-6 text-[#637f87]">
+            Продължете с теми, които допълват интерпретацията на мониторинговите данни за подземните води.
+          </p>
+
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            <Link
+              href="/knowledge/monitoring/chemical-monitoring"
+              className="rounded-[18px] border border-[#dce8eb] bg-white px-5 py-4 text-sm font-semibold leading-6 text-[#177f98] transition hover:border-[#a9cfd6] hover:shadow-[0_10px_30px_rgba(23,63,72,.06)]"
+            >
+              Химичен мониторинг на подземните води →
+            </Link>
+            <Link
+              href="/knowledge/monitoring/upward-trend"
+              className="rounded-[18px] border border-[#dce8eb] bg-white px-5 py-4 text-sm font-semibold leading-6 text-[#177f98] transition hover:border-[#a9cfd6] hover:shadow-[0_10px_30px_rgba(23,63,72,.06)]"
+            >
+              Какво е възходяща тенденция →
+            </Link>
+            <Link
+              href="/knowledge/monitoring/drinking-water-monitoring"
+              className="rounded-[18px] border border-[#dce8eb] bg-white px-5 py-4 text-sm font-semibold leading-6 text-[#177f98] transition hover:border-[#a9cfd6] hover:shadow-[0_10px_30px_rgba(23,63,72,.06)]"
+            >
+              Мониторинг на подземни води за питейни цели →
+            </Link>
+          </div>
+        </section>
         <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-[#dce8eb] pt-8">
           <Link
             href="/knowledge/monitoring"
