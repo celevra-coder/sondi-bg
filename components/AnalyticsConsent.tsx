@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 
@@ -12,6 +12,13 @@ declare global {
 }
 
 function loadClarity() {
+  if (
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1" ||
+    window.location.hostname === "::1"
+  ) {
+    return;
+  }
   if (document.getElementById("sondi-clarity-script")) {
     return;
   }

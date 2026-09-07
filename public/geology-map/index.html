@@ -826,6 +826,13 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 
   function loadClarity(){
     if (
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1" ||
+      window.location.hostname === "::1"
+    ) {
+      return;
+    }
+    if (
       document.getElementById(
         "sondi-map-clarity-script"
       )
