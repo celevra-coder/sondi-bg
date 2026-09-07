@@ -45,9 +45,11 @@ function getPageRoutes(dir: string, appDir: string): string[] {
         ? "/"
         : "/" + relativeDir.split(path.sep).join("/");
 
-    const excluded = EXCLUDED_PREFIXES.some(
-      (prefix) => route === prefix || route.startsWith(prefix + "/"),
-    );
+    const excluded =
+      route === "/geology" ||
+      EXCLUDED_PREFIXES.some(
+        (prefix) => route === prefix || route.startsWith(prefix + "/"),
+      );
 
     if (!excluded) {
       routes.push(route);
