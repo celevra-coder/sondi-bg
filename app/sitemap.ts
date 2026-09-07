@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import fs from "node:fs";
 import path from "node:path";
+import { getIndexableSettlements } from "@/lib/settlements";
 
 const BASE_URL = "https://www.sondi.bg";
 
@@ -60,25 +61,53 @@ function getPageRoutes(dir: string, appDir: string): string[] {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const appDir = path.join(process.cwd(), "app");
+  const appDir = path.join(
+    process.cwd(),
+    "app",
+  );
 
-  const routes = Array.from(new Set(getPageRoutes(appDir, appDir))).sort();
+  const routes = Array.from(
+    new Set(
+      getPageRoutes(appDir, appDir),
+    ),
+  ).sort();
 
-  return routes.map((route) => ({
-    url: route === "/" ? BASE_URL : `${BASE_URL}${route}`,
-    changeFrequency:
-      route === "/"
-        ? "daily"
-        : route.startsWith("/knowledge/")
-          ? "monthly"
-          : "weekly",
-    priority:
-      route === "/"
-        ? 1
-        : route === "/map" || route === "/explore"
-          ? 0.9
+  const staticEntries: MetadataRoute.Sitemap =
+    routes.map((route) => ({
+      url:
+        route === "/"
+          ? BASE_URL
+          : `${BASE_URL}${route}`,
+      changeFrequency:
+        route === "/"
+          ? "daily"
           : route.startsWith("/knowledge/")
-            ? 0.7
-            : 0.8,
-  }));
+            ? "monthly"
+            : "weekly",
+      priority:
+        route === "/"
+          ? 1
+          : route === "/map" ||
+              route === "/explore" ||
+              route === "/water"
+            ? 0.9
+            : route.startsWith("/knowledge/")
+              ? 0.7
+              : 0.8,
+    }));
+
+  const settlementEntries: MetadataRoute.Sitemap =
+    getIndexableSettlements().map(
+      (settlement) => ({
+        url:
+          `${BASE_URL}/water/${settlement.slug}`,
+        changeFrequency: "monthly",
+        priority: 0.75,
+      }),
+    );
+
+  return [
+    ...staticEntries,
+    ...settlementEntries,
+  ];
 }

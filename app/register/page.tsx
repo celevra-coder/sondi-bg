@@ -6,6 +6,10 @@ import {
   type FormEvent,
 } from "react";
 import { createClient } from "@/lib/supabase-browser";
+import {
+  clarityEvent,
+  clarityTag,
+} from "@/lib/clarity-client";
 
 type AccountType =
   | "client"
@@ -148,6 +152,13 @@ export default function RegisterPage() {
     setMessage("");
     setMessageType("");
 
+    clarityEvent("registration_started");
+    clarityTag(
+      "funnel_stage",
+      "registration"
+    );
+
+
     const { data: result, error } =
       await supabase.auth.signUp({
         email,
@@ -183,6 +194,19 @@ export default function RegisterPage() {
       return;
     }
 
+    clarityTag(
+      "user_state",
+      "registered"
+    );
+    clarityTag(
+      "funnel_stage",
+      "registration_completed"
+    );
+    clarityEvent(
+      "registration_completed"
+    );
+
+
     if (result.session) {
       document.cookie =
         "sondi_auth_next=; path=/; max-age=0; samesite=lax";
@@ -203,6 +227,15 @@ export default function RegisterPage() {
   async function registerWithGoogle() {
     setMessage("");
     setMessageType("");
+
+    clarityEvent(
+      "registration_google_started"
+    );
+    clarityTag(
+      "funnel_stage",
+      "registration"
+    );
+
 
     document.cookie =
       `sondi_auth_next=${encodeURIComponent(returnTo)}; path=/; max-age=3600; samesite=lax`;

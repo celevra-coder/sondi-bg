@@ -1,5 +1,10 @@
 "use client";
 
+import {
+  clarityEvent,
+  clarityTag,
+} from "@/lib/clarity-client";
+
 import { useEffect, useMemo, useState } from "react";
 
 type PreviousAnalysis = {
@@ -140,6 +145,26 @@ export default function ExpertAccessPage() {
         }
 
         setStatus(data);
+
+        const clarityUserState =
+          data?.admin
+            ? "admin"
+            : data?.authenticated
+              ? "registered"
+              : "guest";
+
+        clarityTag(
+          "user_state",
+          clarityUserState
+        );
+        clarityTag(
+          "funnel_stage",
+          "expert_access"
+        );
+        clarityEvent(
+          "expert_access_viewed"
+        );
+
       } catch (err) {
         setError(
           err instanceof Error
@@ -179,6 +204,19 @@ export default function ExpertAccessPage() {
 
     setStarting(true);
     setError("");
+
+    clarityTag(
+      "user_state",
+      status?.admin
+        ? "admin"
+        : status?.authenticated
+          ? "registered"
+          : "guest"
+    );
+    clarityEvent(
+      "expert_analysis_clicked"
+    );
+
 
     try {
       const queryParams:
@@ -236,6 +274,15 @@ export default function ExpertAccessPage() {
             "Анализът не можа да бъде стартиран."
         );
       }
+
+      clarityTag(
+        "funnel_stage",
+        "expert_started"
+      );
+      clarityEvent(
+        "expert_analysis_started"
+      );
+
 
       const proParams =
         new URLSearchParams(params);
@@ -414,7 +461,12 @@ export default function ExpertAccessPage() {
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="/login"
-                  onClick={rememberReturn}
+                  onClick={() => {
+                    clarityEvent(
+                      "expert_login_clicked"
+                    );
+                    rememberReturn();
+                  }}
                   className="inline-flex items-center justify-center rounded-xl bg-[#173f48] px-5 py-3 text-sm font-bold text-white"
                 >
                   Вход
@@ -422,7 +474,12 @@ export default function ExpertAccessPage() {
 
                 <a
                   href="/register"
-                  onClick={rememberReturn}
+                  onClick={() => {
+                    clarityEvent(
+                      "expert_register_clicked"
+                    );
+                    rememberReturn();
+                  }}
                   className="inline-flex items-center justify-center rounded-xl border border-[#b9d7dc] bg-[#eef8f9] px-5 py-3 text-sm font-bold text-[#245d68]"
                 >
                   Регистрация

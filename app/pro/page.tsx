@@ -5,6 +5,7 @@ import { getFaultSpatialProfile } from "@/lib/fault-spatial-profile";
 import FaultActivityMap from "./FaultActivityMap";
 import MonitoringBodyDetails from "./MonitoringBodyDetails";
 import ProPrintReport from "./ProPrintReport";
+import ProClarityTracker from "./ProClarityTracker";
 import { resolveGroundwaterBodiesAtPoint } from "@/lib/gwb-spatial-resolver";
 import { getBlackSeaGisAnalysis } from "@/lib/black-sea-gis";
 import { redirect } from "next/navigation";
@@ -243,6 +244,7 @@ export default async function ProPage({
     params.analysis_id?.trim() || "";
 
   let hasExpertAccess = false;
+  let isAdmin = false;
 
   if (user) {
     const { data: adminRow } =
@@ -253,6 +255,7 @@ export default async function ProPage({
         .maybeSingle();
 
     if (adminRow) {
+      isAdmin = true;
       hasExpertAccess = true;
     } else if (analysisId) {
       const { data: analysisRow } =
@@ -3931,6 +3934,12 @@ export default async function ProPage({
 
   return (
     <>
+      <ProClarityTracker
+        userState={
+          isAdmin ? "admin" : "registered"
+        }
+      />
+
       <ProPrintReport
         lat={lat}
         lng={lng}

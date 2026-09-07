@@ -892,6 +892,65 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
   );
 })();
 
+/* MAP_CLARITY_EVENTS_START */
+function sondiMapClarityEvent(name) {
+  try {
+    if (typeof window.clarity === "function") {
+      window.clarity("event", name);
+    }
+  } catch (error) {
+    console.warn("[Map Clarity event]", error);
+  }
+}
+
+function sondiMapClarityTag(key, value) {
+  try {
+    if (
+      typeof window.clarity === "function" &&
+      value !== null &&
+      value !== undefined &&
+      String(value).trim() !== ""
+    ) {
+      window.clarity(
+        "set",
+        String(key),
+        String(value)
+      );
+    }
+  } catch (error) {
+    console.warn("[Map Clarity tag]", error);
+  }
+}
+
+sondiMapClarityTag("entry_type", "map");
+sondiMapClarityEvent("map_opened");
+
+document.addEventListener(
+  "click",
+  function(event) {
+    const target =
+      event.target instanceof Element
+        ? event.target.closest(
+            'a[href*="/expert-access"]'
+          )
+        : null;
+
+    if (!target) {
+      return;
+    }
+
+    sondiMapClarityTag(
+      "funnel_stage",
+      "expert_access_clicked"
+    );
+    sondiMapClarityEvent(
+      "expert_access_clicked"
+    );
+  },
+  true
+);
+/* MAP_CLARITY_EVENTS_END */
+
 const map=L.map('map').setView([42.72,25.35],7);
 (async function initAdminMapTools(){
   try {
@@ -10032,7 +10091,7 @@ async function analyzeGemFault(encodedCatalogId) {
 
     html += "</div>";
 
-  
+
 
 
   result.innerHTML = html;
@@ -10798,7 +10857,7 @@ function resetFilters(){
  ['search','tempMin','depthMax'].forEach(i=>document.getElementById(i).value='');
  ['basin','category'].forEach(i=>document.getElementById(i).value='');
  ['layer-wells','layer-springs','layer-monitoring','layer-inactive','layer-other'].forEach(i=>document.getElementById(i).checked=false);
- 
+
 }
 
 function toggleUnmapped(){
@@ -18233,7 +18292,15 @@ function showSearchedCoordinates(
   label = "Търсена локация",
   zoomToPoint = true
 ) {
-  if (coordinateSearchMarker) {
+
+  sondiMapClarityTag(
+    "funnel_stage",
+    "map_location_selected"
+  );
+  sondiMapClarityEvent(
+    "map_location_selected"
+  );
+if (coordinateSearchMarker) {
     map.removeLayer(coordinateSearchMarker);
   }
 
@@ -18293,7 +18360,75 @@ function showSearchedCoordinates(
       }
     }, 150);
   }
+
 }
+
+/* INCOMING_MAP_LOCATION_START */
+(function setupIncomingMapLocation() {
+  function applyIncomingMapLocation() {
+    const params = new URLSearchParams(window.location.search);
+
+    const rawLatitude = params.get("lat");
+    const rawLongitude = params.get("lng");
+
+    if (
+      rawLatitude === null ||
+      rawLongitude === null ||
+      rawLatitude.trim() === "" ||
+      rawLongitude.trim() === ""
+    ) {
+      return;
+    }
+
+    const latitude = Number(rawLatitude);
+    const longitude = Number(rawLongitude);
+
+    if (
+      !Number.isFinite(latitude) ||
+      !Number.isFinite(longitude) ||
+      latitude < -90 ||
+      latitude > 90 ||
+      longitude < -180 ||
+      longitude > 180
+    ) {
+      return;
+    }
+
+    const rawLabel = String(params.get("label") || "").trim();
+
+    const label =
+      rawLabel ||
+      "\u0418\u0437\u0431\u0440\u0430\u043d\u043e \u043c\u044f\u0441\u0442\u043e";
+
+    lastGroundwaterClickLatLng =
+      L.latLng(latitude, longitude);
+
+    const status =
+      document.getElementById(
+        "coordinate-search-status"
+      );
+
+    showSearchedCoordinates(
+      latitude,
+      longitude,
+      status,
+      label,
+      true
+    );
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      applyIncomingMapLocation,
+      { once: true }
+    );
+  } else {
+    setTimeout(applyIncomingMapLocation, 0);
+  }
+})();
+/* INCOMING_MAP_LOCATION_END */
+
 let sondiPlaceSearchResults = [];
 
 function sondiSearchEscape(value) {

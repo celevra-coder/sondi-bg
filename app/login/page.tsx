@@ -6,6 +6,10 @@ import {
   type FormEvent,
 } from "react";
 import { createClient } from "@/lib/supabase-browser";
+import {
+  clarityEvent,
+  clarityTag,
+} from "@/lib/clarity-client";
 
 const T = {
   eyebrow:
@@ -123,6 +127,10 @@ export default function LoginPage() {
     setLoading(true);
     setMessage("");
 
+    clarityEvent("login_started");
+    clarityTag("funnel_stage", "login");
+
+
     const { error } =
       await supabase.auth.signInWithPassword({
         email: String(
@@ -159,6 +167,17 @@ export default function LoginPage() {
       isAdmin = Boolean(adminRow);
     }
 
+    clarityTag(
+      "user_state",
+      isAdmin ? "admin" : "registered"
+    );
+    clarityTag(
+      "funnel_stage",
+      "login_completed"
+    );
+    clarityEvent("login_completed");
+
+
     document.cookie =
       "sondi_auth_next=; path=/; max-age=0; samesite=lax";
 
@@ -170,6 +189,10 @@ export default function LoginPage() {
 
   async function loginWithGoogle() {
     setMessage("");
+
+    clarityEvent("login_google_started");
+    clarityTag("funnel_stage", "login");
+
 
     document.cookie =
       `sondi_auth_next=${encodeURIComponent(returnTo)}; path=/; max-age=3600; samesite=lax`;
