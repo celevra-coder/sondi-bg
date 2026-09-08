@@ -318,6 +318,13 @@ const [authReady, setAuthReady] = useState(false);
             </Link>
 
             <Link
+              href="/water"
+              className="px-4 py-3 text-[13px] font-medium text-[#294e59] transition hover:text-[#15809a]"
+            >
+              {"\u041f\u041e\u0414\u0417\u0415\u041c\u041d\u0418 \u0412\u041e\u0414\u0418"}
+            </Link>
+
+            <Link
               href="/about"
               className="px-4 py-3 text-[13px] font-medium text-[#294e59] transition hover:text-[#15809a]"
             >
@@ -384,6 +391,7 @@ const [authReady, setAuthReady] = useState(false);
               <Link href="/drilling">Сондажи</Link>
               <Link href="/pro">Професионалисти</Link>
               <Link href="/knowledge">Знания</Link>
+              <Link href="/water">{"\u041f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u0438"}</Link>
               <Link href="/about">За нас</Link>
               {authReady && (
                 isAuthenticated ? (

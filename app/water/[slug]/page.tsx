@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import WaterCityClarityTracker from "./WaterCityClarityTracker";
+import SettlementLocalContent from "./SettlementLocalContent";
 
 import {
   getIndexableSettlements,
@@ -140,7 +141,7 @@ function BerkovitsaPage({
                 href={mapHref}
                 className="rounded-full bg-[#173f48] px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
               >
-                {"\u0412\u0438\u0436 \u0411\u0435\u0440\u043a\u043e\u0432\u0438\u0446\u0430 \u043d\u0430 \u043a\u0430\u0440\u0442\u0430\u0442\u0430"}
+                {"\u0412\u0438\u0436 \u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043d\u0430\u0442\u0430 \u043a\u0430\u0440\u0442\u0430 \u0437\u0430 \u0432\u043e\u0434\u0438\u0442\u0435 \u043d\u0430 \u0411\u0435\u0440\u043a\u043e\u0432\u0438\u0446\u0430"}
               </Link>
               <Link
                 href="/knowledge/groundwater"
@@ -275,7 +276,7 @@ function BerkovitsaPage({
             href={mapHref}
             className="mt-9 inline-flex rounded-full bg-[#173f48] px-7 py-3.5 text-sm font-bold text-white"
           >
-            {"\u041e\u0442\u0432\u043e\u0440\u0438 \u0411\u0435\u0440\u043a\u043e\u0432\u0438\u0446\u0430 \u0432 \u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043d\u0430\u0442\u0430 \u043a\u0430\u0440\u0442\u0430"}
+            {"\u0412\u0438\u0436 \u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043d\u0430\u0442\u0430 \u043a\u0430\u0440\u0442\u0430 \u0437\u0430 \u0432\u043e\u0434\u0438\u0442\u0435 \u043d\u0430 \u0411\u0435\u0440\u043a\u043e\u0432\u0438\u0446\u0430"}
           </Link>
         </div>
       </section>
@@ -388,6 +389,7 @@ const mapParams = new URLSearchParams({
   return (
     <main className="bg-white">
       {clarityTracker}
+      <SettlementLocalContent slug={settlement.slug} />
       <script
 
         type="application/ld+json"
@@ -426,7 +428,7 @@ const mapParams = new URLSearchParams({
             href={mapHref}
             className="inline-flex rounded-full bg-[#173f48] px-6 py-3 text-sm font-bold text-white"
           >
-            {"\u0412\u0438\u0436 \u0442\u043e\u0432\u0430 \u043c\u044f\u0441\u0442\u043e \u043d\u0430 \u043a\u0430\u0440\u0442\u0430\u0442\u0430"}
+            {"\u0412\u0438\u0436 \u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043d\u0430\u0442\u0430 \u043a\u0430\u0440\u0442\u0430 \u0437\u0430 \u0432\u043e\u0434\u0438\u0442\u0435 \u043d\u0430 "}{settlement.name}
           </Link>
         </div>
 
@@ -457,14 +459,6 @@ const mapParams = new URLSearchParams({
               {settlement.ekatte}
             </p>
           </div>
-        </div>
-
-        <div className="mt-12 max-w-3xl rounded-[22px] border border-[#d9e7e9] bg-[#f7fbfc] p-7">
-          <p className="text-sm leading-7 text-[#657e84]">
-            {
-              "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430\u0442\u0430 \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u043f\u0443\u0431\u043b\u0438\u0447\u0435\u043d \u043c\u0435\u0441\u0442\u0435\u043d \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442. \u0422\u044f \u043d\u0435 \u0441\u044a\u0434\u044a\u0440\u0436\u0430 \u043f\u043b\u0430\u0442\u0435\u043d PRO \u0430\u043d\u0430\u043b\u0438\u0437 \u0438 \u043d\u0435 \u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u0435\u043d \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0434\u043e\u043a\u043b\u0430\u0434, \u0438\u043d\u0432\u0435\u0441\u0442\u0438\u0446\u0438\u043e\u043d\u0435\u043d \u043f\u0440\u043e\u0435\u043a\u0442 \u0438\u043b\u0438 \u0440\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u0435\u043b\u043d\u043e."
-            }
-          </p>
         </div>
       </section>
     </main>
