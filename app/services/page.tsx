@@ -132,7 +132,7 @@ const T = {
   presentation: "\u041f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044f\u043d\u0435",
   presentationHelp:
     "\u041e\u043f\u0438\u0448\u0435\u0442\u0435 \u043e\u043f\u0438\u0442\u0430, \u0443\u0441\u043b\u0443\u0433\u0438\u0442\u0435 \u0438 \u043d\u0430\u0447\u0438\u043d\u0430 \u0441\u0438 \u043d\u0430 \u0440\u0430\u0431\u043e\u0442\u0430...",
-  sendApproval: "\u0418\u0437\u043f\u0440\u0430\u0442\u0438 \u043f\u0440\u043e\u0444\u0438\u043b \u0437\u0430 \u043e\u0434\u043e\u0431\u0440\u0435\u043d\u0438\u0435",
+  sendApproval: "\u0418\u0437\u043f\u0440\u0430\u0442\u0438 \u0438 \u0441\u0435 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u0439",
   providerPending:
     "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f\u0442\u0430 \u0438 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0435\u0442\u043e \u0449\u0435 \u0431\u044a\u0434\u0430\u0442 \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u043d\u0438. \u0424\u043e\u0440\u043c\u0430\u0442\u0430 \u0449\u0435 \u0431\u044a\u0434\u0435 \u0430\u043a\u0442\u0438\u0432\u0438\u0440\u0430\u043d\u0430 \u0441\u043b\u0435\u0434 \u0441\u0432\u044a\u0440\u0437\u0432\u0430\u043d\u0435\u0442\u043e \u0441\u044a\u0441 Supabase.",
 };
@@ -702,22 +702,44 @@ export default function ServicesPage() {
     if (providerSubmitting) return;
 
     const form = event.currentTarget;
+    const data = new FormData(form);
 
     setProviderMessage("");
 
-    const user = await requireUser(
-      "Необходима е регистрация",
-      "За да публикувате профил на изпълнител, трябва да имате акаунт в SONDI.BG."
+    const companyName = String(
+      data.get("company_name") || ""
+    ).trim();
+
+    const phone = String(
+      data.get("phone") || ""
+    ).trim();
+
+    const email = String(
+      data.get("email") || ""
+    ).trim();
+
+    const password = String(
+      data.get("password") || ""
     );
-
-    if (!user) return;
-
-    const data = new FormData(form);
 
     const selectedServices = data
       .getAll("services")
       .map(value => String(value))
       .filter(Boolean);
+
+    if (companyName.length < 2) {
+      setProviderMessage(
+        "\u0412\u044a\u0432\u0435\u0434\u0435\u0442\u0435 \u0438\u043c\u0435 \u0438\u043b\u0438 \u0444\u0438\u0440\u043c\u0430."
+      );
+      return;
+    }
+
+    if (phone.length < 5) {
+      setProviderMessage(
+        "\u0412\u044a\u0432\u0435\u0434\u0435\u0442\u0435 \u0432\u0430\u043b\u0438\u0434\u0435\u043d \u0442\u0435\u043b\u0435\u0444\u043e\u043d."
+      );
+      return;
+    }
 
     if (selectedServices.length === 0) {
       setProviderMessage(
@@ -736,64 +758,136 @@ export default function ServicesPage() {
       return;
     }
 
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) {
+      if (!email) {
+        setProviderMessage(
+          "\u0412\u044a\u0432\u0435\u0434\u0435\u0442\u0435 \u0438\u043c\u0435\u0439\u043b \u0437\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f."
+        );
+        return;
+      }
+
+      if (password.length < 6) {
+        setProviderMessage(
+          "\u041f\u0430\u0440\u043e\u043b\u0430\u0442\u0430 \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0435 \u043f\u043e\u043d\u0435 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430."
+        );
+        return;
+      }
+    }
+
+    const providerPayload = {
+      company_name: companyName,
+      phone,
+      email: email || null,
+      website_or_facebook:
+        String(
+          data.get("website_or_facebook") || ""
+        ).trim() || null,
+      services: selectedServices,
+      work_regions:
+        allBulgaria ? [] : providerRegions,
+      works_nationwide: allBulgaria,
+      max_depth:
+        String(data.get("max_depth") || "").trim() || null,
+      diameters:
+        String(data.get("diameters") || "").trim() || null,
+      drilling_method:
+        String(data.get("drilling_method") || "").trim() || null,
+      equipment:
+        String(data.get("equipment") || "").trim() || null,
+      presentation:
+        String(data.get("presentation") || "").trim() || null,
+    };
+
     setProviderSubmitting(true);
     setProviderMessage("");
 
-    const { error } = await supabase
-      .from("service_providers")
-      .insert({
-        owner_id: user.id,
-        company_name:
-          String(data.get("company_name") || "").trim(),
-        phone:
-          String(data.get("phone") || "").trim(),
-        email:
-          String(data.get("email") || "").trim() || null,
-        website_or_facebook:
-          String(
-            data.get("website_or_facebook") || ""
-          ).trim() || null,
-        services: selectedServices,
-        work_regions:
-          allBulgaria ? [] : providerRegions,
-        works_nationwide: allBulgaria,
-        max_depth:
-          String(data.get("max_depth") || "").trim() || null,
-        diameters:
-          String(data.get("diameters") || "").trim() || null,
-        drilling_method:
-          String(data.get("drilling_method") || "").trim() || null,
-        equipment:
-          String(data.get("equipment") || "").trim() || null,
-        presentation:
-          String(data.get("presentation") || "").trim() || null,
-        status: "pending",
-      });
+    try {
+      if (user) {
+        const { error } = await supabase
+          .from("service_providers")
+          .insert({
+            owner_id: user.id,
+            ...providerPayload,
+            status: "pending",
+          });
 
-    setProviderSubmitting(false);
+        if (error) {
+          throw new Error(error.message);
+        }
+      } else {
+        const response =
+          await fetch("/api/provider-register", {
+            method: "POST",
+            headers: {
+              "Content-Type":
+                "application/json",
+            },
+            body: JSON.stringify({
+              ...providerPayload,
+              email,
+              password,
+            }),
+          });
 
-    if (error) {
-      console.error("service provider insert error", error);
+        const result =
+          await response.json().catch(() => null);
+
+        if (!response.ok) {
+          throw new Error(
+            result?.error ||
+              "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u0441\u044a\u0437\u0434\u0430\u0434\u0435\u043c \u043f\u0440\u043e\u0444\u0438\u043b\u0430."
+          );
+        }
+
+        const { error: signInError } =
+          await supabase.auth.signInWithPassword({
+            email,
+            password,
+          });
+
+        if (signInError) {
+          console.error(
+            "provider automatic sign-in error",
+            signInError
+          );
+        }
+      }
+
+      form.reset();
+      setAllBulgaria(false);
+      setProviderRegions([]);
+
       setProviderMessage(
-        "\u0413\u0440\u0435\u0448\u043a\u0430: " + error.message
+        "\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0438 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
       );
-      return;
+
+      setSuccessPopup({
+        title:
+          "\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d",
+        text:
+          "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u0438\u043c! \u0410\u043a\u0430\u0443\u043d\u0442\u044a\u0442 \u0438 \u043f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0432\u0438 \u0441\u0430 \u0441\u044a\u0437\u0434\u0430\u0434\u0435\u043d\u0438. \u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
+      });
+    } catch (error) {
+      console.error(
+        "service provider registration error",
+        error
+      );
+
+      setProviderMessage(
+        "\u0413\u0440\u0435\u0448\u043a\u0430: " +
+          (
+            error instanceof Error
+              ? error.message
+              : "\u043d\u0435\u0443\u0441\u043f\u0435\u0448\u043d\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f"
+          )
+      );
+    } finally {
+      setProviderSubmitting(false);
     }
-
-    form.reset();
-    setAllBulgaria(false);
-    setProviderRegions([]);
-
-    setProviderMessage(
-      "\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0438 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
-    );
-
-    setSuccessPopup({
-      title:
-        "\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d",
-      text:
-        "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u0438\u043c! \u0412\u0430\u0448\u0438\u044f\u0442 \u043f\u0440\u043e\u0444\u0438\u043b \u0435 \u043f\u0440\u0438\u0435\u0442 \u0438 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
-    });
   }
 
   function toggleProviderRegion(
@@ -862,28 +956,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-                <section className="mt-8 rounded-[26px] border border-[#d9e7e9] bg-white p-6 sm:p-8 lg:p-10">
-          <h2 className="text-2xl font-bold text-[#173f48] sm:text-3xl">{"\u041a\u0430\u043a \u0434\u0430 \u043f\u043e\u0434\u0433\u043e\u0442\u0432\u0438\u0442\u0435 \u0441\u043e\u043d\u0434\u0430\u0436 \u0437\u0430 \u0432\u043e\u0434\u0430"}</h2>
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-[#5f787f]">{"\u041f\u0440\u0435\u0434\u0438 \u0434\u0430 \u0438\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b, \u043f\u043e\u043b\u0435\u0437\u043d\u043e \u0435 \u0434\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u0435 \u043c\u044f\u0441\u0442\u043e\u0442\u043e, \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430\u0442\u0430 \u043e\u0431\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430, \u043e\u0447\u0430\u043a\u0432\u0430\u043d\u0430\u0442\u0430 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430 \u0438 \u0432\u043e\u0434\u043d\u0438\u0442\u0435 \u043d\u0438\u0432\u0430."}</p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <a href="/drilling" className="rounded-2xl border border-[#dce8ea] bg-[#f7fbfb] p-4">
-              <div className="font-bold text-[#173f48]">{"\u0421\u043e\u043d\u0434\u0430\u0436\u0438 \u0437\u0430 \u0432\u043e\u0434\u0430"}</div>
-              <div className="mt-1 text-sm text-[#6a8187]">{"\u041f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f."}</div>
-            </a>
-            <a href="/knowledge/practice/before-drilling" className="rounded-2xl border border-[#dce8ea] bg-[#f7fbfb] p-4">
-              <div className="font-bold text-[#173f48]">{"\u041f\u0440\u0435\u0434\u0438 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435"}</div>
-              <div className="mt-1 text-sm text-[#6a8187]">{"\u041a\u0430\u043a\u0432\u043e \u0434\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u043c \u043f\u0440\u0435\u0434\u0438 \u043d\u0430\u0447\u0430\u043b\u043e\u0442\u043e."}</div>
-            </a>
-            <a href="/knowledge/exploration/selecting-drilling-point" className="rounded-2xl border border-[#dce8ea] bg-[#f7fbfb] p-4">
-              <div className="font-bold text-[#173f48]">{"\u0418\u0437\u0431\u043e\u0440 \u043d\u0430 \u0442\u043e\u0447\u043a\u0430"}</div>
-              <div className="mt-1 text-sm text-[#6a8187]">{"\u041a\u0430\u043a \u0441\u0435 \u043e\u0446\u0435\u043d\u044f\u0432\u0430 \u043c\u044f\u0441\u0442\u043e\u0442\u043e \u0437\u0430 \u0441\u043e\u043d\u0434\u0430\u0436."}</div>
-            </a>
-            <a href="/map" className="rounded-2xl border border-[#dce8ea] bg-[#f7fbfb] p-4">
-              <div className="font-bold text-[#173f48]">{"\u041a\u0430\u0440\u0442\u0430 \u043d\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u0438"}</div>
-              <div className="mt-1 text-sm text-[#6a8187]">{"\u041f\u0440\u043e\u0432\u0435\u0440\u0435\u0442\u0435 \u0434\u0430\u043d\u043d\u0438\u0442\u0435 \u0437\u0430 \u0440\u0430\u0439\u043e\u043d\u0430."}</div>
-            </a>
-          </div>
-        </section>
 {tab === "find" && (
           <section className="mt-8">
             <div className="grid gap-6 lg:grid-cols-[360px_1fr]">
@@ -1560,6 +1632,22 @@ export default function ServicesPage() {
                   />
                 </div>
 
+                <div className="mt-6">
+                  <FieldLabel>
+                    {"\u041f\u0430\u0440\u043e\u043b\u0430 \u0437\u0430 \u0432\u0445\u043e\u0434"}
+                  </FieldLabel>
+
+                  <Input
+                    name="password"
+                    type="password"
+                    autoComplete="new-password"
+                    placeholder={"\u041c\u0438\u043d\u0438\u043c\u0443\u043c 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430"}
+                  />
+
+                  <div className="mt-2 text-xs leading-5 text-[#789096]">
+                    {"\u0429\u0435 \u0438\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u0442\u0435 \u0442\u0430\u0437\u0438 \u043f\u0430\u0440\u043e\u043b\u0430 \u0437\u0430 \u0432\u0445\u043e\u0434 \u0432 SONDI.BG."}
+                  </div>
+                </div>
               </form>
             </div>
 
