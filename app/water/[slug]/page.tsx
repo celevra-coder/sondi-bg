@@ -344,9 +344,14 @@ const mapParams = new URLSearchParams({
 
   const mapHref = `/map?${mapParams.toString()}`;
 
+  const pageUrl = `https://www.sondi.bg/water/${settlement.slug}`;
+  const placeId = `${pageUrl}#place`;
+  const breadcrumbId = `${pageUrl}#breadcrumb`;
+
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": breadcrumbId,
     itemListElement: [
       {
         "@type": "ListItem",
@@ -370,6 +375,47 @@ const mapParams = new URLSearchParams({
     ],
   };
 
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: "\u041f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u0438 \u0432 " + settlement.name,
+    description:
+      "\u041f\u0443\u0431\u043b\u0438\u0447\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0437\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0438\u0442\u0435 \u0432\u043e\u0434\u0438, \u0433\u0435\u043e\u043b\u043e\u0436\u0438\u044f\u0442\u0430 \u0438 \u0432\u043e\u0434\u043d\u0438\u0442\u0435 \u043e\u0431\u0435\u043a\u0442\u0438 \u043e\u043a\u043e\u043b\u043e " +
+      settlement.name +
+      ".",
+    inLanguage: "bg-BG",
+    breadcrumb: {
+      "@id": breadcrumbId,
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      name: "SONDI.BG",
+      url: "https://www.sondi.bg/",
+    },
+    about: [
+      {
+        "@type": "Thing",
+        name: "\u041f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u0438",
+      },
+      {
+        "@type": "Place",
+        "@id": placeId,
+        name: settlement.name,
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: settlement.lat,
+          longitude: settlement.lon,
+        },
+        containedInPlace: {
+          "@type": "AdministrativeArea",
+          name: settlement.district,
+        },
+      },
+    ],
+  };
+
   if (settlement.slug === "berkovitsa") {
     return (
       <>
@@ -379,6 +425,12 @@ const mapParams = new URLSearchParams({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(breadcrumb).replace(/</g, "\\u003c"),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(pageSchema).replace(/</g, "\\u003c"),
           }}
         />
         <BerkovitsaPage settlement={settlement} mapHref={mapHref} />
@@ -395,6 +447,12 @@ const mapParams = new URLSearchParams({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumb).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pageSchema).replace(/</g, "\\u003c"),
         }}
       />
 
