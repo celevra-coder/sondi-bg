@@ -398,6 +398,7 @@ export default function ExpertAccessPage() {
   })();
   const canStart =
     Boolean(status?.admin) ||
+    Boolean(status?.unlimited) ||
     freeRemaining > 0 ||
     (
       activePrice > 0 &&

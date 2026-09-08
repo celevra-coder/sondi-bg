@@ -236,7 +236,9 @@ export async function POST(request: Request) {
     return NextResponse.json({
       ok: true,
       admin: false,
-      unlimited: false,
+      unlimited:
+        result.access_type ===
+        "unlimited",
       current_version:
         CURRENT_EXPERT_VERSION,
       analysis_id:

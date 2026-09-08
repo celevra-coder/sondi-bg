@@ -71,6 +71,7 @@ export async function GET(request: Request) {
       walletResult,
       lotsResult,
       previousResult,
+      timeAccessResult,
     ] = await Promise.all([
       supabase
         .from("expert_wallets")
@@ -106,6 +107,24 @@ export async function GET(request: Request) {
         })
         .limit(1)
         .maybeSingle(),
+
+      supabase
+        .from("expert_time_access")
+        .select("expires_at")
+        .eq("user_id", user.id)
+        .lte(
+          "starts_at",
+          new Date().toISOString()
+        )
+        .gt(
+          "expires_at",
+          new Date().toISOString()
+        )
+        .order("expires_at", {
+          ascending: false,
+        })
+        .limit(1)
+        .maybeSingle(),
     ]);
 
     if (walletResult.error) {
@@ -119,6 +138,13 @@ export async function GET(request: Request) {
     if (previousResult.error) {
       throw previousResult.error;
     }
+
+    if (timeAccessResult.error) {
+      throw timeAccessResult.error;
+    }
+
+    const activeTimeAccess =
+      timeAccessResult.data || null;
 
     const freeRemaining =
       walletResult.data
@@ -157,7 +183,11 @@ export async function GET(request: Request) {
     return NextResponse.json({
       authenticated: true,
       admin: false,
-      unlimited: false,
+      unlimited:
+        activeTimeAccess !== null,
+      time_access_expires_at:
+        activeTimeAccess?.expires_at ??
+        null,
       current_version:
         CURRENT_EXPERT_VERSION,
       analysis_key:
