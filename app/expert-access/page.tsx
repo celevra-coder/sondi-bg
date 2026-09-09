@@ -294,8 +294,9 @@ export default function ExpertAccessPage() {
         );
       }
 
-      window.location.href =
-        `/pro?${proParams.toString()}`;
+      window.location.replace(
+        `/pro?${proParams.toString()}`
+      );
     } catch (err) {
       setError(
         err instanceof Error
@@ -312,6 +313,10 @@ export default function ExpertAccessPage() {
     if (checkoutTier) {
       return;
     }
+
+    clarityTag("funnel_stage", "checkout_clicked");
+    clarityTag("checkout_tier", tier);
+    clarityEvent("expert_checkout_clicked");
 
     setCheckoutTier(tier);
     setError("");
@@ -355,6 +360,10 @@ export default function ExpertAccessPage() {
           "Stripe не върна адрес за плащане."
         );
       }
+
+      clarityTag("funnel_stage", "checkout_redirected");
+      clarityTag("checkout_tier", tier);
+      clarityEvent("expert_checkout_redirected");
 
       window.location.href =
         data.url;
@@ -521,6 +530,15 @@ export default function ExpertAccessPage() {
           status?.authenticated &&
           !status.admin && (
             <>
+              {freeRemaining > 0 && (
+                <div className="mt-8 rounded-2xl border border-[#b9dfd4] bg-[#eaf8f3] px-5 py-4 text-sm font-bold text-[#17634f]">
+                  {"\uD83C\uDF81 \u0418\u043c\u0430\u0442\u0435 "}
+                  {freeRemaining}
+                  {freeRemaining === 1
+                    ? " \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u0435\u043d SONDI EXPERT \u0430\u043d\u0430\u043b\u0438\u0437"
+                    : " \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u043d\u0438 SONDI EXPERT \u0430\u043d\u0430\u043b\u0438\u0437\u0430"}
+                </div>
+              )}
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-[#d9e7e9] bg-[#f7fbfb] p-5">
                   <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#82969b]">
@@ -582,6 +600,12 @@ export default function ExpertAccessPage() {
 
                   <a
                     href={previousAnalysisHref}
+                    onClick={event => {
+                      event.preventDefault();
+                      window.location.replace(
+                        previousAnalysisHref
+                      );
+                    }}
                     className="mt-4 inline-flex rounded-xl bg-[#87661c] px-4 py-2.5 text-sm font-bold text-white"
                   >
                     {"\u041e\u0442\u0432\u043e\u0440\u0438 \u043f\u0440\u0435\u0434\u0438\u0448\u043d\u0438\u044f \u0430\u043d\u0430\u043b\u0438\u0437"}

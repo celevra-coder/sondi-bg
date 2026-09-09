@@ -7,6 +7,7 @@ import {
 } from "react";
 
 import { createClient } from "@/lib/supabase-browser";
+import { clarityEvent, clarityTag } from "@/lib/clarity-client";
 
 type ExpertAnalysis = {
   id: string;
@@ -135,6 +136,20 @@ function machineAccessLabel(value: string | null) {
 }
 
 export default function AccountPage() {
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const payment = params.get("payment");
+
+    if (payment === "success") {
+      clarityTag("funnel_stage", "payment_success");
+      clarityEvent("expert_payment_success");
+    }
+
+    if (payment === "cancelled") {
+      clarityTag("funnel_stage", "payment_cancelled");
+      clarityEvent("expert_payment_cancelled");
+    }
+  }, []);
   const supabase =
     useMemo(() => createClient(), []);
 
@@ -995,6 +1010,15 @@ export default function AccountPage() {
                 </button>
               </div>
 
+              {expertData.free_analyses_remaining > 0 && (
+                <div className="mt-3 rounded-xl border border-[#b9dfd4] bg-[#eaf8f3] px-4 py-3 text-sm font-bold text-[#17634f]">
+                  {"\uD83C\uDF81 \u0418\u043c\u0430\u0442\u0435 "}
+                  {expertData.free_analyses_remaining}
+                  {expertData.free_analyses_remaining === 1
+                    ? " \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u0435\u043d SONDI EXPERT \u0430\u043d\u0430\u043b\u0438\u0437"
+                    : " \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u043d\u0438 SONDI EXPERT \u0430\u043d\u0430\u043b\u0438\u0437\u0430"}
+                </div>
+              )}
               {!expertData.can_top_up && expertData.paid_balance_cents > 0 && (
                 <div className="mt-2 text-[11px] leading-4 text-[#87661c]">
                   Ново зареждане е възможно след изчерпване на текущия баланс.
@@ -1887,6 +1911,10 @@ export default function AccountPage() {
                   type="button"
                   disabled={Boolean(expertCheckoutTier)}
                   onClick={async () => {
+                    clarityTag("funnel_stage", "checkout_clicked");
+                    clarityTag("checkout_tier", tier);
+                    clarityEvent("expert_checkout_clicked");
+
                     setExpertCheckoutTier(tier);
                     setExpertError("");
 
@@ -1919,6 +1947,10 @@ export default function AccountPage() {
                             "Неуспешно стартиране на плащането."
                         );
                       }
+
+                      clarityTag("funnel_stage", "checkout_redirected");
+                      clarityTag("checkout_tier", tier);
+                      clarityEvent("expert_checkout_redirected");
 
                       window.location.href =
                         data.url;
