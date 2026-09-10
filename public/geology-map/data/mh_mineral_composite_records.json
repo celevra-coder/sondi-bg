@@ -1,0 +1,112 @@
+{
+  "records": [
+    {
+      "status": "MISSING",
+      "score": 0.475,
+      "reason": "fuzzy",
+      "mh_facility": "сондаж № 1ВКП+Каптирани естествени извори",
+      "mh_deposit": "",
+      "mh_settlement": "Благоевград",
+      "mh_municipality": "Благоевград",
+      "mh_district": "Благоевград",
+      "mh_documents": [
+        {
+          "source_type": "balneology",
+          "title": "Балнеологична оценка № 75 от 28.04.2026 г.",
+          "description": "за сондаж № 1ВКП+Каптирани естествени извори от находище „Благоевград“, гр. Благоевград, община Благоевград, област Благоевград",
+          "published": "04.05.2026",
+          "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=2"
+        }
+      ],
+      "current_facility": "Каптиран естествен извор № К-14",
+      "current_deposit": "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+      "current_settlement": "Велинград",
+      "current_municipality": "Велинград",
+      "current_district": "Пазарджик",
+      "current_category": "Каптаж/естествен извор",
+      "current_coordinates": [
+        23.9861944,
+        42.0288611
+      ],
+      "research_batch": 1,
+      "research_status": "COMPOSITE_GROUP",
+      "research_note": "Combined record: ?????? ?1??? + ????????? ?????????? ??????; not one physical point."
+    },
+    {
+      "status": "MISSING",
+      "score": 0.427,
+      "reason": "fuzzy",
+      "mh_facility": "КЕИ № 13 и 13а",
+      "mh_deposit": "",
+      "mh_settlement": "",
+      "mh_municipality": "Гърмен",
+      "mh_district": "Благоевград",
+      "mh_documents": [
+        {
+          "source_type": "balneology",
+          "title": "Балнеологична оценка № 243/01.06.2023 г.",
+          "description": "„КЕИ № 13 и 13а“ - находище № 53 на минерална вода „Огняново-Гърмен“ с. Марчево и с. Огняново, община Гърмен, област Благоевград",
+          "published": "08.06.2023",
+          "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=13"
+        }
+      ],
+      "current_facility": "КЕИ № 1 \"Стар каптаж\"",
+      "current_deposit": "Велинград-Чепино”, гр. Велинград, община Велинград, област Пазарджик",
+      "current_settlement": "Велинград",
+      "current_municipality": "Велинград",
+      "current_district": "Пазарджик",
+      "current_category": "Каптаж/естествен извор",
+      "current_coordinates": [
+        23.9728889,
+        41.9954722
+      ],
+      "research_batch": 2,
+      "research_status": "COMPOSITE_GROUP",
+      "research_note": "Combined record representing two physical facilities: ??? ?13 and ??? ?13?.",
+      "physical_children_expected": [
+        {
+          "facility": "??? ?13",
+          "coordinate_status": "TO_RESEARCH"
+        },
+        {
+          "facility": "??? ?13?",
+          "coordinate_status": "TO_RESEARCH"
+        }
+      ]
+    },
+    {
+      "status": "MISSING",
+      "score": 0.477,
+      "reason": "fuzzy",
+      "mh_facility": "Некаптирани естествени извори \"Парилките",
+      "mh_deposit": "МАрикостиново",
+      "mh_settlement": "Марикостиново",
+      "mh_municipality": "Петрич",
+      "mh_district": "Благоевград",
+      "mh_documents": [
+        {
+          "source_type": "balneology",
+          "title": "Балнеологична оценка № 57 от 09.06.2017 г.",
+          "description": "Некаптирани естествени извори „Парилките“ - находище на минерална вода „МАрикостиново“, с. Марикостиново, община Петрич, област Благоевград",
+          "published": "19.06.2019",
+          "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=30"
+        }
+      ],
+      "current_facility": "Каптаж \"Парилките\"",
+      "current_deposit": "Хисаря, гр. Хисаря, община Хисаря, област Пловдив",
+      "current_settlement": "Хисаря",
+      "current_municipality": "Хисаря",
+      "current_district": "Пловдив",
+      "current_category": "Каптаж/естествен извор",
+      "current_coordinates": [
+        24.7144722,
+        42.50225
+      ],
+      "research_batch": 3,
+      "research_status": "COMPOSITE_GROUP",
+      "research_note": "??????????? ?????????? ?????? ????????? - plural spring group, not one physical point.",
+      "physical_children_status": "TO_RESEARCH",
+      "mapping_rule": "Do not map as one precise facility point."
+    }
+  ]
+}

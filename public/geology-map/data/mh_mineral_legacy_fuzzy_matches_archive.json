@@ -1,0 +1,1719 @@
+﻿{
+    "schema_version":  1,
+    "created_at":  "2026-09-10T19:52:33",
+    "source_file":  "public/geology-map/data/mh_mineral_gap_candidates.json",
+    "record_count":  190,
+    "purpose":  "Archive of obsolete fuzzy current_facility/current_deposit comparison output. Runtime/code usage was independently verified as zero before cleanup. These fields are preserved only for audit provenance and removed from active candidate records.",
+    "records":  [
+                    {
+                        "candidate_index":  1,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "КЕИ \"Трънска Банкя\"",
+                        "enriched_current_deposit_name":  "Трънска Банкя",
+                        "legacy_current_deposit":  "Белчински бани",
+                        "legacy_current_facility":  "КИ \"Белчински бани\""
+                    },
+                    {
+                        "candidate_index":  2,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "",
+                        "mh_facility":  "КЕИ \"Трънска Банкя",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "КЕИ \"Бански каптаж\""
+                    },
+                    {
+                        "candidate_index":  3,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Долна баня",
+                        "mh_facility":  "Каптиран естествен извор \"Долна баня",
+                        "enriched_current_deposit_name":  "Долна баня",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-6 \"Вельова баня\""
+                    },
+                    {
+                        "candidate_index":  4,
+                        "research_status":  "UNRESOLVED",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Р-184х",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Ресен",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  5,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Казичене-Равно поле",
+                        "mh_facility":  "Сондаж № С-46хг \"Равно поле",
+                        "enriched_current_deposit_name":  "Казичене-Равно поле",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № С -46хг"
+                    },
+                    {
+                        "candidate_index":  6,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Кюстендил",
+                        "mh_facility":  "Сондаж № БУ",
+                        "enriched_current_deposit_name":  "Кюстендил",
+                        "legacy_current_deposit":  "Софийска котловина",
+                        "legacy_current_facility":  "Сондаж № 20"
+                    },
+                    {
+                        "candidate_index":  7,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Белчин-Верила",
+                        "mh_facility":  "Сондаж № ПС - 1хг",
+                        "enriched_current_deposit_name":  "Белчин-Верила",
+                        "legacy_current_deposit":  "Белчински бани",
+                        "legacy_current_facility":  "Сондаж № 1 ХГ"
+                    },
+                    {
+                        "candidate_index":  8,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Габровница - Еленов дол",
+                        "mh_facility":  "Каптиран естествен извор № 1 \"Банята",
+                        "enriched_current_deposit_name":  "Габровница - Еленов дол",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-6 \"Вельова баня\""
+                    },
+                    {
+                        "candidate_index":  9,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Добринище",
+                        "mh_facility":  "КЕИ № 2 \"Банята",
+                        "enriched_current_deposit_name":  "Добринище",
+                        "legacy_current_deposit":  "София - Железница",
+                        "legacy_current_facility":  "КИ № 2 \"Баня\""
+                    },
+                    {
+                        "candidate_index":  10,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Добринище",
+                        "mh_facility":  "КЕИ № 4а \"Сребърният извор",
+                        "enriched_current_deposit_name":  "Добринище",
+                        "legacy_current_deposit":  "София - Железница",
+                        "legacy_current_facility":  "КИ № 1 \"Горен\""
+                    },
+                    {
+                        "candidate_index":  11,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Добринище",
+                        "mh_facility":  "Каптиран естествен извор \"Тепавицата",
+                        "enriched_current_deposit_name":  "Добринище",
+                        "legacy_current_deposit":  "Пчелински бани”, с. Пчелин, община Костенец, област София",
+                        "legacy_current_facility":  "Каптиран естествен извор"
+                    },
+                    {
+                        "candidate_index":  12,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Добринище",
+                        "mh_facility":  "Сондаж № 2 \"Банята",
+                        "enriched_current_deposit_name":  "Добринище",
+                        "legacy_current_deposit":  "\"Боаза\" - област Търговище- №90",
+                        "legacy_current_facility":  "Сондаж № 1                            Боаза"
+                    },
+                    {
+                        "candidate_index":  13,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Добринище",
+                        "mh_facility":  "Сондаж № 3 \"Плажа",
+                        "enriched_current_deposit_name":  "Добринище",
+                        "legacy_current_deposit":  "София - Княжево",
+                        "legacy_current_facility":  "Сондаж № 3 ВКП"
+                    },
+                    {
+                        "candidate_index":  14,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "сондаж № 15Бхг",
+                        "enriched_current_deposit_name":  "Благоевград",
+                        "legacy_current_deposit":  "Софийска котловина",
+                        "legacy_current_facility":  "Сондаж № 1хг"
+                    },
+                    {
+                        "candidate_index":  15,
+                        "research_status":  "COMPOSITE_GROUP",
+                        "mh_deposit":  "",
+                        "mh_facility":  "сондаж № 1ВКП+Каптирани естествени извори",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-14"
+                    },
+                    {
+                        "candidate_index":  16,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Баничан",
+                        "mh_facility":  "КЕИ \"Топлица",
+                        "enriched_current_deposit_name":  "Баничан",
+                        "legacy_current_deposit":  "Невестино-Топилата” №48",
+                        "legacy_current_facility":  "КЕИ \"Топилата\""
+                    },
+                    {
+                        "candidate_index":  17,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Баничан",
+                        "mh_facility":  "Каптиран естествен извор \"Топлица",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Пчелински бани”, с. Пчелин, община Костенец, област София",
+                        "legacy_current_facility":  "Каптиран естествен извор"
+                    },
+                    {
+                        "candidate_index":  18,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Баничан",
+                        "mh_facility":  "сондаж № 273",
+                        "enriched_current_deposit_name":  "Баничан",
+                        "legacy_current_deposit":  "Харманли”, гр. Харманли, община Харманли, област Хасково",
+                        "legacy_current_facility":  "Сондаж № 2"
+                    },
+                    {
+                        "candidate_index":  19,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "КЕИ \"Миро-женско",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "КИ Шипково"
+                    },
+                    {
+                        "candidate_index":  20,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "КЕИ \"Миро-мъжко",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "КИ Шипково"
+                    },
+                    {
+                        "candidate_index":  21,
+                        "research_status":  "COMPOSITE_GROUP",
+                        "mh_deposit":  "",
+                        "mh_facility":  "КЕИ № 13 и 13а",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Велинград-Чепино”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "КЕИ № 1 \"Стар каптаж\""
+                    },
+                    {
+                        "candidate_index":  22,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж \"АПК",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Михалково, с. Михалково, община Девин, област Смолян",
+                        "legacy_current_facility":  "Сондаж  №3 КГ"
+                    },
+                    {
+                        "candidate_index":  23,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж \"Вила Шамов",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 1"
+                    },
+                    {
+                        "candidate_index":  24,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж \"Никола Ушев",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж  \"Банкя Палас\""
+                    },
+                    {
+                        "candidate_index":  25,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № 1ВКП",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж № 1 ВКП"
+                    },
+                    {
+                        "candidate_index":  26,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № 4ВКП",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Михалково, с. Михалково, община Девин, област Смолян",
+                        "legacy_current_facility":  "Сондаж №1 ВКП"
+                    },
+                    {
+                        "candidate_index":  27,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "КЕИ \"Басейн в средна баня",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "КЕИ № К-8 \"Вельова баня\""
+                    },
+                    {
+                        "candidate_index":  28,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "КЕИ № 17 \"Тасков гьол",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Велинград-Чепино”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "КЕИ № 1 \"Стар каптаж\""
+                    },
+                    {
+                        "candidate_index":  29,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж \"Делта-Бисер",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 1"
+                    },
+                    {
+                        "candidate_index":  30,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж \"Дом Терзиев",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Павел баня, с. Павел баня, община Павел баня, област Стара Загора",
+                        "legacy_current_facility":  "Сондаж МС 1"
+                    },
+                    {
+                        "candidate_index":  31,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж \"Петралийски",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж  \"Банкя Палас\""
+                    },
+                    {
+                        "candidate_index":  32,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № 2ВКП",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "София - Княжево",
+                        "legacy_current_facility":  "Сондаж № 2 ВКП"
+                    },
+                    {
+                        "candidate_index":  33,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № 3ВКП",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "София - Княжево",
+                        "legacy_current_facility":  "Сондаж № 3 ВКП"
+                    },
+                    {
+                        "candidate_index":  34,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Огняново-Гърмен",
+                        "mh_facility":  "Сондаж Виктория 2",
+                        "enriched_current_deposit_name":  "Огняново-Гърмен",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № Р - 2"
+                    },
+                    {
+                        "candidate_index":  35,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № 1ВКН",
+                        "enriched_current_deposit_name":  "Рупите-м. Кожух",
+                        "legacy_current_deposit":  "София - Княжево",
+                        "legacy_current_facility":  "Сондаж № 1 ВКП"
+                    },
+                    {
+                        "candidate_index":  36,
+                        "research_status":  "COMPOSITE_GROUP",
+                        "mh_deposit":  "МАрикостиново",
+                        "mh_facility":  "Некаптирани естествени извори \"Парилките",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Хисаря, гр. Хисаря, община Хисаря, област Пловдив",
+                        "legacy_current_facility":  "Каптаж \"Парилките\""
+                    },
+                    {
+                        "candidate_index":  37,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Марикостиново",
+                        "mh_facility":  "Каптиран естествен извор \"Бочвата",
+                        "enriched_current_deposit_name":  "Марикостиново",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-6 \"Вельова баня\""
+                    },
+                    {
+                        "candidate_index":  38,
+                        "research_status":  "UNRESOLVED",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Извор №7",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Чирпан”, гр. Чирпан, община Чирпан, област Стара Загора",
+                        "legacy_current_facility":  "Сондаж №7"
+                    },
+                    {
+                        "candidate_index":  39,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Гулийна баня",
+                        "mh_facility":  "Каптиран естествен извор № 2 \"Благата вода",
+                        "enriched_current_deposit_name":  "Гулийна баня",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-14"
+                    },
+                    {
+                        "candidate_index":  40,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Гулийна баня",
+                        "mh_facility":  "Каптиран естествен извор № 4",
+                        "enriched_current_deposit_name":  "Гулийна баня",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-14"
+                    },
+                    {
+                        "candidate_index":  41,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Гулийна баня",
+                        "mh_facility":  "Каптиран естествен извор № 5",
+                        "enriched_current_deposit_name":  "Гулийна баня",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-14"
+                    },
+                    {
+                        "candidate_index":  42,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Гулийна баня",
+                        "mh_facility":  "Каптиран естествен извор № 6",
+                        "enriched_current_deposit_name":  "Гулийна баня",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-16"
+                    },
+                    {
+                        "candidate_index":  43,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Гулийна баня",
+                        "mh_facility":  "Каптиран естествен извор №7",
+                        "enriched_current_deposit_name":  "Гулийна баня",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-14"
+                    },
+                    {
+                        "candidate_index":  44,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Елешница - м. Св. Варвара - р. Места",
+                        "mh_facility":  "Извор \"Топилата",
+                        "enriched_current_deposit_name":  "Елешница - м. Св. Варвара - р. Места",
+                        "legacy_current_deposit":  "Невестино-Топилата” №48",
+                        "legacy_current_facility":  "Извор 1 \"Топилата\""
+                    },
+                    {
+                        "candidate_index":  45,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Катунци",
+                        "mh_facility":  "сондаж № 235хг",
+                        "enriched_current_deposit_name":  "Катунци",
+                        "legacy_current_deposit":  "Катунци” №33",
+                        "legacy_current_facility":  "Сондаж 236хг"
+                    },
+                    {
+                        "candidate_index":  46,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Левуново",
+                        "mh_facility":  "Сондаж № МС-3",
+                        "enriched_current_deposit_name":  "Левуново",
+                        "legacy_current_deposit":  "Вършец",
+                        "legacy_current_facility":  "Сондаж № 3 (МС 3)"
+                    },
+                    {
+                        "candidate_index":  47,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Сандански",
+                        "mh_facility":  "Каптиран естествен извор № 8",
+                        "enriched_current_deposit_name":  "Сандански",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-18"
+                    },
+                    {
+                        "candidate_index":  48,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № Сн-7 \"- находдище на минерална вода\"",
+                        "enriched_current_deposit_name":  "Хотово",
+                        "legacy_current_deposit":  "„Хотово”",
+                        "legacy_current_facility":  "Сондаж Сн-7"
+                    },
+                    {
+                        "candidate_index":  49,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Якоруда",
+                        "mh_facility":  "Сондаж № 10",
+                        "enriched_current_deposit_name":  "Якоруда",
+                        "legacy_current_deposit":  "„Рударци” №62",
+                        "legacy_current_facility":  "Сондаж №1"
+                    },
+                    {
+                        "candidate_index":  50,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Бургаски минерални бани",
+                        "mh_facility":  "Сондаж 3 Б-165",
+                        "enriched_current_deposit_name":  "Бургаски минерални бани",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № Р - 1"
+                    },
+                    {
+                        "candidate_index":  51,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Ветрен",
+                        "mh_facility":  "Сондаж № Б-191",
+                        "enriched_current_deposit_name":  "Бургаски минерални бани",
+                        "legacy_current_deposit":  "Павел баня, с. Павел баня, община Павел баня, област Стара Загора",
+                        "legacy_current_facility":  "Сондаж № Х-19"
+                    },
+                    {
+                        "candidate_index":  52,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Съдиево",
+                        "mh_facility":  "сондаж № Б-20",
+                        "enriched_current_deposit_name":  "Съдиево",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 2"
+                    },
+                    {
+                        "candidate_index":  53,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Съдиево",
+                        "mh_facility":  "сондаж № Б-88",
+                        "enriched_current_deposit_name":  "Съдиево",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 28"
+                    },
+                    {
+                        "candidate_index":  54,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Бургаски минерални бани",
+                        "mh_facility":  "сондаж № Б-165",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № Р - 1"
+                    },
+                    {
+                        "candidate_index":  55,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Бургаски минерални бани",
+                        "mh_facility":  "сондаж № Б-191",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Павел баня, с. Павел баня, община Павел баня, област Стара Загора",
+                        "legacy_current_facility":  "Сондаж № Х-19"
+                    },
+                    {
+                        "candidate_index":  56,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Рудник",
+                        "mh_facility":  "сондаж № Б-166",
+                        "enriched_current_deposit_name":  "Рудник",
+                        "legacy_current_deposit":  "Бързия",
+                        "legacy_current_facility":  "Сондаж № 1"
+                    },
+                    {
+                        "candidate_index":  57,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № Б-81 \"- находищя на минерална вода\"",
+                        "enriched_current_deposit_name":  "Изворище",
+                        "legacy_current_deposit":  "\"Бургаски минерални бани\"             община Бургас                № 13",
+                        "legacy_current_facility":  "Б-191              Бургаски минерални бани"
+                    },
+                    {
+                        "candidate_index":  58,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Изворище",
+                        "mh_facility":  "Сондаж № Б-108",
+                        "enriched_current_deposit_name":  "Изворище",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 1"
+                    },
+                    {
+                        "candidate_index":  59,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № Б-166",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 1"
+                    },
+                    {
+                        "candidate_index":  60,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № Б-53",
+                        "enriched_current_deposit_name":  "Каменар",
+                        "legacy_current_deposit":  "Павел баня, с. Павел баня, община Павел баня, област Стара Загора",
+                        "legacy_current_facility":  "Сондаж № 3"
+                    },
+                    {
+                        "candidate_index":  61,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Медово",
+                        "mh_facility":  "Сондаж № Б-72",
+                        "enriched_current_deposit_name":  "Медово",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 2"
+                    },
+                    {
+                        "candidate_index":  62,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Медово",
+                        "mh_facility":  "Сондаж № Б-73",
+                        "enriched_current_deposit_name":  "Медово",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 36"
+                    },
+                    {
+                        "candidate_index":  63,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № Р-113 \"Каварна\"",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № С -11в"
+                    },
+                    {
+                        "candidate_index":  64,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № Р-12х \"Албена\"",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Крушуна",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  65,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № Р-13х \"Албена\"",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Крушуна",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  66,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № Р-149х \"Албена\"",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Крушуна",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  67,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № Р-177х \"-\"",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Крушуна",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  68,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Р-106х \"Варна",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Ресен",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  69,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Р-2х",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Обединение",
+                        "legacy_current_facility":  "Сондаж № Р - 2хг"
+                    },
+                    {
+                        "candidate_index":  70,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Р-6х \"Св. Св. Константин и Елена",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "\"МВВХ\" №100 - участък  \"Варна\"",
+                        "legacy_current_facility":  "Р-6х ,,Св. Св. Константин и Елена\"                      ПИ 10135.2569.4"
+                    },
+                    {
+                        "candidate_index":  71,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Р-83х",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Ресен",
+                        "legacy_current_facility":  "Сондаж № Р - 3хг"
+                    },
+                    {
+                        "candidate_index":  72,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Р-9х\"",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Ресен",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  73,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Ц-8 \"Кранево",
+                        "enriched_current_deposit_name":  "Варненски басейн - еоценски водоносен хоризонт",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж № 1хг \"Иваняне\""
+                    },
+                    {
+                        "candidate_index":  74,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район Североизточна България",
+                        "mh_facility":  "Сондаж № Р-11х \"Златни пясъци",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж № 1хг \"Иваняне\""
+                    },
+                    {
+                        "candidate_index":  75,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район Североизточна България",
+                        "mh_facility":  "Сондаж № Р-70 \"Близнаци",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "\"Боаза\" - област Търговище- №90",
+                        "legacy_current_facility":  "Сондаж № 1                            Боаза"
+                    },
+                    {
+                        "candidate_index":  76,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "сондаж № Р-6 \"Царевци",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Свищов",
+                        "legacy_current_facility":  "Сондаж № Р - 6хг"
+                    },
+                    {
+                        "candidate_index":  77,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № Р-1х \"Варна\"",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Ресен",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  78,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Варненски басейн",
+                        "mh_facility":  "сондаж № Вн-48 \"Гранд Хотел Варна",
+                        "enriched_current_deposit_name":  "Варненски басейн - еоценски водоносен хоризонт",
+                        "legacy_current_deposit":  "\"EВХ\" - участък  Варна - №101",
+                        "legacy_current_facility":  "Вн-48 ,,Варна\"                             /Гранд хотел Варна/             ПИ 10135.2569.130"
+                    },
+                    {
+                        "candidate_index":  79,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Варненски басейн",
+                        "mh_facility":  "сондаж № С-5 \"Аспарухово",
+                        "enriched_current_deposit_name":  "Варненски басейн - еоценски водоносен хоризонт",
+                        "legacy_current_deposit":  "Софийска котловина",
+                        "legacy_current_facility":  "Сондаж № ТК - ПС Маслово"
+                    },
+                    {
+                        "candidate_index":  80,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Варненски басейн",
+                        "mh_facility":  "сондаж № С-5Бх",
+                        "enriched_current_deposit_name":  "Варненски басейн - еоценски водоносен хоризонт",
+                        "legacy_current_deposit":  "Варненски басейн - еоценски водоносен хоризонт",
+                        "legacy_current_facility":  "С-2Бх, к.к. \"Златни пясъци\", хотел \"Берлин\", ПИ 10135.513.573"
+                    },
+                    {
+                        "candidate_index":  81,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Варненски басейн",
+                        "mh_facility":  "сондаж № С-5х \"Ф-ка Христо Ботев",
+                        "enriched_current_deposit_name":  "Варненски басейн - еоценски водоносен хоризонт",
+                        "legacy_current_deposit":  "\"МВВХ\" - участък  Варна - №101",
+                        "legacy_current_facility":  "С-5х ф-ка           ,,Христо Ботев\"       ПИ 10135.1.1691"
+                    },
+                    {
+                        "candidate_index":  82,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Варненски басейн",
+                        "mh_facility":  "сондаж № С-6х \"Тополи",
+                        "enriched_current_deposit_name":  "Варненски басейн - еоценски водоносен хоризонт",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № С -46хг"
+                    },
+                    {
+                        "candidate_index":  83,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "Сондаж № Р-1 Аспарухово",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Чифлик",
+                        "legacy_current_facility":  "Сондаж № Р 1-хг"
+                    },
+                    {
+                        "candidate_index":  84,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "Сондаж № Р-134х Св. Св. Константин и Елена",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "\"МВВХ\" №100 - участък  \"Варна\"",
+                        "legacy_current_facility":  "Р-134х ,,Св. Св. Константин и Елена\"           ПИ 10135.2569.164"
+                    },
+                    {
+                        "candidate_index":  85,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "Сондаж № Р-161х Варна",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Ресен",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  86,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "Сондаж № Р-3х Златни пясъци",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Ресен",
+                        "legacy_current_facility":  "Сондаж № Р - 3хг"
+                    },
+                    {
+                        "candidate_index":  87,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "Сондаж № Р-70х Златни пясъци",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Овча могила",
+                        "legacy_current_facility":  "Сондаж № Р - 2хг"
+                    },
+                    {
+                        "candidate_index":  88,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "сондаж № Р-107х \"Варна",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Ресен",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  89,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "сондаж № Р-110х \"Варна",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Ресен",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  90,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "сондаж № Р-209х \"ИСУ ИНВЕСТ-Варна",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "\"МВВХ\" №100 - участък Варна",
+                        "legacy_current_facility":  "Р-209х ,,ИСУ – Инвест – Варна“   ПИ 10135.3514.813"
+                    },
+                    {
+                        "candidate_index":  91,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "сондаж № Р-39х \"Варна",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Ресен",
+                        "legacy_current_facility":  "Сондаж № Р - 3хг"
+                    },
+                    {
+                        "candidate_index":  92,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "сондаж № Р-66х \"Св. Св. Константи и Елена",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "\"МВВХ\" №100 - участък  \"Варна\"",
+                        "legacy_current_facility":  "Р-6х ,,Св. Св. Константин и Елена\"                      ПИ 10135.2569.4"
+                    },
+                    {
+                        "candidate_index":  93,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "сондаж № Р-68х \"Златни пясъци",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Свищов",
+                        "legacy_current_facility":  "Сондаж № Р - 6хг"
+                    },
+                    {
+                        "candidate_index":  94,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "сондаж № Р-96х \"Варна",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Свищов",
+                        "legacy_current_facility":  "Сондаж № Р - 6хг"
+                    },
+                    {
+                        "candidate_index":  95,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Провадия",
+                        "mh_facility":  "Сондаж \"43\"",
+                        "enriched_current_deposit_name":  "Провадия",
+                        "legacy_current_deposit":  "Девин”, гр. Девин, община Девин\", област Смолян",
+                        "legacy_current_facility":  "Сондаж 3"
+                    },
+                    {
+                        "candidate_index":  96,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Провадия",
+                        "mh_facility":  "сондаж № 43 \"Ерека",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "№ 59 ,,Провадия\"",
+                        "legacy_current_facility":  "С-43                       \"Ерека\"              ПИ 58503.171.339"
+                    },
+                    {
+                        "candidate_index":  97,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Р-113",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № Р - 1"
+                    },
+                    {
+                        "candidate_index":  98,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № C-29",
+                        "enriched_current_deposit_name":  "Варненски басейн - еоценски водоносен хоризонт",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № Р - 2"
+                    },
+                    {
+                        "candidate_index":  99,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Тх-15х",
+                        "enriched_current_deposit_name":  "Варненски басейн - еоценски водоносен хоризонт",
+                        "legacy_current_deposit":  "Ресен",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  100,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "сондаж Вн-35х Кранево",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "\"МВВХ\" №100 - участък Балчик",
+                        "legacy_current_facility":  "Вн-35х               Кранево          ПИ 39459.25.509"
+                    },
+                    {
+                        "candidate_index":  101,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "Сондаж № Вн-45 Кранево",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Вонеща вода",
+                        "legacy_current_facility":  "Сондаж № Л 51 А"
+                    },
+                    {
+                        "candidate_index":  102,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № Вн-35х Кранево \"- от Район\"",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "\"МВВХ\" №100 - участък Балчик",
+                        "legacy_current_facility":  "Вн-35х               Кранево          ПИ 39459.25.509"
+                    },
+                    {
+                        "candidate_index":  103,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Вн - 39 Каварна",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Снондаж № 9 \"Кентавър\""
+                    },
+                    {
+                        "candidate_index":  104,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Р-33а \"Тузлата - Бялата лагуна",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "\"МВВХ\" №100 - участък Каварна",
+                        "legacy_current_facility":  "Р-33а \"Тузлата - Бялата лагуна\"     ПИ 72693.154.9"
+                    },
+                    {
+                        "candidate_index":  105,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "сондаж № Р-Белгун",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Овча могила",
+                        "legacy_current_facility":  "Сондаж № Р - 2хг"
+                    },
+                    {
+                        "candidate_index":  106,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Североизточна България",
+                        "mh_facility":  "сондаж № Р-Селце",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Замфирово",
+                        "legacy_current_facility":  "Сондаж № Р-4"
+                    },
+                    {
+                        "candidate_index":  107,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Р-178х",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Ресен",
+                        "legacy_current_facility":  "Сондаж № Р - 1хг"
+                    },
+                    {
+                        "candidate_index":  108,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Кюстендил",
+                        "mh_facility":  "КЕИ \"Стар каптаж\"",
+                        "enriched_current_deposit_name":  "Кюстендил",
+                        "legacy_current_deposit":  "Велинград-Чепино”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "КЕИ № 1 \"Стар каптаж\""
+                    },
+                    {
+                        "candidate_index":  109,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Кюстендил",
+                        "mh_facility":  "Каптиран естествен извор \"Стар каптаж",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Пчелински бани”, с. Пчелин, община Костенец, област София",
+                        "legacy_current_facility":  "Каптиран естествен извор"
+                    },
+                    {
+                        "candidate_index":  110,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Невестино-Барището",
+                        "mh_facility":  "Сондаж № 1хг - Барището",
+                        "enriched_current_deposit_name":  "Невестино-Барището",
+                        "legacy_current_deposit":  "Невестино-Барището” №47",
+                        "legacy_current_facility":  "Сондаж №1хг"
+                    },
+                    {
+                        "candidate_index":  111,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Сапарева баня",
+                        "mh_facility":  "Каптиран естествен извор \"Галерията",
+                        "enriched_current_deposit_name":  "Сапарева баня",
+                        "legacy_current_deposit":  "Пчелински бани”, с. Пчелин, община Костенец, област София",
+                        "legacy_current_facility":  "Каптиран естествен извор"
+                    },
+                    {
+                        "candidate_index":  112,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Белово",
+                        "mh_facility":  "Каптиран естествен извор \"Топлата вода - закрит",
+                        "enriched_current_deposit_name":  "Белово",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-14"
+                    },
+                    {
+                        "candidate_index":  113,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Велинград-Каменица",
+                        "mh_facility":  "Сондаж № 5 \"Сярна Баня",
+                        "enriched_current_deposit_name":  "Велинград-Каменица",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Сондаж № 7ВКП \"Кремъчна баня\""
+                    },
+                    {
+                        "candidate_index":  114,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Велинград - Лъджене",
+                        "mh_facility":  "каптирани естествени извори № К-28",
+                        "enriched_current_deposit_name":  "Велинград-Лъджене",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-18"
+                    },
+                    {
+                        "candidate_index":  115,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Велинград - Лъджене",
+                        "mh_facility":  "каптирани естествени извори № К-29",
+                        "enriched_current_deposit_name":  "Велинград-Лъджене",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-19"
+                    },
+                    {
+                        "candidate_index":  116,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Велинград-Каменица",
+                        "mh_facility":  "КЕИ \"Власа",
+                        "enriched_current_deposit_name":  "Велинград-Каменица",
+                        "legacy_current_deposit":  "Невестино-Топилата” №48",
+                        "legacy_current_facility":  "КЕИ \"Топилата\""
+                    },
+                    {
+                        "candidate_index":  117,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Велинград-Каменица",
+                        "mh_facility":  "КЕИ № 7 \"Сярна баня",
+                        "enriched_current_deposit_name":  "Велинград-Каменица",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "КЕИ № К-8 \"Вельова баня\""
+                    },
+                    {
+                        "candidate_index":  118,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Велинград-Каменица",
+                        "mh_facility":  "Каптиран естествен извор № 7 \"Сярна баня",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-28 \"Кремъчна баня\""
+                    },
+                    {
+                        "candidate_index":  119,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Велинград-Каменица",
+                        "mh_facility":  "сондаж № 3 \"Мизинка",
+                        "enriched_current_deposit_name":  "Велинград-Каменица",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Сондаж № 8КГ \"Топилата\""
+                    },
+                    {
+                        "candidate_index":  120,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Велинград-Каменица",
+                        "mh_facility":  "сондаж № 4 \"Власа",
+                        "enriched_current_deposit_name":  "Велинград-Каменица",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Сондаж № 8КГ \"Топилата\""
+                    },
+                    {
+                        "candidate_index":  121,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Велинград-Каменица",
+                        "mh_facility":  "сондаж № 5 \"Сярна баня",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Сондаж № 7ВКП \"Кремъчна баня\""
+                    },
+                    {
+                        "candidate_index":  122,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Велинград-Лъджене",
+                        "mh_facility":  "Каптиран естествен извор № 7",
+                        "enriched_current_deposit_name":  "Велинград-Лъджене",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-14"
+                    },
+                    {
+                        "candidate_index":  123,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Драгиново",
+                        "mh_facility":  "Сондаж № 13",
+                        "enriched_current_deposit_name":  "Драгиново",
+                        "legacy_current_deposit":  "Харманли”, гр. Харманли, община Харманли, област Хасково",
+                        "legacy_current_facility":  "Сондаж № 3"
+                    },
+                    {
+                        "candidate_index":  124,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Баня",
+                        "mh_facility":  "Каптиран естествен извор \"Банчето",
+                        "enriched_current_deposit_name":  "Баня - Панагюрище",
+                        "legacy_current_deposit":  "Пчелински бани”, с. Пчелин, община Костенец, област София",
+                        "legacy_current_facility":  "Каптиран естествен извор"
+                    },
+                    {
+                        "candidate_index":  125,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Баня",
+                        "mh_facility":  "Сондаж № 2 \"Наклонен",
+                        "enriched_current_deposit_name":  "Баня - Панагюрище",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж № 1хг \"Иваняне\""
+                    },
+                    {
+                        "candidate_index":  126,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Ракитово",
+                        "mh_facility":  "Сондаж № 9а",
+                        "enriched_current_deposit_name":  "Ракитово",
+                        "legacy_current_deposit":  "„Рударци” №62",
+                        "legacy_current_facility":  "Сондаж №9"
+                    },
+                    {
+                        "candidate_index":  127,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Ракитово",
+                        "mh_facility":  "сондаж № 9а",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Бързия",
+                        "legacy_current_facility":  "Сондаж № 1"
+                    },
+                    {
+                        "candidate_index":  128,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Варвара",
+                        "mh_facility":  "КЕИ № 1 \"Варвара",
+                        "enriched_current_deposit_name":  "Варвара",
+                        "legacy_current_deposit":  "Велинград-Чепино”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "КЕИ № 1 \"Стар каптаж\""
+                    },
+                    {
+                        "candidate_index":  129,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Варвара",
+                        "mh_facility":  "Каптиран естествен извор № 2 \"Ветрен дол\"",
+                        "enriched_current_deposit_name":  "Варвара",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-28 \"Кремъчна баня\""
+                    },
+                    {
+                        "candidate_index":  130,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Брезник",
+                        "mh_facility":  "Каптиран естествен извор \"Галерията\"",
+                        "enriched_current_deposit_name":  "Брезник",
+                        "legacy_current_deposit":  "Пчелински бани”, с. Пчелин, община Костенец, област София",
+                        "legacy_current_facility":  "Каптиран естествен извор"
+                    },
+                    {
+                        "candidate_index":  131,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Рударци",
+                        "mh_facility":  "Сондаж № 8\"",
+                        "enriched_current_deposit_name":  "Рударци",
+                        "legacy_current_deposit":  "„Рударци” №62",
+                        "legacy_current_facility":  "Сондаж №1"
+                    },
+                    {
+                        "candidate_index":  132,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Рударци",
+                        "mh_facility":  "Сондаж № 9\"",
+                        "enriched_current_deposit_name":  "Рударци",
+                        "legacy_current_deposit":  "„Рударци” №62",
+                        "legacy_current_facility":  "Сондаж №1"
+                    },
+                    {
+                        "candidate_index":  133,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Долни Раковец",
+                        "mh_facility":  "Каптиран естествен извор № 1 \"Денена фабрика\"",
+                        "enriched_current_deposit_name":  "Долни Раковец",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-28 \"Кремъчна баня\""
+                    },
+                    {
+                        "candidate_index":  134,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Долни раковец",
+                        "mh_facility":  "КЕИ № 2 \"Бански каптаж",
+                        "enriched_current_deposit_name":  "Долни раковец",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "КЕИ \"Бански каптаж\""
+                    },
+                    {
+                        "candidate_index":  135,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Трънска Банкя",
+                        "mh_facility":  "Каптиран естествен извор \"Трънска Банкя",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-28 \"Кремъчна баня\""
+                    },
+                    {
+                        "candidate_index":  136,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Хисаря",
+                        "mh_facility":  "Каптиран естествен извор \"Русалка",
+                        "enriched_current_deposit_name":  "Хисаря",
+                        "legacy_current_deposit":  "Хисаря, гр. Хисаря, община Хисаря, област Пловдив",
+                        "legacy_current_facility":  "Каптаж \"Русалка\" (Кюпчез)"
+                    },
+                    {
+                        "candidate_index":  137,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Леново",
+                        "mh_facility":  "Сондаж № 16",
+                        "enriched_current_deposit_name":  "Леново",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 1"
+                    },
+                    {
+                        "candidate_index":  138,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Леново",
+                        "mh_facility":  "сондаж № 12",
+                        "enriched_current_deposit_name":  "Леново",
+                        "legacy_current_deposit":  "Софийска котловина",
+                        "legacy_current_facility":  "Сондаж № 12хг"
+                    },
+                    {
+                        "candidate_index":  139,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Нареченски минерални бани",
+                        "mh_facility":  "КЕИ \"Козлето\"",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Павел баня, с. Павел баня, община Павел баня, област Стара Загора",
+                        "legacy_current_facility":  "КЕИ \"Кадемлията\""
+                    },
+                    {
+                        "candidate_index":  140,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Нареченски минерални бани",
+                        "mh_facility":  "КЕИ \"Очно изворче\"",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "София -Горна баня",
+                        "legacy_current_facility":  "КИ \"Домуз дере\""
+                    },
+                    {
+                        "candidate_index":  141,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Нареченски минерални бани",
+                        "mh_facility":  "КЕИ \"Солено изворче\"",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "София -Горна баня",
+                        "legacy_current_facility":  "КИ \"Домуз дере\""
+                    },
+                    {
+                        "candidate_index":  142,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Нареченски минерални бани",
+                        "mh_facility":  "Каптиран естествен извор \"Бански каптаж\"",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "КЕИ \"Бански каптаж\""
+                    },
+                    {
+                        "candidate_index":  143,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Баня",
+                        "mh_facility":  "Каптиран естествен извор \"Централен каптаж",
+                        "enriched_current_deposit_name":  "Баня - Карлово",
+                        "legacy_current_deposit":  "Сандански” №66",
+                        "legacy_current_facility":  "КЕИ №8 (КЕИ №8 \"Централан каптаж\")"
+                    },
+                    {
+                        "candidate_index":  144,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Климент",
+                        "mh_facility":  "Сондаж № 12",
+                        "enriched_current_deposit_name":  "Климент",
+                        "legacy_current_deposit":  "Харманли”, гр. Харманли, община Харманли, област Хасково",
+                        "legacy_current_facility":  "Сондаж № 2"
+                    },
+                    {
+                        "candidate_index":  145,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Баня",
+                        "mh_facility":  "Каптиран естествен извор \"Женско банче\"",
+                        "enriched_current_deposit_name":  "Баня - Карлово",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-6 \"Вельова баня\""
+                    },
+                    {
+                        "candidate_index":  146,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Баня",
+                        "mh_facility":  "Каптиран естествен извор \"Мъжко банче\"",
+                        "enriched_current_deposit_name":  "Баня - Карлово",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-6 \"Вельова баня\""
+                    },
+                    {
+                        "candidate_index":  147,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Баня",
+                        "mh_facility":  "Сондаж \"Българска роза\"",
+                        "enriched_current_deposit_name":  "Баня - Карлово",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж  \"Банкя Палас\""
+                    },
+                    {
+                        "candidate_index":  148,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Баня",
+                        "mh_facility":  "Сондаж I\"",
+                        "enriched_current_deposit_name":  "Баня - Карлово",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж № 1ХГ"
+                    },
+                    {
+                        "candidate_index":  149,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Баня",
+                        "mh_facility":  "Сондаж А\"",
+                        "enriched_current_deposit_name":  "Баня - Карлово",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж № 1ХГ"
+                    },
+                    {
+                        "candidate_index":  150,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Баня",
+                        "mh_facility":  "Сондаж В\"",
+                        "enriched_current_deposit_name":  "Баня - Карлово",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж № 1 ВКП"
+                    },
+                    {
+                        "candidate_index":  151,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Драгойново",
+                        "mh_facility":  "Сондаж № 8",
+                        "enriched_current_deposit_name":  "Драгойново",
+                        "legacy_current_deposit":  "Харманли”, гр. Харманли, община Харманли, област Хасково",
+                        "legacy_current_facility":  "Сондаж № 2"
+                    },
+                    {
+                        "candidate_index":  152,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Драгойново",
+                        "mh_facility":  "сондаж № 9",
+                        "enriched_current_deposit_name":  "Драгойново",
+                        "legacy_current_deposit":  "Харманли”, гр. Харманли, община Харманли, област Хасково",
+                        "legacy_current_facility":  "Сондаж № 2"
+                    },
+                    {
+                        "candidate_index":  153,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Красново",
+                        "mh_facility":  "КЕИ \"Топлите извори",
+                        "enriched_current_deposit_name":  "Красново",
+                        "legacy_current_deposit":  "Невестино-Топилата” №48",
+                        "legacy_current_facility":  "КЕИ \"Топилата\""
+                    },
+                    {
+                        "candidate_index":  154,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Баня",
+                        "mh_facility":  "КЕИ № 2",
+                        "enriched_current_deposit_name":  "Баня - Нова Загора",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж № 2ХГ"
+                    },
+                    {
+                        "candidate_index":  155,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Сливенски минерални бани",
+                        "mh_facility":  "Сондаж № 2 \"Наклонен\"",
+                        "enriched_current_deposit_name":  "Сливенски минерални бани",
+                        "legacy_current_deposit":  "София - Княжево",
+                        "legacy_current_facility":  "Сондаж № 2 ВКП"
+                    },
+                    {
+                        "candidate_index":  156,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Сливенски минерални бани",
+                        "mh_facility":  "Сондаж № 22",
+                        "enriched_current_deposit_name":  "Сливенски минерални бани",
+                        "legacy_current_deposit":  "Софийска котловина",
+                        "legacy_current_facility":  "Сондаж № 20"
+                    },
+                    {
+                        "candidate_index":  157,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Шивачево",
+                        "mh_facility":  "КЕИ \"Хаджи Димитър",
+                        "enriched_current_deposit_name":  "Шивачево",
+                        "legacy_current_deposit":  "София - Панчарево",
+                        "legacy_current_facility":  "КИ \"Гъбата\""
+                    },
+                    {
+                        "candidate_index":  158,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Шивачево - м",
+                        "mh_facility":  "Каптиран естествен извор \"Хаджи Димитър",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-14"
+                    },
+                    {
+                        "candidate_index":  159,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Шивачево - м. Топлата вода",
+                        "mh_facility":  "КАптиран естествен извор \"Хаджи Димитър",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Пчелински бани”, с. Пчелин, община Костенец, област София",
+                        "legacy_current_facility":  "Каптиран естествен извор"
+                    },
+                    {
+                        "candidate_index":  160,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Ерма река",
+                        "mh_facility":  "Сондаж \"Ерма река",
+                        "enriched_current_deposit_name":  "Ерма река",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № Р - 1"
+                    },
+                    {
+                        "candidate_index":  161,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "сондаж ПЕС-1хг \"Яновска",
+                        "enriched_current_deposit_name":  "Мадан",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж № 1хг \"Иваняне\""
+                    },
+                    {
+                        "candidate_index":  162,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "сондаж ПЕС-1хг \"Рудозем",
+                        "enriched_current_deposit_name":  "Рудозем",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № С -1хг"
+                    },
+                    {
+                        "candidate_index":  163,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "София Княжево",
+                        "mh_facility":  "Сондаж 6хг",
+                        "enriched_current_deposit_name":  "София Княжево",
+                        "legacy_current_deposit":  "София - Надежда",
+                        "legacy_current_facility":  "Сондаж № 6ХГ"
+                    },
+                    {
+                        "candidate_index":  164,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "София – Горна баня",
+                        "mh_facility":  "каптиран естествен извор \"Домус дере",
+                        "enriched_current_deposit_name":  "София – Горна баня",
+                        "legacy_current_deposit":  "София -Горна баня",
+                        "legacy_current_facility":  "КИ \"Домуз дере\""
+                    },
+                    {
+                        "candidate_index":  165,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "София-Панчерево",
+                        "mh_facility":  "Каптиран естествен извор \"Тунела",
+                        "enriched_current_deposit_name":  "София-Панчерево",
+                        "legacy_current_deposit":  "София - Панчарево",
+                        "legacy_current_facility":  "КИ \"Тунела\""
+                    },
+                    {
+                        "candidate_index":  166,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "София-Панчерево",
+                        "mh_facility":  "Каптиран естествен извор\"Гъбата",
+                        "enriched_current_deposit_name":  "София-Панчерево",
+                        "legacy_current_deposit":  "София - Панчарево",
+                        "legacy_current_facility":  "КИ \"Гъбата\""
+                    },
+                    {
+                        "candidate_index":  167,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Долна баня",
+                        "mh_facility":  "сондаж № 13хг",
+                        "enriched_current_deposit_name":  "Долна баня",
+                        "legacy_current_deposit":  "Банкя",
+                        "legacy_current_facility":  "Сондаж № 1ХГ"
+                    },
+                    {
+                        "candidate_index":  168,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Долна баня – Бялата вода",
+                        "mh_facility":  "сондаж № 141",
+                        "enriched_current_deposit_name":  "Долна баня – Бялата вода",
+                        "legacy_current_deposit":  "Хисаря, гр. Хисаря, община Хисаря, област Пловдив",
+                        "legacy_current_facility":  "Сондаж № 1"
+                    },
+                    {
+                        "candidate_index":  169,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "сондаж № С-58хг Кривина",
+                        "enriched_current_deposit_name":  "Софийска котловина - участък София-изток",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № С -28хг"
+                    },
+                    {
+                        "candidate_index":  170,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Овощник",
+                        "mh_facility":  "сондаж № К-12",
+                        "enriched_current_deposit_name":  "Овощник",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № ВКП 1"
+                    },
+                    {
+                        "candidate_index":  171,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Овощник",
+                        "mh_facility":  "сондаж № К-14",
+                        "enriched_current_deposit_name":  "Овощник",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № ВКП 1"
+                    },
+                    {
+                        "candidate_index":  172,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Овощник",
+                        "mh_facility":  "сондаж № К-2",
+                        "enriched_current_deposit_name":  "Овощник",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 2"
+                    },
+                    {
+                        "candidate_index":  173,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Овощник",
+                        "mh_facility":  "сондаж № К-3",
+                        "enriched_current_deposit_name":  "Овощник",
+                        "legacy_current_deposit":  "Софийска котловина",
+                        "legacy_current_facility":  "Сондаж № ТК 3"
+                    },
+                    {
+                        "candidate_index":  174,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Овощник",
+                        "mh_facility":  "сондаж № К-5",
+                        "enriched_current_deposit_name":  "Овощник",
+                        "legacy_current_deposit":  "Вонеща вода",
+                        "legacy_current_facility":  "Сондаж № Л 51"
+                    },
+                    {
+                        "candidate_index":  175,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Овощник",
+                        "mh_facility":  "сондаж № К-6",
+                        "enriched_current_deposit_name":  "Овощник",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 36"
+                    },
+                    {
+                        "candidate_index":  176,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Ягода",
+                        "mh_facility":  "Сондаж № Сз-37",
+                        "enriched_current_deposit_name":  "Ягода",
+                        "legacy_current_deposit":  "Павел баня, с. Павел баня, община Павел баня, област Стара Загора",
+                        "legacy_current_facility":  "Сондаж № Сз-7"
+                    },
+                    {
+                        "candidate_index":  177,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № P-2",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № Р - 2"
+                    },
+                    {
+                        "candidate_index":  178,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж Р-2",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Казичене - Равно поле",
+                        "legacy_current_facility":  "Сондаж № Р - 2"
+                    },
+                    {
+                        "candidate_index":  179,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Хасковски минерални бани",
+                        "mh_facility":  "Сондаж № 2ВП",
+                        "enriched_current_deposit_name":  "Хасковски минерални бани",
+                        "legacy_current_deposit":  "Михалково, с. Михалково, община Девин, област Смолян",
+                        "legacy_current_facility":  "Сондаж №1 ВКП"
+                    },
+                    {
+                        "candidate_index":  180,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Хасковски минерални бани",
+                        "mh_facility":  "Каптиран естествен извор № 5",
+                        "enriched_current_deposit_name":  "Хасковски минерални бани",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-14"
+                    },
+                    {
+                        "candidate_index":  181,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Хасковски минерални бани",
+                        "mh_facility":  "Сондаж № 3ВП",
+                        "enriched_current_deposit_name":  "Хасковски минерални бани",
+                        "legacy_current_deposit":  "Павел баня, с. Павел баня, община Павел баня, област Стара Загора",
+                        "legacy_current_facility":  "Сондаж № 3"
+                    },
+                    {
+                        "candidate_index":  182,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Хасковски минерални бани",
+                        "mh_facility":  "Сондаж № 4ВП",
+                        "enriched_current_deposit_name":  "Хасковски минерални бани",
+                        "legacy_current_deposit":  "Михалково, с. Михалково, община Девин, област Смолян",
+                        "legacy_current_facility":  "Сондаж №1 ВКП"
+                    },
+                    {
+                        "candidate_index":  183,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Върбица",
+                        "mh_facility":  "Каптиран естествен извор \"Минерална вода",
+                        "enriched_current_deposit_name":  "Върбица",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-6 \"Вельова баня\""
+                    },
+                    {
+                        "candidate_index":  184,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Върбица",
+                        "mh_facility":  "Каптиран естествен извор \"Солената вода",
+                        "enriched_current_deposit_name":  "Върбица",
+                        "legacy_current_deposit":  "Велинград-Лъджене”, гр. Велинград, община Велинград, област Пазарджик",
+                        "legacy_current_facility":  "Каптиран естествен извор № К-6 \"Вельова баня\""
+                    },
+                    {
+                        "candidate_index":  185,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "Сондаж № Я-32а",
+                        "enriched_current_deposit_name":  "Стефан Караджово",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 2"
+                    },
+                    {
+                        "candidate_index":  186,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Стефан Караджово",
+                        "mh_facility":  "Сондаж Я-33",
+                        "enriched_current_deposit_name":  "Стефан Караджово",
+                        "legacy_current_deposit":  "Павел баня, с. Павел баня, община Павел баня, област Стара Загора",
+                        "legacy_current_facility":  "Сондаж № 3"
+                    },
+                    {
+                        "candidate_index":  187,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Стефан Караджово",
+                        "mh_facility":  "Сондаж № Я-32а",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Шипково",
+                        "legacy_current_facility":  "Сондаж № Л - 2"
+                    },
+                    {
+                        "candidate_index":  188,
+                        "research_status":  "DUPLICATE_MH",
+                        "mh_deposit":  "Стефан Караджово",
+                        "mh_facility":  "Сондаж № Я-33",
+                        "enriched_current_deposit_name":  "",
+                        "legacy_current_deposit":  "Софийска котловина",
+                        "legacy_current_facility":  "Сондаж № ТК 3"
+                    },
+                    {
+                        "candidate_index":  189,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "",
+                        "mh_facility":  "сондаж № Я-12",
+                        "enriched_current_deposit_name":  "Стралджа",
+                        "legacy_current_deposit":  "Харманли”, гр. Харманли, община Харманли, област Хасково",
+                        "legacy_current_facility":  "Сондаж № 2"
+                    },
+                    {
+                        "candidate_index":  190,
+                        "research_status":  "CONFIRMED_MISSING",
+                        "mh_deposit":  "Район",
+                        "mh_facility":  "Сондаж № Р-54х Каварна",
+                        "enriched_current_deposit_name":  "Североизточна България - малмоваланжски водоносен хоризонт",
+                        "legacy_current_deposit":  "Замфирово",
+                        "legacy_current_facility":  "Сондаж № Р-4"
+                    }
+                ]
+}
