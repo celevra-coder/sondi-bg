@@ -11114,6 +11114,26 @@ function renderMineralMarkers(){
            Копирай координатите
          </button>
 
+         <div
+           style="
+             margin:10px 0 8px;
+             padding:9px 10px;
+             background:#f8fafc;
+             border:1px solid #e2e8f0;
+             border-radius:8px;
+             font-size:12px;
+             line-height:1.45;
+             color:#334155;
+           "
+         >
+           <strong>\u0412 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u0438\u044f \u0430\u043d\u0430\u043b\u0438\u0437 \u0449\u0435 \u0432\u0438\u0434\u0438\u0442\u0435:</strong><br>
+           &bull; \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430 \u0438 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430, \u043a\u043e\u0433\u0430\u0442\u043e \u0441\u0430 \u043d\u0430\u043b\u0438\u0447\u043d\u0438;<br>
+           &bull; \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043c\u0438\u043d\u0435\u0440\u0430\u043b\u043d\u0438\u044f \u0432\u043e\u0434\u043e\u0438\u0437\u0442\u043e\u0447\u043d\u0438\u043a \u0438 \u0431\u043b\u0438\u0437\u043a\u0438\u0442\u0435 \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u044f;<br>
+           &bull; \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0438 \u0445\u0438\u0434\u0440\u043e\u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0441\u0440\u0435\u0434\u0430;<br>
+           &bull; \u0440\u0430\u0437\u043b\u043e\u043c\u0438 \u0438 \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0435\u043d \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442;<br>
+           &bull; \u0430\u043d\u0430\u043b\u0438\u0442\u0438\u0447\u043d\u043e \u043e\u0431\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u043d\u0430 \u0442\u043e\u0447\u043a\u0430\u0442\u0430.
+         </div>
+
          <a
            class="analysis-btn"
            href="${proUrl}"
@@ -17639,54 +17659,7 @@ async function analyzeLocation(
     "\u0412\u0438\u0436 \u043f\u043e\u0434\u0440\u043e\u0431\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437 \u0437\u0430 \u0442\u0430\u0437\u0438 \u0442\u043e\u0447\u043a\u0430 \u2192" +
     "</a>" +
 
-    "<a " +
-    "href=\"/expert-access?lat=" +
-    encodeURIComponent(
-      lat.toFixed(7)
-    ) +
-    "&lng=" +
-    encodeURIComponent(
-      lon.toFixed(7)
-    ) +
-    (
-      resolvedGroundwaterCode
-        ? "&gwb=" +
-          encodeURIComponent(
-            resolvedGroundwaterCode
-          )
-        : ""
-    ) +
-    (
-      resolvedGroundwaterCodes.length > 1
-        ? "&gwbs=" +
-          encodeURIComponent(
-            resolvedGroundwaterCodes.join(",")
-          )
-        : ""
-    ) +
-    (
-      label
-        ? "&location_label=" +
-          encodeURIComponent(label)
-        : ""
-    ) +
-    "&target=driller" +
-    "\" " +
-    "target=\"_top\" " +
-    "rel=\"noopener noreferrer\" " +
-    "style=\"" +
-      "display:block;" +
-      "margin-top:10px;" +
-      "text-align:center;" +
-      "padding:12px 14px;" +
-      "background:#267363;" +
-      "color:#fff;" +
-      "font-weight:700;" +
-      "text-decoration:none;" +
-      "border-radius:8px;" +
-    "\">" +
-    "\u0412\u0438\u0436 \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438\u0442\u0435 \u0437\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435 \u2192" +
-    "</a>" +
+
 
     "<a " +
     "href=\"/services\" " +
@@ -18916,6 +18889,86 @@ if (coordinateSearchMarker) {
     "'))\">" +
     "\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u0439 \u0442\u0430\u0437\u0438 \u043b\u043e\u043a\u0430\u0446\u0438\u044f" +
     "</button>" +
+
+    "<div style=\"display:grid;" +
+      "grid-template-columns:1fr 1fr;" +
+      "gap:7px;margin-top:7px\">" +
+
+      "<a " +
+      "href=\"/expert-access?lat=" +
+      encodeURIComponent(
+        latitude.toFixed(7)
+      ) +
+      "&lng=" +
+      encodeURIComponent(
+        longitude.toFixed(7)
+      ) +
+      "&analysis=mineral-area" +
+      (
+        label
+          ? "&location_label=" +
+            encodeURIComponent(label)
+          : ""
+      ) +
+      "\" target=\"_top\" " +
+      "rel=\"noopener noreferrer\" " +
+      "style=\"" +
+        "display:flex;" +
+        "align-items:center;" +
+        "justify-content:center;" +
+        "min-height:42px;" +
+        "padding:7px 6px;" +
+        "border:1px solid #177f98;" +
+        "border-radius:7px;" +
+        "background:#eef8fa;" +
+        "color:#176577;" +
+        "font-size:11.5px;" +
+        "font-weight:800;" +
+        "line-height:1.2;" +
+        "text-align:center;" +
+        "text-decoration:none;" +
+      "\">" +
+      "\u041c\u0438\u043d\u0435\u0440\u0430\u043b\u0435\u043d \u043f\u043e\u0442\u0435\u043d\u0446\u0438\u0430\u043b" +
+      "</a>" +
+
+      "<a " +
+      "href=\"/expert-access?lat=" +
+      encodeURIComponent(
+        latitude.toFixed(7)
+      ) +
+      "&lng=" +
+      encodeURIComponent(
+        longitude.toFixed(7)
+      ) +
+      "&target=driller" +
+      (
+        label
+          ? "&location_label=" +
+            encodeURIComponent(label)
+          : ""
+      ) +
+      "\" target=\"_top\" " +
+      "rel=\"noopener noreferrer\" " +
+      "style=\"" +
+        "display:flex;" +
+        "align-items:center;" +
+        "justify-content:center;" +
+        "min-height:42px;" +
+        "padding:7px 6px;" +
+        "border:1px solid #267363;" +
+        "border-radius:7px;" +
+        "background:#f1f8f6;" +
+        "color:#245f52;" +
+        "font-size:11.5px;" +
+        "font-weight:800;" +
+        "line-height:1.2;" +
+        "text-align:center;" +
+        "text-decoration:none;" +
+      "\">" +
+      "\u041f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438 \u0437\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435" +
+      "</a>" +
+
+    "</div>" +
     "</div>";
 
   coordinateSearchMarker

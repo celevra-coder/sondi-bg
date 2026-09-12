@@ -44,6 +44,39 @@ export type MineralWaterProfile = {
   sources: string[];
 };
 
+
+export type MineralAreaFacility =
+  MineralFacilityContext & {
+    distanceKm: number;
+  };
+
+export type MineralWaterAreaProfile = {
+  latitude: number;
+  longitude: number;
+
+  nearbyFacilities: MineralAreaFacility[];
+
+  within1Km: number;
+  within5Km: number;
+  within10Km: number;
+  within25Km: number;
+
+  nearestFacility:
+    | MineralAreaFacility
+    | null;
+
+  representedDeposits: string[];
+
+  contextualUnlocated:
+    MineralFacilityContext[];
+
+  temperatureMin: number | null;
+  temperatureMax: number | null;
+
+  depthMin: number | null;
+  depthMax: number | null;
+};
+
 let cache: Obj[] | null = null;
 
 function records(): Obj[] {
@@ -470,5 +503,160 @@ export function getMineralWaterProfile(
 
     sources:
       sourceNames(record),
+  };
+}
+
+
+function distanceKm(
+  lat1: number,
+  lon1: number,
+  lat2: number,
+  lon2: number
+) {
+  const toRad = (value: number) =>
+    value * Math.PI / 180;
+
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) *
+      Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) ** 2;
+
+  return (
+    6371 *
+    2 *
+    Math.atan2(
+      Math.sqrt(a),
+      Math.sqrt(1 - a)
+    )
+  );
+}
+
+export function getMineralWaterAreaProfile(
+  latitude: number,
+  longitude: number
+): MineralWaterAreaProfile {
+  const all = records();
+
+  const located =
+    all
+      .map(facilityContext)
+      .filter(
+        item =>
+          item.latitude !== null &&
+          item.longitude !== null
+      )
+      .map(item => ({
+        ...item,
+        distanceKm: distanceKm(
+          latitude,
+          longitude,
+          item.latitude as number,
+          item.longitude as number
+        ),
+      }))
+      .filter(
+        item =>
+          item.distanceKm <= 25
+      )
+      .sort(
+        (a, b) =>
+          a.distanceKm - b.distanceKm
+      );
+
+  const representedDeposits =
+    Array.from(
+      new Set(
+        located
+          .map(item => item.deposit)
+          .filter(
+            (value): value is string =>
+              Boolean(value)
+          )
+      )
+    );
+
+  const depositKeys =
+    new Set(
+      representedDeposits.map(norm)
+    );
+
+  const contextualUnlocated =
+    all
+      .map(facilityContext)
+      .filter(
+        item =>
+          !item.hasCoordinates &&
+          item.deposit &&
+          depositKeys.has(
+            norm(item.deposit)
+          )
+      );
+
+  const group = [
+    ...located,
+    ...contextualUnlocated,
+  ];
+
+  const temperatures =
+    numericRange(
+      group.map(
+        item => item.temperatureC
+      )
+    );
+
+  const depths =
+    numericRange(
+      group.map(
+        item => item.depthM
+      )
+    );
+
+  return {
+    latitude,
+    longitude,
+
+    nearbyFacilities:
+      located,
+
+    within1Km:
+      located.filter(
+        item => item.distanceKm <= 1
+      ).length,
+
+    within5Km:
+      located.filter(
+        item => item.distanceKm <= 5
+      ).length,
+
+    within10Km:
+      located.filter(
+        item => item.distanceKm <= 10
+      ).length,
+
+    within25Km:
+      located.length,
+
+    nearestFacility:
+      located[0] || null,
+
+    representedDeposits,
+
+    contextualUnlocated,
+
+    temperatureMin:
+      temperatures.min,
+
+    temperatureMax:
+      temperatures.max,
+
+    depthMin:
+      depths.min,
+
+    depthMax:
+      depths.max,
   };
 }

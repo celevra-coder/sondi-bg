@@ -1,4 +1,4 @@
-﻿import type {
+import type {
   MineralWaterProfile,
 } from "@/lib/mineral-water-profile";
 
@@ -13,8 +13,7 @@ function Row({
     <div
       style={{
         display: "grid",
-        gridTemplateColumns:
-          "minmax(150px,220px) 1fr",
+        gridTemplateColumns: "minmax(150px,220px) 1fr",
         gap: 12,
         padding: "8px 0",
         borderBottom: "1px solid #edf2f3",
@@ -24,27 +23,11 @@ function Row({
       <strong style={{ color: "#38535b" }}>
         {label}
       </strong>
-
       <div style={{ color: "#1f343a" }}>
         {value || "Няма публикувани данни"}
       </div>
     </div>
   );
-}
-
-function formatValue(
-  value: unknown,
-  suffix = ""
-) {
-  if (
-    value === null ||
-    value === undefined ||
-    value === ""
-  ) {
-    return "Няма публикувани данни";
-  }
-
-  return `${String(value)}${suffix}`;
 }
 
 function deep(
@@ -103,6 +86,91 @@ function deep(
   return null;
 }
 
+function haversineKm(
+  lat1: number,
+  lon1: number,
+  lat2: number,
+  lon2: number
+) {
+  const toRad = (value: number) =>
+    value * Math.PI / 180;
+
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) *
+      Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) ** 2;
+
+  return (
+    6371 *
+    2 *
+    Math.atan2(
+      Math.sqrt(a),
+      Math.sqrt(1 - a)
+    )
+  );
+}
+
+function fmt(
+  value: number | null,
+  digits = 1
+) {
+  if (value === null) {
+    return "няма данни";
+  }
+
+  return value.toLocaleString(
+    "bg-BG",
+    {
+      maximumFractionDigits: digits,
+    }
+  );
+}
+
+function Box({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section
+      style={{
+        background: "#fff",
+        border: "1px solid #d9e7e9",
+        borderRadius: 16,
+        padding: 18,
+        boxShadow:
+          "0 5px 18px rgba(16,62,73,.035)",
+      }}
+    >
+      <h2
+        style={{
+          margin: "0 0 12px",
+          fontSize: 19,
+          color: "#173f48",
+        }}
+      >
+        {title}
+      </h2>
+
+      <div
+        style={{
+          color: "#365c65",
+          fontSize: 14,
+          lineHeight: 1.75,
+        }}
+      >
+        {children}
+      </div>
+    </section>
+  );
+}
+
 export default function MineralWaterAnalysisCard({
   profile,
   geology,
@@ -112,6 +180,60 @@ export default function MineralWaterAnalysisCard({
   geology: any;
   faultSpatial: any;
 }) {
+  const related =
+    profile.relatedFacilities || [];
+
+  const located =
+    related.filter(
+      item => item.hasCoordinates
+    );
+
+  const selectedHasCoordinates =
+    profile.latitude !== null &&
+    profile.longitude !== null;
+
+  const relatedWithDistance =
+    selectedHasCoordinates
+      ? located
+          .map(item => ({
+            ...item,
+            distanceKm:
+              item.latitude !== null &&
+              item.longitude !== null
+                ? haversineKm(
+                    profile.latitude as number,
+                    profile.longitude as number,
+                    item.latitude,
+                    item.longitude
+                  )
+                : null,
+          }))
+          .filter(
+            item =>
+              item.distanceKm !== null
+          )
+          .sort(
+            (a, b) =>
+              Number(a.distanceKm) -
+              Number(b.distanceKm)
+          )
+      : [];
+
+  const within1Km =
+    relatedWithDistance.filter(
+      item =>
+        Number(item.distanceKm) <= 1
+    );
+
+  const within5Km =
+    relatedWithDistance.filter(
+      item =>
+        Number(item.distanceKm) <= 5
+    );
+
+  const nearestRelated =
+    relatedWithDistance[0] || null;
+
   const nearestFault =
     faultSpatial?.nearestGem ??
     faultSpatial?.nearestFault ??
@@ -139,17 +261,16 @@ export default function MineralWaterAnalysisCard({
       ]
     );
 
-  const faultDistance =
+  const parsedFaultDistance =
     Number(rawFaultDistance);
 
-  const validFaultDistance =
-    Number.isFinite(faultDistance)
-      ? faultDistance
+  const faultDistance =
+    Number.isFinite(parsedFaultDistance)
+      ? parsedFaultDistance
       : null;
 
   const lithology =
-    geology?.lithology ??
-    null;
+    geology?.lithology ?? null;
 
   const horizon =
     geology?.hydrogeological_horizon ??
@@ -165,311 +286,320 @@ export default function MineralWaterAnalysisCard({
     geology?.tectonic_unit ??
     null;
 
-  const related =
-    profile.relatedFacilities;
+  const geologyJoined =
+    [
+      lithology,
+      horizon,
+      waterType,
+      tectonics,
+    ]
+      .filter(Boolean)
+      .join(" ")
+      .toLocaleLowerCase("bg");
 
-  const located =
-    related.filter(
-      item => item.hasCoordinates
-    );
+  let geologyInterpretation =
+    "Наличните геоложки данни не са достатъчни за по-конкретно описание на колектора.";
 
-  const unlocated =
-    related.filter(
-      item => !item.hasCoordinates
-    );
+  if (
+    geologyJoined.includes("карст") ||
+    geologyJoined.includes("варовик") ||
+    geologyJoined.includes("доломит")
+  ) {
+    geologyInterpretation =
+      "Наличните данни сочат карбонатна или карстово-пукнатинна среда. При такава среда движението на минералната вода обикновено се контролира силно от пукнатини, карстови канали и тектонски нарушения, поради което отделни съоръжения в едно находище могат да показват различни температури и дебити.";
+  } else if (
+    geologyJoined.includes("пукнат") ||
+    geologyJoined.includes("fractur") ||
+    geologyJoined.includes("магм") ||
+    geologyJoined.includes("гранит")
+  ) {
+    geologyInterpretation =
+      "Средата е съвместима с пукнатинен тип циркулация. В такъв контекст разломите и зоните на интензивна напуканост са особено важни за дълбоката циркулация и възходящото движение на минералната вода.";
+  } else if (
+    geologyJoined.includes("пор") ||
+    geologyJoined.includes("алув") ||
+    geologyJoined.includes("пясък") ||
+    geologyJoined.includes("чакъл")
+  ) {
+    geologyInterpretation =
+      "Средата има поров компонент. При минералните води това може да означава, че по-дълбока минерализирана вода достига до по-проницаем пласт и впоследствие се разпространява странично в него; затова структурният контекст остава важен.";
+  } else if (geology) {
+    geologyInterpretation =
+      "Наличните геоложки и хидрогеоложки данни дават регионален контекст на минералната система. За интерпретацията имат значение едновременно колекторът, дълбочината на циркулация и връзката със структурни нарушения.";
+  }
 
-  const depthText =
-    profile.depthMin !== null &&
-    profile.depthMax !== null
-      ? (
-          profile.depthMin ===
-          profile.depthMax
-            ? `Наличната публикувана дълбочина е ${profile.depthMin} m.`
-            : `Известните дълбочини в свързаните съоръжения са приблизително от ${profile.depthMin} до ${profile.depthMax} m. Това показва, че минералната система може да обхваща повече от един водоносен интервал и не трябва да се разглежда само като единичен плитък хоризонт.`
-        )
-      : "Няма достатъчно публикувани данни за надеждно определяне на общ дълбочинен диапазон.";
+  const selectedTemp =
+    profile.temperatureC;
 
-  const tempText =
+  let temperatureInterpretation =
+    "За конкретното съоръжение няма публикувана температура, затова температурният режим не може да бъде оценен директно.";
+
+  if (selectedTemp !== null) {
+    if (
+      profile.temperatureMin !== null &&
+      profile.temperatureMax !== null &&
+      profile.temperatureMin !==
+        profile.temperatureMax
+    ) {
+      const span =
+        profile.temperatureMax -
+        profile.temperatureMin;
+
+      temperatureInterpretation =
+        `За избраното съоръжение е публикувана температура ${fmt(selectedTemp)} °C. В свързаната група стойностите са от ${fmt(profile.temperatureMin)} до ${fmt(profile.temperatureMax)} °C. Температурният диапазон е ${fmt(span)} °C и показва, че отделните съоръжения не прихващат напълно еднакви условия на циркулация. Разликите могат да се дължат на различна дълбочина, смесване със студени води или различна позиция спрямо водопроводящата структура.`;
+    } else {
+      temperatureInterpretation =
+        `За избраното съоръжение е публикувана температура ${fmt(selectedTemp)} °C. В наличните свързани записи няма достатъчно различни температурни стойности за надеждно пространствено сравнение.`;
+    }
+  } else if (
     profile.temperatureMin !== null &&
     profile.temperatureMax !== null
-      ? (
-          profile.temperatureMin ===
-          profile.temperatureMax
-            ? `Наличната публикувана температура е ${profile.temperatureMin} °C.`
-            : `Публикуваните температури в свързаните съоръжения са в диапазона ${profile.temperatureMin}–${profile.temperatureMax} °C. Разликите могат да бъдат свързани с различна дълбочина, смесване с по-студени води и различна позиция спрямо водопроводящи структури.`
-        )
-      : "Няма достатъчно публикувани температурни стойности за надеждно сравнение.";
+  ) {
+    temperatureInterpretation =
+      `За конкретното съоръжение няма публикувана температура, но за свързаната минерална система са налични стойности от ${fmt(profile.temperatureMin)} до ${fmt(profile.temperatureMax)} °C. Те могат да се използват като контекст за находището, но не трябва да се приписват директно на избраната точка.`;
+  }
 
-  const geologyText =
-    geology
-      ? [
-          lithology
-            ? `Литоложкият контекст е: ${String(lithology)}.`
-            : null,
+  const selectedDepth =
+    profile.depthM;
 
-          horizon
-            ? `Хидрогеоложкият хоризонт е: ${String(horizon)}.`
-            : null,
+  let depthInterpretation =
+    "За конкретното съоръжение няма достатъчно публикувани данни за дълбочината.";
 
-          waterType
-            ? `Водоносната среда/колекторът е описан като: ${String(waterType)}.`
-            : null,
+  if (selectedDepth !== null) {
+    if (
+      profile.depthMin !== null &&
+      profile.depthMax !== null &&
+      profile.depthMin !==
+        profile.depthMax
+    ) {
+      depthInterpretation =
+        `Публикуваната дълбочина на избраното съоръжение е ${fmt(selectedDepth)} m. В свързаната група дълбочините са от ${fmt(profile.depthMin)} до ${fmt(profile.depthMax)} m. Такъв диапазон показва, че минералната система се наблюдава на повече от едно дълбочинно ниво и не бива да се разглежда като един-единствен хоризонт.`;
+    } else {
+      depthInterpretation =
+        `Публикуваната дълбочина на избраното съоръжение е ${fmt(selectedDepth)} m. Наличните свързани записи не дават достатъчно разнообразни стойности за надеждно сравнение на дълбочините.`;
+    }
+  } else if (
+    profile.depthMin !== null &&
+    profile.depthMax !== null
+  ) {
+    depthInterpretation =
+      `За избрания обект няма публикувана дълбочина. За свързаните съоръжения са известни стойности от ${fmt(profile.depthMin)} до ${fmt(profile.depthMax)} m, които показват общия дълбочинен мащаб на системата, но не определят дълбочината на конкретния обект.`;
+  }
 
-          tectonics
-            ? `Тектонският контекст е: ${String(tectonics)}.`
-            : null,
-        ]
-          .filter(Boolean)
-          .join(" ")
-      : "За точката няма достатъчно детайлни геоложки данни.";
+  let structuralInterpretation =
+    "В наличния модел не е установена достатъчно ясно определена близка разломна структура.";
 
-  const faultText =
-    nearestFault
-      ? (
-          validFaultDistance !== null
-            ? `Най-близката анализирана разломна структура${faultName ? ` (${String(faultName)})` : ""} е приблизително на ${validFaultDistance.toFixed(2)} km. Разломните и силно напукани зони могат да подпомагат вертикалната циркулация на минерални води, но само пространствената близост не доказва пряка хидравлична връзка.`
-            : `В района е установена близка разломна структура${faultName ? ` (${String(faultName)})` : ""}. Тя е важна част от структурния контекст, но сама по себе си не доказва водоносност или термален приток.`
-        )
-      : "В наличния разломен модел не е установена достатъчно близка структура, която сама по себе си да обяснява минералното проявление.";
+  if (faultDistance !== null) {
+    const relation =
+      faultDistance <= 0.5
+        ? "много силна пространствена близост"
+        : faultDistance <= 2
+          ? "ясна локална пространствена близост"
+          : faultDistance <= 5
+            ? "регионална пространствена близост"
+            : "по-отдалечена структурна връзка";
 
-  const unlocatedText =
-    unlocated.length > 0
-      ? `Установени са още ${unlocated.length} свързани съоръжения, за които има идентификационна и/или техническа информация, но няма достатъчно сигурна точна координата. Те не се поставят като измислени точки на картата. Данните им се използват единствено като контекст за находището и за сравнение на дълбочини, температури и други характеристики.`
-      : "Няма допълнителни свързани съоръжения без потвърдена координата.";
+    structuralInterpretation =
+      `Най-близката картографирана разломна структура${faultName ? ` (${String(faultName)})` : ""} е на приблизително ${fmt(faultDistance, 2)} km. Това представлява ${relation}. При минералните системи разломите могат да действат като пътища за по-дълбока циркулация и възходящо движение на вода, но пространствената близост сама по себе си не доказва пряка хидравлична връзка.`;
+  }
 
-  const interpretation =
-    `Избраното съоръжение се разглежда като част от цялостна минерална водоносна система, а не като изолиран обект. ${depthText} ${tempText} ${geologyText} ${faultText} ${unlocatedText}`;
+  let clusterInterpretation =
+    "Няма достатъчно локализирани свързани съоръжения за надеждна пространствена оценка на групирането.";
 
-  const conclusion =
-    "Най-силната оценка за минералната система идва от съвкупността между доказаните съоръжения, техническите им параметри, геоложката среда и разломната обстановка. За избор на нова сондажна точка тези данни трябва да се комбинират с локално проучване на конкретния имот и детайлна оценка на разломно-пукнатинната мрежа.";
+  if (relatedWithDistance.length > 0) {
+    clusterInterpretation =
+      `Към същата минерална система са свързани ${related.length} допълнителни съоръжения, от които ${located.length} имат потвърдена координата. ${within1Km.length > 0 ? `${within1Km.length} са в радиус до 1 km от избраната точка. ` : ""}${within5Km.length > 0 ? `${within5Km.length} са в радиус до 5 km. ` : ""}${nearestRelated ? `Най-близкият локализиран свързан обект е „${nearestRelated.name}“ на приблизително ${fmt(Number(nearestRelated.distanceKm), 2)} km. ` : ""}Пространственото групиране на няколко минерални проявления е по-силен аргумент за обща хидрогеоложка система от единично изолирано съоръжение.`;
+  }
+
+  const technicalFlow =
+    deep(
+      profile.existingProperties,
+      [
+        "technical_possible_flow_l_s",
+        "flow_l_s",
+        "discharge_l_s",
+      ]
+    );
+
+  const permit =
+    deep(
+      profile.existingProperties,
+      [
+        "permit_number",
+        "permit_no",
+        "bddr_permit_reference",
+      ]
+    );
+
+  const ownership =
+    deep(
+      profile.existingProperties,
+      [
+        "ownership_regime",
+        "ownership",
+      ]
+    );
+
+  const professionalInterpretation =
+    [
+      `Избраният обект „${profile.name}“ се разглежда като част от минерална водоносна система, а не като изолиран регистров запис.`,
+      temperatureInterpretation,
+      depthInterpretation,
+      clusterInterpretation,
+      geologyInterpretation,
+      structuralInterpretation,
+      "Най-надеждната интерпретация идва от съвпадението между техническите характеристики на съоръженията, пространственото им разпределение, геоложката среда и структурния контрол. Когато тези независими признаци сочат една и съща зона, увереността, че обектите принадлежат към обща минерална система, е по-висока.",
+    ].join(" ");
 
   return (
-    <section
+    <div
       style={{
-        background: "#fff",
-        border: "1px solid #d8e6e9",
-        borderRadius: 18,
-        padding: 20,
-        boxShadow:
-          "0 8px 28px rgba(16,62,73,.05)",
+        display: "grid",
+        gap: 18,
       }}
     >
-      <div
+      <section
         style={{
-          fontSize: 12,
-          fontWeight: 800,
-          letterSpacing: ".08em",
-          textTransform: "uppercase",
-          color: "#177f98",
-          marginBottom: 8,
+          background:
+            "linear-gradient(135deg,#123f4a,#176d78)",
+          color: "#fff",
+          borderRadius: 20,
+          padding: 22,
         }}
       >
-        Минерални води · EXPERT
-      </div>
+        <div
+          style={{
+            fontSize: 12,
+            fontWeight: 800,
+            letterSpacing: ".1em",
+            opacity: .8,
+          }}
+        >
+          МИНЕРАЛНИ ВОДИ · SONDI EXPERT
+        </div>
 
-      <h2
-        style={{
-          margin: 0,
-          fontSize: 23,
-          color: "#173f48",
-        }}
-      >
-        {profile.name}
-      </h2>
+        <h1
+          style={{
+            margin: "8px 0 6px",
+            fontSize:
+              "clamp(25px,4vw,38px)",
+          }}
+        >
+          {profile.name}
+        </h1>
 
-      <p
-        style={{
-          marginTop: 10,
-          color: "#607b82",
-          lineHeight: 1.65,
-          fontSize: 14,
-        }}
-      >
-        Цялостен анализ на съоръжението,
-        свързаните минерални проявления,
-        геоложката среда и разломната обстановка.
-      </p>
+        <div
+          style={{
+            opacity: .9,
+            lineHeight: 1.6,
+          }}
+        >
+          Професионален анализ на минералния
+          водоизточник, свързаните съоръжения,
+          температурно-дълбочинния профил,
+          геоложката среда и разломния контекст.
+        </div>
+      </section>
 
       <div
         style={{
           display: "grid",
           gridTemplateColumns:
-            "repeat(auto-fit,minmax(260px,1fr))",
-          gap: 18,
-          marginTop: 18,
+            "repeat(auto-fit,minmax(190px,1fr))",
+          gap: 12,
         }}
       >
-        <div>
-          <h3 style={{ color: "#173f48" }}>
-            Съоръжение
-          </h3>
-
-          <Row
-            label="Тип"
-            value={formatValue(profile.facilityType)}
-          />
-
-          <Row
-            label="Населено място"
-            value={formatValue(profile.settlement)}
-          />
-
-          <Row
-            label="Находище"
-            value={formatValue(profile.deposit)}
-          />
-
-          <Row
-            label="Дълбочина"
-            value={
-              profile.depthM !== null
-                ? `${profile.depthM} m`
-                : "Няма публикувани данни"
-            }
-          />
-
-          <Row
-            label="Температура"
-            value={
-              profile.temperatureC !== null
-                ? `${profile.temperatureC} °C`
-                : "Няма публикувани данни"
-            }
-          />
-
-          <Row
-            label="Точност на позицията"
-            value={formatValue(profile.coordinateStatus)}
-          />
-        </div>
-
-        <div>
-          <h3 style={{ color: "#173f48" }}>
-            Технически и регистрови данни
-          </h3>
-
-          <Row
-            label="Собственост"
-            value={
-              formatValue(
-                deep(
-                  profile.existingProperties,
-                  [
-                    "ownership_regime",
-                    "ownership",
-                  ]
-                )
-              )
-            }
-          />
-
-          <Row
-            label="Технически дебит"
-            value={
-              formatValue(
-                deep(
-                  profile.existingProperties,
-                  [
-                    "technical_possible_flow_l_s",
-                    "flow_l_s",
-                    "discharge_l_s",
-                  ]
-                ),
-                " l/s"
-              )
-            }
-          />
-
-          <Row
-            label="Разрешително"
-            value={
-              formatValue(
-                deep(
-                  profile.existingProperties,
-                  [
-                    "permit_number",
-                    "permit_no",
-                  ]
-                )
-              )
-            }
-          />
-
-          <Row
-            label="Допълнителни данни"
-            value={
-              Object.keys(
-                profile.researchEnrichment || {}
-              ).length > 0
-                ? "Налични"
-                : "Няма публикувани данни"
-            }
-          />
-        </div>
-      </div>
-
-      <div
-        style={{
-          marginTop: 22,
-          borderRadius: 16,
-          background: "#f3f8f8",
-          border: "1px solid #d9e7e9",
-          padding: 18,
-        }}
-      >
-        <h3
-          style={{
-            margin: "0 0 10px 0",
-            color: "#173f48",
-          }}
-        >
-          Хидрогеоложка интерпретация
-        </h3>
-
-        <p
-          style={{
-            margin: 0,
-            lineHeight: 1.75,
-            color: "#365c65",
-            fontSize: 14,
-          }}
-        >
-          {interpretation}
-        </p>
-      </div>
-
-      {related.length > 0 && (
-        <div style={{ marginTop: 22 }}>
-          <h3 style={{ color: "#173f48" }}>
-            Свързани съоръжения
-          </h3>
-
-          <p
+        {[
+          [
+            "Температура",
+            profile.temperatureC !== null
+              ? `${fmt(profile.temperatureC)} °C`
+              : "няма данни",
+          ],
+          [
+            "Дълбочина",
+            profile.depthM !== null
+              ? `${fmt(profile.depthM)} m`
+              : "няма данни",
+          ],
+          [
+            "Свързани обекти",
+            String(related.length),
+          ],
+          [
+            "Локализирани",
+            String(located.length),
+          ],
+        ].map(([label, value]) => (
+          <div
+            key={label}
             style={{
-              fontSize: 13,
-              color: "#6a8288",
+              background: "#fff",
+              border: "1px solid #d9e7e9",
+              borderRadius: 14,
+              padding: 15,
             }}
           >
-            {located.length} с установена координата ·{" "}
-            {unlocated.length} без потвърдена точна координата
-          </p>
+            <div
+              style={{
+                color: "#688087",
+                fontSize: 12,
+                fontWeight: 700,
+              }}
+            >
+              {label}
+            </div>
 
+            <div
+              style={{
+                marginTop: 5,
+                color: "#173f48",
+                fontSize: 20,
+                fontWeight: 850,
+              }}
+            >
+              {value}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <Box title="1. Температурен профил">
+        <p style={{ margin: 0 }}>
+          {temperatureInterpretation}
+        </p>
+      </Box>
+
+      <Box title="2. Дълбочинен профил">
+        <p style={{ margin: 0 }}>
+          {depthInterpretation}
+        </p>
+      </Box>
+
+      <Box title="3. Минерални обекти около точката">
+        <p style={{ margin: 0 }}>
+          {clusterInterpretation}
+        </p>
+
+        {relatedWithDistance.length > 0 && (
           <div
             style={{
               display: "grid",
               gap: 8,
+              marginTop: 14,
             }}
           >
-            {related
-              .slice(0, 20)
+            {relatedWithDistance
+              .slice(0, 12)
               .map(item => (
                 <div
                   key={item.mineralId}
                   style={{
-                    border: "1px solid #e1eaec",
-                    borderRadius: 12,
                     padding: "10px 12px",
-                    fontSize: 13,
+                    background: "#f7fafb",
+                    border:
+                      "1px solid #e2eaec",
+                    borderRadius: 10,
                   }}
                 >
                   <strong>
@@ -479,84 +609,207 @@ export default function MineralWaterAnalysisCard({
                   <div
                     style={{
                       marginTop: 4,
-                      color: "#637d84",
+                      color: "#607b82",
+                      fontSize: 13,
                     }}
                   >
                     {item.facilityType ||
                       "Минерално съоръжение"}
-
-                    {item.depthM !== null
-                      ? ` · ${item.depthM} m`
-                      : ""}
-
+                    {" · "}
+                    {fmt(
+                      Number(item.distanceKm),
+                      2
+                    )} km
                     {item.temperatureC !== null
-                      ? ` · ${item.temperatureC} °C`
+                      ? ` · ${fmt(item.temperatureC)} °C`
                       : ""}
-                  </div>
-
-                  <div
-                    style={{
-                      marginTop: 4,
-                      fontWeight: 700,
-                      color:
-                        item.hasCoordinates
-                          ? "#37745d"
-                          : "#9a681f",
-                    }}
-                  >
-                    {item.hasCoordinates
-                      ? "Точката е локализирана"
-                      : "Точната позиция не е потвърдена — използва се само като контекст"}
+                    {item.depthM !== null
+                      ? ` · ${fmt(item.depthM)} m`
+                      : ""}
                   </div>
                 </div>
               ))}
           </div>
-        </div>
-      )}
+        )}
+      </Box>
 
-      <div
-        style={{
-          marginTop: 22,
-          borderRadius: 16,
-          background: "#eef6f3",
-          border: "1px solid #cfe2da",
-          padding: 18,
-        }}
-      >
-        <h3
+      <Box title="4. Геоложка и хидрогеоложка среда">
+        {lithology && (
+          <Row
+            label="Литология"
+            value={String(lithology)}
+          />
+        )}
+
+        {horizon && (
+          <Row
+            label="Хидрогеоложки хоризонт"
+            value={String(horizon)}
+          />
+        )}
+
+        {waterType && (
+          <Row
+            label="Тип колектор / водоносна среда"
+            value={String(waterType)}
+          />
+        )}
+
+        {tectonics && (
+          <Row
+            label="Тектонски контекст"
+            value={String(tectonics)}
+          />
+        )}
+
+        <p
           style={{
-            margin: "0 0 8px 0",
-            color: "#173f48",
+            margin:
+              "14px 0 0",
           }}
         >
-          Заключение
-        </h3>
+          {geologyInterpretation}
+        </p>
+      </Box>
+
+      <Box title="5. Разломи и структурен контекст">
+        <p style={{ margin: 0 }}>
+          {structuralInterpretation}
+        </p>
+      </Box>
+
+      <section
+        style={{
+          background: "#eef7f5",
+          border: "1px solid #cfe5de",
+          borderRadius: 18,
+          padding: 20,
+        }}
+      >
+        <h2
+          style={{
+            margin: "0 0 10px",
+            color: "#205b4b",
+            fontSize: 21,
+          }}
+        >
+          6. Аналитично обобщение
+        </h2>
 
         <p
           style={{
             margin: 0,
-            lineHeight: 1.75,
             color: "#315861",
             fontSize: 14,
+            lineHeight: 1.8,
           }}
         >
-          {conclusion}
+          {professionalInterpretation}
         </p>
-      </div>
+      </section>
+
+      <details
+        style={{
+          background: "#fff",
+          border: "1px solid #d9e7e9",
+          borderRadius: 14,
+          padding: 16,
+        }}
+      >
+        <summary
+          style={{
+            cursor: "pointer",
+            fontWeight: 850,
+            color: "#315861",
+          }}
+        >
+          Официални и регистрови данни
+        </summary>
+
+        <div style={{ marginTop: 12 }}>
+          <Row
+            label="Тип"
+            value={
+              profile.facilityType ||
+              "Няма публикувани данни"
+            }
+          />
+
+          <Row
+            label="Населено място"
+            value={
+              profile.settlement ||
+              "Няма публикувани данни"
+            }
+          />
+
+          <Row
+            label="Находище"
+            value={
+              profile.deposit ||
+              "Няма публикувани данни"
+            }
+          />
+
+          <Row
+            label="Координатна точност"
+            value={
+              profile.coordinateStatus ||
+              "Няма публикувани данни"
+            }
+          />
+
+          <Row
+            label="Технически дебит"
+            value={
+              technicalFlow
+                ? `${String(technicalFlow)} l/s`
+                : "Няма публикувани данни"
+            }
+          />
+
+          <Row
+            label="Разрешително"
+            value={
+              permit ||
+              "Няма публикувани данни"
+            }
+          />
+
+          <Row
+            label="Собственост"
+            value={
+              ownership ||
+              "Няма публикувани данни"
+            }
+          />
+        </div>
+      </details>
 
       {profile.sources.length > 0 && (
-        <details style={{ marginTop: 18 }}>
+        <details
+          style={{
+            background: "#fff",
+            border: "1px solid #d9e7e9",
+            borderRadius: 14,
+            padding: 16,
+          }}
+        >
           <summary
             style={{
               cursor: "pointer",
-              fontWeight: 800,
-              color: "#456c74",
+              fontWeight: 850,
+              color: "#315861",
             }}
           >
-            Използвани официални източници
+            Използвани източници
           </summary>
 
-          <ul>
+          <ul
+            style={{
+              lineHeight: 1.65,
+            }}
+          >
             {profile.sources.map(
               (source, index) => (
                 <li
@@ -569,6 +822,6 @@ export default function MineralWaterAnalysisCard({
           </ul>
         </details>
       )}
-    </section>
+    </div>
   );
 }

@@ -2,8 +2,12 @@ import Link from "next/link";
 import { getGwbProfile } from "@/lib/gwb-profile";
 import { getSpatialProfile } from "@/lib/spatial-profile";
 import { getFaultSpatialProfile } from "@/lib/fault-spatial-profile";
-import { getMineralWaterProfile } from "@/lib/mineral-water-profile";
+import { getMineralWaterProfile, getMineralWaterAreaProfile } from "@/lib/mineral-water-profile";
 import MineralWaterAnalysisCard from "./MineralWaterAnalysisCard";
+import MineralAreaAnalysisCard from "./MineralAreaAnalysisCard";
+import MineralWaterPrintReport from "./MineralWaterPrintReport";
+import MineralAreaPrintReport from "./MineralAreaPrintReport";
+import PrintReportButton from "./PrintReportButton";
 import FaultActivityMap from "./FaultActivityMap";
 import MonitoringBodyDetails from "./MonitoringBodyDetails";
 import ProPrintReport from "./ProPrintReport";
@@ -455,6 +459,18 @@ export default async function ProPage({
   const mineralWaterProfile =
     isMineralAnalysis
       ? getMineralWaterProfile(mineralId)
+      : null;
+
+  const isMineralAreaAnalysis =
+    params.analysis === "mineral-area" &&
+    hasValidCoordinates;
+
+  const mineralWaterAreaProfile =
+    isMineralAreaAnalysis
+      ? getMineralWaterAreaProfile(
+          Number(lat),
+          Number(lng)
+        )
       : null;
 
   const profile = getGwbProfile(gwb);
@@ -3952,6 +3968,200 @@ export default async function ProPage({
       title: "#476168",
     },
   };
+
+  if (
+    isMineralAreaAnalysis &&
+    mineralWaterAreaProfile
+  ) {
+    return (
+      <>
+        <MineralAreaPrintReport
+          profile={mineralWaterAreaProfile}
+          geology={geology}
+          faultSpatial={faultSpatial}
+        />
+
+        <ProClarityTracker
+          userState={
+            isAdmin
+              ? "admin"
+              : "registered"
+          }
+        />
+
+        <main
+          className="sondi-pro-screen"
+          style={{
+            minHeight: "100vh",
+            background:
+              "linear-gradient(180deg,#edf7f8 0,#f8fbfc 340px)",
+            padding: "34px 18px 70px",
+            color: "#20383f",
+          }}
+        >
+          <div
+            style={{
+              maxWidth: 1180,
+              margin: "0 auto",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent:
+                  "space-between",
+                alignItems: "center",
+                gap: 16,
+                flexWrap: "wrap",
+                marginBottom: 22,
+              }}
+            >
+              <div>
+                <div
+                  style={{
+                    fontSize: 12,
+                    fontWeight: 800,
+                    letterSpacing: ".12em",
+                    color: "#16825c",
+                  }}
+                >
+                  SONDI EXPERT
+                </div>
+
+                <h1
+                  style={{
+                    margin: "5px 0 0",
+                    fontSize:
+                      "clamp(26px,4vw,40px)",
+                    color: "#103944",
+                  }}
+                >
+                  Минерален потенциал на района
+                </h1>
+              </div>
+
+              <Link
+                href="/map"
+                style={{
+                  textDecoration: "none",
+                  background: "#0d8055",
+                  color: "#fff",
+                  padding: "10px 15px",
+                  borderRadius: 11,
+                  fontWeight: 700,
+                }}
+              >
+                ← Към картата
+              </Link>
+            </div>
+
+            <MineralAreaAnalysisCard
+              profile={mineralWaterAreaProfile}
+              geology={geology}
+              faultSpatial={faultSpatial}
+            />
+          </div>
+        </main>
+      </>
+    );
+  }
+
+  if (
+    isMineralAnalysis &&
+    mineralWaterProfile
+  ) {
+    return (
+      <>
+        <MineralWaterPrintReport
+          profile={mineralWaterProfile}
+          geology={geology}
+          faultSpatial={faultSpatial}
+        />
+
+        <ProClarityTracker
+          userState={
+            isAdmin
+              ? "admin"
+              : "registered"
+          }
+        />
+
+        <main
+          className="sondi-pro-screen"
+          style={{
+            minHeight: "100vh",
+            background:
+              "linear-gradient(180deg,#edf7f8 0,#f8fbfc 340px)",
+            padding: "34px 18px 70px",
+            color: "#20383f",
+          }}
+        >
+          <div
+            style={{
+              maxWidth: 1180,
+              margin: "0 auto",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent:
+                  "space-between",
+                alignItems: "center",
+                gap: 16,
+                flexWrap: "wrap",
+                marginBottom: 22,
+              }}
+            >
+              <div>
+                <div
+                  style={{
+                    fontSize: 12,
+                    fontWeight: 800,
+                    letterSpacing: ".12em",
+                    color: "#16825c",
+                  }}
+                >
+                  SONDI EXPERT
+                </div>
+
+                <h1
+                  style={{
+                    margin: "5px 0 0",
+                    fontSize:
+                      "clamp(26px,4vw,40px)",
+                    color: "#103944",
+                  }}
+                >
+                  Подробен анализ на минерален водоизточник
+                </h1>
+              </div>
+
+              <Link
+                href="/map"
+                style={{
+                  textDecoration: "none",
+                  background: "#0d8055",
+                  color: "#fff",
+                  padding: "10px 15px",
+                  borderRadius: 11,
+                  fontWeight: 700,
+                }}
+              >
+                ← Към картата
+              </Link>
+            </div>
+
+            <MineralWaterAnalysisCard
+              profile={mineralWaterProfile}
+              geology={geology}
+              faultSpatial={faultSpatial}
+            />
+          </div>
+        </main>
+      </>
+    );
+  }
 
   const drillingPerspectiveColors =
     finalCardColors[drillingPerspectiveTone];
