@@ -122,13 +122,16 @@ export default async function GeologyReportPage({
       );
     }
 
+    accessParams.set(
+      "target",
+      "driller"
+    );
+
     const query =
       accessParams.toString();
 
     redirect(
-      query
-        ? `/expert-access?${query}`
-        : "/expert-access"
+      `/expert-access?${query}`
     );
   }
 

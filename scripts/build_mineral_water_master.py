@@ -98,23 +98,48 @@ def valid_bg(lat, lon):
 
 
 def classify_facility(name: str, raw_type: str = "") -> str:
-    s = f"{name} {raw_type}".lower()
+    s = f"{name} {raw_type}".casefold()
 
-    if "Ð³Ð°Ð»ÐµÑ€" in s:
-        return "Ð”Ñ€ÐµÐ½Ð°Ð¶Ð½Ð° Ð³Ð°Ð»ÐµÑ€Ð¸Ñ"
-
+    # Monitoring / observation boreholes
     if (
-        "Ð¸Ð·Ð²Ð¾Ñ€" in s
-        or "ÐºÐµÐ¸" in s
-        or "ÐºÐ°Ð¿Ñ‚Ð°Ð¶" in s
-        or "ÐºÐ°Ð¿Ñ‚Ð¸Ñ€Ð°Ð½" in s
+        "\u043c\u043e\u043d\u0438\u0442\u043e\u0440" in s
+        or "\u043d\u0430\u0431\u043b\u044e\u0434" in s
     ):
-        return "ÐœÐ¸Ð½ÐµÑ€Ð°Ð»ÐµÐ½ Ð¸Ð·Ð²Ð¾Ñ€ / ÐºÐ°Ð¿Ñ‚Ð°Ð¶"
+        return "\u041c\u0438\u043d\u0435\u0440\u0430\u043b\u0435\u043d \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432 \u0441\u043e\u043d\u0434\u0430\u0436"
 
-    if "Ð»Ð¸ÐºÐ²Ð¸Ð´" in s:
-        return "Ð›Ð¸ÐºÐ²Ð¸Ð´Ð¸Ñ€Ð°Ð½Ð¾ Ð¼Ð¸Ð½ÐµÑ€Ð°Ð»Ð½Ð¾ ÑÑŠÐ¾Ñ€ÑŠÐ¶ÐµÐ½Ð¸Ðµ"
+    # Closed / liquidated / conserved facilities
+    if (
+        "\u043b\u0438\u043a\u0432\u0438\u0434" in s
+        or "\u0437\u0430\u043a\u0440\u0438\u0442" in s
+        or "\u043a\u043e\u043d\u0441\u0435\u0440\u0432" in s
+    ):
+        return "\u0417\u0430\u043a\u0440\u0438\u0442\u043e \u043c\u0438\u043d\u0435\u0440\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435"
 
-    return "ÐœÐ¸Ð½ÐµÑ€Ð°Ð»ÐµÐ½ ÑÐ¾Ð½Ð´Ð°Ð¶"
+    # Drainage galleries / drainage facilities
+    if (
+        "\u0433\u0430\u043b\u0435\u0440" in s
+        or "\u0434\u0440\u0435\u043d\u0430\u0436" in s
+    ):
+        return "\u0414\u0440\u0435\u043d\u0430\u0436\u043d\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435"
+
+    # Captured / natural springs
+    if (
+        "\u0438\u0437\u0432\u043e\u0440" in s
+        or "\u043a\u0435\u0438" in s
+        or "\u043a\u0430\u043f\u0442\u0430\u0436" in s
+        or "\u043a\u0430\u043f\u0442\u0438\u0440\u0430\u043d" in s
+    ):
+        return "\u041c\u0438\u043d\u0435\u0440\u0430\u043b\u0435\u043d \u043a\u0430\u043f\u0442\u0430\u0436/\u0438\u0437\u0432\u043e\u0440"
+
+    # Boreholes / wells
+    if (
+        "\u0441\u043e\u043d\u0434\u0430\u0436" in s
+        or "\u0441\u043a\u0432\u0430\u0436" in s
+        or "\u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u0435\u043d" in s
+    ):
+        return "\u041c\u0438\u043d\u0435\u0440\u0430\u043b\u0435\u043d \u0432\u043e\u0434\u043e\u0432\u0437\u0435\u043c\u0435\u043d \u0441\u043e\u043d\u0434\u0430\u0436"
+
+    return "\u0414\u0440\u0443\u0433\u043e \u043c\u0438\u043d\u0435\u0440\u0430\u043b\u043d\u043e \u0441\u044a\u043e\u0440\u044a\u0436\u0435\u043d\u0438\u0435"
 
 
 def canonical_temperature(e: dict, fallback=None):
@@ -424,7 +449,8 @@ for index, feature in enumerate(current_features):
             "name": name,
             "facility_type": classify_facility(
                 name,
-                text(p.get("facility_type")),
+                text(p.get("display_category"))
+                or text(p.get("facility_type")),
             ),
             "deposit": deposit,
             "settlement": settlement,
@@ -642,9 +668,9 @@ for global_index, row in enumerate(rows):
 # These three links were explicitly established by the audited
 # previous-research references. No fuzzy matching is used.
 previous_research_targets = {
-    ("7", norm('Ð¡Ð¾Ð½Ð´Ð°Ð¶ â„– Ð -113')): ("5", 3),
-    ("9", norm('ÑÐ¾Ð½Ð´Ð°Ð¶ â„– 5 "Ð¡ÑÑ€Ð½Ð° Ð±Ð°Ð½Ñ')): ("8", 8),
-    ("9", norm('ÐšÐ°Ð¿Ñ‚Ð¸Ñ€Ð°Ð½ ÐµÑÑ‚ÐµÑÑ‚Ð²ÐµÐ½ Ð¸Ð·Ð²Ð¾Ñ€ "Ð¢Ñ€ÑŠÐ½ÑÐºÐ° Ð‘Ð°Ð½ÐºÑ')): (
+    ("7", norm('Сондаж № Р-113')): ("5", 3),
+    ("9", norm('сондаж № 5 "Сярна баня')): ("8", 8),
+    ("9", norm('Каптиран естествен извор "Трънска Банкя')): (
         "1",
         1,
     ),
@@ -923,8 +949,6 @@ for r in master_records:
                 "name": r["identity"]["name"],
                 "facility_type": r["identity"]["facility_type"],
                 "settlement": r["identity"]["settlement"],
-                "temperature_c": r["free"]["temperature_c"],
-                "depth_m": r["free"]["depth_m"],
             },
         }
     )
@@ -939,8 +963,6 @@ allowed_free = {
     "name",
     "facility_type",
     "settlement",
-    "temperature_c",
-    "depth_m",
 }
 
 for feature in free_features:
@@ -961,8 +983,6 @@ for feature in free_features:
         "name",
         "facility_type",
         "settlement",
-        "temperature_c",
-        "depth_m",
     ]:
         if p.get(key) is None or text(p.get(key)) == "":
             free_missing[key] += 1
@@ -1121,8 +1141,6 @@ for key in [
     "name",
     "facility_type",
     "settlement",
-    "temperature_c",
-    "depth_m",
 ]:
     print(
         f"  {key}: "

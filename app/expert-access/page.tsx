@@ -294,9 +294,22 @@ export default function ExpertAccessPage() {
         );
       }
 
-      window.location.replace(
-        `/pro?${proParams.toString()}`
-      );
+      const target =
+        params.get("target") === "driller"
+          ? "driller"
+          : "pro";
+
+      if (target === "driller") {
+        proParams.delete("target");
+
+        window.location.replace(
+          `/geology/report?${proParams.toString()}`
+        );
+      } else {
+        window.location.replace(
+          `/pro?${proParams.toString()}`
+        );
+      }
     } catch (err) {
       setError(
         err instanceof Error
@@ -402,6 +415,14 @@ export default function ExpertAccessPage() {
       "analysis_id",
       previous.id
     );
+
+    if (
+      params.get("target") === "driller"
+    ) {
+      previousParams.delete("target");
+
+      return `/geology/report?${previousParams.toString()}`;
+    }
 
     return `/pro?${previousParams.toString()}`;
   })();

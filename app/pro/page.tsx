@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getGwbProfile } from "@/lib/gwb-profile";
 import { getSpatialProfile } from "@/lib/spatial-profile";
 import { getFaultSpatialProfile } from "@/lib/fault-spatial-profile";
+import { getMineralWaterProfile } from "@/lib/mineral-water-profile";
+import MineralWaterAnalysisCard from "./MineralWaterAnalysisCard";
 import FaultActivityMap from "./FaultActivityMap";
 import MonitoringBodyDetails from "./MonitoringBodyDetails";
 import ProPrintReport from "./ProPrintReport";
@@ -18,6 +20,8 @@ type SearchParams = Promise<{
   lng?: string;
   lon?: string;
   analysis_id?: string;
+  mineral_id?: string;
+  analysis?: string;
 }>;
 
 function Card({
@@ -234,6 +238,13 @@ export default async function ProPage({
 }) {
   const params = await searchParams;
 
+  const mineralId =
+    params.mineral_id?.trim() || "";
+
+  const isMineralAnalysis =
+    params.analysis === "mineral" &&
+    Boolean(mineralId);
+
   const supabase = await createClient();
 
   const {
@@ -346,6 +357,14 @@ export default async function ProPage({
       accessParams.set("gwbs", params.gwbs);
     }
 
+    if (params.mineral_id) {
+      accessParams.set("mineral_id", params.mineral_id);
+    }
+
+    if (params.analysis) {
+      accessParams.set("analysis", params.analysis);
+    }
+
     const query = accessParams.toString();
 
     redirect(
@@ -432,6 +451,11 @@ export default async function ProPage({
       lat,
       lng
     );
+
+  const mineralWaterProfile =
+    isMineralAnalysis
+      ? getMineralWaterProfile(mineralId)
+      : null;
 
   const profile = getGwbProfile(gwb);
 
@@ -4380,6 +4404,14 @@ export default async function ProPage({
               value={profile.gwbCode}
             />
           </Card>
+
+          {mineralWaterProfile && (
+            <MineralWaterAnalysisCard
+              profile={mineralWaterProfile}
+              geology={geology}
+              faultSpatial={faultSpatial}
+            />
+          )}
 
           <Card
             title="2. Геология и хидрогеология"
