@@ -1,0 +1,37 @@
+{
+  "place": "Леново",
+  "status": "RESEARCH_CLOSED",
+  "facilities": [
+    {
+      "candidate": 137,
+      "facility": "Сондаж №16",
+      "coordinate_status": "TO_RESEARCH",
+      "spatial_resolution": "URBAN_PLAN_LOCATION_CONFIRMED",
+      "official_location": "УПИ I – зеленина, кв. 56 по ПУП на с. Леново",
+      "source": "Община Асеновград — съобщение за издаване на разрешително за водовземане на АКВА ЛЕНОВО",
+      "safe_coordinate_available": false
+    },
+    {
+      "candidate": 138,
+      "facility": "Сондаж №12",
+      "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+      "spatial_resolution": "CADASTRAL_ID_CONFIRMED",
+      "parcel_id": "43298.77.94",
+      "building_id": "43298.77.94.1",
+      "locality": "Пърженака/Янаклък",
+      "parcel_area_sqm": 5395,
+      "building_area_sqm": 5,
+      "source": "Община Асеновград — концесионна документация",
+      "safe_coordinate_available": false,
+      "geometry_note": "Official cadastral identity is confirmed, but parcel geometry was not found in the local project data."
+    }
+  ],
+  "final_spatial_resolution": {
+    "result": "PARTIAL_SPATIAL_RESOLUTION",
+    "candidate_137": "TO_RESEARCH",
+    "candidate_138": "CADASTRAL_RESOLVED_APPROXIMATE",
+    "facility_coordinates_added": 0,
+    "unsafe_inference_prohibited": true
+  },
+  "updated_at": "2026-09-12T16:55:19.300558+00:00"
+}

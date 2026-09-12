@@ -1,0 +1,85 @@
+{
+  "source": "AGKK KAIS OpenData",
+  "method": "Targeted cadastral land-plot geometry download for nine settlements; no national bulk download.",
+  "count": 2,
+  "records": [
+    {
+      "property_id": "61248.203.312",
+      "facility": "Сондаж № С-46хг \"Равно поле\"",
+      "oblast": "София",
+      "municipality": "Елин Пелин",
+      "ekatte": "61248",
+      "kais_settlement": "с. Равно поле (61248)",
+      "status": "PARCEL_GEOMETRY_RESOLVED",
+      "matches": [
+        {
+          "shapefile": "data/mineral-water/kais-parcels/61248/land_plots/поземлени имоти/Имоти (Polygon).shp",
+          "area_source_crs_m2": 409.81,
+          "centroid_lat": 42.667836931,
+          "centroid_lon": 23.522125129,
+          "point_on_surface_lat": 42.667839455,
+          "point_on_surface_lon": 23.522124666,
+          "record": {
+            "AREA": 409.81170599464,
+            "PERIM": 81.132826396331,
+            "cadimm": 312,
+            "cadnum": "61248.203.312",
+            "cadreg": 203,
+            "cattype": "Няма стойност",
+            "ekatte": "61248",
+            "ekattefn": "с. Равно поле",
+            "immaddr": "с. Равно поле",
+            "oldident": "000312",
+            "place": "БАРАТА",
+            "propcode": "2",
+            "proptype": "Държавна частна",
+            "purpcode": "5",
+            "purptype": "Територия, заета от води и водни обекти",
+            "usecode": "3230",
+            "usetype": "За извор на минерална вода",
+            "validate": "РД-18-560/16.08.2019 г., издадена от ИЗПЪЛНИТЕЛЕН ДИРЕКТОР НА АГКК"
+          }
+        }
+      ]
+    },
+    {
+      "property_id": "21498.156.88",
+      "facility": "КЕИ № 7 \"Тепавицата\"",
+      "oblast": "Благоевград",
+      "municipality": "Банско",
+      "ekatte": "21498",
+      "kais_settlement": "гр. Добринище (21498)",
+      "status": "PARCEL_GEOMETRY_RESOLVED",
+      "matches": [
+        {
+          "shapefile": "data/mineral-water/kais-parcels/21498/land_plots/поземлени имоти/Имоти (Polygon).shp",
+          "area_source_crs_m2": 100.01,
+          "centroid_lat": 41.819955052,
+          "centroid_lon": 23.57051689,
+          "point_on_surface_lat": 41.819955052,
+          "point_on_surface_lon": 23.57051689,
+          "record": {
+            "AREA": 100.0058329988,
+            "PERIM": 40.00116658275,
+            "cadimm": 88,
+            "cadnum": "21498.156.88",
+            "cadreg": 156,
+            "cattype": "Няма стойност",
+            "ekatte": "21498",
+            "ekattefn": "гр. Добринище",
+            "immaddr": "гр. Добринище",
+            "oldident": "156015",
+            "place": "ПАРЧОВИЦА",
+            "propcode": "12",
+            "proptype": "Изключителна държавна собственост",
+            "purpcode": "5",
+            "purptype": "Територия, заета от води и водни обекти",
+            "usecode": "3230",
+            "usetype": "За извор на минерална вода",
+            "validate": "РД-18-92/15.12.2007 г., издадена от ИЗПЪЛНИТЕЛНИЯ ДИРЕКТОР НА АК"
+          }
+        }
+      ]
+    }
+  ]
+}

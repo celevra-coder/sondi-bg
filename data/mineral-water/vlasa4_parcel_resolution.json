@@ -1,0 +1,46 @@
+{
+  "source": "AGKK KAIS OpenData",
+  "method": "Targeted cadastral land-plot geometry download for nine settlements; no national bulk download.",
+  "count": 1,
+  "records": [
+    {
+      "property_id": "10450.501.2479",
+      "facility": "Сондаж № 4 \"Власа\"",
+      "oblast": "Пазарджик",
+      "municipality": "Велинград",
+      "ekatte": "10450",
+      "kais_settlement": "гр. Велинград (10450)",
+      "status": "PARCEL_GEOMETRY_RESOLVED",
+      "matches": [
+        {
+          "shapefile": "data/mineral-water/kais-parcels/10450/land_plots/поземлени имоти/Имоти (Polygon).shp",
+          "area_source_crs_m2": 382.41,
+          "centroid_lat": 42.039685989,
+          "centroid_lon": 23.98895286,
+          "point_on_surface_lat": 42.03968237,
+          "point_on_surface_lon": 23.988934322,
+          "record": {
+            "AREA": 382.41009449377,
+            "PERIM": 86.67775023597,
+            "cadimm": 2479,
+            "cadnum": "10450.501.2479",
+            "cadreg": 501,
+            "cattype": "Няма стойност",
+            "ekatte": "10450",
+            "ekattefn": "гр. Велинград",
+            "immaddr": "гр. Велинград, ул. АЛЕКСАНДЪР ДИМИТРОВ",
+            "oldident": "1512",
+            "propcode": "1",
+            "proptype": "Държавна публична",
+            "purpcode": "1",
+            "purptype": "Урбанизирана",
+            "strename": "ул. АЛЕКСАНДЪР ДИМИТРОВ",
+            "usecode": "1000",
+            "usetype": "Ниско застрояване (до 10 m)",
+            "validate": "РД-18-1214/06.06.2018 г., издадена от ИЗПЪЛНИТЕЛЕН ДИРЕКТОР НА АГКК"
+          }
+        }
+      ]
+    }
+  ]
+}

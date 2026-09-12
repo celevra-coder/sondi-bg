@@ -1,0 +1,545 @@
+{
+  "research_id": "DOLNI_RAKOVETS_OFFICIAL_SOURCE_ENRICHMENT",
+  "deposit": "Долни Раковец",
+  "updated_at": "2026-09-12T16:49:38.898940+00:00",
+  "status": "RESEARCH_CLOSED",
+  "coordinate_resolution": "TO_RESEARCH",
+  "sources": [
+    {
+      "institution": "Ministry of Health",
+      "document": "Balneological assessment No.66/04.08.2017",
+      "url": "https://www.mh.government.bg/upload/6839/66-dolni_rakovec-kei1_lenena_fabrika-04-08-2017.pdf",
+      "supports": [
+        "official KEI No.1 name",
+        "eastern bank of Stefanovska River",
+        "construction year 1959",
+        "capture construction",
+        "pipeline >2500 m",
+        "overflow elevation 630.69 m"
+      ]
+    },
+    {
+      "institution": "Ministry of Health",
+      "document": "Balneological assessment No.312/28.05.2026",
+      "url": "https://www.mh.government.bg/upload/19731/312-Dolni%20Rakovec-KEI2%20Banski%20kaptaj-28-05-2026.pdf",
+      "supports": [
+        "official KEI No.2 identity",
+        "two exploitation facilities identity",
+        "KEI No.2 technical structure",
+        "SOZ belt I fence description",
+        "overflow elevation 630.10 m"
+      ]
+    },
+    {
+      "institution": "Municipality of Radomir",
+      "document": "Water information document",
+      "url": "https://radomir.bg/wp-content/uploads/2024/08/voda.pdf",
+      "supports": [
+        "KEI No.1 Lenena fabrika",
+        "KEI No.2 Banski kaptazh",
+        "deposit facility inventory"
+      ]
+    },
+    {
+      "institution": "RIOSV Pernik / Ministry of Environment and Water",
+      "document": "Decision No. PE-13-PR/2020, file PE-OVOS-53-2019",
+      "url": "https://natura2000.egov.bg/EsriBg.Natura.Public.Web.App/PublicDownloads/RIEWPernik/OVOS/PK-OVOS-2020-13.pdf",
+      "registry_url": "https://registers.moew.government.bg/ovos/lot/32430",
+      "supports": [
+        "official spatial description of the Dolni Rakovets thermomineral deposit",
+        "Stefanovska River correction project geometry",
+        "protective drainage ditch geometry",
+        "Agiното banche spring spatial relation to drainage outfall",
+        "approximately 10 subthermal springs in the eastern part of Dolni Rakovets"
+      ]
+    },
+    {
+      "institution": "Municipality of Radomir",
+      "document": "Municipal water information document — Dolni Rakovets thermomineral deposit inventory",
+      "url": "https://radomir.bg/wp-content/uploads/2024/08/voda.pdf",
+      "supports": [
+        "official municipal inventory of the Dolni Rakovets thermomineral facilities",
+        "KEI No.1 identity as captage for the old Linen Factory",
+        "NEI No.5 Malкoto banche explicitly located next to KEI No.1",
+        "North and South boreholes as separate facilities",
+        "KEI No.2 Banski kaptazh identity",
+        "NEI No.7 Vodenitsata identity",
+        "NEI No.8 Agino banche identity"
+      ]
+    }
+  ],
+  "facilities": [
+    {
+      "raw_candidate_name": "Каптиран естествен извор № 1 \"Денена фабрика\"",
+      "official_name": "Каптиран естествен извор № 1 „Ленена фабрика“",
+      "coordinate_status": "TO_RESEARCH",
+      "safe_location_facts": [
+        "east bank of Stefanovska River",
+        "eastern natural drainage zone of Dolni Rakovets",
+        "overflow elevation 630.69 m"
+      ],
+      "critical_note": "The former Linen Factory reservoir is more than 2500 m downstream by pipeline and MUST NOT be used as the facility coordinate."
+    },
+    {
+      "raw_candidate_name": "КЕИ № 2 \"Бански каптаж",
+      "official_name": "КЕИ № 2 „Бански каптаж“",
+      "coordinate_status": "TO_RESEARCH",
+      "safe_location_facts": [
+        "captage and pumping station share fenced SOZ belt I",
+        "small concrete overflow adjacent",
+        "overflow elevation 630.10 m"
+      ]
+    }
+  ],
+  "baseline_identity_audit": {
+    "official_map_match": false,
+    "note": "No valid Dolni Rakovets identity match exists in the current official baseline. Legacy fuzzy matches to Velingrad and Bankya are rejected."
+  },
+  "next_research_targets": [
+    "official SOZ project",
+    "WABD/municipal technical file",
+    "cadastral parcel for KEI No.1",
+    "cadastral parcel for KEI No.2",
+    "facility-level BGS/WGS coordinates"
+  ],
+  "deposit_spatial_evidence": {
+    "source": "RIOSV Pernik Decision No. PE-13-PR/2020",
+    "source_url": "https://natura2000.egov.bg/EsriBg.Natura.Public.Web.App/PublicDownloads/RIEWPernik/OVOS/PK-OVOS-2020-13.pdf",
+    "moew_ovos_registry_lot": 32430,
+    "file_number": "PE-OVOS-53-2019",
+    "decision_date": "2020-04-10",
+    "official_facts": [
+      "The thermomineral deposit at Dolni Rakovets comprises approximately 10 subthermal springs with documented temperatures of 20-31 C.",
+      "The springs drain at the foot of a hill in the eastern part of Dolni Rakovets.",
+      "The Stefanovska River correction project is intended to protect the Dolni Rakovets thermomineral deposit from mixing with surface waters.",
+      "A protective drainage ditch is planned in the western part of the deposit under an existing dirt road.",
+      "The ditch receives a stream flowing from the spring named Aginoto banche.",
+      "The ditch outfall is described as approximately 44 m from that spring."
+    ],
+    "published_project_coordinates_as_printed": {
+      "river_correction_axis_vertices": [
+        {
+          "X": 8472895.48,
+          "Y": 4578899.79
+        },
+        {
+          "X": 8472931.45,
+          "Y": 4578656.4
+        },
+        {
+          "X": 8472910.0,
+          "Y": 4578622.81
+        },
+        {
+          "X": 8472884.58,
+          "Y": 4578569.82
+        }
+      ],
+      "protective_ditch_axis_vertices": [
+        {
+          "X": 8473030.27,
+          "Y": 4578670.03
+        },
+        {
+          "X": 8473037.51,
+          "Y": 4578698.86
+        },
+        {
+          "X": 8473038.05,
+          "Y": 4578713.3
+        },
+        {
+          "X": 8473031.66,
+          "Y": 4578751.47
+        },
+        {
+          "X": 8473048.43,
+          "Y": 4578815.54
+        },
+        {
+          "X": 8473041.69,
+          "Y": 4578833.25
+        },
+        {
+          "X": 8473023.61,
+          "Y": 4578868.03
+        },
+        {
+          "X": 8473014.9,
+          "Y": 4578912.22
+        }
+      ]
+    },
+    "coordinate_caution": "Coordinates above are project geometry coordinates transcribed exactly as printed in the official decision. The decision page does not explicitly identify their CRS and they are NOT facility coordinates for KEI No.1 or KEI No.2. They must not be used to resolve either candidate without an authoritative spatial identity link.",
+    "facility_resolution_effect": "NONE_YET",
+    "research_value": "HIGH_FOR_DEPOSIT_GEOMETRY_AND_FOLLOWUP_SOURCE_DISCOVERY",
+    "project_coordinate_interpretation": {
+      "interpreted_crs": "BGS1970 K9",
+      "source_axis_labels_preserved": true,
+      "transformation_library_input_order": "[printed Y, printed X]",
+      "method": "BGS1970 K9 -> BGS2005 KK using bojko108/transformations grid BGS_1970_K9_to_BGS_2005_KK.bcsg; BGS2005 Lambert -> WGS84 geographic",
+      "qa_first_vertex_source_printed": {
+        "X": 8472895.48,
+        "Y": 4578899.79
+      },
+      "qa_first_vertex_library_input": [
+        4578899.79,
+        8472895.48
+      ],
+      "qa_first_vertex_wgs84": {
+        "lat": 42.47462500208827,
+        "lon": 23.011206331821136
+      },
+      "reverse_order_test": "FAILED_OUTSIDE_GRID_EXTENT",
+      "interpretation_status": "SPATIALLY_VALIDATED_PROJECT_GEOMETRY",
+      "critical_caution": "These coordinates describe project geometry from RIOSV Decision PE-13-PR/2020. They are not facility coordinates for KEI No.1 or KEI No.2 and must not be assigned to either facility without an authoritative identity link."
+    },
+    "project_geometry_wgs84": {
+      "river_correction_axis_vertices": [
+        {
+          "vertex": 1,
+          "source_printed_X": 8472895.48,
+          "source_printed_Y": 4578899.79,
+          "bgs1970_k9_library_input": [
+            4578899.79,
+            8472895.48
+          ],
+          "bgs2005_kk": {
+            "X": 4707370.7857711185,
+            "Y": 295383.12637885567
+          },
+          "wgs84": {
+            "lat": 42.47462500208827,
+            "lon": 23.011206331821136
+          }
+        },
+        {
+          "vertex": 2,
+          "source_printed_X": 8472931.45,
+          "source_printed_Y": 4578656.4,
+          "bgs1970_k9_library_input": [
+            4578656.4,
+            8472931.45
+          ],
+          "bgs2005_kk": {
+            "X": 4707126.596831665,
+            "Y": 295413.0834489679
+          },
+          "wgs84": {
+            "lat": 42.472435490093424,
+            "lon": 23.011657893259365
+          }
+        },
+        {
+          "vertex": 3,
+          "source_printed_X": 8472910,
+          "source_printed_Y": 4578622.81,
+          "bgs1970_k9_library_input": [
+            4578622.81,
+            8472910
+          ],
+          "bgs2005_kk": {
+            "X": 4707093.547615167,
+            "Y": 295390.81315300707
+          },
+          "wgs84": {
+            "lat": 42.472132180028126,
+            "lon": 23.011399010941982
+          }
+        },
+        {
+          "vertex": 4,
+          "source_printed_X": 8472884.58,
+          "source_printed_Y": 4578569.82,
+          "bgs1970_k9_library_input": [
+            4578569.82,
+            8472884.58
+          ],
+          "bgs2005_kk": {
+            "X": 4707041.203224428,
+            "Y": 295364.0960496757
+          },
+          "wgs84": {
+            "lat": 42.47165405410356,
+            "lon": 23.011092984690784
+          }
+        }
+      ],
+      "protective_ditch_axis_vertices": [
+        {
+          "vertex": 1,
+          "source_printed_X": 8473030.27,
+          "source_printed_Y": 4578670.03,
+          "bgs1970_k9_library_input": [
+            4578670.03,
+            8473030.27
+          ],
+          "bgs2005_kk": {
+            "X": 4707137.7861498725,
+            "Y": 295512.20375247486
+          },
+          "wgs84": {
+            "lat": 42.47256243871775,
+            "lon": 23.012858771550633
+          }
+        },
+        {
+          "vertex": 2,
+          "source_printed_X": 8473037.51,
+          "source_printed_Y": 4578698.86,
+          "bgs1970_k9_library_input": [
+            4578698.86,
+            8473037.51
+          ],
+          "bgs2005_kk": {
+            "X": 4707166.427334665,
+            "Y": 295520.1518362183
+          },
+          "wgs84": {
+            "lat": 42.47282228500517,
+            "lon": 23.01294514120838
+          }
+        },
+        {
+          "vertex": 3,
+          "source_printed_X": 8473038.05,
+          "source_printed_Y": 4578713.3,
+          "bgs1970_k9_library_input": [
+            4578713.3,
+            8473038.05
+          ],
+          "bgs2005_kk": {
+            "X": 4707180.848836075,
+            "Y": 295521.0476069208
+          },
+          "wgs84": {
+            "lat": 42.4729523010227,
+            "lon": 23.012950871223282
+          }
+        },
+        {
+          "vertex": 4,
+          "source_printed_X": 8473031.66,
+          "source_printed_Y": 4578751.47,
+          "bgs1970_k9_library_input": [
+            4578751.47,
+            8473031.66
+          ],
+          "bgs2005_kk": {
+            "X": 4707219.162626787,
+            "Y": 295515.6008584555
+          },
+          "wgs84": {
+            "lat": 42.473295643616865,
+            "lon": 23.01287095544535
+          }
+        },
+        {
+          "vertex": 5,
+          "source_printed_X": 8473048.43,
+          "source_printed_Y": 4578815.54,
+          "bgs1970_k9_library_input": [
+            4578815.54,
+            8473048.43
+          ],
+          "bgs2005_kk": {
+            "X": 4707282.796200403,
+            "Y": 295533.94421281386
+          },
+          "wgs84": {
+            "lat": 42.47387313844125,
+            "lon": 23.0130711737799
+          }
+        },
+        {
+          "vertex": 6,
+          "source_printed_X": 8473041.69,
+          "source_printed_Y": 4578833.25,
+          "bgs1970_k9_library_input": [
+            4578833.25,
+            8473041.69
+          ],
+          "bgs2005_kk": {
+            "X": 4707300.665932247,
+            "Y": 295527.64322488196
+          },
+          "wgs84": {
+            "lat": 42.474032279217894,
+            "lon": 23.012988186508565
+          }
+        },
+        {
+          "vertex": 7,
+          "source_printed_X": 8473023.61,
+          "source_printed_Y": 4578868.03,
+          "bgs1970_k9_library_input": [
+            4578868.03,
+            8473023.61
+          ],
+          "bgs2005_kk": {
+            "X": 4707335.879011251,
+            "Y": 295510.42713543586
+          },
+          "wgs84": {
+            "lat": 42.47434460167813,
+            "lon": 23.01276630931751
+          }
+        },
+        {
+          "vertex": 8,
+          "source_printed_X": 8473014.9,
+          "source_printed_Y": 4578912.22,
+          "bgs1970_k9_library_input": [
+            4578912.22,
+            8473014.9
+          ],
+          "bgs2005_kk": {
+            "X": 4707380.267731162,
+            "Y": 295502.80963038094
+          },
+          "wgs84": {
+            "lat": 42.4747420373154,
+            "lon": 23.0126578292157
+          }
+        }
+      ],
+      "bbox_wgs84": {
+        "min_lat": 42.47165405410356,
+        "max_lat": 42.4747420373154,
+        "min_lon": 23.011092984690784,
+        "max_lon": 23.0130711737799
+      },
+      "facility_resolution_effect": "NONE_YET"
+    }
+  },
+  "official_municipal_facility_inventory": {
+    "source": "Municipality of Radomir",
+    "source_url": "https://radomir.bg/wp-content/uploads/2024/08/voda.pdf",
+    "inventory": [
+      {
+        "id": "NEI_1",
+        "name": "Най-северния некаптиран естествен извор"
+      },
+      {
+        "id": "NEI_2",
+        "name": "„Окното“",
+        "type": "некаптирана съсредоточена изворна група"
+      },
+      {
+        "id": "NEI_3",
+        "name": "„Банчето“",
+        "type": "некаптирана съсредоточена изворна група"
+      },
+      {
+        "id": "NEI_4",
+        "name": "Некаптиран естествен извор"
+      },
+      {
+        "id": "KEI_1",
+        "name": "Каптаж за старата „Ленена фабрика“"
+      },
+      {
+        "id": "NEI_5",
+        "name": "„Малкото банче“",
+        "relation": "до каптажа за „Ленената фабрика“"
+      },
+      {
+        "id": "BOREHOLE_1",
+        "name": "Северен сондаж"
+      },
+      {
+        "id": "NEI_6",
+        "name": "„Окно 2“",
+        "relation": "южно",
+        "type": "некаптиран естествен извор"
+      },
+      {
+        "id": "BOREHOLE_2",
+        "name": "Южен сондаж"
+      },
+      {
+        "id": "KEI_2",
+        "name": "„Бански каптаж“"
+      },
+      {
+        "id": "NEI_7",
+        "name": "„Воденицата“",
+        "type": "некаптиран естествен извор"
+      },
+      {
+        "id": "NEI_8",
+        "name": "„Агино банче“",
+        "type": "некаптирани естествени извори"
+      }
+    ],
+    "spatial_identity_constraints": [
+      "NEI No.5 Malкoto banche is explicitly adjacent to KEI No.1 Lenena fabrika.",
+      "NEI No.8 Agino banche is a distinct non-captured spring group and must not be confused with KEI No.1 or KEI No.2.",
+      "North borehole, South borehole, KEI No.1 and KEI No.2 are separate physical facilities."
+    ],
+    "coordinate_effect": "NONE",
+    "research_value": "HIGH_FOR_FACILITY_IDENTITY_AND_SITUATIONAL_PLAN_MATCHING"
+  },
+  "official_ovos_additional_findings": {
+    "source": "MOEW / RIOSV Pernik OVOС lot 32430, Information under Annex No.2",
+    "groundwater_body": {
+      "name": "Порови води в кватернер Радомир-Брезник",
+      "code": "BG4G000000Q007"
+    },
+    "water_protection_context": "Инвестиционното предложение попада в зона за защита на водите по смисъла на чл. 119а от Закона за водите.",
+    "facility_coordinate_result": "NO_FACILITY_LEVEL_COORDINATES_FOUND",
+    "cadastral_result": "NO_PARCEL_IDENTIFIER_FOUND",
+    "kei1_result": "NOT_RESOLVED",
+    "kei2_result": "NOT_RESOLVED",
+    "research_effect": "OVOS_LOT_32430_EXHAUSTED_FOR_FACILITY_LEVEL_LOCATION"
+  },
+  "official_2024_gas_pipeline_spatial_context": {
+    "source_title": "Информация за преценяване на необходимостта от ОВОС — Преносен газопровод от Пиперево до Перник",
+    "source_institution": "МОСВ / Булгартрансгаз",
+    "source_year": 2024,
+    "figure": "Фигура 2 — Местоположение на ИП спрямо СОЗ на НМВ „Долни Раковец“",
+    "deposit_geometry_evidence": {
+      "deposit_name": "Долни Раковец",
+      "map_depiction": "На официалната карта е показан синьо щрихован пространствен обхват, обозначен като СОЗ на находище на минерални води / НМВ Долни Раковец.",
+      "interpretation": "DEPOSIT_LEVEL_SPATIAL_CONTEXT_ONLY",
+      "facility_level_use": "PROHIBITED",
+      "gas_pipeline_relation": "Документът посочва, че пояс III / защитният обхват на НМВ Долни Раковец е в близост до трасето, без да се засяга от него."
+    },
+    "important_caveat": "Същият документ посочва, че в района няма определени СОЗ по реда на Наредба №3/2000 г.; картографираният полигон не се използва като доказателство за официално учредена facility-level СОЗ на КЕИ №1 или КЕИ №2.",
+    "hydrogeological_context": {
+      "location": "извън регулационните граници на с. Долни Раковец",
+      "aquifer_character": "субтермални пукнатинно-карстови води",
+      "geology": "среднотриаски окарстени варовици"
+    },
+    "coordinate_effect": "NONE",
+    "kei1_coordinate_effect": "NONE",
+    "kei2_coordinate_effect": "NONE",
+    "research_value": "HIGH_FOR_DEPOSIT_BOUNDARY_CONTEXT"
+  },
+  "final_spatial_resolution": {
+    "result": "NO_SAFE_RESOLUTION",
+    "kei1": {
+      "name": "КЕИ № 1 „Ленена фабрика“",
+      "coordinate_status": "TO_RESEARCH",
+      "reason": "No authoritative facility-level coordinate or cadastral parcel securely tied to KEI1 was found."
+    },
+    "kei2": {
+      "name": "КЕИ № 2 „Бански каптаж“",
+      "coordinate_status": "TO_RESEARCH",
+      "reason": "No authoritative facility-level coordinate or cadastral parcel securely tied to KEI2 was found."
+    },
+    "deposit_level_geometry_available": true,
+    "facility_level_geometry_available": false,
+    "unsafe_inference_prohibited": true,
+    "search_scope_completed": [
+      "MH official balneological assessments",
+      "Municipality Radomir official facility inventory",
+      "MOEW/RIOSV OVOС lot 32430",
+      "project geometry and transformed BGS1970 K9 coordinates",
+      "2024 MOEW/Bulgartransgaz deposit-level spatial context",
+      "public search for RD-707/10.09.2014",
+      "public search for exploitation resource report",
+      "public search for SOZ/cadastral facility-level evidence"
+    ]
+  }
+}

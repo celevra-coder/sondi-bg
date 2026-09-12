@@ -1,0 +1,39 @@
+{
+  "place": "Добринище",
+  "status": "RESEARCH_CLOSED",
+  "coordinate_resolution": "TO_RESEARCH",
+  "facilities": [
+    {
+      "candidate": 12,
+      "facility": "Сондаж №2 „Банята“",
+      "coordinate_status": "TO_RESEARCH",
+      "site_level_coordinate": {
+        "lat": 41.822542396806654,
+        "lon": 23.56609765905634,
+        "scope": "GROUP_SITE_LEVEL_ONLY",
+        "applies_to": [
+          "Сондаж №2 „Банята“",
+          "КЕИ №2 „Банята“"
+        ],
+        "facility_level_use": "PROHIBITED",
+        "source": "Greece-Bulgaria Mineral Paths thematic study"
+      },
+      "reason": "Published coordinate represents the combined Banyata source group and cannot safely distinguish borehole No.2 from KEI No.2."
+    },
+    {
+      "candidate": 13,
+      "facility": "Сондаж №3 „Плажа“",
+      "coordinate_status": "TO_RESEARCH",
+      "location_context": "mineral beach area north of the old mineral bath, outside the built-up part of Dobrinishte",
+      "reason": "Official identity and water-abstraction permit confirmed, but no authoritative facility-level coordinate or cadastral parcel was established."
+    }
+  ],
+  "final_spatial_resolution": {
+    "result": "NO_SAFE_FACILITY_LEVEL_RESOLUTION",
+    "candidate_12": "TO_RESEARCH",
+    "candidate_13": "TO_RESEARCH",
+    "facility_coordinates_added": 0,
+    "unsafe_inference_prohibited": true
+  },
+  "updated_at": "2026-09-12T16:56:24.271233+00:00"
+}

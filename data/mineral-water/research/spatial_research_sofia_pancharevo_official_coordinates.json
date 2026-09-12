@@ -1,0 +1,43 @@
+{
+  "place": "София-Панчарево",
+  "status": "RESEARCH_CLOSED",
+  "result": "MATCHED_EXISTING_OFFICIAL_COORDINATES_VERIFIED",
+  "conclusion": "The two MH candidates are not separate missing facilities. They match existing BDDR official facilities already present in official_water_facilities.geojson.",
+  "facilities": [
+    {
+      "candidate": 165,
+      "mh_facility": "Каптиран естествен извор \"Тунела",
+      "existing_feature_index": 214,
+      "existing_facility": "КИ \"Тунела\"",
+      "existing_registry_number": "РМН1 - 081001",
+      "existing_coordinate": [
+        23.4033056,
+        42.6021111
+      ],
+      "independent_soz_coordinate": [
+        23.40327777777778,
+        42.60219444444444
+      ],
+      "final_status": "MATCHED_EXISTING"
+    },
+    {
+      "candidate": 166,
+      "mh_facility": "Каптиран естествен извор\"Гъбата",
+      "existing_feature_index": 215,
+      "existing_facility": "КИ \"Гъбата\"",
+      "existing_registry_number": "РМН1 - 081002",
+      "existing_coordinate": [
+        23.4043056,
+        42.6018333
+      ],
+      "independent_soz_coordinate": [
+        23.40419444444444,
+        42.60183333333333
+      ],
+      "final_status": "MATCHED_EXISTING"
+    }
+  ],
+  "new_facilities_added": 0,
+  "matched_existing": 2,
+  "updated_at": "2026-09-12T17:17:10.862687+00:00"
+}

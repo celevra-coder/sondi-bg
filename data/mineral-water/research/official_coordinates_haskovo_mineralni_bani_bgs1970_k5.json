@@ -1,0 +1,43 @@
+{
+  "source": "БД Източнобеломорски район",
+  "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+  "source_crs": "BGS1970 K5",
+  "target_crs": "WGS84 / ETRS89 geographic",
+  "control": {
+    "facility": "Сондаж 1ВП",
+    "x_northing": 4579854.14,
+    "y_easting": 9410397.96,
+    "official_reference_lat": 41.9417222222,
+    "official_reference_lon": 25.3441944444,
+    "transformed_lat": 41.9417175,
+    "transformed_lon": 25.3441945,
+    "difference_m_approx": 0.53
+  },
+  "facilities": {
+    "2ВП": {
+      "x_northing": 4579662.98,
+      "y_easting": 9410467.95,
+      "lat": 41.9400044,
+      "lon": 25.3450668
+    },
+    "3ВП": {
+      "x_northing": 4579427.7,
+      "y_easting": 9410591.16,
+      "lat": 41.9379,
+      "lon": 25.3465872
+    },
+    "4ВП": {
+      "x_northing": 4579766.8,
+      "y_easting": 9410429.74,
+      "lat": 41.9409348,
+      "lon": 25.3445907
+    },
+    "КЕИ5": {
+      "x_northing": 4579650.06,
+      "y_easting": 9410486.03,
+      "lat": 41.9398901,
+      "lon": 25.3452867
+    }
+  },
+  "applied_at": "2026-09-11T06:18:04+00:00"
+}

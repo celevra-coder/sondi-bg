@@ -1,0 +1,41 @@
+{
+  "deposit": "Баня - Панагюрище",
+  "source": "Басейнова дирекция „Източнобеломорски район“ — официален регистър на съоръженията за минерални води",
+  "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+  "source_crs": "BGS1970 K9",
+  "source_axis_order": "X=Northing, Y=Easting",
+  "target_crs": "WGS84 / ETRS89 geographic",
+  "control": {
+    "facility": "КЕИ №1 „Банчето“",
+    "official_source_coordinate_x_northing": 4577843.331,
+    "official_source_coordinate_y_easting": 8564971.399,
+    "official_reference_latitude": 42.46372222,
+    "official_reference_longitude": 24.13086111,
+    "transformed_latitude": 42.463631491,
+    "transformed_longitude": 24.130800558,
+    "difference_m": 11.245,
+    "transform_chain": "BGS1970 K9 -> BGS2005 KK -> WGS84/ETRS89 geographic",
+    "transform_validation_status": "PASS"
+  },
+  "facilities": {
+    "BANCHETO": {
+      "official_facility_name": "Каптиран естествен извор „Банчето“",
+      "x_northing": 4577843.331,
+      "y_easting": 8564971.399,
+      "latitude": 42.46372222,
+      "longitude": 24.13086111,
+      "resolution_method": "Official facility geographic coordinate published in the basin register. The accompanying official BGS1970 K9 coordinate was independently transformed and used as a control.",
+      "precision_scope": "OFFICIAL_PUBLISHED_GEOGRAPHIC_COORDINATE"
+    },
+    "NAKLONEN": {
+      "official_facility_name": "Сондаж № 2 „Наклонен“",
+      "x_northing": 4577989.06,
+      "y_easting": 8564991.592,
+      "latitude": 42.464941831,
+      "longitude": 24.131060893,
+      "resolution_method": "Official BGS1970 K9 facility coordinate transformed to WGS84/ETRS89 geographic coordinates. Transformation validated against official KEI No.1 Bancheto control.",
+      "precision_scope": "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED_TO_WGS84"
+    }
+  },
+  "applied_at": "2026-09-11T14:12:31.007048Z"
+}

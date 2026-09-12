@@ -1,0 +1,888 @@
+{
+  "count": 27,
+  "records": [
+    {
+      "mh_deposit": "Добринище",
+      "mh_facility": "КЕИ № 2 \"Банята",
+      "mh_settlement": "Добринище",
+      "property_id": "21498.350.547",
+      "location_note": null,
+      "verified_source": "MH balneological assessment No.228/01.06.2023",
+      "verified_source_url": "https://old.mh.government.bg/media/filer_public/2023/06/08/228-dobrinishte-kei_2_baniata-01-06-2023.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "Добринище",
+      "mh_facility": "КЕИ № 4а \"Сребърният извор",
+      "mh_settlement": "Добринище",
+      "property_id": "21498.158.23",
+      "location_note": null,
+      "verified_source": "MH balneological assessment No.310/20.01.2026",
+      "verified_source_url": "https://www.mh.government.bg/upload/18177/310-Dobrinishte-KEI%204a%20Srebarniqt%20izvor-20-01-2026.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "",
+      "mh_facility": "Сондаж \"Петралийски",
+      "mh_settlement": "Марчево и с. Огняново",
+      "property_id": "47408.501.12",
+      "location_note": "Отделно физическо водовземно съоръжение от находище ",
+      "verified_source": "MH balneological assessment No.232/01.06.2023",
+      "verified_source_url": "https://www.mh.government.bg/upload/6669/232-ognianovo-garmen-sondazh_petraliiski-01-06-2023.pdf",
+      "hits": [
+        {
+          "file": "public/geology-map/data/bd_wabd_current_groundwater_registers.json",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/bd_wabd_current_groundwater_registers.json",
+          "object_path": "$.all_mineral_water_permits",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/bd_wabd_current_groundwater_registers.json",
+          "object_path": "$.all_mineral_water_permits.records[399]",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/bd_wabd_current_groundwater_registers.json",
+          "object_path": "$.all_mineral_water_permits.records[426]",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/bd_wabd_current_groundwater_registers.json",
+          "object_path": "$.all_mineral_water_permits.records[427]",
+          "coordinates": [],
+          "summary": {}
+        }
+      ],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_FOUND_NO_COORDINATE"
+    },
+    {
+      "mh_deposit": "Катунци",
+      "mh_facility": "сондаж № 235хг",
+      "mh_settlement": "Катунци",
+      "property_id": "36693.15.4",
+      "location_note": null,
+      "verified_source": "MH balneological assessment No.295/04.03.2025",
+      "verified_source_url": "https://www.mh.government.bg/upload/13589/295-Katunci-sondazh235hg-04-03-2025.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "Варненски басейн",
+      "mh_facility": "сондаж № Вн-48 \"Гранд Хотел Варна",
+      "mh_settlement": "",
+      "property_id": "10135.2569.130",
+      "location_note": null,
+      "verified_source": "MH balneological assessment No.275/03.06.2024",
+      "verified_source_url": "https://www.mh.government.bg/upload/6623/275-grand_hotel_varna-sondazh-vn-48-03-06-2024.pdf",
+      "hits": [
+        {
+          "file": "public/geology-map/data/mh_mineral_compare.json",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/mh_mineral_compare.json",
+          "object_path": "$.records[218]",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/mh_vs_current_mineral_master_v2.json",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/mh_vs_current_mineral_master_v2.json",
+          "object_path": "$.records[67]",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[324]",
+          "coordinates": [
+            {
+              "lat": 43.2255272,
+              "lon": 28.0109461,
+              "method": "GeoJSON Point"
+            }
+          ],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[324].properties",
+          "coordinates": [],
+          "summary": {
+            "facility": "Вн-48 ,,Варна\"                             /Гранд хотел Варна/             ПИ 10135.2569.130",
+            "settlement": "Варна",
+            "municipality": "Варна",
+            "district": "Варна",
+            "deposit": "\"EВХ\" - участък  Варна - №101"
+          }
+        }
+      ],
+      "unique_coordinate_candidates": [
+        {
+          "lat": 43.2255272,
+          "lon": 28.0109461
+        }
+      ],
+      "repo_resolution_status": "ONE_EXACT_COORDINATE_CANDIDATE"
+    },
+    {
+      "mh_deposit": "Варненски басейн",
+      "mh_facility": "сондаж № С-5 \"Аспарухово",
+      "mh_settlement": "",
+      "property_id": "10135.5502.588",
+      "location_note": null,
+      "verified_source": "MH balneological assessment No.305/13.01.2026",
+      "verified_source_url": "https://www.mh.government.bg/upload/18098/305-Varnenski%20basein-sondazh-C-5Asparuhovo-13-01-2026.pdf",
+      "hits": [
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[285]",
+          "coordinates": [
+            {
+              "lat": 43.1844072,
+              "lon": 27.8842689,
+              "method": "GeoJSON Point"
+            }
+          ],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[285].properties",
+          "coordinates": [],
+          "summary": {
+            "facility": "С-5              ,,Аспарухово\"  ПИ   10135.5502.588",
+            "settlement": "Варна",
+            "municipality": "Варна",
+            "district": "Варна",
+            "deposit": "\"EВХ\" - участък  Варна - №101"
+          }
+        }
+      ],
+      "unique_coordinate_candidates": [
+        {
+          "lat": 43.1844072,
+          "lon": 27.8842689
+        }
+      ],
+      "repo_resolution_status": "ONE_EXACT_COORDINATE_CANDIDATE"
+    },
+    {
+      "mh_deposit": "Североизточна България",
+      "mh_facility": "сондаж № Р-110х \"Варна",
+      "mh_settlement": "",
+      "property_id": "30497.37.15",
+      "location_note": "Официалната Програма за опазване на околната среда на Община Варна 2024-2033 локализира съоръжението на територия: Варна, местност „Орехчето“. Това е facility-level териториално уточнение, но не представлява точна координата на устието.",
+      "verified_source": "MH balneological assessment No.283/14.06.2024",
+      "verified_source_url": "https://www.mh.government.bg/upload/6614/283-varnenski_basein-sondazh-r-110h-14-06-2024.pdf",
+      "hits": [
+        {
+          "file": "public/geology-map/data/mh_mineral_compare.json",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/mh_mineral_compare.json",
+          "object_path": "$.records[329]",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[318]",
+          "coordinates": [
+            {
+              "lat": 43.1842722,
+              "lon": 27.8425306,
+              "method": "GeoJSON Point"
+            }
+          ],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[318].properties",
+          "coordinates": [],
+          "summary": {
+            "facility": "Р-110х             ,,Варна\"    ПИ 30497.37.15",
+            "settlement": "с. Звездица",
+            "municipality": "Варна",
+            "district": "Варна",
+            "deposit": "\"МВВХ\"  №100 участък  Варна"
+          }
+        }
+      ],
+      "unique_coordinate_candidates": [
+        {
+          "lat": 43.1842722,
+          "lon": 27.8425306
+        }
+      ],
+      "repo_resolution_status": "ONE_EXACT_COORDINATE_CANDIDATE"
+    },
+    {
+      "mh_deposit": "Североизточна България",
+      "mh_facility": "сондаж № Р-209х \"ИСУ ИНВЕСТ-Варна",
+      "mh_settlement": "",
+      "property_id": "10135.3514.813",
+      "location_note": null,
+      "verified_source": "MH balneological assessment No.307/13.01.2026",
+      "verified_source_url": "https://www.mh.government.bg/upload/18100/307-SeveroiztochnaBulgaria-malmvalanzh-Varna-sondazh-R-209h-13-01-2026.pdf",
+      "hits": [
+        {
+          "file": "public/geology-map/data/mh_vs_current_mineral_master_v2.json",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/mh_vs_current_mineral_master_v2.json",
+          "object_path": "$.records[20]",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[384]",
+          "coordinates": [
+            {
+              "lat": 43.21938,
+              "lon": 27.87853,
+              "method": "GeoJSON Point"
+            }
+          ],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[384].properties",
+          "coordinates": [],
+          "summary": {
+            "facility": "Р-209х ,,ИСУ – Инвест – Варна“   ПИ 10135.3514.813",
+            "settlement": "Варна",
+            "municipality": "Варна",
+            "district": "Варна",
+            "deposit": "\"МВВХ\" №100 - участък Варна"
+          }
+        }
+      ],
+      "unique_coordinate_candidates": [
+        {
+          "lat": 43.21938,
+          "lon": 27.87853
+        }
+      ],
+      "repo_resolution_status": "ONE_EXACT_COORDINATE_CANDIDATE"
+    },
+    {
+      "mh_deposit": "Североизточна България",
+      "mh_facility": "сондаж № Р-39х \"Варна",
+      "mh_settlement": "",
+      "property_id": "10135.5501.445",
+      "location_note": "Официалната Програма за опазване на околната среда на Община Варна 2024-2033 локализира съоръжението на територия: КРЗ „Одесос“ АД, Варна. Това е facility-level териториално уточнение, но не представлява точна координата на устието.",
+      "verified_source": "MH balneological assessment No.277/03.06.2024",
+      "verified_source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=7",
+      "hits": [
+        {
+          "file": "public/geology-map/data/mh_mineral_compare.json",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/mh_mineral_compare.json",
+          "object_path": "$.records[422]",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[274]",
+          "coordinates": [
+            {
+              "lat": 43.1908847,
+              "lon": 27.8967822,
+              "method": "GeoJSON Point"
+            }
+          ],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[274].properties",
+          "coordinates": [],
+          "summary": {
+            "facility": "Р-39х                        Варна (КРЗ)    ПИ 10135.5501.445",
+            "settlement": "Варна",
+            "municipality": "Варна",
+            "district": "Варна",
+            "deposit": "\"МВВХ\" №100 - участък  \"Варна\""
+          }
+        }
+      ],
+      "unique_coordinate_candidates": [
+        {
+          "lat": 43.1908847,
+          "lon": 27.8967822
+        }
+      ],
+      "repo_resolution_status": "ONE_EXACT_COORDINATE_CANDIDATE"
+    },
+    {
+      "mh_deposit": "Североизточна България",
+      "mh_facility": "сондаж № Р-66х \"Св. Св. Константи и Елена",
+      "mh_settlement": "",
+      "property_id": "10135.2570.11",
+      "location_note": "Сондаж Р-66х Св. Св. Константин и Елена, участък Варна, община Варна. Актуална балнеологична оценка на МЗ от 13.01.2026 г.; точна facility-level координата не е установена.",
+      "verified_source": "MH balneological assessment No.308/13.01.2026",
+      "verified_source_url": "https://www.mh.government.bg/upload/18101/308-SeveroiztochnaBulgaria-malmvalanzh-Varna-sondazh-R-66h-13-01-2026.pdf",
+      "hits": [
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[293]",
+          "coordinates": [
+            {
+              "lat": 43.2465636,
+              "lon": 28.0264467,
+              "method": "GeoJSON Point"
+            }
+          ],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[293].properties",
+          "coordinates": [],
+          "summary": {
+            "facility": "Р-66х                   ,,Св. Св. Константин и Елена\"    ПИ 10135.2570.11",
+            "settlement": "Варна",
+            "municipality": "Варна",
+            "district": "Варна",
+            "deposit": "\"МВВХ\" №100 - участък  \"Варна\""
+          }
+        }
+      ],
+      "unique_coordinate_candidates": [
+        {
+          "lat": 43.2465636,
+          "lon": 28.0264467
+        }
+      ],
+      "repo_resolution_status": "ONE_EXACT_COORDINATE_CANDIDATE"
+    },
+    {
+      "mh_deposit": "Североизточна България",
+      "mh_facility": "сондаж № Р-68х \"Златни пясъци",
+      "mh_settlement": "",
+      "property_id": "10135.2572.150.1",
+      "location_note": "Официалната Програма за опазване на околната среда на Община Варна 2024-2033 локализира съоръжението на територия: район „Журналист“, Варна. Това е facility-level териториално уточнение, но не представлява точна координата на устието.",
+      "verified_source": "MH balneological assessment No.276/03.06.2024",
+      "verified_source_url": "https://www.mh.government.bg/upload/6622/276-zlatni_pqsaci-sondazh-p-68h-03-06-2024.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "Район",
+      "mh_facility": "Сондаж № Вн - 39 Каварна",
+      "mh_settlement": "",
+      "property_id": "72693.600.1",
+      "location_note": null,
+      "verified_source": "MH balneological assessment No.149/06.02.2020",
+      "verified_source_url": "https://www.mh.government.bg/upload/6756/149-severoiztochna_bulgaria-malmovalanzh-sondazhvn39_kavarna-06-02-2020.pdf",
+      "hits": [
+        {
+          "file": "public/geology-map/data/mh_mineral_compare.json",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/mh_mineral_compare.json",
+          "object_path": "$.records[84]",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/mh_mineral_compare.json",
+          "object_path": "$.records[89]",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/mh_mineral_compare.json",
+          "object_path": "$.records[302]",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[346]",
+          "coordinates": [
+            {
+              "lat": 43.4059186,
+              "lon": 28.2429353,
+              "method": "GeoJSON Point"
+            }
+          ],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[346].properties",
+          "coordinates": [],
+          "summary": {
+            "facility": "Вн-39 ,,Каварна\"               /Икантълъка/    ПИ 72693.600.1.4-ЧДС",
+            "settlement": "с.Топола - к.к.\"Карвуна\"",
+            "municipality": "Каварна",
+            "district": "Добрич",
+            "deposit": "\"МВВХ\" №100 - участък Каварна"
+          }
+        }
+      ],
+      "unique_coordinate_candidates": [
+        {
+          "lat": 43.4059186,
+          "lon": 28.2429353
+        }
+      ],
+      "repo_resolution_status": "ONE_EXACT_COORDINATE_CANDIDATE"
+    },
+    {
+      "mh_deposit": "Район",
+      "mh_facility": "Сондаж № Р-33а \"Тузлата - Бялата лагуна",
+      "mh_settlement": "",
+      "property_id": "72693.154.9",
+      "location_note": null,
+      "verified_source": "MH balneological assessment No.148/31.01.2020",
+      "verified_source_url": "https://www.mh.government.bg/upload/6757/148-severoiztochna_bulgaria-malmovalanzh-sondazhr33htuzlata-byalata_laguna-31-01-2020.pdf",
+      "hits": [
+        {
+          "file": "public/geology-map/data/mh_vs_current_mineral_master_v2.json",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/mh_vs_current_mineral_master_v2.json",
+          "object_path": "$.records[192]",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[378]",
+          "coordinates": [
+            {
+              "lat": 43.4086775,
+              "lon": 28.2371692,
+              "method": "GeoJSON Point"
+            }
+          ],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[378].properties",
+          "coordinates": [],
+          "summary": {
+            "facility": "Р-33а \"Тузлата - Бялата лагуна\"     ПИ 72693.154.9",
+            "settlement": "с.Топола",
+            "municipality": "Каварна",
+            "district": "Добрич",
+            "deposit": "\"МВВХ\" №100 - участък Каварна"
+          }
+        }
+      ],
+      "unique_coordinate_candidates": [
+        {
+          "lat": 43.4086775,
+          "lon": 28.2371692
+        }
+      ],
+      "repo_resolution_status": "ONE_EXACT_COORDINATE_CANDIDATE"
+    },
+    {
+      "mh_deposit": "Североизточна България",
+      "mh_facility": "сондаж № Р-Белгун",
+      "mh_settlement": "",
+      "property_id": "03318.10.156",
+      "location_note": "Съществуващ сондаж Р-Белгун, участък Каварна, община Каварна. През 2026 г. е предмет на официална процедура за разрешително за водовземане от минерална вода.",
+      "verified_source": "MH balneological assessment No.315/05.06.2026",
+      "verified_source_url": "https://www.mh.government.bg/upload/19739/315-Severoiztochna%20Bulgaria-malmovalanzh-sondazhR-Belgun-05-06-2026.pdf",
+      "hits": [
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[403]",
+          "coordinates": [
+            {
+              "lat": 43.6017872,
+              "lon": 28.3107381,
+              "method": "GeoJSON Point"
+            }
+          ],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[403].properties",
+          "coordinates": [],
+          "summary": {
+            "facility": "Р-Белгун    ПИ 03318.10.156- ОС-Кв",
+            "settlement": "с. Белгун",
+            "municipality": "Каварна",
+            "district": "Добрич",
+            "deposit": "\"МВВХ\"  №100 участък  Каварна"
+          }
+        }
+      ],
+      "unique_coordinate_candidates": [
+        {
+          "lat": 43.6017872,
+          "lon": 28.3107381
+        }
+      ],
+      "repo_resolution_status": "ONE_EXACT_COORDINATE_CANDIDATE"
+    },
+    {
+      "mh_deposit": "Североизточна България",
+      "mh_facility": "сондаж № Р-Селце",
+      "mh_settlement": "",
+      "property_id": "05009.15.117",
+      "location_note": "Съществуващ сондаж Р-Селце, участък Каварна, община Каварна. През 2026 г. е предмет на официална процедура за разрешително за водовземане от минерална вода.",
+      "verified_source": "MH balneological assessment No.314/05.06.2026",
+      "verified_source_url": "https://www.mh.government.bg/upload/19738/314-Severoiztochna%20Bulgaria-malmovalanzh-sondazhR-Selce-05-06-2026.pdf",
+      "hits": [
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[401]",
+          "coordinates": [
+            {
+              "lat": 43.4413558,
+              "lon": 28.2787586,
+              "method": "GeoJSON Point"
+            }
+          ],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[401].properties",
+          "coordinates": [],
+          "summary": {
+            "facility": "Р-Селце               ПИ 05009.15.117 - ОС-Кв",
+            "settlement": "с. Божурец",
+            "municipality": "Каварна",
+            "district": "Добрич",
+            "deposit": "\"МВВХ\"  №100 участък  Каварна"
+          }
+        }
+      ],
+      "unique_coordinate_candidates": [
+        {
+          "lat": 43.4413558,
+          "lon": 28.2787586
+        }
+      ],
+      "repo_resolution_status": "ONE_EXACT_COORDINATE_CANDIDATE"
+    },
+    {
+      "mh_deposit": "Район",
+      "mh_facility": "Сондаж № Р-178х",
+      "mh_settlement": "",
+      "property_id": "02508.541.447",
+      "location_note": null,
+      "verified_source": "MH balneological assessment No.175/08.06.2020",
+      "verified_source_url": "https://www.mh.government.bg/upload/6731/175-severoiztochnabulgaria-malmvalanzh-balchik-sondazh-r-178h-08-06-2020.pdf",
+      "hits": [
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[357]",
+          "coordinates": [
+            {
+              "lat": 43.4139522,
+              "lon": 28.2263656,
+              "method": "GeoJSON Point"
+            }
+          ],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[357].properties",
+          "coordinates": [],
+          "summary": {
+            "facility": "Р-178х               Балчик                   ПИ 02508.541.447",
+            "settlement": "Балчик",
+            "municipality": "Балчик",
+            "district": "Добрич",
+            "deposit": "\"МВВХ\" №100 - участък Балчик"
+          }
+        }
+      ],
+      "unique_coordinate_candidates": [
+        {
+          "lat": 43.4139522,
+          "lon": 28.2263656
+        }
+      ],
+      "repo_resolution_status": "ONE_EXACT_COORDINATE_CANDIDATE"
+    },
+    {
+      "mh_deposit": "Климент",
+      "mh_facility": "Сондаж № 12",
+      "mh_settlement": "",
+      "property_id": "37229.12.22",
+      "location_note": "???????? ??? ???????, ??????? ?? ?. ???????",
+      "verified_source": "MH balneological assessment No.209/19.04.2022",
+      "verified_source_url": "https://www.mh.government.bg/upload/6693/209-kliment-sondazh12-19-04-2022.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "",
+      "mh_facility": "сондаж ПЕС-1хг \"Яновска",
+      "mh_settlement": "Мадан",
+      "property_id": "46045.502.636",
+      "location_note": null,
+      "verified_source": "MH balneological assessment No.268/02.02.2024",
+      "verified_source_url": "https://www.mh.government.bg/upload/6632/268-madan-sondazhpes-1hg-qnovska-02-02-2024.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "",
+      "mh_facility": "сондаж ПЕС-1хг \"Рудозем",
+      "mh_settlement": "Рудозем",
+      "property_id": "63207.501.244",
+      "location_note": "ПЕС-1ХГ ",
+      "verified_source": "MH balneological assessment No.269/02.02.2024",
+      "verified_source_url": "https://www.mh.government.bg/upload/6557/103-rudozem-sondazhpes-1hg-rudozem-02-02-2024.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "",
+      "mh_facility": "сондаж № С-58хг Кривина",
+      "mh_settlement": "",
+      "property_id": "39791.6003.614",
+      "location_note": "Сондаж С-58хг Кривина е официално посочен като разположен в ПИ 39791.6003.614 по КККР на с. Кривина, Столична община.",
+      "verified_source": "MH balneological assessment No.266/12.01.2024",
+      "verified_source_url": "https://www.mh.government.bg/upload/6634/balneologichna_otsenka__266_ot_12012024_g.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "Овощник",
+      "mh_facility": "сондаж № К-12",
+      "mh_settlement": "Овощник",
+      "property_id": "35167.507.355",
+      "location_note": "Сондаж К-12 е описан от Община Казанлък като разположен между с. Овощник и с. Розово. Няма установена точна facility-level координата.",
+      "verified_source": "MH balneological assessment No.261/02.01.2024",
+      "verified_source_url": "https://old.mh.government.bg/media/filer_public/2024/01/03/261-ovoshtnik-sondazhk12-02-01-2024.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "Овощник",
+      "mh_facility": "сондаж № К-14",
+      "mh_settlement": "Овощник",
+      "property_id": "35167.507.333",
+      "location_note": "Сондаж К-14 е описан от Община Казанлък като разположен западно от с. Овощник. Няма установена точна facility-level координата.",
+      "verified_source": "MH balneological assessment No.262/02.01.2024",
+      "verified_source_url": "https://www.mh.government.bg/upload/6638/262-ovoshtnik-sondazhk14-02-01-2024.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "Овощник",
+      "mh_facility": "сондаж № К-2",
+      "mh_settlement": "Овощник",
+      "property_id": "35167.99.743",
+      "location_note": "Сондаж К-2 е описан от Община Казанлък като разположен в близост до летище Овощник. Няма установена точна facility-level координата.",
+      "verified_source": "MH balneological assessment No.258/02.01.2024",
+      "verified_source_url": "https://old.mh.government.bg/media/filer_public/2024/01/03/258-ovoshtnik-sondazhk2-02-01-2024.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "Овощник",
+      "mh_facility": "сондаж № К-3",
+      "mh_settlement": "Овощник",
+      "property_id": "35167.93.617",
+      "location_note": "Сондаж К-3 е разположен южно от гр. Казанлък; официалната оценка на МЗ го описва до помпена станция и на 2125 m С-СЗ от минералната баня в с. Овощник.",
+      "verified_source": "MH balneological assessment No.41/02.01.2024",
+      "verified_source_url": "https://old.mh.government.bg/media/filer_public/2024/01/03/41-ovoshtnik-sondazhk3-02-01-2024.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "Овощник",
+      "mh_facility": "сондаж № К-5",
+      "mh_settlement": "Овощник",
+      "property_id": "35167.507.436",
+      "location_note": "Сондаж К-5 е отделно водовземно съоръжение на находище Овощник, използвано за минералната баня Овощник. Няма установена точна facility-level координата.",
+      "verified_source": "MH balneological assessment No.259/02.01.2024",
+      "verified_source_url": "https://www.mh.government.bg/upload/6641/259-ovoshtnik-sondazhk5-02-01-2024_MrQuCxG.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "Овощник",
+      "mh_facility": "сондаж № К-6",
+      "mh_settlement": "Овощник",
+      "property_id": "35167.119.370",
+      "location_note": "Сондаж К-6 е описан от Община Казанлък като разположен до „Арсенал“ АД и като недействащ към момента на общинския план. Няма установена точна facility-level координата.",
+      "verified_source": "MH balneological assessment No.260/02.01.2024",
+      "verified_source_url": "https://old.mh.government.bg/media/filer_public/2024/02/26/260-ovoshtnik-sondazhk6-02-01-2024.pdf",
+      "hits": [],
+      "unique_coordinate_candidates": [],
+      "repo_resolution_status": "PARCEL_NOT_FOUND_IN_LOCAL_DATA"
+    },
+    {
+      "mh_deposit": "Район",
+      "mh_facility": "Сондаж № Р-54х Каварна",
+      "mh_settlement": "",
+      "property_id": "72693.155.8",
+      "location_note": null,
+      "verified_source": "MH balneological assessment No.182/20.08.2020",
+      "verified_source_url": "https://www.mh.government.bg/upload/6724/182-severoiztochnabulgaria-malmvalanzh-kavarna-sondazh-r-54h-20-08-2020.pdf",
+      "hits": [
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$",
+          "coordinates": [],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[347]",
+          "coordinates": [
+            {
+              "lat": 43.4070928,
+              "lon": 28.2508683,
+              "method": "GeoJSON Point"
+            }
+          ],
+          "summary": {}
+        },
+        {
+          "file": "public/geology-map/data/official_water_facilities.geojson",
+          "object_path": "$.features[347].properties",
+          "coordinates": [],
+          "summary": {
+            "facility": "Р-54х ,,Каварна\"          /Тервелски лагер/               ПИ 72693.155.8",
+            "settlement": "с.Топола ",
+            "municipality": "Каварна",
+            "district": "Добрич",
+            "deposit": "\"МВВХ\" №100 - участък Каварна"
+          }
+        }
+      ],
+      "unique_coordinate_candidates": [
+        {
+          "lat": 43.4070928,
+          "lon": 28.2508683
+        }
+      ],
+      "repo_resolution_status": "ONE_EXACT_COORDINATE_CANDIDATE"
+    }
+  ]
+}

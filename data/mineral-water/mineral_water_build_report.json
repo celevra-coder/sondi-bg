@@ -1,0 +1,38 @@
+{
+  "baseline_existing_map_records": 423,
+  "research_status_counts": {
+    "COMPOSITE_GROUP": 3,
+    "CONFIRMED_MISSING": 111,
+    "DUPLICATE_MH": 19,
+    "MATCHED_EXISTING": 55,
+    "UNRESOLVED": 2
+  },
+  "confirmed_missing_added_to_master": 111,
+  "confirmed_missing_mappable_now": 66,
+  "confirmed_missing_without_safe_coordinates": 45,
+  "matched_existing_total": 55,
+  "matched_existing_attached": 55,
+  "matched_existing_unlinked": 0,
+  "duplicate_mh_total": 19,
+  "duplicate_mh_attached_to_confirmed": 13,
+  "duplicate_mh_attached_to_existing": 6,
+  "duplicate_mh_unlinked": 0,
+  "duplicate_mh_unlinked_records": [],
+  "settlements_filled_from_duplicate": 1,
+  "deposits_filled_from_duplicate": 0,
+  "non_point_research_records": 5,
+  "master_facility_records": 534,
+  "free_feature_count": 489,
+  "free_missing_field_counts": {
+    "temperature_c": 240,
+    "depth_m": 115,
+    "settlement": 9
+  },
+  "confirmed_location_status_counts": {
+    "CADASTRAL_BUILDING_RESOLVED_APPROXIMATE": 1,
+    "CADASTRAL_RESOLVED_APPROXIMATE": 27,
+    "OFFICIAL_EXACT": 37,
+    "TO_RESEARCH": 45,
+    "WABD_REGISTER_RESOLVED": 1
+  }
+}

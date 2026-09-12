@@ -1,0 +1,42 @@
+{
+  "place": "Баничан",
+  "status": "RESEARCH_CLOSED",
+  "coordinate_resolution": "TO_RESEARCH",
+  "final_spatial_resolution": {
+    "result": "NO_SAFE_RESOLUTION",
+    "facilities": [
+      {
+        "candidate": 16,
+        "facility": "КЕИ „Топлица“",
+        "coordinate_status": "TO_RESEARCH",
+        "locality": "Топлицата",
+        "relative_location": "approximately 40 m from borehole No.273",
+        "reason": "No authoritative facility-level coordinate or cadastral parcel securely tied to the spring was found."
+      },
+      {
+        "candidate": 18,
+        "facility": "сондаж №273",
+        "coordinate_status": "TO_RESEARCH",
+        "locality": "Топлицата",
+        "relative_location": "approximately 40 m from captured natural spring Toplitsa",
+        "reason": "No authoritative facility-level coordinate or cadastral parcel securely tied to the borehole was found."
+      }
+    ],
+    "official_spatial_evidence": {
+      "soz_order": "RD-475/05.05.2021",
+      "soz_scope": "deposit-level only; NOT an exact facility coordinate",
+      "relative_facility_relation": "KEI Toplitsa and borehole No.273 are approximately 40 m apart",
+      "current_fuzzy_coordinates": "NOT_ACCEPTED_AS_FACILITY_COORDINATES"
+    },
+    "search_scope_completed": [
+      "MH official balneological assessments and certificates",
+      "official relative facility descriptions",
+      "local official SOZ GeoJSON",
+      "repo-wide targeted identity and coordinate search",
+      "SOZ order reference RD-475/05.05.2021"
+    ],
+    "facility_coordinates_added": 0,
+    "unsafe_inference_prohibited": true
+  },
+  "updated_at": "2026-09-12T16:53:50.180223+00:00"
+}

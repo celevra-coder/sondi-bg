@@ -1,0 +1,59 @@
+{
+  "id": "VURBITSA_OFFICIAL_EXACT_2",
+  "created_at": "2026-09-12T06:12:35.386239+00:00",
+  "deposit": "Върбица",
+  "municipality": "Върбица",
+  "district": "Шумен",
+  "official_source": "Official sanitary protection zone project around the abstraction facilities of NMW \"Vurbitsa\"",
+  "official_source_url": "https://www.varbitsa.org/raw/uploads/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8A%D1%82%20%D0%B7%D0%B0%20%D1%81%D0%B0%D0%BD%D0%B8%D1%82%D0%B0%D1%80%D0%BD%D0%BE-%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%B0%20%D0%B7%D0%BE%D0%BD%D0%B0.rar",
+  "source_document": "Proect_SOZ_NMV_Varbitza_cor.pdf",
+  "resolution_basis": [
+    "Table No. 2 directly publishes WGS84 geographic coordinates for the two named KEI abstraction facilities.",
+    "Coordinate appendices independently publish BGS2005 coordinates for the same named KEI facilities.",
+    "Independent EPSG:7801 transformation of the BGS2005 values agrees with the published WGS84 positions at approximately metre scale.",
+    "Cadastral property-number discrepancy inside the official source is preserved and is not used to derive the exact coordinates."
+  ],
+  "facilities": [
+    {
+      "facility": "Каптиран естествен извор \"Минерална вода",
+      "coordinate_status": "OFFICIAL_EXACT",
+      "latitude": 42.95205555555556,
+      "longitude": 26.654805555555555,
+      "published_wgs84_dms": "42°57'07.40\" N, 26°39'17.30\" E",
+      "official_source_bgs2005_x_northing": 4758034.203,
+      "official_source_bgs2005_y_easting": 594228.133,
+      "independent_transform_interpretation": "BGS2005 / CCS2005 (EPSG:7801)",
+      "independent_transform_difference_m": 1.35,
+      "descriptive_property_reference": "12763.79.65",
+      "appendix_property_reference": "12766.79.65",
+      "property_reference_status": "SOURCE_INTERNAL_DISCREPANCY",
+      "source_page_wgs84": 15,
+      "source_page_bgs2005": 72
+    },
+    {
+      "facility": "Каптиран естествен извор \"Солената вода",
+      "coordinate_status": "OFFICIAL_EXACT",
+      "latitude": 42.95676111111111,
+      "longitude": 26.651680555555554,
+      "published_wgs84_dms": "42°57'24.34\" N, 26°39'06.05\" E",
+      "official_source_bgs2005_x_northing": 4758553.927,
+      "official_source_bgs2005_y_easting": 593966.703,
+      "independent_transform_interpretation": "BGS2005 / CCS2005 (EPSG:7801)",
+      "independent_transform_difference_m": 0.537,
+      "descriptive_property_reference": "12763.79.72",
+      "appendix_property_reference": "12766.79.72",
+      "property_reference_status": "SOURCE_INTERNAL_DISCREPANCY",
+      "source_page_wgs84": 15,
+      "source_page_bgs2005": 75
+    }
+  ],
+  "coordinate_status_before": {
+    "OFFICIAL_EXACT": 30,
+    "TO_RESEARCH": 54
+  },
+  "coordinate_status_after": {
+    "OFFICIAL_EXACT": 32,
+    "TO_RESEARCH": 52
+  },
+  "raw_mh_fields_modified": false
+}

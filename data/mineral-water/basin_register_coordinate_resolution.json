@@ -1,0 +1,1086 @@
+{
+  "source_files": [
+    {
+      "file": "public/geology-map/data/active_faults_source_registry.json",
+      "status": "OK",
+      "coordinate_records": 0
+    },
+    {
+      "file": "public/geology-map/data/bd_bs_additional_groundwater_registers.json",
+      "status": "OK",
+      "coordinate_records": 0
+    },
+    {
+      "file": "public/geology-map/data/bd_bs_current_groundwater_registers.json",
+      "status": "OK",
+      "coordinate_records": 0
+    },
+    {
+      "file": "public/geology-map/data/bd_bs_hydrogeological_investigations.geojson",
+      "status": "OK",
+      "coordinate_records": 23
+    },
+    {
+      "file": "public/geology-map/data/bd_bs_ordinary_groundwater_wells.geojson",
+      "status": "OK",
+      "coordinate_records": 2593
+    },
+    {
+      "file": "public/geology-map/data/bd_danube_active_groundwater_facilities.geojson",
+      "status": "OK",
+      "coordinate_records": 3316
+    },
+    {
+      "file": "public/geology-map/data/bd_danube_active_groundwater_permits.json",
+      "status": "OK",
+      "coordinate_records": 0
+    },
+    {
+      "file": "public/geology-map/data/bd_ibr_ordinary_groundwater_wells.geojson",
+      "status": "OK",
+      "coordinate_records": 6467
+    },
+    {
+      "file": "public/geology-map/data/bd_wabd_active_groundwater_facilities.geojson",
+      "status": "OK",
+      "coordinate_records": 893
+    },
+    {
+      "file": "public/geology-map/data/bd_wabd_additional_groundwater_registers.json",
+      "status": "OK",
+      "coordinate_records": 0
+    },
+    {
+      "file": "public/geology-map/data/bd_wabd_current_groundwater_registers.json",
+      "status": "OK",
+      "coordinate_records": 0
+    },
+    {
+      "file": "public/geology-map/data/bd_wabd_hydrogeological_investigations.geojson",
+      "status": "OK",
+      "coordinate_records": 21
+    },
+    {
+      "file": "public/geology-map/data/bd_wabd_mineral_water_facilities.geojson",
+      "status": "OK",
+      "coordinate_records": 32
+    },
+    {
+      "file": "public/geology-map/data/bd_wabd_mineral_water_facilities_master.json",
+      "status": "OK",
+      "coordinate_records": 32
+    },
+    {
+      "file": "public/geology-map/data/mineral_water_free.geojson",
+      "status": "OK",
+      "coordinate_records": 443
+    },
+    {
+      "file": "public/geology-map/data/official_water_facilities.geojson",
+      "status": "OK",
+      "coordinate_records": 423
+    }
+  ],
+  "source_file_count": 16,
+  "coordinate_record_count": 14243,
+  "input_to_research": 104,
+  "resolved": 7,
+  "ambiguous_not_changed": 3,
+  "not_found": 94,
+  "to_research_remaining": 97,
+  "resolved_records": [
+    {
+      "facility": "Сондаж № 2 \"Банята",
+      "code": "",
+      "name_key": "No 2 банята",
+      "contexts": [
+        "добринище"
+      ],
+      "latitude": 41.8229255,
+      "longitude": 23.5655865,
+      "sources": [
+        "public/geology-map/data/mineral_water_free.geojson"
+      ],
+      "methods": [
+        "GEOJSON_POINT"
+      ],
+      "raw_hit_count": 1
+    },
+    {
+      "facility": "Каптиран естествен извор № 4",
+      "code": "",
+      "name_key": "No 4",
+      "contexts": [
+        "баня",
+        "гулийна баня"
+      ],
+      "latitude": 42.6774167,
+      "longitude": 23.2368611,
+      "sources": [
+        "public/geology-map/data/mineral_water_free.geojson",
+        "public/geology-map/data/official_water_facilities.geojson"
+      ],
+      "methods": [
+        "GEOJSON_POINT"
+      ],
+      "raw_hit_count": 2
+    },
+    {
+      "facility": "Каптиран естествен извор № 6",
+      "code": "",
+      "name_key": "No 6",
+      "contexts": [
+        "баня",
+        "гулийна баня"
+      ],
+      "latitude": 42.0291111,
+      "longitude": 23.9850556,
+      "sources": [
+        "public/geology-map/data/mineral_water_free.geojson",
+        "public/geology-map/data/official_water_facilities.geojson"
+      ],
+      "methods": [
+        "GEOJSON_POINT"
+      ],
+      "raw_hit_count": 2
+    },
+    {
+      "facility": "Сондаж № 9а",
+      "code": "9а",
+      "name_key": "No 9а",
+      "contexts": [
+        "костандово",
+        "ракитово"
+      ],
+      "latitude": 42.6019167,
+      "longitude": 25.2091111,
+      "sources": [
+        "public/geology-map/data/mineral_water_free.geojson"
+      ],
+      "methods": [
+        "GEOJSON_POINT"
+      ],
+      "raw_hit_count": 1
+    },
+    {
+      "facility": "Каптиран естествен извор \"Русалка",
+      "code": "",
+      "name_key": "русалка",
+      "contexts": [
+        "хисаря"
+      ],
+      "latitude": 42.5016111,
+      "longitude": 24.7005278,
+      "sources": [
+        "public/geology-map/data/mineral_water_free.geojson",
+        "public/geology-map/data/official_water_facilities.geojson"
+      ],
+      "methods": [
+        "GEOJSON_POINT"
+      ],
+      "raw_hit_count": 2
+    },
+    {
+      "facility": "Каптиран естествен извор \"Тунела",
+      "code": "",
+      "name_key": "тунела",
+      "contexts": [
+        "софия",
+        "софия-панчерево"
+      ],
+      "latitude": 42.6021111,
+      "longitude": 23.4033056,
+      "sources": [
+        "public/geology-map/data/official_water_facilities.geojson"
+      ],
+      "methods": [
+        "GEOJSON_POINT"
+      ],
+      "raw_hit_count": 1
+    },
+    {
+      "facility": "Каптиран естествен извор\"Гъбата",
+      "code": "",
+      "name_key": "гъбата",
+      "contexts": [
+        "софия",
+        "софия-панчерево"
+      ],
+      "latitude": 42.6018333,
+      "longitude": 23.4043056,
+      "sources": [
+        "public/geology-map/data/official_water_facilities.geojson"
+      ],
+      "methods": [
+        "GEOJSON_POINT"
+      ],
+      "raw_hit_count": 1
+    }
+  ],
+  "ambiguous_records": [
+    {
+      "facility": "Каптиран естествен извор \"Долна баня",
+      "code": "",
+      "contexts": [
+        "долна баня"
+      ],
+      "coordinate_groups": [
+        {
+          "latitude": 42.307994,
+          "longitude": 23.779597,
+          "sources": [
+            "public/geology-map/data/bd_ibr_ordinary_groundwater_wells.geojson"
+          ]
+        },
+        {
+          "latitude": 42.331142,
+          "longitude": 23.789903,
+          "sources": [
+            "public/geology-map/data/bd_ibr_ordinary_groundwater_wells.geojson"
+          ]
+        },
+        {
+          "latitude": 42.329139,
+          "longitude": 23.787583,
+          "sources": [
+            "public/geology-map/data/bd_ibr_ordinary_groundwater_wells.geojson"
+          ]
+        },
+        {
+          "latitude": 42.307417,
+          "longitude": 23.816111,
+          "sources": [
+            "public/geology-map/data/bd_ibr_ordinary_groundwater_wells.geojson"
+          ]
+        },
+        {
+          "latitude": 42.284601,
+          "longitude": 23.78639,
+          "sources": [
+            "public/geology-map/data/bd_ibr_ordinary_groundwater_wells.geojson"
+          ]
+        },
+        {
+          "latitude": 42.285157,
+          "longitude": 23.784582,
+          "sources": [
+            "public/geology-map/data/bd_ibr_ordinary_groundwater_wells.geojson"
+          ]
+        },
+        {
+          "latitude": 42.300528,
+          "longitude": 23.793833,
+          "sources": [
+            "public/geology-map/data/bd_ibr_ordinary_groundwater_wells.geojson"
+          ]
+        },
+        {
+          "latitude": 42.303528,
+          "longitude": 23.776556,
+          "sources": [
+            "public/geology-map/data/bd_ibr_ordinary_groundwater_wells.geojson"
+          ]
+        },
+        {
+          "latitude": 42.319378,
+          "longitude": 23.790025,
+          "sources": [
+            "public/geology-map/data/bd_ibr_ordinary_groundwater_wells.geojson"
+          ]
+        }
+      ]
+    },
+    {
+      "facility": "КЕИ \"Стар каптаж\"",
+      "code": "",
+      "contexts": [
+        "кюстендил"
+      ],
+      "coordinate_groups": [
+        {
+          "latitude": 42.28461,
+          "longitude": 22.5778111,
+          "sources": [
+            "public/geology-map/data/bd_wabd_active_groundwater_facilities.geojson"
+          ]
+        },
+        {
+          "latitude": 42.3169325,
+          "longitude": 22.6287936,
+          "sources": [
+            "public/geology-map/data/bd_wabd_active_groundwater_facilities.geojson"
+          ]
+        }
+      ]
+    },
+    {
+      "facility": "КЕИ № 2",
+      "code": "",
+      "contexts": [
+        "баня"
+      ],
+      "coordinate_groups": [
+        {
+          "latitude": 42.0288611,
+          "longitude": 23.9818333,
+          "sources": [
+            "public/geology-map/data/mineral_water_free.geojson",
+            "public/geology-map/data/official_water_facilities.geojson"
+          ]
+        },
+        {
+          "latitude": 42.5400111,
+          "longitude": 23.3855444,
+          "sources": [
+            "public/geology-map/data/mineral_water_free.geojson",
+            "public/geology-map/data/official_water_facilities.geojson"
+          ]
+        },
+        {
+          "latitude": 41.8229255,
+          "longitude": 23.5655865,
+          "sources": [
+            "public/geology-map/data/mineral_water_free.geojson"
+          ]
+        }
+      ]
+    }
+  ],
+  "remaining_records": [
+    {
+      "facility": "КЕИ \"Трънска Банкя\"",
+      "code": "",
+      "name_key": "трънска банкя",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж № С-46хг \"Равно поле",
+      "code": "",
+      "name_key": "No с-46хг равно поле",
+      "contexts": [
+        "казичене-равно поле"
+      ]
+    },
+    {
+      "facility": "Сондаж № БУ",
+      "code": "",
+      "name_key": "No бу",
+      "contexts": [
+        "кюстендил"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор № 1 \"Банята",
+      "code": "",
+      "name_key": "No 1 банята",
+      "contexts": [
+        "габровница",
+        "габровница-еленов дол"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор \"Тепавицата",
+      "code": "",
+      "name_key": "тепавицата",
+      "contexts": [
+        "добринище"
+      ]
+    },
+    {
+      "facility": "Сондаж № 3 \"Плажа",
+      "code": "",
+      "name_key": "No 3 плажа",
+      "contexts": [
+        "добринище"
+      ]
+    },
+    {
+      "facility": "сондаж № 15Бхг",
+      "code": "15бхг",
+      "name_key": "No 15бхг",
+      "contexts": [
+        "благоевград"
+      ]
+    },
+    {
+      "facility": "КЕИ \"Топлица",
+      "code": "",
+      "name_key": "топлица",
+      "contexts": [
+        "баничан"
+      ]
+    },
+    {
+      "facility": "сондаж № 273",
+      "code": "",
+      "name_key": "No 273",
+      "contexts": [
+        "баничан"
+      ]
+    },
+    {
+      "facility": "КЕИ \"Миро-женско",
+      "code": "",
+      "name_key": "миро-женско",
+      "contexts": []
+    },
+    {
+      "facility": "КЕИ \"Миро-мъжко",
+      "code": "",
+      "name_key": "миро-мъжко",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж \"АПК",
+      "code": "",
+      "name_key": "",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж \"Вила Шамов",
+      "code": "",
+      "name_key": "вила шамов",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж \"Никола Ушев",
+      "code": "",
+      "name_key": "никола ушев",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж № 4ВКП",
+      "code": "4вкп",
+      "name_key": "No 4вкп",
+      "contexts": []
+    },
+    {
+      "facility": "КЕИ \"Басейн в средна баня",
+      "code": "",
+      "name_key": "басейн в средна баня",
+      "contexts": [
+        "марчево и с огняново"
+      ]
+    },
+    {
+      "facility": "КЕИ № 17 \"Тасков гьол",
+      "code": "",
+      "name_key": "No 17 тасков гьол",
+      "contexts": [
+        "марчево и с огняново"
+      ]
+    },
+    {
+      "facility": "Сондаж \"Делта-Бисер",
+      "code": "",
+      "name_key": "делта-бисер",
+      "contexts": [
+        "марчево и с огняново"
+      ]
+    },
+    {
+      "facility": "Сондаж \"Дом Терзиев",
+      "code": "",
+      "name_key": "дом терзиев",
+      "contexts": [
+        "марчево и с огняново"
+      ]
+    },
+    {
+      "facility": "Сондаж № 3ВКП",
+      "code": "3вкп",
+      "name_key": "No 3вкп",
+      "contexts": [
+        "марчево и с огняново"
+      ]
+    },
+    {
+      "facility": "Сондаж Виктория 2",
+      "code": "",
+      "name_key": "виктория 2",
+      "contexts": [
+        "огняново и с гърмен",
+        "огняново-гърмен"
+      ]
+    },
+    {
+      "facility": "Сондаж № 1ВКН",
+      "code": "1вкн",
+      "name_key": "No 1вкн",
+      "contexts": [
+        "генерал тодоров"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор \"Бочвата",
+      "code": "",
+      "name_key": "бочвата",
+      "contexts": [
+        "марикостиново"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор № 2 \"Благата вода",
+      "code": "",
+      "name_key": "No 2 благата вода",
+      "contexts": [
+        "баня",
+        "гулийна баня"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор № 5",
+      "code": "",
+      "name_key": "No 5",
+      "contexts": [
+        "баня",
+        "гулийна баня"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор №7",
+      "code": "",
+      "name_key": "",
+      "contexts": [
+        "баня",
+        "гулийна баня"
+      ]
+    },
+    {
+      "facility": "Извор \"Топилата",
+      "code": "",
+      "name_key": "топилата",
+      "contexts": [
+        "баня",
+        "елешница-м св варвара-р места"
+      ]
+    },
+    {
+      "facility": "Сондаж № МС-3",
+      "code": "мс-3",
+      "name_key": "No мс-3",
+      "contexts": [
+        "левуново"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор № 8",
+      "code": "",
+      "name_key": "No 8",
+      "contexts": [
+        "сандански"
+      ]
+    },
+    {
+      "facility": "Сондаж № 10",
+      "code": "",
+      "name_key": "No 10",
+      "contexts": [
+        "якоруда"
+      ]
+    },
+    {
+      "facility": "Сондаж 3 Б-165",
+      "code": "б-165",
+      "name_key": "3 б-165",
+      "contexts": [
+        "бургас",
+        "бургаски минерални бани"
+      ]
+    },
+    {
+      "facility": "Сондаж № Б-108",
+      "code": "б-108",
+      "name_key": "No б-108",
+      "contexts": [
+        "изворище"
+      ]
+    },
+    {
+      "facility": "Сондаж № Р-12х \"Албена\"",
+      "code": "",
+      "name_key": "No р-12х албена",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж № Р-13х \"Албена\"",
+      "code": "",
+      "name_key": "No р-13х албена",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж № Р-149х \"Албена\"",
+      "code": "",
+      "name_key": "No р-149х албена",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж № Р-106х \"Варна",
+      "code": "",
+      "name_key": "No р-106х варна",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж № Р-2х",
+      "code": "",
+      "name_key": "No р-2х",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж № Р-6х \"Св. Св. Константин и Елена",
+      "code": "",
+      "name_key": "No р-6х св св константин и елена",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж № Р-83х",
+      "code": "",
+      "name_key": "No р-83х",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж № Р-9х\"",
+      "code": "",
+      "name_key": "No р-9х",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж № Р-11х \"Златни пясъци",
+      "code": "",
+      "name_key": "No р-11х златни пясъци",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж № Р-1х \"Варна\"",
+      "code": "",
+      "name_key": "No р-1х варна",
+      "contexts": []
+    },
+    {
+      "facility": "сондаж № С-5х \"Ф-ка Христо Ботев",
+      "code": "",
+      "name_key": "No с-5х ф-ка христо ботев",
+      "contexts": [
+        "варненски басейн"
+      ]
+    },
+    {
+      "facility": "сондаж № С-6х \"Тополи",
+      "code": "",
+      "name_key": "No с-6х тополи",
+      "contexts": [
+        "варненски басейн"
+      ]
+    },
+    {
+      "facility": "сондаж № Р-107х \"Варна",
+      "code": "",
+      "name_key": "No р-107х варна",
+      "contexts": []
+    },
+    {
+      "facility": "сондаж № Р-96х \"Варна",
+      "code": "",
+      "name_key": "No р-96х варна",
+      "contexts": []
+    },
+    {
+      "facility": "Сондаж \"43\"",
+      "code": "",
+      "name_key": "",
+      "contexts": [
+        "провадия"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор \"Галерията",
+      "code": "",
+      "name_key": "галерията",
+      "contexts": [
+        "сапарева баня"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор \"Топлата вода - закрит",
+      "code": "",
+      "name_key": "топлата вода-закрит",
+      "contexts": [
+        "белово"
+      ]
+    },
+    {
+      "facility": "Сондаж № 5 \"Сярна Баня",
+      "code": "",
+      "name_key": "No 5 сярна баня",
+      "contexts": [
+        "велинград-каменица"
+      ]
+    },
+    {
+      "facility": "КЕИ \"Власа",
+      "code": "",
+      "name_key": "власа",
+      "contexts": [
+        "велинград",
+        "велинград-каменица"
+      ]
+    },
+    {
+      "facility": "КЕИ № 7 \"Сярна баня",
+      "code": "",
+      "name_key": "No 7 сярна баня",
+      "contexts": [
+        "велинград",
+        "велинград-каменица"
+      ]
+    },
+    {
+      "facility": "сондаж № 3 \"Мизинка",
+      "code": "",
+      "name_key": "No 3 мизинка",
+      "contexts": [
+        "велинград",
+        "велинград-каменица"
+      ]
+    },
+    {
+      "facility": "сондаж № 4 \"Власа",
+      "code": "",
+      "name_key": "No 4 власа",
+      "contexts": [
+        "велинград",
+        "велинград-каменица"
+      ]
+    },
+    {
+      "facility": "Сондаж № 13",
+      "code": "",
+      "name_key": "No 13",
+      "contexts": [
+        "драгиново"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор \"Банчето",
+      "code": "",
+      "name_key": "банчето",
+      "contexts": [
+        "баня"
+      ]
+    },
+    {
+      "facility": "Сондаж № 2 \"Наклонен",
+      "code": "",
+      "name_key": "No 2 наклонен",
+      "contexts": [
+        "баня"
+      ]
+    },
+    {
+      "facility": "КЕИ № 1 \"Варвара",
+      "code": "",
+      "name_key": "No 1 варвара",
+      "contexts": [
+        "варвара"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор № 2 \"Ветрен дол\"",
+      "code": "",
+      "name_key": "No 2 ветрен дол",
+      "contexts": [
+        "варвара"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор \"Галерията\"",
+      "code": "",
+      "name_key": "галерията",
+      "contexts": [
+        "брезник"
+      ]
+    },
+    {
+      "facility": "Сондаж № 8\"",
+      "code": "",
+      "name_key": "No 8",
+      "contexts": [
+        "рударци"
+      ]
+    },
+    {
+      "facility": "Сондаж № 9\"",
+      "code": "",
+      "name_key": "No 9",
+      "contexts": [
+        "рударци"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор № 1 \"Денена фабрика\"",
+      "code": "",
+      "name_key": "No 1 денена фабрика",
+      "contexts": [
+        "долни раковец"
+      ]
+    },
+    {
+      "facility": "КЕИ № 2 \"Бански каптаж",
+      "code": "",
+      "name_key": "No 2 бански",
+      "contexts": [
+        "долни раковец"
+      ]
+    },
+    {
+      "facility": "Сондаж № 16",
+      "code": "",
+      "name_key": "No 16",
+      "contexts": [
+        "леново"
+      ]
+    },
+    {
+      "facility": "сондаж № 12",
+      "code": "",
+      "name_key": "No 12",
+      "contexts": [
+        "леново"
+      ]
+    },
+    {
+      "facility": "КЕИ \"Солено изворче\"",
+      "code": "",
+      "name_key": "солено изворче",
+      "contexts": [
+        "нареченски бани",
+        "нареченски минерални бани"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор \"Централен каптаж",
+      "code": "",
+      "name_key": "централен",
+      "contexts": [
+        "баня"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор \"Женско банче\"",
+      "code": "",
+      "name_key": "женско банче",
+      "contexts": [
+        "баня"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор \"Мъжко банче\"",
+      "code": "",
+      "name_key": "мъжко банче",
+      "contexts": [
+        "баня"
+      ]
+    },
+    {
+      "facility": "Сондаж \"Българска роза\"",
+      "code": "",
+      "name_key": "българска роза",
+      "contexts": [
+        "баня"
+      ]
+    },
+    {
+      "facility": "Сондаж I\"",
+      "code": "",
+      "name_key": "",
+      "contexts": [
+        "баня"
+      ]
+    },
+    {
+      "facility": "Сондаж А\"",
+      "code": "",
+      "name_key": "",
+      "contexts": [
+        "баня"
+      ]
+    },
+    {
+      "facility": "Сондаж В\"",
+      "code": "",
+      "name_key": "",
+      "contexts": [
+        "баня"
+      ]
+    },
+    {
+      "facility": "Сондаж № 8",
+      "code": "",
+      "name_key": "No 8",
+      "contexts": [
+        "драгойново"
+      ]
+    },
+    {
+      "facility": "сондаж № 9",
+      "code": "",
+      "name_key": "No 9",
+      "contexts": [
+        "драгойново"
+      ]
+    },
+    {
+      "facility": "КЕИ \"Топлите извори",
+      "code": "",
+      "name_key": "топлите извори",
+      "contexts": [
+        "красвново",
+        "красново"
+      ]
+    },
+    {
+      "facility": "Сондаж № 2 \"Наклонен\"",
+      "code": "",
+      "name_key": "No 2 наклонен",
+      "contexts": [
+        "злати войвода",
+        "сливенски минерални бани"
+      ]
+    },
+    {
+      "facility": "Сондаж № 22",
+      "code": "",
+      "name_key": "No 22",
+      "contexts": [
+        "мечкарево",
+        "сливенски минерални бани"
+      ]
+    },
+    {
+      "facility": "КЕИ \"Хаджи Димитър",
+      "code": "",
+      "name_key": "хаджи димитър",
+      "contexts": [
+        "шивачево"
+      ]
+    },
+    {
+      "facility": "Сондаж \"Ерма река",
+      "code": "",
+      "name_key": "ерма река",
+      "contexts": [
+        "ерма река"
+      ]
+    },
+    {
+      "facility": "каптиран естествен извор \"Домус дере",
+      "code": "",
+      "name_key": "домус дере",
+      "contexts": [
+        "софия",
+        "софия-горна баня"
+      ]
+    },
+    {
+      "facility": "сондаж № 13хг",
+      "code": "13хг",
+      "name_key": "No 13хг",
+      "contexts": [
+        "долна баня"
+      ]
+    },
+    {
+      "facility": "сондаж № 141",
+      "code": "",
+      "name_key": "No 141",
+      "contexts": [
+        "долна баня",
+        "долна баня-бялата вода"
+      ]
+    },
+    {
+      "facility": "Сондаж № Сз-37",
+      "code": "сз-37",
+      "name_key": "No сз-37",
+      "contexts": [
+        "ягода"
+      ]
+    },
+    {
+      "facility": "Сондаж № 2ВП",
+      "code": "2вп",
+      "name_key": "No 2вп",
+      "contexts": [
+        "минерални бани",
+        "хасковски минерални бани"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор № 5",
+      "code": "",
+      "name_key": "No 5",
+      "contexts": [
+        "минерални бани",
+        "хасковски минерални бани"
+      ]
+    },
+    {
+      "facility": "Сондаж № 3ВП",
+      "code": "3вп",
+      "name_key": "No 3вп",
+      "contexts": [
+        "минерални бани",
+        "хасковски минерални бани"
+      ]
+    },
+    {
+      "facility": "Сондаж № 4ВП",
+      "code": "4вп",
+      "name_key": "No 4вп",
+      "contexts": [
+        "минерални бани",
+        "хасковски минерални бани"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор \"Минерална вода",
+      "code": "",
+      "name_key": "минерална вода",
+      "contexts": [
+        "върбица"
+      ]
+    },
+    {
+      "facility": "Каптиран естествен извор \"Солената вода",
+      "code": "",
+      "name_key": "солената вода",
+      "contexts": [
+        "върбица"
+      ]
+    },
+    {
+      "facility": "Сондаж № Я-32а",
+      "code": "",
+      "name_key": "No я-32а",
+      "contexts": [
+        "стефан караджово"
+      ]
+    },
+    {
+      "facility": "Сондаж Я-33",
+      "code": "я-33",
+      "name_key": "я-33",
+      "contexts": [
+        "стефан караджово"
+      ]
+    },
+    {
+      "facility": "сондаж № Я-12",
+      "code": "я-12",
+      "name_key": "No я-12",
+      "contexts": [
+        "стралджа"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "deposit": "Добринище",
+  "targets": [
+    "Сондаж №2 \"Банята\"",
+    "Сондаж №3 \"Плажа\""
+  ],
+  "research_status": "RESEARCH_CONTINUES",
+  "canonical_coordinate_change": false,
+  "build_required": false,
+  "ledger_update_required_now": true,
+  "sondazh_2_banyata": {
+    "facility": "Сондаж №2 \"Банята\"",
+    "coordinate_status": "TO_RESEARCH",
+    "mh_source": {
+      "assessment": "Балнеологична оценка №227/01.06.2023",
+      "technical_possible_discharge_l_s": 5.6,
+      "technical_temperature_c": 40.3,
+      "self_flow_elevation_m": 825.73
+    },
+    "excluded_false_positive": {
+      "latitude": 41.822925548,
+      "longitude": 23.565586491,
+      "reason": "These coordinates belong to КЕИ №2 \"Банята\", not to Сондаж №2.",
+      "kei_facility": "КЕИ №2 \"Банята\"",
+      "kei_cadastral_property_id": "21498.350.547",
+      "apply_to_sondazh_2": false
+    },
+    "historical_permits": [
+      {
+        "issuer": "БД \"Западнобеломорски район\"",
+        "permit_number": "3331",
+        "issue_date": "2004-07-19",
+        "facility": "сондаж №2",
+        "water_use_location": "Балнео-санаториален комплекс, Добринище",
+        "final_status": "expired",
+        "facility_coordinate_provided": false
+      },
+      {
+        "issuer": "БД \"Западнобеломорски район\"",
+        "permit_number": "3843",
+        "issue_date": "2006-08-28",
+        "facility": "сондаж №2",
+        "water_use_location": "Комплекс \"Романтика\", Добринище",
+        "final_status": "terminated",
+        "facility_coordinate_provided": false
+      }
+    ],
+    "current_official_research_lead": {
+      "authority": "Община Банско",
+      "published": "2026-07-14",
+      "title": "Водоснабдяване на съществуваща чешма, използваща води от Сондаж №2 „Банята“ от НМВ „Добринище“",
+      "url": "https://bansko.bg/aktualno/uvedomlenie-za-investiczionno-predlozhenie-vodosnabdyavane-na-sasthestvuvastha-cheshma-izpolzvastha-vodi-ot-sondazh-%E2%84%962-banyata-ot-nmv-dobrinisthe/",
+      "safe_fact": "The 2026 municipal investment proposal explicitly identifies Сондаж №2 \"Банята\" as the mineral-water source.",
+      "source_parcel_resolved": false
+    },
+    "safe_conclusion": "Official permit and RIOSV evidence confirms Sondazh №2 as a distinct mineral-water abstraction facility and confirms an existing 110 m pipeline to the mineral bath. However, all locally identified cadastral parcels (21498.350.133, .155, .3, .68, .547) are proven to be consumer/project properties or the separate KEI №2 source property. No safe cadastral parcel or exact coordinate for Sondazh №2 has been established.",
+    "official_wabd_2026_statement": {
+      "authority": "Басейнова дирекция \"Западнобеломорски район\"",
+      "document_number": "П-01-291-1/20.07.2026",
+      "document_date": "2026-07-20",
+      "source_url": "https://wabd.bg/content/wp-content/uploads/2026/07/%D0%9F-01-291-1.pdf",
+      "sha256": "DD73C9B04713D8C079A0625275C5826E6B67852938A5ACC81F6354B19659B3AB",
+      "document_pages": 3,
+      "facility": "Сондаж №2 \"Банята\"",
+      "confirmed_use": {
+        "description": "Mineral water from Sondazh №2 Banyata feeds the public mineral bath and an existing public fountain.",
+        "existing_pipeline_chain": [
+          "Сондаж №2 \"Банята\"",
+          "съществуващ водопровод",
+          "сграда на минералната баня",
+          "съществуващо отклонение",
+          "потопяема помпа",
+          "обществена чешма"
+        ]
+      },
+      "public_fountain": {
+        "cadastral_property_id": "21498.350.133",
+        "location_description": "обществена чешма пред сградата на минералната баня в гр. Добринище",
+        "role": "WATER_USE_OBJECT_NOT_SOURCE_FACILITY",
+        "apply_property_to_borehole": false
+      },
+      "source_facility": {
+        "modern_cadastral_property_id": null,
+        "official_wgs84_coordinate": null,
+        "projected_coordinate": null,
+        "source_parcel_resolved": false
+      },
+      "technical_data": {
+        "basis": "Заповед № РД-408/05.06.2025",
+        "technical_possible_discharge_l_s": 4.2,
+        "note": "Value is reported by WABD in the 2026 statement. Preserve separately from older MH technical values."
+      },
+      "permit": {
+        "permit_number": "МВ-012-Д",
+        "issue_date": "2019-05-27",
+        "issuer": "Община Банско",
+        "purpose": "за профилактика и за хигиенни нужди в лечебни, социални и учебни заведения",
+        "water_use_object": "обществена минерална баня",
+        "permitted_flow_l_s": 3.83,
+        "permitted_annual_volume_m3": 120883,
+        "source_parcel_provided": false,
+        "exact_source_coordinate_provided": false
+      },
+      "safe_spatial_interpretation": "PI 21498.350.133 belongs to the public fountain/mineral-bath water-use location. The official document explicitly describes an existing pipeline running from Sondazh №2 to the mineral-bath building, therefore this parcel must not be assigned to the borehole."
+    },
+    "excluded_source_parcel_candidates": [
+      {
+        "parcel_id": "21498.350.155",
+        "role": "PUBLIC_MINERAL_BATH_WATER_USE_OBJECT",
+        "reason": "Permit МВ-012-Д explicitly identifies this parcel as the public mineral-bath water-use location supplied by Sondazh №2.",
+        "apply_to_sondazh_2": false
+      },
+      {
+        "parcel_id": "21498.350.133",
+        "role": "PUBLIC_FOUNTAIN_LAUNDRY_AND_BATH_PROJECT_PROPERTY",
+        "reason": "Consumer/project property; not independently identified as Sondazh №2 source parcel.",
+        "apply_to_sondazh_2": false
+      },
+      {
+        "parcel_id": "21498.350.3",
+        "role": "KEI2_RECREATIONAL_WATER_USE_PROPERTY",
+        "reason": "Permit record links the property to recreational water use supplied from KEI №2, not Sondazh №2.",
+        "apply_to_sondazh_2": false
+      },
+      {
+        "parcel_id": "21498.350.68",
+        "role": "KEI2_HOTEL_SPA_WATER_USE_PROPERTY",
+        "reason": "Permit record identifies hotel/SPA consumer property supplied from KEI №2.",
+        "apply_to_sondazh_2": false
+      },
+      {
+        "parcel_id": "21498.350.547",
+        "role": "KEI2_SOURCE_PROPERTY",
+        "reason": "Independently resolved source parcel of KEI №2 Banyata; not Sondazh №2.",
+        "apply_to_sondazh_2": false
+      }
+    ],
+    "next_research_priority": {
+      "target": "Сондаж №3 \"Плажа\" final authoritative spatial pass",
+      "reason": "Local cadastral and permit routes for Sondazh №2 have been exhausted without a safe source parcel. Complete the second Dobrinishte target before closing the deposit batch."
+    },
+    "official_riosv_2025_pipeline_repair": {
+      "authority": "РИОСВ - Благоевград",
+      "message_number": "963/2025",
+      "outgoing_number": "1897(1)/22.04.2025",
+      "publication_date": "2025-04-24",
+      "source_url": "https://riosvbl.org/index.php/priroda/letters-natura/verpr-22/32530-2025-963",
+      "print_view_url": "https://riosvbl.org/index.php/priroda/letters-natura/verpr-22/32530-2025-963?tmpl=component&print=1&layout=default&page=",
+      "investment_proposal": "Извършване на текущ ремонт на тръбопроводи за минерална вода, захранващи минерална баня – гр. Добринище",
+      "bath_property": {
+        "cadastral_property_id": "21498.350.133",
+        "area_m2": 16876,
+        "territory": "Урбанизирана",
+        "land_use": "Обществен селищен парк, градина",
+        "contains": "Минерална баня - Добринище",
+        "role": "MINERAL_BATH_AND_PIPELINE_PROJECT_PROPERTY",
+        "apply_property_to_sondazh_2": false
+      },
+      "existing_pipeline_segments": [
+        {
+          "from": "Сондаж №2 \"Банята\"",
+          "to": "Минерална баня - Добринище",
+          "length_m": 110,
+          "existing_route": true,
+          "route_change_planned": false,
+          "facility_coordinate_resolved": false
+        },
+        {
+          "from": "КЕИ №2 \"Банята\"",
+          "to": "Минерална баня - Добринище",
+          "length_m": 65,
+          "existing_route": true,
+          "route_change_planned": false
+        },
+        {
+          "from": "събирателна шахта към КЕИ №3",
+          "to": "Минерална баня - Добринище",
+          "length_m": 80,
+          "existing_route": true,
+          "route_change_planned": false
+        }
+      ],
+      "pipe_replacement": {
+        "existing_routes_preserved": true,
+        "diameters_preserved": true,
+        "replacement_material": "полиетиленови тръби с фабрична топлоизолация"
+      },
+      "safe_spatial_interpretation": "Official RIOSV evidence confirms an existing 110 m pipeline segment between Sondazh №2 and the mineral-bath building. PI 21498.350.133 is the mineral-bath/project property. The document does not explicitly identify the cadastral parcel or coordinate of Sondazh №2 itself, therefore PI 21498.350.133 must not be assigned to the borehole without independent facility-level proof.",
+      "spatial_constraint": {
+        "type": "PIPELINE_ROUTE_LENGTH_FROM_BATH",
+        "length_m": 110,
+        "is_straight_line_distance": false,
+        "usable_as_exact_coordinate": false,
+        "research_value": "Can constrain candidate source location after the mineral-bath connection point and local cadastral/building geometry are identified."
+      }
+    },
+    "official_wabd_pi_role_audit_2026": {
+      "source_dataset": "public/geology-map/data/bd_wabd_current_groundwater_registers.json",
+      "source_as_of": "2026-08-04",
+      "target_facility": "Сондаж №2 \"Банята\"",
+      "reviewed_properties": {
+        "21498.350.155": {
+          "facility_in_permit": "Сондаж №2",
+          "permit": "МВ-012-Д/27.05.2019",
+          "holder": "Община Банско",
+          "role": "PUBLIC_MINERAL_BATH_WATER_USE_OBJECT",
+          "water_use_location": "Обществена минерална баня в имот № 21498.350.155",
+          "is_source_facility_parcel": false,
+          "reason": "The permit explicitly identifies the parcel as the public mineral-bath water-use location. It does not identify the parcel as the cadastral location of Sondazh №2."
+        },
+        "21498.350.133": {
+          "facility_in_permit": "КЕИ №3 \"Пералнята\"",
+          "permit": "МВ-015-Д/26.01.2022",
+          "holder": "Община Банско",
+          "role": "PUBLIC_FOUNTAIN_AND_LAUNDRY_WATER_USE_OBJECT",
+          "water_use_location": "обществена чешма и обществена пералня",
+          "is_source_facility_parcel": false,
+          "apply_to_sondazh_2": false
+        },
+        "21498.350.3": {
+          "facility_in_permit": "КЕИ №2 \"Банята\"",
+          "permit": "МВ-010-Д/06.02.2017",
+          "role": "RECREATIONAL_CONSUMER_PROPERTY",
+          "water_use_location": "Външен басейн и рекреационни съоръжения към почивен център",
+          "is_source_facility_parcel": false,
+          "apply_to_sondazh_2": false
+        },
+        "21498.350.68": {
+          "facility_in_permit": "КЕИ №2 \"Банята\"",
+          "permit": "МВ-010-Д/30.11.2017",
+          "holder": "Хотел \"Русковец\" ЕООД",
+          "role": "HOTEL_SPA_WATER_USE_OBJECT",
+          "water_use_location": "басейни, вани, душове, хидромасажори и джакузита в хотелски комплекс \"RUSKOVETS RESORT\"",
+          "is_source_facility_parcel": false,
+          "apply_to_sondazh_2": false
+        },
+        "21498.350.547": {
+          "facility": "КЕИ №2 \"Банята\"",
+          "role": "KEI2_SOURCE_PROPERTY",
+          "is_sondazh_2_property": false,
+          "note": "Already independently resolved as the source property of KEI №2. Must never be inherited by Sondazh №2."
+        }
+      },
+      "historical_sondazh_2_permits": [
+        {
+          "permit": "3331/19.07.2004",
+          "facility": "Сондаж №2",
+          "water_use_location": "Балнео-санаториален комплекс, Добринище",
+          "source_parcel_provided": false,
+          "source_coordinate_provided": false
+        },
+        {
+          "permit": "3843/28.08.2006",
+          "facility": "Сондаж №2",
+          "water_use_location": "Комплекс \"Романтика\", Добринище",
+          "source_parcel_provided": false,
+          "source_coordinate_provided": false
+        },
+        {
+          "permit": "МВ-012-Д/27.05.2019",
+          "facility": "Сондаж №2",
+          "water_use_location": "Обществена минерална баня в PI 21498.350.155",
+          "source_parcel_provided": false,
+          "source_coordinate_provided": false
+        }
+      ],
+      "safe_conclusion": "All locally discovered Dobrinishte cadastral identifiers in the current WABD/municipal permit dataset are attributable to consumer/water-use objects or to KEI №2. None is explicitly tied to the cadastral location of Sondazh №2 itself.",
+      "source_parcel_resolved": false,
+      "source_coordinate_resolved": false
+    },
+    "research_close_status": "UNRESOLVED_AFTER_AUTHORITATIVE_SPATIAL_RESEARCH",
+    "research_close_reason": "Official permits, municipal register, WABD evidence, RIOSV pipeline evidence, local cadastral data and available spatial sources establish the facility identity and consumer/project locations but do not provide a safe source parcel or exact coordinate for Sondazh №2."
+  },
+  "sondazh_3_plazha": {
+    "facility": "Сондаж №3 \"Плажа\"",
+    "coordinate_status": "TO_RESEARCH",
+    "mh_source": {
+      "assessment": "Балнеологична оценка №206/07.01.2022",
+      "technical_possible_discharge_l_s": 1.92,
+      "self_flow_elevation_m": 819.17,
+      "relative_location": "mineral-beach area north of the old mineral bath, outside the built-up part of Dobrinishte"
+    },
+    "official_permit_identity": {
+      "issuer": "Община Банско",
+      "permit_number": "МВ-001-Д",
+      "issue_date": "26.07.2013",
+      "facility": "Сондаж №3 \"Плажа\"",
+      "current_register_status": "active"
+    },
+    "official_2024_permit_change": {
+      "authority": "БД \"Западнобеломорски район\"",
+      "facility": "Сондаж №3 \"Плажа\"",
+      "permit_number": "МВ-001-Д/26.07.2013",
+      "consumer_property_id": "21498.157.2",
+      "consumer_property_role": "WATER_USE_OBJECT_NOT_SOURCE_FACILITY",
+      "apply_property_to_borehole": false,
+      "url": "https://wabd.bg/content/%D0%BF%D1%80%D0%BE%D0%BC%D1%8F%D0%BD%D0%B0-%D0%BD%D0%B0-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%BE-%D0%B7%D0%B0-%D0%B2%D0%BE%D0%B4%D0%BE%D0%B2%D0%B7%D0%B5%D0%BC%D0%B0/",
+      "safe_interpretation": "PI 21498.157.2 is explicitly the property of the water-use object. It is not proven to contain the borehole itself."
+    },
+    "safe_conclusion": "Official BDZBR, RIOSV and Municipality of Bansko documents confirm Sondazh №3 Plazha as a distinct existing mineral-water abstraction facility. PI 21498.157.2 and PI 21498.157.7 are consumer/recreational properties supplied by the facility and must not be assigned as the borehole source parcel. No authoritative facility-level cadastral parcel or exact coordinate for Sondazh №3 has yet been established.",
+    "official_bdzbr_2024_statement": {
+      "authority": "Басейнова дирекция „Западнобеломорски район“",
+      "document_number": "П-01-150-1/14.06.2024",
+      "document_date": "2024-06-14",
+      "source_url": "https://wabd.bg/content/wp-content/uploads/2024/06/%D0%9F-01-150-1.pdf",
+      "facility": "Сондаж №3 \"Плажа\"",
+      "deposit": "Добринище",
+      "state_property_status": "изключителна държавна собственост",
+      "permit_chain": [
+        "МВ-001-Д/26.07.2013",
+        "МВ-03-Д/23.10.2020",
+        "МВ-06-Д/14.07.2023"
+      ],
+      "technical_possible_discharge": {
+        "value_l_s": 1.92,
+        "basis": "Заповед № РД-881/26.11.2012"
+      },
+      "authorized_before_change": {
+        "average_flow_l_s": 0.43,
+        "annual_volume_m3": 13604.65
+      },
+      "requested_change": {
+        "average_flow_l_s": 0.53,
+        "annual_volume_m3": 16624.85
+      },
+      "water_use_object": {
+        "cadastral_property_id": "21498.157.2",
+        "description": "Открит плувен басейн, воден бар, съблекалня и ресторант",
+        "role": "WATER_USE_OBJECT_NOT_SOURCE_FACILITY",
+        "apply_property_to_sondazh_3": false
+      },
+      "source_facility": {
+        "modern_cadastral_property_id": null,
+        "official_coordinate": null,
+        "source_parcel_resolved": false
+      },
+      "safe_spatial_interpretation": "PI 21498.157.2 is explicitly the property of the water-use object supplied with mineral water from Sondazh №3. The BDZBR document does not identify this parcel as the cadastral location of the borehole itself."
+    },
+    "official_riosv_2022_consumer_property": {
+      "authority": "РИОСВ - Благоевград",
+      "message_number": "485/2022",
+      "outgoing_number": "1041(3)/13.04.2022",
+      "publication_date": "2022-04-14",
+      "source_url": "https://www.riosvbl.org/index.php/priroda/letters-natura/verpr-19/23169-2022-485",
+      "cadastral_property_id": "21498.157.7",
+      "locality": "Благиица",
+      "property_area_m2": 491,
+      "property_land_use": "За паркинг",
+      "planned_object": "закрит плувен басейн",
+      "relationship_to_sondazh_3": "The planned pool is associated with the water-use system supplied under permit МВ-001-Д from Sondazh №3.",
+      "infrastructure_relation": "PI 21498.157.7 is to connect to the water and sewer infrastructure in neighbouring PI 21498.157.2 and receive mineral water through the pipeline serving that consumer site.",
+      "role": "SECONDARY_WATER_USE_OBJECT_NOT_SOURCE_FACILITY",
+      "apply_property_to_sondazh_3": false
+    },
+    "official_bansko_2025_permit_procedure": {
+      "authority": "Община Банско",
+      "source_url": "https://bansko.bg/wp-content/uploads/2025/06/doc_6_.6_-01-189.pdf",
+      "facility": "Сондаж №3 \"Плажа\"",
+      "description": "Съществуващо водовземно съоръжение от находище Добринище",
+      "permit_chain": [
+        "МВ-001-Д/26.07.2013",
+        "МВ-03-Д/23.10.2020",
+        "МВ-04-Д/17.06.2022",
+        "МВ-06-Д/14.07.2023"
+      ],
+      "application_for_change": "33-24-1411/05.07.2024",
+      "municipal_notice": "ОБ-24-5973/08.08.2024",
+      "bdzbr_letter": "РР-20-70-/1/24.07.2024",
+      "facility_specific_source_parcel_provided": false,
+      "facility_specific_coordinate_provided": false,
+      "safe_interpretation": "The municipal procedure independently confirms Sondazh №3 Plazha as an existing abstraction facility but does not publish a source-level cadastral parcel or coordinate."
+    },
+    "excluded_source_parcel_candidates": [
+      {
+        "parcel_id": "21498.157.2",
+        "role": "OPEN_POOL_RECREATIONAL_WATER_USE_OBJECT",
+        "reason": "BDZBR P-01-150-1/14.06.2024 explicitly identifies this PI as the property of the open pool, water bar, changing room and restaurant supplied from Sondazh №3.",
+        "apply_to_sondazh_3": false
+      },
+      {
+        "parcel_id": "21498.157.7",
+        "role": "INDOOR_POOL_SECONDARY_WATER_USE_OBJECT",
+        "reason": "RIOSV message 485/2022 identifies this PI as the planned indoor-pool property connected to the infrastructure of neighbouring PI 21498.157.2.",
+        "apply_to_sondazh_3": false
+      }
+    ],
+    "next_research_priority": {
+      "target": "Original permit/decision chain for МВ-001-Д/26.07.2013 and facility-level technical / sanitary-protection documentation",
+      "documents": [
+        "МВ-001-Д/26.07.2013",
+        "МВ-03-Д/23.10.2020",
+        "МВ-04-Д/17.06.2022",
+        "МВ-06-Д/14.07.2023",
+        "РР-20-70-/1/24.07.2024"
+      ],
+      "reason": "These are the remaining authoritative documents most likely to contain source-facility location, scheme, sanitary-zone geometry or coordinates."
+    },
+    "official_bansko_2024_public_notice_image": {
+      "authority": "Общинска администрация - Банско",
+      "document_type": "Съобщение / публично обявяване",
+      "application_number": "33-24-1411/05.07.2024",
+      "applicant": "Алфа-2005 ООД",
+      "publication_page": "https://bansko.bg/aktualno/publichno-obyavyavane-po-zayavlenie-s-vh-33-24-1411-05-07-2024g/",
+      "published_document_image": "https://bansko.bg/wp-content/uploads/2025/06/screenshot-2024-08-13-at-19.42.32.png",
+      "document_signed_date": "2024-08-13",
+      "permit_chain": [
+        "МВ-001-Д/26.07.2013",
+        "МВ-03-Д/23.10.2020",
+        "МВ-04-Д/17.06.2022",
+        "МВ-06-Д/14.07.2023"
+      ],
+      "mineral_deposit": "Добринище",
+      "facility": "Сондаж №3 \"Плажа\"",
+      "facility_property_status": "изключителна държавна собственост",
+      "water_use_location": {
+        "settlement": "гр. Добринище",
+        "municipality": "Банско",
+        "district": "Благоевград",
+        "ekatte": "21498",
+        "consumer_object": "Открит плувен басейн, воден бар, съблекални и ресторант",
+        "cadastral_property_id": "21498.157.2",
+        "role": "WATER_USE_OBJECT_NOT_SOURCE_FACILITY",
+        "apply_property_to_sondazh_3": false,
+        "building_permit": "№278/19.10.2005"
+      },
+      "requested_parameters": {
+        "average_flow_l_s": 0.53,
+        "currently_permitted_average_flow_l_s": 0.43,
+        "annual_volume_m3": 16624.85,
+        "currently_permitted_annual_volume_m3": 13604.65
+      },
+      "purpose": "спорт, отдих и рекреация",
+      "conditions_include": [
+        "спазване на разрешеното водно количество",
+        "провеждане на собствен мониторинг",
+        "измерване на нивото на подземните води ежемесечно по време на работа на помпата"
+      ],
+      "source_parcel_provided": false,
+      "source_coordinate_provided": false,
+      "sanitary_zone_geometry_provided": false,
+      "source_scheme_provided": false,
+      "safe_spatial_interpretation": "The official municipal notice explicitly describes PI 21498.157.2 as the cadastral property containing the consumer object (open swimming pool, water bar, changing rooms and restaurant). It does not identify PI 21498.157.2 as the source parcel of Sondazh №3. No facility-level source parcel or exact coordinate is published."
+    },
+    "research_close_status": "UNRESOLVED_AFTER_AUTHORITATIVE_SPATIAL_RESEARCH",
+    "research_close_reason": "Official BDZBR, RIOSV and Municipality of Bansko documents establish Sondazh №3 Plazha as a distinct abstraction facility. PI 21498.157.2 and PI 21498.157.7 are proven consumer properties. The final published municipal notice provides no source parcel, coordinate, sanitary-zone geometry or source-location scheme."
+  },
+  "local_resolution_audit": {
+    "targets": 2,
+    "mh_pdf_property_resolution": {
+      "Сондаж №2 \"Банята\"": "NO_UNIQUE_OFFICIAL_PROPERTY_ID",
+      "Сондаж №3 \"Плажа\"": "NO_UNIQUE_OFFICIAL_PROPERTY_ID"
+    },
+    "mh_pdf_coordinate_resolution": {
+      "Сондаж №2 \"Банята\"": "NO_OFFICIAL_WGS84_COORDINATE",
+      "Сондаж №3 \"Плажа\"": "NO_OFFICIAL_WGS84_COORDINATE"
+    },
+    "wabd_exact_coordinate_match": {
+      "Сондаж №2 \"Банята\"": false,
+      "Сондаж №3 \"Плажа\"": false
+    }
+  },
+  "decision": {
+    "sondazh_2_banyata": "KEEP_TO_RESEARCH",
+    "sondazh_3_plazha": "KEEP_TO_RESEARCH",
+    "next_research": [
+      "Inspect the 2026 municipal/WABD investment proposal documents for Сондаж №2 Банята for a source-facility parcel or plan.",
+      "Inspect permit amendments and supporting plans for МВ-001-Д / Сондаж №3 Плажа for a facility-specific source location."
+    ]
+  },
+  "recorded_at": "2026-09-11T19:50:42.196664Z",
+  "research_closeout": {
+    "status": "CLOSED_UNRESOLVED",
+    "date": "2026-09-11",
+    "facilities_reviewed": 2,
+    "facilities_resolved": 0,
+    "facilities_unresolved": 2,
+    "unresolved_facilities": [
+      "Сондаж №2 \"Банята\"",
+      "Сондаж №3 \"Плажа\""
+    ],
+    "reason": "Authoritative and local spatial research routes were exhausted without a facility-specific source parcel or exact coordinate for either target.",
+    "reopen_only_if": "new authoritative facility-level cadastral, coordinate, sanitary-zone, technical scheme or equivalent source-location evidence appears"
+  }
+}

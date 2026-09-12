@@ -1,0 +1,35 @@
+{
+  "deposit": "Кюстендил",
+  "status": "RESEARCH_CLOSED",
+  "result": "NO_SAFE_FACILITY_LEVEL_RESOLUTION",
+  "facilities": [
+    {
+      "candidate": 6,
+      "facility": "Сондаж № БУ",
+      "result": "NO_SAFE_RESOLUTION",
+      "coordinate_status": "TO_RESEARCH",
+      "legacy_coordinate_rejected": [
+        23.3518889,
+        42.8356944
+      ]
+    },
+    {
+      "candidate": 108,
+      "facility": "КЕИ \"Стар каптаж\"",
+      "result": "NO_SAFE_RESOLUTION",
+      "coordinate_status": "TO_RESEARCH",
+      "legacy_coordinate_rejected": [
+        23.9728889,
+        41.9954722
+      ],
+      "false_match": {
+        "feature_index": 37,
+        "facility": "КЕИ № 1 \"Стар каптаж\"",
+        "deposit": "Велинград-Чепино",
+        "result": "DIFFERENT_FACILITY"
+      }
+    }
+  ],
+  "facility_coordinates_added": 0,
+  "updated_at": "2026-09-12T17:21:02.563150+00:00"
+}

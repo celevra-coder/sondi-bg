@@ -1,0 +1,131 @@
+{
+  "id": "NORTHEAST_BULGARIA_MALM_VALANGINIAN_EXISTING_RECONCILIATION_9",
+  "created_at": "2026-09-12T05:44:31.988702+00:00",
+  "deposit": "Североизточна България - малмоваланжски водоносен хоризонт",
+  "scope": "Exact reconciliation of nine MH candidates against existing official BSBD facilities",
+  "result": "MATCHED_EXISTING_9",
+  "facilities_reviewed": 9,
+  "facilities_reclassified": 9,
+  "new_map_points_created": 0,
+  "canonical_status_before": {
+    "CONFIRMED_MISSING": 124,
+    "MATCHED_EXISTING": 42,
+    "DUPLICATE_MH": 19,
+    "COMPOSITE_GROUP": 3,
+    "UNRESOLVED": 2
+  },
+  "canonical_status_after": {
+    "CONFIRMED_MISSING": 115,
+    "MATCHED_EXISTING": 51,
+    "DUPLICATE_MH": 19,
+    "COMPOSITE_GROUP": 3,
+    "UNRESOLVED": 2
+  },
+  "active_to_research_before": 65,
+  "active_to_research_after": 56,
+  "match_rule": "No fuzzy-only promotion. Each candidate must match one unique current official BSBD feature by facility identifier, cadastral property, official coordinate and registry identity.",
+  "official_source": "public/geology-map/data/official_water_facilities.geojson",
+  "official_register_source": "БДЧР – Reg-saor_mineralni-vodi.xlsx",
+  "matches": [
+    {
+      "mh_facility": "Сондаж № Р-106х \"Варна",
+      "existing_feature_index": 280,
+      "existing_facility_name": "Р-106х  Варна                      (Дом Младост)     ПИ 10135.3515.5020",
+      "cadastral_property_id": "10135.3515.5020",
+      "registry_number": "251 100 00014/ 26.03.2008 г",
+      "longitude": 27.8874372,
+      "latitude": 43.2264789,
+      "source": "БДЧР – официален регистър",
+      "match_status": "EXACT_IDENTITY_MATCH"
+    },
+    {
+      "mh_facility": "сондаж № Р-107х \"Варна",
+      "existing_feature_index": 275,
+      "existing_facility_name": "Р-107х                    Варна   /КЗ \"Георги Димитров\"/     ПИ 10135.5501.278",
+      "cadastral_property_id": "10135.5501.278",
+      "registry_number": "251 100 00009/ 26.03.2008 г",
+      "longitude": 27.8975353,
+      "latitude": 43.1997322,
+      "source": "БДЧР – официален регистър",
+      "match_status": "EXACT_IDENTITY_MATCH"
+    },
+    {
+      "mh_facility": "Сондаж № Р-11х \"Златни пясъци",
+      "existing_feature_index": 270,
+      "existing_facility_name": "Р-11х                   ,,Зл. пясъци\"   ПИ 10135.2574.1",
+      "cadastral_property_id": "10135.2574.1",
+      "registry_number": "251 100 00004/ 26.03.2008 г",
+      "longitude": 28.0398306,
+      "latitude": 43.2722572,
+      "source": "БДЧР – официален регистър",
+      "match_status": "EXACT_IDENTITY_MATCH"
+    },
+    {
+      "mh_facility": "Сондаж № Р-1х \"Варна\"",
+      "existing_feature_index": 284,
+      "existing_facility_name": "Р-1х  Варна                    (Аквариума)    ПИ 10135.1509.13",
+      "cadastral_property_id": "10135.1509.13",
+      "registry_number": "251 100 00018/ 26.03.2008 г",
+      "longitude": 27.9230581,
+      "latitude": 43.2011489,
+      "source": "БДЧР – официален регистър",
+      "match_status": "EXACT_IDENTITY_MATCH"
+    },
+    {
+      "mh_facility": "Сондаж № Р-2х",
+      "existing_feature_index": 273,
+      "existing_facility_name": "Р-2х                        ,,Св. Св. Константин и Елена\"    ПИ 10135.2569.100",
+      "cadastral_property_id": "10135.2569.100",
+      "registry_number": "251 100 00007/ 26.03.2008 г",
+      "longitude": 28.014145,
+      "latitude": 43.2294944,
+      "source": "БДЧР – официален регистър",
+      "match_status": "EXACT_IDENTITY_MATCH"
+    },
+    {
+      "mh_facility": "Сондаж № Р-6х \"Св. Св. Константин и Елена",
+      "existing_feature_index": 268,
+      "existing_facility_name": "Р-6х ,,Св. Св. Константин и Елена\"                      ПИ 10135.2569.4",
+      "cadastral_property_id": "10135.2569.4",
+      "registry_number": "251 100 00002/ 26.03.2008 г",
+      "longitude": 28.0093186,
+      "latitude": 43.2332353,
+      "source": "БДЧР – официален регистър",
+      "match_status": "EXACT_IDENTITY_MATCH"
+    },
+    {
+      "mh_facility": "Сондаж № Р-83х",
+      "existing_feature_index": 279,
+      "existing_facility_name": "Р-83х                     ,,Св. Св. Константин и Елена\" (МО)    ПИ 10135.2570.107",
+      "cadastral_property_id": "10135.2570.107",
+      "registry_number": "251 100 00013/ 26.03.2008 г",
+      "longitude": 28.0153172,
+      "latitude": 43.2348592,
+      "source": "БДЧР – официален регистър",
+      "match_status": "EXACT_IDENTITY_MATCH"
+    },
+    {
+      "mh_facility": "сондаж № Р-96х \"Варна",
+      "existing_feature_index": 299,
+      "existing_facility_name": "Р-96х ,,Варна\"                           /Ж.п. Гара/   ПИ 10135.1506.845",
+      "cadastral_property_id": "10135.1506.845",
+      "registry_number": "251 100 00036/    27.03.2008 г",
+      "longitude": 27.9068831,
+      "latitude": 43.2004544,
+      "source": "БДЧР – официален регистър",
+      "match_status": "EXACT_IDENTITY_MATCH"
+    },
+    {
+      "mh_facility": "Сондаж № Р-9х\"",
+      "existing_feature_index": 278,
+      "existing_facility_name": "Р-9х                 ,,Св. Св. Константин и Елена\" (Сл. Ден)    ПИ 10135.2570.96",
+      "cadastral_property_id": "10135.2570.96",
+      "registry_number": "251 100 00012/ 26.03.2008 г",
+      "longitude": 28.0184661,
+      "latitude": 43.2428483,
+      "source": "БДЧР – официален регистър",
+      "match_status": "EXACT_IDENTITY_MATCH"
+    }
+  ],
+  "raw_mh_fields_modified": false
+}

@@ -1,0 +1,86 @@
+{
+  "source": "AGKK KAIS OpenData",
+  "method": "Targeted cadastral land-plot geometry download for nine settlements; no national bulk download.",
+  "count": 2,
+  "records": [
+    {
+      "property_id": "10450.501.842",
+      "facility": "Сондаж №5 + КЕИ №7 \"Сярна баня\"",
+      "oblast": "Пазарджик",
+      "municipality": "Велинград",
+      "ekatte": "10450",
+      "kais_settlement": "гр. Велинград (10450)",
+      "status": "PARCEL_GEOMETRY_RESOLVED",
+      "matches": [
+        {
+          "shapefile": "data/mineral-water/kais-parcels/10450/land_plots/поземлени имоти/Имоти (Polygon).shp",
+          "area_source_crs_m2": 697.16,
+          "centroid_lat": 42.041790629,
+          "centroid_lon": 23.991351781,
+          "point_on_surface_lat": 42.041787663,
+          "point_on_surface_lon": 23.991339506,
+          "record": {
+            "AREA": 697.15619500481,
+            "PERIM": 115.4845921946,
+            "cadimm": 842,
+            "cadnum": "10450.501.842",
+            "cadreg": 501,
+            "cattype": "Няма стойност",
+            "ekatte": "10450",
+            "ekattefn": "гр. Велинград",
+            "immaddr": "гр. Велинград, ул. ГЕОРГИ КИРКОВ",
+            "oldident": "1001",
+            "propcode": "3",
+            "proptype": "Общинска публична",
+            "purpcode": "1",
+            "purptype": "Урбанизирана",
+            "strename": "ул. ГЕОРГИ КИРКОВ",
+            "usecode": "1000",
+            "usetype": "Ниско застрояване (до 10 m)",
+            "validate": "РД-18-1214/06.06.2018 г., издадена от ИЗПЪЛНИТЕЛЕН ДИРЕКТОР НА АГКК"
+          }
+        }
+      ]
+    },
+    {
+      "property_id": "02693.501.6000",
+      "facility": "КЕИ №6 \"Гулийна баня\"",
+      "oblast": "Благоевград",
+      "municipality": "Разлог",
+      "ekatte": "02693",
+      "kais_settlement": "с. Баня (02693)",
+      "status": "PARCEL_GEOMETRY_RESOLVED",
+      "matches": [
+        {
+          "shapefile": "data/mineral-water/kais-parcels/02693/land_plots/поземлени имоти/Имоти (Polygon).shp",
+          "area_source_crs_m2": 58679.71,
+          "centroid_lat": 41.881496218,
+          "centroid_lon": 23.530207224,
+          "point_on_surface_lat": 41.881671319,
+          "point_on_surface_lon": 23.53007353,
+          "record": {
+            "AREA": 58679.711871488,
+            "PERIM": 1073.5760648299,
+            "cadimm": 6000,
+            "cadnum": "02693.501.6000",
+            "cadreg": 501,
+            "cattype": "Няма стойност",
+            "ekatte": "02693",
+            "ekattefn": "с. Баня",
+            "immaddr": "с. Баня",
+            "oldident": "382",
+            "parcel": "V",
+            "propcode": "5",
+            "proptype": "Частна",
+            "purpcode": "1",
+            "purptype": "Урбанизирана",
+            "quarter": "16А",
+            "usecode": "1920",
+            "usetype": "За друг вид производствен, складов обект",
+            "validate": "РД-18-1326/24.07.2018 г., издадена от ИЗПЪЛНИТЕЛЕН ДИРЕКТОР НА АГКК"
+          }
+        }
+      ]
+    }
+  ]
+}

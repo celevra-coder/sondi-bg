@@ -1,0 +1,77 @@
+{
+  "pass_id": "DOLNA_BANYA_OFFICIAL_EXACT_2",
+  "deposit": "Долна баня",
+  "completed_at": "2026-09-12T15:21:16.747036+00:00",
+  "research_result": {
+    "status": "OFFICIAL_EXACT",
+    "facilities_resolved": 2
+  },
+  "source": {
+    "title": "Доклад за оценка на ресурсите на находище на минерални води „Долна баня“",
+    "year": 2012,
+    "coordinate_basis": "facility-level geodetic survey",
+    "coordinate_crs": "BGS 1970 K9",
+    "url": "https://almainvest.bg/wp-content/uploads/2025/03/%D0%A5%D0%B8%D0%B4%D1%80%D0%BE%D0%B3%D0%B5%D0%BE%D0%BB%D0%BE%D0%B6%D0%BA%D0%B8-%D0%B4%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4-2012%D0%B3.pdf"
+  },
+  "facilities": [
+    {
+      "facility": "Каптиран естествен извор „Долна баня“",
+      "canonical_mh_facility": "Каптиран естествен извор \"Долна баня",
+      "official_source_coordinate": {
+        "crs": "BGS 1970 K9",
+        "x": 4560694.84,
+        "y": 8535814.7
+      },
+      "transformed_bgs2005": {
+        "northing": 4687623.235,
+        "easting": 357831.999
+      },
+      "resolved_wgs84": {
+        "latitude": 42.310901433257,
+        "longitude": 23.775425286452
+      }
+    },
+    {
+      "facility": "Сондаж № 13хг",
+      "canonical_mh_facility": "сондаж № 13хг",
+      "official_source_coordinate": {
+        "crs": "BGS 1970 K9",
+        "x": 4560713.3,
+        "y": 8535778.4
+      },
+      "transformed_bgs2005": {
+        "northing": 4687642.582,
+        "easting": 357796.165
+      },
+      "resolved_wgs84": {
+        "latitude": 42.311068990513,
+        "longitude": 23.774985936602
+      }
+    }
+  ],
+  "transformation_qa": {
+    "library": "bojko108/transformations",
+    "grid": "BGS_1970_K9_to_BGS_2005_KK.bcsg",
+    "control": {
+      "input_bgs1970_k9_x": 4547844.976,
+      "input_bgs1970_k9_y": 8508858.179,
+      "result_bgs2005_northing": 4675440.846,
+      "result_bgs2005_easting": 330568.434,
+      "expected_bgs2005_northing": 4675440.859,
+      "expected_bgs2005_easting": 330568.41,
+      "difference_m": 0.028,
+      "result_wgs84_latitude": 42.195768528,
+      "result_wgs84_longitude": 23.44840873
+    },
+    "result": "PASS"
+  },
+  "local_spatial_qa": {
+    "sondazh_1hg_to_13hg_m": 52.88,
+    "sondazh_1hg_to_kei_dolna_banya_m": 14.36,
+    "sondazh_13hg_to_kei_dolna_banya_m": 40.65
+  },
+  "notes": [
+    "The legacy current_* fuzzy matches in the MH candidate inventory are not used as spatial evidence.",
+    "The apparent 13hg text hit in the existing official layer was feature 249, S-451 (3hg), Kumaritsa, and was rejected as a different facility."
+  ]
+}

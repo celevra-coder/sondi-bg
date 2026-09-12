@@ -1,0 +1,194 @@
+{
+  "deposit": "Велинград-Каменица",
+  "research_scope": [
+    "КЕИ \"Власа\"",
+    "Сондаж №3 \"Мизинка\""
+  ],
+  "status": "RESEARCH_CONTINUES",
+  "canonical_coordinate_change": false,
+  "official_interactive_map": {
+    "url": "https://voda.velingrad.bg/nachodishta/kamenitsa",
+    "interpretation": "The map marker sets linked to individual mineral-water sources represent downstream consumers/distribution points such as fountains, hotels, baths, pools and medical facilities. They are not coordinates of the source facility itself.",
+    "kei_vlasa_marker_type": 24,
+    "kei_vlasa_observed_members": [
+      {
+        "marker_id": 43,
+        "title": "Чешма 46",
+        "latitude": 42.037314,
+        "longitude": 23.992636,
+        "use_as_source_coordinate": false
+      }
+    ],
+    "mizinka_marker_type": 28,
+    "mizinka_observed_members": [
+      {
+        "marker_id": 56,
+        "title": "Чешма 54",
+        "latitude": 42.039798,
+        "longitude": 23.991823,
+        "use_as_source_coordinate": false
+      },
+      {
+        "marker_id": 64,
+        "title": "Чешма 55",
+        "latitude": 42.040939,
+        "longitude": 23.988988,
+        "use_as_source_coordinate": false
+      }
+    ],
+    "qa_conclusion": "Official interactive-map marker coordinates must not be promoted as source-facility coordinates."
+  },
+  "mizinka": {
+    "facility": "Сондаж №3 \"Мизинка\"",
+    "coordinate_status": "TO_RESEARCH",
+    "official_location_reference": {
+      "planning_unit": "УПИ VI – \"Озеленяване\"",
+      "quarter": "253",
+      "settlement": "гр. Велинград",
+      "source": "Община Велинград, Решение №179/29.05.2025 and corroborating municipal planning/building records",
+      "source_url": "https://m.velingrad.bg/?p=68777",
+      "evidence_strength": "OFFICIAL_FACILITY_LEVEL_UPI"
+    },
+    "safe_conclusion": "The source facility is officially tied to UPI VI \"Озеленяване\", quarter 253. A modern cadastral parcel identifier or facility point has not yet been established.",
+    "next_step": "Resolve UPI VI, quarter 253 to the current cadastral parcel before considering CADASTRAL_RESOLVED_APPROXIMATE."
+  },
+  "kei_vlasa": {
+    "facility": "КЕИ \"Власа\"",
+    "coordinate_status": "TO_RESEARCH",
+    "official_context": {
+      "shared_extraction_reservoir_with": "Сондаж №4 \"Власа\"",
+      "source": "Община Велинград, Решение №148/29.05.2025",
+      "source_url": "https://m.velingrad.bg/?p=68693"
+    },
+    "nearby_related_facility": {
+      "facility": "Сондаж №4 \"Власа\"",
+      "official_parcel": "10450.501.2479",
+      "planning_unit": "УПИ I \"За охр. зона на минерална вода\"",
+      "quarter": "229",
+      "source_url": "https://m.velingrad.bg/?p=47315",
+      "apply_to_kei_vlasa": false
+    },
+    "safe_conclusion": "The common reservoir and the official parcel of Sonдаж №4 do not prove that KEI Vlasa occupies the same cadastral parcel. Do not inherit Sonдаж №4 coordinates or parcel.",
+    "next_step": "Find an official facility-level parcel, UPI or coordinate explicitly tied to KEI Vlasa.",
+    "resolution_result": "NO_SAFE_CURRENT_PUBLIC_COORDINATE_RESOLUTION",
+    "reason": "КЕИ \"Власа\" is officially identified, but the inspected public evidence does not provide an exact facility coordinate or facility-specific cadastral parcel. Parcel 10450.501.2479 belongs to Сондаж №4 \"Власа\" and must not be inherited by the natural spring."
+  },
+  "decision": {
+    "kei_vlasa": "KEEP_TO_RESEARCH_NO_SAFE_RESOLUTION",
+    "mizinka": "KEEP_TO_RESEARCH_NO_SAFE_RESOLUTION",
+    "resolved_facilities": 0,
+    "unresolved_facilities": 2,
+    "canonical_coordinate_change": false,
+    "build_required": false,
+    "ledger_ready_for_no_safe_resolution_pass": true
+  },
+  "recorded_at": "2026-09-11T19:34:21.597598Z",
+  "official_facility_register": {
+    "municipality_register": {
+      "authority": "Община Велинград",
+      "register_name": "Регистър на водовземните съоръжения на находище \"Каменица-Велинград\"",
+      "facilities": {
+        "kei_vlasa": {
+          "facility": "КЕИ \"Власа\"",
+          "registration_number": "351016002",
+          "registration_date": "26.03.2008",
+          "self_flow_elevation_m": 768.8
+        },
+        "mizinka": {
+          "facility": "Сондаж №3 \"Мизинка\"",
+          "registration_number": "351016003",
+          "registration_date": "26.03.2008",
+          "construction_year": 1960,
+          "depth_m": 271.0,
+          "self_flow_elevation_m": 771.84
+        }
+      },
+      "coordinate_columns_present": true,
+      "coordinates_populated_for_targets": false,
+      "coordinate_use": "Identity evidence only; not sufficient for OFFICIAL_EXACT."
+    },
+    "earbd_identity_crosscheck": {
+      "authority": "Басейнова дирекция \"Източнобеломорски район\"",
+      "registration_numbers": {
+        "351016002": "КЕИ \"Власа\"",
+        "351016003": "Сондаж №3 \"Мизинка\""
+      },
+      "safe_use": "Official facility identity cross-check; no exact facility coordinate promoted."
+    }
+  },
+  "mizinka_planning_identity": {
+    "facility": "Сондаж №3 \"Мизинка\"",
+    "registration_number": "351016003",
+    "official_planning_location": {
+      "upi": "VI \"Озеленяване\"",
+      "quarter": "253",
+      "settlement": "Велинград"
+    },
+    "modern_cadastral_pi": null,
+    "resolution_status": "UPI_CONFIRMED_PI_NOT_RESOLVED",
+    "safe_conclusion": "Сондаж №3 \"Мизинка\" е официално идентифициран в УПИ VI \"Озеленяване\", кв.253, но актуален кадастрален PI още не е установен."
+  },
+  "mizinka_spatial_resolution": {
+    "facility": "Сондаж №3 \"Мизинка\"",
+    "registration_number": "351016003",
+    "confirmed_planning_location": {
+      "upi": "VI \"Озеленяване\"",
+      "quarter": "253",
+      "settlement": "Велинград",
+      "confidence": "OFFICIAL_FACILITY_LEVEL"
+    },
+    "official_sources": [
+      {
+        "authority": "Община Велинград",
+        "document": "Решение №60/24.02.2022",
+        "fact": "Сондаж \"Мизинка\" е в УПИ VI, кв.253.",
+        "url": "https://m.velingrad.bg/?p=52124"
+      },
+      {
+        "authority": "Община Велинград",
+        "document": "Решение №179/29.05.2025",
+        "fact": "Сондаж №3 \"Мизинка\" е в УПИ VI \"Озеленяване\", кв.253.",
+        "url": "https://m.velingrad.bg/?p=68777"
+      },
+      {
+        "authority": "Община Велинград",
+        "document": "Решение №181/29.05.2025",
+        "fact": "Повторно потвърждение: УПИ VI \"Озеленяване\", кв.253.",
+        "url": "https://m.velingrad.bg/?p=68782"
+      },
+      {
+        "authority": "Община Велинград",
+        "document": "Обявление 18.01.2021",
+        "fact": "Трасето започва от съществуващ сондаж №3 \"Мизинка\", след което тръгва на изток и излиза в улицата, после на юг по ул. \"Еленка\". Графичната скица е налична в ТСУ, но не е публикувана в страницата.",
+        "url": "https://m.velingrad.bg/?p=47332"
+      }
+    ],
+    "excluded_cadastral_candidate": {
+      "parcel_id": "10450.501.507",
+      "reason": "Official municipal documents identify 10450.501.507 as the cadastral parcel from which UPI V \"За озеленяване\", quarter 253, is formed. Mizinka is repeatedly identified as UPI VI.",
+      "apply_to_mizinka": false,
+      "sources": [
+        {
+          "document": "Решение №44/15.02.2024",
+          "url": "https://m.velingrad.bg/?p=60461"
+        },
+        {
+          "document": "Решение №106/28.03.2024",
+          "url": "https://m.velingrad.bg/?p=61579"
+        }
+      ]
+    },
+    "local_cadastral_audit": {
+      "json_geojson_files_scanned": 112,
+      "reference_pi": "10450.501.507",
+      "feature_collections_with_reference_pi": 0,
+      "nearby_candidate_features": 0,
+      "local_geometry_found": false
+    },
+    "modern_cadastral_pi": null,
+    "resolution_result": "NO_SAFE_CURRENT_PUBLIC_CADASTRAL_RESOLUTION",
+    "safe_coordinate_status": "TO_RESEARCH",
+    "reason": "The exact facility is officially localized to UPI VI \"Озеленяване\", quarter 253, but no authoritative public source currently inspected provides a modern cadastral parcel identifier or exact facility coordinates. PI 10450.501.507 is specifically excluded because it corresponds to UPI V.",
+    "future_resolution_trigger": "Official plan sketch / cadastral crosswalk for UPI VI \"Озеленяване\", quarter 253, or an authoritative facility coordinate."
+  }
+}

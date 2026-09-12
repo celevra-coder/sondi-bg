@@ -1,0 +1,47 @@
+{
+  "id": "VARNA_BASIN_EOCENE_MATCHED_EXISTING_2",
+  "created_at": "2026-09-12T05:49:57.505235+00:00",
+  "deposit": "Варненски басейн - еоценски водоносен хоризонт",
+  "result": "MATCHED_EXISTING_2",
+  "facilities_reviewed": 2,
+  "facilities_reclassified": 2,
+  "new_map_points_created": 0,
+  "research_status_before": {
+    "CONFIRMED_MISSING": 115,
+    "MATCHED_EXISTING": 51
+  },
+  "research_status_after": {
+    "CONFIRMED_MISSING": 113,
+    "MATCHED_EXISTING": 53
+  },
+  "active_to_research_before": 56,
+  "active_to_research_after": 54,
+  "identity_rule": "Duplicate facility numbers elsewhere in the official register were explicitly rejected. Exact matching requires facility number plus locality/name, settlement, cadastral property, official coordinates and registry identity.",
+  "matches": [
+    {
+      "mh_facility": "сондаж № С-5х \"Ф-ка Христо Ботев",
+      "existing_feature_index": 316,
+      "existing_facility_name": "С-5х ф-ка           ,,Христо Ботев\"       ПИ 10135.1.1691",
+      "settlement": "Варна",
+      "cadastral_property_id": "10135.1.1691",
+      "registry_number": "251 100 00056/                     28.03.2008 г",
+      "longitude": 27.8905839,
+      "latitude": 43.2066472,
+      "source": "БДЧР – официален регистър",
+      "match_status": "EXACT_IDENTITY_MATCH"
+    },
+    {
+      "mh_facility": "сондаж № С-6х \"Тополи",
+      "existing_feature_index": 286,
+      "existing_facility_name": "С-6х           Тополи          ПИ 72709.516.1031",
+      "settlement": "с.Тополи",
+      "cadastral_property_id": "72709.516.1031",
+      "registry_number": "251 101 00020/        27.03.2008 г",
+      "longitude": 27.8401097,
+      "latitude": 43.2088939,
+      "source": "БДЧР – официален регистър",
+      "match_status": "EXACT_IDENTITY_MATCH"
+    }
+  ],
+  "raw_mh_fields_modified": false
+}

@@ -1,0 +1,87 @@
+{
+  "source": "AGKK KAIS OpenData",
+  "method": "Targeted cadastral land-plot geometry download for nine settlements; no national bulk download.",
+  "count": 2,
+  "records": [
+    {
+      "property_id": "47408.501.33",
+      "facility": "КЕИ № 17 \"Тасков гьол\"",
+      "oblast": "Благоевград",
+      "municipality": "Гърмен",
+      "ekatte": "47408",
+      "kais_settlement": "с. Марчево (47408)",
+      "status": "PARCEL_GEOMETRY_RESOLVED",
+      "matches": [
+        {
+          "shapefile": "data/mineral-water/kais-parcels/47408/land_plots/поземлени имоти/Имоти (Polygon).shp",
+          "area_source_crs_m2": 406.75,
+          "centroid_lat": 41.620206875,
+          "centroid_lon": 23.798905604,
+          "point_on_surface_lat": 41.620231823,
+          "point_on_surface_lon": 23.798908317,
+          "record": {
+            "AREA": 406.74964300374,
+            "PERIM": 85.741828976376,
+            "cadimm": 33,
+            "cadnum": "47408.501.33",
+            "cadreg": 501,
+            "cattype": "Няма стойност",
+            "ekatte": "47408",
+            "ekattefn": "с. Марчево",
+            "immaddr": "с. Марчево",
+            "oldident": "33",
+            "parcel": "1",
+            "place": "ОГНЯНОВСКИ МИН. БАНИ",
+            "propcode": "3",
+            "proptype": "Общинска публична",
+            "purpcode": "1",
+            "purptype": "Урбанизирана",
+            "quarter": "17",
+            "usecode": "1000",
+            "usetype": "Ниско застрояване (до 10 m)",
+            "validate": "РД-18-01-2/12.12.2005 г., издадена от НАЧАЛНИКА НА СК - БЛАГОЕВГРАД"
+          }
+        }
+      ]
+    },
+    {
+      "property_id": "49312.17.39",
+      "facility": "Сондаж № 1ВКН / 1ВКП \"Рупите\"",
+      "oblast": "Благоевград",
+      "municipality": "Петрич",
+      "ekatte": "49312",
+      "kais_settlement": "с. Рупите (49312)",
+      "status": "PARCEL_GEOMETRY_RESOLVED",
+      "matches": [
+        {
+          "shapefile": "data/mineral-water/kais-parcels/49312/land_plots/поземлени имоти/Имоти (Polygon).shp",
+          "area_source_crs_m2": 10302.23,
+          "centroid_lat": 41.458185674,
+          "centroid_lon": 23.262261398,
+          "point_on_surface_lat": 41.458324055,
+          "point_on_surface_lon": 23.262196701,
+          "record": {
+            "AREA": 10302.228101987,
+            "PERIM": 447.44916590569,
+            "cadimm": 39,
+            "cadnum": "49312.17.39",
+            "cadreg": 17,
+            "cattype": "Няма стойност",
+            "ekatte": "49312",
+            "ekattefn": "с. Рупите",
+            "immaddr": "с. Рупите",
+            "oldident": "000284",
+            "place": "РУПИТЕ",
+            "propcode": "4",
+            "proptype": "Общинска частна",
+            "purpcode": "3",
+            "purptype": "Земеделска",
+            "usecode": "1050",
+            "usetype": "За друг вид застрояване",
+            "validate": "РД-18-554/24.10.2017 г., издадена от ИЗПЪЛНИТЕЛЕН ДИРЕКТОР НА АГКК"
+          }
+        }
+      ]
+    }
+  ]
+}

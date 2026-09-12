@@ -1,0 +1,2061 @@
+{
+  "schema_version": 1,
+  "canonical_data_files": [
+    "data/mineral-water/research/mh_mineral_gap_candidates.json",
+    "data/mineral-water/research/mh_mineral_composite_records.json"
+  ],
+  "policy": {
+    "memory_is_canonical": false,
+    "project_files_are_canonical": true,
+    "save_confirmed_findings_immediately": true,
+    "qa_after_each_write": true,
+    "invent_coordinates": false,
+    "cadastral_centroid_is_exact_coordinate": false,
+    "unlocated_confirmed_facilities_are_counted": true,
+    "unlocated_confirmed_facilities_participate_in_analysis": true
+  },
+  "mineral_layer_goal": {
+    "scope": "Complete national mineral-water information layer for Bulgaria",
+    "include": [
+      "boreholes",
+      "captured natural springs",
+      "drainage galleries",
+      "captages",
+      "composite groups",
+      "historical confirmed facilities"
+    ],
+    "analysis_links": [
+      "fault network",
+      "geology",
+      "lithology",
+      "aquifers",
+      "depth",
+      "temperature",
+      "discharge",
+      "hydrochemistry"
+    ]
+  },
+  "current_status": {
+    "total_candidates": 190,
+    "no_spatial_status": 0,
+    "confirmed_missing": 124,
+    "matched_existing": 42,
+    "duplicate_mh": 19,
+    "composite_group": 3,
+    "unresolved": 2,
+    "official_exact": 30,
+    "with_cadastral_property": 38,
+    "cadastral_resolved_approximate": 27,
+    "cadastral_building_resolved_approximate": 1,
+    "wabd_register_resolved": 1,
+    "to_research": 65,
+    "new_mappable": 59,
+    "new_without_safe_coordinates": 65,
+    "master_facilities": 547,
+    "free_features": 482
+  },
+  "completed_spatial_passes": [
+    {
+      "name": "Spatial pass 2 - Batch 1",
+      "result": "PASS",
+      "confirmed_updates": [
+        {
+          "facility": "К-2",
+          "deposit": "Овощник",
+          "cadastral_property_id": "35167.99.743",
+          "locality": "Големите ливади",
+          "status": "CADASTRAL_LOCATION_TO_RESOLVE"
+        },
+        {
+          "facility": "К-3",
+          "deposit": "Овощник",
+          "cadastral_property_id": "35167.93.617",
+          "locality": "Големите ливади",
+          "status": "CADASTRAL_LOCATION_TO_RESOLVE"
+        },
+        {
+          "facility": "К-6",
+          "deposit": "Овощник",
+          "cadastral_property_id": "35167.119.370",
+          "locality": "Малево",
+          "status": "CADASTRAL_LOCATION_TO_RESOLVE"
+        },
+        {
+          "facility": "Я-33",
+          "deposit": "Стефан Караджово",
+          "relative_location": "approximately 650 m west of Stefan Karadzhovo village",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "Я-12",
+          "deposit": "Стралджа",
+          "terrain_elevation_m": 145.64,
+          "exploitation_resource_l_s": 0.33,
+          "temperature_c": 59.2,
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "Сн-7",
+          "deposit": "Хотово",
+          "depth_m": 430.5,
+          "exploitation_resource_l_s": 3.39,
+          "temperature_c": 38.7,
+          "status": "TO_RESEARCH"
+        }
+      ]
+    },
+    {
+      "name": "Spatial pass 2 - Ognyanovo-Garmen focused batch",
+      "completed_at": "2026-09-08T22:13:12",
+      "result": "PASS",
+      "facilities_updated": 3,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "КЕИ Басейн в средна баня",
+          "finding": "Right bank of Kanina River, Hotel Elis courtyard, immediately adjacent to borehole No.2VKP.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "Сондаж №2ВКП",
+          "finding": "Immediately adjacent to KEI Basin in Middle Bath; Hotel Elis PI 53326.500.11 retained only as consumer-property context.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "Сондаж Дом Терзиев",
+          "finding": "Left bank of Kanina River; official source property reference 501.6; constructed 1994.",
+          "status": "TO_RESEARCH"
+        }
+      ],
+      "deposit_level_finding": "Official hydrogeological documentation relates the Ognyanovo-Garmen thermal system to major WNW-ESE faults and open tectonic fractures."
+    },
+    {
+      "name": "Banya Panagyurishte and Karlovo enrichment batch",
+      "completed_at": "2026-09-08T22:29:42",
+      "result": "PASS",
+      "facilities_updated": 4,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "КЕИ Банчето",
+          "deposit": "Баня - Панагюрище",
+          "finding": "1.43 l/s; 39 C; captured 1936; self-flow elevation 449.35 m; left bank of Banska Luda Yana."
+        },
+        {
+          "facility": "Сондаж 2 Наклонен",
+          "deposit": "Баня - Панагюрище",
+          "finding": "Depth 190.16 m; 4.50 l/s; 43.4 C; SWL 2.95 m; allowable drawdown 0.66 m."
+        },
+        {
+          "facility": "Сондаж Българска роза",
+          "deposit": "Баня - Карлово",
+          "finding": "Official pipeline/PUP context recorded; target PI and route parcels explicitly NOT treated as facility parcel."
+        },
+        {
+          "facility": "Сондаж А",
+          "deposit": "Баня - Карлово",
+          "finding": "Confirmed as facility included in official sanitary protection zone project."
+        }
+      ],
+      "deposit_level_finding": "Banya-Panagyurishte is a fracture-vein pressurized system in Senonian andesitic tuffs and marl limestones; 11 natural springs are captured by 6 chambers on the left bank of Banska Luda Yana."
+    },
+    {
+      "name": "Spatial pass 2 - Y-32a Stefan Karadzhovo and B-53 Kamenar",
+      "completed_at": "2026-09-08T22:33:20",
+      "facilities_updated": 2,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "Y-32a",
+          "deposit": "Stefan Karadzhovo",
+          "finding": "Approx. 650 m west of village; depth 265.70 m; wellhead elevation 224.81 m; constructed 1973; tectonic/fracture hydrogeological context and borehole log recorded.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "B-53",
+          "deposit": "Kamenar",
+          "finding": "Official SOZ order RD-725/03.11.2017; related B-180 and TK-1; PI 35691.64.14 and 35691.64.15 retained only as SOZ-belt context, not facility parcel.",
+          "status": "TO_RESEARCH"
+        }
+      ],
+      "result": "PARTIAL_CORRECTED_LATER",
+      "correction_note": "B-53 update succeeded. Y-32a enrichment did not reach the canonical record because its raw mh_deposit field is blank; Y-32a was corrected in the subsequent dedicated correction batch."
+    },
+    {
+      "name": "Y-32a Stefan Karadzhovo canonical-record correction",
+      "completed_at": "2026-09-08T22:35:28",
+      "result": "PASS",
+      "facilities_updated": 1,
+      "spatial_promotions": 0,
+      "finding": "Canonical CONFIRMED_MISSING Y-32a record updated using facility + settlement + current_deposit_name rather than blank raw mh_deposit.",
+      "verified_values": {
+        "construction_year": 1973,
+        "depth_m": 265.7,
+        "wellhead_elevation_m": 224.81,
+        "relative_location": "approximately 650 m west of Stefan Karadzhovo village",
+        "hydrogeological_conductor": "lithogenetic and tectonic fractures and dislocation zones"
+      },
+      "source": "MH Certificate No.65 dated 03.06.2020"
+    },
+    {
+      "name": "Banichan borehole 273 and Toplitsa enrichment batch",
+      "completed_at": "2026-09-08T22:40:28",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "Borehole 273",
+          "deposit": "Banichan",
+          "finding": "Depth 600 m; mineral water intercept 120-170 m; Q 0.40 l/s; T 18.3 C; SWL elevation 535.72 m; geological section recorded; approx. 40 m from Toplitsa.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "KEI Toplitsa",
+          "deposit": "Banichan",
+          "finding": "Approx. 40 m from borehole 273; drainage recapture 2018-2019; Q 6.00 l/s; T 17.6 C; overflow elevation 531.51 m; 2026 chemistry recorded.",
+          "status": "TO_RESEARCH"
+        }
+      ],
+      "deposit_level_finding": "Current approved deposit resource under RD-169/04.03.2025 is 6.84 l/s total (QER1 2.74 + QER2 4.10); stored explicitly as deposit-level scope."
+    },
+    {
+      "name": "Ognyanovo-Garmen Taskov Gyol and 1VKP enrichment batch",
+      "completed_at": "2026-09-08T22:41:57",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "KEI No.17 Taskov Gyol",
+          "finding": "Q 3.0 l/s; T 42.3 C; self-flow elevation 574.67 m; capture construction and historical identification recorded.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "Borehole No.1VKP",
+          "finding": "2021 SOZ-project analytical sample: T 39.9 C; pH 9.17; mineralization 258 mg/l; deposit fracture-vein geological context recorded.",
+          "status": "TO_RESEARCH"
+        }
+      ],
+      "deposit_level_finding": "Ognyanovo-Garmen is documented as a fracture-vein pressurized mineral-water system in the West Rhodope massif."
+    },
+    {
+      "name": "Banya-Karlovo fault and facility enrichment batch",
+      "completed_at": "2026-09-08T22:43:35",
+      "result": "PASS",
+      "facilities_updated": 3,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "Borehole A",
+          "finding": "Depth 40 m; Q 2.40 l/s; T 42 C; SWL elevation 277.56 m; allowable dynamic elevation 275.06 m; south-southeastern deposit position.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "KEI Male Bath",
+          "finding": "Constructed 1961; basin-well south of Central Captage; Q 0.72 l/s; T 40 C; self-flow elevation 276.99 m.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "KEI Female Bath",
+          "finding": "Constructed 1958; basin-well south of Central Captage; Q 1.75 l/s; T 41 C; self-flow elevation 276.99 m.",
+          "status": "TO_RESEARCH"
+        }
+      ],
+      "deposit_level_finding": "Two WNW-ESE faults are documented within the Banya-Karlovo deposit and interpreted as parts of the Stryama fault zone; mineral-water discharge occurs along these tectonic structures."
+    },
+    {
+      "name": "Ovoshtnik K-5 K-14 fault and technical enrichment batch",
+      "completed_at": "2026-09-08T22:45:05",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "K-5",
+          "deposit": "Ovoshtnik",
+          "finding": "1970; depth 540 m; elevation 324.97 m; approx. 150 m east of New Mineral Bath; Q 4.85 l/s; deeply fractured and tectonically disturbed granite interval recorded.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "K-14",
+          "deposit": "Ovoshtnik",
+          "finding": "Approx. 915 m NE of village; depth 425 m; Q 0.16 l/s; T 45 C; SWL elevation 327.57 m; shallow fresh-water inflow isolated; lithological and temperature profiles recorded.",
+          "status": "TO_RESEARCH"
+        }
+      ],
+      "deposit_level_finding": "Tundzha fault zone documented as collector of the Ovoshtnik thermal system; three principal tectonic directions recorded, with two thermoconductive systems and one barrier system."
+    },
+    {
+      "name": "Ovoshtnik borehole 12 and K-6 enrichment batch",
+      "completed_at": "2026-09-08T23:02:25",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 1,
+      "findings": [
+        {
+          "facility": "Borehole 12",
+          "deposit": "Ovoshtnik",
+          "finding": "Official facility-containing cadastral property 35167.507.355 established; depth 340 m; Q 0.21 l/s; technical T 54 C; chemistry and geology recorded.",
+          "new_status": "CADASTRAL_LOCATION_TO_RESOLVE"
+        },
+        {
+          "facility": "K-6",
+          "deposit": "Ovoshtnik",
+          "finding": "Depth 680.25 m; elevation 337.39 m; 3000 m SSE of Kazanlak centre and 55 m east of Arsenal; Q 4.25 l/s; technical T 51 C; geophysical water-bearing interval 405-520 m.",
+          "status": "CADASTRAL_LOCATION_TO_RESOLVE"
+        }
+      ]
+    },
+    {
+      "name": "Ovoshtnik K-2 and K-3 technical geology chemistry batch",
+      "completed_at": "2026-09-08T23:07:30",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "K-2",
+          "deposit": "Ovoshtnik",
+          "finding": "1965; depth 588.8 m; elevation 331.95 m; Q 1.93 l/s; technical T 64 C; fractured granite intervals and chemistry recorded.",
+          "status": "CADASTRAL_LOCATION_TO_RESOLVE"
+        },
+        {
+          "facility": "K-3",
+          "deposit": "Ovoshtnik",
+          "finding": "1966; depth 697.4 m; elevation 339.96 m; Q 5.56 l/s; technical T 78 C; strongly fractured granite from 570.6 m downward and chemistry recorded.",
+          "status": "CADASTRAL_LOCATION_TO_RESOLVE"
+        }
+      ]
+    },
+    {
+      "name": "Ovoshtnik K-5 K-14 cadastral chemistry closure",
+      "completed_at": "2026-09-08T23:09:51",
+      "result": "PASS",
+      "facilities_updated": 6,
+      "spatial_promotions": 2,
+      "findings": [
+        {
+          "facility": "K-5",
+          "cadastral_property_id": "35167.507.436",
+          "finding": "Facility-containing cadastral property established; technical temperature and chemistry completed.",
+          "new_status": "CADASTRAL_LOCATION_TO_RESOLVE"
+        },
+        {
+          "facility": "K-14",
+          "cadastral_property_id": "35167.507.333",
+          "finding": "Facility-containing cadastral property established; chemistry completed.",
+          "new_status": "CADASTRAL_LOCATION_TO_RESOLVE"
+        }
+      ],
+      "deposit_level_finding": "Common Tundzha fault-zone context normalized across all six confirmed Ovoshtnik facilities."
+    },
+    {
+      "name": "Ognyanovo-Garmen Petraliyski APK 4VKP batch",
+      "completed_at": "2026-09-08T23:12:57",
+      "result": "PASS",
+      "facilities_updated": 3,
+      "spatial_promotions": 1,
+      "findings": [
+        {
+          "facility": "Petraliyski",
+          "cadastral_property_id": "47408.501.12",
+          "finding": "Official facility-containing cadastral parcel; Q 1.00 l/s; T 33.9 C; self-flow elevation 566.44 m; chemistry recorded.",
+          "new_status": "CADASTRAL_LOCATION_TO_RESOLVE"
+        },
+        {
+          "facility": "APK",
+          "finding": "Right bank of Kanina River, southwest of Miro-mazhko, source property reference 500.29; chemistry recorded.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "4VKP",
+          "finding": "Eastern drainage zone, source property reference 501.16; Q 6.70 l/s; T 40.7 C; self-flow elevation 576.45 m.",
+          "status": "TO_RESEARCH"
+        }
+      ]
+    },
+    {
+      "name": "Ognyanovo-Garmen Miro female and male springs batch",
+      "completed_at": "2026-09-08T23:14:36",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "KEI Miro-zhensko",
+          "finding": "Source property reference 500.31; Q 1.00 l/s; technical T 38 C; self-flow elevation 590.13 m; chemistry completed.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "KEI Miro-mazhko",
+          "finding": "Source property reference 500.31; Q 1.50 l/s; technical T 39 C; self-flow elevation 590.07 m; chemistry completed.",
+          "status": "TO_RESEARCH"
+        }
+      ]
+    },
+    {
+      "name": "Ognyanovo-Garmen Vila Shamov Nikola Ushev 3VKP batch",
+      "completed_at": "2026-09-08T23:16:11",
+      "result": "PASS",
+      "facilities_updated": 3,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "Vila Shamov",
+          "finding": "Property ref 501.24; depth 120 m; Q 1.30 l/s; T 39.4 C; fractured amphibolite gneiss section and chemistry recorded.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "Nikola Ushev",
+          "finding": "Property ref 501.15; 1987; depth 110 m; Q 1.33 l/s; T 38.8 C; fractured amphibolite gneiss section and chemistry recorded.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "3VKP",
+          "finding": "Property ref 500.20; 1965; depth 221.6 m; Q 0.88 l/s; T 41.2 C; 20 m east of Upper Bath; fractured gneiss section and chemistry recorded.",
+          "status": "TO_RESEARCH"
+        }
+      ]
+    },
+    {
+      "name": "Ognyanovo-Garmen Delta-Biser 1VKP 2VKP batch",
+      "completed_at": "2026-09-08T23:17:51",
+      "result": "PASS",
+      "facilities_updated": 3,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "Delta-Biser",
+          "finding": "Left bank of Kanina River; hotel-complex location; depth 106 m; Q 2.08 l/s; T 35.4 C; fractured amphibolite gneiss section and chemistry recorded.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "1VKP",
+          "finding": "Source property ref 500.3; western drainage zone; depth 169 m; Q 6.20 l/s; T 39.8 C; drilling-stage inflow history and fractured gneiss section recorded.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "2VKP",
+          "finding": "Source property ref 500.11; Hotel Elis / Middle Bath area; depth 21 m; Q 2.75 l/s; T 41.5 C; fractured amphibolite gneiss section and chemistry recorded.",
+          "status": "TO_RESEARCH"
+        }
+      ]
+    },
+    {
+      "name": "Ognyanovo-Garmen Basin Dom Terziev Victoria 2 batch",
+      "completed_at": "2026-09-08T23:19:46",
+      "result": "PASS",
+      "facilities_updated": 3,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "KEI Basin in Middle Bath",
+          "finding": "Right bank of Kanina River, Hotel Elis courtyard, adjacent to 2VKP; Q 0.30 l/s; T 39 C; SWL elevation 585.12 m.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "Dom Terziev",
+          "finding": "1994; left bank of Kanina River; source property 501.6; depth 45 m; Q 2.00 l/s; T 41.8 C; fractured gneiss section recorded.",
+          "status": "TO_RESEARCH"
+        },
+        {
+          "facility": "Victoria 2",
+          "finding": "Right bank of Kanina River, north of Therma Vitae, beside road to Village Baths; historical borehole No.9 TPK; Q 2.00 l/s; 2015 chemistry recorded.",
+          "status": "TO_RESEARCH"
+        }
+      ]
+    },
+    {
+      "name": "Ognyanovo-Garmen final completeness closure",
+      "completed_at": "2026-09-08T23:22:10",
+      "result": "PASS",
+      "facilities_updated": 4,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "KEI Basin in Middle Bath",
+          "finding": "Chemistry completed: mineralization 220 mg/l; pH 9.36; sample T 40.6 C; F 5.26 mg/l; As 0.042 mg/l."
+        },
+        {
+          "facility": "KEI No.17 Taskov Gyol",
+          "finding": "Chemistry completed and common deposit fault context normalized."
+        },
+        {
+          "facility": "4VKP",
+          "finding": "Chemistry completed: mineralization 223 mg/l; pH 9.42; sample T 40.6 C; F 5.64 mg/l; As 0.035 mg/l."
+        },
+        {
+          "facility": "APK",
+          "finding": "Technical data completed: 1994; depth 64 m; Q 1.50 l/s; T 41 C; SWL elevation 591.46 m; allowable drawdown 1.74 m."
+        }
+      ]
+    },
+    {
+      "name": "Banya-Karlovo six-facility completeness batch",
+      "completed_at": "2026-09-09T07:54:05",
+      "result": "PASS",
+      "facilities_updated": 6,
+      "spatial_promotions": 0,
+      "important_scope_note": "Central Captage 12.85 l/s is a combined Central Captage + Kokalche value and is NOT stored as individual Central Captage discharge."
+    },
+    {
+      "name": "Guliyna Banya five-facility completeness batch",
+      "completed_at": "2026-09-09T07:58:02",
+      "result": "PASS",
+      "facilities_updated": 5,
+      "spatial_promotions": 0,
+      "important_scope_notes": [
+        "KEI No.4 + KEI No.5 Q 8.0 l/s and T 58 C are combined-system values.",
+        "Borehole No.4 + KEI No.6 Q 7.5 l/s and T 58.2 C are combined-system values.",
+        "Old plan/property references are not treated as modern cadastral identifiers."
+      ]
+    },
+    {
+      "name": "Velingrad-Kamenitsa five-facility completeness batch",
+      "completed_at": "2026-09-09T08:01:43",
+      "result": "PASS",
+      "facilities_updated": 5,
+      "spatial_promotions": 0,
+      "important_scope_note": "Deposit-level Kamenitsa location and fracture-vein context are not treated as individual facility coordinates or proof of intersection with a mapped fault trace."
+    },
+    {
+      "name": "Banya-Nova Zagora KEI No.2 completeness batch",
+      "completed_at": "2026-09-09T08:16:42",
+      "result": "PASS",
+      "facilities_updated": 1,
+      "spatial_promotions": 0,
+      "finding": "1930 captage; depth 7 m; Q 7.10 l/s; T 56.8 C; fractured Paleozoic granite collector; 2025-2026 chemistry recorded."
+    },
+    {
+      "name": "Banya-Panagyurishte Bancheto Naklonen completeness batch",
+      "completed_at": "2026-09-09T08:18:57",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 0,
+      "findings": [
+        {
+          "facility": "KEI No.1 Bancheto",
+          "finding": "1936 captage; Q 1.43 l/s; T 39 C; self-flow elevation 449.35 m; chemistry and Banya-Buten fault context recorded."
+        },
+        {
+          "facility": "Borehole No.2 Naklonen",
+          "finding": "Depth 190.16 m; Q 4.50 l/s; T 43.4 C; SWL depth 2.95 m; chemistry and fracture-vein fault context recorded."
+        }
+      ]
+    },
+    {
+      "name": "Banya-Karlovo borehole G identity and completeness batch",
+      "completed_at": "2026-09-09T08:20:49",
+      "result": "PASS",
+      "facilities_updated": 1,
+      "spatial_promotions": 0,
+      "important_identity_finding": "Raw record 'Sondazh I' corresponds to official borehole G under MH assessment No.102/31.08.2018. Raw source label retained; canonical official identity stored separately."
+    },
+    {
+      "name": "Haskovski Mineralni Bani four-facility completeness batch",
+      "completed_at": "2026-09-09T08:37:25",
+      "result": "PASS",
+      "facilities_updated": 4,
+      "spatial_promotions": 0,
+      "important_scope_notes": [
+        "Boreholes 2VP + 4VP share combined Q 24.10 l/s and T 58.4 C; this is NOT assigned as individual discharge to either borehole.",
+        "Borehole 3VP has individual Q 6.10 l/s and T 58.5 C.",
+        "KEI No.5 has individual Q 1.33 l/s and T 58.6 C.",
+        "Deposit-level Banski fault context is not treated as exact individual fault intersection."
+      ]
+    },
+    {
+      "name": "Narechenski Mineralni Bani exact spatial three batch",
+      "completed_at": "2026-09-09T08:40:04",
+      "result": "PASS",
+      "facilities_updated": 4,
+      "spatial_promotions": 3,
+      "findings": [
+        {
+          "facility": "KEI Kozleto",
+          "finding": "Official exact WGS84 coordinate established from Basin Directorate abstraction-facility register."
+        },
+        {
+          "facility": "Banski Kaptazh / Galeriyata",
+          "finding": "Official exact WGS84 coordinate established from Basin Directorate abstraction-facility register."
+        },
+        {
+          "facility": "Ochno izvorche",
+          "finding": "Official exact WGS84 coordinate established; current technical data and chemistry recorded from MH assessment No.290/2024."
+        },
+        {
+          "facility": "Soleno izvorche",
+          "finding": "Deposit structural context recorded; spatial status retained TO_RESEARCH because reliable WGS84 facility coordinate was not established."
+        }
+      ]
+    },
+    {
+      "name": "Narechenski Mineralni Bani final completeness batch",
+      "completed_at": "2026-09-09T08:42:44",
+      "result": "PASS",
+      "facilities_updated": 3,
+      "spatial_promotions": 0,
+      "important_scope_notes": [
+        "Banski Kaptazh 0.45 l/s is a permitted average abstraction rate, NOT technical possible discharge.",
+        "Soleno Izvorche remains TO_RESEARCH spatially; no non-official web coordinate accepted.",
+        "Current MH chemistry added for Kozleto and Soleno Izvorche."
+      ]
+    },
+    {
+      "name": "Velingrad-Ladzhene exact three completeness batch",
+      "completed_at": "2026-09-09T08:49:05",
+      "result": "PASS",
+      "facilities_updated": 3,
+      "spatial_promotions": 3,
+      "important_scope_notes": [
+        "K-28 and K-29 are separate natural springs sharing one common captage shaft and identical official facility coordinates.",
+        "Q 1.80 l/s and T 59 C belong to the combined K-28 + K-29 system and are not individual values."
+      ]
+    },
+    {
+      "name": "Dobrinishte five-facility completeness batch",
+      "completed_at": "2026-09-09T10:50:39",
+      "result": "PASS",
+      "facilities_updated": 5,
+      "spatial_promotions": 0,
+      "important_scope_notes": [
+        "KEI 2 Banyata retains cadastral PI 21498.350.547 and CADASTRAL_LOCATION_TO_RESOLVE.",
+        "KEI 4a Srebarniyat izvor retains cadastral PI 21498.158.23 and CADASTRAL_LOCATION_TO_RESOLVE.",
+        "Tepavitsata, Borehole 2 Banyata and Borehole 3 Plazha remain TO_RESEARCH; no facility coordinate invented.",
+        "Latest MH assessment No.310/2026 provides deposit-level fault interpretation with NW-SE thermowater-bearing faults and oblique NNW-SSE barrier faults."
+      ]
+    },
+    {
+      "name": "Northeast Bulgaria Varna raw-Rayon six normalization batch",
+      "completed_at": "2026-09-09T21:45:46",
+      "result": "PASS",
+      "facilities_updated": 6,
+      "spatial_promotions": 0,
+      "important_findings": [
+        "All six raw 'Rayon' Varna-district records belong to the official Northeast Bulgaria Malm-Valanginian mineral-water deposit.",
+        "Local labels Varna, Sts. Constantine and Helena and Kranevo are facility/local-area descriptors, not separate deposit identities.",
+        "R-9h previous current_deposit_name 'Northeast Bulgaria - Varna section' normalized to the official Malm-Valanginian deposit."
+      ]
+    },
+    {
+      "name": "Northeast Bulgaria Varna R-6h R-9h chemistry completion",
+      "completed_at": "2026-09-09T21:47:24",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 0,
+      "notes": [
+        "R-6h chemistry completed from MH assessment No.74/2017.",
+        "R-9h chemistry completed from MH assessment No.70/2017.",
+        "C-8 Kranevo intentionally left for separate verification; no values guessed."
+      ]
+    },
+    {
+      "name": "S-8 Kranevo Eocene identity correction and exact spatial batch",
+      "completed_at": "2026-09-09T21:49:30",
+      "result": "PASS",
+      "facilities_updated": 1,
+      "spatial_promotions": 1,
+      "important_findings": [
+        "S-8 Kranevo belongs to Varna Basin Eocene aquifer, not Northeast Bulgaria Malm-Valanginian aquifer.",
+        "Exact WGS84 coordinate and cadastral PI 39459.4.159 established.",
+        "Technical Q 3.50 l/s, T 23 C and depth 700 m recorded.",
+        "Full MH chemistry recorded from assessment No.119/2019."
+      ]
+    },
+    {
+      "name": "Raw Rayon Dobrich seven identity and spatial consistency batch",
+      "completed_at": "2026-09-09T21:51:37",
+      "result": "PASS",
+      "facilities_updated": 7,
+      "spatial_promotions": 2,
+      "notes": [
+        "C-29 and Vn-35h already had previously verified exact coordinates but missing coordinate status metadata; repaired to OFFICIAL_EXACT.",
+        "Vn-35h official cadastral PI 39459.25.501 added from MH assessment.",
+        "C-29 and Tx-15h normalized to Varna Basin Eocene aquifer, Balchik section.",
+        "R-178h and Vn-35h normalized to Northeast Bulgaria Malm-Valanginian aquifer, Balchik section.",
+        "Vn-39, R-33a and R-54h normalized to Northeast Bulgaria Malm-Valanginian aquifer, Kavarna section."
+      ]
+    },
+    {
+      "name": "Exact coordinate status metadata consistency repair",
+      "completed_at": "2026-09-09T21:53:10",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 0,
+      "notes": [
+        "Vn-45 Kranevo already had verified exact coordinates and coordinate_accuracy=official_exact; missing coordinate_status repaired.",
+        "PS-1hg Belchin-Verila already had verified exact coordinates and coordinate_accuracy=official_exact; missing coordinate_status repaired.",
+        "Official exact total remains unchanged at 11 because both facilities were already counted by coordinate_accuracy."
+      ]
+    },
+    {
+      "name": "Dobrich seven technical and chemistry completeness batch",
+      "completed_at": "2026-09-09T21:57:07",
+      "result": "PASS",
+      "facilities_updated": 7,
+      "spatial_promotions": 0,
+      "important_findings": [
+        "Tx-15h technical possible discharge corrected from previous 0.42 l/s to official MH value 0.60 l/s.",
+        "C-29 and Tx-15h Eocene chemistry and technical parameters completed.",
+        "Vn-39, R-178h, R-33a, R-54h and Vn-35h Malm-Valanginian technical and chemistry data completed.",
+        "No existing exact coordinate or cadastral localization was overwritten."
+      ]
+    },
+    {
+      "name": "Tx-15h Balchik official exact coordinate promotion",
+      "completed_at": "2026-09-09T21:57:56",
+      "result": "PASS",
+      "facilities_updated": 1,
+      "spatial_promotions": 1,
+      "findings": [
+        "Tx-15h promoted from TO_RESEARCH to OFFICIAL_EXACT using facility-level DMS coordinates from MH assessment No.171/19.05.2020."
+      ]
+    },
+    {
+      "name": "Voditsa P-2 identity geology chemistry completeness batch",
+      "completed_at": "2026-09-09T21:59:37",
+      "result": "PASS",
+      "facilities_updated": 1,
+      "spatial_promotions": 0,
+      "important_findings": [
+        "P-2 Voditsa belongs to Northeast Bulgaria Malm-Valanginian aquifer.",
+        "Depth 2395.40 m and intake intervals 590-1150 m and 1275-1290 m recorded.",
+        "Mineralization 443 mg/l and official water type recorded.",
+        "Technical possible discharge intentionally left unset because no sufficiently verified official value was established."
+      ]
+    },
+    {
+      "name": "Northeast Bulgaria nine official identity normalization batch",
+      "completed_at": "2026-09-09T22:01:41",
+      "result": "PASS",
+      "facilities_updated": 9,
+      "spatial_promotions": 0,
+      "findings": [
+        "R-11h, R-3h, R-70h, R-134h, R-39h, R-209h, R-6 Tsarevtsi and Vn-45 Kranevo normalized to the official Northeast Bulgaria Malm-Valanginian aquifer with section information.",
+        "R-68h Golden Sands recorded as an official multi-aquifer case with both Malm-Valanginian and Eocene MH assessments.",
+        "R-1 Asparuhovo, R-107h, R-110h and R-161h intentionally left unresolved for separate verification."
+      ]
+    },
+    {
+      "name": "Northeast Bulgaria final four identity normalization batch",
+      "completed_at": "2026-09-09T22:02:32",
+      "result": "PASS",
+      "facilities_updated": 4,
+      "spatial_promotions": 0,
+      "findings": [
+        "R-1 Asparuhovo, R-107h, R-110h and R-161h normalized to Northeast Bulgaria Malm-Valanginian aquifer, Varna section.",
+        "R-110h technical Q 22 l/s and T 55 C recorded from MH assessment No.283/2024.",
+        "R-161h construction year 1992 and Port Varna East location recorded.",
+        "No coordinates were invented."
+      ]
+    },
+    {
+      "name": "Northeast Bulgaria six missing-source closure batch",
+      "completed_at": "2026-09-09T22:05:28",
+      "result": "PASS",
+      "facilities_updated": 6,
+      "spatial_promotions": 0,
+      "findings": [
+        "All six previously source-less Northeast Bulgaria facilities linked to official MH balneological assessments.",
+        "R-66h and R-96h normalized from generic Varna-section labels to the canonical Malm-Valanginian deposit.",
+        "R-Belgun and R-Seltse normalized from Kavarna-section labels to the canonical Malm-Valanginian deposit with section retained separately.",
+        "No unverified technical or chemistry values added."
+      ]
+    },
+    {
+      "name": "Northeast Bulgaria nine missing fault-context closure batch",
+      "completed_at": "2026-09-09T22:07:54",
+      "result": "PASS",
+      "facilities_updated": 9,
+      "spatial_promotions": 0,
+      "findings": [
+        "Eight standard Northeast Bulgaria records received Malm-Valanginian regional fracture-karst context.",
+        "R-68h Golden Sands received separate multi-aquifer context preserving both Malm-Valanginian and Eocene official assignments.",
+        "No exact mapped-fault intersections were asserted."
+      ]
+    },
+    {
+      "name": "Northeast Bulgaria Varna five technical chemistry and exact spatial batch",
+      "completed_at": "2026-09-09T22:11:48",
+      "result": "PASS",
+      "facilities_updated": 5,
+      "spatial_promotions": 4,
+      "findings": [
+        "R-1 Asparuhovo, R-134h, R-161h and R-70h promoted to OFFICIAL_EXACT using facility-level WGS84 coordinates from MH assessments.",
+        "Vn-45 exact spatial status preserved and technical/chemistry data completed.",
+        "Official technical possible discharge, depth, temperature and chemistry recorded for all five."
+      ]
+    },
+    {
+      "name": "Northeast Bulgaria Varna R3 R39 R110 technical chemistry spatial batch",
+      "completed_at": "2026-09-09T22:15:18",
+      "result": "PASS",
+      "facilities_updated": 3,
+      "spatial_promotions": 3,
+      "findings": [
+        "R-3h Golden Sands promoted to OFFICIAL_EXACT from official WGS84 coordinates.",
+        "R-39h Varna assigned official cadastral property 10135.5501.445.",
+        "R-110h Varna assigned official cadastral property 30497.37.15.",
+        "Technical and chemistry datasets completed for all three."
+      ]
+    },
+    {
+      "name": "Northeast Bulgaria R11h and R209h technical chemistry spatial batch",
+      "completed_at": "2026-09-09T22:18:33",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 1,
+      "findings": [
+        "R-11h Golden Sands technical and chemistry dataset completed from MH assessment No.94/2018.",
+        "R-209h ISU INVEST Varna technical and chemistry dataset completed from MH assessment No.307/2026.",
+        "R-209h assigned official cadastral property 10135.3514.813.",
+        "Facility-level MH assessment confirms R-209h belongs to the Northeast Bulgaria Malm-Valanginian aquifer despite inconsistent register metadata."
+      ]
+    },
+    {
+      "name": "R-107h Varna technical chemistry completion batch",
+      "completed_at": "2026-09-09T22:20:46",
+      "result": "PASS",
+      "facilities_updated": 1,
+      "spatial_promotions": 0,
+      "findings": [
+        "R-107h technical discharge 40 l/s and technical temperature 50 C recorded from official Municipality of Varna documentation.",
+        "Chemistry completed using MH assessment-derived values: mineralization 612 mg/l, pH 7.64, fluoride 0.772 mg/l.",
+        "Spatial status remains TO_RESEARCH because no sufficiently verified facility-level coordinate or cadastral property was established."
+      ]
+    },
+    {
+      "name": "Avren R6 Tsarevtsi and R70 Bliznatsi technical chemistry closure batch",
+      "completed_at": "2026-09-09T22:23:43",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 0,
+      "findings": [
+        "R-6 Tsarevtsi completed: depth 3550 m, technical Q 0.70 l/s, T 32 C, mineralization 1875 mg/l.",
+        "R-70 Bliznatsi completed: depth 2398 m, technical Q 8.50 l/s, T 69.60 C, mineralization 968.42 mg/l.",
+        "Official descriptive locations recorded for both facilities.",
+        "Both facilities remain TO_RESEARCH spatially because no facility-level exact coordinate or cadastral property was established."
+      ]
+    },
+    {
+      "name": "Kavarna R-Belgun and R-Seltse technical chemistry cadastral closure batch",
+      "completed_at": "2026-09-09T22:26:54",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 2,
+      "findings": [
+        "R-Belgun assigned official cadastral PI 03318.10.156 and completed technically and chemically.",
+        "R-Seltse assigned official cadastral PI 05009.15.117 and completed technically and chemically.",
+        "R-Belgun: depth 750 m, Q 24.05 l/s, T 21.40 C, mineralization 611 mg/l.",
+        "R-Seltse: depth 1180 m, Q 24.40 l/s, T 30.80 C, mineralization 578 mg/l.",
+        "Exact facility coordinates were not invented; both remain cadastral-location records."
+      ]
+    },
+    {
+      "name": "R-68h Golden Sands official identity correction and completeness batch",
+      "completed_at": "2026-09-09T22:32:24",
+      "result": "PASS",
+      "facilities_updated": 1,
+      "spatial_promotions": 1,
+      "corrections": [
+        "Removed incorrect MULTI_AQUIFER_OFFICIAL interpretation.",
+        "Removed incorrect association of MH assessment No.278 with R-68h.",
+        "Canonical identity set to Northeast Bulgaria Malm-Valanginian aquifer, Varna section.",
+        "Preserved Eocene strata only as geological profile/collector context, not a separate official facility assignment."
+      ],
+      "findings": [
+        "Official cadastral identifier 10135.2572.150.1 recorded.",
+        "Depth 1774 m; Malm-Valanginian interval 1061-1774 m.",
+        "Technical Q 30 l/s and T 38 C.",
+        "Mineralization 571 mg/l, pH 7.54, fluoride 0.429 mg/l."
+      ]
+    },
+    {
+      "name": "R-68h Golden Sands restore official multi-aquifer identity",
+      "completed_at": "2026-09-09T22:34:39",
+      "result": "PASS",
+      "facilities_updated": 1,
+      "spatial_promotions": 0,
+      "corrections": [
+        "Restored MULTI_AQUIFER_OFFICIAL identity.",
+        "Restored official Eocene assignment from MH assessment No.278/03.06.2024.",
+        "Existing technical and chemistry values explicitly scoped to assessment No.276 Malm-Valanginian dataset.",
+        "No Eocene technical or chemistry values added or mixed."
+      ]
+    },
+    {
+      "name": "R-68h Golden Sands final official identity correction",
+      "completed_at": "2026-09-09T22:35:52",
+      "result": "PASS",
+      "facilities_updated": 1,
+      "spatial_promotions": 0,
+      "corrections": [
+        "Removed MULTI_AQUIFER_OFFICIAL status.",
+        "Removed incorrect association with MH assessment No.278/03.06.2024.",
+        "Canonical identity retained as Northeast Bulgaria Malm-Valanginian aquifer, Varna section.",
+        "Existing R-68h technical and chemistry data remain scoped to MH assessment No.276/03.06.2024."
+      ]
+    },
+    {
+      "name": "R-66h Varna technical chemistry cadastral completion batch",
+      "completed_at": "2026-09-09T22:36:52",
+      "result": "PASS",
+      "facilities_updated": 1,
+      "spatial_promotions": 1,
+      "findings": [
+        "R-66h assigned official PI 10135.2570.11.",
+        "Depth 1800 m, Q 10.04 l/s and T 38 C recorded.",
+        "Chemistry completed from MH assessment No.308/2026."
+      ]
+    },
+    {
+      "name": "Northeast Bulgaria final R177h and R96h completeness closure",
+      "completed_at": "2026-09-09T22:38:45",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 0,
+      "findings": [
+        "R-177h Balchik completed with depth 1228 m and MH chemistry dataset.",
+        "Older R-177h max test discharge 17.39 l/s preserved as historical/test value, not current technical possible discharge.",
+        "R-96h Varna chemistry completed from MH assessment No.281/2024 derived values.",
+        "Northeast Bulgaria block expected to reach 30/30 informational completeness."
+      ]
+    },
+    {
+      "name": "R-177h Balchik official exact spatial promotion",
+      "completed_at": "2026-09-09T22:44:23",
+      "result": "PASS",
+      "facilities_updated": 1,
+      "spatial_promotions": 1,
+      "findings": [
+        "R-177h Balchik promoted to OFFICIAL_EXACT.",
+        "Official monitoring coordinates: 43°24'56.2 N, 28°11'54.0 E.",
+        "Decimal WGS84: 43.4156111111, 28.1983333333.",
+        "Coordinate identity cross-checks with Tabiyata locality and R-177h facility identity."
+      ]
+    },
+    {
+      "name": "Northeast Bulgaria remaining eleven bulk spatial research pass",
+      "completed_at": "2026-09-09T22:51:56",
+      "result": "PASS",
+      "facilities_reviewed": 11,
+      "spatial_promotions": 0,
+      "findings": [
+        "All 11 remaining Northeast Bulgaria TO_RESEARCH facilities reviewed as one spatial batch.",
+        "Official/locality descriptions preserved for all facilities.",
+        "Consumer/use-location parcels were explicitly not promoted to borehole parcels.",
+        "No fabricated coordinates or parcel centroids added.",
+        "These records are now marked as officially researched but spatially unresolved, preventing repeated low-value re-research."
+      ]
+    },
+    {
+      "name": "RAW empty-deposit national bulk ten normalization and enrichment",
+      "completed_at": "2026-09-09T22:55:27",
+      "result": "PASS",
+      "facilities_updated": 10,
+      "spatial_promotions": 0,
+      "findings": [
+        "All ten RAW empty-deposit records normalized to canonical deposits/sections.",
+        "Technical and chemistry data completed for Sn-7 Hotovo, B-81 Izvorishte, R-113 Kavarna, R-1h Varna, PES-1hg Yanovska, PES-1hg Rudozem and S-58hg Krivina.",
+        "Albena R-12h, R-13h and R-149h normalized and chemistry completed; technical fields remain for a later grouped technical pass.",
+        "B-81 legacy property 000083 preserved separately and not treated as a modern cadastral identifier."
+      ]
+    },
+    {
+      "name": "Albena R12h R13h R149h grouped technical documentation closure",
+      "completed_at": "2026-09-09T22:56:45",
+      "result": "PASS",
+      "facilities_updated": 3,
+      "spatial_promotions": 0,
+      "findings": [
+        "R-12h documented facility Q/T: 21 l/s / 30 C.",
+        "R-13h documented facility Q/T: 42 l/s / 30 C.",
+        "R-149h documented facility Q/T: 16 l/s / 28 C.",
+        "Permit-average abstractions preserved separately as 1.00 / 2.00 / 0.55 l/s.",
+        "No facility discharge value was falsely promoted to technical_possible_discharge_l_s."
+      ]
+    },
+    {
+      "name": "Varna Basin raw five bulk normalization and enrichment",
+      "completed_at": "2026-09-09T22:59:12",
+      "result": "PASS",
+      "facilities_updated": 5,
+      "spatial_promotions": 2,
+      "findings": [
+        "All five RAW Varna Basin records normalized to the Eocene aquifer, Varna section.",
+        "Vn-48 assigned official PI 10135.2569.130.",
+        "C-5 Asparuhovo assigned official PI 10135.5502.588.",
+        "Vn-48, C-5 Asparuhovo, C-5h Hristo Botev and C-6h Topoli chemistry populated.",
+        "C-5Bh identity/source closed; detailed technical and chemistry values intentionally left for one later extraction pass rather than guessed."
+      ]
+    },
+    {
+      "name": "National true-gap bulk research batch 1 - nine facilities",
+      "completed_at": "2026-09-10T17:02:27",
+      "result": "PASS",
+      "facilities_updated": 9,
+      "spatial_promotions": 1,
+      "findings": [
+        "Nine true technical/chemistry gaps closed from official MH sources.",
+        "Katuntsi borehole 235hg assigned official facility parcel PI 36693.15.4.",
+        "Belchin-Verila PS-1hg populated with current technical possible discharge and chemistry.",
+        "B-165 and B-191 populated from 2026 MH assessments with explicit technical possible discharge.",
+        "Natural springs retain documented/resource discharge without artificial borehole depth requirements."
+      ]
+    },
+    {
+      "name": "Correction Varvara KEI1 versus Varbitsa Mineralna voda cross-write",
+      "completed_at": "2026-09-10T17:05:06",
+      "result": "PASS",
+      "facilities_updated": 2,
+      "spatial_promotions": 0,
+      "findings": [
+        "Removed Varbitsa chemistry/discharge values accidentally written into Varvara KEI No.1.",
+        "Restored official MH No.298/2025 values for Varvara KEI No.1.",
+        "Populated Varbitsa Mineralna voda from official MH No.130/2019."
+      ]
+    },
+    {
+      "name": "National true-gap bulk research batch 2 - eight facilities",
+      "completed_at": "2026-09-10T17:09:12",
+      "result": "PASS",
+      "facilities_updated": 8,
+      "spatial_promotions": 0,
+      "findings": [
+        "Medovo B-73 fully populated from official MH assessment.",
+        "Sliven Mineral Baths borehole 22 fully populated with depth, technical Q/T and mineralization.",
+        "Stefan Karadzhovo Y-33 fully populated.",
+        "Domus dere chemistry completed.",
+        "Levunovo MS-3 technical/chemistry completed.",
+        "Rudnik B-166 technical data completed; chemistry intentionally remains separate if absent.",
+        "Sadievo B-88 technical gap closed using official depth and current assessment.",
+        "Shivachevo Hadzhi Dimitar technical gap closed without overwriting previously stored chemistry."
+      ]
+    },
+    {
+      "name": "National true-gap bulk research batch 3 - seven facilities",
+      "completed_at": "2026-09-10T17:14:11",
+      "result": "PASS",
+      "facilities_updated": 7,
+      "spatial_promotions": 0,
+      "findings": [
+        "Banichan 273 chemistry completed from MH assessment 141/2024.",
+        "Nevestino-Barishteto chemistry completed from MH assessment 146/2020.",
+        "Sliven borehole No.2 Naklonen chemistry stored with explicit joint-sample scope with borehole No.3.",
+        "Sofia-Knyazhevo borehole 6hg technical Q/T and chemistry completed.",
+        "Pancharevo Tunela and Gubata chemistry completed from official Sofia/MH assessment documents.",
+        "Transka Bankya chemistry completed; measured 38 l/s kept separate from approved Qkr2=22 l/s."
+      ]
+    },
+    {
+      "name": "National true-gap bulk research batch 4 - six facilities",
+      "completed_at": "2026-09-10T17:17:01",
+      "result": "PASS",
+      "facilities_updated": 6,
+      "spatial_promotions": 0,
+      "findings": [
+        "Rudnik B-166 chemistry completed from 2026 MH assessment.",
+        "Stefan Karadzhovo Y-32a chemistry completed.",
+        "Straldzha Y-12 chemistry completed while preserving sample discharge separately from exploitation-resource scope.",
+        "Rakitovo 9a completed with current 2026 technical and chemistry data.",
+        "Blagoevgrad 15Bhg completed with depth, technical Q/T and chemistry.",
+        "Dolna Banya-Byalata voda borehole 141 completed with facility resource, depth and chemistry."
+      ]
+    },
+    {
+      "name": "National true-gap bulk research batch 5 - four facilities",
+      "completed_at": "2026-09-10T17:24:49",
+      "result": "PASS",
+      "facilities_updated": 4,
+      "spatial_promotions": 0,
+      "findings": [
+        "Ravno pole C-46hg technical and chemistry completed.",
+        "Yagoda Sz-37 technical and chemistry completed.",
+        "Sapareva banya KEI Galeriyata technical, captage construction and chemistry completed.",
+        "Dolna banya borehole 13hg technical, depth and chemistry completed."
+      ]
+    },
+    {
+      "name": "National true-gap bulk research batch 6 - four facilities",
+      "completed_at": "2026-09-10T17:28:21",
+      "result": "PASS",
+      "facilities_updated": 4,
+      "spatial_promotions": 0,
+      "findings": [
+        "Lenovo borehole 12 technical gap closed from MH 188/2026.",
+        "Dolna Banya borehole 13hg technical and chemistry gaps closed.",
+        "Dolni Rakovets KEI No.1 Lenena fabrika fully populated from MH 66/2017.",
+        "Breznik KEI Galeriata technical and chemistry gaps closed from MH 78/2018."
+      ]
+    },
+    {
+      "name": "National true-gap bulk research batch 7 - three fully verified facilities",
+      "completed_at": "2026-09-10T17:32:21",
+      "result": "PASS",
+      "facilities_updated": 3,
+      "spatial_promotions": 1,
+      "findings": [
+        "Kliment borehole 12 fully populated and assigned official facility PI 37229.12.22.",
+        "Dolna Banya borehole 13hg fully populated from MH assessment No.29/2025.",
+        "Kyustendil Star kaptazh chemistry and captage-system technical description completed.",
+        "Combined discharge of Kyustendil boreholes No.5 + BU was not falsely assigned to Star kaptazh."
+      ]
+    },
+    {
+      "id": "NATIONAL_TRUE_GAP_BULK_8",
+      "name": "NATIONAL TRUE-GAP BULK 8",
+      "completed_at": "2026-09-10T17:53:22",
+      "facilities_updated": 9,
+      "true_incomplete_before": 22,
+      "true_incomplete_after": 13,
+      "source_policy": "Official MH balneological assessments",
+      "facilities": [
+        "Белово | КЕИ Топлата вода - закрит",
+        "Габровница - Еленов дол | КЕИ №1 Банята",
+        "Долна баня | КЕИ Долна баня",
+        "Долни Раковец | КЕИ №2 Бански каптаж",
+        "Драгиново | Сондаж №13",
+        "Изворище | Сондаж № Б-108",
+        "Марикостиново | КЕИ Бочвата",
+        "Сандански | Каптиран естествен извор №8",
+        "Съдиево | Сондаж № Б-20"
+      ]
+    },
+    {
+      "id": "NATIONAL_TRUE_GAP_BULK_9",
+      "name": "NATIONAL TRUE-GAP BULK 9",
+      "completed_at": "2026-09-10T17:57:37",
+      "facilities_updated": 8,
+      "true_incomplete_before": 13,
+      "true_incomplete_after": 5,
+      "source_policy": "Official Ministry of Health balneological assessments",
+      "facilities": [
+        "Варвара | Каптиран естествен извор №2 Ветрен дол",
+        "Елешница - м. Св. Варвара - р. Места | Извор Топилата",
+        "Ерма река | Сондаж Ерма река",
+        "Каменар | Сондаж № Б-53",
+        "Красново | КЕИ Топлите извори",
+        "Рударци | Сондаж №8",
+        "Рударци | Сондаж №9",
+        "Якоруда | Сондаж №10"
+      ]
+    },
+    {
+      "id": "NATIONAL_TRUE_GAP_BULK_10",
+      "name": "NATIONAL TRUE-GAP BULK 10",
+      "completed_at": "2026-09-10T19:11:58",
+      "facilities_updated": 4,
+      "true_incomplete_before": 5,
+      "true_incomplete_after": 1,
+      "source_policy": "Official MH documents; combined Kyustendil values stored explicitly as composite/mixed",
+      "facilities": [
+        "Драгойново | Сондаж №8",
+        "Драгойново | Сондаж №9",
+        "Кюстендил | Сондаж №БУ",
+        "Рупите-м. Кожух | Сондаж №1ВКН / №1ВКП"
+      ]
+    },
+    {
+      "id": "NATIONAL_TRUE_GAP_BULK_11",
+      "name": "NATIONAL TRUE-GAP BULK 11 — FINAL IDENTITY RESOLUTION",
+      "completed_at": "2026-09-10T19:30:03",
+      "facilities_updated": 1,
+      "true_incomplete_before": 1,
+      "true_incomplete_after": 0,
+      "resolution": "MH registry S-5Bh entry resolved as source-label mismatch/duplicate of existing S-2Bh based on the official assessment PDF and exact cadastral-property match",
+      "source_document": "MH balneological assessment No.282/14.06.2024",
+      "resolved_facility": "С-2Бх",
+      "cadastral_property_id": "10135.513.573",
+      "final_research_status": "DUPLICATE_MH",
+      "correction_note": "Post-Bulk-11 QA found the resolved S-5Bh source row with blank research_status. Corrected in place to existing canonical status DUPLICATE_MH; ledger count intentionally unchanged.",
+      "status_corrected_at": "2026-09-10T19:32:42"
+    },
+    {
+      "id": "NATIONAL_INVENTORY_FINAL_CLEANUP",
+      "name": "National mineral inventory final source and legacy-match cleanup",
+      "completed_at": "2026-09-10T19:52:33",
+      "true_incomplete_before": 0,
+      "true_incomplete_after": 0,
+      "verified_source_missing_before": 2,
+      "verified_source_missing_after": 0,
+      "source_url_missing_before": 22,
+      "source_url_missing_after": 0,
+      "official_records_enriched": 3,
+      "legacy_fuzzy_matches_archived": 190,
+      "technical_rule_normalization": "exploitation_resource_l_s accepted as normal technical evidence; no facility-specific technical completeness exceptions remain",
+      "note": "Enriched Medovo B-72 and Provadia borehole 43 Ereka from official sources; normalized Banya-Karlovo borehole G technical evidence; completed missing source URLs; archived and removed obsolete top-level fuzzy current_facility/current_deposit fields.",
+      "post_qa_correction": "Provadia borehole 43 Ereka enrichment re-applied after read-back QA detected missing technical/source fields.",
+      "post_qa_corrected_at": "2026-09-10T19:56:35"
+    },
+    {
+      "id": "CANONICAL_INVENTORY_RECONCILIATION_20260911",
+      "name": "National mineral inventory canonical classification reconciliation",
+      "completed_at": "2026-09-11T12:45:51+00:00",
+      "result": "PASS",
+      "scope": "Synchronize research ledger with the canonical 190-record inventory after linking already-mapped facilities, duplicates and confirmed new facilities.",
+      "total_candidates": 190,
+      "research_status_counts": {
+        "COMPOSITE_GROUP": 3,
+        "CONFIRMED_MISSING": 124,
+        "DUPLICATE_MH": 19,
+        "MATCHED_EXISTING": 42,
+        "UNRESOLVED": 2
+      },
+      "confirmed_missing": 124,
+      "matched_existing": 42,
+      "duplicate_mh": 19,
+      "composite_group": 3,
+      "unresolved": 2,
+      "rule": "MATCHED_EXISTING records enrich an already mapped mineral-water facility. CONFIRMED_MISSING records represent new facilities; when safely localized they are emitted by the master build to the public mineral-water layer.",
+      "data_loss": false
+    },
+    {
+      "id": "HASKOVO_MINERALNI_BANI_OFFICIAL_EXACT_4",
+      "name": "Haskovo Mineralni Bani official exact coordinate resolution — four facilities",
+      "completed_at": "2026-09-11T12:45:51+00:00",
+      "result": "PASS",
+      "facilities_updated": 4,
+      "spatial_promotions": 4,
+      "promotion": "TO_RESEARCH -> OFFICIAL_EXACT",
+      "facilities": [
+        "Сондаж 2ВП",
+        "Сондаж 3ВП",
+        "Сондаж 4ВП",
+        "КЕИ5"
+      ],
+      "coordinate_source_crs": "BGS1970 K5",
+      "coordinate_scope": "Official facility coordinates transformed to WGS84.",
+      "evidence_file": "data/mineral-water/research/official_coordinates_haskovo_mineralni_bani_bgs1970_k5.json"
+    },
+    {
+      "id": "BANYA_KARLOVO_OFFICIAL_EXACT_6",
+      "name": "Banya-Karlovo official exact coordinate resolution — six facilities",
+      "completed_at": "2026-09-11T12:45:51+00:00",
+      "result": "PASS",
+      "facilities_updated": 6,
+      "spatial_promotions": 6,
+      "promotion": "TO_RESEARCH -> OFFICIAL_EXACT",
+      "facilities": [
+        "Каптиран естествен извор Централен каптаж",
+        "Каптиран естествен извор Мъжко банче",
+        "Сондаж Българска роза",
+        "Сондаж Г — raw source label Сондаж I",
+        "Сондаж А",
+        "Сондаж В"
+      ],
+      "coordinate_source_crs": "BGS1970 K9",
+      "coordinate_scope": "Official facility coordinates transformed to WGS84.",
+      "unresolved": [
+        "Каптиран естествен извор Женско банче — remains TO_RESEARCH because the published projected coordinate is spatially inconsistent and has not been corrected by assumption."
+      ],
+      "evidence_file": "data/mineral-water/research/official_coordinates_banya_karlovo_bgs1970_k9.json"
+    },
+    {
+      "id": "GULIYNA_BANYA_SPATIAL_RESOLUTION_3",
+      "name": "Guliyna Banya group spatial resolution and facility identity verification",
+      "completed_at": "2026-09-11T12:45:51+00:00",
+      "result": "PASS",
+      "facilities_reviewed": 5,
+      "spatial_promotions": 3,
+      "promotion": "TO_RESEARCH -> CADASTRAL_RESOLVED_APPROXIMATE",
+      "findings": [
+        {
+          "facility": "Каптиран естествен извор №4",
+          "cadastral_property_id": "02693.501.514",
+          "basis": "Official UPI III, quarter 49 matched to current KAIS parcel III, quarter 49, oldident 514."
+        },
+        {
+          "facility": "Каптиран естествен извор №5",
+          "cadastral_property_id": "02693.501.514",
+          "basis": "Official UPI III, quarter 49 matched to current KAIS parcel III, quarter 49, oldident 514."
+        },
+        {
+          "facility": "Каптиран естествен извор №7",
+          "cadastral_property_id": "02693.501.5068",
+          "basis": "Official UPI IV, quarter 29 matched to current KAIS parcel IV, quarter 29, oldident 348.",
+          "identity_status": "OFFICIAL_IDENTITY_VERIFIED",
+          "official_identity": "Каптиран естествен извор № 7"
+        },
+        {
+          "facility": "Каптиран естествен извор №6",
+          "status": "already spatially resolved",
+          "cadastral_property_id": "02693.501.6000"
+        },
+        {
+          "facility": "Каптиран естествен извор №2 Благата вода",
+          "status": "TO_RESEARCH",
+          "reason": "Legacy property reference 00483 has multiple current KAIS candidates and is not resolved by assumption."
+        }
+      ],
+      "coordinate_scope": "Resolved coordinates are representative points inside verified cadastral parcels, not surveyed spring/captage coordinates.",
+      "evidence_file": "data/mineral-water/research/cadastral_resolution_guliyna_banya_kei4_5_7.json"
+    },
+    {
+      "pass_id": "BANYA_PANAGYURISHTE_OFFICIAL_EXACT_2",
+      "title": "Баня - Панагюрище — official exact coordinates",
+      "deposit": "Баня - Панагюрище",
+      "status": "PASS",
+      "facilities": [
+        {
+          "facility": "Каптиран естествен извор „Банчето“",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "official_source_crs": "BGS1970 K9",
+          "official_source_x_northing": 4577843.331,
+          "official_source_y_easting": 8564971.399,
+          "resolved_latitude": 42.46372222,
+          "resolved_longitude": 24.13086111,
+          "resolution": "Published official geographic coordinate; BGS1970 K9 coordinate independently validated by transformation.",
+          "transform_control_error_m": 11.245
+        },
+        {
+          "facility": "Сондаж № 2 „Наклонен“",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "official_source_crs": "BGS1970 K9",
+          "official_source_x_northing": 4577989.06,
+          "official_source_y_easting": 8564991.592,
+          "resolved_latitude": 42.464941831,
+          "resolved_longitude": 24.131060893,
+          "resolution": "Official BGS1970 K9 facility coordinate transformed to WGS84/ETRS89.",
+          "transform_control_error_m": 11.245
+        }
+      ],
+      "spatial_promotions": 2,
+      "coordinate_status_before": {
+        "OFFICIAL_EXACT": 26,
+        "TO_RESEARCH": 69
+      },
+      "coordinate_status_after": {
+        "OFFICIAL_EXACT": 28,
+        "TO_RESEARCH": 67
+      },
+      "publication_before": {
+        "new_mappable": 55,
+        "without_safe_coordinates": 69,
+        "free_features": 478
+      },
+      "publication_after": {
+        "new_mappable": 57,
+        "without_safe_coordinates": 67,
+        "free_features": 480
+      },
+      "master_facilities": 547,
+      "evidence_file": "data/mineral-water/research/official_coordinates_banya_panagyurishte_bgs1970_k9.json",
+      "qa": {
+        "canonical": "PASS",
+        "build": "PASS",
+        "free_geojson": "PASS",
+        "privacy_schema": "PASS"
+      },
+      "completed_at": "2026-09-11T14:18:36.214900Z"
+    },
+    {
+      "id": "BANICHAN_SPATIAL_RESEARCH_NO_SAFE_RESOLUTION_2",
+      "name": "Banichan borehole 273 and KEI Toplitsa spatial audit",
+      "completed_at": "2026-09-11T15:39:43.171907+00:00",
+      "result": "PASS_NO_SAFE_RESOLUTION",
+      "facilities_reviewed": 2,
+      "spatial_promotions": 0,
+      "deposit": "Баничан",
+      "findings": [
+        {
+          "facility": "сондаж № 273",
+          "status": "TO_RESEARCH",
+          "finding": "Official SOZ register, MH assessment, concession material and existing basin-resolution datasets do not establish a safe facility-level coordinate or cadastral parcel."
+        },
+        {
+          "facility": "КЕИ „Топлица“",
+          "status": "TO_RESEARCH",
+          "finding": "Official SOZ register, MH assessment, concession material and existing basin-resolution datasets do not establish a safe facility-level coordinate or cadastral parcel."
+        }
+      ],
+      "important_scope_notes": [
+        "RD-475/05.05.2021 is deposit-level SOZ evidence and is not treated as an exact coordinate.",
+        "WABD SOZ raw Excel row 378 contains no parcel, coordinate, geometry or hyperlink.",
+        "PI 02600.14.35 and PI 02600.14.38 are documented development/bottling-site parcels and are not treated as mineral-water source parcels.",
+        "No third-party GPS or bottling-plant coordinate was accepted."
+      ],
+      "evidence_file": "data/mineral-water/research/spatial_audit_banichan_273_toplitsa.json"
+    },
+    {
+      "id": "VARVARA_OFFICIAL_EXACT_2",
+      "name": "Варвара — КЕИ №1 „Варвара“ и КЕИ №2 „Ветрен дол“",
+      "completed_at": "2026-09-11T19:25:58.168606Z",
+      "status": "PASS",
+      "deposit": "Варвара",
+      "municipality": "Септември",
+      "district": "Пазарджик",
+      "facilities_reviewed": 2,
+      "spatial_promotions": 2,
+      "coordinate_status_before": {
+        "OFFICIAL_EXACT": 28,
+        "TO_RESEARCH": 67
+      },
+      "coordinate_status_after": {
+        "OFFICIAL_EXACT": 30,
+        "TO_RESEARCH": 65
+      },
+      "facilities": [
+        {
+          "facility": "КЕИ № 1 \"Варвара",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "latitude": 42.133805556,
+          "longitude": 24.125027778,
+          "source_x_northing": 4541195.218,
+          "source_y_easting": 8564811.244,
+          "transform_qa_difference_m": 13.92
+        },
+        {
+          "facility": "Каптиран естествен извор № 2 \"Ветрен дол\"",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "latitude": 42.133277778,
+          "longitude": 24.126027778,
+          "source_x_northing": 4541136.496,
+          "source_y_easting": 8564881.366,
+          "transform_qa_difference_m": 10.013
+        }
+      ],
+      "evidence_file": "data/mineral-water/research/official_coordinates_varvara_exact2.json",
+      "resolution_basis": [
+        "Direct official geographic coordinates published for the named facilities by BD IBR.",
+        "Official SOZ technical specification identifies the same facilities and provides Coordinate System 1970 X/Y coordinates.",
+        "Independent GeoMapBG transformation QA validated the interpreted BGS1970 K9 zone."
+      ],
+      "build_result": {
+        "master_facilities": 547,
+        "new_mappable": 59,
+        "new_without_safe_coordinates": 65,
+        "free_features": 482,
+        "free_privacy_schema": "PASS"
+      }
+    },
+    {
+      "id": "VELINGRAD_KAMENITSA_NO_SAFE_RESOLUTION_2",
+      "name": "Велинград-Каменица — КЕИ „Власа“ и сондаж №3 „Мизинка“ — без безопасно пространствено решение",
+      "completed_at": "2026-09-11T19:44:48.006036Z",
+      "status": "PASS",
+      "deposit": "Велинград-Каменица",
+      "municipality": "Велинград",
+      "district": "Пазарджик",
+      "facilities_reviewed": 2,
+      "resolved_facilities": 0,
+      "unresolved_facilities": 2,
+      "facilities": [
+        {
+          "facility": "КЕИ \"Власа\"",
+          "registration_number": "351016002",
+          "coordinate_status": "TO_RESEARCH",
+          "resolution_result": "NO_SAFE_CURRENT_PUBLIC_COORDINATE_RESOLUTION",
+          "reason": "Official identity confirmed, but no facility-specific exact coordinate or safely proven cadastral parcel."
+        },
+        {
+          "facility": "Сондаж №3 \"Мизинка\"",
+          "registration_number": "351016003",
+          "coordinate_status": "TO_RESEARCH",
+          "official_planning_location": "УПИ VI \"Озеленяване\", кв.253",
+          "resolution_result": "NO_SAFE_CURRENT_PUBLIC_CADASTRAL_RESOLUTION",
+          "excluded_candidate_pi": "10450.501.507",
+          "excluded_candidate_reason": "PI 10450.501.507 corresponds to UPI V, while Mizinka is officially localized to UPI VI."
+        }
+      ],
+      "evidence_file": "data/mineral-water/research/spatial_audit_velingrad_kamenitsa_vlasa_mizinka.json",
+      "coordinate_status_before": {
+        "OFFICIAL_EXACT": 30,
+        "TO_RESEARCH": 65
+      },
+      "coordinate_status_after": {
+        "OFFICIAL_EXACT": 30,
+        "TO_RESEARCH": 65
+      },
+      "build_result": {
+        "build_required": false,
+        "master_facilities": 547,
+        "new_mappable": 59,
+        "new_without_safe_coordinates": 65,
+        "free_features": 482
+      },
+      "notes": [
+        "Municipal interactive-map marker sets were not used as facility coordinates because they represent downstream consumer/distribution points.",
+        "Сондаж №3 \"Мизинка\" is officially tied to UPI VI \"Озеленяване\", quarter 253.",
+        "Modern cadastral PI for UPI VI was not safely resolved from inspected public or local sources.",
+        "PI 10450.501.507 was explicitly excluded from Mizinka because it corresponds to UPI V.",
+        "Parcel 10450.501.2479 belongs to Сондаж №4 \"Власа\" and was not inherited by КЕИ \"Власа\"."
+      ]
+    },
+    {
+      "id": "DOBRINISHTE_NO_SAFE_RESOLUTION_2",
+      "name": "Добринище — Сондаж №2 „Банята“ и Сондаж №3 „Плажа“ — без безопасно пространствено решение",
+      "completed_at": "2026-09-11T20:50:22.261679+00:00",
+      "status": "PASS",
+      "deposit": "Добринище",
+      "municipality": "Банско",
+      "district": "Благоевград",
+      "facilities_reviewed": 2,
+      "resolved_facilities": 0,
+      "unresolved_facilities": 2,
+      "facilities": [
+        {
+          "facility": "Сондаж №2 \"Банята\"",
+          "coordinate_status": "TO_RESEARCH",
+          "resolution_result": "NO_SAFE_CURRENT_PUBLIC_CADASTRAL_RESOLUTION",
+          "reason": "Official permits, Municipality of Bansko records, WABD evidence, RIOSV pipeline evidence and local cadastral datasets confirm the facility and downstream water-use infrastructure but do not establish a facility-specific source parcel or exact coordinate.",
+          "official_pipeline_to_mineral_bath_m": 110,
+          "excluded_consumer_project_properties": [
+            "21498.350.133",
+            "21498.350.155",
+            "21498.350.3",
+            "21498.350.68"
+          ],
+          "excluded_separate_source_property": "21498.350.547"
+        },
+        {
+          "facility": "Сондаж №3 \"Плажа\"",
+          "coordinate_status": "TO_RESEARCH",
+          "resolution_result": "NO_SAFE_CURRENT_PUBLIC_CADASTRAL_RESOLUTION",
+          "reason": "Official BDZBR, RIOSV and Municipality of Bansko documentation confirms the abstraction facility, but published cadastral identifiers refer to consumer properties rather than the borehole source location.",
+          "excluded_consumer_properties": [
+            "21498.157.2",
+            "21498.157.7"
+          ]
+        }
+      ],
+      "evidence_file": "data/mineral-water/research/spatial_audit_dobrinishte_sondazh2_sondazh3.json",
+      "coordinate_status_before": {
+        "OFFICIAL_EXACT": 30,
+        "TO_RESEARCH": 65
+      },
+      "coordinate_status_after": {
+        "OFFICIAL_EXACT": 30,
+        "TO_RESEARCH": 65
+      },
+      "build_result": {
+        "build_required": false,
+        "master_facilities": 547,
+        "new_mappable": 59,
+        "new_without_safe_coordinates": 65,
+        "free_features": 482
+      },
+      "notes": [
+        "Sondazh №2 and Sondazh №3 remain TO_RESEARCH; no coordinate was invented.",
+        "PI 21498.350.133 and PI 21498.350.155 are mineral-bath / consumer-project locations and were not assigned to Sondazh №2.",
+        "PI 21498.350.547 belongs to the separate KEI №2 Banyata source and was not inherited by Sondazh №2.",
+        "PI 21498.157.2 and PI 21498.157.7 are consumer/recreational properties supplied from Sondazh №3 and were not assigned to the borehole.",
+        "Dobrinishte spatial batch is closed until new authoritative facility-level cadastral, coordinate, SOZ or technical-scheme evidence becomes available."
+      ]
+    },
+    {
+      "id": "NORTHEAST_BULGARIA_MALM_VALANGINIAN_MATCHED_EXISTING_9",
+      "name": "Североизточна България – малмоваланжски водоносен хоризонт – 9 MH кандидата reconciled към съществуващи БДЧР съоръжения",
+      "completed_at": "2026-09-12T05:44:33.070851+00:00",
+      "status": "PASS",
+      "deposit": "Североизточна България - малмоваланжски водоносен хоризонт",
+      "facilities_reviewed": 9,
+      "matched_existing_reclassified": 9,
+      "new_facilities_created": 0,
+      "spatial_promotions": 0,
+      "result": "EXACT_EXISTING_FACILITY_RECONCILIATION",
+      "research_status_before": {
+        "CONFIRMED_MISSING": 124,
+        "MATCHED_EXISTING": 42,
+        "DUPLICATE_MH": 19,
+        "COMPOSITE_GROUP": 3,
+        "UNRESOLVED": 2
+      },
+      "research_status_after": {
+        "CONFIRMED_MISSING": 115,
+        "MATCHED_EXISTING": 51,
+        "DUPLICATE_MH": 19,
+        "COMPOSITE_GROUP": 3,
+        "UNRESOLVED": 2
+      },
+      "active_to_research_before": 65,
+      "active_to_research_after": 56,
+      "build_result": {
+        "master_facilities_before": 547,
+        "master_facilities_after": 538,
+        "free_features_before": 482,
+        "free_features_after": 482,
+        "new_mappable": 59,
+        "new_without_safe_coordinates": 56,
+        "matched_existing_total": 51,
+        "matched_existing_attached": 51,
+        "matched_existing_unlinked": 0
+      },
+      "evidence_file": "data/mineral-water/research/existing_reconciliation_northeast_malm_valanginian_varna_9.json",
+      "notes": [
+        "All nine MH candidates were proven to represent facilities already present in the current official BSBD layer.",
+        "Matching used facility identifier, cadastral property, official coordinate and registry identity; no fuzzy-only identity decision was used.",
+        "The richer MH technical, chemical and hydrogeological research remains preserved in research_enrichment and is attached to the existing master facilities.",
+        "No new public map point was created and all nine existing FREE points remain unique.",
+        "Master count decreases by nine because duplicate CONFIRMED_MISSING master records are removed; FREE count remains unchanged."
+      ]
+    },
+    {
+      "id": "VARNA_BASIN_EOCENE_MATCHED_EXISTING_2",
+      "name": "Варненски басейн – еоценски водоносен хоризонт – С-5х „Ф-ка Христо Ботев“ и С-6х „Тополи“ reconciled към БДЧР",
+      "completed_at": "2026-09-12T05:49:58.479006+00:00",
+      "status": "PASS",
+      "deposit": "Варненски басейн - еоценски водоносен хоризонт",
+      "facilities_reviewed": 2,
+      "matched_existing_reclassified": 2,
+      "new_facilities_created": 0,
+      "spatial_promotions": 0,
+      "result": "EXACT_EXISTING_FACILITY_RECONCILIATION",
+      "research_status_before": {
+        "CONFIRMED_MISSING": 115,
+        "MATCHED_EXISTING": 51
+      },
+      "research_status_after": {
+        "CONFIRMED_MISSING": 113,
+        "MATCHED_EXISTING": 53
+      },
+      "active_to_research_before": 56,
+      "active_to_research_after": 54,
+      "build_result": {
+        "master_facilities_before": 538,
+        "master_facilities_after": 536,
+        "free_features_before": 482,
+        "free_features_after": 482,
+        "new_mappable": 59,
+        "new_without_safe_coordinates": 54,
+        "matched_existing_total": 53,
+        "matched_existing_attached": 53,
+        "matched_existing_unlinked": 0
+      },
+      "evidence_file": "data/mineral-water/research/existing_reconciliation_varna_basin_eocene_2.json",
+      "notes": [
+        "Facility numbers C-5h and C-6h are not globally unique in the BSBD register.",
+        "C-5h Hristo Botev was matched specifically to official feature 316, PI 10135.1.1691, Varna.",
+        "C-6h Topoli was matched specifically to official feature 286, PI 72709.516.1031, Topoli, Varna.",
+        "The similarly numbered C-5h Balchik and C-6h Obrochishte facilities were explicitly excluded.",
+        "No new public point was created; richer MH research was attached to the existing official facilities."
+      ]
+    },
+    {
+      "id": "VURBITSA_OFFICIAL_EXACT_2",
+      "name": "Върбица — КЕИ „Минералната вода“ и КЕИ „Солената вода“ — official exact coordinates",
+      "completed_at": "2026-09-12T06:12:36.423887+00:00",
+      "status": "PASS",
+      "deposit": "Върбица",
+      "municipality": "Върбица",
+      "district": "Шумен",
+      "facilities_reviewed": 2,
+      "spatial_promotions": 2,
+      "coordinate_status_before": {
+        "OFFICIAL_EXACT": 30,
+        "TO_RESEARCH": 54
+      },
+      "coordinate_status_after": {
+        "OFFICIAL_EXACT": 32,
+        "TO_RESEARCH": 52
+      },
+      "facilities": [
+        {
+          "facility": "КЕИ „Минералната вода“",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "latitude": 42.95205555555556,
+          "longitude": 26.654805555555555,
+          "official_wgs84": "42°57'07.40\" N, 26°39'17.30\" E",
+          "official_bgs2005_x": 4758034.203,
+          "official_bgs2005_y": 594228.133,
+          "transform_qa_difference_m": 1.35
+        },
+        {
+          "facility": "КЕИ „Солената вода“",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "latitude": 42.95676111111111,
+          "longitude": 26.651680555555554,
+          "official_wgs84": "42°57'24.34\" N, 26°39'06.05\" E",
+          "official_bgs2005_x": 4758553.927,
+          "official_bgs2005_y": 593966.703,
+          "transform_qa_difference_m": 0.537
+        }
+      ],
+      "evidence_file": "data/mineral-water/research/official_coordinates_vurbitsa_exact2.json",
+      "build_result": {
+        "master_facilities": 536,
+        "new_mappable": 61,
+        "new_without_safe_coordinates": 52,
+        "free_features": 484,
+        "matched_existing_total": 53,
+        "matched_existing_unlinked": 0
+      },
+      "notes": [
+        "Table No. 2 of the official SOZ project directly publishes WGS84 coordinates for both abstraction facilities.",
+        "BGS2005 coordinate appendices independently identify the same two named KEI facilities.",
+        "The source contains an internal cadastral identifier discrepancy (12763... in narrative versus 12766... in property appendix extraction); it is preserved and was not used to derive the facility coordinates.",
+        "No representative parcel centroid or nearby landmark coordinate was used."
+      ]
+    },
+    {
+      "pass_id": "DOLNA_BANYA_OFFICIAL_EXACT_2",
+      "status": "COMPLETED",
+      "result": "OFFICIAL_EXACT",
+      "deposit": "Долна баня",
+      "facilities_count": 2,
+      "completed_at": "2026-09-12T15:21:16.747036+00:00",
+      "evidence_file": "data/mineral-water/research/official_coordinates_dolna_banya_exact2.json",
+      "before": {
+        "completed_spatial_passes": 82,
+        "official_exact": 32,
+        "to_research": 52,
+        "master_facilities": 536,
+        "free_features": 484,
+        "confirmed_missing_mappable_now": 61,
+        "confirmed_missing_without_safe_coordinates": 52
+      },
+      "after": {
+        "completed_spatial_passes": 83,
+        "official_exact": 34,
+        "to_research": 50,
+        "master_facilities": 536,
+        "free_features": 486,
+        "confirmed_missing_mappable_now": 63,
+        "confirmed_missing_without_safe_coordinates": 50
+      },
+      "facilities": [
+        {
+          "mh_facility": "Каптиран естествен извор \"Долна баня",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "latitude": 42.310901433257,
+          "longitude": 23.775425286452
+        },
+        {
+          "mh_facility": "сондаж № 13хг",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "latitude": 42.311068990513,
+          "longitude": 23.774985936602
+        }
+      ]
+    },
+    {
+      "id": "DOLNI_RAKOVETS_NO_SAFE_RESOLUTION_84",
+      "place": "Долни Раковец",
+      "result": "NO_SAFE_RESOLUTION",
+      "coordinate_status": "TO_RESEARCH",
+      "candidates": [
+        133,
+        134
+      ],
+      "kei1": "КЕИ № 1 „Ленена фабрика“",
+      "kei2": "КЕИ № 2 „Бански каптаж“",
+      "facility_coordinates_added": 0,
+      "note": "Extensive official-source research established deposit-level context but no safe facility-level coordinates. Both candidates remain TO_RESEARCH.",
+      "completed_at": "2026-09-12T16:49:38.898940+00:00",
+      "candidate_index_correction": {
+        "old": [
+          132,
+          133
+        ],
+        "new": [
+          133,
+          134
+        ],
+        "reason": "Off-by-one candidate index error corrected against canonical missing_candidates array."
+      },
+      "corrected_at": "2026-09-12T17:34:00.168865+00:00"
+    },
+    {
+      "id": "BANICHAN_NO_SAFE_RESOLUTION_85",
+      "deposit": "Баничан",
+      "result": "NO_SAFE_RESOLUTION",
+      "coordinate_status": "TO_RESEARCH",
+      "candidates": [
+        16,
+        18
+      ],
+      "facilities": [
+        "КЕИ „Топлица“",
+        "сондаж №273"
+      ],
+      "facility_coordinates_added": 0,
+      "note": "Official sources confirm both facilities and their relative spacing (~40 m), but no safe facility-level coordinates or cadastral parcels were established.",
+      "completed_at": "2026-09-12T16:53:50.180223+00:00"
+    },
+    {
+      "id": "LENOVO_PARTIAL_SPATIAL_RESOLUTION_86",
+      "deposit": "Леново",
+      "result": "PARTIAL_SPATIAL_RESOLUTION",
+      "candidates": [
+        137,
+        138
+      ],
+      "candidate_137": {
+        "facility": "Сондаж №16",
+        "coordinate_status": "TO_RESEARCH",
+        "location": "УПИ I – зеленина, кв. 56"
+      },
+      "candidate_138": {
+        "facility": "Сондаж №12",
+        "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+        "parcel_id": "43298.77.94",
+        "building_id": "43298.77.94.1"
+      },
+      "facility_coordinates_added": 0,
+      "completed_at": "2026-09-12T16:55:19.300558+00:00"
+    },
+    {
+      "id": "DOBRINISHTE_NO_SAFE_RESOLUTION_87",
+      "deposit": "Добринище",
+      "result": "NO_SAFE_FACILITY_LEVEL_RESOLUTION",
+      "candidates": [
+        12,
+        13
+      ],
+      "candidate_12": {
+        "facility": "Сондаж №2 „Банята“",
+        "coordinate_status": "TO_RESEARCH",
+        "group_site_coordinate": [
+          23.56609765905634,
+          41.822542396806654
+        ]
+      },
+      "candidate_13": {
+        "facility": "Сондаж №3 „Плажа“",
+        "coordinate_status": "TO_RESEARCH"
+      },
+      "facility_coordinates_added": 0,
+      "completed_at": "2026-09-12T16:56:24.271233+00:00"
+    },
+    {
+      "id": "DRAGOINOVO_PARTIAL_SPATIAL_RESOLUTION_88",
+      "deposit": "Драгойново",
+      "result": "PARTIAL_SPATIAL_RESOLUTION",
+      "candidates": [
+        151,
+        152
+      ],
+      "candidate_151": {
+        "facility": "Сондаж №8",
+        "coordinate_status": "TO_RESEARCH",
+        "location": "УПИ III – водоизточник, кв. 12"
+      },
+      "candidate_152": {
+        "facility": "Сондаж №9",
+        "coordinate_status": "TO_RESEARCH",
+        "parcel_id_legacy": "064119",
+        "locality": "Бърчината"
+      },
+      "facility_coordinates_added": 0,
+      "completed_at": "2026-09-12T16:59:00.977363+00:00"
+    },
+    {
+      "id": "RUDARTSI_NO_SAFE_RESOLUTION_89",
+      "deposit": "Рударци",
+      "result": "NO_SAFE_FACILITY_LEVEL_RESOLUTION",
+      "candidates": [
+        131,
+        132
+      ],
+      "facilities": [
+        "Сондаж №8",
+        "Сондаж №9"
+      ],
+      "legacy_shared_coordinate": [
+        23.16761111,
+        42.58638889
+      ],
+      "legacy_coordinate_facility_use": "PROHIBITED",
+      "facility_coordinates_added": 0,
+      "completed_at": "2026-09-12T17:00:13.818552+00:00"
+    },
+    {
+      "id": "SLIVENSKI_MINERALNI_BANI_OFFICIAL_COORDINATES_90",
+      "deposit": "Сливенски минерални бани",
+      "result": "OFFICIAL_FACILITY_COORDINATES_RESOLVED",
+      "candidates": [
+        155,
+        156
+      ],
+      "facility_coordinates_added": 2,
+      "coordinate_source_crs": "BGS1970 K5",
+      "evidence_file": "data/mineral-water/research/spatial_research_slivenski_mineralni_bani_official_coordinates.json",
+      "completed_at": "2026-09-12T17:09:20.305739+00:00"
+    },
+    {
+      "id": "SOFIA_PANCHAREVO_OFFICIAL_COORDINATES_91",
+      "deposit": "София-Панчарево",
+      "result": "MATCHED_EXISTING_OFFICIAL_COORDINATES_VERIFIED",
+      "candidates": [
+        165,
+        166
+      ],
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_sofia_pancharevo_official_coordinates.json",
+      "completed_at": "2026-09-12T17:13:55.371280+00:00",
+      "matched_existing": 2,
+      "new_facilities_added": 0,
+      "corrected_at": "2026-09-12T17:17:10.862687+00:00"
+    },
+    {
+      "id": "BANYA_KARLOVO_NOVA_ZAGORA_PARTIAL_92",
+      "result": "PARTIAL_SPATIAL_RESOLUTION",
+      "candidates": [
+        145,
+        154
+      ],
+      "resolved_official_exact": [
+        154
+      ],
+      "no_safe_resolution": [
+        145
+      ],
+      "evidence_file": "data/mineral-water/research/spatial_research_banya_pass92.json",
+      "completed_at": "2026-09-12T17:18:24.744527+00:00"
+    },
+    {
+      "id": "VELINGRAD_KAMENITSA_NO_SAFE_RESOLUTION_93",
+      "deposit": "Велинград-Каменица",
+      "result": "NO_SAFE_FACILITY_LEVEL_RESOLUTION",
+      "candidates": [
+        116,
+        119
+      ],
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_velingrad_kamenitsa.json",
+      "completed_at": "2026-09-12T17:19:30.000888+00:00"
+    },
+    {
+      "id": "KYUSTENDIL_NO_SAFE_RESOLUTION_94",
+      "deposit": "Кюстендил",
+      "result": "NO_SAFE_FACILITY_LEVEL_RESOLUTION",
+      "candidates": [
+        6,
+        108
+      ],
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_kyustendil.json",
+      "completed_at": "2026-09-12T17:21:02.563150+00:00"
+    },
+    {
+      "id": "STEFAN_KARADZHOVO_NO_SAFE_RESOLUTION_95",
+      "deposit": "Стефан Караджово",
+      "result": "NO_SAFE_FACILITY_LEVEL_RESOLUTION",
+      "candidates": [
+        185,
+        186
+      ],
+      "existing_layer_matches": 0,
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_stefan_karadzhovo.json",
+      "completed_at": "2026-09-12T17:22:44.620013+00:00"
+    },
+    {
+      "id": "BLAGOEVGRAD_15BHG_NO_SAFE_RESOLUTION_96",
+      "deposit": "Благоевград",
+      "candidates": [
+        14
+      ],
+      "result": "NO_SAFE_RESOLUTION",
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_blagoevgrad_15bhg.json",
+      "completed_at": "2026-09-12T17:24:00.392367+00:00"
+    },
+    {
+      "id": "BREZNIK_GALERIATA_NO_SAFE_RESOLUTION_97",
+      "deposit": "Брезник",
+      "candidates": [
+        130
+      ],
+      "result": "NO_SAFE_RESOLUTION",
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_breznik_galeriata.json",
+      "completed_at": "2026-09-12T17:25:16.190965+00:00"
+    },
+    {
+      "id": "BURGASKI_MINERALNI_BANI_B165_NO_SAFE_RESOLUTION_98",
+      "deposit": "Бургаски минерални бани",
+      "candidates": [
+        50
+      ],
+      "result": "NO_SAFE_RESOLUTION",
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_burgaski_mineralni_bani_b165.json",
+      "completed_at": "2026-09-12T17:26:44.490172+00:00"
+    },
+    {
+      "id": "GABROVNITSA_ELENOV_DOL_NO_SAFE_RESOLUTION_99",
+      "deposit": "Габровница - Еленов дол",
+      "candidates": [
+        8
+      ],
+      "result": "NO_SAFE_RESOLUTION",
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_gabrovnitsa_elenov_dol.json",
+      "completed_at": "2026-09-12T17:28:24.117871+00:00"
+    },
+    {
+      "id": "MINERAL_BATCH_NO_SAFE_RESOLUTION_100",
+      "result": "BATCH_NO_SAFE_RESOLUTION",
+      "candidates": [
+        39,
+        112,
+        168,
+        123,
+        44
+      ],
+      "candidate_count": 5,
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_batch_pass100.json",
+      "completed_at": "2026-09-12T17:30:06.936591+00:00"
+    },
+    {
+      "id": "MINERAL_BATCH_NO_SAFE_RESOLUTION_101",
+      "result": "BATCH_NO_SAFE_RESOLUTION",
+      "candidates": [
+        160,
+        58,
+        153,
+        46,
+        37
+      ],
+      "candidate_count": 5,
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_batch_pass101.json",
+      "completed_at": "2026-09-12T17:30:39.519869+00:00"
+    },
+    {
+      "id": "MINERAL_BATCH_NO_SAFE_RESOLUTION_102",
+      "result": "BATCH_NO_SAFE_RESOLUTION",
+      "candidates": [
+        141,
+        95,
+        126,
+        47,
+        111
+      ],
+      "candidate_count": 5,
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_batch_pass102.json",
+      "completed_at": "2026-09-12T17:31:09.966690+00:00"
+    },
+    {
+      "id": "MINERAL_BATCH_NO_SAFE_RESOLUTION_103",
+      "result": "BATCH_NO_SAFE_RESOLUTION",
+      "candidates": [
+        164,
+        189,
+        1,
+        136,
+        157
+      ],
+      "candidate_count": 5,
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_batch_pass103.json",
+      "completed_at": "2026-09-12T17:31:40.318789+00:00"
+    },
+    {
+      "id": "MINERAL_BATCH_NO_SAFE_RESOLUTION_104",
+      "result": "BATCH_NO_SAFE_RESOLUTION",
+      "candidates": [
+        176,
+        49
+      ],
+      "candidate_count": 2,
+      "facility_coordinates_added": 0,
+      "evidence_file": "data/mineral-water/research/spatial_research_batch_pass104.json",
+      "completed_at": "2026-09-12T17:32:08.515581+00:00"
+    }
+  ],
+  "updated_at": "2026-09-12T17:34:00.168865+00:00"
+}

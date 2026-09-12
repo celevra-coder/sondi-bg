@@ -1,0 +1,39 @@
+{
+  "place": "Драгойново",
+  "status": "RESEARCH_CLOSED",
+  "facilities": [
+    {
+      "candidate": 151,
+      "facility": "Сондаж №8",
+      "coordinate_status": "TO_RESEARCH",
+      "spatial_resolution": "URBAN_PLAN_LOCATION_CONFIRMED",
+      "official_location": "УПИ III – водоизточник, кв. 12 по плана на с. Драгойново",
+      "safe_coordinate_available": false
+    },
+    {
+      "candidate": 152,
+      "facility": "Сондаж №9",
+      "coordinate_status": "TO_RESEARCH",
+      "spatial_resolution": "PARCEL_ID_CONFIRMED",
+      "parcel_id_legacy": "064119",
+      "locality": "Бърчината",
+      "safe_coordinate_available": false,
+      "geometry_note": "Parcel identity is confirmed from official municipal documentation, but no safe facility-level geometry/coordinate was established in project data."
+    }
+  ],
+  "final_spatial_resolution": {
+    "result": "PARTIAL_SPATIAL_RESOLUTION",
+    "candidate_151": "TO_RESEARCH",
+    "candidate_152": "TO_RESEARCH",
+    "facility_coordinates_added": 0,
+    "unsafe_inference_prohibited": true
+  },
+  "search_scope_completed": [
+    "MH official certificate/assessment records",
+    "Municipality Parvomay official property/plan documents",
+    "local mineral-water facility layers",
+    "official water facilities layer",
+    "targeted local parcel and facility search"
+  ],
+  "updated_at": "2026-09-12T16:59:00.977363+00:00"
+}

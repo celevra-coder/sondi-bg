@@ -1,0 +1,36 @@
+{
+  "place": "Сливенски минерални бани",
+  "status": "RESEARCH_CLOSED",
+  "result": "OFFICIAL_FACILITY_COORDINATES_RESOLVED",
+  "source_coordinate_crs": "BGS1970 K5",
+  "axis_order": "X=Northing, Y=Easting",
+  "transform_chain": "BGS1970 K5 -> BGS2005 KK -> WGS84/ETRS89 geographic",
+  "transformation_workflow": "bojko108 transformations control-grid workflow",
+  "facilities": [
+    {
+      "candidate": 155,
+      "facility": "Сондаж № 2 \"Наклонен\"",
+      "official_source_x": 4653506.29,
+      "official_source_y": 9484128.35,
+      "wgs84_latitude": 42.60947232726331,
+      "wgs84_longitude": 26.231635064333187,
+      "coordinate_status": "OFFICIAL_EXACT"
+    },
+    {
+      "candidate": 156,
+      "facility": "Сондаж № 22",
+      "official_source_x": 4653494.67,
+      "official_source_y": 9484155.7,
+      "wgs84_latitude": 42.60936817931932,
+      "wgs84_longitude": 26.23196863723359,
+      "coordinate_status": "OFFICIAL_EXACT"
+    }
+  ],
+  "qa": {
+    "both_transformed_points_in_expected_sliven_mineral_baths_area": true,
+    "existing_k5_workflow_reference_difference_m_approx": 0.53,
+    "unsafe_coordinate_inference_used": false
+  },
+  "facility_coordinates_added": 2,
+  "updated_at": "2026-09-12T17:09:20.305739+00:00"
+}

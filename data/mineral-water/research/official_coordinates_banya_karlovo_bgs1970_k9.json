@@ -1,0 +1,66 @@
+{
+  "deposit": "Баня - Карлово",
+  "source": "БД Източнобеломорски район",
+  "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+  "source_crs": "BGS1970 K9",
+  "target_crs": "WGS84 / ETRS89 geographic",
+  "control": {
+    "facility": "Баня-Панагюрище control point",
+    "x_northing": 4577843.331,
+    "y_easting": 8564971.399,
+    "official_reference_lat": 42.46372222,
+    "official_reference_lon": 24.13086111,
+    "transformed_lat": 42.4636315,
+    "transformed_lon": 24.1308006,
+    "difference_m_approx": 11.2
+  },
+  "facilities": {
+    "CENTRAL": {
+      "label": "КЕИ Централен каптаж",
+      "x_northing": 4587183.67,
+      "y_easting": 8623241.71,
+      "lat": 42.541135,
+      "lon": 24.8410929
+    },
+    "MENS": {
+      "label": "КЕИ Мъжко банче",
+      "x_northing": 4586899.75,
+      "y_easting": 8623158.24,
+      "lat": 42.538592,
+      "lon": 24.8400192
+    },
+    "V": {
+      "label": "Сондаж В",
+      "x_northing": 4586927.64,
+      "y_easting": 8622827.28,
+      "lat": 42.5388927,
+      "lon": 24.8359966
+    },
+    "G": {
+      "label": "Сондаж Г",
+      "x_northing": 4587045.91,
+      "y_easting": 8623019.9,
+      "lat": 42.5399283,
+      "lon": 24.8383651
+    },
+    "ROSE": {
+      "label": "Сондаж Българска роза",
+      "x_northing": 4586995.91,
+      "y_easting": 8623293.81,
+      "lat": 42.5394371,
+      "lon": 24.8416889
+    },
+    "A": {
+      "label": "Сондаж А",
+      "x_northing": 4586793.46,
+      "y_easting": 8623166.93,
+      "lat": 42.537634,
+      "lon": 24.8401034
+    }
+  },
+  "excluded_unresolved_facility": {
+    "facility": "Каптиран естествен извор Женско банче",
+    "reason": "Official register coordinate is spatially inconsistent with the neighboring Banya-Karlovo facilities; no manual correction by assumption."
+  },
+  "applied_at": "2026-09-11T07:47:54+00:00"
+}

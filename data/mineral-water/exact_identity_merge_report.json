@@ -1,0 +1,785 @@
+{
+  "matched_existing": 16,
+  "ambiguous": 0,
+  "no_exact_identity_match": 105,
+  "to_research_remaining": 105,
+  "matches": [
+    {
+      "facility": "Сондаж № 1ВКП",
+      "settlement": "",
+      "feature_index": 21,
+      "existing_facility": "Сондаж № 1ВКП \"Вельова баня\"",
+      "existing_settlement": "Велинград",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "1вкп"
+    },
+    {
+      "facility": "Сондаж № 2ВКП",
+      "settlement": "марчево и с огняново",
+      "feature_index": 22,
+      "existing_facility": "Сондаж № 2ВКП \"Вельова баня\"",
+      "existing_settlement": "Велинград",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "2вкп"
+    },
+    {
+      "facility": "Сондаж № Сн-7 \"- находдище на минерална вода\"",
+      "settlement": "хотово",
+      "feature_index": 422,
+      "existing_facility": "Сондаж Сн-7",
+      "existing_settlement": "Хотово",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "сн-7"
+    },
+    {
+      "facility": "Сондаж № Б-191",
+      "settlement": "бургас",
+      "feature_index": 372,
+      "existing_facility": "Б-191              Бургаски минерални бани",
+      "existing_settlement": "с.Ветрен",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "б-191"
+    },
+    {
+      "facility": "сондаж № Б-20",
+      "settlement": "съдиево",
+      "feature_index": 360,
+      "existing_facility": "Б-20                       Съдиево",
+      "existing_settlement": "с.Съдиево",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "б-20"
+    },
+    {
+      "facility": "сондаж № Б-88",
+      "settlement": "съдиево",
+      "feature_index": 361,
+      "existing_facility": "Б-88                       Съдиево",
+      "existing_settlement": "с.Съдиево",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "б-88"
+    },
+    {
+      "facility": "сондаж № Б-166",
+      "settlement": "бургас",
+      "feature_index": 368,
+      "existing_facility": "Б-166                  Рудник             ПИ 07079.17.2348",
+      "existing_settlement": "с.Рудник",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "б-166"
+    },
+    {
+      "facility": "Сондаж № Б-81 \"- находищя на минерална вода\"",
+      "settlement": "изворище",
+      "feature_index": 369,
+      "existing_facility": "Б-81               \"Изворище\"  ПИ 070799.13.2908",
+      "existing_settlement": "с.Изворище",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "б-81"
+    },
+    {
+      "facility": "Сондаж № Б-53",
+      "settlement": "каменар",
+      "feature_index": 362,
+      "existing_facility": "Б-53                   Каменар",
+      "existing_settlement": "с. Каменар",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "б-53"
+    },
+    {
+      "facility": "Сондаж № Б-72",
+      "settlement": "медово",
+      "feature_index": 366,
+      "existing_facility": "Б-72                  Медово",
+      "existing_settlement": "с. Медово",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "б-72"
+    },
+    {
+      "facility": "Сондаж № Б-73",
+      "settlement": "медово",
+      "feature_index": 367,
+      "existing_facility": "Б-73                 Медово",
+      "existing_settlement": "с. Медово",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "б-73"
+    },
+    {
+      "facility": "Сондаж № Р-113 \"Каварна\"",
+      "settlement": "",
+      "feature_index": 349,
+      "existing_facility": "Р-113                   ,,Каварна\"      ПИ 35064.501.2299",
+      "existing_settlement": "Каварна",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "р-113"
+    },
+    {
+      "facility": "Сондаж № Р-70 \"Близнаци",
+      "settlement": "близнаци",
+      "feature_index": 382,
+      "existing_facility": "Р-70 ,,Близнаци\"      ПИ 04426.501.62",
+      "existing_settlement": "с. Близнаци",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "р-70"
+    },
+    {
+      "facility": "сондаж № Р-6 \"Царевци",
+      "settlement": "",
+      "feature_index": 297,
+      "existing_facility": "Р-6                          Царевци,         ПИ 70220.47.34",
+      "existing_settlement": "с.Царевци",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "р-6"
+    },
+    {
+      "facility": "Сондаж 6хг",
+      "settlement": "софия",
+      "feature_index": 208,
+      "existing_facility": "Сондаж № 6ХГ",
+      "existing_settlement": "София",
+      "basis": "EXACT_IDENTIFIER_PLUS_SETTLEMENT",
+      "signature": "6хг"
+    },
+    {
+      "facility": "Сондаж № P-2",
+      "settlement": "водица",
+      "feature_index": 142,
+      "existing_facility": "Сондаж № Р - 2",
+      "existing_settlement": "Казичене",
+      "basis": "UNIQUE_EXACT_FACILITY_IDENTIFIER",
+      "signature": "р-2"
+    }
+  ],
+  "ambiguous_records": [],
+  "remaining_records": [
+    {
+      "facility": "КЕИ \"Трънска Банкя\"",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "трънска банкя"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Долна баня",
+      "settlement": "долна баня",
+      "identifier": "",
+      "name_key": "долна баня"
+    },
+    {
+      "facility": "Сондаж № С-46хг \"Равно поле",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No с-46хг равно поле"
+    },
+    {
+      "facility": "Сондаж № БУ",
+      "settlement": "кюстендил",
+      "identifier": "",
+      "name_key": "No бу"
+    },
+    {
+      "facility": "Каптиран естествен извор № 1 \"Банята",
+      "settlement": "габровница",
+      "identifier": "",
+      "name_key": "No 1 банята"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Тепавицата",
+      "settlement": "добринище",
+      "identifier": "",
+      "name_key": "тепавицата"
+    },
+    {
+      "facility": "Сондаж № 2 \"Банята",
+      "settlement": "добринище",
+      "identifier": "",
+      "name_key": "No 2 банята"
+    },
+    {
+      "facility": "Сондаж № 3 \"Плажа",
+      "settlement": "добринище",
+      "identifier": "",
+      "name_key": "No 3 плажа"
+    },
+    {
+      "facility": "сондаж № 15Бхг",
+      "settlement": "благоевград",
+      "identifier": "15бхг",
+      "name_key": "No 15бхг"
+    },
+    {
+      "facility": "КЕИ \"Топлица",
+      "settlement": "баничан",
+      "identifier": "",
+      "name_key": "топлица"
+    },
+    {
+      "facility": "сондаж № 273",
+      "settlement": "баничан",
+      "identifier": "",
+      "name_key": "No 273"
+    },
+    {
+      "facility": "КЕИ \"Миро-женско",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "миро-женско"
+    },
+    {
+      "facility": "КЕИ \"Миро-мъжко",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "миро-мъжко"
+    },
+    {
+      "facility": "Сондаж \"АПК",
+      "settlement": "",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Сондаж \"Вила Шамов",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "вила шамов"
+    },
+    {
+      "facility": "Сондаж \"Никола Ушев",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "никола ушев"
+    },
+    {
+      "facility": "Сондаж № 4ВКП",
+      "settlement": "",
+      "identifier": "4вкп",
+      "name_key": "No 4вкп"
+    },
+    {
+      "facility": "КЕИ \"Басейн в средна баня",
+      "settlement": "марчево и с огняново",
+      "identifier": "",
+      "name_key": "басейн в средна баня"
+    },
+    {
+      "facility": "КЕИ № 17 \"Тасков гьол",
+      "settlement": "марчево и с огняново",
+      "identifier": "",
+      "name_key": "No 17 тасков гьол"
+    },
+    {
+      "facility": "Сондаж \"Делта-Бисер",
+      "settlement": "марчево и с огняново",
+      "identifier": "",
+      "name_key": "делта-бисер"
+    },
+    {
+      "facility": "Сондаж \"Дом Терзиев",
+      "settlement": "марчево и с огняново",
+      "identifier": "",
+      "name_key": "дом терзиев"
+    },
+    {
+      "facility": "Сондаж № 3ВКП",
+      "settlement": "марчево и с огняново",
+      "identifier": "3вкп",
+      "name_key": "No 3вкп"
+    },
+    {
+      "facility": "Сондаж Виктория 2",
+      "settlement": "огняново и с гърмен",
+      "identifier": "",
+      "name_key": "виктория 2"
+    },
+    {
+      "facility": "Сондаж № 1ВКН",
+      "settlement": "генерал тодоров",
+      "identifier": "1вкн",
+      "name_key": "No 1вкн"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Бочвата",
+      "settlement": "марикостиново",
+      "identifier": "",
+      "name_key": "бочвата"
+    },
+    {
+      "facility": "Каптиран естествен извор № 2 \"Благата вода",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": "No 2 благата вода"
+    },
+    {
+      "facility": "Каптиран естествен извор № 4",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Каптиран естествен извор № 5",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Каптиран естествен извор № 6",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Каптиран естествен извор №7",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Извор \"Топилата",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": "топилата"
+    },
+    {
+      "facility": "Сондаж № МС-3",
+      "settlement": "левуново",
+      "identifier": "мс-3",
+      "name_key": "No мс-3"
+    },
+    {
+      "facility": "Каптиран естествен извор № 8",
+      "settlement": "сандански",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Сондаж № 10",
+      "settlement": "якоруда",
+      "identifier": "",
+      "name_key": "No 10"
+    },
+    {
+      "facility": "Сондаж 3 Б-165",
+      "settlement": "бургас",
+      "identifier": "б-165",
+      "name_key": "3 б-165"
+    },
+    {
+      "facility": "Сондаж № Б-108",
+      "settlement": "изворище",
+      "identifier": "б-108",
+      "name_key": "No б-108"
+    },
+    {
+      "facility": "Сондаж № Р-12х \"Албена\"",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No р-12х албена"
+    },
+    {
+      "facility": "Сондаж № Р-13х \"Албена\"",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No р-13х албена"
+    },
+    {
+      "facility": "Сондаж № Р-149х \"Албена\"",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No р-149х албена"
+    },
+    {
+      "facility": "Сондаж № Р-106х \"Варна",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No р-106х варна"
+    },
+    {
+      "facility": "Сондаж № Р-2х",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No р-2х"
+    },
+    {
+      "facility": "Сондаж № Р-6х \"Св. Св. Константин и Елена",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No р-6х св св константин и елена"
+    },
+    {
+      "facility": "Сондаж № Р-83х",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No р-83х"
+    },
+    {
+      "facility": "Сондаж № Р-9х\"",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No р-9х"
+    },
+    {
+      "facility": "Сондаж № Р-11х \"Златни пясъци",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No р-11х златни пясъци"
+    },
+    {
+      "facility": "Сондаж № Р-1х \"Варна\"",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No р-1х варна"
+    },
+    {
+      "facility": "сондаж № С-5х \"Ф-ка Христо Ботев",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No с-5х ф-ка христо ботев"
+    },
+    {
+      "facility": "сондаж № С-6х \"Тополи",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No с-6х тополи"
+    },
+    {
+      "facility": "сондаж № Р-107х \"Варна",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No р-107х варна"
+    },
+    {
+      "facility": "сондаж № Р-96х \"Варна",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No р-96х варна"
+    },
+    {
+      "facility": "Сондаж \"43\"",
+      "settlement": "провадия",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "КЕИ \"Стар каптаж\"",
+      "settlement": "",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Сондаж № 1хг - Барището",
+      "settlement": "невестино",
+      "identifier": "1хг",
+      "name_key": "No 1хг - барището"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Галерията",
+      "settlement": "сапарева баня",
+      "identifier": "",
+      "name_key": "галерията"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Топлата вода - закрит",
+      "settlement": "белово",
+      "identifier": "",
+      "name_key": "топлата вода - закрит"
+    },
+    {
+      "facility": "Сондаж № 5 \"Сярна Баня",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "No 5 сярна баня"
+    },
+    {
+      "facility": "КЕИ \"Власа",
+      "settlement": "велинград",
+      "identifier": "",
+      "name_key": "власа"
+    },
+    {
+      "facility": "КЕИ № 7 \"Сярна баня",
+      "settlement": "велинград",
+      "identifier": "",
+      "name_key": "No 7 сярна баня"
+    },
+    {
+      "facility": "сондаж № 3 \"Мизинка",
+      "settlement": "велинград",
+      "identifier": "",
+      "name_key": "No 3 мизинка"
+    },
+    {
+      "facility": "сондаж № 4 \"Власа",
+      "settlement": "велинград",
+      "identifier": "",
+      "name_key": "No 4 власа"
+    },
+    {
+      "facility": "Сондаж № 13",
+      "settlement": "драгиново",
+      "identifier": "",
+      "name_key": "No 13"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Банчето",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": "банчето"
+    },
+    {
+      "facility": "Сондаж № 2 \"Наклонен",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": "No 2 наклонен"
+    },
+    {
+      "facility": "Сондаж № 9а",
+      "settlement": "костандово",
+      "identifier": "9а",
+      "name_key": "No 9а"
+    },
+    {
+      "facility": "КЕИ № 1 \"Варвара",
+      "settlement": "варвара",
+      "identifier": "",
+      "name_key": "No 1 варвара"
+    },
+    {
+      "facility": "Каптиран естествен извор № 2 \"Ветрен дол\"",
+      "settlement": "варвара",
+      "identifier": "",
+      "name_key": "No 2 ветрен дол"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Галерията\"",
+      "settlement": "брезник",
+      "identifier": "",
+      "name_key": "галерията"
+    },
+    {
+      "facility": "Сондаж № 8\"",
+      "settlement": "рударци",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Сондаж № 9\"",
+      "settlement": "рударци",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Каптиран естествен извор № 1 \"Денена фабрика\"",
+      "settlement": "долни раковец",
+      "identifier": "",
+      "name_key": "No 1 денена фабрика"
+    },
+    {
+      "facility": "КЕИ № 2 \"Бански каптаж",
+      "settlement": "долни раковец",
+      "identifier": "",
+      "name_key": "No 2 бански"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Русалка",
+      "settlement": "хисаря",
+      "identifier": "",
+      "name_key": "русалка"
+    },
+    {
+      "facility": "Сондаж № 16",
+      "settlement": "леново",
+      "identifier": "",
+      "name_key": "No 16"
+    },
+    {
+      "facility": "сондаж № 12",
+      "settlement": "леново",
+      "identifier": "",
+      "name_key": "No 12"
+    },
+    {
+      "facility": "КЕИ \"Солено изворче\"",
+      "settlement": "нареченски бани",
+      "identifier": "",
+      "name_key": "солено изворче"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Централен каптаж",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "централен"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Женско банче\"",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": "женско банче"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Мъжко банче\"",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": "мъжко банче"
+    },
+    {
+      "facility": "Сондаж \"Българска роза\"",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": "българска роза"
+    },
+    {
+      "facility": "Сондаж I\"",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Сондаж А\"",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Сондаж В\"",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Сондаж № 8",
+      "settlement": "драгойново",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "сондаж № 9",
+      "settlement": "драгойново",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "КЕИ \"Топлите извори",
+      "settlement": "красвново",
+      "identifier": "",
+      "name_key": "топлите извори"
+    },
+    {
+      "facility": "КЕИ № 2",
+      "settlement": "баня",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Сондаж № 2 \"Наклонен\"",
+      "settlement": "злати войвода",
+      "identifier": "",
+      "name_key": "No 2 наклонен"
+    },
+    {
+      "facility": "Сондаж № 22",
+      "settlement": "мечкарево",
+      "identifier": "",
+      "name_key": "No 22"
+    },
+    {
+      "facility": "КЕИ \"Хаджи Димитър",
+      "settlement": "шивачево",
+      "identifier": "",
+      "name_key": "хаджи димитър"
+    },
+    {
+      "facility": "Сондаж \"Ерма река",
+      "settlement": "ерма река",
+      "identifier": "",
+      "name_key": "ерма река"
+    },
+    {
+      "facility": "каптиран естествен извор \"Домус дере",
+      "settlement": "софия",
+      "identifier": "",
+      "name_key": "домус дере"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Тунела",
+      "settlement": "софия",
+      "identifier": "",
+      "name_key": "тунела"
+    },
+    {
+      "facility": "Каптиран естествен извор\"Гъбата",
+      "settlement": "софия",
+      "identifier": "",
+      "name_key": "гъбата"
+    },
+    {
+      "facility": "сондаж № 13хг",
+      "settlement": "долна баня",
+      "identifier": "13хг",
+      "name_key": "No 13хг"
+    },
+    {
+      "facility": "сондаж № 141",
+      "settlement": "долна баня",
+      "identifier": "",
+      "name_key": "No 141"
+    },
+    {
+      "facility": "Сондаж № Сз-37",
+      "settlement": "ягода",
+      "identifier": "сз-37",
+      "name_key": "No сз-37"
+    },
+    {
+      "facility": "Сондаж № 2ВП",
+      "settlement": "минерални бани",
+      "identifier": "2вп",
+      "name_key": "No 2вп"
+    },
+    {
+      "facility": "Каптиран естествен извор № 5",
+      "settlement": "минерални бани",
+      "identifier": "",
+      "name_key": ""
+    },
+    {
+      "facility": "Сондаж № 3ВП",
+      "settlement": "минерални бани",
+      "identifier": "3вп",
+      "name_key": "No 3вп"
+    },
+    {
+      "facility": "Сондаж № 4ВП",
+      "settlement": "минерални бани",
+      "identifier": "4вп",
+      "name_key": "No 4вп"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Минерална вода",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "минерална вода"
+    },
+    {
+      "facility": "Каптиран естествен извор \"Солената вода",
+      "settlement": "",
+      "identifier": "",
+      "name_key": "солената вода"
+    },
+    {
+      "facility": "Сондаж № Я-32а",
+      "settlement": "стефан караджово",
+      "identifier": "",
+      "name_key": "No я-32а"
+    },
+    {
+      "facility": "Сондаж Я-33",
+      "settlement": "стефан караджово",
+      "identifier": "я-33",
+      "name_key": ""
+    },
+    {
+      "facility": "сондаж № Я-12",
+      "settlement": "стралджа",
+      "identifier": "я-12",
+      "name_key": "No я-12"
+    }
+  ]
+}

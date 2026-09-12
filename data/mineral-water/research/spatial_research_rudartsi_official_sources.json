@@ -1,0 +1,49 @@
+{
+  "place": "Рударци",
+  "status": "RESEARCH_CLOSED",
+  "coordinate_resolution": "TO_RESEARCH",
+  "facilities": [
+    {
+      "candidate": 131,
+      "facility": "Сондаж №8",
+      "coordinate_status": "TO_RESEARCH",
+      "legacy_shared_coordinate": [
+        23.16761111,
+        42.58638889
+      ],
+      "legacy_coordinate_scope": "SHARED_OR_UNRESOLVED_CONTEXT_ONLY",
+      "facility_level_use": "PROHIBITED",
+      "reason": "Official sources confirm borehole No.8 within the Rudarci sanitary protection context, but no separate authoritative facility-level coordinate or parcel was established."
+    },
+    {
+      "candidate": 132,
+      "facility": "Сондаж №9",
+      "coordinate_status": "TO_RESEARCH",
+      "legacy_shared_coordinate": [
+        23.16761111,
+        42.58638889
+      ],
+      "legacy_coordinate_scope": "SHARED_OR_UNRESOLVED_CONTEXT_ONLY",
+      "facility_level_use": "PROHIBITED",
+      "reason": "Official sources confirm borehole No.9 as an active abstraction facility supplying public mineral-water fountains, but no separate authoritative facility-level coordinate or parcel was established."
+    }
+  ],
+  "search_scope_completed": [
+    "MH official balneological assessments",
+    "Municipality of Pernik official SOZ and water-abstraction documentation",
+    "local official SOZ GeoJSON",
+    "3 km Belt I geometry check around inherited coordinate"
+  ],
+  "soz_geometry_result": {
+    "belt_i_features_within_3km": 0,
+    "safe_facility_separation_possible": false
+  },
+  "final_spatial_resolution": {
+    "result": "NO_SAFE_FACILITY_LEVEL_RESOLUTION",
+    "candidate_131": "TO_RESEARCH",
+    "candidate_132": "TO_RESEARCH",
+    "facility_coordinates_added": 0,
+    "unsafe_inference_prohibited": true
+  },
+  "updated_at": "2026-09-12T17:00:13.818552+00:00"
+}

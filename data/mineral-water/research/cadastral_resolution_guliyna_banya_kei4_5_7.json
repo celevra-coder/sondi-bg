@@ -1,0 +1,72 @@
+{
+  "deposit": "Гулийна баня",
+  "settlement": "Баня",
+  "municipality": "Разлог",
+  "resolved_facilities": [
+    {
+      "code": "KEI4",
+      "facility": "Каптиран естествен извор № 4",
+      "parcel": "02693.501.514",
+      "latitude": 41.878002935,
+      "longitude": 23.524666089
+    },
+    {
+      "code": "KEI5",
+      "facility": "Каптиран естествен извор № 5",
+      "parcel": "02693.501.514",
+      "latitude": 41.878002935,
+      "longitude": 23.524666089
+    },
+    {
+      "code": "KEI7",
+      "facility": "Каптиран естествен извор №7",
+      "parcel": "02693.501.5068",
+      "latitude": 41.880150591,
+      "longitude": 23.528795072
+    }
+  ],
+  "resolution_basis": {
+    "KEI4_KEI5": {
+      "official_plan_reference": "UPI III, quarter 49",
+      "current_cadastral_property_id": "02693.501.514",
+      "kais_parcel": "III",
+      "kais_quarter": "49",
+      "kais_oldident": "514"
+    },
+    "KEI7": {
+      "official_plan_reference": "UPI IV, quarter 29",
+      "current_cadastral_property_id": "02693.501.5068",
+      "kais_parcel": "IV",
+      "kais_quarter": "29",
+      "kais_oldident": "348"
+    }
+  },
+  "unresolved_facility": {
+    "facility": "Каптиран естествен извор № 2 Благата вода",
+    "source_property_reference": "00483",
+    "reason": "Legacy property identifier is ambiguous in current KAIS parcel data.",
+    "candidates": [
+      {
+        "cadastral_property_id": "02693.501.5052",
+        "oldident": "483",
+        "plan_parcel": "XIV",
+        "plan_quarter": "38"
+      },
+      {
+        "cadastral_property_id": "02693.501.483",
+        "oldident": "483",
+        "plan_parcel": "XVII",
+        "plan_quarter": "38"
+      },
+      {
+        "cadastral_property_id": "02693.58.483",
+        "oldident": "000483",
+        "plan_parcel": null,
+        "plan_quarter": null
+      }
+    ]
+  },
+  "coordinate_scope": "parcel representative points, not exact captage/spring coordinates",
+  "source_shapefile": "data/mineral-water/kais-parcels/02693/land_plots/поземлени имоти/Имоти (Polygon).shp",
+  "resolved_at": "2026-09-11T12:22:39+00:00"
+}
