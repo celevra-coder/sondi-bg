@@ -329,6 +329,11 @@ export default function ServicesPage() {
   const [providerSubmitting, setProviderSubmitting] =
     useState(false);
 
+  const [
+    providerFormAuthenticated,
+    setProviderFormAuthenticated,
+  ] = useState(false);
+
   const [providerMessage, setProviderMessage] =
     useState("");
 
@@ -379,6 +384,41 @@ export default function ServicesPage() {
       allBulgaria,
       providerRegions,
     ]);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadProviderFormAuth() {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      if (active) {
+        setProviderFormAuthenticated(
+          Boolean(user)
+        );
+      }
+    }
+
+    void loadProviderFormAuth();
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        if (active) {
+          setProviderFormAuthenticated(
+            Boolean(session?.user)
+          );
+        }
+      }
+    );
+
+    return () => {
+      active = false;
+      subscription.unsubscribe();
+    };
+  }, [supabase]);
 
   useEffect(() => {
     let active = true;
@@ -1834,22 +1874,24 @@ export default function ServicesPage() {
                   />
                 </div>
 
-                <div className="mt-6">
-                  <FieldLabel>
-                    {"\u041f\u0430\u0440\u043e\u043b\u0430 \u0437\u0430 \u0432\u0445\u043e\u0434"}
-                  </FieldLabel>
+                {!providerFormAuthenticated && (
+                  <div className="mt-6">
+                    <FieldLabel>
+                      {"\u041f\u0430\u0440\u043e\u043b\u0430 \u0437\u0430 \u0432\u0445\u043e\u0434"}
+                    </FieldLabel>
 
-                  <Input
-                    name="password"
-                    type="password"
-                    autoComplete="new-password"
-                    placeholder={"\u041c\u0438\u043d\u0438\u043c\u0443\u043c 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430"}
-                  />
+                    <Input
+                      name="password"
+                      type="password"
+                      autoComplete="new-password"
+                      placeholder={"\u041c\u0438\u043d\u0438\u043c\u0443\u043c 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430"}
+                    />
 
-                  <div className="mt-2 text-xs leading-5 text-[#789096]">
-                    {"\u0429\u0435 \u0438\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u0442\u0435 \u0442\u0430\u0437\u0438 \u043f\u0430\u0440\u043e\u043b\u0430 \u0437\u0430 \u0432\u0445\u043e\u0434 \u0432 SONDI.BG."}
+                    <div className="mt-2 text-xs leading-5 text-[#789096]">
+                      {"\u0429\u0435 \u0438\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u0442\u0435 \u0442\u0430\u0437\u0438 \u043f\u0430\u0440\u043e\u043b\u0430 \u0437\u0430 \u0432\u0445\u043e\u0434 \u0432 SONDI.BG."}
+                    </div>
                   </div>
-                </div>
+                )}
               </form>
             </div>
 
@@ -1980,7 +2022,9 @@ export default function ServicesPage() {
               >
                 {providerSubmitting
                   ? "\u0418\u0437\u043f\u0440\u0430\u0449\u0430\u043d\u0435..."
-                  : T.sendApproval}
+                  : providerFormAuthenticated
+                    ? "\u0418\u0437\u043f\u0440\u0430\u0442\u0438"
+                    : T.sendApproval}
               </button>
 
               <div className="mt-3 max-w-2xl text-center text-xs leading-5 text-[#789096]">
