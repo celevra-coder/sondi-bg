@@ -581,16 +581,16 @@ export default function AccountPage() {
         item => item.media_type === "video"
       ).length;
 
-    if (isImage && imageCount >= 6) {
+    if (isImage && imageCount >= 8) {
       setMediaError(
-        "\u041c\u043e\u0436\u0435 \u0434\u0430 \u043a\u0430\u0447\u0438\u0442\u0435 \u0434\u043e 6 \u0441\u043d\u0438\u043c\u043a\u0438."
+        "\u041c\u043e\u0436\u0435 \u0434\u0430 \u043a\u0430\u0447\u0438\u0442\u0435 \u0434\u043e 8 \u0441\u043d\u0438\u043c\u043a\u0438."
       );
       return;
     }
 
-    if (isVideo && videoCount >= 1) {
+    if (isVideo && videoCount >= 3) {
       setMediaError(
-        "\u041c\u043e\u0436\u0435 \u0434\u0430 \u043a\u0430\u0447\u0438\u0442\u0435 \u0434\u043e 1 \u0432\u0438\u0434\u0435\u043e."
+        "\u041c\u043e\u0436\u0435 \u0434\u0430 \u043a\u0430\u0447\u0438\u0442\u0435 \u0434\u043e 3 \u0432\u0438\u0434\u0435\u0430."
       );
       return;
     }

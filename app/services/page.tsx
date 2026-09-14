@@ -332,6 +332,16 @@ export default function ServicesPage() {
   const [providerMessage, setProviderMessage] =
     useState("");
 
+  const [
+    providerImageFiles,
+    setProviderImageFiles,
+  ] = useState<File[]>([]);
+
+  const [
+    providerVideoFiles,
+    setProviderVideoFiles,
+  ] = useState<File[]>([]);
+
   const [successPopup, setSuccessPopup] =
     useState<{
       title: string;
@@ -694,6 +704,128 @@ export default function ServicesPage() {
     });
   }
 
+  async function uploadProviderRegistrationMedia(
+    userId: string,
+    providerId: string,
+    imageFiles: File[],
+    videoFiles: File[]
+  ) {
+    const files = [
+      ...imageFiles.map(file => ({
+        file,
+        mediaType: "image" as const,
+      })),
+      ...videoFiles.map(file => ({
+        file,
+        mediaType: "video" as const,
+      })),
+    ];
+
+    const allowedImageTypes = [
+      "image/jpeg",
+      "image/png",
+      "image/webp",
+    ];
+
+    const allowedVideoTypes = [
+      "video/mp4",
+      "video/webm",
+      "video/quicktime",
+    ];
+
+    for (
+      let index = 0;
+      index < files.length;
+      index++
+    ) {
+      const {
+        file,
+        mediaType,
+      } = files[index];
+
+      const allowed =
+        mediaType === "image"
+          ? allowedImageTypes
+          : allowedVideoTypes;
+
+      if (!allowed.includes(file.type)) {
+        throw new Error(
+          mediaType === "image"
+            ? "\u0420\u0430\u0437\u0440\u0435\u0448\u0435\u043d\u0438 \u0441\u0430 JPEG, PNG \u0438 WebP."
+            : "\u0420\u0430\u0437\u0440\u0435\u0448\u0435\u043d\u0438 \u0441\u0430 MP4, WebM \u0438 MOV."
+        );
+      }
+
+      const limit =
+        mediaType === "image"
+          ? 10 * 1024 * 1024
+          : 100 * 1024 * 1024;
+
+      if (file.size > limit) {
+        throw new Error(
+          mediaType === "image"
+            ? "\u0412\u0441\u044f\u043a\u0430 \u0441\u043d\u0438\u043c\u043a\u0430 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0435 \u0434\u043e 10 MB."
+            : "\u0412\u0441\u044f\u043a\u043e \u0432\u0438\u0434\u0435\u043e \u043c\u043e\u0436\u0435 \u0434\u0430 \u0435 \u0434\u043e 100 MB."
+        );
+      }
+
+      const extension =
+        file.name.includes(".")
+          ? file.name
+              .split(".")
+              .pop()
+              ?.toLowerCase()
+              .replace(
+                /[^a-z0-9]/g,
+                ""
+              ) || "bin"
+          : "bin";
+
+      const storagePath =
+        `${userId}/${providerId}/${crypto.randomUUID()}.${extension}`;
+
+      const { error: uploadError } =
+        await supabase.storage
+          .from("provider-media")
+          .upload(
+            storagePath,
+            file,
+            {
+              cacheControl: "3600",
+              contentType: file.type,
+              upsert: false,
+            }
+          );
+
+      if (uploadError) {
+        throw new Error(
+          "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u043a\u0430\u0447\u0438\u043c \u0435\u0434\u0438\u043d \u043e\u0442 \u0444\u0430\u0439\u043b\u043e\u0432\u0435\u0442\u0435."
+        );
+      }
+
+      const { error: insertError } =
+        await supabase
+          .from("service_provider_media")
+          .insert({
+            provider_id: providerId,
+            media_type: mediaType,
+            storage_path: storagePath,
+            sort_order: index,
+            status: "pending",
+          });
+
+      if (insertError) {
+        await supabase.storage
+          .from("provider-media")
+          .remove([storagePath]);
+
+        throw new Error(
+          "\u0424\u0430\u0439\u043b\u044a\u0442 \u0431\u0435\u0448\u0435 \u043a\u0430\u0447\u0435\u043d, \u043d\u043e \u043d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u0437\u0430\u043f\u0430\u0437\u0438\u043c \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f\u0442\u0430 \u0437\u0430 \u043d\u0435\u0433\u043e."
+        );
+      }
+    }
+  }
+
   async function submitProvider(
     event: FormEvent<HTMLFormElement>
   ) {
@@ -744,6 +876,20 @@ export default function ServicesPage() {
     if (selectedServices.length === 0) {
       setProviderMessage(
         "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043f\u043e\u043d\u0435 \u0435\u0434\u043d\u0430 \u0443\u0441\u043b\u0443\u0433\u0430."
+      );
+      return;
+    }
+
+    if (providerImageFiles.length > 8) {
+      setProviderMessage(
+        "\u041c\u043e\u0436\u0435\u0442\u0435 \u0434\u0430 \u0434\u043e\u0431\u0430\u0432\u0438\u0442\u0435 \u0434\u043e 8 \u0441\u043d\u0438\u043c\u043a\u0438."
+      );
+      return;
+    }
+
+    if (providerVideoFiles.length > 3) {
+      setProviderMessage(
+        "\u041c\u043e\u0436\u0435\u0442\u0435 \u0434\u0430 \u0434\u043e\u0431\u0430\u0432\u0438\u0442\u0435 \u0434\u043e 3 \u0432\u0438\u0434\u0435\u0430."
       );
       return;
     }
@@ -806,18 +952,31 @@ export default function ServicesPage() {
     setProviderMessage("");
 
     try {
+      let providerId = "";
+      let mediaUserId = user?.id || "";
+
       if (user) {
-        const { error } = await supabase
+        const {
+          data: insertedProvider,
+          error,
+        } = await supabase
           .from("service_providers")
           .insert({
             owner_id: user.id,
             ...providerPayload,
             status: "pending",
-          });
+          })
+          .select("id")
+          .single();
 
-        if (error) {
-          throw new Error(error.message);
+        if (error || !insertedProvider) {
+          throw new Error(
+            error?.message ||
+              "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u0441\u044a\u0437\u0434\u0430\u0434\u0435\u043c \u043f\u0440\u043e\u0444\u0438\u043b\u0430."
+          );
         }
+
+        providerId = insertedProvider.id;
       } else {
         const response =
           await fetch("/api/provider-register", {
@@ -843,6 +1002,22 @@ export default function ServicesPage() {
           );
         }
 
+        providerId =
+          String(
+            result?.provider_id || ""
+          );
+
+        mediaUserId =
+          String(
+            result?.user_id || ""
+          );
+
+        if (!providerId || !mediaUserId) {
+          throw new Error(
+            "\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0435 \u0441\u044a\u0437\u0434\u0430\u0434\u0435\u043d, \u043d\u043e \u043b\u0438\u043f\u0441\u0432\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0437\u0430 \u043a\u0430\u0447\u0432\u0430\u043d\u0435 \u043d\u0430 \u0444\u0430\u0439\u043b\u043e\u0432\u0435\u0442\u0435."
+          );
+        }
+
         const { error: signInError } =
           await supabase.auth.signInWithPassword({
             email,
@@ -854,10 +1029,37 @@ export default function ServicesPage() {
             "provider automatic sign-in error",
             signInError
           );
+
+          if (
+            providerImageFiles.length > 0 ||
+            providerVideoFiles.length > 0
+          ) {
+            throw new Error(
+              "\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0435 \u0441\u044a\u0437\u0434\u0430\u0434\u0435\u043d, \u043d\u043e \u043d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u0432\u043b\u0435\u0437\u0435\u043c \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u043d\u043e, \u0437\u0430 \u0434\u0430 \u043a\u0430\u0447\u0438\u043c \u0444\u0430\u0439\u043b\u043e\u0432\u0435\u0442\u0435. \u041c\u043e\u0436\u0435\u0442\u0435 \u0434\u0430 \u0433\u0438 \u0434\u043e\u0431\u0430\u0432\u0438\u0442\u0435 \u0441\u043b\u0435\u0434 \u0432\u0445\u043e\u0434 \u043e\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u0430 \u0441\u0438."
+            );
+          }
         }
       }
 
+      if (
+        providerId &&
+        mediaUserId &&
+        (
+          providerImageFiles.length > 0 ||
+          providerVideoFiles.length > 0
+        )
+      ) {
+        await uploadProviderRegistrationMedia(
+          mediaUserId,
+          providerId,
+          providerImageFiles,
+          providerVideoFiles
+        );
+      }
+
       form.reset();
+      setProviderImageFiles([]);
+      setProviderVideoFiles([]);
       setAllBulgaria(false);
       setProviderRegions([]);
 
@@ -1683,11 +1885,35 @@ export default function ServicesPage() {
 
                 <input
                   type="file"
-                  accept="image/*"
+                  accept="image/jpeg,image/png,image/webp"
                   multiple
-                  disabled
-                  className="mt-4 block w-full text-sm text-[#6a8187] file:mr-4 file:rounded-xl file:border-0 file:bg-[#eaf4f2] file:px-4 file:py-2 file:font-semibold file:text-[#24634f]"
+                  onChange={event => {
+                    const files =
+                      Array.from(
+                        event.currentTarget.files || []
+                      );
+
+                    if (files.length > 8) {
+                      setProviderMessage(
+                        "\u041c\u043e\u0436\u0435\u0442\u0435 \u0434\u0430 \u0434\u043e\u0431\u0430\u0432\u0438\u0442\u0435 \u0434\u043e 8 \u0441\u043d\u0438\u043c\u043a\u0438."
+                      );
+                      event.currentTarget.value = "";
+                      setProviderImageFiles([]);
+                      return;
+                    }
+
+                    setProviderMessage("");
+                    setProviderImageFiles(files);
+                  }}
+                  className="mt-4 block w-full cursor-pointer rounded-2xl border border-[#b9d5d8] bg-white p-2 text-sm text-[#607980] transition hover:border-[#77aaa9] hover:bg-[#f7fbfb] file:mr-4 file:cursor-pointer file:rounded-xl file:border-0 file:bg-[#16825c] file:px-5 file:py-2.5 file:font-bold file:text-white file:transition file:hover:bg-[#126d4d]"
                 />
+
+                {providerImageFiles.length > 0 && (
+                  <div className="mt-2 text-xs font-semibold text-[#397061]">
+                    {"\u0418\u0437\u0431\u0440\u0430\u043d\u0438 \u0441\u043d\u0438\u043c\u043a\u0438:"}{" "}
+                    {providerImageFiles.length}
+                  </div>
+                )}
               </div>
 
               <div className="mt-4 rounded-2xl border border-dashed border-[#bfd6d9] bg-[#f7fbfb] p-5">
@@ -1709,15 +1935,39 @@ export default function ServicesPage() {
 
                 <input
                   type="file"
-                  accept="video/*"
+                  accept="video/mp4,video/webm,video/quicktime"
                   multiple
-                  disabled
-                  className="mt-4 block w-full text-sm text-[#6a8187] file:mr-4 file:rounded-xl file:border-0 file:bg-[#eaf4f2] file:px-4 file:py-2 file:font-semibold file:text-[#24634f]"
+                  onChange={event => {
+                    const files =
+                      Array.from(
+                        event.currentTarget.files || []
+                      );
+
+                    if (files.length > 3) {
+                      setProviderMessage(
+                        "\u041c\u043e\u0436\u0435\u0442\u0435 \u0434\u0430 \u0434\u043e\u0431\u0430\u0432\u0438\u0442\u0435 \u0434\u043e 3 \u0432\u0438\u0434\u0435\u0430."
+                      );
+                      event.currentTarget.value = "";
+                      setProviderVideoFiles([]);
+                      return;
+                    }
+
+                    setProviderMessage("");
+                    setProviderVideoFiles(files);
+                  }}
+                  className="mt-4 block w-full cursor-pointer rounded-2xl border border-[#b9d5d8] bg-white p-2 text-sm text-[#607980] transition hover:border-[#77aaa9] hover:bg-[#f7fbfb] file:mr-4 file:cursor-pointer file:rounded-xl file:border-0 file:bg-[#16825c] file:px-5 file:py-2.5 file:font-bold file:text-white file:transition file:hover:bg-[#126d4d]"
                 />
+
+                {providerVideoFiles.length > 0 && (
+                  <div className="mt-2 text-xs font-semibold text-[#397061]">
+                    {"\u0418\u0437\u0431\u0440\u0430\u043d\u0438 \u0432\u0438\u0434\u0435\u0430:"}{" "}
+                    {providerVideoFiles.length}
+                  </div>
+                )}
               </div>
 
               <div className="mt-4 text-xs leading-5 text-[#789096]">
-                {"\u041a\u0430\u0447\u0432\u0430\u043d\u0435\u0442\u043e \u0449\u0435 \u0431\u044a\u0434\u0435 \u0430\u043a\u0442\u0438\u0432\u0438\u0440\u0430\u043d\u043e \u0441\u043b\u0435\u0434 \u0441\u0432\u044a\u0440\u0437\u0432\u0430\u043d\u0435\u0442\u043e \u0441\u044a\u0441 \u0441\u0438\u0441\u0442\u0435\u043c\u0430\u0442\u0430 \u0437\u0430 \u0444\u0430\u0439\u043b\u043e\u0432\u0435."}
+                {"\u0421\u043d\u0438\u043c\u043a\u0438\u0442\u0435 \u0438 \u0432\u0438\u0434\u0435\u0430\u0442\u0430 \u0449\u0435 \u0431\u044a\u0434\u0430\u0442 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d\u0438 \u0437\u0430 \u043f\u0440\u0435\u0433\u043b\u0435\u0434 \u0437\u0430\u0435\u0434\u043d\u043e \u0441 \u043f\u0440\u043e\u0444\u0438\u043b\u0430. \u0414\u043e\u043f\u0443\u0441\u0442\u0438\u043c\u0438 \u0441\u0430 \u0434\u043e 8 \u0441\u043d\u0438\u043c\u043a\u0438 \u0438 \u0434\u043e 3 \u043a\u0440\u0430\u0442\u043a\u0438 \u0432\u0438\u0434\u0435\u0430."}
               </div>
             </aside>
 

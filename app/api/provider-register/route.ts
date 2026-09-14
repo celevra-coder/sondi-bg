@@ -200,7 +200,10 @@ export async function POST(request: Request) {
       );
     }
 
-    const { error: providerError } =
+    const {
+      data: providerCreated,
+      error: providerError,
+    } =
       await admin
         .from("service_providers")
         .insert({
@@ -237,9 +240,11 @@ export async function POST(request: Request) {
               body.presentation
             ) || null,
           status: "pending",
-        });
+        })
+        .select("id")
+        .single();
 
-    if (providerError) {
+    if (providerError || !providerCreated) {
       await rollbackUser();
 
       console.error(
@@ -258,6 +263,8 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       ok: true,
+      user_id: userId,
+      provider_id: providerCreated.id,
     });
   } catch (error) {
     console.error(
