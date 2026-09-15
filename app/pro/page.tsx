@@ -3951,6 +3951,117 @@ export default async function ProPage({
       ? professionalConclusionParts.join(" ")
       : "Няма достатъчно официални данни за професионално заключение.";
 
+  // WATER_RELIABILITY_V1
+  // Common national evidence-confidence logic for BG1-BG4.
+  // This measures the strength of the available evidence.
+  // It is not a guarantee for water, depth or yield.
+  const waterReliabilityHasDepthEvidence =
+    ordinaryStatistics?.depthMin != null &&
+    ordinaryStatistics?.depthMax != null;
+
+  const waterReliabilityHasStaticEvidence =
+    ordinaryStatistics?.staticLevelMin != null &&
+    ordinaryStatistics?.staticLevelMax != null;
+
+  const waterReliabilityHasLocalEvidence =
+    nearbyOrdinaryWellCount5Km > 0 ||
+    waterReliabilityHasDepthEvidence ||
+    waterReliabilityHasStaticEvidence;
+
+  let waterReliabilityScore = 0;
+  const waterReliabilityReasons: string[] = [];
+
+  if (nearbyOrdinaryWellCount1Km >= 2) {
+    waterReliabilityScore += 4;
+    waterReliabilityReasons.push(
+      "Има няколко регистрирани обикновени водовземни съоръжения в радиус 1 km."
+    );
+  } else if (nearbyOrdinaryWellCount1Km === 1) {
+    waterReliabilityScore += 3;
+    waterReliabilityReasons.push(
+      "Има регистрирано обикновено водовземно съоръжение в радиус 1 km."
+    );
+  } else if (nearbyOrdinaryWellCount3Km > 0) {
+    waterReliabilityScore += 2;
+    waterReliabilityReasons.push(
+      "Има регистрирани обикновени водовземни съоръжения в радиус 3 km."
+    );
+  } else if (nearbyOrdinaryWellCount5Km > 0) {
+    waterReliabilityScore += 1;
+    waterReliabilityReasons.push(
+      "Има регистрирани обикновени водовземни съоръжения в радиус 5 km."
+    );
+  }
+
+  if (
+    nearestOrdinaryWellDistanceKm != null &&
+    nearestOrdinaryWellDistanceKm <= 1
+  ) {
+    waterReliabilityScore += 1;
+  }
+
+  if (waterReliabilityHasDepthEvidence) {
+    waterReliabilityScore += 2;
+    waterReliabilityReasons.push(
+      "Налични са локални данни за дълбочини на съществуващи съоръжения."
+    );
+  }
+
+  if (waterReliabilityHasStaticEvidence) {
+    waterReliabilityScore += 1;
+    waterReliabilityReasons.push(
+      "Налични са данни за статични водни нива."
+    );
+  }
+
+  if (geologyAvailable) {
+    waterReliabilityScore += 2;
+    waterReliabilityReasons.push(
+      "За района има наличен геоложки и хидрогеоложки профил."
+    );
+  }
+
+  if (
+    nearestFaultDistanceKm != null &&
+    nearestFaultDistanceKm <= 1
+  ) {
+    waterReliabilityScore += 1;
+    waterReliabilityReasons.push(
+      "В близост е картографирана разломна структура като допълнителен структурен фактор."
+    );
+  }
+
+  let waterReliabilityLabel:
+    | "Висока"
+    | "Средна"
+    | "Ниска"
+    | "Недостатъчно локални данни";
+
+  let waterReliabilityText = "";
+
+  if (!waterReliabilityHasLocalEvidence) {
+    waterReliabilityLabel =
+      "Недостатъчно локални данни";
+    waterReliabilityText =
+      "Регионалната информация е налична, но липсват достатъчно близки регистрирани съоръжения или измервания, за да се даде надеждна локална оценка.";
+  } else if (waterReliabilityScore >= 8) {
+    waterReliabilityLabel = "Висока";
+    waterReliabilityText =
+      "Налични са няколко взаимно допълващи се локални и геоложки показателя за подземни води в района на избраната точка.";
+  } else if (waterReliabilityScore >= 4) {
+    waterReliabilityLabel = "Средна";
+    waterReliabilityText =
+      "Налични са положителни локални показатели, но доказателствената база не е достатъчно пълна за висока надеждност.";
+  } else {
+    waterReliabilityLabel = "Ниска";
+    waterReliabilityText =
+      "Наличните локални показатели са ограничени и оценката трябва да се приема с повишена несигурност.";
+  }
+
+  const waterReliabilityReasonText =
+    waterReliabilityReasons
+      .slice(0, 3)
+      .join(" ");
   const finalCardColors = {
     good: {
       background: "#eef7f5",
@@ -8413,7 +8524,75 @@ export default async function ProPage({
                 {proConclusionTitle}
               </div>
 
-              {professionalConclusionText}
+                            <div style={{
+                marginBottom: 16,
+                padding: "14px 15px",
+                borderRadius: 12,
+                background:
+                  waterReliabilityLabel === "Висока"
+                    ? "#eef7f5"
+                    : waterReliabilityLabel === "Средна"
+                      ? "#fff7e5"
+                      : "#f1f5f6",
+                border:
+                  waterReliabilityLabel === "Висока"
+                    ? "1px solid #cfe5de"
+                    : waterReliabilityLabel === "Средна"
+                      ? "1px solid #ecd7a6"
+                      : "1px solid #d7e1e3",
+              }}>
+                <div style={{
+                  fontSize: 12,
+                  fontWeight: 800,
+                  color: "#64767b",
+                  marginBottom: 5,
+                }}>
+                  Надеждност на оценката за наличие на подземна вода
+                </div>
+
+                <div style={{
+                  fontSize: 20,
+                  fontWeight: 900,
+                  color:
+                    waterReliabilityLabel === "Висока"
+                      ? "#27644f"
+                      : waterReliabilityLabel === "Средна"
+                        ? "#876018"
+                        : "#476168",
+                  marginBottom: 7,
+                }}>
+                  {waterReliabilityLabel}
+                </div>
+
+                <div style={{
+                  color: "#38535b",
+                  lineHeight: 1.6,
+                }}>
+                  {waterReliabilityText}
+                </div>
+
+                {waterReliabilityReasonText ? (
+                  <div style={{
+                    marginTop: 8,
+                    color: "#64767b",
+                    fontSize: 12,
+                    lineHeight: 1.55,
+                  }}>
+                    {waterReliabilityReasonText}
+                  </div>
+                ) : null}
+
+                <div style={{
+                  marginTop: 9,
+                  color: "#708187",
+                  fontSize: 11,
+                  lineHeight: 1.5,
+                }}>
+                  Оценката показва надеждността на наличните данни и не е
+                  гаранция за вода, точна дълбочина или дебит в конкретния имот.
+                </div>
+              </div>
+{professionalConclusionText}
             </div>
 
             <details style={{
