@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
+import { createAdminClient } from "@/lib/supabase-admin";
 import AdminServicesClient from "./AdminServicesClient";
 
 export default async function AdminServicesPage() {
@@ -117,6 +118,34 @@ export default async function AdminServicesPage() {
   const providers =
     Array.from(providerMap.values());
 
+  const admin = createAdminClient();
+
+  const providersWithLogos =
+    await Promise.all(
+      providers.map(async item => {
+        if (!item.logo_path) {
+          return {
+            ...item,
+            logo_url: "",
+          };
+        }
+
+        const { data } =
+          await admin.storage
+            .from("provider-media")
+            .createSignedUrl(
+              item.logo_path,
+              3600
+            );
+
+        return {
+          ...item,
+          logo_url:
+            data?.signedUrl || "",
+        };
+      })
+    );
+
   const providerMedia =
     await Promise.all(
       (mediaResult.data || []).map(
@@ -143,7 +172,7 @@ export default async function AdminServicesPage() {
       initialRequests={
         requestsResult.data || []
       }
-      initialProviders={providers}
+      initialProviders={providersWithLogos}
       initialMedia={providerMedia}
       initialHistory={
         historyResult.data || []

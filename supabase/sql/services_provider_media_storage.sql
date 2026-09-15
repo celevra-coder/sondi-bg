@@ -186,14 +186,23 @@ create policy "public can read approved provider media objects"
   to anon, authenticated
   using (
     bucket_id = 'provider-media'
-    and exists (
-      select 1
-      from public.service_provider_media m
-      join public.service_providers p
-        on p.id = m.provider_id
-      where
-        m.storage_path = name
-        and m.status = 'approved'
-        and p.status = 'approved'
+    and (
+      exists (
+        select 1
+        from public.service_provider_media m
+        join public.service_providers p
+          on p.id = m.provider_id
+        where
+          m.storage_path = name
+          and m.status = 'approved'
+          and p.status = 'approved'
+      )
+      or exists (
+        select 1
+        from public.service_providers p
+        where
+          p.logo_path = name
+          and p.status = 'approved'
+      )
     )
   );

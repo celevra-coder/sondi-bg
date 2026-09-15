@@ -114,6 +114,10 @@ create or replace function public.get_public_service_providers()
 returns table (
   id uuid,
   company_name text,
+  phone text,
+  email text,
+  website_or_facebook text,
+  logo_path text,
   services text[],
   work_regions text[],
   works_nationwide boolean,
@@ -133,6 +137,10 @@ as $$
   select
     p.id,
     p.company_name,
+    p.phone,
+    p.email,
+    p.website_or_facebook,
+    p.logo_path,
     p.services,
     p.work_regions,
     p.works_nationwide,

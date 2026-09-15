@@ -51,6 +51,7 @@ type ProviderProfile = {
   phone: string;
   email: string | null;
   website_or_facebook: string | null;
+  logo_path: string | null;
   services: string[];
   work_regions: string[];
   works_nationwide: boolean;
@@ -225,6 +226,15 @@ export default function AccountPage() {
   const [providerPresentation, setProviderPresentation] =
     useState("");
 
+  const [providerLogoUrl, setProviderLogoUrl] =
+    useState("");
+
+  const [providerLogoUploading, setProviderLogoUploading] =
+    useState(false);
+
+  const [providerLogoError, setProviderLogoError] =
+    useState("");
+
   const [providerMedia, setProviderMedia] =
     useState<ProviderMedia[]>([]);
 
@@ -384,7 +394,7 @@ export default function AccountPage() {
         await supabase
           .from("service_providers")
           .select(
-            "id, owner_id, company_name, phone, email, website_or_facebook, services, work_regions, works_nationwide, max_depth, diameters, drilling_method, equipment, presentation, status, created_at"
+            "id, owner_id, company_name, phone, email, website_or_facebook, logo_path, services, work_regions, works_nationwide, max_depth, diameters, drilling_method, equipment, presentation, status, created_at"
           )
           .eq("owner_id", userId)
           .maybeSingle();
@@ -412,8 +422,24 @@ export default function AccountPage() {
         (data || null) as ProviderProfile | null;
 
       setProviderProfile(profile);
+      setProviderLogoUrl("");
+      setProviderLogoError("");
 
       if (profile) {
+        if (profile.logo_path) {
+          const { data: signedLogo } =
+            await supabase.storage
+              .from("provider-media")
+              .createSignedUrl(
+                profile.logo_path,
+                3600
+              );
+
+          setProviderLogoUrl(
+            signedLogo?.signedUrl || ""
+          );
+        }
+
         const { data: mediaData, error: mediaLoadError } =
           await supabase
             .from("service_provider_media")
@@ -542,6 +568,187 @@ export default function AccountPage() {
         item => item.id !== requestId
       )
     );
+  }
+
+  async function uploadProviderLogo(
+    file: File | null
+  ) {
+    if (
+      !file ||
+      !providerProfile ||
+      providerLogoUploading
+    ) {
+      return;
+    }
+
+    setProviderLogoError("");
+
+    if (
+      ![
+        "image/jpeg",
+        "image/png",
+        "image/webp",
+      ].includes(file.type)
+    ) {
+      setProviderLogoError(
+        "\u041b\u043e\u0433\u043e\u0442\u043e \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0435 JPEG, PNG \u0438\u043b\u0438 WebP."
+      );
+      return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+      setProviderLogoError(
+        "\u041b\u043e\u0433\u043e\u0442\u043e \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0435 \u0434\u043e 5 MB."
+      );
+      return;
+    }
+
+    setProviderLogoUploading(true);
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) {
+      setProviderLogoUploading(false);
+      setProviderLogoError(
+        "\u041d\u044f\u043c\u0430 \u0430\u043a\u0442\u0438\u0432\u043d\u0430 \u0441\u0435\u0441\u0438\u044f."
+      );
+      return;
+    }
+
+    const extension =
+      file.name.split(".").pop()?.toLowerCase() ||
+      (file.type === "image/png"
+        ? "png"
+        : file.type === "image/webp"
+          ? "webp"
+          : "jpg");
+
+    const newPath =
+      `${user.id}/${providerProfile.id}/logo/${crypto.randomUUID()}.${extension}`;
+
+    const { error: uploadError } =
+      await supabase.storage
+        .from("provider-media")
+        .upload(newPath, file, {
+          cacheControl: "3600",
+          upsert: false,
+        });
+
+    if (uploadError) {
+      console.error(
+        "provider logo upload error",
+        uploadError
+      );
+      setProviderLogoUploading(false);
+      setProviderLogoError(
+        "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u043a\u0430\u0447\u0438\u043c \u043b\u043e\u0433\u043e\u0442\u043e."
+      );
+      return;
+    }
+
+    const oldPath =
+      providerProfile.logo_path || null;
+
+    const { data: updated, error: updateError } =
+      await supabase
+        .rpc(
+          "set_service_provider_logo",
+          {
+            new_logo_path: newPath,
+          }
+        )
+        .single();
+
+    if (updateError || !updated) {
+      console.error(
+        "provider logo path update error",
+        updateError
+      );
+
+      await supabase.storage
+        .from("provider-media")
+        .remove([newPath]);
+
+      setProviderLogoUploading(false);
+      setProviderLogoError(
+        "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u0437\u0430\u043f\u0430\u0437\u0438\u043c \u043b\u043e\u0433\u043e\u0442\u043e."
+      );
+      return;
+    }
+
+    if (oldPath) {
+      await supabase.storage
+        .from("provider-media")
+        .remove([oldPath]);
+    }
+
+    const { data: signed } =
+      await supabase.storage
+        .from("provider-media")
+        .createSignedUrl(
+          newPath,
+          3600
+        );
+
+    setProviderProfile(
+      updated as ProviderProfile
+    );
+
+    setProviderLogoUrl(
+      signed?.signedUrl || ""
+    );
+
+    setProviderLogoUploading(false);
+  }
+
+  async function deleteProviderLogo() {
+    if (
+      !providerProfile ||
+      !providerProfile.logo_path ||
+      providerLogoUploading
+    ) {
+      return;
+    }
+
+    setProviderLogoUploading(true);
+    setProviderLogoError("");
+
+    const oldPath =
+      providerProfile.logo_path;
+
+    const { data: updated, error: updateError } =
+      await supabase
+        .rpc(
+          "set_service_provider_logo",
+          {
+            new_logo_path: "",
+          }
+        )
+        .single();
+
+    if (updateError || !updated) {
+      console.error(
+        "provider logo remove path error",
+        updateError
+      );
+      setProviderLogoUploading(false);
+      setProviderLogoError(
+        "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u043f\u0440\u0435\u043c\u0430\u0445\u043d\u0435\u043c \u043b\u043e\u0433\u043e\u0442\u043e."
+      );
+      return;
+    }
+
+    await supabase.storage
+      .from("provider-media")
+      .remove([oldPath]);
+
+    setProviderProfile(
+      updated as ProviderProfile
+    );
+    setProviderLogoUrl("");
+    setProviderLogoUploading(false);
   }
 
   async function uploadProviderMedia(
@@ -896,7 +1103,7 @@ export default function AccountPage() {
         .eq("id", providerProfile.id)
         .eq("owner_id", userId)
         .select(
-          "id, owner_id, company_name, phone, email, website_or_facebook, services, work_regions, works_nationwide, max_depth, diameters, drilling_method, equipment, presentation, status, created_at"
+          "id, owner_id, company_name, phone, email, website_or_facebook, logo_path, services, work_regions, works_nationwide, max_depth, diameters, drilling_method, equipment, presentation, status, created_at"
         )
         .maybeSingle();
 
@@ -1344,10 +1551,28 @@ export default function AccountPage() {
                 {providerProfile && (
                   <div className="mt-6 rounded-[24px] border border-[#d9e7e9] bg-white p-5 shadow-[0_10px_35px_rgba(20,63,73,.06)] sm:p-6">
                     <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <h3 className="text-xl font-bold text-[#173f48]">
-                          {providerProfile.company_name}
-                        </h3>
+                      <div className="flex items-start gap-3">
+                        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#d7e6e8] bg-[#f8fbfb]">
+                          {providerLogoUrl ? (
+                            <img
+                              src={providerLogoUrl}
+                              alt={providerProfile.company_name}
+                              className="h-full w-full object-contain p-1"
+                            />
+                          ) : (
+                            <span className="text-2xl font-extrabold text-[#397061]">
+                              {providerProfile.company_name
+                                .trim()
+                                .charAt(0)
+                                .toUpperCase()}
+                            </span>
+                          )}
+                        </div>
+
+                        <div>
+                          <h3 className="text-xl font-bold text-[#173f48]">
+                            {providerProfile.company_name}
+                          </h3>
 
                         <div className="mt-2 flex flex-wrap gap-2">
                           <span
@@ -1370,6 +1595,7 @@ export default function AccountPage() {
                           )}
                         </div>
                       </div>
+                      </div>
 
                       {!providerEditing && (
                         <button
@@ -1382,6 +1608,71 @@ export default function AccountPage() {
                         >
                           {"\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u0430\u0439"}
                         </button>
+                      )}
+                    </div>
+
+                    <div className="mt-6 rounded-2xl border border-[#d9e7e9] bg-[#f8fbfb] p-4">
+                      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                        <div>
+                          <div className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#56858e]">
+                            {"\u0424\u0438\u0440\u043c\u0435\u043d\u043e \u043b\u043e\u0433\u043e"}
+                          </div>
+                          <p className="mt-1 text-xs text-[#71878d]">
+                            {"JPEG, PNG \u0438\u043b\u0438 WebP, \u0434\u043e 5 MB. \u041b\u043e\u0433\u043e\u0442\u043e \u043d\u0435 \u0432\u043b\u0438\u0437\u0430 \u0432 \u043b\u0438\u043c\u0438\u0442\u0430 \u0437\u0430 \u0441\u043d\u0438\u043c\u043a\u0438."}
+                          </p>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2">
+                          <label
+                            className={
+                              "inline-flex cursor-pointer items-center justify-center rounded-xl border border-[#b9d7dc] bg-white px-4 py-2.5 text-sm font-bold text-[#245d68] " +
+                              (providerLogoUploading
+                                ? "pointer-events-none opacity-50"
+                                : "")
+                            }
+                          >
+                            {providerLogoUploading
+                              ? "\u041a\u0430\u0447\u0432\u0430\u043d\u0435..."
+                              : providerProfile.logo_path
+                                ? "\u0421\u043c\u0435\u043d\u0438 \u043b\u043e\u0433\u043e"
+                                : "\u041a\u0430\u0447\u0438 \u043b\u043e\u0433\u043e"}
+
+                            <input
+                              type="file"
+                              accept="image/jpeg,image/png,image/webp"
+                              disabled={providerLogoUploading}
+                              className="hidden"
+                              onChange={event => {
+                                const file =
+                                  event.target.files?.[0] || null;
+
+                                void uploadProviderLogo(file);
+
+                                event.currentTarget.value =
+                                  "";
+                              }}
+                            />
+                          </label>
+
+                          {providerProfile.logo_path && (
+                            <button
+                              type="button"
+                              disabled={providerLogoUploading}
+                              onClick={() =>
+                                void deleteProviderLogo()
+                              }
+                              className="rounded-xl border border-[#efd1d1] bg-white px-4 py-2.5 text-sm font-bold text-[#9a3f3f] disabled:opacity-50"
+                            >
+                              {"\u041f\u0440\u0435\u043c\u0430\u0445\u043d\u0438"}
+                            </button>
+                          )}
+                        </div>
+                      </div>
+
+                      {providerLogoError && (
+                        <div className="mt-3 rounded-xl border border-[#efb5b5] bg-[#fff1f1] px-4 py-3 text-sm font-semibold text-[#a12626]">
+                          {providerLogoError}
+                        </div>
                       )}
                     </div>
 
@@ -1598,7 +1889,7 @@ export default function AccountPage() {
                           </h4>
 
                           <p className="mt-1 text-xs leading-5 text-[#71878d]">
-                            {"\u041f\u043e \u0436\u0435\u043b\u0430\u043d\u0438\u0435: \u0434\u043e 6 \u0441\u043d\u0438\u043c\u043a\u0438 \u0438 1 \u0432\u0438\u0434\u0435\u043e. \u041d\u043e\u0432\u0438\u0442\u0435 \u0444\u0430\u0439\u043b\u043e\u0432\u0435 \u0441\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u0442 \u0441\u043b\u0435\u0434 \u043e\u0434\u043e\u0431\u0440\u0435\u043d\u0438\u0435."}
+                            {"\u041f\u043e \u0436\u0435\u043b\u0430\u043d\u0438\u0435: \u0434\u043e 8 \u0441\u043d\u0438\u043c\u043a\u0438 \u0438 3 \u0432\u0438\u0434\u0435\u0430. \u041d\u043e\u0432\u0438\u0442\u0435 \u0444\u0430\u0439\u043b\u043e\u0432\u0435 \u0441\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u0442 \u0441\u043b\u0435\u0434 \u043e\u0434\u043e\u0431\u0440\u0435\u043d\u0438\u0435."}
                           </p>
                         </div>
 

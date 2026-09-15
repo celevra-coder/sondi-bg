@@ -203,3 +203,65 @@ create trigger user_profiles_set_updated_at
 before update on public.user_profiles
 for each row
 execute function public.set_services_updated_at();
+
+-- ============================================================
+-- PROVIDER: UPDATE OWN LOGO ONLY
+-- Keeps approved profile status unchanged.
+-- ============================================================
+
+create or replace function public.set_service_provider_logo(
+  new_logo_path text
+)
+returns setof public.service_providers
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  provider_uuid uuid;
+  normalized_logo_path text;
+  required_prefix text;
+begin
+  if auth.uid() is null then
+    raise exception 'Authentication required';
+  end if;
+
+  select p.id
+  into provider_uuid
+  from public.service_providers p
+  where p.owner_id = auth.uid();
+
+  if provider_uuid is null then
+    raise exception 'Provider profile not found';
+  end if;
+
+  normalized_logo_path := nullif(trim(new_logo_path), '');
+
+  if normalized_logo_path is not null then
+    required_prefix :=
+      auth.uid()::text || '/' ||
+      provider_uuid::text || '/logo/';
+
+    if left(
+      normalized_logo_path,
+      char_length(required_prefix)
+    ) <> required_prefix then
+      raise exception 'Invalid provider logo path';
+    end if;
+  end if;
+
+  return query
+  update public.service_providers
+  set logo_path = normalized_logo_path
+  where
+    id = provider_uuid
+    and owner_id = auth.uid()
+  returning *;
+end;
+$$;
+
+revoke all on function public.set_service_provider_logo(text)
+  from public;
+
+grant execute on function public.set_service_provider_logo(text)
+  to authenticated;

@@ -142,6 +142,11 @@ type Tab = "find" | "request" | "provider";
 type ProviderRecord = {
   id: string;
   company_name: string;
+  phone: string;
+  email: string | null;
+  website_or_facebook: string | null;
+  logo_path: string | null;
+  logo_url?: string;
   services: string[];
   work_regions: string[];
   works_nationwide: boolean;
@@ -152,13 +157,6 @@ type ProviderRecord = {
   presentation: string | null;
   created_at: string;
 };
-
-type ProviderContacts = {
-  phone: string;
-  email: string | null;
-  website_or_facebook: string | null;
-};
-
 
 type PublicProviderMedia = {
   id: string;
@@ -301,19 +299,6 @@ export default function ServicesPage() {
     setSelectedProviderMediaError,
   ] = useState("");
 
-  const [
-    selectedProviderAuthenticated,
-    setSelectedProviderAuthenticated,
-  ] = useState(false);
-
-
-  const [
-    selectedProviderContacts,
-    setSelectedProviderContacts,
-  ] = useState<ProviderContacts | null>(
-    null
-  );
-
   const [providersLoading, setProvidersLoading] =
     useState(true);
 
@@ -346,6 +331,11 @@ export default function ServicesPage() {
     providerVideoFiles,
     setProviderVideoFiles,
   ] = useState<File[]>([]);
+
+  const [
+    providerLogoFile,
+    setProviderLogoFile,
+  ] = useState<File | null>(null);
 
   const [successPopup, setSuccessPopup] =
     useState<{
@@ -441,7 +431,32 @@ export default function ServicesPage() {
           "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u0437\u0430\u0440\u0435\u0434\u0438\u043c \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u0438\u0442\u0435."
         );
       } else {
-        setProviders((data || []) as ProviderRecord[]);
+        const rows = (data || []) as ProviderRecord[];
+
+        const withLogos = await Promise.all(
+          rows.map(async item => {
+            if (!item.logo_path) {
+              return item;
+            }
+
+            const { data: signed } =
+              await supabase.storage
+                .from("provider-media")
+                .createSignedUrl(
+                  item.logo_path,
+                  3600
+                );
+
+            return {
+              ...item,
+              logo_url:
+                signed?.signedUrl || "",
+            };
+          })
+        );
+
+        if (!active) return;
+        setProviders(withLogos);
       }
 
       setProvidersLoading(false);
@@ -489,45 +504,6 @@ export default function ServicesPage() {
     setSelectedProviderMedia([]);
     setSelectedProviderMediaError("");
     setSelectedProviderMediaLoading(true);
-
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    setSelectedProviderAuthenticated(
-      Boolean(user)
-    );
-
-    setSelectedProviderContacts(null);
-
-    if (user) {
-      const {
-        data: contactsData,
-        error: contactsError,
-      } = await supabase.rpc(
-        "get_service_provider_contacts",
-        {
-          provider_uuid: provider.id,
-        }
-      );
-
-      if (contactsError) {
-        console.error(
-          "provider contacts load error",
-          contactsError
-        );
-      } else {
-        const contacts =
-          Array.isArray(contactsData) &&
-          contactsData.length > 0
-            ? contactsData[0]
-            : null;
-
-        setSelectedProviderContacts(
-          contacts as ProviderContacts | null
-        );
-      }
-    }
 
     const { data, error } =
       await supabase
@@ -594,8 +570,6 @@ export default function ServicesPage() {
     setSelectedProviderMedia([]);
     setSelectedProviderMediaError("");
     setSelectedProviderMediaLoading(false);
-    setSelectedProviderAuthenticated(false);
-    setSelectedProviderContacts(null);
   }
 
   function goToAuth(path: "/login" | "/register") {
@@ -742,6 +716,82 @@ export default function ServicesPage() {
       text:
         "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u0438\u043c! \u0412\u0430\u0448\u0430\u0442\u0430 \u0437\u0430\u044f\u0432\u043a\u0430 \u0435 \u043f\u0440\u0438\u0435\u0442\u0430 \u0438 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430 \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
     });
+  }
+
+  async function uploadProviderRegistrationLogo(
+    userId: string,
+    providerId: string,
+    file: File
+  ) {
+    const allowedTypes = [
+      "image/jpeg",
+      "image/png",
+      "image/webp",
+    ];
+
+    if (!allowedTypes.includes(file.type)) {
+      throw new Error(
+        "\u041b\u043e\u0433\u043e\u0442\u043e \u0442\u0440\u044f\u0431\u0432\u0432\u0430 \u0434\u0430 \u0435 JPEG, PNG \u0438\u043b\u0438 WebP."
+      );
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+      throw new Error(
+        "\u041b\u043e\u0433\u043e\u0442\u043e \u043c\u043e\u0436\u0435 \u0434\u0430 \u0435 \u0434\u043e 5 MB."
+      );
+    }
+
+    const extension =
+      file.name.includes(".")
+        ? file.name
+            .split(".")
+            .pop()
+            ?.toLowerCase()
+            .replace(
+              /[^a-z0-9]/g,
+              ""
+            ) || "bin"
+        : "bin";
+
+    const storagePath =
+      `${userId}/${providerId}/logo/${crypto.randomUUID()}.${extension}`;
+
+    const { error: uploadError } =
+      await supabase.storage
+        .from("provider-media")
+        .upload(
+          storagePath,
+          file,
+          {
+            cacheControl: "3600",
+            contentType: file.type,
+            upsert: false,
+          }
+        );
+
+    if (uploadError) {
+      throw new Error(
+        "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u043a\u0430\u0447\u0438\u043c \u0444\u0438\u0440\u043c\u0435\u043d\u043e\u0442\u043e \u043b\u043e\u0433\u043e."
+      );
+    }
+
+    const { error: logoError } =
+      await supabase.rpc(
+        "set_service_provider_logo",
+        {
+          new_logo_path: storagePath,
+        }
+      );
+
+    if (logoError) {
+      await supabase.storage
+        .from("provider-media")
+        .remove([storagePath]);
+
+      throw new Error(
+        "\u041b\u043e\u0433\u043e\u0442\u043e \u0431\u0435\u0448\u0435 \u043a\u0430\u0447\u0435\u043d\u043e, \u043d\u043e \u043d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u0433\u043e \u0441\u0432\u044a\u0440\u0436\u0435\u043c \u0441 \u043f\u0440\u043e\u0444\u0438\u043b\u0430."
+      );
+    }
   }
 
   async function uploadProviderRegistrationMedia(
@@ -1071,6 +1121,7 @@ export default function ServicesPage() {
           );
 
           if (
+            providerLogoFile ||
             providerImageFiles.length > 0 ||
             providerVideoFiles.length > 0
           ) {
@@ -1079,6 +1130,18 @@ export default function ServicesPage() {
             );
           }
         }
+      }
+
+      if (
+        providerId &&
+        mediaUserId &&
+        providerLogoFile
+      ) {
+        await uploadProviderRegistrationLogo(
+          mediaUserId,
+          providerId,
+          providerLogoFile
+        );
       }
 
       if (
@@ -1098,6 +1161,7 @@ export default function ServicesPage() {
       }
 
       form.reset();
+      setProviderLogoFile(null);
       setProviderImageFiles([]);
       setProviderVideoFiles([]);
       setAllBulgaria(false);
@@ -1337,15 +1401,34 @@ export default function ServicesPage() {
                         className="rounded-[22px] border border-[#d9e7e9] bg-[#fbfdfd] p-5 sm:p-6"
                       >
                         <div className="flex flex-wrap items-start justify-between gap-4">
-                          <div>
-                            <h3 className="text-xl font-bold text-[#173f48]">
-                              {item.company_name}
-                            </h3>
+                          <div className="flex min-w-0 items-start gap-3">
+                            <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#d7e6e8] bg-white shadow-sm">
+                              {item.logo_url ? (
+                                <img
+                                  src={item.logo_url}
+                                  alt={item.company_name}
+                                  className="h-full w-full object-contain p-1"
+                                />
+                              ) : (
+                                <span className="text-xl font-extrabold text-[#397061]">
+                                  {item.company_name
+                                    .trim()
+                                    .charAt(0)
+                                    .toUpperCase()}
+                                </span>
+                              )}
+                            </div>
 
-                            <div className="mt-2 text-sm font-semibold text-[#397061]">
-                              {item.works_nationwide
-                                ? T.wholeCountry
-                                : item.work_regions.join(", ")}
+                            <div className="min-w-0">
+                              <h3 className="text-xl font-bold text-[#173f48]">
+                                {item.company_name}
+                              </h3>
+
+                              <div className="mt-2 text-sm font-semibold text-[#397061]">
+                                {item.works_nationwide
+                                  ? T.wholeCountry
+                                  : item.work_regions.join(", ")}
+                              </div>
                             </div>
                           </div>
 
@@ -1365,6 +1448,41 @@ export default function ServicesPage() {
                               {s}
                             </span>
                           ))}
+                        </div>
+
+                        <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 rounded-2xl border border-[#dbe9e6] bg-[#eef7f4] px-4 py-3 text-sm">
+                          <a
+                            href={`tel:${item.phone}`}
+                            className="font-bold text-[#167454] hover:underline"
+                          >
+                            {"\u0422\u0435\u043b: "}{item.phone}
+                          </a>
+
+                          {item.email && (
+                            <a
+                              href={`mailto:${item.email}`}
+                              className="font-semibold text-[#356b76] hover:underline"
+                            >
+                              {item.email}
+                            </a>
+                          )}
+
+                          {item.website_or_facebook && (
+                            <a
+                              href={
+                                /^https?:\/\//i.test(
+                                  item.website_or_facebook
+                                )
+                                  ? item.website_or_facebook
+                                  : `https://${item.website_or_facebook}`
+                              }
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="break-all font-semibold text-[#356b76] hover:underline"
+                            >
+                              {item.website_or_facebook}
+                            </a>
+                          )}
                         </div>
 
                         {item.presentation && (
@@ -1896,7 +2014,78 @@ export default function ServicesPage() {
             </div>
 
             <aside className="rounded-[26px] border border-[#d9e7e9] bg-white p-6">
-              <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#6a9299]">
+              <div className="rounded-2xl border border-dashed border-[#bfd6d9] bg-[#f7fbfb] p-5">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#e5f2f2] text-xl">
+                    {"\ud83c\udfe2"}
+                  </div>
+
+                  <div>
+                    <div className="font-bold text-[#244b53]">
+                      {"\u0424\u0438\u0440\u043c\u0435\u043d\u043e \u043b\u043e\u0433\u043e"}
+                    </div>
+
+                    <div className="text-xs text-[#789096]">
+                      {"JPEG, PNG \u0438\u043b\u0438 WebP, \u0434\u043e 5 MB"}
+                    </div>
+                  </div>
+                </div>
+
+                <input
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp"
+                  onChange={event => {
+                    const file =
+                      event.currentTarget.files?.[0] || null;
+
+                    if (!file) {
+                      setProviderLogoFile(null);
+                      return;
+                    }
+
+                    const allowedTypes = [
+                      "image/jpeg",
+                      "image/png",
+                      "image/webp",
+                    ];
+
+                    if (!allowedTypes.includes(file.type)) {
+                      setProviderMessage(
+                        "\u041b\u043e\u0433\u043e\u0442\u043e \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0435 JPEG, PNG \u0438\u043b\u0438 WebP."
+                      );
+                      event.currentTarget.value = "";
+                      setProviderLogoFile(null);
+                      return;
+                    }
+
+                    if (file.size > 5 * 1024 * 1024) {
+                      setProviderMessage(
+                        "\u041b\u043e\u0433\u043e\u0442\u043e \u043c\u043e\u0436\u0435 \u0434\u0430 \u0435 \u0434\u043e 5 MB."
+                      );
+                      event.currentTarget.value = "";
+                      setProviderLogoFile(null);
+                      return;
+                    }
+
+                    setProviderMessage("");
+                    setProviderLogoFile(file);
+                  }}
+                  className="mt-4 block w-full cursor-pointer rounded-2xl border border-[#b9d5d8] bg-white p-2 text-sm text-[#607980] transition hover:border-[#77aaa9] hover:bg-[#f7fbfb] file:mr-4 file:cursor-pointer file:rounded-xl file:border-0 file:bg-[#16825c] file:px-5 file:py-2.5 file:font-bold file:text-white file:transition file:hover:bg-[#126d4d]"
+                />
+
+                {providerLogoFile && (
+                  <div className="mt-2 break-all text-xs font-semibold text-[#397061]">
+                    {"\u0418\u0437\u0431\u0440\u0430\u043d\u043e \u043b\u043e\u0433\u043e:"}{" "}
+                    {providerLogoFile.name}
+                  </div>
+                )}
+
+                <div className="mt-2 text-xs leading-5 text-[#789096]">
+                  {"\u041b\u043e\u0433\u043e\u0442\u043e \u0435 \u043e\u0442\u0434\u0435\u043b\u043d\u043e \u043e\u0442 \u0433\u0430\u043b\u0435\u0440\u0438\u044f\u0442\u0430 \u0438 \u043d\u0435 \u0432\u043b\u0438\u0437\u0430 \u0432 \u043b\u0438\u043c\u0438\u0442\u0430 \u0437\u0430 8 \u0441\u043d\u0438\u043c\u043a\u0438."}
+                </div>
+              </div>
+
+              <div className="mt-7 text-xs font-bold uppercase tracking-[0.18em] text-[#6a9299]">
                 {"\u0413\u0410\u041b\u0415\u0420\u0418\u042f"}
               </div>
 
@@ -2152,9 +2341,28 @@ export default function ServicesPage() {
                   {"\u0418\u0417\u041f\u042a\u041b\u041d\u0418\u0422\u0415\u041b"}
                 </div>
 
-                <h2 className="mt-2 text-3xl font-bold text-[#173f48] sm:text-4xl">
-                  {selectedProvider.company_name}
-                </h2>
+                <div className="mt-3 flex items-center gap-4">
+                  <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#d7e6e8] bg-white shadow-sm">
+                    {selectedProvider.logo_url ? (
+                      <img
+                        src={selectedProvider.logo_url}
+                        alt={selectedProvider.company_name}
+                        className="h-full w-full object-contain p-1"
+                      />
+                    ) : (
+                      <span className="text-3xl font-extrabold text-[#397061]">
+                        {selectedProvider.company_name
+                          .trim()
+                          .charAt(0)
+                          .toUpperCase()}
+                      </span>
+                    )}
+                  </div>
+
+                  <h2 className="text-3xl font-bold text-[#173f48] sm:text-4xl">
+                    {selectedProvider.company_name}
+                  </h2>
+                </div>
 
                 <div className="mt-3 inline-flex rounded-full border border-[#b9ddcf] bg-[#eef8f4] px-3 py-1.5 text-xs font-bold text-[#176344]">
                   {"\u041e\u0434\u043e\u0431\u0440\u0435\u043d \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b"}
@@ -2180,6 +2388,47 @@ export default function ServicesPage() {
                           {providerService}
                         </span>
                       )
+                    )}
+                  </div>
+                </div>
+
+                <div className="mt-6 rounded-2xl border border-[#dbe9e6] bg-[#eef7f4] p-5">
+                  <div className="text-xs font-bold uppercase tracking-[0.12em] text-[#789096]">
+                    {"\u041a\u043e\u043d\u0442\u0430\u043a\u0442"}
+                  </div>
+
+                  <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+                    <a
+                      href={`tel:${selectedProvider.phone}`}
+                      className="font-bold text-[#167454] hover:underline"
+                    >
+                      {"\u0422\u0435\u043b: "}{selectedProvider.phone}
+                    </a>
+
+                    {selectedProvider.email && (
+                      <a
+                        href={`mailto:${selectedProvider.email}`}
+                        className="font-semibold text-[#356b76] hover:underline"
+                      >
+                        {selectedProvider.email}
+                      </a>
+                    )}
+
+                    {selectedProvider.website_or_facebook && (
+                      <a
+                        href={
+                          /^https?:\/\//i.test(
+                            selectedProvider.website_or_facebook
+                          )
+                            ? selectedProvider.website_or_facebook
+                            : `https://${selectedProvider.website_or_facebook}`
+                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="break-all font-semibold text-[#356b76] hover:underline"
+                      >
+                        {selectedProvider.website_or_facebook}
+                      </a>
                     )}
                   </div>
                 </div>
@@ -2317,59 +2566,6 @@ export default function ServicesPage() {
                   ) : (
                     <div className="mt-4 text-sm text-[#71878d]">
                       {"\u041d\u044f\u043c\u0430 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438 \u0441\u043d\u0438\u043c\u043a\u0438 \u0438\u043b\u0438 \u0432\u0438\u0434\u0435\u043e."}
-                    </div>
-                  )}
-                </div>
-
-                <div className="mt-8 border-t border-[#e2ecee] pt-7">
-                  <div className="text-xs font-bold uppercase tracking-[0.12em] text-[#789096]">
-                    {"\u041a\u043e\u043d\u0442\u0430\u043a\u0442"}
-                  </div>
-
-                  {selectedProviderAuthenticated &&
-                  selectedProviderContacts ? (
-                    <div className="mt-4 rounded-2xl bg-[#eef7f4] p-5">
-                      <div className="flex flex-wrap gap-5 text-sm">
-                        <a
-                          href={`tel:${selectedProviderContacts?.phone || ""}`}
-                          className="font-bold text-[#167454]"
-                        >
-                          {selectedProviderContacts?.phone}
-                        </a>
-
-                        {selectedProviderContacts?.email && (
-                          <a
-                            href={`mailto:${selectedProviderContacts.email}`}
-                            className="font-semibold text-[#356b76]"
-                          >
-                            {selectedProviderContacts.email}
-                          </a>
-                        )}
-
-                        {selectedProviderContacts?.website_or_facebook && (
-                          <span className="font-semibold text-[#356b76]">
-                            {
-                              selectedProviderContacts.website_or_facebook
-                            }
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="mt-4 rounded-2xl border border-[#d9e7e9] bg-[#f7fbfb] p-5 text-sm text-[#607980]">
-                      {"\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0438\u0442\u0435 \u0441\u0430 \u0434\u043e\u0441\u0442\u044a\u043f\u043d\u0438 \u0441\u043b\u0435\u0434 \u0432\u0445\u043e\u0434 \u0432 SONDI.BG."}
-
-                      <div className="mt-4">
-                        <button
-                          type="button"
-                          onClick={() =>
-                            goToAuth("/login")
-                          }
-                          className="inline-flex rounded-xl bg-[#173f48] px-4 py-2.5 font-bold text-white"
-                        >
-                          {"\u0412\u043b\u0435\u0437 \u0438\u043b\u0438 \u0441\u0435 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u0439"}
-                        </button>
-                      </div>
                     </div>
                   )}
                 </div>

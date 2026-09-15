@@ -17,6 +17,7 @@ create table if not exists public.service_providers (
   phone text not null,
   email text,
   website_or_facebook text,
+  logo_path text,
 
   services text[] not null default '{}',
   work_regions text[] not null default '{}',
@@ -61,6 +62,9 @@ create index if not exists service_providers_work_regions_gin_idx
 
 create index if not exists service_providers_services_gin_idx
   on public.service_providers using gin (services);
+
+alter table public.service_providers
+  add column if not exists logo_path text;
 
 alter table public.service_providers
   enable row level security;

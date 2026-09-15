@@ -33,6 +33,8 @@ type ServiceProvider = {
   phone: string;
   email: string | null;
   website_or_facebook: string | null;
+  logo_path: string | null;
+  logo_url?: string;
   services: string[];
   work_regions: string[];
   works_nationwide: boolean;
@@ -897,12 +899,23 @@ export default function AdminServicesClient({
                   className="rounded-[26px] border border-[#d9e7e9] bg-white p-6 shadow-sm sm:p-7"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-4">
-                    <div>
-                      <h2 className="text-xl font-bold text-[#173f48]">
-                        {item.company_name}
-                      </h2>
+                    <div className="flex items-start gap-4">
+                      {item.logo_url && (
+                        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#d7e6e8] bg-[#f8fbfb]">
+                          <img
+                            src={item.logo_url}
+                            alt={item.company_name}
+                            className="h-full w-full object-contain p-1"
+                          />
+                        </div>
+                      )}
 
-                      <div className="mt-2 flex flex-wrap gap-4 text-sm">
+                      <div>
+                        <h2 className="text-xl font-bold text-[#173f48]">
+                          {item.company_name}
+                        </h2>
+
+                        <div className="mt-2 flex flex-wrap gap-4 text-sm">
                         <a
                           href={`tel:${item.phone}`}
                           className="font-bold text-[#167454]"
@@ -924,6 +937,7 @@ export default function AdminServicesClient({
                             {item.website_or_facebook}
                           </span>
                         )}
+                        </div>
                       </div>
                     </div>
 
