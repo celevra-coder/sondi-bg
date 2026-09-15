@@ -13,10 +13,10 @@ const heroFont = Cormorant_Garamond({
 
 export default function Home() {
   return (
-    <main className="relative min-h-[100svh] overflow-hidden bg-black text-white">
+    <main className="relative h-[100svh] overflow-hidden overscroll-none bg-black text-white">
       <video
         className="
-          absolute inset-0 h-full w-full object-cover
+          pointer-events-none absolute inset-0 h-full w-full object-cover
           object-[52%_center]
           sm:object-center
         "
@@ -34,7 +34,7 @@ export default function Home() {
 
       <section
         className="
-          relative z-10 flex min-h-[100svh] items-center justify-center
+          relative z-10 flex h-full min-h-0 items-center justify-center
           px-5 py-10
           sm:px-7
           md:px-10 md:py-14
@@ -104,7 +104,7 @@ export default function Home() {
             <Link
               href="/explore"
               className="
-                inline-flex min-w-[150px]
+                relative z-20 inline-flex min-w-[150px] touch-manipulation
                 items-center justify-center
                 rounded-full border border-white/40
                 bg-white/10
