@@ -66,6 +66,7 @@ const T = {
   intro:
     "\u041d\u0430\u043c\u0435\u0440\u0435\u0442\u0435 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b \u0437\u0430 \u0432\u0430\u0448\u0438\u044f \u0440\u0430\u0439\u043e\u043d, \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u0439\u0442\u0435 \u043a\u0430\u043a\u0432\u0430 \u0443\u0441\u043b\u0443\u0433\u0430 \u0442\u044a\u0440\u0441\u0438\u0442\u0435 \u0438\u043b\u0438 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0435\u0442\u0435 \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u043d\u043e \u0441\u0432\u043e\u0438\u0442\u0435 \u0441\u043e\u043d\u0434\u0430\u0436\u043d\u0438 \u0443\u0441\u043b\u0443\u0433\u0438 \u0432 SONDI.BG.",
   find: "\u041d\u0430\u043c\u0435\u0440\u0438 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b",
+  opportunities: "\u0422\u044a\u0440\u0441\u044f\u0442 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b",
   request: "\u0422\u044a\u0440\u0441\u044f \u0443\u0441\u043b\u0443\u0433\u0430",
   provider: "\u041f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u043c \u0443\u0441\u043b\u0443\u0433\u0438",
   region: "\u0420\u0435\u0433\u0438\u043e\u043d",
@@ -137,7 +138,7 @@ const T = {
     "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f\u0442\u0430 \u0438 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0435\u0442\u043e \u0449\u0435 \u0431\u044a\u0434\u0430\u0442 \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u043d\u0438. \u0424\u043e\u0440\u043c\u0430\u0442\u0430 \u0449\u0435 \u0431\u044a\u0434\u0435 \u0430\u043a\u0442\u0438\u0432\u0438\u0440\u0430\u043d\u0430 \u0441\u043b\u0435\u0434 \u0441\u0432\u044a\u0440\u0437\u0432\u0430\u043d\u0435\u0442\u043e \u0441\u044a\u0441 Supabase.",
 };
 
-type Tab = "find" | "request" | "provider";
+type Tab = "find" | "opportunities" | "request" | "provider";
 
 type ProviderRecord = {
   id: string;
@@ -155,6 +156,20 @@ type ProviderRecord = {
   drilling_method: string | null;
   equipment: string | null;
   presentation: string | null;
+  created_at: string;
+};
+
+type ServiceRequestRecord = {
+  id: string;
+  service: string;
+  region: string;
+  locality: string | null;
+  desired_period: string | null;
+  estimated_depth: string | null;
+  machine_access: string | null;
+  description: string;
+  contact_phone: string | null;
+  contact_email: string | null;
   created_at: string;
 };
 
@@ -226,6 +241,7 @@ export default function ServicesPage() {
       ).get("tab");
 
     if (
+      value === "opportunities" ||
       value === "request" ||
       value === "provider"
     ) {
@@ -275,6 +291,21 @@ export default function ServicesPage() {
 
   const [providers, setProviders] =
     useState<ProviderRecord[]>([]);
+
+  const [publicRequests, setPublicRequests] =
+    useState<ServiceRequestRecord[]>([]);
+
+  const [publicRequestsLoading, setPublicRequestsLoading] =
+    useState(true);
+
+  const [publicRequestsError, setPublicRequestsError] =
+    useState("");
+
+  const [requestListRegion, setRequestListRegion] =
+    useState("");
+
+  const [requestListService, setRequestListService] =
+    useState("");
 
 
   const [
@@ -468,6 +499,64 @@ export default function ServicesPage() {
       active = false;
     };
   }, [supabase]);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadPublicRequests() {
+      setPublicRequestsLoading(true);
+      setPublicRequestsError("");
+
+      const { data, error } =
+        await supabase.rpc(
+          "get_public_service_requests"
+        );
+
+      if (!active) return;
+
+      if (error) {
+        console.error(
+          "public service requests load error",
+          error
+        );
+
+        setPublicRequests([]);
+        setPublicRequestsError(
+          "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u0437\u0430\u0440\u0435\u0434\u0438\u043c \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0438\u0442\u0435 \u043e\u0431\u044f\u0432\u0438."
+        );
+      } else {
+        setPublicRequests(
+          (data || []) as ServiceRequestRecord[]
+        );
+      }
+
+      setPublicRequestsLoading(false);
+    }
+
+    void loadPublicRequests();
+
+    return () => {
+      active = false;
+    };
+  }, [supabase]);
+
+  const filteredPublicRequests = useMemo(() => {
+    return publicRequests.filter(item => {
+      const regionMatches =
+        !requestListRegion ||
+        item.region === requestListRegion;
+
+      const serviceMatches =
+        !requestListService ||
+        item.service === requestListService;
+
+      return regionMatches && serviceMatches;
+    });
+  }, [
+    publicRequests,
+    requestListRegion,
+    requestListService,
+  ]);
 
   const filteredProviders = useMemo(() => {
     if (!hasSearched) {
@@ -1250,6 +1339,10 @@ export default function ServicesPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               {tabButton("find", T.find)}
               {tabButton(
+                "opportunities",
+                T.opportunities
+              )}
+              {tabButton(
                 "request",
                 T.request
               )}
@@ -1525,6 +1618,212 @@ export default function ServicesPage() {
                     >
                       {T.addFree}
                     </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {tab === "opportunities" && (
+          <section className="mt-8">
+            <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
+              <aside className="h-fit rounded-[26px] border border-[#d9e7e9] bg-white p-6 shadow-sm">
+                <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#6a9299]">
+                  {"\u0424\u0418\u041b\u0422\u0420\u0418"}
+                </div>
+
+                <h2 className="mt-2 text-2xl font-bold text-[#173f48]">
+                  {"\u0422\u044a\u0440\u0441\u044f\u0442 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b"}
+                </h2>
+
+                <p className="mt-2 text-sm leading-6 text-[#6a8187]">
+                  {"\u0412\u0438\u0436\u0442\u0435 \u043a\u044a\u0434\u0435 \u0438 \u0437\u0430 \u043a\u0430\u043a\u0432\u0430 \u0443\u0441\u043b\u0443\u0433\u0430 \u0441\u0435 \u0442\u044a\u0440\u0441\u0438 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b."}
+                </p>
+
+                <div className="mt-6">
+                  <FieldLabel>{T.region}</FieldLabel>
+                  <Select
+                    value={requestListRegion}
+                    onChange={event =>
+                      setRequestListRegion(
+                        event.target.value
+                      )
+                    }
+                  >
+                    <option value="">
+                      {T.allRegions}
+                    </option>
+
+                    {REGIONS.map((item, index) => (
+                      <option
+                        value={item}
+                        key={`request-filter-region-${index}`}
+                      >
+                        {item}
+                      </option>
+                    ))}
+                  </Select>
+                </div>
+
+                <div className="mt-5">
+                  <FieldLabel>{T.service}</FieldLabel>
+                  <Select
+                    value={requestListService}
+                    onChange={event =>
+                      setRequestListService(
+                        event.target.value
+                      )
+                    }
+                  >
+                    <option value="">
+                      {T.allServices}
+                    </option>
+
+                    {SERVICES.map((item, index) => (
+                      <option
+                        value={item}
+                        key={`request-filter-service-${index}`}
+                      >
+                        {item}
+                      </option>
+                    ))}
+                  </Select>
+                </div>
+              </aside>
+
+              <div className="rounded-[26px] border border-[#d9e7e9] bg-white p-6 sm:p-8">
+                <div className="flex flex-wrap items-end justify-between gap-4">
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#6a9299]">
+                      {"\u0410\u041a\u0422\u0418\u0412\u041d\u0418 \u041e\u0411\u042f\u0412\u0418"}
+                    </div>
+
+                    <h2 className="mt-2 text-2xl font-bold text-[#173f48]">
+                      {"\u0422\u044a\u0440\u0441\u044f\u0442 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b"}
+                    </h2>
+                  </div>
+
+                  <div className="text-sm text-[#73898e]">
+                    {filteredPublicRequests.length}
+                    {" "}
+                    {filteredPublicRequests.length === 1
+                      ? "\u043e\u0431\u044f\u0432\u0430"
+                      : "\u043e\u0431\u044f\u0432\u0438"}
+                  </div>
+                </div>
+
+                {publicRequestsLoading ? (
+                  <div className="mt-8 rounded-[22px] bg-[#f7fbfb] px-6 py-12 text-center text-sm text-[#6a8187]">
+                    {"\u0417\u0430\u0440\u0435\u0436\u0434\u0430\u043d\u0435..."}
+                  </div>
+                ) : publicRequestsError ? (
+                  <div className="mt-8 rounded-[22px] border border-[#efd6d6] bg-[#fff8f8] px-6 py-8 text-center text-sm text-[#934b4b]">
+                    {publicRequestsError}
+                  </div>
+                ) : filteredPublicRequests.length === 0 ? (
+                  <div className="mt-8 rounded-[22px] border border-dashed border-[#bfd6d9] bg-[#f7fbfb] px-6 py-12 text-center">
+                    <h3 className="text-xl font-bold text-[#234951]">
+                      {"\u0412 \u043c\u043e\u043c\u0435\u043d\u0442\u0430 \u043d\u044f\u043c\u0430 \u043e\u0431\u044f\u0432\u0438 \u043f\u043e \u0442\u0435\u0437\u0438 \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u0438"}
+                    </h3>
+                  </div>
+                ) : (
+                  <div className="mt-8 grid gap-4">
+                    {filteredPublicRequests.map(item => (
+                      <article
+                        key={item.id}
+                        className="rounded-[22px] border border-[#d9e7e9] bg-[#fbfdfd] p-5 sm:p-6"
+                      >
+                        <div className="flex flex-wrap items-start justify-between gap-4">
+                          <div>
+                            <h3 className="text-xl font-bold text-[#173f48]">
+                              {item.service}
+                            </h3>
+
+                            <div className="mt-2 flex flex-wrap gap-2 text-sm font-semibold text-[#397061]">
+                              <span>{item.region}</span>
+
+                              {item.locality && (
+                                <>
+                                  <span>?</span>
+                                  <span>
+                                    {item.locality}
+                                  </span>
+                                </>
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="rounded-full border border-[#cce1dc] bg-[#edf7f4] px-3 py-1.5 text-xs font-bold text-[#28634f]">
+                            {"\u0422\u044a\u0440\u0441\u0438 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b"}
+                          </div>
+                        </div>
+
+                        <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                          {item.desired_period && (
+                            <div className="rounded-xl bg-[#f4f8f9] p-3">
+                              <div className="text-xs font-bold text-[#789096]">
+                                {"\u0416\u0435\u043b\u0430\u043d \u043f\u0435\u0440\u0438\u043e\u0434"}
+                              </div>
+                              <div className="mt-1 text-sm font-semibold text-[#405c63]">
+                                {item.desired_period}
+                              </div>
+                            </div>
+                          )}
+
+                          {item.estimated_depth && (
+                            <div className="rounded-xl bg-[#f4f8f9] p-3">
+                              <div className="text-xs font-bold text-[#789096]">
+                                {"\u041e\u0440\u0438\u0435\u043d\u0442\u0438\u0440\u043e\u0432\u044a\u0447\u043d\u0430 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430"}
+                              </div>
+                              <div className="mt-1 text-sm font-semibold text-[#405c63]">
+                                {item.estimated_depth}
+                              </div>
+                            </div>
+                          )}
+
+                          {item.machine_access && (
+                            <div className="rounded-xl bg-[#f4f8f9] p-3">
+                              <div className="text-xs font-bold text-[#789096]">
+                                {"\u0414\u043e\u0441\u0442\u044a\u043f \u0437\u0430 \u043c\u0430\u0448\u0438\u043d\u0430"}
+                              </div>
+                              <div className="mt-1 text-sm font-semibold text-[#405c63]">
+                                {item.machine_access === "yes"
+                                  ? "\u0414\u0430"
+                                  : item.machine_access === "limited"
+                                    ? "\u041e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d"
+                                    : "\u041d\u0435 \u0435 \u0443\u0442\u043e\u0447\u043d\u0435\u043d\u043e"}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        <p className="mt-5 whitespace-pre-wrap text-sm leading-7 text-[#526d74]">
+                          {item.description}
+                        </p>
+
+                        <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 rounded-2xl border border-[#dbe9e6] bg-[#eef7f4] px-4 py-3 text-sm">
+                          {item.contact_phone && (
+                            <a
+                              href={`tel:${item.contact_phone}`}
+                              className="font-bold text-[#167454] hover:underline"
+                            >
+                              {"\u0422\u0435\u043b: "}
+                              {item.contact_phone}
+                            </a>
+                          )}
+
+                          {item.contact_email && (
+                            <a
+                              href={`mailto:${item.contact_email}`}
+                              className="font-semibold text-[#356b76] hover:underline"
+                            >
+                              {item.contact_email}
+                            </a>
+                          )}
+                        </div>
+                      </article>
+                    ))}
                   </div>
                 )}
               </div>

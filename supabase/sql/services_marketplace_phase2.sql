@@ -107,7 +107,7 @@ grant execute on function public.get_public_service_providers()
 
 -- ------------------------------------------------------------
 -- 5. SAFE PUBLIC CLIENT REQUEST LIST
--- No phone or email.
+-- Approved request contacts are included.
 -- ------------------------------------------------------------
 
 create or replace function public.get_public_service_requests()
@@ -120,6 +120,8 @@ returns table (
   estimated_depth text,
   machine_access text,
   description text,
+  contact_phone text,
+  contact_email text,
   created_at timestamptz
 )
 language sql
@@ -136,6 +138,8 @@ as $$
     r.estimated_depth,
     r.machine_access,
     r.description,
+    r.contact_phone,
+    r.contact_email,
     r.created_at
   from public.service_requests r
   where r.status = 'approved'
