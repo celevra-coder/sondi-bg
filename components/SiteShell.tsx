@@ -50,6 +50,7 @@ export default function SiteShell({
 }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileSectionOpen, setMobileSectionOpen] = useState<string | null>(null);
   const [headerOpen, setHeaderOpen] = useState(false);
   const [supabase] = useState(() => createClient());
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -408,29 +409,84 @@ const [authReady, setAuthReady] = useState(false);
                 {"\u0423\u0441\u043b\u0443\u0433\u0438"}
               </Link>
 
-              {menus.map(menu => (
-                <div
-                  key={`mobile-${menu.label}`}
-                  className="border-t border-[#d7e9ed] pt-4"
-                >
-                  <div className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#3f8898]">
-                    {menu.label}
-                  </div>
+              {menus.map(menu => {
+                const isOpen =
+                  mobileSectionOpen === menu.label;
 
-                  <div className="grid gap-1.5 pl-2">
-                    {menu.items.map(([label, href]) => (
-                      <Link
-                        key={`mobile-${href}`}
-                        href={href}
-                        onClick={() => setMobileOpen(false)}
-                        className="rounded-xl px-3 py-2.5 leading-5 text-[#355863] transition hover:bg-[#e3f3f6]"
+                return (
+                  <div
+                    key={`mobile-${menu.label}`}
+                    className="border-t border-[#d7e9ed] pt-3"
+                  >
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setMobileSectionOpen(
+                          isOpen
+                            ? null
+                            : menu.label
+                        )
+                      }
+                      className="flex w-full items-center justify-between rounded-xl px-2 py-3 text-left transition hover:bg-[#e7f4f7]"
+                      aria-expanded={isOpen}
+                    >
+                      <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#3f8898]">
+                        {menu.label}
+                      </span>
+
+                      <span
+                        className={[
+                          "flex h-7 w-7 items-center justify-center rounded-full border border-[#bddce3] bg-white text-sm text-[#28798b] transition-transform duration-200",
+                          isOpen
+                            ? "rotate-180"
+                            : "",
+                        ].join(" ")}
+                        aria-hidden="true"
                       >
-                        {label}
-                      </Link>
-                    ))}
+                        {"\u2304"}
+                      </span>
+                    </button>
+
+                    {isOpen && (
+                      <div className="mt-1 grid gap-1.5 pb-2 pl-2">
+                        {menu.items.map(
+                          ([label, href]) => (
+                            <Link
+                              key={`mobile-${href}`}
+                              href={href}
+                              onClick={() => {
+                                setMobileOpen(false);
+                                setMobileSectionOpen(null);
+                              }}
+                              className="flex items-center justify-between gap-4 rounded-xl px-3 py-3 leading-5 text-[#355863] transition hover:bg-[#e3f3f6]"
+                            >
+                              <span>
+                                {label}
+                              </span>
+
+                              <span
+                                className={[
+                                  "shrink-0",
+                                  menu.label ===
+                                  "\u0420\u0410\u0417\u0428\u0418\u0420\u0415\u041d\u0418 \u0410\u041d\u0410\u041b\u0418\u0417\u0418"
+                                    ? "flex h-6 w-6 items-center justify-center rounded-full bg-[#e3f3ed] text-sm font-bold text-[#19805f]"
+                                    : "text-base text-[#65a4b2]",
+                                ].join(" ")}
+                                aria-hidden="true"
+                              >
+                                {menu.label ===
+                                "\u0420\u0410\u0417\u0428\u0418\u0420\u0415\u041d\u0418 \u0410\u041d\u0410\u041b\u0418\u0417\u0418"
+                                  ? "\u2713"
+                                  : "\u2192"}
+                              </span>
+                            </Link>
+                          )
+                        )}
+                      </div>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
 
               <div className="border-t border-[#d7e9ed] pt-4">
                 <div className="grid gap-4">
