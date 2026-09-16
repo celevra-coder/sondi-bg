@@ -7,43 +7,41 @@ import { useEffect, useState } from "react";
 
 const menus = [
   {
-    label: "СОНДАЖИ",
+    label: "\u0421\u041e\u041d\u0414\u0410\u0416\u0418",
     items: [
-      ["Преди да направите сондаж", "/drilling"],
-      ["Избор на място", "/drilling/location"],
-      ["Дълбочина и дебит", "/drilling/depth"],
-      ["Водни нива", "/drilling/water-levels"],
-      ["Помпи и оборудване", "/drilling/equipment"],
+      ["\u041f\u0440\u0435\u0434\u0438 \u0434\u0430 \u043d\u0430\u043f\u0440\u0430\u0432\u0438\u0442\u0435 \u0441\u043e\u043d\u0434\u0430\u0436", "/drilling"],
+      ["\u0418\u0437\u0431\u043e\u0440 \u043d\u0430 \u043c\u044f\u0441\u0442\u043e", "/drilling/location"],
+      ["\u0414\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430 \u0438 \u0434\u0435\u0431\u0438\u0442", "/drilling/depth"],
+      ["\u0412\u043e\u0434\u043d\u0438 \u043d\u0438\u0432\u0430", "/drilling/water-levels"],
+      ["\u041f\u043e\u043c\u043f\u0438 \u0438 \u043e\u0431\u043e\u0440\u0443\u0434\u0432\u0430\u043d\u0435", "/drilling/equipment"],
     ],
   },
   {
-    label: "SONDI EXPERT",
+    label: "\u0420\u0410\u0417\u0428\u0418\u0420\u0415\u041d\u0418 \u0410\u041d\u0410\u041b\u0418\u0417\u0418",
     items: [
-      ["Анализ по координати", "/analysis"],
-      ["EXPERT карта", "/map"],
-      ["Профили на водни тела", "/groundwater/bodies"],
-      ["Мониторинг и данни", "/monitoring"],
-      ["Професионални отчети", "/pro"],
-      ["Официални източници", "/sources"],
+      ["\u0420\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u0434\u0435\u0439\u043d\u043e\u0441\u0442 \u043e\u043a\u043e\u043b\u043e \u043b\u043e\u043a\u0430\u0446\u0438\u044f", "/map"],
+      ["\u0413\u0435\u043e\u043b\u043e\u0433\u0438\u044f \u0438 \u0432\u043e\u0434\u043d\u0438 \u0442\u0435\u043b\u0430", "/groundwater/bodies"],
+      ["\u041c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433 \u0438 \u0432\u043e\u0434\u043d\u0438 \u0434\u0430\u043d\u043d\u0438", "/monitoring"],
+      ["\u0421\u043e\u043d\u0434\u0430\u0436\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437", "/pro"],
+      ["\u0412\u0435\u0440\u043e\u044f\u0442\u043d\u043e\u0441\u0442 \u0437\u0430 \u0432\u043e\u0434\u0430 \u0432 \u0442\u043e\u0447\u043a\u0430\u0442\u0430", "/analysis"],
     ],
   },
 ];
 
 
 const expertDescriptions: Record<string, string> = {
-  "/analysis":
-    "\u041f\u0440\u043e\u0444\u0435\u0441\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437 \u043d\u0430 \u043c\u044f\u0441\u0442\u043e\u0442\u043e, \u0433\u0435\u043e\u043b\u043e\u0433\u0438\u044f\u0442\u0430 \u0438 \u0443\u0441\u043b\u043e\u0432\u0438\u044f\u0442\u0430 \u0437\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435",
   "/map":
-    "\u0420\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u0438 \u0441\u043b\u043e\u0435\u0432\u0435 \u0437\u0430 \u0433\u0435\u043e\u043b\u043e\u0433\u0438\u044f, \u0432\u043e\u0434\u043d\u0438 \u0442\u0435\u043b\u0430, \u0441\u043e\u043d\u0434\u0430\u0436\u0438, \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433 \u0438 \u0440\u0438\u0441\u043a",
+    "\u0420\u0430\u0437\u043b\u043e\u043c\u043d\u0430 \u043c\u0440\u0435\u0436\u0430 \u0438 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0435\u043d \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442 \u043e\u043a\u043e\u043b\u043e \u0438\u0437\u0431\u0440\u0430\u043d\u0430\u0442\u0430 \u043b\u043e\u043a\u0430\u0446\u0438\u044f",
   "/groundwater/bodies":
-    "\u041f\u043e\u0434\u0440\u043e\u0431\u043d\u0430 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430 \u043d\u0430 \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0430\u0442\u0430 \u0441\u0440\u0435\u0434\u0430, \u0440\u0435\u0441\u0443\u0440\u0441\u0430 \u0438 \u0441\u044a\u0441\u0442\u043e\u044f\u043d\u0438\u0435\u0442\u043e",
+    "\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0430 \u0441\u0440\u0435\u0434\u0430, \u0432\u043e\u0434\u043e\u043d\u043e\u0441\u043d\u0438 \u0442\u0435\u043b\u0430, \u0440\u0435\u0441\u0443\u0440\u0441 \u0438 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0430 \u043d\u0430 \u0440\u0430\u0439\u043e\u043d\u0430",
   "/monitoring":
-    "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0438\u0437\u043c\u0435\u0440\u0432\u0430\u043d\u0438\u044f, \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0432\u0430\u043d\u0438 \u0442\u043e\u0447\u043a\u0438 \u0438 \u0440\u0435\u0430\u043b\u0435\u043d \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442 \u0437\u0430 \u0440\u0430\u0439\u043e\u043d\u0430",
+    "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u043e\u0432\u0438 \u0442\u043e\u0447\u043a\u0438, \u0438\u0437\u043c\u0435\u0440\u0432\u0430\u043d\u0438\u044f \u0438 \u0432\u043e\u0434\u043d\u0438 \u0434\u0430\u043d\u043d\u0438",
   "/pro":
-    "\u0413\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u0430\u043d\u0430\u043b\u0438\u0437, \u043e\u0446\u0435\u043d\u043a\u0430 \u043d\u0430 \u0442\u0435\u0440\u0435\u043d\u0430 \u0438 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0438 \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438 \u0437\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435",
-  "/sources":
-    "\u041f\u0440\u043e\u0438\u0437\u0445\u043e\u0434 \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u0438\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u043d\u0438\u0442\u0435 \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u043d\u0438 \u0434\u0430\u043d\u043d\u0438",
+    "\u041f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0441\u043e\u043d\u0434\u0430\u0436\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437 \u0441 \u0440\u0438\u0441\u043a\u043e\u0432\u0435, \u0442\u0435\u0440\u0435\u043d\u043d\u0438 \u0443\u0441\u043b\u043e\u0432\u0438\u044f \u0438 \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438",
+  "/analysis":
+    "\u041f\u043e\u0434\u0440\u043e\u0431\u043d\u043e \u0437\u0430\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u0437\u0430 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0430 \u0442\u043e\u0447\u043a\u0430 \u0438 \u043e\u0446\u0435\u043d\u043a\u0430 \u043d\u0430 \u0432\u0435\u0440\u043e\u044f\u0442\u043d\u043e\u0441\u0442\u0442\u0430 \u0437\u0430 \u043f\u043e\u0434\u0437\u0435\u043c\u043d\u0430 \u0432\u043e\u0434\u0430",
 };
+
 
 export default function SiteShell({
   children,
@@ -253,12 +251,12 @@ const [authReady, setAuthReady] = useState(false);
                   <span className="text-[8px]">▼</span>
                 </button>
 
-                {menu.label === "SONDI EXPERT" ? (
+                {menu.label === "\u0420\u0410\u0417\u0428\u0418\u0420\u0415\u041d\u0418 \u0410\u041d\u0410\u041b\u0418\u0417\u0418" ? (
                   <div className="pointer-events-none absolute left-1/2 top-[72px] w-[690px] -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="border border-[#cde5eb] bg-[#f8fdfe] p-3 shadow-[0_22px_60px_rgba(29,77,90,.16)]">
                       <div className="mb-3 px-2 pt-1">
                         <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3f8898]">
-                          SONDI EXPERT
+                          {"\u0420\u0410\u0417\u0428\u0418\u0420\u0415\u041d\u0418 \u0410\u041d\u0410\u041b\u0418\u0417\u0418"}
                         </div>
                         <div className="mt-1 text-[12px] text-[#718a91]">
                           {"\u041f\u043e\u0432\u0435\u0447\u0435 \u0434\u0430\u043d\u043d\u0438 \u0438 \u043f\u043e-\u0434\u044a\u043b\u0431\u043e\u043a \u043f\u043e\u0433\u043b\u0435\u0434 \u0432\u044a\u0440\u0445\u0443 \u0438\u0437\u0431\u0440\u0430\u043d\u043e\u0442\u043e \u043c\u044f\u0441\u0442\u043e"}
@@ -384,60 +382,143 @@ const [authReady, setAuthReady] = useState(false);
         </div>
 
         {mobileOpen && (
-          <div className="border-t border-[#cde5eb] bg-[#f5fbfd] px-7 py-6 xl:hidden">
-            <div className="grid gap-4 text-sm">
-              <Link href="/explore">Начало</Link>
-              <Link href="/map">Карта</Link>
-              <Link href="/drilling">Сондажи</Link>
-              <Link href="/pro">Професионалисти</Link>
-              <Link href="/knowledge">Знания</Link>
-              <Link href="/water">{"\u041f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u0438"}</Link>
-              <Link href="/about">За нас</Link>
+          <div className="max-h-[calc(100vh-86px)] overflow-y-auto border-t border-[#cde5eb] bg-[#f5fbfd] px-7 py-6 xl:hidden">
+            <div className="grid gap-5 text-sm">
+              <Link
+                href="/explore"
+                onClick={() => setMobileOpen(false)}
+                className="font-medium text-[#294e59]"
+              >
+                {"\u041d\u0430\u0447\u0430\u043b\u043e"}
+              </Link>
+
+              <Link
+                href="/map"
+                onClick={() => setMobileOpen(false)}
+                className="font-medium text-[#294e59]"
+              >
+                {"\u041a\u0430\u0440\u0442\u0430"}
+              </Link>
+
+              <Link
+                href="/services"
+                onClick={() => setMobileOpen(false)}
+                className="font-medium text-[#294e59]"
+              >
+                {"\u0423\u0441\u043b\u0443\u0433\u0438"}
+              </Link>
+
+              {menus.map(menu => (
+                <div
+                  key={`mobile-${menu.label}`}
+                  className="border-t border-[#d7e9ed] pt-4"
+                >
+                  <div className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#3f8898]">
+                    {menu.label}
+                  </div>
+
+                  <div className="grid gap-1.5 pl-2">
+                    {menu.items.map(([label, href]) => (
+                      <Link
+                        key={`mobile-${href}`}
+                        href={href}
+                        onClick={() => setMobileOpen(false)}
+                        className="rounded-xl px-3 py-2.5 leading-5 text-[#355863] transition hover:bg-[#e3f3f6]"
+                      >
+                        {label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              <div className="border-t border-[#d7e9ed] pt-4">
+                <div className="grid gap-4">
+                  <Link
+                    href="/knowledge"
+                    onClick={() => setMobileOpen(false)}
+                    className="font-medium text-[#294e59]"
+                  >
+                    {"\u0417\u043d\u0430\u043d\u0438\u044f"}
+                  </Link>
+
+                  <Link
+                    href="/water"
+                    onClick={() => setMobileOpen(false)}
+                    className="font-medium text-[#294e59]"
+                  >
+                    {"\u041f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u0438"}
+                  </Link>
+
+                  <Link
+                    href="/about"
+                    onClick={() => setMobileOpen(false)}
+                    className="font-medium text-[#294e59]"
+                  >
+                    {"\u0417\u0430 \u043d\u0430\u0441"}
+                  </Link>
+                </div>
+              </div>
+
               {authReady && (
-                isAuthenticated ? (
-                  <>
-                    <Link
-                      href={isAdmin ? "/admin/services" : "/account"}
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {"Профил"}
-                    </Link>
+                <div className="border-t border-[#d7e9ed] pt-4">
+                  {isAuthenticated ? (
+                    <div className="grid gap-4">
+                      <Link
+                        href={
+                          isAdmin
+                            ? "/admin/services"
+                            : "/account"
+                        }
+                        onClick={() =>
+                          setMobileOpen(false)
+                        }
+                        className="font-medium text-[#294e59]"
+                      >
+                        {"\u041f\u0440\u043e\u0444\u0438\u043b"}
+                      </Link>
 
-                    <button
-                      type="button"
-                      onClick={() => void handleSignOut()}
-                      className="text-left"
-                    >
-                      {"Изход"}
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <Link
-                      href="/login"
-                      onClick={() => {
-                        rememberAuthReturn();
-                        setMobileOpen(false);
-                      }}
-                    >
-                      {"Вход"}
-                    </Link>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          void handleSignOut()
+                        }
+                        className="text-left font-medium text-[#294e59]"
+                      >
+                        {"\u0418\u0437\u0445\u043e\u0434"}
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="grid gap-4">
+                      <Link
+                        href="/login"
+                        onClick={() => {
+                          rememberAuthReturn();
+                          setMobileOpen(false);
+                        }}
+                        className="font-medium text-[#294e59]"
+                      >
+                        {"\u0412\u0445\u043e\u0434"}
+                      </Link>
 
-                    <Link
-                      href="/register"
-                      onClick={() => {
-                        rememberAuthReturn();
-                        setMobileOpen(false);
-                      }}
-                    >
-                      {"Регистрация"}
-                    </Link>
-                  </>
-                )
+                      <Link
+                        href="/register"
+                        onClick={() => {
+                          rememberAuthReturn();
+                          setMobileOpen(false);
+                        }}
+                        className="inline-flex w-fit rounded-full bg-[#177f98] px-5 py-3 text-xs font-semibold text-white"
+                      >
+                        {"\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f"}
+                      </Link>
+                    </div>
+                  )}
+                </div>
               )}
             </div>
           </div>
         )}
+
       </header>
 
       <div className="flex-1">{children}</div>
