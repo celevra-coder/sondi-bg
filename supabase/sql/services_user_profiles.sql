@@ -148,6 +148,48 @@ create policy "users can delete own service requests"
   using (owner_id = auth.uid());
 
 
+
+-- ============================================================
+-- CLIENT: MARK OWN REQUEST AS MATCHED THROUGH SONDI.BG
+-- ============================================================
+
+create or replace function public.mark_service_request_matched(
+  request_uuid uuid
+)
+returns setof public.service_requests
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if auth.uid() is null then
+    raise exception 'Authentication required';
+  end if;
+
+  return query
+  update public.service_requests
+  set
+    status = 'matched',
+    updated_at = now()
+  where
+    id = request_uuid
+    and owner_id = auth.uid()
+    and status = 'approved'
+  returning *;
+
+  if not found then
+    raise exception 'Request not found or cannot be marked as matched';
+  end if;
+end;
+$$;
+
+revoke all on function public.mark_service_request_matched(uuid)
+  from public;
+
+grant execute on function public.mark_service_request_matched(uuid)
+  to authenticated;
+
+
 -- ============================================================
 -- PROVIDER: ONE PROFESSIONAL PROFILE PER USER
 -- ============================================================

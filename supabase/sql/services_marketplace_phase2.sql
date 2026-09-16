@@ -110,6 +110,8 @@ grant execute on function public.get_public_service_providers()
 -- Approved request contacts are included.
 -- ------------------------------------------------------------
 
+drop function if exists public.get_public_service_requests();
+
 create or replace function public.get_public_service_requests()
 returns table (
   id uuid,
@@ -122,6 +124,7 @@ returns table (
   description text,
   contact_phone text,
   contact_email text,
+  status text,
   created_at timestamptz
 )
 language sql
@@ -140,10 +143,13 @@ as $$
     r.description,
     r.contact_phone,
     r.contact_email,
+    r.status,
     r.created_at
   from public.service_requests r
-  where r.status = 'approved'
-  order by r.created_at desc;
+  where r.status in ('approved', 'matched')
+  order by
+    case when r.status = 'approved' then 0 else 1 end,
+    r.created_at desc;
 $$;
 
 revoke all on function public.get_public_service_requests()

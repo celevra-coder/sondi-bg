@@ -120,7 +120,7 @@ export async function POST(request: Request) {
         password,
         email_confirm: true,
         user_metadata: {
-          account_type: "provider",
+          account_type: "both",
         },
       });
 
@@ -176,7 +176,7 @@ export async function POST(request: Request) {
         .upsert(
           {
             user_id: userId,
-            account_type: "provider",
+            account_type: "both",
           },
           {
             onConflict: "user_id",

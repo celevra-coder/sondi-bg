@@ -93,6 +93,10 @@ type ServiceRequest = {
 };
 
 function statusLabel(status: string) {
+  if (status === "matched") {
+    return "\u2713 \u041d\u0430\u043c\u0435\u0440\u0435\u043d \u0432 SONDI.BG";
+  }
+
   if (status === "approved") {
     return "\u041f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430";
   }
@@ -109,6 +113,10 @@ function statusLabel(status: string) {
 }
 
 function statusClasses(status: string) {
+  if (status === "matched") {
+    return "border-[#9fd5bf] bg-[#e8f8f0] text-[#116343]";
+  }
+
   if (status === "approved") {
     return "border-[#b7dfcf] bg-[#effaf5] text-[#176247]";
   }
@@ -173,6 +181,9 @@ export default function AccountPage() {
     useState("");
 
   const [deletingId, setDeletingId] =
+    useState<string | null>(null);
+
+  const [matchingId, setMatchingId] =
     useState<string | null>(null);
 
   const [confirmDeleteId, setConfirmDeleteId] =
@@ -377,13 +388,6 @@ export default function AccountPage() {
       return;
     }
 
-    if (
-      accountType !== "provider" &&
-      accountType !== "both"
-    ) {
-      return;
-    }
-
     let active = true;
 
     async function loadProviderProfile() {
@@ -566,6 +570,57 @@ export default function AccountPage() {
     setRequests(current =>
       current.filter(
         item => item.id !== requestId
+      )
+    );
+  }
+
+  async function markRequestMatched(
+    requestId: string
+  ) {
+    if (!userId || matchingId) {
+      return;
+    }
+
+    setMatchingId(requestId);
+    setRequestsError("");
+
+    const { data, error } =
+      await supabase.rpc(
+        "mark_service_request_matched",
+        {
+          request_uuid: requestId,
+        }
+      );
+
+    setMatchingId(null);
+
+    if (error) {
+      console.error(
+        "mark service request matched error",
+        error
+      );
+
+      setRequestsError(
+        "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u043e\u0442\u0431\u0435\u043b\u0435\u0436\u0438\u043c \u043e\u0431\u044f\u0432\u0430\u0442\u0430 \u043a\u0430\u0442\u043e \u043f\u0440\u0438\u043a\u043b\u044e\u0447\u0435\u043d\u0430."
+      );
+      return;
+    }
+
+    const updated =
+      Array.isArray(data) && data.length > 0
+        ? data[0]
+        : null;
+
+    setRequests(current =>
+      current.map(item =>
+        item.id === requestId
+          ? {
+              ...item,
+              status:
+                updated?.status ||
+                "matched",
+            }
+          : item
       )
     );
   }
@@ -1171,11 +1226,7 @@ export default function AccountPage() {
   }
 
   const typeLabel =
-    accountType === "provider"
-      ? "\u041f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u043c \u0443\u0441\u043b\u0443\u0433\u0438"
-      : accountType === "both"
-        ? "\u0418 \u0434\u0432\u0435\u0442\u0435"
-        : "\u0422\u044a\u0440\u0441\u044f \u0443\u0441\u043b\u0443\u0433\u0438";
+    "\u0422\u044a\u0440\u0441\u044f \u0438 \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u043c \u0443\u0441\u043b\u0443\u0433\u0438";
 
   return (
     <main className="min-h-screen bg-[#f2f8f8] px-4 py-12 sm:px-6">
@@ -1445,8 +1496,7 @@ export default function AccountPage() {
               </div>
             )}
 
-            {(accountType === "client" ||
-              accountType === "both") && (
+            {true && (
               <>
             <div className="mt-10 flex flex-col gap-4 border-t border-[#e1ecee] pt-8 sm:flex-row sm:items-end sm:justify-between">
               <div>
@@ -1493,8 +1543,7 @@ export default function AccountPage() {
               </>
             )}
 
-            {(accountType === "provider" ||
-              accountType === "both") && (
+            {true && (
               <div className="mt-10 border-t border-[#e1ecee] pt-8">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                   <div>
@@ -2026,9 +2075,7 @@ export default function AccountPage() {
               </div>
             )}
 
-            {(accountType === "client" ||
-              accountType === "both") &&
-              requests.length > 0 && (
+            {requests.length > 0 && (
               <div className="mt-6 grid gap-5">
                 {requests.map(item => (
                   <article
@@ -2123,22 +2170,43 @@ export default function AccountPage() {
                         {"\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0438\u0442\u0435 \u0441\u0430 \u0432\u0438\u0434\u0438\u043c\u0438 \u0441\u0430\u043c\u043e \u0437\u0430 \u0432\u043b\u0435\u0437\u043b\u0438 \u043f\u043e\u0442\u0440\u0435\u0431\u0438\u0442\u0435\u043b\u0438."}
                       </div>
 
-                      <button
-                        type="button"
-                        disabled={
-                          deletingId === item.id
-                        }
-                        onClick={() =>
-                          setConfirmDeleteId(
-                            item.id
-                          )
-                        }
-                        className="shrink-0 rounded-xl border border-[#e8bcbc] bg-[#fff6f6] px-4 py-2.5 text-sm font-bold text-[#a43a3a] transition hover:bg-[#ffeded] disabled:cursor-not-allowed disabled:opacity-50"
-                      >
-                        {deletingId === item.id
-                          ? "\u0418\u0437\u0442\u0440\u0438\u0432\u0430\u043d\u0435..."
-                          : "\u0418\u0437\u0442\u0440\u0438\u0439 \u0437\u0430\u044f\u0432\u043a\u0430\u0442\u0430"}
-                      </button>
+                      <div className="flex flex-wrap gap-2">
+                        {item.status === "approved" && (
+                          <button
+                            type="button"
+                            disabled={
+                              matchingId === item.id
+                            }
+                            onClick={() =>
+                              void markRequestMatched(
+                                item.id
+                              )
+                            }
+                            className="shrink-0 rounded-xl border border-[#9fd5bf] bg-[#e8f8f0] px-4 py-2.5 text-sm font-bold text-[#116343] transition hover:bg-[#d9f2e7] disabled:cursor-not-allowed disabled:opacity-50"
+                          >
+                            {matchingId === item.id
+                              ? "\u041e\u0442\u0431\u0435\u043b\u044f\u0437\u0432\u0430\u043d\u0435..."
+                              : "\u041d\u0430\u043c\u0435\u0440\u0435\u043d \u0432 SONDI.BG"}
+                          </button>
+                        )}
+
+                        <button
+                          type="button"
+                          disabled={
+                            deletingId === item.id
+                          }
+                          onClick={() =>
+                            setConfirmDeleteId(
+                              item.id
+                            )
+                          }
+                          className="shrink-0 rounded-xl border border-[#e8bcbc] bg-[#fff6f6] px-4 py-2.5 text-sm font-bold text-[#a43a3a] transition hover:bg-[#ffeded] disabled:cursor-not-allowed disabled:opacity-50"
+                        >
+                          {deletingId === item.id
+                            ? "\u0418\u0437\u0442\u0440\u0438\u0432\u0430\u043d\u0435..."
+                            : "\u0418\u0437\u0442\u0440\u0438\u0439 \u0437\u0430\u044f\u0432\u043a\u0430\u0442\u0430"}
+                        </button>
+                      </div>
                     </div>
                   </article>
                 ))}

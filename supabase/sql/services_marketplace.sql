@@ -120,7 +120,7 @@ create table if not exists public.service_requests (
   contact_email text,
 
   status text not null default 'pending'
-    check (status in ('pending', 'approved', 'hidden', 'rejected')),
+    check (status in ('pending', 'approved', 'matched', 'hidden', 'rejected')),
 
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),

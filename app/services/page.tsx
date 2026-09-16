@@ -170,6 +170,7 @@ type ServiceRequestRecord = {
   description: string;
   contact_phone: string | null;
   contact_email: string | null;
+  status: string;
   created_at: string;
 };
 
@@ -1754,8 +1755,17 @@ export default function ServicesPage() {
                             </div>
                           </div>
 
-                          <div className="rounded-full border border-[#cce1dc] bg-[#edf7f4] px-3 py-1.5 text-xs font-bold text-[#28634f]">
-                            {"\u0422\u044a\u0440\u0441\u0438 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b"}
+                          <div
+                            className={
+                              "rounded-full border px-3 py-1.5 text-xs font-bold " +
+                              (item.status === "matched"
+                                ? "border-[#9fd5bf] bg-[#e8f8f0] text-[#116343]"
+                                : "border-[#cce1dc] bg-[#edf7f4] text-[#28634f]")
+                            }
+                          >
+                            {item.status === "matched"
+                              ? "\u2713 \u041d\u0430\u043c\u0435\u0440\u0435\u043d \u0432 SONDI.BG"
+                              : "\u0422\u044a\u0440\u0441\u0438 \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b"}
                           </div>
                         </div>
 

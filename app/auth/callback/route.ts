@@ -114,40 +114,17 @@ export async function GET(request: NextRequest) {
           );
         }
 
-        const allowedAccountType =
-          accountTypeCookie === "client" ||
-          accountTypeCookie === "provider" ||
-          accountTypeCookie === "both";
-
-        if (allowedAccountType) {
-          await supabase
-            .from("user_profiles")
-            .upsert(
-              {
-                user_id: user.id,
-                account_type: accountTypeCookie,
-              },
-              {
-                onConflict: "user_id",
-              }
-            );
-        } else {
-          const { data: existingProfile } =
-            await supabase
-              .from("user_profiles")
-              .select("user_id")
-              .eq("user_id", user.id)
-              .maybeSingle();
-
-          if (!existingProfile) {
-            await supabase
-              .from("user_profiles")
-              .insert({
-                user_id: user.id,
-                account_type: "client",
-              });
-          }
-        }
+        await supabase
+          .from("user_profiles")
+          .upsert(
+            {
+              user_id: user.id,
+              account_type: "both",
+            },
+            {
+              onConflict: "user_id",
+            }
+          );
       }
     }
   }

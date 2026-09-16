@@ -11,10 +11,6 @@ import {
   clarityTag,
 } from "@/lib/clarity-client";
 
-type AccountType =
-  | "client"
-  | "provider";
-
 const T = {
   eyebrow:
     "\u0420\u0415\u0413\u0418\u0421\u0422\u0420\u0410\u0426\u0418\u042f",
@@ -52,9 +48,6 @@ const T = {
 
 export default function RegisterPage() {
   const supabase = createClient();
-
-  const [accountType, setAccountType] =
-    useState<AccountType>("client");
 
   const [loading, setLoading] =
     useState(false);
@@ -166,7 +159,7 @@ export default function RegisterPage() {
         options: {
           data: {
             account_type:
-              accountType,
+              "both",
           },
           emailRedirectTo:
             `${window.location.origin}/auth/callback`,
@@ -241,7 +234,7 @@ export default function RegisterPage() {
       `sondi_auth_next=${encodeURIComponent(returnTo)}; path=/; max-age=3600; samesite=lax`;
 
     document.cookie =
-      `sondi_account_type=${accountType}; path=/; max-age=900; samesite=lax`;
+      "sondi_account_type=both; path=/; max-age=900; samesite=lax";
 
     const { error } =
       await supabase.auth.signInWithOAuth({
@@ -266,10 +259,10 @@ export default function RegisterPage() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
       >
         <source
-          src="/videos/sondi-hero.mp4"
+          src="/videos/sondi-hero-lite.mp4"
           type="video/mp4"
         />
       </video>
@@ -288,39 +281,6 @@ export default function RegisterPage() {
         <p className="mt-3 text-sm leading-6 text-[#667f85]">
           {T.help}
         </p>
-
-        <div className="mt-7">
-          <div className="mb-3 text-sm font-bold text-[#294a53]">
-            {T.who}
-          </div>
-
-          <div className="grid gap-2 sm:grid-cols-2">
-            {([
-              ["client", T.client],
-              ["provider", T.provider],
-            ] as const).map(
-              ([value, label]) => (
-                <button
-                  key={value}
-                  type="button"
-                  onClick={() =>
-                    setAccountType(value)
-                  }
-                  className={
-                    "rounded-2xl border px-3 py-3 text-sm font-semibold transition " +
-                    (
-                      accountType === value
-                        ? "border-[#16825c] bg-[#edf8f3] text-[#176247]"
-                        : "border-[#d8e5e7] bg-white text-[#526b72]"
-                    )
-                  }
-                >
-                  {label}
-                </button>
-              )
-            )}
-          </div>
-        </div>
 
         {message && (
           <div
