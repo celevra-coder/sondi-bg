@@ -701,17 +701,13 @@ export default function ServicesPage() {
     if (requestSubmitting) return;
 
     const form = event.currentTarget;
+    const data = new FormData(form);
 
     setRequestMessage("");
 
-    const user = await requireUser(
-      "Необходима е регистрация",
-      "За да публикувате заявка за услуга, трябва да имате акаунт в SONDI.BG."
-    );
-
-    if (!user) return;
-
-    const data = new FormData(form);
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
     const requestedService = String(
       data.get("service") || ""
@@ -732,6 +728,10 @@ export default function ServicesPage() {
     const email = String(
       data.get("contact_email") || ""
     ).trim();
+
+    const password = String(
+      data.get("password") || ""
+    );
 
     if (!requestedService) {
       setRequestMessage(
@@ -761,51 +761,120 @@ export default function ServicesPage() {
       return;
     }
 
-    setRequestSubmitting(true);
-    setRequestMessage("");
-
-    const { error } = await supabase
-      .from("service_requests")
-      .insert({
-        owner_id: user.id,
-        service: requestedService,
-        region: requestedRegion,
-        locality:
-          String(data.get("locality") || "").trim() || null,
-        desired_period:
-          String(data.get("desired_period") || "").trim() || null,
-        estimated_depth:
-          String(data.get("estimated_depth") || "").trim() || null,
-        machine_access:
-          String(data.get("machine_access") || "unknown"),
-        description,
-        contact_phone: phone || null,
-        contact_email: email || null,
-        status: "pending",
-      });
-
-    setRequestSubmitting(false);
-
-    if (error) {
-      console.error("service request insert error", error);
+    if (!user && !email) {
       setRequestMessage(
-        "\u0413\u0440\u0435\u0448\u043a\u0430: " + error.message
+        "\u0417\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0435 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c \u0438\u043c\u0435\u0439\u043b."
       );
       return;
     }
 
-    form.reset();
+    if (!user && password.length < 6) {
+      setRequestMessage(
+        "\u041f\u0430\u0440\u043e\u043b\u0430\u0442\u0430 \u0442\u0440\u044f\u0431\u0432\u0432\u0430 \u0434\u0430 \u0435 \u043f\u043e\u043d\u0435 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430."
+      );
+      return;
+    }
 
-    setRequestMessage(
-      "\u0417\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d\u0430 \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0438 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430 \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
-    );
+    const requestPayload = {
+      service: requestedService,
+      region: requestedRegion,
+      locality:
+        String(data.get("locality") || "").trim() || null,
+      desired_period:
+        String(data.get("desired_period") || "").trim() || null,
+      estimated_depth:
+        String(data.get("estimated_depth") || "").trim() || null,
+      machine_access:
+        String(data.get("machine_access") || "unknown"),
+      description,
+      contact_phone: phone || null,
+      contact_email: email || null,
+    };
 
-    setSuccessPopup({
-      title:
-        "\u0417\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d\u0430",
-      text:
-        "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u0438\u043c! \u0412\u0430\u0448\u0430\u0442\u0430 \u0437\u0430\u044f\u0432\u043a\u0430 \u0435 \u043f\u0440\u0438\u0435\u0442\u0430 \u0438 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430 \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
-    });
+    setRequestSubmitting(true);
+    setRequestMessage("");
+
+    try {
+      if (user) {
+        const { error } = await supabase
+          .from("service_requests")
+          .insert({
+            owner_id: user.id,
+            ...requestPayload,
+            status: "pending",
+          });
+
+        if (error) {
+          throw new Error(
+            error.message
+          );
+        }
+      } else {
+        const response =
+          await fetch("/api/request-register", {
+            method: "POST",
+            headers: {
+              "Content-Type":
+                "application/json",
+            },
+            body: JSON.stringify({
+              ...requestPayload,
+              password,
+            }),
+          });
+
+        const result =
+          await response.json().catch(() => null);
+
+        if (!response.ok) {
+          throw new Error(
+            result?.error ||
+              "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u0441\u044a\u0437\u0434\u0430\u0434\u0435\u043c \u0430\u043a\u0430\u0443\u043d\u0442\u0430 \u0438 \u0437\u0430\u044f\u0432\u043a\u0430\u0442\u0430."
+          );
+        }
+
+        const { error: signInError } =
+          await supabase.auth.signInWithPassword({
+            email,
+            password,
+          });
+
+        if (signInError) {
+          console.error(
+            "request automatic sign-in error",
+            signInError
+          );
+        }
+      }
+
+      form.reset();
+
+      setRequestMessage(
+        "\u0417\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d\u0430 \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0438 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430 \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
+      );
+
+      setSuccessPopup({
+        title:
+          "\u0417\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d\u0430",
+        text:
+          user
+            ? "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u0438\u043c! \u0412\u0430\u0448\u0430\u0442\u0430 \u0437\u0430\u044f\u0432\u043a\u0430 \u0435 \u043f\u0440\u0438\u0435\u0442\u0430 \u0438 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430 \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
+            : "\u0410\u043a\u0430\u0443\u043d\u0442\u044a\u0442 \u0432\u0438 \u0435 \u0441\u044a\u0437\u0434\u0430\u0434\u0435\u043d, \u0430 \u0437\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d\u0430 \u0437\u0430 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
+      });
+    } catch (error) {
+      console.error(
+        "service request submit error",
+        error
+      );
+
+      setRequestMessage(
+        error instanceof Error
+          ? error.message
+          : "\u0412\u044a\u0437\u043d\u0438\u043a\u043d\u0430 \u0433\u0440\u0435\u0448\u043a\u0430."
+      );
+    } finally {
+      setRequestSubmitting(false);
+    }
   }
 
   async function uploadProviderRegistrationLogo(
@@ -2022,11 +2091,31 @@ export default function ServicesPage() {
                   <Input
                     name="contact_email"
                     type="email"
+                    required={!providerFormAuthenticated}
                     placeholder={
                       T.emailHelp
                     }
                   />
                 </div>
+
+                {!providerFormAuthenticated && (
+                  <div className="sm:col-span-2">
+                    <FieldLabel>
+                      {"\u041f\u0430\u0440\u043e\u043b\u0430 \u0437\u0430 \u0432\u0445\u043e\u0434"}
+                    </FieldLabel>
+
+                    <Input
+                      name="password"
+                      type="password"
+                      autoComplete="new-password"
+                      placeholder={"\u041c\u0438\u043d\u0438\u043c\u0443\u043c 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430"}
+                    />
+
+                    <div className="mt-2 text-xs leading-5 text-[#789096]">
+                      {"\u0429\u0435 \u0441\u044a\u0437\u0434\u0430\u0434\u0435\u043c \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u0435\u043d \u0430\u043a\u0430\u0443\u043d\u0442 \u0432 SONDI.BG \u0438 \u0449\u0435 \u0437\u0430\u043f\u0430\u0437\u0438\u043c \u0437\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0432 \u043f\u0440\u043e\u0444\u0438\u043b\u0430 \u0432\u0438."}
+                    </div>
+                  </div>
+                )}
 
                 <div className="sm:col-span-2">
                   <button
@@ -2036,7 +2125,9 @@ export default function ServicesPage() {
                   >
                     {requestSubmitting
                       ? "\u0418\u0437\u043f\u0440\u0430\u0449\u0430\u043d\u0435..."
-                      : T.publishRequest}
+                      : providerFormAuthenticated
+                        ? T.publishRequest
+                        : "\u041f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u0439 \u0438 \u0441\u0435 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0430\u0439"}
                   </button>
 
                   <div className="mt-3 text-xs leading-5 text-[#789096]">
