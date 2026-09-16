@@ -1745,7 +1745,7 @@ export default function ServicesPage() {
 
                               {item.locality && (
                                 <>
-                                  <span>?</span>
+                                  <span>{"\u2022"}</span>
                                   <span>
                                     {item.locality}
                                   </span>
