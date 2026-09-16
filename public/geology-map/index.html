@@ -60,6 +60,51 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
   display: none;
 }
 
+@media (min-width: 701px) {
+  .mobile-panel-close {
+    display: flex;
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    margin: -5px 0 10px auto;
+    width: auto;
+    min-width: 92px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 18px;
+    background: #173d47;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .mobile-panel-button.panel-reopen-visible {
+    display: inline-flex;
+    position: absolute;
+    z-index: 1001;
+    top: 12px;
+    left: 12px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 13px;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 10px;
+    background: rgba(255,255,255,.96);
+    color: #183f49;
+    box-shadow: 0 2px 12px rgba(0,0,0,.18);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
 @media (max-width: 700px) {
   html,
   body,
@@ -19221,7 +19266,12 @@ let mobilePopupHistoryActive = false;
 
 function openMobilePanel(){
   const panel = document.querySelector('.panel');
+  const panelButton = document.getElementById('mobile-panel-button');
   if (!panel) return;
+
+  if (panelButton) {
+    panelButton.classList.remove('panel-reopen-visible');
+  }
 
   if (window.innerWidth <= 700) {
 
@@ -19249,6 +19299,7 @@ function openMobilePanel(){
 
 function closeMobilePanel(){
   const panel = document.querySelector('.panel');
+  const panelButton = document.getElementById('mobile-panel-button');
   if (!panel) return;
 
   if (window.innerWidth <= 700) {
@@ -19270,6 +19321,10 @@ function closeMobilePanel(){
 
   } else {
     panel.style.display = 'none';
+
+    if (panelButton) {
+      panelButton.classList.add('panel-reopen-visible');
+    }
   }
 }
 
@@ -19665,11 +19720,22 @@ window.addEventListener('resize', function(){
   const panel = document.querySelector('.panel');
   if (!panel) return;
 
+  const panelButton =
+    document.getElementById('mobile-panel-button');
+
   if (window.innerWidth > 700) {
     panel.classList.remove('mobile-open');
     panel.style.display = '';
+
+    if (panelButton) {
+      panelButton.classList.remove('panel-reopen-visible');
+    }
   } else {
     panel.style.display = '';
+
+    if (panelButton) {
+      panelButton.classList.remove('panel-reopen-visible');
+    }
   }
 
   if (typeof map !== 'undefined') {
