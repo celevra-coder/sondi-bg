@@ -1,4 +1,4 @@
-export const metadata = {
+﻿export const metadata = {
   alternates: { canonical: "/map" },
 
   title: "Карта на подземните води в България",
@@ -28,6 +28,63 @@ export default async function GeologyPage({
     typeof incoming.label === "string"
       ? incoming.label.trim()
       : "";
+
+  const mineralId =
+    typeof incoming.mineral_id === "string"
+      ? incoming.mineral_id.trim()
+      : "";
+
+  const mode =
+    typeof incoming.mode === "string"
+      ? incoming.mode.trim()
+      : "";
+
+  const returnTo =
+    typeof incoming.return === "string"
+      ? incoming.return.trim()
+      : "";
+
+  if (mode) {
+    iframeParams.set("mode", mode);
+  }
+
+  if (mineralId) {
+    iframeParams.set(
+      "mineral_id",
+      mineralId
+    );
+  }
+  if (returnTo) {
+    iframeParams.set("return", returnTo);
+  }
+
+  const legalContextKeys = [
+    "legal_name",
+    "legal_type",
+    "legal_deposit",
+    "legal_section",
+    "legal_settlement",
+    "legal_registry",
+    "legal_coord_status",
+    "legal_source",
+    "legal_source_date",
+  ] as const;
+
+  for (const key of legalContextKeys) {
+    const rawValue = incoming[key];
+
+    const value =
+      typeof rawValue === "string"
+        ? rawValue.trim()
+        : "";
+
+    if (value) {
+      iframeParams.set(
+        key,
+        value
+      );
+    }
+  }
 
   if (lat && lng) {
     iframeParams.set("lat", lat);

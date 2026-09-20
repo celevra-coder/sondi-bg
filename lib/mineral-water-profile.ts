@@ -1,4 +1,4 @@
-import fs from "node:fs";
+﻿import fs from "node:fs";
 import path from "node:path";
 
 type Obj = Record<string, any>;
@@ -9,6 +9,9 @@ export type MineralFacilityContext = {
   facilityType: string | null;
   settlement: string | null;
   deposit: string | null;
+  section: string | null;
+  sectionVerified: boolean;
+  registryNumber: string | null;
   depthM: number | null;
   temperatureC: number | null;
   latitude: number | null;
@@ -22,7 +25,11 @@ export type MineralWaterProfile = {
   name: string;
   facilityType: string | null;
   settlement: string | null;
+  municipality: string | null;
   deposit: string | null;
+  section: string | null;
+  sectionVerified: boolean;
+  registryNumber: string | null;
   depthM: number | null;
   temperatureC: number | null;
   latitude: number | null;
@@ -42,6 +49,13 @@ export type MineralWaterProfile = {
   temperatureMax: number | null;
 
   sources: string[];
+
+  sourceLinks: Array<{
+    title: string | null;
+    url: string;
+    sourceType: string | null;
+    published: string | null;
+  }>;
 };
 
 
@@ -251,17 +265,40 @@ function facilityContext(
       String(record.mineral_id || ""),
 
     name:
+      s(record.identity?.name) ||
       s(record.free?.name) ||
       "Минерално водовземно съоръжение",
 
     facilityType:
+      s(record.identity?.facility_type) ||
       s(record.free?.facility_type),
 
     settlement:
+      s(record.identity?.settlement) ||
       s(record.free?.settlement),
 
     deposit:
       getDeposit(record),
+
+    section:
+      s(
+        record.pro
+          ?.existing_properties
+          ?.section
+      ),
+
+    sectionVerified:
+      record.pro
+        ?.existing_properties
+        ?.bddr_facility_register
+        ?.verified === true,
+
+    registryNumber:
+      s(
+        record.pro
+          ?.existing_properties
+          ?.registry_number
+      ),
 
     depthM:
       n(record.free?.depth_m) ??
@@ -333,6 +370,129 @@ function numericRange(
     min: Math.min(...valid),
     max: Math.max(...valid),
   };
+}
+
+function sourceLinks(record: Obj) {
+  const result: Array<{
+    title: string | null;
+    url: string;
+    sourceType: string | null;
+    published: string | null;
+  }> = [];
+
+  const seen = new Set<string>();
+
+  const add = (
+    value: unknown,
+    context: Obj | null = null
+  ) => {
+    const url = s(value);
+
+    if (
+      !url ||
+      !/^https?:\/\//i.test(url) ||
+      seen.has(url)
+    ) {
+      return;
+    }
+
+    seen.add(url);
+
+    result.push({
+      title:
+        s(context?.title) ||
+        s(context?.name) ||
+        s(context?.source) ||
+        s(context?.institution) ||
+        s(context?.label),
+
+      url,
+
+      sourceType:
+        s(context?.source_type) ||
+        s(context?.sourceType) ||
+        s(context?.type),
+
+      published:
+        s(context?.source_date) ||
+        s(context?.published) ||
+        s(context?.date),
+    });
+  };
+
+  const visit = (
+    value: unknown,
+    parentKey = ""
+  ) => {
+    if (
+      value === null ||
+      value === undefined
+    ) {
+      return;
+    }
+
+    if (Array.isArray(value)) {
+      for (const item of value) {
+        visit(item, parentKey);
+      }
+
+      return;
+    }
+
+    if (typeof value !== "object") {
+      return;
+    }
+
+    const obj = value as Obj;
+
+    for (
+      const [key, child]
+      of Object.entries(obj)
+    ) {
+      const normalizedKey =
+        key.toLocaleLowerCase("en-US");
+
+      const directSourceKey =
+        normalizedKey === "source_url" ||
+        normalizedKey === "sourceurl" ||
+        normalizedKey === "official_url" ||
+        normalizedKey === "officialurl" ||
+        normalizedKey === "document_url" ||
+        normalizedKey === "documenturl" ||
+        normalizedKey === "pdf_url" ||
+        normalizedKey === "pdfurl" ||
+        normalizedKey === "register_url" ||
+        normalizedKey === "registerurl";
+
+      if (directSourceKey) {
+        add(child, obj);
+      }
+
+      const sourceLikeContainer =
+        parentKey === "sources" ||
+        normalizedKey === "sources" ||
+        "source" in obj ||
+        "institution" in obj ||
+        "source_type" in obj ||
+        "sourceType" in obj;
+
+      if (
+        normalizedKey === "url" &&
+        sourceLikeContainer
+      ) {
+        add(child, obj);
+      }
+
+      visit(
+        child,
+        normalizedKey
+      );
+    }
+  };
+
+  visit(record);
+
+  return result;
 }
 
 function sourceNames(record: Obj) {
@@ -452,8 +612,42 @@ export function getMineralWaterProfile(
     settlement:
       selected.settlement,
 
+    municipality:
+      s(record.identity?.municipality) ||
+      s(record.free?.municipality) ||
+      s(
+        record.pro
+          ?.research_source_record
+          ?.current_municipality
+      ) ||
+      s(
+        record.pro
+          ?.research_source_record
+          ?.mh_municipality
+      ) ||
+      s(
+        record.pro
+          ?.existing_properties
+          ?.municipality
+      ) ||
+      s(
+        deep(
+          record,
+          ["municipality"]
+        )
+      ),
+
     deposit:
       selected.deposit,
+
+    section:
+      selected.section,
+
+    sectionVerified:
+      selected.sectionVerified,
+
+    registryNumber:
+      selected.registryNumber,
 
     depthM:
       selected.depthM,
@@ -503,6 +697,9 @@ export function getMineralWaterProfile(
 
     sources:
       sourceNames(record),
+
+    sourceLinks:
+      sourceLinks(record),
   };
 }
 
@@ -659,4 +856,32 @@ export function getMineralWaterAreaProfile(
     depthMax:
       depths.max,
   };
+}
+
+
+/* EXACT_MINERAL_FACILITY_RECORD_V2
+ *
+ * Exact identity boundary for legal resolution.
+ * No related records.
+ * No fuzzy matching.
+ * No deposit/settlement grouping.
+ */
+export function getExactMineralFacilityRecord(
+  mineralId: string
+): Record<string, any> | null {
+  const id =
+    String(mineralId ?? "").trim();
+
+  if (!id) {
+    return null;
+  }
+
+  return (
+    records().find(
+      (record) =>
+        String(
+          record?.mineral_id ?? ""
+        ).trim() === id
+    ) || null
+  );
 }
