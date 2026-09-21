@@ -239,7 +239,7 @@ export async function POST(request: Request) {
             cleanText(
               body.presentation
             ) || null,
-          status: "pending",
+          status: "approved",
         })
         .select("id")
         .single();

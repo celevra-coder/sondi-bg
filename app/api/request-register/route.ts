@@ -173,6 +173,32 @@ export async function POST(request: Request) {
       );
     }
 
+    const expertStartsAt = new Date();
+    const expertExpiresAt = new Date(expertStartsAt);
+    expertExpiresAt.setMonth(expertExpiresAt.getMonth() + 1);
+
+    const { error: expertAccessError } =
+      await admin
+        .from("expert_time_access")
+        .insert({
+          user_id: createdUserId,
+          starts_at: expertStartsAt.toISOString(),
+          expires_at: expertExpiresAt.toISOString(),
+          note: "Registration campaign - 1 month free SONDI EXPERT",
+        });
+
+    if (expertAccessError) {
+      await rollbackUser();
+
+      return NextResponse.json(
+        {
+          error:
+            "\u041d\u0435 \u0443\u0441\u043f\u044f\u0445\u043c\u0435 \u0434\u0430 \u0430\u043a\u0442\u0438\u0432\u0438\u0440\u0430\u043c\u0435 \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u043d\u0438\u044f SONDI EXPERT \u0434\u043e\u0441\u0442\u044a\u043f.",
+        },
+        { status: 500 }
+      );
+    }
+
     const {
       data: insertedRequest,
       error: requestError,
@@ -190,7 +216,7 @@ export async function POST(request: Request) {
           description,
           contact_phone: phone,
           contact_email: email,
-          status: "pending",
+          status: "approved",
         })
         .select("id")
         .single();
