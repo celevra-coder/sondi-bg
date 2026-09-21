@@ -34,6 +34,7 @@ export async function GET() {
       return NextResponse.json({
         admin: true,
         unlimited: true,
+        time_access_expires_at: null,
         free_analyses_remaining: 0,
         paid_balance_cents: 0,
         analysis_price_cents: 0,
@@ -47,6 +48,7 @@ export async function GET() {
       walletResult,
       lotsResult,
       analysesResult,
+      timeAccessResult,
     ] = await Promise.all([
       supabase
         .from("expert_wallets")
@@ -74,6 +76,24 @@ export async function GET() {
         .order("created_at", {
           ascending: false,
         }),
+
+      supabase
+        .from("expert_time_access")
+        .select("expires_at")
+        .eq("user_id", user.id)
+        .lte(
+          "starts_at",
+          new Date().toISOString()
+        )
+        .gt(
+          "expires_at",
+          new Date().toISOString()
+        )
+        .order("expires_at", {
+          ascending: false,
+        })
+        .limit(1)
+        .maybeSingle(),
     ]);
 
     if (walletResult.error) {
@@ -87,6 +107,13 @@ export async function GET() {
     if (analysesResult.error) {
       throw analysesResult.error;
     }
+
+    if (timeAccessResult.error) {
+      throw timeAccessResult.error;
+    }
+
+    const activeTimeAccess =
+      timeAccessResult.data || null;
 
     const lots = lotsResult.data || [];
 
@@ -115,7 +142,10 @@ export async function GET() {
 
     return NextResponse.json({
       admin: false,
-      unlimited: false,
+      unlimited:
+        activeTimeAccess !== null,
+      time_access_expires_at:
+        activeTimeAccess?.expires_at ?? null,
       free_analyses_remaining:
         walletResult.data
           ?.free_analyses_remaining ?? 2,
@@ -126,6 +156,7 @@ export async function GET() {
       remaining_paid_analyses:
         remainingPaidAnalyses,
       can_top_up:
+        activeTimeAccess === null &&
         paidBalanceCents === 0,
       analyses:
         analysesResult.data || [],

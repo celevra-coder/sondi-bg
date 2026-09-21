@@ -1268,7 +1268,8 @@ export default function AccountPage() {
                 </button>
               </div>
 
-              {expertData.free_analyses_remaining > 0 && (
+              {!expertData.unlimited &&
+                expertData.free_analyses_remaining > 0 && (
                 <div className="mt-3 rounded-xl border border-[#b9dfd4] bg-[#eaf8f3] px-4 py-3 text-sm font-bold text-[#17634f]">
                   {"\uD83C\uDF81 \u0418\u043c\u0430\u0442\u0435 "}
                   {expertData.free_analyses_remaining}
@@ -1938,7 +1939,7 @@ export default function AccountPage() {
                           </h4>
 
                           <p className="mt-1 text-xs leading-5 text-[#71878d]">
-                            {"\u041f\u043e \u0436\u0435\u043b\u0430\u043d\u0438\u0435: \u0434\u043e 8 \u0441\u043d\u0438\u043c\u043a\u0438 \u0438 3 \u0432\u0438\u0434\u0435\u0430. \u041d\u043e\u0432\u0438\u0442\u0435 \u0444\u0430\u0439\u043b\u043e\u0432\u0435 \u0441\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u0442 \u0441\u043b\u0435\u0434 \u043e\u0434\u043e\u0431\u0440\u0435\u043d\u0438\u0435."}
+                            {"\u041f\u043e \u0436\u0435\u043b\u0430\u043d\u0438\u0435: \u0434\u043e 8 \u0441\u043d\u0438\u043c\u043a\u0438 \u0438 3 \u0432\u0438\u0434\u0435\u0430."}
                           </p>
                         </div>
 
