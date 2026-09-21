@@ -31,6 +31,7 @@ type ExpertAnalysis = {
 type ExpertAccountData = {
   admin: boolean;
   unlimited: boolean;
+  time_access_expires_at: string | null;
   free_analyses_remaining: number;
   paid_balance_cents: number;
   analysis_price_cents: number;
@@ -1247,25 +1248,59 @@ export default function AccountPage() {
                   <div className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#789096]">
                     SONDI EXPERT
                   </div>
-                  <div className="mt-1 text-xl font-bold text-[#173f48]">
-                    Баланс: {(expertData.paid_balance_cents / 100).toFixed(2).replace(".", ",")} €
-                  </div>
-                  <div className="mt-1 text-xs text-[#6b8187]">
-                    Безплатни: {expertData.free_analyses_remaining}
-                    {expertData.analysis_price_cents > 0
-                      ? ` · Ставка: ${(expertData.analysis_price_cents / 100).toFixed(2).replace(".", ",")} €`
-                      : ""}
-                  </div>
+                  {expertData.unlimited &&
+                  expertData.time_access_expires_at ? (
+                    <>
+                      <div className="mt-1 text-xl font-bold text-[#173f48]">
+                        {"SONDI EXPERT \u0430\u043a\u0442\u0438\u0432\u0435\u043d"}
+                      </div>
+
+                      <div className="mt-1 text-sm font-semibold text-[#16825c]">
+                        {"\u0414\u043e "}
+                        {new Intl.DateTimeFormat(
+                          "bg-BG",
+                          {
+                            day: "2-digit",
+                            month: "2-digit",
+                            year: "numeric",
+                          }
+                        ).format(
+                          new Date(
+                            expertData.time_access_expires_at
+                          )
+                        )}
+                      </div>
+
+                      <div className="mt-1 text-xs text-[#6b8187]">
+                        {"\u041f\u044a\u043b\u0435\u043d \u0434\u043e\u0441\u0442\u044a\u043f \u0434\u043e \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u0438\u0442\u0435 \u0430\u043d\u0430\u043b\u0438\u0437\u0438"}
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="mt-1 text-xl font-bold text-[#173f48]">
+                        Баланс: {(expertData.paid_balance_cents / 100).toFixed(2).replace(".", ",")} €
+                      </div>
+
+                      <div className="mt-1 text-xs text-[#6b8187]">
+                        Безплатни: {expertData.free_analyses_remaining}
+                        {expertData.analysis_price_cents > 0
+                          ? ` · Ставка: ${(expertData.analysis_price_cents / 100).toFixed(2).replace(".", ",")} €`
+                          : ""}
+                      </div>
+                    </>
+                  )}
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => setExpertTopupOpen(true)}
-                  disabled={!expertData.can_top_up}
-                  className="shrink-0 rounded-xl bg-[#173f48] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#102f36] disabled:cursor-not-allowed disabled:opacity-45"
-                >
-                  Презареди
-                </button>
+                {!expertData.unlimited && (
+                  <button
+                    type="button"
+                    onClick={() => setExpertTopupOpen(true)}
+                    disabled={!expertData.can_top_up}
+                    className="shrink-0 rounded-xl bg-[#173f48] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#102f36] disabled:cursor-not-allowed disabled:opacity-45"
+                  >
+                    Презареди
+                  </button>
+                )}
               </div>
 
               {!expertData.unlimited &&
@@ -1893,10 +1928,6 @@ export default function AccountPage() {
                           placeholder={"\u041f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044f\u043d\u0435"}
                           className="sm:col-span-2 rounded-xl border border-[#d7e5e8] px-4 py-3 text-sm outline-none focus:border-[#56a4a8]"
                         />
-
-                        <div className="sm:col-span-2 rounded-xl border border-[#ead7a3] bg-[#fff8e5] px-4 py-3 text-xs leading-5 text-[#87661c]">
-                          {"\u0421\u043b\u0435\u0434 \u0440\u0435\u0434\u0430\u043a\u0446\u0438\u044f \u043f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0449\u0435 \u0431\u044a\u0434\u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d \u043e\u0442\u043d\u043e\u0432\u043e \u0437\u0430 \u043e\u0434\u043e\u0431\u0440\u0435\u043d\u0438\u0435."}
-                        </div>
 
                         <div className="sm:col-span-2 flex flex-wrap gap-3">
                           <button
