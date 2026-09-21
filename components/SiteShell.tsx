@@ -242,6 +242,13 @@ const [authReady, setAuthReady] = useState(false);
               УСЛУГИ
             </Link>
 
+            <Link
+              href="/legal"
+              className="px-4 py-3 text-[13px] font-medium text-[#294e59] transition hover:text-[#15809a]"
+            >
+              {"\u0417\u0410\u041a\u041e\u041d\u041e\u0412\u0410 \u041f\u0420\u041e\u0412\u0415\u0420\u041a\u0410"}
+            </Link>
+
             {menus.map((menu) => (
               <div key={menu.label} className="group relative flex h-full items-center">
                 <button
@@ -407,6 +414,14 @@ const [authReady, setAuthReady] = useState(false);
                 className="font-medium text-[#294e59]"
               >
                 {"\u0423\u0441\u043b\u0443\u0433\u0438"}
+              </Link>
+
+              <Link
+                href="/legal"
+                onClick={() => setMobileOpen(false)}
+                className="font-medium text-[#294e59]"
+              >
+                {"\u0417\u0430\u043a\u043e\u043d\u043e\u0432\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"}
               </Link>
 
               {menus.map(menu => {
