@@ -286,6 +286,16 @@ export default function ServicesPage() {
   const [hasSearched, setHasSearched] =
     useState(false);
 
+  const [
+    showRequestPassword,
+    setShowRequestPassword,
+  ] = useState(false);
+
+  const [
+    showProviderPassword,
+    setShowProviderPassword,
+  ] = useState(false);
+
   const supabase = useMemo(
     () => createClient(),
     []
@@ -2104,13 +2114,65 @@ export default function ServicesPage() {
                     <FieldLabel>
                       {"\u041f\u0430\u0440\u043e\u043b\u0430 \u0437\u0430 \u0432\u0445\u043e\u0434"}
                     </FieldLabel>
+                    <div className="relative">
+                      <Input
+                        name="password"
+                        type={showRequestPassword ? "text" : "password"}
+                        autoComplete="new-password"
+                        placeholder={"\u041c\u0438\u043d\u0438\u043c\u0443\u043c 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430"}
+                        className="pr-12"
+                      />
 
-                    <Input
-                      name="password"
-                      type="password"
-                      autoComplete="new-password"
-                      placeholder={"\u041c\u0438\u043d\u0438\u043c\u0443\u043c 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430"}
-                    />
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setShowRequestPassword(current => !current)
+                        }
+                        className="absolute inset-y-0 right-0 flex w-12 items-center justify-center text-[#6b858b] transition hover:text-[#173f48]"
+                        aria-label={
+                          showRequestPassword
+                            ? "\u0421\u043a\u0440\u0438\u0439 \u043f\u0430\u0440\u043e\u043b\u0430\u0442\u0430"
+                            : "\u041f\u043e\u043a\u0430\u0436\u0438 \u043f\u0430\u0440\u043e\u043b\u0430\u0442\u0430"
+                        }
+                        title={
+                          showRequestPassword
+                            ? "\u0421\u043a\u0440\u0438\u0439 \u043f\u0430\u0440\u043e\u043b\u0430\u0442\u0430"
+                            : "\u041f\u043e\u043a\u0430\u0436\u0438 \u043f\u0430\u0440\u043e\u043b\u0430\u0442\u0430"
+                        }
+                      >
+                        {showRequestPassword ? (
+                          <svg
+                            viewBox="0 0 24 24"
+                            className="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M3 3l18 18" />
+                            <path d="M10.6 10.6a2 2 0 002.8 2.8" />
+                            <path d="M9.9 4.2A10.5 10.5 0 0112 4c5 0 9 4 10 8a11.8 11.8 0 01-2 3.8" />
+                            <path d="M6.2 6.2C4.1 7.6 2.7 9.6 2 12c1 4 5 8 10 8a10.6 10.6 0 005.8-1.8" />
+                          </svg>
+                        ) : (
+                          <svg
+                            viewBox="0 0 24 24"
+                            className="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+                            <circle cx="12" cy="12" r="3" />
+                          </svg>
+                        )}
+                      </button>
+                    </div>
 
                     <div className="mt-2 text-xs leading-5 text-[#789096]">
                       {"\u0429\u0435 \u0441\u044a\u0437\u0434\u0430\u0434\u0435\u043c \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u0435\u043d \u0430\u043a\u0430\u0443\u043d\u0442 \u0432 SONDI.BG \u0438 \u0449\u0435 \u0437\u0430\u043f\u0430\u0437\u0438\u043c \u0437\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0432 \u043f\u0440\u043e\u0444\u0438\u043b\u0430 \u0432\u0438."}
@@ -2398,13 +2460,65 @@ export default function ServicesPage() {
                     <FieldLabel>
                       {"\u041f\u0430\u0440\u043e\u043b\u0430 \u0437\u0430 \u0432\u0445\u043e\u0434"}
                     </FieldLabel>
+                    <div className="relative">
+                      <Input
+                        name="password"
+                        type={showProviderPassword ? "text" : "password"}
+                        autoComplete="new-password"
+                        placeholder={"\u041c\u0438\u043d\u0438\u043c\u0443\u043c 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430"}
+                        className="pr-12"
+                      />
 
-                    <Input
-                      name="password"
-                      type="password"
-                      autoComplete="new-password"
-                      placeholder={"\u041c\u0438\u043d\u0438\u043c\u0443\u043c 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430"}
-                    />
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setShowProviderPassword(current => !current)
+                        }
+                        className="absolute inset-y-0 right-0 flex w-12 items-center justify-center text-[#6b858b] transition hover:text-[#173f48]"
+                        aria-label={
+                          showProviderPassword
+                            ? "\u0421\u043a\u0440\u0438\u0439 \u043f\u0430\u0440\u043e\u043b\u0430\u0442\u0430"
+                            : "\u041f\u043e\u043a\u0430\u0436\u0438 \u043f\u0430\u0440\u043e\u043b\u0430\u0442\u0430"
+                        }
+                        title={
+                          showProviderPassword
+                            ? "\u0421\u043a\u0440\u0438\u0439 \u043f\u0430\u0440\u043e\u043b\u0430\u0442\u0430"
+                            : "\u041f\u043e\u043a\u0430\u0436\u0438 \u043f\u0430\u0440\u043e\u043b\u0430\u0442\u0430"
+                        }
+                      >
+                        {showProviderPassword ? (
+                          <svg
+                            viewBox="0 0 24 24"
+                            className="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M3 3l18 18" />
+                            <path d="M10.6 10.6a2 2 0 002.8 2.8" />
+                            <path d="M9.9 4.2A10.5 10.5 0 0112 4c5 0 9 4 10 8a11.8 11.8 0 01-2 3.8" />
+                            <path d="M6.2 6.2C4.1 7.6 2.7 9.6 2 12c1 4 5 8 10 8a10.6 10.6 0 005.8-1.8" />
+                          </svg>
+                        ) : (
+                          <svg
+                            viewBox="0 0 24 24"
+                            className="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+                            <circle cx="12" cy="12" r="3" />
+                          </svg>
+                        )}
+                      </button>
+                    </div>
 
                     <div className="mt-2 text-xs leading-5 text-[#789096]">
                       {"\u0429\u0435 \u0438\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u0442\u0435 \u0442\u0430\u0437\u0438 \u043f\u0430\u0440\u043e\u043b\u0430 \u0437\u0430 \u0432\u0445\u043e\u0434 \u0432 SONDI.BG."}
