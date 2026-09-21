@@ -865,12 +865,12 @@ export default function ServicesPage() {
       );
 
       setSuccessPopup({
-        title:
-          "\u0417\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d\u0430",
-        text:
-          user
-            ? "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u0438\u043c! \u0412\u0430\u0448\u0430\u0442\u0430 \u0437\u0430\u044f\u0432\u043a\u0430 \u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430."
-            : "Добре дошли в SONDI.BG! 🎁\n\nПолучавате 1 месец безплатен достъп до подробните анализи на SONDI EXPERT.\n\nДостъпът е активиран автоматично.\n\nПрисъединете се и към нашата Facebook общност за нови обяви, изпълнители и полезна информация."
+        title: user
+          ? "\u0417\u0430\u044f\u0432\u043a\u0430\u0442\u0430 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d\u0430"
+          : "\u0414\u043e\u0431\u0440\u0435 \u0434\u043e\u0448\u043b\u0438 \u0432 SONDI.BG! \ud83c\udf81",
+        text: user
+          ? "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u0438\u043c! \u0412\u0430\u0448\u0430\u0442\u0430 \u0437\u0430\u044f\u0432\u043a\u0430 \u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d\u0430."
+          : "\u041f\u043e\u043b\u0443\u0447\u0430\u0432\u0430\u0442\u0435 1 \u043c\u0435\u0441\u0435\u0446 \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u0435\u043d \u0434\u043e\u0441\u0442\u044a\u043f \u0434\u043e \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u0438\u0442\u0435 \u0430\u043d\u0430\u043b\u0438\u0437\u0438 \u043d\u0430 SONDI EXPERT.\n\n\u0414\u043e\u0441\u0442\u044a\u043f\u044a\u0442 \u0435 \u0430\u043a\u0442\u0438\u0432\u0438\u0440\u0430\u043d \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u043d\u043e.\n\n\u041f\u0440\u0438\u0441\u044a\u0435\u0434\u0438\u043d\u0435\u0442\u0435 \u0441\u0435 \u0438 \u043a\u044a\u043c \u043d\u0430\u0448\u0430\u0442\u0430 Facebook \u043e\u0431\u0449\u043d\u043e\u0441\u0442 \u0437\u0430 \u043d\u043e\u0432\u0438 \u043e\u0431\u044f\u0432\u0438, \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u0438 \u0438 \u043f\u043e\u043b\u0435\u0437\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f."
       });
     } catch (error) {
       console.error(
@@ -1342,10 +1342,12 @@ export default function ServicesPage() {
       );
 
       setSuccessPopup({
-        title:
-          "\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0435 \u0438\u0437\u043f\u0440\u0430\u0442\u0435\u043d",
-        text:
-          "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u0438\u043c! \u0410\u043a\u0430\u0443\u043d\u0442\u044a\u0442 \u0438 \u043f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0432\u0438 \u0441\u0430 \u0441\u044a\u0437\u0434\u0430\u0434\u0435\u043d\u0438. \u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0449\u0435 \u0431\u044a\u0434\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u0441\u043b\u0435\u0434 \u043f\u0440\u0435\u0433\u043b\u0435\u0434."
+        title: user
+          ? "\u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d"
+          : "\u0414\u043e\u0431\u0440\u0435 \u0434\u043e\u0448\u043b\u0438 \u0432 SONDI.BG! \ud83c\udf81",
+        text: user
+          ? "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u0438\u043c! \u041f\u0440\u043e\u0444\u0438\u043b\u044a\u0442 \u0432\u0438 \u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u0443\u0441\u043f\u0435\u0448\u043d\u043e."
+          : "\u041f\u043e\u043b\u0443\u0447\u0430\u0432\u0430\u0442\u0435 1 \u043c\u0435\u0441\u0435\u0446 \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u0435\u043d \u0434\u043e\u0441\u0442\u044a\u043f \u0434\u043e \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u0438\u0442\u0435 \u0430\u043d\u0430\u043b\u0438\u0437\u0438 \u043d\u0430 SONDI EXPERT.\n\n\u0414\u043e\u0441\u0442\u044a\u043f\u044a\u0442 \u0435 \u0430\u043a\u0442\u0438\u0432\u0438\u0440\u0430\u043d \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u043d\u043e.\n\n\u041f\u0440\u0438\u0441\u044a\u0435\u0434\u0438\u043d\u0435\u0442\u0435 \u0441\u0435 \u0438 \u043a\u044a\u043c \u043d\u0430\u0448\u0430\u0442\u0430 Facebook \u043e\u0431\u0449\u043d\u043e\u0441\u0442 \u0437\u0430 \u043d\u043e\u0432\u0438 \u043e\u0431\u044f\u0432\u0438, \u0438\u0437\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u0438 \u0438 \u043f\u043e\u043b\u0435\u0437\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f."
       });
     } catch (error) {
       console.error(
@@ -2808,19 +2810,47 @@ export default function ServicesPage() {
               {successPopup.title}
             </h3>
 
-            <p className="mt-3 text-sm leading-6 text-[#617a80]">
+            <p className="mt-3 whitespace-pre-line text-sm leading-6 text-[#617a80]">
               {successPopup.text}
             </p>
 
-            <button
-              type="button"
-              onClick={() =>
-                setSuccessPopup(null)
-              }
-              className="mt-7 min-w-[140px] rounded-2xl bg-[#16825c] px-7 py-3 font-bold text-white transition hover:bg-[#126d4d]"
-            >
-              {"OK"}
-            </button>
+            {successPopup.text.includes("SONDI EXPERT") ? (
+              <div className="mt-7 grid gap-3">
+                <a
+                  href="https://www.facebook.com/groups/1384411913062426"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-2xl bg-[#1877f2] px-5 py-3.5 font-bold text-white transition hover:opacity-90"
+                >
+                  {"\u041f\u0440\u0438\u0441\u044a\u0435\u0434\u0438\u043d\u0438 \u0441\u0435 \u043a\u044a\u043c \u043e\u0431\u0449\u043d\u043e\u0441\u0442\u0442\u0430"}
+                </a>
+
+                <a
+                  href="https://www.facebook.com/profile.php?id=61594073405125"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-2xl border border-[#cddde8] bg-white px-5 py-3.5 font-bold text-[#173f48] transition hover:bg-[#f5f9fb]"
+                >
+                  {"\u041f\u043e\u0441\u043b\u0435\u0434\u0432\u0430\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430\u0442\u0430"}
+                </a>
+
+                <button
+                  type="button"
+                  onClick={() => setSuccessPopup(null)}
+                  className="rounded-2xl bg-[#16825c] px-5 py-3.5 font-bold text-white transition hover:bg-[#126d4d]"
+                >
+                  {"\u041f\u0440\u043e\u0434\u044a\u043b\u0436\u0438 \u0432 SONDI.BG"}
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setSuccessPopup(null)}
+                className="mt-7 min-w-[140px] rounded-2xl bg-[#16825c] px-7 py-3 font-bold text-white transition hover:bg-[#126d4d]"
+              >
+                {"OK"}
+              </button>
+            )}
           </div>
         </div>
       )}
