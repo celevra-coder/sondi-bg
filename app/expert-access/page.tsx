@@ -20,6 +20,7 @@ type AccessStatus = {
   authenticated: boolean;
   admin?: boolean;
   unlimited?: boolean;
+  time_access_expires_at?: string | null;
   current_version?: number;
   analysis_key?: string;
   free_analyses_remaining?: number;
@@ -551,7 +552,38 @@ export default function ExpertAccessPage() {
           status?.authenticated &&
           !status.admin && (
             <>
-              {freeRemaining > 0 && (
+              {status?.unlimited && (
+                <div className="mt-8 rounded-2xl border border-[#b9dfd4] bg-[#eaf8f3] px-5 py-4 text-sm text-[#17634f]">
+                  <div className="font-bold">
+                    {"SONDI EXPERT \u0430\u043a\u0442\u0438\u0432\u0435\u043d"}
+
+                    {status.time_access_expires_at && (
+                      <>
+                        {" \u0434\u043e "}
+                        {new Intl.DateTimeFormat(
+                          "bg-BG",
+                          {
+                            day: "2-digit",
+                            month: "2-digit",
+                            year: "numeric",
+                          }
+                        ).format(
+                          new Date(
+                            status.time_access_expires_at
+                          )
+                        )}
+                      </>
+                    )}
+                  </div>
+
+                  <div className="mt-1 text-xs font-semibold">
+                    {
+                      "\u041f\u044a\u043b\u0435\u043d \u0434\u043e\u0441\u0442\u044a\u043f \u0434\u043e SONDI EXPERT \u0430\u043d\u0430\u043b\u0438\u0437\u0438\u0442\u0435."
+                    }
+                  </div>
+                </div>
+              )}
+              {!status?.unlimited && freeRemaining > 0 && (
                 <div className="mt-8 rounded-2xl border border-[#b9dfd4] bg-[#eaf8f3] px-5 py-4 text-sm font-bold text-[#17634f]">
                   {"\uD83C\uDF81 \u0418\u043c\u0430\u0442\u0435 "}
                   {freeRemaining}
@@ -560,36 +592,38 @@ export default function ExpertAccessPage() {
                     : " \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u043d\u0438 SONDI EXPERT \u0430\u043d\u0430\u043b\u0438\u0437\u0430"}
                 </div>
               )}
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-[#d9e7e9] bg-[#f7fbfb] p-5">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#82969b]">
-                    Безплатни анализи
+              {!status?.unlimited && (
+                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                  <div className="rounded-2xl border border-[#d9e7e9] bg-[#f7fbfb] p-5">
+                    <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#82969b]">
+                      Безплатни анализи
+                    </div>
+                    <div className="mt-2 text-2xl font-bold text-[#173f48]">
+                      {freeRemaining}
+                    </div>
                   </div>
-                  <div className="mt-2 text-2xl font-bold text-[#173f48]">
-                    {freeRemaining}
-                  </div>
-                </div>
 
-                <div className="rounded-2xl border border-[#d9e7e9] bg-[#f7fbfb] p-5">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#82969b]">
-                    EXPERT баланс
+                  <div className="rounded-2xl border border-[#d9e7e9] bg-[#f7fbfb] p-5">
+                    <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#82969b]">
+                      EXPERT баланс
+                    </div>
+                    <div className="mt-2 text-2xl font-bold text-[#173f48]">
+                      {euro(paidBalance)}
+                    </div>
                   </div>
-                  <div className="mt-2 text-2xl font-bold text-[#173f48]">
-                    {euro(paidBalance)}
-                  </div>
-                </div>
 
-                <div className="rounded-2xl border border-[#d9e7e9] bg-[#f7fbfb] p-5">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#82969b]">
-                    Текуща ставка
-                  </div>
-                  <div className="mt-2 text-2xl font-bold text-[#173f48]">
-                    {activePrice
-                      ? euro(activePrice)
-                      : "—"}
+                  <div className="rounded-2xl border border-[#d9e7e9] bg-[#f7fbfb] p-5">
+                    <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#82969b]">
+                      Текуща ставка
+                    </div>
+                    <div className="mt-2 text-2xl font-bold text-[#173f48]">
+                      {activePrice
+                        ? euro(activePrice)
+                        : "—"}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
 
               {previous && (
                 <div className="mt-6 rounded-2xl border border-[#ead7a3] bg-[#fff8e5] p-5 text-[#87661c]">
@@ -614,9 +648,11 @@ export default function ExpertAccessPage() {
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6">
-                    {freeRemaining > 0
-                      ? "Ако продължите, ще бъде създаден нов анализ и ще бъде използван 1 безплатен анализ."
-                      : `Ако продължите, ще бъде създаден нов анализ и ще бъде таксуван според текущата ви ставка${activePrice > 0 ? ` (${euro(activePrice)})` : ""}.`}
+                    {status?.unlimited
+                      ? "\u0410\u043a\u043e \u043f\u0440\u043e\u0434\u044a\u043b\u0436\u0438\u0442\u0435, \u0449\u0435 \u0431\u044a\u0434\u0435 \u0441\u044a\u0437\u0434\u0430\u0434\u0435\u043d \u043d\u043e\u0432 SONDI EXPERT \u0430\u043d\u0430\u043b\u0438\u0437 \u0441 \u0430\u043a\u0442\u0438\u0432\u043d\u0438\u044f \u0432\u0438 \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u0435\u043d \u043c\u0435\u0441\u0435\u0447\u0435\u043d \u0434\u043e\u0441\u0442\u044a\u043f."
+                      : freeRemaining > 0
+                        ? "Ако продължите, ще бъде създаден нов анализ и ще бъде използван 1 безплатен анализ."
+                        : `Ако продължите, ще бъде създаден нов анализ и ще бъде таксуван според текущата ви ставка${activePrice > 0 ? ` (${euro(activePrice)})` : ""}.`}
                   </p>
 
                   <a
@@ -640,9 +676,41 @@ export default function ExpertAccessPage() {
                   </h2>
 
                   <p className="mt-2 text-sm leading-6 text-[#526e75]">
-                    {freeRemaining > 0
-                      ? `Ще бъде използван 1 безплатен анализ. След това ще ви останат ${freeRemaining - 1}.`
-                      : `Цена на новия анализ: ${euro(activePrice)}. Баланс след анализа: ${euro(paidBalance - activePrice)}.`}
+                    {status?.unlimited ? (
+                      <>
+                        <span className="font-bold text-[#16825c]">
+                          {"SONDI EXPERT \u0430\u043a\u0442\u0438\u0432\u0435\u043d"}
+                        </span>
+
+                        {status.time_access_expires_at && (
+                          <>
+                            {" \u0434\u043e "}
+                            {new Intl.DateTimeFormat(
+                              "bg-BG",
+                              {
+                                day: "2-digit",
+                                month: "2-digit",
+                                year: "numeric",
+                              }
+                            ).format(
+                              new Date(
+                                status.time_access_expires_at
+                              )
+                            )}
+                          </>
+                        )}
+
+                        <br />
+
+                        {
+                          "\u041f\u044a\u043b\u0435\u043d \u0434\u043e\u0441\u0442\u044a\u043f \u0434\u043e \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u0438\u0442\u0435 \u0430\u043d\u0430\u043b\u0438\u0437\u0438. \u041d\u044f\u043c\u0430 \u0434\u0430 \u0431\u044a\u0434\u0435 \u0438\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u043d \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u0435\u043d \u0430\u043d\u0430\u043b\u0438\u0437 \u0438\u043b\u0438 \u0431\u0430\u043b\u0430\u043d\u0441."
+                        }
+                      </>
+                    ) : freeRemaining > 0 ? (
+                      `Ще бъде използван 1 безплатен анализ. След това ще ви останат ${freeRemaining - 1}.`
+                    ) : (
+                      `Цена на новия анализ: ${euro(activePrice)}. Баланс след анализа: ${euro(paidBalance - activePrice)}.`
+                    )}
                   </p>
 
                   <button
