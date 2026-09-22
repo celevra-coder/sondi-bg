@@ -162,11 +162,11 @@ begin
 
     select coalesce(
       (
-        select analysis_price_cents
-        from public.expert_balance_lots
-        where user_id = p_user_id
-          and remaining_cents > 0
-        order by created_at asc
+        select ebl.analysis_price_cents
+        from public.expert_balance_lots as ebl
+        where ebl.user_id = p_user_id
+          and ebl.remaining_cents > 0
+        order by ebl.created_at asc
         limit 1
       ),
       0
