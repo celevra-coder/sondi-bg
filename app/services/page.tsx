@@ -1217,6 +1217,28 @@ export default function ServicesPage() {
 
       if (user) {
         const {
+          data: existingProvider,
+          error: existingProviderError,
+        } = await supabase
+          .from("service_providers")
+          .select("id")
+          .eq("owner_id", user.id)
+          .maybeSingle();
+
+        if (existingProviderError) {
+          throw new Error(
+            existingProviderError.message
+          );
+        }
+
+        if (existingProvider) {
+          setProviderMessage(
+            "\u0412\u0435\u0447\u0435 \u0438\u043c\u0430\u0442\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u043f\u0440\u043e\u0444\u0438\u043b. \u041c\u043e\u0436\u0435\u0442\u0435 \u0434\u0430 \u0433\u043e \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u0430\u0442\u0435 \u043e\u0442 \u201e\u041c\u043e\u044f\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u201c."
+          );
+          return;
+        }
+
+        const {
           data: insertedProvider,
           error,
         } = await supabase
@@ -1228,6 +1250,13 @@ export default function ServicesPage() {
           })
           .select("id")
           .single();
+
+        if (error?.code === "23505") {
+          setProviderMessage(
+            "\u0412\u0435\u0447\u0435 \u0438\u043c\u0430\u0442\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u043d \u043f\u0440\u043e\u0444\u0438\u043b. \u041c\u043e\u0436\u0435\u0442\u0435 \u0434\u0430 \u0433\u043e \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u0430\u0442\u0435 \u043e\u0442 \u201e\u041c\u043e\u044f\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u201c."
+          );
+          return;
+        }
 
         if (error || !insertedProvider) {
           throw new Error(
