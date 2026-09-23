@@ -704,6 +704,89 @@ export default function ServicesPage() {
     return user;
   }
 
+  function focusInvalidField(
+    form: HTMLFormElement,
+    selector: string,
+    message: string
+  ) {
+    const target =
+      form.querySelector<HTMLElement>(selector);
+
+    if (!target) return;
+
+    form
+      .querySelectorAll(
+        "[data-inline-validation-error]"
+      )
+      .forEach(element => element.remove());
+
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+
+    window.setTimeout(() => {
+      let focusTarget: HTMLElement = target;
+
+      if (
+        !(
+          target instanceof HTMLInputElement ||
+          target instanceof HTMLSelectElement ||
+          target instanceof HTMLTextAreaElement ||
+          target instanceof HTMLButtonElement
+        )
+      ) {
+        focusTarget =
+          target.querySelector<HTMLElement>(
+            "input, select, textarea, button"
+          ) || target;
+      }
+
+      focusTarget.focus({
+        preventScroll: true,
+      });
+
+      target.classList.add(
+        "ring-2",
+        "ring-red-400",
+        "ring-offset-2"
+      );
+
+      const error =
+        document.createElement("div");
+
+      error.setAttribute(
+        "data-inline-validation-error",
+        "true"
+      );
+
+      error.setAttribute(
+        "role",
+        "alert"
+      );
+
+      error.className =
+        "mt-2 rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700";
+
+      error.textContent = message;
+
+      const container =
+        target.closest("div") || target.parentElement;
+
+      if (container) {
+        container.appendChild(error);
+      }
+
+      window.setTimeout(() => {
+        target.classList.remove(
+          "ring-2",
+          "ring-red-400",
+          "ring-offset-2"
+        );
+      }, 2200);
+    }, 350);
+  }
+
   async function submitRequest(
     event: FormEvent<HTMLFormElement>
   ) {
@@ -748,11 +831,21 @@ export default function ServicesPage() {
       setRequestMessage(
         "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u0443\u0441\u043b\u0443\u0433\u0430."
       );
+      focusInvalidField(
+        form,
+        '[name="service"]',
+        "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u0443\u0441\u043b\u0443\u0433\u0430."
+      );
       return;
     }
 
     if (!requestedRegion) {
       setRequestMessage(
+        "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043e\u0431\u043b\u0430\u0441\u0442."
+      );
+      focusInvalidField(
+        form,
+        '[name="region"]',
         "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043e\u0431\u043b\u0430\u0441\u0442."
       );
       return;
@@ -762,11 +855,21 @@ export default function ServicesPage() {
       setRequestMessage(
         "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435\u0442\u043e \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0435 \u043f\u043e\u043d\u0435 10 \u0441\u0438\u043c\u0432\u043e\u043b\u0430."
       );
+      focusInvalidField(
+        form,
+        '[name="description"]',
+        "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435\u0442\u043e \u0442\u0440\u044f\u0431\u0432\u0432\u0430 \u0434\u0430 \u0435 \u043f\u043e\u043d\u0435 10 \u0441\u0438\u043c\u0432\u043e\u043b\u0430."
+      );
       return;
     }
 
     if (!phone && !email) {
       setRequestMessage(
+        "\u0412\u044a\u0432\u0435\u0434\u0435\u0442\u0435 \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u0438\u043b\u0438 \u0438\u043c\u0435\u0439\u043b \u0437\u0430 \u043a\u043e\u043d\u0442\u0430\u043a\u0442."
+      );
+      focusInvalidField(
+        form,
+        '[name="contact_phone"]',
         "\u0412\u044a\u0432\u0435\u0434\u0435\u0442\u0435 \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u0438\u043b\u0438 \u0438\u043c\u0435\u0439\u043b \u0437\u0430 \u043a\u043e\u043d\u0442\u0430\u043a\u0442."
       );
       return;
@@ -776,12 +879,22 @@ export default function ServicesPage() {
       setRequestMessage(
         "\u0417\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0435 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c \u0438\u043c\u0435\u0439\u043b."
       );
+      focusInvalidField(
+        form,
+        '[name="contact_email"]',
+        "\u0417\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0435 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c \u0438\u043c\u0435\u0439\u043b."
+      );
       return;
     }
 
     if (!user && password.length < 6) {
       setRequestMessage(
         "\u041f\u0430\u0440\u043e\u043b\u0430\u0442\u0430 \u0442\u0440\u044f\u0431\u0432\u0432\u0430 \u0434\u0430 \u0435 \u043f\u043e\u043d\u0435 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430."
+      );
+      focusInvalidField(
+        form,
+        '[name="password"]',
+        "\u041f\u0430\u0440\u043e\u043b\u0430\u0442\u0430 \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0435 \u043f\u043e\u043d\u0435 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430."
       );
       return;
     }
@@ -1123,6 +1236,11 @@ export default function ServicesPage() {
       setProviderMessage(
         "\u0412\u044a\u0432\u0435\u0434\u0435\u0442\u0435 \u0438\u043c\u0435 \u0438\u043b\u0438 \u0444\u0438\u0440\u043c\u0430."
       );
+      focusInvalidField(
+        form,
+        '[name="company_name"]',
+        "\u0412\u044a\u0432\u0435\u0434\u0435\u0442\u0435 \u0438\u043c\u0435 \u0438\u043b\u0438 \u0444\u0438\u0440\u043c\u0430."
+      );
       return;
     }
 
@@ -1130,11 +1248,21 @@ export default function ServicesPage() {
       setProviderMessage(
         "\u0412\u044a\u0432\u0435\u0434\u0435\u0442\u0435 \u0432\u0430\u043b\u0438\u0434\u0435\u043d \u0442\u0435\u043b\u0435\u0444\u043e\u043d."
       );
+      focusInvalidField(
+        form,
+        '[name="phone"]',
+        "\u0412\u044a\u0432\u0435\u0434\u0435\u0442\u0435 \u0432\u0430\u043b\u0438\u0434\u0435\u043d \u0442\u0435\u043b\u0435\u0444\u043e\u043d."
+      );
       return;
     }
 
     if (selectedServices.length === 0) {
       setProviderMessage(
+        "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043f\u043e\u043d\u0435 \u0435\u0434\u043d\u0430 \u0443\u0441\u043b\u0443\u0433\u0430."
+      );
+      focusInvalidField(
+        form,
+        '[name="services"]',
         "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043f\u043e\u043d\u0435 \u0435\u0434\u043d\u0430 \u0443\u0441\u043b\u0443\u0433\u0430."
       );
       return;
@@ -1161,6 +1289,11 @@ export default function ServicesPage() {
       setProviderMessage(
         "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043f\u043e\u043d\u0435 \u0435\u0434\u043d\u0430 \u043e\u0431\u043b\u0430\u0441\u0442 \u0438\u043b\u0438 \u201e\u0420\u0430\u0431\u043e\u0442\u044f \u0432 \u0446\u044f\u043b\u0430 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f\u201c."
       );
+      focusInvalidField(
+        form,
+        '[name="work_regions"]',
+        "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u043f\u043e\u043d\u0435 \u0435\u0434\u043d\u0430 \u043e\u0431\u043b\u0430\u0441\u0442 \u0438\u043b\u0438 \u201e\u0420\u0430\u0431\u043e\u0442\u044f \u0432 \u0446\u044f\u043b\u0430 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f\u201c."
+      );
       return;
     }
 
@@ -1173,11 +1306,21 @@ export default function ServicesPage() {
         setProviderMessage(
           "\u0412\u044a\u0432\u0435\u0434\u0435\u0442\u0435 \u0438\u043c\u0435\u0439\u043b \u0437\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f."
         );
+        focusInvalidField(
+          form,
+          '[name="email"]',
+          "\u0412\u044a\u0432\u0435\u0434\u0435\u0442\u0435 \u0438\u043c\u0435\u0439\u043b \u0437\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f."
+        );
         return;
       }
 
       if (password.length < 6) {
         setProviderMessage(
+          "\u041f\u0430\u0440\u043e\u043b\u0430\u0442\u0430 \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0435 \u043f\u043e\u043d\u0435 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430."
+        );
+        focusInvalidField(
+          form,
+          '[name="password"]',
           "\u041f\u0430\u0440\u043e\u043b\u0430\u0442\u0430 \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0435 \u043f\u043e\u043d\u0435 6 \u0441\u0438\u043c\u0432\u043e\u043b\u0430."
         );
         return;
