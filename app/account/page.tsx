@@ -980,7 +980,7 @@ export default function AccountPage() {
           sort_order:
             providerMedia.length,
           status:
-            "pending",
+            "approved",
         })
         .select(
           "id, provider_id, media_type, storage_path, caption, sort_order, status, created_at"
@@ -1154,7 +1154,7 @@ export default function AccountPage() {
             providerEquipment.trim() || null,
           presentation:
             providerPresentation.trim() || null,
-          status: "pending",
+          status: "approved",
         })
         .eq("id", providerProfile.id)
         .eq("owner_id", userId)
