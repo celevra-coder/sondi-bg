@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="bg">
 <head>
 <meta charset="utf-8">
@@ -12034,6 +12034,56 @@ function analyzeFeature(index){
   );
 }
 
+
+/* LEGAL_LOCATION_PICK_START */
+function returnLegalLocationPick(
+  latitude,
+  longitude,
+  label
+) {
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  if (params.get("mode") !== "legal") {
+    return false;
+  }
+
+  const returnTo =
+    params.get("return") || "/legal";
+
+  const target =
+    new URL(
+      returnTo,
+      window.location.origin
+    );
+
+  target.searchParams.set(
+    "lat",
+    Number(latitude).toFixed(7)
+  );
+
+  target.searchParams.set(
+    "lng",
+    Number(longitude).toFixed(7)
+  );
+
+  if (label) {
+    target.searchParams.set(
+      "label",
+      String(label)
+    );
+  }
+
+  window.top.location.href =
+    target.pathname +
+    target.search;
+
+  return true;
+}
+/* LEGAL_LOCATION_PICK_END */
+
 map.on('click', function(e) {
   if (
     !e ||
@@ -12057,6 +12107,17 @@ map.on('click', function(e) {
 
   const latitude = Number(e.latlng.lat);
   const longitude = Number(e.latlng.lng);
+
+
+  if (
+    returnLegalLocationPick(
+      latitude,
+      longitude,
+      "\u0418\u0437\u0431\u0440\u0430\u043d \u0438\u043c\u043e\u0442"
+    )
+  ) {
+    return;
+  }
 
   if (analysisPickMode) {
     analysisPickMode = false;
@@ -18626,6 +18687,347 @@ function analyzeSearchedLocation(
 
 /* UNIFIED_LOCATION_ANALYSIS_END */
 
+
+async function getLegalMineralFeatureById(
+  mineralId
+) {
+  if (!mineralId) {
+    return null;
+  }
+
+  try {
+    if (
+      typeof data !== "undefined" &&
+      data &&
+      Array.isArray(data.features)
+    ) {
+      const existing =
+        data.features.find(function(feature) {
+          return String(
+            feature?.properties?.mineral_id || ""
+          ) === String(mineralId);
+        });
+
+      if (existing) {
+        return existing;
+      }
+    }
+  } catch (error) {}
+
+  try {
+    const response = await fetch(
+      "/geology-map/data/official_water_facilities.geojson",
+      {
+        cache: "no-store"
+      }
+    );
+
+    if (!response.ok) {
+      return null;
+    }
+
+    const geojson =
+      await response.json();
+
+    if (
+      !geojson ||
+      !Array.isArray(geojson.features)
+    ) {
+      return null;
+    }
+
+    return (
+      geojson.features.find(
+        function(feature) {
+          return String(
+            feature?.properties?.mineral_id || ""
+          ) === String(mineralId);
+        }
+      ) || null
+    );
+  } catch (error) {
+    return null;
+  }
+}
+
+
+function legalMineralValue(
+  value,
+  fallback = "Няма данни"
+) {
+  const text =
+    String(value ?? "").trim();
+
+  return text || fallback;
+}
+
+
+function buildLegalMineralContextHtml(
+  feature,
+  latitude,
+  longitude
+) {
+  if (!feature) {
+    return "";
+  }
+
+  const p =
+    feature.properties || {};
+
+  const facility =
+    legalMineralValue(
+      p.facility ||
+      p.name,
+      "Минерално съоръжение"
+    );
+
+  const facilityType =
+    legalMineralValue(
+      p.facility_type
+    );
+
+  const deposit =
+    legalMineralValue(
+      p.deposit
+    );
+
+  const section =
+    legalMineralValue(
+      p.section,
+      "Няма отделен участък"
+    );
+
+  const settlement =
+    legalMineralValue(
+      p.settlement
+    );
+
+  const registryNumber =
+    legalMineralValue(
+      p.registry_number
+    );
+
+  const coordinateAccuracy =
+    legalMineralValue(
+      p.coordinate_accuracy ||
+      p.mapped_status
+    );
+
+  const source =
+    legalMineralValue(
+      p.source
+    );
+
+  const sourceDate =
+    legalMineralValue(
+      p.source_date,
+      ""
+    );
+
+  const sourceLine =
+    sourceDate
+      ? source + " · " + sourceDate
+      : source;
+
+  return (
+    '<div style="' +
+      'margin-bottom:10px;' +
+      'padding:10px 11px;' +
+      'border:1px solid #bdd5cf;' +
+      'border-radius:9px;' +
+      'background:#f4faf8;' +
+      'font-size:12px;' +
+      'line-height:1.45;' +
+      'color:#274f47;' +
+    '">' +
+
+      '<div style="' +
+        'margin-bottom:7px;' +
+        'font-size:11px;' +
+        'font-weight:800;' +
+        'letter-spacing:.06em;' +
+        'color:#397064;' +
+      '">' +
+        '⚖ СЪОРЪЖЕНИЕ ОТ ЗАКОНОВАТА ПРОВЕРКА' +
+      '</div>' +
+
+      '<div style="' +
+        'margin-bottom:7px;' +
+        'font-size:13px;' +
+        'font-weight:800;' +
+        'color:#173f48;' +
+      '">' +
+        esc(facility) +
+      '</div>' +
+
+      '<div><strong>Тип:</strong> ' +
+        esc(facilityType) +
+      '</div>' +
+
+      '<div><strong>Находище:</strong> ' +
+        esc(deposit) +
+      '</div>' +
+
+      '<div><strong>Участък:</strong> ' +
+        esc(section) +
+      '</div>' +
+
+      '<div><strong>Населено място:</strong> ' +
+        esc(settlement) +
+      '</div>' +
+
+      '<div><strong>Регистрационен №:</strong> ' +
+        esc(registryNumber) +
+      '</div>' +
+
+      '<div><strong>Координати:</strong> ' +
+        latitude.toFixed(7) +
+        ', ' +
+        longitude.toFixed(7) +
+      '</div>' +
+
+      '<div><strong>Точност на картографирането:</strong> ' +
+        esc(coordinateAccuracy) +
+      '</div>' +
+
+      '<div><strong>Източник / дата:</strong> ' +
+        esc(sourceLine) +
+      '</div>' +
+
+      '<div style="' +
+        'margin-top:8px;' +
+        'padding-top:8px;' +
+        'border-top:1px solid #d4e4df;' +
+        'color:#5c6f69;' +
+      '">' +
+        'Картата ви помага да потвърдите кое точно съоръжение разглеждате и как е разположено спрямо останалите минерални обекти и геоложкия контекст.' +
+      '</div>' +
+
+    '</div>'
+  );
+}
+
+
+async function applyLegalMineralContextToSearchPopup(
+  latitude,
+  longitude,
+  label
+) {
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  if (
+    params.get("mode") !== "legal"
+  ) {
+    return;
+  }
+
+  const mineralId =
+    String(
+      params.get("mineral_id") || ""
+    ).trim();
+
+  if (!mineralId) {
+    return;
+  }
+
+  const directLegalName =
+    String(
+      params.get("legal_name") || ""
+    ).trim();
+
+  let feature = null;
+
+  if (directLegalName) {
+    feature = {
+      properties: {
+        name:
+          directLegalName,
+
+        facility:
+          directLegalName,
+
+        facility_type:
+          params.get("legal_type") || "",
+
+        deposit:
+          params.get("legal_deposit") || "",
+
+        section:
+          params.get("legal_section") || "",
+
+        settlement:
+          params.get("legal_settlement") || "",
+
+        registry_number:
+          params.get("legal_registry") || "",
+
+        coordinate_accuracy:
+          params.get("legal_coord_status") || "",
+
+        source:
+          params.get("legal_source") || "",
+
+        source_date:
+          params.get("legal_source_date") || ""
+      }
+    };
+  }
+
+  if (!feature) {
+    feature =
+      await getLegalMineralFeatureById(
+        mineralId
+      );
+  }
+
+  if (
+    !feature ||
+    !coordinateSearchMarker
+  ) {
+    return;
+  }
+
+  const contextHtml =
+    buildLegalMineralContextHtml(
+      feature,
+      latitude,
+      longitude
+    );
+
+  if (!contextHtml) {
+    return;
+  }
+
+  const currentPopup =
+    coordinateSearchMarker.getPopup();
+
+  if (!currentPopup) {
+    return;
+  }
+
+  const currentHtml =
+    currentPopup.getContent();
+
+  if (
+    typeof currentHtml !== "string" ||
+    currentHtml.includes(
+      "СЪОРЪЖЕНИЕ ОТ ЗАКОНОВАТА ПРОВЕРКА"
+    )
+  ) {
+    return;
+  }
+
+  currentPopup.setContent(
+    contextHtml +
+    currentHtml
+  );
+
+  coordinateSearchMarker.openPopup();
+}
+
 function showSearchedCoordinates(
   latitude,
   longitude,
@@ -18757,6 +19159,12 @@ if (coordinateSearchMarker) {
     .bindPopup(popupHtml)
     .openPopup();
 
+  void applyLegalMineralContextToSearchPopup(
+    latitude,
+    longitude,
+    label
+  );
+
   if (zoomToPoint) {
     map.setView(
       [latitude, longitude],
@@ -18784,9 +19192,345 @@ if (coordinateSearchMarker) {
 
 }
 
+function stripLegalMineralDuplicateHeader(html) {
+  if (!html) {
+    return "";
+  }
+
+  try {
+    const container =
+      document.createElement("div");
+
+    container.innerHTML =
+      html;
+
+    const analysisBox =
+      Array.from(
+        container.querySelectorAll("div")
+      ).find(element =>
+        String(
+          element.textContent || ""
+        ).includes(
+          "В подробния анализ ще видите:"
+        )
+      );
+
+    const analysisButton =
+      Array.from(
+        container.querySelectorAll("a")
+      ).find(element =>
+        String(
+          element.textContent || ""
+        ).includes(
+          "Виж подробен анализ"
+        )
+      );
+
+    if (
+      !analysisBox &&
+      !analysisButton
+    ) {
+      return html;
+    }
+
+    const result =
+      document.createElement("div");
+
+    if (analysisBox) {
+      result.appendChild(
+        analysisBox.cloneNode(true)
+      );
+    }
+
+    if (analysisButton) {
+      result.appendChild(
+        analysisButton.cloneNode(true)
+      );
+    }
+
+    return result.innerHTML;
+  } catch (error) {
+    console.warn(
+      "[SONDI legal map] Could not strip duplicate mineral popup header.",
+      error
+    );
+
+    return html;
+  }
+}
+async function openIncomingLegalMineralFacility(
+  params,
+  latitude,
+  longitude
+) {
+  if (params.get("mode") !== "legal") {
+    return false;
+  }
+
+  const mineralId =
+    String(
+      params.get("mineral_id") || ""
+    ).trim();
+
+  if (!mineralId) {
+    return false;
+  }
+
+  const legalName =
+    String(
+      params.get("legal_name") || ""
+    ).trim();
+
+  const maxAttempts = 80;
+
+  for (
+    let attempt = 0;
+    attempt < maxAttempts;
+    attempt++
+  ) {
+    let match = null;
+
+    if (
+      typeof markers !== "undefined" &&
+      Array.isArray(markers)
+    ) {
+      match =
+        markers.find(item => {
+          const itemId =
+            String(
+              item?.p?.mineral_id || ""
+            ).trim();
+
+          return itemId === mineralId;
+        }) || null;
+
+      if (!match && legalName) {
+        const normalizedLegalName =
+          legalName.toLowerCase();
+
+        match =
+          markers.find(item => {
+            const itemName =
+              String(
+                item?.p?.name ||
+                item?.p?.facility ||
+                ""
+              )
+                .trim()
+                .toLowerCase();
+
+            if (
+              !itemName ||
+              itemName !== normalizedLegalName
+            ) {
+              return false;
+            }
+
+            const point =
+              item?.marker?.getLatLng
+                ? item.marker.getLatLng()
+                : null;
+
+            if (!point) {
+              return false;
+            }
+
+            const latDiff =
+              Math.abs(
+                Number(point.lat) -
+                Number(latitude)
+              );
+
+            const lngDiff =
+              Math.abs(
+                Number(point.lng) -
+                Number(longitude)
+              );
+
+            return (
+              latDiff < 0.0003 &&
+              lngDiff < 0.0003
+            );
+          }) || null;
+      }
+    }
+
+    if (match?.marker) {
+      const marker =
+        match.marker;
+
+      const properties =
+        match.p || {};
+
+      const layerCheckbox =
+        match.layer
+          ? document.getElementById(
+              match.layer
+            )
+          : null;
+
+      if (
+        layerCheckbox &&
+        !layerCheckbox.checked
+      ) {
+        layerCheckbox.checked = true;
+
+        try {
+          layerCheckbox.dispatchEvent(
+            new Event(
+              "change",
+              {
+                bubbles: true
+              }
+            )
+          );
+        } catch (_) {}
+      }
+
+      if (!map.hasLayer(marker)) {
+        marker.addTo(map);
+      }
+
+      const markerPoint =
+        marker.getLatLng();
+
+      map.setView(
+        markerPoint,
+        15
+      );
+
+      const popup =
+        marker.getPopup();
+
+      if (!popup) {
+        marker.openPopup();
+        return true;
+      }
+
+      const currentContent =
+        popup.getContent();
+
+      const currentHtml =
+        typeof currentContent === "string"
+          ? currentContent
+          : "";
+
+      const legalMineralHtml =
+        stripLegalMineralDuplicateHeader(
+          currentHtml
+        );
+
+      const directProperties = {
+        ...properties,
+
+        name:
+          params.get("legal_name") ||
+          properties.name ||
+          properties.facility ||
+          "",
+
+        facility:
+          params.get("legal_name") ||
+          properties.facility ||
+          properties.name ||
+          "",
+
+        facility_type:
+          params.get("legal_type") ||
+          properties.facility_type ||
+          "",
+
+        deposit:
+          params.get("legal_deposit") ||
+          properties.deposit ||
+          "",
+
+        section:
+          params.get("legal_section") ||
+          properties.section ||
+          "",
+
+        settlement:
+          params.get("legal_settlement") ||
+          properties.settlement ||
+          "",
+
+        registry_number:
+          params.get("legal_registry") ||
+          properties.registry_number ||
+          "",
+
+        coordinate_accuracy:
+          params.get("legal_coord_status") ||
+          properties.coordinate_accuracy ||
+          properties.mapped_status ||
+          "",
+
+        source:
+          params.get("legal_source") ||
+          properties.source ||
+          "",
+
+        source_date:
+          params.get("legal_source_date") ||
+          properties.source_date ||
+          ""
+      };
+
+      const contextHtml =
+        buildLegalMineralContextHtml(
+          {
+            properties:
+              directProperties
+          },
+          Number(markerPoint.lat),
+          Number(markerPoint.lng)
+        );
+
+      const legalMarker =
+        'data-legal-mineral-context="1"';
+
+      const finalHtml =
+        currentHtml.includes(
+          legalMarker
+        )
+          ? currentHtml
+          : (
+              '<div ' +
+              legalMarker +
+              '>' +
+              contextHtml +
+              '</div>' +
+              legalMineralHtml
+            );
+
+      popup.setContent(
+        finalHtml
+      );
+
+      marker.openPopup();
+
+      return true;
+    }
+
+    await new Promise(resolve =>
+      setTimeout(
+        resolve,
+        100
+      )
+    );
+  }
+
+  console.warn(
+    "[SONDI legal map] Mineral facility marker not found:",
+    mineralId
+  );
+
+  return false;
+}
 /* INCOMING_MAP_LOCATION_START */
 (function setupIncomingMapLocation() {
-  function applyIncomingMapLocation() {
+  async function applyIncomingMapLocation() {
     const params = new URLSearchParams(window.location.search);
 
     const rawLatitude = params.get("lat");
@@ -18828,6 +19572,22 @@ if (coordinateSearchMarker) {
       document.getElementById(
         "coordinate-search-status"
       );
+
+    const openedLegalMineral =
+      await openIncomingLegalMineralFacility(
+        params,
+        latitude,
+        longitude
+      );
+
+    if (openedLegalMineral) {
+      if (status) {
+        status.textContent =
+          "Показано минерално съоръжение от законовата проверка.";
+      }
+
+      return;
+    }
 
     showSearchedCoordinates(
       latitude,
@@ -19801,3 +20561,7 @@ function toggleLayersPanel(){
 </script>
 </body>
 </html>
+
+
+
+

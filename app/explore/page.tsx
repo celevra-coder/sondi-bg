@@ -95,7 +95,7 @@ export default function ExplorePage() {
                 playsInline
                 preload="metadata"
               >
-                <source src="/videos/sondi-hero.mp4" type="video/mp4" />
+                <source src="/videos/sondi-hero-lite.mp4" type="video/mp4" />
               </video>
 
               <div className="absolute inset-0 bg-gradient-to-t from-[#082d36]/65 via-transparent to-black/10" />

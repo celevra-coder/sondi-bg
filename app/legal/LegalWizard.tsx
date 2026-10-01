@@ -2087,8 +2087,8 @@ type LegalLocationData = {
 
     within1Km: number;
     within5Km: number;
-    within10Km: number;
-    within25Km: number;
+    within15Km: number;
+    within30Km: number;
 
     representedDeposits: string[];
   };
@@ -7367,13 +7367,13 @@ export default function LegalWizard() {
                                   "до 10 km",
                                   newMineralFacilityLocation
                                     .mineralContext
-                                    ?.within10Km || 0,
+                                    ?.within15Km || 0,
                                 ],
                                 [
                                   "до 25 km",
                                   newMineralFacilityLocation
                                     .mineralContext
-                                    ?.within25Km || 0,
+                                    ?.within30Km || 0,
                                 ],
                               ].map(
                                 ([label, value]) => (
@@ -9260,12 +9260,12 @@ export default function LegalWizard() {
                                 [
                                   "до 10 km",
                                   legalLocation.mineralContext
-                                    .within10Km,
+                                    .within15Km,
                                 ],
                                 [
                                   "до 25 km",
                                   legalLocation.mineralContext
-                                    .within25Km,
+                                    .within30Km,
                                 ],
                               ].map(
                                 ([label, value]) => (
@@ -9505,3 +9505,4 @@ export default function LegalWizard() {
     </main>
   );
 }
+

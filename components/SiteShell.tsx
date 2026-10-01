@@ -316,19 +316,35 @@ const [authReady, setAuthReady] = useState(false);
               </div>
             ))}
 
-            <Link
-              href="/knowledge"
-              className="px-4 py-3 text-[13px] font-medium text-[#294e59] transition hover:text-[#15809a]"
-            >
-              ЗНАНИЯ
-            </Link>
+            <div className="group relative flex h-full items-center">
+              <button
+                type="button"
+                className="flex items-center gap-2 px-4 py-3 text-[13px] font-medium text-[#294e59] transition group-hover:text-[#15809a]"
+              >
+                {"\u0417\u041d\u0410\u041d\u0418\u042f"}
+                <span className="text-[8px]">{"\u25bc"}</span>
+              </button>
 
-            <Link
-              href="/water"
-              className="px-4 py-3 text-[13px] font-medium text-[#294e59] transition hover:text-[#15809a]"
-            >
-              {"\u041f\u041e\u0414\u0417\u0415\u041c\u041d\u0418 \u0412\u041e\u0414\u0418"}
-            </Link>
+              <div className="pointer-events-none absolute left-1/2 top-[72px] w-[330px] -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="overflow-hidden border border-[#cde5eb] bg-[#f8fdfe] shadow-[0_22px_60px_rgba(29,77,90,.16)]">
+                  <Link
+                    href="/knowledge"
+                    className="flex items-center justify-between border-b border-[#e0eef2] px-5 py-4 text-sm text-[#355863] transition hover:bg-[#dff2f7] hover:pl-7 hover:text-[#137891]"
+                  >
+                    <span>{"\u0411\u0430\u0437\u0430 \u0437\u043d\u0430\u043d\u0438\u044f"}</span>
+                    <span className="text-[#7caab5]">{"\u2192"}</span>
+                  </Link>
+
+                  <Link
+                    href="/water"
+                    className="flex items-center justify-between px-5 py-4 text-sm text-[#355863] transition hover:bg-[#dff2f7] hover:pl-7 hover:text-[#137891]"
+                  >
+                    <span>{"\u041f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u0438 \u043f\u043e \u0440\u0430\u0439\u043e\u043d\u0438"}</span>
+                    <span className="text-[#7caab5]">{"\u2192"}</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
 
             <Link
               href="/about"
@@ -505,21 +521,58 @@ const [authReady, setAuthReady] = useState(false);
 
               <div className="border-t border-[#d7e9ed] pt-4">
                 <div className="grid gap-4">
-                  <Link
-                    href="/knowledge"
-                    onClick={() => setMobileOpen(false)}
-                    className="font-medium text-[#294e59]"
-                  >
-                    {"\u0417\u043d\u0430\u043d\u0438\u044f"}
-                  </Link>
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setMobileSectionOpen(
+                          mobileSectionOpen === "knowledge"
+                            ? null
+                            : "knowledge"
+                        )
+                      }
+                      className="flex w-full items-center justify-between font-medium text-[#294e59]"
+                      aria-expanded={mobileSectionOpen === "knowledge"}
+                    >
+                      <span>{"\u0417\u043d\u0430\u043d\u0438\u044f"}</span>
+                      <span
+                        className={[
+                          "transition-transform duration-200",
+                          mobileSectionOpen === "knowledge"
+                            ? "rotate-180"
+                            : "",
+                        ].join(" ")}
+                      >
+                        {"\u2304"}
+                      </span>
+                    </button>
 
-                  <Link
-                    href="/water"
-                    onClick={() => setMobileOpen(false)}
-                    className="font-medium text-[#294e59]"
-                  >
-                    {"\u041f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u0438"}
-                  </Link>
+                    {mobileSectionOpen === "knowledge" && (
+                      <div className="mt-3 grid gap-2 pl-3">
+                        <Link
+                          href="/knowledge"
+                          onClick={() => {
+                            setMobileOpen(false);
+                            setMobileSectionOpen(null);
+                          }}
+                          className="rounded-lg px-2 py-2 text-[#355863] transition hover:bg-[#e3f3f6]"
+                        >
+                          {"\u0411\u0430\u0437\u0430 \u0437\u043d\u0430\u043d\u0438\u044f"}
+                        </Link>
+
+                        <Link
+                          href="/water"
+                          onClick={() => {
+                            setMobileOpen(false);
+                            setMobileSectionOpen(null);
+                          }}
+                          className="rounded-lg px-2 py-2 text-[#355863] transition hover:bg-[#e3f3f6]"
+                        >
+                          {"\u041f\u043e\u0434\u0437\u0435\u043c\u043d\u0438 \u0432\u043e\u0434\u0438 \u043f\u043e \u0440\u0430\u0439\u043e\u043d\u0438"}
+                        </Link>
+                      </div>
+                    )}
+                  </div>
 
                   <Link
                     href="/about"

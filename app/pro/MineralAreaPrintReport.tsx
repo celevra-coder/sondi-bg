@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   MineralWaterAreaProfile,
 } from "@/lib/mineral-water-profile";
 
@@ -195,7 +195,7 @@ export default function MineralAreaPrintReport({
     score += 1;
   }
 
-  if (profile.within10Km >= 5) {
+  if (profile.within15Km >= 5) {
     score += 1;
   }
 
@@ -245,7 +245,7 @@ export default function MineralAreaPrintReport({
 
   const objectsText =
     nearest
-      ? `Най-близкият известен минерален обект е „${nearest.name}“ на приблизително ${fmt(nearest.distanceKm, 2)} km. В радиус до 1 km има ${profile.within1Km} локализирани обекта, до 5 km — ${profile.within5Km}, до 10 km — ${profile.within10Km}, а до 25 km — ${profile.within25Km}.`
+      ? `Най-близкият известен минерален обект е „${nearest.name}“ на приблизително ${fmt(nearest.distanceKm, 2)} km. В радиус до 1 km има ${profile.within1Km} локализирани обекта, до 5 km — ${profile.within5Km}, до 10 km — ${profile.within15Km}, а до 25 km — ${profile.within30Km}.`
       : `В радиус до 25 km в наличната база не е намерено локализирано минерално съоръжение.`;
 
   const temperatureText =
@@ -488,11 +488,11 @@ export default function MineralAreaPrintReport({
               />
               <Row
                 label="Обекти до 10 km"
-                value={profile.within10Km}
+                value={profile.within15Km}
               />
               <Row
                 label="Обекти до 25 km"
-                value={profile.within25Km}
+                value={profile.within30Km}
               />
               <Row
                 label="Свързани находища"
@@ -630,3 +630,4 @@ export default function MineralAreaPrintReport({
     </>
   );
 }
+

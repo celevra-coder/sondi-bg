@@ -1,4 +1,4 @@
-import fs from "node:fs";
+﻿import fs from "node:fs";
 import path from "node:path";
 
 type Obj = Record<string, any>;
@@ -125,8 +125,8 @@ export type MineralWaterAreaProfile = {
 
   within1Km: number;
   within5Km: number;
-  within10Km: number;
-  within25Km: number;
+  within15Km: number;
+  within30Km: number;
 
   nearestFacility:
     | MineralAreaFacility
@@ -949,7 +949,7 @@ export function getMineralWaterAreaProfile(
       }))
       .filter(
         item =>
-          item.distanceKm <= 25
+          item.distanceKm <= 30
       )
       .sort(
         (a, b) =>
@@ -1028,12 +1028,12 @@ export function getMineralWaterAreaProfile(
         item => item.distanceKm <= 5
       ).length,
 
-    within10Km:
+    within15Km:
       located.filter(
-        item => item.distanceKm <= 10
+        item => item.distanceKm <= 15
       ).length,
 
-    within25Km:
+    within30Km:
       located.length,
 
     nearestFacility:
@@ -1084,3 +1084,5 @@ export function getExactMineralFacilityRecord(
     ) || null
   );
 }
+
+

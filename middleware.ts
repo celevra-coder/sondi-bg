@@ -99,7 +99,7 @@ if (
 // register НЕ го пренасочваме автоматично, за да не влиза в quick mode насила
 if (user && request.nextUrl.pathname === "/login") {
   const url = request.nextUrl.clone();
-  url.pathname = "/dashboard";
+  url.pathname = "/services";
   return NextResponse.redirect(url);
 }
 

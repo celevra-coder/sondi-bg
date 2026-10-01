@@ -70,10 +70,10 @@ export default function ForgotPasswordPage() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
       >
         <source
-          src="/videos/sondi-hero.mp4"
+          src="/videos/sondi-hero-lite.mp4"
           type="video/mp4"
         />
       </video>

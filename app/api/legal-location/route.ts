@@ -767,11 +767,11 @@ async function resolvePoint(
       within5Km:
         mineralArea.within5Km,
 
-      within10Km:
-        mineralArea.within10Km,
+      within15Km:
+        mineralArea.within15Km,
 
-      within25Km:
-        mineralArea.within25Km,
+      within30Km:
+        mineralArea.within30Km,
 
       representedDeposits:
         mineralArea.representedDeposits,
@@ -1540,3 +1540,4 @@ export async function GET(request: NextRequest) {
     await resolvePoint(lat, lng)
   );
 }
+
