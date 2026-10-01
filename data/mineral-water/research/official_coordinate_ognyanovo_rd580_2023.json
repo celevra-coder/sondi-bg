@@ -173,5 +173,241 @@
       ]
     }
   ],
-  "note": "Only entries with unambiguous source coordinates were applied in this batch. KEI No.17 Taskov gyol was intentionally excluded because the web text extraction contains an ambiguous digit in the northing; its cadastral property will be resolved separately."
+  "note": "Only entries with unambiguous source coordinates were applied in this batch. KEI No.17 Taskov gyol was intentionally excluded because the web text extraction contains an ambiguous digit in the northing; its cadastral property will be resolved separately.",
+  "belt_III": {
+    "name": "СОЗ пояс III",
+    "deposit": "Огняново-Гърмен",
+    "legal_basis": "Заповед № РД-580/08.08.2023 г.",
+    "source": "МОСВ — Заповед № РД-580/08.08.2023 г. за санитарно-охранителна зона на НМВ „Огняново-Гърмен“",
+    "source_url": "https://garmen.bg/images/Ekologiq/2023_%D0%B3/%D0%97%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4-3-24_compressed.pdf",
+    "coordinate_system": "BGS2005 / CCS2005",
+    "epsg": 7801,
+    "geometry_type": "Polygon",
+    "official_area_m2": 10059953,
+    "coordinate_validation": {
+      "calculated_area_m2": 10059967.05,
+      "difference_m2": 14.05,
+      "difference_percent": 0.00014,
+      "status": "PASS"
+    },
+    "scope_interpretation": "Official outer sanitary-protection belt III polygon. Used as the defensible geographic scope for attaching the Ognyanovo-Garmen regional mineral-water model to coordinate-based analysis. Inclusion indicates regional hydrogeological context and does not prove mineral water, exact inflow depth, temperature or discharge at a specific property.",
+    "points": [
+      {
+        "point": 301,
+        "x_northing": 4610995.17,
+        "y_easting": 357434.84
+      },
+      {
+        "point": 302,
+        "x_northing": 4611556.29,
+        "y_easting": 357370.44
+      },
+      {
+        "point": 303,
+        "x_northing": 4611974.13,
+        "y_easting": 357351.34
+      },
+      {
+        "point": 304,
+        "x_northing": 4612621.83,
+        "y_easting": 357314.98
+      },
+      {
+        "point": 305,
+        "x_northing": 4613051.99,
+        "y_easting": 357284.79
+      },
+      {
+        "point": 306,
+        "x_northing": 4613092.65,
+        "y_easting": 357738.98
+      },
+      {
+        "point": 307,
+        "x_northing": 4613038.72,
+        "y_easting": 358763.53
+      },
+      {
+        "point": 308,
+        "x_northing": 4612978.94,
+        "y_easting": 359453.13
+      },
+      {
+        "point": 309,
+        "x_northing": 4612905.28,
+        "y_easting": 359848.47
+      },
+      {
+        "point": 310,
+        "x_northing": 4612630.12,
+        "y_easting": 360391.7
+      },
+      {
+        "point": 311,
+        "x_northing": 4612277.31,
+        "y_easting": 360737.11
+      },
+      {
+        "point": 312,
+        "x_northing": 4611788.62,
+        "y_easting": 360875.77
+      },
+      {
+        "point": 313,
+        "x_northing": 4611202.25,
+        "y_easting": 360862.52
+      },
+      {
+        "point": 314,
+        "x_northing": 4610625.73,
+        "y_easting": 360661.93
+      },
+      {
+        "point": 315,
+        "x_northing": 4610021.78,
+        "y_easting": 360090.04
+      },
+      {
+        "point": 316,
+        "x_northing": 4609495.17,
+        "y_easting": 359164.11
+      },
+      {
+        "point": 317,
+        "x_northing": 4609566.04,
+        "y_easting": 358821.46
+      },
+      {
+        "point": 318,
+        "x_northing": 4610021.77,
+        "y_easting": 358120.97
+      },
+      {
+        "point": 319,
+        "x_northing": 4610487.87,
+        "y_easting": 357492.31
+      },
+      {
+        "point": 320,
+        "x_northing": 4610995.17,
+        "y_easting": 357434.84
+      }
+    ],
+    "wgs84": {
+      "coordinate_system": "WGS 84",
+      "epsg": 4326,
+      "geometry_type": "Polygon",
+      "transformation": "EPSG:7801 -> EPSG:4326 using pyproj",
+      "validation": {
+        "source_point_count": 20,
+        "transformed_point_count": 20,
+        "polygon_closed": true,
+        "known_facilities_tested": 11,
+        "known_facilities_inside": 11,
+        "status": "PASS"
+      },
+      "points": [
+        {
+          "point": 301,
+          "latitude": 41.621088578,
+          "longitude": 23.789414937
+        },
+        {
+          "point": 302,
+          "latitude": 41.626127451,
+          "longitude": 23.788506152
+        },
+        {
+          "point": 303,
+          "latitude": 41.629884924,
+          "longitude": 23.78817551
+        },
+        {
+          "point": 304,
+          "latitude": 41.635708209,
+          "longitude": 23.787581878
+        },
+        {
+          "point": 305,
+          "latitude": 41.639574553,
+          "longitude": 23.787115069
+        },
+        {
+          "point": 306,
+          "latitude": 41.640023244,
+          "longitude": 23.792554972
+        },
+        {
+          "point": 307,
+          "latitude": 41.639723433,
+          "longitude": 23.804861494
+        },
+        {
+          "point": 308,
+          "latitude": 41.639309528,
+          "longitude": 23.813150275
+        },
+        {
+          "point": 309,
+          "latitude": 41.638717426,
+          "longitude": 23.817911498
+        },
+        {
+          "point": 310,
+          "latitude": 41.636337817,
+          "longitude": 23.824495038
+        },
+        {
+          "point": 311,
+          "latitude": 41.633223713,
+          "longitude": 23.828723082
+        },
+        {
+          "point": 312,
+          "latitude": 41.628849661,
+          "longitude": 23.830502495
+        },
+        {
+          "point": 313,
+          "latitude": 41.623569371,
+          "longitude": 23.830482478
+        },
+        {
+          "point": 314,
+          "latitude": 41.618344417,
+          "longitude": 23.828212998
+        },
+        {
+          "point": 315,
+          "latitude": 41.612806246,
+          "longitude": 23.821497079
+        },
+        {
+          "point": 316,
+          "latitude": 41.607900201,
+          "longitude": 23.810517866
+        },
+        {
+          "point": 317,
+          "latitude": 41.608476379,
+          "longitude": 23.80639147
+        },
+        {
+          "point": 318,
+          "latitude": 41.612451735,
+          "longitude": 23.797880444
+        },
+        {
+          "point": 319,
+          "latitude": 41.61653287,
+          "longitude": 23.790227399
+        },
+        {
+          "point": 320,
+          "latitude": 41.621088578,
+          "longitude": 23.789414937
+        }
+      ]
+    }
+  }
 }

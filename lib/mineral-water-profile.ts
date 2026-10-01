@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import path from "node:path";
 
 type Obj = Record<string, any>;
@@ -20,6 +20,58 @@ export type MineralFacilityContext = {
   hasCoordinates: boolean;
 };
 
+export type MineralRegionalModel = {
+  regional_model_id: string;
+
+  identity?: Obj;
+
+  evidence_base?: {
+    facility_count?: number;
+    facility_ids?: string[];
+    evidence_scope?: string;
+  };
+
+  regional_model_scope?: {
+    scope_type?: string;
+    scope_role?: string;
+    deposit?: string;
+    legal_basis?: string;
+    belt?: string;
+    official_area_m2?: number;
+
+    geometry?: {
+      type?: string;
+      coordinate_system?: string;
+      epsg?: number;
+      coordinates?: number[][];
+    };
+
+    source?: Obj;
+    validation?: Obj;
+    interpretation_limit?: string;
+  };
+
+  system_framework?: Obj;
+  documented_reference_events?: Obj[];
+
+  synthesis?: {
+    collector_model?: Obj;
+    aquitard_model?: Obj;
+    cold_over_thermal_water?: Obj;
+    temperature_model?: Obj;
+    artesian_pressure_model?: Obj;
+    structural_model?: Obj;
+    collector_relationships?: Obj;
+    upper_water_isolation?: Obj;
+    mixing_model?: Obj;
+    temporal_change_model?: Obj;
+    depth_discharge_model?: Obj;
+  };
+
+  research_status?: string;
+  next_research_tasks?: string[];
+};
+
 export type MineralWaterProfile = {
   mineralId: string;
   name: string;
@@ -38,6 +90,7 @@ export type MineralWaterProfile = {
 
   existingProperties: Obj;
   researchEnrichment: Obj;
+  regionalModel: MineralRegionalModel | null;
 
   relatedFacilities: MineralFacilityContext[];
   relatedWithCoordinates: number;
@@ -89,12 +142,23 @@ export type MineralWaterAreaProfile = {
 
   depthMin: number | null;
   depthMax: number | null;
+
+  regionalModel: MineralRegionalModel | null;
 };
 
 let cache: Obj[] | null = null;
+let regionalModelCache: MineralRegionalModel[] | null = null;
 
-function records(): Obj[] {
-  if (cache) return cache;
+function loadMineralMaster(): {
+  facilities: Obj[];
+  regionalModels: MineralRegionalModel[];
+} {
+  if (cache !== null && regionalModelCache !== null) {
+    return {
+      facilities: cache,
+      regionalModels: regionalModelCache,
+    };
+  }
 
   const file = path.join(
     process.cwd(),
@@ -113,7 +177,129 @@ function records(): Obj[] {
       ? raw.facilities
       : [];
 
-  return cache ?? [];
+  regionalModelCache =
+    !Array.isArray(raw) &&
+    Array.isArray(raw?.regional_mineral_models)
+      ? raw.regional_mineral_models
+      : [];
+
+  return {
+    facilities: cache ?? [],
+    regionalModels: regionalModelCache ?? [],
+  };
+}
+
+function records(): Obj[] {
+  return loadMineralMaster().facilities;
+}
+
+function regionalModels(): MineralRegionalModel[] {
+  return loadMineralMaster().regionalModels;
+}
+
+function findRegionalMineralModelForFacility(
+  mineralId: string
+): MineralRegionalModel | null {
+  return (
+    regionalModels().find(model =>
+      (model.evidence_base?.facility_ids ?? []).includes(
+        mineralId
+      )
+    ) ?? null
+  );
+}
+
+function pointInPolygon(
+  latitude: number,
+  longitude: number,
+  coordinates: number[][]
+): boolean {
+  if (coordinates.length < 4) {
+    return false;
+  }
+
+  let inside = false;
+
+  for (
+    let i = 0, j = coordinates.length - 1;
+    i < coordinates.length;
+    j = i++
+  ) {
+    const current = coordinates[i];
+    const previous = coordinates[j];
+
+    if (
+      !Array.isArray(current) ||
+      !Array.isArray(previous) ||
+      current.length < 2 ||
+      previous.length < 2
+    ) {
+      continue;
+    }
+
+    const xi = Number(current[0]);
+    const yi = Number(current[1]);
+    const xj = Number(previous[0]);
+    const yj = Number(previous[1]);
+
+    if (
+      !Number.isFinite(xi) ||
+      !Number.isFinite(yi) ||
+      !Number.isFinite(xj) ||
+      !Number.isFinite(yj)
+    ) {
+      continue;
+    }
+
+    const intersects =
+      (yi > latitude) !== (yj > latitude) &&
+      longitude <
+        ((xj - xi) *
+          (latitude - yi)) /
+          (yj - yi) +
+          xi;
+
+    if (intersects) {
+      inside = !inside;
+    }
+  }
+
+  return inside;
+}
+
+function findRegionalMineralModelForCoordinates(
+  latitude: number,
+  longitude: number
+): MineralRegionalModel | null {
+  if (
+    !Number.isFinite(latitude) ||
+    !Number.isFinite(longitude)
+  ) {
+    return null;
+  }
+
+  return (
+    regionalModels().find(model => {
+      const scope = model.regional_model_scope;
+      const geometry = scope?.geometry;
+
+      if (
+        scope?.scope_role !==
+          "regional_context_trigger" ||
+        geometry?.type !== "Polygon" ||
+        geometry?.epsg !== 4326 ||
+        !Array.isArray(geometry.coordinates)
+      ) {
+        return false;
+      }
+
+      return pointInPolygon(
+        latitude,
+        longitude,
+        geometry.coordinates
+      );
+    }) ?? null
+  );
 }
 
 function s(v: unknown): string | null {
@@ -600,7 +786,13 @@ export function getMineralWaterProfile(
       group.map(x => x.temperatureC)
     );
 
+  const regionalModel =
+    findRegionalMineralModelForFacility(
+      selected.mineralId
+    );
+
   return {
+    regionalModel,
     mineralId,
 
     name:
@@ -812,7 +1004,14 @@ export function getMineralWaterAreaProfile(
       )
     );
 
+  const regionalModel =
+    findRegionalMineralModelForCoordinates(
+      latitude,
+      longitude
+    );
+
   return {
+    regionalModel,
     latitude,
     longitude,
 
