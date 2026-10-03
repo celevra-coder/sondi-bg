@@ -1,4 +1,6 @@
-﻿export const metadata = {
+import { createClient } from "@/lib/supabase-server";
+
+export const metadata = {
   alternates: { canonical: "/map" },
 
   title: "Карта на подземните води в България",
@@ -12,7 +14,29 @@ export default async function GeologyPage({
 }) {
   const incoming = await searchParams;
 
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let isAdmin = false;
+
+  if (user) {
+    const { data: adminRow } = await supabase
+      .from("admin_users")
+      .select("user_id")
+      .eq("user_id", user.id)
+      .maybeSingle();
+
+    isAdmin = Boolean(adminRow);
+  }
+
   const iframeParams = new URLSearchParams();
+
+  if (isAdmin) {
+    iframeParams.set("admin", "1");
+  }
 
   const lat =
     typeof incoming.lat === "string"

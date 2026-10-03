@@ -1,10 +1,12 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="bg">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Сондажи, видими водни тела и активни разломи в България</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="/geology-map/vendor/leaflet.markercluster/MarkerCluster.css">
+<link rel="stylesheet" href="/geology-map/vendor/leaflet.markercluster/MarkerCluster.Default.css">
 <style>
 html,body,#map{height:100%;margin:0;font-family:Arial,sans-serif}
 .panel{position:absolute;z-index:1000;top:12px;left:12px;width:410px;max-width:calc(100% - 24px);background:#fff;padding:13px;border-radius:13px;box-shadow:0 2px 14px #0004;max-height:calc(100% - 24px);overflow:auto}
@@ -829,6 +831,8 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
     <div id="gw-load-status" class="small" style="margin-left:24px">&#1080;&#1079;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086;</div>
   </div>
 </details>
+<label class="layerrow"><input type="checkbox" id="layer-research-boreholes"> 🟤 Проучвателни сондажи</label>
+<div id="research-boreholes-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-geology-age"> 🪨 Геоложка възраст – БД ИБР</label>
 <div id="geology-age-load-status" class="small" style="margin-left:24px">изключено</div>
 <label class="layerrow"><input type="checkbox" id="layer-quant-monitoring"> 🟣 Количествен мониторинг – НИМХ 2019–2020</label>
@@ -886,6 +890,7 @@ button{background:#202020;color:#fff;border:0;cursor:pointer}
 
 <div id="map"></div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/geology-map/vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
 <script src="https://unpkg.com/esri-leaflet@3.0.15/dist/esri-leaflet.js"></script>
 <script>
@@ -1097,6 +1102,10 @@ if (!map.getPane(mrrbFaultPaneName)) {
 
 const osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(map);
 const topo=L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'© OpenTopoMap'});
+
+const researchBoreholesLayer = L.layerGroup();
+let researchBoreholesLoaded = false;
+let researchBoreholesLoading = false;
 
 const groundwaterLayer = L.layerGroup();
 const bdIbrGroundwaterLayer = L.layerGroup();
@@ -3395,6 +3404,142 @@ function sondiProTeaserHtml(url, items){
       ${rows}
     </div>
   `;
+}
+
+const sondiDepthStructureAdmin =
+  new URLSearchParams(
+    window.location.search
+  ).get("admin") === "1";
+
+function applyDepthStructureAvailability(
+  root = document
+) {
+  if (
+    sondiDepthStructureAdmin ||
+    !root ||
+    typeof root.querySelectorAll !== "function"
+  ) {
+    return;
+  }
+
+  const elements =
+    root.querySelectorAll(
+      'a[href*="target=depth-structure"],' +
+      '[onclick*="openDepthStructureForLastGroundwaterPoint"]'
+    );
+
+  elements.forEach(function(element) {
+    if (
+      element.dataset.depthStructureDisabled === "1"
+    ) {
+      return;
+    }
+
+    element.dataset.depthStructureDisabled = "1";
+
+    element.removeAttribute("href");
+    element.removeAttribute("onclick");
+    element.removeAttribute("target");
+
+    element.setAttribute(
+      "aria-disabled",
+      "true"
+    );
+
+    element.setAttribute(
+      "title",
+      "Очаквайте скоро"
+    );
+
+    element.style.cursor = "not-allowed";
+    element.style.opacity = "0.62";
+    element.style.userSelect = "none";
+
+    if ("disabled" in element) {
+      element.disabled = true;
+    }
+
+    element.innerHTML =
+      '<span style="' +
+        'display:flex;' +
+        'flex-direction:column;' +
+        'align-items:center;' +
+        'justify-content:center;' +
+        'gap:2px;' +
+      '">' +
+        '<span>Структура в дълбочина</span>' +
+        '<span style="' +
+          'font-size:10.5px;' +
+          'font-weight:600;' +
+          'opacity:.78;' +
+        '">' +
+          'Очаквайте скоро' +
+        '</span>' +
+      '</span>';
+  });
+}
+
+function startDepthStructureAvailabilityObserver() {
+  applyDepthStructureAvailability(document);
+
+  if (!document.body) {
+    return;
+  }
+
+  const observer =
+    new MutationObserver(function() {
+      applyDepthStructureAvailability(document);
+    });
+
+  observer.observe(
+    document.body,
+    {
+      childList: true,
+      subtree: true
+    }
+  );
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener(
+    "DOMContentLoaded",
+    startDepthStructureAvailabilityObserver
+  );
+} else {
+  startDepthStructureAvailabilityObserver();
+}
+
+function openDepthStructureForLastGroundwaterPoint(){
+  if (
+    !lastGroundwaterClickLatLng ||
+    !Number.isFinite(Number(lastGroundwaterClickLatLng.lat)) ||
+    !Number.isFinite(Number(lastGroundwaterClickLatLng.lng))
+  ) {
+    console.error(
+      "Липсват координати за анализ Структура в дълбочина."
+    );
+    return;
+  }
+
+  const params = new URLSearchParams();
+
+  params.set(
+    "lat",
+    Number(lastGroundwaterClickLatLng.lat).toFixed(7)
+  );
+
+  params.set(
+    "lng",
+    Number(lastGroundwaterClickLatLng.lng).toFixed(7)
+  );
+
+  params.set(
+    "target",
+    "depth-structure"
+  );
+
+  window.top.location.href =
+    "/expert-access?" + params.toString();
 }
 
 function groundwaterFreeAnalysisButtonHtml(feature){
@@ -6015,6 +6160,801 @@ async function loadOrdinaryGroundwaterWells() {
 
   } finally {
     ordinaryGroundwaterWellsLoading = false;
+  }
+}
+
+
+
+function researchBoreholePopupHtml(feature) {
+  const p =
+    feature && feature.properties
+      ? feature.properties
+      : {};
+
+  const esc = value => String(
+    value === null || value === undefined
+      ? ""
+      : value
+  )
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+  const has = value =>
+    value !== null &&
+    value !== undefined &&
+    value !== "";
+
+  const intervalTitle = interval => {
+    const from = interval.depth_from_m;
+    const to = interval.depth_to_m;
+
+    if (has(from) && has(to)) {
+      return esc(from) + "–" + esc(to) + " m";
+    }
+
+    if (has(from)) {
+      return "след " + esc(from) + " m";
+    }
+
+    if (has(to)) {
+      return "до " + esc(to) + " m";
+    }
+
+    return "Интервал";
+  };
+
+  const sectionTitle = title =>
+    '<div style="' +
+      'margin-top:12px;' +
+      'padding-bottom:4px;' +
+      'border-bottom:1px solid #d7dee5;' +
+      'font-weight:700;' +
+      'color:#263746' +
+    '">' +
+      esc(title) +
+    '</div>';
+
+  const name =
+    p.name_bg ||
+    p.name ||
+    p.borehole_id ||
+    "Проучвателен сондаж";
+
+  let html =
+    '<div style="' +
+      'min-width:290px;' +
+      'max-width:390px;' +
+      'font-size:13px;' +
+      'line-height:1.42' +
+    '">' +
+
+    '<div style="' +
+      'font-size:17px;' +
+      'font-weight:700;' +
+      'color:#5b3a1f;' +
+      'margin-bottom:7px' +
+    '">' +
+      esc(name) +
+    '</div>';
+
+  if (has(p.borehole_id)) {
+    html +=
+      '<div><b>ID:</b> ' +
+      esc(p.borehole_id) +
+      '</div>';
+  }
+
+  if (has(p.oblast)) {
+    html +=
+      '<div><b>Област:</b> ' +
+      esc(p.oblast) +
+      '</div>';
+  }
+
+  if (has(p.total_depth_m)) {
+    html +=
+      '<div><b>Обща дълбочина:</b> ' +
+      esc(p.total_depth_m) +
+      ' m</div>';
+  }
+
+  if (p.coordinates) {
+    const lat = p.coordinates.latitude;
+    const lon = p.coordinates.longitude;
+
+    if (has(lat) && has(lon)) {
+      html +=
+        '<div><b>Координати:</b> ' +
+        esc(Number(lat).toFixed(6)) +
+        ', ' +
+        esc(Number(lon).toFixed(6)) +
+        '</div>';
+    }
+  }
+
+  // ---------- LITHOLOGY ----------
+
+  const lithology =
+    Array.isArray(p.lithology)
+      ? p.lithology
+      : [];
+
+  if (lithology.length) {
+    html += sectionTitle(
+      "Литоложки разрез"
+    );
+
+    lithology.forEach(interval => {
+      const material =
+        interval.expected_material_bg ||
+        "";
+
+      html +=
+        '<div style="' +
+          'padding:6px 0;' +
+          'border-bottom:1px solid #edf0f2' +
+        '">' +
+
+        '<b>' +
+          intervalTitle(interval) +
+        '</b>' +
+
+        (
+          material
+            ? '<div style="margin-top:2px">' +
+              esc(material) +
+              '</div>'
+            : ''
+        ) +
+
+        '</div>';
+    });
+  }
+
+  // ---------- STRUCTURE ----------
+
+  const structural =
+    Array.isArray(p.structural_intervals)
+      ? p.structural_intervals
+      : [];
+
+  if (structural.length) {
+    html += sectionTitle(
+      "Структурни данни"
+    );
+
+    structural.forEach(interval => {
+      html +=
+        '<div style="' +
+          'padding:6px 0;' +
+          'border-bottom:1px solid #edf0f2' +
+        '">' +
+
+        '<b>' +
+          intervalTitle(interval) +
+        '</b>' +
+
+        (
+          interval.type_bg
+            ? '<div>' +
+              esc(interval.type_bg) +
+              '</div>'
+            : ''
+        ) +
+
+        (
+          interval.significance_bg
+            ? '<div style="' +
+                'margin-top:2px;' +
+                'color:#5f6b75' +
+              '">' +
+              esc(interval.significance_bg) +
+              '</div>'
+            : ''
+        ) +
+
+        '</div>';
+    });
+  }
+
+  // ---------- SOURCE-EXPLICIT HYDRAULICS ----------
+
+  const hydraulic =
+    Array.isArray(p.hydraulic_intervals)
+      ? p.hydraulic_intervals
+      : [];
+
+  if (hydraulic.length) {
+    html += sectionTitle(
+      "Документирани водопритоци / хидравлични наблюдения"
+    );
+
+    hydraulic.forEach(interval => {
+      const description =
+        interval.description_bg ||
+        interval.type_bg ||
+        interval.observation_bg ||
+        interval.significance_bg ||
+        "";
+
+      html +=
+        '<div style="' +
+          'padding:6px 0;' +
+          'border-bottom:1px solid #edf0f2' +
+        '">' +
+
+        '<b>' +
+          intervalTitle(interval) +
+        '</b>' +
+
+        (
+          description
+            ? '<div>' +
+              esc(description) +
+              '</div>'
+            : ''
+        ) +
+
+        '</div>';
+    });
+  }
+
+  // ---------- DISCHARGE ----------
+
+  const discharge =
+    p.groundwater_discharge &&
+    typeof p.groundwater_discharge === "object"
+      ? p.groundwater_discharge
+      : null;
+
+  if (discharge) {
+    const dischargeRows = [];
+
+    if (
+      has(
+        discharge.technical_possible_flow_l_s
+      )
+    ) {
+      dischargeRows.push(
+        '<div><b>Технически възможен дебит:</b> ' +
+        esc(
+          discharge.technical_possible_flow_l_s
+        ) +
+        ' l/s</div>'
+      );
+    }
+
+    if (
+      has(
+        discharge.static_water_level_elevation_m
+      )
+    ) {
+      dischargeRows.push(
+        '<div><b>Кота статично водно ниво:</b> ' +
+        esc(
+          discharge.static_water_level_elevation_m
+        ) +
+        ' m</div>'
+      );
+    }
+
+    if (
+      has(
+        discharge.dynamic_water_level_elevation_m
+      )
+    ) {
+      dischargeRows.push(
+        '<div><b>Кота динамично водно ниво:</b> ' +
+        esc(
+          discharge.dynamic_water_level_elevation_m
+        ) +
+        ' m</div>'
+      );
+    }
+
+    if (
+      has(
+        discharge.allowable_drawdown_m
+      )
+    ) {
+      dischargeRows.push(
+        '<div><b>Допустимо понижение:</b> ' +
+        esc(
+          discharge.allowable_drawdown_m
+        ) +
+        ' m</div>'
+      );
+    }
+
+    if (dischargeRows.length) {
+      html += sectionTitle(
+        "Дебит и водни нива"
+      );
+
+      html += dischargeRows.join("");
+    }
+  }
+
+  // ---------- TEMPERATURE ----------
+
+  const temperature =
+    p.water_temperature &&
+    typeof p.water_temperature === "object"
+      ? p.water_temperature
+      : null;
+
+  if (temperature) {
+    const tempRows = [];
+
+    if (
+      has(
+        temperature.technical_resource_temperature_c
+      )
+    ) {
+      tempRows.push(
+        '<div><b>Температура за техническия ресурс:</b> ' +
+        esc(
+          temperature.technical_resource_temperature_c
+        ) +
+        ' °C</div>'
+      );
+    }
+
+    if (
+      has(
+        temperature.sample_temperature_c
+      )
+    ) {
+      tempRows.push(
+        '<div><b>Температура на пробата:</b> ' +
+        esc(
+          temperature.sample_temperature_c
+        ) +
+        ' °C</div>'
+      );
+    }
+
+    if (tempRows.length) {
+      html += sectionTitle(
+        "Температура"
+      );
+
+      html += tempRows.join("");
+    }
+  }
+
+  // ---------- CONSTRUCTION ----------
+
+  const construction =
+    p.borehole_construction &&
+    typeof p.borehole_construction === "object"
+      ? p.borehole_construction
+      : null;
+
+  if (construction) {
+    const constructionRows = [];
+
+    if (
+      has(
+        construction.construction_year
+      )
+    ) {
+      constructionRows.push(
+        '<div><b>Година:</b> ' +
+        esc(
+          construction.construction_year
+        ) +
+        '</div>'
+      );
+    }
+
+    if (
+      has(
+        construction.total_depth_m
+      )
+    ) {
+      constructionRows.push(
+        '<div><b>Документирана крайна дълбочина:</b> ' +
+        esc(
+          construction.total_depth_m
+        ) +
+        ' m</div>'
+      );
+    }
+
+    if (constructionRows.length) {
+      html += sectionTitle(
+        "Конструкция"
+      );
+
+      html += constructionRows.join("");
+    }
+  }
+
+  // ---------- COLLECTOR ----------
+
+  const collector =
+    p.collector &&
+    typeof p.collector === "object"
+      ? p.collector
+      : null;
+
+  if (collector) {
+    const collectorRows = [];
+
+    if (collector.material_bg) {
+      collectorRows.push(
+        '<div><b>Водовмещаща среда:</b> ' +
+        esc(collector.material_bg) +
+        '</div>'
+      );
+    }
+
+    if (collector.collector_type_bg) {
+      collectorRows.push(
+        '<div><b>Тип колектор:</b> ' +
+        esc(
+          collector.collector_type_bg
+        ) +
+        '</div>'
+      );
+    }
+
+    if (
+      collector.structural_control_bg
+    ) {
+      collectorRows.push(
+        '<div style="margin-top:4px">' +
+        esc(
+          collector.structural_control_bg
+        ) +
+        '</div>'
+      );
+    }
+
+    if (collectorRows.length) {
+      html += sectionTitle(
+        "Хидрогеоложки контекст"
+      );
+
+      html += collectorRows.join("");
+    }
+  }
+
+  // ---------- NOTES ----------
+
+  if (p.hydro_notes_bg) {
+    html += sectionTitle(
+      "Документирани бележки"
+    );
+
+    html +=
+      '<div style="margin-top:5px">' +
+      esc(p.hydro_notes_bg) +
+      '</div>';
+  }
+
+  // ---------- SCIENTIFIC WARNING ----------
+
+  html +=
+    '<div style="' +
+      'margin-top:12px;' +
+      'padding:8px;' +
+      'border-radius:7px;' +
+      'background:#fff7ed;' +
+      'border:1px solid #fed7aa;' +
+      'font-size:11px;' +
+      'color:#7c2d12' +
+    '">' +
+
+    '<b>Важно:</b> ' +
+    'Напукан, изветрял, филтров или открит интервал ' +
+    'не се приема автоматично за точен водоприток. ' +
+    'Точен хидравличен интервал се показва само когато е ' +
+    'изрично документиран в източника.' +
+
+    '</div>';
+
+  // ---------- SOURCES ----------
+
+  const sourceIds = new Set();
+
+  const addSources = value => {
+    if (!value) return;
+
+    if (Array.isArray(value.source_ids)) {
+      value.source_ids.forEach(id => {
+        if (id) sourceIds.add(id);
+      });
+    }
+  };
+
+  lithology.forEach(addSources);
+  structural.forEach(addSources);
+  hydraulic.forEach(addSources);
+
+  addSources(discharge);
+  addSources(temperature);
+  addSources(construction);
+  addSources(collector);
+
+  if (sourceIds.size) {
+    html +=
+      '<div style="' +
+        'margin-top:8px;' +
+        'font-size:11px;' +
+        'color:#64748b' +
+      '">' +
+      '<b>Източник:</b> ' +
+      esc(
+        Array.from(sourceIds).join(", ")
+      ) +
+      '</div>';
+  }
+
+  html +=
+    '<div style="' +
+      'margin-top:5px;' +
+      'font-size:11px;' +
+      'color:#64748b' +
+    '">' +
+      'Документиран проучвателен сондаж · SONDI.BG' +
+    '</div>' +
+
+    '</div>';
+
+  return html;
+}
+
+
+function focusResearchBoreholes() {
+  const points = [];
+
+  researchBoreholesLayer.eachLayer(layer => {
+    if (
+      layer &&
+      typeof layer.getLatLng === "function"
+    ) {
+      const p = layer.getLatLng();
+
+      if (
+        p &&
+        Number.isFinite(p.lat) &&
+        Number.isFinite(p.lng)
+      ) {
+        points.push(p);
+      }
+    }
+  });
+
+  if (!points.length) {
+    return;
+  }
+
+  /*
+   * Find the densest local group.
+   * Two boreholes belong to the same local group when
+   * connected through neighbours no farther than 5 km.
+   */
+  const visited = new Set();
+  const groups = [];
+
+  for (let i = 0; i < points.length; i++) {
+    if (visited.has(i)) continue;
+
+    const group = [];
+    const queue = [i];
+
+    visited.add(i);
+
+    while (queue.length) {
+      const currentIndex = queue.shift();
+      const current = points[currentIndex];
+
+      group.push(current);
+
+      for (let j = 0; j < points.length; j++) {
+        if (visited.has(j)) continue;
+
+        if (
+          map.distance(
+            current,
+            points[j]
+          ) <= 5000
+        ) {
+          visited.add(j);
+          queue.push(j);
+        }
+      }
+    }
+
+    groups.push(group);
+  }
+
+  groups.sort(
+    (a, b) => b.length - a.length
+  );
+
+  const mainGroup = groups[0];
+
+  if (!mainGroup || !mainGroup.length) {
+    return;
+  }
+
+  if (mainGroup.length === 1) {
+    map.setView(
+      mainGroup[0],
+      15,
+      { animate: true }
+    );
+
+    return;
+  }
+
+  const bounds =
+    L.latLngBounds(mainGroup);
+
+  map.fitBounds(
+    bounds,
+    {
+      padding: [100, 100],
+      maxZoom: 15,
+      animate: true
+    }
+  );
+
+  /*
+   * We deliberately require a detailed view.
+   * The purpose is to SEE the individual boreholes,
+   * not a regional overview.
+   */
+  map.once("moveend", () => {
+    if (map.getZoom() < 14) {
+      map.setZoom(
+        14,
+        { animate: true }
+      );
+    }
+  });
+}
+
+async function loadResearchBoreholes() {
+  if (
+    researchBoreholesLoaded ||
+    researchBoreholesLoading
+  ) {
+    return;
+  }
+
+  researchBoreholesLoading = true;
+
+  setLayerStatus(
+    "research-boreholes-load-status",
+    "зареждане...",
+    "#64748b"
+  );
+
+  try {
+    const response = await fetch(
+      "/geology-map/data/research_boreholes.json",
+      { cache: "no-store" }
+    );
+
+    if (!response.ok) {
+      throw new Error(
+        "HTTP " + response.status
+      );
+    }
+
+    const data = await response.json();
+
+    if (
+      !data ||
+      !Array.isArray(data.boreholes)
+    ) {
+      throw new Error(
+        "Invalid research boreholes dataset"
+      );
+    }
+
+    researchBoreholesLayer.clearLayers();
+
+    let rendered = 0;
+
+    data.boreholes.forEach(borehole => {
+      const coords = borehole.coordinates || {};
+
+      const lat = Number(coords.latitude);
+      const lon = Number(coords.longitude);
+
+      if (
+        !Number.isFinite(lat) ||
+        !Number.isFinite(lon)
+      ) {
+        return;
+      }
+
+      const marker = L.circleMarker(
+        [lat, lon],
+        {
+          radius: 7,
+          color: "#5b3a1f",
+          weight: 2,
+          fillColor: "#c47a2c",
+          fillOpacity: 0.9
+        }
+      );
+
+      const popupRecord = {
+        properties: {
+          ...borehole,
+          name:
+            borehole.name_bg ||
+            borehole.name ||
+            borehole.borehole_id ||
+            "Проучвателен сондаж"
+        }
+      };
+
+      marker.bindPopup(
+        researchBoreholePopupHtml(
+          popupRecord
+        ),
+        {
+          maxWidth: 390,
+          maxHeight: 430
+        }
+      );
+
+      marker.bindTooltip(
+        borehole.name_bg ||
+        borehole.name ||
+        borehole.borehole_id ||
+        "Проучвателен сондаж"
+      );
+
+      marker.addTo(
+        researchBoreholesLayer
+      );
+
+      rendered++;
+    });
+
+    window.researchBoreholesData =
+      data;
+
+    researchBoreholesLoaded = true;
+
+    setLayerStatus(
+      "research-boreholes-load-status",
+      "заредени: " +
+        rendered +
+        " сондажа",
+      "#166534"
+    );
+
+    console.log(
+      "[SONDI] Research boreholes:",
+      rendered
+    );
+
+  } catch (error) {
+    console.error(
+      "[SONDI] Research boreholes load error:",
+      error
+    );
+
+    setLayerStatus(
+      "research-boreholes-load-status",
+      "грешка при зареждане",
+      "#b91c1c"
+    );
+
+  } finally {
+    researchBoreholesLoading = false;
   }
 }
 
@@ -11761,6 +12701,85 @@ document.getElementById(
   }
 );
 
+
+document.getElementById(
+  "layer-research-boreholes"
+).addEventListener(
+  "change",
+  event => {
+    if (event.target.checked) {
+      researchBoreholesLayer.addTo(map);
+
+      loadResearchBoreholes().then(() => {
+        if (
+          event.target.checked &&
+          map.hasLayer(
+            researchBoreholesLayer
+          )
+        ) {
+          focusResearchBoreholes();
+        }
+      });
+
+    } else {
+      if (
+        map.hasLayer(
+          researchBoreholesLayer
+        )
+      ) {
+        map.removeLayer(
+          researchBoreholesLayer
+        );
+      }
+
+      setLayerStatus(
+        "research-boreholes-load-status",
+        "изключено",
+        "#64748b"
+      );
+    }
+  }
+);
+
+map.on("layeradd", event => {
+  if (
+    event.layer !==
+    researchBoreholesLayer
+  ) {
+    return;
+  }
+
+  const checkbox =
+    document.getElementById(
+      "layer-research-boreholes"
+    );
+
+  if (checkbox) {
+    checkbox.checked = true;
+  }
+
+  loadResearchBoreholes();
+});
+
+map.on("layerremove", event => {
+  if (
+    event.layer !==
+    researchBoreholesLayer
+  ) {
+    return;
+  }
+
+  const checkbox =
+    document.getElementById(
+      "layer-research-boreholes"
+    );
+
+  if (checkbox) {
+    checkbox.checked = false;
+  }
+});
+
+
 document.getElementById('layer-geology-age').addEventListener('change',e=>{
   if(e.target.checked){
     geologyAgeLayer.addTo(map);
@@ -17499,7 +18518,40 @@ async function analyzeLocation(
 
 
     "<a " +
-    "href=\"/services\" " +
+    "href=\"/expert-access?lat=" +
+    encodeURIComponent(
+      lat.toFixed(7)
+    ) +
+    "&lng=" +
+    encodeURIComponent(
+      lon.toFixed(7)
+    ) +
+    "&target=depth-structure" +
+    (
+      label
+        ? "&location_label=" +
+          encodeURIComponent(label)
+        : ""
+    ) +
+    "\" " +
+    "target=\"_top\" " +
+    "rel=\"noopener noreferrer\" " +
+    "style=\"" +
+      "display:block;" +
+      "margin-top:10px;" +
+      "text-align:center;" +
+      "padding:12px 14px;" +
+      "background:#ffffff;" +
+      "border:2px solid #0d8055;" +
+      "color:#0d8055;" +
+      "font-weight:800;" +
+      "text-decoration:none;" +
+      "border-radius:8px;" +
+    "\">" +
+    "Структура в дълбочина →" +
+    "</a>" +
+
+    "<a " +    "href=\"/services\" " +
     "target=\"_top\" " +
     "rel=\"noopener noreferrer\" " +
     "style=\"" +
@@ -19150,6 +20202,44 @@ if (coordinateSearchMarker) {
         "text-decoration:none;" +
       "\">" +
       "\u041f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438 \u0437\u0430 \u0441\u043e\u043d\u0434\u0438\u0440\u0430\u043d\u0435" +
+      "</a>" +
+
+      "<a " +
+      "href=\"/expert-access?lat=" +
+      encodeURIComponent(
+        latitude.toFixed(7)
+      ) +
+      "&lng=" +
+      encodeURIComponent(
+        longitude.toFixed(7)
+      ) +
+      "&target=depth-structure" +
+      (
+        label
+          ? "&location_label=" +
+            encodeURIComponent(label)
+          : ""
+      ) +
+      "\" target=\"_top\" " +
+      "rel=\"noopener noreferrer\" " +
+      "style=\"" +
+        "display:flex;" +
+        "grid-column:1 / -1;" +
+        "align-items:center;" +
+        "justify-content:center;" +
+        "min-height:42px;" +
+        "padding:8px 7px;" +
+        "border:1px solid #7957a8;" +
+        "border-radius:7px;" +
+        "background:#f7f3fb;" +
+        "color:#62428f;" +
+        "font-size:11.5px;" +
+        "font-weight:800;" +
+        "line-height:1.2;" +
+        "text-align:center;" +
+        "text-decoration:none;" +
+      "\">" +
+      "\u0421\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430 \u0432 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430" +
       "</a>" +
 
     "</div>" +

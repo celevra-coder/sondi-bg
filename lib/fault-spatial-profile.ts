@@ -595,6 +595,252 @@ function compactMasterRecord(
   };
 }
 
+
+function orientation2d(
+  ax: number,
+  ay: number,
+  bx: number,
+  by: number,
+  cx: number,
+  cy: number
+) {
+  return (bx - ax) * (cy - ay) - (by - ay) * (cx - ax);
+}
+
+function pointOnSegment2d(
+  px: number,
+  py: number,
+  ax: number,
+  ay: number,
+  bx: number,
+  by: number,
+  epsilon = 1e-10
+) {
+  if (Math.abs(orientation2d(ax, ay, bx, by, px, py)) > epsilon) {
+    return false;
+  }
+
+  return (
+    px >= Math.min(ax, bx) - epsilon &&
+    px <= Math.max(ax, bx) + epsilon &&
+    py >= Math.min(ay, by) - epsilon &&
+    py <= Math.max(ay, by) + epsilon
+  );
+}
+
+function segmentsIntersect2d(
+  aLng: number,
+  aLat: number,
+  bLng: number,
+  bLat: number,
+  cLng: number,
+  cLat: number,
+  dLng: number,
+  dLat: number
+) {
+  const o1 = orientation2d(aLng, aLat, bLng, bLat, cLng, cLat);
+  const o2 = orientation2d(aLng, aLat, bLng, bLat, dLng, dLat);
+  const o3 = orientation2d(cLng, cLat, dLng, dLat, aLng, aLat);
+  const o4 = orientation2d(cLng, cLat, dLng, dLat, bLng, bLat);
+
+  const epsilon = 1e-10;
+
+  if (
+    ((o1 > epsilon && o2 < -epsilon) || (o1 < -epsilon && o2 > epsilon)) &&
+    ((o3 > epsilon && o4 < -epsilon) || (o3 < -epsilon && o4 > epsilon))
+  ) {
+    return true;
+  }
+
+  return (
+    pointOnSegment2d(cLng, cLat, aLng, aLat, bLng, bLat, epsilon) ||
+    pointOnSegment2d(dLng, dLat, aLng, aLat, bLng, bLat, epsilon) ||
+    pointOnSegment2d(aLng, aLat, cLng, cLat, dLng, dLat, epsilon) ||
+    pointOnSegment2d(bLng, bLat, cLng, cLat, dLng, dLat, epsilon)
+  );
+}
+
+function featureIntersectsSegment(
+  feature: GeoFeature,
+  startLat: number,
+  startLng: number,
+  endLat: number,
+  endLng: number
+) {
+  const geometry = feature.geometry;
+
+  if (!geometry) {
+    return false;
+  }
+
+  const lines: any[] =
+    geometry.type === "LineString"
+      ? [geometry.coordinates]
+      : geometry.type === "MultiLineString"
+        ? geometry.coordinates
+        : [];
+
+  for (const line of lines) {
+    if (!Array.isArray(line) || line.length < 2) {
+      continue;
+    }
+
+    for (let i = 0; i < line.length - 1; i++) {
+      const a = line[i];
+      const b = line[i + 1];
+
+      if (!Array.isArray(a) || !Array.isArray(b)) {
+        continue;
+      }
+
+      const aLng = Number(a[0]);
+      const aLat = Number(a[1]);
+      const bLng = Number(b[0]);
+      const bLat = Number(b[1]);
+
+      if (
+        !Number.isFinite(aLng) ||
+        !Number.isFinite(aLat) ||
+        !Number.isFinite(bLng) ||
+        !Number.isFinite(bLat)
+      ) {
+        continue;
+      }
+
+      if (
+        segmentsIntersect2d(
+          startLng,
+          startLat,
+          endLng,
+          endLat,
+          aLng,
+          aLat,
+          bLng,
+          bLat
+        )
+      ) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+export function getMappedGemFaultsBetweenPoints(
+  startLatValue: string | number | null,
+  startLngValue: string | number | null,
+  endLatValue: string | number | null,
+  endLngValue: string | number | null
+) {
+  const startLat = Number(startLatValue);
+  const startLng = Number(startLngValue);
+  const endLat = Number(endLatValue);
+  const endLng = Number(endLngValue);
+
+  if (
+    startLatValue == null ||
+    startLngValue == null ||
+    endLatValue == null ||
+    endLngValue == null ||
+    String(startLatValue).trim() === "" ||
+    String(startLngValue).trim() === "" ||
+    String(endLatValue).trim() === "" ||
+    String(endLngValue).trim() === "" ||
+    !Number.isFinite(startLat) ||
+    !Number.isFinite(startLng) ||
+    !Number.isFinite(endLat) ||
+    !Number.isFinite(endLng) ||
+    startLat < -90 ||
+    startLat > 90 ||
+    endLat < -90 ||
+    endLat > 90 ||
+    startLng < -180 ||
+    startLng > 180 ||
+    endLng < -180 ||
+    endLng > 180
+  ) {
+    return null;
+  }
+
+  const gemData = readJson("gem_active_faults_bulgaria.geojson");
+
+  const gemFeatures: GeoFeature[] =
+    Array.isArray(gemData?.features)
+      ? gemData.features
+      : [];
+
+  const intersections = gemFeatures
+    .filter(feature =>
+      featureIntersectsSegment(
+        feature,
+        startLat,
+        startLng,
+        endLat,
+        endLng
+      )
+    )
+    .map(feature => {
+      const properties = feature.properties || {};
+
+      return {
+        bgcs:
+          properties.catalog_id ??
+          null,
+
+        properties: {
+          catalog_id:
+            properties.catalog_id ??
+            null,
+
+          name:
+            properties.name ??
+            properties.Name ??
+            properties.fault_name ??
+            null,
+        },
+      };
+    });
+
+  const unique = Array.from(
+    new Map(
+      intersections.map((item, index) => [
+        String(item.bgcs ?? `UNIDENTIFIED-${index}`),
+        item,
+      ])
+    ).values()
+  );
+
+  return {
+    start: {
+      lat: startLat,
+      lng: startLng,
+    },
+
+    end: {
+      lat: endLat,
+      lng: endLng,
+    },
+
+    intersects_mapped_gem_fault:
+      unique.length > 0,
+
+    intersection_count:
+      unique.length,
+
+    faults:
+      unique,
+
+    semantics: {
+      meaning:
+        "mapped_gem_fault_geometry_intersects_target_to_borehole_segment",
+
+      limitation:
+        "intersection_is_structural_context_only_and_does_not_by_itself_establish_hydraulic_barrier_conduit_or_exact_block_relationship",
+    },
+  };
+}
+
 export function getFaultSpatialProfile(
   latValue: string | number | null,
   lngValue: string | number | null

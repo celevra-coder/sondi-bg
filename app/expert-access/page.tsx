@@ -298,13 +298,19 @@ export default function ExpertAccessPage() {
       const target =
         params.get("target") === "driller"
           ? "driller"
-          : "pro";
+          : params.get("target") === "depth-structure"
+            ? "depth-structure"
+            : "pro";
 
       if (target === "driller") {
         proParams.delete("target");
 
         window.location.replace(
           `/geology/report?${proParams.toString()}`
+        );
+      } else if (target === "depth-structure") {
+        window.location.replace(
+          `/depth-structure?${proParams.toString()}`
         );
       } else {
         window.location.replace(
@@ -423,6 +429,12 @@ export default function ExpertAccessPage() {
       previousParams.delete("target");
 
       return `/geology/report?${previousParams.toString()}`;
+    }
+
+    if (
+      params.get("target") === "depth-structure"
+    ) {
+      return `/depth-structure?${previousParams.toString()}`;
     }
 
     return `/pro?${previousParams.toString()}`;
