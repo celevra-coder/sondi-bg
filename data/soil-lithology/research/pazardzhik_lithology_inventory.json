@@ -1,0 +1,1530 @@
+{
+  "oblast": "Пазарджик",
+  "phase": "LITHOLOGY_DISCOVERY",
+  "production_import_allowed": false,
+  "rule": "Първо се издирват всички достъпни литоложки колонки. Минералната/термалната информация се обработва отделно. Production lithology се обновява едва след приключване на издирването.",
+  "updated": "2026-10-03",
+  "candidates": [
+    {
+      "settlement": "Белово",
+      "deposit": "Белово",
+      "facility": "Сондаж №3",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "notes": "Официална балнеологична оценка. Геоложки разрез е установен.",
+      "mineral_research": {
+        "technical_flow_l_s": 5.67,
+        "resource_temperature_c": 22.8,
+        "sample_temperature_c": 23.0,
+        "flow_regime": "pumped",
+        "free_self_flow": false,
+        "static_water_level_elevation_m": 273.17,
+        "allowable_drawdown_m": 1.4,
+        "allowable_dynamic_level_elevation_m": 271.77,
+        "collector": "гнайси и мрамори; основни колектори са окарстените мрамори, дрениращи водите в гнайсите",
+        "construction": [
+          {
+            "from_m": 0.0,
+            "to_m": 26.0,
+            "description_bg": "кондукторна обсадна колона Ø146 mm, затръбено и циментирано"
+          },
+          {
+            "from_m": 0.0,
+            "to_m": 82.6,
+            "description_bg": "експлоатационна обсадна колона Ø127 mm, затръбено и циментирано"
+          },
+          {
+            "from_m": 82.6,
+            "to_m": 95.7,
+            "description_bg": "необсаден сондажен ствол"
+          }
+        ],
+        "documented_open_hole": {
+          "from_m": 82.6,
+          "to_m": 95.7
+        },
+        "source_note": "МЗ, Балнеологична оценка №180/20.08.2020. Документът отбелязва, че първоначалната дълбочина е 400 m, но участъкът 95.70-400 m е непроходим."
+      }
+    },
+    {
+      "settlement": "Варвара",
+      "deposit": "Варвара",
+      "facility": "Сондаж №3",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "total_depth_m": 150.0,
+      "column_source": "МЗ, Балнеологична оценка №108/02.01.2019",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 12.8,
+          "source_description_bg": "едър, ръбест блокаж и чакъли с песъчливо-глинест запълнител",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 12.8,
+          "to_m": 60.0,
+          "source_description_bg": "биотитови гнайси, инжектирани с пегматит и на места изветрели",
+          "normalized_family": "GNEISS"
+        },
+        {
+          "from_m": 60.0,
+          "to_m": 70.0,
+          "source_description_bg": "тектонична зона",
+          "normalized_family": "GNEISS",
+          "structural_zone": true
+        },
+        {
+          "from_m": 70.0,
+          "to_m": 72.0,
+          "source_description_bg": "гнайси, здрави",
+          "normalized_family": "GNEISS"
+        },
+        {
+          "from_m": 72.0,
+          "to_m": 150.0,
+          "source_description_bg": "биотитови гнайси, сивочерни, напукани",
+          "normalized_family": "GNEISS"
+        }
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 3.04,
+        "temperature_c": 87.3,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 356.33 m",
+        "collector": "пукнатинен; биотитови и амфибол-биотитови гнайси"
+      }
+    },
+    {
+      "settlement": "Варвара",
+      "deposit": "Варвара",
+      "facility": "Сондаж №4",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "total_depth_m": 140.0,
+      "column_documented_to_m": 140.0,
+      "column_source": "МЗ, Балнеологична оценка №297/02.07.2025",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 6.6,
+          "source_description_bg": "чакъли, пясъци, валуни, песъчливи материали",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 6.6,
+          "to_m": 140.0,
+          "source_description_bg": "биотитови гнайси, сивочерни, напукани, окварцени, с пегматитови жили до 1 m, с тектонични зони",
+          "normalized_family": "GNEISS",
+          "structural_zones_present": true
+        }
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 4.24,
+        "temperature_c": 76.5,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 352.17 m",
+        "collector": "биотитови и амфибол-биотитови гнайси; пукнатинен колектор"
+      }
+    },
+    {
+      "settlement": "Варвара",
+      "deposit": "Варвара",
+      "facility": "Сондаж №5",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "notes": "Официален документ съдържа геоложки/хидрогеоложки данни.",
+      "total_depth_m": 230.0,
+      "column_source": "МЗ, Балнеологична оценка №109/02.01.2019",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 6.0,
+          "source_description_bg": "ръбести скални късове с глинесто-песъчлив запълнител",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 6.0,
+          "to_m": 160.0,
+          "source_description_bg": "биотитови гнайси, сивочерни, напукани, окварцени, с пегматитови жили до 1 m",
+          "normalized_family": "GNEISS"
+        },
+        {
+          "from_m": 160.0,
+          "to_m": 220.0,
+          "source_description_bg": "тектонична зона",
+          "normalized_family": "GNEISS",
+          "structural_zone": true
+        },
+        {
+          "from_m": 220.0,
+          "to_m": 230.0,
+          "source_description_bg": "биотитови гнайси",
+          "normalized_family": "GNEISS"
+        }
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 1.36,
+        "temperature_c": 71.2,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 354.63 m",
+        "collector": "пукнатинен; биотитови и амфибол-биотитови гнайси"
+      }
+    },
+    {
+      "settlement": "Варвара",
+      "deposit": "Варвара",
+      "facility": "Сондаж №6",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "total_depth_m": 502.0,
+      "column_source": "МЗ, Балнеологична оценка №110/02.01.2019",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 48.8,
+          "source_description_bg": "биотитови гнайси, среднозърнести, силно напукани",
+          "normalized_family": "GNEISS"
+        },
+        {
+          "from_m": 48.8,
+          "to_m": 55.2,
+          "source_description_bg": "биотитови гнайси, среднозърнести",
+          "normalized_family": "GNEISS"
+        },
+        {
+          "from_m": 55.2,
+          "to_m": 67.8,
+          "source_description_bg": "биотитови гнайси, среднозърнести, напукани",
+          "normalized_family": "GNEISS"
+        },
+        {
+          "from_m": 67.8,
+          "to_m": 253.6,
+          "source_description_bg": "амфибол-биотитови гнайси, средно до едрозърнести",
+          "normalized_family": "AMPHIBOLITE_GNEISS"
+        },
+        {
+          "from_m": 253.6,
+          "to_m": 317.3,
+          "source_description_bg": "силно променени скали",
+          "normalized_family": "OTHER"
+        },
+        {
+          "from_m": 317.3,
+          "to_m": 348.4,
+          "source_description_bg": "вероятно тектонична зона",
+          "normalized_family": "OTHER",
+          "structural_zone": true
+        },
+        {
+          "from_m": 348.4,
+          "to_m": 412.2,
+          "source_description_bg": "биотитови гнайси, силно напукани, окварцени",
+          "normalized_family": "GNEISS"
+        },
+        {
+          "from_m": 412.2,
+          "to_m": 502.0,
+          "source_description_bg": "амфибол-биотитови гнайси, напукани с пегматитови инжекции",
+          "normalized_family": "AMPHIBOLITE_GNEISS"
+        }
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 1.06,
+        "temperature_c": 73.1,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 356.51 m",
+        "collector": "пукнатинен; биотитови и амфибол-биотитови гнайси"
+      }
+    },
+    {
+      "settlement": "Ракитово",
+      "deposit": "Ракитово",
+      "facility": "Сондаж №5",
+      "type": "mineral",
+      "status": "SOURCE_REVIEWED_NO_EXACT_COLUMN",
+      "total_depth_m": 215.9,
+      "notes": "Официалната балнеологична оценка потвърждава дълбочина 215.9 m и регионален колектор от биотитови гнайси, но не публикува индивидуална литоложка колонка по интервали. Да се издири първичен сондажен паспорт.",
+      "mineral_research": {
+        "technical_flow_l_s": 0.13,
+        "temperature_c": 18.2,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 766.44 m",
+        "collector": "биотитови гнайси; регионално описани на дълбочини около 20-140 m до над 880 m, покрити от плиокватернерни наслаги"
+      }
+    },
+    {
+      "settlement": "Ракитово",
+      "deposit": "Ракитово",
+      "facility": "Сондаж №6",
+      "type": "mineral",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Посочен като експлоатационен водоизточник в официалния документ за сондаж №7.",
+      "mineral_research": {
+        "technical_flow_l_s": null,
+        "temperature_c": null,
+        "facility_confirmed": true,
+        "collector": "находище Ракитово: пукнатинна водонапорна система в биотитовите гнайси на Ботурецката плагиоклазова свита",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Официалната балнеологична документация за находище Ракитово потвърждава Сондаж №6 като експлоатационен водоизточник, но прегледаният документ не дава индивидуални Q/T параметри."
+      }
+    },
+    {
+      "settlement": "Ракитово",
+      "deposit": "Ракитово",
+      "facility": "Сондаж №7",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "notes": "Официалният PDF съдържа точни литоложки интервали до 295 m.",
+      "total_depth_m": 295.0,
+      "column_documented_to_m": 295.0,
+      "column_source": "МЗ, Балнеологична оценка №294/24.02.2025",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 40.4,
+          "source_description_bg": "кватернерни и плиоценски наслаги",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 40.4,
+          "to_m": 266.5,
+          "source_description_bg": "биотитови гнайси, дребно до среднозърнести",
+          "normalized_family": "GNEISS"
+        },
+        {
+          "from_m": 266.5,
+          "to_m": 295.0,
+          "source_description_bg": "разлом",
+          "normalized_family": "OTHER",
+          "structural_zone": true
+        }
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 3.1,
+        "temperature_c": 32.0,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив до кота 755.95 m",
+        "collector": "биотитови гнайси; пукнатинно-жилна система"
+      }
+    },
+    {
+      "settlement": "Ракитово",
+      "deposit": "Ракитово",
+      "facility": "Сондаж №9а",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED_PARTIAL",
+      "total_depth_m": 485.5,
+      "column_documented_to_m": 147.0,
+      "column_source": "МЗ, Балнеологична оценка №313/02.06.2026",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 126.0,
+          "source_description_bg": "кватернерни и плиоценски наслаги; в интервала 78.50-82.00 m са пресечени прослойки от лигнитни въглища с мощност около 0.30 m",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 126.0,
+          "to_m": 147.0,
+          "source_description_bg": "биотитови гнайси, дребно до среднозърнести",
+          "normalized_family": "GNEISS"
+        }
+      ],
+      "undocumented_interval": {
+        "from_m": 147.0,
+        "to_m": 485.5,
+        "reason": "Публикуваната балнеологична оценка не дава литоложки интервали за тази част от сондажа."
+      },
+      "mineral_research": {
+        "technical_flow_l_s": 4.25,
+        "temperature_c": 35.7,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив до кота 755.05 m",
+        "collector": "биотитови гнайси; пукнатинно-жилна система"
+      }
+    },
+    {
+      "settlement": "Ракитово",
+      "deposit": "Ракитово",
+      "facility": "Сондаж №10",
+      "type": "mineral",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Посочен като експлоатационен водоизточник в официалния документ за сондаж №7.",
+      "mineral_research": {
+        "technical_flow_l_s": null,
+        "temperature_c": null,
+        "permitted_average_flow_l_s": 1.59,
+        "permitted_flow_type": "concession_average",
+        "facility_confirmed": true,
+        "collector": "находище Ракитово: пукнатинна водонапорна система в биотитовите гнайси на Ботурецката плагиоклазова свита",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Концесионната документация посочва средногодишен разрешен дебит 1.59 l/s за Сондаж №10. Това не се приравнява автоматично на технически възможен дебит."
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Каменица",
+      "facility": "Сондаж №3 „Мизинка“",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "total_depth_m": 271.0,
+      "column_documented_to_m": 271.0,
+      "column_source": "МЗ, Балнеологична оценка №20/20.05.2025",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 1.2,
+          "source_description_bg": "чакъли, кватернер",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 1.2,
+          "to_m": 35.0,
+          "source_description_bg": "конгломерати, гранитни материали, неоген",
+          "normalized_family": "CONGLOMERATIC_SEDIMENT"
+        },
+        {
+          "from_m": 35.0,
+          "to_m": 271.0,
+          "source_description_bg": "гранитогнайси, напукани, с карбонат по пукнатините и пиритни прояви",
+          "normalized_family": "GNEISS"
+        }
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 6.38,
+        "temperature_c": 87.7,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 771.84 m",
+        "collector": "напукани гранитогнайси от Богутевската плагиогнайсова свита"
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Каменица",
+      "facility": "Сондаж №4 „Власа“",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "mineral_research": {
+        "technical_flow_l_s": 13.74,
+        "resource_temperature_c": 88.8,
+        "sample_temperature_c": 86.4,
+        "flow_regime": "free_self_flow",
+        "free_self_flow": true,
+        "self_flow_elevation_m": 768.1,
+        "collector": "напукани и нарушени биотитови и амфиболови гранитизирани гнайси от Богутевската плагиогнайсова свита",
+        "documented_mineral_aquifer_interval": {
+          "from_m": 59.0,
+          "to_m": 450.0,
+          "evidence": "Официалната балнеологична оценка определя този интервал като водоносен хоризонт на минералната вода."
+        },
+        "construction": [
+          {
+            "from_m": 0.0,
+            "to_m": 35.0,
+            "description_bg": "обсадна колона Ø159 mm"
+          },
+          {
+            "from_m": 35.0,
+            "to_m": 51.0,
+            "description_bg": "обсадна колона Ø146 mm"
+          },
+          {
+            "from_m": 51.0,
+            "to_m": 129.0,
+            "description_bg": "обсадна колона Ø127 mm"
+          },
+          {
+            "from_m": 129.0,
+            "to_m": 200.0,
+            "description_bg": "обсадна колона Ø108 mm"
+          },
+          {
+            "from_m": 200.0,
+            "to_m": 450.0,
+            "description_bg": "сондирано Ø108 mm, открит ствол"
+          }
+        ],
+        "documented_open_hole": {
+          "from_m": 200.0,
+          "to_m": 450.0
+        },
+        "source_note": "МЗ, Балнеологична оценка №23/20.05.2025."
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Каменица",
+      "facility": "Сондаж №5 „Сярна баня“",
+      "type": "mineral",
+      "status": "SOURCE_REVIEWED_NO_EXACT_COLUMN",
+      "total_depth_m": 280.0,
+      "notes": "Балнеологична оценка №19/20.05.2025 потвърждава дълбочина 280 m и конструкцията, но не публикува индивидуален геоложки разрез по интервали. Да се издири по-стар сондажен паспорт или първична хидрогеоложка документация.",
+      "mineral_research": {
+        "technical_flow_l_s": 5.4,
+        "temperature_c": 84.5,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 764.67 m",
+        "collector": "гнайси от Богутевската плагиогнайсова свита; регионална информация, не индивидуален разрез"
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Чепино",
+      "facility": "Сондаж №1",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "mineral_research": {
+        "technical_flow_l_s": 11.1,
+        "resource_temperature_c": 47.5,
+        "sample_temperature_c": 47.8,
+        "flow_regime": "free_self_flow",
+        "free_self_flow": true,
+        "self_flow_elevation_m": 775.51,
+        "collector": "регионално: гнайси и гранити в дълбоката пукнатинно-жилна система",
+        "regional_collector_depth_m": {
+          "from_m": 1000.0,
+          "to_m": 1200.0,
+          "interpretation_only": true,
+          "note": "Регионална дълбочина на колектора под земната повърхност; не е доказан водоприток в самия Сондаж №1."
+        },
+        "construction": [
+          {
+            "from_m": 0.0,
+            "to_m": 1.8,
+            "description_bg": "Ø150 mm"
+          },
+          {
+            "from_m": 0.0,
+            "to_m": 2.5,
+            "description_bg": "разширено до Ø150 mm, затръбено и циментирано"
+          },
+          {
+            "from_m": 2.5,
+            "to_m": 53.3,
+            "description_bg": "сондирано Ø127 mm, незатръбено"
+          }
+        ],
+        "documented_open_hole": {
+          "from_m": 2.5,
+          "to_m": 53.3
+        },
+        "source_note": "МЗ, Балнеологична оценка №165/19.05.2020."
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Чепино",
+      "facility": "Сондаж №2",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "total_depth_m": 70.3,
+      "column_documented_to_m": 70.3,
+      "column_source": "МЗ, Балнеологична оценка №166/19.05.2020",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 0.7,
+          "source_description_bg": "глина, песъчлива, кафява, с чакъли",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 0.7,
+          "to_m": 1.0,
+          "source_description_bg": "глина, песъчлива, сива",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 1.0,
+          "to_m": 1.5,
+          "source_description_bg": "пясък и чакъл",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 1.5,
+          "to_m": 4.2,
+          "source_description_bg": "мрамор",
+          "normalized_family": "CRYSTALLINE_UNSPECIFIED"
+        },
+        {
+          "from_m": 4.2,
+          "to_m": 70.3,
+          "source_description_bg": "гранитогнайс, биотит-амфиболов, с пегматитови жили, в отделни участъци силно напукан",
+          "normalized_family": "GNEISS"
+        }
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 9.6,
+        "temperature_c": 47.5,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 775.66 m",
+        "collector": "гнайси и гранити; пукнатинно-жилен колектор"
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Чепино",
+      "facility": "Сондаж №3",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "total_depth_m": 102.4,
+      "column_documented_to_m": 102.4,
+      "column_source": "МЗ, Балнеологична оценка №167/19.05.2020",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 1.7,
+          "source_description_bg": "валуни с глинесто-песъчлив запълнител",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 1.7,
+          "to_m": 102.4,
+          "source_description_bg": "гранитогнайс, биотит-амфиболов, с пегматитови жили, силно напукан в отделни участъци",
+          "normalized_family": "GNEISS"
+        }
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 6.3,
+        "temperature_c": 47.5,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 775.57 m",
+        "collector": "гнайси и гранити; пукнатинно-жилен колектор"
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Чепино",
+      "facility": "Сондаж №4",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "total_depth_m": 101.4,
+      "column_documented_to_m": 101.4,
+      "column_source": "МЗ, Балнеологична оценка №168/19.05.2020",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 2.0,
+          "source_description_bg": "валуни с глинесто-песъчлив запълнител",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 2.0,
+          "to_m": 101.4,
+          "source_description_bg": "гранитогнайс, биотит-амфиболов, с пегматитови жили, силно напукан в отделни участъци",
+          "normalized_family": "GNEISS"
+        }
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 5.4,
+        "temperature_c": 47.5,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 775.50 m",
+        "collector": "гнайси и гранити; пукнатинно-жилен колектор"
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Чепино",
+      "facility": "Сондаж №5 „Горски пункт“",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "total_depth_m": 246.0,
+      "column_documented_to_m": 246.0,
+      "column_source": "МЗ, Балнеологична оценка №170/19.05.2020 и актуална оценка №170/20.03.2025",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 6.5,
+          "source_description_bg": "чакъли и валуни от гранитогнайси, мрамори и гранити, късове 4-15 cm",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 6.5,
+          "to_m": 246.0,
+          "source_description_bg": "гранитогнайси, в началото слабо изветрели, сиви, дребно до среднозърнести, напукани",
+          "normalized_family": "GNEISS"
+        }
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 5.4,
+        "temperature_c": 37.5,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 780.64 m",
+        "collector": "гнайси и гранити; пукнатинно-жилен колектор"
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Лъджене",
+      "facility": "Сондаж №2ВКП „Вельова баня“",
+      "type": "mineral",
+      "status": "SOURCE_REVIEWED_NO_EXACT_COLUMN",
+      "total_depth_m": 178.0,
+      "notes": "Сондаж №2ВКП „Вельова баня“ е изграден през 1959 г. и е с дълбочина 178 m. Официалната балнеологична оценка потвърждава съоръжението и свободния самоизлив, но наличният документ не дава индивидуална литоложка колонка по дълбочинни интервали. Да се издири първичен сондажен паспорт.",
+      "mineral_research": {
+        "technical_flow_l_s": null,
+        "temperature_c": null,
+        "flow_regime": "free_self_flow",
+        "free_self_flow": true,
+        "collector": "пукнатинно-жилна водонапорна система в палеозойски гранити и гранитоиди на Западнородопския батолит",
+        "regional_collector_depth_m": {
+          "from_m": 1200.0,
+          "to_m": 1900.0,
+          "interpretation_only": true,
+          "note": "Регионална дълбочина на минералния колектор за находище Велинград-Лъджене; не е индивидуален водоприток в Сондаж №2ВКП."
+        },
+        "source_note": "МЗ, Балнеологична оценка №16/10.09.2014. Сондажът е изграден през 1959 г., дълбочина 178 m и работи на пълен свободен самоизлив."
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Лъджене",
+      "facility": "Сондаж №6ВКП „Вельова баня“",
+      "type": "mineral",
+      "status": "SOURCE_REVIEWED_NO_EXACT_COLUMN",
+      "total_depth_m": 150.6,
+      "construction_year": 1963,
+      "coordinates": {
+        "lat_dms": "42°01'44.8\" N",
+        "lon_dms": "23°59'06.2\" E",
+        "quality": "official_documented"
+      },
+      "water_level_note": "самоизлив на кота 746.55 m",
+      "notes": "Официалните регистри потвърждават Сондаж №6ВКП „Вельова баня“, дълбочина 150.6 m, изграден през 1963 г. В публично достъпните документи не е установена индивидуална литоложка колонка по дълбочинни интервали.",
+      "mineral_research": {
+        "technical_flow_l_s": null,
+        "temperature_c": null,
+        "flow_regime": "free_self_flow",
+        "free_self_flow": true,
+        "self_flow_elevation_m": 746.55,
+        "collector": "находище Велинград-Лъджене: пукнатинно-жилен колектор в палеозойски гранити и гранитоиди",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "МЗ, Балнеологична оценка №286/11.07.2024 е официално регистрирана. Потвърдени са дълбочина 150.6 m, година 1963 и самоизлив до кота 746.55 m. Индивидуални Q/T параметри още не са надеждно извлечени."
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Лъджене",
+      "facility": "Сондаж №7ВКП „Кремъчна баня“",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "total_depth_m": 345.2,
+      "column_documented_to_m": 345.2,
+      "column_source": "МЗ, Балнеологична оценка №116/15.03.2019",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 2.0,
+          "source_description_bg": "много здрав конгломерат от гранитови, гнайсови и пегматитови късове и валуни",
+          "normalized_family": "CONGLOMERATE"
+        },
+        {
+          "from_m": 2.0,
+          "to_m": 25.0,
+          "source_description_bg": "гнайсови, гранитови и пегматитови валуни с глинесто-песъчлив запълнител",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 25.0,
+          "to_m": 37.8,
+          "source_description_bg": "грубозърнест пясъчник с чакъли, алтерниращи пластове с чакъли",
+          "normalized_family": "SANDSTONE_WITH_INTERBEDS"
+        },
+        {
+          "from_m": 37.8,
+          "to_m": 49.7,
+          "source_description_bg": "гранитови валуни с глинесто-песъчлив запълнител",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 49.7,
+          "to_m": 345.2,
+          "source_description_bg": "биотитов амфиболов гранит, среднозърнест до дребнозърнест, слабо гнайсуван",
+          "normalized_family": "GRANITIC"
+        }
+      ],
+      "lithology_notes": [
+        "ксенолити от гнайси при 226.30-228.00 m",
+        "ксенолити от гнайси при 301.00-302.00 m"
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 8.0,
+        "temperature_c": 63.0,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 749.30 m",
+        "collector": "гранити; пукнатинно-жилен хидротермален колектор"
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Лъджене",
+      "facility": "Сондаж №8КГ „Топилата“",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "total_depth_m": 159.0,
+      "column_documented_to_m": 159.0,
+      "column_source": "МЗ, Балнеологична оценка №255/09.11.2023",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 47.0,
+          "source_description_bg": "пясъци, чакъли и валуни с глинести прослойки",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 47.0,
+          "to_m": 92.0,
+          "source_description_bg": "гранити, променени, брекчирани, милонитизирани и грусирани; грусиране 51-56 m",
+          "normalized_family": "GRANITIC",
+          "structural_zones_present": true
+        },
+        {
+          "from_m": 92.0,
+          "to_m": 100.0,
+          "source_description_bg": "разломна зона",
+          "normalized_family": "OTHER",
+          "structural_zone": true
+        },
+        {
+          "from_m": 100.0,
+          "to_m": 159.0,
+          "source_description_bg": "гранити, дребнозърнести, слабо напукани, с кварцови инжекции и карбонат по пукнатините",
+          "normalized_family": "GRANITIC"
+        }
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 4.6,
+        "temperature_c": 51.0,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив на кота 735.24 m",
+        "collector": "гранити; пукнатинно-жилен хидротермален колектор"
+      }
+    },
+    {
+      "settlement": "Драгиново",
+      "deposit": "Драгиново",
+      "facility": "Сондаж №1",
+      "type": "mineral",
+      "status": "SOURCE_REVIEWED_NO_EXACT_COLUMN",
+      "total_depth_m": 168.5,
+      "construction_period": "1958-1959",
+      "water_level_note": "напор +9.40 m",
+      "column_source": "БД ИБР, регистър на водовземните съоръжения; Балнеологична оценка №34/07.05.2015",
+      "notes": "Официално потвърден минерален сондаж №1, изграден 1958-1959 г., с дълбочина 168.5 m и напор +9.40 m. В публично достъпните официални материали не е установена индивидуална литоложка колонка по интервали. Да се издири архивен сондажен паспорт.",
+      "mineral_research": {
+        "technical_flow_l_s": null,
+        "temperature_c": null,
+        "artesian_character": true,
+        "pressure_head_m": 9.4,
+        "source_note": "МЗ, Балнеологична оценка №34/07.05.2015; официалните регистри потвърждават дълбочина 168.5 m и напор +9.40 m. Надеждни индивидуални Q/T стойности още не са извлечени от първичния документ."
+      }
+    },
+    {
+      "settlement": "Брацигово",
+      "deposit": "Брацигово",
+      "facility": "Сондаж №5",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "total_depth_m": 404.0,
+      "column_documented_to_m": 404.0,
+      "construction_year": 1988,
+      "column_source": "МЗ, Балнеологична оценка №263/08.01.2024; по-ранна оценка №23/01.08.2018",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 40.0,
+          "source_description_bg": "делувиални наслаги и валуни от андезити и риолити с песъчливо-глинест запълнител",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 40.0,
+          "to_m": 62.0,
+          "source_description_bg": "пясъчници, светлосиви, дребнозърнести",
+          "normalized_family": "SANDSTONE"
+        },
+        {
+          "from_m": 62.0,
+          "to_m": 290.0,
+          "source_description_bg": "риолити, розови, среднопорфирни, напукани и натрошени, с лимонитизация и хематизация по пукнатините",
+          "normalized_family": "OTHER"
+        },
+        {
+          "from_m": 290.0,
+          "to_m": 324.0,
+          "source_description_bg": "разломна зона; риолити силно променени, милонитизирани, хидротермално изменени и брекчирани",
+          "normalized_family": "OTHER",
+          "structural_zone": true
+        },
+        {
+          "from_m": 324.0,
+          "to_m": 361.0,
+          "source_description_bg": "риолити, розови до сиворозови, среднопорфирни, напукани и натрошени",
+          "normalized_family": "OTHER"
+        },
+        {
+          "from_m": 361.0,
+          "to_m": 404.0,
+          "source_description_bg": "риолити, розови, среднопорфирни, променени и грусирани в 361-371 m, напукани, на места излужени и брекчирани, с карбонатни налепи",
+          "normalized_family": "OTHER",
+          "structural_zones_present": true
+        }
+      ],
+      "mineral_research": {
+        "technical_flow_l_s": 1.25,
+        "temperature_c": 18.7,
+        "artesian_character": true,
+        "collector": "палеогенски ефузивни скали; пукнатинно-жилен водонапорен колектор"
+      }
+    },
+    {
+      "settlement": "Добровница",
+      "deposit": null,
+      "facility": "Проектен сондажен кладенец",
+      "type": "ordinary_or_project",
+      "status": "LITHOLOGY_ATTACHMENT_REFERENCED",
+      "notes": "Проектен сондаж 20 m; филтър 8-20 m; документът изрично посочва литоложка колонка като приложение 3, но приложението не присъства в публикувания PDF. Да се издири отделното приложение/първичният проект."
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": null,
+      "facility": "Инженерногеоложки проучвания",
+      "type": "engineering_geology",
+      "status": "CROSS_SECTION_FOUND_NEEDS_BOREHOLE_DECOMPOSITION",
+      "notes": "Публикация на Геологически институт БАН за района на Велинград; да се провери дали индивидуалните сондажи могат да се възстановят от разреза."
+    },
+    {
+      "settlement": "Стрелча",
+      "deposit": "Стрелча",
+      "facility": "Сондаж №1 ХГ",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED",
+      "notes": "Минерален сондаж. Да се издири и извлече геоложкият разрез от официалния документ.",
+      "total_depth_m": 487.5,
+      "column_documented_to_m": 485.7,
+      "construction_year": 1965,
+      "column_source": "МЗ, Балнеологична оценка №208/03.02.2022",
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 9.2,
+          "source_description_bg": "глинесто-песъчливи отложения - алувий",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 9.2,
+          "to_m": 11.3,
+          "source_description_bg": "чакъли и валуни с глинесто-песъчлив запълнител, слабо споени - плиоцен",
+          "normalized_family": "UNCONSOLIDATED"
+        },
+        {
+          "from_m": 11.3,
+          "to_m": 139.8,
+          "source_description_bg": "едрозърнест светлосив гранит - палеозой",
+          "normalized_family": "GRANITIC"
+        },
+        {
+          "from_m": 139.8,
+          "to_m": 295.0,
+          "source_description_bg": "гранит, средно до едрозърнест - палеозой",
+          "normalized_family": "GRANITIC"
+        },
+        {
+          "from_m": 295.0,
+          "to_m": 335.0,
+          "source_description_bg": "гранит, средно до едрозърнест, слабо напукан - палеозой",
+          "normalized_family": "GRANITIC"
+        },
+        {
+          "from_m": 335.0,
+          "to_m": 485.7,
+          "source_description_bg": "гранит, среднозърнест, напукан - палеозой",
+          "normalized_family": "GRANITIC"
+        }
+      ],
+      "undocumented_interval": {
+        "from_m": 485.7,
+        "to_m": 487.5,
+        "reason": "Официалният документ посочва крайна сондажна дълбочина 487.50 m, но публикуваният литоложки профил завършва на 485.70 m."
+      },
+      "mineral_research": {
+        "technical_flow_l_s": 7.1,
+        "temperature_c": 56.0,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив до кота 480.90 m",
+        "collector": "пукнатинно-жилен колектор в палеозойски гранити",
+        "formation_depth_interpretation_m": "около 1300-1500 m за формиране на термалната вода; регионална интерпретация, не дълбочина на сондажа"
+      }
+    },
+    {
+      "settlement": "Стрелча",
+      "deposit": "Стрелча",
+      "facility": "Сондаж №2 ВКП",
+      "type": "mineral",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Потвърдено минерално водовземно съоръжение; търси се документ с литоложки разрез.",
+      "mineral_research": {
+        "documented_flow_l_s": 1.0,
+        "documented_temperature_c": 46.0,
+        "allowable_water_level_elevation_m": 480.69,
+        "current_use_note": "Не се използва според общинската програма.",
+        "collector": "находище Стрелча: пукнатинно-жилна хидротермална система",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Община Стрелча, Програма за насърчаване използването на енергия от ВЕИ 2020-2029."
+      }
+    },
+    {
+      "settlement": "Стрелча",
+      "deposit": "Стрелча",
+      "facility": "Сондаж №3 ВКП",
+      "type": "mineral",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Потвърдено минерално водовземно съоръжение; търси се документ с литоложки разрез.",
+      "mineral_research": {
+        "documented_flow_l_s": 4.8,
+        "documented_temperature_c": 32.5,
+        "allowable_water_level_elevation_m": 475.79,
+        "current_use_note": "Не се използва; общинският документ посочва спряно използване за питейно-битови нужди.",
+        "collector": "находище Стрелча: пукнатинно-жилна хидротермална система",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Община Стрелча, Програма за насърчаване използването на енергия от ВЕИ 2020-2029."
+      }
+    },
+    {
+      "settlement": "Панагюрище",
+      "deposit": "Панагюрище",
+      "facility": "Сондаж №9хг",
+      "type": "mineral",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Минерален сондаж; да се издири първичен документ с геоложки разрез.",
+      "mineral_research": {
+        "approved_resource_l_s": 6.72,
+        "temperature_c": 55.3,
+        "resource_value_evidence": "secondary_compilation_from_official_registers",
+        "temperature_evidence": "secondary_compilation_from_official_registers",
+        "collector": "пукнатинно-жилен водонапорен колектор в напукани и разломени андезити на Челопешката свита",
+        "collector_scope": "official_regional_deposit_description",
+        "source_note": "МОСВ потвърждава Сондаж №9хг и типа на водонапорната система. Стойностите 6.72 l/s и 55.3°C са от справочник, компилиращ официални регистри; да се заменят с първичен акт при намирането му."
+      }
+    },
+    {
+      "settlement": "Баня",
+      "deposit": "Баня, община Панагюрище",
+      "facility": "Сондаж №2 „Наклонен“",
+      "type": "mineral",
+      "status": "SOURCE_REVIEWED_NO_EXACT_COLUMN",
+      "notes": "Официалната оценка потвърждава индивидуалния сондаж №2 „Наклонен“ с дълбочина 190.16 m, но не публикува литоложка колонка по дълбочинни интервали. Регионално колекторът е описан като пукнатинно-жилен в андезитови туфи със сенонска възраст и мергелни варовици на Мирковската свита. Тази регионална информация не се използва като индивидуален сондажен разрез.",
+      "total_depth_m": 190.16,
+      "column_source": "МЗ, Балнеологична оценка №132/12.06.2019",
+      "mineral_research": {
+        "technical_flow_l_s": 4.5,
+        "temperature_c_resource_table": 43.4,
+        "temperature_c_sample": 42.7,
+        "artesian_character": true,
+        "dynamic_level_note": "самоизлив до кота 449.35 m",
+        "collector": "андезитови туфи със сенонска възраст и мергелни варовици на Мирковската свита; регионално описание"
+      }
+    },
+    {
+      "settlement": "Брацигово",
+      "deposit": "Брацигово",
+      "facility": "Сондаж №2",
+      "type": "mineral",
+      "status": "SOURCE_REVIEWED_NO_EXACT_COLUMN",
+      "notes": "Официалният документ на МЗ потвърждава Сондаж №2 на находище Брацигово и експлоатационния му статус, но не съдържа индивидуален литоложки разрез по дълбочинни интервали. Да се издири първичен сондажен паспорт или архивна хидрогеоложка документация.",
+      "column_source": "МЗ, официален документ за Сондаж №2, 09.01.2019",
+      "mineral_research": {
+        "total_depth_m": 505.0,
+        "construction_period": "1967-1968",
+        "documented_inflow_zones": [
+          {
+            "from_m": 170.0,
+            "to_m": 213.0,
+            "evidence": "documented_individual_inflow"
+          },
+          {
+            "from_m": 412.0,
+            "to_m": 437.0,
+            "evidence": "documented_individual_inflow"
+          }
+        ],
+        "initial_documented_flow_l_s": 1.1,
+        "test_self_flow_l_s": 1.4,
+        "technical_flow_l_s": 0.5,
+        "resource_temperature_c": 28.5,
+        "sample_temperature_c": 25.7,
+        "artesian_character": true,
+        "static_water_level_elevation_m": 384.86,
+        "allowable_drawdown_m": 0.65,
+        "allowable_dynamic_level_elevation_m": 384.21,
+        "collector": "ефузивни скали; водопроводящите участъци са свързани с напукани и смлени риолити и разломни структури",
+        "construction": [
+          {
+            "from_m": 0.0,
+            "to_m": 11.7,
+            "description_bg": "сондирано Ø295 mm"
+          },
+          {
+            "from_m": 0.0,
+            "to_m": 48.5,
+            "description_bg": "стоманена обсадна колона Ø168 mm, задтръбно циментирана"
+          },
+          {
+            "from_m": 0.0,
+            "to_m": 195.3,
+            "description_bg": "стоманена обсадна колона Ø146 mm"
+          },
+          {
+            "from_m": 194.4,
+            "to_m": 325.7,
+            "description_bg": "стоманена обсадна колона Ø127 mm"
+          },
+          {
+            "from_m": 325.7,
+            "to_m": 505.0,
+            "description_bg": "стоманена обсадна колона Ø108 mm"
+          }
+        ],
+        "hydraulic_notes": [
+          "След прокарването на Сондаж №2 самоизливът му е превишавал 1.4 l/s.",
+          "При измерване през август 1983 г. е отчетен дебит около 1.0 l/s и температура 26°C."
+        ],
+        "source_note": "МЗ, сертификат/балнеологична документация №31/09.01.2019 за Сондаж №2, Брацигово."
+      }
+    },
+    {
+      "settlement": "Панагюрище",
+      "deposit": null,
+      "facility": "Проектен сондажен кладенец, м. „Фетенци“",
+      "type": "ordinary_or_project",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Проектен кладенец до 30 m. Да се издири хидрогеоложката обосновка и евентуална литоложка колонка."
+    },
+    {
+      "settlement": "Септември",
+      "deposit": null,
+      "facility": "Тръбен кладенец за автомивка",
+      "type": "ordinary_or_project",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Проектен тръбен кладенец. Да се издири хидрогеоложката обосновка и литоложката колонка."
+    },
+    {
+      "settlement": "Лесичово",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 43369.374.1",
+      "type": "ordinary_or_project",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Проектна дълбочина 75 m. Да се издири хидрогеоложката обосновка и литоложката колонка."
+    },
+    {
+      "settlement": "Белово",
+      "deposit": null,
+      "facility": "Нов водоизточник, ПИ 03592.502.1656",
+      "type": "ordinary_or_project",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Да се издири хидрогеоложката обосновка и евентуална литоложка колонка."
+    },
+    {
+      "settlement": "Септември",
+      "deposit": null,
+      "facility": "Мониторингов сондаж – Септември-гара",
+      "type": "monitoring_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Потвърден мониторингов сондаж от БД ИБР. Да се издири паспорт/сондажен разрез."
+    },
+    {
+      "settlement": "Пазарджик",
+      "deposit": null,
+      "facility": "ПС-ПБВ „Ивайло“",
+      "type": "monitoring_or_supply_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Потвърден пункт от мониторинговата мрежа на БД ИБР. Да се издири сондажен паспорт и литология."
+    },
+    {
+      "settlement": "Мало Конаре",
+      "deposit": null,
+      "facility": "Мониторингов сондаж – Мало Конаре",
+      "type": "monitoring_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Потвърден мониторингов сондаж от БД ИБР. Да се издири първичен разрез."
+    },
+    {
+      "settlement": "Пазарджик",
+      "deposit": null,
+      "facility": "Мониторингов сондаж „ЕРЦ“",
+      "type": "monitoring_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Потвърден мониторингов сондаж от БД ИБР. Да се издири паспорт/литоложка колонка."
+    },
+    {
+      "settlement": "Гелеменово",
+      "deposit": null,
+      "facility": "Сондаж – ПС",
+      "type": "monitoring_or_supply_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Потвърден сондаж от мониторинговата мрежа на БД ИБР. Да се издири първичен геоложки разрез."
+    },
+    {
+      "settlement": "Оборище",
+      "deposit": null,
+      "facility": "Самоизливен сондаж",
+      "type": "monitoring_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Потвърден самоизливен сондаж в мониторинговата мрежа. Да се издири сондажен паспорт и литология."
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Лъджене",
+      "facility": "Сондаж №1ВКП + КЕИ №К-8 „Вельова баня“",
+      "type": "mineral",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "БД ИБР потвърждава сондаж №1ВКП с дълбочина 203.5 m, изграден през 1964 г. Липсва архивна конструктивна/литоложка информация в публичния регистър. Да се издири първичен паспорт.",
+      "total_depth_m": 203.5,
+      "construction_year": 1964,
+      "coordinates": {
+        "lat_dms": "42°01'42.3\" N",
+        "lon_dms": "23°58'49.2\" E",
+        "quality": "official_documented"
+      },
+      "water_level_note": "самоизлив на кота 752.70 m",
+      "mineral_research": {
+        "combined_source": true,
+        "components": [
+          {
+            "facility": "Сондаж №1ВКП „Вельова баня“",
+            "depth_m": 203.5,
+            "construction_year": 1964
+          },
+          {
+            "facility": "КЕИ №К-8 „Вельова баня“",
+            "depth_m": 1.2,
+            "construction_year": null
+          }
+        ],
+        "technical_flow_l_s": 0.36,
+        "historical_technical_flow_l_s": 0.88,
+        "permitted_average_flow_l_s": 0.05,
+        "permitted_flow_type": "permit_average_for_specific_water_user",
+        "flow_regime": "free_self_flow",
+        "free_self_flow": true,
+        "self_flow_elevation_m": 752.7,
+        "collector": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити и гранитоиди",
+        "collector_scope": "regional_deposit_context",
+        "hydraulic_notes": [
+          "Технически възможният дебит на комбинираното водовземно съоръжение е намален от 0.88 l/s на 0.36 l/s със Заповед РД-506/15.06.2022.",
+          "Разрешеният средноденонощен дебит 0.05 l/s е по конкретно разрешително и не се приема за технически възможен дебит."
+        ],
+        "source_note": "БД ИБР: регистър на минералните водовземни съоръжения и съобщение относно разрешително №31610092/02.02.2016."
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Лъджене",
+      "facility": "Сондаж №7КГ „Вельова баня“",
+      "type": "mineral",
+      "status": "SOURCE_REVIEWED_NO_EXACT_COLUMN",
+      "notes": "Официално потвърдена дълбочина 501.40 m и балнеологична оценка №17/10.09.2014. Не е установена надеждна индивидуална литоложка колонка по интервали в достъпния официален материал. Да се издири първичен сондажен паспорт/архивен геоложки разрез.",
+      "total_depth_m": 501.4,
+      "coordinates": {
+        "lat_dms": "42°01'43.2\" N",
+        "lon_dms": "23°58'52.3\" E",
+        "quality": "official_documented"
+      },
+      "construction_year": 1971,
+      "water_level_note": "самоизлив на кота 749.35 m",
+      "column_source": "МЗ, Балнеологична оценка №17/10.09.2014; БД ИБР, регистър на водовземните съоръжения",
+      "mineral_research": {
+        "approved_exploitation_resource_l_s": 3.4,
+        "documented_temperature_c": 49.8,
+        "flow_regime": "free_self_flow",
+        "free_self_flow": true,
+        "self_flow_elevation_m": 749.35,
+        "collector": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити и гранитоиди",
+        "collector_scope": "regional_deposit_context",
+        "regional_collector_depth_m": {
+          "from_m": 1200.0,
+          "to_m": 1900.0,
+          "interpretation_only": true
+        },
+        "source_note": "БД ИБР потвърждава дълбочина 501.4 m и самоизлив на кота 749.35 m. Официалното приложение за ресурсите посочва 3.40 l/s и 49.8°C."
+      }
+    },
+    {
+      "settlement": "Велинград",
+      "deposit": "Велинград-Лъджене",
+      "facility": "Сондаж №9 „Кентавър“",
+      "type": "mineral",
+      "status": "COLUMN_CONFIRMED_PARTIAL",
+      "notes": "Сондаж №9 „Кентавър“, изграден през 1999 г., дълбочина 428 m. Първите 61 m са документирани като неоген-кватернерна покривка. Под нея са пресечени гранити, гранитогнайси и гнайси, но без точни интервални граници.",
+      "total_depth_m": 428.0,
+      "construction_year": 1999,
+      "column_documented_to_m": 61.0,
+      "known_lithology_summary": [
+        {
+          "from_m": 0.0,
+          "to_m": 61.0,
+          "description_bg": "неоген-кватернерна покривка"
+        },
+        {
+          "from_m": 61.0,
+          "to_m": 428.0,
+          "description_bg": "скален комплекс от гранити, гранитогнайси и гнайси; точните граници между разновидностите не са публикувани в наличния източник"
+        }
+      ],
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 61.0,
+          "source_description_bg": "неоген-кватернерна покривка",
+          "normalized_family": "UNCONSOLIDATED"
+        }
+      ],
+      "deeper_lithology_summary": {
+        "from_m": 61.0,
+        "to_m": 428.0,
+        "description_bg": "гранити, гранитогнайси и гнайси; публикуваният източник не дава точните дълбочинни граници между разновидностите"
+      },
+      "undocumented_interval": {
+        "from_m": 61.0,
+        "to_m": 428.0,
+        "reason": "Известен е общият скален състав, но не са публикувани точни индивидуални граници."
+      },
+      "mineral_research": {
+        "approved_exploitation_resource_l_s": 1.06,
+        "approved_resource_evidence": "official_historical_resource_annex",
+        "documented_temperature_c": 44.0,
+        "collector": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити, гранитогнайси и гнайси",
+        "regional_collector_depth_m": {
+          "from_m": 1200.0,
+          "to_m": 1900.0,
+          "interpretation_only": true
+        },
+        "resource_review_note": "В по-късна вторична компилация се среща стойност 0.52 l/s. Тя не замества официалния исторически утвърден ресурс 1.06 l/s без идентифициран последващ първичен акт.",
+        "source_note": "Официално приложение към ПУРБ посочва 1.06 l/s и температура 44°C за Сондаж №9."
+      }
+    },
+    {
+      "settlement": "Брацигово",
+      "deposit": "Брацигово",
+      "facility": "Сондаж №1",
+      "type": "mineral",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "total_depth_m": 160.8,
+      "construction_year": 1963,
+      "coordinates": {
+        "lat_dms": "42°04'24.7\" N",
+        "lon_dms": "24°21'51.6\" E",
+        "quality": "official_documented"
+      },
+      "notes": "Мониторингов сондаж. Официалният регистър потвърждава дълбочина 160.8 m. Да се издири първичен сондажен паспорт.",
+      "mineral_research": {
+        "documented_depth_m": 160.0,
+        "documented_initial_flow_l_s": 0.5,
+        "documented_temperature_c": 19.0,
+        "artesian_character": true,
+        "pressure_head_m": 1.0,
+        "role": "monitoring",
+        "collector": "находище Брацигово: затворена пукнатинно-жилна водонапорна система в палеогенски седименти и ефузивни скали",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Официалният документ за Сондаж №2 описва историята на находището и Сондаж №1: прокаран през 1963 г., достигнал около 160 m, получена минерална вода с дебит 0.5 l/s, температура 19°C и напор около 1 m над терена. Сондаж №1 се използва като наблюдателен пункт."
+      }
+    },
+    {
+      "settlement": "Брацигово",
+      "deposit": "Брацигово",
+      "facility": "Сондаж №3",
+      "type": "mineral",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официално потвърден сондаж на находище Брацигово; използван като мониторингов пункт. Да се издири дълбочина и геоложки разрез.",
+      "mineral_research": {
+        "facility_confirmed": true,
+        "role": "monitoring",
+        "technical_flow_l_s": null,
+        "temperature_c": null,
+        "collector": "находище Брацигово: затворена пукнатинно-жилна система в палеогенски седименти и ефузивни скали",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Официалният документ за Сондаж №2 посочва, че след 1984 г. са прокарани Сондажи №3, №4 и №5. Сондаж №3 се използва като наблюдателен пункт. В прегледания документ няма надеждни индивидуални Q/T или водоприточни интервали за №3."
+      }
+    },
+    {
+      "settlement": "Брацигово",
+      "deposit": "Брацигово",
+      "facility": "Сондаж №4",
+      "type": "mineral",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официално потвърден сондаж на находище Брацигово. Да се издири дълбочина и геоложки разрез.",
+      "mineral_research": {
+        "facility_confirmed": true,
+        "technical_flow_l_s": null,
+        "temperature_c": null,
+        "collector": "находище Брацигово: затворена пукнатинно-жилна система в палеогенски седименти и ефузивни скали",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Официалният документ потвърждава, че Сондаж №4 е един от сондажите, прокарани след 1984 г. В прегледания материал не са дадени надеждни индивидуални дебит, температура или водоприточни интервали."
+      }
+    },
+    {
+      "settlement": "Батак",
+      "deposit": null,
+      "facility": "Мониторингов сондаж BG3G00000PTMP204",
+      "type": "monitoring_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официален мониторингов пункт на БД ИБР в гр. Батак. Да се издири сондажен паспорт и литоложка колонка."
+    },
+    {
+      "settlement": "Варвара",
+      "deposit": null,
+      "facility": "Мониторингов сондаж BG3G00000PTMP203",
+      "type": "monitoring_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официален мониторингов пункт на БД ИБР в с. Варвара. Да се установи дали е идентичен с някой от известните минерални сондажи №3-№6 или е отделно съоръжение."
+    },
+    {
+      "settlement": "Оборище",
+      "deposit": null,
+      "facility": "Самоизливен сондаж BG3G00000K2MP069",
+      "type": "monitoring_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официален самоизливен мониторингов сондаж на БД ИБР. Да се издири първичен паспорт и литоложки разрез."
+    },
+    {
+      "settlement": "Мало Конаре",
+      "deposit": null,
+      "facility": "3 съществуващи кладенеца за Мало Конаре и Пищигово",
+      "type": "water_supply_boreholes",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "БД ИБР потвърждава три съществуващи кладенеца за питейно-битово водоснабдяване. Да се издирят отделните паспорти, дълбочини и литоложки колонки."
+    },
+    {
+      "settlement": "Мало Конаре",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 46749.135.259",
+      "type": "ordinary_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официална процедура на БД ИБР от 2024 г. Да се издири обосновка и литоложка колонка."
+    },
+    {
+      "settlement": "Мало Конаре",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 46749.135.265",
+      "type": "ordinary_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официална процедура на БД ИБР от 2021 г. Да се издири хидрогеоложка обосновка и колонка."
+    },
+    {
+      "settlement": "Мало Конаре",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 46749.502.1927",
+      "type": "ordinary_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официална процедура на БД ИБР от 2025 г. Да се издири проект и очакван/действителен разрез."
+    },
+    {
+      "settlement": "Панагюрище",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 55302.501.3876",
+      "type": "ordinary_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Съществуващ тръбен кладенец, официално обявен от БД ИБР през 2022 г."
+    },
+    {
+      "settlement": "Панагюрище",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 55302.46.307",
+      "type": "ordinary_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официална процедура на БД ИБР от 18.05.2026 г."
+    },
+    {
+      "settlement": "Батак",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 02837.6.1144, м. „Еньов камък“",
+      "type": "ordinary_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официална процедура на БД ИБР от 08.11.2024 г."
+    },
+    {
+      "settlement": "Ивайло",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 32010.36.21",
+      "type": "ordinary_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Съществуващ тръбен кладенец, официално водовземно съоръжение."
+    },
+    {
+      "settlement": "Пазарджик",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 55155.507.324",
+      "type": "ordinary_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официална процедура на БД ИБР от 24.07.2026 г."
+    },
+    {
+      "settlement": "Гелеменово",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 14619.153.41, м. „Далъка“",
+      "type": "ordinary_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Съществуващ тръбен кладенец, официално обявен от БД ИБР през 2023 г."
+    },
+    {
+      "settlement": "Величково",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 10505.28.4, м. „Саза“",
+      "type": "ordinary_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официална процедура на БД ИБР от 30.06.2026 г."
+    },
+    {
+      "settlement": "Величково",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 10505.28.8, м. „Саза“",
+      "type": "ordinary_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Отделен тръбен кладенец в същата местност, официално обявен от БД ИБР."
+    },
+    {
+      "settlement": "Поибрене",
+      "deposit": null,
+      "facility": "Шахтов кладенец, ПИ 57128.227.15",
+      "type": "ordinary_well",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официално водовземно съоръжение в община Панагюрище."
+    },
+    {
+      "settlement": "Мало Конаре",
+      "deposit": null,
+      "facility": "Тръбен кладенец, ПИ 46749.132.20, м. „Градището“",
+      "type": "ordinary_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "notes": "Официално съоръжение по процедура на БД ИБР от 03.08.2026 г."
+    },
+    {
+      "settlement": "Мало Конаре",
+      "deposit": null,
+      "facility": "Сондаж НИМХ №612",
+      "type": "monitoring_borehole",
+      "status": "FACILITY_CONFIRMED_SOURCE_TO_FIND",
+      "total_depth_m": 9.5,
+      "coordinates": {
+        "lat_dms": "42°12'26\" N",
+        "lon_dms": "24°25'13\" E",
+        "quality": "official_documented"
+      },
+      "notes": "Официален мониторингов сондаж на НИМХ/БД ИБР."
+    }
+  ],
+  "municipalities_search_status": {
+    "Пазарджик": "IN_PROGRESS",
+    "Батак": "TO_SEARCH",
+    "Белово": "IN_PROGRESS",
+    "Брацигово": "IN_PROGRESS",
+    "Велинград": "IN_PROGRESS",
+    "Лесичово": "IN_PROGRESS",
+    "Панагюрище": "IN_PROGRESS",
+    "Пещера": "TO_SEARCH",
+    "Ракитово": "IN_PROGRESS",
+    "Септември": "IN_PROGRESS",
+    "Стрелча": "IN_PROGRESS"
+  }
+}

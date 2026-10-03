@@ -8048,7 +8048,7 @@
         "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
         "deposit_location_context": "central part of Kamenitsa quarter, northern Velingrad; individual facility coordinates not established",
         "construction_year": 1962,
-        "depth_m": 280,
+        "depth_m": 280.0,
         "technical_possible_discharge_l_s": 5.4,
         "technical_temperature_c": 84.5,
         "self_flow_elevation_m": 764.67,
@@ -8088,7 +8088,21 @@
         "coordinate_precision_scope": "CADASTRAL_PARCEL_LEVEL_NOT_CONFIRMED_WELLHEAD",
         "coordinate_resolution_at": "2026-09-11T05:49:22+00:00",
         "coordinate_resolution_note": "Two distinct mineral-water facilities, Sondazh No.5 and KEI No.7 Syarna banya, are officially documented in the same cadastral parcel 10450.501.842. They remain separate facility records. The identical parcel representative point must not be interpreted as an identical surveyed wellhead coordinate.",
-        "settlement": "Велинград"
+        "settlement": "Велинград",
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 5.4,
+          "temperature_c": 84.5,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 764.67 m",
+          "collector": "гнайси от Богутевската плагиогнайсова свита; регионална информация, не индивидуален разрез"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "official_facility_name": "Сондаж №5 „Сярна баня“",
+        "temperature_c": 84.5,
+        "artesian_character": true,
+        "collector": "гнайси от Богутевската плагиогнайсова свита; регионална информация, не индивидуален разрез"
       }
     },
     {
@@ -8513,7 +8527,7 @@
         "coordinate_status": "TO_RESEARCH",
         "deposit_location_context": "central part of Kamenitsa quarter, northern Velingrad; individual facility coordinates not established",
         "construction_year": 1960,
-        "depth_m": 271,
+        "depth_m": 271.0,
         "technical_possible_discharge_l_s": 6.38,
         "technical_temperature_c": 87.7,
         "self_flow_elevation_m": 771.84,
@@ -8569,7 +8583,22 @@
             "title": "Министерство на здравеопазването — балнеологични оценки",
             "url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=4"
           }
-        ]
+        ],
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 6.38,
+          "temperature_c": 87.7,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 771.84 m",
+          "collector": "напукани гранитогнайси от Богутевската плагиогнайсова свита"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "official_facility_name": "Сондаж №3 „Мизинка“",
+        "temperature_c": 87.7,
+        "artesian_character": true,
+        "collector": "напукани гранитогнайси от Богутевската плагиогнайсова свита"
       }
     },
     {
@@ -8670,7 +8699,89 @@
         "coordinate_precision_scope": "CADASTRAL_PARCEL_LEVEL_NOT_CONFIRMED_WELLHEAD",
         "coordinate_resolution_at": "2026-09-11T05:55:32+00:00",
         "coordinate_resolution_note": "The municipality explicitly locates Sondazh No.4 Vlasa in cadastral property 10450.501.2479. The stored coordinate is a representative point inside that exact parcel and is not asserted to be the surveyed borehole mouth.",
-        "settlement": "Велинград"
+        "settlement": "Велинград",
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 13.74,
+          "resource_temperature_c": 88.8,
+          "sample_temperature_c": 86.4,
+          "flow_regime": "free_self_flow",
+          "free_self_flow": true,
+          "self_flow_elevation_m": 768.1,
+          "collector": "напукани и нарушени биотитови и амфиболови гранитизирани гнайси от Богутевската плагиогнайсова свита",
+          "documented_mineral_aquifer_interval": {
+            "from_m": 59.0,
+            "to_m": 450.0,
+            "evidence": "Официалната балнеологична оценка определя този интервал като водоносен хоризонт на минералната вода."
+          },
+          "construction": [
+            {
+              "from_m": 0.0,
+              "to_m": 35.0,
+              "description_bg": "обсадна колона Ø159 mm"
+            },
+            {
+              "from_m": 35.0,
+              "to_m": 51.0,
+              "description_bg": "обсадна колона Ø146 mm"
+            },
+            {
+              "from_m": 51.0,
+              "to_m": 129.0,
+              "description_bg": "обсадна колона Ø127 mm"
+            },
+            {
+              "from_m": 129.0,
+              "to_m": 200.0,
+              "description_bg": "обсадна колона Ø108 mm"
+            },
+            {
+              "from_m": 200.0,
+              "to_m": 450.0,
+              "description_bg": "сондирано Ø108 mm, открит ствол"
+            }
+          ],
+          "documented_open_hole": {
+            "from_m": 200.0,
+            "to_m": 450.0
+          },
+          "source_note": "МЗ, Балнеологична оценка №23/20.05.2025."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "official_facility_name": "Сондаж №4 „Власа“",
+        "resource_temperature_c": 88.8,
+        "free_self_flow": true,
+        "flow_regime": "free_self_flow",
+        "collector": "напукани и нарушени биотитови и амфиболови гранитизирани гнайси от Богутевската плагиогнайсова свита",
+        "construction": [
+          {
+            "from_m": 0.0,
+            "to_m": 35.0,
+            "description_bg": "обсадна колона Ø159 mm"
+          },
+          {
+            "from_m": 35.0,
+            "to_m": 51.0,
+            "description_bg": "обсадна колона Ø146 mm"
+          },
+          {
+            "from_m": 51.0,
+            "to_m": 129.0,
+            "description_bg": "обсадна колона Ø127 mm"
+          },
+          {
+            "from_m": 129.0,
+            "to_m": 200.0,
+            "description_bg": "обсадна колона Ø108 mm"
+          },
+          {
+            "from_m": 200.0,
+            "to_m": 450.0,
+            "description_bg": "сондирано Ø108 mm, открит ствол"
+          }
+        ],
+        "source_note": "МЗ, Балнеологична оценка №23/20.05.2025."
       }
     },
     {
@@ -9039,7 +9150,21 @@
           "transform_validation_status": "PASS"
         },
         "coordinate_resolution_at": "2026-09-11T14:12:31.007048Z",
-        "coordinate_resolution_note": "Original facility coordinate preserved in BGS1970 K9 and transformed to WGS84/ETRS89. The same transformation workflow was validated against KEI No.1 Bancheto with control difference 11.245 m."
+        "coordinate_resolution_note": "Original facility coordinate preserved in BGS1970 K9 and transformed to WGS84/ETRS89. The same transformation workflow was validated against KEI No.1 Bancheto with control difference 11.245 m.",
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 4.5,
+          "temperature_c_resource_table": 43.4,
+          "temperature_c_sample": 42.7,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив до кота 449.35 m",
+          "collector": "андезитови туфи със сенонска възраст и мергелни варовици на Мирковската свита; регионално описание"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Баня",
+        "artesian_character": true,
+        "collector": "андезитови туфи със сенонска възраст и мергелни варовици на Мирковската свита; регионално описание"
       }
     },
     {
@@ -9109,7 +9234,22 @@
         "spatial_research_result": "NO_SAFE_RESOLUTION",
         "spatial_research_closed_at": "2026-09-12T17:31:09.966690+00:00",
         "spatial_research_batch": 102,
-        "spatial_research_note": "Facility identity is retained as CONFIRMED_MISSING. No sufficiently reliable facility-level coordinate has been established. Research is closed for the current national spatial-completion pass. Reopen only if a new authoritative facility-level coordinate or cadastral geometry becomes available."
+        "spatial_research_note": "Facility identity is retained as CONFIRMED_MISSING. No sufficiently reliable facility-level coordinate has been established. Research is closed for the current national spatial-completion pass. Reopen only if a new authoritative facility-level coordinate or cadastral geometry becomes available.",
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 4.25,
+          "temperature_c": 35.7,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив до кота 755.05 m",
+          "collector": "биотитови гнайси; пукнатинно-жилна система"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Ракитово",
+        "official_facility_name": "Сондаж №9а",
+        "temperature_c": 35.7,
+        "artesian_character": true,
+        "collector": "биотитови гнайси; пукнатинно-жилна система"
       }
     },
     {
@@ -13854,6 +13994,1292 @@
         "existing_match_source": "official_water_facilities.geojson",
         "existing_match_basis": "Exact cadastral property identifier + facility identity + existing official GeoJSON point.",
         "existing_match_resolved_at": "2026-09-10T19:25:41+00:00"
+      }
+    },
+    {
+      "status": "MATCHED_EXISTING",
+      "research_status": "MATCHED_EXISTING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №1",
+      "mh_deposit": "Велинград-Чепино",
+      "mh_settlement": "Велинград",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Pazardzhik audited mineral/hydrothermal research; linked to exact existing production feature.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 11.1,
+          "resource_temperature_c": 47.5,
+          "sample_temperature_c": 47.8,
+          "flow_regime": "free_self_flow",
+          "free_self_flow": true,
+          "self_flow_elevation_m": 775.51,
+          "collector": "регионално: гнайси и гранити в дълбоката пукнатинно-жилна система",
+          "regional_collector_depth_m": {
+            "from_m": 1000.0,
+            "to_m": 1200.0,
+            "interpretation_only": true,
+            "note": "Регионална дълбочина на колектора под земната повърхност; не е доказан водоприток в самия Сондаж №1."
+          },
+          "construction": [
+            {
+              "from_m": 0.0,
+              "to_m": 1.8,
+              "description_bg": "Ø150 mm"
+            },
+            {
+              "from_m": 0.0,
+              "to_m": 2.5,
+              "description_bg": "разширено до Ø150 mm, затръбено и циментирано"
+            },
+            {
+              "from_m": 2.5,
+              "to_m": 53.3,
+              "description_bg": "сондирано Ø127 mm, незатръбено"
+            }
+          ],
+          "documented_open_hole": {
+            "from_m": 2.5,
+            "to_m": 53.3
+          },
+          "source_note": "МЗ, Балнеологична оценка №165/19.05.2020."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "current_deposit_name": "Велинград-Чепино",
+        "official_facility_name": "Сондаж №1",
+        "technical_possible_discharge_l_s": 11.1,
+        "resource_temperature_c": 47.5,
+        "sample_temperature_c": 47.8,
+        "free_self_flow": true,
+        "flow_regime": "free_self_flow",
+        "self_flow_elevation_m": 775.51,
+        "collector": "регионално: гнайси и гранити в дълбоката пукнатинно-жилна система",
+        "construction": [
+          {
+            "from_m": 0.0,
+            "to_m": 1.8,
+            "description_bg": "Ø150 mm"
+          },
+          {
+            "from_m": 0.0,
+            "to_m": 2.5,
+            "description_bg": "разширено до Ø150 mm, затръбено и циментирано"
+          },
+          {
+            "from_m": 2.5,
+            "to_m": 53.3,
+            "description_bg": "сондирано Ø127 mm, незатръбено"
+          }
+        ],
+        "source_note": "МЗ, Балнеологична оценка №165/19.05.2020.",
+        "regional_collector_depth_m": {
+          "from_m": 1000.0,
+          "to_m": 1200.0,
+          "interpretation_only": true,
+          "note": "Регионална дълбочина на колектора под земната повърхност; не е доказан водоприток в самия Сондаж №1."
+        },
+        "existing_feature_index": 39,
+        "identity_resolution_status": "EXACT_AUDITED_EXISTING_FEATURE_INDEX"
+      }
+    },
+    {
+      "status": "MATCHED_EXISTING",
+      "research_status": "MATCHED_EXISTING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №2",
+      "mh_deposit": "Велинград-Чепино",
+      "mh_settlement": "Велинград",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Pazardzhik audited mineral/hydrothermal research; linked to exact existing production feature.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 9.6,
+          "temperature_c": 47.5,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 775.66 m",
+          "collector": "гнайси и гранити; пукнатинно-жилен колектор"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "current_deposit_name": "Велинград-Чепино",
+        "official_facility_name": "Сондаж №2",
+        "depth_m": 70.3,
+        "technical_possible_discharge_l_s": 9.6,
+        "temperature_c": 47.5,
+        "artesian_character": true,
+        "collector": "гнайси и гранити; пукнатинно-жилен колектор",
+        "existing_feature_index": 40,
+        "identity_resolution_status": "EXACT_AUDITED_EXISTING_FEATURE_INDEX"
+      }
+    },
+    {
+      "status": "MATCHED_EXISTING",
+      "research_status": "MATCHED_EXISTING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №3",
+      "mh_deposit": "Велинград-Чепино",
+      "mh_settlement": "Велинград",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Pazardzhik audited mineral/hydrothermal research; linked to exact existing production feature.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 6.3,
+          "temperature_c": 47.5,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 775.57 m",
+          "collector": "гнайси и гранити; пукнатинно-жилен колектор"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "current_deposit_name": "Велинград-Чепино",
+        "official_facility_name": "Сондаж №3",
+        "depth_m": 102.4,
+        "technical_possible_discharge_l_s": 6.3,
+        "temperature_c": 47.5,
+        "artesian_character": true,
+        "collector": "гнайси и гранити; пукнатинно-жилен колектор",
+        "existing_feature_index": 41,
+        "identity_resolution_status": "EXACT_AUDITED_EXISTING_FEATURE_INDEX"
+      }
+    },
+    {
+      "status": "MATCHED_EXISTING",
+      "research_status": "MATCHED_EXISTING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №4",
+      "mh_deposit": "Велинград-Чепино",
+      "mh_settlement": "Велинград",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Pazardzhik audited mineral/hydrothermal research; linked to exact existing production feature.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 5.4,
+          "temperature_c": 47.5,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 775.50 m",
+          "collector": "гнайси и гранити; пукнатинно-жилен колектор"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "current_deposit_name": "Велинград-Чепино",
+        "official_facility_name": "Сондаж №4",
+        "depth_m": 101.4,
+        "technical_possible_discharge_l_s": 5.4,
+        "temperature_c": 47.5,
+        "artesian_character": true,
+        "collector": "гнайси и гранити; пукнатинно-жилен колектор",
+        "existing_feature_index": 42,
+        "identity_resolution_status": "EXACT_AUDITED_EXISTING_FEATURE_INDEX"
+      }
+    },
+    {
+      "status": "MATCHED_EXISTING",
+      "research_status": "MATCHED_EXISTING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №5 „Горски пункт“",
+      "mh_deposit": "Велинград-Чепино",
+      "mh_settlement": "Велинград",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Pazardzhik audited mineral/hydrothermal research; linked to exact existing production feature.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 5.4,
+          "temperature_c": 37.5,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 780.64 m",
+          "collector": "гнайси и гранити; пукнатинно-жилен колектор"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "current_deposit_name": "Велинград-Чепино",
+        "official_facility_name": "Сондаж №5 „Горски пункт“",
+        "depth_m": 246.0,
+        "technical_possible_discharge_l_s": 5.4,
+        "temperature_c": 37.5,
+        "artesian_character": true,
+        "collector": "гнайси и гранити; пукнатинно-жилен колектор",
+        "existing_feature_index": 43,
+        "identity_resolution_status": "EXACT_AUDITED_EXISTING_FEATURE_INDEX"
+      }
+    },
+    {
+      "status": "MATCHED_EXISTING",
+      "research_status": "MATCHED_EXISTING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №2ВКП „Вельова баня“",
+      "mh_deposit": "Велинград-Лъджене",
+      "mh_settlement": "Велинград",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Pazardzhik audited mineral/hydrothermal research; linked to exact existing production feature.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": null,
+          "temperature_c": null,
+          "flow_regime": "free_self_flow",
+          "free_self_flow": true,
+          "collector": "пукнатинно-жилна водонапорна система в палеозойски гранити и гранитоиди на Западнородопския батолит",
+          "regional_collector_depth_m": {
+            "from_m": 1200.0,
+            "to_m": 1900.0,
+            "interpretation_only": true,
+            "note": "Регионална дълбочина на минералния колектор за находище Велинград-Лъджене; не е индивидуален водоприток в Сондаж №2ВКП."
+          },
+          "source_note": "МЗ, Балнеологична оценка №16/10.09.2014. Сондажът е изграден през 1959 г., дълбочина 178 m и работи на пълен свободен самоизлив."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "current_deposit_name": "Велинград-Лъджене",
+        "official_facility_name": "Сондаж №2ВКП „Вельова баня“",
+        "depth_m": 178.0,
+        "free_self_flow": true,
+        "flow_regime": "free_self_flow",
+        "collector": "пукнатинно-жилна водонапорна система в палеозойски гранити и гранитоиди на Западнородопския батолит",
+        "source_note": "МЗ, Балнеологична оценка №16/10.09.2014. Сондажът е изграден през 1959 г., дълбочина 178 m и работи на пълен свободен самоизлив.",
+        "regional_collector_depth_m": {
+          "from_m": 1200.0,
+          "to_m": 1900.0,
+          "interpretation_only": true,
+          "note": "Регионална дълбочина на минералния колектор за находище Велинград-Лъджене; не е индивидуален водоприток в Сондаж №2ВКП."
+        },
+        "existing_feature_index": 22,
+        "identity_resolution_status": "EXACT_AUDITED_EXISTING_FEATURE_INDEX"
+      }
+    },
+    {
+      "status": "MATCHED_EXISTING",
+      "research_status": "MATCHED_EXISTING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №6ВКП „Вельова баня“",
+      "mh_deposit": "Велинград-Лъджене",
+      "mh_settlement": "Велинград",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Pazardzhik audited mineral/hydrothermal research; linked to exact existing production feature.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": null,
+          "temperature_c": null,
+          "flow_regime": "free_self_flow",
+          "free_self_flow": true,
+          "self_flow_elevation_m": 746.55,
+          "collector": "находище Велинград-Лъджене: пукнатинно-жилен колектор в палеозойски гранити и гранитоиди",
+          "collector_scope": "regional_deposit_context",
+          "source_note": "МЗ, Балнеологична оценка №286/11.07.2024 е официално регистрирана. Потвърдени са дълбочина 150.6 m, година 1963 и самоизлив до кота 746.55 m. Индивидуални Q/T параметри още не са надеждно извлечени."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "current_deposit_name": "Велинград-Лъджене",
+        "official_facility_name": "Сондаж №6ВКП „Вельова баня“",
+        "depth_m": 150.6,
+        "construction_year": 1963,
+        "free_self_flow": true,
+        "flow_regime": "free_self_flow",
+        "self_flow_elevation_m": 746.55,
+        "collector": "находище Велинград-Лъджене: пукнатинно-жилен колектор в палеозойски гранити и гранитоиди",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "МЗ, Балнеологична оценка №286/11.07.2024 е официално регистрирана. Потвърдени са дълбочина 150.6 m, година 1963 и самоизлив до кота 746.55 m. Индивидуални Q/T параметри още не са надеждно извлечени.",
+        "existing_feature_index": 34,
+        "identity_resolution_status": "EXACT_AUDITED_EXISTING_FEATURE_INDEX"
+      }
+    },
+    {
+      "status": "MATCHED_EXISTING",
+      "research_status": "MATCHED_EXISTING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №7ВКП „Кремъчна баня“",
+      "mh_deposit": "Велинград-Лъджене",
+      "mh_settlement": "Велинград",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Pazardzhik audited mineral/hydrothermal research; linked to exact existing production feature.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 8.0,
+          "temperature_c": 63.0,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 749.30 m",
+          "collector": "гранити; пукнатинно-жилен хидротермален колектор"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "current_deposit_name": "Велинград-Лъджене",
+        "official_facility_name": "Сондаж №7ВКП „Кремъчна баня“",
+        "depth_m": 345.2,
+        "technical_possible_discharge_l_s": 8.0,
+        "temperature_c": 63.0,
+        "artesian_character": true,
+        "collector": "гранити; пукнатинно-жилен хидротермален колектор",
+        "existing_feature_index": 32,
+        "identity_resolution_status": "EXACT_AUDITED_EXISTING_FEATURE_INDEX"
+      }
+    },
+    {
+      "status": "MATCHED_EXISTING",
+      "research_status": "MATCHED_EXISTING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №8КГ „Топилата“",
+      "mh_deposit": "Велинград-Лъджене",
+      "mh_settlement": "Велинград",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Pazardzhik audited mineral/hydrothermal research; linked to exact existing production feature.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 4.6,
+          "temperature_c": 51.0,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 735.24 m",
+          "collector": "гранити; пукнатинно-жилен хидротермален колектор"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "current_deposit_name": "Велинград-Лъджене",
+        "official_facility_name": "Сондаж №8КГ „Топилата“",
+        "depth_m": 159.0,
+        "technical_possible_discharge_l_s": 4.6,
+        "temperature_c": 51.0,
+        "artesian_character": true,
+        "collector": "гранити; пукнатинно-жилен хидротермален колектор",
+        "existing_feature_index": 33,
+        "identity_resolution_status": "EXACT_AUDITED_EXISTING_FEATURE_INDEX"
+      }
+    },
+    {
+      "status": "MATCHED_EXISTING",
+      "research_status": "MATCHED_EXISTING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №1ВКП + КЕИ №К-8 „Вельова баня“",
+      "mh_deposit": "Велинград-Лъджене",
+      "mh_settlement": "Велинград",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Pazardzhik audited mineral/hydrothermal research; linked to exact existing production feature.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "combined_source": true,
+          "components": [
+            {
+              "facility": "Сондаж №1ВКП „Вельова баня“",
+              "depth_m": 203.5,
+              "construction_year": 1964
+            },
+            {
+              "facility": "КЕИ №К-8 „Вельова баня“",
+              "depth_m": 1.2,
+              "construction_year": null
+            }
+          ],
+          "technical_flow_l_s": 0.36,
+          "historical_technical_flow_l_s": 0.88,
+          "permitted_average_flow_l_s": 0.05,
+          "permitted_flow_type": "permit_average_for_specific_water_user",
+          "flow_regime": "free_self_flow",
+          "free_self_flow": true,
+          "self_flow_elevation_m": 752.7,
+          "collector": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити и гранитоиди",
+          "collector_scope": "regional_deposit_context",
+          "hydraulic_notes": [
+            "Технически възможният дебит на комбинираното водовземно съоръжение е намален от 0.88 l/s на 0.36 l/s със Заповед РД-506/15.06.2022.",
+            "Разрешеният средноденонощен дебит 0.05 l/s е по конкретно разрешително и не се приема за технически възможен дебит."
+          ],
+          "source_note": "БД ИБР: регистър на минералните водовземни съоръжения и съобщение относно разрешително №31610092/02.02.2016."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "current_deposit_name": "Велинград-Лъджене",
+        "official_facility_name": "Сондаж №1ВКП + КЕИ №К-8 „Вельова баня“",
+        "depth_m": 203.5,
+        "construction_year": 1964,
+        "technical_possible_discharge_l_s": 0.36,
+        "permitted_average_flow_l_s": 0.05,
+        "free_self_flow": true,
+        "flow_regime": "free_self_flow",
+        "self_flow_elevation_m": 752.7,
+        "collector": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити и гранитоиди",
+        "collector_scope": "regional_deposit_context",
+        "hydraulic_notes": [
+          "Технически възможният дебит на комбинираното водовземно съоръжение е намален от 0.88 l/s на 0.36 l/s със Заповед РД-506/15.06.2022.",
+          "Разрешеният средноденонощен дебит 0.05 l/s е по конкретно разрешително и не се приема за технически възможен дебит."
+        ],
+        "source_note": "БД ИБР: регистър на минералните водовземни съоръжения и съобщение относно разрешително №31610092/02.02.2016.",
+        "existing_feature_index": 21,
+        "identity_resolution_status": "EXACT_AUDITED_EXISTING_FEATURE_INDEX"
+      }
+    },
+    {
+      "status": "MATCHED_EXISTING",
+      "research_status": "MATCHED_EXISTING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №7КГ „Вельова баня“",
+      "mh_deposit": "Велинград-Лъджене",
+      "mh_settlement": "Велинград",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Pazardzhik audited mineral/hydrothermal research; linked to exact existing production feature.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "approved_exploitation_resource_l_s": 3.4,
+          "documented_temperature_c": 49.8,
+          "flow_regime": "free_self_flow",
+          "free_self_flow": true,
+          "self_flow_elevation_m": 749.35,
+          "collector": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити и гранитоиди",
+          "collector_scope": "regional_deposit_context",
+          "regional_collector_depth_m": {
+            "from_m": 1200.0,
+            "to_m": 1900.0,
+            "interpretation_only": true
+          },
+          "source_note": "БД ИБР потвърждава дълбочина 501.4 m и самоизлив на кота 749.35 m. Официалното приложение за ресурсите посочва 3.40 l/s и 49.8°C."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "current_deposit_name": "Велинград-Лъджене",
+        "official_facility_name": "Сондаж №7КГ „Вельова баня“",
+        "depth_m": 501.4,
+        "construction_year": 1971,
+        "approved_exploitation_resource_l_s": 3.4,
+        "documented_temperature_c": 49.8,
+        "free_self_flow": true,
+        "flow_regime": "free_self_flow",
+        "self_flow_elevation_m": 749.35,
+        "collector": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити и гранитоиди",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "БД ИБР потвърждава дълбочина 501.4 m и самоизлив на кота 749.35 m. Официалното приложение за ресурсите посочва 3.40 l/s и 49.8°C.",
+        "regional_collector_depth_m": {
+          "from_m": 1200.0,
+          "to_m": 1900.0,
+          "interpretation_only": true
+        },
+        "existing_feature_index": 23,
+        "identity_resolution_status": "EXACT_AUDITED_EXISTING_FEATURE_INDEX"
+      }
+    },
+    {
+      "status": "MATCHED_EXISTING",
+      "research_status": "MATCHED_EXISTING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №9 „Кентавър“",
+      "mh_deposit": "Велинград-Лъджене",
+      "mh_settlement": "Велинград",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Pazardzhik audited mineral/hydrothermal research; linked to exact existing production feature.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "approved_exploitation_resource_l_s": 1.06,
+          "approved_resource_evidence": "official_historical_resource_annex",
+          "documented_temperature_c": 44.0,
+          "collector": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити, гранитогнайси и гнайси",
+          "regional_collector_depth_m": {
+            "from_m": 1200.0,
+            "to_m": 1900.0,
+            "interpretation_only": true
+          },
+          "resource_review_note": "В по-късна вторична компилация се среща стойност 0.52 l/s. Тя не замества официалния исторически утвърден ресурс 1.06 l/s без идентифициран последващ първичен акт.",
+          "source_note": "Официално приложение към ПУРБ посочва 1.06 l/s и температура 44°C за Сондаж №9."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Велинград",
+        "current_deposit_name": "Велинград-Лъджене",
+        "official_facility_name": "Сондаж №9 „Кентавър“",
+        "depth_m": 428.0,
+        "construction_year": 1999,
+        "approved_exploitation_resource_l_s": 1.06,
+        "documented_temperature_c": 44.0,
+        "collector": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити, гранитогнайси и гнайси",
+        "source_note": "Официално приложение към ПУРБ посочва 1.06 l/s и температура 44°C за Сондаж №9.",
+        "regional_collector_depth_m": {
+          "from_m": 1200.0,
+          "to_m": 1900.0,
+          "interpretation_only": true
+        },
+        "existing_feature_index": 36,
+        "identity_resolution_status": "EXACT_AUDITED_EXISTING_FEATURE_INDEX"
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №3",
+      "mh_deposit": "Белово",
+      "mh_settlement": "Белово",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 5.67,
+          "resource_temperature_c": 22.8,
+          "sample_temperature_c": 23.0,
+          "flow_regime": "pumped",
+          "free_self_flow": false,
+          "static_water_level_elevation_m": 273.17,
+          "allowable_drawdown_m": 1.4,
+          "allowable_dynamic_level_elevation_m": 271.77,
+          "collector": "гнайси и мрамори; основни колектори са окарстените мрамори, дрениращи водите в гнайсите",
+          "construction": [
+            {
+              "from_m": 0.0,
+              "to_m": 26.0,
+              "description_bg": "кондукторна обсадна колона Ø146 mm, затръбено и циментирано"
+            },
+            {
+              "from_m": 0.0,
+              "to_m": 82.6,
+              "description_bg": "експлоатационна обсадна колона Ø127 mm, затръбено и циментирано"
+            },
+            {
+              "from_m": 82.6,
+              "to_m": 95.7,
+              "description_bg": "необсаден сондажен ствол"
+            }
+          ],
+          "documented_open_hole": {
+            "from_m": 82.6,
+            "to_m": 95.7
+          },
+          "source_note": "МЗ, Балнеологична оценка №180/20.08.2020. Документът отбелязва, че първоначалната дълбочина е 400 m, но участъкът 95.70-400 m е непроходим."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Белово",
+        "current_deposit_name": "Белово",
+        "official_facility_name": "Сондаж №3",
+        "technical_possible_discharge_l_s": 5.67,
+        "resource_temperature_c": 22.8,
+        "sample_temperature_c": 23.0,
+        "free_self_flow": false,
+        "flow_regime": "pumped",
+        "static_water_level_elevation_m": 273.17,
+        "allowable_drawdown_m": 1.4,
+        "allowable_dynamic_level_elevation_m": 271.77,
+        "collector": "гнайси и мрамори; основни колектори са окарстените мрамори, дрениращи водите в гнайсите",
+        "construction": [
+          {
+            "from_m": 0.0,
+            "to_m": 26.0,
+            "description_bg": "кондукторна обсадна колона Ø146 mm, затръбено и циментирано"
+          },
+          {
+            "from_m": 0.0,
+            "to_m": 82.6,
+            "description_bg": "експлоатационна обсадна колона Ø127 mm, затръбено и циментирано"
+          },
+          {
+            "from_m": 82.6,
+            "to_m": 95.7,
+            "description_bg": "необсаден сондажен ствол"
+          }
+        ],
+        "source_note": "МЗ, Балнеологична оценка №180/20.08.2020. Документът отбелязва, че първоначалната дълбочина е 400 m, но участъкът 95.70-400 m е непроходим."
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №3",
+      "mh_deposit": "Варвара",
+      "mh_settlement": "Варвара",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 3.04,
+          "temperature_c": 87.3,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 356.33 m",
+          "collector": "пукнатинен; биотитови и амфибол-биотитови гнайси"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Варвара",
+        "current_deposit_name": "Варвара",
+        "official_facility_name": "Сондаж №3",
+        "depth_m": 150.0,
+        "technical_possible_discharge_l_s": 3.04,
+        "temperature_c": 87.3,
+        "artesian_character": true,
+        "collector": "пукнатинен; биотитови и амфибол-биотитови гнайси"
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №4",
+      "mh_deposit": "Варвара",
+      "mh_settlement": "Варвара",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 4.24,
+          "temperature_c": 76.5,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 352.17 m",
+          "collector": "биотитови и амфибол-биотитови гнайси; пукнатинен колектор"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Варвара",
+        "current_deposit_name": "Варвара",
+        "official_facility_name": "Сондаж №4",
+        "depth_m": 140.0,
+        "technical_possible_discharge_l_s": 4.24,
+        "temperature_c": 76.5,
+        "artesian_character": true,
+        "collector": "биотитови и амфибол-биотитови гнайси; пукнатинен колектор"
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №5",
+      "mh_deposit": "Варвара",
+      "mh_settlement": "Варвара",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 1.36,
+          "temperature_c": 71.2,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 354.63 m",
+          "collector": "пукнатинен; биотитови и амфибол-биотитови гнайси"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Варвара",
+        "current_deposit_name": "Варвара",
+        "official_facility_name": "Сондаж №5",
+        "depth_m": 230.0,
+        "technical_possible_discharge_l_s": 1.36,
+        "temperature_c": 71.2,
+        "artesian_character": true,
+        "collector": "пукнатинен; биотитови и амфибол-биотитови гнайси"
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №6",
+      "mh_deposit": "Варвара",
+      "mh_settlement": "Варвара",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 1.06,
+          "temperature_c": 73.1,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 356.51 m",
+          "collector": "пукнатинен; биотитови и амфибол-биотитови гнайси"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Варвара",
+        "current_deposit_name": "Варвара",
+        "official_facility_name": "Сондаж №6",
+        "depth_m": 502.0,
+        "technical_possible_discharge_l_s": 1.06,
+        "temperature_c": 73.1,
+        "artesian_character": true,
+        "collector": "пукнатинен; биотитови и амфибол-биотитови гнайси"
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №5",
+      "mh_deposit": "Ракитово",
+      "mh_settlement": "Ракитово",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 0.13,
+          "temperature_c": 18.2,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив на кота 766.44 m",
+          "collector": "биотитови гнайси; регионално описани на дълбочини около 20-140 m до над 880 m, покрити от плиокватернерни наслаги"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Ракитово",
+        "current_deposit_name": "Ракитово",
+        "official_facility_name": "Сондаж №5",
+        "depth_m": 215.9,
+        "technical_possible_discharge_l_s": 0.13,
+        "temperature_c": 18.2,
+        "artesian_character": true,
+        "collector": "биотитови гнайси; регионално описани на дълбочини около 20-140 m до над 880 m, покрити от плиокватернерни наслаги"
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №6",
+      "mh_deposit": "Ракитово",
+      "mh_settlement": "Ракитово",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": null,
+          "temperature_c": null,
+          "facility_confirmed": true,
+          "collector": "находище Ракитово: пукнатинна водонапорна система в биотитовите гнайси на Ботурецката плагиоклазова свита",
+          "collector_scope": "regional_deposit_context",
+          "source_note": "Официалната балнеологична документация за находище Ракитово потвърждава Сондаж №6 като експлоатационен водоизточник, но прегледаният документ не дава индивидуални Q/T параметри."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Ракитово",
+        "current_deposit_name": "Ракитово",
+        "official_facility_name": "Сондаж №6",
+        "collector": "находище Ракитово: пукнатинна водонапорна система в биотитовите гнайси на Ботурецката плагиоклазова свита",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Официалната балнеологична документация за находище Ракитово потвърждава Сондаж №6 като експлоатационен водоизточник, но прегледаният документ не дава индивидуални Q/T параметри."
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №7",
+      "mh_deposit": "Ракитово",
+      "mh_settlement": "Ракитово",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 3.1,
+          "temperature_c": 32.0,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив до кота 755.95 m",
+          "collector": "биотитови гнайси; пукнатинно-жилна система"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Ракитово",
+        "current_deposit_name": "Ракитово",
+        "official_facility_name": "Сондаж №7",
+        "depth_m": 295.0,
+        "technical_possible_discharge_l_s": 3.1,
+        "temperature_c": 32.0,
+        "artesian_character": true,
+        "collector": "биотитови гнайси; пукнатинно-жилна система"
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №10",
+      "mh_deposit": "Ракитово",
+      "mh_settlement": "Ракитово",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": null,
+          "temperature_c": null,
+          "permitted_average_flow_l_s": 1.59,
+          "permitted_flow_type": "concession_average",
+          "facility_confirmed": true,
+          "collector": "находище Ракитово: пукнатинна водонапорна система в биотитовите гнайси на Ботурецката плагиоклазова свита",
+          "collector_scope": "regional_deposit_context",
+          "source_note": "Концесионната документация посочва средногодишен разрешен дебит 1.59 l/s за Сондаж №10. Това не се приравнява автоматично на технически възможен дебит."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Ракитово",
+        "current_deposit_name": "Ракитово",
+        "official_facility_name": "Сондаж №10",
+        "permitted_average_flow_l_s": 1.59,
+        "collector": "находище Ракитово: пукнатинна водонапорна система в биотитовите гнайси на Ботурецката плагиоклазова свита",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Концесионната документация посочва средногодишен разрешен дебит 1.59 l/s за Сондаж №10. Това не се приравнява автоматично на технически възможен дебит."
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №1",
+      "mh_deposit": "Драгиново",
+      "mh_settlement": "Драгиново",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": null,
+          "temperature_c": null,
+          "artesian_character": true,
+          "pressure_head_m": 9.4,
+          "source_note": "МЗ, Балнеологична оценка №34/07.05.2015; официалните регистри потвърждават дълбочина 168.5 m и напор +9.40 m. Надеждни индивидуални Q/T стойности още не са извлечени от първичния документ."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Драгиново",
+        "current_deposit_name": "Драгиново",
+        "official_facility_name": "Сондаж №1",
+        "depth_m": 168.5,
+        "artesian_character": true,
+        "pressure_head_m": 9.4,
+        "source_note": "МЗ, Балнеологична оценка №34/07.05.2015; официалните регистри потвърждават дълбочина 168.5 m и напор +9.40 m. Надеждни индивидуални Q/T стойности още не са извлечени от първичния документ."
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №5",
+      "mh_deposit": "Брацигово",
+      "mh_settlement": "Брацигово",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 1.25,
+          "temperature_c": 18.7,
+          "artesian_character": true,
+          "collector": "палеогенски ефузивни скали; пукнатинно-жилен водонапорен колектор"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Брацигово",
+        "current_deposit_name": "Брацигово",
+        "official_facility_name": "Сондаж №5",
+        "depth_m": 404.0,
+        "construction_year": 1988,
+        "technical_possible_discharge_l_s": 1.25,
+        "temperature_c": 18.7,
+        "artesian_character": true,
+        "collector": "палеогенски ефузивни скали; пукнатинно-жилен водонапорен колектор"
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №1 ХГ",
+      "mh_deposit": "Стрелча",
+      "mh_settlement": "Стрелча",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "technical_flow_l_s": 7.1,
+          "temperature_c": 56.0,
+          "artesian_character": true,
+          "dynamic_level_note": "самоизлив до кота 480.90 m",
+          "collector": "пукнатинно-жилен колектор в палеозойски гранити",
+          "formation_depth_interpretation_m": "около 1300-1500 m за формиране на термалната вода; регионална интерпретация, не дълбочина на сондажа"
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Стрелча",
+        "current_deposit_name": "Стрелча",
+        "official_facility_name": "Сондаж №1 ХГ",
+        "depth_m": 487.5,
+        "construction_year": 1965,
+        "technical_possible_discharge_l_s": 7.1,
+        "temperature_c": 56.0,
+        "artesian_character": true,
+        "collector": "пукнатинно-жилен колектор в палеозойски гранити"
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №2 ВКП",
+      "mh_deposit": "Стрелча",
+      "mh_settlement": "Стрелча",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "documented_flow_l_s": 1.0,
+          "documented_temperature_c": 46.0,
+          "allowable_water_level_elevation_m": 480.69,
+          "current_use_note": "Не се използва според общинската програма.",
+          "collector": "находище Стрелча: пукнатинно-жилна хидротермална система",
+          "collector_scope": "regional_deposit_context",
+          "source_note": "Община Стрелча, Програма за насърчаване използването на енергия от ВЕИ 2020-2029."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Стрелча",
+        "current_deposit_name": "Стрелча",
+        "official_facility_name": "Сондаж №2 ВКП",
+        "documented_flow_l_s": 1.0,
+        "documented_temperature_c": 46.0,
+        "allowable_water_level_elevation_m": 480.69,
+        "collector": "находище Стрелча: пукнатинно-жилна хидротермална система",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Община Стрелча, Програма за насърчаване използването на енергия от ВЕИ 2020-2029."
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №3 ВКП",
+      "mh_deposit": "Стрелча",
+      "mh_settlement": "Стрелча",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "documented_flow_l_s": 4.8,
+          "documented_temperature_c": 32.5,
+          "allowable_water_level_elevation_m": 475.79,
+          "current_use_note": "Не се използва; общинският документ посочва спряно използване за питейно-битови нужди.",
+          "collector": "находище Стрелча: пукнатинно-жилна хидротермална система",
+          "collector_scope": "regional_deposit_context",
+          "source_note": "Община Стрелча, Програма за насърчаване използването на енергия от ВЕИ 2020-2029."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Стрелча",
+        "current_deposit_name": "Стрелча",
+        "official_facility_name": "Сондаж №3 ВКП",
+        "documented_flow_l_s": 4.8,
+        "documented_temperature_c": 32.5,
+        "allowable_water_level_elevation_m": 475.79,
+        "collector": "находище Стрелча: пукнатинно-жилна хидротермална система",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Община Стрелча, Програма за насърчаване използването на енергия от ВЕИ 2020-2029."
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №9хг",
+      "mh_deposit": "Панагюрище",
+      "mh_settlement": "Панагюрище",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "approved_resource_l_s": 6.72,
+          "temperature_c": 55.3,
+          "resource_value_evidence": "secondary_compilation_from_official_registers",
+          "temperature_evidence": "secondary_compilation_from_official_registers",
+          "collector": "пукнатинно-жилен водонапорен колектор в напукани и разломени андезити на Челопешката свита",
+          "collector_scope": "official_regional_deposit_description",
+          "source_note": "МОСВ потвърждава Сондаж №9хг и типа на водонапорната система. Стойностите 6.72 l/s и 55.3°C са от справочник, компилиращ официални регистри; да се заменят с първичен акт при намирането му."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Панагюрище",
+        "current_deposit_name": "Панагюрище",
+        "official_facility_name": "Сондаж №9хг",
+        "approved_resource_l_s": 6.72,
+        "temperature_c": 55.3,
+        "collector": "пукнатинно-жилен водонапорен колектор в напукани и разломени андезити на Челопешката свита",
+        "collector_scope": "official_regional_deposit_description",
+        "source_note": "МОСВ потвърждава Сондаж №9хг и типа на водонапорната система. Стойностите 6.72 l/s и 55.3°C са от справочник, компилиращ официални регистри; да се заменят с първичен акт при намирането му."
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №2",
+      "mh_deposit": "Брацигово",
+      "mh_settlement": "Брацигово",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "total_depth_m": 505.0,
+          "construction_period": "1967-1968",
+          "documented_inflow_zones": [
+            {
+              "from_m": 170.0,
+              "to_m": 213.0,
+              "evidence": "documented_individual_inflow"
+            },
+            {
+              "from_m": 412.0,
+              "to_m": 437.0,
+              "evidence": "documented_individual_inflow"
+            }
+          ],
+          "initial_documented_flow_l_s": 1.1,
+          "test_self_flow_l_s": 1.4,
+          "technical_flow_l_s": 0.5,
+          "resource_temperature_c": 28.5,
+          "sample_temperature_c": 25.7,
+          "artesian_character": true,
+          "static_water_level_elevation_m": 384.86,
+          "allowable_drawdown_m": 0.65,
+          "allowable_dynamic_level_elevation_m": 384.21,
+          "collector": "ефузивни скали; водопроводящите участъци са свързани с напукани и смлени риолити и разломни структури",
+          "construction": [
+            {
+              "from_m": 0.0,
+              "to_m": 11.7,
+              "description_bg": "сондирано Ø295 mm"
+            },
+            {
+              "from_m": 0.0,
+              "to_m": 48.5,
+              "description_bg": "стоманена обсадна колона Ø168 mm, задтръбно циментирана"
+            },
+            {
+              "from_m": 0.0,
+              "to_m": 195.3,
+              "description_bg": "стоманена обсадна колона Ø146 mm"
+            },
+            {
+              "from_m": 194.4,
+              "to_m": 325.7,
+              "description_bg": "стоманена обсадна колона Ø127 mm"
+            },
+            {
+              "from_m": 325.7,
+              "to_m": 505.0,
+              "description_bg": "стоманена обсадна колона Ø108 mm"
+            }
+          ],
+          "hydraulic_notes": [
+            "След прокарването на Сондаж №2 самоизливът му е превишавал 1.4 l/s.",
+            "При измерване през август 1983 г. е отчетен дебит около 1.0 l/s и температура 26°C."
+          ],
+          "source_note": "МЗ, сертификат/балнеологична документация №31/09.01.2019 за Сондаж №2, Брацигово."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Брацигово",
+        "current_deposit_name": "Брацигово",
+        "official_facility_name": "Сондаж №2",
+        "depth_m": 505.0,
+        "technical_possible_discharge_l_s": 0.5,
+        "initial_documented_flow_l_s": 1.1,
+        "test_self_flow_l_s": 1.4,
+        "resource_temperature_c": 28.5,
+        "sample_temperature_c": 25.7,
+        "artesian_character": true,
+        "static_water_level_elevation_m": 384.86,
+        "allowable_drawdown_m": 0.65,
+        "allowable_dynamic_level_elevation_m": 384.21,
+        "collector": "ефузивни скали; водопроводящите участъци са свързани с напукани и смлени риолити и разломни структури",
+        "documented_inflow_zones": [
+          {
+            "from_m": 170.0,
+            "to_m": 213.0,
+            "evidence": "documented_individual_inflow"
+          },
+          {
+            "from_m": 412.0,
+            "to_m": 437.0,
+            "evidence": "documented_individual_inflow"
+          }
+        ],
+        "construction": [
+          {
+            "from_m": 0.0,
+            "to_m": 11.7,
+            "description_bg": "сондирано Ø295 mm"
+          },
+          {
+            "from_m": 0.0,
+            "to_m": 48.5,
+            "description_bg": "стоманена обсадна колона Ø168 mm, задтръбно циментирана"
+          },
+          {
+            "from_m": 0.0,
+            "to_m": 195.3,
+            "description_bg": "стоманена обсадна колона Ø146 mm"
+          },
+          {
+            "from_m": 194.4,
+            "to_m": 325.7,
+            "description_bg": "стоманена обсадна колона Ø127 mm"
+          },
+          {
+            "from_m": 325.7,
+            "to_m": 505.0,
+            "description_bg": "стоманена обсадна колона Ø108 mm"
+          }
+        ],
+        "hydraulic_notes": [
+          "След прокарването на Сондаж №2 самоизливът му е превишавал 1.4 l/s.",
+          "При измерване през август 1983 г. е отчетен дебит около 1.0 l/s и температура 26°C."
+        ],
+        "source_note": "МЗ, сертификат/балнеологична документация №31/09.01.2019 за Сондаж №2, Брацигово."
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №1",
+      "mh_deposit": "Брацигово",
+      "mh_settlement": "Брацигово",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "documented_depth_m": 160.0,
+          "documented_initial_flow_l_s": 0.5,
+          "documented_temperature_c": 19.0,
+          "artesian_character": true,
+          "pressure_head_m": 1.0,
+          "role": "monitoring",
+          "collector": "находище Брацигово: затворена пукнатинно-жилна водонапорна система в палеогенски седименти и ефузивни скали",
+          "collector_scope": "regional_deposit_context",
+          "source_note": "Официалният документ за Сондаж №2 описва историята на находището и Сондаж №1: прокаран през 1963 г., достигнал около 160 m, получена минерална вода с дебит 0.5 l/s, температура 19°C и напор около 1 m над терена. Сондаж №1 се използва като наблюдателен пункт."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Брацигово",
+        "current_deposit_name": "Брацигово",
+        "official_facility_name": "Сондаж №1",
+        "depth_m": 160.0,
+        "construction_year": 1963,
+        "documented_temperature_c": 19.0,
+        "artesian_character": true,
+        "pressure_head_m": 1.0,
+        "collector": "находище Брацигово: затворена пукнатинно-жилна водонапорна система в палеогенски седименти и ефузивни скали",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Официалният документ за Сондаж №2 описва историята на находището и Сондаж №1: прокаран през 1963 г., достигнал около 160 m, получена минерална вода с дебит 0.5 l/s, температура 19°C и напор около 1 m над терена. Сондаж №1 се използва като наблюдателен пункт."
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №3",
+      "mh_deposit": "Брацигово",
+      "mh_settlement": "Брацигово",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "facility_confirmed": true,
+          "role": "monitoring",
+          "technical_flow_l_s": null,
+          "temperature_c": null,
+          "collector": "находище Брацигово: затворена пукнатинно-жилна система в палеогенски седименти и ефузивни скали",
+          "collector_scope": "regional_deposit_context",
+          "source_note": "Официалният документ за Сондаж №2 посочва, че след 1984 г. са прокарани Сондажи №3, №4 и №5. Сондаж №3 се използва като наблюдателен пункт. В прегледания документ няма надеждни индивидуални Q/T или водоприточни интервали за №3."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Брацигово",
+        "current_deposit_name": "Брацигово",
+        "official_facility_name": "Сондаж №3",
+        "collector": "находище Брацигово: затворена пукнатинно-жилна система в палеогенски седименти и ефузивни скали",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Официалният документ за Сондаж №2 посочва, че след 1984 г. са прокарани Сондажи №3, №4 и №5. Сондаж №3 се използва като наблюдателен пункт. В прегледания документ няма надеждни индивидуални Q/T или водоприточни интервали за №3."
+      }
+    },
+    {
+      "status": "MISSING",
+      "research_status": "CONFIRMED_MISSING",
+      "research_batch": "PAZARDZHIK_MINERAL_2026_10_03",
+      "mh_facility": "Сондаж №4",
+      "mh_deposit": "Брацигово",
+      "mh_settlement": "Брацигово",
+      "mh_municipality": null,
+      "mh_district": "Пазарджик",
+      "research_note": "Confirmed individual mineral-water facility from Pazardzhik lithology/mineral research inventory. Mineral/hydrothermal evidence imported separately from lithology.",
+      "research_enrichment": {
+        "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
+        "mineral_hydrothermal_research": {
+          "facility_confirmed": true,
+          "technical_flow_l_s": null,
+          "temperature_c": null,
+          "collector": "находище Брацигово: затворена пукнатинно-жилна система в палеогенски седименти и ефузивни скали",
+          "collector_scope": "regional_deposit_context",
+          "source_note": "Официалният документ потвърждава, че Сондаж №4 е един от сондажите, прокарани след 1984 г. В прегледания материал не са дадени надеждни индивидуални дебит, температура или водоприточни интервали."
+        },
+        "mineral_research_scope": "individual facility where documented; regional/deposit context explicitly marked",
+        "mineral_research_separate_from_lithology": true,
+        "settlement": "Брацигово",
+        "current_deposit_name": "Брацигово",
+        "official_facility_name": "Сондаж №4",
+        "collector": "находище Брацигово: затворена пукнатинно-жилна система в палеогенски седименти и ефузивни скали",
+        "collector_scope": "regional_deposit_context",
+        "source_note": "Официалният документ потвърждава, че Сондаж №4 е един от сондажите, прокарани след 1984 г. В прегледания материал не са дадени надеждни индивидуални дебит, температура или водоприточни интервали."
       }
     }
   ],
