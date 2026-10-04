@@ -15,9 +15,10 @@
     "unknown_coordinates_are_not_invented": true
   },
   "oblasts_loaded": [
-    "Благоевград"
+    "Благоевград",
+    "Пазарджик"
   ],
-  "borehole_count": 40,
+  "borehole_count": 56,
   "boreholes": [
     {
       "borehole_id": "PLD-Z037",
@@ -5839,6 +5840,1218 @@
         "usable_for_pro_context": true,
         "distance_is_exact": false
       }
+    },
+    {
+      "borehole_id": "PLD-Z081",
+      "name_bg": "Варвара - Сондаж №3",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "no_verified_facility_coordinate",
+        "origin": "pazardzhik_lithology_research"
+      },
+      "total_depth_m": 150.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 12.8,
+          "expected_material_bg": "едър, ръбест блокаж и чакъли с песъчливо-глинест запълнител",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S092"
+          ]
+        },
+        {
+          "depth_from_m": 12.8,
+          "depth_to_m": 60.0,
+          "expected_material_bg": "биотитови гнайси, инжектирани с пегматит и на места изветрели",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S092"
+          ]
+        },
+        {
+          "depth_from_m": 60.0,
+          "depth_to_m": 70.0,
+          "expected_material_bg": "тектонична зона",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S092"
+          ]
+        },
+        {
+          "depth_from_m": 70.0,
+          "depth_to_m": 72.0,
+          "expected_material_bg": "гнайси, здрави",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S092"
+          ]
+        },
+        {
+          "depth_from_m": 72.0,
+          "depth_to_m": 150.0,
+          "expected_material_bg": "биотитови гнайси, сивочерни, напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S092"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 60.0,
+          "depth_to_m": 70.0,
+          "type": "documented_structural_zone",
+          "description_bg": "тектонична зона",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S092"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 1,
+        "deposit": "Варвара",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z082",
+      "name_bg": "Варвара - Сондаж №4",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "no_verified_facility_coordinate",
+        "origin": "pazardzhik_lithology_research"
+      },
+      "total_depth_m": 140.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 6.6,
+          "expected_material_bg": "чакъли, пясъци, валуни, песъчливи материали",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S093"
+          ]
+        },
+        {
+          "depth_from_m": 6.6,
+          "depth_to_m": 140.0,
+          "expected_material_bg": "биотитови гнайси, сивочерни, напукани, окварцени, с пегматитови жили до 1 m, с тектонични зони",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S093"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 2,
+        "deposit": "Варвара",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z083",
+      "name_bg": "Варвара - Сондаж №5",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "no_verified_facility_coordinate",
+        "origin": "pazardzhik_lithology_research"
+      },
+      "total_depth_m": 230.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 6.0,
+          "expected_material_bg": "ръбести скални късове с глинесто-песъчлив запълнител",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S094"
+          ]
+        },
+        {
+          "depth_from_m": 6.0,
+          "depth_to_m": 160.0,
+          "expected_material_bg": "биотитови гнайси, сивочерни, напукани, окварцени, с пегматитови жили до 1 m",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S094"
+          ]
+        },
+        {
+          "depth_from_m": 160.0,
+          "depth_to_m": 220.0,
+          "expected_material_bg": "тектонична зона",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S094"
+          ]
+        },
+        {
+          "depth_from_m": 220.0,
+          "depth_to_m": 230.0,
+          "expected_material_bg": "биотитови гнайси",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S094"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 160.0,
+          "depth_to_m": 220.0,
+          "type": "documented_structural_zone",
+          "description_bg": "тектонична зона",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S094"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 3,
+        "deposit": "Варвара",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z084",
+      "name_bg": "Варвара - Сондаж №6",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "no_verified_facility_coordinate",
+        "origin": "pazardzhik_lithology_research"
+      },
+      "total_depth_m": 502.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 48.8,
+          "expected_material_bg": "биотитови гнайси, среднозърнести, силно напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S095"
+          ]
+        },
+        {
+          "depth_from_m": 48.8,
+          "depth_to_m": 55.2,
+          "expected_material_bg": "биотитови гнайси, среднозърнести",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S095"
+          ]
+        },
+        {
+          "depth_from_m": 55.2,
+          "depth_to_m": 67.8,
+          "expected_material_bg": "биотитови гнайси, среднозърнести, напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S095"
+          ]
+        },
+        {
+          "depth_from_m": 67.8,
+          "depth_to_m": 253.6,
+          "expected_material_bg": "амфибол-биотитови гнайси, средно до едрозърнести",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S095"
+          ]
+        },
+        {
+          "depth_from_m": 253.6,
+          "depth_to_m": 317.3,
+          "expected_material_bg": "силно променени скали",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S095"
+          ]
+        },
+        {
+          "depth_from_m": 317.3,
+          "depth_to_m": 348.4,
+          "expected_material_bg": "вероятно тектонична зона",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S095"
+          ]
+        },
+        {
+          "depth_from_m": 348.4,
+          "depth_to_m": 412.2,
+          "expected_material_bg": "биотитови гнайси, силно напукани, окварцени",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S095"
+          ]
+        },
+        {
+          "depth_from_m": 412.2,
+          "depth_to_m": 502.0,
+          "expected_material_bg": "амфибол-биотитови гнайси, напукани с пегматитови инжекции",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S095"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 317.3,
+          "depth_to_m": 348.4,
+          "type": "documented_structural_zone",
+          "description_bg": "вероятно тектонична зона",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S095"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 4,
+        "deposit": "Варвара",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z085",
+      "name_bg": "Ракитово - Сондаж №7",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "no_verified_facility_coordinate",
+        "origin": "pazardzhik_lithology_research"
+      },
+      "total_depth_m": 295.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 40.4,
+          "expected_material_bg": "кватернерни и плиоценски наслаги",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S096"
+          ]
+        },
+        {
+          "depth_from_m": 40.4,
+          "depth_to_m": 266.5,
+          "expected_material_bg": "биотитови гнайси, дребно до среднозърнести",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S096"
+          ]
+        },
+        {
+          "depth_from_m": 266.5,
+          "depth_to_m": 295.0,
+          "expected_material_bg": "разлом",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S096"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 266.5,
+          "depth_to_m": 295.0,
+          "type": "documented_structural_zone",
+          "description_bg": "разлом",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S096"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 7,
+        "deposit": "Ракитово",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z086",
+      "name_bg": "Ракитово - Сондаж №9а",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_partial_lithological_profile",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "no_verified_facility_coordinate",
+        "origin": "pazardzhik_lithology_research"
+      },
+      "total_depth_m": 485.5,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 126.0,
+          "expected_material_bg": "кватернерни и плиоценски наслаги; в интервала 78.50-82.00 m са пресечени прослойки от лигнитни въглища с мощност около 0.30 m",
+          "confidence": "high",
+          "evidence_level": "borehole_exact_partial_column",
+          "source_ids": [
+            "PLD-S097"
+          ]
+        },
+        {
+          "depth_from_m": 126.0,
+          "depth_to_m": 147.0,
+          "expected_material_bg": "биотитови гнайси, дребно до среднозърнести",
+          "confidence": "high",
+          "evidence_level": "borehole_exact_partial_column",
+          "source_ids": [
+            "PLD-S097"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [
+        {
+          "depth_from_m": 147.0,
+          "depth_to_m": 485.5,
+          "reason": "Lithology not documented in the reviewed source. No extrapolation performed.",
+          "source_ids": [
+            "PLD-S097"
+          ]
+        }
+      ],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Partial column only. Undocumented intervals must not be inferred from adjacent documented lithology."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 8,
+        "deposit": "Ракитово",
+        "inventory_status": "COLUMN_CONFIRMED_PARTIAL"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z087",
+      "name_bg": "Велинград - Сондаж №3 „Мизинка“",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "no_verified_facility_coordinate",
+        "origin": "pazardzhik_lithology_research"
+      },
+      "total_depth_m": 271.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 1.2,
+          "expected_material_bg": "чакъли, кватернер",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S098"
+          ]
+        },
+        {
+          "depth_from_m": 1.2,
+          "depth_to_m": 35.0,
+          "expected_material_bg": "конгломерати, гранитни материали, неоген",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S098"
+          ]
+        },
+        {
+          "depth_from_m": 35.0,
+          "depth_to_m": 271.0,
+          "expected_material_bg": "гранитогнайси, напукани, с карбонат по пукнатините и пиритни прояви",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S098"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 10,
+        "deposit": "Велинград-Каменица",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z088",
+      "name_bg": "Велинград - Сондаж №2",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.9951111,
+        "longitude": 23.9730556,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "mineral_water_master:mw_498dd9e7ff845d86"
+      },
+      "total_depth_m": 70.3,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 0.7,
+          "expected_material_bg": "глина, песъчлива, кафява, с чакъли",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S099"
+          ]
+        },
+        {
+          "depth_from_m": 0.7,
+          "depth_to_m": 1.0,
+          "expected_material_bg": "глина, песъчлива, сива",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S099"
+          ]
+        },
+        {
+          "depth_from_m": 1.0,
+          "depth_to_m": 1.5,
+          "expected_material_bg": "пясък и чакъл",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S099"
+          ]
+        },
+        {
+          "depth_from_m": 1.5,
+          "depth_to_m": 4.2,
+          "expected_material_bg": "мрамор",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S099"
+          ]
+        },
+        {
+          "depth_from_m": 4.2,
+          "depth_to_m": 70.3,
+          "expected_material_bg": "гранитогнайс, биотит-амфиболов, с пегматитови жили, в отделни участъци силно напукан",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S099"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 14,
+        "deposit": "Велинград-Чепино",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z089",
+      "name_bg": "Велинград - Сондаж №3",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.99575,
+        "longitude": 23.9728889,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "mineral_water_master:mw_51a3b648edaa4ff0"
+      },
+      "total_depth_m": 102.4,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 1.7,
+          "expected_material_bg": "валуни с глинесто-песъчлив запълнител",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S100"
+          ]
+        },
+        {
+          "depth_from_m": 1.7,
+          "depth_to_m": 102.4,
+          "expected_material_bg": "гранитогнайс, биотит-амфиболов, с пегматитови жили, силно напукан в отделни участъци",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S100"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 15,
+        "deposit": "Велинград-Чепино",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z090",
+      "name_bg": "Велинград - Сондаж №4",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.9951111,
+        "longitude": 23.9731389,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "mineral_water_master:mw_e48d114e47bb1b3c"
+      },
+      "total_depth_m": 101.4,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 2.0,
+          "expected_material_bg": "валуни с глинесто-песъчлив запълнител",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S101"
+          ]
+        },
+        {
+          "depth_from_m": 2.0,
+          "depth_to_m": 101.4,
+          "expected_material_bg": "гранитогнайс, биотит-амфиболов, с пегматитови жили, силно напукан в отделни участъци",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S101"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 16,
+        "deposit": "Велинград-Чепино",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z091",
+      "name_bg": "Велинград - Сондаж №5 „Горски пункт“",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.9998889,
+        "longitude": 23.9690556,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "mineral_water_master:mw_724e20e5fe0d26f4"
+      },
+      "total_depth_m": 246.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 6.5,
+          "expected_material_bg": "чакъли и валуни от гранитогнайси, мрамори и гранити, късове 4-15 cm",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S102"
+          ]
+        },
+        {
+          "depth_from_m": 6.5,
+          "depth_to_m": 246.0,
+          "expected_material_bg": "гранитогнайси, в началото слабо изветрели, сиви, дребно до среднозърнести, напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S102"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 17,
+        "deposit": "Велинград-Чепино",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z092",
+      "name_bg": "Велинград - Сондаж №7ВКП „Кремъчна баня“",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.0311389,
+        "longitude": 23.9901111,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "mineral_water_master:mw_f76e0ea5334a3440"
+      },
+      "total_depth_m": 345.2,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 2.0,
+          "expected_material_bg": "много здрав конгломерат от гранитови, гнайсови и пегматитови късове и валуни",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S103"
+          ]
+        },
+        {
+          "depth_from_m": 2.0,
+          "depth_to_m": 25.0,
+          "expected_material_bg": "гнайсови, гранитови и пегматитови валуни с глинесто-песъчлив запълнител",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S103"
+          ]
+        },
+        {
+          "depth_from_m": 25.0,
+          "depth_to_m": 37.8,
+          "expected_material_bg": "грубозърнест пясъчник с чакъли, алтерниращи пластове с чакъли",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S103"
+          ]
+        },
+        {
+          "depth_from_m": 37.8,
+          "depth_to_m": 49.7,
+          "expected_material_bg": "гранитови валуни с глинесто-песъчлив запълнител",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S103"
+          ]
+        },
+        {
+          "depth_from_m": 49.7,
+          "depth_to_m": 345.2,
+          "expected_material_bg": "биотитов амфиболов гранит, среднозърнест до дребнозърнест, слабо гнайсуван",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S103"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 20,
+        "deposit": "Велинград-Лъджене",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z093",
+      "name_bg": "Велинград - Сондаж №8КГ „Топилата“",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.0329444,
+        "longitude": 23.9971944,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "mineral_water_master:mw_86298c6e69df230f"
+      },
+      "total_depth_m": 159.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 47.0,
+          "expected_material_bg": "пясъци, чакъли и валуни с глинести прослойки",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S104"
+          ]
+        },
+        {
+          "depth_from_m": 47.0,
+          "depth_to_m": 92.0,
+          "expected_material_bg": "гранити, променени, брекчирани, милонитизирани и грусирани; грусиране 51-56 m",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S104"
+          ]
+        },
+        {
+          "depth_from_m": 92.0,
+          "depth_to_m": 100.0,
+          "expected_material_bg": "разломна зона",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S104"
+          ]
+        },
+        {
+          "depth_from_m": 100.0,
+          "depth_to_m": 159.0,
+          "expected_material_bg": "гранити, дребнозърнести, слабо напукани, с кварцови инжекции и карбонат по пукнатините",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S104"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 92.0,
+          "depth_to_m": 100.0,
+          "type": "documented_structural_zone",
+          "description_bg": "разломна зона",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S104"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 21,
+        "deposit": "Велинград-Лъджене",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z094",
+      "name_bg": "Брацигово - Сондаж №5",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "no_verified_facility_coordinate",
+        "origin": "pazardzhik_lithology_research"
+      },
+      "total_depth_m": 404.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 40.0,
+          "expected_material_bg": "делувиални наслаги и валуни от андезити и риолити с песъчливо-глинест запълнител",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S105"
+          ]
+        },
+        {
+          "depth_from_m": 40.0,
+          "depth_to_m": 62.0,
+          "expected_material_bg": "пясъчници, светлосиви, дребнозърнести",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S105"
+          ]
+        },
+        {
+          "depth_from_m": 62.0,
+          "depth_to_m": 290.0,
+          "expected_material_bg": "риолити, розови, среднопорфирни, напукани и натрошени, с лимонитизация и хематизация по пукнатините",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S105"
+          ]
+        },
+        {
+          "depth_from_m": 290.0,
+          "depth_to_m": 324.0,
+          "expected_material_bg": "разломна зона; риолити силно променени, милонитизирани, хидротермално изменени и брекчирани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S105"
+          ]
+        },
+        {
+          "depth_from_m": 324.0,
+          "depth_to_m": 361.0,
+          "expected_material_bg": "риолити, розови до сиворозови, среднопорфирни, напукани и натрошени",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S105"
+          ]
+        },
+        {
+          "depth_from_m": 361.0,
+          "depth_to_m": 404.0,
+          "expected_material_bg": "риолити, розови, среднопорфирни, променени и грусирани в 361-371 m, напукани, на места излужени и брекчирани, с карбонатни налепи",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S105"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 290.0,
+          "depth_to_m": 324.0,
+          "type": "documented_structural_zone",
+          "description_bg": "разломна зона; риолити силно променени, милонитизирани, хидротермално изменени и брекчирани",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S105"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 23,
+        "deposit": "Брацигово",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z095",
+      "name_bg": "Стрелча - Сондаж №1 ХГ",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "no_verified_facility_coordinate",
+        "origin": "pazardzhik_lithology_research"
+      },
+      "total_depth_m": 487.5,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 9.2,
+          "expected_material_bg": "глинесто-песъчливи отложения - алувий",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S106"
+          ]
+        },
+        {
+          "depth_from_m": 9.2,
+          "depth_to_m": 11.3,
+          "expected_material_bg": "чакъли и валуни с глинесто-песъчлив запълнител, слабо споени - плиоцен",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S106"
+          ]
+        },
+        {
+          "depth_from_m": 11.3,
+          "depth_to_m": 139.8,
+          "expected_material_bg": "едрозърнест светлосив гранит - палеозой",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S106"
+          ]
+        },
+        {
+          "depth_from_m": 139.8,
+          "depth_to_m": 295.0,
+          "expected_material_bg": "гранит, средно до едрозърнест - палеозой",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S106"
+          ]
+        },
+        {
+          "depth_from_m": 295.0,
+          "depth_to_m": 335.0,
+          "expected_material_bg": "гранит, средно до едрозърнест, слабо напукан - палеозой",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S106"
+          ]
+        },
+        {
+          "depth_from_m": 335.0,
+          "depth_to_m": 485.7,
+          "expected_material_bg": "гранит, среднозърнест, напукан - палеозой",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S106"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Use as spatial analogue only after geological and structural comparison with the target."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 26,
+        "deposit": "Стрелча",
+        "inventory_status": "COLUMN_CONFIRMED"
+      }
+    },
+    {
+      "borehole_id": "PLD-Z096",
+      "name_bg": "Велинград - Сондаж №9 „Кентавър“",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_partial_lithological_profile",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.0279722,
+        "longitude": 23.9981389,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "mineral_water_master:mw_136837cfbe19195a"
+      },
+      "total_depth_m": 428.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 61.0,
+          "expected_material_bg": "неоген-кватернерна покривка",
+          "confidence": "high",
+          "evidence_level": "borehole_exact_partial_column",
+          "source_ids": [
+            "PLD-S107"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [
+        {
+          "depth_from_m": 61.0,
+          "depth_to_m": 428.0,
+          "reason": "Lithology not documented in the reviewed source. No extrapolation performed.",
+          "source_ids": [
+            "PLD-S107"
+          ]
+        }
+      ],
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Pazardzhik Province",
+        "warning": "Partial column only. Undocumented intervals must not be inferred from adjacent documented lithology."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "candidate_index": 44,
+        "deposit": "Велинград-Лъджене",
+        "inventory_status": "COLUMN_CONFIRMED_PARTIAL"
+      }
     }
   ],
   "sources": [
@@ -6292,6 +7505,166 @@
       "accessed_date": "2026-10-02",
       "geographic_scope": "Ognyanovo-Garmen, Blagoevgrad Province",
       "notes": "Official balneological assessment. Approximate total depth 130 m; exact lithological intervals 0-24 m and 24-130 m."
+    },
+    {
+      "source_id": "PLD-S092",
+      "title": "МЗ, Балнеологична оценка №108/02.01.2019",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Варвара, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S093",
+      "title": "МЗ, Балнеологична оценка №297/02.07.2025",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Варвара, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S094",
+      "title": "МЗ, Балнеологична оценка №109/02.01.2019",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Варвара, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S095",
+      "title": "МЗ, Балнеологична оценка №110/02.01.2019",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Варвара, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S096",
+      "title": "МЗ, Балнеологична оценка №294/24.02.2025",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Ракитово, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S097",
+      "title": "МЗ, Балнеологична оценка №313/02.06.2026",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology_partial",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Ракитово, област Пазарджик",
+      "notes": "Partial documented lithological column. Undocumented depth interval is deliberately not extrapolated."
+    },
+    {
+      "source_id": "PLD-S098",
+      "title": "МЗ, Балнеологична оценка №20/20.05.2025",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Велинград, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S099",
+      "title": "МЗ, Балнеологична оценка №166/19.05.2020",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Велинград, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S100",
+      "title": "МЗ, Балнеологична оценка №167/19.05.2020",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Велинград, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S101",
+      "title": "МЗ, Балнеологична оценка №168/19.05.2020",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Велинград, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S102",
+      "title": "МЗ, Балнеологична оценка №170/19.05.2020 и актуална оценка №170/20.03.2025",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Велинград, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S103",
+      "title": "МЗ, Балнеологична оценка №116/15.03.2019",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Велинград, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S104",
+      "title": "МЗ, Балнеологична оценка №255/09.11.2023",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Велинград, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S105",
+      "title": "МЗ, Балнеологична оценка №263/08.01.2024; по-ранна оценка №23/01.08.2018",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Брацигово, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S106",
+      "title": "МЗ, Балнеологична оценка №208/03.02.2022",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Стрелча, област Пазарджик",
+      "notes": "Documented borehole lithological column from official mineral-water / balneological source."
+    },
+    {
+      "source_id": "PLD-S107",
+      "title": "Документиран литоложки разрез – Сондаж №9 „Кентавър“, Велинград-Лъджене",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_hydrogeology_partial",
+      "publication_year": null,
+      "accessed_date": "2026-10-04",
+      "geographic_scope": "Велинград, област Пазарджик",
+      "notes": "Partial documented lithological column. Undocumented depth interval is deliberately not extrapolated."
     }
   ]
 }
