@@ -1,0 +1,2837 @@
+{
+  "schema_version": 1,
+  "oblast": "Пловдив",
+  "oblast_en": "Plovdiv",
+  "created": "2026-10-04",
+  "status": "discovery_in_progress",
+  "rules": {
+    "lithology_accepts_any_reliable_borehole": true,
+    "mineral_and_thermal_analysis_separate": true,
+    "preserve_source_gaps_and_overlaps": true,
+    "filter_interval_is_not_proven_inflow": true,
+    "fracture_is_not_proven_inflow": true,
+    "regional_groundwater_body_not_local_depth": true
+  },
+  "existing_source_count": 35,
+  "sources": [
+    {
+      "source_id": "PLD-S001",
+      "title": "Profiles for Soils of the Flat Trakia, South Bulgaria",
+      "institution": "European Commission - ESDAC / EUDASM",
+      "source_type": "soil_map",
+      "publication_year": 1955,
+      "geographic_scope": "Flat Trakia, South Bulgaria",
+      "url": "https://esdac.jrc.ec.europa.eu/content/profiles-soils-flat-trakia-south-bulgaria",
+      "notes": "Historical soil profile resource by V. Koinov. Relevant to shallow soil horizons in the Plovdiv/Upper Thracian plain pilot area.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S002",
+      "title": "Soil Profile Analytical Database 2 (SPADE2)",
+      "institution": "European Commission - ESDAC",
+      "source_type": "soil_map",
+      "publication_year": null,
+      "geographic_scope": "Europe, including Bulgaria",
+      "url": "https://esdac.jrc.ec.europa.eu/content/soil-profile-analytical-database-2",
+      "notes": "Provides soil horizon upper/lower depth and analytical properties including clay, silt, sand, stones, pH, organic carbon and bulk density.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S003",
+      "title": "Groundwater bodies in the East Aegean River Basin District",
+      "institution": "Basin Directorate East Aegean Region",
+      "source_type": "official_register",
+      "publication_year": null,
+      "geographic_scope": "East Aegean River Basin District",
+      "url": "https://earbd.bg/indexdetails.php?elem_id=1212&menu_id=624",
+      "notes": "Official listing includes BG3G000000Q013 Quaternary porous groundwater body and BG3G00000NQ018 Neogene-Quaternary porous groundwater body for the Pazardzhik-Plovdiv area. Also references a groundwater-depth map for the Rhodope foothill sector.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S004",
+      "title": "Groundwater body BG3G00000NQ018",
+      "institution": "Municipality of Plovdiv",
+      "source_type": "hydrogeology",
+      "publication_year": null,
+      "geographic_scope": "Pazardzhik-Plovdiv groundwater body",
+      "url": "https://www.plovdiv.bg/item/ecology/wate/%D0%BF%D0%BE%D0%B4%D0%B7%D0%B5%D0%BC%D0%BD%D0%B8-%D0%B2%D0%BE%D0%B4%D0%B8/%D0%BF%D0%BE%D0%B4%D0%B7%D0%B5%D0%BC%D0%BD%D0%B8-%D0%B2%D0%BE%D0%B4%D0%BD%D0%B8-%D1%82%D0%B5%D0%BB%D0%B0/bg3g00000nq018/",
+      "notes": "Regional hydrogeological description. Lithology includes clays, sandy clays, clayey sands, gravels, conglomerates, breccias, breccia-conglomerates and siltstones. Reported groundwater-body thickness range is broad and must not be treated as a local borehole profile.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S005",
+      "title": "Доклад за ОВОС - находище Кацара, участък Кацара-2",
+      "institution": "РИОСВ - Пловдив",
+      "source_type": "engineering_geology",
+      "publication_year": null,
+      "geographic_scope": "Катуница - Крумово - Ягодово, област Пловдив",
+      "url": "https://plovdiv.riew.gov.bg/files/_documents/Doklad%20OVOS-Kacara-FFF.pdf",
+      "notes": "Official EIA document with site-specific shallow geological descriptions from test pits. Must not be generalized to the whole Plovdiv urban area.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S006",
+      "title": "Информация за преценяване необходимостта от ОВОС - ПИ 47295.85.6, с. Марково",
+      "institution": "РИОСВ - Пловдив, public procedure document",
+      "source_type": "borehole",
+      "publication_year": 2025,
+      "geographic_scope": "ПИ 47295.85.6, с. Марково, общ. Родопи, обл. Пловдив",
+      "url": "https://mail.plovdiv.riew.gov.bg/files/_documents/dostap_pril_2_2025_2809.pdf",
+      "notes": "Contains an exact 20 m exploratory core borehole log with coordinates, lithological intervals and groundwater level. Hosted in the official RIOSV Plovdiv public procedure archive.",
+      "review_status": "VALID_LITHOLOGY",
+      "lithology_verified": true
+    },
+    {
+      "source_id": "PLD-S007",
+      "title": "Становище за допустимост ПУ-01-111(5), ПИ 06447.27.103, с. Брестник",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "hydrogeology",
+      "publication_year": 2025,
+      "geographic_scope": "ПИ 06447.27.103, с. Брестник, местност Горни Бранти, общ. Родопи",
+      "url": "https://earbd.bg/files/File/Stanovishta_dopustimost/2025/June/%D0%9F%D0%A3-01-111%285%29.pdf",
+      "notes": "Official basin-directorate statement. Refers to a 2024 hydrogeological study for the Rhodope foothill area covering Kuklen, Brestnik, Markovo, Belashtitsa and Parvenets. For the specific property, groundwater is stated to occur deeper than 16 m.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S008",
+      "title": "Становище за допустимост ПУ-01-1179(3), ПИ 47295.85.6, с. Марково",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "hydrogeology",
+      "publication_year": 2025,
+      "geographic_scope": "ПИ 47295.85.6, с. Марково, общ. Родопи, обл. Пловдив",
+      "url": "https://earbd.bg/files/File/Stanovishta_dopustimost/2025/April/%D0%9F%D0%A3-01-1179%283%29.pdf",
+      "notes": "Official basin-directorate statement citing the 2024 Rhodope foothill hydrogeological study. For the planned borehole in PI 47295.85.6 it states groundwater occurs deeper than 14 m. This conflicts with the 4.3 m groundwater level documented in the site exploratory borehole source PLD-S006 and must remain unresolved until the underlying 2024 study is obtained.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S009",
+      "title": "Становище за допустимост ПУ-01-400(3)",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "hydrogeology",
+      "publication_year": 2025,
+      "geographic_scope": "ПИ 47295.71.21, 47295.71.22 и 47295.71.99, землище с. Марково",
+      "url": "https://earbd.bg/files/File/Stanovishta_dopustimost/2025/June/%D0%9F%D0%A3-01-400%283%29.pdf",
+      "notes": "Official statement citing the 2024 Rhodope foothill hydrogeological study and its graphical information. Groundwater for the planned wells is stated to occur deeper than 15 m.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S010",
+      "title": "Становище за допустимост ПУ-01-1238-1",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "hydrogeology",
+      "publication_year": 2026,
+      "geographic_scope": "ПИ 06447.29.172, землище с. Брестник",
+      "url": "https://earbd.bg/files/File/Stanovishta_dopustimost/2026/February/%D0%9F%D0%A3-01-1238-1.pdf",
+      "notes": "Official statement citing the 2024 Rhodope foothill hydrogeological study and graphical information. Groundwater is stated to occur deeper than 18.124 m.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S011",
+      "title": "Становище за допустимост ПУ-01-1036-3",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "hydrogeology",
+      "publication_year": 2026,
+      "geographic_scope": "ПИ 47295.48.17, землище с. Марково",
+      "url": "https://earbd.bg/files/File/Stanovishta_dopustimost/2026/January/%D0%9F%D0%A3-01-1036-3.pdf",
+      "notes": "Official statement citing the 2024 Rhodope foothill study. Groundwater for the planned borehole is stated to occur deeper than 14 m.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S012",
+      "title": "Становище за допустимост ПУ-01-821(1)",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "official_register",
+      "publication_year": 2025,
+      "geographic_scope": "ПИ 47295.24.21, землище с. Марково",
+      "url": "https://earbd.bg/files/File/Stanovishta_dopustimost/2025/October/%D0%9F%D0%A3-01-821%281%29.pdf",
+      "notes": "Official statement documenting an existing 51 m borehole. According to the cited 2024 study, the well abstracts from groundwater bodies BG3G000000Q013 and BG3G00000NQ018. No lithological column is reproduced.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S013",
+      "title": "Карта на дълбочина ниво на подземни води под терен за BG3G000000Q013 в района на Родопската яка",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "hydrogeology",
+      "publication_year": null,
+      "geographic_scope": "Родопска яка: Пловдив, Брестовица, Първенец, Марково, Белащица, Браниполе, Брестник, Крумово, Куклен, Храбрино",
+      "url": "https://earbd.bg/indexdetails.php?elem_id=1212&menu_id=624",
+      "notes": "Official Basin Directorate page states that a groundwater-depth-below-terrain map exists for groundwater body BG3G000000Q013 in the Rhodope foothill area. Direct map file has not yet been retrieved. No depth values are extracted in this step.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S014",
+      "title": "Преценяване необходимостта от извършване на ОВОС - МЕТАЛ ИН ЕООД, площадка гр. Пловдив",
+      "institution": "РИОСВ - Пловдив",
+      "source_type": "engineering_geology",
+      "publication_year": 2020,
+      "geographic_scope": "гр. Пловдив - конкретна промишлена площадка",
+      "url": "https://plovdiv.riew.gov.bg/files/_documents/595_2020_dostap_pril_2.pdf",
+      "notes": "Contains site lithological section. Coarse sand with fine gravel is documented at 16.50-19.50 m. Above it are clays and fine-grained clayey sands. Groundwater level is reported at 4.0 m. Exact internal boundaries above 16.50 m are not reproduced.",
+      "review_status": "VALID_PARTIAL_LITHOLOGY",
+      "lithology_verified": true
+    },
+    {
+      "source_id": "PLD-S015",
+      "title": "Доклад за находище Щъркелите",
+      "institution": "РИОСВ - Пловдив",
+      "source_type": "engineering_geology",
+      "publication_year": null,
+      "geographic_scope": "землища с. Костиево и с. Цалапица, област Пловдив",
+      "url": "https://plovdiv.riew.gov.bg/files/_documents/DOSV-Shtqrkelite-F.pdf",
+      "notes": "Shallow practical lithology: sandy-clayey cover up to about 0.8 m; upper sand horizon 3.6-4.8 m thick and locally observed to about 5.2 m depth; gravel horizon below.",
+      "review_status": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "lithology_verified": false
+    },
+    {
+      "source_id": "PLD-S016",
+      "title": "Сондаж №9 - находище на минерална вода Драгоиново",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "publication_year": 2020,
+      "geographic_scope": "с. Драгоиново, общ. Първомай, обл. Пловдив",
+      "url": "https://www.mh.government.bg/upload/6722/184-dragoinovo-sondazh-9-05-11-2020.pdf",
+      "notes": "Official deep borehole lithological profile to 296 m.",
+      "review_status": "VALID_LITHOLOGY",
+      "lithology_verified": true
+    },
+    {
+      "source_id": "PLD-S017",
+      "title": "Балнеологична оценка №60 - сондаж №5, находище Хисаря",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "publication_year": 2017,
+      "geographic_scope": "гр. Хисаря, обл. Пловдив",
+      "url": "https://old.mh.government.bg/media/filer_public/2019/06/19/60-hisarya-sondazh5-19-06-2017.pdf",
+      "notes": "Official deep borehole geological profile to 520 m.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S018",
+      "title": "Балнеологична оценка №82 - сондаж №1, находище Асеновград",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "publication_year": 2018,
+      "geographic_scope": "гр. Асеновград, общ. Асеновград, обл. Пловдив",
+      "url": "https://www.mh.government.bg/upload/6823/82-asenovgrad-sondazh1-30-04-2018.pdf",
+      "notes": "Official deep borehole geological profile to 655.60 m.",
+      "review_status": "VALID_LITHOLOGY",
+      "lithology_verified": true
+    },
+    {
+      "source_id": "PLD-S019",
+      "title": "Балнеологична оценка №188 - сондаж №12, находище Леново",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "publication_year": 2026,
+      "geographic_scope": "с. Леново, общ. Асеновград, обл. Пловдив",
+      "url": "https://www.mh.government.bg/upload/18887/188-Lenovo-sondazh-12-10-03-2026.pdf",
+      "notes": "Official borehole profile to 180 m with exact lithological intervals and documented water-saturated zones at 110-130 m and 170-178 m.",
+      "review_status": "VALID_LITHOLOGY",
+      "lithology_verified": true
+    },
+    {
+      "source_id": "PLD-S020",
+      "title": "Балнеологична оценка №103 - сондаж №1, находище Красново",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "publication_year": 2018,
+      "geographic_scope": "с. Красново, общ. Хисаря, обл. Пловдив",
+      "url": "https://www.mh.government.bg/upload/6802/103-krasnovo-sondazh1-20-11-2018.pdf",
+      "notes": "Official deep borehole geological profile to 160 m.",
+      "review_status": "VALID_LITHOLOGY",
+      "lithology_verified": true
+    },
+    {
+      "source_id": "PLD-S021",
+      "title": "Балнеологична оценка №209 - сондаж №12, находище Климент",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "publication_year": 2022,
+      "geographic_scope": "с. Климент, общ. Карлово, обл. Пловдив",
+      "url": "https://www.mh.government.bg/upload/6693/209-kliment-sondazh12-19-04-2022.pdf",
+      "notes": "Official deep borehole lithological profile to 764.35 m.",
+      "review_status": "VALID_LITHOLOGY",
+      "lithology_verified": true
+    },
+    {
+      "source_id": "PLD-S022",
+      "title": "Балнеологична оценка - сондаж №2, находище Старо Железаре",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "publication_year": 2024,
+      "geographic_scope": "с. Старо Железаре, общ. Хисаря, обл. Пловдив",
+      "url": "https://www.mh.government.bg/upload/11284/61-Staro%20Zhelezare-sondazh2-03-07-2024%281%29.pdf",
+      "notes": "Official borehole description to 175.70 m. Clay to 3.50 m, granite below. Filter slots at 80-90 m and 155-163 m are construction/intake intervals, not automatically aquifer boundaries.",
+      "review_status": "VALID_LITHOLOGY",
+      "lithology_verified": true
+    },
+    {
+      "source_id": "PLD-S023",
+      "title": "Балнеологична оценка - сондаж №4, находище Старо Железаре",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "publication_year": 2025,
+      "geographic_scope": "с. Старо Железаре, общ. Хисаря, обл. Пловдив",
+      "url": "https://www.mh.government.bg/upload/14405/62-Staro%20Zhelezare-sondazh4-04-06-2025.pdf",
+      "notes": "Official borehole description to 418.95 m. Clay to 2.50 m, granite below to final depth.",
+      "review_status": "VALID_LITHOLOGY",
+      "lithology_verified": true
+    },
+    {
+      "source_id": "PLD-S024",
+      "title": "Балнеологична оценка №59 - сондаж №3, находище Хисаря",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "publication_year": 2017,
+      "geographic_scope": "гр. Хисаря, общ. Хисаря, обл. Пловдив",
+      "url": "https://www.mh.government.bg/upload/6846/59-hisarya-sondazh3-19-06-2017.pdf",
+      "notes": "Official deep borehole profile to 322 m with several fractured and tectonically crushed crystalline-rock intervals.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S025",
+      "title": "Балнеологична оценка №71 - сондаж №16, находище Леново",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "publication_year": 2017,
+      "geographic_scope": "с. Леново, общ. Асеновград, обл. Пловдив",
+      "url": "https://www.mh.government.bg/upload/6834/71-lenovo-sondazh16-12-10-2017.pdf",
+      "notes": "Official deep borehole profile to 1312 m with documented subthermal and thermal collector intervals.",
+      "review_status": "VALID_LITHOLOGY",
+      "lithology_verified": true
+    },
+    {
+      "source_id": "PLD-S026",
+      "title": "Балнеологична оценка №83 - сондаж №6, находище Асеновград",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "publication_year": 2018,
+      "geographic_scope": "гр. Асеновград, общ. Асеновград, обл. Пловдив",
+      "url": "https://www.mh.government.bg/upload/6822/83-asenovgrad-sondazh6-30-04-2018.pdf",
+      "notes": "Official deep borehole geological profile to 1204 m with documented fault intervals and marble collector.",
+      "review_status": "VALID_LITHOLOGY",
+      "lithology_verified": true
+    },
+    {
+      "source_id": "PLD-S027",
+      "title": "An investigation of the significance of local site effects in Plovdiv, Bulgaria",
+      "institution": "Bulletin of Earthquake Engineering / Springer",
+      "source_type": "peer_reviewed_borehole_dataset",
+      "publication_year": 2009,
+      "geographic_scope": "гр. Пловдив",
+      "url": "https://www.researchgate.net/publication/225492958_An_investigation_of_the_significance_of_local_site_effects_in_Plovdiv_Bulgaria",
+      "notes": "Peer-reviewed publication reproducing lithological data for three Plovdiv boreholes from EGC archive 1987.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S028",
+      "title": "Балнеологична оценка №79 - сондаж Българска роза, находище Баня",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "publication_year": 2018,
+      "geographic_scope": "гр. Баня, общ. Карлово, обл. Пловдив",
+      "url": "https://www.mh.government.bg/upload/6826/79-banya-sondazhbulgarskaroza-30-04-2018.pdf",
+      "notes": "Official borehole profile to 64 m.",
+      "review_status": "VALID_LITHOLOGY",
+      "lithology_verified": true
+    },
+    {
+      "source_id": "PLD-S033",
+      "title": "Балнеологична оценка №143 - КЕИ Топлите извори, находище Красново",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deposit_hydrogeology",
+      "publication_year": 2019,
+      "geographic_scope": "с. Красново, общ. Хисаря, обл. Пловдив",
+      "url": "https://www.mh.government.bg/upload/6762/143-krasnovo-kei_toplite_izvori-13-12-2019.pdf",
+      "notes": "Official deposit-scale hydrogeological source documenting granite collector and tectonic-fault control of the thermal water.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S034",
+      "title": "Становище за допустимост - Марково ПИ 47295.71.21, 47295.71.22 и 47295.71.99",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "official_hydrogeological_statement",
+      "publication_year": 2025,
+      "geographic_scope": "с. Марково, общ. Родопи, обл. Пловдив",
+      "url": "https://earbd.bg/files/File/Stanovishta_dopustimost/2025/June/%D0%9F%D0%A3-01-400%283%29.pdf",
+      "notes": "Official statement documenting groundwater deeper than 15 m and groundwater body BG3G00000Pt050.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S035",
+      "title": "Становище за допустимост ПУ-01-111(5) - ПИ 06447.27.103 Брестник",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "official_hydrogeological_statement",
+      "publication_year": 2025,
+      "geographic_scope": "с. Брестник, ПИ 06447.27.103",
+      "url": "https://earbd.bg/files/File/Stanovishta_dopustimost/2025/June/%D0%9F%D0%A3-01-111%285%29.pdf",
+      "notes": "Groundwater occurs deeper than 16 m. Planned 20 m borehole falls within Q013.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S036",
+      "title": "Становище за допустимост ПУ-01-1238-1 - ПИ 06447.29.172 Брестник",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "official_hydrogeological_statement",
+      "publication_year": 2026,
+      "geographic_scope": "с. Брестник, ПИ 06447.29.172",
+      "url": "https://earbd.bg/files/File/Stanovishta_dopustimost/2026/February/%D0%9F%D0%A3-01-1238-1.pdf",
+      "notes": "Groundwater occurs deeper than 18.124 m. Q013 overlies NQ018 and Pt050; planned abstraction is from Q013.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S037",
+      "title": "Становище за допустимост ПУ-01-1036-3 - ПИ 47295.48.17 Марково",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "official_hydrogeological_statement",
+      "publication_year": 2026,
+      "geographic_scope": "с. Марково, ПИ 47295.48.17",
+      "url": "https://earbd.bg/files/File/Stanovishta_dopustimost/2026/January/%D0%9F%D0%A3-01-1036-3.pdf",
+      "notes": "Groundwater occurs deeper than 14 m. Site intersects Q013 and underlying NQ018.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S038",
+      "title": "Становище за допустимост ПУ-01-821(1) - ПИ 47295.24.21 Марково",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "official_borehole_and_hydrogeological_statement",
+      "publication_year": 2025,
+      "geographic_scope": "с. Марково, ПИ 47295.24.21",
+      "url": "https://earbd.bg/files/File/Stanovishta_dopustimost/2025/October/%D0%9F%D0%A3-01-821%281%29.pdf",
+      "notes": "Existing 51 m borehole. Intake/filter interval 12-50 m. Draws from Q013 and underlying NQ018.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S039",
+      "title": "Съобщение РР-01-311/2025 - тръбен кладенец ПИ 38950.12.563, Костиево",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "official_groundwater_permit",
+      "publication_year": 2026,
+      "geographic_scope": "с. Костиево, местност Бураго, ПИ 38950.12.563",
+      "url": "https://earbd.bg/files/File/Razreshitelni/Obyavlenia-syobshtenia/Obyavlenia/2026/06/25/%D0%A0%D0%A0-01-311_2025.pdf",
+      "notes": "Local hydrogeological analogue: Q013; planned well depth 24 m; filter 12-20 m; maximum dynamic water level 8.22 m at Qmax 5.0 l/s; maximum allowable drawdown 2.72 m.",
+      "review_status": "EXISTING_SOURCE_TO_REVIEW"
+    },
+    {
+      "source_id": "PLD-S040",
+      "title": "Минерална вода Хисаря - Сондаж №3",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "official_mineral_water_borehole_document",
+      "publication_year": 2017,
+      "geographic_scope": "гр. Хисаря, община Хисаря, област Пловдив",
+      "url": "https://www.mh.government.bg/upload/6846/59-hisarya-sondazh3-19-06-2017.pdf",
+      "notes": "Official document with a depth-resolved geological section for borehole No. 3 to 322.00 m. Borehole construction is documented separately from lithology.",
+      "review_status": "VERIFIED_LITHOLOGY_SOURCE"
+    },
+    {
+      "source_id": "PLD-S041",
+      "title": "Минерална вода Хисаря - Сондаж №5",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "official_mineral_water_borehole_document",
+      "publication_year": 2017,
+      "geographic_scope": "гр. Хисаря, община Хисаря, област Пловдив",
+      "url": "https://old.mh.government.bg/media/filer_public/2019/06/19/60-hisarya-sondazh5-19-06-2017.pdf",
+      "notes": "Official document with a depth-resolved geological section for borehole No. 5 to 520.00 m. Borehole construction is documented separately from lithology.",
+      "review_status": "VERIFIED_LITHOLOGY_SOURCE"
+    },
+    {
+      "source_id": "PLD-S042",
+      "title": "Балнеологична оценка №43 от 11.05.2015 г. — Сондаж №5, Нареченски минерални бани",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "official_mineral_water_borehole_document",
+      "publication_year": 2015,
+      "geographic_scope": "с. Нареченски бани, община Асеновград, област Пловдив",
+      "url": "https://www.mh.government.bg/upload/6862/43-narechenski_mineralni_bani-sondazh5-11-05-2015.pdf",
+      "notes": "Official document containing the individual depth-resolved geological section of borehole No. 5 to 31.40 m.",
+      "review_status": "VERIFIED_LITHOLOGY_SOURCE"
+    }
+  ],
+  "discovery": {
+    "new_candidates": [
+      {
+        "candidate_id": "PLD-C001",
+        "title": "Тръбни кладенци - ПИ 47295.45.36, Марково",
+        "settlement": "Марково",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12",
+        "discovery_basis": "Решение ПВ-118-ПР/2025 за изграждане на съоръжение за водовземане - тръбни кладенци.",
+        "research_goal": "Да се намери приложението/инвестиционната информация и да се провери за сондажен разрез, дълбочина, геоложки интервали и водно ниво.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C002",
+        "title": "Тръбен кладенец - ПИ 03304.2.1382, Белащица",
+        "settlement": "Белащица",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12",
+        "discovery_basis": "Решение ПВ-116-ПР/2025 за изграждане на тръбен кладенец.",
+        "research_goal": "Проверка за литоложки разрез, проектна дълбочина, филтрови интервали и данни за подземно водно ниво.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C003",
+        "title": "Тръбен кладенец - ПИ 47295.21.1139, Марково",
+        "settlement": "Марково",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12",
+        "discovery_basis": "Решение ПВ-113-ПР/2025 за изграждане на тръбен кладенец.",
+        "research_goal": "Проверка за геоложки профил и конкретни данни за сондажа.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C004",
+        "title": "Пет сондажни кладенеца - ПИ 47295.36.70, Марково",
+        "settlement": "Марково",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12",
+        "discovery_basis": "Решение ПВ-114-ПР/2025 за жилищно строителство и 5 сондажни кладенеца.",
+        "research_goal": "Проверка дали документите съдържат отделни дълбочини, разрези или хидрогеоложки данни за петте кладенеца.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C005",
+        "title": "Сондажен кладенец 20 m - ПИ 47295.26.157/158, Марково",
+        "settlement": "Марково",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12",
+        "discovery_basis": "Решение ПВ-110-ПР/2025 посочва сондажен кладенец с дълбочина 20 m.",
+        "research_goal": "Проверка дали има приложен геоложки или хидрогеоложки разрез, а не само проектна дълбочина.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C006",
+        "title": "Сондажен кладенец - ПИ 03620.4.870, Белозем",
+        "settlement": "Белозем",
+        "municipality": "Раковски",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/43/48",
+        "discovery_basis": "ОВОС-79/15.01.2021 и становище на БД ИБР за обект със сондажен кладенец.",
+        "research_goal": "Да се открият първичните документи и да се провери за литология, дълбочина и водно ниво.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C007",
+        "title": "Собствен водоизточник - тръбен кладенец, Калековец",
+        "settlement": "Калековец",
+        "municipality": "Марица",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12/78",
+        "discovery_basis": "Решение ПВ-26-ПР/2017 за собствен водоизточник - тръбен кладенец.",
+        "research_goal": "Да се провери архивът за технически и геоложки данни за кладенеца.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C008",
+        "title": "Сондажен кладенец до 15 m - ПИ 56784.382.207",
+        "settlement": "Пловдив",
+        "municipality": "Пловдив",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/_documents/RESHENIE_206_26_OVOS.pdf",
+        "discovery_basis": "Решение ПВ-206-ПР/2026: един сондажен кладенец с дълбочина до 15 m.",
+        "research_goal": "Проверка за приложени геоложки, хидрогеоложки или сондажни данни.",
+        "status": "PROJECT_DEPTH_ONLY",
+        "source_readability": "IMAGE_ONLY_SCAN",
+        "lithology_verified": false,
+        "review_note": "Official RIEW Plovdiv decision downloaded and verified as image-only scanned PDF. No lithological column is accepted from this document. Project depth, where listed in the official register/discovery record, remains project information only."
+      },
+      {
+        "candidate_id": "PLD-C009",
+        "title": "Сондажен кладенец - ПИ 47295.38.63, Марково",
+        "settlement": "Марково",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/_documents/RESHENIE_203_26_OVOS.pdf",
+        "discovery_basis": "Решение ПВ-203-ПР/2026: жилищно строителство и сондажен кладенец.",
+        "research_goal": "Проверка за дълбочина, литология и водно ниво.",
+        "status": "NEEDS_SOURCE_DOCUMENT",
+        "source_readability": "IMAGE_ONLY_SCAN",
+        "lithology_verified": false,
+        "review_note": "Official RIEW Plovdiv decision downloaded and verified as image-only scanned PDF. No lithological column is accepted from this document. Project depth, where listed in the official register/discovery record, remains project information only."
+      },
+      {
+        "candidate_id": "PLD-C010",
+        "title": "Сондажен кладенец - ПИ 06447.29.138, Брестник",
+        "settlement": "Брестник",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/_documents/RESHENIE_201_26_OVOS.pdf",
+        "discovery_basis": "Решение ПВ-201-ПР/2026: жилищно строителство и сондажен кладенец.",
+        "research_goal": "Проверка за първични хидрогеоложки данни и литоложки разрез.",
+        "status": "NEEDS_SOURCE_DOCUMENT",
+        "source_readability": "IMAGE_ONLY_SCAN",
+        "lithology_verified": false,
+        "review_note": "Official RIEW Plovdiv decision downloaded and verified as image-only scanned PDF. No lithological column is accepted from this document. Project depth, where listed in the official register/discovery record, remains project information only."
+      },
+      {
+        "candidate_id": "PLD-C011",
+        "title": "Сондажен кладенец до 20 m - ПИ 47295.19.301, Марково",
+        "settlement": "Марково",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/_documents/RESHENIE_195_26_OVOS.pdf",
+        "discovery_basis": "Решение ПВ-195-ПР/2026: кладенец с дълбочина до 20 m.",
+        "research_goal": "Проверка за конкретен геоложки профил и водно ниво.",
+        "status": "PROJECT_DEPTH_ONLY",
+        "source_readability": "IMAGE_ONLY_SCAN",
+        "lithology_verified": false,
+        "review_note": "Official RIEW Plovdiv decision downloaded and verified as image-only scanned PDF. No lithological column is accepted from this document. Project depth, where listed in the official register/discovery record, remains project information only."
+      },
+      {
+        "candidate_id": "PLD-C012",
+        "title": "Сондажен кладенец до 24 m - ПИ 03304.2.24, Белащица",
+        "settlement": "Белащица",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/_documents/RESHENIE_198_26_OVOS.pdf",
+        "discovery_basis": "Решение ПВ-198-ПР/2026: кладенец с дълбочина до 24 m.",
+        "research_goal": "Проверка за литоложки интервали, проектен водоносен хоризонт и ниво.",
+        "status": "PROJECT_DEPTH_ONLY",
+        "source_readability": "IMAGE_ONLY_SCAN",
+        "lithology_verified": false,
+        "review_note": "Official RIEW Plovdiv decision downloaded and verified as image-only scanned PDF. No lithological column is accepted from this document. Project depth, where listed in the official register/discovery record, remains project information only."
+      },
+      {
+        "candidate_id": "PLD-C013",
+        "title": "Сондажен кладенец 25 m - ПИ 06447.35.34, Брестник",
+        "settlement": "Брестник",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/_documents/RESHENIE_199_26_OVOS.pdf",
+        "discovery_basis": "Решение ПВ-199-ПР/2026: кладенец с дълбочина 25 m.",
+        "research_goal": "Проверка за геоложки разрез и връзка с Q013/NQ018.",
+        "status": "PROJECT_DEPTH_ONLY",
+        "source_readability": "IMAGE_ONLY_SCAN",
+        "lithology_verified": false,
+        "review_note": "Official RIEW Plovdiv decision downloaded and verified as image-only scanned PDF. No lithological column is accepted from this document. Project depth, where listed in the official register/discovery record, remains project information only."
+      },
+      {
+        "candidate_id": "PLD-C014",
+        "title": "Сондажен кладенец - ПИ 59032.35.44, Първенец",
+        "settlement": "Първенец",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12",
+        "discovery_basis": "Решение ПВ-192-ПР/2026: жилищно строителство с един сондажен кладенец.",
+        "research_goal": "Намиране на приложението и проверка за точна дълбочина/литология.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C015",
+        "title": "Тръбен кладенец до 20 m - ПИ 47295.36.58, Марково",
+        "settlement": "Марково",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/_documents/RESHENIE_184_26_OVOS.pdf",
+        "discovery_basis": "Решение ПВ-184-ПР/2026: водовземно съоръжение с дълбочина до 20 m.",
+        "research_goal": "Проверка за геоложки и хидрогеоложки данни.",
+        "status": "PROJECT_DEPTH_ONLY",
+        "source_readability": "IMAGE_ONLY_SCAN",
+        "lithology_verified": false,
+        "review_note": "Official RIEW Plovdiv decision downloaded and verified as image-only scanned PDF. No lithological column is accepted from this document. Project depth, where listed in the official register/discovery record, remains project information only."
+      },
+      {
+        "candidate_id": "PLD-C016",
+        "title": "Сондажен кладенец 10 m - ПИ 47295.40.6, Марково",
+        "settlement": "Марково",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/_documents/RESHENIE_180_26_OVOS.pdf",
+        "discovery_basis": "Решение ПВ-180-ПР/2026: кладенец с проектна дълбочина 10 m.",
+        "research_goal": "Проверка дали има действителен разрез или само проектна дълбочина.",
+        "status": "PROJECT_DEPTH_ONLY",
+        "source_readability": "IMAGE_ONLY_SCAN",
+        "lithology_verified": false,
+        "review_note": "Official RIEW Plovdiv decision downloaded and verified as image-only scanned PDF. No lithological column is accepted from this document. Project depth, where listed in the official register/discovery record, remains project information only."
+      },
+      {
+        "candidate_id": "PLD-C017",
+        "title": "Тръбни кладенци до 20 m - Златитрап",
+        "settlement": "Златитрап",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12",
+        "discovery_basis": "Решение ПВ-115-ПР/2025 за тръбни кладенци до 20 m в ПИ 31036.15.28-32.",
+        "research_goal": "Установяване на броя съоръжения, разрезите и водното ниво.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C018",
+        "title": "Сондажен кладенец - ПИ 11845.53.93, Войводиново",
+        "settlement": "Войводиново",
+        "municipality": "Марица",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12",
+        "discovery_basis": "Решение ПВ-111-ПР/2025 за склад и сондажен кладенец.",
+        "research_goal": "Проверка за проектна/изпълнена дълбочина и литология.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C019",
+        "title": "Сондажен кладенец 13 m - ПИ 02720.184.15, Баня",
+        "settlement": "Баня",
+        "municipality": "Карлово",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/43/48",
+        "discovery_basis": "ОВОС-432/2021 и становище ПУ-01-292(1): сондажен кладенец 13 m.",
+        "research_goal": "Проверка дали документацията съдържа локален разрез.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C020",
+        "title": "Сондажен кладенец до 10 m - Войводиново",
+        "settlement": "Войводиново",
+        "municipality": "Марица",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12/78",
+        "discovery_basis": "Решение ПВ-20-ПР/2017: сондажен кладенец до 10 m в ПИ 11845.26.9.",
+        "research_goal": "Проверка за локална плитка литология.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C021",
+        "title": "Сондажи за водовземане - Житница",
+        "settlement": "Житница",
+        "municipality": "Калояново",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12/78",
+        "discovery_basis": "Решение ПВ-33-ПР/2017: сондажи за водовземане за трайни насаждения.",
+        "research_goal": "Установяване на броя, дълбочината и евентуални разрези.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C022",
+        "title": "Сондажен кладенец - Асеновградско шосе, Пловдив",
+        "settlement": "Пловдив",
+        "municipality": "Пловдив",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12/78",
+        "discovery_basis": "Решение ПВ-36-ПР/2017: изграждане на сондажен кладенец в ПИ 56784.539.129.",
+        "research_goal": "Проверка за локален градски литоложки разрез.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C023",
+        "title": "Тръбен кладенец - Динк",
+        "settlement": "Динк",
+        "municipality": "Марица",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12/78",
+        "discovery_basis": "Решение ПВ-25-ПР/2017: тръбен кладенец за напояване.",
+        "research_goal": "Проверка за сондажна дълбочина и литология.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C024",
+        "title": "Проектен сондажен кладенец - Оризари",
+        "settlement": "Оризари",
+        "municipality": "Родопи",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12/78",
+        "discovery_basis": "Решение ПВ-27-ПР/2017: проектен сондажен кладенец за оранжерия.",
+        "research_goal": "Проверка за дълбочина и геоложко описание.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C025",
+        "title": "Сондажен кладенец - Розино",
+        "settlement": "Розино",
+        "municipality": "Карлово",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/documents/12/78",
+        "discovery_basis": "Решение ПВ-21-ПР/2017: нов сондажен кладенец в имот 142059.",
+        "research_goal": "Проверка за литология и водно ниво.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C026",
+        "title": "Тръбен кладенец 24 m - ПИ 40467.13.349, Куклен",
+        "settlement": "Куклен",
+        "municipality": "Куклен",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://earbd.bg/files/File/Razreshitelni/Obyavlenia-syobshtenia/Obyavlenia/2021/05/20/%D0%A0%D0%A0-01-222_2020%20.pdf",
+        "discovery_basis": "Съществуващ тръбен кладенец с дълбочина 24 m; филтър 17-24 m.",
+        "research_goal": "Проверка за сондажен паспорт, литоложки разрез и водно ниво.",
+        "status": "CONSTRUCTION_ONLY",
+        "source_review": {
+          "document_reviewed": true,
+          "lithology_verified": false,
+          "depth_m": 24.0,
+          "construction": [
+            "PVC exploitation casing Ø140",
+            "cementation 0-2 m",
+            "gravel pack 2-24 m",
+            "PVC filter Ø140 at 17-24 m"
+          ],
+          "note": "No lithological column documented. Filter interval is construction data, not a proven aquifer/inflow interval."
+        }
+      },
+      {
+        "candidate_id": "PLD-C027",
+        "title": "ТК1 и ТК2 - ПИ 39102.12.78, Кочево",
+        "settlement": "Кочево",
+        "municipality": "Садово",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://earbd.bg/files/File/Razreshitelni/Obyavlenia-syobshtenia/Obyavlenia/2021/05/25/%D0%A0%D0%A0-01-185_2020%20.pdf",
+        "discovery_basis": "Документирани два тръбни кладенеца: ТК1 - 25 m и ТК2 - 12 m.",
+        "research_goal": "Търсене на сондажни паспорти и точни литоложки колони.",
+        "status": "CONSTRUCTION_ONLY",
+        "source_review": {
+          "document_reviewed": true,
+          "lithology_verified": false,
+          "wells": [
+            {
+              "name": "TK1",
+              "depth_m": 25.0,
+              "filter_interval_m": [
+                18.0,
+                25.0
+              ],
+              "terrain_elevation_m": 160.45,
+              "max_permitted_drawdown_m": 3.0
+            },
+            {
+              "name": "TK2",
+              "depth_m": 12.0,
+              "filter_interval_m": [
+                4.0,
+                10.0
+              ],
+              "terrain_elevation_m": 160.65,
+              "max_permitted_drawdown_m": 1.5
+            }
+          ],
+          "note": "No lithological column documented. Filter intervals and permitted drawdown are not treated as lithology or static groundwater level."
+        }
+      },
+      {
+        "candidate_id": "PLD-C028",
+        "title": "Тръбен кладенец - ПИ 51980.161.640, Стамболийски",
+        "settlement": "Стамболийски",
+        "municipality": "Стамболийски",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://earbd.bg/Obyavleniya_mesets_Yuni_2023-p2265",
+        "discovery_basis": "Официално обявление за тръбен кладенец в ПИ 51980.161.640.",
+        "research_goal": "Извличане на дълбочина, конструкция, литология и водно ниво.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C029",
+        "title": "Два тръбни кладенеца - имот 993, кв.35, Стамболийски",
+        "settlement": "Стамболийски",
+        "municipality": "Стамболийски",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://earbd.bg/Obyavleniya_mesets_May_2021-p1979",
+        "discovery_basis": "Два съществуващи тръбни кладенеца по разрешително №31510560/12.12.2016.",
+        "research_goal": "Намиране на паспортите и сондажните разрези.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C030",
+        "title": "Два тръбни кладенеца - ПИ 51980.22.519, Стамболийски",
+        "settlement": "Стамболийски",
+        "municipality": "Стамболийски",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://earbd.bg/Obyavleniya_mesets_May_2021-p1979",
+        "discovery_basis": "Официално документирани два съществуващи тръбни кладенеца.",
+        "research_goal": "Проверка за дълбочини и литоложки профили.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C031",
+        "title": "Ново водовземно съоръжение - ПИ 39921.65.182, Кричим",
+        "settlement": "Кричим",
+        "municipality": "Кричим",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://www.earbd.bg/Obyavleniya_mesets_Yanuari_2017-p1189",
+        "discovery_basis": "Официална процедура за ново водовземно съоръжение в ПИ 39921.65.182.",
+        "research_goal": "Намиране на проектен или изпълнителен сондажен разрез.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C032",
+        "title": "Ново водовземно съоръжение - местност Среден път, Катуница",
+        "settlement": "Катуница",
+        "municipality": "Садово",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://www.earbd.bg/Obyavleniya_mesets_Yanuari_2017-p1189",
+        "discovery_basis": "Официална процедура за ново съоръжение в местност „Среден път“.",
+        "research_goal": "Търсене на точен имот, дълбочина и сондажен разрез.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C033",
+        "title": "Мониторингов сондаж BG3G000000QMP032 - Борец",
+        "settlement": "Борец",
+        "municipality": "Брезово",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/godishni_dokladi/god_2017.pdf",
+        "discovery_basis": "Национален мониторингов пункт ПС-Сондаж BG3G000000QMP032.",
+        "research_goal": "Търсене в ИАОС/БДИБР на паспорт, координати, дълбочина и литоложка колона.",
+        "status": "MONITORING_ONLY",
+        "source_review": {
+          "document_reviewed": true,
+          "lithology_verified": false,
+          "monitoring_code": "BG3G000000QMP032",
+          "depth_m": 60.0,
+          "coordinates_dms": {
+            "lat": "42°19'39.3\"",
+            "lon": "24°53'33.4\""
+          },
+          "note": "Monitoring borehole identity, coordinates and depth confirmed. No lithological log found in the reviewed report."
+        }
+      },
+      {
+        "candidate_id": "PLD-C034",
+        "title": "Мониторингов сондаж ТК1 BG3G000PRQPMP143 - Сопот",
+        "settlement": "Сопот",
+        "municipality": "Сопот",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/godishni_dokladi/god_2017.pdf",
+        "discovery_basis": "Официален мониторингов пункт Сондаж-ТК1 в гр. Сопот.",
+        "research_goal": "Намиране на паспорт и литоложки разрез.",
+        "status": "NEEDS_SOURCE_DOCUMENT",
+        "source_review": {
+          "document_reviewed": true,
+          "lithology_verified": false,
+          "note": "Downloaded monitoring-study document contains no match for BG3G000PRQPMP143 or Sopot. Correct primary/source document still required."
+        }
+      },
+      {
+        "candidate_id": "PLD-C035",
+        "title": "Тръбен кладенец - ПИ 70528.502.176, Съединение",
+        "settlement": "Съединение",
+        "municipality": "Съединение",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://earbd.bg/files/File/Razreshitelni/Obyavlenia-syobshtenia/Obyavlenia/2026/08/17/%D0%A0%D0%A0-02-259_2025.pdf",
+        "discovery_basis": "Съществуващ тръбен кладенец по разрешително №31520554/06.10.2003.",
+        "research_goal": "Извличане на конструкция, дълбочина и евентуален литоложки разрез.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C036",
+        "title": "Мониторингов сондаж BG3G00APRQPMP151 - Царимир",
+        "settlement": "Царимир",
+        "municipality": "Съединение",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/godishni_dokladi/god_2017.pdf",
+        "discovery_basis": "Официален мониторингов сондаж в с. Царимир.",
+        "research_goal": "Търсене на паспорт, координати и литоложка колона.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C037",
+        "title": "ТК1 и ТК2 - ПИ 59080.100.28, Първомай",
+        "settlement": "Първомай",
+        "municipality": "Първомай",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://earbd.bg/Obyavleniya_mesets_May_2021-p1979",
+        "discovery_basis": "Официално документирани два тръбни кладенеца ТК1 и ТК2.",
+        "research_goal": "Намиране на дълбочини и литоложки профили.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C038",
+        "title": "Тръбен кладенец - ПИ 56784.551.38, Пловдив",
+        "settlement": "Пловдив",
+        "municipality": "Пловдив",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://earbd.bg/Obyavleniya_mesets_May_2021-p1979",
+        "discovery_basis": "Официално обявление за един тръбен кладенец.",
+        "research_goal": "Проверка за сондажен паспорт, дълбочина, литология и водно ниво.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C039",
+        "title": "Тръбен кладенец - ПИ 56784.539.282, Пловдив",
+        "settlement": "Пловдив",
+        "municipality": "Пловдив",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://earbd.bg/Obyavleniya_mesets_May_2021-p1979",
+        "discovery_basis": "Съществуващ тръбен кладенец.",
+        "research_goal": "Проверка за дълбочина, конструкция и литоложка колона.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C040",
+        "title": "Нов тръбен кладенец - УПИ VII-661, Калояново",
+        "settlement": "Калояново",
+        "municipality": "Калояново",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://earbd.bg/Obyavleniya_mesets_May_2021-p1979",
+        "discovery_basis": "Официална процедура за нов тръбен кладенец.",
+        "research_goal": "Намиране на проектна дълбочина и фактически сондажен разрез при наличие.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C041",
+        "title": "Шахтов кладенец - ПИ 47295.124.478, Марково",
+        "settlement": "Марково",
+        "municipality": "Родопи",
+        "source_authority": "Басейнова дирекция Източнобеломорски район",
+        "source_url": "https://earbd.bg/Obyavleniya_mesets_May_2021-p1979",
+        "discovery_basis": "Официално документиран шахтов кладенец.",
+        "research_goal": "Проверка дали документацията съдържа плитък геоложки разрез.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C042",
+        "title": "Мониторингов сондаж №8 BG3G000000QMP082 - Раковски",
+        "settlement": "Раковски",
+        "municipality": "Раковски",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/godishni_dokladi/god_2017.pdf",
+        "discovery_basis": "Официален мониторингов сондаж №8.",
+        "research_goal": "Търсене на паспорт, координати, дълбочина и литоложка колона.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C043",
+        "title": "Мониторингов тръбен кладенец BG3G000000QMP215 - Момино село",
+        "settlement": "Момино село",
+        "municipality": "Раковски",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/godishni_dokladi/god_2017.pdf",
+        "discovery_basis": "Официален мониторингов тръбен кладенец.",
+        "research_goal": "Търсене на паспорт, координати, дълбочина и литология.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C044",
+        "title": "ТК1 Божидара-Биофрукт BG3G000000NMP218 - Момино село",
+        "settlement": "Момино село",
+        "municipality": "Раковски",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/godishni_dokladi/god_2017.pdf",
+        "discovery_basis": "Официален мониторингов тръбен кладенец ТК1.",
+        "research_goal": "Търсене на сондажен паспорт, дълбочина и литоложка колона.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C045",
+        "title": "Тръбен кладенец 2 BG3G000000NMP217 - Момино село",
+        "settlement": "Момино село",
+        "municipality": "Раковски",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/godishni_dokladi/god_2017.pdf",
+        "discovery_basis": "Официален мониторингов тръбен кладенец 2.",
+        "research_goal": "Търсене на паспорт, дълбочина и литоложки разрез.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C046",
+        "title": "Тръбен кладенец 2 BG3G000000QMP216 - Раковски",
+        "settlement": "Раковски",
+        "municipality": "Раковски",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/godishni_dokladi/god_2017.pdf",
+        "discovery_basis": "Официален мониторингов тръбен кладенец 2.",
+        "research_goal": "Търсене на паспорт, дълбочина и литоложка колона.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C047",
+        "title": "ТК1 Гард Инвест BG3G000000NMP219 - Раковски",
+        "settlement": "Раковски",
+        "municipality": "Раковски",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/godishni_dokladi/god_2017.pdf",
+        "discovery_basis": "Официален мониторингов тръбен кладенец.",
+        "research_goal": "Търсене на сондажен паспорт и литология.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C048",
+        "title": "Мониторингов сондаж BG3G00APRQPMP149 - Стряма",
+        "settlement": "Стряма",
+        "municipality": "Раковски",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/godishni_dokladi/god_2017.pdf",
+        "discovery_basis": "Официален мониторингов сондаж.",
+        "research_goal": "Търсене на паспорт, координати, дълбочина и литология.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C049",
+        "title": "Мониторингов сондаж BG3G000000NMP164 - Стряма",
+        "settlement": "Стряма",
+        "municipality": "Раковски",
+        "source_authority": "РИОСВ - Пловдив",
+        "source_url": "https://plovdiv.riew.gov.bg/files/godishni_dokladi/god_2017.pdf",
+        "discovery_basis": "Официален мониторингов сондаж.",
+        "research_goal": "Търсене на паспорт, дълбочина и литоложка колона.",
+        "status": "TO_RESEARCH"
+      },
+      {
+        "candidate_id": "PLD-C050",
+        "title": "Сондаж ПС-2 BG3G00000N2MP067 - Борец",
+        "settlement": "Борец",
+        "municipality": "Брезово",
+        "source_authority": "МОСВ - национален мониторингов доклад",
+        "source_url": "National_report_art8WFD-Bulgaria.pdf",
+        "discovery_basis": "Отделен мониторингов сондаж ПС-2 в землището на с. Борец, код BG3G00000N2MP067, документирана дълбочина 38.9 m и координати 42°19'56\" / 24°56'01\".",
+        "research_goal": "Търсене на първичен паспорт/сондажен дневник и литоложка колона.",
+        "status": "TO_RESEARCH"
+      }
+    ],
+    "searched_batches": [
+      {
+        "batch": 1,
+        "date": "2026-10-04",
+        "focus": [
+          "РИОСВ-Пловдив решения и ОВОС процедури",
+          "Марково",
+          "Белащица",
+          "Белозем",
+          "Калековец"
+        ],
+        "candidates_added": 7,
+        "note": "Discovery only. No candidate is treated as a verified lithological profile until the underlying document is opened and reviewed."
+      },
+      {
+        "batch": 2,
+        "date": "2026-10-04",
+        "focus": [
+          "РИОСВ-Пловдив 2026 decisions",
+          "РИОСВ-Пловдив 2025 decisions",
+          "РИОСВ-Пловдив historical OVOС archive",
+          "Пловдив",
+          "Родопи",
+          "Марица",
+          "Карлово",
+          "Калояново"
+        ],
+        "candidates_added": 18,
+        "note": "Candidate discovery only. Projected well depth is not treated as a lithological interval."
+      },
+      {
+        "batch": 3,
+        "date": "2026-10-04",
+        "focus": [
+          "Куклен",
+          "Садово",
+          "Стамболийски",
+          "Кричим",
+          "Брезово",
+          "Сопот",
+          "Съединение",
+          "Пловдив",
+          "Калояново",
+          "Раковски",
+          "Първомай",
+          "monitoring boreholes",
+          "official groundwater abstraction wells"
+        ],
+        "candidates_added": 24,
+        "note": "Discovery only. Borehole existence, construction, casing, open hole and filter intervals are not treated as lithology or proven inflow. Underlying passports/logs must be retrieved and reviewed before lithological use."
+      }
+    ],
+    "discovery_closed": false
+  },
+  "extraction": {
+    "reviewed": 8,
+    "valid_lithology": 11,
+    "rejected": 0,
+    "unresolved": 19,
+    "area_geology_context": 1,
+    "valid_partial_lithology": 1
+  },
+  "verified_lithology_profiles": [
+    {
+      "profile_id": "PLD-LITH-001",
+      "source_id": "PLD-S006",
+      "settlement": "Марково",
+      "municipality": "Родопи",
+      "oblast": "Пловдив",
+      "site": "ПИ 47295.85.6, местност Витрогона",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "borehole_type": "exploratory_core_borehole",
+      "drilled_depth_m": 20,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 0.4,
+          "description": "Растително-почвен слой"
+        },
+        {
+          "from_m": 0.4,
+          "to_m": 7.6,
+          "description": "Жълтокафява до червенокафява песъчлива глина с прослойки от разнозърнест пясък и включения от мраморни късове"
+        },
+        {
+          "from_m": 7.6,
+          "to_m": 20,
+          "description": "Късове мраморна брекча с прослойки от плътна червенокафява глина; редки късове светлозелени до сивозелени изветряли метасерпентинити"
+        }
+      ],
+      "groundwater": {
+        "documented_level_m": 4.3,
+        "level_type": "reached_and_subsequently_observed",
+        "note": "Нивото е достигнато и впоследствие установено на същата дълбочина под терена."
+      },
+      "construction_context": {
+        "exploratory_filter_interval_m": "4-20",
+        "planned_exploitation_filter_interval_m": "4-20",
+        "note": "Филтровият интервал е конструктивна информация и не се третира като доказан водоприток."
+      },
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-002",
+      "source_id": "PLD-S019",
+      "settlement": "Леново",
+      "municipality": "Асеновград",
+      "oblast": "Пловдив",
+      "borehole_name": "Сондаж №12",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "borehole_type": "mineral_water_borehole",
+      "drilled_year": 1977,
+      "drilled_depth_m": 180,
+      "terrain_elevation_m": 292.84,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 4,
+          "description": "Чакълесто-песъчлив слой",
+          "stratigraphy": "aQh"
+        },
+        {
+          "from_m": 4,
+          "to_m": 15,
+          "description": "Чакъли и валуни от андезити",
+          "stratigraphy": "ahN1-2"
+        },
+        {
+          "from_m": 15,
+          "to_m": 18,
+          "description": "Песъчливи глини",
+          "stratigraphy": "ahN1-2"
+        },
+        {
+          "from_m": 18,
+          "to_m": 180,
+          "description": "Брекчоконгломерати — късове от гранити, андезити и гнайси с глинесто-песъчлива спойка; напукани, с карбонатни налепи по пукнатините",
+          "stratigraphy": "2Pg23"
+        }
+      ],
+      "documented_water_saturated_intervals": [
+        {
+          "from_m": 110,
+          "to_m": 130,
+          "evidence": "explicit_source_statement"
+        },
+        {
+          "from_m": 170,
+          "to_m": 178,
+          "evidence": "explicit_source_statement"
+        }
+      ],
+      "construction_context": {
+        "original": [
+          "0.00-14.00 m: metal casing Ø146 mm, cemented",
+          "0.00-108.00 m: metal casing Ø127 mm, cemented",
+          "108.00-180.00 m: Ø110 mm open hole"
+        ],
+        "modification_1999": "Additional metal filter column Ø110 mm in interval 95-180 m",
+        "note": "Construction/filter/open-hole intervals are preserved separately and are not treated as proven inflow intervals."
+      },
+      "mineral_followup": {
+        "collector_statement": "Палеогенски брекчоконгломерати в интервала 115-178 m",
+        "note": "Keep separate from lithology prediction and from the explicitly documented water-saturated intervals."
+      },
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-003",
+      "source_id": "PLD-S016",
+      "settlement": "Драгойново",
+      "municipality": "Първомай",
+      "oblast": "Пловдив",
+      "borehole_name": "Сондаж №9",
+      "borehole_type": "mineral_water_borehole",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "drilled_depth_m": 296,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 20,
+          "description": "Пясъци, чакъли и валуни",
+          "stratigraphy": "кватернер"
+        },
+        {
+          "from_m": 20,
+          "to_m": 75,
+          "description": "Редуване на глини и пясъци",
+          "stratigraphy": "плиоцен"
+        },
+        {
+          "from_m": 75,
+          "to_m": 133,
+          "description": "Глини и песъчливи глини с карбонатни налепи",
+          "stratigraphy": "палеоген-неоген"
+        },
+        {
+          "from_m": 133,
+          "to_m": 142,
+          "description": "Среднозърнести пясъчници и пясъци",
+          "stratigraphy": "палеоген-неоген"
+        },
+        {
+          "from_m": 142,
+          "to_m": 170,
+          "description": "Глини с въглищни чернилки",
+          "stratigraphy": "палеоген-неоген"
+        },
+        {
+          "from_m": 170,
+          "to_m": 296,
+          "description": "Редуване на глини, песъчливи глини и пясъчници",
+          "stratigraphy": "палеоген-неоген"
+        }
+      ],
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-004",
+      "source_id": "PLD-S020",
+      "settlement": "Красново",
+      "municipality": "Хисаря",
+      "oblast": "Пловдив",
+      "borehole_name": "Сондаж №1",
+      "borehole_type": "mineral_water_borehole",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "drilled_depth_m": 160,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 17,
+          "description": "Песъчливи глини, заглинени пясъци и чакъли; кватернерни алувиално-пролувиални материали"
+        },
+        {
+          "from_m": 17,
+          "to_m": 127,
+          "description": "Глини, заглинени пясъци и чакъли, по-сбити и плътни в дълбочина, споени под формата на пясъчници и конгломерати"
+        },
+        {
+          "from_m": 127,
+          "to_m": 160,
+          "description": "Гранити, процепени с пегматитови и аплитови жили, натрошени и разломени"
+        }
+      ],
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-005",
+      "source_id": "PLD-S021",
+      "settlement": "Климент",
+      "municipality": "Карлово",
+      "oblast": "Пловдив",
+      "borehole_name": "Сондаж №12",
+      "borehole_type": "mineral_water_borehole",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "drilled_depth_m": 764.35,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 4,
+          "description": "Делувиална песъчлива червенокафява глина"
+        },
+        {
+          "from_m": 4,
+          "to_m": 58.8,
+          "description": "Палеозойски едрозърнест гранит, напукан и изветрял"
+        },
+        {
+          "from_m": 58.8,
+          "to_m": 72.5,
+          "description": "Палеозойски гранит, напукан, слабо изветрял, левкократен"
+        },
+        {
+          "from_m": 72.5,
+          "to_m": 74.9,
+          "description": "Палеозойски гранит, богат на кварц, натрошен"
+        },
+        {
+          "from_m": 74.9,
+          "to_m": 92.6,
+          "description": "Палеозойски среднозърнест гранит, напукан, слабо изветрял"
+        },
+        {
+          "from_m": 92.6,
+          "to_m": 104.8,
+          "description": "Палеозойски гранит, средно напукан, слабо изветрял"
+        },
+        {
+          "from_m": 104.8,
+          "to_m": 115,
+          "description": "Палеозойски гранит, свеж и здрав"
+        },
+        {
+          "from_m": 115,
+          "to_m": 141.8,
+          "description": "Палеозойски гранит, свеж, здрав, слабо напукан"
+        },
+        {
+          "from_m": 141.8,
+          "to_m": 764.35,
+          "description": "Палеозойски гранит, свеж и здрав"
+        }
+      ],
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-006",
+      "source_id": "PLD-S022",
+      "settlement": "Старо Железаре",
+      "municipality": "Хисаря",
+      "oblast": "Пловдив",
+      "borehole_name": "Сондаж №2",
+      "borehole_type": "mineral_water_borehole",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "drilled_depth_m": 175.7,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 3.5,
+          "description": "Глини"
+        },
+        {
+          "from_m": 3.5,
+          "to_m": 175.7,
+          "description": "Гранити"
+        }
+      ],
+      "construction_context": {
+        "filter_slots_m": [
+          "80-90",
+          "155-163"
+        ],
+        "note": "Filter slots are construction data and are not treated as proven inflow intervals."
+      },
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-007",
+      "source_id": "PLD-S023",
+      "settlement": "Старо Железаре",
+      "municipality": "Хисаря",
+      "oblast": "Пловдив",
+      "borehole_name": "Сондаж №4",
+      "borehole_type": "mineral_water_borehole",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "drilled_depth_m": 418.95,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 2.5,
+          "description": "Глини"
+        },
+        {
+          "from_m": 2.5,
+          "to_m": 418.95,
+          "description": "Гранити"
+        }
+      ],
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-008",
+      "source_id": "PLD-S025",
+      "settlement": "Леново",
+      "municipality": "Асеновград",
+      "oblast": "Пловдив",
+      "borehole_name": "Сондаж №16",
+      "borehole_type": "mineral_water_borehole",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "drilled_depth_m": 1312,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 11.6,
+          "description": "Почвен слой и валуни"
+        },
+        {
+          "from_m": 11.6,
+          "to_m": 26.8,
+          "description": "Чакъли и валуни от андезити, гранит и кварц"
+        },
+        {
+          "from_m": 26.8,
+          "to_m": 503,
+          "description": "Брекчоконгломерати с късове от гранити, амфиболити и гнайси; песъчливо-глинеста и песъчливо-варовита спойка; напукани, с карбонат и хематит по пукнатините"
+        },
+        {
+          "from_m": 503.4,
+          "to_m": 736,
+          "description": "Биотитови шисти, силно напукани, намачкани и лимонитизирани"
+        },
+        {
+          "from_m": 736,
+          "to_m": 845,
+          "description": "Биотитови шисти, среднозърнести, слабо напукани"
+        },
+        {
+          "from_m": 845,
+          "to_m": 1312,
+          "description": "Гнайси с преход към гнайсошисти, дребно- до среднозърнести, напукани; на места гранат и пирит; разломно ориентирани пукнатини с карбонат"
+        }
+      ],
+      "source_gaps": [
+        {
+          "from_m": 503,
+          "to_m": 503.4,
+          "note": "Source interval gap preserved exactly; no lithology inferred."
+        }
+      ],
+      "mineral_context": {
+        "note": "Descriptions of collector behavior are retained separately from lithology and are not converted into individual inflow intervals."
+      },
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-009",
+      "source_id": "PLD-S028",
+      "settlement": "Баня",
+      "municipality": "Карлово",
+      "oblast": "Пловдив",
+      "borehole_name": "Българска роза",
+      "borehole_type": "mineral_water_borehole",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "drilled_depth_m": 64,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 42,
+          "description": "Чакъли и валуни с пясъчен запълнител"
+        },
+        {
+          "from_m": 42,
+          "to_m": 64,
+          "description": "Среднозърнести гранити, напукани и окарстени"
+        }
+      ],
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-010",
+      "source_id": "PLD-S018",
+      "settlement": "Асеновград",
+      "municipality": "Асеновград",
+      "oblast": "Пловдив",
+      "borehole_name": "Сондаж №1",
+      "borehole_type": "mineral_water_borehole",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "drilled_year": 1969,
+      "drilled_depth_m": 655.6,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 365,
+          "description": "Глини, пясъци, чакъли и валуни"
+        },
+        {
+          "from_m": 365,
+          "to_m": 369.5,
+          "description": "Мраморен блок"
+        },
+        {
+          "from_m": 369.5,
+          "to_m": 386,
+          "description": "Алевролити"
+        },
+        {
+          "from_m": 386,
+          "to_m": 404,
+          "description": "Биотитови шисти, дребнозърнести, намачкани"
+        },
+        {
+          "from_m": 404,
+          "to_m": 598,
+          "description": "Мрамори, бели до сиви, дребнозърнести, силно напукани",
+          "structural_context": "Разлом 430.6-466.6 m"
+        },
+        {
+          "from_m": 598,
+          "to_m": 602.5,
+          "description": "Биотитови шисти, дребнозърнести, напукани"
+        },
+        {
+          "from_m": 602.5,
+          "to_m": 655.6,
+          "description": "Мрамори, тъмносиви, дребнозърнести, с прослойки от калкошисти"
+        }
+      ],
+      "construction_context": {
+        "casing": [
+          "0-326 m: steel casing Ø146 mm, cemented",
+          "326-406 m: steel casing Ø127 mm, cemented",
+          "406-464 m: steel casing Ø110 mm, cemented"
+        ],
+        "open_hole": "464-655.60 m",
+        "note": "Construction intervals are kept separate from proven water inflows."
+      },
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-011",
+      "source_id": "PLD-S026",
+      "settlement": "Асеновград",
+      "municipality": "Асеновград",
+      "oblast": "Пловдив",
+      "borehole_name": "Сондаж №6",
+      "borehole_type": "mineral_water_borehole",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "drilled_year": 1979,
+      "drilled_depth_m": 1204,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 110,
+          "description": "Пясъци, чакъли и валуни от гнайси и мрамори"
+        },
+        {
+          "from_m": 110,
+          "to_m": 170,
+          "description": "Кафяви песъчливи глини с валуни"
+        },
+        {
+          "from_m": 170,
+          "to_m": 226,
+          "description": "Валуни с глинести прослойки"
+        },
+        {
+          "from_m": 226,
+          "to_m": 252.3,
+          "description": "Брекчоконгломерати, пясъчници, окарстени шисти"
+        },
+        {
+          "from_m": 252.3,
+          "to_m": 366.3,
+          "description": "Биотитови шисти, дребнозърнести, окарстени, с пегматитови жили, на места променени"
+        },
+        {
+          "from_m": 366.3,
+          "to_m": 427,
+          "description": "Биотитови шисти",
+          "structural_context": "Разлом 379.50-427.00 m"
+        },
+        {
+          "from_m": 427.7,
+          "to_m": 680,
+          "description": "Двуслюдени и биотитови шисти, силно напукани, на места окварцени, хлоритизирани и серицитизирани",
+          "structural_context": "Разломи 478.0-486.0 m и 599.0-680.0 m"
+        },
+        {
+          "from_m": 680,
+          "to_m": 763,
+          "description": "Сиви дребнозърнести мрамори с пегматити",
+          "structural_context": "Пегматити 704-715 m; разлом 724.5-729.40 m"
+        },
+        {
+          "from_m": 763,
+          "to_m": 792,
+          "description": "Биотитови шисти и мрамори"
+        },
+        {
+          "from_m": 792,
+          "to_m": 864,
+          "description": "Сиви дребно- до среднозърнести мрамори"
+        },
+        {
+          "from_m": 864,
+          "to_m": 1044.5,
+          "description": "Биотитови шисти, среднозърнести, напукани, хлоритизирани по пукнатините, с мраморни прослойки"
+        },
+        {
+          "from_m": 1044.5,
+          "to_m": 1159,
+          "description": "Сиви среднозърнести мрамори, слабо лимонитизирани, с карбонатни налепи по пукнатините"
+        },
+        {
+          "from_m": 1159,
+          "to_m": 1204,
+          "description": "Биотитови шисти, среднозърнести, хлоритизирани, с маломощни мраморни прослойки"
+        }
+      ],
+      "source_gaps": [
+        {
+          "from_m": 427,
+          "to_m": 427.7,
+          "note": "Documentary interval gap preserved exactly; no lithology inferred."
+        }
+      ],
+      "construction_context": {
+        "casing": [
+          "0-86 m: steel casing Ø168 mm",
+          "0-473 m: steel casing Ø146 mm",
+          "0-753 m: steel casing Ø127 mm"
+        ],
+        "open_hole": "753-1204 m",
+        "note": "Construction/open-hole intervals are not treated as proven water inflows."
+      },
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-012",
+      "source_id": "PLD-S040",
+      "settlement": "Хисаря",
+      "municipality": "Хисаря",
+      "oblast": "Пловдив",
+      "borehole_name": "Сондаж №3",
+      "borehole_type": "mineral_water_borehole",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "drilled_year": 1962,
+      "drilled_depth_m": 322.0,
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 22.0,
+          "description": "Валуни и чакъли с глинесто-песъчлив запълнител"
+        },
+        {
+          "from_m": 22.0,
+          "to_m": 37.67,
+          "description": "Биотитов гранитогнайс, силно изветрял"
+        },
+        {
+          "from_m": 37.67,
+          "to_m": 156.0,
+          "description": "Редуване на гранитогнайс, слабо напукан и тектонски натрошен"
+        },
+        {
+          "from_m": 156.0,
+          "to_m": 181.0,
+          "description": "Гранит, здрав"
+        },
+        {
+          "from_m": 181.0,
+          "to_m": 254.0,
+          "description": "Гранитогнайс, напукан и на места натрошен"
+        },
+        {
+          "from_m": 254.0,
+          "to_m": 299.0,
+          "description": "Гранит, силно напукан"
+        },
+        {
+          "from_m": 299.0,
+          "to_m": 312.0,
+          "description": "Гранит, тектонски стрита зона"
+        },
+        {
+          "from_m": 312.0,
+          "to_m": 322.0,
+          "description": "Гнайс с кварцови жили, тектонски стрита зона"
+        }
+      ],
+      "construction_context": {
+        "casing": [
+          "0-28.85 m: casing Ø160 mm, cemented"
+        ],
+        "open_hole": [
+          "28.85-205.50 m: drilled Ø130 mm, uncased",
+          "205.50-322.00 m: drilled Ø110 mm, uncased"
+        ],
+        "note": "Construction/open-hole intervals are kept separate from lithology and are not treated as proven water-inflow intervals."
+      },
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-013",
+      "source_id": "PLD-S041",
+      "settlement": "Хисаря",
+      "municipality": "Хисаря",
+      "oblast": "Пловдив",
+      "borehole_name": "Сондаж №5",
+      "borehole_type": "mineral_water_borehole",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "drilled_depth_m": 520.0,
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 1.4,
+          "description": "Почвен слой"
+        },
+        {
+          "from_m": 1.4,
+          "to_m": 9.0,
+          "description": "Гранит-порфир, изветрял"
+        },
+        {
+          "from_m": 9.0,
+          "to_m": 14.0,
+          "description": "Напълно променена масивна скала"
+        },
+        {
+          "from_m": 14.0,
+          "to_m": 99.0,
+          "description": "Гранит, слабо напукан"
+        },
+        {
+          "from_m": 99.0,
+          "to_m": 160.0,
+          "description": "Гранит, тъмносив, средно- до едрозърнест"
+        },
+        {
+          "from_m": 160.0,
+          "to_m": 346.0,
+          "description": "Гранит, на места доста напукан"
+        },
+        {
+          "from_m": 346.0,
+          "to_m": 520.0,
+          "description": "Гранодиорити, здрави, само в отделни участъци напукани"
+        }
+      ],
+      "construction_context": {
+        "casing": [
+          "0-31.10 m: casing Ø146 mm, cemented"
+        ],
+        "open_hole": "31.10-520.00 m: drilled Ø130 mm, uncased",
+        "note": "Construction/open-hole intervals are kept separate from lithology and are not treated as proven water-inflow intervals."
+      },
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "PLD-LITH-014",
+      "source_id": "PLD-S042",
+      "settlement": "Нареченски бани",
+      "municipality": "Асеновград",
+      "oblast": "Пловдив",
+      "borehole_name": "Сондаж №5",
+      "borehole_type": "mineral_water_borehole",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "drilled_year": 1963,
+      "drilled_depth_m": 31.4,
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 8.4,
+          "description": "Травертинови отложения"
+        },
+        {
+          "from_m": 8.4,
+          "to_m": 15.4,
+          "description": "Гнайси, силно натрошени"
+        },
+        {
+          "from_m": 15.4,
+          "to_m": 19.0,
+          "description": "Тектонска стрита зона — сивозелени глини"
+        },
+        {
+          "from_m": 19.0,
+          "to_m": 29.0,
+          "description": "Гнайси, силно напукани"
+        },
+        {
+          "from_m": 29.0,
+          "to_m": 31.4,
+          "description": "Гнайси с кварцови жилки"
+        }
+      ],
+      "status": "VALID_LITHOLOGY"
+    }
+  ],
+  "partial_lithology_profiles": [
+    {
+      "profile_id": "PLD-LITH-P001",
+      "source_id": "PLD-S014",
+      "settlement": "Пловдив",
+      "municipality": "Пловдив",
+      "oblast": "Пловдив",
+      "site": "ПИ 56784.539.106",
+      "evidence_type": "DIRECT_DOCUMENTED_LOCAL_WELL_PARTIAL_SECTION",
+      "status": "VALID_PARTIAL_LITHOLOGY",
+      "well_depth_m": 20,
+      "coordinates": {
+        "latitude": 42.1210278,
+        "longitude": 24.7812222,
+        "source_text": "N 42°07'15.7'' E 24°46'52.4''",
+        "coordinate_status": "DOCUMENTED_EXACT"
+      },
+      "groundwater": {
+        "documented_level_m": 4,
+        "projected_fluctuation_m": 0.5,
+        "note": "Document states groundwater level at 4.0 m during a wet period."
+      },
+      "documented_lithology": [
+        {
+          "from_m": null,
+          "to_m": 16.5,
+          "description": "Над водоносния пласт са установени глини и дребнозърнести заглинени пясъци.",
+          "interval_status": "UPPER_BOUNDARIES_NOT_DOCUMENTED"
+        },
+        {
+          "from_m": 16.5,
+          "to_m": 19.5,
+          "description": "Едрозърнест пясък с дребен чакъл.",
+          "interval_status": "EXACT_DOCUMENTED_INTERVAL",
+          "hydrogeological_role": "documented_aquifer_layer"
+        }
+      ],
+      "limitations": [
+        "Exact boundaries between the clay and fine-grained clayey-sand units above 16.50 m are not given.",
+        "Do not fabricate a complete 0-16.50 m lithological subdivision.",
+        "Regional groundwater-body descriptions are context only."
+      ]
+    }
+  ],
+  "area_geology_contexts": [
+    {
+      "context_id": "PLD-AREA-001",
+      "source_id": "PLD-S015",
+      "area": "Находище Щъркелите",
+      "settlements": [
+        "Костиево",
+        "Цалапица"
+      ],
+      "oblast": "Пловдив",
+      "evidence_type": "DOCUMENTED_DEPOSIT_GEOLOGY_FROM_PITS_AND_EXPLORATION",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "generalized_section": [
+        {
+          "unit": "Откривка",
+          "thickness_m_max": 0.8,
+          "description": "Песъкливо-глинест почвен слой"
+        },
+        {
+          "unit": "Горен пясъчен хоризонт",
+          "thickness_m_min": 3.6,
+          "thickness_m_max": 4.8,
+          "thickness_m_mean": 4.2,
+          "description": "Дребно- до едрозърнести пясъци с глинесто-алевритови частици, редки дребни чакъли и прослойки/лещи от песъчливи глини"
+        },
+        {
+          "unit": "Долен чакълов хоризонт",
+          "description": "Дребно- до среднокъсови чакъли, примесени с глинесто-алевритови частици",
+          "top_relation": "Под горния пясъчен хоризонт"
+        }
+      ],
+      "observations": {
+        "sand_observed_in_all_pits_to_m": 5.2,
+        "geometry": "пластообразна форма, хоризонтално залягане"
+      },
+      "limitations": [
+        "This is an area/deposit geological model, not an individual borehole column.",
+        "Do not assign these generalized thicknesses to a specific coordinate without direct evidence."
+      ]
+    },
+    {
+      "context_id": "PLD-AREA-002",
+      "municipality": "Калояново",
+      "settlement": "Дълго поле",
+      "site": "Находище Инджова върба-3",
+      "source_authority": "РИОСВ - Пловдив",
+      "source_url": "https://plovdiv.riosv.com/files/_documents/DOVOS_Indj_vurba_Holcim.pdf",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "evidence_type": "GENERALIZED_SECTION_FROM_EXPLORATION_BOREHOLES",
+      "individual_borehole_log": false,
+      "generalized_section": [
+        {
+          "position": "upper",
+          "description": "Почвен слой и песъчливи глини",
+          "average_thickness_m": 2.2
+        },
+        {
+          "position": "middle",
+          "description": "Пясъци, чакъли и гравии",
+          "average_thickness_m": 11.2,
+          "note": "В два геологопроучвателни сондажа са наблюдавани лещи от песъчливи глини с дебелина под 2 m."
+        },
+        {
+          "position": "lower",
+          "description": "Глинести и глинесто-песъчливи отложения",
+          "role": "documented_aquitard_below_productive_layer"
+        }
+      ],
+      "groundwater_context": {
+        "average_groundwater_level_m_bgs": "4-5",
+        "note": "Средно водно ниво по проучвателните сондажни изработки."
+      },
+      "regional_hydrogeology": {
+        "shallow_quaternary_aquifer_to_approx_m": 15,
+        "underlying_unit": "глини - водоупор",
+        "deeper_unit": "напорни водоносни пластове на Ахматовската свита, Неоген",
+        "note": "Regional/hydrogeological context only; not an individual borehole inflow profile."
+      },
+      "research_note": "Derived from documented geological exploration boreholes. Average thicknesses must not be presented as exact intervals for a specific borehole."
+    }
+  ],
+  "discovery_closed": true,
+  "external_lithology_leads": [
+    {
+      "lead_id": "PLD-LEAD-MARITSA-001",
+      "municipality": "Марица",
+      "settlements": [
+        "Скутаре",
+        "Труд"
+      ],
+      "title": "Архивни инженерно-геоложки проучвания за жп участъка Тракия-Скутаре",
+      "source_authority": "ДП НКЖИ / архив ЖПС Пловдив",
+      "source_url": "https://www.rail-infra.bg/upload/216/Plan_okolna_sreda.pdf",
+      "evidence": "В официалния документ е посочено, че в архивите на ЖПС Пловдив се съхраняват инженерно-геоложки проучвания от 1984 г. за участъка Тракия-Скутаре.",
+      "research_goal": "Намиране на оригиналния инженерно-геоложки доклад и сондажните колонки.",
+      "status": "SOURCE_LEAD"
+    },
+    {
+      "lead_id": "PLD-LEAD-MARITSA-002",
+      "municipality": "Марица",
+      "settlements": [
+        "Рогош",
+        "Скутаре"
+      ],
+      "title": "Инженерно-геоложки и хидрогеоложки проучвания за ВиК Рогош-Скутаре",
+      "source_authority": "ВиК ЕООД / обществена поръчка",
+      "source_url": "https://bg.openprocurements.com/tender/2024-inzhenering-proektirane-avtorski-nadzor-i-stroitelstvo-na-rekonstruktsiia-i-doizgrazhdane-na-v-/",
+      "evidence": "Проектът изрично включва част инженерно-геоложки и хидрогеоложки проучвания.",
+      "research_goal": "Намиране на работния ИГ доклад и сондажните колонки.",
+      "status": "SOURCE_LEAD"
+    },
+    {
+      "lead_id": "PLD-LEAD-MARITSA-003",
+      "municipality": "Марица",
+      "settlements": [
+        "Костиево"
+      ],
+      "title": "Пълни инженерно-геоложки проучвания при Костиево за трасе Пловдив-Смолян-Рудозем",
+      "source_authority": "АПИ / проектна документация",
+      "source_url": "https://www.marica.bg/region/smolqn/vazlagat-proektirane-na-100-km-alternativno-skorostno-trase-plovdiv-smolqn-rudozem",
+      "evidence": "Проектът започва при Костиево и предвижда пълни инженерно-геоложки проучвания.",
+      "research_goal": "Намиране на разширения идеен проект и приложенията със сондажни колонки.",
+      "status": "SOURCE_LEAD"
+    },
+    {
+      "lead_id": "PLD-LEAD-BREZOVO-001",
+      "oblast": "Пловдив",
+      "municipality": "Брезово",
+      "settlement": "Свежен",
+      "title": "Exploratory groundwater borehole documented in Kolev et al. (2023)",
+      "source_authority": "Geological Institute, Bulgarian Academy of Sciences / Bulgarian Geological Society",
+      "source_type": "scientific_article_primary_report_lead",
+      "source_url": "https://doi.org/10.52215/rev.bgs.2023.84.3.283",
+      "reported_depth_m": 150,
+      "reported_yield_ls": 1.5,
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "note": "Scientific article confirms that an exploratory borehole was drilled to 150 m and groundwater was encountered. The published article does not provide depth-resolved lithological intervals. The underlying geological/hydrogeological drilling report or borehole log must be retrieved before creating a verified lithology profile.",
+      "research_provenance": {
+        "commissioned_by": "Община Брезово",
+        "research_institution": "Геологически институт при Българската академия на науките",
+        "published_scientific_result": "Kolev et al. (2023), Review of the Bulgarian Geological Society 84(3):283-286",
+        "doi": "10.52215/rev.bgs.2023.84.3.283",
+        "note": "The municipality commissioned hydrogeological investigations by the Geological Institute at BAS. The published scientific paper confirms subsequent exploratory drilling to 150 m at Svezhen, Rozovets and Chehlare."
+      },
+      "primary_report_access": {
+        "status": "PRIMARY_REPORT_NOT_FOUND_ON_PUBLIC_WEB",
+        "priority_archive_targets": [
+          "Геологически институт при БАН - документация и отчети по ННП / Споразумение Д01-322/18.12.2019",
+          "Община Брезово"
+        ],
+        "requested_materials": [
+          "сондажен дневник",
+          "геолого-литоложка колонка",
+          "хидрогеоложки доклад",
+          "геоложки доклад",
+          "протокол от проучвателното сондиране",
+          "координати на сондажа"
+        ]
+      },
+      "scientific_program_context": {
+        "program": "Национална научна програма „Опазване на околната среда и намаляване на риска от неблагоприятни явления и природни бедствия“",
+        "council_of_ministers_decision": "№577/17.08.2018",
+        "funding_authority": "Министерство на образованието и науката",
+        "agreement": "Д01-322/18.12.2019",
+        "research_institution": "Геологически институт при Българската академия на науките"
+      },
+      "published_article_evidence": {
+        "title": "Defining of prospective areas for the localization of groundwater in fractured massifs (on the example of the Municipality of Brezovo, Plovdiv Region)",
+        "year": 2023,
+        "doi": "10.52215/rev.bgs.2023.84.3.283",
+        "authors": [
+          "Sava Kolev",
+          "Peter Gerginov",
+          "Aleksey Benderev",
+          "Aglaida Toteva",
+          "Simeon Valchev",
+          "Mila Trayanova-Koleva"
+        ],
+        "key_documentary_note": "The publication explicitly refers to unpublished geological and hydrogeological reports and confirms exploratory drilling to 150 m at Svezhen, Rozovets and Chehlare."
+      }
+    },
+    {
+      "lead_id": "PLD-LEAD-BREZOVO-002",
+      "oblast": "Пловдив",
+      "municipality": "Брезово",
+      "settlement": "Розовец",
+      "title": "Exploratory groundwater borehole documented in Kolev et al. (2023)",
+      "source_authority": "Geological Institute, Bulgarian Academy of Sciences / Bulgarian Geological Society",
+      "source_type": "scientific_article_primary_report_lead",
+      "source_url": "https://doi.org/10.52215/rev.bgs.2023.84.3.283",
+      "reported_depth_m": 150,
+      "reported_yield_ls": 2.0,
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "note": "Scientific article confirms that an exploratory borehole was drilled to 150 m and groundwater was encountered. The published article does not provide depth-resolved lithological intervals. The underlying geological/hydrogeological drilling report or borehole log must be retrieved before creating a verified lithology profile.",
+      "research_provenance": {
+        "commissioned_by": "Община Брезово",
+        "research_institution": "Геологически институт при Българската академия на науките",
+        "published_scientific_result": "Kolev et al. (2023), Review of the Bulgarian Geological Society 84(3):283-286",
+        "doi": "10.52215/rev.bgs.2023.84.3.283",
+        "note": "The municipality commissioned hydrogeological investigations by the Geological Institute at BAS. The published scientific paper confirms subsequent exploratory drilling to 150 m at Svezhen, Rozovets and Chehlare."
+      },
+      "primary_report_access": {
+        "status": "PRIMARY_REPORT_NOT_FOUND_ON_PUBLIC_WEB",
+        "priority_archive_targets": [
+          "Геологически институт при БАН - документация и отчети по ННП / Споразумение Д01-322/18.12.2019",
+          "Община Брезово"
+        ],
+        "requested_materials": [
+          "сондажен дневник",
+          "геолого-литоложка колонка",
+          "хидрогеоложки доклад",
+          "геоложки доклад",
+          "протокол от проучвателното сондиране",
+          "координати на сондажа"
+        ]
+      },
+      "scientific_program_context": {
+        "program": "Национална научна програма „Опазване на околната среда и намаляване на риска от неблагоприятни явления и природни бедствия“",
+        "council_of_ministers_decision": "№577/17.08.2018",
+        "funding_authority": "Министерство на образованието и науката",
+        "agreement": "Д01-322/18.12.2019",
+        "research_institution": "Геологически институт при Българската академия на науките"
+      },
+      "published_article_evidence": {
+        "title": "Defining of prospective areas for the localization of groundwater in fractured massifs (on the example of the Municipality of Brezovo, Plovdiv Region)",
+        "year": 2023,
+        "doi": "10.52215/rev.bgs.2023.84.3.283",
+        "authors": [
+          "Sava Kolev",
+          "Peter Gerginov",
+          "Aleksey Benderev",
+          "Aglaida Toteva",
+          "Simeon Valchev",
+          "Mila Trayanova-Koleva"
+        ],
+        "key_documentary_note": "The publication explicitly refers to unpublished geological and hydrogeological reports and confirms exploratory drilling to 150 m at Svezhen, Rozovets and Chehlare."
+      }
+    },
+    {
+      "lead_id": "PLD-LEAD-BREZOVO-003",
+      "oblast": "Пловдив",
+      "municipality": "Брезово",
+      "settlement": "Чехларе",
+      "title": "Exploratory groundwater borehole documented in Kolev et al. (2023)",
+      "source_authority": "Geological Institute, Bulgarian Academy of Sciences / Bulgarian Geological Society",
+      "source_type": "scientific_article_primary_report_lead",
+      "source_url": "https://doi.org/10.52215/rev.bgs.2023.84.3.283",
+      "reported_depth_m": 150,
+      "reported_yield_ls": 0.4,
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "note": "Scientific article confirms that an exploratory borehole was drilled to 150 m and groundwater was encountered. The published article does not provide depth-resolved lithological intervals. The underlying geological/hydrogeological drilling report or borehole log must be retrieved before creating a verified lithology profile.",
+      "research_provenance": {
+        "commissioned_by": "Община Брезово",
+        "research_institution": "Геологически институт при Българската академия на науките",
+        "published_scientific_result": "Kolev et al. (2023), Review of the Bulgarian Geological Society 84(3):283-286",
+        "doi": "10.52215/rev.bgs.2023.84.3.283",
+        "note": "The municipality commissioned hydrogeological investigations by the Geological Institute at BAS. The published scientific paper confirms subsequent exploratory drilling to 150 m at Svezhen, Rozovets and Chehlare."
+      },
+      "primary_report_access": {
+        "status": "PRIMARY_REPORT_NOT_FOUND_ON_PUBLIC_WEB",
+        "priority_archive_targets": [
+          "Геологически институт при БАН - документация и отчети по ННП / Споразумение Д01-322/18.12.2019",
+          "Община Брезово"
+        ],
+        "requested_materials": [
+          "сондажен дневник",
+          "геолого-литоложка колонка",
+          "хидрогеоложки доклад",
+          "геоложки доклад",
+          "протокол от проучвателното сондиране",
+          "координати на сондажа"
+        ]
+      },
+      "later_water_permit_context": {
+        "authority": "Басейнова дирекция Източнобеломорски район",
+        "year": 2025,
+        "property_id": "81308.34.74",
+        "planned_depth_m": 150.0,
+        "terrain_elevation_m": 420.0,
+        "coordinates": {
+          "latitude_dms": "42°25'11.82\"",
+          "longitude_dms": "25°09'14.51\""
+        },
+        "note": "Later public water-permit documentation confirms a planned 150 m tube well at Chehlare. This is construction/permitting context only and is not treated as lithology."
+      },
+      "scientific_program_context": {
+        "program": "Национална научна програма „Опазване на околната среда и намаляване на риска от неблагоприятни явления и природни бедствия“",
+        "council_of_ministers_decision": "№577/17.08.2018",
+        "funding_authority": "Министерство на образованието и науката",
+        "agreement": "Д01-322/18.12.2019",
+        "research_institution": "Геологически институт при Българската академия на науките"
+      },
+      "published_article_evidence": {
+        "title": "Defining of prospective areas for the localization of groundwater in fractured massifs (on the example of the Municipality of Brezovo, Plovdiv Region)",
+        "year": 2023,
+        "doi": "10.52215/rev.bgs.2023.84.3.283",
+        "authors": [
+          "Sava Kolev",
+          "Peter Gerginov",
+          "Aleksey Benderev",
+          "Aglaida Toteva",
+          "Simeon Valchev",
+          "Mila Trayanova-Koleva"
+        ],
+        "key_documentary_note": "The publication explicitly refers to unpublished geological and hydrogeological reports and confirms exploratory drilling to 150 m at Svezhen, Rozovets and Chehlare."
+      }
+    },
+    {
+      "lead_id": "PLD-LEAD-STAMBOLIYSKI-001",
+      "oblast": "Пловдив",
+      "municipality": "Стамболийски",
+      "settlement": "Куртово Конаре",
+      "title": "Проучвателни сондажи и геоложки доклад за находище „Куртово Конаре“",
+      "source_authority": "РИОСВ-Пловдив / МОСВ / документация по проучване и концесия на находище „Куртово Конаре“",
+      "source_type": "mineral_exploration_borehole_report_lead",
+      "source_urls": [
+        "https://natura2000.egov.bg/EsriBg.Natura.Public.Web.App/PublicDownloads/Auto/IE_Independance/94-%20%D0%9E%D0%A12009/94-%20%D0%9E%D0%A12009_IE_45.pdf",
+        "https://plovdiv.riew.gov.bg/files/_documents/dostap_pril_2_2025_1471.pdf",
+        "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/04f6443e-eecf-48b6-a0b8-ba267eb5c653"
+      ],
+      "documented_borehole_evidence": {
+        "planned_boreholes_count": 6,
+        "planned_total_drilling_m": 90,
+        "maximum_reported_exploration_depth_m": 71.9,
+        "commodity": "Мрамори",
+        "note": "Official exploration-stage documentation states that 6 exploration boreholes with total planned drilling of 90 linear metres formed part of the geological exploration program. Later official environmental documentation states that the marble body was traced by boreholes to 71.9 m depth."
+      },
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "note": "Official documentation confirms real mineral-exploration drilling at the Kurtovo Konare deposit and later states that the marble body was traced by boreholes to 71.9 m. However, the reviewed public documents do not provide individual borehole numbers with exact depth-resolved lithological intervals. The primary geological exploration report and borehole logs should be retrieved before creating verified lithology profiles.",
+      "concession_id": "D-000601",
+      "primary_report_access": {
+        "status": "PRIMARY_REPORT_NOT_PUBLICLY_AVAILABLE",
+        "concession_register_status": "National Concession Register D-000601 contains no published documents in the public concession file.",
+        "recommended_archive_target": "National Geological Fund / Ministry of Energy geological exploration archive for Kurtovo Konare"
+      }
+    },
+    {
+      "lead_id": "PLD-LEAD-KRICHIM-001",
+      "oblast": "Пловдив",
+      "municipality": "Кричим",
+      "settlement": "Кричим",
+      "title": "Инженерно-геоложко проучване с пробен сондаж в ПИ 39921.301.2",
+      "source_authority": "Община Кричим",
+      "source_type": "engineering_geological_report_lead",
+      "source_url": "https://www.krichim.bg/images/documents/obqvleniq/Obyavi2018/10/informacia_po_prilojenie_2_Krichim_Perushtica_21.11.2018.pdf",
+      "site_identifier": "ПИ 39921.301.2",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "note": "Official municipal environmental documentation states that an engineering-geological investigation was carried out for the site and shows a trial-borehole point on the property plan. The reviewed public document does not provide depth-resolved lithological intervals. The original engineering-geological report and borehole log must be retrieved before creating a verified lithology profile.",
+      "location": "местност Сух дол, гр. Кричим",
+      "confirmed_borehole": {
+        "type": "exploratory_tube_well",
+        "depth_m": 20.0,
+        "status": "BUILT",
+        "groundwater_body": "BG3G000000Q013",
+        "groundwater_body_name": "Порови води в Кватернер - Горнотракийска низина",
+        "note": "Official municipal and EARBD documents confirm that the exploratory tube well was actually constructed to 20 m."
+      },
+      "hydrogeological_report_evidence": {
+        "report_confirmed": true,
+        "report_title_generic": "Доклад за хидрогеоложко проучване",
+        "notification_reference": "РР-17-17/27.10.2017",
+        "eia_notification_reference": "ОВОС-1346/30.10.2017",
+        "water_abstraction_application": "РР-01-37/06.03.2018",
+        "permit_number": "31591195/30.08.2018",
+        "note": "Municipal documentation explicitly states that a hydrogeological investigation report was prepared after construction of the exploratory well."
+      },
+      "permit_context": {
+        "permit_number": "31591195/30.08.2018",
+        "well_depth_m": 20.0,
+        "maximum_allowable_drawdown_previous_m": 12.1,
+        "maximum_allowable_drawdown_revised_m": 5.8,
+        "authority": "Басейнова дирекция Източнобеломорски район"
+      },
+      "primary_report_access": {
+        "status": "PRIMARY_HYDROGEOLOGICAL_REPORT_NOT_FOUND_ON_PUBLIC_WEB",
+        "priority_archive_targets": [
+          "Община Кричим",
+          "Басейнова дирекция Източнобеломорски район"
+        ],
+        "requested_materials": [
+          "Доклад за хидрогеоложко проучване",
+          "сондажен дневник",
+          "геолого-литоложка колонка",
+          "конструкция на кладенеца",
+          "статично водно ниво",
+          "динамично водно ниво",
+          "опитно-филтрационни изследвания"
+        ]
+      },
+      "source_urls": [
+        "https://www.krichim.bg/images/novini/2018/06/150618_obyava.pdf",
+        "https://earbd.bg/files/File/Razreshitelni/Obyavlenia-syobshtenia/Obyavlenia/2022/03/11/KD-05-350.pdf"
+      ]
+    },
+    {
+      "lead_id": "PLD-LEAD-LAKI-001",
+      "settlement": "Джурково",
+      "title": "Първична геоложка и концесионна документация за находище „Джурково“",
+      "source_authority": "Министерство на енергетиката / Национален геоложки фонд / Министерски съвет",
+      "source_type": "mining_geological_archive_lead",
+      "source_urls": [
+        "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/b9d43f4f-2c16-4464-9d61-a90afc4a86a3",
+        "https://mdg-magazine.bg/wp-content/uploads/2022/11/Proceedings-VIII-Conference-Devin-2022web.pdf",
+        "https://www.mrrb.bg/static/media/ups/articles/attachments/9c601820f838fec4e00cb3332fab39d4.pdf"
+      ],
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "note": "Official and scientific sources confirm extensive geological exploration and mining documentation for the Dzhurkovo deposit. Reviewed public sources describe marble and gneiss host rocks and mine levels, but do not expose an individual depth-resolved exploration borehole lithological column. Primary geological fund records should be retrieved before lithological use.",
+      "oblast": "Пловдив",
+      "municipality": "Лъки",
+      "concession_context": {
+        "concession_id": "D-000384",
+        "deposit": "Джурково",
+        "commodity": "оловно-цинкови руди",
+        "authority": "Министерски съвет / Министерство на енергетиката",
+        "public_register": "Национален концесионен регистър",
+        "public_documents_available": true,
+        "note": "The National Concession Register contains the original concession contract and subsequent amendments. These documents confirm the mining concession but do not provide individual depth-resolved exploration borehole lithology."
+      },
+      "documented_geological_context": {
+        "rock_types": [
+          "гнайси",
+          "слюдени шисти",
+          "мрамори",
+          "пегматити"
+        ],
+        "mine_depth_context": {
+          "auxiliary_shaft": "ВШ-2",
+          "reaches_horizon": 322,
+          "reported_length_m": 450
+        },
+        "evidence_class": "MINE_GEOLOGY_CONTEXT_ONLY",
+        "note": "Published technical literature describes the lithological structure of the mine, but this is mine-scale geological context and is not converted into a borehole lithology profile."
+      },
+      "additional_engineering_geology_lead": {
+        "location": "с. Джурково",
+        "evidence": "National landslide documentation lists engineering-geological investigation (IGP) for landslide sites PDV 15.20883-02 and PDV 15.20883-03.",
+        "status": "UNDERLYING_IGP_NOT_PUBLICLY_EXTRACTED",
+        "note": "This may point to separate shallow engineering-geological boreholes unrelated to the mining concession. No lithological columns were available in the reviewed public table."
+      },
+      "primary_report_access": {
+        "status": "PRIMARY_BOREHOLE_LOG_NOT_FOUND_ON_PUBLIC_WEB",
+        "priority_archive_targets": [
+          "Национален геоложки фонд",
+          "Министерство на енергетиката",
+          "концесионно досие D-000384",
+          "Лъки Инвест - Джурково",
+          "архив на инженерно-геоложките проучвания за свлачищата в с. Джурково"
+        ],
+        "requested_materials": [
+          "проучвателни сондажни журнали",
+          "геолого-литоложки колонки",
+          "геоложки разрези",
+          "първичен геоложки отчет",
+          "сондажни координати и дълбочини"
+        ]
+      }
+    },
+    {
+      "lead_id": "PLD-LEAD-LAKI-002",
+      "settlement": "Лъки",
+      "title": "Проект за проучване на мраморен пласт, рудник „Говедарника“, хоризонт 1283",
+      "source_authority": "Документация на рудник „Говедарника“ / описана в съдебен акт",
+      "source_type": "mine_exploration_project_lead",
+      "source_url": "https://dela.bg/Acts/6632ab9d-b8fa-41e3-9ea2-f6e152b6ab9e",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "note": "A judicial document explicitly references a project for exploration of a marble layer south of meta-deposit 7 at horizon 1283 in the Govedarnika mine, including a separate mine-geological characteristics section. The underlying exploration project may contain detailed drilling or geological sections, but no individual borehole intervals are available in the reviewed public text.",
+      "oblast": "Пловдив",
+      "municipality": "Лъки",
+      "concession_context": {
+        "concession_id": "D-000085",
+        "deposit": "Говедарника (Дружба)",
+        "commodity": "оловно-цинкови руди",
+        "authority": "Министерски съвет / Министерство на енергетиката",
+        "public_register": "Национален концесионен регистър",
+        "public_documents_available": true,
+        "register_settlement": "Манастир",
+        "operational_document_land": "землище на с. Здравец",
+        "location_note": "The National Concession Register associates the concession with settlement Manastir, while RIEW-Smolyan operational inspection records describe mine Druzhba as located in the land of Zdravets. Both documentary forms are preserved rather than silently normalised."
+      },
+      "documented_geological_context": {
+        "deposit_type": "жилно оловно-цинково находище",
+        "known_exploration_reference": "Проект за проучване на мраморен пласт на юг от метазалеж 7, хоризонт 1283",
+        "evidence_class": "MINE_GEOLOGY_CONTEXT_ONLY",
+        "note": "Publicly identified mine-geological project evidence confirms detailed subsurface investigation, but the reviewed public materials do not expose individual exploration borehole lithological intervals."
+      },
+      "primary_report_access": {
+        "status": "PRIMARY_BOREHOLE_LOG_NOT_FOUND_ON_PUBLIC_WEB",
+        "priority_archive_targets": [
+          "Национален геоложки фонд",
+          "Министерство на енергетиката",
+          "концесионно досие D-000085",
+          "Лъки Инвест - Говедарника"
+        ],
+        "requested_materials": [
+          "проект за проучване на мраморен пласт",
+          "проучвателни сондажни журнали",
+          "геолого-литоложки колонки",
+          "минно-геоложки разрези",
+          "първичен геоложки отчет"
+        ]
+      },
+      "source_urls": [
+        "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/21309591-609a-447f-85ea-d0c6cbe06637"
+      ]
+    }
+  ],
+  "municipality_lithology_searches": [
+    {
+      "municipality": "Раковски",
+      "date": "2026-10-04",
+      "search_type": "internet_lithology_column_search",
+      "settlements_searched": [
+        "Раковски",
+        "Момино село",
+        "Стряма",
+        "Белозем",
+        "Шишманци",
+        "Болярино",
+        "Чалъкови"
+      ],
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "unresolved_strong_leads": 1,
+      "note": "No new locality-verified lithological column was found in the public web search. A scientific paper with a real 25 m borehole column was found, but the publication does not identify the site location, therefore it is not assigned to Rakovski municipality.",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN"
+    },
+    {
+      "municipality": "Садово",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "searched_settlements": [
+        "Садово",
+        "Катуница",
+        "Кочево",
+        "Поповица",
+        "Чешнегирово",
+        "Ахматово",
+        "Богданица",
+        "Болярци",
+        "Караджово",
+        "Милево",
+        "Моминско",
+        "Селци"
+      ],
+      "note": "Targeted internet search for borehole lithological columns, borehole logs and engineering-geological sections. Regional geological maps and general groundwater-body descriptions were not accepted as individual borehole lithology."
+    },
+    {
+      "municipality": "Калояново",
+      "date": "2026-10-04",
+      "verified_new_individual_columns": 0,
+      "generalized_exploration_sections": 1,
+      "status": "SEARCHED_GENERALIZED_BOREHOLE_SECTION_FOUND"
+    },
+    {
+      "municipality": "Карлово",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "existing_verified_profiles": [
+        "PLD-LITH-005",
+        "PLD-LITH-009"
+      ],
+      "strong_leads": [
+        {
+          "title": "ОВОС за район Розино-Слатина",
+          "source_authority": "РИОСВ - Пловдив",
+          "source_url": "https://plovdiv.riew.gov.bg/files/_documents/DOVOS_2018_Maritza.pdf",
+          "note": "Документът съдържа геоложки и литоложки описания за района Розино-Слатина, но при текущия интернет преглед не е потвърдена нова индивидуална сондажна колонка."
+        }
+      ],
+      "note": "Search focused on real lithological columns, borehole logs and engineering-geological sections, not on lists of wells."
+    },
+    {
+      "municipality": "Сопот",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "searched_settlements": [
+        "Сопот",
+        "Анево"
+      ],
+      "note": "Targeted internet search for real lithological columns, borehole logs, engineering-geological sections and hydrogeological drilling records. Official and public documents reviewed during the search provided hydrogeological and regional geological context, but no new locality-verified individual borehole lithological column with depth-resolved intervals was confirmed. General geological descriptions and commercial drilling pages were not accepted as borehole lithology."
+    },
+    {
+      "municipality": "Хисаря",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NEW_VERIFIED_COLUMNS_FOUND",
+      "verified_new_columns": 2,
+      "partial_columns": 0,
+      "existing_verified_profiles": [
+        "PLD-LITH-004",
+        "PLD-LITH-006",
+        "PLD-LITH-007"
+      ],
+      "new_verified_profiles": [
+        "PLD-LITH-012",
+        "PLD-LITH-013"
+      ],
+      "searched_settlements": [
+        "Хисаря",
+        "Красново",
+        "Старо Железаре"
+      ],
+      "note": "Targeted internet search for real lithological columns and borehole geological sections. Two new official depth-resolved individual lithological columns were verified for Hisarya: borehole No. 3 (322 m) and borehole No. 5 (520 m). Existing profiles for Krasnovo and Staro Zhelezare were not duplicated. Borehole construction and open-hole intervals remain separate from lithology and are not interpreted as proven water inflows."
+    },
+    {
+      "municipality": "Асеновград",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NEW_VERIFIED_COLUMNS_FOUND",
+      "verified_new_columns": 1,
+      "partial_columns": 0,
+      "existing_verified_profiles": [
+        "PLD-LITH-002",
+        "PLD-LITH-003",
+        "PLD-LITH-008",
+        "PLD-LITH-010",
+        "PLD-LITH-011"
+      ],
+      "new_verified_profiles": [
+        "PLD-LITH-014"
+      ],
+      "searched_settlements": [
+        "Асеновград",
+        "Нареченски бани",
+        "Бачково",
+        "Тополово",
+        "Червен",
+        "Конуш",
+        "Мулдава",
+        "Боянци",
+        "Избеглии",
+        "Югово",
+        "Добростан",
+        "Леново",
+        "Драгойново"
+      ],
+      "note": "Targeted internet search for real borehole lithological columns, geological logs, engineering-geological sections and official hydrogeological documents. One new locality-verified individual borehole lithological column was confirmed: borehole No. 5 at Narechenski bani, depth 31.40 m. Other public records identifying monitoring and mineral-water boreholes without lithological intervals were not converted into lithology profiles. Existing profiles for Asenovgrad, Lenovo and Dragoynovo were not duplicated."
+    },
+    {
+      "municipality": "Куклен",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "strong_leads": [
+        {
+          "title": "Инженерно-геоложки материал за свлачище PDV 42.40467-02, път Куклен-Гълъбово km 5+839",
+          "source_authority": "МРРБ / Геозащита Перник - Регистър на свлачищата",
+          "source_url": "https://gz-pernik.mrrb.government.bg/landslide/217/",
+          "document_reference": "IGO_PDV_Kuklen_PDV2113-km5+839_2020.pdf",
+          "location": "път PDV 2113 Куклен-Гълъбово при km 5+839, землище на с. Гълъбово",
+          "coordinates": {
+            "longitude": 24.737917,
+            "latitude": 42.022621,
+            "elevation_m": 645.0
+          },
+          "status": "SOURCE_DOCUMENT_TO_RETRIEVE",
+          "note": "Official landslide register confirms an engineering-geological document for the site. The underlying IGO attachment could not be reliably extracted during the current public-web review, therefore no borehole lithological intervals are inferred or recorded."
+        }
+      ],
+      "searched_settlements": [
+        "Куклен",
+        "Гълъбово",
+        "Добралък",
+        "Руен",
+        "Цар Калоян",
+        "Яврово"
+      ],
+      "note": "Targeted internet search for individual lithological columns, borehole logs, engineering-geological boreholes, landslide investigations and hydrogeological drilling records. Official sources confirm boreholes, monitoring points and engineering-geological investigations in the municipality, including the Kuklen-Galabovo landslide, but no new publicly extractable locality-verified individual borehole column with depth-resolved lithological intervals was confirmed. Borehole coordinates, construction, monitoring status and general geology were not treated as lithology."
+    },
+    {
+      "municipality": "Първомай",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "existing_verified_profiles": [
+        "PLD-LITH-003"
+      ],
+      "searched_settlements": [
+        "Първомай",
+        "Драгойново",
+        "Бяла река",
+        "Брягово",
+        "Буково",
+        "Градина",
+        "Дебър",
+        "Добри дол",
+        "Дълбок извор",
+        "Езерово",
+        "Искра",
+        "Караджалово",
+        "Крушево",
+        "Любеново",
+        "Поройна",
+        "Православен",
+        "Татарево",
+        "Виница",
+        "Воден"
+      ],
+      "regional_context": {
+        "status": "AREA_CONTEXT_NOT_INDIVIDUAL_BOREHOLE",
+        "note": "Published hydrogeological descriptions report thermal water in the Pervomay greenhouse area at approximately 330-380 m with temperature around 24 C. This is regional hydrogeological context and is not treated as an individual borehole lithological column."
+      },
+      "note": "Targeted internet search for real borehole lithological columns, geological logs, engineering-geological sections, official groundwater monitoring records and mineral-water documentation. The already verified Dragoynovo borehole No. 9 remains the only locality-verified depth-resolved lithological profile confirmed for the municipality in the current inventory. Monitoring boreholes at Pervomay and Pravoslaven and regional thermal-water depth information were not converted into lithological profiles because no individual depth-resolved lithological intervals were verified."
+    },
+    {
+      "municipality": "Брезово",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "strong_leads": [
+        "PLD-LEAD-BREZOVO-001",
+        "PLD-LEAD-BREZOVO-002",
+        "PLD-LEAD-BREZOVO-003"
+      ],
+      "monitoring_only": [
+        {
+          "settlement": "Борец",
+          "identifier": "BG3G000000QMP032",
+          "note": "Official groundwater monitoring borehole / pumping station borehole confirmed by EARBD. Publicly reviewed documents do not provide depth-resolved lithological intervals, therefore it is not treated as lithology."
+        }
+      ],
+      "searched_settlements": [
+        "Брезово",
+        "Бабек",
+        "Борец",
+        "Върбен",
+        "Дрангово",
+        "Зелениково",
+        "Златосел",
+        "Отец Кирилово",
+        "Пъдарско",
+        "Розовец",
+        "Свежен",
+        "Стрелци",
+        "Сърнегор",
+        "Тюркмен",
+        "Чехларе",
+        "Чоба"
+      ],
+      "note": "Targeted internet search for borehole lithological columns, engineering-geological logs, exploratory drilling records and hydrogeological reports. A 2023 peer-reviewed Geological Institute/Bulgarian Geological Society publication confirms three exploratory boreholes drilled to 150 m at Svezhen, Rozovets and Chehlare, but the article does not publish their depth-resolved lithological logs. These are retained as strong primary-document leads, not as verified lithology profiles. The Borets monitoring borehole is also confirmed, but monitoring status and borehole existence alone are not lithology."
+    },
+    {
+      "municipality": "Съединение",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "monitoring_and_construction_only": [
+        {
+          "settlement": "Любен",
+          "objects": [
+            "ПС Любен ТК-1",
+            "ПС Любен ТК-2"
+          ],
+          "source_authority": "Басейнова дирекция Източнобеломорски район",
+          "note": "Official register confirms groundwater abstraction boreholes, but no depth-resolved lithological intervals were found in the reviewed public document."
+        },
+        {
+          "settlement": "Церетелево",
+          "object": "groundwater monitoring point",
+          "source_authority": "ИАОС",
+          "note": "Monitoring point confirmed. Monitoring status alone is not treated as lithology."
+        },
+        {
+          "settlement": "Съединение",
+          "object": "тръбен кладенец - овцеферма",
+          "source_authority": "Басейнова дирекция Източнобеломорски район",
+          "groundwater_body": "BG3G00000NQ018",
+          "note": "Official sanitary protection zone confirms a tube well in Neogene-Quaternary groundwater body NQ018. No individual borehole lithological intervals were found."
+        }
+      ],
+      "searched_settlements": [
+        "Съединение",
+        "Голям Чардак",
+        "Драгомир",
+        "Любен",
+        "Малък Чардак",
+        "Найден Герово",
+        "Неделево",
+        "Правище",
+        "Царимир",
+        "Церетелево"
+      ],
+      "note": "Targeted internet search for real lithological columns, borehole logs, engineering-geological sections, groundwater abstraction records and monitoring boreholes. Official sources confirm multiple tube wells and groundwater monitoring points in the municipality, including Lyuben, Tseretelevo and Saedinenie, but no new locality-verified individual borehole lithological column with depth-resolved intervals was confirmed. Regional Neogene-Quaternary aquifer descriptions and borehole existence were not converted into lithology profiles."
+    },
+    {
+      "municipality": "Стамболийски",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "strong_leads": [
+        "PLD-LEAD-STAMBOLIYSKI-001"
+      ],
+      "monitoring_only": [
+        {
+          "settlement": "Куртово Конаре",
+          "identifier": "BG3G0000aQhMP034",
+          "object": "Кладенец",
+          "source_authority": "РИОСВ-Пловдив / Басейнова дирекция Източнобеломорски район",
+          "note": "Official groundwater monitoring point. No depth-resolved lithological intervals were found in the reviewed public monitoring documents."
+        }
+      ],
+      "searched_settlements": [
+        "Стамболийски",
+        "Йоаким Груево",
+        "Куртово Конаре",
+        "Ново село",
+        "Триводици"
+      ],
+      "note": "Targeted internet search for individual borehole lithological columns, engineering-geological logs, hydrogeological reports and exploration boreholes. No new publicly extractable individual borehole column with exact depth-resolved intervals was confirmed. The strongest lead is the Kurtovo Konare marble deposit, where official documents confirm exploration drilling and tracing of the marble massif by boreholes to 71.9 m. The primary geological exploration report is required before these boreholes can be converted into verified lithology profiles. The Kurtovo Konare groundwater monitoring well is kept separately as monitoring-only evidence."
+    },
+    {
+      "municipality": "Кричим",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "strong_leads": [
+        "PLD-LEAD-KRICHIM-001"
+      ],
+      "confirmed_boreholes_without_lithology": [
+        {
+          "object": "Кричимски извори - Сондаж №1",
+          "location": "около 6 km южно от гр. Кричим, в близост до манастира Св. Богородица",
+          "elevation_m": 336.62,
+          "water_temperature_c": 32.0,
+          "note": "Official municipal documents confirm the mineral-water borehole and its hydrogeological characteristics, but no individual depth-resolved lithological column was found in the reviewed public material."
+        },
+        {
+          "object": "ПС Кричим - ШК-1 и ШК-2",
+          "note": "Groundwater abstraction structures confirmed by official municipal documentation; no lithological intervals found."
+        }
+      ],
+      "searched_settlements": [
+        "Кричим"
+      ],
+      "note": "Targeted internet search for individual borehole lithological columns, engineering-geological logs, mineral-water borehole documentation, groundwater abstraction structures and geological reports. Official sources confirm multiple wells and the Krichim mineral-water borehole No. 1, but no new publicly extractable individual depth-resolved lithological column was confirmed. An engineering-geological investigation with a documented trial-borehole point in PI 39921.301.2 is retained as a strong lead to the primary report."
+    },
+    {
+      "municipality": "Перущица",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "searched_settlements": [
+        "Перущица",
+        "Пастуша"
+      ],
+      "regional_context_reviewed": {
+        "status": "AREA_CONTEXT_NOT_INDIVIDUAL_BOREHOLE",
+        "note": "Regional hydrogeological literature places the Perushtitsa-Pastusha area within the Perushtitsa-Ognyanovo karst basin, with fault-block structure, Paleogene and Quaternary fill and karstified marble blocks. This was reviewed only as regional context and was not converted into an individual borehole lithology profile."
+      },
+      "note": "Targeted internet search for individual borehole lithological columns, engineering-geological boreholes, geological reports, hydrogeological drilling records and exploratory boreholes in Perushtitsa and Pastusha. No new publicly verifiable individual borehole column with depth-resolved lithological intervals was confirmed. Commercial drilling pages and general regional geological descriptions were excluded from lithology evidence."
+    },
+    {
+      "municipality": "Лъки",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "strong_leads": [
+        "PLD-LEAD-LAKI-001",
+        "PLD-LEAD-LAKI-002"
+      ],
+      "searched_settlements": [
+        "Лъки",
+        "Белица",
+        "Борово",
+        "Джурково",
+        "Дряново",
+        "Здравец",
+        "Лъкавица",
+        "Манастир",
+        "Югово"
+      ],
+      "mining_areas_reviewed": [
+        "Джурково",
+        "Говедарника",
+        "Кенан дере",
+        "Четрока",
+        "Пилево",
+        "Белица",
+        "Балкан махала"
+      ],
+      "regional_geology_note": "Scientific publications describe the Laky ore field as developed mainly in metamorphic rocks including gneisses, schists and marbles, with local acidic igneous rocks and hydrothermal alteration. These descriptions are regional or mine-scale geological context and are not treated as individual borehole lithology.",
+      "note": "Targeted internet search for individual borehole lithological columns, mineral-exploration drill logs, mine geological sections and engineering-geological reports in Laki municipality. No new publicly extractable individual borehole column with depth-resolved lithological intervals was confirmed. Strong archival leads exist for Dzhurkovo and Govedarnika, where extensive geological exploration documentation is confirmed. These are retained as leads to primary reports rather than converted into lithology profiles."
+    },
+    {
+      "municipality": "Пловдив",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "existing_partial_profiles": [
+        "PLD-LITH-P001"
+      ],
+      "searched_settlements": [
+        "Пловдив"
+      ],
+      "note": "Targeted internet search for real borehole lithological columns, engineering-geological boreholes, geological sections and hydrogeological reports in Plovdiv. No new locality-verified individual depth-resolved lithological column was confirmed beyond the already retained partial Metal In profile. General engineering-geological assignments and references to drilled boreholes without extractable lithological intervals were not converted into lithology profiles."
+    },
+    {
+      "municipality": "Родопи",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "existing_verified_profiles": [
+        "PLD-LITH-001"
+      ],
+      "searched_settlements": [
+        "Марково",
+        "Белащица",
+        "Брестник",
+        "Браниполе",
+        "Първенец",
+        "Храбрино",
+        "Цалапица"
+      ],
+      "note": "Targeted internet search for individual lithological columns, borehole logs and engineering-geological sections in Rodopi municipality. No new verified depth-resolved individual column was confirmed beyond the existing Markovo 20 m profile PLD-LITH-001. Hydrogeological statements, planned wells and borehole construction information were not treated as lithology."
+    },
+    {
+      "municipality": "Марица",
+      "date": "2026-10-04",
+      "status": "SEARCHED_NO_NEW_VERIFIED_COLUMN",
+      "verified_new_columns": 0,
+      "partial_columns": 0,
+      "strong_leads": [
+        "PLD-LEAD-MARITSA-001",
+        "PLD-LEAD-MARITSA-002",
+        "PLD-LEAD-MARITSA-003"
+      ],
+      "searched_settlements": [
+        "Скутаре",
+        "Рогош",
+        "Костиево",
+        "Калековец",
+        "Труд",
+        "Граф Игнатиево",
+        "Царацово",
+        "Радиново"
+      ],
+      "note": "Targeted internet search for real lithological columns, engineering-geological borehole logs and geological reports in Maritsa municipality. No new publicly extractable locality-verified individual borehole lithological column was confirmed. Three strong archival/project leads were retained separately: the Trakia-Skutare railway engineering-geological investigations, the Rogosh-Skutare water-supply project and the Kostievo route engineering-geological investigations. Leads are not treated as verified lithology until the underlying primary reports are retrieved."
+    }
+  ]
+}
