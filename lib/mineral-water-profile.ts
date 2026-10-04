@@ -137,6 +137,8 @@ export type MineralWaterAreaProfile = {
   contextualUnlocated:
     MineralFacilityContext[];
 
+  hydroEvidence: Obj;
+
   temperatureMin: number | null;
   temperatureMax: number | null;
 
@@ -1010,8 +1012,108 @@ export function getMineralWaterAreaProfile(
       longitude
     );
 
+  /*
+   * Hydrogeological evidence for the selected AREA.
+   *
+   * Important:
+   * - evidence remains attached to the source facility;
+   * - borehole total depth is NOT an inflow depth;
+   * - filter/open hole is NOT an aquifer/inflow;
+   * - the area analysis synthesizes nearby evidence and
+   *   never assigns one facility's exact depth directly
+   *   to the selected coordinate.
+   */
+  const rawByMineralId =
+    new Map(
+      all.map(record => [
+        String(record.mineral_id || ""),
+        record,
+      ])
+    );
+
+  const nearbyHydroEvidence =
+    group
+      .map(item => {
+        const raw =
+          rawByMineralId.get(
+            item.mineralId
+          );
+
+        const research =
+          raw?.pro
+            ?.research_enrichment
+            ?.mineral_hydrothermal_research;
+
+        if (
+          !research ||
+          typeof research !== "object"
+        ) {
+          return null;
+        }
+
+        const distanceKm =
+          "distanceKm" in item &&
+          typeof (item as any).distanceKm ===
+            "number"
+            ? (item as any).distanceKm
+            : null;
+
+        return {
+          mineralId:
+            item.mineralId,
+
+          deposit:
+            item.deposit,
+
+          distanceKm,
+
+          hasExactCoordinates:
+            item.hasCoordinates,
+
+          research,
+        };
+      })
+      .filter(Boolean);
+
+  const regionalReferenceEvents =
+    Array.isArray(
+      regionalModel
+        ?.documented_reference_events
+    )
+      ? regionalModel
+          ?.documented_reference_events
+      : [];
+
+  const regionalColdModel =
+    regionalModel
+      ?.synthesis
+      ?.cold_over_thermal_water ??
+    null;
+
+  const regionalIsolationModel =
+    regionalModel
+      ?.synthesis
+      ?.upper_water_isolation ??
+    null;
+
+  const hydroEvidence = {
+    nearby: nearbyHydroEvidence,
+
+    regionalReferenceEvents,
+
+    regionalColdModel,
+
+    regionalIsolationModel,
+
+    interpretationRule:
+      "Nearby documented evidence is used as area context. " +
+      "Exact inflow depths from one borehole are not assigned " +
+      "automatically to the selected coordinate.",
+  };
+
   return {
     regionalModel,
+    hydroEvidence,
     latitude,
     longitude,
 

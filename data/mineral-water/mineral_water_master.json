@@ -39566,7 +39566,55 @@
           "fluoride_mg_l": 1.31,
           "silicic_acid_mg_l": 31.35,
           "verified_source": "MH balneological assessment No.188/10.03.2026",
-          "verified_source_url": "https://www.mh.government.bg/upload/18887/188-Lenovo-sondazh-12-10-03-2026.pdf"
+          "verified_source_url": "https://www.mh.government.bg/upload/18887/188-Lenovo-sondazh-12-10-03-2026.pdf",
+          "mineral_hydrothermal_research": {
+            "role": "verified individual hydrothermal evidence imported separately from lithology",
+            "documented_water_saturated_intervals": [
+              {
+                "from_m": 110.0,
+                "to_m": 130.0,
+                "evidence": "explicit_source_statement"
+              },
+              {
+                "from_m": 170.0,
+                "to_m": 178.0,
+                "evidence": "explicit_source_statement"
+              }
+            ],
+            "collector": "Paleogene breccia-conglomerates",
+            "collector_interval_m": {
+              "from_m": 115.0,
+              "to_m": 178.0
+            },
+            "collector_scope": "collector_statement_not_exact_inflow",
+            "construction": [
+              {
+                "from_m": 0.0,
+                "to_m": 14.0,
+                "type": "casing",
+                "note": "metal casing Ø146 mm, cemented"
+              },
+              {
+                "from_m": 0.0,
+                "to_m": 108.0,
+                "type": "casing",
+                "note": "metal casing Ø127 mm, cemented"
+              },
+              {
+                "from_m": 108.0,
+                "to_m": 180.0,
+                "type": "open_hole",
+                "note": "Ø110 mm open hole"
+              },
+              {
+                "from_m": 95.0,
+                "to_m": 180.0,
+                "type": "filter_column",
+                "note": "additional Ø110 mm filter column, 1999"
+              }
+            ],
+            "source_note": "Water-saturated intervals 110-130 m and 170-178 m are explicit source statements. Construction, filter and open-hole intervals must not be treated as proven inflow intervals."
+          }
         },
         "research_source_record": {
           "status": "MISSING",
@@ -45863,6 +45911,245 @@
       },
       "sources": [],
       "origin": "mh_confirmed_missing"
+    },
+    {
+      "mineral_id": "mw_c534dd604ec83c05",
+      "identity": {
+        "name": "Сондаж № 1ВКП",
+        "facility_type": "Минерален водовземен сондаж",
+        "deposit": "Огняново-Гърмен",
+        "settlement": "Марчево и с. Огняново"
+      },
+      "location": {
+        "lat": null,
+        "lon": null,
+        "status": "TO_RESEARCH",
+        "origin": "official descriptive location; exact coordinates not yet established"
+      },
+      "free": {
+        "temperature_c": 39.8,
+        "depth_m": 169
+      },
+      "pro": {
+        "research_status": "CONFIRMED_MISSING",
+        "research_enrichment": {
+          "current_deposit_name": "Огняново-Гърмен",
+          "identity_source": "MH registry + official MOEW/BD WABD documents for NMW Ognyanovo-Garmen",
+          "location_note": "Отделно физическо водовземно съоръжение от находище ",
+          "source_note": "BD WABD official document citing MOEW Order RD-118/13.02.2025",
+          "source_type": "BD WABD official document",
+          "temperature_c_2021_sample": 39.9,
+          "ph_2021_sample": 9.17,
+          "total_mineralization_mg_l_2021_sample": 258,
+          "chemistry_sample_date": "24.09.2021",
+          "chemistry_sample_protocol": "AKVATERATEST No.605-15/24.09.2021",
+          "chemistry_sample_scope": "deposit SOZ project analytical sample; not necessarily current 2026 chemistry",
+          "deposit_system_type": "fracture-vein pressurized mineral-water system",
+          "deposit_geological_host": "West Rhodope massif: gneiss-schists, schists, biotite and two-mica gneisses",
+          "deposit_context_scope": "deposit-level hydrogeological interpretation",
+          "verified_soz_source": "Official SOZ project for mineral-water deposit Ognyanovo-Garmen",
+          "source_property_reference": "500.3",
+          "source_property_reference_scope": "property number stated in MH assessment; NOT normalized as modern cadastral identifier",
+          "drainage_zone": "western drainage zone",
+          "relative_location": "near the old village bath, approximately 20 m from the northeast corner of the men's section",
+          "terrain_elevation_m": 593.14,
+          "spatial_accuracy": "official descriptive location + source property reference",
+          "coordinate_status": "TO_RESEARCH",
+          "construction_year": 1965,
+          "depth_m": 169,
+          "historical_inflow_intervals": [
+            {
+              "depth_m": 26,
+              "discharge_l_s": 1,
+              "temperature_c": 14,
+              "note": "temporary shallow inflow, later eliminated by casing"
+            },
+            {
+              "depth_m": 33,
+              "discharge_l_s": 3,
+              "temperature_c": 39
+            },
+            {
+              "depth_m": 96,
+              "cumulative_discharge_l_s": 10,
+              "temperature_c": 39,
+              "event_type": "flow_increase",
+              "note": "Documented drilling-stage increase; cumulative discharge reached 10 l/s.",
+              "evidence_scope": "historical drilling observation"
+            },
+            {
+              "depth_interval_m": "139-160",
+              "discharge_range_l_s": "35-55",
+              "temperature_c": 39.8,
+              "note": "historical drilling-stage increase; not current facility discharge"
+            }
+          ],
+          "technical_possible_discharge_l_s": 6.2,
+          "technical_temperature_c": 39.8,
+          "static_water_level_elevation_m": 592.03,
+          "allowable_drawdown_m": 5.12,
+          "allowable_dynamic_water_level_elevation_m": 586.91,
+          "resource_scope": "technical possible facility discharge",
+          "borehole_geology_intervals": [
+            {
+              "from_m": 0,
+              "to_m": 40,
+              "description": "amphibolite gneisses, fractured and cut by quartz veins"
+            },
+            {
+              "from_m": 40,
+              "to_m": 72,
+              "description": "same lithology with weaker fracturing"
+            },
+            {
+              "from_m": 92,
+              "to_m": 169,
+              "description": "strongly fractured gneisses cut by quartz and pegmatite veins"
+            }
+          ],
+          "sample_temperature_c": 39.1,
+          "total_mineralization_mg_l": 243,
+          "ph": 9.44,
+          "fluoride_mg_l": 5.63,
+          "arsenic_mg_l": 0.017,
+          "sodium_mg_l": 46.94,
+          "calcium_mg_l": 2.3,
+          "sulfate_mg_l": 32.3,
+          "bicarbonate_mg_l": 97.63,
+          "silicic_acid_mg_l": 48.21,
+          "potable_status": "not suitable for drinking due to elevated fluoride according to MH assessment",
+          "deposit_fault_context": "Находище Огняново-Гърмен е пукнатинно-жилна хидротермална система в кристалинния комплекс. Важна роля имат разседи от главната система с посока ЗСЗ-ИЮИ; термоминералната вода постъпва от дълбочина по отворени пукнатини на тектоничните нарушения.",
+          "verified_source": "MH balneological assessment No.238/01.06.2023",
+          "verified_source_url": "https://www.mh.government.bg/upload/6663/238-ognianovo-garmen-sondazh_1vkp-01-06-2023.pdf",
+          "previous_research_status": "CONFIRMED_MISSING",
+          "cross_deposit_match_correction": {
+            "status": "REMOVED_FALSE_MATCH",
+            "reason": "Previous identifier-only match linked this Ognyanovo-Garmen facility to a different facility with the same VKP number in Velingrad.",
+            "rule": "Facility number alone is insufficient for cross-deposit identity matching."
+          }
+        },
+        "duplicate_mh_records": []
+      },
+      "sources": [
+        {
+          "source_type": "balneology",
+          "title": "Балнеологична оценка № 238/01.06.2023 г.",
+          "description": "„Сондаж № 1ВКП“ - находище № 53 на минерална вода „Огняново-Гърмен“ с. Марчево и с. Огняново, община Гърмен, област Благоевград",
+          "published": "08.06.2023",
+          "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=12"
+        },
+        {
+          "source_type": "verified_research",
+          "title": "MH balneological assessment No.238/01.06.2023",
+          "source_url": "https://www.mh.government.bg/upload/6663/238-ognianovo-garmen-sondazh_1vkp-01-06-2023.pdf",
+          "assessment_no": "238",
+          "assessment_date": "01.06.2023"
+        }
+      ],
+      "origin": "mh_confirmed_missing"
+    },
+    {
+      "mineral_id": "mw_2016db5e97268368",
+      "identity": {
+        "name": "Сондаж № 2ВКП",
+        "facility_type": "Минерален водовземен сондаж",
+        "deposit": "Огняново-Гърмен",
+        "settlement": "Марчево и с. Огняново"
+      },
+      "location": {
+        "lat": null,
+        "lon": null,
+        "status": "TO_RESEARCH",
+        "origin": "official descriptive location; exact coordinates not yet established"
+      },
+      "free": {
+        "temperature_c": 41.5,
+        "depth_m": 21
+      },
+      "pro": {
+        "research_status": "CONFIRMED_MISSING",
+        "research_enrichment": {
+          "current_deposit_name": "Огняново-Гърмен",
+          "identity_source": "MH registry + official MOEW/BD WABD documents for NMW Ognyanovo-Garmen",
+          "source_note": "BD WABD official document citing MOEW Order RD-118/13.02.2025",
+          "source_type": "BD WABD official document",
+          "location_note": "Сондаж №2ВКП е непосредствено до КЕИ ",
+          "river_bank_context": "right-bank zone of Kanina River",
+          "nearby_consumer_property_id": "53326.500.11",
+          "nearby_consumer_property_scope": "Hotel Elis consumer property; NOT proven facility cadastral parcel",
+          "spatial_source_type": "Official SOZ project + RIEW Blagoevgrad permit documentation",
+          "permit_allowed_abstraction_l_s": 0.278,
+          "permit_value_scope": "permitted abstraction for Hotel Elis; not facility resource",
+          "deposit_fault_context_scope": "deposit-level geological interpretation; not proof that this individual facility lies directly on a mapped fault trace",
+          "deposit_fault_context_source": "MH assessment / official SOZ hydrogeological documentation for Ognyanovo-Garmen",
+          "source_property_reference": "500.11",
+          "source_property_reference_scope": "property number stated in MH assessment; NOT normalized as modern cadastral identifier",
+          "locality": "Баните",
+          "drainage_zone": "eastern drainage zone",
+          "relative_location": "at Hotel Elis, approximately 20 m east of the Middle Bath building",
+          "terrain_elevation_m": 584.03,
+          "spatial_accuracy": "official descriptive location + source property reference",
+          "coordinate_status": "TO_RESEARCH",
+          "construction_year": 1965,
+          "depth_m": 21,
+          "technical_possible_discharge_l_s": 2.75,
+          "technical_temperature_c": 41.5,
+          "static_water_level_elevation_m": 585.07,
+          "allowable_drawdown_m": 2.57,
+          "allowable_dynamic_water_level_elevation_m": 582.5,
+          "resource_scope": "technical possible facility discharge",
+          "borehole_geology_intervals": [
+            {
+              "from_m": 0,
+              "to_m": 2,
+              "description": "Quaternary alluvial materials with gneiss-pegmatite boulders and gravel in sandy matrix"
+            },
+            {
+              "from_m": 2,
+              "to_m": 21,
+              "description": "fractured, locally broken amphibolite gneisses"
+            }
+          ],
+          "sample_temperature_c": 41.5,
+          "total_mineralization_mg_l": 232,
+          "ph": 9.36,
+          "fluoride_mg_l": 5.02,
+          "arsenic_mg_l": 0.036,
+          "sodium_mg_l": 45.27,
+          "calcium_mg_l": 2.61,
+          "sulfate_mg_l": 27.78,
+          "bicarbonate_mg_l": 88.48,
+          "silicic_acid_mg_l": 51.24,
+          "potable_status": "not suitable for drinking due to elevated fluoride and arsenic according to MH assessment",
+          "deposit_fault_context": "Находище Огняново-Гърмен е пукнатинно-жилна хидротермална система в кристалинния комплекс. Важна роля имат разседи от главната система с посока ЗСЗ-ИЮИ; термоминералната вода постъпва от дълбочина по отворени пукнатини на тектоничните нарушения.",
+          "verified_source": "MH balneological assessment No.235/01.06.2023",
+          "verified_source_url": "https://www.mh.government.bg/upload/6666/235-ognianovo-garmen-sondazh_2vkp-01-06-2023.pdf",
+          "previous_research_status": "CONFIRMED_MISSING",
+          "cross_deposit_match_correction": {
+            "status": "REMOVED_FALSE_MATCH",
+            "reason": "Previous identifier-only match linked this Ognyanovo-Garmen facility to a different facility with the same VKP number in Velingrad.",
+            "rule": "Facility number alone is insufficient for cross-deposit identity matching."
+          }
+        },
+        "duplicate_mh_records": []
+      },
+      "sources": [
+        {
+          "source_type": "balneology",
+          "title": "Балнеологична оценка № 235/01.06.2023 г.",
+          "description": "„Сондаж № 2ВКП“ - находище № 53 на минерална вода „Огняново-Гърмен“, с. Марчево и с. Огняново, община Гърмен, област Благоевград",
+          "published": "08.06.2023",
+          "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=12"
+        },
+        {
+          "source_type": "verified_research",
+          "title": "MH balneological assessment No.235/01.06.2023",
+          "source_url": "https://www.mh.government.bg/upload/6666/235-ognianovo-garmen-sondazh_2vkp-01-06-2023.pdf",
+          "assessment_no": "235",
+          "assessment_date": "01.06.2023"
+        }
+      ],
+      "origin": "mh_confirmed_missing"
     }
   ],
   "non_point_research_records": [
@@ -46003,5 +46290,409 @@
       "TO_RESEARCH": 45,
       "WABD_REGISTER_RESOLVED": 1
     }
-  }
+  },
+  "regional_mineral_models": [
+    {
+      "regional_model_id": "ognyanovo-garmen",
+      "identity": {
+        "name": "Огняново–Гърмен",
+        "model_type": "regional mineral / thermal hydrogeological model",
+        "district": "Благоевград",
+        "municipality": "Гърмен"
+      },
+      "evidence_base": {
+        "facility_count": 15,
+        "facility_ids": [
+          "mw_24ca7c64989a6332",
+          "mw_27ba7616341b13f3",
+          "mw_0f3e489bf8634092",
+          "mw_930f20a3510b2716",
+          "mw_3707302fdb70003b",
+          "mw_c1621805accf4863",
+          "mw_591d2a815fc6803e",
+          "mw_3c28b8b00a84021f",
+          "mw_e68102fb401e676a",
+          "mw_a884e1bf730197c8",
+          "mw_346f70f2307ed630",
+          "mw_8f1c86a9ba3db1b0",
+          "mw_309c175f25bcea90",
+          "mw_c534dd604ec83c05",
+          "mw_2016db5e97268368"
+        ],
+        "evidence_scope": "verified facility records and official hydrogeological documentation"
+      },
+      "system_framework": {
+        "system_type": "fracture-vein pressurized mineral-water system",
+        "geological_host": "crystalline complex of the West Rhodope massif",
+        "principal_structural_direction": "WNW-ESE / ЗСЗ-ИЮИ",
+        "drainage_zones": [
+          "western drainage zone / Селски бани",
+          "eastern drainage zone / Градски бани"
+        ],
+        "river_context": "Kanina River / р. Канина",
+        "interpretation_scope": "deposit-scale framework; does not prove that every individual facility lies directly on a mapped fault"
+      },
+      "documented_reference_events": [
+        {
+          "facility_id": "mw_c534dd604ec83c05",
+          "facility_name": "Сондаж № 1ВКП",
+          "depth_m": 26,
+          "water_type": "cold groundwater",
+          "discharge_l_s": 1,
+          "temperature_c": 14,
+          "interpretation": "shallow cold inflow subsequently isolated"
+        },
+        {
+          "facility_id": "mw_c534dd604ec83c05",
+          "facility_name": "Сондаж № 1ВКП",
+          "depth_m": 33,
+          "water_type": "mineral / thermal",
+          "discharge_l_s": 3,
+          "temperature_c": 39,
+          "interpretation": "first documented thermal inflow during drilling"
+        },
+        {
+          "facility_id": "mw_c534dd604ec83c05",
+          "facility_name": "Сондаж № 1ВКП",
+          "depth_m": 96,
+          "water_type": "mineral / thermal",
+          "cumulative_discharge_l_s": 10,
+          "temperature_c": 39,
+          "interpretation": "documented increase in thermal-water discharge during drilling"
+        },
+        {
+          "facility_id": "mw_c534dd604ec83c05",
+          "facility_name": "Сондаж № 1ВКП",
+          "depth_interval_m": "139-160",
+          "water_type": "mineral / thermal",
+          "discharge_range_l_s": "35-55",
+          "temperature_c": 39.8,
+          "interpretation": "major documented drilling-stage discharge increase"
+        }
+      ],
+      "synthesis": {
+        "collector_model": {
+          "status": "SUPPORTED",
+          "conclusion": "Regional evidence supports a fracture-controlled collector developed mainly in fractured, strongly fractured and locally silicified crystalline rocks, especially amphibolite gneisses cut by quartz and pegmatite veins. Borehole evidence shows that productive conditions are related to fracture intensity and structural permeability rather than to a single continuous porous stratigraphic aquifer.",
+          "evidence": [
+            {
+              "facility_id": "mw_c534dd604ec83c05",
+              "facility_name": "Сондаж № 1ВКП",
+              "evidence": "Fractured amphibolite gneisses occur from surface downward; strongly fractured gneisses with quartz and pegmatite veins are documented from 92 to 169 m. Major historical discharge increase occurs within the deeper fractured crystalline section."
+            },
+            {
+              "facility_id": "mw_930f20a3510b2716",
+              "facility_name": "Сондаж Вила Шамов",
+              "evidence": "Fractured amphibolite gneisses from 18-28 m and strongly silicified and fractured amphibolite gneisses from 28-120 m."
+            },
+            {
+              "facility_id": "mw_3707302fdb70003b",
+              "facility_name": "Сондаж Никола Ушев",
+              "evidence": "Fractured amphibolite gneisses from 16-28 m and strongly silicified and fractured amphibolite gneisses from 28-110 m."
+            },
+            {
+              "facility_id": "mw_e68102fb401e676a",
+              "facility_name": "Сондаж Делта-Бисер",
+              "evidence": "Strongly fractured amphibolite gneisses with numerous quartz and pegmatite veins from 17-106 m."
+            },
+            {
+              "facility_id": "mw_8f1c86a9ba3db1b0",
+              "facility_name": "Сондаж № 3ВКП",
+              "evidence": "Strongly fractured amphibolite gneisses with numerous quartz and pegmatite veins from 20-175 m."
+            },
+            {
+              "facility_id": "mw_2016db5e97268368",
+              "facility_name": "Сондаж № 2ВКП",
+              "evidence": "Fractured and locally broken amphibolite gneisses from 2-21 m."
+            }
+          ]
+        },
+        "aquitard_model": {
+          "status": "INSUFFICIENT_EXACT_EVIDENCE",
+          "conclusion": "The current facility evidence does not support definition of a laterally continuous regional aquitard. Local weakly fractured or dense crystalline intervals are documented, but they must not yet be generalized as a continuous confining layer across the deposit.",
+          "evidence": [
+            {
+              "facility_id": "mw_c1621805accf4863",
+              "facility_name": "Сондаж АПК",
+              "evidence": "Dense amphibolite gneiss is documented from 41-47 m."
+            },
+            {
+              "facility_id": "mw_c534dd604ec83c05",
+              "facility_name": "Сондаж № 1ВКП",
+              "evidence": "Fracturing becomes weaker between 40 and 72 m, but this alone does not prove a regional aquitard."
+            },
+            {
+              "facility_id": "mw_8f1c86a9ba3db1b0",
+              "facility_name": "Сондаж № 3ВКП",
+              "evidence": "Below 175 m the gneisses are locally weakly fractured and silicified."
+            }
+          ]
+        },
+        "cold_over_thermal_water": {
+          "status": "DIRECTLY_DOCUMENTED_LOCALLY",
+          "conclusion": "Borehole No.1VKP directly documents shallow cold groundwater above the thermal system: at 26 m an inflow of approximately 1 l/s at 14 C was encountered and later isolated. Thermal water was encountered deeper at 33 m at approximately 39 C. This proves local vertical separation at No.1VKP but must not automatically be generalized to identical depths throughout the deposit.",
+          "evidence_facility_ids": [
+            "mw_c534dd604ec83c05"
+          ]
+        },
+        "temperature_model": {
+          "status": "SUPPORTED",
+          "temperature_gradient_status": "NOT_DEFENSIBLE_FROM_CURRENT_DATA",
+          "conclusion": "The available facilities do not show a simple monotonic relationship between total borehole depth and water temperature. Shallow facilities can yield water around 41-42 C, while some substantially deeper boreholes have lower temperatures. The regional evidence therefore supports structurally controlled thermal-water movement through fractures rather than use of total borehole depth as a proxy for temperature. A numerical geothermal gradient is not calculated from these data.",
+          "evidence": [
+            {
+              "facility_id": "mw_2016db5e97268368",
+              "depth_m": 21,
+              "technical_temperature_c": 41.5
+            },
+            {
+              "facility_id": "mw_a884e1bf730197c8",
+              "depth_m": 45,
+              "technical_temperature_c": 41.8
+            },
+            {
+              "facility_id": "mw_e68102fb401e676a",
+              "depth_m": 106,
+              "technical_temperature_c": 35.4
+            },
+            {
+              "facility_id": "mw_930f20a3510b2716",
+              "depth_m": 120,
+              "technical_temperature_c": 39.4
+            },
+            {
+              "facility_id": "mw_c534dd604ec83c05",
+              "depth_m": 169,
+              "technical_temperature_c": 39.8
+            },
+            {
+              "facility_id": "mw_8f1c86a9ba3db1b0",
+              "depth_m": 221.6,
+              "technical_temperature_c": 41.2
+            }
+          ]
+        },
+        "artesian_pressure_model": {
+          "status": "SUPPORTED",
+          "conclusion": "The deposit contains pressurized mineral-water circulation. Several facilities have documented self-flow elevations, and borehole No.2VKP provides direct evidence of artesian pressure because its static water-level elevation is above terrain elevation. Pressure conditions vary spatially and should be evaluated per facility rather than assigned as one uniform head across the deposit.",
+          "evidence": [
+            {
+              "facility_id": "mw_2016db5e97268368",
+              "facility_name": "Сондаж № 2ВКП",
+              "terrain_elevation_m": 584.03,
+              "static_water_level_elevation_m": 585.07,
+              "interpretation": "Static head approximately 1.04 m above terrain elevation."
+            },
+            {
+              "facility_id": "mw_24ca7c64989a6332",
+              "facility_name": "КЕИ Миро-женско",
+              "self_flow_elevation_m": 590.13
+            },
+            {
+              "facility_id": "mw_27ba7616341b13f3",
+              "facility_name": "КЕИ Миро-мъжко",
+              "self_flow_elevation_m": 590.07
+            },
+            {
+              "facility_id": "mw_930f20a3510b2716",
+              "facility_name": "Сондаж Вила Шамов",
+              "self_flow_elevation_m": 579.98
+            },
+            {
+              "facility_id": "mw_3707302fdb70003b",
+              "facility_name": "Сондаж Никола Ушев",
+              "self_flow_elevation_m": 584.33
+            },
+            {
+              "facility_id": "mw_8f1c86a9ba3db1b0",
+              "facility_name": "Сондаж № 3ВКП",
+              "self_flow_elevation_m": 587.85
+            }
+          ]
+        },
+        "structural_model": {
+          "status": "SUPPORTED",
+          "principal_direction": "WNW-ESE / ЗСЗ-ИЮИ",
+          "conclusion": "Official deposit-scale interpretations consistently describe Ognyanovo-Garmen as a fracture-vein hydrothermal system in the crystalline complex. Faults of the principal WNW-ESE / ЗСЗ-ИЮИ system are identified as important pathways through which thermomineral water rises from depth along open fractures. This is a regional structural interpretation and must not be treated as proof that every facility lies directly on an individually mapped fault trace.",
+          "evidence": [
+            "Official facility assessments repeatedly describe the deposit as a fracture-vein hydrothermal system.",
+            "The principal structural direction repeatedly cited in the official assessments is WNW-ESE / ЗСЗ-ИЮИ.",
+            "Eastern and western drainage zones are documented within the same deposit-scale hydrothermal framework."
+          ]
+        },
+        "collector_relationships": {
+          "status": "REGIONAL_SYSTEM_SUPPORTED_LOCAL_CONNECTIONS_UNRESOLVED",
+          "shared_vs_separate_collectors": "UNRESOLVED",
+          "conclusion": "The facilities belong to the same deposit-scale fracture-vein hydrothermal system, but the current evidence does not prove that all facilities tap one hydraulically identical fracture collector. Differences in temperature, discharge, depth and hydraulic head are compatible with spatially variable fracture pathways and/or different levels of connection within the regional system. Hydraulic equivalence between individual facilities remains unresolved.",
+          "evidence": [
+            "Substantial temperature differences occur between facilities without a simple relation to total borehole depth.",
+            "Technical discharge and hydraulic-head values vary substantially between facilities.",
+            "Borehole geology repeatedly identifies fractured crystalline rocks, but exact productive fracture intervals are known only for a limited subset."
+          ]
+        },
+        "upper_water_isolation": {
+          "status": "DIRECTLY_DOCUMENTED_LOCALLY",
+          "conclusion": "At borehole No.1VKP the shallow cold-water inflow encountered at 26 m was subsequently eliminated by casing/isolation. This is direct evidence that shallow non-thermal groundwater can require isolation from the deeper thermal system. It is a facility-specific observation and is not yet a universal construction rule for the whole deposit.",
+          "evidence_facility_ids": [
+            "mw_c534dd604ec83c05"
+          ]
+        },
+        "mixing_model": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "The current evidence is insufficient to demonstrate or quantify mixing between waters from different thermal horizons across the deposit. Borehole No.1VKP proves the presence of shallow cold groundwater above thermal inflows and its subsequent isolation, but this alone does not establish regional mixing in operating facilities.",
+          "evidence": [
+            "No.1VKP: shallow 14 C inflow at 26 m and thermal inflow at 33 m and deeper.",
+            "No deposit-wide tracer, hydraulic or depth-specific chemical evidence currently stored proves mixing between individual thermal horizons."
+          ]
+        },
+        "temporal_change_model": {
+          "status": "PARTIALLY_DOCUMENTED",
+          "conclusion": "Historical drilling-stage discharge values must be kept separate from present technical possible discharge. The clearest example is borehole No.1VKP, where historical drilling observations reached approximately 35-55 l/s in the 139-160 m interval, whereas the current technical possible discharge stored for the facility is 6.2 l/s. These values describe different measurement and operational contexts and must not be treated as contradictory measurements of the same condition.",
+          "evidence": [
+            {
+              "facility_id": "mw_c534dd604ec83c05",
+              "historical_drilling_discharge_l_s": "35-55",
+              "current_technical_possible_discharge_l_s": 6.2,
+              "interpretation": "Different temporal and operational scopes."
+            }
+          ]
+        },
+        "depth_discharge_model": {
+          "status": "SUPPORTED_AT_REFERENCE_BOREHOLE",
+          "conclusion": "Borehole No.1VKP demonstrates that increasing drilling depth intersected additional productive fracture zones and strongly increased cumulative discharge without a comparable increase in temperature. The documented sequence is approximately 3 l/s at 33 m and 39 C, 10 l/s cumulative at 96 m and 39 C, followed by a major historical drilling-stage increase to approximately 35-55 l/s in the 139-160 m interval at 39.8 C. This behaviour supports additional fracture interception with depth rather than a simple temperature-with-depth model.",
+          "evidence": [
+            {
+              "facility_id": "mw_c534dd604ec83c05",
+              "sequence": [
+                "33 m: 3 l/s, 39 C",
+                "96 m: cumulative 10 l/s, 39 C",
+                "139-160 m: historical drilling-stage increase 35-55 l/s, 39.8 C"
+              ]
+            }
+          ]
+        }
+      },
+      "research_status": "MINERAL_SYNTHESIS_V1_COMPLETE",
+      "next_research_tasks": [
+        "Search for exact productive intervals in facilities other than No.1VKP where authoritative evidence exists",
+        "Search for explicit hydraulic-connection or interference-test evidence between facilities",
+        "Search for depth-specific chemical evidence relevant to mixing",
+        "Search for stronger evidence for local or regional aquitards",
+        "Preserve historical drilling discharge separately from current technical and permitted abstraction values",
+        "Proceed to Ognyanovo-Garmen regional lithological synthesis after mineral model QA"
+      ],
+      "regional_model_scope": {
+        "scope_type": "official_sanitary_protection_zone_outer_belt",
+        "scope_role": "regional_context_trigger",
+        "deposit": "Огняново–Гърмен",
+        "legal_basis": "Заповед № РД-580/08.08.2023 г.",
+        "belt": "III",
+        "official_area_m2": 10059953,
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_system": "WGS 84",
+          "epsg": 4326,
+          "coordinates": [
+            [
+              23.789414937,
+              41.621088578
+            ],
+            [
+              23.788506152,
+              41.626127451
+            ],
+            [
+              23.78817551,
+              41.629884924
+            ],
+            [
+              23.787581878,
+              41.635708209
+            ],
+            [
+              23.787115069,
+              41.639574553
+            ],
+            [
+              23.792554972,
+              41.640023244
+            ],
+            [
+              23.804861494,
+              41.639723433
+            ],
+            [
+              23.813150275,
+              41.639309528
+            ],
+            [
+              23.817911498,
+              41.638717426
+            ],
+            [
+              23.824495038,
+              41.636337817
+            ],
+            [
+              23.828723082,
+              41.633223713
+            ],
+            [
+              23.830502495,
+              41.628849661
+            ],
+            [
+              23.830482478,
+              41.623569371
+            ],
+            [
+              23.828212998,
+              41.618344417
+            ],
+            [
+              23.821497079,
+              41.612806246
+            ],
+            [
+              23.810517866,
+              41.607900201
+            ],
+            [
+              23.80639147,
+              41.608476379
+            ],
+            [
+              23.797880444,
+              41.612451735
+            ],
+            [
+              23.790227399,
+              41.61653287
+            ],
+            [
+              23.789414937,
+              41.621088578
+            ]
+          ]
+        },
+        "source": {
+          "research_file": "data/mineral-water/research/official_coordinate_ognyanovo_rd580_2023.json",
+          "official_document": "МОСВ — Заповед № РД-580/08.08.2023 г.",
+          "source_url": "https://garmen.bg/images/Ekologiq/2023_%D0%B3/%D0%97%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4-3-24_compressed.pdf",
+          "source_crs": "EPSG:7801",
+          "operational_crs": "EPSG:4326"
+        },
+        "validation": {
+          "source_polygon_point_count": 20,
+          "official_area_m2": 10059953,
+          "calculated_source_area_m2": 10059967.05,
+          "area_difference_m2": 14.05,
+          "known_coordinate_facilities_tested": 11,
+          "known_coordinate_facilities_inside": 11,
+          "status": "PASS"
+        },
+        "interpretation_limit": "Point inclusion activates the regional hydrogeological context for the Ognyanovo-Garmen mineral-water system. It does not prove mineral water at the selected property and does not establish an exact local inflow depth, temperature, discharge or collector."
+      }
+    }
+  ]
 }

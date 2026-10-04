@@ -162,6 +162,109 @@ export default function MineralAreaAnalysisCard({
   const regionalScope =
     regionalModel?.regional_model_scope;
 
+  const hydroEvidence =
+    profile.hydroEvidence || {};
+
+  const nearbyHydroEvidence =
+    Array.isArray(
+      hydroEvidence.nearby
+    )
+      ? hydroEvidence.nearby
+      : [];
+
+  const regionalReferenceEvents =
+    Array.isArray(
+      hydroEvidence.regionalReferenceEvents
+    )
+      ? hydroEvidence.regionalReferenceEvents
+      : [];
+
+  const coldReferenceEvents =
+    regionalReferenceEvents.filter(
+      (item: any) =>
+        String(
+          item?.water_type || ""
+        )
+          .toLowerCase()
+          .includes("cold")
+    );
+
+  const thermalReferenceEvents =
+    regionalReferenceEvents.filter(
+      (item: any) => {
+        const value =
+          String(
+            item?.water_type || ""
+          ).toLowerCase();
+
+        return (
+          value.includes("mineral") ||
+          value.includes("thermal")
+        );
+      }
+    );
+
+  const nearbyWaterSaturatedIntervals =
+    nearbyHydroEvidence.flatMap(
+      (item: any) => {
+        const rows =
+          item?.research
+            ?.documented_water_saturated_intervals;
+
+        if (!Array.isArray(rows)) {
+          return [];
+        }
+
+        return rows.map(
+          (row: any) => ({
+            ...row,
+            distanceKm:
+              item.distanceKm,
+          })
+        );
+      }
+    );
+
+  const nearbyMineralInflows =
+    nearbyHydroEvidence.flatMap(
+      (item: any) => {
+        const rows =
+          item?.research
+            ?.documented_inflow_zones;
+
+        if (!Array.isArray(rows)) {
+          return [];
+        }
+
+        return rows.map(
+          (row: any) => ({
+            ...row,
+            distanceKm:
+              item.distanceKm,
+          })
+        );
+      }
+    );
+
+  const nearbyMineralAquifers =
+    nearbyHydroEvidence
+      .map(
+        (item: any) => ({
+          interval:
+            item?.research
+              ?.documented_mineral_aquifer_interval ??
+            null,
+
+          distanceKm:
+            item.distanceKm,
+        })
+      )
+      .filter(
+        (item: any) =>
+          item.interval &&
+          typeof item.interval === "object"
+      );
+
   const nearestFault =
     faultSpatial?.nearestGem ??
     faultSpatial?.nearestFault ??
@@ -412,6 +515,183 @@ export default function MineralAreaAnalysisCard({
               ? `За свързаните с района минерални съоръжения са известни дълбочини приблизително ${fmt(profile.depthMin)}–${fmt(profile.depthMax)} m. Това показва общия дълбочинен мащаб на известната система, но липсват достатъчно температурни данни за по-пълна оценка на термалния режим.`
               : "Няма достатъчно публикувани температурни и дълбочинни данни за близките минерални съоръжения, затова този фактор не може да има голяма тежест в оценката."
           );
+  const intervalLabel = (
+    row: any
+  ): string | null => {
+    const from =
+      Number(row?.from_m);
+
+    const to =
+      Number(row?.to_m);
+
+    if (
+      Number.isFinite(from) &&
+      Number.isFinite(to)
+    ) {
+      return `${fmt(from)}–${fmt(to)} m`;
+    }
+
+    const depth =
+      Number(row?.depth_m);
+
+    if (Number.isFinite(depth)) {
+      return `${fmt(depth)} m`;
+    }
+
+    const interval =
+      row?.depth_interval_m;
+
+    if (interval) {
+      return `${String(interval)} m`;
+    }
+
+    return null;
+  };
+
+  const uniqueLabels = (
+    values: Array<string | null>
+  ) =>
+    Array.from(
+      new Set(
+        values.filter(
+          (value): value is string =>
+            Boolean(value)
+        )
+      )
+    );
+
+  const coldDepthLabels =
+    uniqueLabels(
+      coldReferenceEvents.map(
+        (item: any) =>
+          intervalLabel(item)
+      )
+    );
+
+  const thermalDepthLabels =
+    uniqueLabels(
+      thermalReferenceEvents.map(
+        (item: any) =>
+          intervalLabel(item)
+      )
+    );
+
+  const saturatedLabels =
+    uniqueLabels(
+      nearbyWaterSaturatedIntervals.map(
+        (item: any) =>
+          intervalLabel(item)
+      )
+    );
+
+  const inflowLabels =
+    uniqueLabels(
+      nearbyMineralInflows.map(
+        (item: any) =>
+          intervalLabel(item)
+      )
+    );
+
+  const aquiferLabels =
+    uniqueLabels(
+      nearbyMineralAquifers.map(
+        (item: any) =>
+          intervalLabel(
+            item.interval
+          )
+      )
+    );
+
+  let waterLevelAnalysis =
+    "За близките проучени съоръжения няма достатъчно " +
+    "документирани дълбочинни данни, за да се определи " +
+    "надеждно броят или дълбочината на студените водни " +
+    "нива над минералната система.";
+
+  if (
+    coldDepthLabels.length > 0
+  ) {
+    const firstThermal =
+      thermalDepthLabels[0] ||
+      null;
+
+    const deeperThermal =
+      thermalDepthLabels.slice(1);
+
+    waterLevelAnalysis =
+      `В приложимия хидрогеоложки модел около избраната ` +
+      `точка е документирано отделно плитко студено водно ` +
+      `ниво около ${coldDepthLabels.join(", ")}. ` +
+      (
+        hydroEvidence
+          .regionalIsolationModel
+          ? "Документирано е и изолиране на това плитко ниво от по-дълбоката термална система. "
+          : ""
+      ) +
+      (
+        firstThermal
+          ? `Първата документирана термална проява в референтните данни е около ${firstThermal}. `
+          : ""
+      ) +
+      (
+        deeperThermal.length > 0
+          ? `Допълнителни по-дълбоки термални прояви са документирани около ${deeperThermal.join(", ")}. `
+          : ""
+      ) +
+      `Това показва възможно вертикално разделяне между ` +
+      `плитки студени и по-дълбоки минерални води в системата, ` +
+      `но тези точни метри не се прехвърлят автоматично върху ` +
+      `самата избрана координата.`;
+  } else if (
+    saturatedLabels.length > 0 ||
+    inflowLabels.length > 0 ||
+    aquiferLabels.length > 0
+  ) {
+    const parts: string[] = [];
+
+    if (
+      saturatedLabels.length > 0
+    ) {
+      parts.push(
+        `В близките проучени съоръжения са документирани ` +
+        `водонаситени интервали около ` +
+        `${saturatedLabels.slice(0, 4).join(", ")}.`
+      );
+    }
+
+    if (
+      inflowLabels.length > 0
+    ) {
+      parts.push(
+        `Документирани минерални приточни зони има около ` +
+        `${inflowLabels.slice(0, 4).join(", ")}.`
+      );
+    }
+
+    if (
+      aquiferLabels.length > 0
+    ) {
+      parts.push(
+        `Документирани минерални водоносни интервали включват ` +
+        `${aquiferLabels.slice(0, 3).join(", ")}.`
+      );
+    }
+
+    parts.push(
+      `Наличните данни не са достатъчни, за да се твърди ` +
+      `колко отделни студени водни нива има точно под избраната ` +
+      `точка или на каква точна дълбочина са те.`
+    );
+
+    parts.push(
+      `Филтри, обсадни колони и открит ствол не се приемат ` +
+      `автоматично за доказани водопритоци.`
+    );
+
+    waterLevelAnalysis =
+      parts.join(" ");
+  }
+
   const geologyAnalysis =
     geologySummary
       ? `${geologySummary} При минералните води тази информация е важна, защото геоложката среда определя през какви скали и пластове може да циркулира водата, къде могат да съществуват пропускливи колектори и по-слабо пропускливи покривни слоеве и доколко е възможна продължителна дълбока циркулация. По-дългият контакт със скалите и по-дълбоката циркулация могат да влияят върху температурата и минералния състав на водата.`
@@ -814,6 +1094,34 @@ export default function MineralAreaAnalysisCard({
           <div style={{ marginTop: 6 }}>
             {surfaceContext}
           </div>
+        </div>
+      </Panel>
+
+      <Panel title="Студени води над минералната система">
+        <div
+          style={{
+            padding: 14,
+            background: "#eef7fa",
+            borderLeft: "3px solid #167d96",
+            lineHeight: 1.75,
+          }}
+        >
+          {waterLevelAnalysis}
+        </div>
+
+        <div
+          style={{
+            marginTop: 10,
+            fontSize: 13,
+            color: "#5a6d72",
+            lineHeight: 1.6,
+          }}
+        >
+          Анализът е районен синтез спрямо избраната
+          координата. Данните от близките сондажи и
+          извори се използват като доказателствен
+          контекст и не се приписват механично на
+          точката.
         </div>
       </Panel>
 
