@@ -7,6 +7,7 @@ type Props = {
   assessments: any[];
   faultSpatial: any;
   spatial: any;
+  surfaceWaterWetness: any;
   exploitation: any;
   quantitySummaryTitle: string;
   quantitySummaryText: string;

@@ -12,6 +12,24 @@ const nextConfig: NextConfig = {
     "/api/expert-pdf/render-save": [
       "./node_modules/@sparticuz/chromium/bin/**/*",
     ],
+    "/pro": [
+      "./data/surface-water-wetness/**/*.tif",
+    ],
+  },
+
+  outputFileTracingExcludes: {
+    "/api/provider-register": [
+      "./data/surface-water-wetness/**/*",
+    ],
+    "/knowledge/practice/property-conclusions": [
+      "./data/surface-water-wetness/**/*",
+    ],
+    "/knowledge/practice/protection-zones": [
+      "./data/surface-water-wetness/**/*",
+    ],
+    "/services/provider/[id]": [
+      "./data/surface-water-wetness/**/*",
+    ],
   },
 };
 

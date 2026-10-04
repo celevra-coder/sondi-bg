@@ -14,6 +14,7 @@ import ProPrintReport from "./ProPrintReport";
 import ProClarityTracker from "./ProClarityTracker";
 import { resolveGroundwaterBodiesAtPoint } from "@/lib/gwb-spatial-resolver";
 import { getBlackSeaGisAnalysis } from "@/lib/black-sea-gis";
+import { getSurfaceWaterWetnessProfile } from "@/lib/surface-water-wetness-profile";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 
@@ -455,6 +456,14 @@ export default async function ProPage({
       lat,
       lng
     );
+
+  const surfaceWaterWetness =
+    hasValidCoordinates
+      ? await getSurfaceWaterWetnessProfile(
+          Number(lat),
+          Number(lng)
+        )
+      : null;
 
   const mineralWaterProfile =
     isMineralAnalysis
@@ -4292,6 +4301,7 @@ export default async function ProPage({
         assessments={activeGroundwaterAssessments}
         faultSpatial={faultSpatial}
         spatial={spatial}
+        surfaceWaterWetness={surfaceWaterWetness}
         exploitation={exploitation}
         quantitySummaryTitle={quantitySummaryTitle}
         quantitySummaryText={quantitySummaryText}
@@ -5272,6 +5282,115 @@ export default async function ProPage({
                 lat={Number(lat)}
                 lng={Number(lng)}
               />
+            </Card>
+          )}
+
+          {surfaceWaterWetness?.status === "OK" && (
+            <Card
+              title="Повърхностна вода и влажност"
+              subtitle="Copernicus HRL Water and Wetness 2018 · 10 m · исторически повърхностен контекст."
+            >
+              <div
+                style={{
+                  display: "grid",
+                  gap: 12,
+                }}
+              >
+                <div
+                  style={{
+                    padding: 14,
+                    borderRadius: 12,
+                    background: "#eef7f7",
+                    border: "1px solid #cfe5e5",
+                  }}
+                >
+                  <strong>
+                    Клас в избраната точка:
+                  </strong>{" "}
+                  {surfaceWaterWetness.point_class_bg ||
+                    "няма класификация"}
+                </div>
+
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns:
+                      "repeat(auto-fit, minmax(180px, 1fr))",
+                    gap: 10,
+                  }}
+                >
+                  <div
+                    style={{
+                      padding: 12,
+                      border: "1px solid #e3e8e8",
+                      borderRadius: 10,
+                    }}
+                  >
+                    <strong>Радиус 100 m</strong>
+                    <br />
+                    Вода или влажна повърхност:{" "}
+                    {surfaceWaterWetness
+                      .radius_100m
+                      ?.water_or_wet_percent != null
+                      ? `${surfaceWaterWetness.radius_100m.water_or_wet_percent}%`
+                      : "няма данни"}
+                  </div>
+
+                  <div
+                    style={{
+                      padding: 12,
+                      border: "1px solid #e3e8e8",
+                      borderRadius: 10,
+                    }}
+                  >
+                    <strong>Радиус 300 m</strong>
+                    <br />
+                    Вода или влажна повърхност:{" "}
+                    {surfaceWaterWetness
+                      .radius_300m
+                      ?.water_or_wet_percent != null
+                      ? `${surfaceWaterWetness.radius_300m.water_or_wet_percent}%`
+                      : "няма данни"}
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    fontSize: 14,
+                    lineHeight: 1.6,
+                    color: "#52605d",
+                  }}
+                >
+                  Данните описват появата на повърхностна
+                  вода и влажни повърхности през периода
+                  2012–2018. Те се използват само като
+                  допълнителен повърхностен контекст и не
+                  доказват наличие, дълбочина или дебит на
+                  подземни води.
+                </div>
+
+                {(
+                  surfaceWaterWetness.radius_100m &&
+                  !surfaceWaterWetness.radius_100m
+                    .coverage_complete
+                ) ||
+                (
+                  surfaceWaterWetness.radius_300m &&
+                  !surfaceWaterWetness.radius_300m
+                    .coverage_complete
+                ) ? (
+                  <div
+                    style={{
+                      fontSize: 13,
+                      color: "#8a5a00",
+                    }}
+                  >
+                    Част от анализирания радиус е извън
+                    наличното raster покритие и процентите
+                    трябва да се разглеждат като непълни.
+                  </div>
+                ) : null}
+              </div>
             </Card>
           )}
 
