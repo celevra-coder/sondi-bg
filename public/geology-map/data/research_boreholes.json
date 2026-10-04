@@ -1,0 +1,2699 @@
+{
+  "boreholes": [
+    {
+      "borehole_id": "PLD-Z037",
+      "name_bg": "Катунци - сондаж №236хг",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact_with_source_conflict",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.4539167,
+        "longitude": 23.4227778,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 291,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 32,
+          "expected_material_bg": "Чакъли с песъчлив запълнител, вероятно кватернер",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S048"
+          ]
+        },
+        {
+          "depth_from_m": 32,
+          "depth_to_m": 144,
+          "expected_material_bg": "Дребнозърнести пясъчници с глинесто-песъчлива спойка, редуващи се с алевролити и прослойки от дребни конгломерати - Калиманска свита",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S048"
+          ]
+        },
+        {
+          "depth_from_m": 144,
+          "depth_to_m": 233,
+          "expected_material_bg": "Конгломерати, дребнокъсови, с песъчлива спойка, редуващи се с грубозърнести пясъчници, глинести, с прослойки от аргилити - Санданска свита",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S048"
+          ]
+        },
+        {
+          "depth_from_m": 230,
+          "depth_to_m": 291,
+          "expected_material_bg": "Среднозърнести и дребнозърнести конгломерати с песъчлива спойка и прослойки от глинести пясъчници - Санданска свита",
+          "confidence": "high",
+          "evidence_level": "borehole_exact_with_source_conflict",
+          "source_ids": [
+            "PLD-S048"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "year_constructed": 1987,
+        "total_depth_m": 291,
+        "wellhead_elevation_m": 198.4,
+        "conductor_from_m": 0,
+        "conductor_to_m": 31,
+        "conductor_diameter_mm": 146,
+        "production_casing_from_m": 15,
+        "production_casing_to_m": 291,
+        "production_casing_diameter_mm": 75,
+        "cemented_from_m": 0,
+        "cemented_to_m": 168,
+        "filter_from_m": 168,
+        "filter_to_m": 270,
+        "source_ids": [
+          "PLD-S048"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "discharge_type": "artesian_self_flow",
+        "technical_possible_flow_l_s": 1.73,
+        "self_flow_elevation_m": 199.23,
+        "allowable_drawdown_m": 4.5,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S048"
+        ]
+      },
+      "water_temperature": {
+        "value_c": 27.4,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S048"
+        ]
+      },
+      "collector": {
+        "depth_from_m": 144,
+        "depth_to_m": 291,
+        "material_bg": "Конгломерати и пясъчници на Санданската свита",
+        "collector_type_bg": "Поров седиментен напорен колектор",
+        "role_bg": "Основна водовместяща среда на минералната вода",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": [
+          "PLD-S048"
+        ]
+      },
+      "intake_intervals": [
+        {
+          "depth_from_m": 168,
+          "depth_to_m": 270,
+          "type": "filter_interval",
+          "material_bg": "Конгломерати и пясъчници на Санданската свита",
+          "interpretation_bg": "Документиран филтров и водоприемен интервал",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S048"
+          ]
+        }
+      ],
+      "hydro_notes_bg": "Сондаж №236хг експлоатира поровия напорен колектор в седиментите на Санданската свита. Филтровият интервал 168-270 м е пряко документиран и попада в конгломератно-пясъчниковата последователност. Сондажът е самоизливен.",
+      "expert_context": {
+        "simple_text_bg": "При сондаж №236хг в Катунци до 32 м има чакъли. Между 32 и 144 м преобладават дребнозърнести пясъчници, алевролити и дребни конгломерати. Под 144 м започват конгломерати и пясъчници на Санданската свита. Филтровият интервал е 168-270 м. Сондажът е самоизливен с технически възможен дебит около 1.73 l/s и температура около 27.4°C.",
+        "usage": "Deep sedimentary lithological and hydrothermal analogue",
+        "warning": "The official source contains a 230-233 m overlap between two lithological interval descriptions. Conflict is preserved and should not be silently resolved."
+      }
+    },
+    {
+      "borehole_id": "PLD-Z038",
+      "name_bg": "Благоевград - р. Струма - сондаж №1хг",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.00608333333333,
+        "longitude": 23.057194444444445,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 814,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 49.5,
+          "expected_material_bg": "Разнозърнести чакъли с глинесто-песъчлив запълнител - алувий, кватернер",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 49.5,
+          "depth_to_m": 165,
+          "expected_material_bg": "Пъстросиви конгломерати с глинесто-песъчлива спойка - плиоцен",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 165,
+          "depth_to_m": 182,
+          "expected_material_bg": "Светлосиви дребнозърнести биотитови гнайси с гранат",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 182,
+          "depth_to_m": 359,
+          "expected_material_bg": "Тъмносиви кварцови амфиболити с гранат",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 359,
+          "depth_to_m": 429,
+          "expected_material_bg": "Дребнозърнести двуслюдени гнайси, силно напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 429,
+          "depth_to_m": 469,
+          "expected_material_bg": "Мусковитови шисти с гранат, напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 469,
+          "depth_to_m": 547,
+          "expected_material_bg": "Дребнозърнести диоритов тип скали с паралелна текстура, силно напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 547,
+          "depth_to_m": 591,
+          "expected_material_bg": "Дребнозърнести кварцови ортоамфиболити, силно напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 591,
+          "depth_to_m": 768,
+          "expected_material_bg": "Сиви дребнозърнести биотитови гнайси, често пресечени от мигматитови жили",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 768,
+          "depth_to_m": 782,
+          "expected_material_bg": "Ситнозърнест масивен биотитов плагиогранит",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 782,
+          "depth_to_m": 799,
+          "expected_material_bg": "Биотитов плагиогранит, силно тектонски преработен",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 799,
+          "depth_to_m": 805,
+          "expected_material_bg": "Биотитов плагиогранит, много силно напукан",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 805,
+          "depth_to_m": 814,
+          "expected_material_bg": "Масивен диорит",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 359,
+          "depth_to_m": 429,
+          "type_bg": "Силно напукани двуслюдени гнайси",
+          "significance_bg": "Документиран мощен напукан интервал в метаморфната подложка",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 429,
+          "depth_to_m": 469,
+          "type_bg": "Напукани мусковитови шисти",
+          "significance_bg": "Документиран напукан интервал в метаморфната подложка",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 469,
+          "depth_to_m": 547,
+          "type_bg": "Силно напукани диоритови скали",
+          "significance_bg": "Документиран силно напукан скален интервал",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 547,
+          "depth_to_m": 591,
+          "type_bg": "Силно напукани ортоамфиболити",
+          "significance_bg": "Документиран силно напукан интервал в метаморфната подложка",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 782,
+          "depth_to_m": 799,
+          "type_bg": "Силно тектонски преработен плагиогранит",
+          "significance_bg": "Документирана тектонски преработена зона",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 799,
+          "depth_to_m": 805,
+          "type_bg": "Много силно напукан плагиогранит",
+          "significance_bg": "Документиран интервал с много силна напуканост",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "year_constructed": 1972,
+        "total_depth_m": 814,
+        "casing_1_from_m": 0,
+        "casing_1_to_m": 27.5,
+        "casing_1_diameter_mm": 168,
+        "casing_1_cemented": true,
+        "casing_2_from_m": 0,
+        "casing_2_to_m": 194.2,
+        "casing_2_diameter_mm": 146,
+        "casing_2_cemented": true,
+        "casing_3_from_m": 0,
+        "casing_3_to_m": 315.6,
+        "casing_3_diameter_mm": 127,
+        "casing_3_cemented": false,
+        "combined_filter_column_from_m": 300,
+        "combined_filter_column_to_m": 620,
+        "combined_filter_column_diameter_mm": 108,
+        "filter_pattern_solid_m": 8,
+        "filter_pattern_filter_m": 4,
+        "open_hole_from_m": 620,
+        "open_hole_to_m": 814,
+        "open_hole_diameter_mm": 91,
+        "source_ids": [
+          "PLD-S049"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "discharge_type": "pumped_operation",
+        "technical_possible_flow_l_s": 1.5,
+        "piezometric_level_depth_m": 0.15,
+        "allowable_drawdown_m": 3,
+        "allowable_dynamic_level_depth_m": 3.15,
+        "allowable_dynamic_level_elevation_m": 320.55,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S049"
+        ]
+      },
+      "water_temperature": {
+        "technical_resource_temperature_c": 57.8,
+        "sampled_temperature_c": 56.3,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S049"
+        ]
+      },
+      "collector": {
+        "depth_from_m": 165,
+        "depth_to_m": 814,
+        "material_bg": "Силно напукани метаморфни и магматични скали от подложката",
+        "collector_type_bg": "Пукнатинно-разломен термоминерален колектор",
+        "role_bg": "Основна водовместяща среда на минералната вода",
+        "structural_control_bg": "Термоминералните води са привързани към разломи и разседи, включително напречни нарушения с посока североизток-югозапад",
+        "scope": "borehole_and_deposit_context",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": [
+          "PLD-S049"
+        ]
+      },
+      "intake_intervals": [
+        {
+          "depth_from_m": 300,
+          "depth_to_m": 620,
+          "type": "combined_filter_casing",
+          "material_bg": "Метаморфни и магматични скали от подложката",
+          "interpretation_bg": "Комбинирана обсадно-филтърна колона. Източникът описва повтаряща се схема: след 8 м плътни тръби следват 4 м филтърни тръби.",
+          "exact_individual_filter_slots": false,
+          "pattern_bg": "8 м плътна тръба + 4 м филтър, повтаряща се схема",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        },
+        {
+          "depth_from_m": 620,
+          "depth_to_m": 814,
+          "type": "open_hole",
+          "material_bg": "Биотитови гнайси, плагиогранити и диорит",
+          "interpretation_bg": "Документиран открит ствол",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S049"
+          ]
+        }
+      ],
+      "hydro_notes_bg": "МЗ определя силно напуканите метаморфни скали от подложката като колектор на минералната вода. Сондажът пресича множество мощни напукани и тектонски преработени интервали. Те се пазят като структурни интервали и не се обявяват автоматично за отделни водоносни хоризонти. В 300-620 м има комбинирана филтърна колона с повтарящ се конструктивен модел, а 620-814 м е открит ствол.",
+      "expert_context": {
+        "simple_text_bg": "При сондаж №1хг край Благоевград до 165 м има чакъли и конгломерати. Под тях започва метаморфният и магматичният фундамент. Между 359 и 591 м има няколко мощни силно напукани интервала в гнайси, шисти, диоритови скали и амфиболити. На 782-805 м плагиогранитът е силно тектонски преработен и много силно напукан. Сондажът достига 814 м.",
+        "usage": "Very deep lithological, structural and hydrothermal analogue",
+        "warning": "Fractured intervals are documented structural evidence. Do not automatically treat each interval as a separate aquifer without hydraulic evidence."
+      }
+    },
+    {
+      "borehole_id": "PLD-Z040",
+      "name_bg": "Симитли - сондаж №7",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.8932694,
+        "longitude": 23.1137889,
+        "status": "official_documented",
+        "evidence_level": "official_resource_assessment"
+      },
+      "total_depth_m": 234.7,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 17.2,
+          "expected_material_bg": "Чакъли и пясъци - пролувиални отложения",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S051",
+            "PLD-S083"
+          ]
+        },
+        {
+          "depth_from_m": 17.2,
+          "depth_to_m": 166,
+          "expected_material_bg": "Разнозърнести пясъчници с глинеста спойка, на места с единични валуни и тънки прослойки от слабоспоен конгломерат",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S051",
+            "PLD-S083"
+          ]
+        },
+        {
+          "depth_from_m": 166,
+          "depth_to_m": 234.7,
+          "expected_material_bg": "Едрокъсов до валунен конгломерат с прослойки от пясъчници",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S051",
+            "PLD-S083"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [
+        {
+          "depth_from_m": 166,
+          "depth_to_m": 234.7,
+          "event_bg": "При навлизането в конгломератите на 166 m се появява вода на самоизлив с напор 7 m над терена. Източникът свързва появата на водата директно с тази литоложка граница.",
+          "evidence_level": "source_explicit_hydraulic_onset",
+          "source_ids": [
+            "PLD-S083"
+          ]
+        }
+      ],
+      "borehole_construction": {
+        "year_constructed": 1965,
+        "total_depth_m": 234.7,
+        "planned_depth_m": 800,
+        "stopped_early": true,
+        "casing_from_m": 0,
+        "casing_to_m": 32.25,
+        "casing_diameter_mm": 219,
+        "open_hole_from_m": 32.25,
+        "open_hole_to_m": 234.7,
+        "open_hole_diameter_mm": 146,
+        "source_ids": [
+          "PLD-S051",
+          "PLD-S083"
+        ],
+        "construction_year": 1965
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "technical_possible_flow_l_s": 4.84,
+        "status": "documented_2011_multistep_test",
+        "source_ids": [
+          "PLD-S083"
+        ]
+      },
+      "water_temperature": {
+        "sampled_temperature_c": 51.9,
+        "status": "documented_at_water_sampling",
+        "source_ids": [
+          "PLD-S051"
+        ]
+      },
+      "collector": null,
+      "intake_intervals": [
+        {
+          "depth_from_m": 32.25,
+          "depth_to_m": 234.7,
+          "type": "open_hole",
+          "material_bg": "Основно пясъчници и конгломерати",
+          "interpretation_bg": "Документиран открит ствол в неогенския седиментен комплекс",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S051"
+          ]
+        }
+      ],
+      "hydro_notes_bg": "Сондаж №7 не достига докамбрийската кристалинна подложка и остава в пролувиалните и неогенските седименти. Находище Симитли е част от разломно контролирана хидротермална система, в която регионалната водовмещаща среда включва тектонски напукани гнайси и амфиболити на подложката и неогенски пясъчници и конгломерати. При навлизането в едрокъсовите до валунни конгломерати на 166 m е документирана поява на вода на самоизлив с напор 7 m над терена. При достигане на 234.7 m е документиран първоначален дебит 0.91 l/s при 51.8°C. В балнеологичната оценка на МЗ са запазени отделно стойностите 1.00 l/s и 51.9°C при пробовземането. Ресурсната оценка от 2011 г. определя технически възможен дебит 4.84 l/s. Тези различни стойности се пазят според контекста им и не се приравняват.",
+      "expert_context": {
+        "simple_text_bg": "При сондаж №7 в Симитли до 17.2 m има чакъли и пясъци. Между 17.2 и 166 m са преминати пясъчници с глинеста спойка и тънки конгломератни прослойки. От 166 до 234.7 m следва едрокъсов до валунен конгломерат с прослойки от пясъчници. При навлизането в конгломератите на 166 m е документирана поява на вода на самоизлив.",
+        "usage": "Deep sedimentary hydrothermal analogue with documented hydraulic onset",
+        "warning": "Borehole 7 does not reach the fractured metamorphic basement. Sampled flow, drilling-stage flow and technical possible yield must remain separate measurements."
+      }
+    },
+    {
+      "borehole_id": "PLD-Z043",
+      "name_bg": "Огняново-Гърмен - сондаж Вила Шамов",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.619167705,
+        "longitude": 23.797241704,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate"
+      },
+      "total_depth_m": 120,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 18,
+          "expected_material_bg": "Кватернерни делувиални материали - ръбести скални късове в глинесто-песъчлива матрица",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S054"
+          ]
+        },
+        {
+          "depth_from_m": 18,
+          "depth_to_m": 28,
+          "expected_material_bg": "Напукани амфиболитови гнайси, процепени от кварцови и пегматитови жили",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S054"
+          ]
+        },
+        {
+          "depth_from_m": 28,
+          "depth_to_m": 120,
+          "expected_material_bg": "Силно силицифицирани и напукани амфиболитови гнайси",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S054"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 18,
+          "depth_to_m": 28,
+          "type_bg": "Напукани амфиболитови гнайси с кварцови и пегматитови жили",
+          "significance_bg": "Документиран напукан кристалинен интервал",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S054"
+          ]
+        },
+        {
+          "depth_from_m": 28,
+          "depth_to_m": 120,
+          "type_bg": "Силно силицифицирани и напукани амфиболитови гнайси",
+          "significance_bg": "Мощен дълбок структурно нарушен кристалинен интервал",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S054"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "total_depth_m": 120,
+        "source_ids": [
+          "PLD-S054"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "discharge_type": "self_flow",
+        "technical_possible_flow_l_s": 1.3,
+        "self_flow_elevation_m": 579.98,
+        "status": "documented_current_resource_assessment",
+        "source_ids": [
+          "PLD-S054"
+        ]
+      },
+      "water_temperature": {
+        "technical_resource_temperature_c": 39.4,
+        "sample_temperature_c": 37.2,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S054"
+        ]
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "Кристалинни скали - гнайси",
+        "collector_type_bg": "Пукнатинно-жилен термоминерален колектор",
+        "role_bg": "Регионална водовместяща среда на минералната вода",
+        "structural_control_bg": "Минералната вода е свързана с отворени пукнатини и тектонски нарушения в кристалинния комплекс",
+        "scope": "deposit_scale",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": [
+          "PLD-S054"
+        ]
+      },
+      "intake_intervals": null,
+      "hydro_notes_bg": "Сондаж Вила Шамов достига 120 м. Под 18 м кватернерни делувиални материали се навлиза в амфиболитови гнайси. Интервалът 18-28 м е напукан и пресечен от кварцови и пегматитови жили, а от 28 до 120 м гнайсите са силно силицифицирани и напукани.",
+      "expert_context": {
+        "simple_text_bg": "При сондаж Вила Шамов в Огняново до 18 м са преминати делувиални наслаги. От 18 до 28 м следват напукани амфиболитови гнайси с кварцови и пегматитови жили. От 28 до 120 м са документирани силно силицифицирани и напукани амфиболитови гнайси.",
+        "usage": "Deep crystalline lithological and structural analogue for Ognyanovo-Garmen",
+        "warning": "Fractured and silicified intervals are structural evidence and must not automatically be interpreted as exact water-bearing horizons."
+      }
+    },
+    {
+      "borehole_id": "PLD-Z044",
+      "name_bg": "Огняново-Гърмен - сондаж Никола Ушев",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.620125134,
+        "longitude": 23.800316214,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate"
+      },
+      "total_depth_m": 110,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 16,
+          "expected_material_bg": "Кватернерни алувиални и делувиални материали",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S055"
+          ]
+        },
+        {
+          "depth_from_m": 16,
+          "depth_to_m": 28,
+          "expected_material_bg": "Напукани амфиболитови гнайси, пресечени от кварцови и пегматитови жили",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S055"
+          ]
+        },
+        {
+          "depth_from_m": 28,
+          "depth_to_m": 110,
+          "expected_material_bg": "Силно силицифицирани и напукани амфиболитови гнайси",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S055"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 16,
+          "depth_to_m": 28,
+          "type_bg": "Напукани амфиболитови гнайси с кварцови и пегматитови жили",
+          "significance_bg": "Документиран напукан и жилно пресечен кристалинен интервал",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S055"
+          ]
+        },
+        {
+          "depth_from_m": 28,
+          "depth_to_m": 110,
+          "type_bg": "Силно силицифицирани и напукани амфиболитови гнайси",
+          "significance_bg": "Мощен дълбок структурно нарушен кристалинен интервал",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S055"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "construction_year": 1987,
+        "total_depth_m": 110,
+        "source_ids": [
+          "PLD-S055"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "discharge_type": "self_flow",
+        "technical_possible_flow_l_s": 1.33,
+        "self_flow_elevation_m": 584.33,
+        "status": "documented_current_resource_assessment",
+        "source_ids": [
+          "PLD-S055"
+        ]
+      },
+      "water_temperature": {
+        "technical_resource_temperature_c": 38.8,
+        "sample_temperature_c": 38.7,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S055"
+        ]
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "Кристалинни скали - гнайси",
+        "collector_type_bg": "Пукнатинно-жилен термоминерален колектор",
+        "role_bg": "Регионална водовмещаща среда на минералната вода",
+        "structural_control_bg": "Термоминералната вода постъпва от дълбочина по отворени пукнатини и тектонски нарушения в кристалинния комплекс",
+        "scope": "deposit_scale",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": [
+          "PLD-S055"
+        ]
+      },
+      "intake_intervals": null,
+      "hydro_notes_bg": "Сондаж Никола Ушев достига 110 м. До 16 м са документирани кватернерни алувиални и делувиални материали. От 16 до 28 м са преминати напукани амфиболитови гнайси с кварцови и пегматитови жили, а от 28 до 110 м - силно силицифицирани и напукани амфиболитови гнайси. Източникът не определя отделен точен приточен интервал в сондажа.",
+      "expert_context": {
+        "simple_text_bg": "При сондаж Никола Ушев до 16 м са преминати кватернерни алувиални и делувиални материали. Между 16 и 28 м следват напукани амфиболитови гнайси с кварцови и пегматитови жили. От 28 до 110 м са документирани силно силицифицирани и напукани амфиболитови гнайси.",
+        "usage": "Deep crystalline lithological and structural analogue for Ognyanovo-Garmen",
+        "warning": "Fractured and silicified intervals are structural evidence and must not automatically be interpreted as exact water-bearing horizons."
+      }
+    },
+    {
+      "borehole_id": "PLD-Z045",
+      "name_bg": "Огняново-Гърмен - сондаж № 3ВКП",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact_with_source_overlap",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.620969871,
+        "longitude": 23.803542991,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate"
+      },
+      "total_depth_m": 221.6,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 20,
+          "expected_material_bg": "Силно изветрели гнайси",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S056"
+          ]
+        },
+        {
+          "depth_from_m": 20,
+          "depth_to_m": 175,
+          "expected_material_bg": "Силно напукани амфиболитови гнайси, процепени с множество кварцови и пегматитови жили",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S056"
+          ]
+        },
+        {
+          "depth_from_m": 174,
+          "depth_to_m": 221.6,
+          "expected_material_bg": "Гнайси, слабо напукани, на места окварцени",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S056"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 20,
+          "depth_to_m": 175,
+          "description_bg": "Силно напукани амфиболитови гнайси с множество кварцови и пегматитови жили.",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S056"
+          ]
+        },
+        {
+          "depth_from_m": 174,
+          "depth_to_m": 221.6,
+          "description_bg": "Слабо напукани гнайси, на места окварцени.",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S056"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "total_depth_m": 221.6,
+        "construction_year": 1965,
+        "terrain_elevation_m": 587.22,
+        "drilling_intervals": [
+          {
+            "depth_from_m": 0,
+            "depth_to_m": 19,
+            "diameter_mm": 168
+          },
+          {
+            "depth_from_m": 19,
+            "depth_to_m": 32,
+            "diameter_mm": 146
+          },
+          {
+            "depth_from_m": 32,
+            "depth_to_m": 132,
+            "diameter_mm": 127
+          },
+          {
+            "depth_from_m": 132,
+            "depth_to_m": 221.6,
+            "diameter_mm": 108
+          }
+        ],
+        "casing_intervals": [
+          {
+            "depth_from_m": 0,
+            "depth_to_m": 21.6,
+            "diameter_mm": 146,
+            "note_bg": "Стоманена обсадна колона; извършена е циментация в този интервал."
+          }
+        ],
+        "open_hole_intervals": [
+          {
+            "depth_from_m": 21.6,
+            "depth_to_m": 221,
+            "note_bg": "Сондажът не е затръбен в този интервал."
+          }
+        ],
+        "source_ids": [
+          "PLD-S056"
+        ]
+      },
+      "source_overlaps": [
+        {
+          "depth_from_m": 174,
+          "depth_to_m": 175,
+          "description_bg": "Официалният литоложки разрез съдържа припокриване: интервалът 20-175 m и следващият интервал 174-221,6 m се застъпват с 1 m. Запазено е без корекция.",
+          "source_ids": [
+            "PLD-S056"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "discharge_type": "self_flow",
+        "technical_possible_flow_l_s": 0.88,
+        "self_flow_elevation_m": 587.85,
+        "status": "documented_current_resource_assessment",
+        "source_ids": [
+          "PLD-S056"
+        ]
+      },
+      "water_temperature": {
+        "technical_resource_temperature_c": 41.2,
+        "sample_temperature_c": 39.4,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S056"
+        ]
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "Кристалинни скали - гнайси и амфиболитови гнайси",
+        "collector_type_bg": "Пукнатинно-жилен термоминерален колектор",
+        "role_bg": "Регионална водовмещаща среда на минералната вода",
+        "structural_control_bg": "Термоминералната вода постъпва от дълбочина по отворени пукнатини и тектонски нарушения в кристалинния комплекс",
+        "scope": "deposit_scale",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": [
+          "PLD-S056"
+        ]
+      },
+      "intake_intervals": null,
+      "hydro_notes_bg": "Сондаж №3 ВКП достига 221,6 m. От 0 до 20 m са описани силно изветрели гнайси. От 20 до 175 m следват силно напукани амфиболитови гнайси с множество кварцови и пегматитови жили, а официалният разрез дава следващия интервал от 174 до 221,6 m като слабо напукани, на места окварцени гнайси. Припокриването 174-175 m е запазено без корекция. Източникът не установява отделни точни водоприточни интервали.",
+      "expert_context": {
+        "simple_text_bg": "Сондаж №3 ВКП при Огняново-Гърмен достига 221,6 m. До 20 m са силно изветрели гнайси. Между 20 и 175 m са документирани силно напукани амфиболитови гнайси с множество кварцови и пегматитови жили. Следващият описан интервал е 174-221,6 m със слабо напукани, на места окварцени гнайси.",
+        "usage": "Deep fractured-vein mineral-water analogue for the Ognyanovo-Garmen system",
+        "warning": "Припокриването 174-175 m е източниково и се пази без корекция. Структурните интервали не се приемат автоматично за точни водоприточни интервали."
+      }
+    },
+    {
+      "borehole_id": "PLD-Z046",
+      "name_bg": "Огняново-Гърмен - сондаж Делта-Бисер",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.620578607,
+        "longitude": 23.80395462,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate"
+      },
+      "total_depth_m": 106,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 17,
+          "expected_material_bg": "Силно изветрели милонитизирани гнайси",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S057"
+          ]
+        },
+        {
+          "depth_from_m": 17,
+          "depth_to_m": 106,
+          "expected_material_bg": "Силно напукани амфиболитови гнайси, пресечени от множество кварцови и пегматитови жили",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S057"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 17,
+          "type_bg": "Силно изветрели милонитизирани гнайси",
+          "significance_bg": "Документирана плитка изветряла и милонитизирана кристалинна зона",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S057"
+          ]
+        },
+        {
+          "depth_from_m": 17,
+          "depth_to_m": 106,
+          "type_bg": "Силно напукани амфиболитови гнайси с множество кварцови и пегматитови жили",
+          "significance_bg": "Мощен документиран напукан и жилно пресечен кристалинен интервал",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S057"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "construction_year": 1999,
+        "total_depth_m": 106,
+        "source_ids": [
+          "PLD-S057"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "discharge_type": "pumped_or_static_level_documented",
+        "technical_possible_flow_l_s": 2.08,
+        "static_water_level_elevation_m": 587.5,
+        "allowable_drawdown_m": 6.6,
+        "dynamic_water_level_elevation_m": 580.9,
+        "status": "documented_current_resource_assessment",
+        "source_ids": [
+          "PLD-S057"
+        ]
+      },
+      "water_temperature": {
+        "technical_resource_temperature_c": 35.4,
+        "sample_temperature_c": 33.8,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S057"
+        ]
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "Кристалинни скали - гнайси и амфиболитови гнайси",
+        "collector_type_bg": "Пукнатинно-жилен термоминерален колектор",
+        "role_bg": "Регионална водовмещаща среда на минералната вода",
+        "structural_control_bg": "Термоминералната вода постъпва от дълбочина по отворени пукнатини на тектонските нарушения в кристалинния комплекс",
+        "scope": "deposit_scale",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": [
+          "PLD-S057"
+        ]
+      },
+      "intake_intervals": null,
+      "hydro_notes_bg": "Сондаж Делта-Бисер достига 106 м. От 0 до 17 м са документирани силно изветрели милонитизирани гнайси. От 17 до 106 м следват силно напукани амфиболитови гнайси, пресечени от множество кварцови и пегматитови жили. Източникът не определя отделен точен приточен интервал.",
+      "expert_context": {
+        "simple_text_bg": "При сондаж Делта-Бисер до 17 м са преминати силно изветрели милонитизирани гнайси. От 17 м до крайната дълбочина 106 м са документирани силно напукани амфиболитови гнайси с множество кварцови и пегматитови жили.",
+        "usage": "Deep crystalline lithological and structural analogue for Ognyanovo-Garmen",
+        "warning": "The 17-106 m fractured interval is structural evidence. The source does not establish that the entire interval is uniformly water-bearing or define an exact inflow depth."
+      }
+    },
+    {
+      "borehole_id": "PLD-Z047",
+      "name_bg": "Огняново-Гърмен - сондаж АПК",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.623131162,
+        "longitude": 23.806619738,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate"
+      },
+      "total_depth_m": 64,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 2,
+          "expected_material_bg": "Кватернерни алувиални материали с гнайсови и пегматитови валуни и чакъл в глинесто-песъчлив пълнеж",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S058"
+          ]
+        },
+        {
+          "depth_from_m": 2,
+          "depth_to_m": 41,
+          "expected_material_bg": "Амфиболитови гнайси, напукани и локално раздробени",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S058"
+          ]
+        },
+        {
+          "depth_from_m": 41,
+          "depth_to_m": 47,
+          "expected_material_bg": "Плътен амфиболитов гнайс",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S058"
+          ]
+        },
+        {
+          "depth_from_m": 47,
+          "depth_to_m": 64,
+          "expected_material_bg": "Кристалинни скали - открит ствол; източникът не дава по-подробно литоложко подразделяне",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S058"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 2,
+          "depth_to_m": 41,
+          "type_bg": "Напукани и локално раздробени амфиболитови гнайси",
+          "significance_bg": "Документирана плитка до среднодълбока структурно нарушена кристалинна зона",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S058"
+          ]
+        },
+        {
+          "depth_from_m": 41,
+          "depth_to_m": 47,
+          "type_bg": "Плътен амфиболитов гнайс",
+          "significance_bg": "Документиран преход към по-плътна кристалинна скала",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S058"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "construction_year": 1994,
+        "total_depth_m": 64,
+        "source_ids": [
+          "PLD-S058"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "discharge_type": "pumped_or_static_level_documented",
+        "technical_possible_flow_l_s": 1.5,
+        "static_water_level_elevation_m": 591.46,
+        "allowable_drawdown_m": 1.74,
+        "allowable_water_level_depth_m": 3.3,
+        "pump_installation_elevation_m": 589.72,
+        "status": "documented_current_resource_assessment",
+        "source_ids": [
+          "PLD-S058"
+        ]
+      },
+      "water_temperature": {
+        "technical_resource_temperature_c": 41,
+        "sample_temperature_c": 41,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S058"
+        ]
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "Кристалинни скали - гнайси и амфиболитови гнайси",
+        "collector_type_bg": "Пукнатинно-жилен термоминерален колектор",
+        "role_bg": "Регионална водовмещаща среда на минералната вода",
+        "structural_control_bg": "Минералните води са свързани с Гоцеделчевската хидротермална система и с отворени пукнатини по тектонски нарушения в кристалинния комплекс",
+        "scope": "deposit_scale",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": [
+          "PLD-S058"
+        ]
+      },
+      "intake_intervals": null,
+      "hydro_notes_bg": "Сондаж АПК достига 64 м. От 0 до 2 м са преминати кватернерни алувиални материали. От 2 до 41 м са документирани напукани и локално раздробени амфиболитови гнайси. Между 41 и 47 м скалата е плътен амфиболитов гнайс. От 47 до 64 м сондажът продължава като открит ствол в кристалинни скали. Наличните данни не определят точна дълбочина на минералния водоприток.",
+      "expert_context": {
+        "simple_text_bg": "При сондаж АПК до 2 м има кватернерни алувиални материали. От 2 до 41 м следват напукани и локално раздробени амфиболитови гнайси. Между 41 и 47 м е преминат плътен амфиболитов гнайс, а от 47 до 64 м сондажът продължава в кристалинни скали.",
+        "usage": "Shallow-to-medium crystalline lithological and structural analogue for Ognyanovo-Garmen",
+        "warning": "The fractured 2-41 m interval is structural evidence. No exact mineral-water inflow depth is documented in the available record."
+      }
+    },
+    {
+      "borehole_id": "PLD-Z048",
+      "name_bg": "Огняново-Гърмен - сондаж Дом Терзиев",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.620353413,
+        "longitude": 23.801057222,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate"
+      },
+      "total_depth_m": 45,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 16,
+          "expected_material_bg": "Кватернерни алувиални и делувиални материали с валуни, чакъл и песъчливо-глинест пълнеж",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S059"
+          ]
+        },
+        {
+          "depth_from_m": 16,
+          "depth_to_m": 28,
+          "expected_material_bg": "Напукани амфиболитови гнайси, пресечени от кварцови и пегматитови жили",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S059"
+          ]
+        },
+        {
+          "depth_from_m": 28,
+          "depth_to_m": 45,
+          "expected_material_bg": "Силно силицифицирани и напукани амфиболитови гнайси",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S059"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 16,
+          "depth_to_m": 28,
+          "type_bg": "Напукани амфиболитови гнайси с кварцови и пегматитови жили",
+          "significance_bg": "Документирана напукана и жилно пресечена кристалинна зона",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S059"
+          ]
+        },
+        {
+          "depth_from_m": 28,
+          "depth_to_m": 45,
+          "type_bg": "Силно силицифицирани и напукани амфиболитови гнайси",
+          "significance_bg": "Документирана силно променена и напукана кристалинна зона",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S059"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "construction_year": 1994,
+        "total_depth_m": 45,
+        "source_ids": [
+          "PLD-S059"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "discharge_type": "self_flow_documented",
+        "technical_possible_flow_l_s": 2,
+        "self_flow_elevation_m": 583.05,
+        "status": "documented_current_resource_assessment",
+        "source_ids": [
+          "PLD-S059"
+        ]
+      },
+      "water_temperature": {
+        "technical_resource_temperature_c": 41.8,
+        "sample_temperature_c": 41.3,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S059"
+        ]
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "Кристалинни скали - гнайси и амфиболитови гнайси",
+        "collector_type_bg": "Пукнатинно-жилен термоминерален колектор",
+        "role_bg": "Регионална водовмещаща среда на минералната вода",
+        "structural_control_bg": "Минералните води се движат по отворени пукнатини на тектонични нарушения в кристалинния комплекс; това е регионална интерпретация и не доказва директно пресичане на картографиран разлом от конкретния сондаж",
+        "scope": "deposit_scale",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": [
+          "PLD-S059"
+        ]
+      },
+      "intake_intervals": null,
+      "hydro_notes_bg": "Сондаж Дом Терзиев достига 45 м. От 0 до 16 м са преминати кватернерни алувиални и делувиални материали. От 16 до 28 м следват напукани амфиболитови гнайси с кварцови и пегматитови жили. От 28 до 45 м са документирани силно силицифицирани и напукани амфиболитови гнайси. Наличният източник не определя точна дълбочина на минералния водоприток.",
+      "expert_context": {
+        "simple_text_bg": "При сондаж Дом Терзиев до 16 м има алувиални и делувиални материали. Между 16 и 28 м са преминати напукани амфиболитови гнайси с кварцови и пегматитови жили, а от 28 до 45 м - силно силицифицирани и напукани амфиболитови гнайси.",
+        "usage": "Shallow crystalline lithological and structural analogue for Ognyanovo-Garmen",
+        "warning": "The fractured and silicified intervals are structural evidence. The available record does not define an exact mineral-water inflow depth."
+      }
+    },
+    {
+      "borehole_id": "PLD-Z050",
+      "name_bg": "Катунци - сондаж №235хг",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.4540556,
+        "longitude": 23.42275,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 255,
+      "water_type": "mineral",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 32,
+          "expected_material_bg": "Чакъли",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S061"
+          ]
+        },
+        {
+          "depth_from_m": 32,
+          "depth_to_m": 144,
+          "expected_material_bg": "Пясъчници с прослойки от аргилити",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S061"
+          ]
+        },
+        {
+          "depth_from_m": 144,
+          "depth_to_m": 233,
+          "expected_material_bg": "Конгломерати, грубозърнести пясъчници и аргилити",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S061"
+          ]
+        },
+        {
+          "depth_from_m": 233,
+          "depth_to_m": 255,
+          "expected_material_bg": "Конгломерати с прослойка от глинести пясъчници",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S061"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "total_depth_m": 255,
+        "open_hole_from_m": 30,
+        "open_hole_to_m": 255,
+        "source_ids": [
+          "PLD-S061"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "Седиментни скали",
+        "collector_type_bg": "Поров минерален водоносен колектор",
+        "role_bg": "Документирана водоносна среда",
+        "structural_control_bg": null,
+        "scope": "deposit_scale",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": [
+          "PLD-S061"
+        ]
+      },
+      "intake_intervals": null,
+      "hydro_notes_bg": "Сондаж №235хг е с крайна дълбочина 255 м. Литоложката колона преминава от чакъли до 32 м към пясъчници с аргилитови прослойки до 144 м, след което следват конгломерати, грубозърнести пясъчници и аргилити до 233 м и конгломерати с прослойка от глинести пясъчници до 255 м.",
+      "expert_context": {
+        "simple_text_bg": "При сондаж №235хг край Катунци до 32 м са преминати чакъли. Между 32 и 144 м следват пясъчници с прослойки от аргилити. От 144 до 233 м са установени конгломерати, грубозърнести пясъчници и аргилити, а от 233 до 255 м - конгломерати с прослойка от глинести пясъчници.",
+        "usage": "Deep lithological analogue for the Katuntsi sector of the Sandanski basin",
+        "warning": "The lithological intervals are borehole-exact. They must not be transferred directly to another property without geological, structural and spatial analogue checks."
+      }
+    },
+    {
+      "borehole_id": "PLD-Z067",
+      "name_bg": "Симитли - сондаж №18",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.8907527806,
+        "longitude": 23.1080611056,
+        "status": "official_documented",
+        "evidence_level": "official_geodetic_survey"
+      },
+      "total_depth_m": 95.4,
+      "water_type": "mineral",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 20.4,
+          "expected_material_bg": "Кватернерни отложения",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S078"
+          ]
+        },
+        {
+          "depth_from_m": 20.4,
+          "depth_to_m": 95.4,
+          "expected_material_bg": "Неогенски седименти, представени от напукан сиво-син пясъчник",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S078"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 20.4,
+          "depth_to_m": 95.4,
+          "description_bg": "Напукан сиво-син пясъчник",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S078"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 6,
+          "event_bg": "При 6 м: самоизлив 0,03 l/s, температура 38°C.",
+          "evidence_level": "drilling_stage_hydraulic_observation",
+          "source_ids": [
+            "PLD-S078"
+          ]
+        },
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 8.56,
+          "event_bg": "При 8,56 м: самоизлив 1 l/s, температура 50°C.",
+          "evidence_level": "drilling_stage_hydraulic_observation",
+          "source_ids": [
+            "PLD-S078"
+          ]
+        },
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 18,
+          "event_bg": "При 18 м: самоизлив 2 l/s, температура 61°C.",
+          "evidence_level": "drilling_stage_hydraulic_observation",
+          "source_ids": [
+            "PLD-S078"
+          ]
+        },
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 62,
+          "event_bg": "При 62 м: самоизлив 6,2 l/s, температура 61°C.",
+          "evidence_level": "drilling_stage_hydraulic_observation",
+          "source_ids": [
+            "PLD-S078"
+          ]
+        },
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 70,
+          "event_bg": "При 70 м: самоизлив 12,9 l/s, температура 61,5°C.",
+          "evidence_level": "drilling_stage_hydraulic_observation",
+          "source_ids": [
+            "PLD-S078"
+          ]
+        },
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 95.4,
+          "event_bg": "При крайната дълбочина около 95,4-95,5 м е документиран самоизлив около 19,95 l/s и температура 62°C.",
+          "evidence_level": "drilling_stage_hydraulic_observation",
+          "source_ids": [
+            "PLD-S078"
+          ]
+        }
+      ],
+      "borehole_construction": {
+        "total_depth_m": 95.4,
+        "construction_year": 1957,
+        "casing_from_m": 0,
+        "casing_to_m": 20.5,
+        "open_hole_from_m": 20.5,
+        "open_hole_to_m": 95.4,
+        "source_ids": [
+          "PLD-S078"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": null,
+      "hydro_notes_bg": "Ресурсният доклад посочва, че част от разкритата от №18 вода е привлечена от сондаж №14. Хидравличните стойности са запазени като наблюдения при удълбяването, а не като точни граници на водоносни пластове.",
+      "expert_context": {
+        "simple_text_bg": "Сондаж №18 преминава през 20,4 м кватернерни отложения, след което до 95,4 м разкрива напукан сиво-син неогенски пясъчник.",
+        "usage": "Shallow thermal-water lithological analogue for Simitli",
+        "warning": "Drilling-stage discharge changes are not exact aquifer boundaries."
+      }
+    },
+    {
+      "borehole_id": "PLD-Z068",
+      "name_bg": "Симитли - сондаж №2",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.893722225,
+        "longitude": 23.1132833389,
+        "status": "official_documented",
+        "evidence_level": "official_geodetic_survey"
+      },
+      "total_depth_m": 90,
+      "water_type": "mineral",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 90,
+          "expected_material_bg": "Неогенски синьо-зелен глинест кварцов пясъчник",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S079"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 1.5,
+          "event_bg": "При 1,5 м: самоизлив 0,15 l/s, температура 32,8°C.",
+          "evidence_level": "drilling_stage_hydraulic_observation",
+          "source_ids": [
+            "PLD-S079"
+          ]
+        },
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 6.5,
+          "event_bg": "При 6,5 м: самоизлив 0,35 l/s, температура 55,5°C.",
+          "evidence_level": "drilling_stage_hydraulic_observation",
+          "source_ids": [
+            "PLD-S079"
+          ]
+        },
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 13.5,
+          "event_bg": "При 13,5 м: самоизлив 1,55 l/s, температура 57,2°C.",
+          "evidence_level": "drilling_stage_hydraulic_observation",
+          "source_ids": [
+            "PLD-S079"
+          ]
+        },
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 44,
+          "event_bg": "При 44 м: самоизлив 1,87 l/s, температура 58°C.",
+          "evidence_level": "drilling_stage_hydraulic_observation",
+          "source_ids": [
+            "PLD-S079"
+          ]
+        },
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 90,
+          "event_bg": "При 90 м: самоизлив 1,87 l/s, температура 58°C.",
+          "evidence_level": "drilling_stage_hydraulic_observation",
+          "source_ids": [
+            "PLD-S079"
+          ]
+        }
+      ],
+      "borehole_construction": {
+        "total_depth_m": 90,
+        "construction_year": 1957,
+        "casing_intervals": [
+          {
+            "depth_from_m": 0,
+            "depth_to_m": 9.85,
+            "diameter_mm": 273
+          },
+          {
+            "depth_from_m": 9.85,
+            "depth_to_m": 27.55,
+            "diameter_mm": 200
+          }
+        ],
+        "open_hole_from_m": 27.55,
+        "open_hole_to_m": 90,
+        "source_ids": [
+          "PLD-S079"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": null,
+      "hydro_notes_bg": "Документът описва цялата 90-метрова мощност като неогенски синьо-зелен глинест кварцов пясъчник. Сондажът впоследствие е ликвидиран/недостъпен според огледа от 2011 г.",
+      "expert_context": {
+        "simple_text_bg": "Целият 90-метров разрез на сондаж №2 е представен от неогенски синьо-зелен глинест кварцов пясъчник.",
+        "usage": "Shallow thermal-water sedimentary analogue for Simitli",
+        "warning": "Open-hole construction must not be treated as an exact inflow interval."
+      }
+    },
+    {
+      "borehole_id": "PLD-Z070",
+      "name_bg": "Благоевград - р. Струма - сондаж №14хг",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.0046667,
+        "longitude": 23.0538889,
+        "status": "official_documented_external",
+        "evidence_level": "official_environmental_document"
+      },
+      "total_depth_m": 477,
+      "water_type": "mineral",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 48.4,
+          "expected_material_bg": "Чакъли с глинесто-песъчлив запълнител; алувий-кватернер",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 48.4,
+          "depth_to_m": 143,
+          "expected_material_bg": "Грубозърнести неспоени конгломерати от добре заоблени късове от гнайси, гранити и рядко мрамори; плиоцен",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 143,
+          "depth_to_m": 148.6,
+          "expected_material_bg": "Гранатови гнайси; архай",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 148.6,
+          "depth_to_m": 151.6,
+          "expected_material_bg": "Двуслюдени шисти с гранат; архай",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 151.6,
+          "depth_to_m": 164.5,
+          "expected_material_bg": "Биотитови гнайси, силно напукани; архай",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 164.5,
+          "depth_to_m": 187,
+          "expected_material_bg": "Ортоамфиболити, силно напукани; архай",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 187,
+          "depth_to_m": 203,
+          "expected_material_bg": "Ортоамфиболити, милонитизирани, с тектонска глина - тектонска зона; архай",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 203,
+          "depth_to_m": 230.4,
+          "expected_material_bg": "Ортоамфиболити, силно напукани; архай",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 230.4,
+          "depth_to_m": 324.8,
+          "expected_material_bg": "Амфиболити с маломощни прослойки от биотитови гнайси; силно напукани до 263 м; архай",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 324.8,
+          "depth_to_m": 360,
+          "expected_material_bg": "Редуване на биотитови гнайси и амфиболити; архай",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 360,
+          "depth_to_m": 477,
+          "expected_material_bg": "Ортоамфиболити, силно напукани; архай",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 151.6,
+          "depth_to_m": 164.5,
+          "description_bg": "Силно напукани биотитови гнайси",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 164.5,
+          "depth_to_m": 187,
+          "description_bg": "Силно напукани ортоамфиболити",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 187,
+          "depth_to_m": 203,
+          "description_bg": "Милонитизирани ортоамфиболити с тектонска глина - тектонска зона",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 203,
+          "depth_to_m": 230.4,
+          "description_bg": "Силно напукани ортоамфиболити",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 230.4,
+          "depth_to_m": 263,
+          "description_bg": "Силно напукани амфиболити с маломощни прослойки от биотитови гнайси",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        },
+        {
+          "depth_from_m": 360,
+          "depth_to_m": 477,
+          "description_bg": "Силно напукани ортоамфиболити",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S081"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "total_depth_m": 477,
+        "construction_year": 1972,
+        "drilled_site_elevation_m": 325.5,
+        "casing_intervals": [
+          {
+            "depth_from_m": 0,
+            "depth_to_m": 32,
+            "diameter_mm": 168,
+            "cemented": true
+          },
+          {
+            "depth_from_m": 10,
+            "depth_to_m": 156.5,
+            "diameter_mm": 146,
+            "cemented": true
+          },
+          {
+            "depth_from_m": 20,
+            "depth_to_m": 306.26,
+            "diameter_mm": 127,
+            "cemented": false,
+            "perforated_from_m": 175,
+            "perforated_to_m": 225
+          }
+        ],
+        "filter_column_from_m": 297.9,
+        "filter_column_to_m": 473.3,
+        "filter_from_m": 315,
+        "filter_to_m": 450,
+        "source_ids": [
+          "PLD-S081"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "technical_possible_flow_l_s": 4.8,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S081"
+        ]
+      },
+      "water_temperature": {
+        "technical_resource_temperature_c": 63,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S081"
+        ]
+      },
+      "collector": null,
+      "intake_intervals": null,
+      "hydro_notes_bg": "Силно напуканите и тектонски нарушени интервали са запазени като структурни данни. Перфорациите и филтрите са конструктивни данни и не са преобразувани автоматично в точни интервали на водоприток.",
+      "expert_context": {
+        "simple_text_bg": "Под 143 м кватернерни и плиоценски седименти сондаж №14хг навлиза в кристалинна подложка от гнайси, шисти и амфиболити. Разрезът съдържа множество силно напукани интервали и ясно описана милонитизирана тектонска зона между 187 и 203 м.",
+        "usage": "Deep structural analogue for southern Blagoevgrad basin / Vlahina margin",
+        "warning": "Filter and perforation intervals are construction data, not exact inflow intervals."
+      }
+    },
+    {
+      "borehole_id": "PZ-LITH-CH-002",
+      "name_bg": "Велинград-Чепино - Сондаж №2",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.9951111,
+        "longitude": 23.9730556,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 70.3,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 0.7,
+          "expected_material_bg": "глина, песъчлива, кафява, с чакъли",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 0.7,
+          "depth_to_m": 1.0,
+          "expected_material_bg": "глина, песъчлива, сива",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 1.0,
+          "depth_to_m": 1.5,
+          "expected_material_bg": "пясък и чакъл",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 1.5,
+          "depth_to_m": 4.2,
+          "expected_material_bg": "мрамор",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 4.2,
+          "depth_to_m": 70.3,
+          "expected_material_bg": "гранитогнайс, биотит-амфиболов, с пегматитови жили, в отделни участъци силно напукан",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "status": "documented",
+        "source_ids": [],
+        "technical_possible_flow_l_s": 9.6,
+        "discharge_type": "artesian_self_flow",
+        "level_note_bg": "самоизлив на кота 775.66 m"
+      },
+      "water_temperature": {
+        "value_c": 47.5,
+        "status": "documented",
+        "source_ids": []
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "гнайси и гранити; пукнатинно-жилен колектор",
+        "collector_type_bg": "Документиран минерално-хидротермален колектор",
+        "role_bg": "Хидрогеоложки контекст към конкретния сондаж.",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": []
+      },
+      "intake_intervals": [],
+      "hydro_notes_bg": "Хидрогеоложките данни са отделени от литоложката колонка. Фрактури, конструктивни интервали и общ колекторен модел не се третират автоматично като отделни доказани водопритоци.",
+      "expert_context": {
+        "simple_text_bg": "Точката представлява реален документиран сондаж с официално установени координати. Литоложките интервали са запазени само там, където са публикувани конкретни граници.",
+        "usage": "Site-specific lithological and hydrothermal analogue",
+        "warning": "Do not transfer exact borehole depths mechanically to a nearby target point."
+      },
+      "source_reference": "МЗ, Балнеологична оценка №166/19.05.2020"
+    },
+    {
+      "borehole_id": "PZ-LITH-CH-003",
+      "name_bg": "Велинград-Чепино - Сондаж №3",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.99575,
+        "longitude": 23.9728889,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 102.4,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 1.7,
+          "expected_material_bg": "валуни с глинесто-песъчлив запълнител",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 1.7,
+          "depth_to_m": 102.4,
+          "expected_material_bg": "гранитогнайс, биотит-амфиболов, с пегматитови жили, силно напукан в отделни участъци",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "status": "documented",
+        "source_ids": [],
+        "technical_possible_flow_l_s": 6.3,
+        "discharge_type": "artesian_self_flow",
+        "level_note_bg": "самоизлив на кота 775.57 m"
+      },
+      "water_temperature": {
+        "value_c": 47.5,
+        "status": "documented",
+        "source_ids": []
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "гнайси и гранити; пукнатинно-жилен колектор",
+        "collector_type_bg": "Документиран минерално-хидротермален колектор",
+        "role_bg": "Хидрогеоложки контекст към конкретния сондаж.",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": []
+      },
+      "intake_intervals": [],
+      "hydro_notes_bg": "Хидрогеоложките данни са отделени от литоложката колонка. Фрактури, конструктивни интервали и общ колекторен модел не се третират автоматично като отделни доказани водопритоци.",
+      "expert_context": {
+        "simple_text_bg": "Точката представлява реален документиран сондаж с официално установени координати. Литоложките интервали са запазени само там, където са публикувани конкретни граници.",
+        "usage": "Site-specific lithological and hydrothermal analogue",
+        "warning": "Do not transfer exact borehole depths mechanically to a nearby target point."
+      },
+      "source_reference": "МЗ, Балнеологична оценка №167/19.05.2020"
+    },
+    {
+      "borehole_id": "PZ-LITH-CH-004",
+      "name_bg": "Велинград-Чепино - Сондаж №4",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.9951111,
+        "longitude": 23.9731389,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 101.4,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 2.0,
+          "expected_material_bg": "валуни с глинесто-песъчлив запълнител",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 2.0,
+          "depth_to_m": 101.4,
+          "expected_material_bg": "гранитогнайс, биотит-амфиболов, с пегматитови жили, силно напукан в отделни участъци",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "status": "documented",
+        "source_ids": [],
+        "technical_possible_flow_l_s": 5.4,
+        "discharge_type": "artesian_self_flow",
+        "level_note_bg": "самоизлив на кота 775.50 m"
+      },
+      "water_temperature": {
+        "value_c": 47.5,
+        "status": "documented",
+        "source_ids": []
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "гнайси и гранити; пукнатинно-жилен колектор",
+        "collector_type_bg": "Документиран минерално-хидротермален колектор",
+        "role_bg": "Хидрогеоложки контекст към конкретния сондаж.",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": []
+      },
+      "intake_intervals": [],
+      "hydro_notes_bg": "Хидрогеоложките данни са отделени от литоложката колонка. Фрактури, конструктивни интервали и общ колекторен модел не се третират автоматично като отделни доказани водопритоци.",
+      "expert_context": {
+        "simple_text_bg": "Точката представлява реален документиран сондаж с официално установени координати. Литоложките интервали са запазени само там, където са публикувани конкретни граници.",
+        "usage": "Site-specific lithological and hydrothermal analogue",
+        "warning": "Do not transfer exact borehole depths mechanically to a nearby target point."
+      },
+      "source_reference": "МЗ, Балнеологична оценка №168/19.05.2020"
+    },
+    {
+      "borehole_id": "PZ-LITH-CH-005",
+      "name_bg": "Велинград-Чепино - Сондаж №5 „Горски пункт“",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.9998889,
+        "longitude": 23.9690556,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 246.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 6.5,
+          "expected_material_bg": "чакъли и валуни от гранитогнайси, мрамори и гранити, късове 4-15 cm",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 6.5,
+          "depth_to_m": 246.0,
+          "expected_material_bg": "гранитогнайси, в началото слабо изветрели, сиви, дребно до среднозърнести, напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "status": "documented",
+        "source_ids": [],
+        "technical_possible_flow_l_s": 5.4,
+        "discharge_type": "artesian_self_flow",
+        "level_note_bg": "самоизлив на кота 780.64 m"
+      },
+      "water_temperature": {
+        "value_c": 37.5,
+        "status": "documented",
+        "source_ids": []
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "гнайси и гранити; пукнатинно-жилен колектор",
+        "collector_type_bg": "Документиран минерално-хидротермален колектор",
+        "role_bg": "Хидрогеоложки контекст към конкретния сондаж.",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": []
+      },
+      "intake_intervals": [],
+      "hydro_notes_bg": "Хидрогеоложките данни са отделени от литоложката колонка. Фрактури, конструктивни интервали и общ колекторен модел не се третират автоматично като отделни доказани водопритоци.",
+      "expert_context": {
+        "simple_text_bg": "Точката представлява реален документиран сондаж с официално установени координати. Литоложките интервали са запазени само там, където са публикувани конкретни граници.",
+        "usage": "Site-specific lithological and hydrothermal analogue",
+        "warning": "Do not transfer exact borehole depths mechanically to a nearby target point."
+      },
+      "source_reference": "МЗ, Балнеологична оценка №170/19.05.2020 и актуална оценка №170/20.03.2025"
+    },
+    {
+      "borehole_id": "PZ-LITH-LD-007",
+      "name_bg": "Велинград-Лъджене - Сондаж №7ВКП „Кремъчна баня“",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.0311389,
+        "longitude": 23.9901111,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 345.2,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 2.0,
+          "expected_material_bg": "много здрав конгломерат от гранитови, гнайсови и пегматитови късове и валуни",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 2.0,
+          "depth_to_m": 25.0,
+          "expected_material_bg": "гнайсови, гранитови и пегматитови валуни с глинесто-песъчлив запълнител",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 25.0,
+          "depth_to_m": 37.8,
+          "expected_material_bg": "грубозърнест пясъчник с чакъли, алтерниращи пластове с чакъли",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 37.8,
+          "depth_to_m": 49.7,
+          "expected_material_bg": "гранитови валуни с глинесто-песъчлив запълнител",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 49.7,
+          "depth_to_m": 345.2,
+          "expected_material_bg": "биотитов амфиболов гранит, среднозърнест до дребнозърнест, слабо гнайсуван",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "status": "documented",
+        "source_ids": [],
+        "technical_possible_flow_l_s": 8.0,
+        "discharge_type": "artesian_self_flow",
+        "level_note_bg": "самоизлив на кота 749.30 m"
+      },
+      "water_temperature": {
+        "value_c": 63.0,
+        "status": "documented",
+        "source_ids": []
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "гранити; пукнатинно-жилен хидротермален колектор",
+        "collector_type_bg": "Документиран минерално-хидротермален колектор",
+        "role_bg": "Хидрогеоложки контекст към конкретния сондаж.",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": []
+      },
+      "intake_intervals": [],
+      "hydro_notes_bg": "Хидрогеоложките данни са отделени от литоложката колонка. Фрактури, конструктивни интервали и общ колекторен модел не се третират автоматично като отделни доказани водопритоци.",
+      "expert_context": {
+        "simple_text_bg": "Точката представлява реален документиран сондаж с официално установени координати. Литоложките интервали са запазени само там, където са публикувани конкретни граници.",
+        "usage": "Site-specific lithological and hydrothermal analogue",
+        "warning": "Do not transfer exact borehole depths mechanically to a nearby target point."
+      },
+      "source_reference": "МЗ, Балнеологична оценка №116/15.03.2019"
+    },
+    {
+      "borehole_id": "PZ-LITH-LD-008",
+      "name_bg": "Велинград-Лъджене - Сондаж №8КГ „Топилата“",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.0329444,
+        "longitude": 23.9971944,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 159.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 47.0,
+          "expected_material_bg": "пясъци, чакъли и валуни с глинести прослойки",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 47.0,
+          "depth_to_m": 92.0,
+          "expected_material_bg": "гранити, променени, брекчирани, милонитизирани и грусирани; грусиране 51-56 m",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 92.0,
+          "depth_to_m": 100.0,
+          "expected_material_bg": "разломна зона",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 100.0,
+          "depth_to_m": 159.0,
+          "expected_material_bg": "гранити, дребнозърнести, слабо напукани, с кварцови инжекции и карбонат по пукнатините",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 47.0,
+          "depth_to_m": 92.0,
+          "type_bg": "гранити, променени, брекчирани, милонитизирани и грусирани; грусиране 51-56 m",
+          "significance_bg": "Интервалът съдържа документирани структурно нарушени участъци; не се приема автоматично за водоприток.",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        },
+        {
+          "depth_from_m": 92.0,
+          "depth_to_m": 100.0,
+          "type_bg": "разломна зона",
+          "significance_bg": "Документирана структурна зона в литоложката колонка.",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "status": "documented",
+        "source_ids": [],
+        "technical_possible_flow_l_s": 4.6,
+        "discharge_type": "artesian_self_flow",
+        "level_note_bg": "самоизлив на кота 735.24 m"
+      },
+      "water_temperature": {
+        "value_c": 51.0,
+        "status": "documented",
+        "source_ids": []
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "гранити; пукнатинно-жилен хидротермален колектор",
+        "collector_type_bg": "Документиран минерално-хидротермален колектор",
+        "role_bg": "Хидрогеоложки контекст към конкретния сондаж.",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": []
+      },
+      "intake_intervals": [],
+      "hydro_notes_bg": "Хидрогеоложките данни са отделени от литоложката колонка. Фрактури, конструктивни интервали и общ колекторен модел не се третират автоматично като отделни доказани водопритоци.",
+      "expert_context": {
+        "simple_text_bg": "Точката представлява реален документиран сондаж с официално установени координати. Литоложките интервали са запазени само там, където са публикувани конкретни граници.",
+        "usage": "Site-specific lithological and hydrothermal analogue",
+        "warning": "Do not transfer exact borehole depths mechanically to a nearby target point."
+      },
+      "source_reference": "МЗ, Балнеологична оценка №255/09.11.2023"
+    },
+    {
+      "borehole_id": "PZ-LITH-LD-009",
+      "name_bg": "Велинград-Лъджене - Сондаж №9 „Кентавър“",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "deep_borehole_exact_partial_column",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.0279722,
+        "longitude": 23.9981389,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 428.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 61.0,
+          "expected_material_bg": "неоген-кватернерна покривка",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": []
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [
+        {
+          "depth_from_m": 61.0,
+          "depth_to_m": 428.0,
+          "reason_bg": "Известен е общият скален състав, но в наличния източник не са публикувани точните индивидуални литоложки граници."
+        }
+      ],
+      "groundwater_discharge": {
+        "status": "documented",
+        "source_ids": [],
+        "approved_exploitation_resource_l_s": 1.06
+      },
+      "water_temperature": {
+        "value_c": 44.0,
+        "status": "documented",
+        "source_ids": []
+      },
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити, гранитогнайси и гнайси",
+        "collector_type_bg": "Документиран минерално-хидротермален колектор",
+        "role_bg": "Хидрогеоложки контекст към конкретния сондаж.",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": []
+      },
+      "intake_intervals": [],
+      "hydro_notes_bg": "Хидрогеоложките данни са отделени от литоложката колонка. Фрактури, конструктивни интервали и общ колекторен модел не се третират автоматично като отделни доказани водопритоци.",
+      "expert_context": {
+        "simple_text_bg": "Точката представлява реален документиран сондаж с официално установени координати. Литоложките интервали са запазени само там, където са публикувани конкретни граници.",
+        "usage": "Site-specific lithological and hydrothermal analogue",
+        "warning": "Do not transfer exact borehole depths mechanically to a nearby target point."
+      },
+      "source_reference": "Официално приложение към ПУРБ посочва 1.06 l/s и температура 44°C за Сондаж №9."
+    },
+    {
+      "borehole_id": "PLD-LITH-MAP-012",
+      "name_bg": "Хисаря - Сондаж №3",
+      "oblast": "Пловдив",
+      "region_code": "Plovdiv",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.5040444,
+        "longitude": 24.7154139,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 322.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 22.0,
+          "expected_material_bg": "Валуни и чакъли с глинесто-песъчлив запълнител",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S040"
+          ]
+        },
+        {
+          "depth_from_m": 22.0,
+          "depth_to_m": 37.67,
+          "expected_material_bg": "Биотитов гранитогнайс, силно изветрял",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S040"
+          ]
+        },
+        {
+          "depth_from_m": 37.67,
+          "depth_to_m": 156.0,
+          "expected_material_bg": "Редуване на гранитогнайс, слабо напукан и тектонски натрошен",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S040"
+          ]
+        },
+        {
+          "depth_from_m": 156.0,
+          "depth_to_m": 181.0,
+          "expected_material_bg": "Гранит, здрав",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S040"
+          ]
+        },
+        {
+          "depth_from_m": 181.0,
+          "depth_to_m": 254.0,
+          "expected_material_bg": "Гранитогнайс, напукан и на места натрошен",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S040"
+          ]
+        },
+        {
+          "depth_from_m": 254.0,
+          "depth_to_m": 299.0,
+          "expected_material_bg": "Гранит, силно напукан",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S040"
+          ]
+        },
+        {
+          "depth_from_m": 299.0,
+          "depth_to_m": 312.0,
+          "expected_material_bg": "Гранит, тектонски стрита зона",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S040"
+          ]
+        },
+        {
+          "depth_from_m": 312.0,
+          "depth_to_m": 322.0,
+          "expected_material_bg": "Гнайс с кварцови жили, тектонски стрита зона",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S040"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "construction_context": {
+          "casing": [
+            "0-28.85 m: casing Ø160 mm, cemented"
+          ],
+          "open_hole": [
+            "28.85-205.50 m: drilled Ø130 mm, uncased",
+            "205.50-322.00 m: drilled Ø110 mm, uncased"
+          ],
+          "note": "Construction/open-hole intervals are kept separate from lithology and are not treated as proven water-inflow intervals."
+        },
+        "source_ids": [
+          "PLD-S040"
+        ],
+        "note": "Construction and open-hole intervals are preserved separately and are not treated as proven water-inflow intervals."
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": "Литоложката колонка е директно документирана. Обсадните и откритите интервали са конструктивни данни и не се приемат автоматично за водоносни хоризонти.",
+      "expert_context": {
+        "simple_text_bg": "Реален документиран сондаж в Хисаря с точна официална координата и публикувана литоложка колонка.",
+        "usage": "Site-specific lithological and structural analogue",
+        "warning": "Fractured rock and open-hole intervals are not automatically separate aquifers."
+      }
+    },
+    {
+      "borehole_id": "PLD-LITH-MAP-013",
+      "name_bg": "Хисаря - Сондаж №5",
+      "oblast": "Пловдив",
+      "region_code": "Plovdiv",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.5014167,
+        "longitude": 24.7003889,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 520.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 1.4,
+          "expected_material_bg": "Почвен слой",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S041"
+          ]
+        },
+        {
+          "depth_from_m": 1.4,
+          "depth_to_m": 9.0,
+          "expected_material_bg": "Гранит-порфир, изветрял",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S041"
+          ]
+        },
+        {
+          "depth_from_m": 9.0,
+          "depth_to_m": 14.0,
+          "expected_material_bg": "Напълно променена масивна скала",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S041"
+          ]
+        },
+        {
+          "depth_from_m": 14.0,
+          "depth_to_m": 99.0,
+          "expected_material_bg": "Гранит, слабо напукан",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S041"
+          ]
+        },
+        {
+          "depth_from_m": 99.0,
+          "depth_to_m": 160.0,
+          "expected_material_bg": "Гранит, тъмносив, средно- до едрозърнест",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S041"
+          ]
+        },
+        {
+          "depth_from_m": 160.0,
+          "depth_to_m": 346.0,
+          "expected_material_bg": "Гранит, на места доста напукан",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S041"
+          ]
+        },
+        {
+          "depth_from_m": 346.0,
+          "depth_to_m": 520.0,
+          "expected_material_bg": "Гранодиорити, здрави, само в отделни участъци напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S041"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "construction_context": {
+          "casing": [
+            "0-31.10 m: casing Ø146 mm, cemented"
+          ],
+          "open_hole": "31.10-520.00 m: drilled Ø130 mm, uncased",
+          "note": "Construction/open-hole intervals are kept separate from lithology and are not treated as proven water-inflow intervals."
+        },
+        "source_ids": [
+          "PLD-S041"
+        ],
+        "note": "Construction and open-hole intervals are preserved separately and are not treated as proven water-inflow intervals."
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": "Литоложката колонка е директно документирана. Обсадните и откритите интервали са конструктивни данни и не се приемат автоматично за водоносни хоризонти.",
+      "expert_context": {
+        "simple_text_bg": "Реален документиран сондаж в Хисаря с точна официална координата и публикувана литоложка колонка.",
+        "usage": "Site-specific lithological and structural analogue",
+        "warning": "Fractured rock and open-hole intervals are not automatically separate aquifers."
+      }
+    }
+  ]
+}
