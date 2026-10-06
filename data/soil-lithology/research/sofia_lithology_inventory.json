@@ -1,0 +1,3159 @@
+{
+  "schema_version": 1,
+  "oblast": "София",
+  "oblast_en": "Sofia Province",
+  "created": "2026-10-06",
+  "status": "discovery_in_progress",
+  "rules": {
+    "lithology_accepts_any_reliable_borehole": true,
+    "mineral_and_thermal_analysis_separate": true,
+    "preserve_source_gaps_and_overlaps": true,
+    "filter_interval_is_not_proven_inflow": true,
+    "fracture_is_not_proven_inflow": true,
+    "regional_groundwater_body_not_local_depth": true
+  },
+  "existing_source_count": 11,
+  "sources": [
+    {
+      "source_id": "SOF-S001",
+      "title": "Сондаж № 2хг – находище на минерална вода „Костенец“",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "official_mineral_water_balneological_document",
+      "publication_year": 2022,
+      "geographic_scope": "с. Костенец, община Костенец, Софийска област",
+      "url": "https://www.mh.government.bg/upload/6567/3-kostenec-sondazh-2hg-19-04-2022.pdf",
+      "notes": "Официалният документ съдържа точен геоложки разрез на Сондаж №2хг до 444.70 m, както и отделна конструктивна информация. Пукнатини, открит ствол и конструктивни интервали не се приемат автоматично за доказани водопритоци.",
+      "review_status": "REVIEWED_PRIMARY_SOURCE"
+    },
+    {
+      "source_id": "SOF-S002",
+      "title": "Регистър на водовземните съоръжения за минерални води, стопанисвани от БД Източнобеломорски район",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "official_mineral_water_facility_register",
+      "publication_year": 2025,
+      "geographic_scope": "Находище „Пчелински бани“, с. Пчелин, община Костенец, Софийска област",
+      "url": "https://earbd.org/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2025/01/Register_saoraje%20MV_%20BD%20IBR%20_2025.pdf",
+      "notes": "Потвърждава индивидуалната идентичност, година, дълбочина, координати и водно ниво на Сондаж 2 ХГ и Сондаж №3 ХГ. Регистърът не предоставя индивидуални литоложки колонки.",
+      "review_status": "REVIEWED_PRIMARY_OFFICIAL_REGISTER"
+    },
+    {
+      "source_id": "SOF-S003",
+      "title": "Investigation on the regime of Pchelinski Bani mineral water occurrence and current assessment of its exploitation resources",
+      "institution": "Минно-геоложки университет",
+      "source_type": "scientific_hydrogeological_publication",
+      "publication_year": 2009,
+      "geographic_scope": "Находище Пчелински бани",
+      "url": "https://mgu.bg/wp-content/uploads/2021/10/pp_vz_bd.pdf",
+      "notes": "Потвърждава регионалния геоложки и хидротермален контекст: гранитоиди на Гуцалския плутон, разломна зона и три сондажа с дълбочини приблизително 349–497 m. Не се използва за приписване на индивидуални литоложки интервали на Сондаж 2 ХГ или Сондаж №3 ХГ.",
+      "review_status": "REVIEWED_CONTEXT_SOURCE"
+    },
+    {
+      "source_id": "SOF-S004",
+      "title": "Костенец – минерални води",
+      "institution": "Министерство на туризма",
+      "source_type": "official_government_spa_destination_information",
+      "geographic_scope": "Находище Костенец, община Костенец, Софийска област",
+      "url": "https://www.tourism.government.bg/bg/spa-destinations/6473/6478",
+      "notes": "Официалният източник съобщава за сондажни проучвания на находище Костенец: сондаж 197 m, а през 1971 г. сондажи 444 m и 530 m. Сондажът около 444 m се идентифицира отделно чрез документа на МЗ като Сондаж №2хг с крайна дълбочина 444.70 m. Източникът не дава индивидуални литоложки колонки за сондажите 197 m и 530 m.",
+      "review_status": "REVIEWED_OFFICIAL_CONTEXT_SOURCE"
+    },
+    {
+      "source_id": "SOF-S005",
+      "title": "Балнеологична оценка №29 – сондаж №13хг, Долна баня",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "url": "https://www.mh.government.bg/upload/13665/29-Dolna%20banya-sondazh13hg-06-03-2025.pdf",
+      "publication_year": 2025,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "гр. Долна баня, община Долна баня, Софийска област",
+      "notes": "Official exact deep borehole profile to 279.2 m. Contains documented lithological and structural intervals, borehole construction and hydrothermal information. Lithology is kept separate from construction and hydraulic interpretation."
+    },
+    {
+      "source_id": "SOF-S006",
+      "title": "Балнеологична оценка №279 – сондаж №141, Долна баня – Бялата вода",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "url": "https://www.mh.government.bg/upload/6618/279-dolna_banya-byalata_voda-sondazh141-14-06-2024.pdf",
+      "publication_year": 2024,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "местност Бялата вода, югоизточната част на гр. Долна баня, Софийска област",
+      "notes": "Confirms borehole No.141, total depth 515 m, drilled in 1978. No individual lithological column has yet been extracted. Existing fuzzy coordinates are explicitly rejected; exact facility coordinates remain unresolved."
+    },
+    {
+      "source_id": "SOF-S007",
+      "title": "Балнеологична оценка №247 – сондаж №1хг, Белчински бани",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "url": "https://www.mh.government.bg/upload/6654/balneologichna_otsenka__247_ot_15082023_g_za_sondazh__1khg_nakhodishche_na_mineralna_voda_belchinski_bani_s_belchin_obshchina_samokov_sofiiska_oblast.pdf",
+      "publication_year": 2023,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "с. Белчин, община Самоков, Софийска област",
+      "notes": "Официален точен геоложки профил до 418.7 m. Гранодиорити от 303.5 m; силно тектонски напукани гранодиорити от 362 до 418.7 m. Конструкцията и хидравличната информация се пазят отделно от литоложката интерпретация."
+    },
+    {
+      "source_id": "SOF-S008",
+      "title": "Балнеологична оценка №1/12.11.2021 – Сондаж №ПС-1хг, Белчин–Верила",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "borehole",
+      "url": "https://www.mh.government.bg/upload/6702/1-belchin-verila-sondazhps-1hg-12-11-2021.pdf",
+      "publication_year": 2021,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "с. Белчин, община Самоков, Софийска област",
+      "notes": "Официално потвърдено отделно физическо съоръжение при находище Белчин-Верила. Документирани са точни координати, дебит и температура. В наличния локален research dataset не е установена индивидуална литоложка колонка, обща дълбочина или конструктивен профил."
+    },
+    {
+      "source_id": "SOF-S009",
+      "title": "Доклад за екологична оценка на Общ устройствен план на община Костинброд",
+      "institution": "Община Костинброд",
+      "source_type": "municipal_environmental_assessment_with_borehole_log",
+      "url": "https://kostinbrod.bg/wp-content/uploads/2023/07/EO_OUPO_Kostinbrod-31.10.2022.pdf",
+      "publication_year": 2022,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "гр. Костинброд, Софийска област",
+      "notes": "Документът съдържа индивидуален геоложки разрез на ТК-3 до 200 m и отделно описва конструктивната изолация на горния неогенски водоносен хоризонт."
+    },
+    {
+      "source_id": "SOF-S010",
+      "title": "Балнеологична оценка №253/09.11.2023 – Сондаж №С-11в, Равно поле",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "official_balneological_assessment_with_borehole_log",
+      "url": "https://old.mh.government.bg/media/filer_public/2023/11/09/253-kazichene-ravno_pole-sondazhc-11v-09-11-2023.pdf",
+      "publication_year": 2023,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "с. Равно поле, община Елин Пелин, Софийска област"
+    },
+    {
+      "source_id": "SOF-S011",
+      "title": "Балнеологична оценка №254/09.11.2023 – Сондаж №С-55хг, Равно поле",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "official_balneological_assessment_with_borehole_log",
+      "url": "https://www.mh.government.bg/upload/6647/254-kazichene-ravno_pole-sondazhc-55hg-09-11-2023.pdf",
+      "publication_year": 2023,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "с. Равно поле, община Елин Пелин, Софийска област"
+    },
+    {
+      "source_id": "SOF-S012",
+      "title": "Rusanov, Popov & Popova (1997) – stratigraphy of the Carboniferous succession in the Svoge basin",
+      "institution": "Bulgarian Geological Society",
+      "source_type": "peer_reviewed_geological_publication_with_borehole_sections",
+      "url": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_1997/pdf_files_1997/28_Rusanov_1997_BGD_3.pdf",
+      "publication_year": 1997,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Свогенски басейн, Софийска област",
+      "evidence_note": "Publication uses data from more than 500 boreholes along approximately 170 profile lines and publishes graphic sections including boreholes C-221 and C-102."
+    },
+    {
+      "source_id": "SOF-S013",
+      "title": "Geological structure and petrology of the Late Cretaceous Chelopech volcano, Srednogorie magmatic zone",
+      "institution": "scientific geological publication",
+      "source_type": "peer_reviewed_geological_publication_borehole_constrained",
+      "url": "https://www.researchgate.net/publication/236842116_Geological_structure_and_petrology_of_the_Late_Cretaceous_Chelopech_volcano_Srednogorie_magmatic_zone",
+      "publication_year": null,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Челопеч, Софийска област"
+    },
+    {
+      "source_id": "SOF-S014",
+      "title": "Volcanic environment and geochronology of the Chelopech high-sulfidation epithermal deposit, Bulgaria",
+      "institution": "scientific geological publication",
+      "source_type": "peer_reviewed_stratigraphic_context",
+      "url": "https://www.researchgate.net/publication/234338479_Volcanic_environment_and_geochronology_of_the_Chelopech_high-sulfidation_epithermal_deposit_Bulgaria_regional_relationship_with_associated_deposits",
+      "publication_year": null,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Челопешко находище и вулканичен комплекс"
+    },
+    {
+      "source_id": "SOF-S015",
+      "title": "Adopted approaches and practices during the structural-geological investigation of the rock mass in Ellatzite open pit mine",
+      "institution": "University of Mining and Geology / Ellatzite-Med AD",
+      "source_type": "peer_reviewed_mine_geology_publication",
+      "url": "https://mgu.bg/wp-content/uploads/2025/01/Yalamov-Hadzhieva.pdf",
+      "publication_year": 2020,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Находище Елаците, община Етрополе"
+    },
+    {
+      "source_id": "SOF-S016",
+      "title": "Упражнения по геостатистика – данни от находище Елаците",
+      "institution": "Минно-геоложки университет Св. Иван Рилски",
+      "source_type": "academic_material_using_historic_exploration_borehole_dataset",
+      "url": "https://mgu.bg/wp-content/uploads/2022/07/%D0%A3%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE-%D0%93%D0%B5%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0.pdf",
+      "publication_year": null,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Находище Елаците"
+    },
+    {
+      "source_id": "SOF-S017",
+      "title": "Mihaylova et al. – groundwater monitoring system at Aurubis Bulgaria AD, Pirdop",
+      "institution": "Bulgarian Geological Society",
+      "source_type": "scientific_groundwater_monitoring_publication",
+      "url": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2023_3/PDF/67_Mihaylova_Rev_BGS_2023-3.pdf",
+      "publication_year": 2023,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Пирдоп – площадка Аурубис България"
+    },
+    {
+      "source_id": "SOF-S018",
+      "title": "ГДОС 2024 – Аурубис България АД, Приложение №2",
+      "institution": "ИАОС / Аурубис България АД",
+      "source_type": "official_environmental_report_with_monitoring_borehole_map",
+      "url": "https://eea.government.bg/data/addons/cms_backend/public/2025/%D0%A0%D0%A0_%D0%A0%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%B8%20%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B8/%D0%9A%D0%9F%D0%9A%D0%97/%D0%93%D0%BE%D0%B4%D0%B8%D1%88%D0%BD%D0%B8-%D0%94%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4%D0%B8-%D0%93%D0%94%D0%9E%D0%A1/GDOS_2024_Aurubis_Bulgaria.pdf",
+      "publication_year": 2025,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Пирдоп – Аурубис България"
+    },
+    {
+      "source_id": "SOF-S019",
+      "title": "ПУРБ Източнобеломорски район 2022-2027 – мониторинг на подземни води",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "official_groundwater_monitoring_register",
+      "url": "https://www.earbd.org/files/File/PURB%20-%203/Project_RBMP_2022_2027/%D0%A4%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%204/Razdel%204%20EARBD.pdf",
+      "publication_year": 2025,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "с. Бенковски, община Мирково"
+    },
+    {
+      "source_id": "SOF-S020",
+      "title": "Стратиграфия на Горната креда – Мирковска свита",
+      "institution": "Българско геологическо дружество",
+      "source_type": "peer_reviewed_stratigraphic_publication",
+      "url": "https://www.bgd.bg/REVIEW_BGS/REVIEW_BGD_2016_2-3/PDF/03_Sinnyovsky_Review_2016_2-3.pdf",
+      "publication_year": 2016,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Мирково, Софийска област"
+    },
+    {
+      "source_id": "SOF-S021",
+      "title": "Гергинов – хидрогеоложки условия в района на извор „Врелото“, с. Габер",
+      "institution": "Българско геологическо дружество",
+      "source_type": "peer_reviewed_hydrogeological_publication_with_borehole_data",
+      "url": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2019_2/PDF/Gerginov_REV_BGS_2019_2.pdf",
+      "publication_year": 2019,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "с. Габер / мина Бели брег, община Драгоман"
+    },
+    {
+      "source_id": "SOF-S022",
+      "title": "НСМОС – мониторинг на подземни води, Драгоман",
+      "institution": "ИАОС",
+      "source_type": "official_groundwater_monitoring_register",
+      "url": "https://eea.government.bg/spravki-za-obsluzhvaneto-na-monitoringovata-mrezha-za-2021-g-parvo-polugodie",
+      "publication_year": 2021,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "гр. Драгоман"
+    },
+    {
+      "source_id": "SOF-S023",
+      "title": "Общ устройствен план на община Годеч – окончателен проект",
+      "institution": "Община Годеч",
+      "source_type": "official_municipal_planning_and_water_supply_context",
+      "url": "https://www.godech.bg/obshtinska-administratziya/programi/66-proekti-na-obshtina-godech/1690-oup-na-obshtina-godech-sled-priemane-ot-obs-godech-i-obnarodvane-v-darzhaven-vestnik",
+      "publication_year": 2018,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "община Годеч, Софийска област",
+      "note": "Official OUP includes explanatory text and a water-supply scheme, but no individual borehole lithological log suitable for VERIFIED or PARTIAL inclusion was identified in the online sweep."
+    },
+    {
+      "source_id": "SOF-S024",
+      "title": "Справки за обслужването на мониторинговата мрежа за 2022 г.",
+      "institution": "ИАОС",
+      "source_type": "official_groundwater_monitoring_register",
+      "url": "https://eea.government.bg/spravki-za-obsluzhvaneto-na-monitoringovata-mrezha-za-2022-g",
+      "publication_year": 2022,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "гр. Ихтиман, Софийска област"
+    },
+    {
+      "source_id": "SOF-S025",
+      "title": "Географски особености – Геоложка характеристика на община Горна Малина",
+      "institution": "Община Горна Малина",
+      "source_type": "official_municipal_geological_context",
+      "url": "https://www.gornamalina.bg/?page_id=127",
+      "publication_year": null,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "община Горна Малина, Софийска област"
+    },
+    {
+      "source_id": "SOF-S026",
+      "title": "Доклад за екологична оценка – община Ботевград",
+      "institution": "Община Ботевград / официална екологична документация",
+      "source_type": "official_environmental_assessment_with_groundwater_facilities",
+      "url": "https://botevgrad.bg/data/news/files/1607083031.pdf",
+      "publication_year": null,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "община Ботевград, Софийска област"
+    },
+    {
+      "source_id": "SOF-S027",
+      "title": "Геоложка карта на част от Било планина, югоизточно от Ботевград",
+      "institution": "Българско геологическо дружество",
+      "source_type": "peer_reviewed_regional_geological_map",
+      "url": "https://www.bgd.bg/REVIEW_BGS/REVIEW_BGD_1987_2/PDF/01_Ivanov.pdf",
+      "publication_year": 1987,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Ботевград – Трудовец – Правец – Било планина"
+    },
+    {
+      "source_id": "SOF-S028",
+      "title": "Инженерно-геоложко проучване – депо Ботевград",
+      "institution": "МОСВ",
+      "source_type": "official_shallow_geotechnical_investigation",
+      "url": "https://www.moew.government.bg/static/media/ups/tiny/file/public_contracts/OP_PNOOP/SMR_Botevgrad_2014/Documentation_Depo_Botevgrad.pdf",
+      "publication_year": 2014,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Ботевград"
+    },
+    {
+      "source_id": "SOF-S029",
+      "title": "Velocity enters option agreement to acquire up to 75% interest in the Zlatusha Copper-Gold Property, Bulgaria",
+      "institution": "Velocity Minerals Ltd.",
+      "source_type": "company_exploration_disclosure_with_historical_drilling",
+      "url": "https://velocityminerals.com/news/velocity-enters-into-option-agreement-to-acquire-up-to-75-interest-in-the-zlatusha-copper-gold-property-in-bulgaria/",
+      "publication_year": 2023,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Златуша / Росоман, община Божурище"
+    },
+    {
+      "source_id": "SOF-S030",
+      "title": "Докладна записка Д-153 – проучвателни сондажи Златуша / Росоман",
+      "institution": "Общински съвет Божурище",
+      "source_type": "official_municipal_exploration_project_document",
+      "url": "https://www.bozhurishte.bg/storagently/2024/04/%D0%94-153.pdf",
+      "publication_year": 2024,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "с. Златуша и с. Росоман, община Божурище"
+    },
+    {
+      "source_id": "SOF-S031",
+      "title": "Velocity Minerals amends Zlatusha project option agreement",
+      "institution": "Velocity Minerals Ltd.",
+      "source_type": "company_project_status_disclosure",
+      "url": "https://velocityminerals.com/news/velocity-minerals-provides-update-for-the-zlatusha-copper-gold-project-bulgaria/",
+      "publication_year": 2024,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "площ Златуша"
+    },
+    {
+      "source_id": "SOF-S032",
+      "title": "Общински план / стратегия за развитие на община Антон",
+      "institution": "Община Антон",
+      "source_type": "official_municipal_context",
+      "url": "https://strategy.bg/index.php/strategy-document/download-file/6153",
+      "publication_year": null,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "община Антон, Софийска област",
+      "note": "Official municipal document confirms regional setting but does not provide an individual borehole lithological log."
+    },
+    {
+      "source_id": "SOF-S033",
+      "title": "Общ устройствен план на община Чавдар – обяснителна записка",
+      "institution": "Община Чавдар",
+      "source_type": "official_municipal_geological_context",
+      "url": "https://www.chavdar.eu/data/uploads/editor/files/OUP-zapiska.pdf",
+      "publication_year": 2015,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "община Чавдар, Софийска област"
+    },
+    {
+      "source_id": "SOF-S034",
+      "title": "План за интегрирано развитие на община Копривщица – актуализация",
+      "institution": "Община Копривщица",
+      "source_type": "official_municipal_geological_context",
+      "url": "https://koprivshtitsa-bg.com/download/PIRO_Aktualizaciq.pdf",
+      "publication_year": null,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "община Копривщица, Софийска област"
+    },
+    {
+      "source_id": "SOF-S035",
+      "title": "Общ устройствен план на община Копривщица",
+      "institution": "Община Копривщица",
+      "source_type": "official_municipal_planning_context",
+      "url": "https://koprivshtitsa-bg.com/bg/municipality/direktsiya-tsu/obsht-ustroystven-plan-na-obshtina-koprivshtitsa/",
+      "publication_year": 2016,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "община Копривщица, Софийска област"
+    },
+    {
+      "source_id": "SOF-S036",
+      "title": "Общ устройствен план на община Правец",
+      "institution": "Община Правец",
+      "source_type": "official_municipal_planning_context",
+      "url": "https://pravets.bg/ads/view/obshtestveno-obsazhdane-na-obsht-ustroystven-plan-na-obshtina-pravets-268",
+      "publication_year": 2015,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "община Правец, Софийска област"
+    },
+    {
+      "source_id": "SOF-S037",
+      "title": "Общинска документация за инвестиционно проектиране с инженерно-геоложки и хидротехнически проучвания",
+      "institution": "Община Правец",
+      "source_type": "official_engineering_geology_context",
+      "url": "https://pravets.bg/data/obsavet/files/1716577824.pdf",
+      "publication_year": 2024,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "община Правец",
+      "note": "The document explicitly requires/uses engineering-geological and hydrotechnical investigations, but no individual deep borehole lithological log was extracted from the reviewed material."
+    },
+    {
+      "source_id": "SOF-S038",
+      "title": "Trans-border South-Eastern Serbia / South-Western Bulgaria correlations of the Jurassic sediments",
+      "institution": "scientific geological publication",
+      "source_type": "peer_reviewed_regional_stratigraphic_publication",
+      "url": "https://www.researchgate.net/publication/250151313_Trans-border_South-Eastern_SerbiaSouth-Western_Bulgaria_correlations_of_the_Jurassic_sediments_The_Getic_and_Supra-Getic_units",
+      "publication_year": 2008,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Сливница – Калотина – Западна България"
+    },
+    {
+      "source_id": "SOF-S039",
+      "title": "New stratigraphical and sedimentological data on the Lower Cretaceous rocks in section Kalotina, Western Bulgaria",
+      "institution": "scientific geological publication",
+      "source_type": "peer_reviewed_stratigraphic_section",
+      "url": "https://www.researchgate.net/publication/366544099_NEW_STRATIGRAPHICAL_AND_SEDIMENTOLOGICAL_DATA_ON_THE_LOWER_CRETACEOUS_ROCKS_IN_SECTION_KALOTINA_WESTERN_BULGARIA",
+      "publication_year": 2022,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Калотина / Сливнишка свита, Софийска област"
+    },
+    {
+      "source_id": "SOF-S040",
+      "title": "Paleokarst features at the top of the Slivnitsa Formation",
+      "institution": "Българско геологическо дружество",
+      "source_type": "peer_reviewed_sedimentological_publication",
+      "url": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2024_3/PDF/12_Chatalov_REV_BGS_2024-3.pdf",
+      "publication_year": 2024,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "Сливнишка свита / Западна България"
+    },
+    {
+      "source_id": "SOF-S041",
+      "title": "Програма за управление на отпадъците на община Сливница",
+      "institution": "Община Сливница",
+      "source_type": "official_municipal_water_supply_context",
+      "url": "https://old-site.slivnitsa.bg/sites/default/files/_%D0%9E%D0%B1%D1%89%D0%B8%D0%BD%D0%B0_%D0%A1%D0%BB%D0%B8%D0%B2%D0%BD%D0%B8%D1%86%D0%B0_%D0%BF%D1%80%D0%B8%D0%B5%D1%82%D0%B0.pdf",
+      "publication_year": 2016,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "община Сливница"
+    },
+    {
+      "source_id": "SOF-S042",
+      "title": "Програма за мониторинг на количественото състояние на подземни води в Източнобеломорски район",
+      "institution": "Басейнова дирекция Източнобеломорски район",
+      "source_type": "official_groundwater_monitoring_program",
+      "url": "https://earbd.bg/files/File/PURB/PURB-2009/TOM%201%20EARBD/R04/Annexes_EARBD/Annex_4_08_Programa%20za%20monitoring%20na%20kolichestvenoto%20sastoyanie%20na%20podzemni%20vodni%20tela%20v%20IBR.pdf",
+      "publication_year": null,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "гр. Златица, община Златица"
+    },
+    {
+      "source_id": "SOF-S043",
+      "title": "Application of borehole cameras in the field of Engineering Geology and Hydrogeology",
+      "institution": "Geological Institute, Bulgarian Academy of Sciences / Bulgarian Geological Society",
+      "source_type": "peer_reviewed_engineering_geology_borehole_publication",
+      "url": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2023_3/PDF/66_Krastanov_Rev_BGS_2023-3.pdf",
+      "publication_year": 2023,
+      "accessed_date": "2026-10-06",
+      "geographic_scope": "с. Горни Окол, община Самоков"
+    }
+  ],
+  "discovery": {
+    "new_candidates": [],
+    "searched_batches": [
+      {
+        "batch": 1,
+        "date": "2026-10-06",
+        "focus": [
+          "Костенец",
+          "минерални и термални сондажи",
+          "първични официални геоложки разрези"
+        ],
+        "candidates_added": 1,
+        "note": "Първият проверен първичен източник съдържа действителна индивидуална литоложка колонка за Сондаж №2хг, Костенец."
+      },
+      {
+        "batch": 2,
+        "date": "2026-10-06",
+        "focus": [
+          "Пчелински бани",
+          "Сондаж 2 ХГ",
+          "Сондаж №3 ХГ",
+          "официален регистър БД ИБР",
+          "локални SONDI.BG данни",
+          "научни публикации"
+        ],
+        "candidates_added": 2,
+        "note": "Двата сондажа са потвърдени като реални дълбоки съоръжения с точни официални координати и дълбочини. Индивидуални литоложки колонки не са открити; остават NEEDS_PRIMARY_BOREHOLE_LOG."
+      },
+      {
+        "batch": 3,
+        "date": "2026-10-06",
+        "focus": [
+          "община Костенец",
+          "находище Костенец",
+          "Момин проход",
+          "Пчелински бани",
+          "historical deep drilling"
+        ],
+        "candidates_added": 2,
+        "note": "Коригирана е първоначална погрешна асоциация: дълбочините 197/444/530 m принадлежат на находище Костенец, не на Момин проход. 444 m е идентифициран като Сондаж №2хг, 444.70 m и вече е VERIFIED. Сондажите 197 m и 530 m остават NEEDS_PRIMARY_BOREHOLE_LOG."
+      },
+      {
+        "batch": 4,
+        "date": "2026-10-06",
+        "focus": [
+          "Долна баня",
+          "Сондаж №13хг",
+          "Сондаж №141",
+          "Бялата вода"
+        ],
+        "verified_profiles_added": 1,
+        "strong_leads_added": 1,
+        "note": "Сондаж №13хг е добавен като VERIFIED exact lithology profile до 279.2 m. Сондаж №141, 515 m, е запазен като NEEDS_PRIMARY_BOREHOLE_LOG поради липса на извлечена индивидуална литоложка колонка. №1хг остава за отделна проверка."
+      },
+      {
+        "batch": 5,
+        "date": "2026-10-06",
+        "focus": [
+          "община Самоков",
+          "Белчински бани",
+          "Сондаж №1хг"
+        ],
+        "verified_profiles_added": 1,
+        "note": "Добавен е точен 418.7 m литоложки профил за Сондаж №1хг, Белчински бани. PS-1hg Белчин-Верила е потвърден като отделно съоръжение и не е смесван с №1хг."
+      },
+      {
+        "batch": 6,
+        "date": "2026-10-06",
+        "focus": [
+          "община Самоков",
+          "Белчин-Верила",
+          "Сондаж №ПС-1хг"
+        ],
+        "verified_profiles_added": 0,
+        "strong_leads_added": 1,
+        "note": "PS-1hg Белчин-Верила е потвърден като отделно съоръжение с OFFICIAL_EXACT координати, но без открита индивидуална литоложка колонка. Не е смесван със SOF-LITH-003."
+      },
+      {
+        "batch": 7,
+        "date": "2026-10-06",
+        "focus": [
+          "община Костинброд",
+          "ТК-3",
+          "дълбоки сондажи >50 m"
+        ],
+        "verified_profiles_added": 1,
+        "strong_leads_added": 3,
+        "note": "Fast triage: verified exact three-interval lithological profile for TK-3, 200 m. Only the three strongest additional deep boreholes were retained as unresolved leads; the full mapped well inventory was not individually researched."
+      },
+      {
+        "batch": 8,
+        "date": "2026-10-06",
+        "focus": [
+          "община Елин Пелин",
+          "Равно поле",
+          "С-11в",
+          "С-55хг",
+          "официални МЗ балнеологични оценки"
+        ],
+        "verified_profiles_added": 2,
+        "strong_leads_resolved": 1,
+        "note": "Official source sweep upgraded C-55hg from strong lead to verified lithology and added C-11v as a second verified profile."
+      },
+      {
+        "batch": 9,
+        "date": "2026-10-06",
+        "focus": [
+          "Антон",
+          "Ботевград",
+          "Божурище",
+          "Чавдар",
+          "Челопеч",
+          "Драгоман",
+          "Етрополе",
+          "Годеч",
+          "Горна Малина",
+          "Ихтиман",
+          "Копривщица",
+          "Мирково",
+          "Пирдоп",
+          "Правец",
+          "Сливница",
+          "Своге",
+          "Златица"
+        ],
+        "method": "official-source batch sweep",
+        "verified_profiles_added": 0,
+        "partial_profiles_added": 0,
+        "strong_leads_added": 0,
+        "note": "Seventeen remaining Sofia Province municipalities were triaged as one batch. No ready individual lithological column was found. Bozhurishte retained only PROJECT_DEPTH_ONLY context; Svoge natural spring retained as non-borehole context."
+      },
+      {
+        "batch": 10,
+        "date": "2026-10-06",
+        "focus": [
+          "Своге",
+          "С-102",
+          "С-221",
+          "С-151",
+          "С-171",
+          "С-172"
+        ],
+        "method": "deep archival / scientific publication research",
+        "verified_profiles_added": 0,
+        "partial_profiles_added": 2,
+        "verified_depth_points_added": 5,
+        "area_contexts_added": 1
+      },
+      {
+        "batch": 11,
+        "date": "2026-10-06",
+        "focus": [
+          "Челопеч",
+          "Челопешки вулканичен комплекс",
+          "руднични сондажи",
+          "сондажно ограничен геоложки разрез"
+        ],
+        "method": "deep scientific publication research",
+        "verified_profiles_added": 0,
+        "partial_profiles_added": 0,
+        "borehole_constrained_sections_added": 1,
+        "verified_thickness_records_added": 3,
+        "area_contexts_added": 1
+      },
+      {
+        "batch": 12,
+        "date": "2026-10-06",
+        "focus": [
+          "Етрополе",
+          "Елаците",
+          "146 проучвателни сондажа",
+          "3D литоложки модел"
+        ],
+        "method": "deep online archival and mine-geology research",
+        "verified_profiles_added": 0,
+        "verified_borehole_datasets_added": 1,
+        "borehole_constrained_sections_added": 1,
+        "area_contexts_added": 1
+      },
+      {
+        "batch": 13,
+        "date": "2026-10-06",
+        "focus": [
+          "Пирдоп",
+          "Аурубис България",
+          "мониторингови сондажи",
+          "пиезометрична мрежа"
+        ],
+        "method": "official + scientific online research",
+        "verified_profiles_added": 0,
+        "verified_borehole_datasets_added": 1,
+        "area_contexts_added": 1
+      },
+      {
+        "batch": 14,
+        "date": "2026-10-06",
+        "focus": [
+          "Мирково",
+          "Бенковски",
+          "BG3G00000PtMP128",
+          "Мирковска свита"
+        ],
+        "method": "official monitoring + stratigraphic publication research",
+        "verified_profiles_added": 0,
+        "verified_boreholes_added": 1,
+        "monitoring_values_added": 1,
+        "area_contexts_added": 1
+      },
+      {
+        "batch": 15,
+        "date": "2026-10-06",
+        "focus": [
+          "Драгоман",
+          "Габер",
+          "Врелото",
+          "Бели брег",
+          "Вс 211",
+          "Нс 208",
+          "Нс 209",
+          "ТК-1 / ТК-2 / ТК-3",
+          "ТК Имобилиен"
+        ],
+        "method": "deep peer-reviewed + official monitoring research",
+        "verified_profiles_added": 0,
+        "verified_borehole_datasets_added": 2,
+        "hydraulic_level_records_added": 2,
+        "area_contexts_added": 1,
+        "project_only_records_added": 1
+      },
+      {
+        "batch": 16,
+        "date": "2026-10-06",
+        "focus": [
+          "Годеч",
+          "ОУП",
+          "сондажни колонки",
+          "хидрогеоложки сондажи"
+        ],
+        "method": "official municipal + government + academic online search",
+        "verified_profiles_added": 0,
+        "partial_profiles_added": 0,
+        "depth_points_added": 0
+      },
+      {
+        "batch": 17,
+        "date": "2026-10-06",
+        "focus": [
+          "Ихтиман",
+          "BG3G000000QMP017",
+          "ПС - Сондаж"
+        ],
+        "method": "official monitoring + online lithology research",
+        "verified_profiles_added": 0,
+        "verified_boreholes_added": 1
+      },
+      {
+        "batch": 18,
+        "date": "2026-10-06",
+        "focus": [
+          "Горна Малина",
+          "официална геология",
+          "сондажни колонки"
+        ],
+        "method": "official municipal + online borehole research",
+        "verified_profiles_added": 0,
+        "partial_profiles_added": 0,
+        "area_contexts_added": 1
+      },
+      {
+        "batch": 19,
+        "date": "2026-10-06",
+        "focus": [
+          "Ботевград",
+          "Новачене",
+          "СК",
+          "ТК-1",
+          "ТК-2",
+          "Било планина"
+        ],
+        "method": "official environmental + geological publication research",
+        "verified_profiles_added": 0,
+        "verified_facilities_added": 3,
+        "area_contexts_added": 1,
+        "shallow_contexts_added": 1
+      },
+      {
+        "batch": 20,
+        "date": "2026-10-06",
+        "focus": [
+          "Божурище",
+          "Златуша",
+          "Росоман",
+          "исторически сондажи",
+          "нови диамантено-ядкови сондажи"
+        ],
+        "method": "official municipal + exploration company disclosure research",
+        "verified_profiles_added": 0,
+        "verified_historical_boreholes_identified": 11,
+        "verified_depth_intervals_added": 2,
+        "project_only_records_added": 1,
+        "area_contexts_added": 1
+      },
+      {
+        "batch": 21,
+        "date": "2026-10-06",
+        "focus": [
+          "Антон",
+          "официални сондажни данни",
+          "литоложки колонки",
+          "мониторингови сондажи"
+        ],
+        "method": "official municipal + basin + EEA + geological online search",
+        "verified_profiles_added": 0,
+        "partial_profiles_added": 0,
+        "verified_depth_points_added": 0
+      },
+      {
+        "batch": 22,
+        "date": "2026-10-06",
+        "focus": [
+          "Чавдар",
+          "ОУП",
+          "геоложки условия",
+          "сондажни колонки"
+        ],
+        "method": "official municipal + scientific + mining online research",
+        "verified_profiles_added": 0,
+        "partial_profiles_added": 0,
+        "area_contexts_added": 1
+      },
+      {
+        "batch": 23,
+        "date": "2026-10-06",
+        "focus": [
+          "Копривщица",
+          "ОУП",
+          "ПИРО",
+          "сондажни колонки",
+          "хидрогеоложки сондажи"
+        ],
+        "method": "official municipal + EEA + basin + geological online research",
+        "verified_profiles_added": 0,
+        "partial_profiles_added": 0,
+        "area_contexts_added": 1
+      },
+      {
+        "batch": 24,
+        "date": "2026-10-06",
+        "focus": [
+          "Правец",
+          "ОУП",
+          "инженерно-геоложки проучвания",
+          "хидрогеоложки сондажи",
+          "литоложки колонки"
+        ],
+        "method": "official municipal + geological + hydrogeological online research",
+        "verified_profiles_added": 0,
+        "partial_profiles_added": 0,
+        "verified_depth_points_added": 0
+      },
+      {
+        "batch": 25,
+        "date": "2026-10-06",
+        "focus": [
+          "Сливница",
+          "Калотина",
+          "Сливнишка свита",
+          "карст",
+          "сондажни колонки"
+        ],
+        "method": "scientific stratigraphy + official municipal + borehole search",
+        "verified_profiles_added": 0,
+        "partial_profiles_added": 0,
+        "area_contexts_added": 1
+      },
+      {
+        "batch": 26,
+        "date": "2026-10-06",
+        "focus": [
+          "Златица",
+          "BG3G000000QMP003",
+          "мониторингов сондаж",
+          "литоложка колонка"
+        ],
+        "method": "official basin + EEA + geological online research",
+        "verified_profiles_added": 0,
+        "verified_boreholes_added": 1,
+        "verified_depth_points_added": 1
+      },
+      {
+        "batch": 27,
+        "date": "2026-10-06",
+        "focus": [
+          "Елин Пелин",
+          "Равно поле",
+          "S-44hg",
+          "S-45hg"
+        ],
+        "method": "targeted online identifier + hydrogeological borehole log search",
+        "verified_profiles_added": 0,
+        "partial_profiles_added": 0,
+        "strong_leads_resolved": 0,
+        "strong_leads_remaining": 2
+      },
+      {
+        "batch": 28,
+        "date": "2026-10-06",
+        "focus": [
+          "Самоков",
+          "Горни Окол",
+          "Плански плутон",
+          "ПС-1хг Белчин-Верила"
+        ],
+        "method": "peer-reviewed engineering geology + Ministry of Health search",
+        "verified_profiles_added": 0,
+        "partial_profiles_added": 1,
+        "area_contexts_added": 1,
+        "strong_leads_resolved": 0
+      },
+      {
+        "batch": 29,
+        "date": "2026-10-06",
+        "focus": [
+          "Костинброд",
+          "ТК-3",
+          "ТК-2",
+          "№738",
+          "С-49"
+        ],
+        "method": "municipality status normalization after completed research",
+        "verified_profiles_added": 0,
+        "municipality_status_records_added": 1
+      }
+    ],
+    "discovery_closed": false
+  },
+  "extraction": {
+    "reviewed": 1,
+    "valid_lithology": 1,
+    "rejected": 0,
+    "unresolved": 11,
+    "area_geology_context": 0,
+    "valid_partial_lithology": 0
+  },
+  "verified_lithology_profiles": [
+    {
+      "profile_id": "SOF-LITH-001",
+      "source_id": "SOF-S001",
+      "settlement": "Костенец",
+      "municipality": "Костенец",
+      "oblast": "София",
+      "site": "Сондаж №2хг; на около 145 m североизточно от каптажите на минералните извори, левия бряг на р. Чавча; кота 825.37 m",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "borehole_type": "mineral_water_exploitation_borehole",
+      "drilled_depth_m": 444.7,
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 4.5,
+          "description": "Дребнозърнести сивозеленикави пясъчници; палеоген."
+        },
+        {
+          "from_m": 4.5,
+          "to_m": 19.0,
+          "description": "Песъчливи глини и пясъци, тъмнозелени до черни, плътни, с плоскости на триене; палеоген."
+        },
+        {
+          "from_m": 19.0,
+          "to_m": 36.6,
+          "description": "Дребно- и среднозърнести сиви до зеленикави пясъчници с прослойка от тъмносиви до черни песъчливи глини; палеоген."
+        },
+        {
+          "from_m": 36.6,
+          "to_m": 64.2,
+          "description": "Здраво споени песъчливи глини с прослойки от едрозърнести пясъчници; палеоген."
+        },
+        {
+          "from_m": 64.2,
+          "to_m": 411.0,
+          "description": "Сиви среднозърнести слабонапукани гранити; по пукнатините карбонатни налепи, хематитизация и хлоритизация, с редки пегматитови инжекции. Документирани характерни пукнатини при 192–193, 200–202, 204–213, 223–227, 249–263, 269–271, 275–277, 293–297, 303–306, 388–391, 401–403 m. Палеозой."
+        },
+        {
+          "from_m": 411.0,
+          "to_m": 420.1,
+          "description": "Разломна зона, представена от силно изменени, напукани, излужени и на места брекчирани гранити; по пукнатините силно хематитизирани. Палеозой."
+        },
+        {
+          "from_m": 420.1,
+          "to_m": 444.7,
+          "description": "Среднозърнести светлосиви напукани и хлоритизирани гранити. Палеозой."
+        }
+      ],
+      "construction_context": {
+        "intervals": [
+          {
+            "from_m": 0.0,
+            "to_m": 80.0,
+            "description": "Плътна стоманена обсадна тръба Ø168 mm"
+          },
+          {
+            "from_m": 80.0,
+            "to_m": 117.3,
+            "description": "Открит ствол Ø150 mm"
+          },
+          {
+            "from_m": 117.3,
+            "to_m": 387.0,
+            "description": "Открит ствол Ø130 mm"
+          },
+          {
+            "from_m": 387.0,
+            "to_m": 394.0,
+            "description": "Плътна стоманена обсадна колона Ø127 mm"
+          },
+          {
+            "from_m": 394.0,
+            "to_m": 444.7,
+            "description": "Открит ствол Ø127 mm"
+          }
+        ],
+        "cementation": "Обсадната колона Ø168 mm е циментирана в интервала 0–80 m.",
+        "note": "Конструкцията и откритият ствол са отделна техническа информация и не се третират като доказани водопритоци."
+      },
+      "limitations": [
+        "Документираните пукнатини не се приемат автоматично за водопритоци.",
+        "Разломната зона 411.0–420.1 m е литоложко-структурен интервал, не автоматично водоносен интервал.",
+        "Минералните и хидравличните данни за съоръжението се анализират отделно от литоложкия профил."
+      ],
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "SOF-LITH-002",
+      "source_id": "SOF-S005",
+      "settlement": "Долна баня",
+      "municipality": "Долна баня",
+      "oblast": "София",
+      "site": "Сондаж №13хг – находище Долна баня",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "borehole_type": "mineral_thermal_borehole",
+      "drilled_depth_m": 279.2,
+      "coordinates": {
+        "latitude": 42.311068990513,
+        "longitude": 23.774985936602,
+        "coordinate_status": "OFFICIAL_EXACT",
+        "source": "2012 Dolna Banya mineral-water resource assessment; facility-level BGS 1970 K9 coordinates transformed to WGS84",
+        "transform_control_difference_m": 0.028
+      },
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 31.0,
+          "description": "Чакъли и валуни с песъчлив запълнител, алувий"
+        },
+        {
+          "from_m": 31.0,
+          "to_m": 50.0,
+          "description": "Глинести пясъци"
+        },
+        {
+          "from_m": 50.0,
+          "to_m": 114.4,
+          "description": "Редуване на глини и пясъци"
+        },
+        {
+          "from_m": 114.4,
+          "to_m": 116.5,
+          "description": "Биотитови шисти"
+        },
+        {
+          "from_m": 116.5,
+          "to_m": 121.5,
+          "description": "Тектонска зона"
+        },
+        {
+          "from_m": 121.5,
+          "to_m": 184.4,
+          "description": "Биотитови шисти"
+        },
+        {
+          "from_m": 184.4,
+          "to_m": 192.8,
+          "description": "Пегматити, силно напукани"
+        },
+        {
+          "from_m": 192.8,
+          "to_m": 265.9,
+          "description": "Биотитови шисти"
+        },
+        {
+          "from_m": 265.9,
+          "to_m": 271.9,
+          "description": "Аплити"
+        },
+        {
+          "from_m": 271.9,
+          "to_m": 279.2,
+          "description": "Амфиболити"
+        }
+      ],
+      "structural_context": [
+        {
+          "from_m": 116.5,
+          "to_m": 121.5,
+          "type": "tectonic_zone",
+          "note": "Документиран структурно нарушен интервал. Не се третира автоматично като доказан водоприток."
+        },
+        {
+          "from_m": 184.4,
+          "to_m": 192.8,
+          "type": "strongly_fractured_pegmatite",
+          "note": "Документиран силно напукан пегматитов интервал. Напукаността сама по себе си не доказва индивидуален водоприток."
+        }
+      ],
+      "construction_context": {
+        "casing_1_m": "0-45.9",
+        "casing_1_diameter_mm": 168,
+        "casing_2_m": "45.9-116",
+        "casing_2_diameter_mm": 146,
+        "cemented_to_m": 116,
+        "open_hole_m": "116-279.2",
+        "open_hole_drilling_diameter_mm": 130,
+        "note": "Отвореният ствол е конструктивна характеристика. Интервалът 116-279.2 m НЕ се приема като един непрекъснат водоносен хоризонт или доказан водоприток."
+      },
+      "limitations": [
+        "Exact water-bearing sub-intervals are not specified by the source.",
+        "Open hole 116-279.2 m must not be converted into an aquifer interval.",
+        "Tectonic and fractured intervals are structural observations, not automatically water inflows.",
+        "Mineral/thermal hydraulic interpretation is maintained separately from lithology."
+      ],
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "SOF-LITH-003",
+      "source_id": "SOF-S007",
+      "settlement": "Белчин",
+      "municipality": "Самоков",
+      "oblast": "София",
+      "site": "Белчински бани – Сондаж №1хг",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "borehole_type": "mineral_thermal_borehole",
+      "drilled_depth_m": 418.7,
+      "construction_year": 1964,
+      "coordinates": {
+        "latitude": 42.3670222,
+        "longitude": 23.4135389,
+        "coordinate_status": "OFFICIAL_EXACT",
+        "source": "БДДР – официален регистър / official_water_facilities.geojson",
+        "registry_number": "РМН1 - 009002"
+      },
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 8.0,
+          "description": "Сивокафяви песъчливи глини със заоблени скални късове"
+        },
+        {
+          "from_m": 8.0,
+          "to_m": 20.0,
+          "description": "Дребнозърнести и едрозърнести глинести пясъци"
+        },
+        {
+          "from_m": 20.0,
+          "to_m": 22.0,
+          "description": "Едрозърнести гравийни пясъци"
+        },
+        {
+          "from_m": 22.0,
+          "to_m": 29.0,
+          "description": "Сивокафяви песъчливи глини"
+        },
+        {
+          "from_m": 29.0,
+          "to_m": 121.0,
+          "description": "Пясъчници със слаба глинеста спойка, прослойки от гравий и едрозърнести пясъчници; напукани"
+        },
+        {
+          "from_m": 121.0,
+          "to_m": 186.0,
+          "description": "Средно до едрозърнести пясъчници с конгломератни прослойки и късове от диорити, гранитогнайси и гнайси"
+        },
+        {
+          "from_m": 186.0,
+          "to_m": 198.1,
+          "description": "Едрозърнести пясъци с прослойки от въглища и чакълни късове"
+        },
+        {
+          "from_m": 198.1,
+          "to_m": 237.5,
+          "description": "Средно и едрозърнести пясъчници с глинеста спойка и конгломератни прослойки"
+        },
+        {
+          "from_m": 237.5,
+          "to_m": 303.5,
+          "description": "Конгломерати с глинесто-песъчлива спойка"
+        },
+        {
+          "from_m": 303.5,
+          "to_m": 362.0,
+          "description": "Среднозърнести гранодиорити, слабо напукани; много пукнатини са запълнени с калцит"
+        },
+        {
+          "from_m": 362.0,
+          "to_m": 418.7,
+          "description": "Среднозърнести гранодиорити, силно тектонски напукани"
+        }
+      ],
+      "structural_context": [
+        {
+          "from_m": 362.0,
+          "to_m": 418.7,
+          "type": "strong_tectonic_fracturing",
+          "note": "Документиран силно тектонски напукан гранодиоритен интервал. Напукаността не се приема автоматично като индивидуален водоприток."
+        }
+      ],
+      "construction_context": {
+        "casing_1_m": "0-29",
+        "casing_1_diameter_mm": 146,
+        "casing_1_cemented": true,
+        "casing_2_m": "29-313.2",
+        "casing_2_diameter_mm": 127,
+        "cemented_interval_m": "250-313",
+        "open_hole_m": "313.2-418.7",
+        "open_hole_diameter_mm": 108,
+        "note": "Отвореният ствол е конструктивен интервал и не се приема като непрекъснат доказан водоприток."
+      },
+      "hydro_context_separate": {
+        "documented_collector_m": "303.5-418.7",
+        "collector_type": "fracture-vein granodiorite collector",
+        "strongly_fractured_interval_m": "362-418.7",
+        "technical_possible_flow_l_s": 10.23,
+        "temperature_c": 40.7,
+        "pressure_system": true,
+        "note": "Колекторният интервал и хидравличните характеристики се пазят отделно от литоложката колонка. Няма извлечени отделни индивидуални inflow depths."
+      },
+      "limitations": [
+        "Exact intervals apply only to borehole №1hg at Belchinski Bani.",
+        "Strong fracturing 362-418.7 m is not automatically an individual inflow interval.",
+        "Open hole 313.2-418.7 m is construction, not a proven aquifer boundary.",
+        "PS-1hg Belchin-Verila is a different facility and must not be merged with this borehole."
+      ],
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "SOF-LITH-004",
+      "source_id": "SOF-S009",
+      "settlement": "Костинброд",
+      "municipality": "Костинброд",
+      "oblast": "София",
+      "site": "Сондаж ТК-3 – Костинброд",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "borehole_type": "mineral_water_borehole",
+      "drilled_depth_m": 200.0,
+      "construction_year": 2000,
+      "coordinates": {
+        "latitude": 42.79775,
+        "longitude": 23.1719333,
+        "coordinate_status": "OFFICIAL_EXACT",
+        "source": "БДДР – официален регистър",
+        "registry_number": "РМН1 - 102015"
+      },
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 12.0,
+          "description": "Кватернерни материали"
+        },
+        {
+          "from_m": 12.0,
+          "to_m": 145.0,
+          "description": "Неогенски материали – Лозенецка и Новиискърска свита"
+        },
+        {
+          "from_m": 145.0,
+          "to_m": 200.0,
+          "description": "Горнокредни напукани пясъчници със силициева спойка с прослойки от глинести мергели"
+        }
+      ],
+      "construction_context": {
+        "water_intake_below_m": 151.5,
+        "upper_neogene_aquifer_isolated": true,
+        "isolation_method": "Неперфорирана метална тръба и циментация на затръбното пространство",
+        "note": "Водоприемната част и изолацията са конструктивно-хидрогеоложки данни и не се приемат като самостоятелни литоложки граници."
+      },
+      "hydro_context_separate": {
+        "static_water_level_m_below_ground": 12.1,
+        "static_water_level_date": "2010-03-16",
+        "resource_context_l_s": 10.14,
+        "note": "Статичното ниво и ресурсът са хидравличен контекст, не доказани индивидуални inflow depths."
+      },
+      "limitations": [
+        "The three intervals are the level of detail explicitly documented in the source.",
+        "Fractured sandstone does not imply every fracture is water-bearing.",
+        "Water-intake interval is construction/hydrogeological context, not a lithological interval.",
+        "Exact profile applies only to TK-3."
+      ],
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "SOF-LITH-005",
+      "source_id": "SOF-S010",
+      "settlement": "Равно поле",
+      "municipality": "Елин Пелин",
+      "oblast": "София",
+      "site": "Сондаж №С-11в – Равно поле",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "borehole_type": "mineral_thermal_borehole",
+      "drilled_depth_m": 550.0,
+      "construction_year": 1966,
+      "coordinates": {
+        "latitude": 42.6687381,
+        "longitude": 23.5222372,
+        "coordinate_status": "OFFICIAL_EXACT",
+        "source": "official_water_facilities.geojson / mineral_water_master"
+      },
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 73.5,
+          "description": "Песъчливи глини, пясъци, глина с чакъли и чакъли; кватернер"
+        },
+        {
+          "from_m": 73.5,
+          "to_m": 451.7,
+          "description": "Алтернация на глини, песъчливи глини, глинести пясъци и маломощни пясъчни прослойки; неоген"
+        },
+        {
+          "from_m": 451.7,
+          "to_m": 464.7,
+          "description": "Среднозърнести пясъци; неоген"
+        },
+        {
+          "from_m": 464.7,
+          "to_m": 493.0,
+          "description": "Песъчливи глини; неоген"
+        },
+        {
+          "from_m": 493.0,
+          "to_m": 515.0,
+          "description": "Среднозърнести пясъци с песъчливо-глинеста прослойка от 500 до 504 m; неоген"
+        },
+        {
+          "from_m": 515.0,
+          "to_m": 550.0,
+          "description": "Песъчливи глини; неоген"
+        }
+      ],
+      "construction_context": {
+        "drilling_0_138_2_m": "Ø150 mm",
+        "drilling_138_2_550_m": "Ø130 mm",
+        "casing_0_138_2_m": "Ø146 mm",
+        "filter_zone_451_460_m": "Ø89 mm",
+        "casing_0_525_m": "Ø108 mm",
+        "filter_zone_493_497_5_m": "Ø108 mm",
+        "note": "Филтърните интервали са конструктивна информация. FILTER != INFLOW."
+      },
+      "hydro_context_separate": {
+        "technical_possible_discharge_l_s": 1.96,
+        "temperature_c": 51.6,
+        "pressure_context": "самоизлив",
+        "note": "Дебитът, температурата и самоизливът се пазят отделно от литоложкия профил."
+      },
+      "limitations": [
+        "Filter intervals are not treated as proven inflow depths.",
+        "The exact lithology applies only to borehole C-11v.",
+        "Regional carbonate collector descriptions are not converted into local exact intervals."
+      ],
+      "status": "VALID_LITHOLOGY"
+    },
+    {
+      "profile_id": "SOF-LITH-006",
+      "source_id": "SOF-S011",
+      "settlement": "Равно поле",
+      "municipality": "Елин Пелин",
+      "oblast": "София",
+      "site": "Сондаж №С-55хг – Равно поле",
+      "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE",
+      "borehole_type": "mineral_thermal_borehole",
+      "drilled_depth_m": 758.0,
+      "construction_year": 1985,
+      "coordinates": {
+        "latitude": 42.6717289,
+        "longitude": 23.5295917,
+        "coordinate_status": "OFFICIAL_EXACT",
+        "source": "official_water_facilities.geojson / mineral_water_master"
+      },
+      "lithology_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 2.0,
+          "description": "Почвен слой"
+        },
+        {
+          "from_m": 2.0,
+          "to_m": 80.0,
+          "description": "Пясъци с прослойки от глини; кватернер"
+        },
+        {
+          "from_m": 80.0,
+          "to_m": 699.6,
+          "description": "Песъчливи глини с прослойки от пясъци; неоген"
+        },
+        {
+          "from_m": 699.6,
+          "to_m": 758.0,
+          "description": "Доломитизирани варовици; триас"
+        }
+      ],
+      "construction_context": {
+        "drilling_0_215_5_m": "Ø170 mm",
+        "drilling_215_5_688_5_m": "Ø130 mm",
+        "drilling_688_5_758_m": "Ø91 mm",
+        "casing_0_215_5_m": "Ø146 mm",
+        "filter_zone_678_758_m": "Ø146 mm",
+        "casing_0_684_m": "Ø108 mm",
+        "casing_684_758_m": "Ø89 mm",
+        "note": "Филтърната зона 678-758 m е конструктивен интервал и не се приема автоматично като доказан непрекъснат водоприток."
+      },
+      "hydro_context_separate": {
+        "technical_possible_discharge_l_s": 0.61,
+        "temperature_c": 54.1,
+        "pressure_context": "самоизлив",
+        "note": "Дебитът, температурата и самоизливът са хидравличен контекст, отделен от литологията."
+      },
+      "limitations": [
+        "Filter interval 678-758 m is not automatically an inflow interval.",
+        "Dolomitized limestone interval is documented lithology, but individual fractures are not individual inflows.",
+        "The exact profile applies only to borehole C-55hg."
+      ],
+      "status": "VALID_LITHOLOGY"
+    }
+  ],
+  "partial_lithology_profiles": [
+    {
+      "profile_id": "SOF-PARTIAL-001",
+      "source_id": "SOF-S012",
+      "municipality": "Своге",
+      "oblast": "София",
+      "site": "Сондаж С-102 – Свогенски басейн",
+      "borehole_name": "С-102",
+      "evidence_type": "PUBLISHED_GRAPHIC_BOREHOLE_SECTION",
+      "status": "PARTIAL_GRAPHIC_LOG",
+      "drilled_depth_m": null,
+      "published_graphic_depth_scale_m_approx": 650,
+      "published_graphic_depth_scale_status": "APPROXIMATE_FROM_GRAPHIC_ONLY",
+      "verified_depth_points": [
+        {
+          "depth_m": 611.0,
+          "unit": "Царичинска свита",
+          "evidence_type": "TEXT_CONFIRMED_DEPTH_POINT"
+        }
+      ],
+      "graphic_lithology_summary": [
+        "конгломерати / брекчоконгломерати",
+        "пясъчници",
+        "алевролити",
+        "аргилити",
+        "въглищни пластове"
+      ],
+      "stratigraphic_units_shown": [
+        "Царичинска свита",
+        "Дръмшанска свита",
+        "Дреновска свита",
+        "Чибаовска свита"
+      ],
+      "limitations": [
+        "Exact interval boundaries cannot be read reliably from the published graphic scale.",
+        "Approximate graphic depth scale is not treated as exact drilled depth.",
+        "No interpolation between visually shown contacts.",
+        "Graphic lithology symbols are not converted into exact metric intervals without numeric boundaries."
+      ]
+    },
+    {
+      "profile_id": "SOF-PARTIAL-002",
+      "source_id": "SOF-S012",
+      "municipality": "Своге",
+      "oblast": "София",
+      "site": "Сондаж С-221 – Свогенски басейн",
+      "borehole_name": "С-221",
+      "evidence_type": "PUBLISHED_GRAPHIC_BOREHOLE_SECTION",
+      "status": "PARTIAL_GRAPHIC_LOG",
+      "drilled_depth_m": null,
+      "published_graphic_depth_scale_m_approx": 440,
+      "published_graphic_depth_scale_status": "APPROXIMATE_FROM_GRAPHIC_ONLY",
+      "graphic_lithology_summary": [
+        "конгломерати / брекчоконгломерати",
+        "пясъчници",
+        "алевролити",
+        "аргилити",
+        "въглищни пластове"
+      ],
+      "limitations": [
+        "Exact metric contacts are unresolved from the scanned graphic.",
+        "Approximate graphic depth scale is not treated as exact drilled depth.",
+        "No numeric intervals are created from visual proportions."
+      ]
+    },
+    {
+      "profile_id": "SOF-PARTIAL-003",
+      "source_id": "SOF-S043",
+      "municipality": "Самоков",
+      "oblast": "София",
+      "settlement": "Горни Окол",
+      "site": "инженерно-геоложки сондажи в района на с. Горни Окол",
+      "borehole_name": null,
+      "borehole_count": null,
+      "evidence_type": "PARTIAL_ENGINEERING_BOREHOLE_EVIDENCE",
+      "status": "PARTIAL_LITHOLOGY_EVIDENCE",
+      "investigation_period": "2017-2023",
+      "documented_lithology": [
+        {
+          "material": "изветрял гранодиорит от Планския плутон",
+          "field_drilling_appearance": [
+            "прахов пясък (siSa)",
+            "чакълест прахов пясък (grsiSa)"
+          ]
+        },
+        {
+          "material": "неизветрял гранодиорит",
+          "structure": "хоризонтална пукнатина"
+        }
+      ],
+      "drilled_depth_m": null,
+      "exact_interval_boundaries_m": null,
+      "limitations": [
+        "No individual borehole identifier published in the extracted passage.",
+        "No total borehole depth established.",
+        "No exact metric lithological contacts published.",
+        "Observed fracture does not imply groundwater inflow."
+      ],
+      "scientific_rule": "The publication proves lithology observed in real engineering boreholes, but without exact metric boundaries it must remain partial evidence only."
+    }
+  ],
+  "area_geology_contexts": [],
+  "external_lithology_leads": [
+    {
+      "lead_id": "SOF-LEAD-PCHELIN-002",
+      "municipality": "Костенец",
+      "settlements": [
+        "Пчелин"
+      ],
+      "title": "Сондаж 2 ХГ – находище „Пчелински бани“",
+      "source_authority": "Басейнова дирекция Източнобеломорски район",
+      "source_url": "https://earbd.org/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2025/01/Register_saoraje%20MV_%20BD%20IBR%20_2025.pdf",
+      "evidence": "Официално потвърден наблюдателен сондаж, изпълнен през 1966 г.; дълбочина 348.9 m; координати 42°21'52.5\" N, 23°49'11.7\" E; статично водно ниво 2.28 m под терена.",
+      "known_depth_m": 348.9,
+      "coordinates": {
+        "latitude": 42.3645833,
+        "longitude": 23.8199167,
+        "coordinate_status": "OFFICIAL_EXACT",
+        "source": "SOF-S002"
+      },
+      "groundwater_context": {
+        "documented_static_level_m_bgl": 2.28,
+        "note": "Документирано водно ниво. Не определя само по себе си водоприточен или литоложки интервал."
+      },
+      "related_mineral_master_id": "mw_5405d6c171c7de7c",
+      "research_goal": "Намиране на първичния сондажен дневник, паспорт или архивен геоложки разрез с точни литоложки интервали.",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+    },
+    {
+      "lead_id": "SOF-LEAD-PCHELIN-003",
+      "municipality": "Костенец",
+      "settlements": [
+        "Пчелин"
+      ],
+      "title": "Сондаж №3 ХГ – находище „Пчелински бани“",
+      "source_authority": "Басейнова дирекция Източнобеломорски район",
+      "source_url": "https://earbd.org/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2025/01/Register_saoraje%20MV_%20BD%20IBR%20_2025.pdf",
+      "evidence": "Официално потвърден проучвателно-експлоатационен сондаж, изпълнен през 1966–1967 г.; дълбочина 350.3 m; координати 42°21'52.2\" N, 23°49'10.7\" E; статично водно ниво 1.40 m под терена.",
+      "known_depth_m": 350.3,
+      "coordinates": {
+        "latitude": 42.3645,
+        "longitude": 23.8196389,
+        "coordinate_status": "OFFICIAL_EXACT",
+        "source": "SOF-S002"
+      },
+      "groundwater_context": {
+        "documented_static_level_m_bgl": 1.4,
+        "note": "Документирано водно ниво. Не определя само по себе си водоприточен или литоложки интервал."
+      },
+      "related_mineral_master_id": "mw_85fde85a40180250",
+      "research_goal": "Намиране на първичния сондажен дневник, паспорт или архивен геоложки разрез с точни литоложки интервали.",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+    },
+    {
+      "lead_id": "SOF-LEAD-KOSTENETS-197M",
+      "municipality": "Костенец",
+      "settlements": [
+        "Костенец"
+      ],
+      "title": "Исторически сондаж 197 m – находище Костенец",
+      "source_authority": "Министерство на туризма",
+      "source_url": "https://www.tourism.government.bg/bg/spa-destinations/6473/6478",
+      "evidence": "Официален държавен източник посочва сондаж с дълбочина 197 m, прокаран при сондажните проучвания на находище Костенец в близост до минералните извори.",
+      "known_depth_m": 197.0,
+      "identity_status": "HISTORICAL_BOREHOLE_NUMBER_UNKNOWN",
+      "research_goal": "Намиране на оригинален сондажен дневник, паспорт, архивен доклад или публикация, които установяват номера, точната позиция и индивидуалната литоложка колонка.",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+    },
+    {
+      "lead_id": "SOF-LEAD-KOSTENETS-530M",
+      "municipality": "Костенец",
+      "settlements": [
+        "Костенец"
+      ],
+      "title": "Исторически сондаж 530 m – находище Костенец",
+      "source_authority": "Министерство на туризма",
+      "source_url": "https://www.tourism.government.bg/bg/spa-destinations/6473/6478",
+      "evidence": "Официален държавен източник посочва, че през 1971 г. проучването на находище Костенец продължава със сондажи 444 m и 530 m. Сондажът 444 m е идентифициран отделно като №2хг, 444.70 m; 530-метровият сондаж остава неидентифициран по номер.",
+      "known_depth_m": 530.0,
+      "reported_year": 1971,
+      "identity_status": "HISTORICAL_BOREHOLE_NUMBER_UNKNOWN",
+      "research_goal": "Намиране на първичен документ за номера, местоположението и точната литоложка колонка на 530-метровия сондаж.",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+    },
+    {
+      "lead_id": "SOF-LEAD-DOLNABANYA-141",
+      "municipality": "Долна баня",
+      "settlements": [
+        "Долна баня"
+      ],
+      "site": "местност Бялата вода",
+      "title": "Сондаж №141 – Долна баня – Бялата вода",
+      "source_authority": "Министерство на здравеопазването",
+      "source_id": "SOF-S006",
+      "source_url": "https://www.mh.government.bg/upload/6618/279-dolna_banya-byalata_voda-sondazh141-14-06-2024.pdf",
+      "evidence": "Официалната балнеологична оценка потвърждава Сондаж №141, дълбочина 515 m, изграден през 1978 г., в югоизточната част на Долна баня, местност Бялата вода.",
+      "known_depth_m": 515.0,
+      "reported_year": 1978,
+      "coordinate_status": "TO_RESEARCH",
+      "location_status": "OFFICIAL_DESCRIPTIVE_LOCATION_ONLY",
+      "rejected_legacy_coordinate": {
+        "latitude": 42.5043333,
+        "longitude": 24.7123611,
+        "reason": "Legacy/fuzzy coordinate explicitly rejected by the existing canonical spatial research as unsafe for facility-level mapping."
+      },
+      "research_goal": "Намиране или извличане на първична индивидуална литоложка колонка и, ако стане достъпен нов надежден източник, точни facility-level координати.",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+    },
+    {
+      "lead_id": "SOF-LEAD-BELCHIN-VERILA-PS1HG",
+      "municipality": "Самоков",
+      "settlements": [
+        "Белчин"
+      ],
+      "title": "Сондаж №ПС-1хг – находище Белчин-Верила",
+      "source_id": "SOF-S008",
+      "source_authority": "Министерство на здравеопазването",
+      "source_url": "https://www.mh.government.bg/upload/6702/1-belchin-verila-sondazhps-1hg-12-11-2021.pdf",
+      "related_mineral_id": "mw_7cfe8c41b771290b",
+      "coordinates": {
+        "latitude": 42.3627222222,
+        "longitude": 23.3871944444,
+        "coordinate_status": "OFFICIAL_EXACT",
+        "coordinate_crs": "WGS84",
+        "cadastral_property": "УПИ №846, кв.57",
+        "terrain_elevation_m": 913.6
+      },
+      "known_depth_m": null,
+      "construction_year": null,
+      "documented_hydraulic_context": {
+        "technical_possible_discharge_l_s": 5.6,
+        "exploitation_resource_l_s": 5.6,
+        "technical_temperature_c": 45.0,
+        "sample_temperature_c": 43.0,
+        "note": "Хидравличните и температурните данни не представляват литоложка колонка и не се използват като доказателство за конкретен водоприточен интервал."
+      },
+      "identity_note": "PS-1hg Белчин-Верила е отделно физическо съоръжение от Сондаж №1хг Белчински бани.",
+      "evidence": "Официалната балнеоложка оценка потвърждава съоръжението, находището, точните координати и техническите показатели. В soil_lithology_research_state няма индивидуален профил за PS-1hg Белчин-Верила.",
+      "research_goal": "Да се намери първичен сондажен паспорт, геоложки дневник или архивен доклад с обща дълбочина, година на прокарване, конструкция и точни индивидуални литоложки интервали.",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+    },
+    {
+      "lead_id": "SOF-LEAD-KOSTINBROD-TK2",
+      "municipality": "Костинброд",
+      "settlements": [
+        "Костинброд",
+        "Шияковци",
+        "Маслово"
+      ],
+      "title": "Сондаж ТК-2 – Костинброд",
+      "known_depth_m": 207.0,
+      "construction_year": 1978,
+      "source_authority": "БДДР",
+      "evidence": "Официалният регистър потвърждава индивидуалното съоръжение, годината и общата дълбочина.",
+      "research_goal": "Да се намери първичен сондажен паспорт или геоложки дневник с индивидуалните литоложки интервали.",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+    },
+    {
+      "lead_id": "SOF-LEAD-KOSTINBROD-738",
+      "municipality": "Костинброд",
+      "settlements": [
+        "Костинброд",
+        "Шияковци",
+        "Маслово"
+      ],
+      "title": "Сондаж №738 – Шияковци",
+      "known_depth_m": 200.0,
+      "construction_year": 1990,
+      "source_authority": "БДДР",
+      "evidence": "Официалният регистър потвърждава индивидуалното съоръжение, годината и общата дълбочина.",
+      "research_goal": "Да се намери първичен сондажен паспорт или геоложки дневник с индивидуалните литоложки интервали.",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+    },
+    {
+      "lead_id": "SOF-LEAD-KOSTINBROD-S49",
+      "municipality": "Костинброд",
+      "settlements": [
+        "Костинброд",
+        "Шияковци",
+        "Маслово"
+      ],
+      "title": "Сондаж С-49 – Маслово",
+      "known_depth_m": 250.0,
+      "construction_year": 1970,
+      "source_authority": "БДДР",
+      "evidence": "Официалният регистър потвърждава индивидуалното съоръжение, годината и общата дълбочина.",
+      "research_goal": "Да се намери първичен сондажен паспорт или геоложки дневник с индивидуалните литоложки интервали.",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+    },
+    {
+      "lead_id": "SOF-LEAD-ELINPELIN-S44HG",
+      "municipality": "Елин Пелин",
+      "settlements": [
+        "Равно поле"
+      ],
+      "title": "Сондаж №С-44хг – Равно поле",
+      "known_depth_m": 690.3,
+      "construction_year": 1984,
+      "coordinates": {
+        "latitude": 42.6710278,
+        "longitude": 23.5220861,
+        "coordinate_status": "OFFICIAL_EXACT"
+      },
+      "registry_number": "РМН1 - 031010",
+      "source_authority": "БДДР",
+      "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx",
+      "evidence": "Официалният регистър потвърждава индивидуалното съоръжение, годината, общата дълбочина и точните координати.",
+      "research_goal": "Да се намери първичен сондажен паспорт или геоложки дневник.",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+    },
+    {
+      "lead_id": "SOF-LEAD-ELINPELIN-S45HG",
+      "municipality": "Елин Пелин",
+      "settlements": [
+        "Равно поле"
+      ],
+      "title": "Сондаж №С-45хг – Равно поле",
+      "known_depth_m": 679.8,
+      "construction_year": 1984,
+      "coordinates": {
+        "latitude": 42.6655056,
+        "longitude": 23.5211605,
+        "coordinate_status": "OFFICIAL_EXACT"
+      },
+      "registry_number": "РМН1 - 031011",
+      "source_authority": "БДДР",
+      "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx",
+      "evidence": "Официалният регистър потвърждава индивидуалното съоръжение, годината, общата дълбочина и точните координати.",
+      "research_goal": "Да се намери първичен сондажен паспорт или геоложки дневник.",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+    }
+  ],
+  "municipality_lithology_searches": [
+    {
+      "municipality": "Костенец",
+      "date": "2026-10-06",
+      "search_type": "systematic_lithology_and_deep_borehole_search",
+      "settlements_searched": [
+        "Костенец",
+        "Момин проход",
+        "Пчелин",
+        "Пчелински бани"
+      ],
+      "verified_new_lithology_columns": 1,
+      "partial_columns": 0,
+      "unresolved_strong_leads": 4,
+      "verified_profiles": [
+        "SOF-LITH-001"
+      ],
+      "unresolved_leads": [
+        "SOF-LEAD-PCHELIN-002",
+        "SOF-LEAD-PCHELIN-003",
+        "SOF-LEAD-KOSTENETS-197M",
+        "SOF-LEAD-KOSTENETS-530M"
+      ],
+      "note": "Verified exact lithology: Костенец Сондаж №2хг, 444.70 m. Пчелин №2 ХГ и №3 ХГ са реални дълбоки сондажи с официални дълбочини и координати, но без открити индивидуални литоложки колонки. Историческите сондажи 197 m и 530 m при находище Костенец са потвърдени като съществували, но техните номера и индивидуални колонки не са установени. За Момин проход локалните canonical datasets показват каптиран естествен извор, не доказан дълбок сондаж.",
+      "status": "SEARCHED_WITH_VERIFIED_AND_UNRESOLVED_LEADS"
+    },
+    {
+      "municipality": "Долна баня",
+      "date": "2026-10-06",
+      "search_type": "systematic_lithology_and_deep_borehole_search",
+      "settlements_searched": [
+        "Долна баня",
+        "местност Бялата вода"
+      ],
+      "verified_new_lithology_columns": 1,
+      "partial_columns": 0,
+      "unresolved_strong_leads": 1,
+      "verified_profiles": [
+        "SOF-LITH-002"
+      ],
+      "unresolved_leads": [
+        "SOF-LEAD-DOLNABANYA-141"
+      ],
+      "rejected_or_not_established": [
+        {
+          "candidate": "Сондаж №1хг – Долна баня",
+          "reason": "No individually verified Dolna Banya borehole No.1hg was found. The existing research contains a note distinguishing Dolna Banya 13hg from mapped 1HG Bankya. A legacy spatial QA variable named sondazh_1hg does not establish a separate facility and is not accepted as evidence.",
+          "status": "NOT_ESTABLISHED"
+        }
+      ],
+      "note": "Verified exact lithology: Сондаж №13хг, 279.2 m. Сондаж №141, 515 m, remains NEEDS_PRIMARY_BOREHOLE_LOG. No separate Dolna Banya borehole №1хг is accepted because no reliable individual facility identity or lithological record was established. The captured natural spring is a separate mineral-water facility and must not be converted into a borehole.",
+      "status": "SEARCHED_WITH_VERIFIED_AND_UNRESOLVED_LEAD"
+    },
+    {
+      "municipality": "Елин Пелин",
+      "date": "2026-10-06",
+      "search_type": "official_source_verified_lithology",
+      "verified_new_lithology_columns": 2,
+      "partial_columns": 0,
+      "verified_profiles": [
+        "SOF-LITH-005",
+        "SOF-LITH-006"
+      ],
+      "unresolved_strong_leads": 2,
+      "unresolved_leads": [
+        "SOF-LEAD-ELINPELIN-S44HG",
+        "SOF-LEAD-ELINPELIN-S45HG"
+      ],
+      "excluded_false_or_out_of_scope_hits": [
+        {
+          "candidate": "Казичене facilities",
+          "reason": "Панчарево / София-град",
+          "status": "OUT_OF_SCOPE"
+        },
+        {
+          "candidate": "P-2 Водица 2395.4 m",
+          "reason": "Попово, Търговище – stale nested match",
+          "status": "FALSE_HIT"
+        }
+      ],
+      "note": "Official Ministry of Health balneological assessments provide exact individual lithological profiles for C-11v and C-55hg at Ravno pole. S-44hg and S-45hg remain strong unresolved leads.",
+      "status": "SEARCHED_WITH_VERIFIED_AND_UNRESOLVED_LEADS",
+      "followup_search_date": "2026-10-06",
+      "followup_focus": [
+        "S-44hg",
+        "S-45hg"
+      ],
+      "followup_result": {
+        "S-44hg": "NO_PUBLIC_PRIMARY_LITHOLOGY_LOG_FOUND",
+        "S-45hg": "NO_PUBLIC_PRIMARY_LITHOLOGY_LOG_FOUND"
+      },
+      "remaining_strong_leads": [
+        "SOF-LEAD-ELINPELIN-S44HG",
+        "SOF-LEAD-ELINPELIN-S45HG"
+      ]
+    },
+    {
+      "municipality": "Своге",
+      "date": "2026-10-06",
+      "search_type": "deep_online_archival_borehole_research",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 2,
+      "verified_depth_points": 5,
+      "partial_profiles": [
+        "SOF-PARTIAL-001",
+        "SOF-PARTIAL-002"
+      ],
+      "boreholes_with_point_evidence": [
+        "С-151",
+        "С-171",
+        "С-172"
+      ],
+      "area_contexts": [
+        "SOF-AREA-SVOGE-CARBONIFEROUS-001"
+      ],
+      "note": "Published scientific material establishes graphic borehole sections for C-102 and C-221 and exact core/sample depths for C-151, C-171 and C-172. Exact metric lithological contacts remain unresolved.",
+      "status": "SEARCHED_WITH_PARTIAL_AND_DEPTH_POINT_EVIDENCE"
+    },
+    {
+      "municipality": "Челопеч",
+      "date": "2026-10-06",
+      "search_type": "deep_online_borehole_constrained_geology_research",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "borehole_constrained_sections": 1,
+      "verified_borehole_thickness_records": 3,
+      "area_contexts": 1,
+      "records": {
+        "section": "SOF-SECTION-CHELOPECH-001",
+        "thickness_evidence": [
+          "SOF-THICK-001",
+          "SOF-THICK-002",
+          "SOF-THICK-003"
+        ],
+        "area_context": "SOF-AREA-CHELOPECH-001"
+      },
+      "note": "Scientific publications provide a geological section constrained by borehole data and several documented thickness ranges through the Chelopech volcanic complex, but no complete individual metric borehole log has yet been extracted.",
+      "status": "SEARCHED_WITH_BOREHOLE_CONSTRAINED_AREA_EVIDENCE"
+    },
+    {
+      "municipality": "Етрополе",
+      "date": "2026-10-06",
+      "search_type": "deep_online_archival_and_mine_geology_research",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_borehole_datasets": 1,
+      "borehole_constrained_sections": 1,
+      "area_contexts": 1,
+      "records": {
+        "dataset": "SOF-DATASET-ELATSITE-001",
+        "section": "SOF-SECTION-ELATSITE-001",
+        "area_context": "SOF-AREA-ELATSITE-001"
+      },
+      "note": "Public mine-geology and academic sources establish a 146-borehole exploration dataset, a drill-constrained 3D lithological model, and six main lithological rock types. No complete individual public borehole log has yet been extracted.",
+      "status": "SEARCHED_WITH_VERIFIED_BOREHOLE_DATASET_AND_AREA_MODEL"
+    },
+    {
+      "municipality": "Пирдоп",
+      "date": "2026-10-06",
+      "search_type": "deep_online_monitoring_borehole_research",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_borehole_datasets": 1,
+      "monitoring_boreholes_current": 70,
+      "monitoring_boreholes_initial": 26,
+      "records": {
+        "dataset": "SOF-DATASET-PIRDOP-001",
+        "area_context": "SOF-AREA-PIRDOP-001"
+      },
+      "note": "Scientific and official environmental sources establish a real groundwater monitoring network, initially 26 and later 70 wells. Individual lithological logs have not yet been publicly extracted.",
+      "status": "SEARCHED_WITH_VERIFIED_MONITORING_BOREHOLE_NETWORK"
+    },
+    {
+      "municipality": "Мирково",
+      "date": "2026-10-06",
+      "search_type": "deep_online_official_and_stratigraphic_research",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_borehole_datasets": 1,
+      "verified_monitoring_values": 1,
+      "area_contexts": 1,
+      "records": {
+        "borehole": "SOF-DATASET-MIRKOVO-001",
+        "monitoring_value": "SOF-POINT-006",
+        "area_context": "SOF-AREA-MIRKOVO-001"
+      },
+      "note": "Official monitoring documentation confirms a real borehole in Benkovski (yard of Dako Mechkarov), while scientific literature provides regional stratigraphic context for the Mirkovo Formation. No public individual lithological log has yet been identified.",
+      "status": "SEARCHED_WITH_VERIFIED_BOREHOLE_AND_AREA_CONTEXT"
+    },
+    {
+      "municipality": "Драгоман",
+      "date": "2026-10-06",
+      "search_type": "deep_online_hydrogeological_borehole_research",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_borehole_datasets": 2,
+      "verified_hydraulic_levels": 2,
+      "area_contexts": 1,
+      "project_only_records": 1,
+      "records": {
+        "vreloto_dataset": "SOF-DATASET-DRAGOMAN-001",
+        "immobilien_monitoring": "SOF-DATASET-DRAGOMAN-002",
+        "area_context": "SOF-AREA-DRAGOMAN-001",
+        "project_only": "SOF-PROJECT-DRAGOMAN-001"
+      },
+      "note": "Peer-reviewed and official sources establish multiple real hydrogeological boreholes around Vreloto/Beli Breg and a monitoring borehole in Dragoman. Three 2012 tubular wells are verified at 41, 50 and 65 m, but individual depth-to-TK assignment is unresolved.",
+      "status": "SEARCHED_WITH_VERIFIED_BOREHOLE_DATASETS_AND_AREA_CONTEXT"
+    },
+    {
+      "municipality": "Годеч",
+      "date": "2026-10-06",
+      "search_type": "deep_online_official_lithology_search",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_depth_points": 0,
+      "official_context_sources": [
+        "SOF-S023"
+      ],
+      "searched_for": [
+        "individual borehole lithology",
+        "drilling log",
+        "geological cross-section",
+        "hydrogeological borehole",
+        "municipal OUP geology",
+        "water-supply boreholes"
+      ],
+      "result": "No sufficiently documented public individual borehole log with exact lithological depth intervals was identified.",
+      "scientific_rule": "Municipal/regional geological or water-supply context is not converted into exact individual borehole intervals.",
+      "status": "SEARCHED_NO_VERIFIED_PUBLIC_BOREHOLE_LOG"
+    },
+    {
+      "municipality": "Ихтиман",
+      "date": "2026-10-06",
+      "search_type": "deep_online_official_borehole_research",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_borehole_datasets": 1,
+      "records": {
+        "monitoring_borehole": "SOF-DATASET-IHTIMAN-001"
+      },
+      "note": "Official EEA monitoring documentation confirms a real borehole BG3G000000QMP017 at Ihtiman. No public individual lithological log or verified drilled depth has yet been identified.",
+      "status": "SEARCHED_WITH_VERIFIED_BOREHOLE_EXISTENCE"
+    },
+    {
+      "municipality": "Горна Малина",
+      "date": "2026-10-06",
+      "search_type": "deep_online_official_geology_and_borehole_search",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_depth_points": 0,
+      "area_contexts": 1,
+      "records": {
+        "area_context": "SOF-AREA-GORNA-MALINA-001"
+      },
+      "note": "Official municipal geology provides detailed regional lithology and structural context, but no reliable public individual borehole lithological log was identified.",
+      "status": "SEARCHED_WITH_AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "municipality": "Ботевград",
+      "date": "2026-10-06",
+      "search_type": "deep_online_official_geology_and_groundwater_research",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_borehole_datasets": 1,
+      "verified_facilities": 3,
+      "area_contexts": 1,
+      "shallow_geotechnical_contexts": 1,
+      "records": {
+        "groundwater_facilities": "SOF-DATASET-BOTEVGRAD-001",
+        "area_geology": "SOF-AREA-BOTEVGRAD-001",
+        "shallow_geotechnical": "SOF-SHALLOW-BOTEVGRAD-001"
+      },
+      "note": "Official sources establish groundwater facilities at Botevgrad and Novachene and regional geology southeast of Botevgrad. No public individual deep lithological borehole log was identified.",
+      "status": "SEARCHED_WITH_VERIFIED_FACILITIES_AND_AREA_CONTEXT"
+    },
+    {
+      "municipality": "Божурище",
+      "date": "2026-10-06",
+      "search_type": "deep_online_historical_and_modern_exploration_research",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_borehole_datasets": 1,
+      "verified_historical_boreholes": 11,
+      "historical_total_drilling_m": "approximately 1800",
+      "verified_non_lithology_depth_intervals": 2,
+      "project_only_records": 1,
+      "planned_modern_boreholes": 11,
+      "planned_modern_max_depth_m": 350,
+      "area_contexts": 1,
+      "records": {
+        "historical_dataset": "SOF-DATASET-BOZHURISHTE-ZLATUSHA-001",
+        "modern_project": "SOF-PROJECT-BOZHURISHTE-001",
+        "area_context": "SOF-AREA-ZLATUSHA-001"
+      },
+      "note": "Historical drilling is confirmed: 11 boreholes totalling nearly 1800 m. Two exact assay intervals are published, but no complete individual lithological log has been extracted. The newer 11-hole diamond drilling program remains PROJECT_DEPTH_ONLY in the reviewed evidence.",
+      "status": "SEARCHED_WITH_VERIFIED_HISTORICAL_DRILLING_DATASET"
+    },
+    {
+      "municipality": "Антон",
+      "date": "2026-10-06",
+      "search_type": "deep_online_official_lithology_search",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_depth_points": 0,
+      "verified_borehole_datasets": 0,
+      "official_context_sources": [
+        "SOF-S032"
+      ],
+      "excluded_nearby_evidence": [
+        {
+          "facility": "Сондаж, около 450 m югозападно от гр. Златица",
+          "monitoring_code": "BG3G000000QMP003",
+          "depth_m": 36,
+          "reason": "община Златица, не община Антон"
+        }
+      ],
+      "excluded_source_types": [
+        "private drilling service pages",
+        "geophysical prediction reports without verified drilled log"
+      ],
+      "result": "No sufficiently documented public individual borehole log with exact lithological intervals was identified for municipality Anton.",
+      "scientific_rule": "Nearby Zlаtitsa boreholes and private geophysical reports are not transferred to municipality Anton as individual lithological evidence.",
+      "status": "SEARCHED_NO_VERIFIED_PUBLIC_BOREHOLE_LOG"
+    },
+    {
+      "municipality": "Чавдар",
+      "date": "2026-10-06",
+      "search_type": "deep_online_official_geology_and_borehole_search",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_depth_points": 0,
+      "verified_borehole_datasets": 0,
+      "area_contexts": 1,
+      "records": {
+        "area_context": "SOF-AREA-CHAVDAR-001"
+      },
+      "searched_for": [
+        "individual borehole lithology",
+        "drilling logs",
+        "hydrogeological boreholes",
+        "mineral exploration drillholes",
+        "municipal geological documents"
+      ],
+      "result": "No sufficiently documented public individual borehole lithology log was identified. Official OUP provides municipality-scale structural and geological context.",
+      "status": "SEARCHED_WITH_AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "municipality": "Копривщица",
+      "date": "2026-10-06",
+      "search_type": "deep_online_official_geology_and_borehole_search",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_depth_points": 0,
+      "verified_borehole_datasets": 0,
+      "area_contexts": 1,
+      "records": {
+        "area_context": "SOF-AREA-KOPRIVSHTITSA-001"
+      },
+      "searched_for": [
+        "individual borehole lithology",
+        "drilling log",
+        "hydrogeological borehole",
+        "groundwater monitoring borehole",
+        "municipal OUP geology"
+      ],
+      "result": "No sufficiently documented public individual borehole log with exact lithological intervals was identified.",
+      "status": "SEARCHED_WITH_AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "municipality": "Правец",
+      "date": "2026-10-06",
+      "search_type": "deep_online_official_geology_and_borehole_search",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_depth_points": 0,
+      "verified_borehole_datasets": 0,
+      "official_context_sources": [
+        "SOF-S036",
+        "SOF-S037"
+      ],
+      "searched_for": [
+        "individual borehole lithology",
+        "engineering-geological boreholes",
+        "hydrogeological boreholes",
+        "drilling logs",
+        "OUP geology",
+        "water-supply boreholes"
+      ],
+      "result": "Official municipal documents confirm planning and engineering-geological investigations, but no sufficiently documented public individual deep borehole log with exact lithological depth intervals was identified.",
+      "scientific_rule": "Existence of an engineering-geological investigation does not by itself create an individual lithological profile without the actual borehole log.",
+      "status": "SEARCHED_NO_VERIFIED_PUBLIC_BOREHOLE_LOG"
+    },
+    {
+      "municipality": "Сливница",
+      "date": "2026-10-06",
+      "search_type": "deep_online_stratigraphic_and_borehole_search",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_depth_points": 0,
+      "verified_borehole_datasets": 0,
+      "area_contexts": 1,
+      "records": {
+        "area_context": "SOF-AREA-SLIVNITSA-001"
+      },
+      "searched_for": [
+        "individual borehole lithology",
+        "hydrogeological boreholes",
+        "monitoring boreholes",
+        "water-supply boreholes",
+        "Slivnitsa Formation sections",
+        "karst geology"
+      ],
+      "excluded_neighbour_evidence": [
+        "Opitsvet karst springs - Kostinbrod municipality",
+        "Bezden karst springs - Kostinbrod municipality",
+        "Bogyovtsi karst springs - Kostinbrod municipality"
+      ],
+      "result": "Strong regional stratigraphic context established, but no sufficiently documented public individual borehole lithology log was identified for Slivnitsa municipality.",
+      "status": "SEARCHED_WITH_AREA_STRATIGRAPHIC_CONTEXT_ONLY"
+    },
+    {
+      "municipality": "Златица",
+      "date": "2026-10-06",
+      "search_type": "deep_online_official_borehole_and_lithology_search",
+      "verified_new_lithology_columns": 0,
+      "partial_columns": 0,
+      "verified_borehole_datasets": 1,
+      "verified_depth_points": 1,
+      "records": {
+        "monitoring_borehole": "SOF-DATASET-ZLATITSA-001",
+        "verified_depth": "SOF-POINT-011"
+      },
+      "result": "Official basin documentation confirms monitoring borehole BG3G000000QMP003 southwest of Zlatitsa with depth 36 m. No public individual lithological log was identified.",
+      "status": "SEARCHED_WITH_VERIFIED_BOREHOLE_DEPTH"
+    },
+    {
+      "municipality": "Самоков",
+      "date": "2026-10-06",
+      "search_type": "deep_targeted_online_borehole_and_engineering_geology_research",
+      "verified_new_lithology_columns": 0,
+      "partial_columns_added": 1,
+      "area_contexts_added": 1,
+      "already_verified_profiles": [
+        "SOF-LITH-003"
+      ],
+      "remaining_strong_leads": [
+        "SOF-LEAD-BELCHIN-VERILA-PS1HG"
+      ],
+      "new_records": {
+        "partial_borehole_evidence": "SOF-PARTIAL-003",
+        "area_context": "SOF-AREA-SAMOKOV-GORNI-OKOL-001"
+      },
+      "note": "New peer-reviewed evidence confirms real engineering boreholes at Gorni Okol intersecting weathered and unweathered granodiorite. Exact individual borehole depths and interval boundaries remain unresolved.",
+      "status": "SEARCHED_WITH_PARTIAL_ENGINEERING_BOREHOLE_EVIDENCE"
+    },
+    {
+      "municipality": "Костинброд",
+      "date": "2026-10-06",
+      "search_type": "official_and_archival_borehole_lithology_research",
+      "verified_new_lithology_columns": 1,
+      "partial_columns": 0,
+      "verified_profiles": [
+        "SOF-LITH-004"
+      ],
+      "verified_profile_summary": {
+        "profile_id": "SOF-LITH-004",
+        "borehole": "ТК-3",
+        "depth_m": 200.0,
+        "year": 2000,
+        "status": "VERIFIED"
+      },
+      "remaining_source_leads": [
+        {
+          "lead_id": "SOF-LEAD-KOSTINBROD-TK2",
+          "borehole": "ТК-2",
+          "depth_m": 207,
+          "year": 1978,
+          "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+        },
+        {
+          "lead_id": "SOF-LEAD-KOSTINBROD-738",
+          "borehole": "№738",
+          "depth_m": 200,
+          "year": 1990,
+          "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+        },
+        {
+          "lead_id": "SOF-LEAD-KOSTINBROD-S49",
+          "borehole": "С-49",
+          "depth_m": 250,
+          "year": 1970,
+          "status": "NEEDS_PRIMARY_BOREHOLE_LOG"
+        }
+      ],
+      "note": "ТК-3 is a verified 200 m borehole lithology profile. Three additional historical deep boreholes remain source leads because complete primary lithological logs have not been extracted.",
+      "status": "SEARCHED_WITH_VERIFIED_AND_UNRESOLVED_LEADS"
+    }
+  ],
+  "discovery_closed": false,
+  "verified_depth_point_evidence": [
+    {
+      "evidence_id": "SOF-POINT-001",
+      "source_id": "SOF-S012",
+      "municipality": "Своге",
+      "borehole_name": "С-151",
+      "depth_m": 455.0,
+      "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+      "status": "VERIFIED_DEPTH_POINT_ONLY",
+      "note": "Published borehole core/sample depth used for stratigraphic/palaeobotanical interpretation. Not a continuous lithological interval."
+    },
+    {
+      "evidence_id": "SOF-POINT-002",
+      "source_id": "SOF-S012",
+      "municipality": "Своге",
+      "borehole_name": "С-171",
+      "depth_m": 247.0,
+      "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+      "status": "VERIFIED_DEPTH_POINT_ONLY"
+    },
+    {
+      "evidence_id": "SOF-POINT-003",
+      "source_id": "SOF-S012",
+      "municipality": "Своге",
+      "borehole_name": "С-171",
+      "depth_m": 259.0,
+      "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+      "status": "VERIFIED_DEPTH_POINT_ONLY"
+    },
+    {
+      "evidence_id": "SOF-POINT-004",
+      "source_id": "SOF-S012",
+      "municipality": "Своге",
+      "borehole_name": "С-172",
+      "depth_m": 124.0,
+      "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+      "status": "VERIFIED_DEPTH_POINT_ONLY"
+    },
+    {
+      "evidence_id": "SOF-POINT-005",
+      "source_id": "SOF-S012",
+      "municipality": "Своге",
+      "borehole_name": "С-172",
+      "depth_m": 361.0,
+      "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+      "status": "VERIFIED_DEPTH_POINT_ONLY"
+    },
+    {
+      "evidence_id": "SOF-POINT-006",
+      "source_id": "SOF-S019",
+      "municipality": "Мирково",
+      "settlement": "Бенковски",
+      "borehole_name": "Сондаж – двор Дако Мечкаров",
+      "value_m": 52.33,
+      "evidence_type": "OFFICIAL_MONITORING_VALUE",
+      "status": "MONITORING_VALUE_ONLY",
+      "note": "Official RBMP table reports 52.33 m for the monitoring point. The source context does not justify interpreting this value as total drilling depth or a lithological contact."
+    },
+    {
+      "evidence_id": "SOF-POINT-007",
+      "source_id": "SOF-S021",
+      "municipality": "Драгоман",
+      "area": "Врелото / Габер",
+      "value_m_below_ground": "3-5",
+      "observation_period": "2012",
+      "evidence_type": "GROUNDWATER_LEVEL",
+      "status": "HYDRAULIC_LEVEL_ONLY"
+    },
+    {
+      "evidence_id": "SOF-POINT-008",
+      "source_id": "SOF-S021",
+      "municipality": "Драгоман",
+      "area": "Врелото / Габер",
+      "value_m_below_ground": "approximately 20",
+      "observation_period": "2018-2019",
+      "evidence_type": "GROUNDWATER_LEVEL",
+      "status": "HYDRAULIC_LEVEL_ONLY"
+    },
+    {
+      "evidence_id": "SOF-POINT-009",
+      "source_id": "SOF-S029",
+      "municipality": "Божурище",
+      "area": "Росоман / Златуша",
+      "from_m": 2.7,
+      "to_m": 13.7,
+      "interval_length_m": 11.0,
+      "reported_result": "3.63 g/t Au",
+      "evidence_type": "DOCUMENTED_ASSAY_INTERVAL",
+      "status": "VERIFIED_DEPTH_INTERVAL_NOT_LITHOLOGY",
+      "note": "Exact historical drilling interval. No lithology is assigned from assay information."
+    },
+    {
+      "evidence_id": "SOF-POINT-010",
+      "source_id": "SOF-S029",
+      "municipality": "Божурище",
+      "area": "Росоман / Златуша",
+      "from_m": 109.0,
+      "to_m": 120.0,
+      "interval_length_m": 11.0,
+      "reported_result": "4.33 g/t Au",
+      "evidence_type": "DOCUMENTED_ASSAY_INTERVAL",
+      "status": "VERIFIED_DEPTH_INTERVAL_NOT_LITHOLOGY",
+      "note": "Exact historical drilling interval. No lithology is assigned from assay information."
+    },
+    {
+      "evidence_id": "SOF-POINT-011",
+      "source_id": "SOF-S042",
+      "municipality": "Златица",
+      "settlement": "Златица",
+      "borehole_name": "BG3G000000QMP003",
+      "depth_m": 36.0,
+      "evidence_type": "OFFICIAL_MONITORING_POINT_DEPTH",
+      "status": "VERIFIED_DRILLED_DEPTH",
+      "note": "Official basin monitoring program explicitly lists the monitoring point depth as 36 m."
+    }
+  ],
+  "area_stratigraphic_contexts": [
+    {
+      "context_id": "SOF-AREA-SVOGE-CARBONIFEROUS-001",
+      "municipality": "Своге",
+      "oblast": "София",
+      "source_id": "SOF-S012",
+      "area": "Свогенски антрацитен басейн",
+      "evidence_type": "AREA_STRATIGRAPHIC_CONTEXT_ONLY",
+      "regional_units": [
+        {
+          "unit": "Царичинска свита",
+          "regional_thickness_m": "approximately 150-250+ depending on source/model"
+        },
+        {
+          "unit": "Свиденска свита",
+          "regional_thickness_m": "approximately 220-260"
+        },
+        {
+          "unit": "Дръмшанска свита",
+          "regional_thickness_m": "approximately 70-250"
+        },
+        {
+          "unit": "Свогенска свита",
+          "regional_thickness_m": "approximately 500"
+        },
+        {
+          "unit": "Беровдолска свита",
+          "regional_thickness_m": "approximately 220-280"
+        },
+        {
+          "unit": "Чибаовска свита",
+          "regional_thickness_m": "approximately 250-420"
+        }
+      ],
+      "dominant_lithology_context": [
+        "пясъчници",
+        "алевролити",
+        "аргилити / глинести скали",
+        "конгломерати",
+        "въглищни пластове"
+      ],
+      "scientific_rule": "Regional formation thicknesses are contextual only and must never be converted into exact intervals for an individual target or borehole.",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "context_id": "SOF-AREA-CHELOPECH-001",
+      "municipality": "Челопеч",
+      "oblast": "София",
+      "source_id": "SOF-S013",
+      "secondary_source_id": "SOF-S014",
+      "area": "Челопешки вулканичен комплекс",
+      "evidence_type": "AREA_STRATIGRAPHIC_CONTEXT_ONLY",
+      "regional_units": [
+        {
+          "unit": "пясъчникова формация в подложката",
+          "regional_thickness_m": "approximately 300-450"
+        },
+        {
+          "unit": "Челопешка вулканогенно-седиментна формация",
+          "regional_thickness_m": "variable; borehole-constrained volcanic succession"
+        },
+        {
+          "unit": "Вождолски пясъчници",
+          "regional_thickness_m": "locally up to approximately 250"
+        },
+        {
+          "unit": "червени глинести варовици / Мирковска формация",
+          "regional_thickness_m": "approximately 30-40"
+        },
+        {
+          "unit": "флишови седименти",
+          "regional_thickness_m": "up to approximately 500"
+        }
+      ],
+      "basement_context": [
+        "мигматитови гнайси",
+        "амфиболити",
+        "филити"
+      ],
+      "volcanic_lithology_context": [
+        "андезитови лави",
+        "автокластични брекчи",
+        "вулкански брекчи",
+        "вулканогенно-седиментни скали"
+      ],
+      "flysch_context": [
+        "варовити пясъчници",
+        "алевролити",
+        "аргилити"
+      ],
+      "scientific_rule": "Regional unit thicknesses are contextual only. They are not exact intervals in a specific borehole.",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "context_id": "SOF-AREA-ELATSITE-001",
+      "municipality": "Етрополе",
+      "oblast": "София",
+      "source_id": "SOF-S015",
+      "area": "находище Елаците",
+      "evidence_type": "AREA_STRATIGRAPHIC_CONTEXT_ONLY",
+      "paleozoic_metamorphic_and_intrusive_rocks": [
+        "филити",
+        "контактно променени шисти",
+        "хорнфелзи",
+        "гранодиорити на Веженския плутон"
+      ],
+      "upper_cretaceous_rocks": [
+        "кварц-монцодиоритови порфири",
+        "гранодиоритови порфири",
+        "туронски пясъчници"
+      ],
+      "scientific_rule": "These lithologies describe the deposit-scale geological framework and must not be converted into exact depth intervals for an individual target location.",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "context_id": "SOF-AREA-PIRDOP-001",
+      "municipality": "Пирдоп",
+      "oblast": "София",
+      "source_id": "SOF-S017",
+      "area": "Пирдопски грабен / район на Аурубис България",
+      "evidence_type": "AREA_HYDROGEOLOGICAL_CONTEXT_ONLY",
+      "monitoring_context": "Dense groundwater-monitoring network established from 1999 onward for hydrodynamic and hydrochemical monitoring around the plant.",
+      "scientific_rule": "Monitoring density does not establish lithological intervals for any individual borehole.",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "context_id": "SOF-AREA-MIRKOVO-001",
+      "municipality": "Мирково",
+      "oblast": "София",
+      "source_id": "SOF-S020",
+      "area": "типова местност на Мирковската свита, северно от гара Мирково",
+      "evidence_type": "AREA_STRATIGRAPHIC_CONTEXT_ONLY",
+      "unit": "Мирковска свита",
+      "regional_thickness_m": "approximately 180",
+      "lithology": [
+        "бели мергели",
+        "сиви мергели",
+        "розови мергели",
+        "варовици"
+      ],
+      "structure_note": "Последователността е незакономерно редуване на мергели и варовици; на места е силно нагъната и разломена.",
+      "boundary_context": {
+        "lower": "постепенен преход от пясъчникова задруга",
+        "upper": "постепенен литоложки преход към мергелния Воденски член"
+      },
+      "scientific_rule": "The ~180 m formation thickness is regional/type-section context and must not be transferred as exact intervals into the Benkovski borehole.",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "context_id": "SOF-AREA-DRAGOMAN-001",
+      "municipality": "Драгоман",
+      "oblast": "София",
+      "source_id": "SOF-S021",
+      "area": "Габер – Неделище – Бели брег – извор Врелото",
+      "evidence_type": "AREA_HYDROGEOLOGICAL_CONTEXT_ONLY",
+      "documented_units": [
+        {
+          "unit": "горнокредни наслаги",
+          "lithology": [
+            "алевролити",
+            "глинести пясъчници",
+            "варовици"
+          ],
+          "hydro_role": "водоупорна преграда"
+        },
+        {
+          "unit": "Сливнишка свита",
+          "age": "горна юра",
+          "lithology": [
+            "дебелопластови варовици",
+            "окарстени варовици"
+          ],
+          "hydro_role": "карстов водоносен хоризонт"
+        },
+        {
+          "unit": "неогенски комплекс",
+          "hydro_role": "отделен от юрските карстови варовици в изследвания участък"
+        }
+      ],
+      "scientific_rule": "Area geological relationships are not converted into exact individual borehole intervals.",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "context_id": "SOF-AREA-GORNA-MALINA-001",
+      "municipality": "Горна Малина",
+      "oblast": "София",
+      "source_id": "SOF-S025",
+      "area": "източно Софийско поле / Софийска котловина",
+      "evidence_type": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "structural_context": {
+        "setting": "плиоценско-кватернерен грабенов и блоков строеж",
+        "faults": [
+          "надлъжни разломи",
+          "напречни разломи",
+          "коси разломи"
+        ],
+        "documented_fault_block_displacement_m": "28-1190"
+      },
+      "young_cover": [
+        {
+          "unit": "кватернерни алувиални и алувиално-пролувиални материали",
+          "lithology": [
+            "чакъли",
+            "пясъци",
+            "глини"
+          ]
+        },
+        {
+          "unit": "плиоценски езерно-речни отложения",
+          "lithology": [
+            "пясъци",
+            "глини",
+            "чакъли"
+          ]
+        }
+      ],
+      "prepliocene_basement_lithologies": [
+        "горнокредни андезити",
+        "горнокредни туфи",
+        "горнокредни туфити",
+        "пясъчници",
+        "мергели",
+        "мергелни варовици",
+        "горноюрски варовици",
+        "пясъчникови оолитни варовици",
+        "пясъчливи шисти",
+        "кварцити",
+        "среднотриаски варовици",
+        "среднотриаски доломити",
+        "долнотриаски пясъчници"
+      ],
+      "scientific_rule": "Municipality-scale geology is contextual only. No exact individual borehole depth intervals are inferred.",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "context_id": "SOF-AREA-BOTEVGRAD-001",
+      "municipality": "Ботевград",
+      "oblast": "София",
+      "source_id": "SOF-S027",
+      "area": "Било планина, югоизточно от Ботевград",
+      "evidence_type": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "mapped_units": [
+        "кватернерни отложения",
+        "мезозойски седименти",
+        "старопланински гранодиорити",
+        "диабазово-филитоидна формация",
+        "алевролитово-кварцитна задруга",
+        "пясъчниково-алевролитна задруга с олистолити от метабазити"
+      ],
+      "structural_context": [
+        "разломи"
+      ],
+      "scientific_rule": "Mapped regional units are contextual only and must not be converted into exact intervals in the Botevgrad/Novachene wells.",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "context_id": "SOF-AREA-ZLATUSHA-001",
+      "municipality": "Божурище",
+      "oblast": "София",
+      "source_id": "SOF-S029",
+      "area": "Златуша / Росоман",
+      "evidence_type": "AREA_EXPLORATION_GEOLOGY_CONTEXT_ONLY",
+      "documented_exploration_features": [
+        "исторически сондажи",
+        "хидротермална промяна",
+        "аргилитова промяна",
+        "филична промяна",
+        "пропилитова промяна",
+        "медно-златна минерализация"
+      ],
+      "regional_target_context": "Upper Cretaceous volcanic-sedimentary host rocks are considered prospective within the Zlatusha exploration property.",
+      "scientific_rule": "Exploration alteration/mineralization context is not converted into individual lithological depth intervals.",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "context_id": "SOF-AREA-CHAVDAR-001",
+      "municipality": "Чавдар",
+      "oblast": "София",
+      "source_id": "SOF-S033",
+      "area": "община Чавдар",
+      "evidence_type": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "geomorphological_setting": [
+        "Централно-Средногорска планинско-котловинна подобласт",
+        "регион Същинска Средна гора",
+        "Западносредногорски регион"
+      ],
+      "structural_setting": "Преходна блоково-разломна зона",
+      "documented_geological_context": [
+        "докамбрийски метаморфни комплекси",
+        "карбонатни скали",
+        "локално развити карстови процеси"
+      ],
+      "limitations": [
+        "No public individual borehole lithological log identified.",
+        "No exact lithological depth intervals established.",
+        "Nearby Chelopech, Pirdop and Zlatitsa drilling is not transferred to Chavdar."
+      ],
+      "scientific_rule": "Municipality-scale geology and karst context are retained only as regional geological evidence and are never converted into exact borehole intervals.",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "context_id": "SOF-AREA-KOPRIVSHTITSA-001",
+      "municipality": "Копривщица",
+      "oblast": "София",
+      "source_id": "SOF-S034",
+      "secondary_source_id": "SOF-S035",
+      "area": "община Копривщица",
+      "evidence_type": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "documented_rock_groups": [
+        {
+          "group": "архайски скални разновидности",
+          "distribution": "северни и централни части на общината"
+        },
+        {
+          "group": "южнобългарски гранити",
+          "distribution": "северно от гр. Копривщица и на юг"
+        }
+      ],
+      "engineering_context": "Official municipal planning documents describe these rocks as generally strong and suitable foundation materials outside zones affected by physical-geological processes.",
+      "limitations": [
+        "No public individual borehole lithological log identified.",
+        "No verified drilled depth identified.",
+        "No exact depth intervals derived from municipality-scale geology."
+      ],
+      "scientific_rule": "Municipality-scale rock distribution is contextual only and must not be converted into exact lithological intervals for an individual drilling target.",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "context_id": "SOF-AREA-SLIVNITSA-001",
+      "municipality": "Сливница",
+      "oblast": "София",
+      "source_id": "SOF-S038",
+      "secondary_source_ids": [
+        "SOF-S039",
+        "SOF-S040",
+        "SOF-S041"
+      ],
+      "area": "Сливница – Калотина – Западен Гетик",
+      "evidence_type": "AREA_STRATIGRAPHIC_CONTEXT_ONLY",
+      "documented_regional_sequence": [
+        {
+          "unit": "Туденска свита",
+          "regional_thickness_m": "approximately 24-25",
+          "lithology": [
+            "континентални глини",
+            "пясъчници",
+            "нагоре морски глини и пясъчници",
+            "тънки гипсови прослойки"
+          ]
+        },
+        {
+          "unit": "Костинска свита",
+          "regional_thickness_m": "approximately 3-5",
+          "lithology": [
+            "пясъчници"
+          ]
+        },
+        {
+          "unit": "Сливнишка свита",
+          "regional_thickness_m": "greater than 400 in Kalotina section",
+          "lithology": [
+            "светлосиви дебелопластови варовици",
+            "масивни варовици",
+            "интракластични варовици",
+            "биокластични варовици"
+          ],
+          "karst_context": [
+            "палеокарст",
+            "разтваряне",
+            "брекчиране",
+            "колапсови брекчи"
+          ]
+        },
+        {
+          "unit": "Салашка свита",
+          "regional_thickness_m": "approximately 75",
+          "lithology": [
+            "тъмни варовици",
+            "мергели"
+          ]
+        }
+      ],
+      "water_supply_context": "Municipal documentation states that Slivnitsa water supply uses karst springs near Opitsvet, Bezden and Bogyovtsi, but those sources are situated in Kostinbrod municipality.",
+      "scientific_rules": [
+        "Regional formation thicknesses are not individual borehole intervals.",
+        "Paleokarst does not prove a present-day water inflow.",
+        "Karst springs in Kostinbrod municipality are not transferred as Slivnitsa borehole evidence."
+      ],
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    },
+    {
+      "context_id": "SOF-AREA-SAMOKOV-GORNI-OKOL-001",
+      "municipality": "Самоков",
+      "oblast": "София",
+      "settlement": "Горни Окол",
+      "source_id": "SOF-S043",
+      "area": "Горни Окол / Плански плутон",
+      "evidence_type": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "documented_rocks": [
+        "гранодиорити от Планския плутон",
+        "изветрял гранодиорит",
+        "неизветрял гранодиорит"
+      ],
+      "engineering_geology_note": "Strongly weathered granodiorite may appear during drilling as unconsolidated sandy/gravelly material.",
+      "scientific_rule": "Area context and weathering state must not be converted into exact depth intervals for another target.",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+    }
+  ],
+  "verified_borehole_thickness_evidence": [
+    {
+      "evidence_id": "SOF-THICK-001",
+      "source_id": "SOF-S013",
+      "municipality": "Челопеч",
+      "area": "Челопешко находище",
+      "unit": "вулканска последователност",
+      "thickness_m": "approximately 700-800",
+      "evidence_type": "BOREHOLE_CONSTRAINED_THICKNESS",
+      "note": "Multiple boreholes in the deposit intersect approximately 700-800 m of volcanic rocks."
+    },
+    {
+      "evidence_id": "SOF-THICK-002",
+      "source_id": "SOF-S013",
+      "municipality": "Челопеч",
+      "area": "Челопешки вулканичен комплекс",
+      "unit": "вулкански продукти",
+      "thickness_m": "up to approximately 1200",
+      "evidence_type": "BOREHOLE_CONSTRAINED_THICKNESS",
+      "note": "Published drilling data indicate volcanic products commonly reach thicknesses up to around 1200 m."
+    },
+    {
+      "evidence_id": "SOF-THICK-003",
+      "source_id": "SOF-S013",
+      "municipality": "Челопеч",
+      "area": "централна част на находище Челопеч",
+      "unit": "вулканска последователност",
+      "thickness_m": "approximately 1700-2000",
+      "evidence_type": "BOREHOLE_CONSTRAINED_THICKNESS",
+      "note": "Two boreholes in the central part of the deposit intersect approximately 1700-2000 m of volcanic succession."
+    }
+  ],
+  "area_borehole_constrained_sections": [
+    {
+      "section_id": "SOF-SECTION-CHELOPECH-001",
+      "municipality": "Челопеч",
+      "oblast": "София",
+      "source_id": "SOF-S013",
+      "area": "Челопешки вулканичен комплекс / находище Челопеч",
+      "evidence_type": "AREA_BOREHOLE_CONSTRAINED_SECTION",
+      "description": "Published geological section constrained by drilling data. The section is based on multiple boreholes through the Chelopech volcanic complex and its basement.",
+      "documented_sequence": [
+        "метаморфна подложка",
+        "пясъчникова формация в основата",
+        "Челопешки вулканогенно-седиментен комплекс",
+        "андезитови лави",
+        "автокластични и вулкански брекчи",
+        "Вождолски пясъчници",
+        "червени глинести варовици",
+        "флишови седименти"
+      ],
+      "scientific_rule": "This is a borehole-constrained area section, not an individual borehole lithology log. It must not be converted into exact 0-X / X-Y intervals for a specific borehole.",
+      "status": "AREA_BOREHOLE_CONSTRAINED_SECTION"
+    },
+    {
+      "section_id": "SOF-SECTION-ELATSITE-001",
+      "municipality": "Етрополе",
+      "oblast": "София",
+      "area": "рудник Елаците",
+      "source_id": "SOF-S015",
+      "evidence_type": "BOREHOLE_CONSTRAINED_3D_LITHOLOGICAL_MODEL",
+      "input_evidence": [
+        "existing drill-hole data",
+        "underground exploration galleries",
+        "drainage galleries modelled as sub-horizontal drill lines",
+        "surface geological mapping",
+        "archived geological maps",
+        "archived geological cross-sections"
+      ],
+      "interpreted_profiles": 58,
+      "profile_spacing_m": {
+        "central_area": 50,
+        "peripheral_area": "100-200"
+      },
+      "model_volume_m": {
+        "x": 4930,
+        "y": 4770,
+        "z": 1400
+      },
+      "main_lithologies": [
+        "хорнфелзи",
+        "шисти",
+        "филити",
+        "гранодиорити",
+        "кварц-монцодиоритови порфири",
+        "гранодиоритови порфири"
+      ],
+      "status": "AREA_BOREHOLE_CONSTRAINED_SECTION",
+      "scientific_rule": "The 3D model demonstrates drill-constrained lithological geometry but does not provide exact continuous intervals for a single borehole."
+    }
+  ],
+  "verified_borehole_datasets": [
+    {
+      "dataset_id": "SOF-DATASET-ELATSITE-001",
+      "municipality": "Етрополе",
+      "oblast": "София",
+      "area": "меднопорфирно находище Елаците",
+      "source_id": "SOF-S016",
+      "evidence_type": "VERIFIED_EXPLORATION_BOREHOLE_DATASET",
+      "borehole_count": 146,
+      "reference_level": "хоризонт 1180",
+      "preliminary_grid_m": "100 x 100",
+      "detailed_grid_m": {
+        "central_area": "71 x 71",
+        "peripheral_area": "50 x 100"
+      },
+      "boundary_borehole_offset_m": "approximately 200-300 outside main exploration grid",
+      "historic_source": "Хаджийски и др., 1970",
+      "scientific_rule": "The 146 boreholes establish a verified exploration drilling dataset. They are not treated as 146 complete individual lithological logs because individual depth-by-depth logs are not publicly extracted.",
+      "status": "VERIFIED_BOREHOLE_DATASET"
+    },
+    {
+      "dataset_id": "SOF-DATASET-PIRDOP-001",
+      "municipality": "Пирдоп",
+      "oblast": "София",
+      "area": "Аурубис България АД – промишлена площадка Пирдоп",
+      "source_id": "SOF-S017",
+      "secondary_source_id": "SOF-S018",
+      "evidence_type": "VERIFIED_MONITORING_BOREHOLE_NETWORK",
+      "network_start_year": 1999,
+      "initial_monitoring_boreholes": 26,
+      "current_monitoring_boreholes": 70,
+      "known_example_codes": [
+        "PE9",
+        "PE65"
+      ],
+      "monitoring_parameters": [
+        "groundwater level",
+        "water temperature",
+        "pH",
+        "electrical conductivity",
+        "groundwater chemistry"
+      ],
+      "official_map_available": true,
+      "lithological_logs_publicly_extracted": false,
+      "scientific_rule": "Monitoring-well existence and network size are verified. They are not converted into individual lithological profiles without published depth-by-depth logs.",
+      "status": "VERIFIED_BOREHOLE_DATASET"
+    },
+    {
+      "dataset_id": "SOF-DATASET-MIRKOVO-001",
+      "municipality": "Мирково",
+      "oblast": "София",
+      "settlement": "Бенковски",
+      "facility": "Сондаж – двор Дако Мечкаров",
+      "source_id": "SOF-S019",
+      "monitoring_point_code": "BG3G00000PtMP128",
+      "groundwater_body_code": "BG3G00000PT044",
+      "groundwater_body_name": "Пукнатинни води - Западно- и централнобалкански масив",
+      "evidence_type": "VERIFIED_MONITORING_BOREHOLE",
+      "monitoring_value_m": 52.33,
+      "monitoring_value_interpretation": "OFFICIAL_MONITORING_VALUE_NOT_LITHOLOGICAL_DEPTH",
+      "drilled_depth_m": null,
+      "lithological_log_available": false,
+      "scientific_rule": "The value 52.33 m is retained only as an official monitoring value. It is not treated as total borehole depth, aquifer depth, inflow depth or lithological boundary without explicit source confirmation.",
+      "status": "VERIFIED_BOREHOLE_EXISTENCE"
+    },
+    {
+      "dataset_id": "SOF-DATASET-DRAGOMAN-001",
+      "municipality": "Драгоман",
+      "oblast": "София",
+      "area": "извор Врелото / мина Бели брег, с. Габер",
+      "source_id": "SOF-S021",
+      "evidence_type": "VERIFIED_HYDROGEOLOGICAL_BOREHOLE_DATASET",
+      "documented_boreholes": [
+        {
+          "name": "Вс 211",
+          "type": "водопонизителен сондаж",
+          "construction_year": 1997,
+          "exact_depth_m": null,
+          "status": "VERIFIED_EXISTENCE"
+        },
+        {
+          "name": "Нс 208",
+          "type": "наблюдателен сондаж",
+          "construction_year": 1997,
+          "exact_depth_m": null,
+          "status": "VERIFIED_EXISTENCE"
+        },
+        {
+          "name": "Нс 209",
+          "type": "наблюдателен сондаж",
+          "construction_year": 1997,
+          "exact_depth_m": null,
+          "status": "VERIFIED_EXISTENCE"
+        }
+      ],
+      "2012_tubular_wells": {
+        "count": 3,
+        "depths_m": [
+          41,
+          50,
+          65
+        ],
+        "construction_year": 2012,
+        "individual_depth_assignment_to_TK1_TK2_TK3": "UNRESOLVED",
+        "lithology": "дебелопластови варовици",
+        "hydrogeology": "Възходящо движение на карстови води по карстови канали."
+      },
+      "scientific_rule": "The three depths 41, 50 and 65 m are verified for the three 2012 tubular wells as a group, but the publication does not assign each depth unambiguously to TK-1, TK-2 or TK-3.",
+      "status": "VERIFIED_BOREHOLE_DATASET"
+    },
+    {
+      "dataset_id": "SOF-DATASET-DRAGOMAN-002",
+      "municipality": "Драгоман",
+      "oblast": "София",
+      "facility": "Драгоман, ТК - Имобилиен",
+      "monitoring_point_code": "BG1G00000NQMP435",
+      "source_id": "SOF-S022",
+      "evidence_type": "VERIFIED_MONITORING_BOREHOLE",
+      "drilled_depth_m": null,
+      "lithological_log_available": false,
+      "2021_status": "NOT_IN_USE_NO_PUMP",
+      "status": "VERIFIED_BOREHOLE_EXISTENCE"
+    },
+    {
+      "dataset_id": "SOF-DATASET-IHTIMAN-001",
+      "municipality": "Ихтиман",
+      "oblast": "София",
+      "settlement": "Ихтиман",
+      "facility": "Ихтиман, ПС - Сондаж",
+      "monitoring_point_code": "BG3G000000QMP017",
+      "source_id": "SOF-S024",
+      "evidence_type": "VERIFIED_MONITORING_BOREHOLE",
+      "drilled_depth_m": null,
+      "lithological_log_available": false,
+      "2022_status": "NO_PUMP_IN_FACILITY",
+      "scientific_rule": "Official monitoring records verify the existence of the borehole. Operational status does not provide lithology, aquifer depth, inflow depth or total drilled depth.",
+      "status": "VERIFIED_BOREHOLE_EXISTENCE"
+    },
+    {
+      "dataset_id": "SOF-DATASET-BOTEVGRAD-001",
+      "municipality": "Ботевград",
+      "oblast": "София",
+      "source_id": "SOF-S026",
+      "evidence_type": "VERIFIED_GROUNDWATER_FACILITY_DATASET",
+      "groundwater_body_code": "BG1G00000NQ028",
+      "facilities": [
+        {
+          "facility": "СК",
+          "settlement": "Ботевград",
+          "facility_type": "подземен водоизточник",
+          "sanitary_zone_order": "СОЗ-38/07.02.2005",
+          "drilled_depth_m": null,
+          "lithological_log_available": false,
+          "status": "VERIFIED_EXISTENCE"
+        },
+        {
+          "facility": "ТК-1",
+          "settlement": "Новачене",
+          "facility_type": "тръбен кладенец",
+          "sanitary_zone_order": "СОЗ-52/28.03.2005",
+          "drilled_depth_m": null,
+          "lithological_log_available": false,
+          "status": "VERIFIED_EXISTENCE"
+        },
+        {
+          "facility": "ТК-2",
+          "settlement": "Новачене",
+          "facility_type": "тръбен кладенец",
+          "sanitary_zone_order": "СОЗ-52/28.03.2005",
+          "drilled_depth_m": null,
+          "lithological_log_available": false,
+          "status": "VERIFIED_EXISTENCE"
+        }
+      ],
+      "scientific_rule": "Official sanitary-zone documentation confirms the facilities, but does not establish drilled depth or lithological intervals.",
+      "status": "VERIFIED_BOREHOLE_DATASET"
+    },
+    {
+      "dataset_id": "SOF-DATASET-BOZHURISHTE-ZLATUSHA-001",
+      "municipality": "Божурище",
+      "oblast": "София",
+      "area": "Златуша / Росоман",
+      "source_id": "SOF-S029",
+      "evidence_type": "VERIFIED_HISTORICAL_EXPLORATION_BOREHOLE_DATASET",
+      "historical_borehole_count": 11,
+      "historical_total_drilling_m": "approximately 1800",
+      "individual_borehole_ids": "NOT_PUBLISHED_IN_EXTRACTED_SOURCE",
+      "individual_total_depths_m": null,
+      "lithological_logs_publicly_extracted": false,
+      "verified_exact_sample_intervals_m": [
+        {
+          "from_m": 2.7,
+          "to_m": 13.7,
+          "length_m": 11.0,
+          "reported_result": "3.63 g/t Au",
+          "evidence_class": "ASSAY_INTERVAL_NOT_LITHOLOGY"
+        },
+        {
+          "from_m": 109.0,
+          "to_m": 120.0,
+          "length_m": 11.0,
+          "reported_result": "4.33 g/t Au",
+          "evidence_class": "ASSAY_INTERVAL_NOT_LITHOLOGY"
+        }
+      ],
+      "scientific_rule": "Historical drilling is verified, but assay intervals do not constitute lithological intervals. No rock type or lithological boundary is inferred from the reported grades.",
+      "status": "VERIFIED_BOREHOLE_DATASET"
+    },
+    {
+      "dataset_id": "SOF-DATASET-ZLATITSA-001",
+      "municipality": "Златица",
+      "oblast": "София",
+      "settlement": "Златица",
+      "facility": "Сондаж, около 450 m югозападно от гр. Златица",
+      "source_id": "SOF-S042",
+      "monitoring_point_code": "BG3G000000QMP003",
+      "groundwater_body_code": "BG3G000000Q001",
+      "coordinates": {
+        "lat_dms": "42°42'05.3\" N",
+        "lon_dms": "24°08'10.6\" E",
+        "coordinate_source": "OFFICIAL"
+      },
+      "evidence_type": "VERIFIED_MONITORING_BOREHOLE",
+      "drilled_depth_m": 36.0,
+      "drilled_depth_status": "OFFICIAL_POINT_DEPTH",
+      "lithological_log_available": false,
+      "scientific_rule": "The official monitoring table explicitly gives point depth = 36 m. This verifies borehole depth but does not establish any lithological intervals, aquifer contacts or inflow depths.",
+      "status": "VERIFIED_BOREHOLE_EXISTENCE_AND_DEPTH"
+    }
+  ],
+  "project_depth_only_records": [
+    {
+      "record_id": "SOF-PROJECT-DRAGOMAN-001",
+      "municipality": "Драгоман",
+      "source_id": "SOF-S021",
+      "project": "planned dewatering system at Beli Breg mine",
+      "planned_boreholes": 10,
+      "planned_depth_each_m": 280,
+      "status": "PROJECT_DEPTH_ONLY",
+      "note": "The planned 10 x 280 m dewatering system was abandoned after the 1997 investigations and must not be treated as drilled."
+    },
+    {
+      "record_id": "SOF-PROJECT-BOZHURISHTE-001",
+      "municipality": "Божурище",
+      "oblast": "София",
+      "area": "Златуша / Росоман",
+      "source_id": "SOF-S030",
+      "project_status_source_id": "SOF-S031",
+      "project_type": "diamond_core_exploration_drilling",
+      "planned_boreholes": 11,
+      "planned_max_depth_m": 350,
+      "planned_locations": [
+        "землище Златуша",
+        "землище Росоман"
+      ],
+      "documented_stage": "preparatory activities started; drilling completion not established by the reviewed source",
+      "status": "PROJECT_DEPTH_ONLY",
+      "scientific_rule": "The 11 planned diamond-core holes must not be counted as drilled boreholes until completion is independently documented."
+    }
+  ],
+  "shallow_geotechnical_contexts": [
+    {
+      "context_id": "SOF-SHALLOW-BOTEVGRAD-001",
+      "municipality": "Ботевград",
+      "oblast": "София",
+      "source_id": "SOF-S028",
+      "site": "депо Ботевград",
+      "evidence_type": "SHALLOW_GEOTECHNICAL_CONTEXT_ONLY",
+      "investigation": {
+        "shurfs_count": 4,
+        "maximum_investigation_depth_m": 4.0
+      },
+      "documented_materials": [
+        {
+          "unit": "Пласт 1",
+          "description": "твърди битови отпадъци",
+          "reported_thickness_m": "0.70 to locally 4.0-7.0"
+        },
+        {
+          "unit": "Пласт 2",
+          "description": "кафява прахово-песъчлива глина, в дълбочина с чакъли",
+          "note": "не е премината в шурф 1 до 4.0 m"
+        }
+      ],
+      "scientific_rule": "Shallow pits to 4 m are retained only as geotechnical context. They are not counted as borehole lithology profiles.",
+      "status": "SHALLOW_GEOTECHNICAL_CONTEXT_ONLY"
+    }
+  ],
+  "strong_leads": [
+    {
+      "lead_id": "SOF-LEAD-ELINPELIN-S44HG",
+      "municipality": "Елин Пелин",
+      "settlement": "Равно поле",
+      "borehole_name": "S-44hg",
+      "depth_m": 690.3,
+      "year": 1984,
+      "lat": 42.6710278,
+      "lon": 23.5220861,
+      "registry": "РМН1-031010",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "public_lithology_log_found": false,
+      "research_update_date": "2026-10-06",
+      "research_note": "Targeted online search for the borehole identifier, Ravno Pole, historic hydrogeological drilling and lithological logs did not identify a reliable public source with exact lithological intervals.",
+      "scientific_rule": "Lithology from nearby S-11v or S-55hg must not be transferred to this borehole."
+    },
+    {
+      "lead_id": "SOF-LEAD-ELINPELIN-S45HG",
+      "municipality": "Елин Пелин",
+      "settlement": "Равно поле",
+      "borehole_name": "S-45hg",
+      "depth_m": 679.8,
+      "year": 1984,
+      "lat": 42.6655056,
+      "lon": 23.5211605,
+      "registry": "РМН1-031011",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "public_lithology_log_found": false,
+      "research_update_date": "2026-10-06",
+      "research_note": "Targeted online search for the borehole identifier, Ravno Pole, historic hydrogeological drilling and lithological logs did not identify a reliable public source with exact lithological intervals.",
+      "scientific_rule": "Lithology from nearby S-11v or S-55hg must not be transferred to this borehole."
+    }
+  ]
+}
