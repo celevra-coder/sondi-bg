@@ -7137,7 +7137,24 @@
           "ownership_regime": "exclusive_state_property",
           "ownership_match_level": "deposit"
         },
-        "research_enrichment": [],
+        "research_enrichment": {
+          "deposit_regional_mineral_context": {
+            "context_scope": "deposit-level thermal context for coordinate-based mineral-potential analysis",
+            "regional_position": "Belchinski Bani mineral-water deposit is situated in the central part of the Samokov field / Palakariya basin.",
+            "temperature_context": {
+              "regional_range_c": {
+                "approx_min": 35.0,
+                "approx_max": 40.7
+              },
+              "interpretation": "Belchinski Bani represents a moderate-temperature mineral-water field. This range is regional evidence and must not be assigned directly to an arbitrary selected point."
+            },
+            "relationship_to_nearby_systems": "Belchinski Bani and Belchin-Verila are separate documented mineral-water deposits within the wider Belchin area. They must not be merged automatically into one uniform thermal regime.",
+            "potential_interpretation": "The presence of an established mineral-water field supports elevated regional mineral potential near Belchinski Bani, but does not prove mineral water, exact depth or exact temperature at the selected point.",
+            "evidence_limit": "No individual borehole depth, filter interval or exact inflow is transferred to the selected coordinate."
+          },
+          "deposit_context_scope": "deposit-level thermal interpretation; regional mineral-potential use only",
+          "sofia_regional_context_tag": "BELCHINSKI_BANI_REGIONAL_CONTEXT_2026_10_06"
+        },
         "duplicate_mh_records": [],
         "matched_existing_records": []
       },
@@ -7234,7 +7251,74 @@
             ]
           }
         },
-        "research_enrichment": [],
+        "research_enrichment": {
+          "mineral_hydrothermal_research": {
+            "role": "verified individual mineral / thermal facility evidence",
+            "total_depth_m": 418.7,
+            "technical_flow_l_s": 10.23,
+            "approved_resource_l_s": 10.74,
+            "collector": "fracture-vein mineral-water collector in granodiorites; documented collector interval 303.5-418.7 m",
+            "collector_scope": "documented collector interval; not a discrete proven inflow zone",
+            "collector_interval_m": {
+              "from_m": 303.5,
+              "to_m": 418.7
+            },
+            "construction": [
+              {
+                "from_m": 0.0,
+                "to_m": 29.0,
+                "type": "casing",
+                "note": "casing Ø146 mm; cemented"
+              },
+              {
+                "from_m": 29.0,
+                "to_m": 313.2,
+                "type": "casing",
+                "note": "casing Ø127 mm"
+              },
+              {
+                "from_m": 250.0,
+                "to_m": 313.0,
+                "type": "cemented_interval",
+                "note": "documented cementation"
+              },
+              {
+                "from_m": 313.2,
+                "to_m": 418.7,
+                "type": "open_hole",
+                "note": "open hole Ø108 mm"
+              }
+            ],
+            "documented_open_hole": {
+              "from_m": 313.2,
+              "to_m": 418.7
+            },
+            "hydraulic_notes": [
+              "Official resource register stores pressure/dynamic-level information.",
+              "Open hole and fractured granodiorite must not be interpreted as a discrete inflow interval."
+            ],
+            "source_note": "Belchinski Bani No.1hg. Lithology/construction from verified Sofia research profile SOF-LITH-003; resource values from official mineral resource register."
+          },
+          "mineral_research_scope": "individual facility where documented; construction/collector/inflow distinctions preserved",
+          "mineral_research_separate_from_lithology": true,
+          "sofia_mineral_import_tag": "SOFIA_MINERAL_2026_10_06_BATCH1",
+          "deposit_regional_mineral_context": {
+            "context_scope": "deposit-level thermal context for coordinate-based mineral-potential analysis",
+            "regional_position": "Belchinski Bani mineral-water deposit is situated in the central part of the Samokov field / Palakariya basin.",
+            "temperature_context": {
+              "regional_range_c": {
+                "approx_min": 35.0,
+                "approx_max": 40.7
+              },
+              "interpretation": "Belchinski Bani represents a moderate-temperature mineral-water field. This range is regional evidence and must not be assigned directly to an arbitrary selected point."
+            },
+            "relationship_to_nearby_systems": "Belchinski Bani and Belchin-Verila are separate documented mineral-water deposits within the wider Belchin area. They must not be merged automatically into one uniform thermal regime.",
+            "potential_interpretation": "The presence of an established mineral-water field supports elevated regional mineral potential near Belchinski Bani, but does not prove mineral water, exact depth or exact temperature at the selected point.",
+            "evidence_limit": "No individual borehole depth, filter interval or exact inflow is transferred to the selected coordinate."
+          },
+          "deposit_context_scope": "deposit-level thermal interpretation; regional mineral-potential use only",
+          "sofia_regional_context_tag": "BELCHINSKI_BANI_REGIONAL_CONTEXT_2026_10_06"
+        },
         "duplicate_mh_records": [],
         "matched_existing_records": []
       },
@@ -10260,208 +10344,69 @@
             ]
           }
         },
-        "research_enrichment": [],
-        "duplicate_mh_records": [],
-        "matched_existing_records": []
-      },
-      "sources": [
-        {
-          "source_type": "existing_register",
-          "title": "БДДР – официален регистър",
-          "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx",
-          "published": "01.11.2022",
-          "registry_number": "РМН1 - 031009"
-        }
-      ],
-      "origin": "existing_map"
-    },
-    {
-      "mineral_id": "mw_e122f13a229d26e6",
-      "identity": {
-        "name": "Сондаж № С -11в",
-        "facility_type": "Минерален водовземен сондаж",
-        "deposit": "Казичене - Равно поле",
-        "settlement": "Равно поле"
-      },
-      "location": {
-        "lat": 42.6687381,
-        "lon": 23.5222372,
-        "status": "A – официални географски координати",
-        "origin": "official_water_facilities.geojson"
-      },
-      "free": {
-        "temperature_c": null,
-        "depth_m": 550
-      },
-      "pro": {
-        "existing_properties": {
-          "basin_directorate": "Дунавски район",
-          "district": "София",
-          "municipality": "Елин Пелин",
-          "settlement": "Равно поле",
-          "deposit": "Казичене - Равно поле",
-          "section": "Равно поле",
-          "facility": "Сондаж № С -11в",
-          "facility_type": "водовземно",
-          "year": "1966",
-          "depth_m": "550.0",
-          "temperature_c": "",
-          "status": "",
-          "registry_number": "РМН1 - 031009",
-          "source_date": "01.11.2022",
-          "source": "БДДР – официален регистър",
-          "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx",
-          "coordinate_accuracy": "A – официални географски координати",
-          "mapped_status": "картографирано",
-          "display_category": "Минерален сондаж",
-          "temperature_class": "Без температура",
-          "bddr_facility_register": {
-            "verified": true,
-            "source_date": "2024-05-01",
-            "source_file": "VS_MV_BDDR_01052024.xlsx",
-            "matched_rows": [
-              59,
-              60,
-              61,
-              62
-            ]
+        "research_enrichment": {
+          "mineral_hydrothermal_research": {
+            "role": "verified individual mineral / thermal facility evidence imported separately from lithology",
+            "total_depth_m": 550.0,
+            "technical_flow_l_s": 1.96,
+            "temperature_c": 51.6,
+            "artesian_character": true,
+            "flow_regime": "free_self_flow",
+            "free_self_flow": true,
+            "construction_period": "1966",
+            "construction": [
+              {
+                "from_m": 0.0,
+                "to_m": 138.2,
+                "type": "drilling_interval",
+                "note": "drilling diameter Ø150 mm"
+              },
+              {
+                "from_m": 138.2,
+                "to_m": 550.0,
+                "type": "drilling_interval",
+                "note": "drilling diameter Ø130 mm"
+              },
+              {
+                "from_m": 0.0,
+                "to_m": 138.2,
+                "type": "casing",
+                "note": "casing Ø146 mm"
+              },
+              {
+                "from_m": 0.0,
+                "to_m": 525.0,
+                "type": "casing",
+                "note": "casing Ø108 mm"
+              },
+              {
+                "from_m": 451.0,
+                "to_m": 460.0,
+                "type": "filter",
+                "note": "filter Ø89 mm; construction evidence only, not a proven inflow interval"
+              },
+              {
+                "from_m": 493.0,
+                "to_m": 497.5,
+                "type": "filter",
+                "note": "filter Ø108 mm; construction evidence only, not a proven inflow interval"
+              }
+            ],
+            "source_note": "Ravno Pole S-11v. Exact total depth and construction from verified Sofia profile SOF-LITH-005. Technical discharge 1.96 l/s, temperature 51.6 C and self-flow/artesian regime from official mineral-water assessment. Filter intervals 451-460 m and 493-497.5 m are construction only and are not treated as documented inflow zones."
+          },
+          "mineral_research_scope": "individual facility where documented; construction/filter/inflow distinctions preserved",
+          "mineral_research_separate_from_lithology": true,
+          "sofia_mineral_import_tag": "SOFIA_MINERAL_2026_10_06_S11_CANONICAL",
+          "duplicate_resolution": {
+            "canonical_mineral_id": "mw_0334e43a6e5fcf61",
+            "removed_duplicate_mineral_ids": [
+              "mw_55a6f4199e15ebdf",
+              "mw_d37217d537570d4b",
+              "mw_e122f13a229d26e6"
+            ],
+            "resolution_basis": "Four records had identical facility identity, official registry number RMN1-031009, coordinates, year, depth, source and map geometry."
           }
         },
-        "research_enrichment": [],
-        "duplicate_mh_records": [],
-        "matched_existing_records": []
-      },
-      "sources": [
-        {
-          "source_type": "existing_register",
-          "title": "БДДР – официален регистър",
-          "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx",
-          "published": "01.11.2022",
-          "registry_number": "РМН1 - 031009"
-        }
-      ],
-      "origin": "existing_map"
-    },
-    {
-      "mineral_id": "mw_55a6f4199e15ebdf",
-      "identity": {
-        "name": "Сондаж № С -11в",
-        "facility_type": "Минерален водовземен сондаж",
-        "deposit": "Казичене - Равно поле",
-        "settlement": "Равно поле"
-      },
-      "location": {
-        "lat": 42.6687381,
-        "lon": 23.5222372,
-        "status": "A – официални географски координати",
-        "origin": "official_water_facilities.geojson"
-      },
-      "free": {
-        "temperature_c": null,
-        "depth_m": 550
-      },
-      "pro": {
-        "existing_properties": {
-          "basin_directorate": "Дунавски район",
-          "district": "София",
-          "municipality": "Елин Пелин",
-          "settlement": "Равно поле",
-          "deposit": "Казичене - Равно поле",
-          "section": "Равно поле",
-          "facility": "Сондаж № С -11в",
-          "facility_type": "водовземно",
-          "year": "1966",
-          "depth_m": "550.0",
-          "temperature_c": "",
-          "status": "",
-          "registry_number": "РМН1 - 031009",
-          "source_date": "01.11.2022",
-          "source": "БДДР – официален регистър",
-          "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx",
-          "coordinate_accuracy": "A – официални географски координати",
-          "mapped_status": "картографирано",
-          "display_category": "Минерален сондаж",
-          "temperature_class": "Без температура",
-          "bddr_facility_register": {
-            "verified": true,
-            "source_date": "2024-05-01",
-            "source_file": "VS_MV_BDDR_01052024.xlsx",
-            "matched_rows": [
-              59,
-              60,
-              61,
-              62
-            ]
-          }
-        },
-        "research_enrichment": [],
-        "duplicate_mh_records": [],
-        "matched_existing_records": []
-      },
-      "sources": [
-        {
-          "source_type": "existing_register",
-          "title": "БДДР – официален регистър",
-          "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx",
-          "published": "01.11.2022",
-          "registry_number": "РМН1 - 031009"
-        }
-      ],
-      "origin": "existing_map"
-    },
-    {
-      "mineral_id": "mw_d37217d537570d4b",
-      "identity": {
-        "name": "Сондаж № С -11в",
-        "facility_type": "Минерален водовземен сондаж",
-        "deposit": "Казичене - Равно поле",
-        "settlement": "Равно поле"
-      },
-      "location": {
-        "lat": 42.6687381,
-        "lon": 23.5222372,
-        "status": "A – официални географски координати",
-        "origin": "official_water_facilities.geojson"
-      },
-      "free": {
-        "temperature_c": null,
-        "depth_m": 550
-      },
-      "pro": {
-        "existing_properties": {
-          "basin_directorate": "Дунавски район",
-          "district": "София",
-          "municipality": "Елин Пелин",
-          "settlement": "Равно поле",
-          "deposit": "Казичене - Равно поле",
-          "section": "Равно поле",
-          "facility": "Сондаж № С -11в",
-          "facility_type": "водовземно",
-          "year": "1966",
-          "depth_m": "550.0",
-          "temperature_c": "",
-          "status": "",
-          "registry_number": "РМН1 - 031009",
-          "source_date": "01.11.2022",
-          "source": "БДДР – официален регистър",
-          "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx",
-          "coordinate_accuracy": "A – официални географски координати",
-          "mapped_status": "картографирано",
-          "display_category": "Минерален сондаж",
-          "temperature_class": "Без температура",
-          "bddr_facility_register": {
-            "verified": true,
-            "source_date": "2024-05-01",
-            "source_file": "VS_MV_BDDR_01052024.xlsx",
-            "matched_rows": [
-              59,
-              60,
-              61,
-              62
-            ]
-          }
-        },
-        "research_enrichment": [],
         "duplicate_mh_records": [],
         "matched_existing_records": []
       },
@@ -10909,7 +10854,71 @@
             ]
           }
         },
-        "research_enrichment": [],
+        "research_enrichment": {
+          "mineral_hydrothermal_research": {
+            "role": "verified individual mineral / thermal facility evidence imported separately from lithology",
+            "total_depth_m": 758.0,
+            "technical_flow_l_s": 0.61,
+            "temperature_c": 54.1,
+            "artesian_character": true,
+            "flow_regime": "free_self_flow",
+            "free_self_flow": true,
+            "collector": "dolomitized Triassic limestones in the lower borehole section",
+            "collector_interval_m": {
+              "from_m": 699.6,
+              "to_m": 758.0
+            },
+            "collector_scope": "documented lithological collector context; not a discrete proven inflow interval",
+            "construction": [
+              {
+                "from_m": 0.0,
+                "to_m": 215.5,
+                "type": "drilling_interval",
+                "note": "drilling diameter Ø170 mm"
+              },
+              {
+                "from_m": 215.5,
+                "to_m": 688.5,
+                "type": "drilling_interval",
+                "note": "drilling diameter Ø130 mm"
+              },
+              {
+                "from_m": 688.5,
+                "to_m": 758.0,
+                "type": "drilling_interval",
+                "note": "drilling diameter Ø91 mm"
+              },
+              {
+                "from_m": 0.0,
+                "to_m": 215.5,
+                "type": "casing",
+                "note": "casing Ø146 mm"
+              },
+              {
+                "from_m": 0.0,
+                "to_m": 684.0,
+                "type": "casing",
+                "note": "casing Ø108 mm"
+              },
+              {
+                "from_m": 684.0,
+                "to_m": 758.0,
+                "type": "casing",
+                "note": "casing Ø89 mm"
+              },
+              {
+                "from_m": 678.0,
+                "to_m": 758.0,
+                "type": "filter",
+                "note": "documented filter interval; must not be interpreted as a continuous inflow zone"
+              }
+            ],
+            "source_note": "Ravno Pole S-55hg. Exact depth, lithology and construction from verified Sofia profile SOF-LITH-006. Technical discharge 0.61 l/s, temperature 54.1 C and self-flow/artesian regime from official mineral-water assessment. Filter 678-758 m is construction evidence only."
+          },
+          "mineral_research_scope": "individual facility where documented; collector/construction/inflow distinctions preserved",
+          "mineral_research_separate_from_lithology": true,
+          "sofia_mineral_import_tag": "SOFIA_MINERAL_2026_10_06_BATCH2"
+        },
         "duplicate_mh_records": [],
         "matched_existing_records": []
       },
@@ -32057,7 +32066,38 @@
           "coordinate_transform_control_difference_m": 0.028,
           "coordinate_transform_control_status": "PASS",
           "spatial_resolution_basis": "Exact facility-level geodetic coordinates published for the named abstraction facility in the 2012 Dolna Banya mineral-water resource assessment. Original BGS 1970 K9 coordinates were transformed to BGS2005 and WGS84 with an independently checked transformation control difference of 0.028 m.",
-          "spatial_resolved_at": "2026-09-12T15:21:16.747036+00:00"
+          "spatial_resolved_at": "2026-09-12T15:21:16.747036+00:00",
+          "mineral_hydrothermal_research": {
+            "role": "verified natural mineral-water abstraction facility",
+            "technical_flow_l_s": 2.74,
+            "technical_temperature_c": 55.4,
+            "sample_temperature_c": 60.0,
+            "collector_scope": "natural spring/captured source; borehole inflow-depth model not applicable",
+            "source_note": "Captured natural spring Dolna Banya. Technical discharge and temperature from official Ministry of Health assessment.",
+            "regional_context": {
+              "context_scope": "deposit-level hydrogeological context for coordinate-based mineral-potential analysis",
+              "system_type": "pressurized fracture-controlled thermal groundwater system with deep circulation",
+              "geological_framework": "The Dolna Banya thermal field lies in the northwestern part of the Kostenets-Dolna Banya basin. Regional thermal-water circulation is associated with fractured crystalline and metamorphic rocks of the Rila-Rhodope basement and granitoid bodies.",
+              "recharge_model": "Regional recharge is predominantly meteoric from the higher parts of Rila, followed by deep circulation through fractured rock systems toward the Dolna Banya discharge area.",
+              "structural_context": "Mineral-water movement is fracture and tectonic-structure controlled. This is regional evidence and does not prove that a selected property lies directly on a productive fault or fracture zone.",
+              "temperature_context": {
+                "regional_main_thermal_field_c": {
+                  "approx_min": 59.7,
+                  "approx_max": 62.9
+                },
+                "interpretation": "The main Dolna Banya thermal system is characterized regionally by water around 60 C. This temperature range is regional evidence and must not be assigned as the expected temperature at an arbitrary selected point."
+              },
+              "potential_interpretation": "The presence of a proven pressurized thermal system supports elevated mineral-water potential in the local Dolna Banya area where geological and structural conditions are compatible. It does not establish mineral water, exact depth, temperature or discharge at the selected point.",
+              "evidence_limit": "Individual borehole construction, filter intervals and total depths are not transferred to the selected coordinate."
+            }
+          },
+          "mineral_research_scope": "individual facility where documented; construction/collector/inflow distinctions preserved",
+          "mineral_research_separate_from_lithology": true,
+          "sofia_mineral_import_tag": "SOFIA_MINERAL_2026_10_06_BATCH1",
+          "deposit_hydrogeological_context": "The Dolna Banya thermal field lies in the northwestern part of the Kostenets-Dolna Banya basin. Regional thermal-water circulation is associated with fractured crystalline and metamorphic rocks of the Rila-Rhodope basement and granitoid bodies. Regional recharge is predominantly meteoric from the higher parts of Rila, followed by deep circulation through fractured rock systems toward the Dolna Banya discharge area.",
+          "deposit_fault_context": "Mineral-water movement is fracture and tectonic-structure controlled. This is regional evidence and does not prove that a selected property lies directly on a productive fault or fracture zone.",
+          "deposit_context_scope": "deposit-level hydrogeological interpretation; for regional mineral-potential analysis only",
+          "sofia_regional_context_tag": "DOLNA_BANYA_REGIONAL_MINERAL_CONTEXT_2026_10_06"
         },
         "research_source_record": {
           "status": "MISSING",
@@ -32153,7 +32193,18 @@
           "coordinate_resolution_method": "Official cadastral property identification + AGKK KAIS parcel geometry representative point",
           "coordinate_precision_scope": "CADASTRAL_PARCEL_LEVEL_NOT_CONFIRMED_WELLHEAD",
           "coordinate_resolution_at": "2026-09-10T20:23:35+00:00",
-          "coordinate_resolution_note": "The official source identifies the facility's cadastral parcel / SOZ belt-I parcel. The map coordinate is a representative point inside that exact cadastral geometry and is not asserted to be a surveyed wellhead coordinate."
+          "coordinate_resolution_note": "The official source identifies the facility's cadastral parcel / SOZ belt-I parcel. The map coordinate is a representative point inside that exact cadastral geometry and is not asserted to be a surveyed wellhead coordinate.",
+          "mineral_hydrothermal_research": {
+            "role": "verified individual mineral / thermal facility evidence",
+            "documented_depth_m": 652.0,
+            "technical_flow_l_s": 3.78,
+            "temperature_c": 58.6,
+            "facility_confirmed": true,
+            "source_note": "Ravno Pole S-46hg. Technical flow and temperature are taken from the verified Ministry of Health balneological assessment. No exact mineral inflow depth is assigned."
+          },
+          "mineral_research_scope": "individual facility where documented; construction/collector/inflow distinctions preserved",
+          "mineral_research_separate_from_lithology": true,
+          "sofia_mineral_import_tag": "SOFIA_MINERAL_2026_10_06_BATCH1"
         },
         "research_source_record": {
           "status": "MISSING",
@@ -32329,7 +32380,31 @@
           "exploitation_resource_l_s": 5.6,
           "exploitation_resource_scope": "official facility exploitation resource",
           "verified_source": "MH balneological assessment No.1/12.11.2021",
-          "verified_source_url": "https://www.mh.government.bg/upload/6702/1-belchin-verila-sondazhps-1hg-12-11-2021.pdf"
+          "verified_source_url": "https://www.mh.government.bg/upload/6702/1-belchin-verila-sondazhps-1hg-12-11-2021.pdf",
+          "mineral_hydrothermal_research": {
+            "role": "verified individual mineral / thermal facility evidence",
+            "technical_flow_l_s": 5.6,
+            "approved_resource_l_s": 5.6,
+            "temperature_c": 45.0,
+            "sample_temperature_c": 43.0,
+            "facility_confirmed": true,
+            "source_note": "Belchin-Verila PS-1hg. Official facility exploitation resource 5.6 l/s; technical temperature 45 C and sample temperature 43 C. Exact lithological log and productive inflow depth remain unresolved."
+          },
+          "mineral_research_scope": "individual facility where documented; construction/collector/inflow distinctions preserved",
+          "mineral_research_separate_from_lithology": true,
+          "sofia_mineral_import_tag": "SOFIA_MINERAL_2026_10_06_BATCH1",
+          "deposit_regional_mineral_context": {
+            "context_scope": "deposit-level thermal context for coordinate-based mineral-potential analysis",
+            "temperature_context": {
+              "documented_deposit_temperature_c": 45.0,
+              "interpretation": "Belchin-Verila is documented as a separate and somewhat hotter mineral-water system than Belchinski Bani."
+            },
+            "relationship_to_nearby_systems": "Belchin-Verila is treated separately from the Belchinski Bani deposit. The difference in documented temperature supports spatial variation of the thermal regime in the wider Belchin area.",
+            "potential_interpretation": "A selected point in the Belchin area must be evaluated by proximity to the relevant documented mineral-water system rather than by applying one common temperature regime to the whole area.",
+            "evidence_limit": "No exact borehole depth, inflow depth or temperature is assigned to the selected coordinate."
+          },
+          "deposit_context_scope": "deposit-level thermal interpretation; regional mineral-potential use only",
+          "sofia_regional_context_tag": "BELCHIN_VERILA_REGIONAL_CONTEXT_2026_10_06"
         },
         "research_source_record": {
           "status": "REVIEW",
@@ -32433,7 +32508,18 @@
             42.0283889
           ],
           "rejected_current_coordinates_reason": "Legacy/fuzzy coordinate has no verified facility-level provenance for KEI No.1 'Banyata' in the Gabrovnitsa-Elenov dol mineral-water deposit and is not accepted for canonical mapping.",
-          "spatial_research_note": "Official MH evidence confirms KEI No.1 'Banyata' as a separate physical mineral-water abstraction facility in the Gabrovnitsa-Elenov dol deposit. Search of the canonical official-water-facility layer returned no deterministic existing match. No safe facility-level coordinate or cadastral geometry was established."
+          "spatial_research_note": "Official MH evidence confirms KEI No.1 'Banyata' as a separate physical mineral-water abstraction facility in the Gabrovnitsa-Elenov dol deposit. Search of the canonical official-water-facility layer returned no deterministic existing match. No safe facility-level coordinate or cadastral geometry was established.",
+          "mineral_hydrothermal_research": {
+            "role": "verified natural mineral-water abstraction facility",
+            "technical_flow_l_s": 0.25,
+            "technical_temperature_c": 25.0,
+            "sample_temperature_c": 26.0,
+            "collector_scope": "natural spring/captured source; borehole inflow-depth model not applicable",
+            "source_note": "Captured natural spring No.1 'Banyata', Gabrovnitsa-Elenov dol. Technical discharge and temperature are official assessment values."
+          },
+          "mineral_research_scope": "individual facility where documented; construction/collector/inflow distinctions preserved",
+          "mineral_research_separate_from_lithology": true,
+          "sofia_mineral_import_tag": "SOFIA_MINERAL_2026_10_06_BATCH1"
         },
         "research_source_record": {
           "status": "MISSING",
@@ -42314,7 +42400,71 @@
           "coordinate_transform_control_difference_m": 0.028,
           "coordinate_transform_control_status": "PASS",
           "spatial_resolution_basis": "Exact facility-level geodetic coordinates published for the named abstraction facility in the 2012 Dolna Banya mineral-water resource assessment. Original BGS 1970 K9 coordinates were transformed to BGS2005 and WGS84 with an independently checked transformation control difference of 0.028 m.",
-          "spatial_resolved_at": "2026-09-12T15:21:16.747036+00:00"
+          "spatial_resolved_at": "2026-09-12T15:21:16.747036+00:00",
+          "mineral_hydrothermal_research": {
+            "role": "verified individual mineral / thermal facility evidence",
+            "total_depth_m": 279.2,
+            "technical_flow_l_s": 8.45,
+            "sample_flow_l_s": 7.76,
+            "resource_temperature_c": 59.7,
+            "sample_temperature_c": 56.0,
+            "artesian_character": true,
+            "construction_period": "1978",
+            "construction": [
+              {
+                "from_m": 0.0,
+                "to_m": 45.9,
+                "type": "casing",
+                "note": "casing Ø168 mm"
+              },
+              {
+                "from_m": 45.9,
+                "to_m": 116.0,
+                "type": "casing",
+                "note": "casing Ø146 mm"
+              },
+              {
+                "from_m": 0.0,
+                "to_m": 116.0,
+                "type": "cemented_interval",
+                "note": "documented cementation to 116 m"
+              },
+              {
+                "from_m": 116.0,
+                "to_m": 279.2,
+                "type": "open_hole",
+                "note": "open hole Ø130 mm"
+              }
+            ],
+            "documented_open_hole": {
+              "from_m": 116.0,
+              "to_m": 279.2
+            },
+            "source_note": "Dolna Banya No.13hg. Exact depth and construction from SOF-LITH-002; technical/sample discharge and temperature from official Ministry of Health assessment. Open hole is construction and is not treated as an inflow interval.",
+            "regional_context": {
+              "context_scope": "deposit-level hydrogeological context for coordinate-based mineral-potential analysis",
+              "system_type": "pressurized fracture-controlled thermal groundwater system with deep circulation",
+              "geological_framework": "The Dolna Banya thermal field lies in the northwestern part of the Kostenets-Dolna Banya basin. Regional thermal-water circulation is associated with fractured crystalline and metamorphic rocks of the Rila-Rhodope basement and granitoid bodies.",
+              "recharge_model": "Regional recharge is predominantly meteoric from the higher parts of Rila, followed by deep circulation through fractured rock systems toward the Dolna Banya discharge area.",
+              "structural_context": "Mineral-water movement is fracture and tectonic-structure controlled. This is regional evidence and does not prove that a selected property lies directly on a productive fault or fracture zone.",
+              "temperature_context": {
+                "regional_main_thermal_field_c": {
+                  "approx_min": 59.7,
+                  "approx_max": 62.9
+                },
+                "interpretation": "The main Dolna Banya thermal system is characterized regionally by water around 60 C. This temperature range is regional evidence and must not be assigned as the expected temperature at an arbitrary selected point."
+              },
+              "potential_interpretation": "The presence of a proven pressurized thermal system supports elevated mineral-water potential in the local Dolna Banya area where geological and structural conditions are compatible. It does not establish mineral water, exact depth, temperature or discharge at the selected point.",
+              "evidence_limit": "Individual borehole construction, filter intervals and total depths are not transferred to the selected coordinate."
+            }
+          },
+          "mineral_research_scope": "individual facility where documented; construction/collector/inflow distinctions preserved",
+          "mineral_research_separate_from_lithology": true,
+          "sofia_mineral_import_tag": "SOFIA_MINERAL_2026_10_06_BATCH1",
+          "deposit_hydrogeological_context": "The Dolna Banya thermal field lies in the northwestern part of the Kostenets-Dolna Banya basin. Regional thermal-water circulation is associated with fractured crystalline and metamorphic rocks of the Rila-Rhodope basement and granitoid bodies. Regional recharge is predominantly meteoric from the higher parts of Rila, followed by deep circulation through fractured rock systems toward the Dolna Banya discharge area.",
+          "deposit_fault_context": "Mineral-water movement is fracture and tectonic-structure controlled. This is regional evidence and does not prove that a selected property lies directly on a productive fault or fracture zone.",
+          "deposit_context_scope": "deposit-level hydrogeological interpretation; for regional mineral-potential analysis only",
+          "sofia_regional_context_tag": "DOLNA_BANYA_REGIONAL_MINERAL_CONTEXT_2026_10_06"
         },
         "research_source_record": {
           "status": "REVIEW",
@@ -42426,7 +42576,35 @@
           "spatial_research_result": "NO_SAFE_RESOLUTION",
           "spatial_research_closed_at": "2026-09-12T17:30:06.936591+00:00",
           "spatial_research_batch": 100,
-          "spatial_research_note": "Facility identity is retained as CONFIRMED_MISSING. No sufficiently reliable facility-level coordinate has been established. Research is closed for the current national spatial-completion pass; the facility may be reopened only if a new authoritative source with facility-level coordinates or cadastral geometry becomes available."
+          "spatial_research_note": "Facility identity is retained as CONFIRMED_MISSING. No sufficiently reliable facility-level coordinate has been established. Research is closed for the current national spatial-completion pass; the facility may be reopened only if a new authoritative source with facility-level coordinates or cadastral geometry becomes available.",
+          "mineral_hydrothermal_research": {
+            "role": "verified individual mineral-water facility evidence",
+            "documented_depth_m": 515.0,
+            "documented_flow_l_s": 1.65,
+            "approved_resource_l_s": 1.65,
+            "documented_temperature_c": 22.0,
+            "facility_confirmed": true,
+            "source_note": "Dolna Banya No.141 / Byalata voda. Official local exploitation resource QER1 0.99 + QER2 0.66 = 1.65 l/s. Documented facility temperature 22 C. No exact productive inflow interval is assigned.",
+            "regional_context": {
+              "context_scope": "local hydrogeological context for coordinate-based mineral-potential analysis",
+              "system_type": "cool mineral-water subsystem distinct from the main Dolna Banya thermal field",
+              "geological_framework": "The Byalata Voda occurrence is associated with Paleogene sedimentary rocks, with sandstone units acting as the documented regional collector context.",
+              "structural_context": "The occurrence is associated with the structurally controlled basin setting and the regional Maritsa suture zone. This is regional/local structural context and does not prove an exact productive fault beneath a selected point.",
+              "temperature_context": {
+                "documented_local_value_c": 22.0,
+                "interpretation": "The markedly cooler water shows that the Dolna Banya area does not represent one uniform thermal regime. The Byalata Voda setting must not be merged automatically with the hotter main Dolna Banya thermal field."
+              },
+              "potential_interpretation": "A selected point in the wider Dolna Banya area must be evaluated spatially against both the main thermal field and the cooler Byalata Voda subsystem. Proximity alone does not justify assigning the approximately 60 C main-field regime to every point.",
+              "evidence_limit": "No exact inflow depth, temperature or discharge is transferred from the reference facility to the selected coordinate."
+            }
+          },
+          "mineral_research_scope": "individual facility where documented; construction/collector/inflow distinctions preserved",
+          "mineral_research_separate_from_lithology": true,
+          "sofia_mineral_import_tag": "SOFIA_MINERAL_2026_10_06_BATCH1",
+          "deposit_hydrogeological_context": "The Byalata Voda occurrence is associated with Paleogene sedimentary rocks, with sandstone units acting as the documented regional collector context.",
+          "deposit_fault_context": "The occurrence is associated with the structurally controlled basin setting and the regional Maritsa suture zone. This is regional/local structural context and does not prove an exact productive fault beneath a selected point.",
+          "deposit_context_scope": "local hydrogeological interpretation; distinct cooler subsystem; regional mineral-potential use only",
+          "sofia_regional_context_tag": "DOLNA_BANYA_BYALATA_VODA_CONTEXT_2026_10_06"
         },
         "research_source_record": {
           "status": "MISSING",
@@ -46150,6 +46328,99 @@
         }
       ],
       "origin": "mh_confirmed_missing"
+    },
+    {
+      "mineral_id": "mw_a20a18442c44ef7f",
+      "identity": {
+        "name": "Каптиран естествен извор",
+        "facility_type": "Минерален каптаж/извор",
+        "deposit": "Момин проход",
+        "settlement": "Момин проход"
+      },
+      "location": {
+        "lat": 42.3320972222,
+        "lon": 23.8715833333,
+        "status": "A – официални географски координати",
+        "origin": "BDIBR official mineral-water facility register"
+      },
+      "free": {
+        "temperature_c": null,
+        "depth_m": 2.0
+      },
+      "pro": {
+        "existing_properties": {
+          "basin_directorate": "Източнобеломорски район",
+          "district": "София",
+          "municipality": "Костенец",
+          "settlement": "Момин проход",
+          "deposit": "Момин проход",
+          "section": "-",
+          "facility": "Каптиран естествен извор",
+          "facility_type": "водовземно",
+          "year": "1936",
+          "depth_m": "2.0",
+          "temperature_c": "",
+          "registry_number": "351046001",
+          "source": "БДИБР – официален регистър",
+          "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+          "coordinate_accuracy": "A – официални географски координати",
+          "mapped_status": "картографирано",
+          "display_category": "Каптаж/естествен извор"
+        },
+        "research_enrichment": {
+          "research_status": "OFFICIAL_FACILITY_CONFIRMED",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "coordinate_crs": "WGS84",
+          "latitude": 42.3320972222,
+          "longitude": 23.8715833333,
+          "resolved_latitude": 42.3320972222,
+          "resolved_longitude": 23.8715833333,
+          "coordinate_source": "БДИБР – официален регистър на съоръженията за минерални води",
+          "coordinate_source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+          "official_registry_number": "351046001",
+          "capture_year": 1936,
+          "capture_depth_m": 2.0,
+          "capture_depth_scope": "facility/capture depth only; not thermal circulation depth",
+          "natural_discharge_status": "CONFIRMED",
+          "flow_regime": "natural discharge / self-flow",
+          "self_flow_elevation_m": 537.0,
+          "temperature_assignment_status": "NO_EXACT_FACILITY_TEMPERATURE_ASSIGNED",
+          "temperature_note": "The regional 63.8-65.4 C deposit range remains regional-model context and is not copied as an exact facility measurement.",
+          "mineral_hydrothermal_research": {
+            "role": "verified natural mineral-water abstraction facility and spatial anchor",
+            "facility_confirmed": true,
+            "facility_type": "captured natural spring",
+            "capture_depth_m": 2.0,
+            "capture_depth_interpretation": "capture construction depth; not mineral-water source depth",
+            "natural_discharge": true,
+            "self_flow_elevation_m": 537.0,
+            "collector_scope": "natural spring/captured source; exact subsurface productive fracture depth not assigned",
+            "regional_model_id": "momin-prohod",
+            "evidence_limit": "Facility coordinates anchor the known mineral occurrence spatially. They do not define exact mineral-water depth, temperature, discharge or productive fracture at another selected point."
+          },
+          "mineral_research_scope": "facility identity, official location and hydraulic occurrence only",
+          "mineral_research_separate_from_lithology": true,
+          "sofia_mineral_import_tag": "MOMIN_PROHOD_CANONICAL_FACILITY_2026_10_06"
+        },
+        "duplicate_mh_records": [],
+        "matched_existing_records": []
+      },
+      "sources": [
+        {
+          "source_type": "official_facility_register",
+          "title": "БДИБР – регистър на съоръженията за минерални води",
+          "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+          "registry_number": "351046001",
+          "evidence_role": "facility identity, official coordinates, capture year, facility depth and self-flow elevation"
+        },
+        {
+          "source_type": "balneology",
+          "title": "Балнеологична оценка №42/11.05.2015 г.",
+          "authority": "Министерство на здравеопазването",
+          "evidence_role": "official confirmation of the captured natural spring at mineral-water deposit Momin Prohod"
+        }
+      ],
+      "origin": "official_register_research"
     }
   ],
   "non_point_research_records": [
@@ -46692,6 +46963,592 @@
           "status": "PASS"
         },
         "interpretation_limit": "Point inclusion activates the regional hydrogeological context for the Ognyanovo-Garmen mineral-water system. It does not prove mineral water at the selected property and does not establish an exact local inflow depth, temperature, discharge or collector."
+      }
+    },
+    {
+      "regional_model_id": "momin-prohod",
+      "identity": {
+        "name": "Момин проход",
+        "model_type": "regional mineral / thermal hydrogeological model",
+        "district": "София",
+        "municipality": "Костенец"
+      },
+      "evidence_base": {
+        "facility_count": 1,
+        "facility_ids": [
+          "mw_a20a18442c44ef7f"
+        ],
+        "evidence_scope": "officially documented mineral-water deposit and captured natural spring; regional hydrogeological interpretation from official and public-authority sources",
+        "facility_link_status": "canonical mineral facility linked",
+        "spatial_anchor_status": "OFFICIAL_EXACT_FACILITY_COORDINATES"
+      },
+      "system_framework": {
+        "system_type": "pressurized fracture-vein thermal mineral-water system",
+        "geological_host": "fractured and faulted Upper Cretaceous granodiorites of the Gutsal pluton",
+        "structural_control": "thermal discharge is associated with a documented fault zone and fractured granodioritic rock mass",
+        "natural_discharge_geometry": "before capture, approximately 10 thermal springs were aligned along a fault zone over about 25 m",
+        "interpretation_scope": "deposit-scale framework; does not prove that an arbitrary selected point intersects the productive fault or fracture network"
+      },
+      "synthesis": {
+        "collector_model": {
+          "status": "SUPPORTED",
+          "conclusion": "Regional evidence supports a fracture-vein collector developed in fractured and faulted granodiorites of the Gutsal pluton. Thermal-water occurrence is structurally controlled rather than represented by a laterally continuous porous aquifer.",
+          "evidence": [
+            "Public-authority documentation describes the deposit as a pressurized fracture-vein system in granodiorites.",
+            "Thermomineral water is documented as emerging from fractured and faulted granodiorites.",
+            "The pre-capture springs were aligned along a fault zone."
+          ]
+        },
+        "structural_model": {
+          "status": "SUPPORTED",
+          "conclusion": "The Momin Prohod deposit is structurally controlled. Approximately ten natural thermal springs were historically aligned along a fault zone over roughly 25 m, supporting ascending flow through a localized fracture/fault network.",
+          "interpretation_limit": "This deposit-scale structural model must not be treated as proof that every nearby property lies directly on the productive fault zone."
+        },
+        "temperature_model": {
+          "status": "SUPPORTED",
+          "regional_temperature_range_c": {
+            "min": 63.8,
+            "max": 65.4
+          },
+          "classification": "hot thermal mineral-water system",
+          "conclusion": "The documented deposit temperature is approximately 63.8-65.4 C. This range characterizes the established Momin Prohod system and must not be assigned directly as the expected temperature at an arbitrary selected coordinate.",
+          "temperature_gradient_status": "NOT_DEFENSIBLE_FROM_CURRENT_DATA"
+        },
+        "artesian_pressure_model": {
+          "status": "SUPPORTED_AT_DEPOSIT_SCALE",
+          "conclusion": "Official/public-authority hydrogeological descriptions identify Momin Prohod as a pressurized fracture-vein mineral-water system. Natural spring discharge confirms an ascending hydraulic regime, but a uniform hydraulic head must not be assigned across the surrounding area."
+        },
+        "natural_discharge_model": {
+          "status": "SUPPORTED",
+          "conclusion": "The deposit was naturally expressed by a group of approximately ten thermomineral springs before capture. This is strong evidence of natural upward discharge concentrated along the documented structural zone."
+        },
+        "cold_over_thermal_water": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "No current reviewed evidence demonstrates a separate shallow cold-water inflow above the Momin Prohod thermal system."
+        },
+        "aquitard_model": {
+          "status": "INSUFFICIENT_EXACT_EVIDENCE",
+          "conclusion": "The current evidence does not justify defining a laterally continuous regional aquitard for point-based prediction."
+        },
+        "depth_model": {
+          "status": "NO_TARGET_DEPTH_MODEL",
+          "conclusion": "The known captured spring and regional structural setting do not justify transferring an exact mineral-water depth to an arbitrary selected point. Mineral-water potential should be controlled primarily by spatial relationship to the documented thermal system and structural setting."
+        },
+        "collector_relationships": {
+          "status": "SINGLE_DOCUMENTED_REGIONAL_SYSTEM",
+          "conclusion": "The available evidence supports one documented Momin Prohod fracture-vein thermal system. The geometry and hydraulic connectivity of individual productive fractures outside the spring zone remain unresolved."
+        }
+      },
+      "research_status": "REGIONAL_MINERAL_CONTEXT_SUPPORTED",
+      "next_research_tasks": [
+        "Search for official sanitary-protection-zone geometry or another defensible spatial boundary for regional context triggering.",
+        "Search for more detailed hydrogeological evidence on the geometry of the productive fault/fracture system.",
+        "Preserve deposit-scale temperature and pressure evidence separately from any future facility-specific measurements."
+      ],
+      "regional_model_scope": {
+        "scope_type": "deposit_reference_context_without_validated_polygon",
+        "scope_role": "regional_context_only",
+        "deposit": "Момин проход",
+        "spatial_geometry_status": "NO_VALIDATED_REGIONAL_POLYGON_STORED",
+        "interpretation_limit": "The regional model may support mineral-potential interpretation near the documented Momin Prohod deposit, but without a validated regional polygon it must not be activated solely by broad municipality membership. It does not prove mineral water at a selected property and does not establish exact local depth, temperature, discharge or productive fracture."
+      },
+      "sources": [
+        {
+          "type": "official_deposit_listing",
+          "authority": "МОСВ",
+          "note": "Momin Prohod is an officially recognized mineral-water deposit."
+        },
+        {
+          "type": "public_authority_hydrogeological_description",
+          "authority": "Министерство на туризма",
+          "note": "Thermomineral water emerges from fractured and faulted granodiorites."
+        },
+        {
+          "type": "municipal_deposit_information",
+          "authority": "Община Костенец",
+          "note": "Approximately ten pre-capture springs aligned along a fault zone over about 25 m; deposit temperature approximately 63.8-65.4 C."
+        },
+        {
+          "type": "public_authority_environmental_documentation",
+          "note": "Deposit described as a pressurized fracture-vein system in Upper Cretaceous granodiorites of the Gutsal pluton."
+        }
+      ]
+    },
+    {
+      "regional_model_id": "kostenets",
+      "identity": {
+        "name": "Костенец",
+        "model_type": "regional mineral / thermal hydrogeological model",
+        "district": "София",
+        "municipality": "Костенец"
+      },
+      "evidence_base": {
+        "facility_count": 3,
+        "facility_ids": [],
+        "evidence_scope": "official mineral-water deposit documentation, verified borehole lithology and official historical drilling context",
+        "known_reference_drilling_m": [
+          197.0,
+          444.7,
+          530.0
+        ],
+        "verified_reference_borehole": {
+          "name": "Сондаж №2хг",
+          "depth_m": 444.7,
+          "status": "VERIFIED_PRIMARY_SOURCE"
+        },
+        "facility_link_status": "canonical Kostenets mineral facility record not yet present in mineral_water_master"
+      },
+      "system_framework": {
+        "system_type": "documented thermal mineral-water system in a deep crystalline-rock setting",
+        "geological_host_context": "deep section dominated by Paleozoic granitic rocks",
+        "documented_structural_context": "borehole No.2hg intersects a strongly altered, fractured, leached and locally brecciated granite fault zone at 411.0-420.1 m",
+        "structural_hydraulic_status": "UNRESOLVED",
+        "interpretation_scope": "The documented fault zone is structural evidence from one borehole. It is not automatically a mineral-water inflow interval and must not be transferred as an exact target depth."
+      },
+      "synthesis": {
+        "temperature_model": {
+          "status": "SUPPORTED",
+          "regional_temperature_c": 46.0,
+          "conclusion": "Official deposit-level data support a mineral-water temperature context of approximately 46 C for the Kostenets deposit. This value characterizes the established system and must not be assigned directly as the expected temperature at an arbitrary selected point.",
+          "temperature_gradient_status": "NOT_DEFENSIBLE_FROM_CURRENT_DATA"
+        },
+        "resource_context": {
+          "status": "SUPPORTED_AT_DEPOSIT_SCALE",
+          "approved_deposit_resource_l_s": 15.0,
+          "conclusion": "The documented approved exploitation resource of approximately 15 l/s applies to the deposit-scale resource context and must not be interpreted as expected discharge from a new borehole at a selected point."
+        },
+        "deep_system_evidence": {
+          "status": "SUPPORTED",
+          "conclusion": "Historical exploration at approximately 197 m, 444 m and 530 m demonstrates that the Kostenets mineral-water system has been investigated by multiple deep boreholes. These depths describe historical exploration and do not define a target drilling depth for another property."
+        },
+        "crystalline_host_model": {
+          "status": "SUPPORTED",
+          "conclusion": "The verified No.2hg profile demonstrates a deep granite-dominated crystalline section. A strongly altered and fractured fault zone is documented at 411.0-420.1 m, followed by fractured and chloritized granite to 444.7 m.",
+          "interpretation_limit": "These exact intervals belong only to No.2hg."
+        },
+        "structural_model": {
+          "status": "STRUCTURAL_EVIDENCE_PRESENT_HYDRAULIC_ROLE_UNRESOLVED",
+          "conclusion": "A genuine faulted interval is documented in the verified reference borehole, confirming structural disruption within the deep crystalline section. Current reviewed evidence does not prove that this specific fault zone is the mineral-water inflow pathway or that equivalent fault geometry occurs beneath an arbitrary selected point."
+        },
+        "collector_model": {
+          "status": "INSUFFICIENT_EXPLICIT_HYDRAULIC_EVIDENCE",
+          "conclusion": "The current reviewed evidence is insufficient to define an exact deposit-scale mineral-water collector type for point prediction. Fractured granite and the documented fault zone provide geological context but are not automatically treated as proven mineral-water collectors."
+        },
+        "artesian_pressure_model": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "No currently reviewed evidence is sufficient to assign a regional artesian or self-flow regime to the Kostenets model."
+        },
+        "cold_over_thermal_water": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "No reviewed evidence currently demonstrates a distinct shallow cold-water system overlying the deeper mineral-water system."
+        },
+        "depth_model": {
+          "status": "NO_TARGET_DEPTH_MODEL",
+          "conclusion": "Historical borehole depths of 197 m, 444.7 m and 530 m prove deep exploration of the deposit but do not justify assigning an expected mineral-water depth to a selected property."
+        },
+        "mixing_model": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "No reviewed evidence currently supports a regional interpretation of mixing between separate mineral-water horizons."
+        }
+      },
+      "research_status": "REGIONAL_MINERAL_CONTEXT_PARTIALLY_SUPPORTED",
+      "next_research_tasks": [
+        "Recover or create the canonical mineral facility record for Kostenets No.2hg if authoritative coordinates and identity are available.",
+        "Search official hydrogeological documentation for an explicit deposit-scale mineral-water collector description.",
+        "Search for documented artesian pressure or self-flow evidence.",
+        "Search for explicit hydraulic linkage between mineral-water inflow and the deep faulted granite intervals.",
+        "Search for a defensible official spatial boundary or sanitary-protection-zone geometry."
+      ],
+      "regional_model_scope": {
+        "scope_type": "deposit_reference_context_without_validated_polygon",
+        "scope_role": "regional_context_only",
+        "deposit": "Костенец",
+        "spatial_geometry_status": "NO_VALIDATED_REGIONAL_POLYGON_STORED",
+        "interpretation_limit": "The model supports regional mineral-potential interpretation near the documented Kostenets system. It does not prove mineral water at a selected property and does not establish exact local depth, temperature, discharge, collector or productive fault."
+      },
+      "sources": [
+        {
+          "source_id": "SOF-S001",
+          "authority": "Министерство на здравеопазването",
+          "type": "official_mineral_water_balneological_document",
+          "role": "verified No.2hg identity, exact borehole depth and geological profile"
+        },
+        {
+          "source_id": "SOF-S004",
+          "authority": "Министерство на туризма",
+          "type": "official_government_context",
+          "role": "historical deposit exploration context including 197 m, 444 m and 530 m drilling"
+        },
+        {
+          "type": "official_deposit_resource_context",
+          "role": "deposit temperature approximately 46 C and approved exploitation resource approximately 15 l/s"
+        }
+      ]
+    },
+    {
+      "regional_model_id": "pchelinski-bani",
+      "identity": {
+        "name": "Пчелински бани",
+        "model_type": "regional mineral / thermal hydrogeological model",
+        "district": "София",
+        "municipality": "Костенец"
+      },
+      "evidence_base": {
+        "facility_count": 3,
+        "facility_ids": [
+          "mw_62b32c72b570d43b",
+          "mw_5405d6c171c7de7c",
+          "mw_85fde85a40180250"
+        ],
+        "evidence_scope": "verified mineral-water facilities plus reviewed regional hydrogeological scientific source",
+        "verified_deep_boreholes": [
+          {
+            "facility_id": "mw_5405d6c171c7de7c",
+            "name": "Сондаж 2 ХГ",
+            "depth_m": 348.9
+          },
+          {
+            "facility_id": "mw_85fde85a40180250",
+            "name": "Сондаж №3 ХГ",
+            "depth_m": 350.3
+          }
+        ],
+        "additional_regional_drilling_context": "reviewed scientific source describes three boreholes in the Pchelinski Bani system with depths approximately 349-497 m"
+      },
+      "system_framework": {
+        "system_type": "structurally controlled mineral-water system in granitoid rocks",
+        "geological_host": "granitoids of the Gutsal pluton",
+        "structural_context": "reviewed regional hydrogeological evidence documents a fault-zone setting associated with the Pchelinski Bani mineral-water occurrence",
+        "interpretation_scope": "deposit-scale regional context; does not prove that every selected point intersects the documented fault zone"
+      },
+      "synthesis": {
+        "collector_model": {
+          "status": "REGIONAL_GEOLOGICAL_CONTEXT_SUPPORTED_HYDRAULIC_DETAIL_UNRESOLVED",
+          "conclusion": "The Pchelinski Bani mineral-water system is regionally associated with granitoids of the Gutsal pluton and a documented fault-zone setting. Current reviewed evidence does not justify assigning a single exact productive fracture interval or exact collector depth across the deposit."
+        },
+        "structural_model": {
+          "status": "SUPPORTED_AT_REGIONAL_SCALE",
+          "conclusion": "Regional scientific evidence supports structural control of the Pchelinski Bani mineral-water occurrence through a fault-zone setting in the granitoid massif.",
+          "interpretation_limit": "The presence of a regional fault zone does not establish a productive fault directly beneath an arbitrary selected property."
+        },
+        "deep_system_evidence": {
+          "status": "SUPPORTED",
+          "conclusion": "The system has been investigated by several deep boreholes. Two canonical facilities are documented at 348.9 m and 350.3 m, while the reviewed regional source describes three boreholes in the approximate 349-497 m range.",
+          "interpretation_limit": "These depths demonstrate the scale of historical exploration and must not be converted into a target drilling depth."
+        },
+        "temperature_model": {
+          "status": "INSUFFICIENT_VERIFIED_REGIONAL_VALUE",
+          "conclusion": "No new regional temperature value is stored in this model because the currently reviewed clean source set does not provide a sufficiently verified deposit-scale temperature range for point-based interpretation."
+        },
+        "artesian_pressure_model": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "The currently reviewed evidence does not justify assigning a uniform artesian or self-flow regime to the regional model."
+        },
+        "cold_over_thermal_water": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "No reviewed evidence currently demonstrates a distinct shallow cold-water layer above the mineral-water system."
+        },
+        "depth_model": {
+          "status": "NO_TARGET_DEPTH_MODEL",
+          "conclusion": "Borehole depths around 349-497 m describe documented exploration of the established mineral system but do not establish mineral-water depth beneath another selected coordinate."
+        },
+        "mixing_model": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "No current reviewed evidence supports a regional interpretation of mixing between separate mineral-water horizons."
+        }
+      },
+      "research_status": "REGIONAL_MINERAL_CONTEXT_PARTIALLY_SUPPORTED",
+      "next_research_tasks": [
+        "Search for an authoritative deposit-scale temperature range.",
+        "Search for explicit hydraulic evidence defining the mineral-water collector.",
+        "Search for documented artesian pressure or natural self-flow conditions.",
+        "Search for a defensible sanitary-protection-zone or other official spatial geometry.",
+        "Do not convert the approximately 349-497 m historical drilling range into a target depth."
+      ],
+      "regional_model_scope": {
+        "scope_type": "deposit_reference_context_without_validated_polygon",
+        "scope_role": "regional_context_only",
+        "deposit": "Пчелински бани",
+        "spatial_geometry_status": "NO_VALIDATED_REGIONAL_POLYGON_STORED",
+        "interpretation_limit": "The model supports regional mineral-potential interpretation near the documented Pchelinski Bani system. It does not prove mineral water at a selected property and does not establish exact depth, temperature, discharge or productive fracture."
+      },
+      "sources": [
+        {
+          "source_id": "SOF-S002",
+          "authority": "Басейнова дирекция Източнобеломорски район",
+          "type": "official_mineral_water_facility_register",
+          "role": "verified identity, coordinates, depths and water levels for boreholes 2 HG and No.3 HG"
+        },
+        {
+          "source_id": "SOF-S003",
+          "authority": "Минно-геоложки университет",
+          "type": "scientific_hydrogeological_publication",
+          "role": "regional geological and hydrothermal context: Gutsal pluton granitoids, fault-zone setting and deep borehole system"
+        }
+      ]
+    },
+    {
+      "regional_model_id": "belchinski-bani",
+      "identity": {
+        "name": "Белчински бани",
+        "model_type": "regional mineral / thermal hydrogeological model",
+        "district": "София",
+        "municipality": "Самоков"
+      },
+      "evidence_base": {
+        "facility_count": 2,
+        "facility_ids": [
+          "mw_7d772acf30e340ba",
+          "mw_0e65830ed00da652"
+        ],
+        "evidence_scope": "verified mineral-water facilities and official balneological / hydrogeological documentation",
+        "reference_borehole": {
+          "facility_id": "mw_0e65830ed00da652",
+          "name": "Сондаж №1хг",
+          "total_depth_m": 418.7
+        }
+      },
+      "system_framework": {
+        "system_type": "pressurized fracture-vein thermal mineral-water system",
+        "geological_host": "granodioritic crystalline rocks",
+        "structural_context": "thermal-water circulation is associated with tectonically fractured granodiorites",
+        "interpretation_scope": "deposit-scale hydrogeological framework; exact fractured intervals in the reference borehole must not be transferred to another selected point"
+      },
+      "synthesis": {
+        "collector_model": {
+          "status": "SUPPORTED",
+          "collector_type": "fracture-vein granodiorite collector",
+          "conclusion": "Official evidence supports a fracture-vein mineral-water collector developed in fractured granodioritic rocks. The reference borehole documents a collector interval within the deep granodioritic section, with stronger tectonic fracturing in its lower part.",
+          "interpretation_limit": "The exact documented interval belongs only to the reference borehole and is not a target depth for another property."
+        },
+        "structural_model": {
+          "status": "SUPPORTED",
+          "conclusion": "The mineral-water system is structurally controlled by tectonic fracturing in granodioritic rocks.",
+          "interpretation_limit": "Regional structural control does not prove that every nearby selected point intersects a productive fracture."
+        },
+        "temperature_model": {
+          "status": "SUPPORTED",
+          "regional_temperature_c": 40.7,
+          "conclusion": "The verified Belchinski Bani reference system supports a thermal-water temperature context around 40.7 C. This value characterizes the established system and must not be assigned directly to another selected coordinate.",
+          "temperature_gradient_status": "NOT_DEFENSIBLE_FROM_CURRENT_DATA"
+        },
+        "artesian_pressure_model": {
+          "status": "SUPPORTED",
+          "conclusion": "Official hydrogeological evidence supports a pressurized mineral-water system at Belchinski Bani. Pressure conditions must still be treated as spatially variable and not assigned uniformly across the surrounding area."
+        },
+        "deep_system_evidence": {
+          "status": "SUPPORTED",
+          "conclusion": "The reference borehole reaches 418.7 m and confirms a deep crystalline thermal-water system.",
+          "interpretation_limit": "Total borehole depth does not define mineral-water depth at another selected point."
+        },
+        "cold_over_thermal_water": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "No reviewed evidence currently demonstrates a separate shallow cold-water layer above the thermal system."
+        },
+        "depth_model": {
+          "status": "NO_TARGET_DEPTH_MODEL",
+          "conclusion": "The documented deep collector interval and total borehole depth are facility-specific and must not be converted into a target drilling depth for another property."
+        },
+        "mixing_model": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "Current evidence does not justify a regional model of mixing between separate thermal horizons."
+        }
+      },
+      "research_status": "REGIONAL_MINERAL_CONTEXT_SUPPORTED",
+      "next_research_tasks": [
+        "Search for validated sanitary-protection-zone or other official spatial geometry.",
+        "Search for additional facility-level pressure evidence.",
+        "Search for independent structural mapping relevant to the thermal system.",
+        "Preserve exact reference-borehole collector depths as facility-specific evidence only."
+      ],
+      "regional_model_scope": {
+        "scope_type": "deposit_reference_context_without_validated_polygon",
+        "scope_role": "regional_context_only",
+        "deposit": "Белчински бани",
+        "spatial_geometry_status": "NO_VALIDATED_REGIONAL_POLYGON_STORED",
+        "interpretation_limit": "The model supports mineral-potential interpretation near the documented Belchinski Bani system. It does not prove mineral water, exact depth, exact temperature, discharge or productive fracture at a selected property."
+      }
+    },
+    {
+      "regional_model_id": "belchin-verila",
+      "identity": {
+        "name": "Белчин-Верила",
+        "model_type": "regional mineral / thermal hydrogeological model",
+        "district": "София",
+        "municipality": "Самоков"
+      },
+      "evidence_base": {
+        "facility_count": 1,
+        "facility_ids": [
+          "mw_7cfe8c41b771290b"
+        ],
+        "evidence_scope": "verified mineral-water facility and official balneological documentation"
+      },
+      "system_framework": {
+        "system_type": "documented mineral-water system distinct from Belchinski Bani",
+        "system_relationship": "separate nearby thermal regime within the wider Belchin area",
+        "interpretation_scope": "Belchin-Verila must not be merged automatically with Belchinski Bani into one uniform thermal field"
+      },
+      "synthesis": {
+        "temperature_model": {
+          "status": "SUPPORTED",
+          "technical_temperature_c": 45.0,
+          "sample_temperature_c": 43.0,
+          "conclusion": "Belchin-Verila is documented with a somewhat hotter thermal regime than Belchinski Bani. The difference supports real spatial variation of the thermal system in the wider Belchin area.",
+          "interpretation_limit": "These values apply to the documented facility/system and must not be assigned directly to arbitrary selected points."
+        },
+        "system_separation_model": {
+          "status": "SUPPORTED",
+          "conclusion": "Belchin-Verila is a separate documented mineral-water system from Belchinski Bani. A selected point in the wider Belchin area should be evaluated according to proximity and hydrogeological relationship to the relevant system rather than by applying one common thermal regime."
+        },
+        "collector_model": {
+          "status": "INSUFFICIENT_EXACT_REGIONAL_EVIDENCE",
+          "conclusion": "Current reviewed evidence is insufficient to define an independent exact regional collector model for Belchin-Verila."
+        },
+        "structural_model": {
+          "status": "INSUFFICIENT_EXACT_REGIONAL_EVIDENCE",
+          "conclusion": "No additional structural interpretation is stored beyond the documented separation from Belchinski Bani."
+        },
+        "artesian_pressure_model": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "Current reviewed evidence is insufficient to assign a uniform artesian regime to the Belchin-Verila regional model."
+        },
+        "cold_over_thermal_water": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "No reviewed evidence demonstrates a separate shallow cold-water system overlying the mineral-water system."
+        },
+        "depth_model": {
+          "status": "NO_TARGET_DEPTH_MODEL",
+          "conclusion": "No exact mineral-water depth is assigned to arbitrary selected points."
+        }
+      },
+      "research_status": "REGIONAL_MINERAL_CONTEXT_PARTIALLY_SUPPORTED",
+      "next_research_tasks": [
+        "Search for official regional collector description.",
+        "Search for explicit structural/fault control.",
+        "Search for validated spatial geometry.",
+        "Keep Belchin-Verila separate from Belchinski Bani in point-based potential analysis."
+      ],
+      "regional_model_scope": {
+        "scope_type": "deposit_reference_context_without_validated_polygon",
+        "scope_role": "regional_context_only",
+        "deposit": "Белчин-Верила",
+        "spatial_geometry_status": "NO_VALIDATED_REGIONAL_POLYGON_STORED",
+        "interpretation_limit": "The model supports regional mineral-potential interpretation near the documented Belchin-Verila system. It does not prove mineral water, exact depth, exact temperature or discharge at a selected property."
+      }
+    },
+    {
+      "regional_model_id": "dolna-banya",
+      "identity": {
+        "name": "Долна баня",
+        "model_type": "regional mineral / thermal hydrogeological model",
+        "district": "София",
+        "municipality": "Долна баня"
+      },
+      "evidence_base": {
+        "facility_count": 3,
+        "facility_ids": [
+          "mw_07544739efd28920",
+          "mw_9b238e499c073ecb",
+          "mw_a7d5b002d3dfb0da"
+        ],
+        "main_thermal_system_facility_ids": [
+          "mw_07544739efd28920",
+          "mw_9b238e499c073ecb"
+        ],
+        "distinct_cooler_context_facility_ids": [
+          "mw_a7d5b002d3dfb0da"
+        ],
+        "evidence_scope": "verified mineral-water facilities plus official deposit-scale hydrogeological and balneological context"
+      },
+      "system_framework": {
+        "system_type": "pressurized fracture-controlled thermal groundwater system with deep circulation",
+        "regional_position": "northwestern part of the Kostenets-Dolna Banya basin",
+        "geological_framework": "thermal-water circulation is associated with fractured crystalline and metamorphic rocks of the Rila-Rhodope basement and granitoid bodies",
+        "recharge_model": "predominantly meteoric recharge from the higher parts of Rila followed by deep circulation toward the Dolna Banya discharge area",
+        "structural_context": "regional mineral-water movement is controlled by fractured and tectonically disturbed crystalline-rock pathways",
+        "interpretation_scope": "deposit-scale framework; does not prove that every selected property intersects a productive fracture or identical thermal-water pathway"
+      },
+      "synthesis": {
+        "collector_model": {
+          "status": "SUPPORTED_AT_REGIONAL_SCALE",
+          "collector_type": "fracture-controlled crystalline / metamorphic thermal-water system",
+          "conclusion": "Regional evidence supports deep circulation through fractured crystalline and metamorphic rocks and granitoids. Productivity is related to structural permeability rather than to one laterally continuous porous aquifer.",
+          "interpretation_limit": "Exact fractured or productive intervals from individual facilities must not be transferred to another selected point."
+        },
+        "structural_model": {
+          "status": "SUPPORTED",
+          "conclusion": "The main Dolna Banya thermal system is structurally controlled by fracture and tectonic pathways in the crystalline basement.",
+          "interpretation_limit": "Regional structural control does not establish an exact productive fault beneath an arbitrary selected coordinate."
+        },
+        "recharge_model": {
+          "status": "SUPPORTED",
+          "conclusion": "Regional recharge is interpreted as predominantly meteoric from the higher parts of Rila, followed by deep circulation through fractured rock systems toward the discharge area."
+        },
+        "temperature_model": {
+          "status": "SUPPORTED",
+          "main_thermal_field_c": {
+            "approx_min": 59.7,
+            "approx_max": 62.9
+          },
+          "conclusion": "The main Dolna Banya thermal field is characterized regionally by water around 60 C. This range describes the established thermal system and must not be assigned directly to an arbitrary selected point.",
+          "temperature_gradient_status": "NOT_DEFENSIBLE_FROM_CURRENT_DATA"
+        },
+        "artesian_pressure_model": {
+          "status": "SUPPORTED",
+          "conclusion": "The main Dolna Banya system has documented pressurized / artesian behavior. Hydraulic head must still be treated as spatially variable rather than assigned uniformly across the area."
+        },
+        "deep_system_evidence": {
+          "status": "SUPPORTED",
+          "conclusion": "The established thermal system includes deep mineral-water circulation demonstrated by the documented facilities and crystalline-basement hydrogeological setting.",
+          "interpretation_limit": "Individual borehole total depths are evidence of system scale only and are not target depths for another property."
+        },
+        "distinct_local_subsystem": {
+          "status": "SUPPORTED_AS_DISTINCT_LOCAL_CONTEXT",
+          "name": "Бялата вода",
+          "facility_id": "mw_a7d5b002d3dfb0da",
+          "temperature_context_c": 22.0,
+          "geological_context": "Paleogene sedimentary setting with sandstone collector context",
+          "structural_context": "regional association with the basin structural setting and the Maritsa suture context",
+          "conclusion": "The markedly cooler Byalata Voda occurrence demonstrates that the wider Dolna Banya area does not represent one uniform thermal regime. The cooler local subsystem must not be merged automatically with the hotter main Dolna Banya thermal field.",
+          "spatial_limit": "The exact spatial influence of the Byalata Voda subsystem remains unresolved because reliable facility-level coordinates are not yet established."
+        },
+        "thermal_regime_variability": {
+          "status": "SUPPORTED",
+          "conclusion": "The contrast between the main approximately 60 C thermal field and the cooler approximately 22 C Byalata Voda context demonstrates real hydrogeological variability within the wider Dolna Banya area.",
+          "interpretation_limit": "This variability does not by itself prove two vertically stacked thermal horizons beneath any arbitrary selected property."
+        },
+        "cold_over_thermal_water": {
+          "status": "NOT_DEMONSTRATED_AS_VERTICAL_RELATION",
+          "conclusion": "The cooler Byalata Voda occurrence must not be interpreted automatically as shallow cold water directly overlying the main thermal system. Current evidence supports spatially distinct hydrogeological regimes, not a proven vertical cold-over-thermal sequence at one point."
+        },
+        "depth_model": {
+          "status": "NO_TARGET_DEPTH_MODEL",
+          "conclusion": "No exact thermal-water depth is assigned to a selected point. Nearby borehole depths and deep-system evidence provide regional context only."
+        },
+        "mixing_model": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "conclusion": "Current reviewed evidence is insufficient to demonstrate hydraulic mixing between the main hot field and the cooler Byalata Voda subsystem."
+        },
+        "collector_relationships": {
+          "status": "MULTIPLE_HYDROGEOLOGICAL_CONTEXTS_SUPPORTED",
+          "conclusion": "The wider Dolna Banya area contains at least two contrasting hydrogeological contexts: a hot fracture-controlled crystalline-basement system and a cooler sedimentary/sandstone-associated context at Byalata Voda. Hydraulic equivalence between them is not assumed."
+        }
+      },
+      "research_status": "REGIONAL_MINERAL_CONTEXT_SUPPORTED",
+      "next_research_tasks": [
+        "Search for validated sanitary-protection-zone or other official spatial geometry for the main Dolna Banya field.",
+        "Resolve reliable facility-level coordinates for Byalata Voda if authoritative evidence becomes available.",
+        "Search for explicit hydraulic-connection evidence between facilities.",
+        "Search for depth-specific evidence relevant to exact productive fracture zones.",
+        "Do not interpret the 22 C Byalata Voda occurrence as a vertical cold-over-thermal layer without direct evidence."
+      ],
+      "regional_model_scope": {
+        "scope_type": "deposit_reference_context_without_validated_polygon",
+        "scope_role": "regional_context_only",
+        "deposit": "Долна баня",
+        "spatial_geometry_status": "NO_VALIDATED_REGIONAL_POLYGON_STORED",
+        "interpretation_limit": "The model supports point-based mineral-potential interpretation near the documented Dolna Banya thermal system. It does not prove mineral water at a selected property and does not establish exact local depth, temperature, discharge, productive fracture or hydraulic connection to Byalata Voda."
       }
     }
   ]

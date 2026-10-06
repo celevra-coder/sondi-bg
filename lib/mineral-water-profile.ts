@@ -280,8 +280,15 @@ function findRegionalMineralModelForCoordinates(
     return null;
   }
 
-  return (
-    regionalModels().find(model => {
+  const models = regionalModels();
+
+  /*
+   * Priority 1:
+   * use an explicitly validated polygon trigger when one
+   * exists. This remains the strongest spatial evidence.
+   */
+  const polygonMatch =
+    models.find(model => {
       const scope = model.regional_model_scope;
       const geometry = scope?.geometry;
 
@@ -300,8 +307,90 @@ function findRegionalMineralModelForCoordinates(
         longitude,
         geometry.coordinates
       );
-    }) ?? null
-  );
+    }) ?? null;
+
+  if (polygonMatch) {
+    return polygonMatch;
+  }
+
+  /*
+   * Priority 2:
+   * models without validated geometry may participate only
+   * through their own documented facilities.
+   *
+   * No municipality-wide activation, settlement-name match
+   * or invented buffer is used here.
+   *
+   * The 30 km ceiling matches the existing area-analysis
+   * evidence window:
+   *   0-5 km   local context
+   *   5-15 km  regional context
+   *   15-30 km broad context
+   */
+  const facilitiesById =
+    new Map(
+      records()
+        .map(facilityContext)
+        .filter(
+          item =>
+            item.latitude !== null &&
+            item.longitude !== null
+        )
+        .map(item => [
+          item.mineralId,
+          item,
+        ])
+    );
+
+  let best:
+    | {
+        model: MineralRegionalModel;
+        distanceKm: number;
+      }
+    | null = null;
+
+  for (const model of models) {
+    const facilityIds =
+      model.evidence_base?.facility_ids ?? [];
+
+    for (const mineralId of facilityIds) {
+      const facility =
+        facilitiesById.get(mineralId);
+
+      if (
+        !facility ||
+        facility.latitude === null ||
+        facility.longitude === null
+      ) {
+        continue;
+      }
+
+      const modelDistanceKm =
+        distanceKm(
+          latitude,
+          longitude,
+          facility.latitude,
+          facility.longitude
+        );
+
+      if (
+        modelDistanceKm > 30 ||
+        (
+          best !== null &&
+          modelDistanceKm >= best.distanceKm
+        )
+      ) {
+        continue;
+      }
+
+      best = {
+        model,
+        distanceKm: modelDistanceKm,
+      };
+    }
+  }
+
+  return best?.model ?? null;
 }
 
 function s(v: unknown): string | null {

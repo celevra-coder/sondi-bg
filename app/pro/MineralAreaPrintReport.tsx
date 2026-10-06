@@ -175,6 +175,209 @@ export default function MineralAreaPrintReport({
       .join(" ")
       .toLocaleLowerCase("bg");
 
+  const regionalModel =
+    profile.regionalModel;
+
+  const regionalScope =
+    regionalModel?.regional_model_scope;
+
+  const regionalSynthesis =
+    (regionalModel?.synthesis ?? {}) as any;
+
+  const regionalModelName =
+    String(
+      regionalModel?.identity?.name ??
+      regionalScope?.deposit ??
+      ""
+    ).trim();
+
+  const regionalEvidenceCount =
+    regionalModel?.evidence_base?.facility_count ??
+    regionalModel?.evidence_base?.facility_ids?.length ??
+    0;
+
+  const regionalFacilityIds =
+    new Set(
+      regionalModel?.evidence_base?.facility_ids ?? []
+    );
+
+  const regionalNearestFacility =
+    profile.nearbyFacilities.find(
+      item =>
+        regionalFacilityIds.has(
+          item.mineralId
+        )
+    ) ?? null;
+
+  const modelStatus = (
+    value: any
+  ): string =>
+    String(value?.status ?? "")
+      .trim()
+      .toUpperCase();
+
+  const modelSupported = (
+    value: any
+  ): boolean => {
+    const status = modelStatus(value);
+
+    return (
+      status.includes("SUPPORTED") &&
+      !status.includes("INSUFFICIENT")
+    );
+  };
+
+  const modelUnresolved = (
+    value: any
+  ): boolean => {
+    const status = modelStatus(value);
+
+    return (
+      status.includes("UNRESOLVED") ||
+      status.includes("INSUFFICIENT")
+    );
+  };
+
+  const regionalTemperatureText = (() => {
+    const model =
+      regionalSynthesis.temperature_model;
+
+    if (!model || typeof model !== "object") {
+      return null;
+    }
+
+    const range =
+      model.regional_temperature_range_c ??
+      model.main_thermal_field_c ??
+      null;
+
+    if (range && typeof range === "object") {
+      const min = Number(
+        range.min ?? range.approx_min
+      );
+
+      const max = Number(
+        range.max ?? range.approx_max
+      );
+
+      if (
+        Number.isFinite(min) &&
+        Number.isFinite(max)
+      ) {
+        return min === max
+          ? `Регионален температурен контекст: около ${fmt(min)} °C.`
+          : `Регионален температурен контекст: приблизително ${fmt(min)}–${fmt(max)} °C.`;
+      }
+    }
+
+    const single =
+      Number(model.regional_temperature_c);
+
+    if (Number.isFinite(single)) {
+      return `Регионален температурен контекст: около ${fmt(single)} °C.`;
+    }
+
+    const technical =
+      Number(model.technical_temperature_c);
+
+    const sample =
+      Number(model.sample_temperature_c);
+
+    if (
+      Number.isFinite(technical) &&
+      Number.isFinite(sample)
+    ) {
+      return `Документиран температурен контекст: приблизително ${fmt(sample)}–${fmt(technical)} °C.`;
+    }
+
+    return null;
+  })();
+
+  const regionalPrintFacts =
+    regionalModel
+      ? [
+          regionalTemperatureText,
+
+          modelSupported(
+            regionalSynthesis.collector_model
+          )
+            ? "Колекторният / водоносният контекст е подкрепен на регионално ниво."
+            : modelUnresolved(
+                  regionalSynthesis.collector_model
+                )
+              ? "Колекторната среда е известна частично, но точната хидравлична роля остава неуточнена."
+              : null,
+
+          modelSupported(
+            regionalSynthesis.structural_model
+          )
+            ? "Структурният или разломният контрол е подкрепен."
+            : modelUnresolved(
+                  regionalSynthesis.structural_model
+                )
+              ? "Има структурни данни, но хидравличната им роля не е напълно доказана."
+              : null,
+
+          modelSupported(
+            regionalSynthesis
+              .artesian_pressure_model
+          )
+            ? "Наличен е подкрепен напорен / артезиански контекст."
+            : null,
+
+          regionalSynthesis
+            ?.system_separation_model
+            ?.status === "SUPPORTED"
+            ? "Системата е документирана като отделен термален режим и не се слива автоматично със съседните находища."
+            : null,
+
+          regionalSynthesis
+            ?.distinct_local_subsystem
+            ?.status ===
+              "SUPPORTED_AS_DISTINCT_LOCAL_CONTEXT"
+            ? (
+                `Документиран е и отделен локален контекст „${
+                  regionalSynthesis
+                    .distinct_local_subsystem
+                    .name ?? "локална подсистема"
+                }“${
+                  Number.isFinite(
+                    Number(
+                      regionalSynthesis
+                        .distinct_local_subsystem
+                        .temperature_context_c
+                    )
+                  )
+                    ? ` около ${fmt(
+                        Number(
+                          regionalSynthesis
+                            .distinct_local_subsystem
+                            .temperature_context_c
+                        )
+                      )} °C`
+                    : ""
+                }, който не се приема за вертикален слой под избраната точка.`
+              )
+            : null,
+        ]
+          .filter(Boolean)
+          .join(" ")
+      : null;
+
+  const regionalPrintCaveat =
+    regionalModel
+      ? (
+          regionalNearestFacility
+            ? `Най-близкото собствено доказано съоръжение на този регионален модел е на приблизително ${fmt(
+                regionalNearestFacility.distanceKm,
+                2
+              )} km от избраната точка. Регионалните данни не определят автоматично локална дълбочина, температура или дебит.`
+            : regionalScope?.geometry
+              ? "Моделът е приложен чрез валидирана пространствена геометрия. Попадането в регионалния обхват не доказва минерална вода точно под имота."
+              : "Моделът се използва само като регионален контекст и не представлява локална прогноза."
+        )
+      : null;
+
   let score = 0;
 
   if (nearest) {
@@ -182,7 +385,7 @@ export default function MineralAreaPrintReport({
       score += 4;
     } else if (nearest.distanceKm <= 5) {
       score += 3;
-    } else if (nearest.distanceKm <= 10) {
+    } else if (nearest.distanceKm <= 15) {
       score += 2;
     } else {
       score += 1;
@@ -245,8 +448,8 @@ export default function MineralAreaPrintReport({
 
   const objectsText =
     nearest
-      ? `Най-близкият известен минерален обект е „${nearest.name}“ на приблизително ${fmt(nearest.distanceKm, 2)} km. В радиус до 1 km има ${profile.within1Km} локализирани обекта, до 5 km — ${profile.within5Km}, до 10 km — ${profile.within15Km}, а до 25 km — ${profile.within30Km}.`
-      : `В радиус до 25 km в наличната база не е намерено локализирано минерално съоръжение.`;
+      ? `Най-близкият известен минерален обект е „${nearest.name}“ на приблизително ${fmt(nearest.distanceKm, 2)} km. В радиус до 1 km има ${profile.within1Km} локализирани обекта, до 5 km — ${profile.within5Km}, до 15 km — ${profile.within15Km}, а до 30 km — ${profile.within30Km}.`
+      : `В радиус до 30 km в наличната база не е намерено локализирано минерално съоръжение.`;
 
   const temperatureText =
     profile.temperatureMin !== null &&
@@ -487,11 +690,11 @@ export default function MineralAreaPrintReport({
                 value={profile.within5Km}
               />
               <Row
-                label="Обекти до 10 km"
+                label="Обекти до 15 km"
                 value={profile.within15Km}
               />
               <Row
-                label="Обекти до 25 km"
+                label="Обекти до 30 km"
                 value={profile.within30Km}
               />
               <Row
@@ -602,8 +805,40 @@ export default function MineralAreaPrintReport({
           </div>
         </section>
 
+        {regionalModel && (
+          <section className="mineral-print-section allow-break">
+            <h2>6. Регионален хидрогеоложки модел</h2>
+
+            <div className="mineral-print-context">
+              <strong>
+                {regionalModelName ||
+                  regionalModel.regional_model_id}
+              </strong>
+              <br />
+              {regionalEvidenceCount > 0
+                ? `Моделът е подкрепен от ${regionalEvidenceCount} документирани минерални съоръжения или референтни обекта. `
+                : ""}
+              {regionalPrintFacts ||
+                "Наличен е проверен регионален хидрогеоложки контекст."}
+            </div>
+
+            {regionalPrintCaveat && (
+              <div className="mineral-print-warning">
+                <strong>
+                  Обхват и ограничения:
+                </strong>{" "}
+                {regionalPrintCaveat}
+              </div>
+            )}
+          </section>
+        )}
+
         <section className="mineral-print-section allow-break">
-          <h2>6. Аналитично обобщение</h2>
+          <h2>
+            {regionalModel
+              ? "7. Аналитично обобщение"
+              : "6. Аналитично обобщение"}
+          </h2>
 
           <div className="mineral-print-warning">
             <strong>

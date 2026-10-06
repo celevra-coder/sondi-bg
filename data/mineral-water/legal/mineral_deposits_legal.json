@@ -1,4 +1,4 @@
-﻿{
+{
   "schema_version": 1,
   "description": "Canonical deposit-level legal layer for Bulgarian mineral-water deposits. Facility data remains authoritative in mineral_water_master.json.",
   "canonicalization_policy": {
@@ -3519,7 +3519,6 @@
         "mw_3d2fd9e104babac4",
         "mw_449a7620c51854e6",
         "mw_4d6ebd84b510fcd3",
-        "mw_55a6f4199e15ebdf",
         "mw_6c2b1233b58312b9",
         "mw_6ccfd55c8543115b",
         "mw_83e99660a917f78c",
@@ -3528,10 +3527,8 @@
         "mw_b6d1806bb8db81de",
         "mw_b81e38817110acf3",
         "mw_d00fba72901dbba8",
-        "mw_d37217d537570d4b",
         "mw_d39f24f7a75f8c49",
         "mw_d8a5817d2daf534c",
-        "mw_e122f13a229d26e6",
         "mw_f5fa69f1032d4f15"
       ],
       "location_context": {
@@ -3661,6 +3658,7 @@
           },
           "management_research_status": "DELEGATION_DECISION_CONFIRMED_TERM_COVERS_2026_09_18",
           "facility_ids": [
+            "mw_0334e43a6e5fcf61",
             "mw_ae215efe14432a07",
             "mw_83e99660a917f78c",
             "mw_b81e38817110acf3",
@@ -3687,17 +3685,7 @@
             "С-48хг",
             "С-63хг"
           ],
-          "duplicate_facility_candidates": [
-            {
-              "official_name": "С-11в",
-              "candidate_ids": [
-                "mw_0334e43a6e5fcf61",
-                "mw_e122f13a229d26e6",
-                "mw_55a6f4199e15ebdf",
-                "mw_d37217d537570d4b"
-              ]
-            }
-          ],
+          "duplicate_facility_candidates": [],
           "sources": [
             {
               "source_type": "MOEW_ART133_DELEGATION_DECISION",

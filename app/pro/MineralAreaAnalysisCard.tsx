@@ -162,6 +162,230 @@ export default function MineralAreaAnalysisCard({
   const regionalScope =
     regionalModel?.regional_model_scope;
 
+  const regionalSynthesis =
+    (regionalModel?.synthesis ?? {}) as any;
+
+  const regionalModelName =
+    String(
+      regionalModel?.identity?.name ??
+      regionalScope?.deposit ??
+      ""
+    ).trim();
+
+  const regionalModelFacilityIds =
+    new Set(
+      regionalModel?.evidence_base?.facility_ids ?? []
+    );
+
+  const regionalModelNearestFacility =
+    profile.nearbyFacilities.find(
+      item =>
+        regionalModelFacilityIds.has(
+          item.mineralId
+        )
+    ) ?? null;
+
+  const regionalStatus = (
+    value: any
+  ): string =>
+    String(value?.status ?? "")
+      .trim()
+      .toUpperCase();
+
+  const statusSupported = (
+    value: any
+  ): boolean => {
+    const status = regionalStatus(value);
+
+    return (
+      status.includes("SUPPORTED") &&
+      !status.includes("INSUFFICIENT")
+    );
+  };
+
+  const statusUnresolved = (
+    value: any
+  ): boolean => {
+    const status = regionalStatus(value);
+
+    return (
+      status.includes("UNRESOLVED") ||
+      status.includes("INSUFFICIENT")
+    );
+  };
+
+  const regionalTemperatureText = (() => {
+    const model =
+      regionalSynthesis.temperature_model;
+
+    if (!model || typeof model !== "object") {
+      return null;
+    }
+
+    const range =
+      model.regional_temperature_range_c ??
+      model.main_thermal_field_c ??
+      null;
+
+    if (range && typeof range === "object") {
+      const min = Number(
+        range.min ?? range.approx_min
+      );
+
+      const max = Number(
+        range.max ?? range.approx_max
+      );
+
+      if (
+        Number.isFinite(min) &&
+        Number.isFinite(max)
+      ) {
+        return min === max
+          ? `Регионалният температурен контекст е около ${fmt(min)} °C.`
+          : `Регионалният температурен контекст е приблизително ${fmt(min)}–${fmt(max)} °C.`;
+      }
+    }
+
+    const single =
+      Number(model.regional_temperature_c);
+
+    if (Number.isFinite(single)) {
+      return `Регионалният температурен контекст е около ${fmt(single)} °C.`;
+    }
+
+    const technical =
+      Number(model.technical_temperature_c);
+
+    const sample =
+      Number(model.sample_temperature_c);
+
+    if (
+      Number.isFinite(technical) &&
+      Number.isFinite(sample)
+    ) {
+      return `Документираният температурен контекст е приблизително ${fmt(sample)}–${fmt(technical)} °C.`;
+    }
+
+    if (Number.isFinite(technical)) {
+      return `Документираната техническа температура е около ${fmt(technical)} °C.`;
+    }
+
+    return null;
+  })();
+
+  const regionalModelFacts =
+    regionalModel
+      ? [
+          regionalTemperatureText,
+
+          statusSupported(
+            regionalSynthesis.collector_model
+          )
+            ? "Регионалният модел съдържа подкрепен колекторен / водоносен контекст."
+            : statusUnresolved(
+                  regionalSynthesis.collector_model
+                )
+              ? "Колекторната среда е частично известна, но точната ѝ хидравлична роля или продуктивен интервал не са достатъчно доказани."
+              : null,
+
+          statusSupported(
+            regionalSynthesis.structural_model
+          )
+            ? "Структурният или разломният контрол на минералната система е подкрепен от наличните данни."
+            : statusUnresolved(
+                  regionalSynthesis.structural_model
+                )
+              ? "Има структурни данни, но точната им хидравлична роля остава неуточнена."
+              : null,
+
+          statusSupported(
+            regionalSynthesis
+              .artesian_pressure_model
+          )
+            ? "За системата има подкрепен напорен / артезиански хидравличен контекст."
+            : null,
+
+          regionalSynthesis
+            ?.system_separation_model
+            ?.status === "SUPPORTED"
+            ? "Данните показват отделна документирана термална система, която не трябва автоматично да се слива със съседните находища."
+            : null,
+
+          regionalSynthesis
+            ?.distinct_local_subsystem
+            ?.status ===
+              "SUPPORTED_AS_DISTINCT_LOCAL_CONTEXT"
+            ? (
+                `В района е документиран и отделен локален контекст „${
+                  regionalSynthesis
+                    .distinct_local_subsystem
+                    .name ?? "локална подсистема"
+                }“${
+                  Number.isFinite(
+                    Number(
+                      regionalSynthesis
+                        .distinct_local_subsystem
+                        .temperature_context_c
+                    )
+                  )
+                    ? ` с температура около ${fmt(
+                        Number(
+                          regionalSynthesis
+                            .distinct_local_subsystem
+                            .temperature_context_c
+                        )
+                      )} °C`
+                    : ""
+                }, който не се приема автоматично за вертикален слой под избраната точка.`
+              )
+            : null,
+
+          regionalStatus(
+            regionalSynthesis
+              .cold_over_thermal_water
+          ).includes("NOT_DEMONSTRATED")
+            ? "Не е доказана вертикална връзка тип плитка студена вода над термалната система при избраната точка."
+            : null,
+        ]
+          .filter(Boolean)
+          .join(" ")
+      : null;
+
+  const genericRegionalModelInterpretation =
+    regionalModel &&
+    !isOgnyanovoGarmen
+      ? (
+          `За района е приложим регионалният хидрогеоложки модел „${
+            regionalModelName ||
+            regionalModel.regional_model_id
+          }“. ` +
+          (
+            regionalEvidenceCount > 0
+              ? `Моделът е изграден върху ${regionalEvidenceCount} документирани минерални съоръжения или референтни обекта. `
+              : ""
+          ) +
+          (
+            regionalModelFacts ||
+            "Моделът предоставя допълнителен проверен регионален контекст за минералната система."
+          )
+        )
+      : null;
+
+  const genericRegionalScopeCaveat =
+    regionalModel &&
+    !isOgnyanovoGarmen
+      ? (
+          regionalModelNearestFacility
+            ? `Моделът е свързан с избраната точка чрез собствено документирано минерално съоръжение на приблизително ${fmt(
+                regionalModelNearestFacility.distanceKm,
+                2
+              )} km. Това е пространствен регионален контекст, а не доказателство за минерална вода, конкретна дълбочина, температура или дебит под имота.`
+            : regionalScope?.geometry
+              ? "Моделът е активиран чрез наличната валидирана пространствена геометрия. Това не доказва минерална вода или конкретна дълбочина под избраната точка."
+              : "Регионалният модел се използва само като контекст и не се превръща в локална прогноза за дълбочина, температура или дебит."
+        )
+      : null;
+
   const hydroEvidence =
     profile.hydroEvidence || {};
 
@@ -344,7 +568,7 @@ export default function MineralAreaAnalysisCard({
       reasons.push(
         "доказан минерален обект е в радиус до 5 km"
       );
-    } else if (nearest.distanceKm <= 10) {
+    } else if (nearest.distanceKm <= 15) {
       score += 2;
       reasons.push(
         "има доказано минерално проявление в радиус до 15 km"
@@ -1137,6 +1361,41 @@ export default function MineralAreaAnalysisCard({
         </div>
       </Panel>
 
+      {regionalModel &&
+        !isOgnyanovoGarmen &&
+        genericRegionalModelInterpretation && (
+          <Panel title="6. Регионален хидрогеоложки модел">
+            <div
+              style={{
+                padding: 14,
+                background: "#eef7fa",
+                borderLeft: "3px solid #167d96",
+                lineHeight: 1.75,
+              }}
+            >
+              {genericRegionalModelInterpretation}
+            </div>
+
+            {genericRegionalScopeCaveat && (
+              <div
+                style={{
+                  marginTop: 12,
+                  padding: 14,
+                  background: "#fff8e8",
+                  border: "1px solid #ead9a6",
+                  borderRadius: 12,
+                  lineHeight: 1.7,
+                }}
+              >
+                <strong>
+                  Обхват и ограничения:
+                </strong>{" "}
+                {genericRegionalScopeCaveat}
+              </div>
+            )}
+          </Panel>
+        )}
+
       {isOgnyanovoGarmen &&
         regionalModelInterpretation && (
           <Panel title="6. Регионален хидрогеоложки модел">
@@ -1203,7 +1462,7 @@ export default function MineralAreaAnalysisCard({
             fontSize: 21,
           }}
         >
-          {isOgnyanovoGarmen
+          {regionalModel
             ? "7. Аналитично обобщение"
             : "6. Аналитично обобщение"}
         </h2>
