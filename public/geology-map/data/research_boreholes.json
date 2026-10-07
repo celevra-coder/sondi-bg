@@ -2694,6 +2694,685 @@
         "usage": "Site-specific lithological and structural analogue",
         "warning": "Fractured rock and open-hole intervals are not automatically separate aquifers."
       }
+    },
+    {
+      "borehole_id": "SOF-LITH-002",
+      "name_bg": "Сондаж №13хг – находище Долна баня",
+      "oblast": "София",
+      "region_code": "Sofia",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 279.2,
+      "coordinates": {
+        "latitude": 42.311068990513,
+        "longitude": 23.774985936602,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "sofia_lithology_research"
+      },
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 31.0,
+          "expected_material_bg": "Чакъли и валуни с песъчлив запълнител, алувий",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S005"
+          ]
+        },
+        {
+          "depth_from_m": 31.0,
+          "depth_to_m": 50.0,
+          "expected_material_bg": "Глинести пясъци",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S005"
+          ]
+        },
+        {
+          "depth_from_m": 50.0,
+          "depth_to_m": 114.4,
+          "expected_material_bg": "Редуване на глини и пясъци",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S005"
+          ]
+        },
+        {
+          "depth_from_m": 114.4,
+          "depth_to_m": 116.5,
+          "expected_material_bg": "Биотитови шисти",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S005"
+          ]
+        },
+        {
+          "depth_from_m": 116.5,
+          "depth_to_m": 121.5,
+          "expected_material_bg": "Тектонска зона",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S005"
+          ]
+        },
+        {
+          "depth_from_m": 121.5,
+          "depth_to_m": 184.4,
+          "expected_material_bg": "Биотитови шисти",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S005"
+          ]
+        },
+        {
+          "depth_from_m": 184.4,
+          "depth_to_m": 192.8,
+          "expected_material_bg": "Пегматити, силно напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S005"
+          ]
+        },
+        {
+          "depth_from_m": 192.8,
+          "depth_to_m": 265.9,
+          "expected_material_bg": "Биотитови шисти",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S005"
+          ]
+        },
+        {
+          "depth_from_m": 265.9,
+          "depth_to_m": 271.9,
+          "expected_material_bg": "Аплити",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S005"
+          ]
+        },
+        {
+          "depth_from_m": 271.9,
+          "depth_to_m": 279.2,
+          "expected_material_bg": "Амфиболити",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S005"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "borehole_construction": {
+        "total_depth_m": 279.2,
+        "construction_year": 1978,
+        "casing_intervals": [
+          {
+            "from_m": 0.0,
+            "to_m": 45.9,
+            "diameter_mm": 168
+          },
+          {
+            "from_m": 45.9,
+            "to_m": 116.0,
+            "diameter_mm": 146
+          }
+        ],
+        "cemented_to_m": 116.0,
+        "open_hole_intervals": [
+          {
+            "from_m": 116.0,
+            "to_m": 279.2,
+            "diameter_mm": 130
+          }
+        ],
+        "source_ids": [
+          "SOF-S005"
+        ]
+      },
+      "collector": null,
+      "groundwater_discharge": null,
+      "hydraulic_intervals": [],
+      "intake_intervals": [],
+      "structural_intervals": [],
+      "water_temperature": null,
+      "hydro_notes_bg": "Хидравлични интервали не се извеждат автоматично от филтри, открит ствол, пукнатини или конструктивни интервали.",
+      "expert_context": {
+        "municipality_bg": "Долна баня",
+        "settlement_bg": "Долна баня",
+        "usage": "Verified site-specific borehole lithology analogue for Sofia Province",
+        "warning": "Exact documented lithological profile. Borehole construction, open-hole sections, filters, fractures and water-intake construction are preserved separately and must not be interpreted automatically as aquifer or inflow intervals.",
+        "research_profile_id": "SOF-LITH-002",
+        "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE"
+      }
+    },
+    {
+      "borehole_id": "SOF-LITH-003",
+      "name_bg": "Белчински бани – Сондаж №1хг",
+      "oblast": "София",
+      "region_code": "Sofia",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 418.7,
+      "coordinates": {
+        "latitude": 42.3670222,
+        "longitude": 23.4135389,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "sofia_lithology_research"
+      },
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 8.0,
+          "expected_material_bg": "Сивокафяви песъчливи глини със заоблени скални късове",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S007"
+          ]
+        },
+        {
+          "depth_from_m": 8.0,
+          "depth_to_m": 20.0,
+          "expected_material_bg": "Дребнозърнести и едрозърнести глинести пясъци",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S007"
+          ]
+        },
+        {
+          "depth_from_m": 20.0,
+          "depth_to_m": 22.0,
+          "expected_material_bg": "Едрозърнести гравийни пясъци",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S007"
+          ]
+        },
+        {
+          "depth_from_m": 22.0,
+          "depth_to_m": 29.0,
+          "expected_material_bg": "Сивокафяви песъчливи глини",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S007"
+          ]
+        },
+        {
+          "depth_from_m": 29.0,
+          "depth_to_m": 121.0,
+          "expected_material_bg": "Пясъчници със слаба глинеста спойка, прослойки от гравий и едрозърнести пясъчници; напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S007"
+          ]
+        },
+        {
+          "depth_from_m": 121.0,
+          "depth_to_m": 186.0,
+          "expected_material_bg": "Средно до едрозърнести пясъчници с конгломератни прослойки и късове от диорити, гранитогнайси и гнайси",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S007"
+          ]
+        },
+        {
+          "depth_from_m": 186.0,
+          "depth_to_m": 198.1,
+          "expected_material_bg": "Едрозърнести пясъци с прослойки от въглища и чакълни късове",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S007"
+          ]
+        },
+        {
+          "depth_from_m": 198.1,
+          "depth_to_m": 237.5,
+          "expected_material_bg": "Средно и едрозърнести пясъчници с глинеста спойка и конгломератни прослойки",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S007"
+          ]
+        },
+        {
+          "depth_from_m": 237.5,
+          "depth_to_m": 303.5,
+          "expected_material_bg": "Конгломерати с глинесто-песъчлива спойка",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S007"
+          ]
+        },
+        {
+          "depth_from_m": 303.5,
+          "depth_to_m": 362.0,
+          "expected_material_bg": "Среднозърнести гранодиорити, слабо напукани; много пукнатини са запълнени с калцит",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S007"
+          ]
+        },
+        {
+          "depth_from_m": 362.0,
+          "depth_to_m": 418.7,
+          "expected_material_bg": "Среднозърнести гранодиорити, силно тектонски напукани",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S007"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "borehole_construction": {
+        "total_depth_m": 418.7,
+        "construction_year": 1964,
+        "casing_intervals": [
+          {
+            "from_m": 0.0,
+            "to_m": 29.0,
+            "diameter_mm": 146,
+            "cemented": true
+          },
+          {
+            "from_m": 29.0,
+            "to_m": 313.2,
+            "diameter_mm": 127
+          }
+        ],
+        "cemented_interval_m": {
+          "from_m": 250.0,
+          "to_m": 313.0
+        },
+        "open_hole_intervals": [
+          {
+            "from_m": 313.2,
+            "to_m": 418.7,
+            "diameter_mm": 108
+          }
+        ],
+        "source_ids": [
+          "SOF-S007"
+        ]
+      },
+      "collector": null,
+      "groundwater_discharge": null,
+      "hydraulic_intervals": [],
+      "intake_intervals": [],
+      "structural_intervals": [],
+      "water_temperature": null,
+      "hydro_notes_bg": "Хидравлични интервали не се извеждат автоматично от филтри, открит ствол, пукнатини или конструктивни интервали.",
+      "expert_context": {
+        "municipality_bg": "Самоков",
+        "settlement_bg": "Белчин",
+        "usage": "Verified site-specific borehole lithology analogue for Sofia Province",
+        "warning": "Exact documented lithological profile. Borehole construction, open-hole sections, filters, fractures and water-intake construction are preserved separately and must not be interpreted automatically as aquifer or inflow intervals.",
+        "research_profile_id": "SOF-LITH-003",
+        "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE"
+      }
+    },
+    {
+      "borehole_id": "SOF-LITH-004",
+      "name_bg": "Сондаж ТК-3 – Костинброд",
+      "oblast": "София",
+      "region_code": "Sofia",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 200.0,
+      "coordinates": {
+        "latitude": 42.79775,
+        "longitude": 23.1719333,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "sofia_lithology_research"
+      },
+      "water_type": "mineral",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 12.0,
+          "expected_material_bg": "Кватернерни материали",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S009"
+          ]
+        },
+        {
+          "depth_from_m": 12.0,
+          "depth_to_m": 145.0,
+          "expected_material_bg": "Неогенски материали – Лозенецка и Новиискърска свита",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S009"
+          ]
+        },
+        {
+          "depth_from_m": 145.0,
+          "depth_to_m": 200.0,
+          "expected_material_bg": "Горнокредни напукани пясъчници със силициева спойка с прослойки от глинести мергели",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S009"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "borehole_construction": {
+        "total_depth_m": 200.0,
+        "construction_year": 2000,
+        "water_intake_below_m": 151.5,
+        "upper_neogene_aquifer_isolated": true,
+        "isolation_method_bg": "Неперфорирана метална тръба и циментация на затръбното пространство",
+        "source_ids": [
+          "SOF-S009"
+        ]
+      },
+      "collector": null,
+      "groundwater_discharge": null,
+      "hydraulic_intervals": [],
+      "intake_intervals": [],
+      "structural_intervals": [],
+      "water_temperature": null,
+      "hydro_notes_bg": "Хидравлични интервали не се извеждат автоматично от филтри, открит ствол, пукнатини или конструктивни интервали.",
+      "expert_context": {
+        "municipality_bg": "Костинброд",
+        "settlement_bg": "Костинброд",
+        "usage": "Verified site-specific borehole lithology analogue for Sofia Province",
+        "warning": "Exact documented lithological profile. Borehole construction, open-hole sections, filters, fractures and water-intake construction are preserved separately and must not be interpreted automatically as aquifer or inflow intervals.",
+        "research_profile_id": "SOF-LITH-004",
+        "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE"
+      }
+    },
+    {
+      "borehole_id": "SOF-LITH-005",
+      "name_bg": "Сондаж №С-11в – Равно поле",
+      "oblast": "София",
+      "region_code": "Sofia",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 550.0,
+      "coordinates": {
+        "latitude": 42.6687381,
+        "longitude": 23.5222372,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "sofia_lithology_research"
+      },
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 73.5,
+          "expected_material_bg": "Песъчливи глини, пясъци, глина с чакъли и чакъли; кватернер",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S010"
+          ]
+        },
+        {
+          "depth_from_m": 73.5,
+          "depth_to_m": 451.7,
+          "expected_material_bg": "Алтернация на глини, песъчливи глини, глинести пясъци и маломощни пясъчни прослойки; неоген",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S010"
+          ]
+        },
+        {
+          "depth_from_m": 451.7,
+          "depth_to_m": 464.7,
+          "expected_material_bg": "Среднозърнести пясъци; неоген",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S010"
+          ]
+        },
+        {
+          "depth_from_m": 464.7,
+          "depth_to_m": 493.0,
+          "expected_material_bg": "Песъчливи глини; неоген",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S010"
+          ]
+        },
+        {
+          "depth_from_m": 493.0,
+          "depth_to_m": 515.0,
+          "expected_material_bg": "Среднозърнести пясъци с песъчливо-глинеста прослойка от 500 до 504 m; неоген",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S010"
+          ]
+        },
+        {
+          "depth_from_m": 515.0,
+          "depth_to_m": 550.0,
+          "expected_material_bg": "Песъчливи глини; неоген",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S010"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "borehole_construction": {
+        "total_depth_m": 550.0,
+        "construction_year": 1966,
+        "drilling_intervals": [
+          {
+            "from_m": 0.0,
+            "to_m": 138.2,
+            "diameter_mm": 150
+          },
+          {
+            "from_m": 138.2,
+            "to_m": 550.0,
+            "diameter_mm": 130
+          }
+        ],
+        "casing_intervals": [
+          {
+            "from_m": 0.0,
+            "to_m": 138.2,
+            "diameter_mm": 146
+          },
+          {
+            "from_m": 0.0,
+            "to_m": 525.0,
+            "diameter_mm": 108
+          }
+        ],
+        "filter_intervals_m": [
+          {
+            "from_m": 451.0,
+            "to_m": 460.0,
+            "diameter_mm": 89
+          },
+          {
+            "from_m": 493.0,
+            "to_m": 497.5,
+            "diameter_mm": 108
+          }
+        ],
+        "source_ids": [
+          "SOF-S010"
+        ]
+      },
+      "collector": null,
+      "groundwater_discharge": null,
+      "hydraulic_intervals": [],
+      "intake_intervals": [],
+      "structural_intervals": [],
+      "water_temperature": null,
+      "hydro_notes_bg": "Хидравлични интервали не се извеждат автоматично от филтри, открит ствол, пукнатини или конструктивни интервали.",
+      "expert_context": {
+        "municipality_bg": "Елин Пелин",
+        "settlement_bg": "Равно поле",
+        "usage": "Verified site-specific borehole lithology analogue for Sofia Province",
+        "warning": "Exact documented lithological profile. Borehole construction, open-hole sections, filters, fractures and water-intake construction are preserved separately and must not be interpreted automatically as aquifer or inflow intervals.",
+        "research_profile_id": "SOF-LITH-005",
+        "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE"
+      }
+    },
+    {
+      "borehole_id": "SOF-LITH-006",
+      "name_bg": "Сондаж №С-55хг – Равно поле",
+      "oblast": "София",
+      "region_code": "Sofia",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 758.0,
+      "coordinates": {
+        "latitude": 42.6717289,
+        "longitude": 23.5295917,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "sofia_lithology_research"
+      },
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 2.0,
+          "expected_material_bg": "Почвен слой",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S011"
+          ]
+        },
+        {
+          "depth_from_m": 2.0,
+          "depth_to_m": 80.0,
+          "expected_material_bg": "Пясъци с прослойки от глини; кватернер",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S011"
+          ]
+        },
+        {
+          "depth_from_m": 80.0,
+          "depth_to_m": 699.6,
+          "expected_material_bg": "Песъчливи глини с прослойки от пясъци; неоген",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S011"
+          ]
+        },
+        {
+          "depth_from_m": 699.6,
+          "depth_to_m": 758.0,
+          "expected_material_bg": "Доломитизирани варовици; триас",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SOF-S011"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "borehole_construction": {
+        "total_depth_m": 758.0,
+        "construction_year": 1985,
+        "drilling_intervals": [
+          {
+            "from_m": 0.0,
+            "to_m": 215.5,
+            "diameter_mm": 170
+          },
+          {
+            "from_m": 215.5,
+            "to_m": 688.5,
+            "diameter_mm": 130
+          },
+          {
+            "from_m": 688.5,
+            "to_m": 758.0,
+            "diameter_mm": 91
+          }
+        ],
+        "casing_intervals": [
+          {
+            "from_m": 0.0,
+            "to_m": 215.5,
+            "diameter_mm": 146
+          },
+          {
+            "from_m": 0.0,
+            "to_m": 684.0,
+            "diameter_mm": 108
+          },
+          {
+            "from_m": 684.0,
+            "to_m": 758.0,
+            "diameter_mm": 89
+          }
+        ],
+        "filter_intervals_m": [
+          {
+            "from_m": 678.0,
+            "to_m": 758.0,
+            "diameter_mm": 146
+          }
+        ],
+        "source_ids": [
+          "SOF-S011"
+        ]
+      },
+      "collector": null,
+      "groundwater_discharge": null,
+      "hydraulic_intervals": [],
+      "intake_intervals": [],
+      "structural_intervals": [],
+      "water_temperature": null,
+      "hydro_notes_bg": "Хидравлични интервали не се извеждат автоматично от филтри, открит ствол, пукнатини или конструктивни интервали.",
+      "expert_context": {
+        "municipality_bg": "Елин Пелин",
+        "settlement_bg": "Равно поле",
+        "usage": "Verified site-specific borehole lithology analogue for Sofia Province",
+        "warning": "Exact documented lithological profile. Borehole construction, open-hole sections, filters, fractures and water-intake construction are preserved separately and must not be interpreted automatically as aquifer or inflow intervals.",
+        "research_profile_id": "SOF-LITH-006",
+        "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE"
+      }
     }
   ]
 }
