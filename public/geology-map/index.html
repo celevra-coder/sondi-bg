@@ -1061,6 +1061,39 @@ const map=L.map('map').setView([42.72,25.35],7);
       if (tools) {
         tools.style.display = "block";
       }
+
+      /*
+       * Direct /geology-map visits do not pass through the
+       * server-rendered /map wrapper, so they do not receive
+       * the admin=1 iframe flag.
+       *
+       * Once the authenticated account has been verified as
+       * admin by /api/expert-account, add the same flag once.
+       * This keeps depth-structure locked for normal users.
+       */
+      const adminParams =
+        new URLSearchParams(
+          window.location.search
+        );
+
+      if (adminParams.get("admin") !== "1") {
+        adminParams.set(
+          "admin",
+          "1"
+        );
+
+        const adminUrl =
+          window.location.pathname +
+          "?" +
+          adminParams.toString() +
+          window.location.hash;
+
+        window.location.replace(
+          adminUrl
+        );
+
+        return;
+      }
     }
   } catch (error) {
     console.warn(
