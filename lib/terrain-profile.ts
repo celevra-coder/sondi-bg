@@ -21,7 +21,12 @@ export type TerrainPosition =
   | "flat_or_indeterminate";
 
 export type TerrainProfile = {
-  status: "OK" | "OUTSIDE_DATASET" | "INVALID_COORDINATES" | "NO_VALID_TERRAIN";
+  status:
+    | "OK"
+    | "OUTSIDE_DATASET"
+    | "INVALID_COORDINATES"
+    | "NO_VALID_TERRAIN"
+    | "DATA_UNAVAILABLE";
   source: "Copernicus DEM GLO-30";
   resolution_arc_seconds: 1;
   resolution_approx_m: 30;
@@ -207,8 +212,34 @@ export async function getTerrainProfile(
 
   const file = path.join(DEM_ROOT, filename);
 
-  const tif = await fromFile(file);
-  const image = await tif.getImage();
+  /*
+   * DEM tiles are local optional terrain context.
+   *
+   * Production deployments may intentionally omit the large
+   * Copernicus GeoTIFF files. Missing/unreadable terrain data
+   * must never abort the complete depth/lithology analysis.
+   */
+  const image =
+    await (async () => {
+      try {
+        const tif =
+          await fromFile(file);
+
+        return await tif.getImage();
+      }
+      catch {
+        return null;
+      }
+    })();
+
+  if (!image) {
+    return invalid(
+      "DATA_UNAVAILABLE",
+      latitude,
+      longitude,
+      filename
+    );
+  }
 
   const [originX, originY] = image.getOrigin();
   const [resX, resY] = image.getResolution();
