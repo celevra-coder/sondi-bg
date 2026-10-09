@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "engine": "SONDI.BG Spatial Lithology Interpretation Engine",
+  "oblast": "Враца",
+  "status": "SCHEMA_READY_ENGINE_NOT_YET_WIRED",
+  "purpose": "Define the production contract for coordinate/depth lithology interpretation using spatial geological models first and boreholes as evidence/control rather than as the sole model.",
+  "authoritative_inputs": {
+    "research_inventory": "data/soil-lithology/research/vratsa_lithology_inventory.json",
+    "coverage_model": "data/soil-lithology/research/vratsa_lithology_coverage.json",
+    "final_qa": "data/soil-lithology/research/vratsa_lithology_final_qa.json",
+    "borehole_evidence": "data/soil-lithology/bulgaria_borehole_lithology.json"
+  },
+  "authority_precedence": [
+    {
+      "rank": 1,
+      "source": "DIRECT_LOCAL_CONTROL",
+      "examples": [
+        "exact borehole lithology at target",
+        "site-specific geological profile",
+        "local 2D/3D geological model"
+      ]
+    },
+    {
+      "rank": 2,
+      "source": "DIGITISED_SPATIAL_MODEL",
+      "examples": [
+        "geological formation polygon",
+        "terrace polygon",
+        "formation top/base surface",
+        "isopach surface",
+        "structural block"
+      ]
+    },
+    {
+      "rank": 3,
+      "source": "REGIONAL_STRUCTURAL_MODEL",
+      "examples": [
+        "syncline/anticline position",
+        "fault block",
+        "paleovalley model",
+        "formation thickness trend"
+      ]
+    },
+    {
+      "rank": 4,
+      "source": "BOREHOLE_ANALOGUE_CONTROL",
+      "examples": [
+        "same geological unit",
+        "same structural block",
+        "same geomorphological setting",
+        "nearby documented borehole"
+      ]
+    },
+    {
+      "rank": 5,
+      "source": "BROAD_REGIONAL_FALLBACK",
+      "examples": [
+        "municipality-level model",
+        "regional analogue",
+        "broad structural interpolation"
+      ]
+    }
+  ],
+  "critical_rule": "Never start interpretation from the nearest borehole. Resolve spatial geological context first; then use boreholes to validate, constrain or adjust the spatial model.",
+  "zone_resolution": {
+    "resolution_order": [
+      "exact_local_model_polygon",
+      "digitised_geological_polygon",
+      "digitised_structural_block",
+      "geomorphological_subzone",
+      "municipality_fallback",
+      "oblast_regional_fallback"
+    ],
+    "geometry_rule": "No polygon, axis, surface or fault geometry may be invented. Only digitised or otherwise documented geometry can be used as exact spatial geometry.",
+    "fallback_is_allowed": true,
+    "fallback_must_reduce_confidence": true
+  },
+  "zones": [
+    {
+      "zone_id": "VRA-Z01",
+      "name": "Козлодуйска низина / Радиана / АЕЦ",
+      "municipality_fallback": [
+        "Козлодуй"
+      ],
+      "model_strength": "STRONG",
+      "preferred_model_order": [
+        "local 3D geological model",
+        "Radiana/site engineering profiles",
+        "geomorphological terrace model",
+        "regional Cenozoic model",
+        "Paleo-Skat/pre-Neogene structural model",
+        "borehole controls"
+      ],
+      "depth_policy": {
+        "0-20": "VERY_HIGH",
+        "20-50": "VERY_HIGH",
+        "50-100": "HIGH",
+        "100-200": "HIGH",
+        "200-500": "MEDIUM"
+      }
+    },
+    {
+      "zone_id": "VRA-Z02",
+      "name": "Северна льосово-алувиална равнина",
+      "municipality_fallback": [
+        "Оряхово",
+        "Мизия",
+        "Хайредин",
+        "Борован",
+        "Бяла Слатина"
+      ],
+      "model_strength": "REGIONALLY_CONNECTED",
+      "preferred_model_order": [
+        "geomorphological/loess subzone",
+        "Quaternary cover model",
+        "Neogene formation thickness model",
+        "pre-Neogene paleorelief",
+        "regional 3D structural model",
+        "fault-block model",
+        "borehole controls"
+      ],
+      "structural_guards": [
+        "do not smooth through Byala Slatina depression",
+        "do not smooth across mapped fault blocks",
+        "test Paleo-Skat/Paleo-Ogosta paleovalley context",
+        "formation thickness is not automatically depth below ground"
+      ],
+      "depth_policy": {
+        "0-20": "HIGH",
+        "20-50": "HIGH",
+        "50-100": "MEDIUM_TO_HIGH",
+        "100-200": "MEDIUM_TO_HIGH",
+        "200-500": "MEDIUM_STRUCTURAL"
+      }
+    },
+    {
+      "zone_id": "VRA-Z03",
+      "name": "Криводолско-Врачански Предбалкан",
+      "municipality_fallback": [
+        "Криводол",
+        "Враца"
+      ],
+      "model_strength": "REGIONALLY_CONNECTED",
+      "preferred_model_order": [
+        "surface formation polygon",
+        "facies belt",
+        "structural block",
+        "formation thickness model",
+        "local vertical model",
+        "borehole controls"
+      ],
+      "critical_facies_rules": [
+        "Botunya thins westward",
+        "Botunya pinches out",
+        "west of Krivodol Botunya is replaced by Mramoren marl",
+        "Vratsa Urgonian carbonates require polygon-aware interpretation",
+        "Sumer and Mramoren may independently dominate 0-500 m"
+      ],
+      "depth_policy": {
+        "0-20": "HIGH",
+        "20-50": "HIGH",
+        "50-100": "HIGH",
+        "100-200": "HIGH_TO_MEDIUM",
+        "200-500": "MEDIUM_TO_HIGH"
+      }
+    },
+    {
+      "zone_id": "VRA-Z04",
+      "name": "Мездренско-Романски синклинален пояс",
+      "municipality_fallback": [
+        "Мездра",
+        "Роман"
+      ],
+      "model_strength": "STRUCTURALLY_CONSTRAINED",
+      "preferred_model_order": [
+        "surface formation polygon",
+        "syncline limb / axis position",
+        "Kostalevo fault block",
+        "local measured thickness anchors",
+        "formation sequence",
+        "borehole controls"
+      ],
+      "critical_structural_rules": [
+        "never project continuously across Kostalevo fault",
+        "do not assume symmetric formation preservation on both limbs",
+        "do not convert stratigraphic thickness directly to vertical depth",
+        "Kaylaka preservation may differ by syncline limb"
+      ],
+      "depth_policy": {
+        "0-20": "HIGH",
+        "20-50": "HIGH",
+        "50-100": "MEDIUM_TO_HIGH",
+        "100-200": "MEDIUM_TO_HIGH_LOCAL",
+        "200-500": "MEDIUM_STRUCTURAL"
+      }
+    }
+  ],
+  "target_depths_m": [
+    20,
+    50,
+    60,
+    80,
+    100,
+    150,
+    200,
+    300,
+    400,
+    500
+  ],
+  "interpretation_request": {
+    "required": [
+      "latitude",
+      "longitude",
+      "depth_m"
+    ],
+    "optional_context": [
+      "municipality",
+      "surface_geology",
+      "terrain",
+      "fault_context",
+      "groundwater_body_context"
+    ]
+  },
+  "interpretation_response": {
+    "required_fields": [
+      "latitude",
+      "longitude",
+      "depth_m",
+      "zone_id",
+      "expected_lithology_bg",
+      "confidence",
+      "interpretation_basis",
+      "evidence_ids",
+      "limitations"
+    ],
+    "optional_fields": [
+      "formation_bg",
+      "surface_unit",
+      "structural_block",
+      "geomorphological_subzone",
+      "expected_interval_from_m",
+      "expected_interval_to_m",
+      "competing_interpretations",
+      "nearest_control_boreholes",
+      "source_ids"
+    ]
+  },
+  "confidence": {
+    "VERY_HIGH": {
+      "meaning": "direct/local geological control",
+      "production_label_bg": "много висока"
+    },
+    "HIGH": {
+      "meaning": "multiple consistent controls plus spatial model",
+      "production_label_bg": "висока"
+    },
+    "MEDIUM": {
+      "meaning": "formation/structural/geomorphological regional model",
+      "production_label_bg": "средна"
+    },
+    "LOW": {
+      "meaning": "broad defensible regional interpolation",
+      "production_label_bg": "ниска"
+    },
+    "UNRESOLVED": {
+      "meaning": "no defensible vertical interpretation",
+      "production_label_bg": "недостатъчно данни"
+    }
+  },
+  "confidence_translation_from_final_qa": {
+    "DIRECT_HIGH": "VERY_HIGH",
+    "REGIONAL_HIGH": "HIGH",
+    "MODEL_BASED": "MEDIUM",
+    "MODEL_BASED_LOW": "LOW",
+    "UNRESOLVED": "UNRESOLVED"
+  },
+  "qa_precedence_rule": "When an older intermediate coverage/subzone status conflicts with vratsa_lithology_final_qa.json, the final QA classification controls readiness/confidence until the older field is explicitly reconciled.",
+  "borehole_role": {
+    "exact_target_borehole": "direct observation at target; highest evidence",
+    "nearby_borehole": "control/validation evidence only; does not automatically define target depth contacts",
+    "regional_borehole": "regional stratigraphic context only"
+  },
+  "scientific_guards": [
+    "project depth is not drilled depth",
+    "formation thickness is not automatically depth below surface",
+    "projected section is not observed borehole lithology",
+    "filter interval is not automatically aquifer or inflow",
+    "fracture is not automatically water-bearing",
+    "groundwater-body polygon is regional hydrogeological context only",
+    "fault proximity alone does not prove hydraulic connection",
+    "source gaps and overlaps must remain visible",
+    "exact boundaries must not be invented",
+    "confidence must accompany every interpretation"
+  ],
+  "fallback_policy": {
+    "no_information_not_allowed_when": "a defensible regional or structural geological model exists",
+    "fallback_sequence": [
+      "local spatial model",
+      "formation/structural model",
+      "municipality regional model",
+      "oblast regional model"
+    ],
+    "never_upgrade_confidence_during_fallback": true
+  },
+  "production_readiness": {
+    "research_complete_for_engine_prototype": true,
+    "exact_spatial_geometry_complete": false,
+    "production_engine_wiring_allowed": true,
+    "limitations": [
+      "some canonical formation polygons are not digitised",
+      "some fault geometries are not digitised",
+      "some structural surfaces exist only as published figures",
+      "200-500 m remains model-based in several sectors"
+    ]
+  },
+  "planned_code_architecture": {
+    "existing_borehole_resolver": "lib/lithology-profile.ts",
+    "existing_analogue_synthesis": "lib/lithology-synthesis.ts",
+    "new_spatial_engine": "lib/lithology-spatial-engine.ts",
+    "future_orchestrator_role": "spatial engine resolves target geological model first; existing borehole resolver then supplies control evidence",
+    "depth_structure_page": "app/depth-structure/page.tsx"
+  },
+  "next_implementation_stage": "Build a read-only Vratsa spatial resolver prototype that returns zone + model + confidence without changing the current depth-structure production output."
+}

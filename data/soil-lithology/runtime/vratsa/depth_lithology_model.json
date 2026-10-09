@@ -1,0 +1,645 @@
+{
+  "schema_version": 1,
+  "model_id": "VRA-DEPTH-LITHOLOGY-001",
+  "oblast": "Враца",
+  "purpose": "Machine-readable spatial/depth lithology evidence model for SONDI.BG. It preserves conditional spatial and structural rules and must not invent exact geological contacts where geometry is unavailable.",
+  "authoritative_source": "data/soil-lithology/research/vratsa_lithology_inventory.json",
+  "build_policy": {
+    "spatial_model_precedes_borehole_analogue": true,
+    "municipality_is_routing_geometry_not_geological_geometry": true,
+    "formation_thickness_is_not_depth_below_ground": true,
+    "surface_polygon_required_when_source_model_requires_it": true,
+    "fault_and_fold_geometry_must_not_be_ignored": true,
+    "local_templates_must_not_be_applied_oblast_wide": true,
+    "conditional_alternatives_are_preferred_over_false_precision": true,
+    "exact_contact_depth_may_not_be_invented": true
+  },
+  "confidence_semantics": {
+    "VERY_HIGH": "Direct/local model or profile control.",
+    "HIGH": "Strong regional or spatially conditioned model.",
+    "MEDIUM": "Regional/structural interpretation with unresolved local geometry.",
+    "LOW": "Broad model with major unresolved structural ambiguity.",
+    "UNRESOLVED": "Required spatial/structural selector is unavailable."
+  },
+  "zones": {
+    "VRA-Z01": {
+      "name": "Козлодуйска низина / Радиана / АЕЦ",
+      "municipalities": [
+        "Козлодуй"
+      ],
+      "default_mode": "REGIONAL_SEQUENCE_WITH_LOCAL_MODEL_OVERRIDE",
+      "evidence": [
+        {
+          "record_id": "VRA-CTX-011",
+          "status": "SPATIAL_3D_GEOLOGICAL_MODEL",
+          "source_ids": [
+            "VRA-S045"
+          ],
+          "priority_depth_range_m": "0-50"
+        },
+        {
+          "record_id": "VRA-CTX-012",
+          "status": "REGIONAL_VERTICAL_LITHOLOGY_CONTEXT",
+          "source_ids": [
+            "VRA-S046"
+          ],
+          "priority_depth_range_m": "0-550+"
+        },
+        {
+          "record_id": "VRA-CTX-013",
+          "status": "SPATIAL_VERTICAL_LITHOLOGY_MODEL",
+          "source_ids": [
+            "VRA-S047"
+          ],
+          "priority_depth_range_m": "0-150+"
+        },
+        {
+          "record_id": "VRA-CTX-014",
+          "status": "SPATIAL_VERTICAL_LITHOLOGY_MODEL",
+          "source_ids": [
+            "VRA-S047"
+          ],
+          "priority_depth_range_m": "0-100+"
+        }
+      ],
+      "regional_sequence": {
+        "record_id": "VRA-CTX-012",
+        "depth_scope": "0-550+",
+        "sequence": [
+          {
+            "unit": "Quaternary",
+            "probable_material": "alluvial, eolian and eolian-alluvial deposits; terrace-dependent gravel, sand, clay and loess",
+            "contact_depth": "SPATIALLY_VARIABLE"
+          },
+          {
+            "unit": "Romanian",
+            "probable_material": "dense yellowish clays with calcareous concretions; locally sandy with clayey-sand intercalations",
+            "contact_depth": "NOT_EXACTLY_RESOLVED"
+          },
+          {
+            "unit": "Dacian",
+            "probable_material": "grey-bluish sandy clays and sands; locally lignitic coal horizons and sandy clays",
+            "contact_depth": "NOT_EXACTLY_RESOLVED"
+          }
+        ],
+        "neogene_total_thickness_m": ">550",
+        "confidence": "HIGH_REGIONAL",
+        "source_ids": [
+          "VRA-S046"
+        ]
+      },
+      "shallow_spatial_model": {
+        "record_id": "VRA-CTX-011",
+        "depth_scope": "0-50",
+        "status": "LOCAL_SPATIAL_MODEL_REQUIRES_MODEL_COVERAGE",
+        "model_units": [
+          {
+            "group": "ML-1",
+            "materials": [
+              "loess complex",
+              "loess-like clay",
+              "clayey sand",
+              "alluvial clay"
+            ]
+          },
+          {
+            "group": "ML-2",
+            "materials": [
+              "alluvial gravel",
+              "gravelly clay",
+              "coarse gravel",
+              "sand"
+            ]
+          },
+          {
+            "group": "ML-3_TO_ML-5",
+            "formation": "Brusartsi Formation",
+            "materials": [
+              "clay",
+              "clay with sandy interbeds",
+              "coarse sand"
+            ]
+          }
+        ],
+        "guard": "Published 3D model architecture is valid evidence, but exact model top/bottom grids are not currently machine-readable. Do not apply local layer boundaries outside documented model geometry.",
+        "source_ids": [
+          "VRA-S045"
+        ]
+      },
+      "local_templates": [
+        {
+          "template_id": "BRESTOVA_PADINA",
+          "record_id": "VRA-CTX-013",
+          "activation": "ONLY_WHEN_LOCATION_IS_SUPPORTED_AS_BRESTOVA_PADINA_LOCAL_MODEL",
+          "depth_summary": [
+            {
+              "approx_depth": "surface to ~15 m",
+              "material": "loess / loess-like and deluvial-proluvial clay"
+            },
+            {
+              "approx_depth": "~15 m downward",
+              "material": "Brusartsi Formation clay with local sand beds"
+            },
+            {
+              "deeper_unit": "Archar Formation",
+              "material": "sand",
+              "exact_top": "NOT_RESOLVED"
+            }
+          ],
+          "source_ids": [
+            "VRA-S047"
+          ]
+        },
+        {
+          "template_id": "MARICHIN_VALOG",
+          "record_id": "VRA-CTX-014",
+          "activation": "ONLY_WHEN_LOCATION_IS_SUPPORTED_AS_MARICHIN_VALOG_LOCAL_MODEL",
+          "sequence": "soil → loess/loess-like clay → gravel → Brusartsi clay and sands",
+          "depth_scope": "0-100+",
+          "source_ids": [
+            "VRA-S047"
+          ]
+        }
+      ],
+      "fallback_rule": "If no local model selector is resolved, use the regional Cenozoic sequence and zone confidence only. Do not invent exact contacts."
+    },
+    "VRA-Z02": {
+      "name": "Северна льосово-алувиална равнина",
+      "municipalities": [
+        "Оряхово",
+        "Мизия",
+        "Хайредин",
+        "Борован",
+        "Бяла Слатина"
+      ],
+      "default_mode": "MUNICIPALITY_MODEL_PLUS_REGIONAL_STRUCTURE",
+      "regional_structural_controls": [
+        {
+          "record_id": "VRA-CTX-021",
+          "status": "REGIONAL_3D_STRUCTURAL_MODEL",
+          "source_ids": [
+            "VRA-S053"
+          ],
+          "priority_depth_range_m": "0-500+"
+        },
+        {
+          "record_id": "VRA-CTX-022",
+          "status": "REGIONAL_FORMATION_THICKNESS_MODEL",
+          "source_ids": [
+            "VRA-S054"
+          ],
+          "priority_depth_range_m": "0-300+"
+        },
+        {
+          "record_id": "VRA-CTX-023",
+          "status": "PALEORELIEF_SPATIAL_MODEL",
+          "source_ids": [
+            "VRA-S055"
+          ],
+          "priority_depth_range_m": "0-500+"
+        },
+        {
+          "record_id": "VRA-CTX-024",
+          "status": "REGIONAL_DEPTH_SURFACE_MODEL",
+          "source_ids": [
+            "VRA-S056"
+          ],
+          "priority_depth_range_m": "0-500+"
+        }
+      ],
+      "absolute_guards": [
+        "Do not invent exact base-Neogene depth from regional trend.",
+        "Do not convert formation thickness directly into depth below ground.",
+        "Do not smooth through the Byala Slatina depression.",
+        "Do not smooth across mapped fault blocks.",
+        "Test Paleo-Skat/paleorelief context before deep assignment."
+      ],
+      "municipality_models": {
+        "Мизия": {
+          "record_id": "VRA-CTX-016",
+          "rules": [
+            {
+              "depth_m": 20,
+              "probable": "Quaternary loess/alluvium; locally transition toward Neogene",
+              "confidence": "HIGH"
+            },
+            {
+              "depth_m": 50,
+              "probable": "Quaternary in thick-cover sectors OR Neogene where cover is thinner",
+              "confidence": "MEDIUM_TO_HIGH"
+            },
+            {
+              "depth_m": 80,
+              "probable": "commonly Neogene",
+              "confidence": "MEDIUM_TO_HIGH"
+            },
+            {
+              "depth_m": 100,
+              "probable": "Neogene",
+              "confidence": "HIGH_REGIONAL"
+            },
+            {
+              "depth_m": 150,
+              "probable": "Neogene or approaching older substrate",
+              "confidence": "MEDIUM"
+            },
+            {
+              "depth_m": 200,
+              "probable": "older substrate possible; structural control required",
+              "confidence": "MEDIUM"
+            }
+          ],
+          "source_ids": [
+            "VRA-S048"
+          ]
+        },
+        "Оряхово": {
+          "record_id": "VRA-CTX-017",
+          "selector_required": "GEOMORPHIC_SUBZONE",
+          "subzones": {
+            "KAPITANITSA": {
+              "20_m": "loess complex",
+              "50_m": "loess complex",
+              "80_m": "commonly loess complex",
+              "typical_loess_thickness_m": "80-100"
+            },
+            "RAVNISHTETO": {
+              "20_m": "loess complex",
+              "50_m": "near base of loess complex",
+              "deeper": "substrate requires Neogene/Cretaceous model",
+              "typical_loess_thickness_m": "40-60"
+            },
+            "OSTROV_LOWLAND": {
+              "surface_model": "Danube floodplain alluvium",
+              "rule": "Do not apply plateau loess template."
+            }
+          },
+          "source_ids": [
+            "VRA-S049"
+          ]
+        },
+        "Бяла Слатина": {
+          "record_id": "VRA-CTX-018",
+          "sequence": [
+            {
+              "unit": "Quaternary",
+              "material": "alluvial deposits and loess"
+            },
+            {
+              "unit": "Sarmatian",
+              "material": "sandstones, dark-bedded limestones and calcareous clays"
+            }
+          ],
+          "confidence": "MEDIUM_MODEL_BASED",
+          "guard": "Exact formation depth requires structural/seismic surface integration.",
+          "source_ids": [
+            "VRA-S050"
+          ]
+        },
+        "Хайредин": {
+          "record_id": "VRA-CTX-019",
+          "rules": [
+            {
+              "depth_m": 20,
+              "probable": "loess complex",
+              "confidence": "HIGH"
+            },
+            {
+              "depth_m": 50,
+              "probable": "red clay or Neogene depending on local loess thickness",
+              "confidence": "MEDIUM_TO_HIGH"
+            },
+            {
+              "depth_m": 80,
+              "probable": "Neogene basin fill",
+              "confidence": "HIGH_REGIONAL"
+            },
+            {
+              "depth_m": 100,
+              "probable": "Neogene basin fill",
+              "confidence": "HIGH_REGIONAL"
+            },
+            {
+              "depth_m": 200,
+              "probable": "Neogene basin fill",
+              "confidence": "HIGH_REGIONAL"
+            },
+            {
+              "depth_m": 500,
+              "probable": "Neogene basin fill",
+              "confidence": "HIGH_REGIONAL"
+            }
+          ],
+          "source_ids": [
+            "VRA-S051"
+          ]
+        },
+        "Борован": {
+          "record_id": "VRA-CTX-020",
+          "rules": [
+            {
+              "depth_m": 20,
+              "probable": "loess/red clay OR Neogene depending on local cover",
+              "confidence": "MEDIUM"
+            },
+            {
+              "depth_m": 50,
+              "probable": "commonly Neogene",
+              "confidence": "MEDIUM"
+            },
+            {
+              "depth_m": 80,
+              "probable": "Neogene likely",
+              "confidence": "MEDIUM"
+            },
+            {
+              "depth_m": 100,
+              "probable": "Neogene or locally older substrate",
+              "confidence": "MEDIUM"
+            },
+            {
+              "depth_m": 200,
+              "probable": "Neogene OR Cretaceous depending on structure",
+              "confidence": "LOW_TO_MEDIUM"
+            },
+            {
+              "depth_m": 500,
+              "probable": "older platform cover; exact unit unresolved",
+              "confidence": "LOW"
+            }
+          ],
+          "source_ids": [
+            "VRA-S052"
+          ]
+        }
+      },
+      "regional_formation_thickness": {
+        "record_id": "VRA-CTX-022",
+        "formations": [
+          {
+            "unit": "Furen Formation",
+            "thickness_m": "40-50"
+          },
+          {
+            "unit": "Byala Slatina Formation",
+            "thickness_m": "up to 143 around Oryahovo; typically 40-50 eastward"
+          },
+          {
+            "unit": "Brusartsi Formation",
+            "thickness_m": "50-70"
+          }
+        ],
+        "guard": "Thickness is not depth below ground.",
+        "source_ids": [
+          "VRA-S054"
+        ]
+      },
+      "paleovalley_guard": {
+        "record_id": "VRA-CTX-023",
+        "feature": "Paleo-Skat",
+        "effect": "Neogene fill may be hundreds of metres thicker than on adjacent structural highs.",
+        "exact_coordinate_lookup": false,
+        "source_ids": [
+          "VRA-S055"
+        ]
+      }
+    },
+    "VRA-Z03": {
+      "name": "Криводол / Враца – Западен Предбалкан",
+      "municipalities": [
+        "Криводол",
+        "Враца"
+      ],
+      "default_mode": "SURFACE_POLYGON_OR_LOCAL_MODEL_REQUIRED",
+      "evidence": [
+        {
+          "record_id": "VRA-CTX-015",
+          "status": "SPATIAL_VERTICAL_LITHOLOGY_MODEL",
+          "source_ids": [
+            "VRA-S047"
+          ],
+          "priority_depth_range_m": "0-500+"
+        },
+        {
+          "record_id": "VRA-CTX-025",
+          "status": "REGIONAL_STRUCTURAL_LITHOLOGY_MODEL",
+          "source_ids": [
+            "VRA-S057",
+            "VRA-S058",
+            "VRA-S059"
+          ],
+          "priority_depth_range_m": "0-500+"
+        }
+      ],
+      "local_templates": {
+        "VARBITSA_MARL_MODEL": {
+          "record_id": "VRA-CTX-015",
+          "activation": "ONLY_WHEN_LOCATION_MATCHES_VARBITSA_LOCAL_STRUCTURAL_CONTEXT",
+          "rules": {
+            "20_m": "weathered or fresh marl depending on local surface-cover thickness",
+            "50_m": "fresh marl",
+            "80_m": "fresh marl",
+            "100_m": "fresh marl",
+            "200_m": "fresh marl",
+            "500_m": "fresh marl"
+          },
+          "confidence": "HIGH_LOCAL",
+          "source_ids": [
+            "VRA-S047"
+          ]
+        }
+      },
+      "conditional_surface_templates": {
+        "SUMER_SURFACE_POLYGON": {
+          "rules": {
+            "20_m": "Sumer marl",
+            "50_m": "Sumer marl",
+            "100_m": "Sumer marl",
+            "200_m": "Sumer marl",
+            "300_m": "Sumer marl likely",
+            "500_m": "Sumer marl or underlying unit"
+          },
+          "confidence_0_300": "HIGH",
+          "confidence_500": "MEDIUM_TO_HIGH"
+        },
+        "MRAMOREN_SURFACE_POLYGON": {
+          "rules": {
+            "20_m": "Mramoren marl",
+            "50_m": "Mramoren marl",
+            "100_m": "Mramoren marl",
+            "200_m": "Mramoren marl",
+            "300_m": "Mramoren marl",
+            "500_m": "Mramoren marl likely"
+          },
+          "confidence": "HIGH_REGIONAL"
+        },
+        "VRATSA_URGONIAN_POLYGON": {
+          "rules": {
+            "20_m": "massive/organogenic limestone",
+            "50_m": "carbonate complex",
+            "100_m": "carbonate complex",
+            "200_m": "carbonate complex OR adjacent/underlying marl depending on facies and thickness",
+            "500_m": "STRUCTURAL_FACIES_CONTROL_REQUIRED"
+          },
+          "confidence_0_100": "HIGH",
+          "confidence_200_500": "MEDIUM"
+        },
+        "PASTRINA_KRIVODOL_POLYGON": {
+          "rules": {
+            "20_m": "micritic limestone / calcareous marl",
+            "50_m": "micritic limestone / calcareous marl",
+            "100_m": "micritic limestone / calcareous marl",
+            "200_m": "Pastrina unit likely",
+            "300_m": "near/below unit base depending on local thickness"
+          },
+          "confidence_0_200": "HIGH_REGIONAL"
+        }
+      },
+      "facies_guards": [
+        "Botunya is a lateral facies equivalent of the Vratsa Urgonian carbonate group.",
+        "Botunya thins westward and pinches out.",
+        "West of Krivodol, Botunya is replaced by Mramoren marl.",
+        "Sumer may overlie either Mramoren or Urgonian units depending on structural/facies position.",
+        "Do not interpolate linearly through these transitions."
+      ],
+      "fallback_output_when_surface_polygon_unknown": {
+        "status": "CONDITIONAL_LITHOLOGY",
+        "allowed_alternatives": [
+          "Sumer marl",
+          "Mramoren marl",
+          "Vratsa Urgonian carbonate complex",
+          "Pastrina limestone/calcareous marl"
+        ],
+        "confidence": "MEDIUM",
+        "note": "Exact alternative must not be selected until surface geological polygon and structural/facies position are resolved."
+      },
+      "source_ids": [
+        "VRA-S057",
+        "VRA-S058",
+        "VRA-S059"
+      ]
+    },
+    "VRA-Z04": {
+      "name": "Мездра / Роман – синклинален пояс",
+      "municipalities": [
+        "Мездра",
+        "Роман"
+      ],
+      "default_mode": "SURFACE_FORMATION_AND_STRUCTURE_REQUIRED",
+      "record_id": "VRA-CTX-026",
+      "regional_sequence": [
+        {
+          "unit": "Darmantsi Formation",
+          "material": "glauconitic/calcareous sandstone and sandy limestone"
+        },
+        {
+          "unit": "Kunino Formation",
+          "material": "micritic and argillaceous limestone"
+        },
+        {
+          "unit": "Mezdra Formation",
+          "material": "micritic/flint-bearing limestone with local marl intervals"
+        },
+        {
+          "unit": "Kaylaka Formation",
+          "material": "bioclastic to massive organogenic limestone"
+        }
+      ],
+      "conditional_templates": {
+        "MEZDRA_FORMATION_POLYGON": {
+          "rules": {
+            "0_50_m": "predominantly micritic/flint-bearing limestone; locally argillaceous limestone/marl",
+            "50_100_m": "Mezdra Formation may persist OR pass into Kunino/Darmantsi depending on dip"
+          },
+          "confidence": "HIGH_WITH_STRUCTURE"
+        },
+        "KAYLAKA_KARLUKOVO_ROMAN_POLYGON": {
+          "rules": {
+            "0_50_m": "massive organogenic limestone likely",
+            "50_80_m": "Kaylaka limestone likely",
+            "80_100_m": "near/below Kaylaka base depending on local thickness",
+            "100_200_m": "older Maastrichtian formations expected; structural position required"
+          },
+          "confidence_0_80": "HIGH_REGIONAL",
+          "confidence_100_200": "MEDIUM"
+        },
+        "SOUTH_MEZDRA_SYNCLINE_MORAVITSA_CONTROL": {
+          "activation": "LOCAL_ONLY",
+          "first_20_m": "Upper Cretaceous carbonate-siliciclastic sequence may be traversed completely locally",
+          "below": "Roman Formation sandstone and/or Sumer marl",
+          "confidence": "VERY_HIGH_LOCAL"
+        }
+      },
+      "structural_guards": [
+        "Identify geological polygon first.",
+        "Identify tectonic block.",
+        "Identify syncline limb / axis relation.",
+        "Apply local measured thickness only where spatially justified.",
+        "Project contacts with dip only when dip is known.",
+        "Never interpolate straight through a thrust.",
+        "Never assume symmetric preservation between syncline limbs.",
+        "Never convert stratigraphic thickness directly to vertical depth without structural orientation.",
+        "Kaylaka preservation may differ between limbs."
+      ],
+      "fallback_output_when_structure_unknown": {
+        "status": "CONDITIONAL_LITHOLOGY",
+        "allowed_alternatives": [
+          "Darmantsi sandstone/sandy limestone",
+          "Kunino micritic/argillaceous limestone",
+          "Mezdra flint-bearing limestone",
+          "Kaylaka organogenic limestone",
+          "underlying Roman Formation sandstone",
+          "underlying Sumer marl"
+        ],
+        "confidence": "LOW_TO_MEDIUM",
+        "note": "Do not select one formation solely from depth. Surface polygon, tectonic block and fold position are required."
+      },
+      "source_ids": [
+        "VRA-S062",
+        "VRA-S063",
+        "VRA-S064",
+        "VRA-S065",
+        "VRA-S066",
+        "VRA-S067",
+        "VRA-S068",
+        "VRA-S069",
+        "VRA-S070",
+        "VRA-S071"
+      ]
+    }
+  },
+  "interpretation_contract": {
+    "request": {
+      "latitude": "number",
+      "longitude": "number",
+      "depth_m": "number"
+    },
+    "required_resolution_order": [
+      "official municipality polygon",
+      "VRA model zone",
+      "local named model if spatially justified",
+      "surface geological polygon when required",
+      "tectonic/fault block when required",
+      "fold limb/axis relation when required",
+      "depth template",
+      "regional fallback"
+    ],
+    "response": {
+      "probable_lithology": "string or null",
+      "alternative_lithologies": "array",
+      "confidence": "VERY_HIGH | HIGH | MEDIUM | LOW | UNRESOLVED",
+      "rule_type": "DIRECT_DEPTH_TEMPLATE | CONDITIONAL_TEMPLATE | REGIONAL_SEQUENCE | STRUCTURAL_FALLBACK",
+      "source_record_ids": "array",
+      "source_ids": "array",
+      "limitations": "array"
+    },
+    "never_do": [
+      "invent exact geological contact depth",
+      "treat municipality polygon as geological polygon",
+      "treat formation thickness as local depth",
+      "ignore mapped fault/fold constraints",
+      "apply local profile across an entire municipality",
+      "force a single lithology where source model is conditional"
+    ]
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "oblast": "Враца",
+  "qa_goal": "Determine whether every municipality has a defensible geological interpretation at 20, 50, 100, 200 and 500 m. The QA does not require a borehole at every location.",
+  "target_depths_m": [
+    20,
+    50,
+    100,
+    200,
+    500
+  ],
+  "municipalities_total": 10,
+  "municipality_results": {
+    "Козлодуй": {
+      "depths": {
+        "20": "DIRECT_HIGH",
+        "50": "DIRECT_HIGH",
+        "100": "REGIONAL_HIGH",
+        "200": "REGIONAL_HIGH",
+        "500": "MODEL_BASED"
+      },
+      "basis": [
+        "Radiana 3D shallow model",
+        "Sites 1-4 engineering-geological profiles",
+        "Marichin Valog profiles",
+        "Brestova Padina profile",
+        "Brusartsi/Archar regional model",
+        "Neogene >550 m regional sequence",
+        "Paleo-Skat / pre-Neogene paleorelief model",
+        "deep structural controls"
+      ],
+      "remaining_refinement": [
+        "digitisation of published palaeorelief/isopach surfaces",
+        "finer exact 200-500 m contacts outside strong local models"
+      ],
+      "coverage_class": "FULL_DEFENSIBLE_COVERAGE"
+    },
+    "Оряхово": {
+      "depths": {
+        "20": "REGIONAL_HIGH",
+        "50": "REGIONAL_HIGH",
+        "100": "REGIONAL_HIGH",
+        "200": "MODEL_BASED",
+        "500": "MODEL_BASED"
+      },
+      "basis": [
+        "Kapitanitsa 80-100 m loess",
+        "Ravnishte 40-60 m loess",
+        "Ostrov floodplain model",
+        "Byala Slatina Formation thickness trend",
+        "regional Neogene structural model",
+        "pre-Neogene palaeorelief/isopach model"
+      ],
+      "remaining_refinement": [
+        "substrate depth refinement beneath plateau loess",
+        "digitised Neogene-base/palaeorelief surfaces"
+      ],
+      "coverage_class": "FULL_DEFENSIBLE_COVERAGE"
+    },
+    "Мизия": {
+      "depths": {
+        "20": "REGIONAL_HIGH",
+        "50": "REGIONAL_HIGH",
+        "100": "REGIONAL_HIGH",
+        "200": "MODEL_BASED",
+        "500": "MODEL_BASED"
+      },
+      "basis": [
+        "Quaternary 12 to >65 m",
+        "Neogene ~95 to >120 m",
+        "Lom Depression setting",
+        "regional formation-thickness model",
+        "Paleo-Skat / pre-Neogene structural framework"
+      ],
+      "remaining_refinement": [
+        "exact position of older substrate below Neogene",
+        "digitised regional structural surfaces"
+      ],
+      "coverage_class": "FULL_DEFENSIBLE_COVERAGE"
+    },
+    "Хайредин": {
+      "depths": {
+        "20": "REGIONAL_HIGH",
+        "50": "REGIONAL_HIGH",
+        "100": "REGIONAL_HIGH",
+        "200": "REGIONAL_HIGH",
+        "500": "REGIONAL_HIGH"
+      },
+      "basis": [
+        "loess 10-40/50 m",
+        "red clay substrate",
+        "southwestern Lom Depression",
+        "Cenozoic basin fill ~1000-1400 m"
+      ],
+      "remaining_refinement": [
+        "finer internal subdivision of Neogene at depth"
+      ],
+      "coverage_class": "FULL_DEFENSIBLE_COVERAGE"
+    },
+    "Борован": {
+      "depths": {
+        "20": "REGIONAL_HIGH",
+        "50": "REGIONAL_HIGH",
+        "100": "MODEL_BASED",
+        "200": "MODEL_BASED",
+        "500": "MODEL_BASED_LOW"
+      },
+      "basis": [
+        "Quaternary alluvium 5-10 m",
+        "loess + red clay substrate",
+        "Neogene cover",
+        "Moesian Platform Cretaceous substrate",
+        "regional northern structural model"
+      ],
+      "remaining_refinement": [
+        "Neogene top/base surfaces",
+        "exact Cretaceous unit at 200-500 m by structural block"
+      ],
+      "coverage_class": "FULL_COVERAGE_WITH_LOW_CONFIDENCE_SECTOR"
+    },
+    "Бяла Слатина": {
+      "depths": {
+        "20": "REGIONAL_HIGH",
+        "50": "REGIONAL_HIGH",
+        "100": "MODEL_BASED",
+        "200": "MODEL_BASED",
+        "500": "MODEL_BASED"
+      },
+      "basis": [
+        "Quaternary + Sarmatian surface model",
+        "Dobrolevo-Byala Slatina-Knezha 3D structural model",
+        "17 seismic horizons",
+        "9 structural maps",
+        "Byala Slatina depression",
+        "regional Neogene thickness model"
+      ],
+      "remaining_refinement": [
+        "numeric extraction of structural-map contours",
+        "precise Cretaceous top below depression"
+      ],
+      "coverage_class": "FULL_DEFENSIBLE_COVERAGE"
+    },
+    "Криводол": {
+      "depths": {
+        "20": "REGIONAL_HIGH",
+        "50": "REGIONAL_HIGH",
+        "100": "REGIONAL_HIGH",
+        "200": "REGIONAL_HIGH",
+        "500": "MODEL_BASED"
+      },
+      "basis": [
+        "Pastrina 200-300 m",
+        "Botunya 200 -> 50-60 -> 0 m westward",
+        "Mramoren >500 m locally ~800 m",
+        "Sumer 200-500 m and locally much thicker",
+        "Krivodol Neogene 10-20 m",
+        "documented facies replacement rules"
+      ],
+      "remaining_refinement": [
+        "digitised K-34-036 formation polygons",
+        "fault geometry and exact formation boundaries"
+      ],
+      "coverage_class": "FULL_DEFENSIBLE_COVERAGE"
+    },
+    "Враца": {
+      "depths": {
+        "20": "REGIONAL_HIGH",
+        "50": "REGIONAL_HIGH",
+        "100": "REGIONAL_HIGH",
+        "200": "MODEL_BASED",
+        "500": "MODEL_BASED"
+      },
+      "basis": [
+        "Vratsa Urgonian carbonate complex",
+        "Sumer Formation",
+        "Mramoren Formation",
+        "Botunya facies transition",
+        "Kostalevo thrust/fault control",
+        "Varbitsa 0-500+ m local model"
+      ],
+      "remaining_refinement": [
+        "K-34-036 polygons",
+        "digitised faults",
+        "formation top/base surfaces"
+      ],
+      "coverage_class": "FULL_DEFENSIBLE_COVERAGE"
+    },
+    "Мездра": {
+      "depths": {
+        "20": "DIRECT_HIGH",
+        "50": "REGIONAL_HIGH",
+        "100": "REGIONAL_HIGH",
+        "200": "MODEL_BASED",
+        "500": "MODEL_BASED"
+      },
+      "basis": [
+        "Darmantsi-Kunino-Mezdra-Kaylaka succession",
+        "Moravitsa measured section",
+        "Kunino measured thicknesses",
+        "Mezdra ~60 m control",
+        "Mezdra syncline geometry",
+        "Kostalevo fault/thrust rule"
+      ],
+      "remaining_refinement": [
+        "digitised 1:50000 polygons",
+        "exact limb dips",
+        "syncline-axis geometry",
+        "dip-aware 200-500 m surfaces"
+      ],
+      "coverage_class": "FULL_DEFENSIBLE_COVERAGE"
+    },
+    "Роман": {
+      "depths": {
+        "20": "REGIONAL_HIGH",
+        "50": "REGIONAL_HIGH",
+        "100": "REGIONAL_HIGH",
+        "200": "MODEL_BASED",
+        "500": "MODEL_BASED_LOW"
+      },
+      "basis": [
+        "Upper Cretaceous regional sequence",
+        "Kaylaka 80-100 m Karlukovo control",
+        "Karlukovo-Roman shallow syncline",
+        "regional eastward dip",
+        "Quaternary cover model"
+      ],
+      "remaining_refinement": [
+        "exact Roman/Karlukovo structural contacts",
+        "formation surfaces at 200-500 m",
+        "1:50000 polygon integration"
+      ],
+      "coverage_class": "FULL_COVERAGE_WITH_LOW_CONFIDENCE_SECTOR"
+    }
+  },
+  "zone_results": {
+    "Z01_KOZLODUY": {
+      "status": "PASS",
+      "depth_range_m": "0-500",
+      "note": "Strongest zone. Combines detailed shallow 3D model, local profiles and regional/deep structural context."
+    },
+    "Z02_NORTHERN_PLAIN": {
+      "status": "PASS_WITH_MODEL_REFINEMENT",
+      "depth_range_m": "0-500",
+      "note": "All municipalities now have defensible vertical interpretation. Deep prediction is structurally model-based in some sectors."
+    },
+    "Z03_KRIVODOL_VRATSA": {
+      "status": "PASS_WITH_POLYGON_REFINEMENT",
+      "depth_range_m": "0-500",
+      "note": "Formation/facies model is strong. Main missing component is digital surface polygon and fault geometry."
+    },
+    "Z04_MEZDRA_ROMAN": {
+      "status": "PASS_WITH_STRUCTURAL_REFINEMENT",
+      "depth_range_m": "0-500",
+      "note": "Lithostratigraphy and local measured thickness anchors are available; deeper projection must remain fold/fault aware."
+    }
+  },
+  "true_unresolved_gaps": [],
+  "low_confidence_but_interpretable": [
+    {
+      "municipality": "Борован",
+      "depth_m": 500
+    },
+    {
+      "municipality": "Роман",
+      "depth_m": 500
+    }
+  ],
+  "qa_summary": {
+    "municipalities_with_depth_model": 10,
+    "municipalities_without_depth_model": 0,
+    "true_unresolved_depth_cells": 0,
+    "all_10_municipalities_have_defensible_interpretation": true,
+    "20m_oblast_coverage": "PASS",
+    "50m_oblast_coverage": "PASS",
+    "100m_oblast_coverage": "PASS",
+    "200m_oblast_coverage": "PASS_MODEL_BASED_IN_PLACES",
+    "500m_oblast_coverage": "PASS_MODEL_BASED_IN_PLACES"
+  },
+  "important_architecture_rule": "The production map must never choose interpretation solely from nearest borehole distance. It must combine geological polygon, geomorphology, stratigraphy, structural block, formation thickness, fault/fold geometry, local profiles and regional models.",
+  "confidence_policy": {
+    "DIRECT_HIGH": "direct/local spatial geological control",
+    "REGIONAL_HIGH": "strong regional formation/structural control",
+    "MODEL_BASED": "defensible interpolation/model",
+    "MODEL_BASED_LOW": "still interpretable but user should see lower confidence",
+    "UNRESOLVED": "not acceptable for final map"
+  },
+  "remaining_work_is_not_basic_research": [
+    "digitise/georeference canonical geological maps",
+    "encode formation polygons",
+    "encode fault and fold geometry",
+    "build spatial interpolation rules",
+    "construct derived top/base surfaces where direct grids do not exist",
+    "assign confidence dynamically per coordinate/depth",
+    "validate outputs against known control points"
+  ],
+  "research_decision": "READY_FOR_INTERPRETATION_ENGINE_BUILD",
+  "inventory_reference": "data/soil-lithology/research/vratsa_lithology_inventory.json",
+  "coverage_reference": "data/soil-lithology/research/vratsa_lithology_coverage.json"
+}

@@ -180,6 +180,67 @@ export default async function DepthStructurePage({
   const checkpoints =
     [20, 50, 100, 150, 200, 300];
 
+  const vratsaSpatialRows =
+    Array.isArray(
+      profile.target_spatial_depth_model
+    )
+      ? profile.target_spatial_depth_model
+          .filter(item =>
+            checkpoints.includes(
+              item.target.depth_m
+            )
+          )
+          .map(item => {
+            const lithology =
+              item.depth_lithology;
+
+            const alternatives =
+              lithology
+                ?.alternative_lithologies ||
+              [];
+
+            const material =
+              lithology
+                ?.probable_lithology ||
+              (
+                alternatives.length > 0
+                  ? alternatives.join(" / ")
+                  : "Условна литоложка интерпретация"
+              );
+
+            const description =
+              lithology?.status === "OK"
+                ? (
+                    `Пространствен модел ${item.zone.zone_id}; ` +
+                    `литоложка интерпретация по дълбочина.`
+                  )
+                : (
+                    `Условен пространствен модел ${item.zone.zone_id}. ` +
+                    `Не се избира единична формация без необходимия ` +
+                    `геоложки или структурен контрол.`
+                  );
+
+            return {
+              depth:
+                item.target.depth_m,
+
+              material,
+
+              description,
+
+              confidence:
+                lithology?.confidence ||
+                item.depth_model.confidence,
+
+              analogueCount:
+                0,
+
+              source:
+                "vratsa_spatial_model" as const,
+            };
+          })
+      : [];
+
   const rows =
     synthesis.evidence_level === "DIRECT"
       ? (() => {
@@ -228,7 +289,9 @@ export default async function DepthStructurePage({
             })
             .filter(Boolean);
         })()
-      : synthesis.depth_profile
+      : vratsaSpatialRows.length > 0
+        ? vratsaSpatialRows
+        : synthesis.depth_profile
           .filter(
             item =>
               item.comparison_family != null

@@ -15,6 +15,10 @@ import {
   getGroundwaterBodyProfile,
   type GroundwaterBodyProfileResult,
 } from "./groundwater-body-profile";
+import {
+  resolveVratsaSpatialContext,
+  type VratsaSpatialContextResult,
+} from "./lithology-spatial-engine";
 
 type TerrainProfileResult =
   Awaited<ReturnType<typeof getTerrainProfile>>;
@@ -197,6 +201,15 @@ export type LithologyProfile = {
     regional_hydrogeology_only: true;
     interpretation_guard: string;
   };
+
+  /*
+   * Spatial/depth model results for standard checkpoints.
+   *
+   * Empty outside the currently supported Vratsa model.
+   * This is separate from borehole analogue evidence.
+   */
+  target_spatial_depth_model:
+    VratsaSpatialContextResult[];
 
   direct_borehole_evidence: LithologyAnalogue[];
 
@@ -1180,6 +1193,30 @@ export async function getLithologyProfile(
   const targetGeology =
     getGeologyAtLocation(latitude, longitude);
 
+  /*
+   * Spatial model is evaluated independently from the
+   * legacy surface raster.
+   *
+   * Outside Vratsa these calls remain unresolved and are
+   * filtered out, preserving all existing behaviour.
+   */
+  const spatialDepthCheckpoints =
+    [20, 50, 100, 150, 200, 300, 500];
+
+  const targetSpatialDepthModel =
+    spatialDepthCheckpoints
+      .map(depthM =>
+        resolveVratsaSpatialContext({
+          latitude,
+          longitude,
+          depthM,
+        })
+      )
+      .filter(result =>
+        result.status === "OK" &&
+        result.zone.zone_id !== null
+      );
+
   const targetFaultProfile =
     getFaultSpatialProfile(latitude, longitude);
 
@@ -1529,6 +1566,9 @@ export async function getLithologyProfile(
       mrrb_corridor_ids:
         getMrrbCorridorIds(targetFaultProfile),
     },
+
+    target_spatial_depth_model:
+      targetSpatialDepthModel,
 
     direct_borehole_evidence:
       nearby.filter((item) =>
