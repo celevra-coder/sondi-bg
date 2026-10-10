@@ -194,6 +194,16 @@ export default async function DepthStructurePage({
    */
   const geologyTextBg = (value: string): string => {
     const direct: Record<string, string> = {
+      "Sumer marl": "Мергели на Сумерската свита",
+      "Mramoren marl": "Мергели на Мраморенската свита",
+      "Vratsa Urgonian carbonate complex": "Ургонски карбонатен комплекс — варовици",
+      "Pastrina limestone/calcareous marl": "Пастрински варовици и варовити мергели",
+      "Darmantsi sandstone/sandy limestone": "Пясъчници и песъчливи варовици на Дарманската свита",
+      "Kunino micritic/argillaceous limestone": "Микритни и глинести варовици на Кунинската свита",
+      "Mezdra flint-bearing limestone": "Кременосъдържащи варовици на Мездренската свита",
+      "Kaylaka organogenic limestone": "Органогенни варовици на Кайлъшката свита",
+      "Quaternary: alluvial deposits and loess": "Кватернерни алувиални и льосови наслаги",
+      "Sarmatian: sandstones, dark-bedded limestones and calcareous clays": "Сарматски пясъчници, тъмнослоести варовици и варовити глини",
       "Neogene clay-sand sedimentary sequence":
         "Неогенски глинесто-песъчлив седиментен комплекс",
 
@@ -354,7 +364,7 @@ export default async function DepthStructurePage({
     const description =
       !point.material && point.alternatives.length > 0
         ? "Възможни са: " +
-          point.alternatives.slice(0, 2)
+          point.alternatives
             .map(x => geologyTextBg(familyLabel(x)))
             .join(" или ") + "."
         : !point.material
@@ -427,9 +437,9 @@ export default async function DepthStructurePage({
   }
 
   const rows = groupedRows.map(row => ({
-    depth: row.startDepth === row.endDepth
-      ? String(row.startDepth)
-      : `${row.startDepth}–${row.endDepth}`,
+    depth: row.checkpoints.length > 1
+      ? `${row.checkpoints.length} проверки`
+      : `${row.startDepth} м`,
     material: row.material,
     description: row.checkpoints.length > 1
       ? `${row.description} Сходен резултат при проверените дълбочини: ${
@@ -537,7 +547,7 @@ export default async function DepthStructurePage({
                     color: "#0d8055",
                   }}
                 >
-                  {row.depth} m
+                  {row.depth}
                 </div>
 
                 <div>
