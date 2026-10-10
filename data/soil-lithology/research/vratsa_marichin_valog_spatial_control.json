@@ -1,0 +1,90 @@
+{
+    "schema_version":  1,
+    "record_id":  "VRA-SPATIAL-MARICHIN-001",
+    "oblast":  "Враца",
+    "municipality":  "Козлодуй",
+    "site_name":  "Маричин валог",
+    "status":  "OFFICIAL_SITE_BOUNDARY_VERIFIED",
+    "coordinate_system":  "EPSG:4326",
+    "geometry":  {
+                     "type":  "Polygon",
+                     "coordinates":  [
+                                         [
+                                             [
+                                                 23.723314,
+                                                 43.733439
+                                             ],
+                                             [
+                                                 23.732764,
+                                                 43.740461
+                                             ],
+                                             [
+                                                 23.73505,
+                                                 43.7392
+                                             ],
+                                             [
+                                                 23.725519,
+                                                 43.732219
+                                             ],
+                                             [
+                                                 23.723314,
+                                                 43.733439
+                                             ]
+                                         ]
+                                     ]
+                 },
+    "official_vertices":  [
+                              {
+                                  "point":  1,
+                                  "latitude":  43.733439,
+                                  "longitude":  23.723314
+                              },
+                              {
+                                  "point":  2,
+                                  "latitude":  43.740461,
+                                  "longitude":  23.732764
+                              },
+                              {
+                                  "point":  3,
+                                  "latitude":  43.7392,
+                                  "longitude":  23.73505
+                              },
+                              {
+                                  "point":  4,
+                                  "latitude":  43.732219,
+                                  "longitude":  23.725519
+                              }
+                          ],
+    "sources":  [
+                    {
+                        "title":  "ДОВОС НХРАО, Част I, таблица 1.5-9",
+                        "url":  "https://dprao.bg/images/EIA_part_1_Anotation.pdf",
+                        "evidence":  "OFFICIAL_SITE_BOUNDARY_COORDINATES"
+                    },
+                    {
+                        "title":  "The 2006 site characterization campaign at the Marichin Valog site",
+                        "url":  "https://www.researchgate.net/publication/305347832_The_2006_site_characterization_campaign_at_the_Marichin_Valog_site_Kozloduy_Bulgaria",
+                        "evidence":  "LOCAL_LITHOLOGY_AND_SITE_PROFILES"
+                    }
+                ],
+    "associated_lithology_records":  [
+                                         "VRA-CTX-002",
+                                         "VRA-CTX-003",
+                                         "VRA-CTX-004"
+                                     ],
+    "spatial_evidence":  {
+                             "site_boundary_verified":  true,
+                             "individual_borehole_coordinates_verified":  false,
+                             "site_level_lithological_context_available":  true,
+                             "exact_target_depth_interpolation_allowed":  false,
+                             "production_eligible":  false
+                         },
+    "scientific_limits":  [
+                              "Polygon identifies the investigated site, not individual boreholes.",
+                              "B-1a, B-2a and B-2b retain unresolved individual coordinates.",
+                              "Different shallow profiles must not be averaged into one exact column.",
+                              "Open-ended Pliocene clay intervals have no documented lower boundary.",
+                              "Geological observations must not be projected outside the site without independent evidence.",
+                              "Source figures require separate QA before individual borehole placement."
+                          ]
+}

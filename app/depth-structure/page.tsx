@@ -7,6 +7,7 @@ import {
   type LithologyProfile,
 } from "@/lib/lithology-profile";
 import { synthesizeLithologyEvidence } from "@/lib/lithology-synthesis";
+import { buildUnifiedLithology } from "@/lib/lithology-unified-synthesis";
 
 type SearchParams = Promise<{
   lat?: string;
@@ -178,140 +179,266 @@ export default async function DepthStructurePage({
     synthesizeLithologyEvidence(profile);
 
   const checkpoints =
-    [20, 50, 100, 150, 200, 300];
+    [20, 50, 80, 100, 150, 200, 300];
 
-  const vratsaSpatialRows =
-    Array.isArray(
-      profile.target_spatial_depth_model
-    )
-      ? profile.target_spatial_depth_model
-          .filter(item =>
-            checkpoints.includes(
-              item.target.depth_m
-            )
-          )
-          .map(item => {
-            const lithology =
-              item.depth_lithology;
 
-            const alternatives =
-              lithology
-                ?.alternative_lithologies ||
-              [];
+  const unified = buildUnifiedLithology(
+    profile,
+    synthesis,
+    checkpoints
+  );
 
-            const material =
-              lithology
-                ?.probable_lithology ||
-              (
-                alternatives.length > 0
-                  ? alternatives.join(" / ")
-                  : "Условна литоложка интерпретация"
-              );
+  /*
+   * User-facing lithology translation.
+   * Source evidence and geological calculations remain unchanged.
+   */
+  const geologyTextBg = (value: string): string => {
+    const direct: Record<string, string> = {
+      "Neogene clay-sand sedimentary sequence":
+        "Неогенски глинесто-песъчлив седиментен комплекс",
 
-            const description =
-              lithology?.status === "OK"
-                ? (
-                    `Пространствен модел ${item.zone.zone_id}; ` +
-                    `литоложка интерпретация по дълбочина.`
-                  )
-                : (
-                    `Условен пространствен модел ${item.zone.zone_id}. ` +
-                    `Не се избира единична формация без необходимия ` +
-                    `геоложки или структурен контрол.`
-                  );
+      "Quaternary loess/alluvial deposits":
+        "Кватернерни льосови и алувиални наслаги",
 
-            return {
-              depth:
-                item.target.depth_m,
+      "Brusartsi Formation clay/sand sequence":
+        "Глинесто-песъчлив комплекс на Брусарската свита",
 
-              material,
+      "Sarmatian clay-sand sequence":
+        "Сарматски глинесто-песъчлив комплекс",
 
-              description,
+      "Pliocene clay":
+        "Плиоценска глина",
 
-              confidence:
-                lithology?.confidence ||
-                item.depth_model.confidence,
+      "loess":
+        "льос",
 
-              analogueCount:
-                0,
+      "clay":
+        "глина",
 
-              source:
-                "vratsa_spatial_model" as const,
-            };
-          })
-      : [];
+      "sand":
+        "пясък",
 
-  const rows =
-    synthesis.evidence_level === "DIRECT"
-      ? (() => {
-          const direct =
-            profile.direct_borehole_evidence?.[0];
+      "gravel":
+        "чакъл",
 
-          if (!direct) {
-            return [];
-          }
+      "sandstone":
+        "пясъчник",
 
-          return checkpoints
-            .map(depth => {
-              const interval =
-                direct.lithology.find(
-                  item => {
-                    const from =
-                      Number(item.depth_from_m);
+      "limestone":
+        "варовик",
 
-                    const to =
-                      Number(item.depth_to_m);
+      "marl":
+        "мергел",
 
-                    return (
-                      Number.isFinite(from) &&
-                      Number.isFinite(to) &&
-                      depth >= from &&
-                      depth <= to
-                    );
-                  }
-                );
+      "dolomite":
+        "доломит",
 
-              if (!interval) {
-                return null;
-              }
+      "conglomerate":
+        "конгломерат",
+    };
 
-              return {
-                depth,
-                material:
-                  interval.expected_material_bg ||
-                  "Документиран литоложки интервал",
-                description:
-                  "Материалът е установен в документиран сондажен разрез на тази точка.",
-                confidence:
-                  "документиран сондаж",
-                analogueCount: 1,
-              };
-            })
-            .filter(Boolean);
-        })()
-      : vratsaSpatialRows.length > 0
-        ? vratsaSpatialRows
-        : synthesis.depth_profile
-          .filter(
-            item =>
-              item.comparison_family != null
-          )
-          .map(item => ({
-            depth: item.depth_m,
-            material: familyLabel(
-              item.comparison_family!
-            ),
-            description: familyDescription(
-              item.comparison_family!
-            ),
-            confidence:
-              confidenceLabel(
-                item.confidence
-              ),
-            analogueCount:
-              item.analogue_count,
-          }));
+    const trimmed = value.trim();
 
+    if (direct[trimmed]) {
+      return direct[trimmed];
+    }
+
+    let result = trimmed;
+
+    const replacements: Array<[RegExp, string]> = [
+      [
+        /Quaternary loess\/alluvial deposits/gi,
+        "кватернерни льосови и алувиални наслаги"
+      ],
+      [
+        /Brusartsi Formation clay\/sand sequence/gi,
+        "глинесто-песъчлив комплекс на Брусарската свита"
+      ],
+      [
+        /Neogene clay-sand sedimentary sequence/gi,
+        "неогенски глинесто-песъчлив седиментен комплекс"
+      ],
+      [
+        /Romanian: dense yellowish clays with calcareous concretions/gi,
+        "Романски етаж: плътни жълтеникави глини с варовити конкреции"
+      ],
+      [
+        /locally sandy with clayey-sand intercalations/gi,
+        "на места песъчливи, с глинесто-песъчливи прослойки"
+      ],
+      [
+        /Dacian: grey-bluish sandy clays and sands/gi,
+        "Дакийски етаж: сиво-синкави песъчливи глини и пясъци"
+      ],
+      [
+        /locally lignitic coal horizons and sandy clays/gi,
+        "на места лигнитни въглищни хоризонти и песъчливи глини"
+      ],
+      [
+        /Exact local Romanian\/Dacian contact depth is not machine-resolved/gi,
+        "Точната дълбочина на местния контакт между романския и дакийския етаж не е определена"
+      ],
+      [
+        /Local shallow 3D model must override this regional fallback where its geometry is resolved/gi,
+        "При установена локална 3D геометрия регионалният модел трябва да бъде уточнен според нея"
+      ],
+      [
+        /lithology depends strongly on local terrace\/3D-model geometry/gi,
+        "литологията зависи силно от местната терасова и триизмерна геоложка структура"
+      ],
+      [
+        /Romanian\b/g,
+        "романски етаж"
+      ],
+      [
+        /Dacian\b/g,
+        "дакийски етаж"
+      ],
+    ];
+
+    for (const [pattern, replacement] of replacements) {
+      result = result.replace(pattern, replacement);
+    }
+
+    return familyLabel(result);
+  };
+
+  const evidenceLabels = {
+    DIRECT_BOREHOLE:
+      "Документирани сондажни данни",
+
+    BOREHOLE_PROJECTION:
+      "Прогноза по сондажен аналог",
+
+    SPATIAL_MODEL:
+      "Пространствен геоложки модел",
+
+    REGIONAL_CONTEXT:
+      "Регионален геоложки контекст",
+
+    UNRESOLVED:
+      "Недостатъчно данни за конкретната дълбочина",
+  } as const;
+
+  const confidenceLabel = (value: string | null) => {
+    const labels: Record<string, string> = {
+      HIGH: "Висока",
+      MEDIUM: "Средна",
+      LOW: "Ниска",
+      VERY_LOW: "Много ниска",
+      UNRESOLVED: "Неопределена",
+      DOCUMENTED: "Документирана",
+      DOCUMENTED_NEAR_TARGET_NOT_EXACT:
+        "Документиран близък аналог, не точно в избраната точка",
+    };
+
+    if (!value) return "Неопределена";
+
+    return labels[value] || value;
+  };
+
+  const rawRows = unified.map(point => {
+    const material = point.material
+      ? geologyTextBg(familyLabel(point.material))
+      : point.alternatives.length > 0
+        ? "Точният пласт не е установен"
+        : "Недостатъчно геоложки данни";
+
+    const simpleMaterial =
+      /Neogene clay-sand|неогенски глинесто-песъчлив/i.test(material)
+        ? "Глини и пясъци"
+        : material;
+
+    const evidence = point.evidence_kind;
+
+    const description =
+      !point.material && point.alternatives.length > 0
+        ? "Възможни са: " +
+          point.alternatives.slice(0, 2)
+            .map(x => geologyTextBg(familyLabel(x)))
+            .join(" или ") + "."
+        : !point.material
+          ? "Няма достатъчно данни за този пласт."
+          : evidence === "DIRECT_BOREHOLE"
+            ? "Данни от документиран сондаж."
+            : evidence === "BOREHOLE_PROJECTION"
+              ? "Прогноза по сондажен аналог."
+              : evidence === "SPATIAL_MODEL"
+                ? "Вероятен материал според геоложкия модел."
+                : "Ориентировъчна геоложка информация за района.";
+
+    const confidence =
+      evidence === "DIRECT_BOREHOLE"
+        ? "Документирани данни"
+        : evidence === "BOREHOLE_PROJECTION"
+          ? "Прогноза по сондажен аналог"
+          : evidence === "SPATIAL_MODEL"
+            ? "Прогноза по геоложки модел"
+            : "Не е доказан конкретен пласт";
+
+    const groupable =
+      evidence === "SPATIAL_MODEL" ||
+      evidence === "REGIONAL_CONTEXT";
+
+    // Only the same underlying evidence may be grouped.
+    // Display text alone is not a sufficient geological match.
+    const signature = JSON.stringify({
+      material: point.material,
+      alternatives: point.alternatives,
+      evidence: point.evidence_kind,
+      confidence: point.confidence,
+      boreholes: point.borehole_ids,
+      sources: point.source_ids,
+      limitations: point.limitations,
+    });
+
+    return {
+      startDepth: point.depth_m,
+      endDepth: point.depth_m,
+      checkpoints: [point.depth_m],
+      signature,
+      groupable,
+      material: simpleMaterial,
+      description,
+      confidence,
+      analogueCount: 0,
+    };
+  });
+
+  const groupedRows: typeof rawRows = [];
+
+  for (const row of rawRows) {
+    const previous = groupedRows[groupedRows.length - 1];
+
+    if (
+      previous &&
+      previous.groupable &&
+      row.groupable &&
+      previous.signature === row.signature
+    ) {
+      previous.endDepth = row.endDepth;
+      previous.checkpoints.push(...row.checkpoints);
+    } else {
+      groupedRows.push({
+        ...row,
+        checkpoints: [...row.checkpoints],
+      });
+    }
+  }
+
+  const rows = groupedRows.map(row => ({
+    depth: row.startDepth === row.endDepth
+      ? String(row.startDepth)
+      : `${row.startDepth}–${row.endDepth}`,
+    material: row.material,
+    description: row.checkpoints.length > 1
+      ? `${row.description} Сходен резултат при проверените дълбочини: ${
+          row.checkpoints.join(", ")
+        } м. Това не доказва непрекъснат пласт между тях.`
+      : row.description,
+    confidence: row.confidence,
+    analogueCount: row.analogueCount,
+  }));
   const title =
     params.location_label?.trim() ||
     `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
@@ -467,6 +594,58 @@ export default async function DepthStructurePage({
             изграждане на профил.
           </div>
         )}
+        {/* MARICHIN_LOCAL_EVIDENCE_START */}
+        {profile.marichin_local_context != null && (
+            <section
+              aria-label="Локална геоложка информация"
+              style={{
+                marginTop: 28,
+                padding: 20,
+                border: "1px solid #b9d8cf",
+                borderRadius: 14,
+                background: "#f5faf8",
+              }}
+            >
+              <h2
+                style={{
+                  margin: "0 0 12px",
+                  fontSize: 20,
+                  color: "#173f49",
+                }}
+              >
+                Локална геоложка информация — Маричин валог
+              </h2>
+
+              <p
+                style={{
+                  margin: 0,
+                  lineHeight: 1.65,
+                  color: "#344f55",
+                  fontSize: 14,
+                }}
+              >
+                В района са установени льосови наслаги,
+                червени глини, а на отделни места —
+                пясък и чакъл. Под плитките наслаги
+                е установена и плиоценска глина.
+              </p>
+
+              <p
+                style={{
+                  margin: "12px 0 0",
+                  lineHeight: 1.55,
+                  color: "#657c80",
+                  fontSize: 12,
+                }}
+              >
+                Дебелината на пластовете се различава между
+                изследваните места. Точната им последователност
+                под избраната точка не е доказана.
+              </p>
+            </section>
+          )}
+        {/* MARICHIN_LOCAL_EVIDENCE_END */}
+
 
         <div
           style={{

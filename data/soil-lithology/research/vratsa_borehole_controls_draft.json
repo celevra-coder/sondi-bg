@@ -1,0 +1,1657 @@
+{
+    "schema_version":  1,
+    "oblast":  "Враца",
+    "status":  "DRAFT_BOREHOLE_CONTROL_LAYER",
+    "purpose":  "Canonical research-layer borehole controls for future spatial lithology ensemble interpretation.",
+    "scientific_rules":  [
+                             "Observed depth point is not automatically a lithological interval.",
+                             "Projected sections are not borehole logs.",
+                             "Regional structural models are not boreholes.",
+                             "Approximate coordinates may be used for interpolation with reduced spatial weight.",
+                             "Approximate coordinates must not be displayed publicly as exact borehole locations.",
+                             "Formation thickness is not depth below ground."
+                         ],
+    "coordinate_policy":  {
+                              "recorded_coordinates":  "May be displayed only when source precision is defensible.",
+                              "approximate_coordinates":  "May participate in interpolation after location assignment and uncertainty estimation, but display_on_map remains false.",
+                              "next_step":  "Assign approximate coordinates and uncertainty in batches using site, profile, settlement and source descriptions.",
+                              "radiana_note":  "BH1-BH12 use official EIA Table 3.2-9 source coordinates. The printed coordinate pair was spatially validated as BGS1970 K3; transformation library input uses [printed Y, printed X].",
+                              "marichin_note":  "Six boreholes normalized by evidence role. Coordinates remain unresolved. No arbitrary site centroid or uncertainty value assigned."
+                          },
+    "summary":  {
+                    "total_borehole_controls":  32,
+                    "by_evidence_class":  {
+                                              "BOREHOLE_NO_USABLE_COLUMN":  26,
+                                              "PARTIAL_DOCUMENTED_COLUMN":  2,
+                                              "VERIFIED_LITHOLOGY_COLUMN":  4
+                                          },
+                    "by_location_status":  {
+                                               "EXACT_SOURCE_COORDINATES":  12,
+                                               "MUNICIPALITY_ONLY":  10,
+                                               "SITE_DESCRIPTION_ONLY":  10
+                                           },
+                    "radiana_exact_coordinates_added":  12
+                },
+    "controls":  [
+                     {
+                         "record_id":  "VRA-LEAD-018",
+                         "borehole_name":  "Р-11 Козлодуй",
+                         "site":  null,
+                         "settlement":  null,
+                         "municipality":  "Вълчедръм",
+                         "original_status":  "REGIONAL_ANALOGUE_PRIMARY_LOG_TO_RESEARCH",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  3800.0,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "MUNICIPALITY_ONLY",
+                                          "coordinate_precision":  "TO_ASSIGN_APPROXIMATE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Вълчедръм"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S019",
+                                            "VRA-S021"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-004",
+                         "borehole_name":  "Р-12 Козлодуй",
+                         "site":  null,
+                         "settlement":  null,
+                         "municipality":  "Вълчедръм",
+                         "original_status":  "DEEP_BOREHOLE_PRIMARY_LOG_TO_RESEARCH",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  4019.0,
+                         "evidence_class":  "PARTIAL_DOCUMENTED_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "MUNICIPALITY_ONLY",
+                                          "coordinate_precision":  "TO_ASSIGN_APPROXIMATE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Вълчедръм"
+                                      },
+                         "use_for_lithology_interpolation":  true,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+                                                                        {
+                                                                            "from_m":  2762.0,
+                                                                            "to_m":  3568.0,
+                                                                            "material":  "Kozlodui Formation",
+                                                                            "source_field":  "documented_lithostratigraphic_evidence",
+                                                                            "evidence_kind":  "published_holostratotype_interval"
+                                                                        }
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S005",
+                                            "VRA-S006",
+                                            "VRA-S007",
+                                            "VRA-S008",
+                                            "VRA-S009",
+                                            "VRA-S019",
+                                            "VRA-S021",
+                                            "VRA-S023",
+                                            "VRA-S024"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-005",
+                         "borehole_name":  "Р-13 Козлодуй",
+                         "site":  null,
+                         "settlement":  null,
+                         "municipality":  "Вълчедръм",
+                         "original_status":  "DEEP_BOREHOLE_PRIMARY_LOG_TO_RESEARCH",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  4291.0,
+                         "evidence_class":  "PARTIAL_DOCUMENTED_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "MUNICIPALITY_ONLY",
+                                          "coordinate_precision":  "TO_ASSIGN_APPROXIMATE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Вълчедръм"
+                                      },
+                         "use_for_lithology_interpolation":  true,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+                                                                        {
+                                                                            "from_m":  3.55,
+                                                                            "to_m":  22.0,
+                                                                            "material":  "Loess; basal sands",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  22.0,
+                                                                            "to_m":  58.0,
+                                                                            "material":  "Clays with sand seams",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  58.0,
+                                                                            "to_m":  97.0,
+                                                                            "material":  "Clays with sand seams",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  97.0,
+                                                                            "to_m":  177.0,
+                                                                            "material":  "Sands",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  177.0,
+                                                                            "to_m":  338.0,
+                                                                            "material":  "Clays with sand seams",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  338.0,
+                                                                            "to_m":  418.0,
+                                                                            "material":  "Clays with thin sand seams",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  418.0,
+                                                                            "to_m":  468.0,
+                                                                            "material":  "Clays with thin sand seams",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  468.0,
+                                                                            "to_m":  577.0,
+                                                                            "material":  "Clays with thin sand seams",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  577.0,
+                                                                            "to_m":  743.0,
+                                                                            "material":  "Clays with sand seams and marls",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  743.0,
+                                                                            "to_m":  882.0,
+                                                                            "material":  "Marls",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  882.0,
+                                                                            "to_m":  940.0,
+                                                                            "material":  "Marls",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  940.0,
+                                                                            "to_m":  1311.0,
+                                                                            "material":  "Limestones",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  1311.0,
+                                                                            "to_m":  1486.0,
+                                                                            "material":  "Clayey limestones",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  1486.0,
+                                                                            "to_m":  1609.0,
+                                                                            "material":  "Sandy limestones and marls",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  1609.0,
+                                                                            "to_m":  1675.0,
+                                                                            "material":  "Silty limestones and marls",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  1675.0,
+                                                                            "to_m":  1779.0,
+                                                                            "material":  "Marls",
+                                                                            "source_field":  "documented_partial_geologic_column",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        }
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S005",
+                                            "VRA-S006",
+                                            "VRA-S008",
+                                            "VRA-S009",
+                                            "VRA-S019",
+                                            "VRA-S021",
+                                            "VRA-S022",
+                                            "VRA-S023",
+                                            "VRA-S024"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-017",
+                         "borehole_name":  "С-1 Козлодуй",
+                         "site":  null,
+                         "settlement":  null,
+                         "municipality":  "Вълчедръм",
+                         "original_status":  "REGIONAL_ANALOGUE_PRIMARY_LOG_TO_RESEARCH",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  705.0,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "MUNICIPALITY_ONLY",
+                                          "coordinate_precision":  "TO_ASSIGN_APPROXIMATE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Вълчедръм"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S019",
+                                            "VRA-S021"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-008",
+                         "borehole_name":  "1-6HIG",
+                         "site":  "АЕЦ Козлодуй – Site 1",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "NEEDS_PRIMARY_BOREHOLE_LOG",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  null,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "SITE_DESCRIPTION_ONLY",
+                                          "coordinate_precision":  "UNRESOLVED_NO_GEOREFERENCE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "АЕЦ Козлодуй – Site 1"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S018"
+                                        ],
+                         "spatial_control_role":  "BOREHOLE_REFERENCE_ONLY",
+                         "spatial_interpolation_ready":  false
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-009",
+                         "borehole_name":  "2-7HIG",
+                         "site":  "АЕЦ Козлодуй – Site 2",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "NEEDS_PRIMARY_BOREHOLE_LOG",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  null,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "SITE_DESCRIPTION_ONLY",
+                                          "coordinate_precision":  "UNRESOLVED_NO_GEOREFERENCE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "АЕЦ Козлодуй – Site 2"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S018"
+                                        ],
+                         "spatial_control_role":  "BOREHOLE_REFERENCE_ONLY",
+                         "spatial_interpolation_ready":  false
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-010",
+                         "borehole_name":  "3-5HIG",
+                         "site":  "АЕЦ Козлодуй – Site 3",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "NEEDS_PRIMARY_BOREHOLE_LOG",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  null,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "SITE_DESCRIPTION_ONLY",
+                                          "coordinate_precision":  "UNRESOLVED_NO_GEOREFERENCE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "АЕЦ Козлодуй – Site 3"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S018"
+                                        ],
+                         "spatial_control_role":  "BOREHOLE_REFERENCE_ONLY",
+                         "spatial_interpolation_ready":  false
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-011",
+                         "borehole_name":  "4-6HIG",
+                         "site":  "АЕЦ Козлодуй – Site 4",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "NEEDS_PRIMARY_BOREHOLE_LOG",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  null,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "SITE_DESCRIPTION_ONLY",
+                                          "coordinate_precision":  "UNRESOLVED_NO_GEOREFERENCE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "АЕЦ Козлодуй – Site 4"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S018"
+                                        ],
+                         "spatial_control_role":  "BOREHOLE_REFERENCE_ONLY",
+                         "spatial_interpolation_ready":  false
+                     },
+                     {
+                         "record_id":  "VRA-CTX-002",
+                         "borehole_name":  "B-1a",
+                         "site":  "Маричин валог – Site 1",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "SHALLOW_VERIFIED_LITHOLOGY_CONTEXT",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  true,
+                         "total_depth_m":  null,
+                         "evidence_class":  "VERIFIED_LITHOLOGY_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "SITE_DESCRIPTION_ONLY",
+                                          "coordinate_precision":  "UNRESOLVED_NO_GEOREFERENCE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Маричин валог – Site 1"
+                                      },
+                         "use_for_lithology_interpolation":  true,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+                                                                        {
+                                                                            "from_m":  0.0,
+                                                                            "to_m":  7.5,
+                                                                            "material":  "силтист льос",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  7.5,
+                                                                            "to_m":  10.0,
+                                                                            "material":  "глинест льос",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  10.0,
+                                                                            "to_m":  10.7,
+                                                                            "material":  "червена глина",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  10.7,
+                                                                            "to_m":  null,
+                                                                            "material":  "плиоценска глина",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        }
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S004"
+                                        ],
+                         "spatial_control_role":  "DOCUMENTED_INTERVAL_LITHOLOGY",
+                         "spatial_normalization_note":  "Site identity documented; individual borehole position not sufficiently georeferenced. Not eligible for distance-weighted spatial interpolation until resolved.",
+                         "profile_evidence_qualification":  "INFILTROMETER_SITE_PROFILE_NOT_IDENTICAL_TO_SAMPLING_BOREHOLE",
+                         "profile_reference":  "SCK-CEN-R-4419, 2006, figures 2-4 to 2-8 and Annex 1",
+                         "associated_official_site_polygon":  "VRA-SPATIAL-MARICHIN-001",
+                         "site_polygon_is_exact_borehole_position":  false,
+                         "spatial_interpolation_ready":  false
+                     },
+                     {
+                         "record_id":  "VRA-CTX-003",
+                         "borehole_name":  "B-2a",
+                         "site":  "Маричин валог – Site 2",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "SHALLOW_VERIFIED_LITHOLOGY_CONTEXT",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  true,
+                         "total_depth_m":  null,
+                         "evidence_class":  "VERIFIED_LITHOLOGY_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "SITE_DESCRIPTION_ONLY",
+                                          "coordinate_precision":  "UNRESOLVED_NO_GEOREFERENCE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Маричин валог – Site 2"
+                                      },
+                         "use_for_lithology_interpolation":  true,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+                                                                        {
+                                                                            "from_m":  0.0,
+                                                                            "to_m":  1.3,
+                                                                            "material":  "глинест льос",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  1.3,
+                                                                            "to_m":  1.8,
+                                                                            "material":  "червена глина",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  1.8,
+                                                                            "to_m":  2.0,
+                                                                            "material":  "червена глина с чакъл",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  2.0,
+                                                                            "to_m":  3.4,
+                                                                            "material":  "глинест чакъл с пясък",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  3.4,
+                                                                            "to_m":  null,
+                                                                            "material":  "плиоценска глина",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        }
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S004"
+                                        ],
+                         "spatial_control_role":  "DOCUMENTED_INTERVAL_LITHOLOGY",
+                         "spatial_normalization_note":  "Site identity documented; individual borehole position not sufficiently georeferenced. Not eligible for distance-weighted spatial interpolation until resolved.",
+                         "profile_evidence_qualification":  "INFILTROMETER_SITE_PROFILE_NOT_IDENTICAL_TO_SAMPLING_BOREHOLE",
+                         "profile_reference":  "SCK-CEN-R-4419, 2006, figures 2-4 to 2-8 and Annex 1",
+                         "associated_official_site_polygon":  "VRA-SPATIAL-MARICHIN-001",
+                         "site_polygon_is_exact_borehole_position":  false,
+                         "spatial_interpolation_ready":  false
+                     },
+                     {
+                         "record_id":  "VRA-CTX-004",
+                         "borehole_name":  "B-2b / Site 3 profile",
+                         "site":  "Маричин валог – Site 3",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "SHALLOW_VERIFIED_LITHOLOGY_CONTEXT",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  true,
+                         "total_depth_m":  null,
+                         "evidence_class":  "VERIFIED_LITHOLOGY_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "SITE_DESCRIPTION_ONLY",
+                                          "coordinate_precision":  "UNRESOLVED_NO_GEOREFERENCE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Маричин валог – Site 3"
+                                      },
+                         "use_for_lithology_interpolation":  true,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+                                                                        {
+                                                                            "from_m":  0.0,
+                                                                            "to_m":  1.25,
+                                                                            "material":  "глинест льос",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  1.25,
+                                                                            "to_m":  1.6,
+                                                                            "material":  "червена глина",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  1.6,
+                                                                            "to_m":  1.8,
+                                                                            "material":  "червена глина с чакъл",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  1.8,
+                                                                            "to_m":  2.3,
+                                                                            "material":  "глинест чакъл с пясък",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  2.3,
+                                                                            "to_m":  3.3,
+                                                                            "material":  "силно карбонатен слой / bioherm",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        },
+                                                                        {
+                                                                            "from_m":  3.3,
+                                                                            "to_m":  null,
+                                                                            "material":  "плиоценска глина",
+                                                                            "source_field":  "summary_intervals",
+                                                                            "evidence_kind":  "DOCUMENTED_INTERVAL"
+                                                                        }
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S004"
+                                        ],
+                         "spatial_control_role":  "DOCUMENTED_INTERVAL_LITHOLOGY",
+                         "spatial_normalization_note":  "Site identity documented; individual borehole position not sufficiently georeferenced. Not eligible for distance-weighted spatial interpolation until resolved.",
+                         "profile_evidence_qualification":  "INFILTROMETER_SITE_PROFILE_NOT_IDENTICAL_TO_SAMPLING_BOREHOLE",
+                         "profile_reference":  "SCK-CEN-R-4419, 2006, figures 2-4 to 2-8 and Annex 1",
+                         "associated_official_site_polygon":  "VRA-SPATIAL-MARICHIN-001",
+                         "site_polygon_is_exact_borehole_position":  false,
+                         "spatial_interpolation_ready":  false
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-021",
+                         "borehole_name":  "BH1",
+                         "site":  "Радиана",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "MONITORING_ONLY",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  60.0,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  43.737308693005744,
+                                          "longitude":  23.763521580373233,
+                                          "status":  "EXACT_SOURCE_COORDINATES",
+                                          "coordinate_precision":  "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  true,
+                                          "location_basis":  "Official EIA Table 3.2-9 geodetic coordinate",
+                                          "source_id":  "VRA-S043",
+                                          "source_coordinates":  {
+                                                                     "x":  8542478.34,
+                                                                     "y":  4755805.64,
+                                                                     "interpreted_crs":  "BGS1970 K3",
+                                                                     "axis_handling":  "printed X/Y preserved; library input [printed Y, printed X]"
+                                                                 },
+                                          "transformation":  {
+                                                                 "chain":  "BGS1970 K3 -\u003e BGS2005 KK -\u003e WGS84/ETRS89 geographic",
+                                                                 "method":  "bojko108/transformations control-grid workflow",
+                                                                 "bgs2005_kk":  {
+                                                                                    "northing":  4846070.528414657,
+                                                                                    "easting":  360105.4948957581
+                                                                                }
+                                                             }
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S043"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-030",
+                         "borehole_name":  "BH10",
+                         "site":  "Радиана",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "MONITORING_ONLY",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  25.68,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  43.73707089315944,
+                                          "longitude":  23.776554646649586,
+                                          "status":  "EXACT_SOURCE_COORDINATES",
+                                          "coordinate_precision":  "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  true,
+                                          "location_basis":  "Official EIA Table 3.2-9 geodetic coordinate",
+                                          "source_id":  "VRA-S043",
+                                          "source_coordinates":  {
+                                                                     "x":  8543528.44,
+                                                                     "y":  4755786.46,
+                                                                     "interpreted_crs":  "BGS1970 K3",
+                                                                     "axis_handling":  "printed X/Y preserved; library input [printed Y, printed X]"
+                                                                 },
+                                          "transformation":  {
+                                                                 "chain":  "BGS1970 K3 -\u003e BGS2005 KK -\u003e WGS84/ETRS89 geographic",
+                                                                 "method":  "bojko108/transformations control-grid workflow",
+                                                                 "bgs2005_kk":  {
+                                                                                    "northing":  4846022.623605506,
+                                                                                    "easting":  361154.7825917192
+                                                                                }
+                                                             }
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S043"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-031",
+                         "borehole_name":  "BH11",
+                         "site":  "Радиана",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "MONITORING_ONLY",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  36.07,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  43.73653459977699,
+                                          "longitude":  23.778215601223728,
+                                          "status":  "EXACT_SOURCE_COORDINATES",
+                                          "coordinate_precision":  "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  true,
+                                          "location_basis":  "Official EIA Table 3.2-9 geodetic coordinate",
+                                          "source_id":  "VRA-S043",
+                                          "source_coordinates":  {
+                                                                     "x":  8543662.66,
+                                                                     "y":  4755727.81,
+                                                                     "interpreted_crs":  "BGS1970 K3",
+                                                                     "axis_handling":  "printed X/Y preserved; library input [printed Y, printed X]"
+                                                                 },
+                                          "transformation":  {
+                                                                 "chain":  "BGS1970 K3 -\u003e BGS2005 KK -\u003e WGS84/ETRS89 geographic",
+                                                                 "method":  "bojko108/transformations control-grid workflow",
+                                                                 "bgs2005_kk":  {
+                                                                                    "northing":  4845960.31696476,
+                                                                                    "easting":  361287.36125311535
+                                                                                }
+                                                             }
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S043"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-032",
+                         "borehole_name":  "BH12",
+                         "site":  "Радиана",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "MONITORING_ONLY",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  47.0,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  43.73610065752415,
+                                          "longitude":  23.779709565817893,
+                                          "status":  "EXACT_SOURCE_COORDINATES",
+                                          "coordinate_precision":  "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  true,
+                                          "location_basis":  "Official EIA Table 3.2-9 geodetic coordinate",
+                                          "source_id":  "VRA-S043",
+                                          "source_coordinates":  {
+                                                                     "x":  8543783.35,
+                                                                     "y":  4755680.44,
+                                                                     "interpreted_crs":  "BGS1970 K3",
+                                                                     "axis_handling":  "printed X/Y preserved; library input [printed Y, printed X]"
+                                                                 },
+                                          "transformation":  {
+                                                                 "chain":  "BGS1970 K3 -\u003e BGS2005 KK -\u003e WGS84/ETRS89 geographic",
+                                                                 "method":  "bojko108/transformations control-grid workflow",
+                                                                 "bgs2005_kk":  {
+                                                                                    "northing":  4845909.657468508,
+                                                                                    "easting":  361406.722200972
+                                                                                }
+                                                             }
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S043"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-022",
+                         "borehole_name":  "BH2",
+                         "site":  "Радиана",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "MONITORING_ONLY",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  39.0,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  43.736162438406296,
+                                          "longitude":  23.767431141239538,
+                                          "status":  "EXACT_SOURCE_COORDINATES",
+                                          "coordinate_precision":  "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  true,
+                                          "location_basis":  "Official EIA Table 3.2-9 geodetic coordinate",
+                                          "source_id":  "VRA-S043",
+                                          "source_coordinates":  {
+                                                                     "x":  8542794.16,
+                                                                     "y":  4755680.44,
+                                                                     "interpreted_crs":  "BGS1970 K3",
+                                                                     "axis_handling":  "printed X/Y preserved; library input [printed Y, printed X]"
+                                                                 },
+                                          "transformation":  {
+                                                                 "chain":  "BGS1970 K3 -\u003e BGS2005 KK -\u003e WGS84/ETRS89 geographic",
+                                                                 "method":  "bojko108/transformations control-grid workflow",
+                                                                 "bgs2005_kk":  {
+                                                                                    "northing":  4845936.722246468,
+                                                                                    "easting":  360417.8033287637
+                                                                                }
+                                                             }
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S043"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-023",
+                         "borehole_name":  "BH3",
+                         "site":  "Радиана",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "MONITORING_ONLY",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  107.0,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  43.73477746539915,
+                                          "longitude":  23.77236036000692,
+                                          "status":  "EXACT_SOURCE_COORDINATES",
+                                          "coordinate_precision":  "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  true,
+                                          "location_basis":  "Official EIA Table 3.2-9 geodetic coordinate",
+                                          "source_id":  "VRA-S043",
+                                          "source_coordinates":  {
+                                                                     "x":  8543192.32,
+                                                                     "y":  4755529.3,
+                                                                     "interpreted_crs":  "BGS1970 K3",
+                                                                     "axis_handling":  "printed X/Y preserved; library input [printed Y, printed X]"
+                                                                 },
+                                          "transformation":  {
+                                                                 "chain":  "BGS1970 K3 -\u003e BGS2005 KK -\u003e WGS84/ETRS89 geographic",
+                                                                 "method":  "bojko108/transformations control-grid workflow",
+                                                                 "bgs2005_kk":  {
+                                                                                    "northing":  4845774.7305876,
+                                                                                    "easting":  360811.71934517194
+                                                                                }
+                                                             }
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S043"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-024",
+                         "borehole_name":  "BH4",
+                         "site":  "Радиана",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "MONITORING_ONLY",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  79.0,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  43.73336041609963,
+                                          "longitude":  23.777554925508127,
+                                          "status":  "EXACT_SOURCE_COORDINATES",
+                                          "coordinate_precision":  "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  true,
+                                          "location_basis":  "Official EIA Table 3.2-9 geodetic coordinate",
+                                          "source_id":  "VRA-S043",
+                                          "source_coordinates":  {
+                                                                     "x":  8543611.9,
+                                                                     "y":  4755374.77,
+                                                                     "interpreted_crs":  "BGS1970 K3",
+                                                                     "axis_handling":  "printed X/Y preserved; library input [printed Y, printed X]"
+                                                                 },
+                                          "transformation":  {
+                                                                 "chain":  "BGS1970 K3 -\u003e BGS2005 KK -\u003e WGS84/ETRS89 geographic",
+                                                                 "method":  "bojko108/transformations control-grid workflow",
+                                                                 "bgs2005_kk":  {
+                                                                                    "northing":  4845608.7626723,
+                                                                                    "easting":  361226.956508914
+                                                                                }
+                                                             }
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S043"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-025",
+                         "borehole_name":  "BH5",
+                         "site":  "Радиана",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "MONITORING_ONLY",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  24.47,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  43.73967145979295,
+                                          "longitude":  23.76609212326952,
+                                          "status":  "EXACT_SOURCE_COORDINATES",
+                                          "coordinate_precision":  "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  true,
+                                          "location_basis":  "Official EIA Table 3.2-9 geodetic coordinate",
+                                          "source_id":  "VRA-S043",
+                                          "source_coordinates":  {
+                                                                     "x":  8542683.62,
+                                                                     "y":  4756069.57,
+                                                                     "interpreted_crs":  "BGS1970 K3",
+                                                                     "axis_handling":  "printed X/Y preserved; library input [printed Y, printed X]"
+                                                                 },
+                                          "transformation":  {
+                                                                 "chain":  "BGS1970 K3 -\u003e BGS2005 KK -\u003e WGS84/ETRS89 geographic",
+                                                                 "method":  "bojko108/transformations control-grid workflow",
+                                                                 "bgs2005_kk":  {
+                                                                                    "northing":  4846328.7710871855,
+                                                                                    "easting":  360317.93896305375
+                                                                                }
+                                                             }
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S043"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-026",
+                         "borehole_name":  "BH6",
+                         "site":  "Радиана",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "MONITORING_ONLY",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  15.14,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  43.73899111570171,
+                                          "longitude":  23.768171958397566,
+                                          "status":  "EXACT_SOURCE_COORDINATES",
+                                          "coordinate_precision":  "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  true,
+                                          "location_basis":  "Official EIA Table 3.2-9 geodetic coordinate",
+                                          "source_id":  "VRA-S043",
+                                          "source_coordinates":  {
+                                                                     "x":  8542851.68,
+                                                                     "y":  4755995.13,
+                                                                     "interpreted_crs":  "BGS1970 K3",
+                                                                     "axis_handling":  "printed X/Y preserved; library input [printed Y, printed X]"
+                                                                 },
+                                          "transformation":  {
+                                                                 "chain":  "BGS1970 K3 -\u003e BGS2005 KK -\u003e WGS84/ETRS89 geographic",
+                                                                 "method":  "bojko108/transformations control-grid workflow",
+                                                                 "bgs2005_kk":  {
+                                                                                    "northing":  4846249.753277105,
+                                                                                    "easting":  360483.91656738706
+                                                                                }
+                                                             }
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S043"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-027",
+                         "borehole_name":  "BH7",
+                         "site":  "Радиана",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "MONITORING_ONLY",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  35.0,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  43.73973380676148,
+                                          "longitude":  23.76987325207646,
+                                          "status":  "EXACT_SOURCE_COORDINATES",
+                                          "coordinate_precision":  "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  true,
+                                          "location_basis":  "Official EIA Table 3.2-9 geodetic coordinate",
+                                          "source_id":  "VRA-S043",
+                                          "source_coordinates":  {
+                                                                     "x":  8542988.16,
+                                                                     "y":  4756078.59,
+                                                                     "interpreted_crs":  "BGS1970 K3",
+                                                                     "axis_handling":  "printed X/Y preserved; library input [printed Y, printed X]"
+                                                                 },
+                                          "transformation":  {
+                                                                 "chain":  "BGS1970 K3 -\u003e BGS2005 KK -\u003e WGS84/ETRS89 geographic",
+                                                                 "method":  "bojko108/transformations control-grid workflow",
+                                                                 "bgs2005_kk":  {
+                                                                                    "northing":  4846329.456873319,
+                                                                                    "easting":  360622.6425031377
+                                                                                }
+                                                             }
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S043"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-028",
+                         "borehole_name":  "BH8",
+                         "site":  "Радиана",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "MONITORING_ONLY",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  46.11,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  43.73834234708634,
+                                          "longitude":  23.772044330631804,
+                                          "status":  "EXACT_SOURCE_COORDINATES",
+                                          "coordinate_precision":  "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  true,
+                                          "location_basis":  "Official EIA Table 3.2-9 geodetic coordinate",
+                                          "source_id":  "VRA-S043",
+                                          "source_coordinates":  {
+                                                                     "x":  8543164.12,
+                                                                     "y":  4755925.2,
+                                                                     "interpreted_crs":  "BGS1970 K3",
+                                                                     "axis_handling":  "printed X/Y preserved; library input [printed Y, printed X]"
+                                                                 },
+                                          "transformation":  {
+                                                                 "chain":  "BGS1970 K3 -\u003e BGS2005 KK -\u003e WGS84/ETRS89 geographic",
+                                                                 "method":  "bojko108/transformations control-grid workflow",
+                                                                 "bgs2005_kk":  {
+                                                                                    "northing":  4846171.294223849,
+                                                                                    "easting":  360794.35799848475
+                                                                                }
+                                                             }
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S043"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-029",
+                         "borehole_name":  "BH9",
+                         "site":  "Радиана",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "MONITORING_ONLY",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  15.98,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  43.73762912969269,
+                                          "longitude":  23.774571742741664,
+                                          "status":  "EXACT_SOURCE_COORDINATES",
+                                          "coordinate_precision":  "OFFICIAL_SOURCE_COORDINATE_TRANSFORMED",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  true,
+                                          "location_basis":  "Official EIA Table 3.2-9 geodetic coordinate",
+                                          "source_id":  "VRA-S043",
+                                          "source_coordinates":  {
+                                                                     "x":  8543368.27,
+                                                                     "y":  4755847.37,
+                                                                     "interpreted_crs":  "BGS1970 K3",
+                                                                     "axis_handling":  "printed X/Y preserved; library input [printed Y, printed X]"
+                                                                 },
+                                          "transformation":  {
+                                                                 "chain":  "BGS1970 K3 -\u003e BGS2005 KK -\u003e WGS84/ETRS89 geographic",
+                                                                 "method":  "bojko108/transformations control-grid workflow",
+                                                                 "bgs2005_kk":  {
+                                                                                    "northing":  4846087.899957744,
+                                                                                    "easting":  360996.32284781244
+                                                                                }
+                                                             }
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S043"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-006",
+                         "borehole_name":  "Borehole 34",
+                         "site":  "Маричин валог",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "NEEDS_PRIMARY_BOREHOLE_LOG",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  null,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "SITE_DESCRIPTION_ONLY",
+                                          "coordinate_precision":  "UNRESOLVED_NO_GEOREFERENCE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Маричин валог"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S003",
+                                            "VRA-S004"
+                                        ],
+                         "spatial_control_role":  "BOREHOLE_EXISTENCE_ONLY",
+                         "spatial_interpolation_ready":  false,
+                         "spatial_normalization_note":  "Site identity documented; individual borehole position not sufficiently georeferenced. Not eligible for distance-weighted spatial interpolation until resolved."
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-007",
+                         "borehole_name":  "Borehole 64",
+                         "site":  "Маричин валог",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "NEEDS_PRIMARY_BOREHOLE_LOG",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  null,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "SITE_DESCRIPTION_ONLY",
+                                          "coordinate_precision":  "UNRESOLVED_NO_GEOREFERENCE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Маричин валог"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S003",
+                                            "VRA-S004"
+                                        ],
+                         "spatial_control_role":  "BOREHOLE_EXISTENCE_ONLY",
+                         "spatial_interpolation_ready":  false,
+                         "spatial_normalization_note":  "Site identity documented; individual borehole position not sufficiently georeferenced. Not eligible for distance-weighted spatial interpolation until resolved."
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-003",
+                         "borehole_name":  "Р-10 Козлодуй",
+                         "site":  null,
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "NEEDS_PRIMARY_BOREHOLE_LOG",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  3110.0,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "MUNICIPALITY_ONLY",
+                                          "coordinate_precision":  "TO_ASSIGN_APPROXIMATE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Козлодуй"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S005",
+                                            "VRA-S019",
+                                            "VRA-S021",
+                                            "VRA-S023",
+                                            "VRA-S025"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-015",
+                         "borehole_name":  "Р-8 Козлодуй",
+                         "site":  null,
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "NEEDS_PRIMARY_BOREHOLE_LOG",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  1326.5,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "MUNICIPALITY_ONLY",
+                                          "coordinate_precision":  "TO_ASSIGN_APPROXIMATE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Козлодуй"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S019",
+                                            "VRA-S021",
+                                            "VRA-S023"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-016",
+                         "borehole_name":  "Р-9 Козлодуй",
+                         "site":  null,
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "NEEDS_PRIMARY_BOREHOLE_LOG",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  1343.0,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "MUNICIPALITY_ONLY",
+                                          "coordinate_precision":  "TO_ASSIGN_APPROXIMATE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Козлодуй"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S019",
+                                            "VRA-S021",
+                                            "VRA-S023"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-013",
+                         "borehole_name":  "С-4 Козлодуй",
+                         "site":  null,
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "NEEDS_PRIMARY_BOREHOLE_LOG",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  705.0,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "MUNICIPALITY_ONLY",
+                                          "coordinate_precision":  "TO_ASSIGN_APPROXIMATE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Козлодуй"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S019",
+                                            "VRA-S021",
+                                            "VRA-S023"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-014",
+                         "borehole_name":  "С-5 Козлодуй",
+                         "site":  null,
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "NEEDS_PRIMARY_BOREHOLE_LOG",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  703.0,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "MUNICIPALITY_ONLY",
+                                          "coordinate_precision":  "TO_ASSIGN_APPROXIMATE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Козлодуй"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S019",
+                                            "VRA-S021",
+                                            "VRA-S023"
+                                        ]
+                     },
+                     {
+                         "record_id":  "VRA-CTX-001",
+                         "borehole_name":  "Сондаж №37",
+                         "site":  "Маричин валог",
+                         "settlement":  null,
+                         "municipality":  "Козлодуй",
+                         "original_status":  "SHALLOW_VERIFIED_LITHOLOGY_CONTEXT",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  true,
+                         "total_depth_m":  45.0,
+                         "evidence_class":  "VERIFIED_LITHOLOGY_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "SITE_DESCRIPTION_ONLY",
+                                          "coordinate_precision":  "UNRESOLVED_NO_GEOREFERENCE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Маричин валог"
+                                      },
+                         "use_for_lithology_interpolation":  true,
+                         "lithology":  {
+                                           "depth_points":  [
+                                                                {
+                                                                    "depth_m":  1.8,
+                                                                    "material":  "силтист льос",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  7.5,
+                                                                    "material":  "палеопочва",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  8.5,
+                                                                    "material":  "силтист льос",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  10.0,
+                                                                    "material":  "силтист льос",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  11.5,
+                                                                    "material":  "силтист льос",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  13.0,
+                                                                    "material":  "глинест льос",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  14.0,
+                                                                    "material":  "глинест льос",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  15.0,
+                                                                    "material":  "червена глина",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  16.3,
+                                                                    "material":  "червена глина с чакъл",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  17.5,
+                                                                    "material":  "плиоценска глина",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  18.0,
+                                                                    "material":  "плиоценска глина",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  20.5,
+                                                                    "material":  "песъчлива глина, плиоцен",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  21.3,
+                                                                    "material":  "силтист пясък, плиоцен",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  22.3,
+                                                                    "material":  "силтист пясък, плиоцен",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  28.5,
+                                                                    "material":  "глина, плиоцен",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  31.3,
+                                                                    "material":  "глина, плиоцен",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  36.7,
+                                                                    "material":  "силтисто-глинест пясък, плиоцен",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  39.0,
+                                                                    "material":  "плътна мазна глина",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                },
+                                                                {
+                                                                    "depth_m":  42.5,
+                                                                    "material":  "плътна мазна глина",
+                                                                    "evidence_kind":  "OBSERVED_DEPTH_POINT"
+                                                                }
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S003"
+                                        ],
+                         "spatial_control_role":  "SAMPLED_DEPTH_LITHOLOGY",
+                         "spatial_interpolation_ready":  false,
+                         "spatial_normalization_note":  "Site identity documented; individual borehole position not sufficiently georeferenced. Not eligible for distance-weighted spatial interpolation until resolved."
+                     },
+                     {
+                         "record_id":  "VRA-LEAD-020",
+                         "borehole_name":  "C-3 Oryahovo",
+                         "site":  null,
+                         "settlement":  null,
+                         "municipality":  "Оряхово",
+                         "original_status":  "DEFERRED_BOREHOLE_LOG_TO_RESEARCH",
+                         "borehole_exists_verified":  true,
+                         "verified_borehole_log":  false,
+                         "total_depth_m":  null,
+                         "evidence_class":  "BOREHOLE_NO_USABLE_COLUMN",
+                         "location":  {
+                                          "latitude":  null,
+                                          "longitude":  null,
+                                          "status":  "MUNICIPALITY_ONLY",
+                                          "coordinate_precision":  "TO_ASSIGN_APPROXIMATE",
+                                          "coordinate_uncertainty_m":  null,
+                                          "display_on_map":  false,
+                                          "location_basis":  "Оряхово"
+                                      },
+                         "use_for_lithology_interpolation":  false,
+                         "lithology":  {
+                                           "depth_points":  [
+
+                                                            ],
+                                           "documented_intervals":  [
+
+                                                                    ]
+                                       },
+                         "source_ids":  [
+                                            "VRA-S019",
+                                            "VRA-S008"
+                                        ]
+                     }
+                 ]
+}

@@ -1,4 +1,8 @@
 import "server-only";
+import {
+  getMarichinLocalContext,
+  type MarichinLocalContext,
+} from "./vratsa-marichin-context";
 
 import fs from "node:fs";
 import path from "node:path";
@@ -210,6 +214,9 @@ export type LithologyProfile = {
    */
   target_spatial_depth_model:
     VratsaSpatialContextResult[];
+
+  marichin_local_context:
+    MarichinLocalContext | null;
 
   direct_borehole_evidence: LithologyAnalogue[];
 
@@ -1201,7 +1208,7 @@ export async function getLithologyProfile(
    * filtered out, preserving all existing behaviour.
    */
   const spatialDepthCheckpoints =
-    [20, 50, 100, 150, 200, 300, 500];
+    [20, 50, 80, 100, 150, 200, 300, 500];
 
   const targetSpatialDepthModel =
     spatialDepthCheckpoints
@@ -1569,6 +1576,9 @@ export async function getLithologyProfile(
 
     target_spatial_depth_model:
       targetSpatialDepthModel,
+
+    marichin_local_context:
+      getMarichinLocalContext(latitude, longitude),
 
     direct_borehole_evidence:
       nearby.filter((item) =>

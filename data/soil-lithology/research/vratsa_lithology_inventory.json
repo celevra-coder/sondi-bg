@@ -1,0 +1,3570 @@
+{
+  "oblast": "Враца",
+  "region_code": "Vratsa",
+  "research_status": "IN_PROGRESS",
+  "sources": [
+    {
+      "source_id": "VRA-S001",
+      "source_type": "official_operator_tender_documentation",
+      "authority": "Булгартрансгаз ЕАД",
+      "title": "Техническа спецификация – Сондаж Е-72, ПГХ Чирен",
+      "url": "https://bulgartransgaz.bg/file/download/7e0b671bf806f7321712e25acdad2ab14a08b6a0",
+      "reliability": "HIGH",
+      "evidence_scope": "projected lithostratigraphic section before drilling; not final verified post-drilling log"
+    },
+    {
+      "source_id": "VRA-S003",
+      "source_type": "technical_scientific_report",
+      "authority": "SCK•CEN / Geological Institute BAS",
+      "title": "The 2005 site characterization campaign at the Marichin Valog site (Kozloduy), Bulgaria",
+      "url": "https://www.researchgate.net/publication/305347767_The_2005_site_characterization_campaing_at_the_Marichin_Valog_site_Kozloduy_Bulgaria",
+      "reliability": "HIGH",
+      "evidence_scope": "Actual 45 m borehole No. 37 with detailed lithological sample description in Annex 1"
+    },
+    {
+      "source_id": "VRA-S004",
+      "source_type": "technical_scientific_report",
+      "authority": "SCK•CEN / Geological Institute BAS",
+      "title": "The 2006 site characterization campaign at the Marichin Valog site (Kozloduy), Bulgaria",
+      "url": "https://www.researchgate.net/publication/305347832_The_2006_site_characterization_campaign_at_the_Marichin_Valog_site_Kozloduy_Bulgaria",
+      "reliability": "HIGH",
+      "evidence_scope": "Actual core boreholes B-1a, B-2a and B-2b with refined stratigraphic description"
+    },
+    {
+      "source_id": "VRA-S005",
+      "source_type": "official_eia",
+      "authority": "ДП РАО / Енергиен институт",
+      "title": "ДОВОС – извеждане от експлоатация на блокове 1–4 на АЕЦ Козлодуй, Глава 3",
+      "url": "https://dprao.bg/images/KPMU-EIA016_02-Chapter-3-BG-PH_1.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Identifies deep structural boreholes R-10, R-12 and R-13 Kozloduy and regional lithostratigraphy"
+    },
+    {
+      "source_type": "peer_reviewed_scientific_article",
+      "authority": "Stratigraphy and Geological Correlation",
+      "authors": "H. I. Chemberski; N. D. Botoucharov",
+      "title": "Triassic Lithostratigraphic Correlation in the Moesian Platform (Bulgaria-Romania)",
+      "year": 2013,
+      "doi": "10.1134/S0869593813060087",
+      "url": "https://www.researchgate.net/publication/259073740_Triassic_Lithostratigraphic_Correlation_in_the_Moesian_Platform_Bulgaria-Romania",
+      "reliability": "HIGH",
+      "evidence_scope": "R-12 Kozlodui is the holostratotype of the Kozlodui Formation at 2762-3568 m. R-13 Kozlodui documents 811 m thickness of the Kozlodui Formation.",
+      "source_id": "VRA-S006"
+    },
+    {
+      "source_type": "peer_reviewed_scientific_article",
+      "authority": "Geologica Balcanica",
+      "authors": "Todor Nikolov; Nikolina Ruskova",
+      "title": "The Lower Cretaceous in the wells of Northwestern Bulgaria",
+      "year": 1993,
+      "url": "https://www.geologica-balcanica.eu/sites/default/files/articles/GB%20(1993)_23%20(5)_pp.47-67%20(Nikolov%20and%20Ruskova).pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Published borehole-based Lower Cretaceous lithostratigraphy. R-12 Kozlodui is specifically described within the studied Kozlodui area; micritic limestones dominate, with thin marly interbeds and locally clayey limestone/marl.",
+      "source_id": "VRA-S007"
+    },
+    {
+      "source_type": "scientific_book_chapter",
+      "authority": "Geological Challenges in Radioactive Waste Isolation",
+      "authors": "Doncho Karastanev; Dimcho Evstatiev",
+      "title": "Nuclear Waste Disposal in Bulgaria: Possibilities for Radioactive Waste Disposal in Kozloduy Nuclear Power Plant Area",
+      "year": 2006,
+      "url": "https://curie.pnnl.gov/system/files/lbnl-59808-wwr4.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Documents approximately 60 deep boreholes within about 25 km of Kozloduy NPP, with depths from roughly 1000 to 4300 m, mainly related to earlier oil and gas exploration.",
+      "source_id": "VRA-S008",
+      "figure_4_3_interpretation": {
+        "figure": "Isopach map of Neogene sediments",
+        "label_format": "borehole number / Neogene sediment thickness",
+        "critical_identity_warning": "Borehole identifiers repeat across the wider regional map. Do not assign a Figure 4.3 thickness to an inventory borehole based on identifier alone. Spatial identity and source correlation must be resolved first.",
+        "examples_visible_on_map": [
+          "P-10/536",
+          "P-13/555",
+          "P-8/613",
+          "P-11/558",
+          "P-9/1238",
+          "C-5/1238",
+          "C-4/1380"
+        ],
+        "values_saved_to_individual_boreholes": false
+      }
+    },
+    {
+      "source_type": "peer_reviewed_bibliographic_trace",
+      "authority": "Bulgarian Geological Society",
+      "title": "Engineering geological investigations in the Kozloduy NPP region - bibliography and source trace",
+      "year": 2024,
+      "url": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2024_3/PDF/51_Karastanev_REV_BGS_2024-3.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Bibliographic trace to primary and contract reports including Bojinov & Markov 1985 (Units 5 and 6 foundation/Pliocene clays), GI-BAS 2003 geological assessment, GI-BAS 2009 confirmation investigations, and GI-BAS 2011 Radiana engineering-geological and hydrogeological investigations.",
+      "source_id": "VRA-S009"
+    },
+    {
+      "source_type": "scientific_bibliography_with_abstracts",
+      "authority": "Geological Institute, Bulgarian Academy of Sciences",
+      "title": "Bibliography with abstracts of the scientific, scientific-applied and other publications of Prof. Dr. Dimcho Evstatiev",
+      "url": "https://www.researchgate.net/publication/368544674_Evstatiev_Bibliogarfia",
+      "reliability": "HIGH",
+      "evidence_scope": "Identifies published and contract work related to Kozloduy NPP, including the 1972 Energoproekt engineering-geological study, regional deep-borehole context and RAW repository investigations.",
+      "source_id": "VRA-S010"
+    },
+    {
+      "source_type": "published_engineering_geological_article",
+      "authority": "Energoproekt",
+      "authors": "M. Minkov; D. Evstatiev; T. Anastasov",
+      "title": "Инженерногеоложки условия и възможности за фундиране на главния корпус на АЕЦ Козлодуй посредством комбинация от уплътняване с тежка трамбовка и възглавница от циментольос",
+      "year": 1972,
+      "publication": "Годишник на Енергопроект, т. XIII, 1, 213-237",
+      "reliability": "HIGH",
+      "evidence_scope": "Published summary of field investigations for the foundation of Kozloduy NPP Unit 1; includes geological structure figure and engineering-geological data. Exact borehole logs still to research.",
+      "source_trace_id": "VRA-S010",
+      "source_id": "VRA-S011"
+    },
+    {
+      "source_type": "official_eia_terms_of_reference",
+      "authority": "Ministry of Environment and Water / Kozloduy NPP New Build documentation",
+      "title": "Terms of Reference for the scope and content of the EIA Report - Kozloduy NPP New Unit",
+      "year": 2013,
+      "url": "https://www.moew.government.bg/static/media/ups/tiny/file/Industry/EIA/Transgranichni_EIA_procedures/ToR_NPP_Kozlodui_EN.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Official reference list identifying the 2009 Radiana confirmation report, 2012 geological/hydrogeological profiles from Radiana to the Danube, and 2013 site selection and characterization report by Risk Engineering and University of Mining and Geology.",
+      "source_id": "VRA-S012"
+    },
+    {
+      "source_type": "primary_report_bibliographic_trace",
+      "authority": "Geological Institute BAS",
+      "title": "Assessment of the geological conditions for long-term disposal of conditioned RAW at the site and the proximity of Kozloduy NPP",
+      "year": 2003,
+      "reliability": "HIGH_TRACE",
+      "evidence_scope": "Contract report; primary document not yet located publicly.",
+      "source_trace_id": "VRA-S010",
+      "source_id": "VRA-S013"
+    },
+    {
+      "source_type": "primary_report_bibliographic_trace",
+      "authority": "Geological Institute BAS",
+      "title": "Results from the performed geological, geophysical, engineering geological, hydrogeological and hydrological investigations for Confirmation of the NDF site",
+      "year": 2009,
+      "reliability": "HIGH_TRACE",
+      "evidence_scope": "Contract report; explicitly cited in later official EIA documentation.",
+      "source_trace_id": "VRA-S012",
+      "source_id": "VRA-S014"
+    },
+    {
+      "source_type": "primary_report_bibliographic_trace",
+      "authority": "Geological Institute BAS",
+      "title": "Engineering geological and hydrogeological field and laboratory investigations in the plain part of Radiana site",
+      "year": 2011,
+      "reliability": "HIGH_TRACE",
+      "evidence_scope": "Contract report; primary document still to research.",
+      "source_trace_id": "VRA-S012",
+      "source_id": "VRA-S015"
+    },
+    {
+      "source_type": "primary_report_bibliographic_trace",
+      "authority": "Geological Institute BAS",
+      "title": "Preparation of geological and hydrogeological profiles from the plateau through the Radiana site to the Danube River",
+      "year": 2012,
+      "reliability": "HIGH_TRACE",
+      "evidence_scope": "Referenced by official Kozloduy EIA Terms of Reference.",
+      "source_trace_id": "VRA-S012",
+      "source_id": "VRA-S016"
+    },
+    {
+      "source_type": "primary_report_bibliographic_trace",
+      "authority": "Risk Engineering Ltd / University of Mining and Geology",
+      "title": "Selection and characterization of sites for the construction of a new nuclear unit at the site of Kozloduy NPP",
+      "year": 2013,
+      "reliability": "HIGH_TRACE",
+      "evidence_scope": "Potential primary source for named site-characterization boreholes; full report to research.",
+      "source_trace_id": "VRA-S012",
+      "source_id": "VRA-S017",
+      "related_report_refs": [
+        "REL-1000-ST-001-2",
+        "REL-1000-ST-005-A-1"
+      ],
+      "report_reference_context": "Official EIAR Annex 6 bibliography lists REL-1000-ST-001-2 (January 2013) and REL-1000-ST-005-A-1 (May 2013) as reviews of studies conducted for selection of a preferred new nuclear-unit site at Kozloduy NPP and adjoining areas."
+    },
+    {
+      "source_type": "contractor_project_reference",
+      "authority": "ХефестГео",
+      "title": "АЕЦ Козлодуй – ОФИ на сондажи 1-6HIG, 2-7HIG, 3-5HIG, 4-6HIG",
+      "url": "https://hefestgeo.com/obekti-i-klienti/",
+      "reliability": "MEDIUM_HIGH_EXISTENCE",
+      "evidence_scope": "Explicitly identifies boreholes 1-6HIG, 2-7HIG, 3-5HIG and 4-6HIG at Kozloduy NPP sites 1, 2, 3 and 4. Does not provide lithological logs or drilled depths.",
+      "source_id": "VRA-S018"
+    },
+    {
+      "source_type": "official_eiar",
+      "authority": "DICON-ACCIONA / Kozloduy NPP New Build",
+      "title": "EIAR Chapter 3.3-3.4 - Land, soils, earth interior and natural resources",
+      "year": 2013,
+      "url": "https://www.umwelt.steiermark.at/cms/dokumente/11940599_9175955/9d81a07c/EIAR_Chapter_3_3_3_to_3_4_EN.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Engineering-geological description of potential Kozloduy NPP sites. Documents generalized site layers including Pliocene sands of the Brusartsi Formation, Miocene clayey sands of the Archar Formation and silty clay/clay marl. These are site/profile data, not an individual borehole log.",
+      "source_id": "VRA-S019"
+    },
+    {
+      "source_type": "official_eiar_annex_index",
+      "authority": "Umweltbundesamt Austria",
+      "title": "Kozloduy 7 EIA Annex 9 geological profiles",
+      "url": "https://www.umweltbundesamt.at/uve-kkw-kozloduy7",
+      "reliability": "HIGH_TRACE",
+      "evidence_scope": "Official EIA archive lists Annex 9.6 Geological Profile II-II and Annex 9.7 Geological Profile IV-IV. Direct legacy image downloads currently return 404 and require further archive research.",
+      "source_id": "VRA-S020"
+    },
+    {
+      "source_type": "primary_geological_fund_report_trace",
+      "authority": "National Geological Fund / Bulgarian geological exploration",
+      "authors": "B. Monov; D. Vulcheva; D. Monova; Ts. Zheleva",
+      "title": "Report on the results of the drilling studies in the Kozloduy area in 1960-1967",
+      "year": 1969,
+      "geofund_ref": "III-218",
+      "reliability": "PRIMARY_SOURCE_TRACE_HIGH",
+      "availability": "PRIMARY_REPORT_NOT_YET_OBTAINED",
+      "evidence_scope": "Primary report explicitly cited by the official Kozloduy EIAR as the source for the deep-borehole map and Table 3.4-2. Potential source for complete or more detailed logs of C-1, C-4, C-5, R-8, R-9, R-10, R-11, R-12 and R-13 Kozloduy.",
+      "trace_url": "https://www.umwelt.steiermark.at/cms/dokumente/11940599_9175955/9d81a07c/EIAR_Chapter_3_3_3_to_3_4_EN.pdf",
+      "source_id": "VRA-S021"
+    },
+    {
+      "source_type": "primary_hydrogeological_report_trace",
+      "authority": "ДП РАО",
+      "author": "Алексей Бендерев",
+      "title": "Доклад за дълбочинните водоносни хоризонти в частта от Северозападна България, в която е разположен АЕЦ „Козлодуй“",
+      "year": 2012,
+      "reliability": "PRIMARY_SOURCE_TRACE_HIGH",
+      "availability": "PRIMARY_REPORT_NOT_YET_OBTAINED",
+      "evidence_scope": "Primary hydrogeological report used by later Kozloduy EIAR documentation. EIAR Table 3.4-3 reproduces geological and hydrogeological information for deep borehole R-13 from this work.",
+      "secondary_bibliographic_confirmation": "Groundwater Studies in Bulgaria / ИЗСЛЕДВАНИЯ НА ПОДЗЕМНИТЕ ВОДИ В БЪЛГАРИЯ",
+      "trace_url": "https://www.researchgate.net/publication/390944978_IZSLEDVANIA_NA_PODZEMNITE_VODI_V_BLGARIA_GROUNDWATER_STUDIES_IN_BULGARIA",
+      "source_id": "VRA-S022"
+    },
+    {
+      "source_type": "published_petroleum_geology_article_trace",
+      "authority": "Нефтена и въглищна геология",
+      "authors": "П. Боков; И. Монахов; Л. Найденов",
+      "title": "Върху геоложкия строеж и нефтогазоносността на Козлодуйската площ",
+      "year": 1969,
+      "volume_or_issue": "18",
+      "pages": "37-54",
+      "reliability": "HIGH_TRACE",
+      "availability": "FULL_ARTICLE_NOT_YET_OBTAINED",
+      "evidence_scope": "Contemporary petroleum-geology publication specifically devoted to the geological structure and petroleum potential of the Kozloduy exploration area. Potentially contains borehole-specific sections or correlations from the 1960s drilling campaign.",
+      "trace_url": "https://mdg-magazine.bg/en/po-dirite-na-neftenite-vaglevodorodi-v-severna-bulgaria/",
+      "source_id": "VRA-S023"
+    },
+    {
+      "source_type": "primary_lithostratigraphic_publication_trace",
+      "authority": "Review of the Bulgarian Geological Society",
+      "author": "B. Monov",
+      "title": "Lithostratigraphy of the Triassic system in the Western ForeBalkan and Lom Depression",
+      "year": 1971,
+      "volume": "32",
+      "issue": "3",
+      "pages": "277-293",
+      "reliability": "PRIMARY_LITHOSTRATIGRAPHIC_SOURCE_HIGH",
+      "availability": "FULL_TEXT_NOT_YET_OBTAINED",
+      "evidence_scope": "Original publication introducing the Kozlodui Formation. Later peer-reviewed correlation work cites R-12 Kozlodui (2762-3568 m) as its holostratotype.",
+      "documented_formation_context": {
+        "unit": "Kozlodui Formation",
+        "age": "Upper Triassic",
+        "composition": "Variegated terrigenous succession of white sandstones, red siltstones and shales/argillaceous rocks in irregular alternation, with isolated thin limestone and dolomite seams.",
+        "holostratotype": "R-12 Kozlodui",
+        "holostratotype_from_m": 2762.0,
+        "holostratotype_to_m": 3568.0
+      },
+      "source_id": "VRA-S024"
+    },
+    {
+      "source_type": "official_eia",
+      "authority": "ДП РАО / Energy Institute JSC",
+      "title": "Environmental Impact Assessment Report for the Decommissioning of Units 1 to 4 at Kozloduy NPP - Chapter 3",
+      "year": 2013,
+      "url": "https://dprao.bg/images/KPMU-EIA016_02-Chapter-3-EN.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Official EIA states that Triassic rocks were reached in structural boreholes R-10, R-12 and R-13 Kozloduy. It describes Petrohan, Iskar and Mizia lithostratigraphic groups and their regional borehole-derived lithology. The text does not provide exact depth contacts for R-10.",
+      "source_id": "VRA-S025"
+    },
+    {
+      "source_type": "published_borehole_stratigraphy_trace",
+      "authority": "Geological Institute, Bulgarian Academy of Sciences",
+      "authors": "D. Tronkov; B. Monov",
+      "title": "Triassic stratigraphy based on data from wells near the villages Beli izvor and Glavatsi, Vratsa district",
+      "year": 1971,
+      "publication": "Bulletin of the Geological Institute, Series Stratigraphy and Lithology, vol. 20, pp. 15-32",
+      "reliability": "HIGH_TRACE",
+      "availability": "FULL_TEXT_NOT_YET_OBTAINED",
+      "evidence_scope": "Borehole-based Triassic stratigraphy from wells near Beli izvor and Glavatsi in Vratsa district. Strong future lead for Vratsa oblast, intentionally deferred until Kozloduy research is exhausted.",
+      "research_scope": "DEFERRED_UNTIL_KOZLODUY_COMPLETE",
+      "source_id": "VRA-S026"
+    },
+    {
+      "source_type": "official_eiar_archival_input_trace",
+      "authority": "Energoproekt / Kozloduy NPP",
+      "title": "Engineering geological and hydro-geological conditions within Units 5 and 6 - detail design phase",
+      "year": 1980,
+      "archive_reference": "EIAR Annex 8 - Folder 16",
+      "url": "https://www.umwelt.steiermark.at/cms/dokumente/11940599_9175955/ffed3f35/EIAR_Annex8_Input_data_EN.pdf",
+      "reliability": "PRIMARY_ARCHIVE_TRACE_HIGH",
+      "availability": "UNDERLYING_REPORT_NOT_YET_OBTAINED",
+      "evidence_scope": "Engineering-geological and hydrogeological investigation for Kozloduy NPP Units 5 and 6 at detail-design stage. Potential source of real borehole logs and site profiles.",
+      "source_id": "VRA-S027"
+    },
+    {
+      "source_type": "official_eiar_archival_input_trace",
+      "authority": "Energoproekt / Kozloduy NPP",
+      "title": "Existing hydro-technical channels - Hydro-geological research of the lowlands between the double channel and the Danube River",
+      "year": 1990,
+      "archive_reference": "EIAR Annex 8 - Folder 45",
+      "url": "https://www.umwelt.steiermark.at/cms/dokumente/11940599_9175955/ffed3f35/EIAR_Annex8_Input_data_EN.pdf",
+      "reliability": "PRIMARY_ARCHIVE_TRACE_HIGH",
+      "availability": "UNDERLYING_REPORT_NOT_YET_OBTAINED",
+      "evidence_scope": "Detail-design hydrogeological investigation dated December 1990. Potential source of boreholes, groundwater levels and lithology between the Kozloduy NPP channels and the Danube.",
+      "source_id": "VRA-S028"
+    },
+    {
+      "source_type": "official_eiar_archival_input_trace",
+      "authority": "Energoproekt / Kozloduy NPP",
+      "title": "Kozloduy NPP Open Cold Channel and Hot Channel - Engineering-geological surveys - General explanatory note",
+      "year": 1989,
+      "archive_reference": "EIAR Annex 8 - Folder 46",
+      "url": "https://www.umwelt.steiermark.at/cms/dokumente/11940599_9175955/ffed3f35/EIAR_Annex8_Input_data_EN.pdf",
+      "reliability": "PRIMARY_ARCHIVE_TRACE_HIGH",
+      "availability": "UNDERLYING_REPORT_NOT_YET_OBTAINED",
+      "evidence_scope": "Engineering-geological survey report dated December 1989. Potential source of real engineering boreholes and profiles.",
+      "source_id": "VRA-S029"
+    },
+    {
+      "source_type": "peer_reviewed_engineering_geology_article",
+      "authority": "Bulgarian Geological Society / Geological Institute BAS",
+      "author": "Roumyana Angelova",
+      "title": "Engineering geological characteristics of Danube right bank between Kozloduy and Gorni Tsibar",
+      "year": 2020,
+      "doi": "10.52215/rev.bgs.2020.81.2.2",
+      "url": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2020_2/PDF/Angelova_REV_BGS_2020_2.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Summarizes Energoproekt archive investigations along the 14 km Danube-bank section between Kozloduy and Gorni Tsibar. Reports 59 motor boreholes totaling 1265 m and 174 hand boreholes totaling 2305 m for the working-design stage.",
+      "production_screening_note": "Do not treat the borehole population as production-eligible without individual depths. Mean motor-borehole depth is only about 21.4 m; project threshold is 50 m.",
+      "source_id": "VRA-S030"
+    },
+    {
+      "source_type": "primary_energoproekt_archive_trace",
+      "authority": "Енергохидропроект",
+      "authors": "Д. Яранов",
+      "title": "Схема за комплексното използване на р. Дунав. Том II: Геология, хидрогеология и инженерна геология",
+      "year": 1956,
+      "archive_location": "Геофонд на Дирекция „Проучване“ при „Енергохидропроект“",
+      "reliability": "PRIMARY_ARCHIVE_TRACE_HIGH",
+      "availability": "PRIMARY_REPORT_NOT_YET_OBTAINED",
+      "source_trace_id": "VRA-S030",
+      "evidence_scope": "Primary archival engineering-geological/hydrogeological source cited by Angelova 2020 for the Kozloduy-Gorni Tsibar Danube-bank investigations.",
+      "source_id": "VRA-S031"
+    },
+    {
+      "source_type": "primary_energoproekt_archive_trace",
+      "authority": "НИППИЕС Енергопроект",
+      "authors": "Колев",
+      "title": "Козлодуй-Горни Цибър - стадий работен",
+      "year": 1978,
+      "archive_location": "Геофонд на НИППИЕС „Енергопроект“",
+      "reliability": "PRIMARY_ARCHIVE_TRACE_HIGH",
+      "availability": "PRIMARY_REPORT_NOT_YET_OBTAINED",
+      "source_trace_id": "VRA-S030",
+      "evidence_scope": "Primary archival engineering-geological/hydrogeological source cited by Angelova 2020 for the Kozloduy-Gorni Tsibar Danube-bank investigations.",
+      "source_id": "VRA-S032"
+    },
+    {
+      "source_type": "primary_energoproekt_archive_trace",
+      "authority": "НИППИЕС Енергопроект",
+      "authors": "Х. Цанков; К. Гогов",
+      "title": "ХТК Никопол-Турну Мъгуреле - водохранилище. Инженерногеоложки и хидрогеоложки условия по високия бряг (обобщителен доклад)",
+      "year": 1978,
+      "archive_location": "Геофонд на НИППИЕС „Енергопроект“",
+      "reliability": "PRIMARY_ARCHIVE_TRACE_HIGH",
+      "availability": "PRIMARY_REPORT_NOT_YET_OBTAINED",
+      "source_trace_id": "VRA-S030",
+      "evidence_scope": "Primary archival engineering-geological/hydrogeological source cited by Angelova 2020 for the Kozloduy-Gorni Tsibar Danube-bank investigations.",
+      "source_id": "VRA-S033"
+    },
+    {
+      "source_type": "published_engineering_geological_article",
+      "authority": "Energoproekt / Geological Institute BAS",
+      "authors": "M. Minkov; D. Evstatiev; T. Anastasov",
+      "title": "Инженерногеоложки условия и възможности за фундиране на главния корпус на първия енергоблок на АЕЦ Козлодуй",
+      "year": 1972,
+      "publication": "Годишник на Енергопроект, т. XIII, 1, 213-237",
+      "reliability": "HIGH",
+      "evidence_scope": "Published summary of field investigations and laboratory tests performed by Energoproekt and the Geological Institute BAS for Unit 1 foundation design.",
+      "trace_url": "https://www.researchgate.net/publication/368544674_Evstatiev_Bibliogarfia",
+      "source_id": "VRA-S034"
+    },
+    {
+      "source_type": "published_engineering_geological_article",
+      "authority": "Hydrotechnics and Amelioration",
+      "authors": "M. Minkov; D. Evstatiev; T. Anastasov",
+      "title": "Циментопочвена възглавница на АЕЦ Козлодуй",
+      "year": 1973,
+      "publication": "Хидротехника и мелиорация, 1, 15-17",
+      "reliability": "HIGH",
+      "evidence_scope": "Published engineering-geological summary for the first Kozloduy NPP units, including loess thickness and groundwater data.",
+      "trace_url": "https://www.researchgate.net/publication/368544674_Evstatiev_Bibliogarfia",
+      "source_id": "VRA-S035"
+    },
+    {
+      "source_type": "peer_reviewed_engineering_geology_article",
+      "authority": "Geological Institute, Bulgarian Academy of Sciences",
+      "authors": "D. Evstatiev; D. Karastanev",
+      "title": "Investigation and applications of loess-cement in Bulgaria",
+      "year": 2013,
+      "reliability": "HIGH",
+      "url": "https://www.researchgate.net/publication/301520637_Investigation_and_applications_of_loess-cement_in_Bulgaria",
+      "evidence_scope": "For Kozloduy NPP the loess thickness is reported as varying from 10 to 14 m. The loess foundation is classified as Type I collapsible ground. This is site-level shallow engineering-geological evidence, not an individual borehole log.",
+      "source_id": "VRA-S036"
+    },
+    {
+      "source_type": "official_eia_geotechnical_profile",
+      "authority": "ДП РАО",
+      "title": "NDF Radiana EIA - Geotechnical Profile Figure 3.3-4",
+      "year": 2014,
+      "url": "https://dprao.bg/images/EIA_part_3_Description_EN_NDF.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Official detailed geotechnical profile for Radiana Site, differentiating Quaternary loess/alluvial deposits and Neogene Brusartsi and Archar Formation sediments.",
+      "source_id": "VRA-S037"
+    },
+    {
+      "source_type": "primary_campaign_trace",
+      "authority": "МГУ / Геологически институт БАН / ДП РАО",
+      "title": "Геоложки, геофизични, инженерно-геоложки, хидрогеоложки, хидроложки и лабораторни проучвания за обект „Потвърждаване на площадка за изграждане на НХРАО“",
+      "year_range": "2008-2009",
+      "site": "Радиана",
+      "reliability": "PRIMARY_CAMPAIGN_TRACE_HIGH",
+      "availability": "FULL_PRIMARY_REPORT_NOT_YET_OBTAINED",
+      "evidence_scope": "Detailed site-confirmation campaign at Radiana. Strong candidate source for individual shallow boreholes, engineering-geological logs and groundwater observations.",
+      "trace_url": "https://www.geology.bas.bg/~doncho/projects.html",
+      "source_id": "VRA-S038"
+    },
+    {
+      "source_type": "primary_campaign_trace",
+      "authority": "МГУ / Геологически институт БАН / ДП РАО",
+      "title": "Инженерногеоложки и хидрогеоложки полеви и лабораторни изследвания в равнинната част на площадка „Радиана“",
+      "year_range": "2010-2011",
+      "site": "Радиана",
+      "reliability": "PRIMARY_CAMPAIGN_TRACE_HIGH",
+      "availability": "FULL_PRIMARY_REPORT_NOT_YET_OBTAINED",
+      "evidence_scope": "Detailed engineering-geological and hydrogeological investigation of the flat part of Radiana Site. Potential source for shallow borehole logs and precise stratigraphic contacts.",
+      "trace_url": "https://www.geology.bas.bg/~doncho/projects.html",
+      "source_id": "VRA-S039"
+    },
+    {
+      "source_type": "primary_lithostratigraphic_borehole_campaign_trace",
+      "authority": "Геологически институт БАН / ДП РАО",
+      "authors": "Й. Евлогиев; В. Петрова; М. Неделчева; Р. Тачков; Л. Иванова; Е. Евлогиев",
+      "title": "Литостратиграфски сондажи по надлъжната ос на хранилищните модули на НХРАО на площадка „Радиана“ за уточняване на котата на залягане на плиоценските седименти",
+      "year": 2012,
+      "contract": "№ 2012083/17.09.2012",
+      "site": "Радиана",
+      "reliability": "PRIMARY_BOREHOLE_CAMPAIGN_TRACE_HIGH",
+      "availability": "FULL_PRIMARY_REPORT_NOT_YET_OBTAINED",
+      "evidence_scope": "Dedicated lithostratigraphic boreholes drilled along the longitudinal axis of the planned NDF disposal modules, specifically to determine the elevation of the Pliocene sediment surface. This is a priority source for real shallow borehole logs.",
+      "research_priority": "VERY_HIGH_0_100M",
+      "trace_urls": [
+        "https://www.geology.bas.bg/~doncho/projects.html",
+        "https://dprao.bg/images/Annex_456.pdf"
+      ],
+      "source_id": "VRA-S040"
+    },
+    {
+      "source_type": "primary_geological_hydrogeological_profile_trace",
+      "authority": "ДП РАО / Геологически институт БАН",
+      "author": "Йордан Евлогиев",
+      "title": "Доклад за изработване на геолого-хидрогеоложки профили от платото през площадка „Радиана“ до р. Дунав",
+      "year": 2012,
+      "month": "December",
+      "site": "Радиана - Козлодуй - Дунав",
+      "reliability": "PRIMARY_PROFILE_TRACE_HIGH",
+      "availability": "FULL_PRIMARY_REPORT_NOT_YET_OBTAINED",
+      "evidence_scope": "Separate 2012 report producing geological-hydrogeological profiles from the plateau through Radiana Site to the Danube. Potential source of shallow stratigraphic contacts and borehole controls.",
+      "trace_url": "https://dprao.bg/images/Annex_1-NTS.pdf",
+      "research_priority": "VERY_HIGH_0_100M",
+      "source_id": "VRA-S041"
+    },
+    {
+      "source_type": "peer_reviewed_regional_lithology",
+      "authority": "Geologica Balcanica",
+      "title": "Determination of distribution coefficient of Pliocene clay (Brusartsi Formation) in the Kozloduy area, Bulgaria",
+      "year": 2025,
+      "reliability": "HIGH",
+      "evidence_scope": "Reports that the Brusartsi Formation in the Kozloduy area is approximately 80-100 m thick, consists mainly of clays with sand intercalations, and is covered by Quaternary alluvium and loess.",
+      "regional_parameters": {
+        "unit": "Brusartsi Formation",
+        "thickness_m": "80-100",
+        "dominant_lithology": "clays with sand intercalations",
+        "cover": "Quaternary alluvium and loess"
+      },
+      "source_id": "VRA-S042"
+    },
+    {
+      "source_type": "official_eia_monitoring_borehole_table",
+      "authority": "ДП РАО",
+      "title": "Radiana NDF EIA Table 3.2-9 - Depth and coordinates of pre-commissioning groundwater monitoring points",
+      "year": 2014,
+      "url": "https://dprao.bg/images/EIA_part_3_Description_EN_NDF.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Official table documenting 12 monitoring boreholes/piezometers BH1-BH12 installed in 2013 at Radiana Site, including exact drilled depths, geodetic coordinates and mouth elevations.",
+      "construction_context": "NN Commercial 2013 Deliverables D4, D6 and D12 - design and construction of vadose-zone and saturated-zone monitoring systems.",
+      "source_id": "VRA-S043"
+    },
+    {
+      "source_type": "official_eia_site_engineering_geology",
+      "authority": "Consortium Dicon-Acciona / Kozloduy NPP",
+      "title": "Terms of Reference / EIAR - engineering geological structure of candidate Sites 1-4 for new nuclear unit at Kozloduy NPP",
+      "year": 2013,
+      "url": "https://www.moew.government.bg/static/media/ups/tiny/file/Industry/EIA/Transgranichni_EIA_procedures/ToR_NPP_Kozlodui_EN.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Official shallow engineering-geological descriptions of candidate Sites 1-4 around Kozloduy NPP, including thicknesses of loess, alluvial clay/sand/gravel, Pliocene Brusartsi sediments and groundwater levels.",
+      "source_id": "VRA-S044"
+    },
+    {
+      "source_type": "published_3d_hydrogeological_geological_model",
+      "authority": "Минно-геоложки университет „Св. Иван Рилски“",
+      "author": "Николай Тонев Стоянов",
+      "title": "Хидрогеоложки модел на влиянието на река Дунав върху нивото на подземните води и възможно наводняване на проектния Блок-7 на АЕЦ „Козлодуй“",
+      "year": 2016,
+      "publication": "Годишник на МГУ, том 59, св. I, стр. 145-150",
+      "url": "https://mgu.bg/wp-content/uploads/2022/02/Vol.-59-I-2016.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Spatial 3D model covering approximately 23.7 km2 around the four alternative NPP sites and adjacent territory to the Danube. Model layer surfaces were constructed from detailed drilling, geophysical and historical geological/hydrogeological data.",
+      "model_depth_m": "approximately 40-50",
+      "model_layers": 5,
+      "model_zones": 10,
+      "spatial_grid": {
+        "rows": 180,
+        "columns": 230
+      },
+      "source_id": "VRA-S045"
+    },
+    {
+      "source_type": "published_regional_lithostratigraphic_profile",
+      "authority": "Geological Institute BAS / radioactive-waste geology study",
+      "title": "Kozloduy NPP geological environment as a barrier against radionuclide migration",
+      "year": 2001,
+      "url": "https://www.osti.gov/etdeweb/servlets/purl/20236676",
+      "reliability": "HIGH",
+      "evidence_scope": "Regional lithostratigraphic description of Quaternary and Neogene sediments in the Kozloduy NPP area. Reports total Neogene thickness exceeding 550 m.",
+      "source_id": "VRA-S046"
+    },
+    {
+      "source_type": "official_eia_engineering_geological_profiles",
+      "authority": "ДП РАО / Еко Енергопроект",
+      "title": "НХРАО ДОВОС - инженерно-геоложки разрези на Брестова падина, Маричин валог и Върбица",
+      "url": "https://dprao.bg/images/EIA_part_1_Anotation.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Official engineering-geological profiles and lithological descriptions for three investigated sites in Vratsa Province.",
+      "source_id": "VRA-S047"
+    },
+    {
+      "source_type": "official_municipal_geological_summary",
+      "authority": "Община Мизия",
+      "title": "Програма за опазване на околната среда на община Мизия 2015-2020 - геоложки строеж",
+      "url": "https://miziabg.com/attachments/1080_%D0%9F%D0%9E%D0%9E%D0%A1%20%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%BF%D1%8A%D0%BB%D0%B5%D0%BD.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Municipality-scale geological synthesis based on Geological Map of Bulgaria 1:100000. Documents Neogene and Quaternary thickness ranges, lithostratigraphic units and structural setting.",
+      "source_id": "VRA-S048"
+    },
+    {
+      "source_type": "official_municipal_geomorphological_geological_context",
+      "authority": "Община Оряхово",
+      "title": "Програма за опазване на околната среда на Община Оряхово 2021-2028",
+      "url": "https://www.airnetwork.bg/system/files/documents/2025-10/VRC31_POOS_proekt_2021_2028.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Documents major loess plateaus and floodplain morphology in Oryahovo municipality, including 80-100 m loess at Kapitanitsa and 40-60 m at Ravnishte.",
+      "source_id": "VRA-S049"
+    },
+    {
+      "source_type": "official_municipal_geological_context",
+      "authority": "Община Бяла Слатина",
+      "title": "Община Бяла Слатина - геоложки формации и минерални ресурси",
+      "url": "https://www.byala-slatina.bg/section-317-content.html",
+      "reliability": "MEDIUM_HIGH",
+      "evidence_scope": "Municipal geological summary documenting Sarmatian and Quaternary formations and confirming mapping, seismic and drilling investigations in the area.",
+      "source_id": "VRA-S050"
+    },
+    {
+      "source_type": "official_hydrogeological_geological_document",
+      "authority": "Община Хайредин / ВиК",
+      "title": "Проект за санитарно-охранителни зони - геоложки и хидрогеоложки условия, община Хайредин",
+      "url": "https://hayredin.com/pic/posts/2021-09/16304540241078/embed/files/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%B7%D0%B0%20%D1%81%D0%B0%D0%BD%D0%B8%D1%82%D0%B0%D1%80%D0%BD%D0%BE%20-%20%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%B8%20%D0%B7%D0%BE%D0%BD%D0%B8%20%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%82%D0%BE%D1%80%20%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D0%BD%D0%B0%D0%B1%D0%B4%D1%8F%D0%B2%D0%B0%D0%BD%D0%B5%20%D0%B8%20%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%9E%D0%9E%D0%94.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Documents Quaternary loess thickness, its red-clay substrate, tectonic position in the southwestern Lom Depression, and regional Neogene basin-fill thickness.",
+      "source_id": "VRA-S051"
+    },
+    {
+      "source_type": "official_municipal_environmental_geology",
+      "authority": "Община Борован",
+      "title": "Екологична оценка на Общ устройствен план на Община Борован - геоложки строеж",
+      "url": "https://borovan.bg/pic/pages/2021-01/581/gals/Ecolo.ocenka_compressed.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Official geological description documenting Quaternary alluvium, loess complex, red clays, Neogene formations and older Cretaceous platform deposits.",
+      "source_id": "VRA-S052"
+    },
+    {
+      "source_type": "published_3d_structural_geological_model",
+      "author": "Ева Мариновска",
+      "title": "3D структурно моделиране и възможни нефтогазоносни сценарии в района на Добролево-Бяла Слатина-Кнежа",
+      "year": 2019,
+      "publication": "Геология и минерални ресурси",
+      "url": "https://www.researchgate.net/publication/334761296_3D_STRUKTURNO_MODELIRANE_I_VZMOZNI_NEFTOGAZONOSNI_SCENARII_V_RAJONA_NA_DOBROLEVO-BALA_SLATINA-KNEZA",
+      "reliability": "HIGH",
+      "evidence_scope": "3D structural model based on available well-log data and reinterpretation of 2D seismic data. Correlates Quaternary, Neogene, Paleogene, Cretaceous, Jurassic and Triassic units. Seventeen seismic reflectors were traced and depth/time structural maps were constructed for nine principal horizons, including the base of the Neogene.",
+      "source_id": "VRA-S053",
+      "dataset_details": {
+        "boreholes_integrated": 12,
+        "2d_seismic_profiles_km": "~300",
+        "seismic_reflectors_traced": 17,
+        "depth_time_structural_maps": 9,
+        "software": "Petrel E&P / Schlumberger",
+        "well_data_types": [
+          "cuttings lithological descriptions",
+          "core descriptions",
+          "standard well logs",
+          "gamma ray",
+          "neutron gamma",
+          "caliper",
+          "acoustic logs",
+          "resistivity / detailed electrical logging",
+          "temperature logging"
+        ]
+      },
+      "confirmed_structural_horizons": [
+        "base of Neogene",
+        "top of Upper Jurassic-Lower Cretaceous carbonate complex",
+        "base of Callovian",
+        "top of Ozirovo Formation",
+        "Triassic-Jurassic erosional unconformity",
+        "top of Ladinian-Carnian sediments",
+        "top of Anisian carbonate complex",
+        "top of Dolni Dabnik Member",
+        "base of Anisian"
+      ],
+      "important_limit": "Publication confirms depth structural maps but the current publicly extracted text does not provide machine-readable or reliably readable numeric contour values for the base-Neogene surface. No exact local depth may be inferred without those values."
+    },
+    {
+      "source_type": "peer_reviewed_regional_neogene_geology",
+      "title": "Overview on geological and geomorphological setting of the Bulgarian Danube bank / Lom Depression",
+      "year": 2014,
+      "url": "https://geoproblems.eu/wp-content/uploads/2016/01/2014_12/2014_12.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Regional Neogene lithostratigraphy and thicknesses in the Lom Depression, including Furen, Byala Slatina and Brusartsi formations.",
+      "source_id": "VRA-S054"
+    },
+    {
+      "source_type": "peer_reviewed_paleogeographic_isopach_model",
+      "authors": "Emilia Kojumdgieva; Nikolai Popov",
+      "title": "Paleogeography and geodynamic evolution of Northern Bulgaria during the Neogene",
+      "year": 1989,
+      "publication": "Geologica Balcanica 19(1), 73-92",
+      "doi": "10.52321/GeolBalc.19.1.73",
+      "url": "https://www.geologica-balcanica.eu/sites/default/files/articles/GB%20%281989%29_19%281%29_pp.73-92%20%28Kojumgieva%26Popov%29.pdf",
+      "reliability": "VERY_HIGH",
+      "evidence_scope": "Regional paleogeographic reconstruction of NW Bulgaria with cross-sections, pre-Badenian paleovalleys and isopach maps for Badenian-Volhynian and younger Neogene sediments.",
+      "source_id": "VRA-S055",
+      "figure_8_isopach_map": {
+        "available": true,
+        "figure": 8,
+        "content": "Badenian + Volhynian cumulative sediment thickness",
+        "contour_interval_m": 100,
+        "visible_contours_m": [
+          0,
+          100,
+          200,
+          300,
+          400,
+          500,
+          600,
+          700
+        ],
+        "digitizable_from_published_figure": true,
+        "machine_readable_grid": false,
+        "recommended_future_action": "georeference figure and digitise isopach contours"
+      },
+      "additional_depth_control": {
+        "R-1_Glozhene": "pre-Badenian erosion reaches Albian",
+        "S-3_Harlets_comparison": "reported stratigraphic/depth difference >900 m relative to nearby R-1 Glozhene"
+      }
+    },
+    {
+      "source_type": "peer_reviewed_preneogene_depth_surface_model",
+      "authors": "V. Velev; T. Nenov; S. Popov; S. Jovchev",
+      "title": "Main features of neotectonic development and characteristics of the deep geological structure of the Moesian Plate between the Archar and Osam rivers",
+      "year": 1988,
+      "publication": "Geologica Balcanica 18(6), 79-91",
+      "doi": "10.52321/GeolBalc.18.6.79",
+      "url": "https://geologica-balcanica.eu/sites/default/files/articles/GB%20%281988%29_18%286%29_pp.79-291%20%28Velev%20et%20al.%29.pdf",
+      "reliability": "VERY_HIGH",
+      "evidence_scope": "Regional synthesis based on long-term seismic-geophysical and drilling investigations. The authors compiled 1:200000 working maps of major Mesozoic-Cenozoic boundary surfaces, including a hypsometric map of the pre-Neogene deposits and a reconstructed pre-Neogene denudational paleorelief.",
+      "source_id": "VRA-S056"
+    },
+    {
+      "source_type": "official_engineering_geological_regional_synthesis",
+      "authority": "ДП НКЖИ",
+      "title": "ОВОС / геоложка характеристика на участък Медковец - Руска Бела и прилежащия Криводолско-Врачански район",
+      "year": 2016,
+      "url": "https://www.krivodol.com/pic/pages/2023-12/209/gals/Precenka_Medkov_Stolnik_20160318.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Official regional geological synthesis with lithology and thickness ranges of Cretaceous, Paleogene, Neogene and Quaternary units around Krivodol, Vratsa and adjacent areas.",
+      "source_id": "VRA-S057"
+    },
+    {
+      "source_type": "peer_reviewed_lithostratigraphic_spatial_model",
+      "authors": "B. Monov; T. Nikolov",
+      "title": "Lower Cretaceous lithostratigraphic units in part of the Western Fore-Balkan - Botunya Formation relations",
+      "year": 1999,
+      "url": "https://www.bgd.bg/REVIEW_BGS/REVIEW_BGD_1999/pdf_files_1999/02_Monov_Nikolov_1999_BGD.pdf",
+      "reliability": "VERY_HIGH",
+      "evidence_scope": "Maps spatial distribution of Vratsa Urgonian Group, Botunya, Sumer and Hayredin formations and documents lateral facies replacement and syndepositional fault control.",
+      "source_id": "VRA-S058"
+    },
+    {
+      "source_type": "peer_reviewed_regional_lithostratigraphic_model",
+      "author": "Madlena Tsvetkova",
+      "title": "Comparison between the geological settings of the Varbitsa and Bure sites for geological disposal of radioactive waste",
+      "year": 2022,
+      "publication": "Geologica Balcanica 51(1), 57-65",
+      "url": "https://www.geologica-balcanica.eu/sites/default/files/articles/Tsvetkova_Geol_Balc_51-1-2022.pdf",
+      "reliability": "VERY_HIGH",
+      "evidence_scope": "Regional Lower Cretaceous lithostratigraphic relations in the Western Fore-Balkan. Confirms Sumer Formation thickness up to ~1200 m and locally underlying Mramoren marls up to ~800 m.",
+      "source_id": "VRA-S059"
+    },
+    {
+      "source_type": "official_geological_map",
+      "title": "Геоложка карта на България М 1:100000 - картен лист K-34-036 Враца",
+      "authors": "Ц. Цанков, Л. Недялкова, В. Ангелов, К. Аладжова-Хрисчева, С. Янев, И. Хайдутов, И. Сапунов, П. Чумаченко",
+      "year": 1990,
+      "scale": "1:100000",
+      "sheet": "K-34-036",
+      "authority": "Комитет по геология / предприятие за геофизични проучвания и геоложко картиране",
+      "reliability": "VERY_HIGH",
+      "public_catalogue_status": "CONFIRMED",
+      "raw_map_file_obtained": false,
+      "priority": "VERY_HIGH",
+      "research_role": [
+        "surface formation polygons",
+        "fault geometry",
+        "formation boundaries",
+        "structural position",
+        "surface control for 0-500 m interpretation"
+      ],
+      "acquisition_status": "PRIMARY_MAP_SCAN_TO_OBTAIN",
+      "source_id": "VRA-S060"
+    },
+    {
+      "source_type": "official_geological_map_explanatory_note",
+      "title": "Обяснителна записка към Геоложка карта на България М 1:100000 - картен лист Враца",
+      "authors": "Ц. Цанков, К. Аладжова-Хрисчева, С. Янев, И. Хайдутов, И. Сапунов, П. Чумаченко, Л. Недялкова, В. Ангелов",
+      "year": 1995,
+      "pages": 102,
+      "publisher": "ЕТ Аверс, София",
+      "sheet": "K-34-036",
+      "scale": "1:100000",
+      "reliability": "VERY_HIGH",
+      "bibliographic_trace": "CONFIRMED_BY_MULTIPLE_SCIENTIFIC_SOURCES",
+      "full_document_obtained": false,
+      "priority": "VERY_HIGH",
+      "research_role": [
+        "formation lithology",
+        "formation thickness",
+        "stratigraphic relations",
+        "fault descriptions",
+        "fold geometry",
+        "facies changes",
+        "map legend interpretation"
+      ],
+      "acquisition_status": "FULL_EXPLANATORY_NOTE_TO_OBTAIN",
+      "source_id": "VRA-S061"
+    },
+    {
+      "source_type": "official_geological_map",
+      "authors": "V. Angelov, M. Antonov, S. Gerdzhikov, P. Petrov, G. Aydanliyski, H. Kiselinov, V. Valev",
+      "title": "Geological Map of Bulgaria 1:50000 - sheet K-34-36-V Mezdra",
+      "year": 2008,
+      "scale": "1:50000",
+      "sheet": "K-34-36-V",
+      "authority": "MOEW / Bulgarian National Geological Survey",
+      "reliability": "VERY_HIGH",
+      "raw_map_file_obtained": false,
+      "research_role": [
+        "surface geological polygons",
+        "faults",
+        "fold geometry",
+        "formation boundaries"
+      ],
+      "acquisition_status": "PRIMARY_MAP_TO_OBTAIN",
+      "source_id": "VRA-S062"
+    },
+    {
+      "source_type": "official_geological_map_explanatory_note",
+      "authors": "V. Angelov, M. Antonov, S. Gerdzhikov, P. Petrov, H. Kiselinov, G. Aydanliyski, V. Valev",
+      "title": "Explanatory Note to Geological Map of Bulgaria 1:50000 - sheet Mezdra",
+      "year": 2009,
+      "pages": 87,
+      "reliability": "VERY_HIGH",
+      "full_document_obtained": false,
+      "acquisition_status": "FULL_NOTE_TO_OBTAIN",
+      "source_id": "VRA-S063"
+    },
+    {
+      "source_type": "peer_reviewed_stratigraphic_section",
+      "title": "The Cretaceous/Paleogene boundary in the Mezdra and Lyutidol syncline, Vratsa District",
+      "reliability": "VERY_HIGH",
+      "evidence_scope": "Documents lithostratigraphic succession and generalized sections in the Mezdra and Lyutidol synclines.",
+      "source_id": "VRA-S064"
+    },
+    {
+      "source_type": "official_municipal_geological_summary",
+      "authority": "Община Роман",
+      "title": "Доклад за екологична оценка на предварителен проект за ОУП на община Роман - геоложки строеж",
+      "url": "https://roman.bg/plan/DEO-preciziran.pdf",
+      "reliability": "HIGH",
+      "evidence_scope": "Confirms widespread Upper Cretaceous units including Darmantsi, Kunino, Mezdra and Kaylaka formations, with limited Neogene and Quaternary cover.",
+      "source_id": "VRA-S065"
+    },
+    {
+      "source_type": "peer_reviewed_field_stratigraphy",
+      "title": "Upper Cretaceous sections near Reselets, Kunino and Darmantsi - revised stratigraphic and palaeontological data",
+      "year": 2020,
+      "publication": "Geologica Balcanica 49(3)",
+      "url": "https://www.geologica-balcanica.eu/sites/default/files/articles/Pavlishina_Geol_Balc_49-3_2020.pdf",
+      "reliability": "VERY_HIGH",
+      "evidence_scope": "Provides measured local section thicknesses around Kunino, Darmantsi and Reselets and lithologic descriptions of Darmantsi, Kunino and Mezdra formations.",
+      "source_id": "VRA-S066"
+    },
+    {
+      "source_type": "peer_reviewed_field_lithostratigraphy",
+      "title": "Upper Cretaceous lithostratigraphy and measured thicknesses in the Mezdra region",
+      "year": 2024,
+      "publication": "Review of the Bulgarian Geological Society",
+      "url": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2024_3/PDF/15_Metodiev_REV-BGS_2024-3.pdf",
+      "reliability": "VERY_HIGH",
+      "evidence_scope": "Reports measured thicknesses of Kunino and Mezdra formations and local variability in the Starna Reka area.",
+      "source_id": "VRA-S067"
+    },
+    {
+      "source_type": "published_regional_karst_lithology",
+      "title": "Karst geology of Karlukovo region",
+      "reliability": "HIGH",
+      "evidence_scope": "Documents Mezdra and Kaylaka carbonate rocks in the Karlukovo area and Kaylaka Formation thickness of approximately 80-100 m.",
+      "source_id": "VRA-S068"
+    },
+    {
+      "source_type": "peer_reviewed_tectonic_synthesis",
+      "title": "Tectonic relations between Vratsa block and Western Fore-Balkan structures",
+      "year": 2012,
+      "publication": "Annual of the University of Mining and Geology",
+      "url": "https://mgu.bg/wp-content/uploads/2022/02/Vol.-55-I-2012.pdf",
+      "reliability": "VERY_HIGH",
+      "evidence_scope": "Documents Kostalevo fault geometry and tectonic relation between Vratsa block and Mezdra syncline / Lyutibrod anticline.",
+      "source_id": "VRA-S069"
+    },
+    {
+      "source_type": "peer_reviewed_structural_stratigraphy",
+      "title": "The Cretaceous/Paleogene boundary in the Mezdra and Lyutidol synclines",
+      "year": 2006,
+      "doi": "10.2298/GABP0667041J",
+      "url": "https://gabp.rgf.bg.ac.rs/index.php/gabp/article/view/224",
+      "reliability": "VERY_HIGH",
+      "evidence_scope": "Documents northern/southern limbs of Lyutidol syncline, southern limb of Mezdra syncline, reverse faults/thrusts and preservation of Kaylaka Formation.",
+      "source_id": "VRA-S070"
+    },
+    {
+      "source_type": "published_karst_structural_geology",
+      "title": "Structural geology of Karlukovo carbonate karst region",
+      "reliability": "HIGH",
+      "evidence_scope": "Documents a shallow W-E striking syncline in the Karlukovo carbonate area, with regional eastward dip and structural control on carbonate groundwater movement.",
+      "source_id": "VRA-S071"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "VRA-LEAD-001",
+      "borehole_name": "Е-72",
+      "site": "ПГХ Чирен",
+      "settlement": "Чирен",
+      "municipality": "Враца",
+      "oblast": "Враца",
+      "status": "PROJECTED_LITHOLOGY_SECTION",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_ESTABLISHED"
+      },
+      "evidence_note": "Official technical specification explicitly states that the geological section is the section expected to be penetrated. Therefore the intervals are preserved only as projected lithostratigraphic context and must not be treated as a verified post-drilling borehole column.",
+      "projected_lithology": [
+        {
+          "from_m": 0.0,
+          "to_m": 15.0,
+          "age": "Кватернер–Неоген",
+          "description_bg": "Почвен слой кафяв, глинесто-песъчлив; жълтеникави слабопесъчливи глини, на места прослоени от пясъци."
+        },
+        {
+          "from_m": 15.0,
+          "to_m": 200.0,
+          "age": "Апт",
+          "description_bg": "Сиви мергели, неравномерно алевритови, плътни."
+        },
+        {
+          "from_m": 200.0,
+          "to_m": 895.0,
+          "age": "Хотрив–Барем",
+          "description_bg": "Редуване на мергели и глинести варовици; в долната част се очакват варовици, различно глинести."
+        },
+        {
+          "from_m": 895.0,
+          "to_m": 1380.0,
+          "age": "Горна юра–Валанж",
+          "description_bg": "Сиви микрокристалинни и тъмносиви неравномерно глинести варовици."
+        },
+        {
+          "from_m": 1380.0,
+          "to_m": 1680.0,
+          "age": "Средна юра",
+          "description_bg": "Варовици, глинести с преход в мергели; алевролити с прослойки аргилити и аргилити, на места слабо варовити."
+        }
+      ],
+      "source_ids": [
+        "VRA-S001"
+      ],
+      "next_research_task": "Find post-drilling lithological/geophysical interpretation for E-72 or another primary source confirming actual penetrated intervals."
+    },
+    {
+      "record_id": "VRA-CTX-001",
+      "borehole_name": "Сондаж №37",
+      "site": "Маричин валог",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "total_depth_m": 45.0,
+      "status": "SHALLOW_VERIFIED_LITHOLOGY_CONTEXT",
+      "production_eligible": false,
+      "verified_borehole_log": true,
+      "exclusion_reason": "Depth below 50 m project threshold",
+      "lithology_points": [
+        {
+          "depth_m": 1.8,
+          "material": "силтист льос"
+        },
+        {
+          "depth_m": 7.5,
+          "material": "палеопочва"
+        },
+        {
+          "depth_m": 8.5,
+          "material": "силтист льос"
+        },
+        {
+          "depth_m": 10.0,
+          "material": "силтист льос"
+        },
+        {
+          "depth_m": 11.5,
+          "material": "силтист льос"
+        },
+        {
+          "depth_m": 13.0,
+          "material": "глинест льос"
+        },
+        {
+          "depth_m": 14.0,
+          "material": "глинест льос"
+        },
+        {
+          "depth_m": 15.0,
+          "material": "червена глина"
+        },
+        {
+          "depth_m": 16.3,
+          "material": "червена глина с чакъл"
+        },
+        {
+          "depth_m": 17.5,
+          "material": "плиоценска глина"
+        },
+        {
+          "depth_m": 18.0,
+          "material": "плиоценска глина"
+        },
+        {
+          "depth_m": 20.5,
+          "material": "песъчлива глина, плиоцен"
+        },
+        {
+          "depth_m": 21.3,
+          "material": "силтист пясък, плиоцен"
+        },
+        {
+          "depth_m": 22.3,
+          "material": "силтист пясък, плиоцен"
+        },
+        {
+          "depth_m": 28.5,
+          "material": "глина, плиоцен"
+        },
+        {
+          "depth_m": 31.3,
+          "material": "глина, плиоцен"
+        },
+        {
+          "depth_m": 36.7,
+          "material": "силтисто-глинест пясък, плиоцен"
+        },
+        {
+          "depth_m": 39.0,
+          "material": "плътна мазна глина"
+        },
+        {
+          "depth_m": 42.5,
+          "material": "плътна мазна глина"
+        }
+      ],
+      "source_ids": [
+        "VRA-S003"
+      ],
+      "note": "Annex 1 provides sampled depths/materials, not continuous exact contacts between every sample point."
+    },
+    {
+      "record_id": "VRA-CTX-002",
+      "borehole_name": "B-1a",
+      "site": "Маричин валог – Site 1",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "SHALLOW_VERIFIED_LITHOLOGY_CONTEXT",
+      "production_eligible": false,
+      "verified_borehole_log": true,
+      "summary_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 7.5,
+          "material": "силтист льос"
+        },
+        {
+          "from_m": 7.5,
+          "to_m": 10.0,
+          "material": "глинест льос"
+        },
+        {
+          "from_m": 10.0,
+          "to_m": 10.7,
+          "material": "червена глина"
+        },
+        {
+          "from_m": 10.7,
+          "to_m": null,
+          "material": "плиоценска глина"
+        }
+      ],
+      "source_ids": [
+        "VRA-S004"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-003",
+      "borehole_name": "B-2a",
+      "site": "Маричин валог – Site 2",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "SHALLOW_VERIFIED_LITHOLOGY_CONTEXT",
+      "production_eligible": false,
+      "verified_borehole_log": true,
+      "summary_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 1.3,
+          "material": "глинест льос"
+        },
+        {
+          "from_m": 1.3,
+          "to_m": 1.8,
+          "material": "червена глина"
+        },
+        {
+          "from_m": 1.8,
+          "to_m": 2.0,
+          "material": "червена глина с чакъл"
+        },
+        {
+          "from_m": 2.0,
+          "to_m": 3.4,
+          "material": "глинест чакъл с пясък"
+        },
+        {
+          "from_m": 3.4,
+          "to_m": null,
+          "material": "плиоценска глина"
+        }
+      ],
+      "source_ids": [
+        "VRA-S004"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-004",
+      "borehole_name": "B-2b / Site 3 profile",
+      "site": "Маричин валог – Site 3",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "SHALLOW_VERIFIED_LITHOLOGY_CONTEXT",
+      "production_eligible": false,
+      "verified_borehole_log": true,
+      "summary_intervals": [
+        {
+          "from_m": 0.0,
+          "to_m": 1.25,
+          "material": "глинест льос"
+        },
+        {
+          "from_m": 1.25,
+          "to_m": 1.6,
+          "material": "червена глина"
+        },
+        {
+          "from_m": 1.6,
+          "to_m": 1.8,
+          "material": "червена глина с чакъл"
+        },
+        {
+          "from_m": 1.8,
+          "to_m": 2.3,
+          "material": "глинест чакъл с пясък"
+        },
+        {
+          "from_m": 2.3,
+          "to_m": 3.3,
+          "material": "силно карбонатен слой / bioherm"
+        },
+        {
+          "from_m": 3.3,
+          "to_m": null,
+          "material": "плиоценска глина"
+        }
+      ],
+      "source_ids": [
+        "VRA-S004"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-003",
+      "borehole_name": "Р-10 Козлодуй",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "known_context": "Structural borehole reaching Triassic; mentioned in official EIA.",
+      "source_ids": [
+        "VRA-S005",
+        "VRA-S019",
+        "VRA-S021",
+        "VRA-S023",
+        "VRA-S025"
+      ],
+      "year_completed": 1962,
+      "total_depth_m": 3110.0,
+      "oldest_rocks_reached": "Lower Triassic",
+      "verified_total_depth": true,
+      "verified_borehole_log": false,
+      "primary_log_search": {
+        "status": "ACTIVE",
+        "priority_sources": [
+          {
+            "source_id": "VRA-S021",
+            "role": "PRIMARY_DRILLING_REPORT"
+          },
+          {
+            "source_id": "VRA-S023",
+            "role": "CONTEMPORARY_GEOLOGICAL_PUBLICATION"
+          }
+        ]
+      },
+      "triassic_borehole_context": {
+        "triassic_reached": true,
+        "exact_group_contacts_in_r10_known": false,
+        "exact_depth_intervals_known": false,
+        "documented_groups": [
+          {
+            "group": "Petrohan Group",
+            "regional_borehole_lithology": "Reddish sandstones of variable grain size, locally muddy, interbedded with siltstones and argillites. Alexandrovska Formation consists of alternating siltstones, sandstones and argillites.",
+            "reported_thickness_context_m": {
+              "Alexandrovska Formation": 52.0
+            },
+            "r10_specific_thickness": false
+          },
+          {
+            "group": "Iskar Group",
+            "regional_borehole_lithology": "Predominantly carbonate succession including limestones, dolomites, siltstones, argillites, sandstones and anhydrite interbeds in the Kozloduy area.",
+            "reported_crossed_thickness_context_m": 495.0,
+            "r10_specific_thickness": false
+          },
+          {
+            "group": "Mizia Group",
+            "unit": "Kozlodui Formation",
+            "regional_borehole_lithology": "Unequal alternation of sandstones of different grain size, dark-brown to reddish siltstones/aleurolites, with isolated thin limestone and dolomite beds.",
+            "r10_specific_thickness": false,
+            "note": "The EIA reports 81 m specifically for R-13 Kozloduy; this value must not be assigned to R-10."
+          }
+        ],
+        "interpretation_limit": "Group descriptions are based collectively on R-10, R-12 and R-13 and regional drilling. They are not continuous depth intervals for R-10.",
+        "source_id": "VRA-S025"
+      }
+    },
+    {
+      "record_id": "VRA-LEAD-004",
+      "borehole_name": "Р-12 Козлодуй",
+      "municipality": "Вълчедръм",
+      "oblast": "Монтана",
+      "status": "DEEP_BOREHOLE_PRIMARY_LOG_TO_RESEARCH",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "known_context": "Verified deep structural borehole. Published secondary scientific sources document real lithostratigraphic information. R-12 Kozlodui is the holostratotype of the Upper Triassic Kozlodui Formation at 2762-3568 m. Published Lower Cretaceous work also describes real lithology from R-12, dominated in the cited unit by grey to light-grey massive micritic limestones with thin marly interbeds locally present. The complete primary borehole log has not yet been located.",
+      "source_ids": [
+        "VRA-S005",
+        "VRA-S006",
+        "VRA-S007",
+        "VRA-S008",
+        "VRA-S009",
+        "VRA-S019",
+        "VRA-S021",
+        "VRA-S023",
+        "VRA-S024"
+      ],
+      "documented_lithostratigraphic_evidence": [
+        {
+          "from_m": 2762.0,
+          "to_m": 3568.0,
+          "unit": "Kozlodui Formation",
+          "age": "Upper Triassic",
+          "evidence_type": "published_holostratotype_interval",
+          "source_id": "VRA-S006"
+        },
+        {
+          "unit": "Lower Cretaceous carbonate succession",
+          "material": "Predominantly grey to light-grey massive micritic limestone; thin marly interbeds and locally clayey limestone to marl reported in parts of the R-12 Kozlodui section.",
+          "evidence_type": "published_borehole_lithology_context",
+          "exact_depth_interval_known": false,
+          "source_id": "VRA-S007"
+        }
+      ],
+      "primary_log_status": "TO_RESEARCH",
+      "vratsa_inventory_scope": "REGIONAL_ANALOGUE_OUTSIDE_OBLAST",
+      "administrative_scope_note": "Official EIAR Table 3.4-2 locates this borehole in Valchedram municipality, Montana Province, despite the Kozloduy name in the borehole identifier.",
+      "year_completed": 1963,
+      "total_depth_m": 4019.0,
+      "oldest_rocks_reached": "Middle Triassic"
+    },
+    {
+      "record_id": "VRA-LEAD-005",
+      "borehole_name": "Р-13 Козлодуй",
+      "municipality": "Вълчедръм",
+      "oblast": "Монтана",
+      "status": "DEEP_BOREHOLE_PRIMARY_LOG_TO_RESEARCH",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "known_context": "Verified deep structural borehole. Published scientific literature documents an 811 m thickness of the Upper Triassic Kozlodui Formation in R-13 Kozlodui. The publication does not provide sufficient evidence here for exact top and bottom depths of that 811 m interval. Complete primary borehole log remains to be located.",
+      "source_ids": [
+        "VRA-S005",
+        "VRA-S006",
+        "VRA-S008",
+        "VRA-S009",
+        "VRA-S019",
+        "VRA-S021",
+        "VRA-S022",
+        "VRA-S023",
+        "VRA-S024"
+      ],
+      "documented_lithostratigraphic_evidence": [
+        {
+          "unit": "Kozlodui Formation",
+          "age": "Upper Triassic",
+          "thickness_m": 811.0,
+          "top_depth_m": null,
+          "bottom_depth_m": null,
+          "evidence_type": "published_formation_thickness",
+          "source_id": "VRA-S006"
+        }
+      ],
+      "primary_log_status": "TO_RESEARCH",
+      "vratsa_inventory_scope": "REGIONAL_ANALOGUE_OUTSIDE_OBLAST",
+      "administrative_scope_note": "Official EIAR Table 3.4-2 locates this borehole in Valchedram municipality, Montana Province, despite the Kozloduy name in the borehole identifier.",
+      "year_completed": 1965,
+      "total_depth_m": 4291.0,
+      "oldest_rocks_reached": "Upper Triassic",
+      "documented_partial_geologic_column": [
+        {
+          "from_m": 3.55,
+          "to_m": 22.0,
+          "lithology": "Loess; basal sands"
+        },
+        {
+          "from_m": 22.0,
+          "to_m": 58.0,
+          "lithology": "Clays with sand seams"
+        },
+        {
+          "from_m": 58.0,
+          "to_m": 97.0,
+          "lithology": "Clays with sand seams"
+        },
+        {
+          "from_m": 97.0,
+          "to_m": 177.0,
+          "lithology": "Sands"
+        },
+        {
+          "from_m": 177.0,
+          "to_m": 338.0,
+          "lithology": "Clays with sand seams"
+        },
+        {
+          "from_m": 338.0,
+          "to_m": 418.0,
+          "lithology": "Clays with thin sand seams"
+        },
+        {
+          "from_m": 418.0,
+          "to_m": 468.0,
+          "lithology": "Clays with thin sand seams"
+        },
+        {
+          "from_m": 468.0,
+          "to_m": 577.0,
+          "lithology": "Clays with thin sand seams"
+        },
+        {
+          "from_m": 577.0,
+          "to_m": 743.0,
+          "lithology": "Clays with sand seams and marls"
+        },
+        {
+          "from_m": 743.0,
+          "to_m": 882.0,
+          "lithology": "Marls"
+        },
+        {
+          "from_m": 882.0,
+          "to_m": 940.0,
+          "lithology": "Marls"
+        },
+        {
+          "from_m": 940.0,
+          "to_m": 1311.0,
+          "lithology": "Limestones"
+        },
+        {
+          "from_m": 1311.0,
+          "to_m": 1486.0,
+          "lithology": "Clayey limestones"
+        },
+        {
+          "from_m": 1486.0,
+          "to_m": 1609.0,
+          "lithology": "Sandy limestones and marls"
+        },
+        {
+          "from_m": 1609.0,
+          "to_m": 1675.0,
+          "lithology": "Silty limestones and marls"
+        },
+        {
+          "from_m": 1675.0,
+          "to_m": 1779.0,
+          "lithology": "Marls"
+        }
+      ],
+      "partial_column_status": "DOCUMENTED_TO_1779_M_ONLY_IN_CURRENT_EXTRACT",
+      "formation_thickness_conflict": {
+        "unit": "Kozlodui Formation",
+        "value_a_m": 811.0,
+        "value_a_source": "Chemberski & Botoucharov 2013",
+        "value_b_m": 81.0,
+        "value_b_source": "2013 Kozloduy EIA / decommissioning documentation",
+        "resolution_status": "UNRESOLVED_REQUIRES_PRIMARY_SOURCE"
+      },
+      "primary_log_search": {
+        "status": "ACTIVE",
+        "priority_sources": [
+          {
+            "source_id": "VRA-S021",
+            "role": "PRIMARY_DRILLING_REPORT"
+          },
+          {
+            "source_id": "VRA-S022",
+            "role": "PRIMARY_HYDROGEOLOGICAL_REPORT"
+          },
+          {
+            "source_id": "VRA-S023",
+            "role": "CONTEMPORARY_GEOLOGICAL_PUBLICATION"
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "VRA-LEAD-006",
+      "borehole_name": "Borehole 34",
+      "site": "Маричин валог",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "known_context": "Real geotechnical/hydrogeological borehole explicitly shown and discussed in the Marichin Valog site-characterization reports. Exact continuous lithological log not yet extracted.",
+      "source_ids": [
+        "VRA-S003",
+        "VRA-S004"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-007",
+      "borehole_name": "Borehole 64",
+      "site": "Маричин валог",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "known_context": "Real geotechnical/hydrogeological borehole explicitly shown and discussed in the Marichin Valog site-characterization reports. Exact continuous lithological log not yet extracted.",
+      "source_ids": [
+        "VRA-S003",
+        "VRA-S004"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-008",
+      "borehole_name": "1-6HIG",
+      "site": "АЕЦ Козлодуй – Site 1",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_borehole_log": false,
+      "known_context": "Borehole identifier explicitly listed in contractor project reference for Kozloduy NPP. Exact drilled depth, coordinates and continuous lithological log remain to research.",
+      "source_ids": [
+        "VRA-S018"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-009",
+      "borehole_name": "2-7HIG",
+      "site": "АЕЦ Козлодуй – Site 2",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_borehole_log": false,
+      "known_context": "Borehole identifier explicitly listed in contractor project reference for Kozloduy NPP. Exact drilled depth, coordinates and continuous lithological log remain to research.",
+      "source_ids": [
+        "VRA-S018"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-010",
+      "borehole_name": "3-5HIG",
+      "site": "АЕЦ Козлодуй – Site 3",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_borehole_log": false,
+      "known_context": "Borehole identifier explicitly listed in contractor project reference for Kozloduy NPP. Exact drilled depth, coordinates and continuous lithological log remain to research.",
+      "source_ids": [
+        "VRA-S018"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-011",
+      "borehole_name": "4-6HIG",
+      "site": "АЕЦ Козлодуй – Site 4",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_borehole_log": false,
+      "known_context": "Borehole identifier explicitly listed in contractor project reference for Kozloduy NPP. Exact drilled depth, coordinates and continuous lithological log remain to research.",
+      "source_ids": [
+        "VRA-S018"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-012",
+      "borehole_name": "KOZLODUY NPP ENGINEERING GEOLOGY CONTEXT",
+      "site": "Potential NNU sites 1-4",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "context_units": [
+        {
+          "unit": "Pliocene sand - Brusartsi Formation",
+          "description": "Fine to medium sand, locally clayey",
+          "reported_thickness_m": "7-11 to 24",
+          "depth_interval": null
+        },
+        {
+          "unit": "Miocene clayey sand - Archar Formation",
+          "description": "Fine clayey sand, grey-green, water-bearing, thixotropic",
+          "reported_position": "below absolute elevation about 1 m",
+          "depth_interval": null
+        },
+        {
+          "unit": "Silty clay / clay marl - Archar Formation",
+          "description": "Compact grey-blue silty clay grading into clay marl; reported in western part of Site 1 at profile II-II",
+          "depth_interval": null
+        }
+      ],
+      "source_ids": [
+        "VRA-S019",
+        "VRA-S020"
+      ],
+      "note": "Generalized engineering-geological/site-profile information only. Do not convert reported thickness or elevation into individual borehole depth intervals."
+    },
+    {
+      "record_id": "VRA-LEAD-013",
+      "borehole_name": "С-4 Козлодуй",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 1961,
+      "total_depth_m": 705.0,
+      "oldest_rocks_reached": "Maeotian",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_borehole_log": false,
+      "known_context": "Real borehole explicitly listed in official EIAR Table 3.4-2. Continuous primary lithological log has not yet been located.",
+      "source_ids": [
+        "VRA-S019",
+        "VRA-S021",
+        "VRA-S023"
+      ],
+      "primary_log_search": {
+        "status": "ACTIVE",
+        "priority_sources": [
+          {
+            "source_id": "VRA-S021",
+            "role": "PRIMARY_DRILLING_REPORT"
+          },
+          {
+            "source_id": "VRA-S023",
+            "role": "CONTEMPORARY_GEOLOGICAL_PUBLICATION"
+          }
+        ]
+      },
+      "geological_profile_evidence": {
+        "profile": "EIAR Figure 3.4-4 / Profile I-I",
+        "used_as_profile_control": true,
+        "profile_label": "C-4 Kozloduy",
+        "exact_contacts_extracted": false,
+        "important_limit": "Profile geometry and formations are documented, but exact formation contacts must not be converted into borehole intervals without the underlying borehole log.",
+        "source_id": "VRA-S019"
+      }
+    },
+    {
+      "record_id": "VRA-LEAD-014",
+      "borehole_name": "С-5 Козлодуй",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 1962,
+      "total_depth_m": 703.0,
+      "oldest_rocks_reached": "Maeotian",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_borehole_log": false,
+      "known_context": "Real borehole explicitly listed in official EIAR Table 3.4-2. Continuous primary lithological log has not yet been located.",
+      "source_ids": [
+        "VRA-S019",
+        "VRA-S021",
+        "VRA-S023"
+      ],
+      "primary_log_search": {
+        "status": "ACTIVE",
+        "priority_sources": [
+          {
+            "source_id": "VRA-S021",
+            "role": "PRIMARY_DRILLING_REPORT"
+          },
+          {
+            "source_id": "VRA-S023",
+            "role": "CONTEMPORARY_GEOLOGICAL_PUBLICATION"
+          }
+        ]
+      },
+      "geological_profile_evidence": {
+        "profile": "EIAR Figure 3.4-4 / Profile I-I",
+        "used_as_profile_control": true,
+        "profile_label": "C-5 Kozloduy",
+        "exact_contacts_extracted": false,
+        "important_limit": "Profile geometry and formations are documented, but exact formation contacts must not be converted into borehole intervals without the underlying borehole log.",
+        "source_id": "VRA-S019"
+      }
+    },
+    {
+      "record_id": "VRA-LEAD-015",
+      "borehole_name": "Р-8 Козлодуй",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 1961,
+      "total_depth_m": 1326.5,
+      "oldest_rocks_reached": "Cenonian",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_borehole_log": false,
+      "known_context": "Real borehole explicitly listed in official EIAR Table 3.4-2. Continuous primary lithological log has not yet been located.",
+      "source_ids": [
+        "VRA-S019",
+        "VRA-S021",
+        "VRA-S023"
+      ],
+      "primary_log_search": {
+        "status": "ACTIVE",
+        "priority_sources": [
+          {
+            "source_id": "VRA-S021",
+            "role": "PRIMARY_DRILLING_REPORT"
+          },
+          {
+            "source_id": "VRA-S023",
+            "role": "CONTEMPORARY_GEOLOGICAL_PUBLICATION"
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "VRA-LEAD-016",
+      "borehole_name": "Р-9 Козлодуй",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 1961,
+      "total_depth_m": 1343.0,
+      "oldest_rocks_reached": "Cenonian",
+      "status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_borehole_log": false,
+      "known_context": "Real borehole explicitly listed in official EIAR Table 3.4-2. Continuous primary lithological log has not yet been located.",
+      "source_ids": [
+        "VRA-S019",
+        "VRA-S021",
+        "VRA-S023"
+      ],
+      "primary_log_search": {
+        "status": "ACTIVE",
+        "priority_sources": [
+          {
+            "source_id": "VRA-S021",
+            "role": "PRIMARY_DRILLING_REPORT"
+          },
+          {
+            "source_id": "VRA-S023",
+            "role": "CONTEMPORARY_GEOLOGICAL_PUBLICATION"
+          }
+        ]
+      },
+      "geological_profile_evidence": {
+        "profile": "EIAR Figure 3.4-4 / Profile I-I",
+        "used_as_profile_control": true,
+        "profile_label": "R-9 Kozloduy",
+        "exact_contacts_extracted": false,
+        "important_limit": "Profile geometry and formations are documented, but exact formation contacts must not be converted into borehole intervals without the underlying borehole log.",
+        "source_id": "VRA-S019"
+      }
+    },
+    {
+      "record_id": "VRA-LEAD-017",
+      "borehole_name": "С-1 Козлодуй",
+      "municipality": "Вълчедръм",
+      "oblast": "Монтана",
+      "year_completed": 1961,
+      "total_depth_m": 705.0,
+      "oldest_rocks_reached": "Eocene",
+      "status": "REGIONAL_ANALOGUE_PRIMARY_LOG_TO_RESEARCH",
+      "vratsa_inventory_scope": "REGIONAL_ANALOGUE_OUTSIDE_OBLAST",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_borehole_log": false,
+      "known_context": "Real borehole explicitly listed in official Kozloduy EIAR Table 3.4-2. Located in Valchedram municipality, Montana Province, therefore retained only as a regional analogue for the Vratsa/Kozloduy research context.",
+      "source_ids": [
+        "VRA-S019",
+        "VRA-S021"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-018",
+      "borehole_name": "Р-11 Козлодуй",
+      "municipality": "Вълчедръм",
+      "oblast": "Монтана",
+      "year_completed": 1964,
+      "total_depth_m": 3800.0,
+      "oldest_rocks_reached": "Middle Triassic",
+      "status": "REGIONAL_ANALOGUE_PRIMARY_LOG_TO_RESEARCH",
+      "vratsa_inventory_scope": "REGIONAL_ANALOGUE_OUTSIDE_OBLAST",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_borehole_log": false,
+      "known_context": "Real borehole explicitly listed in official Kozloduy EIAR Table 3.4-2. Located in Valchedram municipality, Montana Province, therefore retained only as a regional analogue for the Vratsa/Kozloduy research context.",
+      "source_ids": [
+        "VRA-S019",
+        "VRA-S021"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-019",
+      "borehole_name": "D-1 Energoproekt",
+      "site": "Kozloduy regional geological profile",
+      "municipality": "Козлодуй - TO_VERIFY",
+      "oblast": "Враца",
+      "status": "PROFILE_CONTROL_POINT_TO_RESEARCH",
+      "production_eligible": false,
+      "verified_borehole_exists": false,
+      "verified_borehole_log": false,
+      "known_context": "Explicitly labelled D-1 Energoproekt on official EIAR geological Profile I-I between the Kozloduy and Oryahovo profile controls. The present public figure alone does not establish whether D-1 is a full drilled borehole, engineering borehole or another subsurface control point.",
+      "source_ids": [
+        "VRA-S019"
+      ],
+      "research_priority": "HIGH",
+      "required_resolution": [
+        "exact object type",
+        "total drilled depth",
+        "coordinates",
+        "primary Energoproekt report",
+        "continuous lithological log"
+      ],
+      "research_update": "No reliable independent resolution yet for D-1 Energoproekt as a specific drilled borehole. Keep as PROFILE_CONTROL_POINT_TO_RESEARCH."
+    },
+    {
+      "record_id": "VRA-LEAD-020",
+      "borehole_name": "C-3 Oryahovo",
+      "municipality": "Оряхово",
+      "oblast": "Враца",
+      "status": "DEFERRED_BOREHOLE_LOG_TO_RESEARCH",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_borehole_log": false,
+      "known_context": "Shown as a borehole/control on official geological profiles linking Kozloduy with Oryahovo. Retained as a strong Vratsa oblast lead but intentionally deferred until Kozloduy research is exhausted.",
+      "source_ids": [
+        "VRA-S019",
+        "VRA-S008"
+      ],
+      "research_scope": "DEFERRED_UNTIL_KOZLODUY_COMPLETE"
+    },
+    {
+      "record_id": "VRA-CTX-005",
+      "borehole_name": "KOZLODUY NPP FIRST UNITS SHALLOW FOUNDATION CONTEXT",
+      "site": "АЕЦ Козлодуй - първи енергоблокове",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "SHALLOW_ENGINEERING_GEOLOGY_CONTEXT",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-50",
+      "documented_shallow_geology": [
+        {
+          "observation": "Loess foundation",
+          "thickness_m": "11-12",
+          "source_id": "VRA-S035",
+          "evidence_type": "published_engineering_geology"
+        },
+        {
+          "observation": "First Unit situated on the first non-flooded Danube terrace",
+          "surface_elevation_m": 34.5,
+          "source_id": "VRA-S034",
+          "evidence_type": "published_site_context"
+        },
+        {
+          "observation": "Loess foundation classified as Type I collapsible",
+          "source_id": "VRA-S034",
+          "evidence_type": "published_engineering_geology"
+        },
+        {
+          "observation": "Loess foundation - broader NPP site range",
+          "thickness_m": "10-14",
+          "source_id": "VRA-S036",
+          "evidence_type": "published_engineering_geology",
+          "scope": "broader_Kozloduy_NPP_site"
+        }
+      ],
+      "groundwater_observations": [
+        {
+          "value_m": 28.0,
+          "reference": "from ground surface",
+          "source_id": "VRA-S034",
+          "source_year": 1972
+        },
+        {
+          "value_m": "6.5-7.0",
+          "reference": "reported groundwater level; datum not reconciled here",
+          "source_id": "VRA-S035",
+          "source_year": 1973
+        }
+      ],
+      "groundwater_conflict_status": "UNRESOLVED_SOURCE_SPECIFIC_VALUES",
+      "important_limit": "These are published site/foundation investigation results, not a continuous individual borehole lithological log. Groundwater values are preserved exactly as reported and must not be merged until their reference datum and site context are resolved.",
+      "source_ids": [
+        "VRA-S034",
+        "VRA-S035",
+        "VRA-S036"
+      ],
+      "loess_thickness_synthesis": {
+        "older_specific_report_m": "11-12",
+        "later_broader_site_range_m": "10-14",
+        "status": "COMPATIBLE_SOURCE_SPECIFIC_RANGES",
+        "interpretation": "Keep both values. 11-12 m represents the earlier specific foundation description, while 10-14 m is a broader range reported for the Kozloduy NPP site."
+      }
+    },
+    {
+      "record_id": "VRA-CTX-006",
+      "borehole_name": "RADIANA SHALLOW GEOTECHNICAL PROFILE",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-100",
+      "geotechnical_layers": [
+        {
+          "layer": "Surface soil",
+          "material": "dark-grey contemporary soil",
+          "thickness_m": "0.5-1.0"
+        },
+        {
+          "layer": "Layer 1",
+          "material": "collapsible silty loess, Type II",
+          "geomorphic_scope": "Terrace T6",
+          "thickness_m": "6-16"
+        },
+        {
+          "layer": "Layer 1a",
+          "material": "collapsible silty to silty-sandy loess, Type I",
+          "geomorphic_scope": "Terraces T2 and T1",
+          "thickness_m": "5-11"
+        },
+        {
+          "layer": "Layer 2",
+          "material": "non-collapsible silty loess with buried-soil/clayey streaks",
+          "thickness_m": {
+            "south_of_T6": "30-33",
+            "T6": "up to 32",
+            "T2": "up to 1"
+          }
+        },
+        {
+          "layer": "Layer 2a",
+          "material": "non-collapsible compact clayey loess",
+          "geomorphic_scope": "Terraces T2 and T1",
+          "thickness_m": "2-8"
+        },
+        {
+          "layer": "Layer 3",
+          "material": "alluvial sandy clay, locally with gravel",
+          "thickness_m": {
+            "T6_T2": "2-5.5",
+            "T0": "2-8"
+          }
+        },
+        {
+          "layer": "Layer 4",
+          "material": "alluvial gravel / gravelly sand",
+          "thickness_m": {
+            "T6": "1-4.3",
+            "T1_T0": "2-5 to 8-13"
+          }
+        },
+        {
+          "layer": "Layer 4a",
+          "material": "fine- to medium-grained alluvial sand",
+          "geomorphic_scope": "Terraces T1 and T0",
+          "thickness_m": "1-3.3"
+        },
+        {
+          "layer": "Layer 5",
+          "unit": "Brusartsi Formation",
+          "material": "compact yellow-rusty to variegated/grey silty clay, locally with carbonate gravel pieces",
+          "combined_with_layer_6_thickness_m": {
+            "T6": "48-52",
+            "T2": "25-26",
+            "T1": "20-25"
+          }
+        },
+        {
+          "layer": "Layer 6",
+          "unit": "Brusartsi Formation",
+          "material": "fine- to medium-grained or clayey sand, beige to grey, forming lenses and streaks within Layer 5",
+          "individual_lens_thickness_m": "0.5-1.0 to 12"
+        },
+        {
+          "layer": "Layer 7",
+          "unit": "Archar Formation",
+          "material": "fine-grained clayey sand, sage-green, aquifer, thixotropic",
+          "reported_position": "below elevation +4.7 to -8.6 m"
+        },
+        {
+          "layer": "Layer 8",
+          "unit": "Archar Formation",
+          "material": "compact bluish-grey silty clay grading to clayey marl"
+        }
+      ],
+      "hydrogeological_context": {
+        "slope_area_vadose_zone_m": {
+          "south": "11-16",
+          "north": "13-17"
+        },
+        "water_level_elevation_m": {
+          "southwest": "40-45",
+          "northeast": "32-38"
+        }
+      },
+      "important_limit": "This is a site-scale geotechnical profile, not one continuous individual borehole log. Thicknesses vary by terrace and must not be stacked into a single synthetic column without spatial context.",
+      "source_ids": [
+        "VRA-S037",
+        "VRA-S038",
+        "VRA-S039",
+        "VRA-S040",
+        "VRA-S041",
+        "VRA-S042"
+      ],
+      "primary_borehole_campaigns_to_research": [
+        {
+          "period": "2008-2009",
+          "source_id": "VRA-S038",
+          "priority": "HIGH"
+        },
+        {
+          "period": "2010-2011",
+          "source_id": "VRA-S039",
+          "priority": "HIGH"
+        },
+        {
+          "period": "2012",
+          "source_id": "VRA-S040",
+          "priority": "VERY_HIGH",
+          "contract": "2012083/17.09.2012"
+        },
+        {
+          "period": "December 2012",
+          "source_id": "VRA-S041",
+          "priority": "VERY_HIGH",
+          "type": "geological-hydrogeological profiles"
+        }
+      ],
+      "next_research_goal": "Identify individual borehole numbers, drilled depths and continuous lithological intervals from the 2012 lithostratigraphic borehole campaign.",
+      "regional_brusartsi_context": {
+        "formation_thickness_m": "80-100",
+        "dominant_lithology": "clay with sand intercalations",
+        "scope": "Kozloduy lowland regional context",
+        "not_individual_borehole_interval": true,
+        "source_id": "VRA-S042"
+      }
+    },
+    {
+      "record_id": "VRA-LEAD-021",
+      "borehole_name": "BH1",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 2013,
+      "total_depth_m": 60.0,
+      "geodetic_coordinates_source": {
+        "x": 8542478.34,
+        "y": 4755805.64,
+        "coordinate_system": "as reported in official EIA Table 3.2-9; do not convert to WGS84 until CRS is verified"
+      },
+      "mouth_elevation_m": 86.1,
+      "borehole_function": "groundwater monitoring piezometer",
+      "status": "MONITORING_ONLY",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_coordinates_in_source_crs": true,
+      "verified_borehole_log": false,
+      "lithology_status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "priority_for_lithology_research": "VERY_HIGH",
+      "known_context": "Real monitoring borehole/piezometer installed in 2013 at Radiana Site. Exact drilled depth and source coordinates are documented by official EIA Table 3.2-9. No continuous lithological log has yet been located.",
+      "source_ids": [
+        "VRA-S043"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-022",
+      "borehole_name": "BH2",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 2013,
+      "total_depth_m": 39.0,
+      "geodetic_coordinates_source": {
+        "x": 8542794.16,
+        "y": 4755680.44,
+        "coordinate_system": "as reported in official EIA Table 3.2-9; do not convert to WGS84 until CRS is verified"
+      },
+      "mouth_elevation_m": 90.87,
+      "borehole_function": "groundwater monitoring piezometer",
+      "status": "MONITORING_ONLY",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_coordinates_in_source_crs": true,
+      "verified_borehole_log": false,
+      "lithology_status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "priority_for_lithology_research": "HIGH",
+      "known_context": "Real monitoring borehole/piezometer installed in 2013 at Radiana Site. Exact drilled depth and source coordinates are documented by official EIA Table 3.2-9. No continuous lithological log has yet been located.",
+      "source_ids": [
+        "VRA-S043"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-023",
+      "borehole_name": "BH3",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 2013,
+      "total_depth_m": 107.0,
+      "geodetic_coordinates_source": {
+        "x": 8543192.32,
+        "y": 4755529.3,
+        "coordinate_system": "as reported in official EIA Table 3.2-9; do not convert to WGS84 until CRS is verified"
+      },
+      "mouth_elevation_m": 93.52,
+      "borehole_function": "groundwater monitoring piezometer",
+      "status": "MONITORING_ONLY",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_coordinates_in_source_crs": true,
+      "verified_borehole_log": false,
+      "lithology_status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "priority_for_lithology_research": "VERY_HIGH",
+      "known_context": "Real monitoring borehole/piezometer installed in 2013 at Radiana Site. Exact drilled depth and source coordinates are documented by official EIA Table 3.2-9. No continuous lithological log has yet been located.",
+      "source_ids": [
+        "VRA-S043"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-024",
+      "borehole_name": "BH4",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 2013,
+      "total_depth_m": 79.0,
+      "geodetic_coordinates_source": {
+        "x": 8543611.9,
+        "y": 4755374.77,
+        "coordinate_system": "as reported in official EIA Table 3.2-9; do not convert to WGS84 until CRS is verified"
+      },
+      "mouth_elevation_m": 93.85,
+      "borehole_function": "groundwater monitoring piezometer",
+      "status": "MONITORING_ONLY",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_coordinates_in_source_crs": true,
+      "verified_borehole_log": false,
+      "lithology_status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "priority_for_lithology_research": "VERY_HIGH",
+      "known_context": "Real monitoring borehole/piezometer installed in 2013 at Radiana Site. Exact drilled depth and source coordinates are documented by official EIA Table 3.2-9. No continuous lithological log has yet been located.",
+      "source_ids": [
+        "VRA-S043"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-025",
+      "borehole_name": "BH5",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 2013,
+      "total_depth_m": 24.47,
+      "geodetic_coordinates_source": {
+        "x": 8542683.62,
+        "y": 4756069.57,
+        "coordinate_system": "as reported in official EIA Table 3.2-9; do not convert to WGS84 until CRS is verified"
+      },
+      "mouth_elevation_m": 40.74,
+      "borehole_function": "groundwater monitoring piezometer",
+      "status": "MONITORING_ONLY",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_coordinates_in_source_crs": true,
+      "verified_borehole_log": false,
+      "lithology_status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "priority_for_lithology_research": "CONTEXT",
+      "known_context": "Real monitoring borehole/piezometer installed in 2013 at Radiana Site. Exact drilled depth and source coordinates are documented by official EIA Table 3.2-9. No continuous lithological log has yet been located.",
+      "source_ids": [
+        "VRA-S043"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-026",
+      "borehole_name": "BH6",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 2013,
+      "total_depth_m": 15.14,
+      "geodetic_coordinates_source": {
+        "x": 8542851.68,
+        "y": 4755995.13,
+        "coordinate_system": "as reported in official EIA Table 3.2-9; do not convert to WGS84 until CRS is verified"
+      },
+      "mouth_elevation_m": 40.38,
+      "borehole_function": "groundwater monitoring piezometer",
+      "status": "MONITORING_ONLY",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_coordinates_in_source_crs": true,
+      "verified_borehole_log": false,
+      "lithology_status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "priority_for_lithology_research": "CONTEXT",
+      "known_context": "Real monitoring borehole/piezometer installed in 2013 at Radiana Site. Exact drilled depth and source coordinates are documented by official EIA Table 3.2-9. No continuous lithological log has yet been located.",
+      "source_ids": [
+        "VRA-S043"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-027",
+      "borehole_name": "BH7",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 2013,
+      "total_depth_m": 35.0,
+      "geodetic_coordinates_source": {
+        "x": 8542988.16,
+        "y": 4756078.59,
+        "coordinate_system": "as reported in official EIA Table 3.2-9; do not convert to WGS84 until CRS is verified"
+      },
+      "mouth_elevation_m": 37.64,
+      "borehole_function": "groundwater monitoring piezometer",
+      "status": "MONITORING_ONLY",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_coordinates_in_source_crs": true,
+      "verified_borehole_log": false,
+      "lithology_status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "priority_for_lithology_research": "HIGH",
+      "known_context": "Real monitoring borehole/piezometer installed in 2013 at Radiana Site. Exact drilled depth and source coordinates are documented by official EIA Table 3.2-9. No continuous lithological log has yet been located.",
+      "source_ids": [
+        "VRA-S043"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-028",
+      "borehole_name": "BH8",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 2013,
+      "total_depth_m": 46.11,
+      "geodetic_coordinates_source": {
+        "x": 8543164.12,
+        "y": 4755925.2,
+        "coordinate_system": "as reported in official EIA Table 3.2-9; do not convert to WGS84 until CRS is verified"
+      },
+      "mouth_elevation_m": 39.39,
+      "borehole_function": "groundwater monitoring piezometer",
+      "status": "MONITORING_ONLY",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_coordinates_in_source_crs": true,
+      "verified_borehole_log": false,
+      "lithology_status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "priority_for_lithology_research": "HIGH",
+      "known_context": "Real monitoring borehole/piezometer installed in 2013 at Radiana Site. Exact drilled depth and source coordinates are documented by official EIA Table 3.2-9. No continuous lithological log has yet been located.",
+      "source_ids": [
+        "VRA-S043"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-029",
+      "borehole_name": "BH9",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 2013,
+      "total_depth_m": 15.98,
+      "geodetic_coordinates_source": {
+        "x": 8543368.27,
+        "y": 4755847.37,
+        "coordinate_system": "as reported in official EIA Table 3.2-9; do not convert to WGS84 until CRS is verified"
+      },
+      "mouth_elevation_m": 41.13,
+      "borehole_function": "groundwater monitoring piezometer",
+      "status": "MONITORING_ONLY",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_coordinates_in_source_crs": true,
+      "verified_borehole_log": false,
+      "lithology_status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "priority_for_lithology_research": "CONTEXT",
+      "known_context": "Real monitoring borehole/piezometer installed in 2013 at Radiana Site. Exact drilled depth and source coordinates are documented by official EIA Table 3.2-9. No continuous lithological log has yet been located.",
+      "source_ids": [
+        "VRA-S043"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-030",
+      "borehole_name": "BH10",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 2013,
+      "total_depth_m": 25.68,
+      "geodetic_coordinates_source": {
+        "x": 8543528.44,
+        "y": 4755786.46,
+        "coordinate_system": "as reported in official EIA Table 3.2-9; do not convert to WGS84 until CRS is verified"
+      },
+      "mouth_elevation_m": 40.06,
+      "borehole_function": "groundwater monitoring piezometer",
+      "status": "MONITORING_ONLY",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_coordinates_in_source_crs": true,
+      "verified_borehole_log": false,
+      "lithology_status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "priority_for_lithology_research": "CONTEXT",
+      "known_context": "Real monitoring borehole/piezometer installed in 2013 at Radiana Site. Exact drilled depth and source coordinates are documented by official EIA Table 3.2-9. No continuous lithological log has yet been located.",
+      "source_ids": [
+        "VRA-S043"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-031",
+      "borehole_name": "BH11",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 2013,
+      "total_depth_m": 36.07,
+      "geodetic_coordinates_source": {
+        "x": 8543662.66,
+        "y": 4755727.81,
+        "coordinate_system": "as reported in official EIA Table 3.2-9; do not convert to WGS84 until CRS is verified"
+      },
+      "mouth_elevation_m": 38.53,
+      "borehole_function": "groundwater monitoring piezometer",
+      "status": "MONITORING_ONLY",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_coordinates_in_source_crs": true,
+      "verified_borehole_log": false,
+      "lithology_status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "priority_for_lithology_research": "HIGH",
+      "known_context": "Real monitoring borehole/piezometer installed in 2013 at Radiana Site. Exact drilled depth and source coordinates are documented by official EIA Table 3.2-9. No continuous lithological log has yet been located.",
+      "source_ids": [
+        "VRA-S043"
+      ]
+    },
+    {
+      "record_id": "VRA-LEAD-032",
+      "borehole_name": "BH12",
+      "site": "Радиана",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "year_completed": 2013,
+      "total_depth_m": 47.0,
+      "geodetic_coordinates_source": {
+        "x": 8543783.35,
+        "y": 4755680.44,
+        "coordinate_system": "as reported in official EIA Table 3.2-9; do not convert to WGS84 until CRS is verified"
+      },
+      "mouth_elevation_m": 37.91,
+      "borehole_function": "groundwater monitoring piezometer",
+      "status": "MONITORING_ONLY",
+      "production_eligible": false,
+      "verified_borehole_exists": true,
+      "verified_total_depth": true,
+      "verified_coordinates_in_source_crs": true,
+      "verified_borehole_log": false,
+      "lithology_status": "NEEDS_PRIMARY_BOREHOLE_LOG",
+      "priority_for_lithology_research": "HIGH",
+      "known_context": "Real monitoring borehole/piezometer installed in 2013 at Radiana Site. Exact drilled depth and source coordinates are documented by official EIA Table 3.2-9. No continuous lithological log has yet been located.",
+      "source_ids": [
+        "VRA-S043"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-007",
+      "borehole_name": "KOZLODUY NPP SITE 1 SHALLOW PROFILE",
+      "site": "Candidate Site 1",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-50",
+      "geomorphic_position": "T0 floodplain terrace",
+      "ground_elevation_m": "25-26",
+      "documented_layers": [
+        {
+          "material": "sandy alluvial clay",
+          "thickness_m": "4-6.5"
+        },
+        {
+          "material": "alluvial sand, locally lower half of clay layer",
+          "thickness_m": "not separately fixed"
+        },
+        {
+          "material": "alluvial gravel",
+          "thickness_m": "7-8"
+        },
+        {
+          "unit": "Pliocene",
+          "material": "sand",
+          "thickness_m": "10-15"
+        },
+        {
+          "unit": "Archar Formation",
+          "material": "Miocene sands",
+          "position": "starts near elevation 0 m"
+        }
+      ],
+      "important_limit": "Official site-scale engineering-geological profile. Do not treat as one individual borehole log.",
+      "source_ids": [
+        "VRA-S044"
+      ],
+      "groundwater_context": "at or very close to ground surface; Danube-controlled"
+    },
+    {
+      "record_id": "VRA-CTX-008",
+      "borehole_name": "KOZLODUY NPP SITE 2 SHALLOW PROFILE",
+      "site": "Candidate Site 2",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-50",
+      "geomorphic_position": "T1 first non-floodable terrace",
+      "ground_elevation_m": "34-37",
+      "documented_layers": [
+        {
+          "material": "silty collapsible loess, Layer 1a",
+          "thickness_m": "7-11"
+        },
+        {
+          "material": "clayey non-collapsible loess, Layer 2a",
+          "thickness_m": "3-4"
+        },
+        {
+          "material": "alluvial sand",
+          "thickness_m": "5-8"
+        },
+        {
+          "material": "alluvial gravel",
+          "thickness_m": "not separately fixed"
+        },
+        {
+          "unit": "Brusartsi Formation",
+          "material": "Pliocene clay",
+          "thickness_m": "5-7"
+        },
+        {
+          "unit": "Brusartsi Formation",
+          "material": "sand",
+          "thickness_m": "4-5"
+        }
+      ],
+      "important_limit": "Official site-scale engineering-geological profile. Do not treat as one individual borehole log.",
+      "source_ids": [
+        "VRA-S044"
+      ],
+      "groundwater_depth_m": "8-10"
+    },
+    {
+      "record_id": "VRA-CTX-009",
+      "borehole_name": "KOZLODUY NPP SITE 3 SHALLOW PROFILE",
+      "site": "Candidate Site 3",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-50",
+      "geomorphic_position": "T0 floodplain terrace",
+      "ground_elevation_m": "25-26",
+      "documented_layers": [
+        {
+          "material": "sandy alluvial clay",
+          "thickness_m": "3-5"
+        },
+        {
+          "material": "alluvial sand",
+          "thickness_m": "2.5-3"
+        },
+        {
+          "material": "alluvial gravel",
+          "thickness_m": "5-8"
+        },
+        {
+          "unit": "Pliocene",
+          "material": "clay",
+          "thickness_m": "~15"
+        },
+        {
+          "unit": "Archar Formation",
+          "material": "Miocene sands",
+          "position": "starts near elevation 0 m"
+        }
+      ],
+      "important_limit": "Official site-scale engineering-geological profile. Do not treat as one individual borehole log.",
+      "source_ids": [
+        "VRA-S044"
+      ],
+      "groundwater_context": "shallow / Danube-influenced floodplain conditions"
+    },
+    {
+      "record_id": "VRA-CTX-010",
+      "borehole_name": "KOZLODUY NPP SITE 4 SHALLOW PROFILE",
+      "site": "Candidate Site 4",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "AREA_GEOLOGY_CONTEXT_ONLY",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-50",
+      "geomorphic_position": "T1 first non-floodable terrace",
+      "ground_elevation_m": "~36",
+      "documented_layers": [
+        {
+          "material": "silty collapsible loess, Layer 1a",
+          "thickness_m": "6-9"
+        },
+        {
+          "material": "loess becoming more clayey/non-collapsible",
+          "depth_context_m": "to ~12-15"
+        },
+        {
+          "material": "alluvial sand and gravel",
+          "thickness_m": "4-7"
+        },
+        {
+          "unit": "Brusartsi Formation",
+          "material": "Pliocene clay",
+          "thickness_m": "6-8"
+        }
+      ],
+      "important_limit": "Official site-scale engineering-geological profile. Do not treat as one individual borehole log.",
+      "source_ids": [
+        "VRA-S044"
+      ],
+      "groundwater_depth_m": "8-10"
+    },
+    {
+      "record_id": "VRA-CTX-011",
+      "borehole_name": "KOZLODUY 3D SHALLOW LITHOLOGICAL MODEL",
+      "site": "АЕЦ Козлодуй - четири алтернативни площадки и прилежащи територии",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "SPATIAL_3D_GEOLOGICAL_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "coverage_area_km2": 23.7,
+      "priority_depth_range_m": "0-50",
+      "interpretation_role": "PRIMARY_SPATIAL_INTERPOLATION_SOURCE_FOR_SHALLOW_DEPTH",
+      "model_units": [
+        {
+          "id": "HGE1",
+          "model_layer": "ML-1",
+          "material": "льосов комплекс - льос, льосовидна глина и глинест пясък",
+          "average_thickness_m": "5-10"
+        },
+        {
+          "id": "HGE2",
+          "model_layer": "ML-1",
+          "material": "алувиални глини",
+          "average_thickness_m": "3-7"
+        },
+        {
+          "id": "HGE3",
+          "model_layer": "ML-2",
+          "material": "алувиален чакъл и чакълеста глина - стари тераси",
+          "average_thickness_m": "1-3"
+        },
+        {
+          "id": "HGE4",
+          "model_layer": "ML-2",
+          "material": "алувиален дребен чакъл и пясък",
+          "average_thickness_m": "5-9"
+        },
+        {
+          "id": "HGE5",
+          "model_layer": "ML-2",
+          "material": "алувиален чакъл и пясък - заливна тераса",
+          "average_thickness_m": "6-8"
+        },
+        {
+          "id": "HGE6",
+          "model_layer": "ML-2",
+          "material": "алувиален чакъл - заливна тераса",
+          "average_thickness_m": "3-5"
+        },
+        {
+          "id": "HGE7",
+          "model_layer": "ML-3",
+          "unit": "Брусарска свита",
+          "material": "глина с пясъчни прослойки",
+          "average_thickness_m": null
+        },
+        {
+          "id": "HGE8",
+          "model_layer": "ML-3",
+          "unit": "Брусарска свита",
+          "material": "дребен пясък",
+          "average_thickness_m": "1-8"
+        },
+        {
+          "id": "HGE9",
+          "model_layer": "ML-4",
+          "unit": "Брусарска свита",
+          "material": "глина",
+          "average_thickness_m": "3-10"
+        },
+        {
+          "id": "HGE10",
+          "model_layer": "ML-5",
+          "unit": "Брусарска свита",
+          "material": "глина и глина с пясъчни прослойки",
+          "average_thickness_m": ">30"
+        }
+      ],
+      "surface_model_status": {
+        "tops_and_bottoms_defined": true,
+        "basis": "detailed borehole investigations, geophysics and 30-40 years of geological/hydrogeological archives",
+        "digital_surfaces_available_in_current_source": false
+      },
+      "important_limit": "The published paper documents the model architecture and layer thickness ranges, but does not expose a machine-readable grid of every model top/bottom surface. Use as spatial model evidence, not as an exact depth lookup outside documented geometry.",
+      "source_ids": [
+        "VRA-S045"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-012",
+      "borehole_name": "KOZLODUY REGIONAL CENOZOIC DEPTH MODEL",
+      "site": "Козлодуйска низина",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "REGIONAL_VERTICAL_LITHOLOGY_CONTEXT",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-550+",
+      "documented_regional_sequence": [
+        {
+          "system": "Quaternary",
+          "material": "alluvial, eolian and eolian-alluvial deposits; terrace-dependent gravel, sand, clay and loess"
+        },
+        {
+          "age": "Romanian",
+          "material": "predominantly yellowish dense greasy clays with calcareous concretions; locally sandy, with clayey-sand intercalations"
+        },
+        {
+          "age": "Dacian",
+          "material": "grey-bluish sandy clays and sands; lower part includes lignitic coal horizons up to about 10 m followed by sandy clays"
+        }
+      ],
+      "neogene_total_thickness_m": ">550",
+      "interpretation_role": "DEEPER_REGIONAL_BACKGROUND_FOR_GAPS_BELOW_DETAILED_SHALLOW_MODELS",
+      "important_limit": "Regional sequence only. Do not convert the described units into exact local depth contacts without a spatial/profile control.",
+      "source_ids": [
+        "VRA-S046"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-013",
+      "borehole_name": "BRESTOVA PADINA VERTICAL LITHOLOGY MODEL",
+      "site": "Брестова падина",
+      "oblast": "Враца",
+      "status": "SPATIAL_VERTICAL_LITHOLOGY_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-150+",
+      "vertical_model": [
+        {
+          "order": 1,
+          "material": "типичен прахов льос",
+          "thickness_m": "~9"
+        },
+        {
+          "order": 2,
+          "material": "льосовидна глина",
+          "thickness_m": "4-6"
+        },
+        {
+          "order": 3,
+          "material": "делувиален глинест льос",
+          "scope": "mainly surrounding dry valleys",
+          "thickness_m": "4-11"
+        },
+        {
+          "order": 4,
+          "material": "делувиално-пролувиална глина",
+          "thickness_m": "1.5-2"
+        },
+        {
+          "order": 5,
+          "unit": "Брусарска свита",
+          "material": "прахова до песъчлива жълторъждива глина",
+          "approx_top_depth_m": 15,
+          "thickness_m": "20-21"
+        },
+        {
+          "order": 6,
+          "unit": "Брусарска свита",
+          "material": "дребнозърнест пясък - лещи и прослойки",
+          "thickness_m": "up to 5-5.5"
+        },
+        {
+          "order": 7,
+          "unit": "Брусарска свита",
+          "material": "прахова глина, сивосиня, плътна",
+          "position": "below approximately elevation 74 m",
+          "hydro_role": "aquitard"
+        },
+        {
+          "order": 8,
+          "unit": "Арчарска свита",
+          "material": "пясъци",
+          "hydro_role": "aquifer",
+          "regional_thickness_m": "60-80"
+        }
+      ],
+      "interpretation_role": "LOCAL_DEPTH_LOOKUP_AND_CONTROL_FOR_INTERPOLATION",
+      "source_ids": [
+        "VRA-S047"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-014",
+      "borehole_name": "MARICHIN VALOG SPATIAL VERTICAL PROFILE",
+      "site": "Маричин валог",
+      "municipality": "Козлодуй",
+      "oblast": "Враца",
+      "status": "SPATIAL_VERTICAL_LITHOLOGY_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "source_ids": [
+        "VRA-S047"
+      ],
+      "priority_depth_range_m": "0-100+",
+      "vertical_model": [
+        {
+          "order": 1,
+          "material": "съвременна почва",
+          "thickness_m": "0.5-1.0"
+        },
+        {
+          "order": 2,
+          "material": "прахов льос + льосовидни глини",
+          "thickness_m": "5-14 total"
+        },
+        {
+          "order": 3,
+          "material": "чакъл с глинесто-песъчлив запълнител",
+          "thickness_m": "0.5-2.0"
+        },
+        {
+          "order": 4,
+          "unit": "Брусарска свита",
+          "material": "прахова до песъчлива жълторъждива глина",
+          "thickness_m": "16.5-18.0"
+        },
+        {
+          "order": 5,
+          "unit": "Брусарска свита",
+          "material": "дребнозърнест пясък - тънки лещи и прослойки"
+        },
+        {
+          "order": 6,
+          "unit": "Брусарска свита",
+          "material": "дребнозърнест до глинест пясък",
+          "thickness_m": "1.5-3.0",
+          "hydro_role": "aquifer"
+        },
+        {
+          "order": 7,
+          "unit": "Брусарска свита",
+          "material": "плътна жълторъждива до сива глина с мергелоподобна структура"
+        }
+      ],
+      "interpretation_role": "LOCAL_DEPTH_LOOKUP_AND_CONTROL_FOR_INTERPOLATION"
+    },
+    {
+      "record_id": "VRA-CTX-015",
+      "borehole_name": "VARBITSA VERTICAL LITHOLOGY MODEL",
+      "site": "Върбица",
+      "municipality": "Враца",
+      "oblast": "Враца",
+      "status": "SPATIAL_VERTICAL_LITHOLOGY_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-500+",
+      "surface_elevation_m": "312-336",
+      "vertical_model": [
+        {
+          "order": 1,
+          "material": "делувиално-пролувиални глини и глинести чакъли",
+          "thickness_m": "4-5 NE to 11-11.5 SW"
+        },
+        {
+          "order": 2,
+          "material": "изветрял мергел",
+          "thickness_m": "4.5-10"
+        },
+        {
+          "order": 3,
+          "material": "свеж неизветрял мергел",
+          "approx_top_depth_m": "8.5-21.5 depending on local cover",
+          "regional_thickness_m": ">1000"
+        }
+      ],
+      "depth_lookup_implication": {
+        "20_m": "commonly weathered or fresh marl depending on local thickness of surface cover",
+        "50_m": "fresh marl",
+        "80_m": "fresh marl",
+        "100_m": "fresh marl",
+        "200_m": "fresh marl",
+        "500_m": "fresh marl"
+      },
+      "structural_context": "Northern limb of Varbitsa structure within the Mramoren anticline system, Western Fore-Balkan.",
+      "interpretation_role": "HIGH_VALUE_LOCAL_MODEL_FOR_0_500M_DEPTH_LOOKUP",
+      "source_ids": [
+        "VRA-S047"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-016",
+      "borehole_name": "MIZIA REGIONAL VERTICAL LITHOLOGY MODEL",
+      "site": "Община Мизия",
+      "municipality": "Мизия",
+      "oblast": "Враца",
+      "status": "REGIONAL_VERTICAL_LITHOLOGY_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-200+",
+      "vertical_model": [
+        {
+          "unit": "Quaternary",
+          "material": "alluvial-proluvial, aeolian and alluvial deposits: unconsolidated gravel, sand, clay and loess",
+          "thickness_m": "about 12 to >65"
+        },
+        {
+          "unit": "Neogene",
+          "subunits": [
+            "Furen Formation",
+            "Lehchevo Member of Smirnenski Formation",
+            "Beloslav? / Beloslatina Formation"
+          ],
+          "material": "limestones and various terrigenous rocks",
+          "thickness_m": "about 95 to >120"
+        }
+      ],
+      "structural_context": {
+        "unit": "Lom Depression / Moesian Platform",
+        "regional_structure": "large Cretaceous-Tertiary depression; local positive structures trend NW-SE",
+        "typical_bedding_dip_deg": "1-2"
+      },
+      "depth_lookup_implication": {
+        "20_m": "commonly Quaternary loess/alluvium; locally transition toward Neogene where cover is thin",
+        "50_m": "Quaternary in thick-cover sectors; Neogene in thinner-cover sectors",
+        "80_m": "commonly Neogene beneath Quaternary cover",
+        "100_m": "Neogene",
+        "150_m": "Neogene or approaching older substrate depending on local Neogene thickness",
+        "200_m": "below typical combined Quaternary + Neogene thickness in many areas; requires structural/substrate control"
+      },
+      "source_ids": [
+        "VRA-S048"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-017",
+      "borehole_name": "ORYAHOVO LOESS PLATEAU DEPTH MODEL",
+      "site": "Община Оряхово",
+      "municipality": "Оряхово",
+      "oblast": "Враца",
+      "status": "SPATIAL_GEOMORPHIC_LITHOLOGY_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-100+",
+      "spatial_subzones": [
+        {
+          "name": "Капитаница",
+          "material": "loess / loess complex",
+          "thickness_m": "80-100",
+          "interpretation": "At 20, 50 and commonly 80 m the expected material remains within the loess complex."
+        },
+        {
+          "name": "Равнището",
+          "material": "loess / loess complex",
+          "thickness_m": "40-60",
+          "interpretation": "20 m is within loess; around 50 m is near the base of the loess complex; deeper depths require substrate model."
+        },
+        {
+          "name": "Островска низина",
+          "material": "Danube floodplain alluvium",
+          "interpretation": "Use alluvial/floodplain model rather than plateau loess model."
+        }
+      ],
+      "important_limit": "Strong spatial control for Quaternary cover, but substrate below the loess still requires Neogene/Cretaceous refinement.",
+      "source_ids": [
+        "VRA-S049"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-018",
+      "borehole_name": "BYALA SLATINA REGIONAL LITHOLOGY MODEL",
+      "site": "Община Бяла Слатина",
+      "municipality": "Бяла Слатина",
+      "oblast": "Враца",
+      "status": "REGIONAL_LITHOLOGY_CONTEXT",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-200+",
+      "regional_sequence": [
+        {
+          "unit": "Quaternary",
+          "material": "alluvial deposits and loess"
+        },
+        {
+          "unit": "Sarmatian",
+          "material": "sandstones, dark-bedded limestones and calcareous clays"
+        }
+      ],
+      "exploration_context": [
+        "geological mapping",
+        "seismic surveys",
+        "borehole exploration",
+        "petroleum exploration"
+      ],
+      "important_limit": "Formation composition is documented, but exact thickness/depth surfaces require geological-map and seismic integration.",
+      "source_ids": [
+        "VRA-S050"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-019",
+      "borehole_name": "HAYREDIN REGIONAL DEPTH MODEL",
+      "site": "Община Хайредин",
+      "municipality": "Хайредин",
+      "oblast": "Враца",
+      "status": "REGIONAL_VERTICAL_LITHOLOGY_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-500+",
+      "vertical_model": [
+        {
+          "unit": "Quaternary loess complex",
+          "material": "sandy, typical and clayey loess / loess-like deposits",
+          "thickness_m": "10-40 to 50"
+        },
+        {
+          "unit": "Quaternary / basal loess substrate",
+          "material": "red clays",
+          "position": "commonly immediately beneath loess complex"
+        },
+        {
+          "unit": "Neogene basin fill",
+          "material": "thick sedimentary succession filling the Lom Depression",
+          "regional_total_thickness_m": "1000-1400"
+        },
+        {
+          "unit": "Paleogene",
+          "material": "buried sedimentary succession",
+          "position": "present at depth beneath Neogene; not exposed at surface"
+        }
+      ],
+      "structural_context": {
+        "unit": "southwestern Lom Depression",
+        "nearby_structure": "Mihaylovgrad anticline",
+        "basin_geometry": "asymmetric basin with steep southern and gentler northern margin"
+      },
+      "depth_lookup_implication": {
+        "20_m": "commonly within loess complex",
+        "50_m": "near/below base of loess; red clay or Neogene depending on locality",
+        "80_m": "Neogene basin fill expected",
+        "100_m": "Neogene basin fill expected",
+        "200_m": "Neogene basin fill expected",
+        "300_m": "Neogene basin fill expected",
+        "500_m": "Neogene basin fill expected"
+      },
+      "confidence_note": "High regional confidence for continued Cenozoic basin fill to 500 m; exact formation/lithology within the Neogene still requires finer stratigraphic subdivision.",
+      "source_ids": [
+        "VRA-S051"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-020",
+      "borehole_name": "BOROVAN REGIONAL VERTICAL LITHOLOGY MODEL",
+      "site": "Община Борован",
+      "municipality": "Борован",
+      "oblast": "Враца",
+      "status": "REGIONAL_VERTICAL_LITHOLOGY_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-500",
+      "vertical_model": [
+        {
+          "unit": "Quaternary alluvium",
+          "material": "gravel mixed with fine-grained sand and clay",
+          "thickness_m": "5-10",
+          "scope": "river valleys"
+        },
+        {
+          "unit": "Quaternary loess complex",
+          "material": "sandy, typical and clayey loess / loess-like clay",
+          "thickness_m": "significant but spatially variable"
+        },
+        {
+          "unit": "Loess substrate",
+          "material": "red calcareous clays",
+          "position": "commonly beneath loess"
+        },
+        {
+          "unit": "Neogene",
+          "documented_formations": [
+            "Beloslavska Formation",
+            "Dimovska Formation"
+          ],
+          "material": "Neogene sedimentary succession; exact local thickness still to resolve"
+        },
+        {
+          "unit": "Upper Cretaceous",
+          "material": "marine and brackish sedimentary rocks"
+        },
+        {
+          "unit": "Lower Cretaceous",
+          "material": "clayey-terrigenous-carbonate sedimentary rocks"
+        }
+      ],
+      "structural_context": {
+        "unit": "Moesian Platform",
+        "surface_setting": "northern plain to weakly hilly transition toward Fore-Balkan"
+      },
+      "depth_lookup_implication": {
+        "20_m": "loess/red clay or Neogene depending on local cover thickness",
+        "50_m": "commonly Neogene beneath Quaternary cover",
+        "80_m": "Neogene likely in large parts of municipality",
+        "100_m": "Neogene / locally approaching older substrate",
+        "200_m": "Neogene or Cretaceous depending on local thickness and structure",
+        "500_m": "older platform cover expected; exact unit requires structural control"
+      },
+      "confidence_note": "Good 0-50 m regional model; 50-500 m still needs formation-thickness and structural surfaces.",
+      "source_ids": [
+        "VRA-S052"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-021",
+      "borehole_name": "DOBROLEVO BYALA SLATINA KNEZHA 3D STRUCTURAL MODEL",
+      "site": "Добролево - Бяла Слатина - Кнежа",
+      "oblast": "Враца / Плевен",
+      "status": "REGIONAL_3D_STRUCTURAL_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-500+",
+      "spatial_role": "PRIMARY_STRUCTURAL_CONTROL_FOR_NORTHEASTERN_VRATSA",
+      "data_basis": [
+        "well-log data",
+        "2D seismic interpretation",
+        "lithostratigraphic correlation",
+        "tectonic interpretation"
+      ],
+      "correlated_systems": [
+        "Quaternary",
+        "Neogene",
+        "Paleogene",
+        "Cretaceous",
+        "Jurassic",
+        "Triassic"
+      ],
+      "seismic_reflectors_traced": 17,
+      "structural_depth_time_maps": 9,
+      "confirmed_structural_surfaces": [
+        "base of Neogene",
+        "top of Upper Jurassic-Lower Cretaceous complex",
+        "additional Jurassic/Triassic horizons"
+      ],
+      "interpretation_value": "Allows geological depth interpolation between borehole controls and provides a structural framework for predicting which stratigraphic unit is expected at a requested depth.",
+      "critical_limit": "The published article confirms the existence and methodology of the structural depth maps, but the current research record does not contain machine-readable raster/grid values for each surface. Do not invent exact local depths from the figures.",
+      "source_ids": [
+        "VRA-S053"
+      ],
+      "model_geometry": {
+        "regional_setting": "eastern Lom Depression",
+        "triassic_regional_trend": "Triassic strata deepen regionally from north toward south",
+        "major_partition": "subparallel monocline separates a relatively elevated northern sector from a subsided southern sector",
+        "southern_depression": "Byala Slatina depression",
+        "southern_depression_trend": "east-west",
+        "fault_control": "multiple approximately E-W faults with variable displacement",
+        "northern_high": "North Knezha terrace",
+        "eastern_element": "Tuchenitsa step"
+      },
+      "model_input_details": {
+        "boreholes": 12,
+        "2d_seismic_km": "~300",
+        "lithology_control": "cuttings + core",
+        "well_log_control": true,
+        "velocity_model_used_for_depth_conversion": true
+      },
+      "depth_interpretation_policy": {
+        "allowed": [
+          "identify broad structural tendency",
+          "identify likely stratigraphic succession",
+          "interpolate only where controlled by mapped surfaces or nearby data"
+        ],
+        "not_allowed": [
+          "invent exact base-Neogene depth",
+          "assign exact Cretaceous top depth from regional trend alone",
+          "convert structural thickness into local depth without surface control"
+        ]
+      },
+      "current_value_for_0_500m_map": "Provides regional structural direction and correlation framework. Useful for deciding how neighbouring lithology controls should be interpolated, but not yet sufficient for exact numerical contact depths at arbitrary coordinates."
+    },
+    {
+      "record_id": "VRA-CTX-022",
+      "borehole_name": "NORTHERN VRATSA NEOGENE FORMATION THICKNESS MODEL",
+      "site": "Ломска депресия - Оряхово / Мизия / Бяла Слатина",
+      "oblast": "Враца",
+      "status": "REGIONAL_FORMATION_THICKNESS_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-300+",
+      "formations": [
+        {
+          "unit": "Фуренска свита",
+          "material": "оолитни, песъчливи, детритусни и черупчести варовици, варовити глини и пясъчни прослойки",
+          "thickness_m": "40-50"
+        },
+        {
+          "unit": "Бялослатинска свита",
+          "material": "жълти разнозърнести пясъци, конгломератни лещи, алеврити и алевритови глини",
+          "thickness_m": {
+            "Oryahovo_max": 143,
+            "eastward_typical": "40-50"
+          }
+        },
+        {
+          "unit": "Брусарска свита",
+          "material": "сиво-зеленикави песъчливи глини; в горната част пясъчни прослойки; в долната част локално лигнитни въглища",
+          "thickness_m": "50-70"
+        }
+      ],
+      "spatial_trend": "Byala Slatina Formation reaches its greatest documented thickness around Oryahovo and decreases eastward.",
+      "interpretation_role": "FORMATION_THICKNESS_CONSTRAINT_FOR_0_300M_DEPTH_MODEL",
+      "critical_limit": "Formation thickness does not equal depth below ground surface. The map must combine these thicknesses with Quaternary cover, structural position and base-Neogene surfaces.",
+      "source_ids": [
+        "VRA-S054"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-023",
+      "borehole_name": "PALEO-SKAT PRE-BADENIAN EROSIONAL VALLEY MODEL",
+      "site": "Палео-Скът / Северна Врачанска област",
+      "oblast": "Враца",
+      "status": "PALEORELIEF_SPATIAL_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-500+",
+      "control_points": [
+        "R-1 Sofronievo",
+        "R-9 Kozlodui"
+      ],
+      "documented_geometry": {
+        "feature": "pre-Badenian erosional paleovalley",
+        "name": "Paleo-Skat",
+        "fill": "Badenian and younger Neogene sediments",
+        "erosional_effect": "Maastrichtian, Paleocene and Eocene units are locally removed in the paleovalley relative to neighbouring areas"
+      },
+      "regional_isopach_model": {
+        "interval": "Badenian + Volhynian",
+        "published_contours_m": [
+          0,
+          100,
+          200,
+          300,
+          400,
+          500,
+          600,
+          700,
+          800,
+          900
+        ],
+        "geometry": "highly variable thickness with narrow paleovalley and depression depocentres rather than a planar base",
+        "exact_coordinate_grid_available": false
+      },
+      "map_interpretation_rule": "Do not interpolate the base of Neogene as a simple planar surface. Paleovalleys may preserve hundreds of metres more Neogene fill than adjacent structural highs.",
+      "important_limit": "Isopach contours are published graphically. Exact values at arbitrary coordinates require georeferencing/digitisation.",
+      "source_ids": [
+        "VRA-S055"
+      ],
+      "published_map_status": {
+        "isopach_map_available": true,
+        "figure": 8,
+        "digitization_feasible": true,
+        "contour_interval_m": 100,
+        "exact_coordinate_lookup_available": false
+      },
+      "erosional_relief_strength": {
+        "paleo_skat": "VERY_HIGH",
+        "evidence": "R-1 Sofronievo + R-9 Kozlodui define Paleo-Skat; R-1 Glozhene indicates erosion locally down to Albian, with >900 m difference relative to nearby S-3 Harlets."
+      },
+      "future_map_rule": "Use georeferenced Paleo-Skat/isopach geometry before interpolating Neogene base. Do not smooth across the paleovalley margins."
+    },
+    {
+      "record_id": "VRA-CTX-024",
+      "borehole_name": "VRATSA PRE-NEOGENE PALEORELIEF DEPTH-SURFACE MODEL",
+      "site": "Мизийска платформа между Арчар и Осъм",
+      "oblast": "Враца / регионален контекст",
+      "status": "REGIONAL_DEPTH_SURFACE_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-500+",
+      "data_basis": [
+        "long-term seismic-geophysical investigations",
+        "drilling data",
+        "structural geology",
+        "morphological analysis"
+      ],
+      "mapped_surfaces": [
+        "base Jurassic-Paleogene structural stage",
+        "top Jurassic-Paleogene structural stage",
+        "pre-Neogene denudational surface",
+        "Quaternary denudational surface"
+      ],
+      "published_working_scale": "1:200000",
+      "critical_surface_for_sondi": "hypsometric surface of pre-Neogene deposits / pre-Neogene paleorelief",
+      "interpretation_role": "REGIONAL_GEOMETRIC_CONTROL_FOR_NEOGENE_BASE",
+      "important_limit": "Publication describes construction of the surface, but a machine-readable raster/grid is not currently available.",
+      "source_ids": [
+        "VRA-S056"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-025",
+      "borehole_name": "KRIVODOL VRATSA 0-500M STRUCTURAL LITHOLOGY MODEL",
+      "site": "Криводол - Враца / Западен Предбалкан",
+      "municipalities": [
+        "Криводол",
+        "Враца"
+      ],
+      "oblast": "Враца",
+      "status": "REGIONAL_STRUCTURAL_LITHOLOGY_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-500+",
+      "major_units": [
+        {
+          "unit": "Пъстринишка свита",
+          "material": "микритови варовици и варовити мергели",
+          "thickness_m": "200-300",
+          "spatial_context": "район около Криводол"
+        },
+        {
+          "unit": "Крапченски член",
+          "material": "глинести варовици и мергели",
+          "thickness_m": "60-1500",
+          "spatial_context": "район около Крапчене"
+        },
+        {
+          "unit": "Стубелски член",
+          "material": "мергели",
+          "thickness_m": "150-200",
+          "spatial_context": "район около Стубел"
+        },
+        {
+          "unit": "Сумерска свита",
+          "material": "плътни сиви до тъмносиви глинести мергели; редки пясъчникови прослойки, по-чести в горната част",
+          "thickness_m": {
+            "official_regional_range": "200-500",
+            "maximum_documented_regional": "~1200"
+          },
+          "spatial_context": "широко разпространена в Западния Предбалкан; разкрива се около Сумер и други части на северната ивица на Предбалкана"
+        },
+        {
+          "unit": "Черепишка свита / Врачанска ургонска група",
+          "material": "светли органогенни масивни варовици; карбонатен ургонски комплекс",
+          "thickness_m": {
+            "Cherepish_local": "~250",
+            "Vratsa_Urgonian_regional": "100-200 to ~500"
+          },
+          "spatial_context": "силно развита около и северозападно от Враца; латерално преминава към Ботунската свита"
+        },
+        {
+          "unit": "Ботунска свита",
+          "material": "варовици, песъчливи и глинести варовици, мергелни преходи",
+          "thickness_m": {
+            "maximum": "~200",
+            "western_reduced": "50-60",
+            "pinchout": "0"
+          },
+          "spatial_geometry": "рамкира от север и северозапад Врачанската ургонска група; изтънява на запад и западно от меридиана на Криводол се замества от Мраморенската свита"
+        },
+        {
+          "unit": "Мраморенска свита",
+          "material": "тъмносиви варовити мергели, локално глинести и слабо алевритови, с редки глинести варовици",
+          "thickness_m": {
+            "documented_minimum": ">500",
+            "regional_local_max": "~800"
+          },
+          "spatial_context": "под Ботунската/Сумерската последователност и замества Ботунската свита западно от Криводол"
+        },
+        {
+          "unit": "Криводолска свита",
+          "age": "Neogene",
+          "material": "мергели и глини",
+          "thickness_m": "10-20",
+          "spatial_context": "северозападно и около Криводол"
+        },
+        {
+          "unit": "Quaternary",
+          "material": "чакъли, валуни, пясъци, глини и льосовидни глини",
+          "thickness_m": {
+            "alluvial_proluvial": "10-20",
+            "river_terraces": "8-10",
+            "loess_like_clays": "8-10",
+            "proluvial": "10-40"
+          }
+        }
+      ],
+      "lateral_facies_rules": [
+        {
+          "rule": "BOTUNYA_TO_URGONIAN",
+          "description": "Ботунската свита е фациален шлейф на Врачанската ургонска група; не трябва да се третира като еднакво дебел пласт навсякъде."
+        },
+        {
+          "rule": "BOTUNYA_TO_MRAMOREN_WEST_OF_KRIVODOL",
+          "description": "Западно от меридиана на Криводол Ботунската свита се замества от мергелите на Мраморенската свита."
+        },
+        {
+          "rule": "SUMER_OVERLIES_MRAMOREN_OR_URGONIAN",
+          "description": "Сумерската свита може да покрива Мраморенската свита или ургонски карбонатни единици според структурната и фациална позиция."
+        }
+      ],
+      "depth_lookup_templates": {
+        "SUMER_SURFACE_POLYGON": {
+          "20_m": "Sumer marl",
+          "50_m": "Sumer marl",
+          "100_m": "Sumer marl",
+          "200_m": "Sumer marl",
+          "300_m": "Sumer marl likely",
+          "500_m": "Sumer marl or underlying unit depending on local formation thickness",
+          "confidence_0_300": "HIGH",
+          "confidence_500": "MEDIUM_TO_HIGH"
+        },
+        "MRAMOREN_SURFACE_POLYGON": {
+          "20_m": "Mramoren marl",
+          "50_m": "Mramoren marl",
+          "100_m": "Mramoren marl",
+          "200_m": "Mramoren marl",
+          "300_m": "Mramoren marl",
+          "500_m": "Mramoren marl likely",
+          "confidence": "HIGH_REGIONAL"
+        },
+        "VRATSA_URGONIAN_POLYGON": {
+          "20_m": "massive/organogenic limestone",
+          "50_m": "carbonate complex",
+          "100_m": "carbonate complex",
+          "200_m": "carbonate complex or underlying/adjacent marl depending on local thickness and facies",
+          "500_m": "requires structural/facies control; do not assume limestone",
+          "confidence_0_100": "HIGH",
+          "confidence_200_500": "MEDIUM"
+        },
+        "PASTRINA_KRIVODOL_POLYGON": {
+          "20_m": "micritic limestone / calcareous marl",
+          "50_m": "micritic limestone / calcareous marl",
+          "100_m": "micritic limestone / calcareous marl",
+          "200_m": "Pastrina unit likely",
+          "300_m": "near/below unit base depending on local thickness",
+          "confidence_0_200": "HIGH_REGIONAL"
+        }
+      },
+      "critical_interpretation_rule": "Surface geological polygon and structural/facies position must be identified before assigning depth lithology. Do not interpolate linearly across the Urgonian-Botunya-Mramoren facies transition or mapped faults.",
+      "remaining_need": [
+        "digitised geological polygons from K-34-036 Vratsa",
+        "formation top/base surfaces",
+        "fault-block geometry",
+        "local dip data",
+        "more exact depth controls in Vratsa city / Krivodol transition"
+      ],
+      "source_ids": [
+        "VRA-S057",
+        "VRA-S058",
+        "VRA-S059"
+      ]
+    },
+    {
+      "record_id": "VRA-CTX-026",
+      "borehole_name": "MEZDRA ROMAN SYNCLINAL BELT 0-500M MODEL",
+      "site": "Мездра - Роман / Мездренска и Лютидолска синклинала",
+      "municipalities": [
+        "Мездра",
+        "Роман"
+      ],
+      "oblast": "Враца",
+      "status": "REGIONAL_STRUCTURAL_LITHOLOGY_MODEL",
+      "production_eligible": false,
+      "verified_borehole_log": false,
+      "priority_depth_range_m": "0-500",
+      "structural_setting": [
+        "Mezdra syncline",
+        "Lyutidol syncline",
+        "Western Fore-Balkan"
+      ],
+      "upper_cretaceous_sequence_ascending": [
+        {
+          "unit": "Darmantsi Formation",
+          "material": "glauconitic/calcareous sandstone and sandy limestone, locally phosphatic basal levels"
+        },
+        {
+          "unit": "Kunino Formation",
+          "material": "thin- to medium-bedded micritic limestone, argillaceous limestone interbeds, local flint nodules",
+          "typical_local_thickness_m": "~7",
+          "documented_local_variability_m": "up to ~40"
+        },
+        {
+          "unit": "Mezdra Formation",
+          "material": [
+            "lower microgranular limestone with flint concretions",
+            "middle argillaceous limestone with marl interbeds/alternation",
+            "upper microgranular limestone with flint concretions"
+          ]
+        },
+        {
+          "unit": "Kaylaka Formation",
+          "material": "bioclastic to medium/coarse-grained limestone, locally quarry-type limestone"
+        }
+      ],
+      "roman_regional_context": {
+        "upper_cretaceous": "widely distributed across municipality",
+        "neogene": "limited distribution",
+        "quaternary": "aeolian, aeolian-deluvial and alluvial deposits"
+      },
+      "depth_interpretation_rules": [
+        {
+          "rule": "SYNCLINE_LIMB_AWARE",
+          "description": "Do not assign vertical depths from stratigraphic order alone. Formation depth depends on position on the northern/southern limb and local dip."
+        },
+        {
+          "rule": "FAULT_AWARE",
+          "description": "Reverse faults/thrusts shown in regional mapping can repeat or truncate stratigraphy."
+        },
+        {
+          "rule": "SURFACE_POLYGON_FIRST",
+          "description": "Identify surface formation from 1:50000 map before constructing 0-500 m vertical sequence."
+        }
+      ],
+      "current_depth_lookup_capability": {
+        "0-20": "MEDIUM_TO_HIGH if surface formation known",
+        "20-50": "MEDIUM_TO_HIGH",
+        "50-100": "MEDIUM",
+        "100-200": "LOW_TO_MEDIUM",
+        "200-500": "LOW_TO_MEDIUM"
+      },
+      "main_limitation": "Formation sequence is well constrained, but exact depth contacts still require geological polygons, dip, fold geometry and faults from the 1:50000 Mezdra map.",
+      "source_ids": [
+        "VRA-S062",
+        "VRA-S063",
+        "VRA-S064",
+        "VRA-S065",
+        "VRA-S066",
+        "VRA-S067",
+        "VRA-S068",
+        "VRA-S069",
+        "VRA-S070",
+        "VRA-S071"
+      ],
+      "measured_local_depth_anchors": [
+        {
+          "location": "Moravitsa / Iskar Gorge",
+          "structural_position": "southern limb of Mezdra syncline",
+          "sequence": [
+            {
+              "unit": "Darmantsi Formation",
+              "measured_thickness_m": 5,
+              "material": "glauconitic sandstone / limestone"
+            },
+            {
+              "unit": "Kunino Formation",
+              "measured_thickness_m": 5,
+              "material": "clayey limestone"
+            },
+            {
+              "unit": "Mezdra Formation",
+              "measured_thickness_m": 10,
+              "material": "flint-bearing limestone"
+            }
+          ],
+          "substrate_below": [
+            "Aptian sandstones of Roman Formation",
+            "marls of Sumer Formation"
+          ],
+          "interpretation_note": "Local measured section only; do not apply these exact thicknesses across the whole syncline."
+        },
+        {
+          "location": "Kunino",
+          "section_total_m": 16.5,
+          "contains": [
+            "upper Darmantsi Formation",
+            "entire Kunino Formation",
+            "lower Mezdra Formation"
+          ]
+        },
+        {
+          "location": "Darmantsi",
+          "section_total_m": 14,
+          "contains": [
+            "Darmantsi Formation",
+            "Kunino Formation",
+            "base of Mezdra Formation"
+          ]
+        },
+        {
+          "location": "Starna Reka / regional measured sections",
+          "formation": "Kunino Formation",
+          "typical_thickness_m": "~7",
+          "local_max_measured_m": 40,
+          "material": "medium-bedded micritic and argillaceous limestone with local flint nodules"
+        },
+        {
+          "location": "Mezdra region",
+          "formation": "Mezdra Formation",
+          "measured_regional_thickness_m": "~60",
+          "material": "grey to dark-grey micritic/fine-bioclastic limestone with abundant flint nodules"
+        },
+        {
+          "location": "Karlukovo / eastern Roman sector",
+          "formation": "Kaylaka Formation",
+          "regional_thickness_m": "80-100",
+          "material": "massive organogenic limestone",
+          "hydrogeological_note": "strongly karstifiable"
+        },
+        {
+          "location": "Varbeshnitsa-Staro Selo / Mezdra syncline",
+          "formation": "Kaylaka Formation quarry-type limestone",
+          "thickness_m": "50-60",
+          "material": "soft to moderately hard, fine- to medium-grained massive quarry limestone"
+        }
+      ],
+      "formation_thickness_constraints": {
+        "Darmantsi": {
+          "local_Moravitsa_m": 5,
+          "regional_variability": "significant"
+        },
+        "Kunino": {
+          "typical_m": "~7",
+          "local_range_m": "5 to 40"
+        },
+        "Mezdra": {
+          "local_Moravitsa_m": 10,
+          "regional_measured_m": "~60",
+          "variability": "significant"
+        },
+        "Kaylaka": {
+          "Karlukovo_regional_m": "80-100",
+          "quarry_type_component_m": "50-60"
+        }
+      },
+      "improved_depth_lookup_logic": {
+        "SOUTH_MEZDRA_SYNCLINE_MORAVITSA_CONTROL": {
+          "surface_condition": "where Darmantsi/Kunino/Mezdra sequence is exposed on southern limb near Moravitsa",
+          "first_20_m": "Upper Cretaceous carbonate-siliciclastic sequence can be traversed completely within approximately 20 m locally.",
+          "below_local_upper_cretaceous": "Aptian Roman Formation sandstone and/or Sumer marl may occur beneath the thin local Maastrichtian package.",
+          "confidence": "VERY_HIGH_LOCAL"
+        },
+        "MEZDRA_FORMATION_POLYGON": {
+          "0_50_m": "predominantly micritic/flint-bearing limestone; locally middle argillaceous limestone/marl interval",
+          "50_100_m": "may remain within Mezdra where formation is thick, or pass into underlying Kunino/Darmantsi depending on dip",
+          "confidence": "HIGH_WITH_STRUCTURE"
+        },
+        "KAYLAKA_KARLUKOVO_ROMAN_POLYGON": {
+          "0_50_m": "massive organogenic limestone likely",
+          "50_80_m": "Kaylaka limestone likely",
+          "80_100_m": "near/below Kaylaka base depending on local thickness",
+          "100_200_m": "older Maastrichtian formations expected; requires structural position",
+          "confidence_0_80": "HIGH_REGIONAL",
+          "confidence_100_200": "MEDIUM"
+        }
+      },
+      "structural_geometry_controls": {
+        "Kostalevo_fault": {
+          "type": "major fault / thrust boundary",
+          "trace": "Vratsa to Cherepish Monastery / Iskar Gorge",
+          "role": "separates Balkan/Vratsa tectonic block from Fore-Balkan structures",
+          "horizontal_displacement_km": "~7",
+          "vertical_component": true,
+          "tectonic_effect": "Vratsa tectonic block is thrust over Fore-Balkan structures including Mezdra syncline and Lyutibrod anticline",
+          "map_rule": "Do not project formations continuously across Kostalevo fault. Treat opposite sides as separate structural blocks."
+        },
+        "Mezdra_syncline": {
+          "structure": "syncline",
+          "documented_control": [
+            "southern limb studied in measured sections",
+            "northern limb documented in stratigraphic sections",
+            "eastern centricline documented"
+          ],
+          "map_rule": "Depth to formation contacts depends on limb position and distance toward syncline axis/closure. Do not use vertical formation thickness alone."
+        },
+        "Lyutidol_syncline": {
+          "structure": "syncline",
+          "documented_limbs": [
+            "northern limb",
+            "southern limb"
+          ],
+          "Kaylaka_preservation": "Kaylaka Formation preserved only in southern limb in the documented Lyutidol area",
+          "map_rule": "Do not assume Kaylaka Formation exists beneath both limbs. Structural preservation is asymmetric."
+        },
+        "Karlukovo_Roman_sector": {
+          "structure": "shallow syncline",
+          "general_strike": "W-E",
+          "regional_dip_direction": "east",
+          "main_units": [
+            "Mezdra Formation carbonates",
+            "Kaylaka Formation carbonates"
+          ],
+          "map_rule": "Toward the east, carbonate formation contacts may occur progressively deeper where controlled by the regional synclinal dip."
+        }
+      },
+      "fault_aware_depth_interpretation": {
+        "priority_order": [
+          "identify geological polygon",
+          "identify tectonic block",
+          "identify syncline limb / axis relation",
+          "apply local measured thickness",
+          "project contacts using dip only when dip is known",
+          "lower confidence across unresolved faults"
+        ],
+        "absolute_rules": [
+          "never interpolate straight through a thrust",
+          "never assume symmetric preservation between syncline limbs",
+          "never convert stratigraphic thickness directly to vertical depth without structural orientation"
+        ]
+      }
+    }
+  ]
+}
