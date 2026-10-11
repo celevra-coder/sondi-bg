@@ -1,3 +1,5 @@
+import type { GlimSurfaceResult } from "./glim-surface";
+import { getGlimSurface } from "./glim-surface";
 import "server-only";
 import {
   getMarichinLocalContext,
@@ -23,6 +25,98 @@ import {
   resolveVratsaSpatialContext,
   type VratsaSpatialContextResult,
 } from "./lithology-spatial-engine";
+
+type VratsaDocumentedGeologicalContext = {
+  zone_id: string;
+  scope: "ZONE_DOCUMENTATION_ONLY";
+  exact_coordinate_applicability_verified: false;
+  interpretation_guard: string;
+  records: Array<{
+    source_id: string | null;
+    source_file: string | null;
+    locality: string | null;
+    evidence_type: string | null;
+    restrictions: string[];
+    source_evidence: unknown;
+  }>;
+};
+
+function getVratsaDocumentedGeologicalContext(
+  spatial: VratsaSpatialContextResult[]
+): VratsaDocumentedGeologicalContext | null {
+  const zoneId = spatial[0]?.zone.zone_id;
+
+  if (!zoneId?.startsWith("VRA-Z")) {
+    return null;
+  }
+
+  try {
+    const file = path.join(
+      process.cwd(),
+      "data",
+      "soil-lithology",
+      "runtime",
+      "vratsa",
+      "depth_lithology_model.json"
+    );
+
+    const model = JSON.parse(
+      fs.readFileSync(file, "utf8")
+    ) as {
+      zones?: Record<string, {
+        documented_context_supplement?: Array<{
+          source_id?: string;
+          source_file?: string;
+          locality?: string;
+          evidence_type?: string;
+          restrictions?: string[];
+          formation_observations?: unknown;
+          regional_geology?: unknown;
+          regional_lithology?: unknown;
+          site_evidence?: unknown;
+          regional_stratigraphy?: unknown;
+          lithology?: unknown;
+          structure?: unknown;
+        }>;
+      }>;
+    };
+
+    const entries =
+      model.zones?.[zoneId]?.documented_context_supplement;
+
+    if (!Array.isArray(entries) || entries.length === 0) {
+      return null;
+    }
+
+    return {
+      zone_id: zoneId,
+      scope: "ZONE_DOCUMENTATION_ONLY",
+      exact_coordinate_applicability_verified: false,
+      interpretation_guard:
+        "Това са документирани геоложки сведения за отделни обекти в зоната. Не доказват същата литология, дълбочина или геоложки контакт в избраните координати.",
+      records: entries.map(entry => ({
+        source_id: entry.source_id ?? null,
+        source_file: entry.source_file ?? null,
+        locality: entry.locality ?? null,
+        evidence_type: entry.evidence_type ?? null,
+        restrictions: Array.isArray(entry.restrictions)
+          ? entry.restrictions
+          : [],
+        source_evidence: {
+          formation_observations: entry.formation_observations,
+          regional_geology: entry.regional_geology,
+          regional_lithology: entry.regional_lithology,
+          site_evidence: entry.site_evidence,
+          regional_stratigraphy: entry.regional_stratigraphy,
+          lithology: entry.lithology,
+          structure: entry.structure,
+        },
+      })),
+    };
+  } catch {
+    return null;
+  }
+}
 
 type TerrainProfileResult =
   Awaited<ReturnType<typeof getTerrainProfile>>;
@@ -212,8 +306,9 @@ export type LithologyProfile = {
    * Empty outside the currently supported Vratsa model.
    * This is separate from borehole analogue evidence.
    */
-  target_spatial_depth_model:
-    VratsaSpatialContextResult[];
+  target_glim_surface_context: GlimSurfaceResult;
+  target_spatial_depth_model: VratsaSpatialContextResult[];
+  target_documented_geological_context: VratsaDocumentedGeologicalContext | null;
 
   marichin_local_context:
     MarichinLocalContext | null;
@@ -1200,6 +1295,9 @@ export async function getLithologyProfile(
   const targetGeology =
     getGeologyAtLocation(latitude, longitude);
 
+  const targetGlimSurface =
+    await getGlimSurface(latitude, longitude);
+
   /*
    * Spatial model is evaluated independently from the
    * legacy surface raster.
@@ -1574,8 +1672,11 @@ export async function getLithologyProfile(
         getMrrbCorridorIds(targetFaultProfile),
     },
 
-    target_spatial_depth_model:
-      targetSpatialDepthModel,
+    target_spatial_depth_model: targetSpatialDepthModel,
+    target_documented_geological_context:
+      getVratsaDocumentedGeologicalContext(targetSpatialDepthModel),
+
+    target_glim_surface_context: targetGlimSurface,
 
     marichin_local_context:
       getMarichinLocalContext(latitude, longitude),

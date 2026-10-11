@@ -1,4 +1,7 @@
+import { assessGlimAlternatives } from "@/lib/glim-alternative-assessment";
 import Link from "next/link";
+import { getVratsaDocumentedColumns } from "@/lib/vratsa-documented-columns";
+import { getVratsaRegionReport } from "@/lib/vratsa-region-report";
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase-server";
@@ -8,6 +11,7 @@ import {
 } from "@/lib/lithology-profile";
 import { synthesizeLithologyEvidence } from "@/lib/lithology-synthesis";
 import { buildUnifiedLithology } from "@/lib/lithology-unified-synthesis";
+import { explainDepthLithology } from "@/lib/lithology-depth-display";
 
 type SearchParams = Promise<{
   lat?: string;
@@ -18,6 +22,7 @@ type SearchParams = Promise<{
   target?: string;
 }>;
 
+// Reader-friendly explanations are integrated directly into the regional text.
 function familyLabel(value: string) {
   const labels: Record<string, string> = {
     UNCONSOLIDATED: "Рохкави повърхностни наслаги",
@@ -178,8 +183,7 @@ export default async function DepthStructurePage({
   const synthesis =
     synthesizeLithologyEvidence(profile);
 
-  const checkpoints =
-    [20, 50, 80, 100, 150, 200, 300];
+  const checkpoints = [20, 50, 80, 100, 150, 200, 300, 500];
 
 
   const unified = buildUnifiedLithology(
@@ -193,6 +197,43 @@ export default async function DepthStructurePage({
    * Source evidence and geological calculations remain unchanged.
    */
   const geologyTextBg = (value: string): string => {
+    // VRATSA_MUNICIPALITY_BG_TRANSLATIONS_V1
+    // Display translations only. Geological evidence is unchanged.
+    const vratsaMunicipalityBg: Record<string, string> = {
+      "Quaternary loess/alluvium; locally transition toward Neogene":
+        "Кватернерни льосови и речни наслаги; на места преход към неогенски пластове",
+      "Quaternary in thick-cover sectors OR Neogene where cover is thinner":
+        "Кватернерни наслаги при по-дебела повърхностна покривка или неогенски пластове, където тя е по-тънка",
+      "commonly Neogene":
+        "Най-често неогенски наслаги",
+      "Neogene":
+        "Неогенски наслаги",
+      "Neogene or approaching older substrate":
+        "Неогенски наслаги или приближаване към по-старата скална основа",
+      "older substrate possible; structural control required":
+        "Възможна по-стара скална основа; конкретният материал зависи от геоложката структура",
+      "loess complex":
+        "Льосов комплекс",
+      "red clay or Neogene depending on local loess thickness":
+        "Червени глини или неогенски наслаги според местната дебелина на льоса",
+      "Neogene basin fill":
+        "Неогенски наслаги, запълващи геоложкия басейн",
+      "loess/red clay OR Neogene depending on local cover":
+        "Льос и червени глини или неогенски наслаги според местната повърхностна покривка",
+      "Neogene likely":
+        "Вероятни неогенски наслаги",
+      "Neogene or locally older substrate":
+        "Неогенски наслаги или на места по-стара скална основа",
+      "Neogene OR Cretaceous depending on structure":
+        "Неогенски или кредни скали според местната геоложка структура",
+      "older platform cover; exact unit unresolved":
+        "По-стари платформени седиментни скали; конкретната геоложка единица не е определена"
+    };
+
+    const translatedVratsaMaterial = vratsaMunicipalityBg[value];
+    if (translatedVratsaMaterial) {
+      return translatedVratsaMaterial;
+    }
     const direct: Record<string, string> = {
       "Sumer marl": "Мергели на Сумерската свита",
       "Mramoren marl": "Мергели на Мраморенската свита",
@@ -347,23 +388,48 @@ export default async function DepthStructurePage({
     return labels[value] || value;
   };
 
+  // VRATSA_CONDITIONAL_MATERIAL_DISPLAY_V2
+  // Presentation only: do not modify source evidence.
+  const conditionalVratsaMaterials = new Set([
+    "Quaternary in thick-cover sectors OR Neogene where cover is thinner",
+    "Neogene or approaching older substrate",
+    "older substrate possible; structural control required",
+    "red clay or Neogene depending on local loess thickness",
+    "loess/red clay OR Neogene depending on local cover",
+    "Neogene or locally older substrate",
+    "Neogene OR Cretaceous depending on structure",
+    "older platform cover; exact unit unresolved"
+  ]);
   const rawRows = unified.map(point => {
-    const material = point.material
+        const isConditionalVratsaMaterial =
+      typeof point.material === "string" &&
+      conditionalVratsaMaterials.has(point.material);
+const material = point.material
       ? geologyTextBg(familyLabel(point.material))
       : point.alternatives.length > 0
-        ? "Точният пласт не е установен"
+        ? (profile.target_glim_surface_context.status === "OK"
+            ? "Регионални геоложки варианти"
+            : "Точният пласт не е установен")
         : "Недостатъчно геоложки данни";
 
-    const simpleMaterial =
+    const simpleMaterialBase =
       /Neogene clay-sand|неогенски глинесто-песъчлив/i.test(material)
         ? "Глини и пясъци"
         : material;
 
+    const simpleMaterial = simpleMaterialBase;
+
+    // A unified plain-language explanation for every municipality and province.
+    // It is generated from the reported material, not a replacement for it.
+    const depthPlainLanguage = point.material
+      ? explainDepthLithology(simpleMaterialBase).explanation
+      : "";
+
     const evidence = point.evidence_kind;
 
-    const description =
+    const baseDescription =
       !point.material && point.alternatives.length > 0
-        ? "Възможни са: " +
+        ? "За района са документирани следните геоложки варианти, но не е доказано кой от тях се среща точно на тази дълбочина: " +
           point.alternatives
             .map(x => geologyTextBg(familyLabel(x)))
             .join(" или ") + "."
@@ -377,8 +443,37 @@ export default async function DepthStructurePage({
                 ? "Вероятен материал според геоложкия модел."
                 : "Ориентировъчна геоложка информация за района.";
 
+    const glimAssessment =
+      !point.material &&
+      point.alternatives.length > 0 &&
+      (point.evidence_kind === "SPATIAL_MODEL" ||
+        point.evidence_kind === "REGIONAL_CONTEXT")
+        ? assessGlimAlternatives(
+            profile.target_glim_surface_context,
+            point.alternatives
+          )
+        : null;
+
+    const description = glimAssessment
+      ? `${baseDescription} Повърхностната геоложка основа е определена като ${
+          glimAssessment.surfaceMaterial.toLowerCase()
+        }. ${
+          glimAssessment.compatible.length > 0
+            ? "Сходни по общ скален тип с нея: " +
+              glimAssessment.compatible
+                .map(x => geologyTextBg(familyLabel(x)))
+                .join("; ") + ". "
+            : ""
+        }Другите изброени формации остават възможни в дълбочина. Точната им последователност и дълбочините на контактите не са установени.`      : isConditionalVratsaMaterial
+        ? "Условна геоложка прогноза. Конкретният пласт зависи от местната геоложка структура и не е доказан точно под избраната точка."
+        : baseDescription;
+
+    // Reader explanation first; evidence conditions are rendered separately in small type.
+    const readerDescription = depthPlainLanguage || (!point.material ? description : "");
+    const evidenceNote = point.material ? description : "";
+
     const confidence =
-      evidence === "DIRECT_BOREHOLE"
+      isConditionalVratsaMaterial ? "Условна прогноза по геоложки модел" : evidence === "DIRECT_BOREHOLE"
         ? "Документирани данни"
         : evidence === "BOREHOLE_PROJECTION"
           ? "Прогноза по сондажен аналог"
@@ -409,7 +504,8 @@ export default async function DepthStructurePage({
       signature,
       groupable,
       material: simpleMaterial,
-      description,
+      description: readerDescription,
+      evidenceNote,
       confidence,
       analogueCount: 0,
     };
@@ -438,17 +534,42 @@ export default async function DepthStructurePage({
 
   const rows = groupedRows.map(row => ({
     depth: row.checkpoints.length > 1
-      ? `${row.checkpoints.length} проверки`
+      ? `${row.startDepth}–${row.checkpoints[row.checkpoints.length - 1]} м`
       : `${row.startDepth} м`,
     material: row.material,
-    description: row.checkpoints.length > 1
-      ? `${row.description} Сходен резултат при проверените дълбочини: ${
-          row.checkpoints.join(", ")
-        } м. Това не доказва непрекъснат пласт между тях.`
-      : row.description,
+    description: row.description,
+    evidenceNote: [
+      row.evidenceNote,
+      row.checkpoints.length > 1
+        ? `Сходен резултат при проверените дълбочини: ${row.checkpoints.join(", ")} м. Това не доказва непрекъснат пласт между тях.`
+        : "",
+    ].filter(Boolean).join(" "),
     confidence: row.confidence,
     analogueCount: row.analogueCount,
   }));
+  const regionalColumns = getVratsaDocumentedColumns(profile);
+  const vratsaReportCards = getVratsaRegionReport(
+    profile.target_spatial_depth_model[0]?.zone.zone_id,
+    profile.target_spatial_depth_model[0]?.target.municipality
+  );
+
+  // Presentation-only grouping. An unverified regional source is never
+  // silently promoted to a local borehole or local geological profile.
+  const selectedVratsaMunicipality =
+    profile.target_spatial_depth_model[0]?.target.municipality ?? null;
+  const documentedContextRecords =
+    profile.target_documented_geological_context?.records ?? [];
+  const normalizedMunicipality = (selectedVratsaMunicipality ?? "").toLocaleLowerCase("bg");
+  const localDocumentedRecords = documentedContextRecords.filter(record => {
+    if (!normalizedMunicipality) return false;
+    const locality = (record.locality ?? "").toLocaleLowerCase("bg");
+    // Only explicit municipality name matches; nearby studies are analogues.
+    return locality.includes(normalizedMunicipality);
+  });
+  const comparativeDocumentedRecords = documentedContextRecords.filter(
+    record => !localDocumentedRecords.includes(record)
+  );
+
   const title =
     params.location_label?.trim() ||
     `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
@@ -573,6 +694,19 @@ export default async function DepthStructurePage({
                     </div>
                   )}
 
+                  {row.evidenceNote && (
+                    <div
+                      style={{
+                        marginTop: 7,
+                        fontSize: 11,
+                        lineHeight: 1.45,
+                        color: "#71858b",
+                      }}
+                    >
+                      {row.evidenceNote}
+                    </div>
+                  )}
+
                   <div
                     style={{
                       marginTop: 5,
@@ -604,7 +738,280 @@ export default async function DepthStructurePage({
             изграждане на профил.
           </div>
         )}
-        {/* MARICHIN_LOCAL_EVIDENCE_START */}
+
+        {profile.target_glim_surface_context?.status === "OK" && (
+          <section
+            style={{
+              marginTop: 24,
+              padding: 18,
+              border: "1px solid #d9e7e9",
+              borderRadius: 14,
+              background: "#f8fbfa",
+            }}
+          >
+            <h2
+              style={{
+                margin: "0 0 10px",
+                fontSize: 19,
+                color: "#173f49",
+              }}
+            >
+              Геоложка основа в района
+            </h2>
+            <p style={{ margin: "0 0 8px", fontWeight: 700 }}>
+              {profile.target_glim_surface_context.material_bg}
+            </p>
+            {profile.target_glim_surface_context.detail_bg && (
+              <p style={{ margin: "0 0 8px" }}>
+                {profile.target_glim_surface_context.detail_bg}
+              </p>
+            )}
+            <p style={{ color: "#657c80", fontSize: 13 }}>
+              Ориентировъчна информация за общия тип скали в района.
+              Точната последователност на пластовете в дълбочина
+              не е установена само от тези данни.
+            </p>
+
+          </section>
+        )}
+        {/* Единна регионална геоложка основа, когато GLIM няма локален отговор. */}
+        {vratsaReportCards.length > 0 && profile.target_glim_surface_context?.status !== "OK" && (
+          <section style={{ marginTop: 24, padding: 18, border: "1px solid #d9e7e9", borderRadius: 14, background: "#f8fbfa" }}>
+            <h2 style={{ margin: "0 0 14px", fontSize: 21, color: "#173f49" }}>Геоложка основа в района</h2>
+            <p style={{ margin: "0 0 7px", fontWeight: 700, color: "#173f49" }}>{vratsaReportCards[0].title}</p>
+            <p style={{ margin: 0, color: "#405a61", lineHeight: 1.6 }}>{vratsaReportCards[0].paragraphs[0]}</p>
+            <p style={{ margin: "9px 0 0", fontSize: 12, color: "#657c80" }}>Регионална геоложка основа, не доказан пласт на конкретна дълбочина.</p>
+          </section>
+        )}
+        {regionalColumns.length > 0 && (
+          <section style={{ marginTop: 26, padding: 18, border: "1px solid #d9e7e9", borderRadius: 14, background: "#f8fbfa" }}>
+            <h2 style={{ margin: "0 0 10px", fontSize: 19, color: "#173f49" }}>Регионална геоложка информация — документирани сондажни разрези</h2>
+            <p style={{ color: "#405a61", fontSize: 13, lineHeight: 1.6 }}>
+              Представени са публикувани литоложки разрези от региона, които дават допълнителна информация за геоложкия строеж в дълбочина.
+            </p>
+            {regionalColumns.map(column => (
+              <div key={column.record_id} style={{ marginTop: 15, borderTop: "1px solid #d9e7e9", paddingTop: 12 }}>
+                <div style={{ color: "#173f49", fontWeight: 800 }}>{column.name}{column.site ? ` — ${column.site}` : ""}</div>
+                <div style={{ color: "#687e83", fontSize: 12, marginTop: 3 }}>
+                  {column.basis === "REGIONAL_COMPARISON" ? "Регионален сравнителен разрез" : "Локален сравнителен профил"} · Посочена община: {column.municipality} · Без точни координати
+                </div>
+                {column.applicability_note && (
+                  <p style={{ color: "#657c80", fontSize: 12, lineHeight: 1.5 }}>
+                    {column.applicability_note}
+                  </p>
+                )}
+                <div style={{ marginTop: 9, display: "grid", gap: 5 }}>
+                  {column.intervals.map((interval, index) => (
+                    <div key={`${column.record_id}-${index}`} style={{ display: "grid", gridTemplateColumns: "minmax(100px, 120px) minmax(0, 1fr)", gap: 10, fontSize: 13, color: "#344f55" }}>
+                      <strong style={{ color: "#0d8055" }}>{interval.from_m}–{interval.to_m ?? "?"} м</strong>
+                      <span>{
+  ({
+    "Loess; basal sands": "Льос — фин праховиден материал с пясъци в основата",
+    "Clays with sand seams": "Глини с прослойки от пясък",
+    "Clays with thin sand seams": "Глини с тънки прослойки от пясък",
+    "Sands": "Пясъци — несвързани зърнести наслаги",
+    "Clays with sand seams and marls": "Глини с пясъчни прослойки и мергели (глинесто-варовикови скали)",
+    "Marls": "Мергели — глинесто-варовикови скали",
+    "Limestones": "Варовици — твърди карбонатни скали",
+    "Clayey limestones": "Глинести варовици — варовици с глинеста примес",
+    "Sandy limestones and marls": "Песъчливи варовици и мергели — карбонатни скали с пясъчна и глинеста съставка",
+    "Silty limestones and marls": "Праховити варовици и мергели — карбонатни скали с фина праховита и глинеста съставка",
+  } as Record<string, string>)[interval.material] ?? interval.material
+}{interval.to_m == null ? " (долна граница не е документирана)" : ""}</span>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ fontSize: 11, color: "#71858b", marginTop: 7 }}>Източници: {column.source_ids.join(", ")} · {column.record_id}</div>
+              </div>
+            ))}
+          </section>
+        )}
+                {/* VRATSA_DOCUMENTED_CONTEXT_UI_START */}
+        {(vratsaReportCards.length > 0 ||
+          (profile.target_documented_geological_context?.records.length ?? 0) > 0) && (
+            <section
+              aria-label="Документиран регионален геоложки контекст"
+              style={{
+                marginTop: 26,
+                padding: 18,
+                border: "1px solid #d9e7e9",
+                borderRadius: 14,
+                background: "#f8fbfa",
+              }}
+            >
+              <h2 style={{
+                margin: "0 0 10px",
+                fontSize: 19,
+                color: "#173f49",
+              }}>
+                Регионална геоложка информация — документирани геоложки сведения
+              </h2>
+
+              <p style={{
+                color: "#405a61",
+                fontSize: 13,
+                lineHeight: 1.6,
+              }}>
+                Геоложки сведения от публикувани проучвания
+                за съответния район.
+              </p>
+
+              {vratsaReportCards.length > 0 && (
+                <h3 style={{ margin: "18px 0 8px", fontSize: 16, color: "#173f49" }}>
+                  Геоложка информация за избраната община
+                </h3>
+              )}
+              {vratsaReportCards.map(card => (
+                <div key={card.id} style={{ marginTop: 14, padding: 14, border: "1px solid #d9e7e9", borderRadius: 10, background: "#ffffff" }}>
+                  <h3 style={{ margin: "0 0 7px", fontSize: 16, color: "#173f49" }}>{card.title}</h3>
+                  <p style={{ margin: "0 0 8px", fontSize: 12, color: "#405a61" }}>Вид информация: {card.informationType}</p>
+                  <details>
+                    <summary style={{ cursor: "pointer", color: "#176c72", fontSize: 13, fontWeight: 700 }}>Покажи геоложките сведения</summary>
+                    <ul style={{ margin: "12px 0 0", paddingLeft: 21, color: "#344f55", fontSize: 13, lineHeight: 1.8 }}>
+                      {card.paragraphs.map((item, index) => <li key={index}>{item}</li>)}
+                    </ul>
+                  </details>
+                  <p style={{ margin: "10px 0 0", fontSize: 11, color: "#71858b" }}>Източници: {card.sources.length ? card.sources.join(", ") : "Регионален геоложки модел"}</p>
+                </div>
+              ))}
+
+              {[
+                { id: "local", records: localDocumentedRecords, heading: "Допълнителни документирани сведения за избраната община" },
+                { id: "analogues", records: comparativeDocumentedRecords, heading: "Допълнителни геоложки проучвания от по-широкия район" }
+              ].filter(group => group.records.length > 0).map(group => (
+                <div key={group.id} style={{ marginTop: 22 }}>
+                  <h3 style={{ margin: "0 0 6px", fontSize: 16, color: "#173f49" }}>{group.heading}</h3>
+                  <p style={{ margin: "0 0 10px", fontSize: 12, lineHeight: 1.6, color: "#587179" }}>
+                    {group.id === "analogues"
+                      ? "Сравнителни регионални проучвания. Те не са сондажи или доказани геоложки разрези точно под избраната точка."
+                      : "Допълнителни източници, в чието наименование е посочена избраната община. Приложимостта им към конкретната точка не е автоматично доказана."}
+                  </p>
+                  {group.records.map((record, index) => (
+                  <div
+                    key={`${record.source_id ?? "source"}-${index}`}
+                    style={{
+                      marginTop: 14,
+                      padding: 14,
+                      border: "1px solid #d9e7e9",
+                      borderRadius: 10,
+                      background: "#ffffff",
+                    }}
+                  >
+                    <h3 style={{
+                      margin: "0 0 7px",
+                      fontSize: 16,
+                      color: "#173f49",
+                    }}>
+                      {record.locality || "Геоложко проучване"}
+                    </h3>
+
+                    {record.evidence_type && (
+                      <p style={{
+                        margin: "0 0 8px",
+                        fontSize: 12,
+                        color: "#405a61",
+                      }}>
+                        Вид информация: {({
+  REGIONAL_LITHOLOGICAL_CONTEXT:
+    "Регионална литоложка информация",
+  DEPOSIT_AND_REGIONAL_GEOLOGY:
+    "Геология на находището и района",
+} as Record<string, string>)[record.evidence_type] ??
+  "Документирана геоложка информация"}
+                      </p>
+                    )}
+
+                                        {/* DOCUMENTED_GEOLOGY_BG_SUMMARIES */}
+                    <details>
+                      <summary style={{
+                        cursor: "pointer",
+                        color: "#176c72",
+                        fontSize: 13,
+                        fontWeight: 700,
+                      }}>
+                        Покажи геоложките сведения
+                      </summary>
+
+                      {(() => {
+                        const source = (record.source_id ?? "").toUpperCase();
+
+                                                // VRATSA_SOURCE_BASED_DESCRIPTIONS
+                        const evidence = record.source_evidence as
+                          Record<string, unknown>;
+
+                        const descriptions: string[] = [];
+
+                                                // VRATSA_FRIENDLY_GEOLOGY_V1
+                        if (source.includes("CHIREN")) {
+                          descriptions.push(
+                            "Проучванията около Чирен показват последователност от дебели седиментни пластове — скали, образувани чрез натрупване и уплътняване на материали.",
+                            "Сондажите са установили различни групи скални пластове (свити), сред които Вранска, Риковска, Милинкамъкска, Костенска, Оризовска, Гложенска и Мраморенска.",
+                            "Някои от тези пластове имат голяма дебелина. Например в сондаж Р-19 Чирен е установена мощност 1888 м на Вранската свита.",
+                            "В по-плитката част на проучвания район са описани льос, глини, песъчливи глини и пясъци.",
+                            "На проучваната площадка е установена льосова покривка с дебелина до 6 м."
+                          );
+                        } else if (source.includes("GLORIA")) {
+                          descriptions.push(
+                            "Най-горе в находището има покривка от льос и глинести материали с дебелина около 1–4 м, а на места и повече.",
+                            "Под нея са разположени скали от Малопещенската свита (група сходни пластове). Тук те са предимно зелени пясъчници с глауконит (зеленикав минерал).",
+                            "Горният пласт е с приблизителна дебелина 20 м и е изграден от зелени средно- и едрозърнести пясъчници.",
+                            "Долният пласт е с установена дебелина най-малко 20–25 м. Състои се от по-плътни тъмнозелени и сивозелени пясъчници, на места с глинести прослойки.",
+                            "Средната отчетена обща полезна дебелина на двата пласта в находището е около 33,5 м.",
+                            "В района са описани геоложки разломи — зони, по които скалните пластове са били размествани."
+                          );
+                        } else if (source.includes("ORYAHOVO")) {
+                          descriptions.push(
+                            "Льосов комплекс (фин прахов материал, натрупан от вятъра) — дебелина за района около 80–100 м.",
+                            "По-стари чакъли под льоса — установена дебелина до около 1 м.",
+                            "Червеникави глини, натрупани под влияние на вятър и вода — под льоса, обикновено над чакълите."
+                          );
+                        } else if (source.includes("DALBOKI")) {
+                          descriptions.push(
+                            "Геоложка информация за района на Дълбоки дол, Мишовец и Синия бряг."
+                          );
+                        }
+
+                        if (descriptions.length === 0) {
+                          descriptions.push(
+                            "Няма извлечено подробно литоложко описание за този източник."
+                          );
+                        }
+return (
+                          <ul style={{
+                            margin: "12px 0 0",
+                            paddingLeft: 21,
+                            color: "#344f55",
+                            fontSize: 13,
+                            lineHeight: 1.8,
+                          }}>
+                            {descriptions.map((description, i) => (
+                              <li key={i}>{description}</li>
+                            ))}
+                                                      <li style={{
+                              marginTop: 12,
+                              listStyle: "none",
+                            }}>
+                                      </li>
+                          </ul>
+                        );
+                      })()}
+                    </details>
+
+                    <p style={{
+                      margin: "10px 0 0",
+                      fontSize: 11,
+                      color: "#71858b",
+                    }}>
+                      Източник: {record.source_id ?? "неуточнен"}
+                    </p>
+                  </div>
+                  ))}
+                </div>
+              ))}
+            </section>
+          )}
+        {/* VRATSA_DOCUMENTED_CONTEXT_UI_END */}
+{/* MARICHIN_LOCAL_EVIDENCE_START */}
         {profile.marichin_local_context != null && (
             <section
               aria-label="Локална геоложка информация"
