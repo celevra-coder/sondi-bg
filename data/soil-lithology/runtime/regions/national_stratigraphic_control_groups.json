@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "registry_type": "NATIONAL_STRATIGRAPHIC_CONTROL_GROUPS",
+  "runtime_approved": false,
+  "groups": [
+    {
+      "group_id": "SOF-RAVNO-POLE-CONTROLS",
+      "region_code": "Sofia",
+      "zone_type": "site_specific",
+      "status": "RESEARCH_ONLY",
+      "method": "DOCUMENTED_CONTACTS_WITH_SPATIAL_HULL",
+      "geological_block_verified": false,
+      "fault_crossing_approved": false,
+      "polygon_is_verified_geological_boundary": false,
+      "external_depth_validation": false,
+      "source_model": "SOF-RAVNO-POLE-CONTACT-V2",
+      "source_structural_gate": "SOF-RAVNO-POLE-STRUCTURAL-GATE-V1",
+      "controls": [
+        {
+          "borehole_id": "SOF-LITH-005",
+          "latitude": 42.6687381,
+          "longitude": 23.5222372,
+          "quaternary_base_m": 73.5,
+          "neogene_base_m": null,
+          "contact_evidence": "DIRECT_DOCUMENTED_CONTACT"
+        },
+        {
+          "borehole_id": "SOF-LITH-006",
+          "latitude": 42.6717289,
+          "longitude": 23.5295917,
+          "quaternary_base_m": 80.0,
+          "neogene_base_m": null,
+          "contact_evidence": "DIRECT_DOCUMENTED_CONTACT"
+        },
+        {
+          "borehole_id": "SOF-RP-S44HG",
+          "latitude": 42.6710278,
+          "longitude": 23.5220861,
+          "quaternary_base_m": 70.0,
+          "neogene_base_m": 591.6,
+          "contact_evidence": "DIRECT_DOCUMENTED_CONTACT"
+        },
+        {
+          "borehole_id": "SOF-RP-S45HG",
+          "latitude": 42.6655056,
+          "longitude": 23.5211605,
+          "quaternary_base_m": 68.0,
+          "neogene_base_m": 615.7,
+          "contact_evidence": "DIRECT_DOCUMENTED_CONTACT"
+        },
+        {
+          "borehole_id": "SOF-RP-S46HG",
+          "latitude": 42.6678286,
+          "longitude": 23.5221481,
+          "quaternary_base_m": 67.7,
+          "neogene_base_m": 570.9,
+          "contact_evidence": "DIRECT_DOCUMENTED_CONTACT"
+        },
+        {
+          "borehole_id": "SOF-RP-S50HG",
+          "latitude": 42.6699056,
+          "longitude": 23.5183453,
+          "quaternary_base_m": 82.4,
+          "neogene_base_m": 550.8,
+          "contact_evidence": "DIRECT_DOCUMENTED_CONTACT"
+        },
+        {
+          "borehole_id": "SOF-RP-S53HG",
+          "latitude": 42.6687746,
+          "longitude": 23.5152436,
+          "quaternary_base_m": 82.4,
+          "neogene_base_m": 570.5,
+          "contact_evidence": "DIRECT_DOCUMENTED_CONTACT"
+        }
+      ],
+      "quaternary_contact_qa": {
+        "observed_range_m": [
+          67.7,
+          82.4
+        ],
+        "leave_one_out_mae_m": 5.87,
+        "status": "EXPLORATORY_NOT_PRODUCTION_APPROVED"
+      },
+      "neogene_contact_qa": {
+        "observed_range_m": [
+          550.8,
+          615.7
+        ],
+        "leave_one_out_mae_m": 24.72,
+        "status": "EXPLORATORY_NOT_PRODUCTION_APPROVED"
+      }
+    }
+  ]
+}

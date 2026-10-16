@@ -1,0 +1,64 @@
+{
+  "model_id": "SOF-SFO47-REGIONAL-V1",
+  "status": "CONDITIONAL_REGIONAL_GEOLOGY",
+  "zones": {
+    "SOF-SFO47-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Златица",
+          "source_id": "SOF-S042",
+          "dominant_lithology_context": [
+            "Чакъли",
+            "Пясъци",
+            "Песъчлива глина",
+            "Глинест пясък",
+            "Седиментни и вулканогенно-седиментни скали",
+            "По-стари скални комплекси и интрузивни скали"
+          ]
+        }
+      ],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-S042"
+      ]
+    }
+  },
+  "candidate_zone_evidence": [
+    {
+      "candidate_zone_id": "SOF-ZLA-BASIN",
+      "source_research_file": "SOF_IHTIMAN_ZLATITSA_GEOLOGICAL_CORRELATION_V1.json",
+      "original_materials": [
+        "gravel",
+        "sand",
+        "sandy clay",
+        "clayey sand"
+      ],
+      "spatial_selector_approved": false
+    },
+    {
+      "candidate_zone_id": "SOF-ZLA-NORTH",
+      "source_research_file": "SOF_IHTIMAN_ZLATITSA_GEOLOGICAL_CORRELATION_V1.json",
+      "original_materials": [
+        "mapped sedimentary and volcanic-sedimentary rocks"
+      ],
+      "spatial_selector_approved": false
+    },
+    {
+      "candidate_zone_id": "SOF-ZLA-SOUTH",
+      "source_research_file": "SOF_IHTIMAN_ZLATITSA_GEOLOGICAL_CORRELATION_V1.json",
+      "original_materials": [
+        "mapped older rock complexes and intrusive rocks"
+      ],
+      "spatial_selector_approved": false
+    }
+  ],
+  "scientific_guards": {
+    "regional_alternatives_not_exact_borehole_log": true,
+    "municipal_boundary_not_geological_boundary": true,
+    "exact_depth_contacts_not_verified": true,
+    "automatic_spatial_interpolation": false
+  }
+}

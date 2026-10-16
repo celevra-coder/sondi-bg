@@ -26,6 +26,11 @@ import {
   type VratsaSpatialContextResult,
 } from "./lithology-spatial-engine";
 
+import {
+  resolveNationalDepthLithology,
+  type NationalDepthResult,
+} from "./sondi-national-depth-engine";
+
 type VratsaDocumentedGeologicalContext = {
   zone_id: string;
   scope: "ZONE_DOCUMENTATION_ONLY";
@@ -308,6 +313,7 @@ export type LithologyProfile = {
    */
   target_glim_surface_context: GlimSurfaceResult;
   target_spatial_depth_model: VratsaSpatialContextResult[];
+  target_national_depth_model: NationalDepthResult[];
   target_documented_geological_context: VratsaDocumentedGeologicalContext | null;
 
   marichin_local_context:
@@ -1322,6 +1328,15 @@ export async function getLithologyProfile(
         result.zone.zone_id !== null
       );
 
+  const targetNationalDepthModel =
+    spatialDepthCheckpoints.map(depthM =>
+      resolveNationalDepthLithology({
+        latitude,
+        longitude,
+        depthM,
+      })
+    );
+
   const targetFaultProfile =
     getFaultSpatialProfile(latitude, longitude);
 
@@ -1673,6 +1688,7 @@ export async function getLithologyProfile(
     },
 
     target_spatial_depth_model: targetSpatialDepthModel,
+    target_national_depth_model: targetNationalDepthModel,
     target_documented_geological_context:
       getVratsaDocumentedGeologicalContext(targetSpatialDepthModel),
 

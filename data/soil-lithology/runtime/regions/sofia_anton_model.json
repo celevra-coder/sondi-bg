@@ -1,0 +1,40 @@
+{
+  "model_id": "SOF-SFO54-REGIONAL-V1",
+  "status": "EVIDENCE_LIMITED_NO_DEPTH_MODEL",
+  "zones": {
+    "SOF-SFO54-Z01": {
+      "regional_structural_context": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки контекст",
+          "informationType": "Ограничени доказателства",
+          "paragraphs": [
+            "Община Антон е в подбалкански структурен контекст.",
+            "В наличното проучване няма потвърдена индивидуална сондажна колонка или надеждни локални дълбочини на геоложки граници.",
+            "Сондажни данни от съседната община Златица не се пренасят автоматично в Антон."
+          ],
+          "source_ids": [
+            "SOF-S032"
+          ]
+        }
+      ],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-S032"
+      ]
+    }
+  },
+  "research_provenance": [
+    "SOF_GODECH_ANTON_TARGETED_COMPLETION_V1.json"
+  ],
+  "scientific_guards": {
+    "municipal_boundary_not_geological_boundary": true,
+    "outcrop_thickness_not_local_drilling_depth": true,
+    "monitoring_borehole_not_lithology_log": true,
+    "no_unverified_depth_contacts": true,
+    "automatic_spatial_interpolation": false
+  }
+}

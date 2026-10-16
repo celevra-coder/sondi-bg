@@ -19,7 +19,7 @@
     "Пазарджик",
     "Пловдив"
   ],
-  "borehole_count": 71,
+  "borehole_count": 82,
   "boreholes": [
     {
       "borehole_id": "PLD-Z037",
@@ -9289,6 +9289,402 @@
         "research_profile_id": "SOF-LITH-006",
         "evidence_type": "DIRECT_DOCUMENTED_BOREHOLE"
       }
+    },
+    {
+      "borehole_id": "SOF-RP-S44HG",
+      "name_bg": "Сондаж № С -44хг",
+      "oblast": "Sofia",
+      "region_code": "Sofia",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 690.3,
+      "coordinates": {
+        "latitude": 42.6710278,
+        "longitude": 23.5220861,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "BDDR_official_register",
+        "registry_number": "РМН1 - 031010",
+        "source_ids": [
+          "SOF-RP-SRC-BDDR-COORD"
+        ],
+        "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 2.5,
+          "expected_material_bg": "Почвен слой",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": null,
+          "evidence_level_normalization": "MISSING_IN_RESEARCH_RECORD",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S44HG"
+          ]
+        },
+        {
+          "depth_from_m": 2.5,
+          "depth_to_m": 70,
+          "expected_material_bg": "Песъчливи глини и пясъци",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": null,
+          "evidence_level_normalization": "MISSING_IN_RESEARCH_RECORD",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S44HG"
+          ]
+        },
+        {
+          "depth_from_m": 70,
+          "depth_to_m": 591.6,
+          "expected_material_bg": "Глини, песъчливи глини и пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": null,
+          "evidence_level_normalization": "MISSING_IN_RESEARCH_RECORD",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S44HG"
+          ]
+        },
+        {
+          "depth_from_m": 591.6,
+          "depth_to_m": 613.3,
+          "expected_material_bg": "Тъмносиви дребнозърнести пясъчници, на места глинести",
+          "stratigraphy": "J1",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": null,
+          "evidence_level_normalization": "MISSING_IN_RESEARCH_RECORD",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S44HG"
+          ]
+        },
+        {
+          "depth_from_m": 613.3,
+          "depth_to_m": 690.3,
+          "expected_material_bg": "Варовици",
+          "stratigraphy": "T2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": null,
+          "evidence_level_normalization": "MISSING_IN_RESEARCH_RECORD",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S44HG"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "research_file": "SOF_RAVNO_POLE_GEOLOCATED_NEW_LOGS.json",
+        "verification_file": "SOF_RAVNO_POLE_SOURCE_VERIFICATION_V1.json",
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false
+      }
+    },
+    {
+      "borehole_id": "SOF-RP-S45HG",
+      "name_bg": "Сондаж № С -45хг",
+      "oblast": "Sofia",
+      "region_code": "Sofia",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 679.8,
+      "coordinates": {
+        "latitude": 42.6655056,
+        "longitude": 23.5211605,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "BDDR_official_register",
+        "registry_number": "РМН1 - 031011",
+        "source_ids": [
+          "SOF-RP-SRC-BDDR-COORD"
+        ],
+        "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 68,
+          "expected_material_bg": "Рохкави дребнозърнести пясъци",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S45HG"
+          ]
+        },
+        {
+          "depth_from_m": 68,
+          "depth_to_m": 615.7,
+          "expected_material_bg": "Песъчливи глини и пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S45HG"
+          ]
+        },
+        {
+          "depth_from_m": 615.7,
+          "depth_to_m": 679.8,
+          "expected_material_bg": "Варовици",
+          "stratigraphy": "T2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S45HG"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "research_file": "SOF_RAVNO_POLE_GEOLOCATED_NEW_LOGS.json",
+        "verification_file": "SOF_RAVNO_POLE_SOURCE_VERIFICATION_V1.json",
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false
+      }
+    },
+    {
+      "borehole_id": "SOF-RP-S46HG",
+      "name_bg": "Сондаж № С -46хг",
+      "oblast": "Sofia",
+      "region_code": "Sofia",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 652.0,
+      "coordinates": {
+        "latitude": 42.6678286,
+        "longitude": 23.5221481,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "BDDR_official_register",
+        "registry_number": "РМН1 - 031012",
+        "source_ids": [
+          "SOF-RP-SRC-BDDR-COORD"
+        ],
+        "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 67.7,
+          "expected_material_bg": "Пясъци и песъчливи глини",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S46HG"
+          ]
+        },
+        {
+          "depth_from_m": 67.7,
+          "depth_to_m": 570.9,
+          "expected_material_bg": "Глини, песъчливи глини и пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S46HG"
+          ]
+        },
+        {
+          "depth_from_m": 570.9,
+          "depth_to_m": 652,
+          "expected_material_bg": "Варовици и доломити",
+          "stratigraphy": "T2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S46HG"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "research_file": "SOF_RAVNO_POLE_GEOLOCATED_NEW_LOGS.json",
+        "verification_file": "SOF_RAVNO_POLE_SOURCE_VERIFICATION_V1.json",
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false
+      }
+    },
+    {
+      "borehole_id": "SOF-RP-S50HG",
+      "name_bg": "Сондаж № С -50хг",
+      "oblast": "Sofia",
+      "region_code": "Sofia",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 679.2,
+      "coordinates": {
+        "latitude": 42.6699056,
+        "longitude": 23.5183453,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "BDDR_official_register",
+        "registry_number": "РМН1 - 031014",
+        "source_ids": [
+          "SOF-RP-SRC-BDDR-COORD"
+        ],
+        "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 82.4,
+          "expected_material_bg": "Пясъци и чакъли",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S50HG"
+          ]
+        },
+        {
+          "depth_from_m": 82.4,
+          "depth_to_m": 550.8,
+          "expected_material_bg": "Песъчливи глини с прослойки от пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S50HG"
+          ]
+        },
+        {
+          "depth_from_m": 550.8,
+          "depth_to_m": 679.2,
+          "expected_material_bg": "Варовици",
+          "stratigraphy": "T2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S50HG"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "research_file": "SOF_RAVNO_POLE_GEOLOCATED_NEW_LOGS.json",
+        "verification_file": "SOF_RAVNO_POLE_SOURCE_VERIFICATION_V1.json",
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false
+      }
+    },
+    {
+      "borehole_id": "SOF-RP-S53HG",
+      "name_bg": "Сондаж № С -53хг",
+      "oblast": "Sofia",
+      "region_code": "Sofia",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 571.2,
+      "coordinates": {
+        "latitude": 42.6687746,
+        "longitude": 23.5152436,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "BDDR_official_register",
+        "registry_number": "РМН1 - 031015",
+        "source_ids": [
+          "SOF-RP-SRC-BDDR-COORD"
+        ],
+        "source_url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 82.4,
+          "expected_material_bg": "Пясъци и чакъли",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S53HG"
+          ]
+        },
+        {
+          "depth_from_m": 82.4,
+          "depth_to_m": 570.5,
+          "expected_material_bg": "Глини и пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S53HG"
+          ]
+        },
+        {
+          "depth_from_m": 570.5,
+          "depth_to_m": 571.2,
+          "expected_material_bg": "Варовици",
+          "stratigraphy": "T2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S53HG"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "research_file": "SOF_RAVNO_POLE_GEOLOCATED_NEW_LOGS.json",
+        "verification_file": "SOF_RAVNO_POLE_SOURCE_VERIFICATION_V1.json",
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false
+      }
     }
   ],
   "sources": [
@@ -10191,6 +10587,60 @@
       "publication_year": 2023,
       "accessed_date": "2026-10-06",
       "geographic_scope": "с. Равно поле, община Елин Пелин, Софийска област"
+    },
+    {
+      "source_id": "SOF-RP-SRC-BDDR-COORD",
+      "title": "BDDR official water-facilities coordinate register",
+      "institution": "BDDR",
+      "source_type": "official_borehole_coordinate_register",
+      "url": "https://www.bd-dunav.bg/uploads/content/files/registri/razreshitelni%20i%20reshenia/2022/10-2022/VS_MV_BDDR_01112022.xlsx",
+      "geographic_scope": "Ravno Pole, Sofia region",
+      "notes": "Coordinate evidence only; lithology is documented separately. Registry information retained in boreholes."
+    },
+    {
+      "source_id": "SOF-RP-SRC-LITH-S44HG",
+      "title": "Балнеологична оценка №293",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "published_technical_borehole_log",
+      "url": "https://www.mh.government.bg/upload/12763/BO-293.pdf",
+      "geographic_scope": "Ravno Pole / Kazichene",
+      "notes": "Research borehole SOF-RP-S44HG. Publication metadata: {\"organization\": \"Министерство на здравеопазването\", \"document\": \"Балнеологична оценка №293\", \"document_date\": \"2024-12-27\", \"url\": \"https://www.mh.government.bg/upload/12763/BO-293.pdf\", \"page\": 2}"
+    },
+    {
+      "source_id": "SOF-RP-SRC-LITH-S45HG",
+      "title": "Проект за СОЗ на НМВ Казичене-Равно поле",
+      "institution": "Геохидродинамика ЕООД",
+      "source_type": "published_technical_borehole_log",
+      "url": null,
+      "geographic_scope": "Ravno Pole / Kazichene",
+      "notes": "Research borehole SOF-RP-S45HG. Publication metadata: {\"title\": \"Проект за СОЗ на НМВ Казичене-Равно поле\", \"author\": \"Геохидродинамика ЕООД\", \"publication_period\": \"2015-2017\", \"archival_reference\": \"Геофонд V-411\", \"host\": \"nag.sofia.bg\", \"source_status\": \"PUBLIC_TECHNICAL_REPORT\"}"
+    },
+    {
+      "source_id": "SOF-RP-SRC-LITH-S46HG",
+      "title": "Проект за СОЗ на НМВ Казичене-Равно поле",
+      "institution": "Геохидродинамика ЕООД",
+      "source_type": "published_technical_borehole_log",
+      "url": null,
+      "geographic_scope": "Ravno Pole / Kazichene",
+      "notes": "Research borehole SOF-RP-S46HG. Publication metadata: {\"title\": \"Проект за СОЗ на НМВ Казичене-Равно поле\", \"author\": \"Геохидродинамика ЕООД\", \"publication_period\": \"2015-2017\", \"archival_reference\": \"Геофонд V-411\", \"host\": \"nag.sofia.bg\", \"source_status\": \"PUBLIC_TECHNICAL_REPORT\"}"
+    },
+    {
+      "source_id": "SOF-RP-SRC-LITH-S50HG",
+      "title": "Проект за СОЗ на НМВ Казичене-Равно поле",
+      "institution": "Геохидродинамика ЕООД",
+      "source_type": "published_technical_borehole_log",
+      "url": null,
+      "geographic_scope": "Ravno Pole / Kazichene",
+      "notes": "Research borehole SOF-RP-S50HG. Publication metadata: {\"title\": \"Проект за СОЗ на НМВ Казичене-Равно поле\", \"author\": \"Геохидродинамика ЕООД\", \"publication_period\": \"2015-2017\", \"archival_reference\": \"Геофонд V-411\", \"host\": \"nag.sofia.bg\", \"source_status\": \"PUBLIC_TECHNICAL_REPORT\"}"
+    },
+    {
+      "source_id": "SOF-RP-SRC-LITH-S53HG",
+      "title": "Проект за СОЗ на НМВ Казичене-Равно поле",
+      "institution": "Геохидродинамика ЕООД",
+      "source_type": "published_technical_borehole_log",
+      "url": null,
+      "geographic_scope": "Ravno Pole / Kazichene",
+      "notes": "Research borehole SOF-RP-S53HG. Publication metadata: {\"title\": \"Проект за СОЗ на НМВ Казичене-Равно поле\", \"author\": \"Геохидродинамика ЕООД\", \"publication_period\": \"2015-2017\", \"archival_reference\": \"Геофонд V-411\", \"host\": \"nag.sofia.bg\", \"source_status\": \"PUBLIC_TECHNICAL_REPORT\"}"
     }
   ]
 }

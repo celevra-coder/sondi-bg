@@ -1,0 +1,52 @@
+{
+  "model_id": "SOF-SFO58-REGIONAL-V1",
+  "status": "SOURCE_BACKED_REGIONAL_CONTEXT",
+  "zones": {
+    "SOF-SFO58-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Челопешки вулканичен комплекс",
+          "source_id": "SOF-S013",
+          "regional_units": [
+            {
+              "unit": "пясъчникова формация в подложката",
+              "regional_thickness_m": "approximately 300-450"
+            },
+            {
+              "unit": "Челопешка вулканогенно-седиментна формация",
+              "regional_thickness_m": "variable; borehole-constrained volcanic succession"
+            },
+            {
+              "unit": "Вождолски пясъчници",
+              "regional_thickness_m": "locally up to approximately 250"
+            },
+            {
+              "unit": "червени глинести варовици / Мирковска формация",
+              "regional_thickness_m": "approximately 30-40"
+            },
+            {
+              "unit": "флишови седименти",
+              "regional_thickness_m": "up to approximately 500"
+            }
+          ],
+          "dominant_lithology_context": []
+        }
+      ],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-S013"
+      ]
+    }
+  },
+  "scientific_guards": {
+    "municipality_boundary_is_not_geological_boundary": true,
+    "reference_intervals_are_location_specific": true,
+    "regional_thickness_is_not_target_depth": true,
+    "automatic_spatial_interpolation": false,
+    "candidate_zones_not_auto_activated": true,
+    "mineral_thermal_analysis_is_separate": true
+  }
+}

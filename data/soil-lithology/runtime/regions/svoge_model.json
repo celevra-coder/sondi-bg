@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "model_id": "SOF-SVOGE-VRATSA-STANDARD-V1",
+  "oblast": "Sofia Oblast",
+  "purpose": "Regional lithology with evidence-gated local override",
+  "authoritative_source": {
+    "regional_research_file": "_research\\sofia_surface_geology\\SOF_SVOGE_REGIONAL_DEPTH_MODEL_V1.json",
+    "publication": {
+      "authors": "Rusanov, Popov and Popova",
+      "year": 1997,
+      "url": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_1997/pdf_files_1997/28_Rusanov_1997_BGD_3.pdf"
+    }
+  },
+  "build_policy": {
+    "template_architecture": "VRATSA",
+    "no_invented_contact_depths": true,
+    "no_unverified_local_projection": true,
+    "research_only": true
+  },
+  "confidence_semantics": {
+    "regional_context_is_not_exact_depth": true,
+    "local_model_requires_spatial_evidence": true,
+    "unknown_is_not_a_proven_material": true
+  },
+  "zones": {
+    "SOF-SVG-Z01": {
+      "name": "Svoge regional geological and structural context",
+      "municipalities": [
+        "Svoge"
+      ],
+      "default_mode": "REGIONAL_SEQUENCE_WITH_LOCAL_MODEL_OVERRIDE",
+      "evidence": [
+        {
+          "record_id": "SOF-SVOGE-REGIONAL-1997",
+          "status": "PUBLISHED_REGIONAL_STRATIGRAPHY",
+          "source_ids": [
+            "SOF-S012"
+          ],
+          "priority_depth_range_m": "REGIONAL_NOT_LOCAL"
+        }
+      ],
+      "regional_stratigraphy": {
+        "formations": [
+          "Tsarichina",
+          "Drumsha",
+          "Drenovo",
+          "Chibaovtsi"
+        ],
+        "drenovo_members": [
+          "Sviden",
+          "Svoge",
+          "Berovdol"
+        ],
+        "use_regional_thickness_as_local_depth": false
+      },
+      "regional_structural_context": [
+        {
+          "context_id": "SOF-AREA-SVOGE-CARBONIFEROUS-001",
+          "municipality": "Своге",
+          "oblast": "София",
+          "source_id": "SOF-S012",
+          "area": "Свогенски антрацитен басейн",
+          "evidence_type": "AREA_STRATIGRAPHIC_CONTEXT_ONLY",
+          "regional_units": [
+            {
+              "unit": "Царичинска свита",
+              "regional_thickness_m": "approximately 150-250+ depending on source/model"
+            },
+            {
+              "unit": "Свиденска свита",
+              "regional_thickness_m": "approximately 220-260"
+            },
+            {
+              "unit": "Дръмшанска свита",
+              "regional_thickness_m": "approximately 70-250"
+            },
+            {
+              "unit": "Свогенска свита",
+              "regional_thickness_m": "approximately 500"
+            },
+            {
+              "unit": "Беровдолска свита",
+              "regional_thickness_m": "approximately 220-280"
+            },
+            {
+              "unit": "Чибаовска свита",
+              "regional_thickness_m": "approximately 250-420"
+            }
+          ],
+          "dominant_lithology_context": [
+            "пясъчници",
+            "алевролити",
+            "аргилити / глинести скали",
+            "конгломерати",
+            "въглищни пластове"
+          ],
+          "scientific_rule": "Regional formation thicknesses are contextual only and must never be converted into exact intervals for an individual target or borehole.",
+          "status": "AREA_GEOLOGY_CONTEXT_ONLY"
+        }
+      ],
+      "regional_depth_alternatives": [
+        {
+          "depth_m": 10,
+          "regional_lithology_candidates": [
+            "SANDSTONE",
+            "SILTSTONE",
+            "ARGILLITE",
+            "CONGLOMERATE",
+            "COAL_BEARING_INTERVALS"
+          ],
+          "specific_material_prediction": null,
+          "confidence": "UNRESOLVED",
+          "local_depth_contact_established": false,
+          "regional_note": "NO_LOCATION_SPECIFIC_METRIC_INTERVAL",
+          "original_evidence_confidence": "LOW"
+        },
+        {
+          "depth_m": 20,
+          "regional_lithology_candidates": [
+            "SANDSTONE",
+            "SILTSTONE",
+            "ARGILLITE",
+            "CONGLOMERATE",
+            "COAL_BEARING_INTERVALS"
+          ],
+          "specific_material_prediction": null,
+          "confidence": "UNRESOLVED",
+          "local_depth_contact_established": false,
+          "regional_note": "NO_LOCATION_SPECIFIC_METRIC_INTERVAL",
+          "original_evidence_confidence": "LOW"
+        },
+        {
+          "depth_m": 30,
+          "regional_lithology_candidates": [
+            "SANDSTONE",
+            "SILTSTONE",
+            "ARGILLITE",
+            "CONGLOMERATE",
+            "COAL_BEARING_INTERVALS"
+          ],
+          "specific_material_prediction": null,
+          "confidence": "UNRESOLVED",
+          "local_depth_contact_established": false,
+          "regional_note": "NO_LOCATION_SPECIFIC_METRIC_INTERVAL",
+          "original_evidence_confidence": "LOW"
+        },
+        {
+          "depth_m": 50,
+          "regional_lithology_candidates": [
+            "SANDSTONE",
+            "SILTSTONE",
+            "ARGILLITE",
+            "CONGLOMERATE",
+            "COAL_BEARING_INTERVALS"
+          ],
+          "specific_material_prediction": null,
+          "confidence": "UNRESOLVED",
+          "local_depth_contact_established": false,
+          "regional_note": "NO_LOCATION_SPECIFIC_METRIC_INTERVAL",
+          "original_evidence_confidence": "LOW"
+        },
+        {
+          "depth_m": 100,
+          "regional_lithology_candidates": [
+            "SANDSTONE",
+            "SILTSTONE",
+            "ARGILLITE",
+            "CONGLOMERATE",
+            "COAL_BEARING_INTERVALS"
+          ],
+          "specific_material_prediction": null,
+          "confidence": "UNRESOLVED",
+          "local_depth_contact_established": false,
+          "regional_note": "NO_LOCATION_SPECIFIC_METRIC_INTERVAL",
+          "original_evidence_confidence": "LOW"
+        },
+        {
+          "depth_m": 200,
+          "regional_lithology_candidates": [
+            "SANDSTONE",
+            "SILTSTONE",
+            "ARGILLITE",
+            "CONGLOMERATE",
+            "COAL_BEARING_INTERVALS"
+          ],
+          "specific_material_prediction": null,
+          "confidence": "UNRESOLVED",
+          "local_depth_contact_established": false,
+          "regional_note": "NO_LOCATION_SPECIFIC_METRIC_INTERVAL",
+          "original_evidence_confidence": "LOW"
+        }
+      ],
+      "partial_borehole_profiles": [
+        {
+          "profile_id": "SOF-PARTIAL-001",
+          "source_id": "SOF-S012",
+          "municipality": "Своге",
+          "oblast": "София",
+          "site": "Сондаж С-102 – Свогенски басейн",
+          "borehole_name": "С-102",
+          "evidence_type": "PUBLISHED_GRAPHIC_BOREHOLE_SECTION",
+          "status": "PARTIAL_GRAPHIC_LOG",
+          "drilled_depth_m": null,
+          "published_graphic_depth_scale_m_approx": 650,
+          "published_graphic_depth_scale_status": "APPROXIMATE_FROM_GRAPHIC_ONLY",
+          "verified_depth_points": [
+            {
+              "depth_m": 611.0,
+              "unit": "Царичинска свита",
+              "evidence_type": "TEXT_CONFIRMED_DEPTH_POINT"
+            }
+          ],
+          "graphic_lithology_summary": [
+            "конгломерати / брекчоконгломерати",
+            "пясъчници",
+            "алевролити",
+            "аргилити",
+            "въглищни пластове"
+          ],
+          "stratigraphic_units_shown": [
+            "Царичинска свита",
+            "Дръмшанска свита",
+            "Дреновска свита",
+            "Чибаовска свита"
+          ],
+          "limitations": [
+            "Exact interval boundaries cannot be read reliably from the published graphic scale.",
+            "Approximate graphic depth scale is not treated as exact drilled depth.",
+            "No interpolation between visually shown contacts.",
+            "Graphic lithology symbols are not converted into exact metric intervals without numeric boundaries."
+          ]
+        },
+        {
+          "profile_id": "SOF-PARTIAL-002",
+          "source_id": "SOF-S012",
+          "municipality": "Своге",
+          "oblast": "София",
+          "site": "Сондаж С-221 – Свогенски басейн",
+          "borehole_name": "С-221",
+          "evidence_type": "PUBLISHED_GRAPHIC_BOREHOLE_SECTION",
+          "status": "PARTIAL_GRAPHIC_LOG",
+          "drilled_depth_m": null,
+          "published_graphic_depth_scale_m_approx": 440,
+          "published_graphic_depth_scale_status": "APPROXIMATE_FROM_GRAPHIC_ONLY",
+          "graphic_lithology_summary": [
+            "конгломерати / брекчоконгломерати",
+            "пясъчници",
+            "алевролити",
+            "аргилити",
+            "въглищни пластове"
+          ],
+          "limitations": [
+            "Exact metric contacts are unresolved from the scanned graphic.",
+            "Approximate graphic depth scale is not treated as exact drilled depth.",
+            "No numeric intervals are created from visual proportions."
+          ]
+        }
+      ],
+      "documented_sample_depth_points": [
+        {
+          "evidence_id": "SOF-POINT-001",
+          "source_id": "SOF-S012",
+          "municipality": "Своге",
+          "borehole_name": "С-151",
+          "depth_m": 455.0,
+          "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+          "status": "VERIFIED_DEPTH_POINT_ONLY",
+          "note": "Published borehole core/sample depth used for stratigraphic/palaeobotanical interpretation. Not a continuous lithological interval."
+        },
+        {
+          "evidence_id": "SOF-POINT-002",
+          "source_id": "SOF-S012",
+          "municipality": "Своге",
+          "borehole_name": "С-171",
+          "depth_m": 247.0,
+          "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+          "status": "VERIFIED_DEPTH_POINT_ONLY"
+        },
+        {
+          "evidence_id": "SOF-POINT-003",
+          "source_id": "SOF-S012",
+          "municipality": "Своге",
+          "borehole_name": "С-171",
+          "depth_m": 259.0,
+          "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+          "status": "VERIFIED_DEPTH_POINT_ONLY"
+        },
+        {
+          "evidence_id": "SOF-POINT-004",
+          "source_id": "SOF-S012",
+          "municipality": "Своге",
+          "borehole_name": "С-172",
+          "depth_m": 124.0,
+          "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+          "status": "VERIFIED_DEPTH_POINT_ONLY"
+        },
+        {
+          "evidence_id": "SOF-POINT-005",
+          "source_id": "SOF-S012",
+          "municipality": "Своге",
+          "borehole_name": "С-172",
+          "depth_m": 361.0,
+          "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+          "status": "VERIFIED_DEPTH_POINT_ONLY"
+        }
+      ],
+      "local_templates": {},
+      "local_model_activation": "ONLY_WITH_VERIFIED_COORDINATES_AND_APPLICABLE_DEPTH_PROFILE",
+      "fallback_rule": "Use documented regional formations and lithological alternatives when local evidence is insufficient. Do not assign exact layer contacts or a single rock type at a requested depth without spatial support.",
+      "structural_guards": [
+        "Do not transfer a remote borehole column to a target.",
+        "Do not convert formation thickness to drilling depth.",
+        "Do not extrapolate across unverified faults or folds.",
+        "Do not treat raster colors as verified formations.",
+        "Do not claim local coordinates from regional literature.",
+        "Keep borehole-specific and regional evidence separate."
+      ],
+      "source_ids": [
+        "SOF-S012"
+      ]
+    }
+  },
+  "interpretation_contract": {
+    "request": {
+      "latitude": "number",
+      "longitude": "number",
+      "depth_m": "number"
+    },
+    "required_resolution_order": [
+      "official municipality polygon",
+      "regional geological zone",
+      "verified local borehole or cross section",
+      "verified surface formation if available",
+      "structural and fault applicability",
+      "local model if justified",
+      "regional fallback"
+    ],
+    "response": {
+      "probable_lithology": "string or null",
+      "alternative_lithologies": "array",
+      "confidence": "VERY_HIGH | HIGH | MEDIUM | LOW | UNRESOLVED",
+      "rule_type": "DIRECT_DEPTH_TEMPLATE | CONDITIONAL_TEMPLATE | REGIONAL_SEQUENCE | STRUCTURAL_FALLBACK",
+      "source_record_ids": "array",
+      "source_ids": "array",
+      "limitations": "array"
+    },
+    "never_do": [
+      "invent exact geological contact depth",
+      "treat municipality polygon as geological polygon",
+      "treat formation thickness as local depth",
+      "ignore mapped fault/fold constraints",
+      "apply local profile across an entire municipality",
+      "force a single lithology where source model is conditional"
+    ]
+  },
+  "source_evidence": [
+    {
+      "record_id": "SOF-PARTIAL-001",
+      "source_id": "SOF-S012",
+      "kind": "PARTIAL_BOREHOLE_GRAPHIC",
+      "record": {
+        "profile_id": "SOF-PARTIAL-001",
+        "source_id": "SOF-S012",
+        "municipality": "Своге",
+        "oblast": "София",
+        "site": "Сондаж С-102 – Свогенски басейн",
+        "borehole_name": "С-102",
+        "evidence_type": "PUBLISHED_GRAPHIC_BOREHOLE_SECTION",
+        "status": "PARTIAL_GRAPHIC_LOG",
+        "drilled_depth_m": null,
+        "published_graphic_depth_scale_m_approx": 650,
+        "published_graphic_depth_scale_status": "APPROXIMATE_FROM_GRAPHIC_ONLY",
+        "verified_depth_points": [
+          {
+            "depth_m": 611.0,
+            "unit": "Царичинска свита",
+            "evidence_type": "TEXT_CONFIRMED_DEPTH_POINT"
+          }
+        ],
+        "graphic_lithology_summary": [
+          "конгломерати / брекчоконгломерати",
+          "пясъчници",
+          "алевролити",
+          "аргилити",
+          "въглищни пластове"
+        ],
+        "stratigraphic_units_shown": [
+          "Царичинска свита",
+          "Дръмшанска свита",
+          "Дреновска свита",
+          "Чибаовска свита"
+        ],
+        "limitations": [
+          "Exact interval boundaries cannot be read reliably from the published graphic scale.",
+          "Approximate graphic depth scale is not treated as exact drilled depth.",
+          "No interpolation between visually shown contacts.",
+          "Graphic lithology symbols are not converted into exact metric intervals without numeric boundaries."
+        ]
+      },
+      "local_depth_transfer_allowed": false
+    },
+    {
+      "record_id": "SOF-PARTIAL-002",
+      "source_id": "SOF-S012",
+      "kind": "PARTIAL_BOREHOLE_GRAPHIC",
+      "record": {
+        "profile_id": "SOF-PARTIAL-002",
+        "source_id": "SOF-S012",
+        "municipality": "Своге",
+        "oblast": "София",
+        "site": "Сондаж С-221 – Свогенски басейн",
+        "borehole_name": "С-221",
+        "evidence_type": "PUBLISHED_GRAPHIC_BOREHOLE_SECTION",
+        "status": "PARTIAL_GRAPHIC_LOG",
+        "drilled_depth_m": null,
+        "published_graphic_depth_scale_m_approx": 440,
+        "published_graphic_depth_scale_status": "APPROXIMATE_FROM_GRAPHIC_ONLY",
+        "graphic_lithology_summary": [
+          "конгломерати / брекчоконгломерати",
+          "пясъчници",
+          "алевролити",
+          "аргилити",
+          "въглищни пластове"
+        ],
+        "limitations": [
+          "Exact metric contacts are unresolved from the scanned graphic.",
+          "Approximate graphic depth scale is not treated as exact drilled depth.",
+          "No numeric intervals are created from visual proportions."
+        ]
+      },
+      "local_depth_transfer_allowed": false
+    },
+    {
+      "record_id": "SOF-POINT-001",
+      "source_id": "SOF-S012",
+      "kind": "DOCUMENTED_SAMPLE_DEPTH_POINT",
+      "record": {
+        "evidence_id": "SOF-POINT-001",
+        "source_id": "SOF-S012",
+        "municipality": "Своге",
+        "borehole_name": "С-151",
+        "depth_m": 455.0,
+        "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+        "status": "VERIFIED_DEPTH_POINT_ONLY",
+        "note": "Published borehole core/sample depth used for stratigraphic/palaeobotanical interpretation. Not a continuous lithological interval."
+      },
+      "local_depth_transfer_allowed": false
+    },
+    {
+      "record_id": "SOF-POINT-002",
+      "source_id": "SOF-S012",
+      "kind": "DOCUMENTED_SAMPLE_DEPTH_POINT",
+      "record": {
+        "evidence_id": "SOF-POINT-002",
+        "source_id": "SOF-S012",
+        "municipality": "Своге",
+        "borehole_name": "С-171",
+        "depth_m": 247.0,
+        "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+        "status": "VERIFIED_DEPTH_POINT_ONLY"
+      },
+      "local_depth_transfer_allowed": false
+    },
+    {
+      "record_id": "SOF-POINT-003",
+      "source_id": "SOF-S012",
+      "kind": "DOCUMENTED_SAMPLE_DEPTH_POINT",
+      "record": {
+        "evidence_id": "SOF-POINT-003",
+        "source_id": "SOF-S012",
+        "municipality": "Своге",
+        "borehole_name": "С-171",
+        "depth_m": 259.0,
+        "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+        "status": "VERIFIED_DEPTH_POINT_ONLY"
+      },
+      "local_depth_transfer_allowed": false
+    },
+    {
+      "record_id": "SOF-POINT-004",
+      "source_id": "SOF-S012",
+      "kind": "DOCUMENTED_SAMPLE_DEPTH_POINT",
+      "record": {
+        "evidence_id": "SOF-POINT-004",
+        "source_id": "SOF-S012",
+        "municipality": "Своге",
+        "borehole_name": "С-172",
+        "depth_m": 124.0,
+        "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+        "status": "VERIFIED_DEPTH_POINT_ONLY"
+      },
+      "local_depth_transfer_allowed": false
+    },
+    {
+      "record_id": "SOF-POINT-005",
+      "source_id": "SOF-S012",
+      "kind": "DOCUMENTED_SAMPLE_DEPTH_POINT",
+      "record": {
+        "evidence_id": "SOF-POINT-005",
+        "source_id": "SOF-S012",
+        "municipality": "Своге",
+        "borehole_name": "С-172",
+        "depth_m": 361.0,
+        "evidence_type": "DOCUMENTED_CORE_SAMPLE_DEPTH",
+        "status": "VERIFIED_DEPTH_POINT_ONLY"
+      },
+      "local_depth_transfer_allowed": false
+    }
+  ],
+  "production_readiness": {
+    "regional_research_model_created": true,
+    "runtime_integration_complete": false,
+    "coordinate_prediction_ready": false,
+    "production_wiring": false
+  }
+}

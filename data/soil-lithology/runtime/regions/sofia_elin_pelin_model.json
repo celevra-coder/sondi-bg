@@ -1,0 +1,114 @@
+{
+  "model_id": "SOF-SFO17-REGIONAL-V1",
+  "status": "SOURCE_BACKED_REGIONAL_CONTEXT",
+  "zones": {
+    "SOF-SFO17-Z01": {
+      "regional_structural_context": [],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [
+        {
+          "borehole_id": "SOF-LITH-005",
+          "latitude": 42.6687381,
+          "longitude": 23.5222372,
+          "intervals": [
+            {
+              "from_m": 0.0,
+              "to_m": 73.5,
+              "material_bg": "Песъчливи глини, пясъци, глина с чакъли и чакъли; кватернер"
+            },
+            {
+              "from_m": 73.5,
+              "to_m": 451.7,
+              "material_bg": "Алтернация на глини, песъчливи глини, глинести пясъци и маломощни пясъчни прослойки; неоген"
+            },
+            {
+              "from_m": 451.7,
+              "to_m": 464.7,
+              "material_bg": "Среднозърнести пясъци; неоген"
+            },
+            {
+              "from_m": 464.7,
+              "to_m": 493.0,
+              "material_bg": "Песъчливи глини; неоген"
+            },
+            {
+              "from_m": 493.0,
+              "to_m": 515.0,
+              "material_bg": "Среднозърнести пясъци с песъчливо-глинеста прослойка от 500 до 504 m; неоген"
+            },
+            {
+              "from_m": 515.0,
+              "to_m": 550.0,
+              "material_bg": "Песъчливи глини; неоген"
+            }
+          ],
+          "source_ids": [
+            "SOF-S010"
+          ]
+        },
+        {
+          "borehole_id": "SOF-LITH-006",
+          "latitude": 42.6717289,
+          "longitude": 23.5295917,
+          "intervals": [
+            {
+              "from_m": 0.0,
+              "to_m": 2.0,
+              "material_bg": "Почвен слой"
+            },
+            {
+              "from_m": 2.0,
+              "to_m": 80.0,
+              "material_bg": "Пясъци с прослойки от глини; кватернер"
+            },
+            {
+              "from_m": 80.0,
+              "to_m": 699.6,
+              "material_bg": "Песъчливи глини с прослойки от пясъци; неоген"
+            },
+            {
+              "from_m": 699.6,
+              "to_m": 758.0,
+              "material_bg": "Доломитизирани варовици; триас"
+            }
+          ],
+          "source_ids": [
+            "SOF-S011"
+          ]
+        }
+      ],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-S010",
+        "SOF-S011"
+      ],
+      "wider_studies": [
+        {
+          "title": "Казичене – Равно поле",
+          "informationType": "Документирано геоложко и хидрогеоложко проучване",
+          "paragraphs": [
+            "Проектът за санитарно-охранителната зона на находище „Казичене–Равно поле“ съдържа геоложки сведения от няколко дълбоки сондажа. Те показват основните скални комплекси в проучената част на Софийската котловина.",
+            "В горната част на сондажните разрези са описани пясъци, чакъли и песъчливи глини. Тези наслаги са образувани чрез натрупване на различни по големина частици.",
+            "Под повърхностните наслаги проучените сондажи установяват дебели неогенски седименти, съставени от глини, песъчливи глини и пясъци.",
+            "На по-голяма дълбочина сондажите достигат до варовици, а на места и доломити. Това са по-стари карбонатни скали, чиято горна граница се изменя в различните проучени разрези."
+          ],
+          "source_ids": [
+            "SOF-RP-SRC-LITH-S45HG",
+            "SOF-RP-SRC-LITH-S46HG",
+            "SOF-RP-SRC-LITH-S50HG",
+            "SOF-RP-SRC-LITH-S53HG"
+          ]
+        }
+      ]
+    }
+  },
+  "scientific_guards": {
+    "municipality_boundary_is_not_geological_boundary": true,
+    "reference_intervals_are_location_specific": true,
+    "regional_thickness_is_not_target_depth": true,
+    "automatic_spatial_interpolation": false,
+    "candidate_zones_not_auto_activated": true,
+    "mineral_thermal_analysis_is_separate": true
+  }
+}

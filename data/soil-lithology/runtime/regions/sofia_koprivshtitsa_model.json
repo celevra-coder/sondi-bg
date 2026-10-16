@@ -1,0 +1,59 @@
+{
+  "model_id": "SOF-SFO24-REGIONAL-V1",
+  "status": "CONDITIONAL_REGIONAL_GEOLOGY",
+  "zones": {
+    "SOF-SFO24-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Копривщица",
+          "source_id": "SOF-S034",
+          "dominant_lithology_context": [
+            "Магмени скални комплекси",
+            "Метаморфни скални комплекси",
+            "Местни повърхностни наслаги"
+          ]
+        }
+      ],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-S034",
+        "SOF-S035"
+      ]
+    }
+  },
+  "candidate_zone_evidence": [
+    {
+      "candidate_zone_id": "SOF-GMK-02-01",
+      "source_research_file": "SOF_GORNA_MALINA_CHAVDAR_KOPRIVSHTITSA_MODEL_V1.json",
+      "original_materials": [
+        "MAPPED_MAGMATIC_COMPLEXES"
+      ],
+      "spatial_selector_approved": false
+    },
+    {
+      "candidate_zone_id": "SOF-GMK-02-02",
+      "source_research_file": "SOF_GORNA_MALINA_CHAVDAR_KOPRIVSHTITSA_MODEL_V1.json",
+      "original_materials": [
+        "MAPPED_METAMORPHIC_COMPLEXES"
+      ],
+      "spatial_selector_approved": false
+    },
+    {
+      "candidate_zone_id": "SOF-GMK-02-03",
+      "source_research_file": "SOF_GORNA_MALINA_CHAVDAR_KOPRIVSHTITSA_MODEL_V1.json",
+      "original_materials": [
+        "LOCAL_SUPERFICIAL_DEPOSITS"
+      ],
+      "spatial_selector_approved": false
+    }
+  ],
+  "scientific_guards": {
+    "regional_alternatives_not_exact_borehole_log": true,
+    "municipal_boundary_not_geological_boundary": true,
+    "exact_depth_contacts_not_verified": true,
+    "automatic_spatial_interpolation": false
+  }
+}

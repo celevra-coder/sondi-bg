@@ -1,0 +1,62 @@
+{
+  "model_id": "SOF-SFO20-REGIONAL-V1",
+  "status": "CONDITIONAL_REGIONAL_GEOLOGY",
+  "zones": {
+    "SOF-SFO20-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Ихтиман",
+          "source_id": "SOF-S024",
+          "dominant_lithology_context": [
+            "Делувиални и пролувиални наслаги",
+            "Алувиални чакъли",
+            "Пясъци",
+            "Местни по-фини наслаги",
+            "Плутонични и метаморфни скали"
+          ]
+        }
+      ],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-S024"
+      ]
+    }
+  },
+  "candidate_zone_evidence": [
+    {
+      "candidate_zone_id": "SOF-IHT-BASIN",
+      "source_research_file": "SOF_IHTIMAN_ZLATITSA_GEOLOGICAL_CORRELATION_V1.json",
+      "original_materials": [
+        "deluvial and proluvial deposits"
+      ],
+      "spatial_selector_approved": false
+    },
+    {
+      "candidate_zone_id": "SOF-IHT-ALLUVIUM",
+      "source_research_file": "SOF_IHTIMAN_ZLATITSA_GEOLOGICAL_CORRELATION_V1.json",
+      "original_materials": [
+        "alluvial gravel",
+        "sand",
+        "locally finer sediments"
+      ],
+      "spatial_selector_approved": false
+    },
+    {
+      "candidate_zone_id": "SOF-IHT-BEDROCK",
+      "source_research_file": "SOF_IHTIMAN_ZLATITSA_GEOLOGICAL_CORRELATION_V1.json",
+      "original_materials": [
+        "mapped plutonic and metamorphic rocks"
+      ],
+      "spatial_selector_approved": false
+    }
+  ],
+  "scientific_guards": {
+    "regional_alternatives_not_exact_borehole_log": true,
+    "municipal_boundary_not_geological_boundary": true,
+    "exact_depth_contacts_not_verified": true,
+    "automatic_spatial_interpolation": false
+  }
+}

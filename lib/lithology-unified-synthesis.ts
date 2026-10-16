@@ -1,4 +1,5 @@
 import type { LithologyProfile } from "./lithology-profile";
+import { getNationalBoreholeIndex } from "./sondi-national-borehole-index";
 import type { LithologySynthesis } from "./lithology-synthesis";
 
 export type UnifiedEvidenceKind =
@@ -25,6 +26,74 @@ export function buildUnifiedLithology(
   depths: number[] = [20, 50, 100, 150, 200, 300, 500]
 ): UnifiedLithologyPoint[] {
   return depths.map((depth) => {
+    // SONDI_DOCUMENTED_EXACT_COORDINATE_V1
+    // Use the documented interval ONLY at its borehole coordinates.
+    // Never turn nearby evidence into a measured local column.
+    const exactIntervals = getNationalBoreholeIndex()
+      .filter(hole =>
+        hole.origin === "NATIONAL" &&
+        hole.coordinate_status === "OFFICIAL_EXACT" &&
+        hole.latitude !== null &&
+        hole.longitude !== null &&
+        Math.abs(hole.latitude - profile.target.latitude) <= 0.000001 &&
+        Math.abs(hole.longitude - profile.target.longitude) <= 0.000001
+      )
+      .flatMap(hole =>
+        hole.intervals
+          .filter(interval =>
+            interval.from_m !== null &&
+            interval.to_m !== null &&
+            interval.from_m <= depth &&
+            depth < interval.to_m &&
+            !interval.interval_status &&
+            (
+              interval.evidence_level === "borehole_exact" ||
+              interval.evidence_level === "documented_borehole_log"
+            ) &&
+            interval.material_bg.trim().length > 0
+          )
+          .map(interval => ({ hole, interval }))
+      );
+
+    if (exactIntervals.length > 0) {
+      const materials = [...new Set(
+        exactIntervals.map(item => item.interval.material_bg.trim())
+      )];
+
+      const ids = [...new Set(
+        exactIntervals.map(item => item.hole.id)
+      )];
+
+      const sources = [...new Set(
+        exactIntervals.flatMap(item => item.interval.source_ids)
+      )];
+
+      const unambiguous = materials.length === 1;
+
+      return {
+        depth_m: depth,
+        material: unambiguous ? materials[0] : null,
+        evidence_kind: unambiguous
+          ? "DIRECT_BOREHOLE" as const
+          : "UNRESOLVED" as const,
+        confidence: unambiguous
+          ? "DOCUMENTED"
+          : "UNRESOLVED",
+        alternatives: unambiguous ? [] : materials,
+        borehole_ids: ids,
+        source_ids: sources,
+        limitations: unambiguous
+          ? [
+              "Документиран литоложки интервал на същите сондажни координати.",
+              "Не се пренася автоматично към съседни имоти."
+            ]
+          : [
+              "Противоречащи си документирани материали на същите координати.",
+              "Няма автоматично избран материал."
+            ]
+      };
+    }
+
     const direct = profile.direct_borehole_evidence.flatMap(
       (borehole) =>
         borehole.lithology
@@ -55,6 +124,58 @@ export function buildUnifiedLithology(
           "???????????? ?????? ? ?????????????? ???????.",
           "?????????? ???????? ?? ??????? ??????????? ?????? ????????? ????? ??? ????????? ?????."
         ]
+      };
+    }
+
+    // SONDI_NATIONAL_OUTPUT_BRIDGE_V1
+    // The national engine has already evaluated the evidence.
+    // Only its depth-specific results can supply a material.
+    // GLiM and regional context never become a depth interval.
+    const national = profile.target_national_depth_model.find(
+      (item) => item.target.depth_m === depth
+    );
+
+    if (
+      national?.engine === "NATIONAL_REGIONAL" &&
+      national.status === "CONDITIONAL" &&
+      national.probable_lithology &&
+      (
+        national.evidence_tier === "DOCUMENTED_BOREHOLE" ||
+        national.evidence_tier === "GEOLOGICAL_CORRELATION"
+      )
+    ) {
+      const documented =
+        national.evidence_tier === "DOCUMENTED_BOREHOLE";
+
+      const referenceIds = documented
+        ? national.evidence
+            .filter((item) =>
+              item.type === "BOREHOLE" &&
+              item.site_relation === "COLOCATED_COORDINATES" &&
+              typeof item.borehole_id === "string"
+            )
+            .map((item) => item.borehole_id!)
+        : [];
+
+      return {
+        depth_m: depth,
+        material: national.probable_lithology,
+        evidence_kind: documented
+          ? "DIRECT_BOREHOLE" as const
+          : "SPATIAL_MODEL" as const,
+        confidence: national.confidence,
+        alternatives: national.alternative_lithologies,
+        borehole_ids: [...new Set(referenceIds)],
+        source_ids: national.source_ids,
+        limitations: documented
+          ? [
+              "Документирана литология на референтен сондаж.",
+              "Важи за документирания интервал и координатите на сондажа."
+            ]
+          : [
+              "Условна национална геоложка корелация.",
+              "Не е пряко измерен пласт под избраната точка."
+            ]
       };
     }
 
@@ -111,23 +232,20 @@ export function buildUnifiedLithology(
       };
     }
 
+    // Unverified analogues are evidence, not a confirmed
+    // depth-specific material at the selected coordinates.
     if (projected && spatial?.status !== "OK") {
       return {
         depth_m: depth,
-        material: String(projected.comparison_family),
-        evidence_kind: "BOREHOLE_PROJECTION" as const,
-        confidence: projected.confidence,
-        alternatives: spatialAlternatives.filter(
-          (value) => value !== String(projected.comparison_family)
-        ),
+        material: null,
+        evidence_kind: "REGIONAL_CONTEXT" as const,
+        confidence: null,
+        alternatives: spatialAlternatives,
         borehole_ids: projected.analogue_ids,
         source_ids: lithology?.source_ids || [],
         limitations: [
-          "Прогноза от сондажни аналози, не пряко наблюдение.",
-          "Геоложката съвместимост с пространствения модел още не е потвърдена.",
-          ...(spatialAlternatives.length > 0
-            ? ["Показани са и алтернативите от пространствения модел; съвпадението им със сондажната прогноза не е доказано."]
-            : []),
+          "Налични са сондажни аналози, но геоложката им приложимост на избраната дълбочина не е потвърдена.",
+          "Не се определя конкретен пласт само по близост.",
           ...structuralLimitations,
           ...(lithology?.limitations || []),
         ],

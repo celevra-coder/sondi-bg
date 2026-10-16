@@ -1,0 +1,58 @@
+{
+  "model_id": "SOF-SFO10-REGIONAL-V1",
+  "status": "CONDITIONAL_REGIONAL_GEOLOGY",
+  "zones": {
+    "SOF-SFO10-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Горна Малина",
+          "source_id": "SOF-S025",
+          "dominant_lithology_context": [
+            "Кватернерни алувиални и пролувиални наслаги",
+            "Плиоценски басейнови наслаги",
+            "По-стари скални комплекси"
+          ]
+        }
+      ],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-S025"
+      ]
+    }
+  },
+  "candidate_zone_evidence": [
+    {
+      "candidate_zone_id": "SOF-GMK-01-01",
+      "source_research_file": "SOF_GORNA_MALINA_CHAVDAR_KOPRIVSHTITSA_MODEL_V1.json",
+      "original_materials": [
+        "QUATERNARY_ALLUVIAL_PROLUVIAL"
+      ],
+      "spatial_selector_approved": false
+    },
+    {
+      "candidate_zone_id": "SOF-GMK-01-02",
+      "source_research_file": "SOF_GORNA_MALINA_CHAVDAR_KOPRIVSHTITSA_MODEL_V1.json",
+      "original_materials": [
+        "PLIOCENE_BASIN_FILL"
+      ],
+      "spatial_selector_approved": false
+    },
+    {
+      "candidate_zone_id": "SOF-GMK-01-03",
+      "source_research_file": "SOF_GORNA_MALINA_CHAVDAR_KOPRIVSHTITSA_MODEL_V1.json",
+      "original_materials": [
+        "MAPPED_BEDROCK_COMPLEXES"
+      ],
+      "spatial_selector_approved": false
+    }
+  ],
+  "scientific_guards": {
+    "regional_alternatives_not_exact_borehole_log": true,
+    "municipal_boundary_not_geological_boundary": true,
+    "exact_depth_contacts_not_verified": true,
+    "automatic_spatial_interpolation": false
+  }
+}

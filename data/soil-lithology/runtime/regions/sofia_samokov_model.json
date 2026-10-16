@@ -1,0 +1,90 @@
+{
+  "model_id": "SOF-SFO39-REGIONAL-V1",
+  "status": "SOURCE_BACKED_REGIONAL_CONTEXT",
+  "zones": {
+    "SOF-SFO39-Z01": {
+      "regional_structural_context": [],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [
+        {
+          "borehole_id": "SOF-LITH-003",
+          "latitude": 42.3670222,
+          "longitude": 23.4135389,
+          "intervals": [
+            {
+              "from_m": 0.0,
+              "to_m": 8.0,
+              "material_bg": "Сивокафяви песъчливи глини със заоблени скални късове"
+            },
+            {
+              "from_m": 8.0,
+              "to_m": 20.0,
+              "material_bg": "Дребнозърнести и едрозърнести глинести пясъци"
+            },
+            {
+              "from_m": 20.0,
+              "to_m": 22.0,
+              "material_bg": "Едрозърнести гравийни пясъци"
+            },
+            {
+              "from_m": 22.0,
+              "to_m": 29.0,
+              "material_bg": "Сивокафяви песъчливи глини"
+            },
+            {
+              "from_m": 29.0,
+              "to_m": 121.0,
+              "material_bg": "Пясъчници със слаба глинеста спойка, прослойки от гравий и едрозърнести пясъчници; напукани"
+            },
+            {
+              "from_m": 121.0,
+              "to_m": 186.0,
+              "material_bg": "Средно до едрозърнести пясъчници с конгломератни прослойки и късове от диорити, гранитогнайси и гнайси"
+            },
+            {
+              "from_m": 186.0,
+              "to_m": 198.1,
+              "material_bg": "Едрозърнести пясъци с прослойки от въглища и чакълни късове"
+            },
+            {
+              "from_m": 198.1,
+              "to_m": 237.5,
+              "material_bg": "Средно и едрозърнести пясъчници с глинеста спойка и конгломератни прослойки"
+            },
+            {
+              "from_m": 237.5,
+              "to_m": 303.5,
+              "material_bg": "Конгломерати с глинесто-песъчлива спойка"
+            },
+            {
+              "from_m": 303.5,
+              "to_m": 362.0,
+              "material_bg": "Среднозърнести гранодиорити, слабо напукани; много пукнатини са запълнени с калцит"
+            },
+            {
+              "from_m": 362.0,
+              "to_m": 418.7,
+              "material_bg": "Среднозърнести гранодиорити, силно тектонски напукани"
+            }
+          ],
+          "source_ids": [
+            "SOF-S007"
+          ]
+        }
+      ],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-S007"
+      ]
+    }
+  },
+  "scientific_guards": {
+    "municipality_boundary_is_not_geological_boundary": true,
+    "reference_intervals_are_location_specific": true,
+    "regional_thickness_is_not_target_depth": true,
+    "automatic_spatial_interpolation": false,
+    "candidate_zones_not_auto_activated": true,
+    "mineral_thermal_analysis_is_separate": true
+  }
+}

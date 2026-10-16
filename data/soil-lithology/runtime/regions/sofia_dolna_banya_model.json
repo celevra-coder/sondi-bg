@@ -1,0 +1,85 @@
+{
+  "model_id": "SOF-SFO59-REGIONAL-V1",
+  "status": "SOURCE_BACKED_REGIONAL_CONTEXT",
+  "zones": {
+    "SOF-SFO59-Z01": {
+      "regional_structural_context": [],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [
+        {
+          "borehole_id": "SOF-LITH-002",
+          "latitude": 42.311068990513,
+          "longitude": 23.774985936602,
+          "intervals": [
+            {
+              "from_m": 0.0,
+              "to_m": 31.0,
+              "material_bg": "Чакъли и валуни с песъчлив запълнител, алувий"
+            },
+            {
+              "from_m": 31.0,
+              "to_m": 50.0,
+              "material_bg": "Глинести пясъци"
+            },
+            {
+              "from_m": 50.0,
+              "to_m": 114.4,
+              "material_bg": "Редуване на глини и пясъци"
+            },
+            {
+              "from_m": 114.4,
+              "to_m": 116.5,
+              "material_bg": "Биотитови шисти"
+            },
+            {
+              "from_m": 116.5,
+              "to_m": 121.5,
+              "material_bg": "Тектонска зона"
+            },
+            {
+              "from_m": 121.5,
+              "to_m": 184.4,
+              "material_bg": "Биотитови шисти"
+            },
+            {
+              "from_m": 184.4,
+              "to_m": 192.8,
+              "material_bg": "Пегматити, силно напукани"
+            },
+            {
+              "from_m": 192.8,
+              "to_m": 265.9,
+              "material_bg": "Биотитови шисти"
+            },
+            {
+              "from_m": 265.9,
+              "to_m": 271.9,
+              "material_bg": "Аплити"
+            },
+            {
+              "from_m": 271.9,
+              "to_m": 279.2,
+              "material_bg": "Амфиболити"
+            }
+          ],
+          "source_ids": [
+            "SOF-S005"
+          ]
+        }
+      ],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-S005"
+      ]
+    }
+  },
+  "scientific_guards": {
+    "municipality_boundary_is_not_geological_boundary": true,
+    "reference_intervals_are_location_specific": true,
+    "regional_thickness_is_not_target_depth": true,
+    "automatic_spatial_interpolation": false,
+    "candidate_zones_not_auto_activated": true,
+    "mineral_thermal_analysis_is_separate": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "model_id": "SOF-SFO25-REGIONAL-V1",
+  "status": "SOURCE_BACKED_REGIONAL_CONTEXT",
+  "zones": {
+    "SOF-SFO25-Z01": {
+      "regional_structural_context": [],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [
+        {
+          "borehole_id": "SOF-LITH-001",
+          "latitude": null,
+          "longitude": null,
+          "intervals": [
+            {
+              "from_m": 0.0,
+              "to_m": 4.5,
+              "material_bg": "Дребнозърнести сивозеленикави пясъчници; палеоген."
+            },
+            {
+              "from_m": 4.5,
+              "to_m": 19.0,
+              "material_bg": "Песъчливи глини и пясъци, тъмнозелени до черни, плътни, с плоскости на триене; палеоген."
+            },
+            {
+              "from_m": 19.0,
+              "to_m": 36.6,
+              "material_bg": "Дребно- и среднозърнести сиви до зеленикави пясъчници с прослойка от тъмносиви до черни песъчливи глини; палеоген."
+            },
+            {
+              "from_m": 36.6,
+              "to_m": 64.2,
+              "material_bg": "Здраво споени песъчливи глини с прослойки от едрозърнести пясъчници; палеоген."
+            },
+            {
+              "from_m": 64.2,
+              "to_m": 411.0,
+              "material_bg": "Сиви среднозърнести слабонапукани гранити; по пукнатините карбонатни налепи, хематитизация и хлоритизация, с редки пегматитови инжекции. Документирани характерни пукнатини при 192–193, 200–202, 204–213, 223–227, 249–263, 269–271, 275–277, 293–297, 303–306, 388–391, 401–403 m. Палеозой."
+            },
+            {
+              "from_m": 411.0,
+              "to_m": 420.1,
+              "material_bg": "Разломна зона, представена от силно изменени, напукани, излужени и на места брекчирани гранити; по пукнатините силно хематитизирани. Палеозой."
+            },
+            {
+              "from_m": 420.1,
+              "to_m": 444.7,
+              "material_bg": "Среднозърнести светлосиви напукани и хлоритизирани гранити. Палеозой."
+            }
+          ],
+          "source_ids": [
+            "SOF-S001"
+          ]
+        }
+      ],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-S001"
+      ]
+    }
+  },
+  "scientific_guards": {
+    "municipality_boundary_is_not_geological_boundary": true,
+    "reference_intervals_are_location_specific": true,
+    "regional_thickness_is_not_target_depth": true,
+    "automatic_spatial_interpolation": false,
+    "candidate_zones_not_auto_activated": true,
+    "mineral_thermal_analysis_is_separate": true
+  }
+}

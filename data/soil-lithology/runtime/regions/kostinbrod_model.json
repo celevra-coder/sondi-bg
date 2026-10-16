@@ -1,0 +1,80 @@
+{
+  "model_id": "SOF-KOS-REGIONAL-V1",
+  "status": "REGIONAL_CONTEXT_NO_SPATIAL_INTERPOLATION",
+  "zones": {
+    "SOF-KOS-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Костинброд",
+          "source_id": "SOF-S009",
+          "dominant_lithology_context": [
+            "Кватернерни материали",
+            "Неогенски материали – Лозенецка и Новиискърска свита",
+            "Горнокредни напукани пясъчници със силициева спойка с прослойки от глинести мергели"
+          ]
+        }
+      ],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [
+        {
+          "borehole_id": "SOF-LITH-004",
+          "latitude": 42.79775,
+          "longitude": 23.1719333,
+          "intervals": [
+            {
+              "from_m": 0.0,
+              "to_m": 12.0,
+              "material_bg": "Кватернерни материали"
+            },
+            {
+              "from_m": 12.0,
+              "to_m": 145.0,
+              "material_bg": "Неогенски материали – Лозенецка и Новиискърска свита"
+            },
+            {
+              "from_m": 145.0,
+              "to_m": 200.0,
+              "material_bg": "Горнокредни напукани пясъчници със силициева спойка с прослойки от глинести мергели"
+            }
+          ],
+          "source_ids": [
+            "SOF-S009"
+          ]
+        }
+      ],
+      "documented_well_depths": [
+        {
+          "name": "TK-1",
+          "depth_m": 218.0,
+          "source_id": "SOF-KOSTINBROD-OUP2021",
+          "full_lithological_log": false
+        },
+        {
+          "name": "TK-2",
+          "depth_m": 204.0,
+          "source_id": "SOF-KOSTINBROD-OUP2021",
+          "full_lithological_log": false
+        },
+        {
+          "name": "TK-1D",
+          "depth_m": 200.0,
+          "source_id": "SOF-KOSTINBROD-OUP2021",
+          "full_lithological_log": false
+        }
+      ],
+      "source_ids": [
+        "SOF-S009",
+        "SOF-KOSTINBROD-OUP2021"
+      ]
+    }
+  },
+  "scientific_guards": {
+    "exact_intervals_apply_only_to_reference_borehole": true,
+    "municipal_boundary_is_not_geological_boundary": true,
+    "regional_sequence_not_depth_calibrated": true,
+    "automatic_geological_interpolation": false,
+    "well_screen_not_lithological_contact": true,
+    "well_screen_not_proven_water_inflow": true
+  }
+}

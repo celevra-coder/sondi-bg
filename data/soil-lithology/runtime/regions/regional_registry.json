@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "purpose": "National source-backed regional lithology reports",
+  "regions": [
+    {
+      "id": "SOF-SVG",
+      "name_bg": "Своге",
+      "zone_id": "SOF-SVG-Z01",
+      "model_file": "svoge_model.json",
+      "boundary_file": "svoge_boundary.json"
+    },
+    {
+      "id": "SOF-KOS",
+      "name_bg": "Костинброд",
+      "zone_id": "SOF-KOS-Z01",
+      "model_file": "kostinbrod_model.json",
+      "boundary_file": "kostinbrod_boundary.json"
+    },
+    {
+      "id": "SOF-SFO17",
+      "name_bg": "Елин Пелин",
+      "zone_id": "SOF-SFO17-Z01",
+      "model_file": "sofia_elin_pelin_model.json",
+      "boundary_file": "sofia_elin_pelin_boundary.json"
+    },
+    {
+      "id": "SOF-SFO25",
+      "name_bg": "Костенец",
+      "zone_id": "SOF-SFO25-Z01",
+      "model_file": "sofia_kostenets_model.json",
+      "boundary_file": "sofia_kostenets_boundary.json"
+    },
+    {
+      "id": "SOF-SFO39",
+      "name_bg": "Самоков",
+      "zone_id": "SOF-SFO39-Z01",
+      "model_file": "sofia_samokov_model.json",
+      "boundary_file": "sofia_samokov_boundary.json"
+    },
+    {
+      "id": "SOF-SFO58",
+      "name_bg": "Челопеч",
+      "zone_id": "SOF-SFO58-Z01",
+      "model_file": "sofia_chelopech_model.json",
+      "boundary_file": "sofia_chelopech_boundary.json"
+    },
+    {
+      "id": "SOF-SFO59",
+      "name_bg": "Долна баня",
+      "zone_id": "SOF-SFO59-Z01",
+      "model_file": "sofia_dolna_banya_model.json",
+      "boundary_file": "sofia_dolna_banya_boundary.json"
+    },
+    {
+      "id": "SOF-SFO10",
+      "name_bg": "Горна Малина",
+      "zone_id": "SOF-SFO10-Z01",
+      "model_file": "sofia_gorna_malina_model.json",
+      "boundary_file": "sofia_gorna_malina_boundary.json"
+    },
+    {
+      "id": "SOF-SFO20",
+      "name_bg": "Ихтиман",
+      "zone_id": "SOF-SFO20-Z01",
+      "model_file": "sofia_ihtiman_model.json",
+      "boundary_file": "sofia_ihtiman_boundary.json"
+    },
+    {
+      "id": "SOF-SFO24",
+      "name_bg": "Копривщица",
+      "zone_id": "SOF-SFO24-Z01",
+      "model_file": "sofia_koprivshtitsa_model.json",
+      "boundary_file": "sofia_koprivshtitsa_boundary.json"
+    },
+    {
+      "id": "SOF-SFO47",
+      "name_bg": "Златица",
+      "zone_id": "SOF-SFO47-Z01",
+      "model_file": "sofia_zlatitsa_model.json",
+      "boundary_file": "sofia_zlatitsa_boundary.json"
+    },
+    {
+      "id": "SOF-SFO57",
+      "name_bg": "Чавдар",
+      "zone_id": "SOF-SFO57-Z01",
+      "model_file": "sofia_chavdar_model.json",
+      "boundary_file": "sofia_chavdar_boundary.json"
+    },
+    {
+      "id": "SOF-SFO06",
+      "name_bg": "Божурище",
+      "zone_id": "SOF-SFO06-Z01",
+      "model_file": "sofia_bozhurishte_model.json",
+      "boundary_file": "sofia_bozhurishte_boundary.json"
+    },
+    {
+      "id": "SOF-SFO07",
+      "name_bg": "Ботевград",
+      "zone_id": "SOF-SFO07-Z01",
+      "model_file": "sofia_botevgrad_model.json",
+      "boundary_file": "sofia_botevgrad_boundary.json"
+    },
+    {
+      "id": "SOF-SFO16",
+      "name_bg": "Драгоман",
+      "zone_id": "SOF-SFO16-Z01",
+      "model_file": "sofia_dragoman_model.json",
+      "boundary_file": "sofia_dragoman_boundary.json"
+    },
+    {
+      "id": "SOF-SFO18",
+      "name_bg": "Етрополе",
+      "zone_id": "SOF-SFO18-Z01",
+      "model_file": "sofia_etropole_model.json",
+      "boundary_file": "sofia_etropole_boundary.json"
+    },
+    {
+      "id": "SOF-SFO34",
+      "name_bg": "Правец",
+      "zone_id": "SOF-SFO34-Z01",
+      "model_file": "sofia_pravets_model.json",
+      "boundary_file": "sofia_pravets_boundary.json"
+    },
+    {
+      "id": "SOF-SFO45",
+      "name_bg": "Сливница",
+      "zone_id": "SOF-SFO45-Z01",
+      "model_file": "sofia_slivnitsa_model.json",
+      "boundary_file": "sofia_slivnitsa_boundary.json"
+    },
+    {
+      "id": "SOF-SFO56",
+      "name_bg": "Мирково",
+      "zone_id": "SOF-SFO56-Z01",
+      "model_file": "sofia_mirkovo_model.json",
+      "boundary_file": "sofia_mirkovo_boundary.json"
+    },
+    {
+      "id": "SOF-SFO09",
+      "name_bg": "Годеч",
+      "zone_id": "SOF-SFO09-Z01",
+      "model_file": "sofia_godech_model.json",
+      "boundary_file": "sofia_godech_boundary.json"
+    },
+    {
+      "id": "SOF-SFO54",
+      "name_bg": "Антон",
+      "zone_id": "SOF-SFO54-Z01",
+      "model_file": "sofia_anton_model.json",
+      "boundary_file": "sofia_anton_boundary.json"
+    },
+    {
+      "id": "SOF-SFO55",
+      "name_bg": "Пирдоп",
+      "zone_id": "SOF-SFO55-Z01",
+      "model_file": "sofia_pirdop_model.json",
+      "boundary_file": "sofia_pirdop_boundary.json"
+    }
+  ]
+}

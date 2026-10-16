@@ -1,0 +1,827 @@
+{
+  "model_id": "SOF-RAVNO-POLE-DEPTH-PILOT-70",
+  "status": "CONDITIONAL_RESEARCH_PROJECTION",
+  "depths_m": [
+    20,
+    50,
+    80,
+    100,
+    150,
+    200,
+    300,
+    500
+  ],
+  "controls": [
+    {
+      "id": "SOF-LITH-005",
+      "latitude": 42.6687381,
+      "longitude": 23.5222372,
+      "depth_classes": {
+        "20": "QUATERNARY",
+        "50": "QUATERNARY",
+        "80": "NEOGENE",
+        "100": "NEOGENE",
+        "150": "NEOGENE",
+        "200": "NEOGENE",
+        "300": "NEOGENE",
+        "500": "NEOGENE"
+      },
+      "material_families": {
+        "20": [
+          "Глини",
+          "Пясъци",
+          "Чакъли"
+        ],
+        "50": [
+          "Глини",
+          "Пясъци",
+          "Чакъли"
+        ],
+        "80": [
+          "Глини",
+          "Пясъци"
+        ],
+        "100": [
+          "Глини",
+          "Пясъци"
+        ],
+        "150": [
+          "Глини",
+          "Пясъци"
+        ],
+        "200": [
+          "Глини",
+          "Пясъци"
+        ],
+        "300": [
+          "Глини",
+          "Пясъци"
+        ],
+        "500": [
+          "Глини",
+          "Пясъци"
+        ]
+      },
+      "documented_intervals": {
+        "20": [
+          {
+            "from_m": 0.0,
+            "to_m": 73.5,
+            "material": "Песъчливи глини, пясъци, глина с чакъли и чакъли; кватернер",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "50": [
+          {
+            "from_m": 0.0,
+            "to_m": 73.5,
+            "material": "Песъчливи глини, пясъци, глина с чакъли и чакъли; кватернер",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "80": [
+          {
+            "from_m": 73.5,
+            "to_m": 451.7,
+            "material": "Алтернация на глини, песъчливи глини, глинести пясъци и маломощни пясъчни прослойки; неоген",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "100": [
+          {
+            "from_m": 73.5,
+            "to_m": 451.7,
+            "material": "Алтернация на глини, песъчливи глини, глинести пясъци и маломощни пясъчни прослойки; неоген",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "150": [
+          {
+            "from_m": 73.5,
+            "to_m": 451.7,
+            "material": "Алтернация на глини, песъчливи глини, глинести пясъци и маломощни пясъчни прослойки; неоген",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "200": [
+          {
+            "from_m": 73.5,
+            "to_m": 451.7,
+            "material": "Алтернация на глини, песъчливи глини, глинести пясъци и маломощни пясъчни прослойки; неоген",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "300": [
+          {
+            "from_m": 73.5,
+            "to_m": 451.7,
+            "material": "Алтернация на глини, песъчливи глини, глинести пясъци и маломощни пясъчни прослойки; неоген",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "500": [
+          {
+            "from_m": 493.0,
+            "to_m": 515.0,
+            "material": "Среднозърнести пясъци с песъчливо-глинеста прослойка от 500 до 504 m; неоген",
+            "evidence_level": "borehole_exact"
+          }
+        ]
+      }
+    },
+    {
+      "id": "SOF-LITH-006",
+      "latitude": 42.6717289,
+      "longitude": 23.5295917,
+      "depth_classes": {
+        "20": "QUATERNARY",
+        "50": "QUATERNARY",
+        "80": "NEOGENE",
+        "100": "NEOGENE",
+        "150": "NEOGENE",
+        "200": "NEOGENE",
+        "300": "NEOGENE",
+        "500": "NEOGENE"
+      },
+      "material_families": {
+        "20": [
+          "Глини",
+          "Пясъци"
+        ],
+        "50": [
+          "Глини",
+          "Пясъци"
+        ],
+        "80": [
+          "Глини",
+          "Пясъци"
+        ],
+        "100": [
+          "Глини",
+          "Пясъци"
+        ],
+        "150": [
+          "Глини",
+          "Пясъци"
+        ],
+        "200": [
+          "Глини",
+          "Пясъци"
+        ],
+        "300": [
+          "Глини",
+          "Пясъци"
+        ],
+        "500": [
+          "Глини",
+          "Пясъци"
+        ]
+      },
+      "documented_intervals": {
+        "20": [
+          {
+            "from_m": 2.0,
+            "to_m": 80.0,
+            "material": "Пясъци с прослойки от глини; кватернер",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "50": [
+          {
+            "from_m": 2.0,
+            "to_m": 80.0,
+            "material": "Пясъци с прослойки от глини; кватернер",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "80": [
+          {
+            "from_m": 80.0,
+            "to_m": 699.6,
+            "material": "Песъчливи глини с прослойки от пясъци; неоген",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "100": [
+          {
+            "from_m": 80.0,
+            "to_m": 699.6,
+            "material": "Песъчливи глини с прослойки от пясъци; неоген",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "150": [
+          {
+            "from_m": 80.0,
+            "to_m": 699.6,
+            "material": "Песъчливи глини с прослойки от пясъци; неоген",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "200": [
+          {
+            "from_m": 80.0,
+            "to_m": 699.6,
+            "material": "Песъчливи глини с прослойки от пясъци; неоген",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "300": [
+          {
+            "from_m": 80.0,
+            "to_m": 699.6,
+            "material": "Песъчливи глини с прослойки от пясъци; неоген",
+            "evidence_level": "borehole_exact"
+          }
+        ],
+        "500": [
+          {
+            "from_m": 80.0,
+            "to_m": 699.6,
+            "material": "Песъчливи глини с прослойки от пясъци; неоген",
+            "evidence_level": "borehole_exact"
+          }
+        ]
+      }
+    },
+    {
+      "id": "SOF-RP-S44HG",
+      "latitude": 42.6710278,
+      "longitude": 23.5220861,
+      "depth_classes": {
+        "20": "QUATERNARY",
+        "50": "QUATERNARY",
+        "80": "NEOGENE",
+        "100": "NEOGENE",
+        "150": "NEOGENE",
+        "200": "NEOGENE",
+        "300": "NEOGENE",
+        "500": "NEOGENE"
+      },
+      "material_families": {
+        "20": [
+          "Глини",
+          "Пясъци"
+        ],
+        "50": [
+          "Глини",
+          "Пясъци"
+        ],
+        "80": [
+          "Глини",
+          "Пясъци"
+        ],
+        "100": [
+          "Глини",
+          "Пясъци"
+        ],
+        "150": [
+          "Глини",
+          "Пясъци"
+        ],
+        "200": [
+          "Глини",
+          "Пясъци"
+        ],
+        "300": [
+          "Глини",
+          "Пясъци"
+        ],
+        "500": [
+          "Глини",
+          "Пясъци"
+        ]
+      },
+      "documented_intervals": {
+        "20": [
+          {
+            "from_m": 2.5,
+            "to_m": 70,
+            "material": "Песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "50": [
+          {
+            "from_m": 2.5,
+            "to_m": 70,
+            "material": "Песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "80": [
+          {
+            "from_m": 70,
+            "to_m": 591.6,
+            "material": "Глини, песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "100": [
+          {
+            "from_m": 70,
+            "to_m": 591.6,
+            "material": "Глини, песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "150": [
+          {
+            "from_m": 70,
+            "to_m": 591.6,
+            "material": "Глини, песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "200": [
+          {
+            "from_m": 70,
+            "to_m": 591.6,
+            "material": "Глини, песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "300": [
+          {
+            "from_m": 70,
+            "to_m": 591.6,
+            "material": "Глини, песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "500": [
+          {
+            "from_m": 70,
+            "to_m": 591.6,
+            "material": "Глини, песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ]
+      }
+    },
+    {
+      "id": "SOF-RP-S45HG",
+      "latitude": 42.6655056,
+      "longitude": 23.5211605,
+      "depth_classes": {
+        "20": "QUATERNARY",
+        "50": "QUATERNARY",
+        "80": "NEOGENE",
+        "100": "NEOGENE",
+        "150": "NEOGENE",
+        "200": "NEOGENE",
+        "300": "NEOGENE",
+        "500": "NEOGENE"
+      },
+      "material_families": {
+        "20": [
+          "Пясъци"
+        ],
+        "50": [
+          "Пясъци"
+        ],
+        "80": [
+          "Глини",
+          "Пясъци"
+        ],
+        "100": [
+          "Глини",
+          "Пясъци"
+        ],
+        "150": [
+          "Глини",
+          "Пясъци"
+        ],
+        "200": [
+          "Глини",
+          "Пясъци"
+        ],
+        "300": [
+          "Глини",
+          "Пясъци"
+        ],
+        "500": [
+          "Глини",
+          "Пясъци"
+        ]
+      },
+      "documented_intervals": {
+        "20": [
+          {
+            "from_m": 0,
+            "to_m": 68,
+            "material": "Рохкави дребнозърнести пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "50": [
+          {
+            "from_m": 0,
+            "to_m": 68,
+            "material": "Рохкави дребнозърнести пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "80": [
+          {
+            "from_m": 68,
+            "to_m": 615.7,
+            "material": "Песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "100": [
+          {
+            "from_m": 68,
+            "to_m": 615.7,
+            "material": "Песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "150": [
+          {
+            "from_m": 68,
+            "to_m": 615.7,
+            "material": "Песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "200": [
+          {
+            "from_m": 68,
+            "to_m": 615.7,
+            "material": "Песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "300": [
+          {
+            "from_m": 68,
+            "to_m": 615.7,
+            "material": "Песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "500": [
+          {
+            "from_m": 68,
+            "to_m": 615.7,
+            "material": "Песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ]
+      }
+    },
+    {
+      "id": "SOF-RP-S46HG",
+      "latitude": 42.6678286,
+      "longitude": 23.5221481,
+      "depth_classes": {
+        "20": "QUATERNARY",
+        "50": "QUATERNARY",
+        "80": "NEOGENE",
+        "100": "NEOGENE",
+        "150": "NEOGENE",
+        "200": "NEOGENE",
+        "300": "NEOGENE",
+        "500": "NEOGENE"
+      },
+      "material_families": {
+        "20": [
+          "Глини",
+          "Пясъци"
+        ],
+        "50": [
+          "Глини",
+          "Пясъци"
+        ],
+        "80": [
+          "Глини",
+          "Пясъци"
+        ],
+        "100": [
+          "Глини",
+          "Пясъци"
+        ],
+        "150": [
+          "Глини",
+          "Пясъци"
+        ],
+        "200": [
+          "Глини",
+          "Пясъци"
+        ],
+        "300": [
+          "Глини",
+          "Пясъци"
+        ],
+        "500": [
+          "Глини",
+          "Пясъци"
+        ]
+      },
+      "documented_intervals": {
+        "20": [
+          {
+            "from_m": 0,
+            "to_m": 67.7,
+            "material": "Пясъци и песъчливи глини",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "50": [
+          {
+            "from_m": 0,
+            "to_m": 67.7,
+            "material": "Пясъци и песъчливи глини",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "80": [
+          {
+            "from_m": 67.7,
+            "to_m": 570.9,
+            "material": "Глини, песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "100": [
+          {
+            "from_m": 67.7,
+            "to_m": 570.9,
+            "material": "Глини, песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "150": [
+          {
+            "from_m": 67.7,
+            "to_m": 570.9,
+            "material": "Глини, песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "200": [
+          {
+            "from_m": 67.7,
+            "to_m": 570.9,
+            "material": "Глини, песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "300": [
+          {
+            "from_m": 67.7,
+            "to_m": 570.9,
+            "material": "Глини, песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "500": [
+          {
+            "from_m": 67.7,
+            "to_m": 570.9,
+            "material": "Глини, песъчливи глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ]
+      }
+    },
+    {
+      "id": "SOF-RP-S50HG",
+      "latitude": 42.6699056,
+      "longitude": 23.5183453,
+      "depth_classes": {
+        "20": "QUATERNARY",
+        "50": "QUATERNARY",
+        "80": "QUATERNARY",
+        "100": "NEOGENE",
+        "150": "NEOGENE",
+        "200": "NEOGENE",
+        "300": "NEOGENE",
+        "500": "NEOGENE"
+      },
+      "material_families": {
+        "20": [
+          "Пясъци",
+          "Чакъли"
+        ],
+        "50": [
+          "Пясъци",
+          "Чакъли"
+        ],
+        "80": [
+          "Пясъци",
+          "Чакъли"
+        ],
+        "100": [
+          "Глини",
+          "Пясъци"
+        ],
+        "150": [
+          "Глини",
+          "Пясъци"
+        ],
+        "200": [
+          "Глини",
+          "Пясъци"
+        ],
+        "300": [
+          "Глини",
+          "Пясъци"
+        ],
+        "500": [
+          "Глини",
+          "Пясъци"
+        ]
+      },
+      "documented_intervals": {
+        "20": [
+          {
+            "from_m": 0,
+            "to_m": 82.4,
+            "material": "Пясъци и чакъли",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "50": [
+          {
+            "from_m": 0,
+            "to_m": 82.4,
+            "material": "Пясъци и чакъли",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "80": [
+          {
+            "from_m": 0,
+            "to_m": 82.4,
+            "material": "Пясъци и чакъли",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "100": [
+          {
+            "from_m": 82.4,
+            "to_m": 550.8,
+            "material": "Песъчливи глини с прослойки от пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "150": [
+          {
+            "from_m": 82.4,
+            "to_m": 550.8,
+            "material": "Песъчливи глини с прослойки от пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "200": [
+          {
+            "from_m": 82.4,
+            "to_m": 550.8,
+            "material": "Песъчливи глини с прослойки от пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "300": [
+          {
+            "from_m": 82.4,
+            "to_m": 550.8,
+            "material": "Песъчливи глини с прослойки от пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "500": [
+          {
+            "from_m": 82.4,
+            "to_m": 550.8,
+            "material": "Песъчливи глини с прослойки от пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ]
+      }
+    },
+    {
+      "id": "SOF-RP-S53HG",
+      "latitude": 42.6687746,
+      "longitude": 23.5152436,
+      "depth_classes": {
+        "20": "QUATERNARY",
+        "50": "QUATERNARY",
+        "80": "QUATERNARY",
+        "100": "NEOGENE",
+        "150": "NEOGENE",
+        "200": "NEOGENE",
+        "300": "NEOGENE",
+        "500": "NEOGENE"
+      },
+      "material_families": {
+        "20": [
+          "Пясъци",
+          "Чакъли"
+        ],
+        "50": [
+          "Пясъци",
+          "Чакъли"
+        ],
+        "80": [
+          "Пясъци",
+          "Чакъли"
+        ],
+        "100": [
+          "Глини",
+          "Пясъци"
+        ],
+        "150": [
+          "Глини",
+          "Пясъци"
+        ],
+        "200": [
+          "Глини",
+          "Пясъци"
+        ],
+        "300": [
+          "Глини",
+          "Пясъци"
+        ],
+        "500": [
+          "Глини",
+          "Пясъци"
+        ]
+      },
+      "documented_intervals": {
+        "20": [
+          {
+            "from_m": 0,
+            "to_m": 82.4,
+            "material": "Пясъци и чакъли",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "50": [
+          {
+            "from_m": 0,
+            "to_m": 82.4,
+            "material": "Пясъци и чакъли",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "80": [
+          {
+            "from_m": 0,
+            "to_m": 82.4,
+            "material": "Пясъци и чакъли",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "100": [
+          {
+            "from_m": 82.4,
+            "to_m": 570.5,
+            "material": "Глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "150": [
+          {
+            "from_m": 82.4,
+            "to_m": 570.5,
+            "material": "Глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "200": [
+          {
+            "from_m": 82.4,
+            "to_m": 570.5,
+            "material": "Глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "300": [
+          {
+            "from_m": 82.4,
+            "to_m": 570.5,
+            "material": "Глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ],
+        "500": [
+          {
+            "from_m": 82.4,
+            "to_m": 570.5,
+            "material": "Глини и пясъци",
+            "evidence_level": "documented_borehole_log"
+          }
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Прогноза само във вътрешността на зоната на седемте контролни сондажа.",
+    "Не е доказано, че всички точки са в един структурен блок.",
+    "Съгласието между сондажите не доказва еднакви пластове под всеки имот.",
+    "Моделът определя геоложки комплекси, не точни материални граници."
+  ]
+}

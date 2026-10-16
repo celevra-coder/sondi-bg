@@ -1,0 +1,41 @@
+{
+  "model_id": "SOF-SFO55-REGIONAL-V1",
+  "status": "EVIDENCE_LIMITED_NO_DEPTH_MODEL",
+  "zones": {
+    "SOF-SFO55-Z01": {
+      "regional_structural_context": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Документирани наблюдателни сондажи",
+          "informationType": "Хидрогеоложки наблюдения, не литоложка колонка",
+          "paragraphs": [
+            "В района на промишлената площадка на Пирдоп е документирана мрежа от първоначално 26, а по-късно 70 наблюдателни сондажа.",
+            "Публично извлечените сведения не съдържат пълни литоложки колонки. Броят на сондажите не определя скалния състав и дълбочините под избран имот."
+          ],
+          "source_ids": [
+            "SOF-S017",
+            "SOF-S018"
+          ]
+        }
+      ],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-S017",
+        "SOF-S018"
+      ]
+    }
+  },
+  "research_provenance": [
+    "SOFIA_22_MUNICIPALITIES_EVIDENCE_BRIDGE_V1.json"
+  ],
+  "scientific_guards": {
+    "municipal_boundary_not_geological_boundary": true,
+    "outcrop_thickness_not_local_drilling_depth": true,
+    "monitoring_borehole_not_lithology_log": true,
+    "no_unverified_depth_contacts": true,
+    "automatic_spatial_interpolation": false
+  }
+}

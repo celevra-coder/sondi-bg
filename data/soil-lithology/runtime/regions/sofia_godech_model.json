@@ -1,0 +1,63 @@
+{
+  "model_id": "SOF-SFO09-REGIONAL-V1",
+  "status": "REGIONAL_OUTCROP_CONTEXT",
+  "zones": {
+    "SOF-SFO09-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Заского, Гинци",
+          "source_id": "SOF-GODECH-MEASURED-OUTCROP",
+          "regional_units": [
+            {
+              "unit": "Яворецка свита",
+              "regional_thickness_m": "30.0"
+            },
+            {
+              "unit": "Гинска свита",
+              "regional_thickness_m": "52.5"
+            },
+            {
+              "unit": "Гложенска свита",
+              "regional_thickness_m": "22.5"
+            }
+          ],
+          "dominant_lithology_context": [
+            "сиви микритни варовици",
+            "нодуларни, микритни и кластични варовици",
+            "сиви микритни варовици"
+          ]
+        }
+      ],
+      "regional_evidence_notes": [
+        {
+          "title": "Измерен геоложки разрез край Гинци",
+          "informationType": "Документирано стратиграфско разкритие",
+          "paragraphs": [
+            "Край Заского, Гинци, е документиран измерен стратиграфски разрез с обща мощност 105 м.",
+            "Това е разкритие, а не сондаж. Мощностите не определят дълбочините под избран имот."
+          ],
+          "source_ids": [
+            "SOF-GODECH-MEASURED-OUTCROP"
+          ]
+        }
+      ],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-GODECH-MEASURED-OUTCROP"
+      ]
+    }
+  },
+  "research_provenance": [
+    "SOF_GODECH_ANTON_TARGETED_COMPLETION_V1.json"
+  ],
+  "scientific_guards": {
+    "municipal_boundary_not_geological_boundary": true,
+    "outcrop_thickness_not_local_drilling_depth": true,
+    "monitoring_borehole_not_lithology_log": true,
+    "no_unverified_depth_contacts": true,
+    "automatic_spatial_interpolation": false
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "model_id": "SOF-SFO56-REGIONAL-V1",
+  "status": "SOURCE_BACKED_REGIONAL_CONTEXT",
+  "zones": {
+    "SOF-SFO56-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "типова местност на Мирковската свита, северно от гара Мирково",
+          "source_id": "SOF-S020",
+          "regional_units": [
+            {
+              "unit": "Мирковска свита",
+              "regional_thickness_m": "approximately 180"
+            }
+          ],
+          "dominant_lithology_context": [
+            "бели мергели",
+            "сиви мергели",
+            "розови мергели",
+            "варовици"
+          ]
+        }
+      ],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [],
+      "documented_well_depths": [],
+      "source_ids": [
+        "SOF-S020"
+      ]
+    }
+  },
+  "scientific_guards": {
+    "local_context_not_entire_municipality": true,
+    "municipality_boundary_not_geological_boundary": true,
+    "assay_interval_not_lithology": true,
+    "monitoring_level_not_lithological_contact": true,
+    "regional_thickness_not_local_depth": true,
+    "automatic_spatial_interpolation": false
+  }
+}
