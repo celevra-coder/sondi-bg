@@ -1,4 +1,5 @@
 import { getRavnoPolePilot } from "../../lib/sondi-ravno-pole-local-pilot";
+import { getNationalBoreholeIndex } from "../../lib/sondi-national-borehole-index";
 import { assessGlimAlternatives } from "@/lib/glim-alternative-assessment";
 import Link from "next/link";
 import { getVratsaDocumentedColumns } from "@/lib/vratsa-documented-columns";
@@ -759,6 +760,56 @@ const material = point.material
     point => point.material !== null
   );
 
+  // Exact official borehole observations take precedence over
+  // sampled checkpoints. Never use nearby holes as exact logs.
+  const exactNationalBorehole = getNationalBoreholeIndex().find(
+    hole =>
+      hole.origin === "NATIONAL" &&
+      hole.coordinate_status === "OFFICIAL_EXACT" &&
+      hole.latitude !== null &&
+      hole.longitude !== null &&
+      Math.abs(hole.latitude - lat) <= 0.000001 &&
+      Math.abs(hole.longitude - lng) <= 0.000001
+  );
+
+  const exactIntervalsCandidate = (
+    exactNationalBorehole?.intervals ?? []
+  )
+    .filter(interval =>
+      interval.interval_status === null &&
+      (
+        interval.evidence_level === "borehole_exact" ||
+        interval.evidence_level === "documented_borehole_log"
+      ) &&
+      interval.from_m !== null &&
+      interval.to_m !== null &&
+      Number.isFinite(interval.from_m) &&
+      Number.isFinite(interval.to_m) &&
+      interval.to_m > interval.from_m &&
+      interval.material_bg.trim().length > 0
+    )
+    .sort((a, b) =>
+      (a.from_m ?? 0) - (b.from_m ?? 0)
+    );
+
+  // Conflicting overlapping logs are not silently merged.
+  const exactIntervalsHaveOverlap =
+    exactIntervalsCandidate.some((interval, index) =>
+      index > 0 &&
+      interval.from_m! <
+        exactIntervalsCandidate[index - 1].to_m! - 0.001
+    );
+
+  const exactDocumentedIntervals =
+    exactIntervalsHaveOverlap ? [] : exactIntervalsCandidate;
+
+  const exactColumnHasGaps =
+    exactDocumentedIntervals.some((interval, index) =>
+      index > 0 &&
+      interval.from_m! >
+        exactDocumentedIntervals[index - 1].to_m! + 0.001
+    );
+
   const displayRows = hasSpecificDepthEvidence
     ? rows
     : regionalFallback
@@ -1121,7 +1172,128 @@ const material = point.material
           </section>
         )}
 
-        {displayRows.length > 0 ? (
+        {exactDocumentedIntervals.length > 0 ? (
+          <section
+            data-sondi-exact-borehole-column="true"
+            style={{
+              marginTop: 24,
+              padding: 20,
+              borderRadius: 16,
+              background: "#f3f9fb",
+              border: "1px solid #bfd7de",
+            }}
+          >
+            <h2 style={{
+              margin: "0 0 8px",
+              color: "#173f49",
+              fontSize: 21,
+            }}>
+              Действителна литоложка колонка
+            </h2>
+
+            <p style={{
+              margin: "0 0 8px",
+              lineHeight: 1.65,
+              color: "#405963",
+            }}>
+              Избраните координати съвпадат с официално
+              документиран сондаж:{" "}
+              <strong>{exactNationalBorehole?.id}</strong>.
+              Дълбочините по-долу са от оригиналното сондажно
+              описание, а не интерполация от съседни сондажи.
+            </p>
+
+            {exactColumnHasGaps && (
+              <p style={{
+                color: "#8a5b27",
+                fontSize: 13,
+                lineHeight: 1.6,
+              }}>
+                В документацията има непокрити интервали.
+                Не приемаме, че материалите са непрекъснати
+                през тези липсващи участъци.
+              </p>
+            )}
+
+            <div style={{
+              display: "grid",
+              gap: 9,
+              marginTop: 16,
+            }}>
+              {exactDocumentedIntervals.map((interval, index) => (
+                <div
+                  key={
+                    interval.from_m + ":" +
+                    interval.to_m + ":" + index
+                  }
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "minmax(110px, 135px) minmax(0, 1fr)",
+                    gap: 12,
+                    borderRadius: 11,
+                    padding: "13px 15px",
+                    background: "#fff",
+                    border: "1px solid #d9e7ea",
+                  }}
+                >
+                  <div style={{
+                    color: "#087452",
+                    fontWeight: 800,
+                    fontSize: 16,
+                  }}>
+                    {interval.from_m!.toLocaleString("bg-BG")}
+                    {"–"}
+                    {interval.to_m!.toLocaleString("bg-BG")} м
+                  </div>
+
+                  <div>
+                    <div style={{
+                      color: "#173f49",
+                      fontWeight: 750,
+                      overflowWrap: "anywhere",
+                    }}>
+                      {interval.material_bg}
+                    </div>
+
+                    {interval.stratigraphy && (
+                      <div style={{
+                        marginTop: 5,
+                        fontSize: 12,
+                        color: "#627984",
+                      }}>
+                        Геоложко означение:{" "}
+                        {interval.stratigraphy}
+                      </div>
+                    )}
+
+                    {interval.source_ids.length > 0 && (
+                      <div style={{
+                        marginTop: 6,
+                        fontSize: 12,
+                        color: "#627984",
+                        overflowWrap: "anywhere",
+                      }}>
+                        Източник:{" "}
+                        {interval.source_ids.join(", ")}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p style={{
+              margin: "14px 0 0",
+              fontSize: 13,
+              lineHeight: 1.65,
+              color: "#5e6f77",
+            }}>
+              Колонката описва геоложките материали в този
+              сондаж. Тя не доказва наличието или дебита
+              на подземна вода.
+            </p>
+          </section>
+        ) : displayRows.length > 0 ? (
           <div
             style={{
               display: "grid",
