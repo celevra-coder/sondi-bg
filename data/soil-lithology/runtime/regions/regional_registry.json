@@ -155,6 +155,13 @@
       "zone_id": "SOF-SFO55-Z01",
       "model_file": "sofia_pirdop_model.json",
       "boundary_file": "sofia_pirdop_boundary.json"
+    },
+    {
+      "id": "SOF-CITY",
+      "name_bg": "София-град (Столична община)",
+      "zone_id": "SOF-CITY-Z01",
+      "model_file": "sofia_city_model.json",
+      "boundary_file": "sofia_city_boundary.json"
     }
   ]
 }

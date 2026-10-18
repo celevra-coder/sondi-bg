@@ -739,12 +739,24 @@ const material = point.material
         }
       : null;
 
+  const isSofiaCityRegional = nationalRegionalResults.some(
+    item => item.region_id === "SOF-CITY"
+  );
+
+  // Sofia uses the actual registered lithology card, not a missing -overview card.
+  const sofiaRegionalSummary = isSofiaCityRegional
+    ? sondiRegionalCards.find(card => card.id === "SOF-CITY-lithology")?.paragraphs[0]
+      ?? sondiRegionalCards.find(card => card.id === "SOF-CITY-evidence-0")?.paragraphs[0]
+      ?? null
+    : null;
+
   const regionalFallbackRow = {
     depth: "20–500 м",
-    material: rockFamilies.length > 0 || regionalOverview
+    material: isSofiaCityRegional || rockFamilies.length > 0 || regionalOverview
       ? "Регионални геоложки варианти"
       : "Недостатъчно геоложки данни",
-    description: regionalDescription,
+    description:
+      sofiaRegionalSummary ?? regionalDescription,
     evidenceNote:
       "Сходен резултат при проверените дълбочини: " +
       checkpoints.join(", ") +
@@ -860,6 +872,13 @@ const material = point.material
     record => !localDocumentedRecords.includes(record)
   );
 
+  // SONDI_SOFIA_THREE_CARD_VIEW_V1
+  // Regional fallback only; exact borehole evidence is preserved.
+  const sofiaThreeCardView =
+    isSofiaCityRegional &&
+    regionalFallback &&
+    !hasSpecificDepthEvidence;
+
   const title =
     params.location_label?.trim() ||
     `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
@@ -928,6 +947,170 @@ const material = point.material
           локалната геоложка обстановка.
         </p>
 
+        {sofiaThreeCardView ? (
+          <div
+            data-sondi-sofia-three-cards="true"
+            style={{ display: "grid", gap: 18, marginTop: 24 }}
+          >
+            <section
+              style={{
+                padding: 22,
+                border: "1px solid #d9e7e9",
+                borderRadius: 14,
+                background: "#f8fbfa"
+              }}
+            >
+              <div style={{
+                color: "#0d8055",
+                fontSize: 16,
+                fontWeight: 800,
+                marginBottom: 9
+              }}>
+                20–500 м
+              </div>
+              <h2 style={{
+                margin: "0 0 12px",
+                fontSize: 21,
+                color: "#173f49"
+              }}>
+                Регионални геоложки варианти
+              </h2>
+              <p style={{ color: "#405a61", lineHeight: 1.7 }}>
+                За избраната точка няма доказана непрекъсната
+                литоложка колонка от 20 до 500 метра. Проучванията
+                в София показват, че в различни части на града
+                се срещат глини, пясъци, чакъли и по-стари,
+                по-твърди скали.
+              </p>
+              <p style={{
+                color: "#405a61",
+                lineHeight: 1.7,
+                marginBottom: 0
+              }}>
+                Дебелината и подредбата на тези материали
+                не са еднакви навсякъде. Данните ни помагат
+                да разберем какви пластове са възможни,
+                но не доказват точно кой материал ще се
+                срещне на дадена дълбочина под имота.
+              </p>
+            </section>
+
+            <section
+              style={{
+                padding: 22,
+                border: "1px solid #d9e7e9",
+                borderRadius: 14,
+                background: "#f8fbfa"
+              }}
+            >
+              <h2 style={{
+                margin: "0 0 12px",
+                fontSize: 21,
+                color: "#173f49"
+              }}>
+                Регионален геоложки анализ
+              </h2>
+              <p style={{ color: "#405a61", lineHeight: 1.7 }}>
+                Софийската котловина има разнообразен геоложки
+                строеж. В проучените части са описани речни
+                и други наслаги от пясъци, чакъли и глини.
+                Срещат се също по-стари седименти и твърди
+                скални комплекси, като разпространението
+                им се различава между отделните райони.
+              </p>
+              <p style={{ color: "#405a61", lineHeight: 1.7 }}>
+                Глините обикновено пропускат водата
+                по-трудно, докато пясъците и чакълите
+                могат да я пропускат по-лесно.
+                Това обаче не означава, че всеки
+                песъчлив или чакълест пласт съдържа
+                достатъчно подземна вода.
+              </p>
+              <p style={{
+                color: "#405a61",
+                lineHeight: 1.7,
+                marginBottom: 0
+              }}>
+                При сондиране е възможно да се премине
+                през материали с различна твърдост.
+                Наличните карти и регионални проучвания
+                дават полезна представа за условията,
+                но точните граници между пластовете
+                зависят от конкретното място.
+              </p>
+            </section>
+
+            <section
+              style={{
+                padding: 22,
+                border: "1px solid #d9e7e9",
+                borderRadius: 14,
+                background: "#f8fbfa"
+              }}
+            >
+              <h2 style={{
+                margin: "0 0 12px",
+                fontSize: 21,
+                color: "#173f49"
+              }}>
+                По-широк регионален геоложки анализ
+              </h2>
+              <p style={{ color: "#405a61", lineHeight: 1.7 }}>
+                Документираните сондажи в различни части
+                на София ни позволяват да сравним
+                геоложкия строеж на отделни райони.
+                Някои от тези проучвания достигат
+                на повече от 500 метра дълбочина.
+              </p>
+              {sondiWiderStudies.map(study => (
+                <div
+                  key={study.id}
+                  style={{
+                    marginTop: 15,
+                    paddingTop: 13,
+                    borderTop: "1px solid #d9e7e9"
+                  }}
+                >
+                  <h3 style={{
+                    margin: "0 0 8px",
+                    fontSize: 16,
+                    color: "#173f49"
+                  }}>
+                    {study.title}
+                  </h3>
+                  {study.paragraphs.slice(0, 3).map(
+                    (paragraph, index) => (
+                      <p
+                        key={index}
+                        style={{
+                          margin: "0 0 9px",
+                          color: "#405a61",
+                          lineHeight: 1.65
+                        }}
+                      >
+                        {paragraph}
+                      </p>
+                    )
+                  )}
+                </div>
+              ))}
+              <p style={{
+                margin: "17px 0 0",
+                color: "#587179",
+                lineHeight: 1.65
+              }}>
+                <strong>Общ извод:</strong> Разликите между
+                проучените места показват защо не е
+                правилно една сондажна колонка да се
+                приема за цяла София. Сравнителните
+                данни разширяват представата ни за
+                геологията, но не доказват същата
+                последователност под избраната точка.
+              </p>
+            </section>
+          </div>
+        ) : (
+          <>
         {showNeighbourContactContext && (
           <section
             data-sondi-national-contact-context="true"
@@ -1422,6 +1605,11 @@ const material = point.material
                 {profile.target_glim_surface_context.detail_bg}
               </p>
             )}
+            {sofiaRegionalSummary && (
+              <p style={{ color: "#405a61", fontSize: 13, lineHeight: 1.65 }}>
+                {sofiaRegionalSummary}
+              </p>
+            )}
             <p style={{ color: "#657c80", fontSize: 13 }}>
               Ориентировъчна информация за общия тип скали в района.
               Точната последователност на пластовете в дълбочина
@@ -1799,6 +1987,9 @@ return (
           )}
         {/* MARICHIN_LOCAL_EVIDENCE_END */}
 
+
+          </>
+        )}
 
         <div
           style={{

@@ -19,7 +19,7 @@
     "Пазарджик",
     "Пловдив"
   ],
-  "borehole_count": 82,
+  "borehole_count": 98,
   "boreholes": [
     {
       "borehole_id": "PLD-Z037",
@@ -9685,6 +9685,2722 @@
         "spatial_transfer_approved": false,
         "water_inflows_inferred": false
       }
+    },
+    {
+      "borehole_id": "SOF-CITY-NADEZHDA-C6HG",
+      "name_bg": "Сондаж № С-6хг — София–Надежда",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 640,
+      "coordinates": {
+        "latitude": 42.72858666666667,
+        "longitude": 23.308435,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "Sofia_Municipality_2021_hydrogeological_project",
+        "source_ids": [
+          "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+        ],
+        "source_url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2Fmineralni+vodi%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%A1%D0%9E%D0%97-+%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D0%B8%D1%89%D0%B5+%D0%A1%D0%BE%D1%84%D0%B8%D1%8F-%D0%9D%D0%B0%D0%B4%D0%B5%D0%B6%D0%B4%D0%B0.pdf"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 10.7,
+          "expected_material_bg": "Черни песъчливи глини",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 10.7,
+          "depth_to_m": 45,
+          "expected_material_bg": "Светлокафяви глини с прослойки от пясъци",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 45,
+          "depth_to_m": 84,
+          "expected_material_bg": "Дребнозърнести бежови пясъци с прослойки от глини",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 84,
+          "depth_to_m": 93.2,
+          "expected_material_bg": "Светлокафяви глини с белезникаво-сиви петна",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 93.2,
+          "depth_to_m": 113.8,
+          "expected_material_bg": "Сиви песъчливи глини с прослойки от пясъци",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 113.8,
+          "depth_to_m": 137.2,
+          "expected_material_bg": "Дребнозърнести пясъци с прослойки от глини",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 137.2,
+          "depth_to_m": 167,
+          "expected_material_bg": "Масленозелени глини с прослойки от пясъци",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 167,
+          "depth_to_m": 169,
+          "expected_material_bg": "Дребнозърнести пясъци",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 169,
+          "depth_to_m": 200.5,
+          "expected_material_bg": "Плътни сиви глини",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 200.5,
+          "depth_to_m": 312,
+          "expected_material_bg": "Сиво-зелени песъчливи глини с прослойки от глини с овъглени частици и пясъци",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 312,
+          "depth_to_m": 410,
+          "expected_material_bg": "Плътни сиви глини; документирана прослойка от пясъчник около 399 м, с неясно отпечатана мощност",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 410,
+          "depth_to_m": 430,
+          "expected_material_bg": "Пясъци с прослойки от глини",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 430,
+          "depth_to_m": 437,
+          "expected_material_bg": "Плътни глини; лигнитни въглища на 435–437 м",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 437,
+          "depth_to_m": 445.1,
+          "expected_material_bg": "Сиви песъчливи глини",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 445.1,
+          "depth_to_m": 481.6,
+          "expected_material_bg": "Плътни сиви глини; лигнитни въглища на 465–467 м",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 481.6,
+          "depth_to_m": 489,
+          "expected_material_bg": "Плътни глини",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 489,
+          "depth_to_m": 492,
+          "expected_material_bg": "Лигнитни въглища",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 492,
+          "depth_to_m": 498.5,
+          "expected_material_bg": "Плътни глини",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 498.5,
+          "depth_to_m": 508,
+          "expected_material_bg": "Лигнитни въглища",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 508,
+          "depth_to_m": 510,
+          "expected_material_bg": "Плътни глини",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 510,
+          "depth_to_m": 514.4,
+          "expected_material_bg": "Плътни глини",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 514.4,
+          "depth_to_m": 520,
+          "expected_material_bg": "Тектонски обработени мергели",
+          "stratigraphy": "K2s",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 520,
+          "depth_to_m": 558,
+          "expected_material_bg": "Кафяви напукани мергели; силно напукани на 544,8–558 м",
+          "stratigraphy": "K2s",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 558,
+          "depth_to_m": 591,
+          "expected_material_bg": "Сиво-зелени мергели с прослойки от кварцити; силно напукани на 568–584 м",
+          "stratigraphy": "K2s",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 591,
+          "depth_to_m": 617.6,
+          "expected_material_bg": "Пясъчник, кварцитизован до 597,7 м; по-надолу местни брекчии и вторични отложения по пукнатините",
+          "stratigraphy": "K2s",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 617.6,
+          "depth_to_m": 640,
+          "expected_material_bg": "Тъмносиви финозърнести кварцитизовани пясъчници с карбонатни прожилки; силно напукани, след 630 м по-слабо напукани",
+          "stratigraphy": "K2s",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "evidence_level_original": "documented_borehole_log",
+          "evidence_level_normalization": "PRESERVED",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [
+        {
+          "depth_from_m": 544.8,
+          "depth_to_m": 558,
+          "description_bg": "Силно напукани мергели",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        },
+        {
+          "depth_from_m": 568,
+          "depth_to_m": 584,
+          "description_bg": "Силно напукани мергели",
+          "source_ids": [
+            "SOF-CITY-NADEZHDA-C6HG-LITH-2021"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "document_pages": "9–10",
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false,
+        "lithology_only": true,
+        "notes": "Термалните данни и данните за дебит се анализират отделно. За прослойката около 399 м мощността не е еднозначно разчетена от публикувания текст."
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-LOZENETS-C2HG",
+      "name_bg": "Сондаж № С-2хг — София–Лозенец",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 296.9,
+      "coordinates": {
+        "latitude": 42.6810586111,
+        "longitude": 23.3232455556,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "Sofia_Municipality_SOZ_Lozenets_2021",
+        "source_ids": [
+          "SOF-CITY-LOZENETS-SOZ-2021"
+        ],
+        "source_url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2Fmineralni+vodi%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%A1%D0%9E%D0%97-%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D0%B8%D1%89%D0%B5+%D0%A1%D0%BE%D1%84%D0%B8%D1%8F-%D0%9B%D0%BE%D0%B7%D0%B5%D0%BD%D0%B5%D1%86.pdf"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 1.5,
+          "expected_material_bg": "Почвен слой",
+          "stratigraphy": "Q",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 1.5,
+          "depth_to_m": 20.7,
+          "expected_material_bg": "Чакъли с глинест запълнител",
+          "stratigraphy": "Q",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 20.7,
+          "depth_to_m": 30.4,
+          "expected_material_bg": "Слабо песъчливи глини",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 30.4,
+          "depth_to_m": 35.5,
+          "expected_material_bg": "Заглинени пясъци",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 35.5,
+          "depth_to_m": 50.5,
+          "expected_material_bg": "Чакъли с песъчливо-глинест запълнител",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 50.5,
+          "depth_to_m": 56,
+          "expected_material_bg": "Песъчливи глини",
+          "stratigraphy": "N",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 56,
+          "depth_to_m": 174,
+          "expected_material_bg": "Редуване на пясъци, глини и песъчливи глини",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 174,
+          "depth_to_m": 181.2,
+          "expected_material_bg": "Слабоспоен конгломерат",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 181.2,
+          "depth_to_m": 195,
+          "expected_material_bg": "Варовити пясъчници",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 195,
+          "depth_to_m": 207.4,
+          "expected_material_bg": "Редуване на варовити и туфозни пясъчници",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 207.4,
+          "depth_to_m": 294.5,
+          "expected_material_bg": "Мергели",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 294.5,
+          "depth_to_m": 296.9,
+          "expected_material_bg": "Варовити пясъчници",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "document_page": 12,
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-LOZENETS-C8HG",
+      "name_bg": "Сондаж № С-8хг — София–Лозенец",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 284,
+      "coordinates": {
+        "latitude": 42.6842388889,
+        "longitude": 23.325085,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "Sofia_Municipality_SOZ_Lozenets_2021",
+        "source_ids": [
+          "SOF-CITY-LOZENETS-SOZ-2021"
+        ],
+        "source_url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2Fmineralni+vodi%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%A1%D0%9E%D0%97-%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D0%B8%D1%89%D0%B5+%D0%A1%D0%BE%D1%84%D0%B8%D1%8F-%D0%9B%D0%BE%D0%B7%D0%B5%D0%BD%D0%B5%D1%86.pdf"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 13.3,
+          "expected_material_bg": "Чакъли с песъчливо-глинест запълнител",
+          "stratigraphy": "Q",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 13.3,
+          "depth_to_m": 19.3,
+          "expected_material_bg": "Неустановен материал — безядков интервал",
+          "stratigraphy": "N2",
+          "interval_status": "UNRESOLVED_NO_CORE",
+          "confidence": "unresolved",
+          "evidence_level": "unresolved_no_core",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 19.3,
+          "depth_to_m": 64,
+          "expected_material_bg": "Плътни песъчливи глини",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 64,
+          "depth_to_m": 78.7,
+          "expected_material_bg": "Алевролитови глини",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 88,
+          "depth_to_m": 110.6,
+          "expected_material_bg": "Редуване на алевролитови глини с тинести пясъци",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 110.6,
+          "depth_to_m": 135,
+          "expected_material_bg": "Уплътнени глинести пясъци",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 135,
+          "depth_to_m": 207.8,
+          "expected_material_bg": "Редуване на песъчливи глини с глинести пясъци; въглищни чернилки",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 207.8,
+          "depth_to_m": 284,
+          "expected_material_bg": "Силно напукани глинесто-варовити туфи",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        }
+      ],
+      "source_gaps": [
+        {
+          "depth_from_m": 78.7,
+          "depth_to_m": 88,
+          "reason": "Интервалът липсва в публикуваното описание"
+        },
+        {
+          "depth_from_m": 13.3,
+          "depth_to_m": 19.3,
+          "reason": "Безядков интервал; литологията е неизвестна"
+        }
+      ],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "document_page": 14,
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-LOZENETS-C35HG",
+      "name_bg": "Сондаж № С-35хг — София–Лозенец",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 543.3,
+      "coordinates": {
+        "latitude": 42.6847944444,
+        "longitude": 23.3267494444,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "Sofia_Municipality_SOZ_Lozenets_2021",
+        "source_ids": [
+          "SOF-CITY-LOZENETS-SOZ-2021"
+        ],
+        "source_url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2Fmineralni+vodi%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%A1%D0%9E%D0%97-%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D0%B8%D1%89%D0%B5+%D0%A1%D0%BE%D1%84%D0%B8%D1%8F-%D0%9B%D0%BE%D0%B7%D0%B5%D0%BD%D0%B5%D1%86.pdf"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 4.5,
+          "expected_material_bg": "Насип от чакъл и пясък; почвен слой",
+          "stratigraphy": "Q",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 4.5,
+          "depth_to_m": 45,
+          "expected_material_bg": "Редуване на аргилити и алевролити с прослойки от пясък",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 45,
+          "depth_to_m": 255,
+          "expected_material_bg": "Глини, алевролити и прослойки от пясъчник",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 255,
+          "depth_to_m": 524,
+          "expected_material_bg": "Кварцдиорити, на места силно натрошени",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 524,
+          "depth_to_m": 543.3,
+          "expected_material_bg": "Тъмносиви напукани мергели",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "document_page": 16,
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-LOZENETS-C7HG",
+      "name_bg": "Сондаж № С-7хг — София–Лозенец",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 218.3,
+      "coordinates": {
+        "latitude": 42.6844513889,
+        "longitude": 23.3257277778,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "Sofia_Municipality_SOZ_Lozenets_2021",
+        "source_ids": [
+          "SOF-CITY-LOZENETS-SOZ-2021"
+        ],
+        "source_url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2Fmineralni+vodi%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%A1%D0%9E%D0%97-%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D0%B8%D1%89%D0%B5+%D0%A1%D0%BE%D1%84%D0%B8%D1%8F-%D0%9B%D0%BE%D0%B7%D0%B5%D0%BD%D0%B5%D1%86.pdf"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 5.1,
+          "expected_material_bg": "Антропогенен слой",
+          "stratigraphy": "Q",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 5.1,
+          "depth_to_m": 10.3,
+          "expected_material_bg": "Чакъли с глинест запълнител",
+          "stratigraphy": "Q",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 10.3,
+          "depth_to_m": 62,
+          "expected_material_bg": "Сиво-зелени песъчливи глини",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 62,
+          "depth_to_m": 81,
+          "expected_material_bg": "Алевролити с прослойки от финозърнест пясък",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 81,
+          "depth_to_m": 102.6,
+          "expected_material_bg": "Финозърнест пясъчник",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 102.6,
+          "depth_to_m": 127.4,
+          "expected_material_bg": "Песъчливи глини",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 127.4,
+          "depth_to_m": 139.7,
+          "expected_material_bg": "Пясъци с тинести прослойки",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 139.7,
+          "depth_to_m": 153,
+          "expected_material_bg": "Редуване на алевролити и пясъци",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 153,
+          "depth_to_m": 218.3,
+          "expected_material_bg": "Сиво-зелени до черни песъчливи глини, богати на въглища",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [
+        {
+          "depth_from_m": 202.5,
+          "depth_to_m": 218.3,
+          "description_bg": "Тектонска зона след 202,5 м; долната граница не е установена отделно",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "document_page": 19,
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-LOZENETS-WELL2",
+      "name_bg": "Кладенец № 2 — София–Лозенец",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 229.4,
+      "coordinates": {
+        "latitude": 42.68451,
+        "longitude": 23.3259016667,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "Sofia_Municipality_SOZ_Lozenets_2021",
+        "source_ids": [
+          "SOF-CITY-LOZENETS-SOZ-2021"
+        ],
+        "source_url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2Fmineralni+vodi%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%A1%D0%9E%D0%97-%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D0%B8%D1%89%D0%B5+%D0%A1%D0%BE%D1%84%D0%B8%D1%8F-%D0%9B%D0%BE%D0%B7%D0%B5%D0%BD%D0%B5%D1%86.pdf"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 12,
+          "expected_material_bg": "Чакъли с песъчливо-глинест запълнител и пясъци",
+          "stratigraphy": "Q",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 12,
+          "depth_to_m": 62,
+          "expected_material_bg": "Сиво-зелени песъчливи глини",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 62,
+          "depth_to_m": 182,
+          "expected_material_bg": "Алевролити, аргилити и прослойки от финозърнести пясъци",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        },
+        {
+          "depth_from_m": 182,
+          "depth_to_m": 229.4,
+          "expected_material_bg": "Песъчливи глини с тънки пясъчни пластове",
+          "stratigraphy": "N2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-LOZENETS-SOZ-2021"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "document_page": 20,
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-OVCHA-C1HG",
+      "name_bg": "Сондаж № 1хг — Овча купел",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_lithology_pending_geolocation",
+      "total_depth_m": 901.2,
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "SOURCE_COORDINATE_CONFLICT",
+        "evidence_level": "not_verified",
+        "origin": "Sofia_Municipality_SOZ_2018",
+        "source_ids": [
+          "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+        ],
+        "source_url": "https://nag.sofia.bg/Pages/Render/773"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 14.5,
+          "expected_material_bg": "Чакъли, пясъци и глини, алувий",
+          "stratigraphy": "Q",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 14.5,
+          "depth_to_m": 42,
+          "expected_material_bg": "Сива песъчлива глина",
+          "stratigraphy": "N",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 42,
+          "depth_to_m": 83,
+          "expected_material_bg": "Сив до ръждивожълт глинест пясък с чакъл",
+          "stratigraphy": "N",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 83,
+          "depth_to_m": 116,
+          "expected_material_bg": "Плътна песъчлива глина с прослойки от глинест пясък",
+          "stratigraphy": "N",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 116,
+          "depth_to_m": 140,
+          "expected_material_bg": "Слабопрекристализирал ръждивочервен варовик",
+          "stratigraphy": "T2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 140,
+          "depth_to_m": 430,
+          "expected_material_bg": "Плътни доломити, местно прекристализирали, тектонски преработени и кавернозни",
+          "stratigraphy": "T2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 430,
+          "depth_to_m": 575.6,
+          "expected_material_bg": "Варовици, местно доломитизирани и прекристализирали",
+          "stratigraphy": "T2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 575.6,
+          "depth_to_m": 656,
+          "expected_material_bg": "Кварцови алевритови пясъчници с прослойки от алевролити",
+          "stratigraphy": "T1",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 656,
+          "depth_to_m": 766,
+          "expected_material_bg": "Светлорозови среднозърнести гранодиорити",
+          "stratigraphy": "K2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 766,
+          "depth_to_m": 784,
+          "expected_material_bg": "Тектонска зона от сиво-зелена тектонска глина",
+          "stratigraphy": "K2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 784,
+          "depth_to_m": 843,
+          "expected_material_bg": "Гранодиорити, първоначално силно променени",
+          "stratigraphy": "K2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 843,
+          "depth_to_m": 901.2,
+          "expected_material_bg": "Метаморфозирали вулкански скали от андезитов тип",
+          "stratigraphy": "K2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [
+        {
+          "depth_from_m": 766,
+          "depth_to_m": 784,
+          "description_bg": "Тектонска зона",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false,
+        "geolocation_pending": true,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-OVCHA-MC1VKP",
+      "name_bg": "Сондаж № МС-1ВКП — Овча купел",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 310,
+      "coordinates": {
+        "latitude": 42.677617898241266,
+        "longitude": 23.267806326502466,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_crossverified_coordinate",
+        "origin": "Sofia_Municipality_SOZ_2018_BGS2005",
+        "source_ids": [
+          "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+        ],
+        "source_url": "https://nag.sofia.bg/Pages/Render/773",
+        "bgs2005_crs": "EPSG:7799",
+        "bgs2005_northing_m": 4727509.243,
+        "bgs2005_easting_m": 685812.604,
+        "coordinate_verification": "BGS2005 converted to WGS84 and cross-checked against source DMS with apparent latitude degree typo 43 corrected to 42; discrepancy 0.76 m."
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 5.3,
+          "expected_material_bg": "Валуни и чакъли с глинесто-песъчлив запълнител",
+          "stratigraphy": "Q",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 5.3,
+          "depth_to_m": 62.5,
+          "expected_material_bg": "Редуване на глини и пясъци",
+          "stratigraphy": "N",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 62.5,
+          "depth_to_m": 134,
+          "expected_material_bg": "Мергелни варовици",
+          "stratigraphy": "T2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 134,
+          "depth_to_m": 162,
+          "expected_material_bg": "Жълти мергелни варовици",
+          "stratigraphy": "T2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 162,
+          "depth_to_m": 192,
+          "expected_material_bg": "Сиви брекчоконгломерати с бяла калцитна спойка",
+          "stratigraphy": "T2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 192,
+          "depth_to_m": 310,
+          "expected_material_bg": "Сиви доломити с бели калцитни жили",
+          "stratigraphy": "T2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false,
+        "geolocation_pending": false,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-OVCHA-C5HG",
+      "name_bg": "Сондаж № 5хг — Овча купел",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 491,
+      "coordinates": {
+        "latitude": 42.68272478250809,
+        "longitude": 23.269978058294306,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_crossverified_coordinate",
+        "origin": "Sofia_Municipality_SOZ_2018_BGS2005",
+        "source_ids": [
+          "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+        ],
+        "source_url": "https://nag.sofia.bg/Pages/Render/773",
+        "bgs2005_crs": "EPSG:7799",
+        "bgs2005_northing_m": 4728081.138,
+        "bgs2005_easting_m": 685975.313,
+        "coordinate_verification": "BGS2005 converted to WGS84 and cross-checked against source DMS with apparent latitude degree typo 43 corrected to 42; discrepancy 0.56 m."
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 2,
+          "expected_material_bg": "Почвен слой",
+          "stratigraphy": "Q",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 2,
+          "depth_to_m": 78.2,
+          "expected_material_bg": "Редуване на глини, пясъци и валуни",
+          "stratigraphy": "Q",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 78.2,
+          "depth_to_m": 230,
+          "expected_material_bg": "Глини и чакълесто-песъчливи глини с пясъци",
+          "stratigraphy": "N",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 230,
+          "depth_to_m": 309,
+          "expected_material_bg": "Силно напукани варовици",
+          "stratigraphy": "T2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 309,
+          "depth_to_m": 324.1,
+          "expected_material_bg": "Андезити",
+          "stratigraphy": "K2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 324.1,
+          "depth_to_m": 371,
+          "expected_material_bg": "Милонитизирана зона, литоложки състав неуточнен",
+          "stratigraphy": "K2",
+          "interval_status": "UNRESOLVED_LITHOLOGY",
+          "confidence": "unresolved",
+          "evidence_level": "documented_structural_zone",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        },
+        {
+          "depth_from_m": 371,
+          "depth_to_m": 491,
+          "expected_material_bg": "Силно напукани андезити",
+          "stratigraphy": "K2",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [
+        {
+          "depth_from_m": 324.1,
+          "depth_to_m": 371,
+          "description_bg": "Милонитизирана зона",
+          "source_ids": [
+            "SOF-CITY-OVCHA-KUPEL-SOZ-2018"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false,
+        "geolocation_pending": false,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-CENTER-C3HG",
+      "name_bg": "Сондаж № 3хг — София–Център",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_lithology_pending_geolocation",
+      "total_depth_m": 490.7,
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "COORDINATES_PENDING_VERIFICATION",
+        "evidence_level": "not_verified",
+        "origin": "Sofia_Municipality_graphical_column",
+        "source_ids": [
+          "SOF-CITY-CENTER-C3HG-COLUMN"
+        ],
+        "source_url": "https://nag.sofia.bg/Pages/Render/773"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 5,
+          "expected_material_bg": "Културен слой",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-CENTER-C3HG-COLUMN"
+          ]
+        },
+        {
+          "depth_from_m": 5,
+          "depth_to_m": 28.5,
+          "expected_material_bg": "Песъчливи глини, пясъци, чакъли и валуни",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-CENTER-C3HG-COLUMN"
+          ]
+        },
+        {
+          "depth_from_m": 28.5,
+          "depth_to_m": 51.8,
+          "expected_material_bg": "Плътни песъчливи глини",
+          "stratigraphy": "Pl",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-CENTER-C3HG-COLUMN"
+          ]
+        },
+        {
+          "depth_from_m": 51.8,
+          "depth_to_m": 124,
+          "expected_material_bg": "Мергели",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-CENTER-C3HG-COLUMN"
+          ]
+        },
+        {
+          "depth_from_m": 124,
+          "depth_to_m": 176,
+          "expected_material_bg": "Пясъчници",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-CENTER-C3HG-COLUMN"
+          ]
+        },
+        {
+          "depth_from_m": 176,
+          "depth_to_m": 439.8,
+          "expected_material_bg": "Редуване на мергели и пясъчници",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-CENTER-C3HG-COLUMN"
+          ]
+        },
+        {
+          "depth_from_m": 439.8,
+          "depth_to_m": 445.1,
+          "expected_material_bg": "Милонитна зона — тектонски нарушени скали",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-CENTER-C3HG-COLUMN"
+          ]
+        },
+        {
+          "depth_from_m": 445.1,
+          "depth_to_m": 484.1,
+          "expected_material_bg": "Мергели и пясъчници",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-CENTER-C3HG-COLUMN"
+          ]
+        }
+      ],
+      "source_gaps": [
+        {
+          "depth_from_m": 484.1,
+          "depth_to_m": 490.7,
+          "reason": "Долният участък изисква проверка на оригиналната графична колонка"
+        }
+      ],
+      "source_overlaps": [],
+      "structural_intervals": [
+        {
+          "depth_from_m": 439.8,
+          "depth_to_m": 445.1,
+          "description_bg": "Милонитна зона",
+          "source_ids": [
+            "SOF-CITY-CENTER-C3HG-COLUMN"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false,
+        "geolocation_pending": true,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-BATALOVA-C6HG",
+      "name_bg": "Сондаж № С-6хг — София–Баталова воденица",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 569.8,
+      "coordinates": {
+        "latitude": 42.69497221030227,
+        "longitude": 23.305161081684147,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_projected_coordinate_transformed",
+        "origin": "MOEW_order_RD-775_2020",
+        "source_ids": [
+          "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+        ],
+        "source_url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2FOBIAVLENIE+BATALOVA+VODENICA%2F%D0%9F%D1%80.3-%D0%A5%D0%93%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D0%B0+%D0%B8+%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D1%8F+%D0%BD%D0%B0+%D1%81%D0%BE%D0%BD%D0%B4%D0%B0%D0%B6+6%D1%85%D0%B3.jpg",
+        "bgs2005_crs": "EPSG:7801",
+        "bgs2005_northing_m": 4731168.639,
+        "bgs2005_easting_m": 320180.283,
+        "coordinate_verification": "EPSG:7801 BGS2005 CCS2005 to WGS84 EPSG:4326; source park Vazrazhdane, parcel 68134.305.82; source WGS84 DMS table is inconsistent and not used"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 6.9,
+          "expected_material_bg": "Културен слой",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 6.9,
+          "depth_to_m": 11.8,
+          "expected_material_bg": "Валуни",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 11.8,
+          "depth_to_m": 100,
+          "expected_material_bg": "Глини–мергели",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 100,
+          "depth_to_m": 102,
+          "expected_material_bg": "Пясък",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 102,
+          "depth_to_m": 128,
+          "expected_material_bg": "Глини–мергели",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 128,
+          "depth_to_m": 160,
+          "expected_material_bg": "Пясък",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 160,
+          "depth_to_m": 184,
+          "expected_material_bg": "Глини–мергели",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 184,
+          "depth_to_m": 192,
+          "expected_material_bg": "Пясък",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 192,
+          "depth_to_m": 237,
+          "expected_material_bg": "Глини–мергели",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 237,
+          "depth_to_m": 243,
+          "expected_material_bg": "Пясък",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 243,
+          "depth_to_m": 287,
+          "expected_material_bg": "Глини–мергели",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 287,
+          "depth_to_m": 289,
+          "expected_material_bg": "Пясък",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 289,
+          "depth_to_m": 308,
+          "expected_material_bg": "Глини–мергели",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 308,
+          "depth_to_m": 312,
+          "expected_material_bg": "Пясък",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 312,
+          "depth_to_m": 327.6,
+          "expected_material_bg": "Глини–мергели",
+          "stratigraphy": "N",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 327.6,
+          "depth_to_m": 363,
+          "expected_material_bg": "Андезити — слабо напукани",
+          "stratigraphy": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 363,
+          "depth_to_m": 433,
+          "expected_material_bg": "Андезити — силно напукани",
+          "stratigraphy": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 433,
+          "depth_to_m": 569.8,
+          "expected_material_bg": "Андезити — много силно напукани",
+          "stratigraphy": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [
+        {
+          "depth_from_m": 327.6,
+          "depth_to_m": 363,
+          "description_bg": "Андезити — слабо напукани",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 363,
+          "depth_to_m": 433,
+          "description_bg": "Андезити — силно напукани",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        },
+        {
+          "depth_from_m": 433,
+          "depth_to_m": 569.8,
+          "description_bg": "Андезити — много силно напукани",
+          "source_ids": [
+            "SOF-CITY-BATALOVA-C6HG-COLUMN-1970"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "original_logged_depth_m": 569.8,
+        "later_reported_depth_m": 640,
+        "later_depth_lithology_documented": false,
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false,
+        "geolocation_pending": false,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-GORNA-BANYA-C1",
+      "name_bg": "Сондаж №1 — София–Горна баня",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_lithology_pending_geolocation",
+      "total_depth_m": 200.05,
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "COORDINATES_PENDING_VERIFICATION",
+        "evidence_level": "not_verified",
+        "origin": "Sofia_Gorna_Banya_SOZ_2016",
+        "source_ids": [
+          "SOF-CITY-GORNA-BANYA-SOZ-2016"
+        ],
+        "source_url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2FOBIAVLENIE+GORNA+BANIA%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%B7%D0%B0+%D0%A1%D0%9E%D0%97+%D0%9D%D0%9C%D0%92+%D0%93%D0%BE%D1%80%D0%BD%D0%B0+%D0%B1%D0%B0%D0%BD%D1%8F.pdf"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 5.2,
+          "expected_material_bg": "Горнобански чакъли с глинест запълнител",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-GORNA-BANYA-SOZ-2016"
+          ]
+        },
+        {
+          "depth_from_m": 5.2,
+          "depth_to_m": 73.25,
+          "expected_material_bg": "Жълтокафяви песъчливи глини и глини с прослойки от глинести пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-GORNA-BANYA-SOZ-2016"
+          ]
+        },
+        {
+          "depth_from_m": 73.25,
+          "depth_to_m": 200.05,
+          "expected_material_bg": "Андезити с прослойки и пачки от мергели с мощност 0,5–10 м",
+          "stratigraphy": "K2s",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-GORNA-BANYA-SOZ-2016"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "document_pages": "PDF 11–12",
+        "historical_location_description": "85 м западно от минералната баня; координати непотвърдени",
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "geolocation_pending": true,
+        "water_inflows_inferred": false,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-GORNA-BANYA-C2",
+      "name_bg": "Сондаж №2 — София–Горна баня",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_lithology_pending_geolocation",
+      "total_depth_m": 300,
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "COORDINATES_PENDING_VERIFICATION",
+        "evidence_level": "not_verified",
+        "origin": "Sofia_Gorna_Banya_SOZ_2016",
+        "source_ids": [
+          "SOF-CITY-GORNA-BANYA-SOZ-2016"
+        ],
+        "source_url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2FOBIAVLENIE+GORNA+BANIA%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%B7%D0%B0+%D0%A1%D0%9E%D0%97+%D0%9D%D0%9C%D0%92+%D0%93%D0%BE%D1%80%D0%BD%D0%B0+%D0%B1%D0%B0%D0%BD%D1%8F.pdf"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 4.6,
+          "expected_material_bg": "Горнобански чакъли с глинест запълнител",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-GORNA-BANYA-SOZ-2016"
+          ]
+        },
+        {
+          "depth_from_m": 4.6,
+          "depth_to_m": 53.2,
+          "expected_material_bg": "Песъчливи глини, на места с дребни чакъли",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-GORNA-BANYA-SOZ-2016"
+          ]
+        },
+        {
+          "depth_from_m": 53.25,
+          "depth_to_m": 300,
+          "expected_material_bg": "Андезити и брекчоандезити",
+          "stratigraphy": "K2s",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-GORNA-BANYA-SOZ-2016"
+          ]
+        }
+      ],
+      "source_gaps": [
+        {
+          "depth_from_m": 53.2,
+          "depth_to_m": 53.25,
+          "reason": "Неописани 0,05 м между отпечатаните граници"
+        }
+      ],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "document_pages": "PDF 11–12",
+        "historical_location_description": "10 м северно от Банския каптаж; координати непотвърдени",
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "geolocation_pending": true,
+        "water_inflows_inferred": false,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-GORNA-BANYA-C3",
+      "name_bg": "Сондаж №3 — София–Горна баня",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_lithology_pending_geolocation",
+      "total_depth_m": 425.6,
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "COORDINATES_PENDING_VERIFICATION",
+        "evidence_level": "not_verified",
+        "origin": "Sofia_Gorna_Banya_SOZ_2016",
+        "source_ids": [
+          "SOF-CITY-GORNA-BANYA-SOZ-2016"
+        ],
+        "source_url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2FOBIAVLENIE+GORNA+BANIA%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%B7%D0%B0+%D0%A1%D0%9E%D0%97+%D0%9D%D0%9C%D0%92+%D0%93%D0%BE%D1%80%D0%BD%D0%B0+%D0%B1%D0%B0%D0%BD%D1%8F.pdf"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 14.5,
+          "expected_material_bg": "Горнобански чакъли и валуни от червен пясъчник с песъчлив и глинест запълнител",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-GORNA-BANYA-SOZ-2016"
+          ]
+        },
+        {
+          "depth_from_m": 14.5,
+          "depth_to_m": 243,
+          "expected_material_bg": "Жълти, кафяви и сиви песъчливи глини, глини и глини с чакъли",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-GORNA-BANYA-SOZ-2016"
+          ]
+        },
+        {
+          "depth_from_m": 243,
+          "depth_to_m": 425.6,
+          "expected_material_bg": "Андезити и брекчоандезити с бели и розови калцитни жили",
+          "stratigraphy": "K2s",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-GORNA-BANYA-SOZ-2016"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "document_pages": "PDF 11–12",
+        "historical_location_description": "570 м източно от главния минерален извор; координати непотвърдени",
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "geolocation_pending": true,
+        "water_inflows_inferred": false,
+        "mineral_thermal_analysis": "SEPARATE"
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-KNYAZHEVO-C1HG",
+      "name_bg": "Сондаж № С-1хг — София–Княжево",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 481,
+      "coordinates": {
+        "latitude": 42.6574444444,
+        "longitude": 23.2360555556,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "Sofia_Knyazhevo_SOZ_2015_table1_WGS84",
+        "source_ids": [
+          "SOF-CITY-KNYAZHEVO-SOZ-2015"
+        ],
+        "source_url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2Fmineralni+vodi%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%B7%D0%B0+%D0%A1%D0%9E%D0%97+%D0%9D%D0%9C%D0%92+%D0%9A%D0%BD%D1%8F%D0%B6%D0%B5%D0%B2%D0%BE_compressed.pdf"
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 21,
+          "expected_material_bg": "Валуни с чакълесто-песъчлив запълнител",
+          "stratigraphy": "Q",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 21,
+          "depth_to_m": 26,
+          "expected_material_bg": "Андезит",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 26,
+          "depth_to_m": 51.6,
+          "expected_material_bg": "Кристалокластичен андезитов туф",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 51.6,
+          "depth_to_m": 66.1,
+          "expected_material_bg": "Милонитизиран андезитов туф",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 66.1,
+          "depth_to_m": 75,
+          "expected_material_bg": "Литокластичен андезитов туф",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 75,
+          "depth_to_m": 116,
+          "expected_material_bg": "Андезит с миндална, порфирна до субпорфирна структура",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 116,
+          "depth_to_m": 225,
+          "expected_material_bg": "Литокластичен андезитов туф, тектонски преработен на места",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 225,
+          "depth_to_m": 245.5,
+          "expected_material_bg": "Тъмносивозелен порфирен до гломеропорфирен андезит",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 245.5,
+          "depth_to_m": 259.3,
+          "expected_material_bg": "Милонитна зона; точен първичен материал неустановен",
+          "stratigraphy": "K2s",
+          "interval_status": "UNRESOLVED_STRUCTURAL_ZONE",
+          "confidence": "unresolved",
+          "evidence_level": "documented_structural_zone",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 259.3,
+          "depth_to_m": 306,
+          "expected_material_bg": "Променен тъмносивозелен порфирен андезит",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 306,
+          "depth_to_m": 408,
+          "expected_material_bg": "Силно променен литокластичен андезитов туф",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 408,
+          "depth_to_m": 425,
+          "expected_material_bg": "Тектонски нарушена зона; точен първичен материал неустановен",
+          "stratigraphy": "K2s",
+          "interval_status": "UNRESOLVED_STRUCTURAL_ZONE",
+          "confidence": "unresolved",
+          "evidence_level": "documented_structural_zone",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 425,
+          "depth_to_m": 481,
+          "expected_material_bg": "Силно променен, епидотизиран и зеолитизиран андезит",
+          "stratigraphy": "K2s",
+          "interval_status": null,
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [
+        {
+          "depth_from_m": 51.6,
+          "depth_to_m": 66.1,
+          "description_bg": "Милонитизиран туф",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 114,
+          "depth_to_m": 116,
+          "description_bg": "Милонитна зона",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 155,
+          "depth_to_m": 158,
+          "description_bg": "Милонитна зона",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 158,
+          "depth_to_m": 190.2,
+          "description_bg": "Силно тектонски преработен туф",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 245.5,
+          "depth_to_m": 259.3,
+          "description_bg": "Милонитна зона",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        },
+        {
+          "depth_from_m": 408,
+          "depth_to_m": 425,
+          "description_bg": "Тектонски нарушена зона",
+          "source_ids": [
+            "SOF-CITY-KNYAZHEVO-SOZ-2015"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "water_inflows_inferred": false,
+        "mineral_thermal_analysis": "SEPARATE",
+        "confirmed_inflows_m_for_separate_analysis": [
+          [
+            408,
+            425
+          ],
+          [
+            440,
+            455.5
+          ]
+        ]
+      }
+    },
+    {
+      "borehole_id": "SOF-CITY-KRIVINA-C58HG",
+      "name_bg": "Сондаж № С-58хг — София, Кривина",
+      "oblast": "Sofia-city",
+      "region_code": "Sofia-city",
+      "zone_type": "site_specific",
+      "status": "documented_exact_lithological_profile",
+      "total_depth_m": 643.6,
+      "coordinates": {
+        "latitude": 42.67930529262626,
+        "longitude": 23.4727519893369,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_projected_coordinate_crossvalidated",
+        "origin": "Official_MOEW_2023_register",
+        "bgs2005_northing_m": 4729086.0,
+        "bgs2005_easting_m": 333866.275,
+        "source_ids": [
+          "SOF-CITY-KRIVINA-C58HG-MH-2024"
+        ],
+        "bgs2005_crs": "EPSG:7801",
+        "coordinate_verification": "BG2005 cadastral CRS inferred and cross-validated against official Sofia-Lozenets C-2hg paired projected/WGS84 data (residual 0.078 m). Krivina transformed position agrees with official description approximately 680 m east of village center. Original register does not independently state EPSG code; do not interpret as a centimetre-accurate field survey."
+      },
+      "water_type": "not_assessed",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 78.4,
+          "expected_material_bg": "Чакъли и пясъци",
+          "stratigraphy": "Q",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 78.4,
+          "depth_to_m": 108,
+          "expected_material_bg": "Разноцветни бежови пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 108,
+          "depth_to_m": 182,
+          "expected_material_bg": "Сиви пясъци с прослойки от силно песъчливи глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 182,
+          "depth_to_m": 237,
+          "expected_material_bg": "Сивозелени песъчливи глини с единични скални късове",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 237,
+          "depth_to_m": 242.4,
+          "expected_material_bg": "Сиви финозърнести пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 242.4,
+          "depth_to_m": 257,
+          "expected_material_bg": "Песъчливи глини с прослойки от пясъци; неясна въглищна прослойка в източника",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 257,
+          "depth_to_m": 270,
+          "expected_material_bg": "Фино- до дребнозърнести пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 270,
+          "depth_to_m": 275,
+          "expected_material_bg": "Сиви песъчливи глини с въглищно вещество",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 275,
+          "depth_to_m": 286,
+          "expected_material_bg": "Сивозелени песъчливи глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 286,
+          "depth_to_m": 320,
+          "expected_material_bg": "Силно песъчливи сиви глини с финозърнести пясъчни прослойки",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 320,
+          "depth_to_m": 366,
+          "expected_material_bg": "Силно песъчливи сиви глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 366,
+          "depth_to_m": 370,
+          "expected_material_bg": "Плътни глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 370,
+          "depth_to_m": 400,
+          "expected_material_bg": "Сивозелени песъчливи глини с пясъчна прослойка 382–384 м",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 400,
+          "depth_to_m": 415,
+          "expected_material_bg": "Дребнозърнести пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 415,
+          "depth_to_m": 420,
+          "expected_material_bg": "Силно песъчливи глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 420,
+          "depth_to_m": 431.1,
+          "expected_material_bg": "Дребнозърнести пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 431.1,
+          "depth_to_m": 436,
+          "expected_material_bg": "Пластични глини с прослойки от глинести пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 436,
+          "depth_to_m": 451,
+          "expected_material_bg": "Сивозелени песъчливи глини с нечисти въглища 444–445 м",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 451,
+          "depth_to_m": 499,
+          "expected_material_bg": "Пясъци с прослойки от песъчливи глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 499,
+          "depth_to_m": 508,
+          "expected_material_bg": "Светлосиви плътни глини с фосили",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 508,
+          "depth_to_m": 539.1,
+          "expected_material_bg": "Пясъци с прослойки от глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 539.1,
+          "depth_to_m": 552,
+          "expected_material_bg": "Плътни глини с пачки от нечисти въглища",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 552,
+          "depth_to_m": 570,
+          "expected_material_bg": "Сиви песъчливи глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 570,
+          "depth_to_m": 584.8,
+          "expected_material_bg": "Сиви глини с овъглени частици",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 584.8,
+          "depth_to_m": 588.8,
+          "expected_material_bg": "Глини с прослойки от пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 588.8,
+          "depth_to_m": 592.8,
+          "expected_material_bg": "Плътни глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 592.8,
+          "depth_to_m": 597.8,
+          "expected_material_bg": "Глини с единични скални късове",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 597.8,
+          "depth_to_m": 618,
+          "expected_material_bg": "Силно песъчливи сиви глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 618,
+          "depth_to_m": 627,
+          "expected_material_bg": "Пясъци и песъчливи глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 627,
+          "depth_to_m": 636,
+          "expected_material_bg": "Силно уплътнени глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 636,
+          "depth_to_m": 639,
+          "expected_material_bg": "Пясъци",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        },
+        {
+          "depth_from_m": 639,
+          "depth_to_m": 643.6,
+          "expected_material_bg": "Силно уплътнени глини",
+          "stratigraphy": "N2",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "SOF-CITY-KRIVINA-C58HG-MH-2024"
+          ]
+        }
+      ],
+      "source_gaps": [],
+      "source_overlaps": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_context": {
+        "spatial_scope": "BOREHOLE_LOCATION_ONLY",
+        "spatial_transfer_approved": false,
+        "geolocation_pending": false,
+        "water_inflows_inferred": false,
+        "mineral_thermal_analysis": "SEPARATE",
+        "source_typo": "257–253 м, въглищна прослойка"
+      }
     }
   ],
   "sources": [
@@ -10641,6 +13357,78 @@
       "url": null,
       "geographic_scope": "Ravno Pole / Kazichene",
       "notes": "Research borehole SOF-RP-S53HG. Publication metadata: {\"title\": \"Проект за СОЗ на НМВ Казичене-Равно поле\", \"author\": \"Геохидродинамика ЕООД\", \"publication_period\": \"2015-2017\", \"archival_reference\": \"Геофонд V-411\", \"host\": \"nag.sofia.bg\", \"source_status\": \"PUBLIC_TECHNICAL_REPORT\"}"
+    },
+    {
+      "source_id": "SOF-CITY-NADEZHDA-C6HG-LITH-2021",
+      "title": "Проект за санитарно-охранителна зона около сондаж № 6хг от находище „София–Надежда“",
+      "institution": "Столична община / Аквариус-ТМ ЕООД",
+      "source_type": "official_hydrogeological_project",
+      "url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2Fmineralni+vodi%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%A1%D0%9E%D0%97-+%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D0%B8%D1%89%D0%B5+%D0%A1%D0%BE%D1%84%D0%B8%D1%8F-%D0%9D%D0%B0%D0%B4%D0%B5%D0%B6%D0%B4%D0%B0.pdf",
+      "geographic_scope": "София-град, район Надежда",
+      "notes": "2021 г.; стр. 9–10 (PDF страници 9–10). Документиран геоложки разрез 0–640 м; официални WGS84 координати."
+    },
+    {
+      "source_id": "SOF-CITY-LOZENETS-SOZ-2021",
+      "title": "Проект за СОЗ — находище София–Лозенец",
+      "institution": "Столична община / Аквариус-ТМ ЕООД",
+      "source_type": "official_hydrogeological_project",
+      "url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2Fmineralni+vodi%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%A1%D0%9E%D0%97-%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D0%B8%D1%89%D0%B5+%D0%A1%D0%BE%D1%84%D0%B8%D1%8F-%D0%9B%D0%BE%D0%B7%D0%B5%D0%BD%D0%B5%D1%86.pdf",
+      "geographic_scope": "София-град, Лозенец",
+      "notes": "2021 г., геоложки колонки в основния текст, стр. 12–20"
+    },
+    {
+      "source_id": "SOF-CITY-OVCHA-KUPEL-SOZ-2018",
+      "title": "Проект за оразмеряване на СОЗ, София–Овча купел, 2018",
+      "institution": "Столична община / Тера Тест-Н ЕООД",
+      "source_type": "official_hydrogeological_project",
+      "url": "https://nag.sofia.bg/Pages/Render/773",
+      "geographic_scope": "София-град, Овча купел",
+      "notes": "Геоложки колонки в основния текст, стр. 10–13. Координатната таблица изисква независимо сверяване."
+    },
+    {
+      "source_id": "SOF-CITY-CENTER-C3HG-COLUMN",
+      "title": "Хидрогеоложка колонка на сондаж № 3хг — София–Център",
+      "institution": "Столична община, НАГ",
+      "source_type": "official_graphical_borehole_log",
+      "url": "https://nag.sofia.bg/Pages/Render/773",
+      "geographic_scope": "София-град, Център",
+      "notes": "Графично приложение 3. Разчетени са интервалите до 484,1 м. Долният участък 484,1–490,7 м се нуждае от допълнителна проверка."
+    },
+    {
+      "source_id": "SOF-CITY-BATALOVA-C6HG-COLUMN-1970",
+      "title": "Хидрогеоложка колонка и конструкция на сондаж С-6хг — София, Баталова воденица",
+      "institution": "Столична община / архивно приложение",
+      "source_type": "official_scanned_borehole_log",
+      "url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2FOBIAVLENIE+BATALOVA+VODENICA%2F%D0%9F%D1%80.3-%D0%A5%D0%93%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D0%B0+%D0%B8+%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D1%8F+%D0%BD%D0%B0+%D1%81%D0%BE%D0%BD%D0%B4%D0%B0%D0%B6+6%D1%85%D0%B3.jpg",
+      "geographic_scope": "София-град, Баталова воденица",
+      "notes": "Първоначална колонка от 1970 г. Литоложки интервали до 569,80 м. Разчетена от оригиналното сканирано изображение, предоставено за проверка. По-късната заявена дълбочина 640 м не е покрита от тази литоложка колонка."
+    },
+    {
+      "source_id": "SOF-CITY-GORNA-BANYA-SOZ-2016",
+      "title": "Проект за СОЗ на НМВ София–Горна баня",
+      "institution": "Геохидродинамика ЕООД / БДУВДР",
+      "source_type": "official_hydrogeological_project",
+      "url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2FOBIAVLENIE+GORNA+BANIA%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%B7%D0%B0+%D0%A1%D0%9E%D0%97+%D0%9D%D0%9C%D0%92+%D0%93%D0%BE%D1%80%D0%BD%D0%B0+%D0%B1%D0%B0%D0%BD%D1%8F.pdf",
+      "geographic_scope": "София-град, Горна баня",
+      "notes": "Октомври 2016 г.; PDF стр. 11–12; исторически сондажи от проучванията на Мартинов, 1958–1961 г. Сондажи №1 и №2 впоследствие са тампонирани."
+    },
+    {
+      "source_id": "SOF-CITY-KNYAZHEVO-SOZ-2015",
+      "title": "Проект за СОЗ НМВ София–Княжево, сондаж С-1хг",
+      "institution": "Геохидродинамика ЕООД / БДУВДР",
+      "source_type": "official_hydrogeological_project",
+      "url": "https://nag.sofia.bg/FileBrowser/File?path=esoft.portal%2Fmineralni+vodi%2F%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82+%D0%B7%D0%B0+%D0%A1%D0%9E%D0%97+%D0%9D%D0%9C%D0%92+%D0%9A%D0%BD%D1%8F%D0%B6%D0%B5%D0%B2%D0%BE_compressed.pdf",
+      "geographic_scope": "София-град, Княжево",
+      "notes": "2015; таблица 1 на стр. 6 и геоложки разрез на стр. 32 (PDF индекс 31); 0–481 м."
+    },
+    {
+      "source_id": "SOF-CITY-KRIVINA-C58HG-MH-2024",
+      "title": "Балнеологична оценка №266/12.01.2024 г., сондаж С-58хг Кривина",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "official_borehole_lithology_description",
+      "url": "https://old.mh.government.bg/media/filer_public/2024/01/15/balneologichna_otsenka__266_ot_12012024_g.pdf",
+      "geographic_scope": "София-град, Кривина",
+      "notes": "Подробен разрез 0–643,6 м, стр. 2–3. В оригинала е отпечатан обърнат интервал 257–253 м за въглищна прослойка; не се приема като доказана граница."
     }
   ]
 }

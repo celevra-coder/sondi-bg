@@ -338,7 +338,8 @@ function collectNationalBoreholeEvidence(
         depth_evidence_class:
           candidate.distance <= 0.01 &&
           borehole.coordinate_status === "OFFICIAL_EXACT"
-            ? interval.evidence_level === "borehole_exact" &&
+            ? (interval.evidence_level === "borehole_exact" ||
+              interval.evidence_level === "documented_borehole_log") &&
               interval.interval_status === null
               ? "DOCUMENTED_REFERENCE_COORDINATE_MATCH"
               : "PARTIAL_OR_CONFLICTED_REFERENCE"
@@ -699,6 +700,111 @@ export function resolveNationalDepthLithology(
         ...new Set([...base.source_ids,...correlation.source_ids])
       ]
     };
+  }
+
+
+  // SONDI_SOFIA_NEARBY_DEPTH_FORECAST_V1
+  // Low-confidence forecast from documented nearby boreholes.
+  // Do not affect Vratsa, exact boreholes or other regions.
+  if (
+    !hasColocatedReference &&
+    base.region_id !== null &&
+    base.region_id.startsWith("SOF-")
+  ) {
+    const expectedRegion = base.region_id === "SOF-CITY"
+      ? "Sofia-city"
+      : "Sofia";
+
+    const radians = (value: number) => value * Math.PI / 180;
+
+    const distanceBetween = (
+      lat1: number, lon1: number,
+      lat2: number, lon2: number
+    ) => {
+      const dLat = radians(lat2 - lat1);
+      const dLon = radians(lon2 - lon1);
+      const a =
+        Math.sin(dLat / 2) ** 2 +
+        Math.cos(radians(lat1)) *
+        Math.cos(radians(lat2)) *
+        Math.sin(dLon / 2) ** 2;
+      return 6371 * 2 * Math.atan2(
+        Math.sqrt(a),
+        Math.sqrt(Math.max(0, 1 - a))
+      );
+    };
+
+    const candidates = getNationalBoreholeIndex()
+      .filter(hole =>
+        hole.origin === "NATIONAL" &&
+        hole.coordinate_status === "OFFICIAL_EXACT" &&
+        hole.region_code === expectedRegion &&
+        hole.latitude !== null &&
+        hole.longitude !== null
+      )
+      .flatMap(hole => {
+        const distance = distanceBetween(
+          input.latitude, input.longitude,
+          hole.latitude!, hole.longitude!
+        );
+
+        if (distance > 30) return [];
+
+        return hole.intervals
+          .filter(interval =>
+            interval.from_m !== null &&
+            interval.to_m !== null &&
+            interval.from_m <= input.depthM &&
+            input.depthM < interval.to_m &&
+            !interval.interval_status &&
+            (
+              interval.evidence_level === "borehole_exact" ||
+              interval.evidence_level === "documented_borehole_log"
+            ) &&
+            interval.material_bg.trim().length > 0
+          )
+          .map(interval => ({
+            id: hole.id,
+            distance,
+            material: interval.material_bg.trim(),
+            sources: interval.source_ids
+          }));
+      })
+      .sort((a, b) => a.distance - b.distance);
+
+    const close = candidates.filter(c => c.distance <= 15);
+    const distinct = new Set(candidates.map(c => c.id));
+
+    // Either one reasonably close documented analogue or
+    // at least two independent nearby documented analogues.
+    const eligible =
+      close.length > 0 ||
+      distinct.size >= 2;
+
+    if (eligible && candidates.length > 0) {
+      const primary = close[0] ?? candidates[0];
+
+      const alternatives = [...new Set(
+        candidates
+          .filter(c => c.id !== primary.id)
+          .map(c => c.material)
+          .filter(material => material !== primary.material)
+      )].slice(0, 5);
+
+      return {
+        ...base,
+        status: "CONDITIONAL",
+        evidence_tier: "GEOLOGICAL_CORRELATION",
+        probable_lithology: primary.material,
+        alternative_lithologies: alternatives,
+        confidence: "LOW",
+        interpretation_scope: "SPATIAL_CORRELATION_CONDITIONAL",
+        source_ids: [...new Set([
+          ...base.source_ids,
+          ...candidates.flatMap(c => c.sources)
+        ])]
+      };
+    }
   }
 
   const matches = base.evidence.filter(item =>

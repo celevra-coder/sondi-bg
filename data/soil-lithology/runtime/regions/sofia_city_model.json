@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0",
+  "region_id": "SOF-CITY",
+  "status": "REGIONAL_CONTEXT_ONLY",
+  "source": {
+    "institution": "ОП Софияплан",
+    "service": "https://gis.sofiaplan.bg/server/rest/services/oup_2009/oup_2009/MapServer/26/query",
+    "layer_id": 26,
+    "retrieved_coordinate_system": "EPSG:4326",
+    "original_layer_coordinate_system": "EPSG:7801"
+  },
+  "zones": {
+    "SOF-CITY-Z01": {
+      "regional_structural_context": [
+        {
+          "source_id": "SOFIAPLAN-OUP2009-ENGINEERING-GEOLOGY-LAYER5",
+          "dominant_lithology_context": [
+            "Алувиални, делувиални и пролувиални отложения; локално глини, пясъци, чакъли и валунни материали."
+          ],
+          "regional_units": [
+            {
+              "unit": "Картографирана категория: Кватернерни седименти; 41 полигона. Пространствено различна в рамките на общината; не представлява единна дълбочинна колонка."
+            }
+          ]
+        },
+        {
+          "source_id": "SOFIAPLAN-OUP2009-ENGINEERING-GEOLOGY-LAYER5",
+          "dominant_lithology_context": [
+            "Неогенски седиментни комплекси; локално редуване на глини, пясъци и чакълести материали."
+          ],
+          "regional_units": [
+            {
+              "unit": "Картографирана категория: Неогенски седименти; 8 полигона. Пространствено различна в рамките на общината; не представлява единна дълбочинна колонка."
+            }
+          ]
+        },
+        {
+          "source_id": "SOFIAPLAN-OUP2009-ENGINEERING-GEOLOGY-LAYER5",
+          "dominant_lithology_context": [
+            "Магмени и вулканогенно-седиментни скални комплекси в картографираните им зони."
+          ],
+          "regional_units": [
+            {
+              "unit": "Картографирана категория: Донеогенски магмени и седиментни скали; 6 полигона. Пространствено различна в рамките на общината; не представлява единна дълбочинна колонка."
+            }
+          ]
+        },
+        {
+          "source_id": "SOFIAPLAN-OUP2009-ENGINEERING-GEOLOGY-LAYER5",
+          "dominant_lithology_context": [
+            "Локални техногенни насипи, блатни глини, торф, изкопи, кариери и свлачищни терени; тези обозначения не определят подлежащата литология."
+          ],
+          "regional_units": [
+            {
+              "unit": "Картографирана категория: Особени строителни почви; 51 полигона. Пространствено различна в рамките на общината; не представлява единна дълбочинна колонка."
+            }
+          ]
+        }
+      ],
+      "documented_reference_intervals": [],
+      "source_ids": [
+        "SOFIAPLAN-OUP2009-ENGINEERING-GEOLOGY-LAYER5",
+        "SOFIA-CITY-DOCUMENTED-BOREHOLE-RESEARCH"
+      ],
+      "wider_studies": [
+        {
+          "title": "Лозенец — документирани дълбоки сондажи",
+          "informationType": "Сравнителни литоложки колонки",
+          "paragraphs": [
+            "В Лозенец са документирани няколко сондажа с различни литоложки последователности.",
+            "Сондаж C35HG е с дълбочина 543,3 м. На 45–255 м са описани глини, алевролити и пясъчникови прослойки, а под 255 м — кварцдиорити.",
+            "Другите сондажи показват различна дебелина на кватернерните наслаги и неогенските материали.",
+            "Тези сведения са сравнителни и не доказват конкретен пласт под избрания имот."
+          ],
+          "source_ids": [
+            "SOFIA-CITY-DOCUMENTED-BOREHOLE-RESEARCH"
+          ]
+        },
+        {
+          "title": "Овча купел и Княжево — геоложки различия",
+          "informationType": "Регионално сондажно сравнение",
+          "paragraphs": [
+            "В Овча купел два документирани сондажа показват различни дълбочини на преход към по-стари скални комплекси.",
+            "Описани са глини, пясъци, варовици и доломити.",
+            "В сондажа от Княжево са документирани андезити и андезитови туфи.",
+            "Няма основание една литоложка последователност да се прилага за целия район."
+          ],
+          "source_ids": [
+            "SOFIA-CITY-DOCUMENTED-BOREHOLE-RESEARCH"
+          ]
+        },
+        {
+          "title": "Надежда и Кривина — дълбоки геоложки разрези",
+          "informationType": "Документиран сондажен контекст",
+          "paragraphs": [
+            "В Надежда е документиран сондаж с дълбочина 640 м и подробно описани литоложки интервали.",
+            "В Кривина сондаж C58HG достига 643,6 м. Описани са кватернерни чакъли и пясъци и по-дълбоки неогенски седименти.",
+            "Данните дават информация за различни части на Софийската котловина.",
+            "Посочените дълбочини се отнасят единствено за документираните сондажи."
+          ],
+          "source_ids": [
+            "SOFIA-CITY-DOCUMENTED-BOREHOLE-RESEARCH"
+          ]
+        }
+      ],
+      "regional_evidence_notes": [
+        {
+          "title": "София-град — регионална геоложка характеристика",
+          "informationType": "Официален картографски контекст",
+          "paragraphs": [
+            "Инженерно-геоложкият слой на SofiaPlan съдържа 106 полигона.",
+            "Разграничени са кватернерни седименти, неогенски седименти, по-стари скални комплекси и особени строителни почви.",
+            "В различни части на града са описани пясъци, чакъли, глини и скални материали с различен произход.",
+            "Регионалната информация не определя точните дълбочини на пластовете под конкретен имот."
+          ],
+          "source_ids": [
+            "SOFIAPLAN-OUP2009-ENGINEERING-GEOLOGY-LAYER5"
+          ]
+        }
+      ]
+    }
+  },
+  "scientific_limitations": [
+    "Municipal boundary does not define a geological unit",
+    "Regional geological units require separate spatial evidence",
+    "Nearby borehole intervals are not local measurements",
+    "No automatic depth-specific prediction",
+    "SofiaPlan polygons are location-specific; not uniform over Sofia City",
+    "Engineering geological polygons do not establish depth contacts",
+    "Exact borehole lithology remains in the national borehole database",
+    "No regional numeric contact depths are approved",
+    "No prediction of groundwater yield or water-bearing depth",
+    "Kremikovtsi and Krivina lack matching polygons in this layer"
+  ]
+}
