@@ -117,7 +117,7 @@ export type NationalDepthResult = {
     | "GEOLOGICAL_CORRELATION"
     | "REGIONAL_CONTEXT"
     | "INSUFFICIENT_EVIDENCE";
-  interpretation_scope?: "REFERENCE_BOREHOLE_ONLY" | "SPATIAL_CORRELATION_CONDITIONAL";
+  interpretation_scope?: "REFERENCE_BOREHOLE_ONLY" | "SPATIAL_CORRELATION_CONDITIONAL" | "NEARBY_BOREHOLE_ANALOG_UNVERIFIED";
   alternative_lithologies: string[];
   confidence: SpatialLithologyConfidence;
   evidence: Array<{
@@ -709,9 +709,11 @@ export function resolveNationalDepthLithology(
   if (
     !hasColocatedReference &&
     base.region_id !== null &&
-    base.region_id.startsWith("SOF-")
+    (base.region_id.startsWith("SOF-") || base.region_id === "BLG")
   ) {
-    const expectedRegion = base.region_id === "SOF-CITY"
+    const expectedRegion = base.region_id === "BLG"
+      ? "Blagoevgrad"
+      : base.region_id === "SOF-CITY"
       ? "Sofia-city"
       : "Sofia";
 
@@ -737,7 +739,22 @@ export function resolveNationalDepthLithology(
     const candidates = getNationalBoreholeIndex()
       .filter(hole =>
         hole.origin === "NATIONAL" &&
-        hole.coordinate_status === "OFFICIAL_EXACT" &&
+        (
+          hole.coordinate_status === "OFFICIAL_EXACT" ||
+          (
+            base.region_id === "BLG" &&
+            (
+              (hole.id === "PLD-Z040" &&
+               hole.coordinate_status === "official_documented") ||
+              (hole.id === "PLD-Z067" &&
+               hole.coordinate_status === "official_documented") ||
+              (hole.id === "PLD-Z068" &&
+               hole.coordinate_status === "official_documented") ||
+              (hole.id === "PLD-Z070" &&
+               hole.coordinate_status === "official_documented_external")
+            )
+          )
+        ) &&
         hole.region_code === expectedRegion &&
         hole.latitude !== null &&
         hole.longitude !== null
@@ -794,11 +811,15 @@ export function resolveNationalDepthLithology(
       return {
         ...base,
         status: "CONDITIONAL",
-        evidence_tier: "GEOLOGICAL_CORRELATION",
+        evidence_tier: base.region_id === "BLG"
+          ? "REGIONAL_CONTEXT"
+          : "GEOLOGICAL_CORRELATION",
         probable_lithology: primary.material,
         alternative_lithologies: alternatives,
         confidence: "LOW",
-        interpretation_scope: "SPATIAL_CORRELATION_CONDITIONAL",
+        interpretation_scope: base.region_id === "BLG"
+          ? "NEARBY_BOREHOLE_ANALOG_UNVERIFIED"
+          : "SPATIAL_CORRELATION_CONDITIONAL",
         source_ids: [...new Set([
           ...base.source_ids,
           ...candidates.flatMap(c => c.sources)

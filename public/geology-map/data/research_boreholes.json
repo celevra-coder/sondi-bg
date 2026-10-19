@@ -6029,6 +6029,871 @@
         "mineral_thermal_analysis": "SEPARATE",
         "source_typo": "257–253 м, въглищна прослойка"
       }
+    },
+    {
+      "borehole_id": "PLD-Z052",
+      "name_bg": "Спатово - сондаж №1хг",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.5115799,
+        "longitude": 23.3235628,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_registry_coordinates",
+        "source_crs": "WGS84",
+        "source_type": "official_water_facilities.geojson",
+        "source_mineral_id": "mw_cd2a1a182b0d957e",
+        "source_mineral_location_status": "A",
+        "coordinate_qa": "MATCHED_EXISTING_OFFICIAL_MINERAL_FACILITY",
+        "source_note": "Matched named borehole No.1hg at Spatovo. Coordinate is taken from existing official water-facility registry; not independently surveyed in this operation."
+      },
+      "total_depth_m": 944.4,
+      "water_type": "mineral",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 27,
+          "expected_material_bg": "Кватернерни чакъли, пясъци и песъчливи глини",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S063"
+          ]
+        },
+        {
+          "depth_from_m": 27,
+          "depth_to_m": 102.4,
+          "expected_material_bg": "Светлосиви песъчливи глини",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S063"
+          ]
+        },
+        {
+          "depth_from_m": 102.4,
+          "depth_to_m": 383.8,
+          "expected_material_bg": "Песъчливи глини с прослойки от заглинени пясъчници",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S063"
+          ]
+        },
+        {
+          "depth_from_m": 383.8,
+          "depth_to_m": 944.4,
+          "expected_material_bg": "Дребнозърнести глинести пясъчници с прослойки от песъчливи глини",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S063"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "total_depth_m": 944.4,
+        "source_ids": [
+          "PLD-S063"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": {
+        "depth_from_m": null,
+        "depth_to_m": null,
+        "material_bg": "Неогенски пясъчници и свързани седиментни пластове",
+        "collector_type_bg": "Поров минерален водоносен колектор",
+        "role_bg": "Документирана регионална колекторна среда",
+        "structural_control_bg": null,
+        "scope": "deposit_scale",
+        "status": "documented",
+        "confidence": "high",
+        "source_ids": [
+          "PLD-S063"
+        ]
+      },
+      "intake_intervals": null,
+      "hydro_notes_bg": "Сондаж №1хг при Спатово достига 944,40 м. До 27 м преминава през кватернерни чакъли, пясъци и песъчливи глини. Под тях следва мощна неогенска седиментна последователност от песъчливи глини и пясъчници.",
+      "expert_context": {
+        "simple_text_bg": "При сондаж №1хг край Спатово до 27 м са преминати чакъли, пясъци и песъчливи глини. Между 27 и 102,4 м следват светлосиви песъчливи глини. От 102,4 до 383,8 м са установени песъчливи глини с прослойки от заглинени пясъчници, а от 383,8 до 944,4 м преобладават дребнозърнести глинести пясъчници с прослойки от песъчливи глини.",
+        "usage": "Very deep lithological analogue for the Spatovo / Sandanski basin sector",
+        "warning": "The intervals describe Borehole 1hg itself. Their depths must not be transferred directly to another location without stratigraphic, structural, relief and spatial comparison."
+      },
+      "approximate_location": {
+        "status": "LOCATION_EVIDENCE_ONLY",
+        "latitude": null,
+        "longitude": null,
+        "location_note_bg": "Официалната балнеоложка оценка идентифицира сондаж №1хг при Спатово. Точни WGS84 координати не са записани на този етап.",
+        "evidence_level": "official_relative_location_only",
+        "source_ids": [
+          "PLD-S063"
+        ],
+        "usable_for_public_map": false,
+        "usable_for_pro_context": true,
+        "distance_is_exact": false
+      },
+      "linked_mineral_facility_id": "mw_cd2a1a182b0d957e"
+    },
+    {
+      "borehole_id": "PLD-Z056",
+      "name_bg": "Хотово - сондаж Сн-7",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.498758,
+        "longitude": 23.3352885,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_registry_coordinates",
+        "source_crs": "WGS84",
+        "source_type": "official_water_facilities.geojson",
+        "source_mineral_id": "mw_5503fbac1418f26b",
+        "source_mineral_location_status": "A",
+        "coordinate_qa": "MATCHED_EXISTING_MINERAL_FACILITY",
+        "source_note": "Facility registry position; no independent field survey performed."
+      },
+      "total_depth_m": 430.5,
+      "water_type": "mineral",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 4,
+          "expected_material_bg": "Чакъли и пясъци, кватернер",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S067"
+          ]
+        },
+        {
+          "depth_from_m": 4,
+          "depth_to_m": 89.6,
+          "expected_material_bg": "Алтернация от пясъчници и песъчливи глини",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S067"
+          ]
+        },
+        {
+          "depth_from_m": 89.6,
+          "depth_to_m": 285.8,
+          "expected_material_bg": "Пясъчници с прослойки от песъчливи глини",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S067"
+          ]
+        },
+        {
+          "depth_from_m": 285.8,
+          "depth_to_m": 430.5,
+          "expected_material_bg": "Алтернация от пясъчници и песъчливи глини",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S067"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "total_depth_m": 430.5,
+        "project_depth_m": 500,
+        "casing_to_m": 70,
+        "source_ids": [
+          "PLD-S067"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": null,
+      "hydro_notes_bg": "Сондаж Сн-7 е завършен през 1966 г. Проектната дълбочина е 500 м, но реално е прокаран до 430,50 м.",
+      "expert_context": {
+        "simple_text_bg": "До 4 м са преминати чакъли и пясъци. От 4 до 430,5 м разрезът е изграден от пясъчници и песъчливи глини, като между 89,6 и 285,8 м преобладават пясъчниците с прослойки от песъчливи глини.",
+        "usage": "Deep sedimentary lithological analogue for Hotovo sector",
+        "warning": "Exact borehole intervals must not be transferred directly to another property."
+      },
+      "approximate_location": {
+        "status": "LOCATION_EVIDENCE_ONLY",
+        "latitude": null,
+        "longitude": null,
+        "location_note_bg": "Сондаж Сн-7, находище на минерална вода „Хотово“.",
+        "evidence_level": "official_site_identification",
+        "source_ids": [
+          "PLD-S067"
+        ],
+        "usable_for_public_map": false,
+        "usable_for_pro_context": true,
+        "distance_is_exact": false
+      },
+      "linked_mineral_facility_id": "mw_5503fbac1418f26b"
+    },
+    {
+      "borehole_id": "PLD-Z063",
+      "name_bg": "Сандански - сондаж №1хг",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.5684783,
+        "longitude": 23.2824122,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_geographic_coordinates",
+        "source_crs": "WGS84",
+        "source_type": "official_water_facilities_register",
+        "source_registry_number": "451066001/12.01.2007",
+        "coordinate_qa": "MATCHES_EXISTING_MINERAL_FACILITY_COORDINATES",
+        "source_document": "БДЗБР - официален регистър на минерални водовземни съоръжения, публикуван 06.02.2026"
+      },
+      "total_depth_m": 1016.2,
+      "water_type": "mineral",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 19.8,
+          "expected_material_bg": "Чакъли, блокаж и едри валуни от гранити - кватернер",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        },
+        {
+          "depth_from_m": 19.8,
+          "depth_to_m": 60,
+          "expected_material_bg": "Слабоспоен пясъчник с алевритова структура - Санданска свита",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        },
+        {
+          "depth_from_m": 60,
+          "depth_to_m": 550,
+          "expected_material_bg": "Алтернация от пясъчници и конгломерати с преобладаване на пясъчниците - плиоцен",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        },
+        {
+          "depth_from_m": 550,
+          "depth_to_m": 1016.2,
+          "expected_material_bg": "Алтернация от пясъчници и конгломерати с преобладаване на конгломератите - плиоцен",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [
+        {
+          "depth_from_m": 19.8,
+          "depth_to_m": 42,
+          "event_bg": "При сондиране е документиран дебит 0,031 l/s и температура 37°C.",
+          "evidence_level": "borehole_hydraulic_test",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        },
+        {
+          "depth_from_m": 19.8,
+          "depth_to_m": 126,
+          "event_bg": "Документиран дебит 0,052 l/s и температура 47°C.",
+          "evidence_level": "borehole_hydraulic_test",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        },
+        {
+          "depth_from_m": 19.8,
+          "depth_to_m": 162.9,
+          "event_bg": "Документиран дебит 20,0 l/s и температура 80°C.",
+          "evidence_level": "borehole_hydraulic_test",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        },
+        {
+          "depth_from_m": 19.8,
+          "depth_to_m": 700,
+          "event_bg": "Документиран дебит 0,20 l/s и температура 53°C.",
+          "evidence_level": "borehole_hydraulic_test",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        },
+        {
+          "depth_from_m": 19.8,
+          "depth_to_m": 705.7,
+          "event_bg": "Документиран дебит 4,0 l/s и температура 72°C.",
+          "evidence_level": "borehole_hydraulic_test",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        },
+        {
+          "depth_from_m": 19.8,
+          "depth_to_m": 710.9,
+          "event_bg": "Документиран дебит 7,0 l/s и температура 74°C.",
+          "evidence_level": "borehole_hydraulic_test",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        },
+        {
+          "depth_from_m": 19.8,
+          "depth_to_m": 713.5,
+          "event_bg": "Документиран дебит 11,10 l/s и температура 75°C.",
+          "evidence_level": "borehole_hydraulic_test",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        },
+        {
+          "depth_from_m": 19.8,
+          "depth_to_m": 722,
+          "event_bg": "Документиран дебит 13,10 l/s и температура 75°C.",
+          "evidence_level": "borehole_hydraulic_test",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        },
+        {
+          "depth_from_m": 19.8,
+          "depth_to_m": 752.8,
+          "event_bg": "Документиран дебит 13,30 l/s и температура 74°C.",
+          "evidence_level": "borehole_hydraulic_test",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        },
+        {
+          "depth_from_m": 19.8,
+          "depth_to_m": 1016.2,
+          "event_bg": "При достигане на крайната дълбочина е документиран дебит 10,60 l/s и температура 74°C.",
+          "evidence_level": "borehole_hydraulic_test",
+          "source_ids": [
+            "PLD-S074"
+          ]
+        }
+      ],
+      "borehole_construction": {
+        "total_depth_m": 1016.2,
+        "construction_period": "1965-1966",
+        "filter_from_m": 679,
+        "filter_to_m": 869.9,
+        "open_hole_from_m": 869.9,
+        "open_hole_to_m": 1016.2,
+        "source_ids": [
+          "PLD-S074"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": null,
+      "hydro_notes_bg": "Хидравличните данни са записани отделно като събития при различни етапи на удълбаването. Те не се преобразуват автоматично в точни водоносни пластове.",
+      "expert_context": {
+        "simple_text_bg": "Сандански №1хг разкрива над километър неогенски разрез. Под 60 м следва мощна алтернация от пясъчници и конгломерати; под 550 м конгломератите стават преобладаващи.",
+        "usage": "Very deep hydrogeological analogue for Sandanski graben",
+        "warning": "Hydraulic tests during drilling must remain separate from lithological boundaries."
+      },
+      "approximate_location": {
+        "status": "LOCATION_EVIDENCE_ONLY",
+        "latitude": null,
+        "longitude": null,
+        "location_note_bg": "Сондаж №1хг, находище на минерална вода „Сандански“.",
+        "evidence_level": "official_site_identification",
+        "source_ids": [
+          "PLD-S074"
+        ],
+        "usable_for_public_map": false,
+        "usable_for_pro_context": true,
+        "distance_is_exact": false
+      },
+      "linked_mineral_facility_id": "mw_788f845cdf632c85"
+    },
+    {
+      "borehole_id": "PLD-Z078",
+      "name_bg": "Огняново-Гърмен - сондаж №4 ВКП",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "deep_borehole_exact_with_source_gap",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.619897882,
+        "longitude": 23.799440783,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_registry_coordinates",
+        "source_type": "existing_mineral_facility_coordinates",
+        "source_mineral_id": "mw_c1621805accf4863",
+        "source_mineral_coordinate_status": "OFFICIAL_EXACT",
+        "source_mineral_coordinate_origin": "latitude+longitude",
+        "source_crs": "WGS84",
+        "coordinate_qa": "MATCHED_EXISTING_MINERAL_FACILITY_IDENTITY",
+        "source_note": "Coordinates transferred from existing mineral master for same named borehole No.4VKP. No independent wellhead survey performed."
+      },
+      "total_depth_m": 53,
+      "water_type": "mineral",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 14,
+          "expected_material_bg": "Кватернерни наслаги",
+          "stratigraphy_bg": "Кватернер",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S089"
+          ]
+        },
+        {
+          "depth_from_m": 20,
+          "depth_to_m": 38,
+          "expected_material_bg": "Напукани амфиболитови гнайси",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S089"
+          ]
+        },
+        {
+          "depth_from_m": 36,
+          "depth_to_m": 40,
+          "expected_material_bg": "Кварцово-пегматитова жила",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S089"
+          ]
+        },
+        {
+          "depth_from_m": 40,
+          "depth_to_m": 53,
+          "expected_material_bg": "Силно окварцени и напукани гнайси",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S089"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 20,
+          "depth_to_m": 38,
+          "description_bg": "Напукани амфиболитови гнайси.",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S089"
+          ]
+        },
+        {
+          "depth_from_m": 36,
+          "depth_to_m": 40,
+          "description_bg": "Кварцово-пегматитова жила.",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S089"
+          ]
+        },
+        {
+          "depth_from_m": 40,
+          "depth_to_m": 53,
+          "description_bg": "Силно окварцени и напукани гнайси.",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S089"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "total_depth_m": 53,
+        "source_ids": [
+          "PLD-S089"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [
+        {
+          "depth_from_m": 14,
+          "depth_to_m": 20,
+          "description_bg": "Интервалът не е надеждно описан в извлечения метричен разрез и умишлено остава без интерпретация.",
+          "source_ids": [
+            "PLD-S089"
+          ]
+        }
+      ],
+      "groundwater_discharge": {
+        "technical_possible_flow_l_s": 6.7,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S089"
+        ]
+      },
+      "water_temperature": {
+        "technical_resource_temperature_c": 40.7,
+        "status": "documented",
+        "source_ids": [
+          "PLD-S089"
+        ]
+      },
+      "collector": null,
+      "intake_intervals": null,
+      "hydro_notes_bg": "Официалната оценка определя минералната система като пукнатинно-жилен тип в кристалинните скали на Западнородопския масив. Това регионално заключение не се използва за запълване на липсващия интервал 14-20 m.",
+      "expert_context": {
+        "simple_text_bg": "Сондаж №4 ВКП при Огняново-Гърмен достига 53 m. След кватернерните наслаги са документирани напукани амфиболитови гнайси, кварцово-пегматитова жила и силно окварцени и напукани гнайси. Интервалът 14-20 m остава като източникова празнина.",
+        "usage": "Shallow fractured-vein mineral-water analogue for the Ognyanovo-Garmen system",
+        "warning": "Интервалът 14-20 m не трябва да се попълва чрез интерполация от съседните пластове."
+      },
+      "approximate_location": {
+        "status": "UNRESOLVED",
+        "latitude": null,
+        "longitude": null,
+        "location_note_bg": null,
+        "evidence_level": "official_relative_location_only",
+        "source_ids": [
+          "PLD-S089"
+        ],
+        "usable_for_public_map": false,
+        "usable_for_pro_context": false,
+        "distance_is_exact": false
+      },
+      "linked_mineral_facility_id": "mw_c1621805accf4863"
+    },
+    {
+      "borehole_id": "BLG-LITH-001",
+      "name_bg": "Белица - Рила фиш - шахтов кладенец",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "documented_shallow_well",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 41.95955416666667,
+        "longitude": 23.54136527777778,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_site_document_coordinates"
+      },
+      "total_depth_m": 4.0,
+      "water_type": "ordinary",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 4.0,
+          "expected_material_bg": "Алувиални наслаги - руслови и речни тераси (чакъли и пясъци)",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-BELITSA-SOZ-2025"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": {
+        "total_depth_m": 4.0,
+        "type": "shaft_well",
+        "diameter_mm": 800,
+        "source_ids": [
+          "BLG-S-BELITSA-SOZ-2025"
+        ]
+      },
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": {
+        "tested_flow_l_s": 0.5,
+        "status": "documented_pumping_test_2024",
+        "source_ids": [
+          "BLG-S-BELITSA-SOZ-2025"
+        ]
+      },
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": null,
+      "hydro_notes_bg": "Статично водно ниво 2,10 м. Шахтовият кладенец е дълбок 4,00 м и не достига основата на водоносния хоризонт. Опитно водочерпене 0,5 л/сек.",
+      "source_documents": [
+        {
+          "source_id": "BLG-S-BELITSA-SOZ-2025",
+          "title": "Проект за санитарно-охранителна зона, Рила фиш, гр. Белица",
+          "publisher": "Община Белица",
+          "author": "Геоконструкт ООД",
+          "document_year": 2025,
+          "url": "https://obshtinabelitsa.com/2026/%D0%A1%D0%9E%D0%97_%D0%91%D0%B5%D0%BB%D0%B8%D1%86%D0%B0.pdf",
+          "pdf_page": 16,
+          "site_parcel": "03504.150.29"
+        }
+      ],
+      "expert_context": {
+        "simple_text_bg": "При шахтовия кладенец в гр. Белица от 0 до 4 м са документирани алувиални чакъли и пясъци.",
+        "usage": "Documented shallow alluvial lithology control",
+        "warning": "No measured lithology below 4 m. No extrapolation to 20-500 m."
+      }
+    },
+    {
+      "borehole_id": "BLG-LITH-002",
+      "name_bg": "Якоруда - находище Баните - минерален сондаж №10 (С-10)",
+      "oblast": "Благоевград",
+      "region_code": "Blagoevgrad",
+      "status": "official_documented",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.0118218,
+        "longitude": 23.6413548,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_projected_coordinates_transformed",
+        "source_crs": "BGS1970_K9",
+        "source_northing": 4527436.798,
+        "source_easting": 8524848.108,
+        "target_crs": "WGS84",
+        "transform_method": "geomapbg.com single-point transformation",
+        "spatial_qa": "NEAR_MINERAL_BATH_AND_RAILWAY; approximate bath-reference distance 178 m",
+        "source_document": "Yakoruda municipal sanitary protection zone documentation"
+      },
+      "total_depth_m": 663.2,
+      "water_type": "mineral_thermal",
+      "linked_mineral_facility_id": "mw_d92b92ca1d485b4f",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 26.5,
+          "expected_material_bg": "Гранити, силно изветрели до 16 м, превърнати в шлам; пегматит при 16–17 м",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 26.5,
+          "depth_to_m": 100.9,
+          "expected_material_bg": "Среднозърнести хлоритизирани гранити, с различна степен на напуканост; кварцови и пегматитови прожилки",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 100.9,
+          "depth_to_m": 188.5,
+          "expected_material_bg": "Здрави среднозърнести гранити с локални напукани и хлоритизирани участъци",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 188.5,
+          "depth_to_m": 274.9,
+          "expected_material_bg": "Светлосиви среднозърнести гранити, сравнително здрави, с локални пукнатини, пегматит и карбонат",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 274.9,
+          "depth_to_m": 339.2,
+          "expected_material_bg": "Здрави гранити с локални пукнатини",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 339.2,
+          "depth_to_m": 392.6,
+          "expected_material_bg": "Сравнително здрави светлосиви среднозърнести гранити, локално напукани",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 392.6,
+          "depth_to_m": 400,
+          "expected_material_bg": "Разломна зона: силно променени гранити с калцитови налепи по пукнатините",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 400,
+          "depth_to_m": 464,
+          "expected_material_bg": "Сравнително здрави гранити, на отделни места напукани",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 464,
+          "depth_to_m": 487,
+          "expected_material_bg": "Среднозърнести хлоритизирани гранити, напукани, с карбонат по пукнатините",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 487,
+          "depth_to_m": 536.4,
+          "expected_material_bg": "Светлосиви среднозърнести гранити с хлоритизация, карбонатна минерализация и пукнатини; разлом при 495–497.2 м",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 536.4,
+          "depth_to_m": 586.3,
+          "expected_material_bg": "Силно напукани гранити",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 586.3,
+          "depth_to_m": 643.6,
+          "expected_material_bg": "Сравнително здрави, слабо напукани гранити с редки пегматитови инжекции",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        }
+      ],
+      "unknown_lithology_intervals": [
+        {
+          "depth_from_m": 643.6,
+          "depth_to_m": 663.2,
+          "reason_bg": "Не е извадена сондажна ядка; скалният състав не е доказан.",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 392.6,
+          "depth_to_m": 400,
+          "description_bg": "Документирана разломна зона в силно променени гранити.",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 495,
+          "depth_to_m": 497.2,
+          "description_bg": "Документирана разломна зона.",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        },
+        {
+          "depth_from_m": 536.4,
+          "depth_to_m": 586.3,
+          "description_bg": "Силно напукани гранити; водоприток на тази дълбочина не е доказан.",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "BLG-S-YAKORUDA-C10-MH120-2019"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "groundwater_discharge": {
+        "technical_possible_flow_l_s": 13.42,
+        "status": "documented_approved_technical_resource",
+        "source_ids": [
+          "BLG-S-YAKORUDA-C10-MH120-2019"
+        ]
+      },
+      "water_temperature": {
+        "technical_resource_temperature_c": 42,
+        "sampled_temperature_c": 44.2,
+        "status": "different_documented_measurement_contexts",
+        "source_ids": [
+          "BLG-S-YAKORUDA-C10-MH120-2019"
+        ]
+      },
+      "borehole_construction": {
+        "construction_year": 1973,
+        "total_depth_m": 663.2,
+        "casing_intervals": [
+          {
+            "depth_from_m": 0,
+            "depth_to_m": 34.2,
+            "diameter_mm": 219
+          },
+          {
+            "depth_from_m": 0,
+            "depth_to_m": 202,
+            "diameter_mm": 146
+          }
+        ],
+        "open_hole_intervals": [
+          {
+            "depth_from_m": 202,
+            "depth_to_m": 534.2,
+            "diameter_mm": 127
+          },
+          {
+            "depth_from_m": 534.2,
+            "depth_to_m": 663.2,
+            "diameter_mm": 108
+          }
+        ],
+        "source_ids": [
+          "BLG-S-YAKORUDA-C10-MH120-2019"
+        ]
+      },
+      "hydro_notes_bg": "Сондажът работи на самоизлив. Точна дълбочина на първи минерален водоприток не е установена от използвания документ. Пукнатините и разломите не са автоматично доказани водопритоци.",
+      "source_documents": [
+        {
+          "source_id": "BLG-S-YAKORUDA-C10-MH120-2019",
+          "title": "Балнеологична оценка №120/10.04.2019 г. - сондаж №10, Якоруда",
+          "publisher": "Министерство на здравеопазването",
+          "document_year": 2019,
+          "url": "https://www.mh.government.bg/upload/6785/120-yakoruda-sondazh10-10-04-2019.pdf",
+          "pdf_page": 2,
+          "additional_hydraulic_page": 3
+        }
+      ]
     }
   ]
 }

@@ -435,7 +435,84 @@
           "display_category": "Минерален сондаж",
           "temperature_class": "40–60°C"
         },
-        "research_enrichment": [],
+        "research_enrichment": [
+          {
+            "research_tag": "BLG_SIMitli_DOCUMENTED_HYDRAULICS_V1",
+            "linked_national_borehole_id": "PLD-Z040",
+            "identity_match": {
+              "settlement": "Симитли",
+              "deposit": "Симитли” №70",
+              "borehole_number": 7
+            },
+            "mineral_hydrothermal_research": {
+              "data_origin": "documented_national_borehole_record",
+              "hydraulic_intervals": [
+                {
+                  "depth_from_m": 166,
+                  "depth_to_m": 234.7,
+                  "event_bg": "При навлизането в конгломератите на 166 m се появява вода на самоизлив с напор 7 m над терена. Източникът свързва появата на водата директно с тази литоложка граница.",
+                  "evidence_level": "source_explicit_hydraulic_onset",
+                  "source_ids": [
+                    "PLD-S083"
+                  ]
+                }
+              ],
+              "groundwater_discharge": {
+                "technical_possible_flow_l_s": 4.84,
+                "status": "documented_2011_multistep_test",
+                "source_ids": [
+                  "PLD-S083"
+                ]
+              },
+              "water_temperature": {
+                "sampled_temperature_c": 51.9,
+                "status": "documented_at_water_sampling",
+                "source_ids": [
+                  "PLD-S051"
+                ]
+              },
+              "structural_intervals": [],
+              "intake_intervals": [
+                {
+                  "depth_from_m": 32.25,
+                  "depth_to_m": 234.7,
+                  "type": "open_hole",
+                  "material_bg": "Основно пясъчници и конгломерати",
+                  "interpretation_bg": "Документиран открит ствол в неогенския седиментен комплекс",
+                  "evidence_level": "borehole_exact",
+                  "source_ids": [
+                    "PLD-S051"
+                  ]
+                }
+              ],
+              "borehole_construction": {
+                "year_constructed": 1965,
+                "total_depth_m": 234.7,
+                "planned_depth_m": 800,
+                "stopped_early": true,
+                "casing_from_m": 0,
+                "casing_to_m": 32.25,
+                "casing_diameter_mm": 219,
+                "open_hole_from_m": 32.25,
+                "open_hole_to_m": 234.7,
+                "open_hole_diameter_mm": 146,
+                "source_ids": [
+                  "PLD-S051",
+                  "PLD-S083"
+                ],
+                "construction_year": 1965
+              },
+              "hydro_notes_bg": "Сондаж №7 не достига докамбрийската кристалинна подложка и остава в пролувиалните и неогенските седименти. Находище Симитли е част от разломно контролирана хидротермална система, в която регионалната водовмещаща среда включва тектонски напукани гнайси и амфиболити на подложката и неогенски пясъчници и конгломерати. При навлизането в едрокъсовите до валунни конгломерати на 166 m е документирана поява на вода на самоизлив с напор 7 m над терена. При достигане на 234.7 m е документиран първоначален дебит 0.91 l/s при 51.8°C. В балнеологичната оценка на МЗ са запазени отделно стойностите 1.00 l/s и 51.9°C при пробовземането. Ресурсната оценка от 2011 г. определя технически възможен дебит 4.84 l/s. Тези различни стойности се пазят според контекста им и не се приравняват.",
+              "interpretation_limits": [
+                "Drilling-stage measurements are not sustainable yield.",
+                "A drilling-stage observation depth is not automatically a water-bearing layer boundary.",
+                "Open-hole, casing and filter intervals are construction, not proven inflow.",
+                "Source-specific temperatures and discharge values remain distinct.",
+                "No new values or coordinates inferred."
+              ]
+            }
+          }
+        ],
         "duplicate_mh_records": [],
         "matched_existing_records": []
       },
@@ -603,7 +680,109 @@
           "display_category": "Минерален сондаж",
           "temperature_class": "60–80°C"
         },
-        "research_enrichment": [],
+        "research_enrichment": [
+          {
+            "research_tag": "BLG_SIMitli_DOCUMENTED_HYDRAULICS_V1",
+            "linked_national_borehole_id": "PLD-Z067",
+            "identity_match": {
+              "settlement": "Симитли",
+              "deposit": "Симитли” №70",
+              "borehole_number": 18
+            },
+            "mineral_hydrothermal_research": {
+              "data_origin": "documented_national_borehole_record",
+              "hydraulic_intervals": [
+                {
+                  "depth_from_m": 0,
+                  "depth_to_m": 6,
+                  "event_bg": "При 6 м: самоизлив 0,03 l/s, температура 38°C.",
+                  "evidence_level": "drilling_stage_hydraulic_observation",
+                  "source_ids": [
+                    "PLD-S078"
+                  ]
+                },
+                {
+                  "depth_from_m": 0,
+                  "depth_to_m": 8.56,
+                  "event_bg": "При 8,56 м: самоизлив 1 l/s, температура 50°C.",
+                  "evidence_level": "drilling_stage_hydraulic_observation",
+                  "source_ids": [
+                    "PLD-S078"
+                  ]
+                },
+                {
+                  "depth_from_m": 0,
+                  "depth_to_m": 18,
+                  "event_bg": "При 18 м: самоизлив 2 l/s, температура 61°C.",
+                  "evidence_level": "drilling_stage_hydraulic_observation",
+                  "source_ids": [
+                    "PLD-S078"
+                  ]
+                },
+                {
+                  "depth_from_m": 0,
+                  "depth_to_m": 62,
+                  "event_bg": "При 62 м: самоизлив 6,2 l/s, температура 61°C.",
+                  "evidence_level": "drilling_stage_hydraulic_observation",
+                  "source_ids": [
+                    "PLD-S078"
+                  ]
+                },
+                {
+                  "depth_from_m": 0,
+                  "depth_to_m": 70,
+                  "event_bg": "При 70 м: самоизлив 12,9 l/s, температура 61,5°C.",
+                  "evidence_level": "drilling_stage_hydraulic_observation",
+                  "source_ids": [
+                    "PLD-S078"
+                  ]
+                },
+                {
+                  "depth_from_m": 0,
+                  "depth_to_m": 95.4,
+                  "event_bg": "При крайната дълбочина около 95,4-95,5 м е документиран самоизлив около 19,95 l/s и температура 62°C.",
+                  "evidence_level": "drilling_stage_hydraulic_observation",
+                  "source_ids": [
+                    "PLD-S078"
+                  ]
+                }
+              ],
+              "groundwater_discharge": null,
+              "water_temperature": null,
+              "structural_intervals": [
+                {
+                  "depth_from_m": 20.4,
+                  "depth_to_m": 95.4,
+                  "description_bg": "Напукан сиво-син пясъчник",
+                  "evidence_level": "borehole_exact",
+                  "source_ids": [
+                    "PLD-S078"
+                  ]
+                }
+              ],
+              "intake_intervals": null,
+              "borehole_construction": {
+                "total_depth_m": 95.4,
+                "construction_year": 1957,
+                "casing_from_m": 0,
+                "casing_to_m": 20.5,
+                "open_hole_from_m": 20.5,
+                "open_hole_to_m": 95.4,
+                "source_ids": [
+                  "PLD-S078"
+                ]
+              },
+              "hydro_notes_bg": "Ресурсният доклад посочва, че част от разкритата от №18 вода е привлечена от сондаж №14. Хидравличните стойности са запазени като наблюдения при удълбяването, а не като точни граници на водоносни пластове.",
+              "interpretation_limits": [
+                "Drilling-stage measurements are not sustainable yield.",
+                "A drilling-stage observation depth is not automatically a water-bearing layer boundary.",
+                "Open-hole, casing and filter intervals are construction, not proven inflow.",
+                "Source-specific temperatures and discharge values remain distinct.",
+                "No new values or coordinates inferred."
+              ]
+            }
+          }
+        ],
         "duplicate_mh_records": [],
         "matched_existing_records": []
       },
@@ -31024,7 +31203,139 @@
           "display_category": "Минерален сондаж",
           "temperature_class": "Без температура"
         },
-        "research_enrichment": [],
+        "research_enrichment": [
+          {
+            "research_tag": "BLG_BLAGOEVGRAD_14HG_DOCUMENTED_HYDRAULICS_V1",
+            "linked_national_borehole_id": "PLD-Z070",
+            "identity_match": {
+              "deposit": "„Благоевград – р. Струма” №11",
+              "settlement": "Зелен дол",
+              "borehole_name": "Сондаж 14ХГ",
+              "coordinate_difference_m": 0.004
+            },
+            "mineral_hydrothermal_research": {
+              "data_origin": "documented_national_borehole_record",
+              "documented_total_depth_m": 477,
+              "hydraulic_intervals": [],
+              "groundwater_discharge": {
+                "technical_possible_flow_l_s": 4.8,
+                "status": "documented",
+                "source_ids": [
+                  "PLD-S081"
+                ]
+              },
+              "water_temperature": {
+                "technical_resource_temperature_c": 63,
+                "status": "documented",
+                "source_ids": [
+                  "PLD-S081"
+                ]
+              },
+              "structural_intervals": [
+                {
+                  "depth_from_m": 151.6,
+                  "depth_to_m": 164.5,
+                  "description_bg": "Силно напукани биотитови гнайси",
+                  "evidence_level": "borehole_exact",
+                  "source_ids": [
+                    "PLD-S081"
+                  ]
+                },
+                {
+                  "depth_from_m": 164.5,
+                  "depth_to_m": 187,
+                  "description_bg": "Силно напукани ортоамфиболити",
+                  "evidence_level": "borehole_exact",
+                  "source_ids": [
+                    "PLD-S081"
+                  ]
+                },
+                {
+                  "depth_from_m": 187,
+                  "depth_to_m": 203,
+                  "description_bg": "Милонитизирани ортоамфиболити с тектонска глина - тектонска зона",
+                  "evidence_level": "borehole_exact",
+                  "source_ids": [
+                    "PLD-S081"
+                  ]
+                },
+                {
+                  "depth_from_m": 203,
+                  "depth_to_m": 230.4,
+                  "description_bg": "Силно напукани ортоамфиболити",
+                  "evidence_level": "borehole_exact",
+                  "source_ids": [
+                    "PLD-S081"
+                  ]
+                },
+                {
+                  "depth_from_m": 230.4,
+                  "depth_to_m": 263,
+                  "description_bg": "Силно напукани амфиболити с маломощни прослойки от биотитови гнайси",
+                  "evidence_level": "borehole_exact",
+                  "source_ids": [
+                    "PLD-S081"
+                  ]
+                },
+                {
+                  "depth_from_m": 360,
+                  "depth_to_m": 477,
+                  "description_bg": "Силно напукани ортоамфиболити",
+                  "evidence_level": "borehole_exact",
+                  "source_ids": [
+                    "PLD-S081"
+                  ]
+                }
+              ],
+              "intake_intervals": null,
+              "borehole_construction": {
+                "total_depth_m": 477,
+                "construction_year": 1972,
+                "drilled_site_elevation_m": 325.5,
+                "casing_intervals": [
+                  {
+                    "depth_from_m": 0,
+                    "depth_to_m": 32,
+                    "diameter_mm": 168,
+                    "cemented": true
+                  },
+                  {
+                    "depth_from_m": 10,
+                    "depth_to_m": 156.5,
+                    "diameter_mm": 146,
+                    "cemented": true
+                  },
+                  {
+                    "depth_from_m": 20,
+                    "depth_to_m": 306.26,
+                    "diameter_mm": 127,
+                    "cemented": false,
+                    "perforated_from_m": 175,
+                    "perforated_to_m": 225
+                  }
+                ],
+                "filter_column_from_m": 297.9,
+                "filter_column_to_m": 473.3,
+                "filter_from_m": 315,
+                "filter_to_m": 450,
+                "source_ids": [
+                  "PLD-S081"
+                ]
+              },
+              "hydro_notes_bg": "Силно напуканите и тектонски нарушени интервали са запазени като структурни данни. Перфорациите и филтрите са конструктивни данни и не са преобразувани автоматично в точни интервали на водоприток.",
+              "source_document_ids": [
+                "PLD-S081"
+              ],
+              "interpretation_limits": [
+                "Filter depth is not proof of productive inflow depth.",
+                "Technical possible discharge is not sustainable yield.",
+                "Temperature is specific to its measurement context.",
+                "Fractures alone do not prove water inflow.",
+                "No new water depths or coordinates inferred."
+              ]
+            }
+          }
+        ],
         "duplicate_mh_records": [],
         "matched_existing_records": []
       },
@@ -31584,7 +31895,100 @@
           "display_category": "Ликвидиран/закрит",
           "temperature_class": "Без температура"
         },
-        "research_enrichment": [],
+        "research_enrichment": [
+          {
+            "research_tag": "BLG_SIMitli_DOCUMENTED_HYDRAULICS_V1",
+            "linked_national_borehole_id": "PLD-Z068",
+            "identity_match": {
+              "settlement": "Симитли",
+              "deposit": "„Симитли” №70",
+              "borehole_number": 2
+            },
+            "mineral_hydrothermal_research": {
+              "data_origin": "documented_national_borehole_record",
+              "hydraulic_intervals": [
+                {
+                  "depth_from_m": 0,
+                  "depth_to_m": 1.5,
+                  "event_bg": "При 1,5 м: самоизлив 0,15 l/s, температура 32,8°C.",
+                  "evidence_level": "drilling_stage_hydraulic_observation",
+                  "source_ids": [
+                    "PLD-S079"
+                  ]
+                },
+                {
+                  "depth_from_m": 0,
+                  "depth_to_m": 6.5,
+                  "event_bg": "При 6,5 м: самоизлив 0,35 l/s, температура 55,5°C.",
+                  "evidence_level": "drilling_stage_hydraulic_observation",
+                  "source_ids": [
+                    "PLD-S079"
+                  ]
+                },
+                {
+                  "depth_from_m": 0,
+                  "depth_to_m": 13.5,
+                  "event_bg": "При 13,5 м: самоизлив 1,55 l/s, температура 57,2°C.",
+                  "evidence_level": "drilling_stage_hydraulic_observation",
+                  "source_ids": [
+                    "PLD-S079"
+                  ]
+                },
+                {
+                  "depth_from_m": 0,
+                  "depth_to_m": 44,
+                  "event_bg": "При 44 м: самоизлив 1,87 l/s, температура 58°C.",
+                  "evidence_level": "drilling_stage_hydraulic_observation",
+                  "source_ids": [
+                    "PLD-S079"
+                  ]
+                },
+                {
+                  "depth_from_m": 0,
+                  "depth_to_m": 90,
+                  "event_bg": "При 90 м: самоизлив 1,87 l/s, температура 58°C.",
+                  "evidence_level": "drilling_stage_hydraulic_observation",
+                  "source_ids": [
+                    "PLD-S079"
+                  ]
+                }
+              ],
+              "groundwater_discharge": null,
+              "water_temperature": null,
+              "structural_intervals": [],
+              "intake_intervals": null,
+              "borehole_construction": {
+                "total_depth_m": 90,
+                "construction_year": 1957,
+                "casing_intervals": [
+                  {
+                    "depth_from_m": 0,
+                    "depth_to_m": 9.85,
+                    "diameter_mm": 273
+                  },
+                  {
+                    "depth_from_m": 9.85,
+                    "depth_to_m": 27.55,
+                    "diameter_mm": 200
+                  }
+                ],
+                "open_hole_from_m": 27.55,
+                "open_hole_to_m": 90,
+                "source_ids": [
+                  "PLD-S079"
+                ]
+              },
+              "hydro_notes_bg": "Документът описва цялата 90-метрова мощност като неогенски синьо-зелен глинест кварцов пясъчник. Сондажът впоследствие е ликвидиран/недостъпен според огледа от 2011 г.",
+              "interpretation_limits": [
+                "Drilling-stage measurements are not sustainable yield.",
+                "A drilling-stage observation depth is not automatically a water-bearing layer boundary.",
+                "Open-hole, casing and filter intervals are construction, not proven inflow.",
+                "Source-specific temperatures and discharge values remain distinct.",
+                "No new values or coordinates inferred."
+              ]
+            }
+          }
+        ],
         "duplicate_mh_records": [],
         "matched_existing_records": []
       },
@@ -36166,10 +36570,16 @@
         "settlement": "Якоруда"
       },
       "location": {
-        "lat": null,
-        "lon": null,
-        "status": "TO_RESEARCH",
-        "origin": null
+        "lat": 42.0118218,
+        "lon": 23.6413548,
+        "status": "OFFICIAL_EXACT",
+        "origin": "official_BGS1970_K9_transformed",
+        "source_crs": "BGS1970_K9",
+        "source_northing": 4527436.798,
+        "source_easting": 8524848.108,
+        "target_crs": "WGS84",
+        "transform_method": "geomapbg.com single-point transformation",
+        "spatial_qa": "NEAR_MINERAL_BATH_AND_RAILWAY; approximate bath-reference distance 178 m"
       },
       "free": {
         "temperature_c": 44.2,
@@ -47550,6 +47960,330 @@
         "spatial_geometry_status": "NO_VALIDATED_REGIONAL_POLYGON_STORED",
         "interpretation_limit": "The model supports point-based mineral-potential interpretation near the documented Dolna Banya thermal system. It does not prove mineral water at a selected property and does not establish exact local depth, temperature, discharge, productive fracture or hydraulic connection to Byalata Voda."
       }
+    },
+    {
+      "regional_model_id": "simitli",
+      "identity": {
+        "name": "Симитли",
+        "model_type": "regional mineral / thermal hydrogeological model",
+        "district": "Благоевград",
+        "municipality": "Симитли"
+      },
+      "evidence_base": {
+        "facility_count": 3,
+        "facility_ids": [
+          "mw_501b1f34b3f7b4fc",
+          "mw_f8caa349596dae97",
+          "mw_cfe28f427ccb6d5c"
+        ],
+        "national_borehole_ids": [
+          "PLD-Z040",
+          "PLD-Z067",
+          "PLD-Z068"
+        ],
+        "evidence_scope": "Documented hydraulic observations from individual boreholes; these are not a spatially interpolated mineral-water depth model."
+      },
+      "system_framework": {
+        "system_type": "documented mineral and thermal groundwater occurrences in the Simitli boreholes",
+        "interpretation_scope": "Individual borehole evidence only. No regional productive fracture geometry or continuous water-bearing horizon is established by this record."
+      },
+      "documented_reference_events": [
+        {
+          "facility_id": "mw_501b1f34b3f7b4fc",
+          "national_borehole_id": "PLD-Z040",
+          "observation_index": 1,
+          "observation_type": "source_explicit_hydraulic_onset",
+          "drilling_stage_depth_m": 234.7,
+          "original_depth_from_m": 166,
+          "original_depth_to_m": 234.7,
+          "original_description_bg": "При навлизането в конгломератите на 166 m се появява вода на самоизлив с напор 7 m над терена. Източникът свързва появата на водата директно с тази литоложка граница.",
+          "source_ids": [
+            "PLD-S083"
+          ],
+          "interpretation_limit": "Depth values preserve the original source record. A stage observation does not prove a continuous water-producing interval."
+        },
+        {
+          "facility_id": "mw_f8caa349596dae97",
+          "national_borehole_id": "PLD-Z067",
+          "observation_index": 1,
+          "observation_type": "drilling_stage_hydraulic_observation",
+          "drilling_stage_depth_m": 6,
+          "original_depth_from_m": 0,
+          "original_depth_to_m": 6,
+          "original_description_bg": "При 6 м: самоизлив 0,03 l/s, температура 38°C.",
+          "source_ids": [
+            "PLD-S078"
+          ],
+          "interpretation_limit": "Depth values preserve the original source record. A stage observation does not prove a continuous water-producing interval."
+        },
+        {
+          "facility_id": "mw_f8caa349596dae97",
+          "national_borehole_id": "PLD-Z067",
+          "observation_index": 2,
+          "observation_type": "drilling_stage_hydraulic_observation",
+          "drilling_stage_depth_m": 8.56,
+          "original_depth_from_m": 0,
+          "original_depth_to_m": 8.56,
+          "original_description_bg": "При 8,56 м: самоизлив 1 l/s, температура 50°C.",
+          "source_ids": [
+            "PLD-S078"
+          ],
+          "interpretation_limit": "Depth values preserve the original source record. A stage observation does not prove a continuous water-producing interval."
+        },
+        {
+          "facility_id": "mw_f8caa349596dae97",
+          "national_borehole_id": "PLD-Z067",
+          "observation_index": 3,
+          "observation_type": "drilling_stage_hydraulic_observation",
+          "drilling_stage_depth_m": 18,
+          "original_depth_from_m": 0,
+          "original_depth_to_m": 18,
+          "original_description_bg": "При 18 м: самоизлив 2 l/s, температура 61°C.",
+          "source_ids": [
+            "PLD-S078"
+          ],
+          "interpretation_limit": "Depth values preserve the original source record. A stage observation does not prove a continuous water-producing interval."
+        },
+        {
+          "facility_id": "mw_f8caa349596dae97",
+          "national_borehole_id": "PLD-Z067",
+          "observation_index": 4,
+          "observation_type": "drilling_stage_hydraulic_observation",
+          "drilling_stage_depth_m": 62,
+          "original_depth_from_m": 0,
+          "original_depth_to_m": 62,
+          "original_description_bg": "При 62 м: самоизлив 6,2 l/s, температура 61°C.",
+          "source_ids": [
+            "PLD-S078"
+          ],
+          "interpretation_limit": "Depth values preserve the original source record. A stage observation does not prove a continuous water-producing interval."
+        },
+        {
+          "facility_id": "mw_f8caa349596dae97",
+          "national_borehole_id": "PLD-Z067",
+          "observation_index": 5,
+          "observation_type": "drilling_stage_hydraulic_observation",
+          "drilling_stage_depth_m": 70,
+          "original_depth_from_m": 0,
+          "original_depth_to_m": 70,
+          "original_description_bg": "При 70 м: самоизлив 12,9 l/s, температура 61,5°C.",
+          "source_ids": [
+            "PLD-S078"
+          ],
+          "interpretation_limit": "Depth values preserve the original source record. A stage observation does not prove a continuous water-producing interval."
+        },
+        {
+          "facility_id": "mw_f8caa349596dae97",
+          "national_borehole_id": "PLD-Z067",
+          "observation_index": 6,
+          "observation_type": "drilling_stage_hydraulic_observation",
+          "drilling_stage_depth_m": 95.4,
+          "original_depth_from_m": 0,
+          "original_depth_to_m": 95.4,
+          "original_description_bg": "При крайната дълбочина около 95,4-95,5 м е документиран самоизлив около 19,95 l/s и температура 62°C.",
+          "source_ids": [
+            "PLD-S078"
+          ],
+          "interpretation_limit": "Depth values preserve the original source record. A stage observation does not prove a continuous water-producing interval."
+        },
+        {
+          "facility_id": "mw_cfe28f427ccb6d5c",
+          "national_borehole_id": "PLD-Z068",
+          "observation_index": 1,
+          "observation_type": "drilling_stage_hydraulic_observation",
+          "drilling_stage_depth_m": 1.5,
+          "original_depth_from_m": 0,
+          "original_depth_to_m": 1.5,
+          "original_description_bg": "При 1,5 м: самоизлив 0,15 l/s, температура 32,8°C.",
+          "source_ids": [
+            "PLD-S079"
+          ],
+          "interpretation_limit": "Depth values preserve the original source record. A stage observation does not prove a continuous water-producing interval."
+        },
+        {
+          "facility_id": "mw_cfe28f427ccb6d5c",
+          "national_borehole_id": "PLD-Z068",
+          "observation_index": 2,
+          "observation_type": "drilling_stage_hydraulic_observation",
+          "drilling_stage_depth_m": 6.5,
+          "original_depth_from_m": 0,
+          "original_depth_to_m": 6.5,
+          "original_description_bg": "При 6,5 м: самоизлив 0,35 l/s, температура 55,5°C.",
+          "source_ids": [
+            "PLD-S079"
+          ],
+          "interpretation_limit": "Depth values preserve the original source record. A stage observation does not prove a continuous water-producing interval."
+        },
+        {
+          "facility_id": "mw_cfe28f427ccb6d5c",
+          "national_borehole_id": "PLD-Z068",
+          "observation_index": 3,
+          "observation_type": "drilling_stage_hydraulic_observation",
+          "drilling_stage_depth_m": 13.5,
+          "original_depth_from_m": 0,
+          "original_depth_to_m": 13.5,
+          "original_description_bg": "При 13,5 м: самоизлив 1,55 l/s, температура 57,2°C.",
+          "source_ids": [
+            "PLD-S079"
+          ],
+          "interpretation_limit": "Depth values preserve the original source record. A stage observation does not prove a continuous water-producing interval."
+        },
+        {
+          "facility_id": "mw_cfe28f427ccb6d5c",
+          "national_borehole_id": "PLD-Z068",
+          "observation_index": 4,
+          "observation_type": "drilling_stage_hydraulic_observation",
+          "drilling_stage_depth_m": 44,
+          "original_depth_from_m": 0,
+          "original_depth_to_m": 44,
+          "original_description_bg": "При 44 м: самоизлив 1,87 l/s, температура 58°C.",
+          "source_ids": [
+            "PLD-S079"
+          ],
+          "interpretation_limit": "Depth values preserve the original source record. A stage observation does not prove a continuous water-producing interval."
+        },
+        {
+          "facility_id": "mw_cfe28f427ccb6d5c",
+          "national_borehole_id": "PLD-Z068",
+          "observation_index": 5,
+          "observation_type": "drilling_stage_hydraulic_observation",
+          "drilling_stage_depth_m": 90,
+          "original_depth_from_m": 0,
+          "original_depth_to_m": 90,
+          "original_description_bg": "При 90 м: самоизлив 1,87 l/s, температура 58°C.",
+          "source_ids": [
+            "PLD-S079"
+          ],
+          "interpretation_limit": "Depth values preserve the original source record. A stage observation does not prove a continuous water-producing interval."
+        }
+      ],
+      "synthesis": {
+        "water_onset_model": {
+          "status": "INDIVIDUAL_BOREHOLE_EVENTS_DOCUMENTED",
+          "conclusion": "Water appearances and changes during drilling are retained at their documented stage depths. They cannot be assigned automatically to another drilling location."
+        },
+        "temperature_model": {
+          "status": "SOURCE_SPECIFIC_TEMPERATURES_DOCUMENTED",
+          "temperature_gradient_status": "NOT_DEFENSIBLE_FROM_CURRENT_DATA",
+          "conclusion": "Temperatures from drilling stages, samples and registry measurements are not interchangeable. A numerical geothermal gradient is not inferred."
+        },
+        "discharge_model": {
+          "status": "DOCUMENTED_HYDRAULIC_OBSERVATIONS",
+          "conclusion": "Drilling-stage discharge, technical potential and approved exploitation resource must remain separate measurements."
+        },
+        "collector_model": {
+          "status": "LOCAL_LITHOLOGICAL_EVIDENCE_ONLY",
+          "conclusion": "Borehole lithology, fractures and water appearances are stored individually. A continuous regional collector is not established."
+        },
+        "cold_over_thermal_water": {
+          "status": "NOT_ESTABLISHED_REGIONALLY"
+        },
+        "artesian_pressure_model": {
+          "status": "DOCUMENTED_LOCALLY",
+          "conclusion": "Self-flow and pressure information is valid at its source borehole, not across the municipality."
+        },
+        "depth_model": {
+          "status": "NO_TARGET_DEPTH_MODEL",
+          "conclusion": "Individual documented water appearances are reference observations, not predicted drilling depths for a selected property."
+        }
+      },
+      "research_status": "REGIONAL_REFERENCE_EVENTS_DOCUMENTED",
+      "next_research_tasks": [
+        "Link further verified Simitli hydraulic measurements.",
+        "Review independent evidence for hydrogeological boundaries.",
+        "Keep mineral inflows separate from borehole construction."
+      ],
+      "regional_model_scope": {
+        "scope_type": "documented_borehole_reference_context",
+        "scope_role": "regional_context_only",
+        "spatial_geometry_status": "NO_VALIDATED_REGIONAL_POLYGON_STORED",
+        "interpretation_limit": "No mineral-water occurrence, temperature, discharge or drilling target depth is proven at an arbitrary point."
+      }
+    },
+    {
+      "regional_model_id": "yakoruda",
+      "identity": {
+        "name": "Якоруда",
+        "model_type": "regional mineral / thermal hydrogeological model",
+        "district": "Благоевград",
+        "municipality": "Якоруда"
+      },
+      "evidence_base": {
+        "facility_count": 1,
+        "facility_ids": [
+          "mw_d92b92ca1d485b4f"
+        ],
+        "primary_facility": "Сондаж № 10",
+        "documented_construction_year": 1973,
+        "documented_total_depth_m": 663.2,
+        "evidence_scope": "Single documented mineral borehole, not a validated spatial interpolation model"
+      },
+      "system_framework": {
+        "system_type": "documented thermal mineral-water occurrence",
+        "geological_collector_status": "NOT_RESOLVED_FROM_CURRENT_FACILITY_RECORD",
+        "interpretation_scope": "Facility-specific observation only; no continuous aquifer, productive fracture depth or regional thermal gradient established"
+      },
+      "documented_reference_events": [],
+      "synthesis": {
+        "depth_model": {
+          "status": "TOTAL_BOREHOLE_DEPTH_ONLY",
+          "documented_total_depth_m": 663.2,
+          "first_mineral_inflow_depth_m": null,
+          "proven_productive_intervals": [],
+          "interpretation_limit": "The 663.2 m borehole depth is not the depth where mineral water first appeared."
+        },
+        "temperature_model": {
+          "status": "DOCUMENTED_DIFFERENT_MEASUREMENT_CONTEXTS",
+          "technical_temperature_c": 42,
+          "sample_temperature_c": 44.2,
+          "temperature_gradient_status": "NOT_DEFENSIBLE_FROM_CURRENT_DATA",
+          "interpretation_limit": "Technical and sample temperatures are distinct; neither is a depth-temperature profile."
+        },
+        "discharge_model": {
+          "status": "TECHNICAL_POSSIBLE_DISCHARGE_DOCUMENTED",
+          "technical_possible_discharge_l_s": 13.42,
+          "sustainable_yield_l_s": null,
+          "interpretation_limit": "Technical possible discharge is not a proven sustainable yield or drilling-stage inflow."
+        },
+        "water_chemistry": {
+          "status": "OFFICIAL_BALNEOLOGICAL_ASSESSMENT_VALUES",
+          "total_mineralization_mg_l": 595.65,
+          "ph": 8.54,
+          "fluoride_mg_l": 14.35,
+          "interpretation_limit": "These are source-specific reported values, not predicted water chemistry elsewhere."
+        },
+        "artesian_pressure_model": {
+          "status": "NOT_ESTABLISHED_FROM_CURRENT_RECORD"
+        },
+        "cold_over_thermal_water": {
+          "status": "NOT_ESTABLISHED_FROM_CURRENT_RECORD"
+        },
+        "collector_model": {
+          "status": "INSUFFICIENT_DEPTH_SPECIFIC_EVIDENCE"
+        }
+      },
+      "research_status": "FACILITY_TECHNICAL_AND_CHEMICAL_DATA_DOCUMENTED",
+      "next_research_tasks": [
+        "Find published source data specifying first mineral inflow depth and subsequent productive horizons.",
+        "Find a verified borehole lithological column.",
+        "Resolve authoritative facility-level coordinates and original projected coordinate reference system.",
+        "Seek direct evidence for hydraulic pressure, sustained discharge and collector fractures."
+      ],
+      "regional_model_scope": {
+        "scope_type": "single_facility_reference_context",
+        "scope_role": "regional_context_only",
+        "spatial_geometry_status": "NO_VERIFIED_FACILITY_COORDINATES",
+        "interpretation_limit": "This model cannot assign mineral water, temperature, discharge or target drilling depth to an arbitrary location."
+      },
+      "sources": [
+        {
+          "source_type": "official_balneological_assessment",
+          "publisher": "Министерство на здравеопазването",
+          "title": "Балнеологична оценка №120/10.04.2019 г.",
+          "source_url": "https://www.mh.government.bg/upload/6785/120-yakoruda-sondazh10-10-04-2019.pdf",
+          "linked_facility_id": "mw_d92b92ca1d485b4f"
+        }
+      ]
     }
   ]
 }

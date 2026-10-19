@@ -371,7 +371,7 @@ export default async function DepthStructurePage({
       "Регионален геоложки контекст",
 
     UNRESOLVED:
-      "Недостатъчно данни за конкретната дълбочина",
+      "Регионален геоложки анализ",
   } as const;
 
   const confidenceLabel = (value: string | null) => {
@@ -403,6 +403,66 @@ export default async function DepthStructurePage({
     "Neogene OR Cretaceous depending on structure",
     "older platform cover; exact unit unresolved"
   ]);
+  // SONDI_GLOBAL_REGIONAL_DEPTH_PRESENTATION_V2
+  // This context is descriptive, never an invented borehole log.
+  const regionalGeologyForEmptyDepth = [
+    profile.target_glim_surface_context?.status === "OK"
+      ? [
+          profile.target_glim_surface_context.material_bg,
+          profile.target_glim_surface_context.detail_bg
+        ].filter(Boolean).join(". ")
+      : "",
+    ...profile.target_national_depth_model.flatMap(item =>
+      item.surface_geology?.name_bg
+        ? [item.surface_geology.name_bg]
+        : []
+    )
+  ].filter((value): value is string =>
+    typeof value === "string" && value.trim().length > 0
+  );
+
+  // SONDI_NATIONAL_HUMAN_REGIONAL_DESCRIPTION_V1
+  // Explain the actual mapped surface unit, never invent depth contacts.
+  const regionalSurfaceExplanation = (() => {
+    const surface = profile.target_glim_surface_context;
+    if (surface?.status !== "OK" || !surface.material_bg) return "";
+
+    const name = surface.material_bg.trim();
+    const lower = name.toLocaleLowerCase("bg");
+    let meaning = "";
+
+    if (/карбонат|варовиц|доломит/i.test(lower)) {
+      meaning = "Това са скали, образувани главно от " +
+        "натрупване на карбонатни материали. Те могат да " +
+        "бъдат плътни, напукани или с кухини, което е " +
+        "важно за условията при сондиране.";
+    } else if (/териген|пясъчник|конгломерат/i.test(lower)) {
+      meaning = "Тези седиментни скали са образувани от " +
+        "натрупване на скални частици. В зависимост от " +
+        "състава и спойката им твърдостта и устойчивостта " +
+        "при сондиране могат да се различават.";
+    } else if (/гнайс|шист|метаморф/i.test(lower)) {
+      meaning = "Това са скали, преобразувани при висока " +
+        "температура и налягане. Тяхната напуканост и " +
+        "изветряне влияят върху условията за сондиране.";
+    } else if (/гранит|магмен|вулкан/i.test(lower)) {
+      meaning = "Тези скали са свързани с магмена дейност. " +
+        "Могат да бъдат здрави или локално напукани " +
+        "и изветрели.";
+    } else if (/глин|пясъ|чакъл|алуви|делуви/i.test(lower)) {
+      meaning = "Това са наслаги от частици с различна " +
+        "големина. Пясъците и чакълите обикновено са " +
+        "по-пропускливи от глините, а устойчивостта им " +
+        "зависи от уплътняването и свързаността.";
+    } else {
+      meaning = "Това е регионална класификация на " +
+        "скалния материал, а не измерена сондажна колонка.";
+    }
+
+    return "В района геоложката карта показва " +
+      lower + ". " + meaning;
+  })();
+
   const rawRows = unified.map(point => {
         const isConditionalVratsaMaterial =
       typeof point.material === "string" &&
@@ -413,7 +473,7 @@ const material = point.material
         ? (profile.target_glim_surface_context.status === "OK"
             ? "Регионални геоложки варианти"
             : "Точният пласт не е установен")
-        : "Недостатъчно геоложки данни";
+        : "Регионален геоложки анализ";
 
     const simpleMaterialBase =
       /Neogene clay-sand|неогенски глинесто-песъчлив/i.test(material)
@@ -437,7 +497,12 @@ const material = point.material
             .map(x => geologyTextBg(familyLabel(x)))
             .join(" или ") + "."
         : !point.material
-          ? "Няма достатъчно данни за този пласт."
+          ? [
+              regionalSurfaceExplanation ||
+                "Регионален геоложки анализ според наличната регионална геология.",
+              "Точната литоложка последователност на избраната " +
+              "дълбочина не е потвърдена от локална колонка."
+            ].join(" ")
           : evidence === "DIRECT_BOREHOLE"
             ? "Данни от документиран сондаж."
             : evidence === "BOREHOLE_PROJECTION"
@@ -754,9 +819,11 @@ const material = point.material
     depth: "20–500 м",
     material: isSofiaCityRegional || rockFamilies.length > 0 || regionalOverview
       ? "Регионални геоложки варианти"
-      : "Недостатъчно геоложки данни",
+      : "Регионален геоложки анализ",
     description:
-      sofiaRegionalSummary ?? regionalDescription,
+      regionalSurfaceExplanation ||
+      sofiaRegionalSummary ||
+      regionalDescription,
     evidenceNote:
       "Сходен резултат при проверените дълбочини: " +
       checkpoints.join(", ") +
@@ -824,20 +891,21 @@ const material = point.material
 
   const displayRows = hasSpecificDepthEvidence
     ? rows
-    : regionalFallback
-    ? [regionalFallbackRow]
-    : isSondiRegional
-    ? [{
-        depth: "—",
-        material: "Регионален геоложки контекст",
-        description:
-          sondiRegionalCards.find(card => card.id.endsWith("-overview"))?.paragraphs[0] ?? "",
-        evidenceNote:
-          sondiRegionalCards.find(card => card.id.endsWith("-overview"))?.paragraphs[1] ?? "",
-        confidence: "Регионални сведения",
-        analogueCount: 0,
-      }]
-    : rows;
+    : [{
+        ...regionalFallbackRow,
+        material: "Регионален геоложки анализ",
+        description: [
+          regionalSurfaceExplanation ||
+            sofiaRegionalSummary ||
+            regionalDescription,
+          "Това е регионална геоложка интерпретация, " +
+          "а не доказателство за конкретен пласт " +
+          "или точна дълбочина на геоложки контакт."
+        ].filter(Boolean).filter((value, index, all) =>
+          all.indexOf(value) === index
+        ).join(" ")
+      }];
+
   // National documented contacts, independent of raster coverage.
   // These are measurements at neighbouring boreholes, NOT
   // a predicted contact beneath the selected coordinate.
@@ -1572,9 +1640,9 @@ const material = point.material
               color: "#52666c",
             }}
           >
-            За тази точка няма достатъчно
-            надежден локален сондажен аналог за
-            изграждане на профил.
+            Представен е регионален геоложки анализ.
+            Местните сондажни данни не доказват
+            конкретна вертикална колонка за избраната точка.
           </div>
         )}
 

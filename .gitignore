@@ -42,3 +42,6 @@ next-env.d.ts
 qa/*-report.json
 qa/*-failures/
 qa/*.bak-*
+
+# Local Copernicus GLO-30 DEM cache (large server-side raster data)
+data/terrain/copernicus-glo30/

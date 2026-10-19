@@ -141,7 +141,14 @@ export function buildUnifiedLithology(
       national.probable_lithology &&
       (
         national.evidence_tier === "DOCUMENTED_BOREHOLE" ||
-        national.evidence_tier === "GEOLOGICAL_CORRELATION"
+        national.evidence_tier === "GEOLOGICAL_CORRELATION" ||
+        (
+          national.evidence_tier === "REGIONAL_CONTEXT" &&
+          national.interpretation_scope ===
+            "NEARBY_BOREHOLE_ANALOG_UNVERIFIED" &&
+          national.confidence === "LOW" &&
+          national.region_id === "BLG"
+        )
       )
     ) {
       const documented =
@@ -172,10 +179,17 @@ export function buildUnifiedLithology(
               "Документирана литология на референтен сондаж.",
               "Важи за документирания интервал и координатите на сондажа."
             ]
-          : [
-              "Условна национална геоложка корелация.",
-              "Не е пряко измерен пласт под избраната точка."
-            ]
+          : national.interpretation_scope ===
+              "NEARBY_BOREHOLE_ANALOG_UNVERIFIED"
+            ? [
+                "Условна прогноза по близък сондажен аналог.",
+                "Геоложката съвместимост с избраната точка не е потвърдена.",
+                "Ниска увереност. Не е доказан пласт под избраните координати."
+              ]
+            : [
+                "Условна национална геоложка корелация.",
+                "Не е пряко измерен пласт под избраната точка."
+              ]
       };
     }
 

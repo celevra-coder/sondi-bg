@@ -390,6 +390,177 @@ function makeCards(
   return cards;
 }
 
+
+// SONDI_BLG_LOCAL_SOURCE_SELECTION_V5
+// Location anchors are approximations for selecting nearby studies.
+// They are not boundaries of geological formations or study footprints.
+type BlgStudySelection = {
+  id: string;
+  title: string;
+  informationType: string;
+  paragraphs: string[];
+  sources: string[];
+  summary: string;
+  distanceKm: number;
+};
+
+function blgApproxDistanceKm(
+  lat1: number, lon1: number,
+  lat2: number, lon2: number
+): number {
+  const rad = Math.PI / 180;
+  const dLat = (lat2 - lat1) * rad;
+  const dLon = (lon2 - lon1) * rad;
+  const a = Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * rad) * Math.cos(lat2 * rad) *
+    Math.sin(dLon / 2) ** 2;
+  return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function selectBlgNearbyStudies(
+  latitude: number,
+  longitude: number,
+  zone: RegionalZone
+): BlgStudySelection[] {
+  const definitions = [
+    {
+      source: "BLG-RES-KRESNA-ERT-2025",
+      lat: 41.72, lng: 23.16,
+      title: "Крупник–Кресна — гранитен скален масив",
+      summary: "В проучените участъци край Крупник и Кресна са "
+        + "описани изветрели и напукани гранити. Гранитът е "
+        + "твърда магмена скала, но близо до повърхността "
+        + "и по разломи може да бъде силно разрушен. "
+        + "Това е важно за условията при сондиране.",
+      paragraphs: [
+        "Проучването използва електросъпротивителни измервания "
+          + "и сондажни сведения за участъци от трасето на "
+          + "автомагистрала Струма в района Крупник–Кресна.",
+        "Описани са зони с изветрял, раздробен и напукан гранит. "
+          + "Те показват, че състоянието на скалния масив "
+          + "може да се променя на малки разстояния.",
+        "Това е сравнителна информация за проучения район, "
+          + "а не установен пласт на конкретна дълбочина "
+          + "под избраните координати."
+      ]
+    },
+    {
+      source: "BLG-RES-MESTA-GROUNDWATER-2024",
+      lat: 41.885, lng: 23.467,
+      title: "Разложки басейн — карстифицирани мрамори",
+      summary: "Регионалните изследвания на Разложкия басейн "
+        + "описват карстифицирани мрамори и силикатни скали "
+        + "в Северен Пирин. Мраморът е преобразувана "
+        + "карбонатна скала, в която пукнатини и разтворени "
+        + "участъци могат да създават пътища за водата.",
+      paragraphs: [
+        "Изследването разглежда подземните води в басейна "
+          + "на Места, включително карстовия Разложки басейн.",
+        "В Северен Пирин е описан регионален контекст "
+          + "с карстифицирани мрамори и прослойки от "
+          + "силикатни скали.",
+        "Тези данни помагат за разбирането на подземното "
+          + "вододвижение, но не доказват точен сондажен "
+          + "разрез под избраната точка."
+      ]
+    },
+    {
+      source: "Razlog-Bansko EIA, App 2.1 - Geology.pdf",
+      lat: 41.859, lng: 23.479,
+      title: "Разлог–Банско — инженерно-геоложки проучвания",
+      summary: "По трасето между Разлог и Банско са описани "
+        + "геоложки участъци, които показват разнообразието "
+        + "на земните материали в проучената зона. "
+        + "Промените по трасето не означават, че същите "
+        + "пластове лежат непосредствено под избраната точка.",
+      paragraphs: [
+        "Публикуваната инженерно-геоложка документация "
+          + "съдържа описания на 148 сегмента по "
+          + "проученото трасе Разлог–Банско.",
+        "Сведенията са полезни за сравнение на "
+          + "местните геоложки условия, но не представляват "
+          + "доказана вертикална сондажна колонка.",
+        "Точните пространствени граници на сегментите "
+          + "не са цифрово установени в този модел."
+      ]
+    },
+    {
+      source: "BLG-GOTSE-MITEV-YANEVA-2013",
+      lat: 41.573, lng: 23.730,
+      title: "Гоце Делчев — геофизично изследване",
+      summary: "За района на Гоце Делчев е публикувано "
+        + "електросъпротивително проучване на геоложки тела. "
+        + "Подобни измервания помагат да се проследяват "
+        + "разлики между подземните материали, но "
+        + "сами по себе си не доказват точния вид "
+        + "и дълбочина на всеки пласт.",
+      paragraphs: [
+        "В изследването е приложено двумерно "
+          + "електросъпротивително профилиране за "
+          + "разграничаване на геоложки тела.",
+        "Резултатите дават сравнителен геофизичен "
+          + "контекст за проучените участъци около "
+          + "Гоце Делчев.",
+        "Интерпретациите не се представят като "
+          + "доказани сондажни интервали."
+      ]
+    }
+  ];
+
+  const available = zone.wider_studies ?? [];
+
+  return definitions.flatMap(def => {
+    const original = available.find(study =>
+      study.source_ids.includes(def.source)
+    );
+    if (!original) return [];
+
+    const distanceKm = blgApproxDistanceKm(
+      latitude, longitude, def.lat, def.lng
+    );
+
+    // Conservative locality-proximity filter.
+    // Do not fill missing studies with faraway regional records.
+    if (distanceKm > 35) return [];
+
+    return [{
+      id: "BLG-V5-" + def.source,
+      title: def.title,
+      informationType: original.informationType,
+      paragraphs: def.paragraphs,
+      sources: original.source_ids,
+      summary: def.summary,
+      distanceKm
+    }];
+  })
+  .sort((a, b) => a.distanceKm - b.distanceKm)
+  .slice(0, 3);
+}
+
+function blgLocalOverview(
+  latitude: number,
+  longitude: number,
+  zone: RegionalZone
+): SondiRegionalReportCard[] {
+  const selected = selectBlgNearbyStudies(latitude, longitude, zone);
+  if (!selected.length) return [];
+
+  const primary = selected[0];
+  return [{
+    id: "BLG-V5-local-overview",
+    title: primary.title,
+    informationType: "Документиран регионален геоложки контекст",
+    paragraphs: [
+      primary.summary,
+      "Информацията описва проучвания от близкия район. "
+        + "Точните пластове и дълбочини под избраната "
+        + "GPS точка не се приемат за доказани "
+        + "само от тези регионални сведения."
+    ],
+    sources: primary.sources
+  }];
+}
+
 /**
  * National, data-driven regional geological reporting.
  * Uses registered source-backed regional models and boundaries.
@@ -417,6 +588,18 @@ export function getSondiRegionalReport(
     const zone = model.zones[entry.zone_id];
 
     if (!zone) continue;
+
+    if (entry.id === "BLG") {
+      // Exclude V4's all-oblast borehole inventory from public cards.
+      const scopedZone: RegionalZone = {
+        ...zone,
+        regional_evidence_notes: []
+      };
+      return [
+        ...blgLocalOverview(latitude, longitude, zone),
+        ...makeCards(entry, scopedZone)
+      ];
+    }
 
     return makeCards(entry, zone);
   }
@@ -455,6 +638,17 @@ export function getSondiWiderStudies(
     );
     const zone = model.zones[entry.zone_id];
     if (!zone) return [];
+
+    if (entry.id === "BLG") {
+      return selectBlgNearbyStudies(latitude, longitude, zone)
+        .map(study => ({
+          id: study.id,
+          title: study.title,
+          informationType: study.informationType,
+          paragraphs: study.paragraphs,
+          sources: study.sources
+        }));
+    }
 
     return (zone.wider_studies ?? [])
       .filter(study =>
