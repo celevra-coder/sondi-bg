@@ -148,6 +148,158 @@ export function resolveNationalCorrelation(
     !target.unit?.code
   ) return null;
 
+  // SONDI_NATIONAL_CONSENSUS_67DJ2
+  // Conditional spatial interpretation, never an exact site log.
+  const categoryOf = (text: string): string | null => {
+    const s = text.toLocaleLowerCase("bg");
+    if (/гранитогнайс/.test(s)) return "Гранитогнайси";
+    if (/гранит/.test(s)) return "Гранити";
+    if (/гнайс/.test(s)) return "Гнайси";
+    if (/мергел/.test(s)) return "Мергели";
+    if (/варовик/.test(s)) return "Варовици";
+    if (/пясъчник/.test(s)) return "Пясъчници";
+    return null;
+  };
+
+  if (target.status === "DIRECT" && target.unit?.code) {
+    const controls: Array<{
+      hole: IndexedBorehole;
+      material: string;
+      sources: string[];
+      distance: number;
+    }> = [];
+
+    let ambiguous = false;
+
+    for (const hole of getNationalBoreholeIndex()) {
+      if (
+        hole.origin !== "NATIONAL" ||
+        hole.coordinate_status !== "OFFICIAL_EXACT" ||
+        hole.latitude === null ||
+        hole.longitude === null
+      ) continue;
+
+      const rad = Math.PI / 180;
+      const dy = (hole.latitude - latitude) * rad;
+      const dx = (hole.longitude - longitude) * rad;
+
+      const hav =
+        Math.sin(dy / 2) ** 2 +
+        Math.cos(latitude * rad) *
+        Math.cos(hole.latitude * rad) *
+        Math.sin(dx / 2) ** 2;
+
+      const distance = 6371 * 2 * Math.atan2(
+        Math.sqrt(hav),
+        Math.sqrt(Math.max(0, 1 - hav))
+      );
+
+      if (distance > 1) continue;
+
+      const surface = getGeologyAtLocation(
+        hole.latitude, hole.longitude
+      );
+
+      if (
+        surface.status !== "DIRECT" ||
+        surface.unit?.code !== target.unit.code
+      ) continue;
+
+      const faults = getMappedGemFaultsBetweenPoints(
+        latitude, longitude,
+        hole.latitude, hole.longitude
+      );
+
+      if (!faults || faults.intersects_mapped_gem_fault)
+        continue;
+
+      const intervals = hole.intervals.filter(x =>
+        x.from_m !== null &&
+        x.to_m !== null &&
+        x.from_m <= depthM &&
+        depthM < x.to_m &&
+        !x.interval_status &&
+        (
+          x.evidence_level === "borehole_exact" ||
+          x.evidence_level === "documented_borehole_log"
+        )
+      );
+
+      if (!intervals.length) continue;
+
+      if (intervals.length !== 1) {
+        ambiguous = true;
+        continue;
+      }
+
+      const material = categoryOf(intervals[0].material_bg);
+
+      if (!material) {
+        ambiguous = true;
+        continue;
+      }
+
+      controls.push({
+        hole,
+        material,
+        sources: intervals[0].source_ids,
+        distance
+      });
+    }
+
+    const categories = new Set(
+      controls.map(x => x.material)
+    );
+
+    if (!ambiguous && categories.size === 1) {
+      controls.sort((a,b) => a.distance - b.distance);
+
+      const independent: typeof controls = [];
+
+      for (const candidate of controls) {
+        const distinct = independent.every(existing => {
+          const north =
+            (candidate.hole.latitude! -
+             existing.hole.latitude!) * 111.2;
+
+          const east =
+            (candidate.hole.longitude! -
+             existing.hole.longitude!) *
+            111.2 * Math.cos(latitude * Math.PI / 180);
+
+          return Math.hypot(north,east) >= 0.03;
+        });
+
+        if (distinct) independent.push(candidate);
+      }
+
+      if (independent.length >= 3) {
+        const polygon = hull(
+          independent.map(x => [
+            x.hole.longitude!,
+            x.hole.latitude!
+          ])
+        );
+
+        if (
+          polygon.length >= 3 &&
+          inside([longitude,latitude],polygon)
+        ) {
+          return {
+            material_bg: independent[0].material,
+            borehole_ids: independent.map(x => x.hole.id),
+            source_ids: [
+              ...new Set(
+                independent.flatMap(x => x.sources)
+              )
+            ],
+            confidence: "LOW",
+            method: "STRATIGRAPHIC_SPATIAL_CONSENSUS"
+          };
+        }
+      }
+    }
+  }
   const groups = new Map<string,Control[]>();
 
   for (const hole of getNationalBoreholeIndex()) {

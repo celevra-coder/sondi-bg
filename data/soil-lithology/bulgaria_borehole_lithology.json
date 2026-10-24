@@ -12745,6 +12745,183 @@
           "additional_hydraulic_page": 3
         }
       ]
+    },
+    {
+      "borehole_id": "PLD-Z112",
+      "name_bg": "Белово - Сондаж №3",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "no_verified_facility_coordinate",
+        "origin": "pazardzhik_66U_research"
+      },
+      "total_depth_m": 95.7,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 10.0,
+          "expected_material_bg": "Делувиални отложения от силно заглинени метаморфни късове с размери 2–3 см",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S123"
+          ]
+        },
+        {
+          "depth_from_m": 10.0,
+          "depth_to_m": 16.0,
+          "expected_material_bg": "Мрамор, силно окварцен и напукан",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S123"
+          ]
+        },
+        {
+          "depth_from_m": 16.0,
+          "depth_to_m": 19.0,
+          "expected_material_bg": "Тектонична зона от глинясали мраморни късове",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S123"
+          ]
+        },
+        {
+          "depth_from_m": 19.0,
+          "depth_to_m": 95.7,
+          "expected_material_bg": "Мрамор, на места окварцен, с каверни",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S123"
+          ]
+        }
+      ]
+    },
+    {
+      "borehole_id": "PLD-Z113",
+      "name_bg": "Велинград-Чепино - Сондаж №1",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "no_verified_facility_coordinate",
+        "origin": "pazardzhik_66U_research"
+      },
+      "total_depth_m": 53.3,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 1.2,
+          "expected_material_bg": "Песъчлива глина, кафява",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S124"
+          ]
+        },
+        {
+          "depth_from_m": 1.2,
+          "depth_to_m": 1.6,
+          "expected_material_bg": "Пясък, ситен, сив",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S124"
+          ]
+        },
+        {
+          "depth_from_m": 1.6,
+          "depth_to_m": 49.3,
+          "expected_material_bg": "Гранитогнайс, биотитов, с пегматитови жили",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S124"
+          ]
+        },
+        {
+          "depth_from_m": 49.3,
+          "depth_to_m": 52.7,
+          "expected_material_bg": "Гранит, двуслюден",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S124"
+          ]
+        },
+        {
+          "depth_from_m": 52.7,
+          "depth_to_m": 53.3,
+          "expected_material_bg": "Гранитогнайс",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S124"
+          ]
+        }
+      ]
+    },
+    {
+      "borehole_id": "PLD-Z114",
+      "name_bg": "Велинград-Каменица - Сондаж №4 „Власа“",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "status": "documented_exact_lithological_profile",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "no_verified_facility_coordinate",
+        "origin": "pazardzhik_66U_research"
+      },
+      "total_depth_m": 450.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 11.0,
+          "expected_material_bg": "Чакъли и валуни; кватернер",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S125"
+          ]
+        },
+        {
+          "depth_from_m": 11.0,
+          "depth_to_m": 59.0,
+          "expected_material_bg": "Пясъчници и граведити; неоген",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S125"
+          ]
+        },
+        {
+          "depth_from_m": 59.0,
+          "depth_to_m": 450.0,
+          "expected_material_bg": "Биотитови и амфиболови, гранитизирани гнайси, напукани и нарушени; Богутевска свита, докамбрий",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S125"
+          ]
+        }
+      ]
     }
   ],
   "sources": [
@@ -13773,6 +13950,33 @@
       "url": "https://old.mh.government.bg/media/filer_public/2024/01/15/balneologichna_otsenka__266_ot_12012024_g.pdf",
       "geographic_scope": "София-град, Кривина",
       "notes": "Подробен разрез 0–643,6 м, стр. 2–3. В оригинала е отпечатан обърнат интервал 257–253 м за въглищна прослойка; не се приема като доказана граница."
+    },
+    {
+      "source_id": "PLD-S123",
+      "title": "Балнеологична оценка за сондаж №3, Белово",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "official_borehole_lithology_description",
+      "url": "https://www.mh.government.bg/upload/14843/6-Belovo-sondazh3-22-07-2025.pdf",
+      "geographic_scope": "Област Пазарджик — Белово",
+      "notes": "Дата на документа: 2025-07-22; PDF стр. 2; референтен сондаж PLD-Z112; точните координати не са потвърдени. Заглавието е описателно, ако не е посочено в provenance."
+    },
+    {
+      "source_id": "PLD-S124",
+      "title": "Балнеологична оценка — Велинград-Чепино, сондаж №1",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "official_borehole_lithology_description",
+      "url": "https://www.mh.government.bg/upload/6741/165-velingrad-chepino-sondazh1-19-05-2020.pdf",
+      "geographic_scope": "Област Пазарджик — Велинград-Чепино",
+      "notes": "Дата на документа: 2020-05-19; PDF стр. 2; референтен сондаж PLD-Z113; точните координати не са потвърдени. Заглавието е описателно, ако не е посочено в provenance."
+    },
+    {
+      "source_id": "PLD-S125",
+      "title": "Балнеологична оценка — Велинград-Каменица, сондаж №4 „Власа“",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "official_borehole_lithology_description",
+      "url": "https://www.mh.government.bg/upload/14245/23-Velingrad-Kamenica-sondazh-4-Vlasa-20-05-2025.pdf",
+      "geographic_scope": "Област Пазарджик — Велинград-Каменица",
+      "notes": "Дата на документа: 2025-05-20; PDF стр. 2; референтен сондаж PLD-Z114; точните координати не са потвърдени. Заглавието е описателно, ако не е посочено в provenance."
     }
   ]
 }

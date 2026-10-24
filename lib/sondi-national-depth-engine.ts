@@ -388,7 +388,14 @@ function collectNationalBoreholeEvidence(
           candidate.distance <= 0.01 &&
           borehole.coordinate_status === "OFFICIAL_EXACT"
             ? (interval.evidence_level === "borehole_exact" ||
-              interval.evidence_level === "documented_borehole_log") &&
+              interval.evidence_level === "documented_borehole_log" ||
+              (
+                (
+                borehole.region_code === "Pazardzhik" ||
+                borehole.region_code === "Plovdiv"
+              ) &&
+                interval.evidence_level === "borehole_exact_partial_column"
+              )) &&
               interval.interval_status === null
               ? "DOCUMENTED_REFERENCE_COORDINATE_MATCH"
               : "PARTIAL_OR_CONFLICTED_REFERENCE"
@@ -835,6 +842,104 @@ export function resolveNationalDepthLithology(
   }
 
 
+  // SONDI_PLD_PZ_SPATIAL_CORRELATION_67BS
+  // A nearby borehole is a conditional analogue, never proof
+  // of lithology beneath the selected property.
+  if (
+    !hasColocatedReference &&
+    base.region_id !== null &&
+    base.region_id !== "VRA"
+  ) {
+    // SONDI_NATIONAL_NEARBY_ROUTING_67DO
+    // Existing PLD/PZ behavior is preserved. Other regions
+    // require a tighter, independently checked local reference.
+    const legacyRegion =
+      base.region_id.startsWith("PZ-")
+        ? "Pazardzhik"
+        : base.region_id.startsWith("PLD-") ||
+          base.region_id === "PLD"
+          ? "Plovdiv"
+          : null;
+
+    const expectedRegion = legacyRegion ??
+      (base.region_id === "BLG"
+        ? "Blagoevgrad"
+        : base.region_id === "SOF-CITY"
+          ? "Sofia-city"
+          : base.region_id.startsWith("SOF-")
+            ? "Sofia"
+            : null);
+
+    const maxDistanceKm = legacyRegion ? 8 : 1;
+
+    const permittedIds = new Set(
+      getNationalBoreholeIndex()
+        .filter(hole =>
+          hole.origin === "NATIONAL" &&
+          expectedRegion !== null &&
+          hole.region_code === expectedRegion &&
+          hole.coordinate_status === "OFFICIAL_EXACT"
+        )
+        .map(hole => hole.id)
+    );
+
+    const candidates = base.evidence
+      .filter(item =>
+        item.type === "BOREHOLE" &&
+        typeof item.borehole_id === "string" &&
+        permittedIds.has(item.borehole_id) &&
+        item.coordinate_status === "OFFICIAL_EXACT" &&
+        item.site_relation === "NEARBY_REFERENCE" &&
+        typeof item.distance_km === "number" &&
+        item.distance_km > 0.001 &&
+        item.distance_km <= maxDistanceKm &&
+        item.surface_comparison === "SAME_MAPPED_UNIT" &&
+        item.mapped_fault_intersection_count === 0 &&
+        item.interval_status === null &&
+        (
+          item.interval_evidence_level === "borehole_exact" ||
+          item.interval_evidence_level === "documented_borehole_log" ||
+          item.interval_evidence_level === "borehole_exact_partial_column"
+        ) &&
+        typeof item.interval_from_m === "number" &&
+        typeof item.interval_to_m === "number" &&
+        item.interval_from_m <= input.depthM &&
+        input.depthM < item.interval_to_m &&
+        typeof item.interval_material_bg === "string" &&
+        item.interval_material_bg.trim().length > 0
+      )
+      .sort((a, b) =>
+        (a.distance_km ?? Infinity) - (b.distance_km ?? Infinity)
+      );
+
+    if (candidates.length > 0) {
+      const primary = candidates[0];
+      const primaryMaterial = String(primary.interval_material_bg).trim();
+
+      const alternatives = [...new Set(
+        candidates.slice(1)
+          .map(item => String(item.interval_material_bg).trim())
+          .filter(material =>
+            material.length > 0 && material !== primaryMaterial
+          )
+      )].slice(0, 5);
+
+      return {
+        ...base,
+        status: "CONDITIONAL",
+        evidence_tier: "GEOLOGICAL_CORRELATION",
+        probable_lithology: primaryMaterial,
+        alternative_lithologies: alternatives,
+        confidence: "LOW",
+        interpretation_scope: "SPATIAL_CORRELATION_CONDITIONAL",
+        source_ids: [...new Set([
+          ...base.source_ids,
+          ...candidates.flatMap(item => item.source_ids)
+        ])]
+      };
+    }
+  }
+
   // SONDI_SOFIA_NEARBY_DEPTH_FORECAST_V1
   // Low-confidence forecast from documented nearby boreholes.
   // Do not affect Vratsa, exact boreholes or other regions.
@@ -887,7 +992,8 @@ export function resolveNationalDepthLithology(
             )
           )
         ) &&
-        hole.region_code === expectedRegion &&
+        expectedRegion !== null &&
+          hole.region_code === expectedRegion &&
         hole.latitude !== null &&
         hole.longitude !== null
       )

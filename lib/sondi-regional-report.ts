@@ -505,6 +505,85 @@ function makeCards(
   }
 
 
+  // SONDI_DOCUMENTED_DEPTH_REFERENCE_67CY
+  // The depths are measured in reference boreholes, NOT at the clicked site.
+  const depthReferenceNotes = (zone.regional_evidence_notes ?? [])
+    .filter(note =>
+      note.informationType.startsWith(
+        "SONDI_REGIONAL_BOREHOLE_ANALOGUE_67CC:"
+      )
+    );
+
+  if (depthReferenceNotes.length > 0) {
+    const targetDepths = [20, 50, 100, 200, 500];
+    const depthParagraphs: string[] = [
+      "Документирани литоложки материали на конкретни дълбочини в сондажи от проучения район. Точните координати на тези сондажи не са потвърдени. Данните НЕ представляват измерване или доказана прогноза за избрания имот."
+    ];
+
+    const intervalPattern =
+      /^(\d+(?:[.,]\d+)?)\s*[–-]\s*(\d+(?:[.,]\d+)?)\s*м:\s*(.+)$/u;
+
+    for (const depth of targetDepths) {
+      const matching: string[] = [];
+
+      for (const note of depthReferenceNotes) {
+        const boreholeName = note.title.replace(
+          /^Регионален сондажен аналог\s*—\s*/u,
+          ""
+        );
+
+        for (const paragraph of note.paragraphs) {
+          const match = paragraph.trim().match(intervalPattern);
+          if (!match) continue;
+
+          const from = Number(match[1].replace(",", "."));
+          const to = Number(match[2].replace(",", "."));
+          const material = match[3].trim();
+
+          if (
+            Number.isFinite(from) &&
+            Number.isFinite(to) &&
+            from <= depth &&
+            depth < to &&
+            material.length > 0
+          ) {
+            matching.push(
+              `${boreholeName} (${from}–${to} м): ${material}`
+            );
+          }
+        }
+      }
+
+      if (matching.length) {
+        depthParagraphs.push(
+          `${depth} м — документирано в ${matching.length} ` +
+          `сондажни интервала: ${matching.join(" | ")}`
+        );
+      } else {
+        depthParagraphs.push(
+          `${depth} м — няма документиран интервал на тази ` +
+          "дълбочина сред включените регионални сондажни аналози."
+        );
+      }
+    }
+
+    depthParagraphs.push(
+      "Различните материали между сондажите са реални локални " +
+      "различия или ограничения на проучванията, а не единна " +
+      "литоложка колонка. Данните не доказват наличие на вода."
+    );
+
+    cards.push({
+      id: `${entry.id}-documented-depth-67CY`,
+      title: "Документирани сондажни материали по дълбочина",
+      informationType: "SONDI_DEPTH_REFERENCE_67CY",
+      paragraphs: depthParagraphs,
+      sources: unique(
+        depthReferenceNotes.flatMap(note => note.source_ids)
+      )
+    });
+  }
+
   for (const [index, note] of (zone.regional_evidence_notes ?? []).entries()) {
     cards.push({
       id: `${entry.id}-evidence-${index}`,
@@ -1695,15 +1774,58 @@ export function getSondiRegionalReport(
 
     // SONDI_PLD_AUTOMATIC_OVERVIEW_65J
     // Pilot activation of the shared automatic interpreter.
-    if (entry.id.startsWith("PLD-M-")) {
-      return [
-        buildAutomaticGeologicalOverview(
-          latitude,
-          longitude,
-          "Регионален геоложки анализ",
-          entry.id + "-automatic-overview"
+    // SONDI_PAZARDZHIK_CLEAN_REGIONAL_REPORT_67DZ
+    // Keep substantive regional interpretations, not the
+    // raw list of every borehole and technical evidence card.
+    if (entry.id.startsWith("PZ-")) {
+      const automatic = buildAutomaticGeologicalOverview(
+        latitude,
+        longitude,
+        `Геоложка основа и по-широк регионален контекст — ${entry.name_bg}`,
+        `${entry.id}-automatic-overview`
+      );
+
+      const sourceCards = makeCards(entry, zone);
+
+      const regionalOverview = sourceCards.find(card =>
+        card.id.endsWith("-reader-overview") &&
+        card.paragraphs.some(p =>
+          typeof p === "string" && p.trim().length > 80
         )
-      ];
+      );
+
+      // Two readable sections at most. Existing regional data,
+      // documented boreholes and their source records are untouched.
+      return regionalOverview
+        ? [regionalOverview, automatic]
+        : [automatic];
+    }
+    if (entry.id.startsWith("PLD-M-")) {
+      const overview = buildAutomaticGeologicalOverview(
+        latitude,
+        longitude,
+        "Регионален геоложки анализ",
+        entry.id + "-automatic-overview"
+      );
+
+      // SONDI_PLD_REGIONAL_BOREHOLE_CARDS_67CF
+      // Preserve the automatic regional overview.
+      // Append documented regional analogues only.
+      // These boreholes have no verified exact coordinates
+      // and must not imply lithology at the clicked property.
+      const analogueCards = makeCards(entry, zone).filter(
+        card =>
+          card.informationType.startsWith(
+            "SONDI_REGIONAL_BOREHOLE_ANALOGUE_67CC:"
+          ) ||
+          (
+            card.informationType ===
+              "Документирано регионално геоложко сведение" ||
+            card.informationType === "SONDI_DEPTH_REFERENCE_67CY"
+          )
+      );
+
+      return [overview, ...analogueCards];
     }
 
     return makeCards(entry, zone);
