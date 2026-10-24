@@ -1,0 +1,1913 @@
+{
+  "schema_version": "1.0-research",
+  "region_id": "PLD",
+  "status": "DOCUMENTED_DEPTH_CHECKPOINT_QA_ONLY",
+  "research_only": true,
+  "production_enabled": false,
+  "public_map_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "depth_checkpoints_m": [
+    20,
+    50,
+    80,
+    100,
+    150,
+    200,
+    300,
+    500
+  ],
+  "borehole_count": 15,
+  "validated_interval_count": 78,
+  "excluded_interval_count": 1,
+  "coordinate_grade_counts": {
+    "UNLOCATED": 9,
+    "OFFICIAL_EXACT": 2,
+    "CADASTRAL_APPROXIMATE": 1,
+    "SOURCE_REPORTED_OFFICIAL": 3
+  },
+  "documented_checkpoint_counts": {
+    "20": 13,
+    "50": 12,
+    "80": 11,
+    "100": 11,
+    "150": 11,
+    "200": 8,
+    "300": 7,
+    "500": 5
+  },
+  "records": [
+    {
+      "borehole_id": "PLD-Z097",
+      "name_bg": "\u041c\u0430\u0440\u043a\u043e\u0432\u043e - \u041f\u0418 47295.85.6, \u043c\u0435\u0441\u0442\u043d\u043e\u0441\u0442 \u0412\u0438\u0442\u0440\u043e\u0433\u043e\u043d\u0430",
+      "total_depth_m": 20,
+      "coordinate_grade": "UNLOCATED",
+      "reference_coordinate": null,
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 3,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z098",
+      "name_bg": "\u041b\u0435\u043d\u043e\u0432\u043e - \u0421\u043e\u043d\u0434\u0430\u0436 \u211612",
+      "total_depth_m": 180,
+      "coordinate_grade": "UNLOCATED",
+      "reference_coordinate": null,
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 4,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 3,
+            "from_m": 18,
+            "to_m": 180,
+            "material_bg": "\u0411\u0440\u0435\u043a\u0447\u043e\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438 \u2014 \u043a\u044a\u0441\u043e\u0432\u0435 \u043e\u0442 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u0430\u043d\u0434\u0435\u0437\u0438\u0442\u0438 \u0438 \u0433\u043d\u0430\u0439\u0441\u0438 \u0441 \u0433\u043b\u0438\u043d\u0435\u0441\u0442\u043e-\u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0430 \u0441\u043f\u043e\u0439\u043a\u0430; \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442\u043d\u0438 \u043d\u0430\u043b\u0435\u043f\u0438 \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438\u0442\u0435",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S109"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": {
+            "index": 3,
+            "from_m": 18,
+            "to_m": 180,
+            "material_bg": "\u0411\u0440\u0435\u043a\u0447\u043e\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438 \u2014 \u043a\u044a\u0441\u043e\u0432\u0435 \u043e\u0442 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u0430\u043d\u0434\u0435\u0437\u0438\u0442\u0438 \u0438 \u0433\u043d\u0430\u0439\u0441\u0438 \u0441 \u0433\u043b\u0438\u043d\u0435\u0441\u0442\u043e-\u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0430 \u0441\u043f\u043e\u0439\u043a\u0430; \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442\u043d\u0438 \u043d\u0430\u043b\u0435\u043f\u0438 \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438\u0442\u0435",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S109"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": {
+            "index": 3,
+            "from_m": 18,
+            "to_m": 180,
+            "material_bg": "\u0411\u0440\u0435\u043a\u0447\u043e\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438 \u2014 \u043a\u044a\u0441\u043e\u0432\u0435 \u043e\u0442 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u0430\u043d\u0434\u0435\u0437\u0438\u0442\u0438 \u0438 \u0433\u043d\u0430\u0439\u0441\u0438 \u0441 \u0433\u043b\u0438\u043d\u0435\u0441\u0442\u043e-\u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0430 \u0441\u043f\u043e\u0439\u043a\u0430; \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442\u043d\u0438 \u043d\u0430\u043b\u0435\u043f\u0438 \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438\u0442\u0435",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S109"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": {
+            "index": 3,
+            "from_m": 18,
+            "to_m": 180,
+            "material_bg": "\u0411\u0440\u0435\u043a\u0447\u043e\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438 \u2014 \u043a\u044a\u0441\u043e\u0432\u0435 \u043e\u0442 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u0430\u043d\u0434\u0435\u0437\u0438\u0442\u0438 \u0438 \u0433\u043d\u0430\u0439\u0441\u0438 \u0441 \u0433\u043b\u0438\u043d\u0435\u0441\u0442\u043e-\u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0430 \u0441\u043f\u043e\u0439\u043a\u0430; \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442\u043d\u0438 \u043d\u0430\u043b\u0435\u043f\u0438 \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438\u0442\u0435",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S109"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": {
+            "index": 3,
+            "from_m": 18,
+            "to_m": 180,
+            "material_bg": "\u0411\u0440\u0435\u043a\u0447\u043e\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438 \u2014 \u043a\u044a\u0441\u043e\u0432\u0435 \u043e\u0442 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u0430\u043d\u0434\u0435\u0437\u0438\u0442\u0438 \u0438 \u0433\u043d\u0430\u0439\u0441\u0438 \u0441 \u0433\u043b\u0438\u043d\u0435\u0441\u0442\u043e-\u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0430 \u0441\u043f\u043e\u0439\u043a\u0430; \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442\u043d\u0438 \u043d\u0430\u043b\u0435\u043f\u0438 \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438\u0442\u0435",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S109"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z099",
+      "name_bg": "\u0414\u0440\u0430\u0433\u043e\u0439\u043d\u043e\u0432\u043e - \u0421\u043e\u043d\u0434\u0430\u0436 \u21169",
+      "total_depth_m": 296,
+      "coordinate_grade": "UNLOCATED",
+      "reference_coordinate": null,
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 6,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 20,
+            "to_m": 75,
+            "material_bg": "\u0420\u0435\u0434\u0443\u0432\u0430\u043d\u0435 \u043d\u0430 \u0433\u043b\u0438\u043d\u0438 \u0438 \u043f\u044f\u0441\u044a\u0446\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S110"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 20,
+            "to_m": 75,
+            "material_bg": "\u0420\u0435\u0434\u0443\u0432\u0430\u043d\u0435 \u043d\u0430 \u0433\u043b\u0438\u043d\u0438 \u0438 \u043f\u044f\u0441\u044a\u0446\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S110"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 75,
+            "to_m": 133,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438 \u0438 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0438 \u0433\u043b\u0438\u043d\u0438 \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442\u043d\u0438 \u043d\u0430\u043b\u0435\u043f\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S110"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 75,
+            "to_m": 133,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438 \u0438 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0438 \u0433\u043b\u0438\u043d\u0438 \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442\u043d\u0438 \u043d\u0430\u043b\u0435\u043f\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S110"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": {
+            "index": 4,
+            "from_m": 142,
+            "to_m": 170,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438 \u0441 \u0432\u044a\u0433\u043b\u0438\u0449\u043d\u0438 \u0447\u0435\u0440\u043d\u0438\u043b\u043a\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S110"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": {
+            "index": 5,
+            "from_m": 170,
+            "to_m": 296,
+            "material_bg": "\u0420\u0435\u0434\u0443\u0432\u0430\u043d\u0435 \u043d\u0430 \u0433\u043b\u0438\u043d\u0438, \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0438 \u0433\u043b\u0438\u043d\u0438 \u0438 \u043f\u044f\u0441\u044a\u0447\u043d\u0438\u0446\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S110"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z100",
+      "name_bg": "\u041a\u0440\u0430\u0441\u043d\u043e\u0432\u043e - \u0421\u043e\u043d\u0434\u0430\u0436 \u21161",
+      "total_depth_m": 160,
+      "coordinate_grade": "OFFICIAL_EXACT",
+      "reference_coordinate": {
+        "latitude": 42.4698333333,
+        "longitude": 24.5105277778
+      },
+      "coordinate_is_exact_surveyed_mouth": true,
+      "spatial_reference_is_canonical": true,
+      "validated_interval_count": 3,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 17,
+            "to_m": 127,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438, \u0437\u0430\u0433\u043b\u0438\u043d\u0435\u043d\u0438 \u043f\u044f\u0441\u044a\u0446\u0438 \u0438 \u0447\u0430\u043a\u044a\u043b\u0438, \u043f\u043e-\u0441\u0431\u0438\u0442\u0438 \u0438 \u043f\u043b\u044a\u0442\u043d\u0438 \u0432 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430, \u0441\u043f\u043e\u0435\u043d\u0438 \u043f\u043e\u0434 \u0444\u043e\u0440\u043c\u0430\u0442\u0430 \u043d\u0430 \u043f\u044f\u0441\u044a\u0447\u043d\u0438\u0446\u0438 \u0438 \u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S111"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 17,
+            "to_m": 127,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438, \u0437\u0430\u0433\u043b\u0438\u043d\u0435\u043d\u0438 \u043f\u044f\u0441\u044a\u0446\u0438 \u0438 \u0447\u0430\u043a\u044a\u043b\u0438, \u043f\u043e-\u0441\u0431\u0438\u0442\u0438 \u0438 \u043f\u043b\u044a\u0442\u043d\u0438 \u0432 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430, \u0441\u043f\u043e\u0435\u043d\u0438 \u043f\u043e\u0434 \u0444\u043e\u0440\u043c\u0430\u0442\u0430 \u043d\u0430 \u043f\u044f\u0441\u044a\u0447\u043d\u0438\u0446\u0438 \u0438 \u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S111"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 17,
+            "to_m": 127,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438, \u0437\u0430\u0433\u043b\u0438\u043d\u0435\u043d\u0438 \u043f\u044f\u0441\u044a\u0446\u0438 \u0438 \u0447\u0430\u043a\u044a\u043b\u0438, \u043f\u043e-\u0441\u0431\u0438\u0442\u0438 \u0438 \u043f\u043b\u044a\u0442\u043d\u0438 \u0432 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430, \u0441\u043f\u043e\u0435\u043d\u0438 \u043f\u043e\u0434 \u0444\u043e\u0440\u043c\u0430\u0442\u0430 \u043d\u0430 \u043f\u044f\u0441\u044a\u0447\u043d\u0438\u0446\u0438 \u0438 \u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S111"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 17,
+            "to_m": 127,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438, \u0437\u0430\u0433\u043b\u0438\u043d\u0435\u043d\u0438 \u043f\u044f\u0441\u044a\u0446\u0438 \u0438 \u0447\u0430\u043a\u044a\u043b\u0438, \u043f\u043e-\u0441\u0431\u0438\u0442\u0438 \u0438 \u043f\u043b\u044a\u0442\u043d\u0438 \u0432 \u0434\u044a\u043b\u0431\u043e\u0447\u0438\u043d\u0430, \u0441\u043f\u043e\u0435\u043d\u0438 \u043f\u043e\u0434 \u0444\u043e\u0440\u043c\u0430\u0442\u0430 \u043d\u0430 \u043f\u044f\u0441\u044a\u0447\u043d\u0438\u0446\u0438 \u0438 \u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S111"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 127,
+            "to_m": 160,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438, \u043f\u0440\u043e\u0446\u0435\u043f\u0435\u043d\u0438 \u0441 \u043f\u0435\u0433\u043c\u0430\u0442\u0438\u0442\u043e\u0432\u0438 \u0438 \u0430\u043f\u043b\u0438\u0442\u043e\u0432\u0438 \u0436\u0438\u043b\u0438, \u043d\u0430\u0442\u0440\u043e\u0448\u0435\u043d\u0438 \u0438 \u0440\u0430\u0437\u043b\u043e\u043c\u0435\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S111"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z101",
+      "name_bg": "\u041a\u043b\u0438\u043c\u0435\u043d\u0442 - \u0421\u043e\u043d\u0434\u0430\u0436 \u211612",
+      "total_depth_m": 764.35,
+      "coordinate_grade": "CADASTRAL_APPROXIMATE",
+      "reference_coordinate": {
+        "latitude": 42.609482232,
+        "longitude": 24.681493969
+      },
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 9,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 4,
+            "to_m": 58.8,
+            "material_bg": "\u041f\u0430\u043b\u0435\u043e\u0437\u043e\u0439\u0441\u043a\u0438 \u0435\u0434\u0440\u043e\u0437\u044a\u0440\u043d\u0435\u0441\u0442 \u0433\u0440\u0430\u043d\u0438\u0442, \u043d\u0430\u043f\u0443\u043a\u0430\u043d \u0438 \u0438\u0437\u0432\u0435\u0442\u0440\u044f\u043b",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S112"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "CADASTRAL_APPROXIMATE"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 4,
+            "to_m": 58.8,
+            "material_bg": "\u041f\u0430\u043b\u0435\u043e\u0437\u043e\u0439\u0441\u043a\u0438 \u0435\u0434\u0440\u043e\u0437\u044a\u0440\u043d\u0435\u0441\u0442 \u0433\u0440\u0430\u043d\u0438\u0442, \u043d\u0430\u043f\u0443\u043a\u0430\u043d \u0438 \u0438\u0437\u0432\u0435\u0442\u0440\u044f\u043b",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S112"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "CADASTRAL_APPROXIMATE"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": {
+            "index": 4,
+            "from_m": 74.9,
+            "to_m": 92.6,
+            "material_bg": "\u041f\u0430\u043b\u0435\u043e\u0437\u043e\u0439\u0441\u043a\u0438 \u0441\u0440\u0435\u0434\u043d\u043e\u0437\u044a\u0440\u043d\u0435\u0441\u0442 \u0433\u0440\u0430\u043d\u0438\u0442, \u043d\u0430\u043f\u0443\u043a\u0430\u043d, \u0441\u043b\u0430\u0431\u043e \u0438\u0437\u0432\u0435\u0442\u0440\u044f\u043b",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S112"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "CADASTRAL_APPROXIMATE"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": {
+            "index": 5,
+            "from_m": 92.6,
+            "to_m": 104.8,
+            "material_bg": "\u041f\u0430\u043b\u0435\u043e\u0437\u043e\u0439\u0441\u043a\u0438 \u0433\u0440\u0430\u043d\u0438\u0442, \u0441\u0440\u0435\u0434\u043d\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d, \u0441\u043b\u0430\u0431\u043e \u0438\u0437\u0432\u0435\u0442\u0440\u044f\u043b",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S112"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "CADASTRAL_APPROXIMATE"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": {
+            "index": 8,
+            "from_m": 141.8,
+            "to_m": 764.35,
+            "material_bg": "\u041f\u0430\u043b\u0435\u043e\u0437\u043e\u0439\u0441\u043a\u0438 \u0433\u0440\u0430\u043d\u0438\u0442, \u0441\u0432\u0435\u0436 \u0438 \u0437\u0434\u0440\u0430\u0432",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S112"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "CADASTRAL_APPROXIMATE"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": {
+            "index": 8,
+            "from_m": 141.8,
+            "to_m": 764.35,
+            "material_bg": "\u041f\u0430\u043b\u0435\u043e\u0437\u043e\u0439\u0441\u043a\u0438 \u0433\u0440\u0430\u043d\u0438\u0442, \u0441\u0432\u0435\u0436 \u0438 \u0437\u0434\u0440\u0430\u0432",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S112"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "CADASTRAL_APPROXIMATE"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": {
+            "index": 8,
+            "from_m": 141.8,
+            "to_m": 764.35,
+            "material_bg": "\u041f\u0430\u043b\u0435\u043e\u0437\u043e\u0439\u0441\u043a\u0438 \u0433\u0440\u0430\u043d\u0438\u0442, \u0441\u0432\u0435\u0436 \u0438 \u0437\u0434\u0440\u0430\u0432",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S112"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "CADASTRAL_APPROXIMATE"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": {
+            "index": 8,
+            "from_m": 141.8,
+            "to_m": 764.35,
+            "material_bg": "\u041f\u0430\u043b\u0435\u043e\u0437\u043e\u0439\u0441\u043a\u0438 \u0433\u0440\u0430\u043d\u0438\u0442, \u0441\u0432\u0435\u0436 \u0438 \u0437\u0434\u0440\u0430\u0432",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S112"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "CADASTRAL_APPROXIMATE"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z102",
+      "name_bg": "\u0421\u0442\u0430\u0440\u043e \u0416\u0435\u043b\u0435\u0437\u0430\u0440\u0435 - \u0421\u043e\u043d\u0434\u0430\u0436 \u21162",
+      "total_depth_m": 175.7,
+      "coordinate_grade": "UNLOCATED",
+      "reference_coordinate": null,
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 2,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 3.5,
+            "to_m": 175.7,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S113"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 3.5,
+            "to_m": 175.7,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S113"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 3.5,
+            "to_m": 175.7,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S113"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 3.5,
+            "to_m": 175.7,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S113"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 3.5,
+            "to_m": 175.7,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S113"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z103",
+      "name_bg": "\u0421\u0442\u0430\u0440\u043e \u0416\u0435\u043b\u0435\u0437\u0430\u0440\u0435 - \u0421\u043e\u043d\u0434\u0430\u0436 \u21164",
+      "total_depth_m": 418.95,
+      "coordinate_grade": "UNLOCATED",
+      "reference_coordinate": null,
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 2,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 2.5,
+            "to_m": 418.95,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S114"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 2.5,
+            "to_m": 418.95,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S114"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 2.5,
+            "to_m": 418.95,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S114"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 2.5,
+            "to_m": 418.95,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S114"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 2.5,
+            "to_m": 418.95,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S114"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 2.5,
+            "to_m": 418.95,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S114"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 2.5,
+            "to_m": 418.95,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S114"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z104",
+      "name_bg": "\u041b\u0435\u043d\u043e\u0432\u043e - \u0421\u043e\u043d\u0434\u0430\u0436 \u211616",
+      "total_depth_m": 1312,
+      "coordinate_grade": "UNLOCATED",
+      "reference_coordinate": null,
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 6,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 11.6,
+            "to_m": 26.8,
+            "material_bg": "\u0427\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438 \u043e\u0442 \u0430\u043d\u0434\u0435\u0437\u0438\u0442\u0438, \u0433\u0440\u0430\u043d\u0438\u0442 \u0438 \u043a\u0432\u0430\u0440\u0446",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S115"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 26.8,
+            "to_m": 503,
+            "material_bg": "\u0411\u0440\u0435\u043a\u0447\u043e\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438 \u0441 \u043a\u044a\u0441\u043e\u0432\u0435 \u043e\u0442 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u0430\u043c\u0444\u0438\u0431\u043e\u043b\u0438\u0442\u0438 \u0438 \u0433\u043d\u0430\u0439\u0441\u0438; \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0433\u043b\u0438\u043d\u0435\u0441\u0442\u0430 \u0438 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0432\u0430\u0440\u043e\u0432\u0438\u0442\u0430 \u0441\u043f\u043e\u0439\u043a\u0430; \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442 \u0438 \u0445\u0435\u043c\u0430\u0442\u0438\u0442 \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438\u0442\u0435",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S115"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 26.8,
+            "to_m": 503,
+            "material_bg": "\u0411\u0440\u0435\u043a\u0447\u043e\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438 \u0441 \u043a\u044a\u0441\u043e\u0432\u0435 \u043e\u0442 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u0430\u043c\u0444\u0438\u0431\u043e\u043b\u0438\u0442\u0438 \u0438 \u0433\u043d\u0430\u0439\u0441\u0438; \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0433\u043b\u0438\u043d\u0435\u0441\u0442\u0430 \u0438 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0432\u0430\u0440\u043e\u0432\u0438\u0442\u0430 \u0441\u043f\u043e\u0439\u043a\u0430; \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442 \u0438 \u0445\u0435\u043c\u0430\u0442\u0438\u0442 \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438\u0442\u0435",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S115"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 26.8,
+            "to_m": 503,
+            "material_bg": "\u0411\u0440\u0435\u043a\u0447\u043e\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438 \u0441 \u043a\u044a\u0441\u043e\u0432\u0435 \u043e\u0442 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u0430\u043c\u0444\u0438\u0431\u043e\u043b\u0438\u0442\u0438 \u0438 \u0433\u043d\u0430\u0439\u0441\u0438; \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0433\u043b\u0438\u043d\u0435\u0441\u0442\u0430 \u0438 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0432\u0430\u0440\u043e\u0432\u0438\u0442\u0430 \u0441\u043f\u043e\u0439\u043a\u0430; \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442 \u0438 \u0445\u0435\u043c\u0430\u0442\u0438\u0442 \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438\u0442\u0435",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S115"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 26.8,
+            "to_m": 503,
+            "material_bg": "\u0411\u0440\u0435\u043a\u0447\u043e\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438 \u0441 \u043a\u044a\u0441\u043e\u0432\u0435 \u043e\u0442 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u0430\u043c\u0444\u0438\u0431\u043e\u043b\u0438\u0442\u0438 \u0438 \u0433\u043d\u0430\u0439\u0441\u0438; \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0433\u043b\u0438\u043d\u0435\u0441\u0442\u0430 \u0438 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0432\u0430\u0440\u043e\u0432\u0438\u0442\u0430 \u0441\u043f\u043e\u0439\u043a\u0430; \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442 \u0438 \u0445\u0435\u043c\u0430\u0442\u0438\u0442 \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438\u0442\u0435",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S115"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 26.8,
+            "to_m": 503,
+            "material_bg": "\u0411\u0440\u0435\u043a\u0447\u043e\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438 \u0441 \u043a\u044a\u0441\u043e\u0432\u0435 \u043e\u0442 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u0430\u043c\u0444\u0438\u0431\u043e\u043b\u0438\u0442\u0438 \u0438 \u0433\u043d\u0430\u0439\u0441\u0438; \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0433\u043b\u0438\u043d\u0435\u0441\u0442\u0430 \u0438 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0432\u0430\u0440\u043e\u0432\u0438\u0442\u0430 \u0441\u043f\u043e\u0439\u043a\u0430; \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442 \u0438 \u0445\u0435\u043c\u0430\u0442\u0438\u0442 \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438\u0442\u0435",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S115"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 26.8,
+            "to_m": 503,
+            "material_bg": "\u0411\u0440\u0435\u043a\u0447\u043e\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438 \u0441 \u043a\u044a\u0441\u043e\u0432\u0435 \u043e\u0442 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u0430\u043c\u0444\u0438\u0431\u043e\u043b\u0438\u0442\u0438 \u0438 \u0433\u043d\u0430\u0439\u0441\u0438; \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0433\u043b\u0438\u043d\u0435\u0441\u0442\u0430 \u0438 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0432\u0430\u0440\u043e\u0432\u0438\u0442\u0430 \u0441\u043f\u043e\u0439\u043a\u0430; \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442 \u0438 \u0445\u0435\u043c\u0430\u0442\u0438\u0442 \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438\u0442\u0435",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S115"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 26.8,
+            "to_m": 503,
+            "material_bg": "\u0411\u0440\u0435\u043a\u0447\u043e\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438 \u0441 \u043a\u044a\u0441\u043e\u0432\u0435 \u043e\u0442 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u0430\u043c\u0444\u0438\u0431\u043e\u043b\u0438\u0442\u0438 \u0438 \u0433\u043d\u0430\u0439\u0441\u0438; \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0433\u043b\u0438\u043d\u0435\u0441\u0442\u0430 \u0438 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u043e-\u0432\u0430\u0440\u043e\u0432\u0438\u0442\u0430 \u0441\u043f\u043e\u0439\u043a\u0430; \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u0441 \u043a\u0430\u0440\u0431\u043e\u043d\u0430\u0442 \u0438 \u0445\u0435\u043c\u0430\u0442\u0438\u0442 \u043f\u043e \u043f\u0443\u043a\u043d\u0430\u0442\u0438\u043d\u0438\u0442\u0435",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S115"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z105",
+      "name_bg": "\u0411\u0430\u043d\u044f - \u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0430 \u0440\u043e\u0437\u0430",
+      "total_depth_m": 64,
+      "coordinate_grade": "SOURCE_REPORTED_OFFICIAL",
+      "reference_coordinate": {
+        "latitude": 42.5394371,
+        "longitude": 24.8416889
+      },
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 2,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0,
+            "to_m": 42,
+            "material_bg": "\u0427\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438 \u0441 \u043f\u044f\u0441\u044a\u0447\u0435\u043d \u0437\u0430\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S116"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 42,
+            "to_m": 64,
+            "material_bg": "\u0421\u0440\u0435\u0434\u043d\u043e\u0437\u044a\u0440\u043d\u0435\u0441\u0442\u0438 \u0433\u0440\u0430\u043d\u0438\u0442\u0438, \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438 \u0438 \u043e\u043a\u0430\u0440\u0441\u0442\u0435\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S116"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z106",
+      "name_bg": "\u0410\u0441\u0435\u043d\u043e\u0432\u0433\u0440\u0430\u0434 - \u0421\u043e\u043d\u0434\u0430\u0436 \u21161",
+      "total_depth_m": 655.6,
+      "coordinate_grade": "UNLOCATED",
+      "reference_coordinate": null,
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 7,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0,
+            "to_m": 365,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438, \u043f\u044f\u0441\u044a\u0446\u0438, \u0447\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S117"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0,
+            "to_m": 365,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438, \u043f\u044f\u0441\u044a\u0446\u0438, \u0447\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S117"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0,
+            "to_m": 365,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438, \u043f\u044f\u0441\u044a\u0446\u0438, \u0447\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S117"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0,
+            "to_m": 365,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438, \u043f\u044f\u0441\u044a\u0446\u0438, \u0447\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S117"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0,
+            "to_m": 365,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438, \u043f\u044f\u0441\u044a\u0446\u0438, \u0447\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S117"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0,
+            "to_m": 365,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438, \u043f\u044f\u0441\u044a\u0446\u0438, \u0447\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S117"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0,
+            "to_m": 365,
+            "material_bg": "\u0413\u043b\u0438\u043d\u0438, \u043f\u044f\u0441\u044a\u0446\u0438, \u0447\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S117"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": {
+            "index": 4,
+            "from_m": 404,
+            "to_m": 598,
+            "material_bg": "\u041c\u0440\u0430\u043c\u043e\u0440\u0438, \u0431\u0435\u043b\u0438 \u0434\u043e \u0441\u0438\u0432\u0438, \u0434\u0440\u0435\u0431\u043d\u043e\u0437\u044a\u0440\u043d\u0435\u0441\u0442\u0438, \u0441\u0438\u043b\u043d\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S117"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z107",
+      "name_bg": "\u0410\u0441\u0435\u043d\u043e\u0432\u0433\u0440\u0430\u0434 - \u0421\u043e\u043d\u0434\u0430\u0436 \u21166",
+      "total_depth_m": 1204,
+      "coordinate_grade": "UNLOCATED",
+      "reference_coordinate": null,
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 13,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0,
+            "to_m": 110,
+            "material_bg": "\u041f\u044f\u0441\u044a\u0446\u0438, \u0447\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438 \u043e\u0442 \u0433\u043d\u0430\u0439\u0441\u0438 \u0438 \u043c\u0440\u0430\u043c\u043e\u0440\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S118"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0,
+            "to_m": 110,
+            "material_bg": "\u041f\u044f\u0441\u044a\u0446\u0438, \u0447\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438 \u043e\u0442 \u0433\u043d\u0430\u0439\u0441\u0438 \u0438 \u043c\u0440\u0430\u043c\u043e\u0440\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S118"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0,
+            "to_m": 110,
+            "material_bg": "\u041f\u044f\u0441\u044a\u0446\u0438, \u0447\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438 \u043e\u0442 \u0433\u043d\u0430\u0439\u0441\u0438 \u0438 \u043c\u0440\u0430\u043c\u043e\u0440\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S118"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0,
+            "to_m": 110,
+            "material_bg": "\u041f\u044f\u0441\u044a\u0446\u0438, \u0447\u0430\u043a\u044a\u043b\u0438 \u0438 \u0432\u0430\u043b\u0443\u043d\u0438 \u043e\u0442 \u0433\u043d\u0430\u0439\u0441\u0438 \u0438 \u043c\u0440\u0430\u043c\u043e\u0440\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S118"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": {
+            "index": 1,
+            "from_m": 110,
+            "to_m": 170,
+            "material_bg": "\u041a\u0430\u0444\u044f\u0432\u0438 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0438 \u0433\u043b\u0438\u043d\u0438 \u0441 \u0432\u0430\u043b\u0443\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S118"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 170,
+            "to_m": 226,
+            "material_bg": "\u0412\u0430\u043b\u0443\u043d\u0438 \u0441 \u0433\u043b\u0438\u043d\u0435\u0441\u0442\u0438 \u043f\u0440\u043e\u0441\u043b\u043e\u0439\u043a\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S118"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": {
+            "index": 4,
+            "from_m": 252.3,
+            "to_m": 366.3,
+            "material_bg": "\u0411\u0438\u043e\u0442\u0438\u0442\u043e\u0432\u0438 \u0448\u0438\u0441\u0442\u0438, \u0434\u0440\u0435\u0431\u043d\u043e\u0437\u044a\u0440\u043d\u0435\u0441\u0442\u0438, \u043e\u043a\u0430\u0440\u0441\u0442\u0435\u043d\u0438, \u0441 \u043f\u0435\u0433\u043c\u0430\u0442\u0438\u0442\u043e\u0432\u0438 \u0436\u0438\u043b\u0438, \u043d\u0430 \u043c\u0435\u0441\u0442\u0430 \u043f\u0440\u043e\u043c\u0435\u043d\u0435\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S118"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": {
+            "index": 6,
+            "from_m": 427.7,
+            "to_m": 680,
+            "material_bg": "\u0414\u0432\u0443\u0441\u043b\u044e\u0434\u0435\u043d\u0438 \u0438 \u0431\u0438\u043e\u0442\u0438\u0442\u043e\u0432\u0438 \u0448\u0438\u0441\u0442\u0438, \u0441\u0438\u043b\u043d\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438, \u043d\u0430 \u043c\u0435\u0441\u0442\u0430 \u043e\u043a\u0432\u0430\u0440\u0446\u0435\u043d\u0438, \u0445\u043b\u043e\u0440\u0438\u0442\u0438\u0437\u0438\u0440\u0430\u043d\u0438 \u0438 \u0441\u0435\u0440\u0438\u0446\u0438\u0442\u0438\u0437\u0438\u0440\u0430\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S118"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z108",
+      "name_bg": "\u0425\u0438\u0441\u0430\u0440\u044f - \u0421\u043e\u043d\u0434\u0430\u0436 \u21163",
+      "total_depth_m": 322.0,
+      "coordinate_grade": "SOURCE_REPORTED_OFFICIAL",
+      "reference_coordinate": {
+        "latitude": 42.5040444,
+        "longitude": 24.7154139
+      },
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 8,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 0,
+            "from_m": 0.0,
+            "to_m": 22.0,
+            "material_bg": "\u0412\u0430\u043b\u0443\u043d\u0438 \u0438 \u0447\u0430\u043a\u044a\u043b\u0438 \u0441 \u0433\u043b\u0438\u043d\u0435\u0441\u0442\u043e-\u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432 \u0437\u0430\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S119"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 37.67,
+            "to_m": 156.0,
+            "material_bg": "\u0420\u0435\u0434\u0443\u0432\u0430\u043d\u0435 \u043d\u0430 \u0433\u0440\u0430\u043d\u0438\u0442\u043e\u0433\u043d\u0430\u0439\u0441, \u0441\u043b\u0430\u0431\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d \u0438 \u0442\u0435\u043a\u0442\u043e\u043d\u0441\u043a\u0438 \u043d\u0430\u0442\u0440\u043e\u0448\u0435\u043d",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S119"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 37.67,
+            "to_m": 156.0,
+            "material_bg": "\u0420\u0435\u0434\u0443\u0432\u0430\u043d\u0435 \u043d\u0430 \u0433\u0440\u0430\u043d\u0438\u0442\u043e\u0433\u043d\u0430\u0439\u0441, \u0441\u043b\u0430\u0431\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d \u0438 \u0442\u0435\u043a\u0442\u043e\u043d\u0441\u043a\u0438 \u043d\u0430\u0442\u0440\u043e\u0448\u0435\u043d",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S119"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 37.67,
+            "to_m": 156.0,
+            "material_bg": "\u0420\u0435\u0434\u0443\u0432\u0430\u043d\u0435 \u043d\u0430 \u0433\u0440\u0430\u043d\u0438\u0442\u043e\u0433\u043d\u0430\u0439\u0441, \u0441\u043b\u0430\u0431\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d \u0438 \u0442\u0435\u043a\u0442\u043e\u043d\u0441\u043a\u0438 \u043d\u0430\u0442\u0440\u043e\u0448\u0435\u043d",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S119"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": {
+            "index": 2,
+            "from_m": 37.67,
+            "to_m": 156.0,
+            "material_bg": "\u0420\u0435\u0434\u0443\u0432\u0430\u043d\u0435 \u043d\u0430 \u0433\u0440\u0430\u043d\u0438\u0442\u043e\u0433\u043d\u0430\u0439\u0441, \u0441\u043b\u0430\u0431\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d \u0438 \u0442\u0435\u043a\u0442\u043e\u043d\u0441\u043a\u0438 \u043d\u0430\u0442\u0440\u043e\u0448\u0435\u043d",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S119"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": {
+            "index": 4,
+            "from_m": 181.0,
+            "to_m": 254.0,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442\u043e\u0433\u043d\u0430\u0439\u0441, \u043d\u0430\u043f\u0443\u043a\u0430\u043d \u0438 \u043d\u0430 \u043c\u0435\u0441\u0442\u0430 \u043d\u0430\u0442\u0440\u043e\u0448\u0435\u043d",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S119"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": {
+            "index": 6,
+            "from_m": 299.0,
+            "to_m": 312.0,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442, \u0442\u0435\u043a\u0442\u043e\u043d\u0441\u043a\u0438 \u0441\u0442\u0440\u0438\u0442\u0430 \u0437\u043e\u043d\u0430",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S119"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z109",
+      "name_bg": "\u0425\u0438\u0441\u0430\u0440\u044f - \u0421\u043e\u043d\u0434\u0430\u0436 \u21165",
+      "total_depth_m": 520.0,
+      "coordinate_grade": "SOURCE_REPORTED_OFFICIAL",
+      "reference_coordinate": {
+        "latitude": 42.5014167,
+        "longitude": 24.7003889
+      },
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 7,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 3,
+            "from_m": 14.0,
+            "to_m": 99.0,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442, \u0441\u043b\u0430\u0431\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S120"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": {
+            "index": 3,
+            "from_m": 14.0,
+            "to_m": 99.0,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442, \u0441\u043b\u0430\u0431\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S120"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": {
+            "index": 3,
+            "from_m": 14.0,
+            "to_m": 99.0,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442, \u0441\u043b\u0430\u0431\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S120"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": {
+            "index": 4,
+            "from_m": 99.0,
+            "to_m": 160.0,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442, \u0442\u044a\u043c\u043d\u043e\u0441\u0438\u0432, \u0441\u0440\u0435\u0434\u043d\u043e- \u0434\u043e \u0435\u0434\u0440\u043e\u0437\u044a\u0440\u043d\u0435\u0441\u0442",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S120"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": {
+            "index": 4,
+            "from_m": 99.0,
+            "to_m": 160.0,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442, \u0442\u044a\u043c\u043d\u043e\u0441\u0438\u0432, \u0441\u0440\u0435\u0434\u043d\u043e- \u0434\u043e \u0435\u0434\u0440\u043e\u0437\u044a\u0440\u043d\u0435\u0441\u0442",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S120"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": {
+            "index": 5,
+            "from_m": 160.0,
+            "to_m": 346.0,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442, \u043d\u0430 \u043c\u0435\u0441\u0442\u0430 \u0434\u043e\u0441\u0442\u0430 \u043d\u0430\u043f\u0443\u043a\u0430\u043d",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S120"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": {
+            "index": 5,
+            "from_m": 160.0,
+            "to_m": 346.0,
+            "material_bg": "\u0413\u0440\u0430\u043d\u0438\u0442, \u043d\u0430 \u043c\u0435\u0441\u0442\u0430 \u0434\u043e\u0441\u0442\u0430 \u043d\u0430\u043f\u0443\u043a\u0430\u043d",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S120"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": {
+            "index": 6,
+            "from_m": 346.0,
+            "to_m": 520.0,
+            "material_bg": "\u0413\u0440\u0430\u043d\u043e\u0434\u0438\u043e\u0440\u0438\u0442\u0438, \u0437\u0434\u0440\u0430\u0432\u0438, \u0441\u0430\u043c\u043e \u0432 \u043e\u0442\u0434\u0435\u043b\u043d\u0438 \u0443\u0447\u0430\u0441\u0442\u044a\u0446\u0438 \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S120"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "SOURCE_REPORTED_OFFICIAL"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z110",
+      "name_bg": "\u041d\u0430\u0440\u0435\u0447\u0435\u043d\u0441\u043a\u0438 \u0431\u0430\u043d\u0438 - \u0421\u043e\u043d\u0434\u0430\u0436 \u21165",
+      "total_depth_m": 31.4,
+      "coordinate_grade": "UNLOCATED",
+      "reference_coordinate": null,
+      "coordinate_is_exact_surveyed_mouth": false,
+      "spatial_reference_is_canonical": false,
+      "validated_interval_count": 5,
+      "excluded_intervals": [],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": {
+            "index": 3,
+            "from_m": 19.0,
+            "to_m": 29.0,
+            "material_bg": "\u0413\u043d\u0430\u0439\u0441\u0438, \u0441\u0438\u043b\u043d\u043e \u043d\u0430\u043f\u0443\u043a\u0430\u043d\u0438",
+            "evidence_level": "borehole_exact",
+            "interval_status": null,
+            "source_ids": [
+              "PLD-S121"
+            ]
+          },
+          "status": "DOCUMENTED_AT_BOREHOLE_REFERENCE",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "UNLOCATED"
+        }
+      },
+      "research_only": true
+    },
+    {
+      "borehole_id": "PLD-Z111",
+      "name_bg": "\u041f\u043b\u043e\u0432\u0434\u0438\u0432 - \u041f\u0418 56784.539.106",
+      "total_depth_m": 20,
+      "coordinate_grade": "OFFICIAL_EXACT",
+      "reference_coordinate": {
+        "latitude": 42.1210278,
+        "longitude": 24.7812222
+      },
+      "coordinate_is_exact_surveyed_mouth": true,
+      "spatial_reference_is_canonical": true,
+      "validated_interval_count": 1,
+      "excluded_intervals": [
+        {
+          "index": 0,
+          "reason": "UNBOUNDED_OR_UNVERIFIED_INTERVAL",
+          "original_status": "UPPER_BOUNDARIES_NOT_DOCUMENTED",
+          "depth_from_m": null,
+          "depth_to_m": 16.5
+        }
+      ],
+      "checkpoints": {
+        "20": {
+          "depth_m": 20,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "50": {
+          "depth_m": 50,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "80": {
+          "depth_m": 80,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "100": {
+          "depth_m": 100,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "150": {
+          "depth_m": 150,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "200": {
+          "depth_m": 200,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "300": {
+          "depth_m": 300,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        },
+        "500": {
+          "depth_m": 500,
+          "documented_interval_at_reference": null,
+          "status": "NO_VALIDATED_INTERVAL_AT_THIS_DEPTH",
+          "applies_automatically_to_nearby_points": false,
+          "source_coordinate_grade": "OFFICIAL_EXACT"
+        }
+      },
+      "research_only": true
+    }
+  ],
+  "source_files": [
+    "data/soil-lithology/bulgaria_borehole_lithology.json",
+    "plovdiv_national_research_adapter_v1_20261023.json",
+    "plovdiv_cross_registry_spatial_links_v1_20261023.json",
+    "plovdiv_interpretation_model_v1_20261023.json"
+  ],
+  "scientific_guards": {
+    "checkpoint_requires_numeric_documented_interval": true,
+    "partial_unbounded_intervals_not_invented": true,
+    "borehole_reference_not_target_prediction": true,
+    "source_reported_coordinates_not_surveyed_exact": true,
+    "cadastral_approximate_not_exact": true,
+    "depth_endpoint_is_exclusive": true,
+    "regional_interpretation_separate": true,
+    "mineral_water_master_unchanged": true,
+    "national_engine_unchanged": true
+  }
+}

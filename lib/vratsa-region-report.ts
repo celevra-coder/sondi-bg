@@ -147,5 +147,25 @@ export function getVratsaRegionReport(zoneId: string | null | undefined, municip
       });
     }
   }
-  return result;
+
+  // SONDI_VRATSA_READER_OVERVIEW_63CU
+  // Merge presentation cards, not source geology or depth models.
+  const paragraphs = Array.from(new Set(
+    result.flatMap(card => card.paragraphs)
+      .map(paragraph => paragraph.trim())
+      .filter(Boolean)
+  ));
+
+  const sources = Array.from(new Set(
+    result.flatMap(card => card.sources)
+      .filter(Boolean)
+  ));
+
+  return [{
+    id: `${zoneId}-${municipality}-reader-overview`,
+    title: `Регионален геоложки анализ — ${municipality}`,
+    informationType: "Геоложки строеж и практическо значение",
+    paragraphs,
+    sources
+  }];
 }

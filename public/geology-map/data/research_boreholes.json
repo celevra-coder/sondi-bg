@@ -6894,6 +6894,155 @@
           "additional_hydraulic_page": 3
         }
       ]
+    },
+    {
+      "borehole_id": "PLD-Z100",
+      "name_bg": "Красново - Сондаж №1",
+      "oblast": "Пловдив",
+      "region_code": "Plovdiv",
+      "status": "deep_borehole_exact",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.4698333333,
+        "longitude": 24.5105277778,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "municipality_hisarya_public_facility_register",
+        "registry_number": "351037001",
+        "source_url": "https://hisarya.bg/aktualno/publichni-registri/registar-na-vodovzemni-saorazheniya-nmv-krasnovo/",
+        "source_text": "42°28′11.4″N, 24°30′37.9″E"
+      },
+      "total_depth_m": 160,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 17,
+          "expected_material_bg": "Песъчливи глини, заглинени пясъци и чакъли; кватернерни алувиално-пролувиални материали",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S111"
+          ]
+        },
+        {
+          "depth_from_m": 17,
+          "depth_to_m": 127,
+          "expected_material_bg": "Глини, заглинени пясъци и чакъли, по-сбити и плътни в дълбочина, споени под формата на пясъчници и конгломерати",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S111"
+          ]
+        },
+        {
+          "depth_from_m": 127,
+          "depth_to_m": 160,
+          "expected_material_bg": "Гранити, процепени с пегматитови и аплитови жили, натрошени и разломени",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLD-S111"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": "Документирана литоложка колонка на минерален сондаж. Описаните пластове и пукнатини не представляват автоматично доказани водоприточни интервали.",
+      "expert_context": {
+        "usage": "Documented borehole lithology analogue for Plovdiv Province",
+        "warning": "Documentary borehole lithology is valid only for this facility. Construction/filter/open-hole intervals, fracturing, collectors and water-saturated intervals must not automatically be interpreted as exact water-inflow intervals."
+      },
+      "research_origin": {
+        "national_borehole_id": "PLD-Z100",
+        "inventory_profile_id": "PLD-LITH-004",
+        "registry_number": "351037001"
+      }
+    },
+{
+  "borehole_id": "PLD-Z111",
+  "name_bg": "Пловдив - ПИ 56784.539.106",
+  "oblast": "Пловдив",
+  "region_code": "Plovdiv",
+  "status": "documented_partial_lithological_profile",
+  "zone_type": "site_specific",
+  "coordinates": {
+    "latitude": 42.1210278,
+    "longitude": 24.7812222,
+    "status": "OFFICIAL_EXACT",
+    "evidence_level": "official_facility_coordinate",
+    "origin": "plovdiv_lithology_research",
+    "source_text": "N 42°07'15.7'' E 24°46'52.4''"
+  },
+  "total_depth_m": 20,
+  "water_type": "groundwater",
+  "lithology": [
+    {
+      "depth_from_m": null,
+      "depth_to_m": 16.5,
+      "expected_material_bg": "Над водоносния пласт са установени глини и дребнозърнести заглинени пясъци.",
+      "confidence": "high",
+      "evidence_level": "borehole_exact_partial_column",
+      "source_ids": [
+        "PLD-S122"
+      ],
+      "interval_status": "UPPER_BOUNDARIES_NOT_DOCUMENTED"
+    },
+    {
+      "depth_from_m": 16.5,
+      "depth_to_m": 19.5,
+      "expected_material_bg": "Едрозърнест пясък с дребен чакъл.",
+      "confidence": "high",
+      "evidence_level": "borehole_exact_partial_column",
+      "source_ids": [
+        "PLD-S122"
+      ],
+      "interval_status": "EXACT_DOCUMENTED_INTERVAL",
+      "hydrogeological_role": "documented_aquifer_layer"
     }
+  ],
+  "structural_intervals": [],
+  "hydraulic_intervals": [],
+  "source_overlaps": [],
+  "source_gaps": [
+    {
+      "depth_from_m": 19.5,
+      "depth_to_m": 20.0,
+      "reason": "Lithology for the final 19.5-20.0 m interval is not documented in the reviewed source. No extrapolation performed.",
+      "source_ids": [
+        "PLD-S122"
+      ]
+    }
+  ],
+  "groundwater_context": {
+    "documented_level_m": 4.0,
+    "projected_fluctuation_m": 0.5,
+    "note": "Document states groundwater level at 4.0 m during a wet period.",
+    "source_ids": [
+      "PLD-S122"
+    ]
+  },
+  "expert_context": {
+    "usage": "Documented partial local borehole lithology analogue for Plovdiv city",
+    "warning": "Partial column only. Exact internal boundaries between clays and fine-grained clayey sands above 16.5 m are not documented and must not be invented."
+  },
+  "research_origin": {
+    "inventory": "data/soil-lithology/research/plovdiv_lithology_inventory.json",
+    "profile_id": "PLD-LITH-P001",
+    "inventory_status": "VALID_PARTIAL_LITHOLOGY"
+  },
+  "research_limitations": [
+    "Exact boundaries between the clay and fine-grained clayey-sand units above 16.50 m are not given.",
+    "Do not fabricate a complete 0-16.50 m lithological subdivision.",
+    "Regional groundwater-body descriptions are context only."
+  ]
+}
+
   ]
 }

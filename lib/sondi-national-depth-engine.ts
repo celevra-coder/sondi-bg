@@ -1,3 +1,4 @@
+import { getNationalBoreholeResearchReferences } from "./sondi-national-borehole-index";
 import "server-only";
 // Unified national access to documented borehole contacts.
 export {
@@ -191,13 +192,61 @@ function containsPoint(
   lat: number,
   lon: number
 ): boolean {
+  // SONDI_GEOJSON_WRAPPER_SUPPORT_64R
+  // Accept GeoJSON geometry, Feature and FeatureCollection.
+  // Existing Polygon/MultiPolygon calculations remain unchanged.
+  const input = geometry as unknown as {
+    type?: string;
+    coordinates?: unknown;
+    geometry?: unknown;
+    features?: unknown;
+  };
+
+  if (!input || typeof input !== "object") {
+    throw new Error("Invalid regional boundary object");
+  }
+
+  if (input.type === "Feature") {
+    if (!input.geometry) {
+      throw new Error("GeoJSON Feature has no geometry");
+    }
+    return containsPoint(input.geometry as Geometry, lat, lon);
+  }
+
+  if (input.type === "FeatureCollection") {
+    if (!Array.isArray(input.features)) {
+      throw new Error("GeoJSON FeatureCollection has no features");
+    }
+    return input.features.some(feature =>
+      containsPoint(feature as Geometry, lat, lon)
+    );
+  }
+
+  if (
+    input.type !== "Polygon" &&
+    input.type !== "MultiPolygon"
+  ) {
+    throw new Error(
+      "Unsupported regional geometry type: " +
+      String(input.type)
+    );
+  }
+
+  if (!Array.isArray(input.coordinates)) {
+    throw new Error(
+      "Regional geometry has no coordinate array: " +
+      input.type
+    );
+  }
+
   const polygons: Polygon[] =
-    geometry.type === "MultiPolygon"
-      ? geometry.coordinates as Polygon[]
-      : [geometry.coordinates as Polygon];
+    input.type === "MultiPolygon"
+      ? input.coordinates as Polygon[]
+      : [input.coordinates as Polygon];
 
   return polygons.some(
     polygon =>
+      Array.isArray(polygon) &&
       polygon.length > 0 &&
       insideRing(lon, lat, polygon[0]) &&
       !polygon.slice(1).some(
@@ -362,6 +411,89 @@ function collectNationalBoreholeEvidence(
           faults?.intersection_count ?? null,
         mapped_fault_ids: faultIds,
       });
+      sourceIds.push(...interval.source_ids);
+    }
+  }
+
+
+  // SONDI_NATIONAL_RESEARCH_CONTEXT_65G_R
+  // Research-only coordinates are comparison references,
+  // never proof of lithology below the clicked location.
+  const researchReferences = getNationalBoreholeResearchReferences();
+
+  if (researchReferences.length > 0) {
+    const indexed = new Map(
+      getNationalBoreholeIndex().map(hole => [hole.id, hole])
+    );
+
+    const candidates = researchReferences.flatMap(reference => {
+      if (
+        reference.latitude === null ||
+        reference.longitude === null ||
+        reference.validated_interval_count < 1 ||
+        reference.coordinate_grade === "UNLOCATED"
+      ) return [];
+
+      const hole = indexed.get(reference.borehole_id);
+
+      // Already positioned boreholes are handled by the
+      // existing national evidence collection.
+      if (
+        !hole ||
+        hole.latitude !== null ||
+        hole.longitude !== null
+      ) return [];
+
+      const distance = distanceKm(
+        latitude,
+        longitude,
+        reference.latitude,
+        reference.longitude
+      );
+
+      if (
+        distance > 50 ||
+        (maxDistanceKm !== null && distance > maxDistanceKm)
+      ) return [];
+
+      return hole.intervals
+        .filter(interval =>
+          interval.from_m !== null &&
+          interval.to_m !== null &&
+          interval.from_m <= depthM &&
+          depthM < interval.to_m &&
+          interval.material_bg.trim().length > 0
+        )
+        .map(interval => ({
+          reference,
+          hole,
+          interval,
+          distance
+        }));
+    })
+    .sort((a, b) =>
+      a.distance - b.distance ||
+      a.hole.id.localeCompare(b.hole.id)
+    )
+    .slice(0, 8);
+
+    for (const candidate of candidates) {
+      const { reference, hole, interval, distance } = candidate;
+
+      evidence.push({
+        type: "REGIONAL_CONTEXT",
+        description:
+          "Сравнителна сондажна колонка " + hole.id +
+          " (" + reference.coordinate_grade +
+          ", приблизително " + distance.toFixed(1) +
+          " км): " + interval.from_m + "–" +
+          interval.to_m + " м — " + interval.material_bg +
+          ". Изследователски запис, който не доказва " +
+          "същия пласт под избраната точка.",
+        distance_km: distance,
+        source_ids: interval.source_ids
+      });
+
       sourceIds.push(...interval.source_ids);
     }
   }
@@ -794,9 +926,13 @@ export function resolveNationalDepthLithology(
 
     // Either one reasonably close documented analogue or
     // at least two independent nearby documented analogues.
-    const eligible =
-      close.length > 0 ||
-      distinct.size >= 2;
+    // SONDI_SOFIA_LOCAL_ANALOGUE_GUARD_63DE
+    // Distant boreholes remain comparative evidence.
+    // They must not supply a depth-specific material for
+    // Sofia solely because two or more exist within 30 km.
+    const eligible = base.region_id.startsWith("SOF-")
+      ? close.length > 0
+      : close.length > 0 || distinct.size >= 2;
 
     if (eligible && candidates.length > 0) {
       const primary = close[0] ?? candidates[0];

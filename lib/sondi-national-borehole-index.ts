@@ -194,3 +194,93 @@ export function getNationalBoreholeIndexStats() {
     ).length,
   };
 }
+
+// SONDI_NATIONAL_RESEARCH_REFERENCE_INDEX_65E
+// Research coordinates are supplementary metadata.
+// They are NEVER silently promoted to surveyed borehole mouths
+// or automatically used to predict target depth lithology.
+
+export type NationalResearchBoreholeReference = {
+  borehole_id: string;
+  latitude: number | null;
+  longitude: number | null;
+  coordinate_grade: string;
+  coordinate_is_exact_surveyed_mouth: boolean;
+  spatial_reference_is_canonical: boolean;
+  validated_interval_count: number;
+  source_dataset: string;
+  research_only: true;
+  automatic_depth_prediction_enabled: false;
+};
+
+export function getNationalBoreholeResearchReferences():
+  NationalResearchBoreholeReference[] {
+
+  const directory = path.join(base, "research");
+
+  if (!fs.existsSync(directory)) return [];
+
+  const results: NationalResearchBoreholeReference[] = [];
+  const seen = new Set<string>();
+
+  const files = fs.readdirSync(directory)
+    .filter(name =>
+      /^[a-zA-Z0-9_.-]*documented_depth_checkpoints[a-zA-Z0-9_.-]*\.json$/
+        .test(name)
+    )
+    .sort();
+
+  for (const filename of files) {
+    const dataset = read(path.join(directory, filename));
+
+    // Never override source-level publication restrictions.
+    if (
+      dataset.research_only !== true ||
+      dataset.automatic_depth_prediction_enabled !== false ||
+      !Array.isArray(dataset.records)
+    ) continue;
+
+    for (const item of dataset.records) {
+      const id = String(item?.borehole_id ?? "").trim();
+      if (!id) continue;
+
+      const coordinate = item.reference_coordinate ?? {};
+      const located = validCoords(
+        coordinate.latitude,
+        coordinate.longitude
+      );
+
+      const exact = item.coordinate_grade === "OFFICIAL_EXACT" &&
+        item.coordinate_is_exact_surveyed_mouth === true &&
+        item.spatial_reference_is_canonical === true &&
+        located;
+
+      const key = filename + ":" + id;
+
+      if (seen.has(key)) continue;
+      seen.add(key);
+
+      results.push({
+        borehole_id: id,
+        latitude: located ? coordinate.latitude : null,
+        longitude: located ? coordinate.longitude : null,
+        coordinate_grade: String(
+          item.coordinate_grade ?? "UNLOCATED"
+        ),
+        coordinate_is_exact_surveyed_mouth: exact,
+        spatial_reference_is_canonical:
+          item.spatial_reference_is_canonical === true,
+        validated_interval_count:
+          Number.isInteger(item.validated_interval_count) &&
+          item.validated_interval_count >= 0
+            ? item.validated_interval_count
+            : 0,
+        source_dataset: filename,
+        research_only: true,
+        automatic_depth_prediction_enabled: false
+      });
+    }
+  }
+
+  return results;
+}
