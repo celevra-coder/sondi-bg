@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "model_id": "KNL-M-KNL48-Z01",
+  "oblast": "Кюстендил",
+  "municipality": "Дупница",
+  "status": "RESEARCH_DRAFT_NOT_PRODUCTION",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "KNL-M-KNL48-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Дупнишка котловина и долината на Джерман",
+          "dominant_lithology_context": [
+            "Конгломерати и пясъчници",
+            "Аргилити и глинести седименти",
+            "Въгленосни седиментни комплекси",
+            "Гнайси и амфиболити в по-старите скални комплекси"
+          ],
+          "regional_units": [
+            {
+              "unit": "Пъстра подвъглищна седиментна единица"
+            },
+            {
+              "unit": "Въгленосна седиментна единица"
+            },
+            {
+              "unit": "Тънкопластова аргилитна единица"
+            },
+            {
+              "unit": "По-стари кристалинни скали"
+            }
+          ],
+          "source_id": "KNL-SECTION-006"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Дупница",
+          "informationType": "Геоложки строеж и практическо значение",
+          "paragraphs": [
+            "Седиментните единици имат различни мощности и разпространение. Те не се приемат за задължителна последователност под всяка точка в общината."
+          ],
+          "source_ids": [
+            "KNL-SECTION-006",
+            "KNL-SECTION-007",
+            "KNL-REGION-019"
+          ]
+        }
+      ],
+      "source_ids": [
+        "KNL-SECTION-006",
+        "KNL-SECTION-007",
+        "KNL-LEAD-017",
+        "KNL-SOURCE-018",
+        "KNL-REGION-019",
+        "KNL-LEAD-027"
+      ],
+      "research_evidence_ids": [
+        "KNL-SECTION-006",
+        "KNL-SECTION-007",
+        "KNL-LEAD-017",
+        "KNL-SOURCE-018",
+        "KNL-REGION-019",
+        "KNL-LEAD-027"
+      ],
+      "wider_studies": []
+    }
+  }
+}

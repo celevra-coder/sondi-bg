@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "model_id": "KNL-M-KNL04-Z01",
+  "oblast": "Кюстендил",
+  "municipality": "Бобов дол",
+  "status": "RESEARCH_DRAFT_NOT_PRODUCTION",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "KNL-M-KNL04-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Бобовдолски въгленосен басейн",
+          "dominant_lithology_context": [
+            "Пясъчници",
+            "Конгломерати и брекчоконгломерати",
+            "Аргилити и песъчливи аргилити",
+            "Въглищни пластове"
+          ],
+          "regional_units": [
+            {
+              "unit": "Бобовдолска въгленосна свита"
+            },
+            {
+              "unit": "Разметанишка свита"
+            },
+            {
+              "unit": "Бърдовенецка свита"
+            },
+            {
+              "unit": "Балановска свита"
+            },
+            {
+              "unit": "Каменишка свита"
+            },
+            {
+              "unit": "Блажиевска свита"
+            }
+          ],
+          "source_id": "KNL-SECTION-003"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Бобов дол",
+          "informationType": "Геоложки строеж и практическо значение",
+          "paragraphs": [
+            "Въгленосният басейн има сложен разломен и нагънат строеж. Отделните свити не се срещат на еднаква дълбочина навсякъде."
+          ],
+          "source_ids": [
+            "KNL-SECTION-003",
+            "KNL-STRUCT-004",
+            "KNL-LITH-005",
+            "KNL-REGION-025"
+          ]
+        }
+      ],
+      "source_ids": [
+        "KNL-SECTION-003",
+        "KNL-STRUCT-004",
+        "KNL-LITH-005",
+        "KNL-STRUCT-021",
+        "KNL-REGION-025",
+        "KNL-SECTION-026"
+      ],
+      "research_evidence_ids": [
+        "KNL-SECTION-003",
+        "KNL-STRUCT-004",
+        "KNL-LITH-005",
+        "KNL-STRUCT-021",
+        "KNL-REGION-025",
+        "KNL-SECTION-026"
+      ],
+      "wider_studies": []
+    }
+  }
+}

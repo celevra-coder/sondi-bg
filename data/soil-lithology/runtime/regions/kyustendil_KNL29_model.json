@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "model_id": "KNL-M-KNL29-Z01",
+  "oblast": "Кюстендил",
+  "municipality": "Кюстендил",
+  "status": "RESEARCH_DRAFT_NOT_PRODUCTION",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "KNL-M-KNL29-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Кюстендилски басейн и прилежащи скални блокове",
+          "dominant_lithology_context": [
+            "Кватернерни пясъци, чакъли и глини",
+            "Неогенски седиментни наслаги",
+            "Гнайси и амфиболити",
+            "Гранитни скали"
+          ],
+          "regional_units": [
+            {
+              "unit": "Кюстендилско седиментно запълване"
+            },
+            {
+              "unit": "Кристалинна геоложка подложка"
+            }
+          ],
+          "source_id": "KNL-SECTION-013"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Кюстендил",
+          "informationType": "Геоложки строеж и практическо значение",
+          "paragraphs": [
+            "Разломните системи и различната дълбочина на кристалинния фундамент не позволяват единна дълбочинна последователност за цялата община."
+          ],
+          "source_ids": [
+            "KNL-SECTION-013",
+            "KNL-STRUCT-014"
+          ]
+        }
+      ],
+      "source_ids": [
+        "KNL-LITH-001",
+        "KNL-SECTION-002",
+        "KNL-SECTION-013",
+        "KNL-STRUCT-014",
+        "KNL-REGION-024"
+      ],
+      "research_evidence_ids": [
+        "KNL-LITH-001",
+        "KNL-SECTION-002",
+        "KNL-SECTION-013",
+        "KNL-STRUCT-014",
+        "KNL-REGION-024"
+      ],
+      "wider_studies": []
+    }
+  }
+}

@@ -6734,7 +6734,7 @@ function researchBoreholePopupHtml(feature) {
       'font-size:11px;' +
       'color:#64748b' +
     '">' +
-      'Документиран проучвателен сондаж · SONDI.BG' +
+      (p.feature_type === 'trial_pit' ? 'Документиран проучвателен шурф · SONDI.BG' : 'Документиран проучвателен сондаж · SONDI.BG') +
     '</div>' +
 
     '</div>';

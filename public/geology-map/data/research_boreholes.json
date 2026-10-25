@@ -6965,84 +6965,377 @@
         "registry_number": "351037001"
       }
     },
-{
-  "borehole_id": "PLD-Z111",
-  "name_bg": "Пловдив - ПИ 56784.539.106",
-  "oblast": "Пловдив",
-  "region_code": "Plovdiv",
-  "status": "documented_partial_lithological_profile",
-  "zone_type": "site_specific",
-  "coordinates": {
-    "latitude": 42.1210278,
-    "longitude": 24.7812222,
-    "status": "OFFICIAL_EXACT",
-    "evidence_level": "official_facility_coordinate",
-    "origin": "plovdiv_lithology_research",
-    "source_text": "N 42°07'15.7'' E 24°46'52.4''"
-  },
-  "total_depth_m": 20,
-  "water_type": "groundwater",
-  "lithology": [
     {
-      "depth_from_m": null,
-      "depth_to_m": 16.5,
-      "expected_material_bg": "Над водоносния пласт са установени глини и дребнозърнести заглинени пясъци.",
-      "confidence": "high",
-      "evidence_level": "borehole_exact_partial_column",
-      "source_ids": [
-        "PLD-S122"
+      "borehole_id": "PLD-Z111",
+      "name_bg": "Пловдив - ПИ 56784.539.106",
+      "oblast": "Пловдив",
+      "region_code": "Plovdiv",
+      "status": "documented_partial_lithological_profile",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.1210278,
+        "longitude": 24.7812222,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "plovdiv_lithology_research",
+        "source_text": "N 42°07'15.7'' E 24°46'52.4''"
+      },
+      "total_depth_m": 20,
+      "water_type": "groundwater",
+      "lithology": [
+        {
+          "depth_from_m": null,
+          "depth_to_m": 16.5,
+          "expected_material_bg": "Над водоносния пласт са установени глини и дребнозърнести заглинени пясъци.",
+          "confidence": "high",
+          "evidence_level": "borehole_exact_partial_column",
+          "source_ids": [
+            "PLD-S122"
+          ],
+          "interval_status": "UPPER_BOUNDARIES_NOT_DOCUMENTED"
+        },
+        {
+          "depth_from_m": 16.5,
+          "depth_to_m": 19.5,
+          "expected_material_bg": "Едрозърнест пясък с дребен чакъл.",
+          "confidence": "high",
+          "evidence_level": "borehole_exact_partial_column",
+          "source_ids": [
+            "PLD-S122"
+          ],
+          "interval_status": "EXACT_DOCUMENTED_INTERVAL",
+          "hydrogeological_role": "documented_aquifer_layer"
+        }
       ],
-      "interval_status": "UPPER_BOUNDARIES_NOT_DOCUMENTED"
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [
+        {
+          "depth_from_m": 19.5,
+          "depth_to_m": 20.0,
+          "reason": "Lithology for the final 19.5-20.0 m interval is not documented in the reviewed source. No extrapolation performed.",
+          "source_ids": [
+            "PLD-S122"
+          ]
+        }
+      ],
+      "groundwater_context": {
+        "documented_level_m": 4.0,
+        "projected_fluctuation_m": 0.5,
+        "note": "Document states groundwater level at 4.0 m during a wet period.",
+        "source_ids": [
+          "PLD-S122"
+        ]
+      },
+      "expert_context": {
+        "usage": "Documented partial local borehole lithology analogue for Plovdiv city",
+        "warning": "Partial column only. Exact internal boundaries between clays and fine-grained clayey sands above 16.5 m are not documented and must not be invented."
+      },
+      "research_origin": {
+        "inventory": "data/soil-lithology/research/plovdiv_lithology_inventory.json",
+        "profile_id": "PLD-LITH-P001",
+        "inventory_status": "VALID_PARTIAL_LITHOLOGY"
+      },
+      "research_limitations": [
+        "Exact boundaries between the clay and fine-grained clayey-sand units above 16.50 m are not given.",
+        "Do not fabricate a complete 0-16.50 m lithological subdivision.",
+        "Regional groundwater-body descriptions are context only."
+      ]
     },
     {
-      "depth_from_m": 16.5,
-      "depth_to_m": 19.5,
-      "expected_material_bg": "Едрозърнест пясък с дребен чакъл.",
-      "confidence": "high",
-      "evidence_level": "borehole_exact_partial_column",
-      "source_ids": [
-        "PLD-S122"
+      "borehole_id": "KNL-LITH-008",
+      "name_bg": "Кочериново – Проучвателен шурф №1",
+      "oblast": "Кюстендил",
+      "region_code": "KNL",
+      "feature_type": "trial_pit",
+      "status": "verified_shallow_trial_pit",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.090858333,
+        "longitude": 23.068872222,
+        "status": "SOURCE_PUBLISHED_EXACT",
+        "evidence_level": "published_trial_pit_coordinate",
+        "origin": "https://kocherinovo.bg/images/stories/docs/2026/08/25-08-2026/hidrogeolojko.pdf"
+      },
+      "total_depth_m": 2.0,
+      "water_type": "not_established_in_trial_pit",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 0.2,
+          "expected_material_bg": "Повърхностен почвен слой (хумус).",
+          "confidence": "high",
+          "evidence_level": "measured_local_trial_pit",
+          "source_ids": [
+            "KNL-LITH-008"
+          ]
+        },
+        {
+          "depth_from_m": 0.2,
+          "depth_to_m": 1.2,
+          "expected_material_bg": "Песъчлива глина, твърдопластична.",
+          "confidence": "high",
+          "evidence_level": "measured_local_trial_pit",
+          "source_ids": [
+            "KNL-LITH-008"
+          ]
+        },
+        {
+          "depth_from_m": 1.2,
+          "depth_to_m": 1.4,
+          "expected_material_bg": "Глина с пясък и чакъл; описана като водонепропусклива.",
+          "confidence": "high",
+          "evidence_level": "measured_local_trial_pit",
+          "source_ids": [
+            "KNL-LITH-008"
+          ]
+        },
+        {
+          "depth_from_m": 1.4,
+          "depth_to_m": 2.0,
+          "expected_material_bg": "Черна глина, твърдопластична.",
+          "confidence": "high",
+          "evidence_level": "measured_local_trial_pit",
+          "source_ids": [
+            "KNL-LITH-008"
+          ]
+        }
       ],
-      "interval_status": "EXACT_DOCUMENTED_INTERVAL",
-      "hydrogeological_role": "documented_aquifer_layer"
-    }
-  ],
-  "structural_intervals": [],
-  "hydraulic_intervals": [],
-  "source_overlaps": [],
-  "source_gaps": [
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "hydro_notes_bg": "Проучвателен шурф, не сондаж. Не е установено ниво на подземните води до 2,00 м. Това не изключва подземни води на по-голяма дълбочина. Не се прави литоложка прогноза под 2,00 м. Изследването е от 13.08.2026 г. Кадастрален имот: 39116.125.1. Източник: Община Кочериново, инженерно-геоложко проучване, PDF стр. 15. https://kocherinovo.bg/images/stories/docs/2026/08/25-08-2026/hidrogeolojko.pdf",
+      "source_reference": {
+        "url": "https://kocherinovo.bg/images/stories/docs/2026/08/25-08-2026/hidrogeolojko.pdf",
+        "document": "Хидрогеоложко и инженерно-геоложко проучване, Кочериново",
+        "pdf_page": 15,
+        "date": "2026-08-13",
+        "research_id": "KNL-LITH-008"
+      },
+      "research_limitations": [
+        "Само измерена плитка литология до 2,00 м.",
+        "Не е индивидуален сондажен разрез.",
+        "Двата шурфа са от едно и също проучване."
+      ]
+    },
     {
-      "depth_from_m": 19.5,
-      "depth_to_m": 20.0,
-      "reason": "Lithology for the final 19.5-20.0 m interval is not documented in the reviewed source. No extrapolation performed.",
-      "source_ids": [
-        "PLD-S122"
+      "borehole_id": "KNL-LITH-009",
+      "name_bg": "Кочериново – Проучвателен шурф №2",
+      "oblast": "Кюстендил",
+      "region_code": "KNL",
+      "feature_type": "trial_pit",
+      "status": "verified_shallow_trial_pit",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.089897222,
+        "longitude": 23.067505556,
+        "status": "SOURCE_PUBLISHED_EXACT",
+        "evidence_level": "published_trial_pit_coordinate",
+        "origin": "https://kocherinovo.bg/images/stories/docs/2026/08/25-08-2026/hidrogeolojko.pdf"
+      },
+      "total_depth_m": 2.0,
+      "water_type": "not_established_in_trial_pit",
+      "lithology": [
+        {
+          "depth_from_m": 0.0,
+          "depth_to_m": 0.2,
+          "expected_material_bg": "Повърхностен почвен слой (хумус).",
+          "confidence": "high",
+          "evidence_level": "measured_local_trial_pit",
+          "source_ids": [
+            "KNL-LITH-009"
+          ]
+        },
+        {
+          "depth_from_m": 0.2,
+          "depth_to_m": 1.2,
+          "expected_material_bg": "Песъчлива глина, твърдопластична.",
+          "confidence": "high",
+          "evidence_level": "measured_local_trial_pit",
+          "source_ids": [
+            "KNL-LITH-009"
+          ]
+        },
+        {
+          "depth_from_m": 1.2,
+          "depth_to_m": 1.4,
+          "expected_material_bg": "Глина с пясък и чакъл; описана като водонепропусклива.",
+          "confidence": "high",
+          "evidence_level": "measured_local_trial_pit",
+          "source_ids": [
+            "KNL-LITH-009"
+          ]
+        },
+        {
+          "depth_from_m": 1.4,
+          "depth_to_m": 2.0,
+          "expected_material_bg": "Черна глина, твърдопластична.",
+          "confidence": "high",
+          "evidence_level": "measured_local_trial_pit",
+          "source_ids": [
+            "KNL-LITH-009"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "hydro_notes_bg": "Проучвателен шурф, не сондаж. Не е установено ниво на подземните води до 2,00 м. Това не изключва подземни води на по-голяма дълбочина. Не се прави литоложка прогноза под 2,00 м. Изследването е от 13.08.2026 г. Кадастрален имот: 39116.125.6. Източник: Община Кочериново, инженерно-геоложко проучване, PDF стр. 16. https://kocherinovo.bg/images/stories/docs/2026/08/25-08-2026/hidrogeolojko.pdf",
+      "source_reference": {
+        "url": "https://kocherinovo.bg/images/stories/docs/2026/08/25-08-2026/hidrogeolojko.pdf",
+        "document": "Хидрогеоложко и инженерно-геоложко проучване, Кочериново",
+        "pdf_page": 16,
+        "date": "2026-08-13",
+        "research_id": "KNL-LITH-009"
+      },
+      "research_limitations": [
+        "Само измерена плитка литология до 2,00 м.",
+        "Не е индивидуален сондажен разрез.",
+        "Двата шурфа са от едно и също проучване."
+      ]
+    },
+    {
+      "borehole_id": "PZ-RESEARCH-VEL-6VKP",
+      "name_bg": "Велинград-Лъджене – Сондаж №6ВКП „Вельова баня“",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "feature_type": "mineral_borehole",
+      "status": "documented_location_no_exact_lithological_column",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.0291111,
+        "longitude": 23.9850556,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_documented_facility_location",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 150.6,
+      "water_type": "mineral_thermal",
+      "lithology": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "hydro_notes_bg": "Официално документиран минерален сондаж от 1963 г. Документирана дълбочина: 150,6 м. Индивидуална литоложка колонка по метри не е установена в проверените източници. Не се извеждат предполагаеми литоложки интервали от регионалната геология. Координатите са отбелязани като официално документирани в изследователския регистър.",
+      "source_reference": {
+        "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2024/11/15_web2021_REG_%D0%A1%D1%8A%D0%BE%D1%80%D1%8A%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D0%9C%D0%B8%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%BD%D0%B8%D0%92%D0%BE%D0%B4%D0%B8_%D0%91%D0%94%D0%98%D0%91%D0%A0_2019.xlsx",
+        "source_description": "БД ИБР – официален регистър",
+        "research_file": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "research_candidate_index": 19,
+        "linked_mineral_facility_id": "mw_4a752e5cea2510dc"
+      },
+      "research_limitations": [
+        "Липсва проверена индивидуална литоложка колонка.",
+        "Не се прави дълбочинна екстраполация."
+      ]
+    },
+    {
+      "borehole_id": "PZ-RESEARCH-VEL-7KG",
+      "name_bg": "Велинград-Лъджене – Сондаж №7КГ „Вельова баня“",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "feature_type": "mineral_borehole",
+      "status": "documented_location_no_exact_lithological_column",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.0285556,
+        "longitude": 23.9809444,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_documented_facility_location",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 501.4,
+      "water_type": "mineral_thermal",
+      "lithology": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "hydro_notes_bg": "Официално документиран минерален сондаж от 1971 г. Документирана дълбочина: 501,4 м. Индивидуална литоложка колонка по метри не е установена в проверените източници. Не се извеждат предполагаеми литоложки интервали от регионалната геология. Координатите са отбелязани като официално документирани в изследователския регистър. Използвана е идентифицираната позиция от официалния минерален регистър, различна от координатите в изследователския запис.",
+      "source_reference": {
+        "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2024/11/15_web2021_REG_%D0%A1%D1%8A%D0%BE%D1%80%D1%8A%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D0%9C%D0%B8%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%BD%D0%B8%D0%92%D0%BE%D0%B4%D0%B8_%D0%91%D0%94%D0%98%D0%91%D0%A0_2019.xlsx",
+        "source_description": "БД ИБР – официален регистър",
+        "research_file": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "research_candidate_index": 43,
+        "linked_mineral_facility_id": "mw_863def67aec92be4"
+      },
+      "research_limitations": [
+        "Липсва проверена индивидуална литоложка колонка.",
+        "Не се прави дълбочинна екстраполация."
+      ]
+    },
+    {
+      "borehole_id": "PZ-RESEARCH-BRATSIGOVO-1",
+      "name_bg": "Брацигово – Мониторингов сондаж №1",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "feature_type": "monitoring_borehole",
+      "status": "documented_location_no_exact_lithological_column",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.0735277778,
+        "longitude": 24.3643333333,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_documented_facility_location",
+        "origin": "pazardzhik_lithology_inventory:official_documented"
+      },
+      "total_depth_m": 160.8,
+      "water_type": "monitoring",
+      "lithology": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "hydro_notes_bg": "Документиран мониторингов сондаж от 1963 г. Документирана дълбочина: 160,8 м. Индивидуална литоложка колонка по метри не е установена в проверените източници. Не се извеждат предполагаеми литоложки интервали от регионалната геология. Координатите са отбелязани като официално документирани в изследователския регистър. Сведенията за температура и водоприток не заместват липсващата индивидуална литоложка колонка.",
+      "source_reference": {
+        "source_url": null,
+        "source_description": "Изследователски регистър Пазарджик, запис с официално документирани координати",
+        "research_file": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "research_candidate_index": 45,
+        "linked_mineral_facility_id": null
+      },
+      "research_limitations": [
+        "Липсва проверена индивидуална литоложка колонка.",
+        "Не се прави дълбочинна екстраполация."
+      ]
+    },
+    {
+      "borehole_id": "PZ-RESEARCH-MALO-KONARE-612",
+      "name_bg": "Мало Конаре – Мониторингов сондаж НИМХ №612",
+      "oblast": "Пазарджик",
+      "region_code": "Pazardzhik",
+      "feature_type": "monitoring_borehole",
+      "status": "documented_location_no_exact_lithological_column",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.2072222222,
+        "longitude": 24.4202777778,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_documented_facility_location",
+        "origin": "pazardzhik_lithology_inventory:official_documented"
+      },
+      "total_depth_m": 9.5,
+      "water_type": "monitoring",
+      "lithology": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "hydro_notes_bg": "Официално документиран мониторингов сондаж НИМХ/БД ИБР. Документирана дълбочина: 9,5 м. Индивидуална литоложка колонка по метри не е установена в проверените източници. Не се извеждат предполагаеми литоложки интервали от регионалната геология. Координатите са отбелязани като официално документирани в изследователския регистър.",
+      "source_reference": {
+        "source_url": null,
+        "source_description": "Изследователски регистър Пазарджик, запис с официално документирани координати",
+        "research_file": "data/soil-lithology/research/pazardzhik_lithology_inventory.json",
+        "research_candidate_index": 65,
+        "linked_mineral_facility_id": null
+      },
+      "research_limitations": [
+        "Липсва проверена индивидуална литоложка колонка.",
+        "Не се прави дълбочинна екстраполация."
       ]
     }
-  ],
-  "groundwater_context": {
-    "documented_level_m": 4.0,
-    "projected_fluctuation_m": 0.5,
-    "note": "Document states groundwater level at 4.0 m during a wet period.",
-    "source_ids": [
-      "PLD-S122"
-    ]
-  },
-  "expert_context": {
-    "usage": "Documented partial local borehole lithology analogue for Plovdiv city",
-    "warning": "Partial column only. Exact internal boundaries between clays and fine-grained clayey sands above 16.5 m are not documented and must not be invented."
-  },
-  "research_origin": {
-    "inventory": "data/soil-lithology/research/plovdiv_lithology_inventory.json",
-    "profile_id": "PLD-LITH-P001",
-    "inventory_status": "VALID_PARTIAL_LITHOLOGY"
-  },
-  "research_limitations": [
-    "Exact boundaries between the clay and fine-grained clayey-sand units above 16.50 m are not given.",
-    "Do not fabricate a complete 0-16.50 m lithological subdivision.",
-    "Regional groundwater-body descriptions are context only."
-  ]
-}
-
   ]
 }

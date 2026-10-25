@@ -45,7 +45,32 @@
         },
         "research_enrichment": [],
         "duplicate_mh_records": [],
-        "matched_existing_records": []
+        "matched_existing_records": [
+          {
+            "status": "MATCHED_EXISTING",
+            "research_status": "MATCHED_EXISTING",
+            "research_batch": "KNL_NEVESTINO_68U",
+            "previous_research_id": "mw_a03a31b82c5095b1",
+            "note": "Verified Barishteto research attached to the official facility. Wrong Zelen Dol coordinate association excluded.",
+            "research_enrichment": {
+              "historical_initial_self_flow_l_s": 11.47,
+              "historical_initial_temperature_c": 30,
+              "historical_value_scope": "initial self-flow after construction; not current discharge",
+              "sample_temperature_c": 29.5,
+              "total_mineralization_mg_l": 766,
+              "ph": 9.58,
+              "fluoride_mg_l": 7.3,
+              "silicic_acid_mg_l": 50.53,
+              "hydrogen_sulfide_mg_l": 0.04,
+              "radon_222_bq_l": 11.03,
+              "potable_status": "not suitable for routine drinking due to elevated fluoride according to MH assessment",
+              "mh_balneological_assessment_no": "146",
+              "mh_balneological_assessment_date": "15.01.2020",
+              "verified_source_url": "https://www.mh.government.bg/upload/6759/146-nevestino-barishteto-sondazh1hgbarishteto-15-01-2020.pdf",
+              "original_duplicate_id": "mw_a03a31b82c5095b1"
+            }
+          }
+        ]
       },
       "sources": [
         {
@@ -54,6 +79,20 @@
           "source_url": "https://wabd.bg/content/wp-content/uploads/2026/02/%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%8A%D1%80-%D0%BD%D0%B0-%D0%B2%D0%BE%D0%B4%D0%BE%D0%B2%D0%B7%D0%B5%D0%BC%D0%BD%D0%B8-%D1%81%D1%8A%D0%BE%D1%80%D1%8A%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B7%D0%B0-%D0%BC%D0%B8%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%BD%D0%B8-%D0%B2%D0%BE%D0%B4%D0%B8-%D0%BE%D1%82-%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D0%B8%D1%89%D0%B0-%D0%BF%D0%BE-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%E2%84%962-%D0%BA%D1%8A%D0%BC-%D1%87%D0%BB.14-%D1%82.-2-%D0%BE%D1%82-%D0%97%D0%92-%D1%81%D1%82%D0%BE%D0%BF%D0%B0%D0%BD%D0%B8%D1%81%D0%B2%D0%B0%D0%BD%D0%B8-%D0%BE%D1%82-%D0%91%D0%94%D0%97%D0%91%D0%A0-06022026.xlsx",
           "published": "06.02.2026",
           "registry_number": "451047001/12.01.2007"
+        },
+        {
+          "source_type": "balneology",
+          "title": "Балнеологична оценка № 146 от 15.01.2020 г.",
+          "description": "„Сондаж № 1хг - Барището“ - находище на минерална вода „Невестино-Барището“, с. Невестино, община Невестино, област Кюстендил",
+          "published": "22.01.2020",
+          "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=21"
+        },
+        {
+          "source_type": "verified_research",
+          "title": "MH balneological assessment No.146/15.01.2020",
+          "source_url": "https://www.mh.government.bg/upload/6759/146-nevestino-barishteto-sondazh1hgbarishteto-15-01-2020.pdf",
+          "assessment_no": "146",
+          "assessment_date": "15.01.2020"
         }
       ],
       "origin": "existing_map"
@@ -101,7 +140,25 @@
         },
         "research_enrichment": [],
         "duplicate_mh_records": [],
-        "matched_existing_records": []
+        "matched_existing_records": [
+          {
+            "status": "MATCHED_EXISTING",
+            "research_status": "MATCHED_EXISTING",
+            "research_batch": "KNL_NEVESTINO_68U",
+            "research_enrichment": {
+              "historical_initial_self_flow_l_s": 36,
+              "historical_initial_temperature_c": 24,
+              "sample_temperature_c_2018": 23.8,
+              "temperature_values_are_historical": true,
+              "current_discharge_not_established": true,
+              "first_inflow_depth_not_established": true,
+              "construction_conflict_requires_review": true,
+              "mh_balneological_assessment_no": "144",
+              "mh_balneological_assessment_date": "13.12.2019",
+              "verified_source_url": "https://www.mh.government.bg/upload/6761/144-nevestino-topilata-sondazh-2hg-13-12-2019.pdf"
+            }
+          }
+        ]
       },
       "sources": [
         {
@@ -1758,8 +1815,8 @@
                 "free_self_flow": true,
                 "collector": "пукнатинно-жилна водонапорна система в палеозойски гранити и гранитоиди на Западнородопския батолит",
                 "regional_collector_depth_m": {
-                  "from_m": 1200.0,
-                  "to_m": 1900.0,
+                  "from_m": 1200,
+                  "to_m": 1900,
                   "interpretation_only": true,
                   "note": "Регионална дълбочина на минералния колектор за находище Велинград-Лъджене; не е индивидуален водоприток в Сондаж №2ВКП."
                 },
@@ -1770,14 +1827,14 @@
               "settlement": "Велинград",
               "current_deposit_name": "Велинград-Лъджене",
               "official_facility_name": "Сондаж №2ВКП „Вельова баня“",
-              "depth_m": 178.0,
+              "depth_m": 178,
               "free_self_flow": true,
               "flow_regime": "free_self_flow",
               "collector": "пукнатинно-жилна водонапорна система в палеозойски гранити и гранитоиди на Западнородопския батолит",
               "source_note": "МЗ, Балнеологична оценка №16/10.09.2014. Сондажът е изграден през 1959 г., дълбочина 178 m и работи на пълен свободен самоизлив.",
               "regional_collector_depth_m": {
-                "from_m": 1200.0,
-                "to_m": 1900.0,
+                "from_m": 1200,
+                "to_m": 1900,
                 "interpretation_only": true,
                 "note": "Регионална дълбочина на минералния колектор за находище Велинград-Лъджене; не е индивидуален водоприток в Сондаж №2ВКП."
               },
@@ -1877,8 +1934,8 @@
                 "collector": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити и гранитоиди",
                 "collector_scope": "regional_deposit_context",
                 "regional_collector_depth_m": {
-                  "from_m": 1200.0,
-                  "to_m": 1900.0,
+                  "from_m": 1200,
+                  "to_m": 1900,
                   "interpretation_only": true
                 },
                 "source_note": "БД ИБР потвърждава дълбочина 501.4 m и самоизлив на кота 749.35 m. Официалното приложение за ресурсите посочва 3.40 l/s и 49.8°C."
@@ -1899,8 +1956,8 @@
               "collector_scope": "regional_deposit_context",
               "source_note": "БД ИБР потвърждава дълбочина 501.4 m и самоизлив на кота 749.35 m. Официалното приложение за ресурсите посочва 3.40 l/s и 49.8°C.",
               "regional_collector_depth_m": {
-                "from_m": 1200.0,
-                "to_m": 1900.0,
+                "from_m": 1200,
+                "to_m": 1900,
                 "interpretation_only": true
               },
               "existing_feature_index": 23,
@@ -2581,7 +2638,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 63.0,
+        "temperature_c": 63,
         "depth_m": 345.2
       },
       "pro": {
@@ -2623,8 +2680,8 @@
             "research_enrichment": {
               "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
               "mineral_hydrothermal_research": {
-                "technical_flow_l_s": 8.0,
-                "temperature_c": 63.0,
+                "technical_flow_l_s": 8,
+                "temperature_c": 63,
                 "artesian_character": true,
                 "dynamic_level_note": "самоизлив на кота 749.30 m",
                 "collector": "гранити; пукнатинно-жилен хидротермален колектор"
@@ -2635,8 +2692,8 @@
               "current_deposit_name": "Велинград-Лъджене",
               "official_facility_name": "Сондаж №7ВКП „Кремъчна баня“",
               "depth_m": 345.2,
-              "technical_possible_discharge_l_s": 8.0,
-              "temperature_c": 63.0,
+              "technical_possible_discharge_l_s": 8,
+              "temperature_c": 63,
               "artesian_character": true,
               "collector": "гранити; пукнатинно-жилен хидротермален колектор",
               "existing_feature_index": 32,
@@ -2671,7 +2728,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 51.0,
+        "temperature_c": 51,
         "depth_m": 159
       },
       "pro": {
@@ -2714,7 +2771,7 @@
               "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
               "mineral_hydrothermal_research": {
                 "technical_flow_l_s": 4.6,
-                "temperature_c": 51.0,
+                "temperature_c": 51,
                 "artesian_character": true,
                 "dynamic_level_note": "самоизлив на кота 735.24 m",
                 "collector": "гранити; пукнатинно-жилен хидротермален колектор"
@@ -2724,9 +2781,9 @@
               "settlement": "Велинград",
               "current_deposit_name": "Велинград-Лъджене",
               "official_facility_name": "Сондаж №8КГ „Топилата“",
-              "depth_m": 159.0,
+              "depth_m": 159,
               "technical_possible_discharge_l_s": 4.6,
-              "temperature_c": 51.0,
+              "temperature_c": 51,
               "artesian_character": true,
               "collector": "гранити; пукнатинно-жилен хидротермален колектор",
               "existing_feature_index": 33,
@@ -2947,7 +3004,7 @@
               "existing_settlement": "Велинград",
               "existing_latitude": 42.0283611,
               "existing_longitude": 23.9803056,
-              "existing_match_distance_m": 0.0,
+              "existing_match_distance_m": 0,
               "existing_match_source": "official_water_facilities.geojson",
               "existing_match_resolved_at": "2026-09-10T19:35:24+00:00",
               "existing_match_basis": "Same physical facility identity with official research coordinate matching the existing official-map point within 25 m."
@@ -2996,7 +3053,7 @@
       },
       "free": {
         "temperature_c": null,
-        "depth_m": 428.0
+        "depth_m": 428
       },
       "pro": {
         "existing_properties": {
@@ -3039,11 +3096,11 @@
               "mineral_hydrothermal_research": {
                 "approved_exploitation_resource_l_s": 1.06,
                 "approved_resource_evidence": "official_historical_resource_annex",
-                "documented_temperature_c": 44.0,
+                "documented_temperature_c": 44,
                 "collector": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити, гранитогнайси и гнайси",
                 "regional_collector_depth_m": {
-                  "from_m": 1200.0,
-                  "to_m": 1900.0,
+                  "from_m": 1200,
+                  "to_m": 1900,
                   "interpretation_only": true
                 },
                 "resource_review_note": "В по-късна вторична компилация се среща стойност 0.52 l/s. Тя не замества официалния исторически утвърден ресурс 1.06 l/s без идентифициран последващ първичен акт.",
@@ -3054,15 +3111,15 @@
               "settlement": "Велинград",
               "current_deposit_name": "Велинград-Лъджене",
               "official_facility_name": "Сондаж №9 „Кентавър“",
-              "depth_m": 428.0,
+              "depth_m": 428,
               "construction_year": 1999,
               "approved_exploitation_resource_l_s": 1.06,
-              "documented_temperature_c": 44.0,
+              "documented_temperature_c": 44,
               "collector": "находище Велинград-Лъджене: пукнатинно-жилен хидротермален колектор в гранити, гранитогнайси и гнайси",
               "source_note": "Официално приложение към ПУРБ посочва 1.06 l/s и температура 44°C за Сондаж №9.",
               "regional_collector_depth_m": {
-                "from_m": 1200.0,
-                "to_m": 1900.0,
+                "from_m": 1200,
+                "to_m": 1900,
                 "interpretation_only": true
               },
               "existing_feature_index": 36,
@@ -3259,19 +3316,19 @@
                 "self_flow_elevation_m": 775.51,
                 "collector": "регионално: гнайси и гранити в дълбоката пукнатинно-жилна система",
                 "regional_collector_depth_m": {
-                  "from_m": 1000.0,
-                  "to_m": 1200.0,
+                  "from_m": 1000,
+                  "to_m": 1200,
                   "interpretation_only": true,
                   "note": "Регионална дълбочина на колектора под земната повърхност; не е доказан водоприток в самия Сондаж №1."
                 },
                 "construction": [
                   {
-                    "from_m": 0.0,
+                    "from_m": 0,
                     "to_m": 1.8,
                     "description_bg": "Ø150 mm"
                   },
                   {
-                    "from_m": 0.0,
+                    "from_m": 0,
                     "to_m": 2.5,
                     "description_bg": "разширено до Ø150 mm, затръбено и циментирано"
                   },
@@ -3301,12 +3358,12 @@
               "collector": "регионално: гнайси и гранити в дълбоката пукнатинно-жилна система",
               "construction": [
                 {
-                  "from_m": 0.0,
+                  "from_m": 0,
                   "to_m": 1.8,
                   "description_bg": "Ø150 mm"
                 },
                 {
-                  "from_m": 0.0,
+                  "from_m": 0,
                   "to_m": 2.5,
                   "description_bg": "разширено до Ø150 mm, затръбено и циментирано"
                 },
@@ -3318,8 +3375,8 @@
               ],
               "source_note": "МЗ, Балнеологична оценка №165/19.05.2020.",
               "regional_collector_depth_m": {
-                "from_m": 1000.0,
-                "to_m": 1200.0,
+                "from_m": 1000,
+                "to_m": 1200,
                 "interpretation_only": true,
                 "note": "Регионална дълбочина на колектора под земната повърхност; не е доказан водоприток в самия Сондаж №1."
               },
@@ -3678,7 +3735,7 @@
               "settlement": "Велинград",
               "current_deposit_name": "Велинград-Чепино",
               "official_facility_name": "Сондаж №5 „Горски пункт“",
-              "depth_m": 246.0,
+              "depth_m": 246,
               "technical_possible_discharge_l_s": 5.4,
               "temperature_c": 37.5,
               "artesian_character": true,
@@ -6547,7 +6604,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 38.0,
+        "temperature_c": 38,
         "depth_m": 277
       },
       "pro": {
@@ -6562,7 +6619,7 @@
           "facility_type": "водовземно",
           "year": "1968",
           "depth_m": "277.0",
-          "temperature_c": 38.0,
+          "temperature_c": 38,
           "status": "",
           "registry_number": "РМН1 - 003004",
           "source_date": "01.11.2022",
@@ -6585,7 +6642,7 @@
             "source_date": "2026-07-17",
             "source_row": 15,
             "ownership_regime": "exclusive_state_property",
-            "temperature_c": 38.0,
+            "temperature_c": 38,
             "approved_resource_l_s": null,
             "technical_possible_flow_l_s": 1.26,
             "static_level_raw": "от 647,52 до 645,85*",
@@ -6638,7 +6695,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 36.0,
+        "temperature_c": 36,
         "depth_m": 650
       },
       "pro": {
@@ -6653,7 +6710,7 @@
           "facility_type": "водовземно",
           "year": "1968",
           "depth_m": "650.0",
-          "temperature_c": 36.0,
+          "temperature_c": 36,
           "status": "",
           "registry_number": "РМН1 - 003005",
           "source_date": "01.11.2022",
@@ -6676,8 +6733,8 @@
             "source_date": "2026-07-17",
             "source_row": 16,
             "ownership_regime": "exclusive_state_property",
-            "temperature_c": 36.0,
-            "approved_resource_l_s": 25.0,
+            "temperature_c": 36,
+            "approved_resource_l_s": 25,
             "technical_possible_flow_l_s": 3.92,
             "static_level_raw": "от 647,26 до 645,43*",
             "pressure_level_raw": "0.8",
@@ -6725,7 +6782,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 23.0,
+        "temperature_c": 23,
         "depth_m": 600
       },
       "pro": {
@@ -6740,7 +6797,7 @@
           "facility_type": "водовземно",
           "year": "2006",
           "depth_m": "600.0",
-          "temperature_c": 23.0,
+          "temperature_c": 23,
           "status": "",
           "registry_number": "РМН1 - 003006",
           "source_date": "01.11.2022",
@@ -6763,7 +6820,7 @@
             "source_date": "2026-07-17",
             "source_row": 19,
             "ownership_regime": "exclusive_state_property",
-            "temperature_c": 23.0,
+            "temperature_c": 23,
             "approved_resource_l_s": null,
             "technical_possible_flow_l_s": 0.66,
             "static_level_raw": null,
@@ -7322,7 +7379,7 @@
             "regional_position": "Belchinski Bani mineral-water deposit is situated in the central part of the Samokov field / Palakariya basin.",
             "temperature_context": {
               "regional_range_c": {
-                "approx_min": 35.0,
+                "approx_min": 35,
                 "approx_max": 40.7
               },
               "interpretation": "Belchinski Bani represents a moderate-temperature mineral-water field. This range is regional evidence and must not be assigned directly to an arbitrary selected point."
@@ -7444,20 +7501,20 @@
             },
             "construction": [
               {
-                "from_m": 0.0,
-                "to_m": 29.0,
+                "from_m": 0,
+                "to_m": 29,
                 "type": "casing",
                 "note": "casing Ø146 mm; cemented"
               },
               {
-                "from_m": 29.0,
+                "from_m": 29,
                 "to_m": 313.2,
                 "type": "casing",
                 "note": "casing Ø127 mm"
               },
               {
-                "from_m": 250.0,
-                "to_m": 313.0,
+                "from_m": 250,
+                "to_m": 313,
                 "type": "cemented_interval",
                 "note": "documented cementation"
               },
@@ -7486,7 +7543,7 @@
             "regional_position": "Belchinski Bani mineral-water deposit is situated in the central part of the Samokov field / Palakariya basin.",
             "temperature_context": {
               "regional_range_c": {
-                "approx_min": 35.0,
+                "approx_min": 35,
                 "approx_max": 40.7
               },
               "interpretation": "Belchinski Bani represents a moderate-temperature mineral-water field. This range is regional evidence and must not be assigned directly to an arbitrary selected point."
@@ -7527,7 +7584,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 32.0,
+        "temperature_c": 32,
         "depth_m": 425
       },
       "pro": {
@@ -7542,7 +7599,7 @@
           "facility_type": "водовземно",
           "year": "1965",
           "depth_m": "425.0",
-          "temperature_c": 32.0,
+          "temperature_c": 32,
           "status": "",
           "registry_number": "РМН1 - 014001",
           "source_date": "01.11.2022",
@@ -7568,16 +7625,16 @@
             "source_date": "2026-07-17",
             "source_row": 50,
             "ownership_regime": "exclusive_state_property",
-            "temperature_c": 32.0,
-            "approved_resource_l_s": 18.0,
-            "technical_possible_flow_l_s": 14.0,
+            "temperature_c": 32,
+            "approved_resource_l_s": 18,
+            "technical_possible_flow_l_s": 14,
             "static_level_raw": null,
             "pressure_level_raw": null,
             "allowable_drawdown_raw": "самоизлив 72 м до кота устие",
             "dynamic_level_raw": null,
             "allowable_depth_raw": null
           },
-          "technical_possible_flow_l_s": 14.0,
+          "technical_possible_flow_l_s": 14,
           "ownership_regime": "exclusive_state_property",
           "bddr_permit_match": {
             "match_quality": "ambiguous",
@@ -7621,7 +7678,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 32.0,
+        "temperature_c": 32,
         "depth_m": 425
       },
       "pro": {
@@ -7636,7 +7693,7 @@
           "facility_type": "водовземно",
           "year": "1965",
           "depth_m": "425.0",
-          "temperature_c": 32.0,
+          "temperature_c": 32,
           "status": "",
           "registry_number": "РМН1 - 014001",
           "source_date": "01.11.2022",
@@ -7662,16 +7719,16 @@
             "source_date": "2026-07-17",
             "source_row": 50,
             "ownership_regime": "exclusive_state_property",
-            "temperature_c": 32.0,
-            "approved_resource_l_s": 18.0,
-            "technical_possible_flow_l_s": 14.0,
+            "temperature_c": 32,
+            "approved_resource_l_s": 18,
+            "technical_possible_flow_l_s": 14,
             "static_level_raw": null,
             "pressure_level_raw": null,
             "allowable_drawdown_raw": "самоизлив 72 м до кота устие",
             "dynamic_level_raw": null,
             "allowable_depth_raw": null
           },
-          "technical_possible_flow_l_s": 14.0,
+          "technical_possible_flow_l_s": 14,
           "ownership_regime": "exclusive_state_property",
           "bddr_permit_match": {
             "match_quality": "ambiguous",
@@ -7715,7 +7772,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 32.0,
+        "temperature_c": 32,
         "depth_m": 425
       },
       "pro": {
@@ -7730,7 +7787,7 @@
           "facility_type": "водовземно",
           "year": "1965",
           "depth_m": "425.0",
-          "temperature_c": 32.0,
+          "temperature_c": 32,
           "status": "",
           "registry_number": "РМН1 - 014001",
           "source_date": "01.11.2022",
@@ -7756,16 +7813,16 @@
             "source_date": "2026-07-17",
             "source_row": 50,
             "ownership_regime": "exclusive_state_property",
-            "temperature_c": 32.0,
-            "approved_resource_l_s": 18.0,
-            "technical_possible_flow_l_s": 14.0,
+            "temperature_c": 32,
+            "approved_resource_l_s": 18,
+            "technical_possible_flow_l_s": 14,
             "static_level_raw": null,
             "pressure_level_raw": null,
             "allowable_drawdown_raw": "самоизлив 72 м до кота устие",
             "dynamic_level_raw": null,
             "allowable_depth_raw": null
           },
-          "technical_possible_flow_l_s": 14.0,
+          "technical_possible_flow_l_s": 14,
           "ownership_regime": "exclusive_state_property",
           "bddr_permit_match": {
             "match_quality": "ambiguous",
@@ -7809,7 +7866,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 32.0,
+        "temperature_c": 32,
         "depth_m": 425
       },
       "pro": {
@@ -7824,7 +7881,7 @@
           "facility_type": "водовземно",
           "year": "1965",
           "depth_m": "425.0",
-          "temperature_c": 32.0,
+          "temperature_c": 32,
           "status": "",
           "registry_number": "РМН1 - 014001",
           "source_date": "01.11.2022",
@@ -7850,16 +7907,16 @@
             "source_date": "2026-07-17",
             "source_row": 50,
             "ownership_regime": "exclusive_state_property",
-            "temperature_c": 32.0,
-            "approved_resource_l_s": 18.0,
-            "technical_possible_flow_l_s": 14.0,
+            "temperature_c": 32,
+            "approved_resource_l_s": 18,
+            "technical_possible_flow_l_s": 14,
             "static_level_raw": null,
             "pressure_level_raw": null,
             "allowable_drawdown_raw": "самоизлив 72 м до кота устие",
             "dynamic_level_raw": null,
             "allowable_depth_raw": null
           },
-          "technical_possible_flow_l_s": 14.0,
+          "technical_possible_flow_l_s": 14,
           "ownership_regime": "exclusive_state_property",
           "bddr_permit_match": {
             "match_quality": "ambiguous",
@@ -10526,7 +10583,7 @@
         "research_enrichment": {
           "mineral_hydrothermal_research": {
             "role": "verified individual mineral / thermal facility evidence imported separately from lithology",
-            "total_depth_m": 550.0,
+            "total_depth_m": 550,
             "technical_flow_l_s": 1.96,
             "temperature_c": 51.6,
             "artesian_character": true,
@@ -10535,37 +10592,37 @@
             "construction_period": "1966",
             "construction": [
               {
-                "from_m": 0.0,
+                "from_m": 0,
                 "to_m": 138.2,
                 "type": "drilling_interval",
                 "note": "drilling diameter Ø150 mm"
               },
               {
                 "from_m": 138.2,
-                "to_m": 550.0,
+                "to_m": 550,
                 "type": "drilling_interval",
                 "note": "drilling diameter Ø130 mm"
               },
               {
-                "from_m": 0.0,
+                "from_m": 0,
                 "to_m": 138.2,
                 "type": "casing",
                 "note": "casing Ø146 mm"
               },
               {
-                "from_m": 0.0,
-                "to_m": 525.0,
+                "from_m": 0,
+                "to_m": 525,
                 "type": "casing",
                 "note": "casing Ø108 mm"
               },
               {
-                "from_m": 451.0,
-                "to_m": 460.0,
+                "from_m": 451,
+                "to_m": 460,
                 "type": "filter",
                 "note": "filter Ø89 mm; construction evidence only, not a proven inflow interval"
               },
               {
-                "from_m": 493.0,
+                "from_m": 493,
                 "to_m": 497.5,
                 "type": "filter",
                 "note": "filter Ø108 mm; construction evidence only, not a proven inflow interval"
@@ -11036,7 +11093,7 @@
         "research_enrichment": {
           "mineral_hydrothermal_research": {
             "role": "verified individual mineral / thermal facility evidence imported separately from lithology",
-            "total_depth_m": 758.0,
+            "total_depth_m": 758,
             "technical_flow_l_s": 0.61,
             "temperature_c": 54.1,
             "artesian_character": true,
@@ -11045,12 +11102,12 @@
             "collector": "dolomitized Triassic limestones in the lower borehole section",
             "collector_interval_m": {
               "from_m": 699.6,
-              "to_m": 758.0
+              "to_m": 758
             },
             "collector_scope": "documented lithological collector context; not a discrete proven inflow interval",
             "construction": [
               {
-                "from_m": 0.0,
+                "from_m": 0,
                 "to_m": 215.5,
                 "type": "drilling_interval",
                 "note": "drilling diameter Ø170 mm"
@@ -11063,31 +11120,31 @@
               },
               {
                 "from_m": 688.5,
-                "to_m": 758.0,
+                "to_m": 758,
                 "type": "drilling_interval",
                 "note": "drilling diameter Ø91 mm"
               },
               {
-                "from_m": 0.0,
+                "from_m": 0,
                 "to_m": 215.5,
                 "type": "casing",
                 "note": "casing Ø146 mm"
               },
               {
-                "from_m": 0.0,
-                "to_m": 684.0,
+                "from_m": 0,
+                "to_m": 684,
                 "type": "casing",
                 "note": "casing Ø108 mm"
               },
               {
-                "from_m": 684.0,
-                "to_m": 758.0,
+                "from_m": 684,
+                "to_m": 758,
                 "type": "casing",
                 "note": "casing Ø89 mm"
               },
               {
-                "from_m": 678.0,
-                "to_m": 758.0,
+                "from_m": 678,
+                "to_m": 758,
                 "type": "filter",
                 "note": "documented filter interval; must not be interpreted as a continuous inflow zone"
               }
@@ -11523,7 +11580,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 45.0,
+        "temperature_c": 45,
         "depth_m": 708.5
       },
       "pro": {
@@ -11538,7 +11595,7 @@
           "facility_type": "водовземно",
           "year": "1970",
           "depth_m": "708.5",
-          "temperature_c": 45.0,
+          "temperature_c": 45,
           "status": "",
           "registry_number": "РМН1 - 050001",
           "source_date": "01.11.2022",
@@ -11561,7 +11618,7 @@
             "source_date": "2026-07-17",
             "source_row": 191,
             "ownership_regime": "exclusive_state_property",
-            "temperature_c": 45.0,
+            "temperature_c": 45,
             "approved_resource_l_s": 14.07,
             "technical_possible_flow_l_s": 14.07,
             "static_level_raw": null,
@@ -12695,7 +12752,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 27.0,
+        "temperature_c": 27,
         "depth_m": 613.1
       },
       "pro": {
@@ -12710,7 +12767,7 @@
           "facility_type": "водовземно",
           "year": "1973",
           "depth_m": "613.1",
-          "temperature_c": 27.0,
+          "temperature_c": 27,
           "status": "",
           "registry_number": "РМН1 - 071001",
           "source_date": "01.11.2022",
@@ -12733,7 +12790,7 @@
             "source_date": "2026-07-17",
             "source_row": 252,
             "ownership_regime": "exclusive_state_property",
-            "temperature_c": 27.0,
+            "temperature_c": 27,
             "approved_resource_l_s": 2.45,
             "technical_possible_flow_l_s": 2.45,
             "static_level_raw": "386(+9,5 от к.т.)",
@@ -12775,7 +12832,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 43.0,
+        "temperature_c": 43,
         "depth_m": 569.8
       },
       "pro": {
@@ -12790,7 +12847,7 @@
           "facility_type": "водовземно",
           "year": "1970",
           "depth_m": "569.8",
-          "temperature_c": 43.0,
+          "temperature_c": 43,
           "status": "за ликвидация",
           "registry_number": "РМН1 - 074001",
           "source_date": "01.11.2022",
@@ -12813,7 +12870,7 @@
             "source_date": "2026-07-17",
             "source_row": 257,
             "ownership_regime": "exclusive_state_property",
-            "temperature_c": 43.0,
+            "temperature_c": 43,
             "approved_resource_l_s": 6.3,
             "technical_possible_flow_l_s": 6.3,
             "static_level_raw": "531.12",
@@ -14901,7 +14958,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 54.0,
+        "temperature_c": 54,
         "depth_m": 640
       },
       "pro": {
@@ -14916,7 +14973,7 @@
           "facility_type": "водовземно",
           "year": "",
           "depth_m": "640.0",
-          "temperature_c": 54.0,
+          "temperature_c": 54,
           "status": "",
           "registry_number": "РМН1 - 079003",
           "source_date": "01.11.2022",
@@ -14939,16 +14996,16 @@
             "source_date": "2026-07-17",
             "source_row": 273,
             "ownership_regime": "exclusive_state_property",
-            "temperature_c": 54.0,
-            "approved_resource_l_s": 4.0,
-            "technical_possible_flow_l_s": 4.0,
+            "temperature_c": 54,
+            "approved_resource_l_s": 4,
+            "technical_possible_flow_l_s": 4,
             "static_level_raw": null,
             "pressure_level_raw": "25.33",
             "allowable_drawdown_raw": "помпажно до 500,29",
             "dynamic_level_raw": "31.82",
             "allowable_depth_raw": null
           },
-          "technical_possible_flow_l_s": 4.0,
+          "technical_possible_flow_l_s": 4,
           "ownership_regime": "exclusive_state_property"
         },
         "research_enrichment": [],
@@ -15873,7 +15930,7 @@
         "origin": "official_water_facilities.geojson"
       },
       "free": {
-        "temperature_c": 48.0,
+        "temperature_c": 48,
         "depth_m": 490.7
       },
       "pro": {
@@ -15888,7 +15945,7 @@
           "facility_type": "мониторинг",
           "year": "",
           "depth_m": "490.7",
-          "temperature_c": 48.0,
+          "temperature_c": 48,
           "status": "",
           "registry_number": "РМН1 - 083002",
           "source_date": "01.11.2022",
@@ -15911,16 +15968,16 @@
             "source_date": "2026-07-17",
             "source_row": 281,
             "ownership_regime": "exclusive_state_property",
-            "temperature_c": 48.0,
+            "temperature_c": 48,
             "approved_resource_l_s": null,
-            "technical_possible_flow_l_s": 8.0,
+            "technical_possible_flow_l_s": 8,
             "static_level_raw": null,
             "pressure_level_raw": "2.2",
             "allowable_drawdown_raw": "помпажно до кота 529,65",
             "dynamic_level_raw": "10,35 от кота м.т.",
             "allowable_depth_raw": null
           },
-          "technical_possible_flow_l_s": 8.0,
+          "technical_possible_flow_l_s": 8,
           "ownership_regime": "exclusive_state_property"
         },
         "research_enrichment": [],
@@ -16408,7 +16465,7 @@
             "source_row": 335,
             "ownership_regime": "exclusive_state_property",
             "temperature_c": 29.5,
-            "approved_resource_l_s": 27.0,
+            "approved_resource_l_s": 27,
             "technical_possible_flow_l_s": 2.94,
             "static_level_raw": null,
             "pressure_level_raw": "32.07",
@@ -19493,7 +19550,7 @@
             "research_note": "?????? ?-6? ??. ??. ?????????? ? ????? - confirmed separate physical facility.",
             "research_enrichment": {
               "concession_average_abstraction_limit_l_s": 0.5,
-              "concession_peak_abstraction_limit_l_s": 1.0,
+              "concession_peak_abstraction_limit_l_s": 1,
               "value_scope": "concession abstraction limits; not natural facility discharge",
               "source_type": "State Gazette concession act",
               "location_note": "Официалната Програма за опазване на околната среда на Община Варна 2024-2033 локализира съоръжението на територия: к.к. Св. Св. Константин и Елена. Това е facility-level териториално уточнение, но не представлява точна координата на устието.",
@@ -24295,7 +24352,7 @@
               "existing_settlement": "Балчик",
               "existing_latitude": 43.4016667,
               "existing_longitude": 28.2253889,
-              "existing_match_distance_m": 0.0,
+              "existing_match_distance_m": 0,
               "existing_match_source": "official_water_facilities.geojson",
               "existing_match_resolved_at": "2026-09-10T19:35:24+00:00",
               "existing_match_basis": "Same physical facility identity with official research coordinate matching the existing official-map point within 25 m."
@@ -26160,7 +26217,7 @@
               "existing_settlement": "с.Кранево",
               "existing_latitude": 43.3417969,
               "existing_longitude": 28.0639777,
-              "existing_match_distance_m": 0.0,
+              "existing_match_distance_m": 0,
               "existing_match_source": "official_water_facilities.geojson",
               "existing_match_resolved_at": "2026-09-10T19:35:24+00:00",
               "existing_match_basis": "Same physical facility identity with official research coordinate matching the existing official-map point within 25 m."
@@ -26544,7 +26601,7 @@
             "research_status": "MATCHED_EXISTING",
             "research_note": "?????? ??-35? ??????? - confirmed separate physical facility.",
             "research_enrichment": {
-              "temperature_c": 27.0,
+              "temperature_c": 27,
               "source_type": "MH balneological assessment",
               "latitude": 43.3387222222,
               "longitude": 28.0683611111,
@@ -27006,7 +27063,7 @@
             "research_status": "MATCHED_EXISTING",
             "research_note": "?????? ?-178? - confirmed separate facility, ??????? ??????.",
             "research_enrichment": {
-              "temperature_c": 27.0,
+              "temperature_c": 27,
               "mh_balneological_assessment_no": "175",
               "mh_balneological_assessment_date": "08.06.2020",
               "cadastral_property_id": "02508.541.447",
@@ -32475,7 +32532,7 @@
             "role": "verified natural mineral-water abstraction facility",
             "technical_flow_l_s": 2.74,
             "technical_temperature_c": 55.4,
-            "sample_temperature_c": 60.0,
+            "sample_temperature_c": 60,
             "collector_scope": "natural spring/captured source; borehole inflow-depth model not applicable",
             "source_note": "Captured natural spring Dolna Banya. Technical discharge and temperature from official Ministry of Health assessment.",
             "regional_context": {
@@ -32600,7 +32657,7 @@
           "coordinate_resolution_note": "The official source identifies the facility's cadastral parcel / SOZ belt-I parcel. The map coordinate is a representative point inside that exact cadastral geometry and is not asserted to be a surveyed wellhead coordinate.",
           "mineral_hydrothermal_research": {
             "role": "verified individual mineral / thermal facility evidence",
-            "documented_depth_m": 652.0,
+            "documented_depth_m": 652,
             "technical_flow_l_s": 3.78,
             "temperature_c": 58.6,
             "facility_confirmed": true,
@@ -32789,8 +32846,8 @@
             "role": "verified individual mineral / thermal facility evidence",
             "technical_flow_l_s": 5.6,
             "approved_resource_l_s": 5.6,
-            "temperature_c": 45.0,
-            "sample_temperature_c": 43.0,
+            "temperature_c": 45,
+            "sample_temperature_c": 43,
             "facility_confirmed": true,
             "source_note": "Belchin-Verila PS-1hg. Official facility exploitation resource 5.6 l/s; technical temperature 45 C and sample temperature 43 C. Exact lithological log and productive inflow depth remain unresolved."
           },
@@ -32800,7 +32857,7 @@
           "deposit_regional_mineral_context": {
             "context_scope": "deposit-level thermal context for coordinate-based mineral-potential analysis",
             "temperature_context": {
-              "documented_deposit_temperature_c": 45.0,
+              "documented_deposit_temperature_c": 45,
               "interpretation": "Belchin-Verila is documented as a separate and somewhat hotter mineral-water system than Belchinski Bani."
             },
             "relationship_to_nearby_systems": "Belchin-Verila is treated separately from the Belchinski Bani deposit. The difference in documented temperature supports spatial variation of the thermal regime in the wider Belchin area.",
@@ -32916,8 +32973,8 @@
           "mineral_hydrothermal_research": {
             "role": "verified natural mineral-water abstraction facility",
             "technical_flow_l_s": 0.25,
-            "technical_temperature_c": 25.0,
-            "sample_temperature_c": 26.0,
+            "technical_temperature_c": 25,
+            "sample_temperature_c": 26,
             "collector_scope": "natural spring/captured source; borehole inflow-depth model not applicable",
             "source_note": "Captured natural spring No.1 'Banyata', Gabrovnitsa-Elenov dol. Technical discharge and temperature are official assessment values."
           },
@@ -33026,7 +33083,7 @@
           "resolved_longitude": 23.565586491,
           "cadastral_parcel_centroid_latitude": 41.822925548,
           "cadastral_parcel_centroid_longitude": 23.565586485,
-          "cadastral_parcel_area_m2": 100.0,
+          "cadastral_parcel_area_m2": 100,
           "cadastral_resolution_shapefile": "data/mineral-water/kais-parcels/21498/land_plots/поземлени имоти/Имоти (Polygon).shp",
           "cadastral_resolution_previous_status": "CADASTRAL_LOCATION_TO_RESOLVE",
           "cadastral_resolution_at": "2026-09-10T19:41:45+00:00",
@@ -37314,8 +37371,8 @@
       "pro": {
         "research_status": "CONFIRMED_MISSING",
         "research_enrichment": {
-          "temperature_c": 28.0,
-          "discharge_l_s": 2.0,
+          "temperature_c": 28,
+          "discharge_l_s": 2,
           "source_type": "MH balneological assessment",
           "coordinate_status": "TO_RESEARCH",
           "current_deposit_name": "Провадия",
@@ -37593,100 +37650,6 @@
       "origin": "mh_confirmed_missing"
     },
     {
-      "mineral_id": "mw_a03a31b82c5095b1",
-      "identity": {
-        "name": "Сондаж № 1хг - Барището",
-        "facility_type": "Минерален водовземен сондаж",
-        "deposit": "Невестино-Барището",
-        "settlement": "Зелен дол"
-      },
-      "location": {
-        "lat": 42.00608333333333,
-        "lon": 23.057194444444445,
-        "status": "WABD_REGISTER_RESOLVED",
-        "origin": "resolved_latitude+resolved_longitude"
-      },
-      "free": {
-        "temperature_c": 29.5,
-        "depth_m": 267.4
-      },
-      "pro": {
-        "research_status": "CONFIRMED_MISSING",
-        "research_enrichment": {
-          "depth_m": 267.4,
-          "historical_initial_self_flow_l_s": 11.47,
-          "historical_initial_temperature_c": 30.0,
-          "historical_value_scope": "initial self-flow after construction; not current discharge",
-          "mh_balneological_assessment_no": "146",
-          "mh_balneological_assessment_date": "15.01.2020",
-          "source_type": "MH balneological assessment",
-          "coordinate_status": "WABD_REGISTER_RESOLVED",
-          "current_deposit_name": "Невестино-Барището",
-          "identity_source": "Ministry of Health balneological assessment/certificate registry",
-          "location_note": "Physical mineral-water abstraction facility confirmed by official source. Reliable facility-level coordinates or cadastral parcel have not yet been established.",
-          "sample_temperature_c": 29.5,
-          "total_mineralization_mg_l": 766,
-          "ph": 9.58,
-          "fluoride_mg_l": 7.3,
-          "silicic_acid_mg_l": 50.53,
-          "hydrogen_sulfide_mg_l": 0.04,
-          "radon_222_bq_l": 11.03,
-          "potable_status": "not suitable for routine drinking due to elevated fluoride according to MH assessment",
-          "verified_source": "MH balneological assessment No.146/15.01.2020",
-          "verified_source_url": "https://www.mh.government.bg/upload/6759/146-nevestino-barishteto-sondazh1hgbarishteto-15-01-2020.pdf",
-          "resolved_latitude": 42.00608333333333,
-          "resolved_longitude": 23.057194444444445,
-          "coordinate_resolution_source": "West Aegean River Basin Directorate mineral-water facility layer",
-          "coordinate_resolution_source_file": "public/geology-map/data/bd_wabd_mineral_water_facilities.geojson",
-          "coordinate_resolution_method": "UNIQUE_EXACT_WABD_FACILITY_IDENTIFIER",
-          "coordinate_resolution_signature": "1хг",
-          "coordinate_precision_scope": "OFFICIAL_REGISTER_POINT",
-          "existing_map_component": "WABD_MINERAL_SUPPLEMENT",
-          "coordinate_resolution_at": "2026-09-10T19:58:25+00:00",
-          "coordinate_resolution_note": "Facility identity matched deterministically to one point in the WABD mineral-water GeoJSON. No fuzzy matching was used.",
-          "settlement": "Зелен дол"
-        },
-        "research_source_record": {
-          "status": "MISSING",
-          "mh_facility": "Сондаж № 1хг - Барището",
-          "mh_deposit": "Невестино-Барището",
-          "mh_settlement": "Невестино",
-          "mh_municipality": "Невестино",
-          "mh_district": "Кюстендил",
-          "mh_documents": [
-            {
-              "source_type": "balneology",
-              "title": "Балнеологична оценка № 146 от 15.01.2020 г.",
-              "description": "„Сондаж № 1хг - Барището“ - находище на минерална вода „Невестино-Барището“, с. Невестино, община Невестино, област Кюстендил",
-              "published": "22.01.2020",
-              "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=21"
-            }
-          ],
-          "research_batch": 8,
-          "research_status": "CONFIRMED_MISSING",
-          "research_note": "?????? ?1?? ????????, ????????? - confirmed separate facility."
-        },
-        "duplicate_mh_records": []
-      },
-      "sources": [
-        {
-          "source_type": "balneology",
-          "title": "Балнеологична оценка № 146 от 15.01.2020 г.",
-          "description": "„Сондаж № 1хг - Барището“ - находище на минерална вода „Невестино-Барището“, с. Невестино, община Невестино, област Кюстендил",
-          "published": "22.01.2020",
-          "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=21"
-        },
-        {
-          "source_type": "verified_research",
-          "title": "MH balneological assessment No.146/15.01.2020",
-          "source_url": "https://www.mh.government.bg/upload/6759/146-nevestino-barishteto-sondazh1hgbarishteto-15-01-2020.pdf",
-          "assessment_no": "146",
-          "assessment_date": "15.01.2020"
-        }
-      ],
-      "origin": "mh_confirmed_missing"
-    },
-    {
       "mineral_id": "mw_773eab745d195da1",
       "identity": {
         "name": "Каптиран естествен извор \"Галерията",
@@ -37889,7 +37852,7 @@
       },
       "free": {
         "temperature_c": 84.2,
-        "depth_m": 280.0
+        "depth_m": 280
       },
       "pro": {
         "research_status": "CONFIRMED_MISSING",
@@ -37904,7 +37867,7 @@
           "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
           "deposit_location_context": "central part of Kamenitsa quarter, northern Velingrad; individual facility coordinates not established",
           "construction_year": 1962,
-          "depth_m": 280.0,
+          "depth_m": 280,
           "technical_possible_discharge_l_s": 5.4,
           "technical_temperature_c": 84.5,
           "self_flow_elevation_m": 764.67,
@@ -38292,7 +38255,7 @@
       },
       "free": {
         "temperature_c": 85.1,
-        "depth_m": 271.0
+        "depth_m": 271
       },
       "pro": {
         "research_status": "CONFIRMED_MISSING",
@@ -38307,7 +38270,7 @@
           "coordinate_status": "TO_RESEARCH",
           "deposit_location_context": "central part of Kamenitsa quarter, northern Velingrad; individual facility coordinates not established",
           "construction_year": 1960,
-          "depth_m": 271.0,
+          "depth_m": 271,
           "technical_possible_discharge_l_s": 6.38,
           "technical_temperature_c": 87.7,
           "self_flow_elevation_m": 771.84,
@@ -38527,40 +38490,40 @@
             "self_flow_elevation_m": 768.1,
             "collector": "напукани и нарушени биотитови и амфиболови гранитизирани гнайси от Богутевската плагиогнайсова свита",
             "documented_mineral_aquifer_interval": {
-              "from_m": 59.0,
-              "to_m": 450.0,
+              "from_m": 59,
+              "to_m": 450,
               "evidence": "Официалната балнеологична оценка определя този интервал като водоносен хоризонт на минералната вода."
             },
             "construction": [
               {
-                "from_m": 0.0,
-                "to_m": 35.0,
+                "from_m": 0,
+                "to_m": 35,
                 "description_bg": "обсадна колона Ø159 mm"
               },
               {
-                "from_m": 35.0,
-                "to_m": 51.0,
+                "from_m": 35,
+                "to_m": 51,
                 "description_bg": "обсадна колона Ø146 mm"
               },
               {
-                "from_m": 51.0,
-                "to_m": 129.0,
+                "from_m": 51,
+                "to_m": 129,
                 "description_bg": "обсадна колона Ø127 mm"
               },
               {
-                "from_m": 129.0,
-                "to_m": 200.0,
+                "from_m": 129,
+                "to_m": 200,
                 "description_bg": "обсадна колона Ø108 mm"
               },
               {
-                "from_m": 200.0,
-                "to_m": 450.0,
+                "from_m": 200,
+                "to_m": 450,
                 "description_bg": "сондирано Ø108 mm, открит ствол"
               }
             ],
             "documented_open_hole": {
-              "from_m": 200.0,
-              "to_m": 450.0
+              "from_m": 200,
+              "to_m": 450
             },
             "source_note": "МЗ, Балнеологична оценка №23/20.05.2025."
           },
@@ -38573,28 +38536,28 @@
           "collector": "напукани и нарушени биотитови и амфиболови гранитизирани гнайси от Богутевската плагиогнайсова свита",
           "construction": [
             {
-              "from_m": 0.0,
-              "to_m": 35.0,
+              "from_m": 0,
+              "to_m": 35,
               "description_bg": "обсадна колона Ø159 mm"
             },
             {
-              "from_m": 35.0,
-              "to_m": 51.0,
+              "from_m": 35,
+              "to_m": 51,
               "description_bg": "обсадна колона Ø146 mm"
             },
             {
-              "from_m": 51.0,
-              "to_m": 129.0,
+              "from_m": 51,
+              "to_m": 129,
               "description_bg": "обсадна колона Ø127 mm"
             },
             {
-              "from_m": 129.0,
-              "to_m": 200.0,
+              "from_m": 129,
+              "to_m": 200,
               "description_bg": "обсадна колона Ø108 mm"
             },
             {
-              "from_m": 200.0,
-              "to_m": 450.0,
+              "from_m": 200,
+              "to_m": 450,
               "description_bg": "сондирано Ø108 mm, открит ствол"
             }
           ],
@@ -40067,44 +40030,44 @@
             "role": "verified individual hydrothermal evidence imported separately from lithology",
             "documented_water_saturated_intervals": [
               {
-                "from_m": 110.0,
-                "to_m": 130.0,
+                "from_m": 110,
+                "to_m": 130,
                 "evidence": "explicit_source_statement"
               },
               {
-                "from_m": 170.0,
-                "to_m": 178.0,
+                "from_m": 170,
+                "to_m": 178,
                 "evidence": "explicit_source_statement"
               }
             ],
             "collector": "Paleogene breccia-conglomerates",
             "collector_interval_m": {
-              "from_m": 115.0,
-              "to_m": 178.0
+              "from_m": 115,
+              "to_m": 178
             },
             "collector_scope": "collector_statement_not_exact_inflow",
             "construction": [
               {
-                "from_m": 0.0,
-                "to_m": 14.0,
+                "from_m": 0,
+                "to_m": 14,
                 "type": "casing",
                 "note": "metal casing Ø146 mm, cemented"
               },
               {
-                "from_m": 0.0,
-                "to_m": 108.0,
+                "from_m": 0,
+                "to_m": 108,
                 "type": "casing",
                 "note": "metal casing Ø127 mm, cemented"
               },
               {
-                "from_m": 108.0,
-                "to_m": 180.0,
+                "from_m": 108,
+                "to_m": 180,
                 "type": "open_hole",
                 "note": "Ø110 mm open hole"
               },
               {
-                "from_m": 95.0,
-                "to_m": 180.0,
+                "from_m": 95,
+                "to_m": 180,
                 "type": "filter_column",
                 "note": "additional Ø110 mm filter column, 1999"
               }
@@ -40218,7 +40181,7 @@
           "mh_balneological_assessment_no": "292",
           "mh_balneological_assessment_date": "13.11.2024",
           "identity_source": "Ministry of Health balneological assessment registry",
-          "temperature_c": 21.0,
+          "temperature_c": 21,
           "location_note": "captured in a fountain immediately beside the Smolyan-Asenovgrad road",
           "latitude": 41.90175,
           "longitude": 24.7483333333,
@@ -41971,12 +41934,12 @@
       },
       "free": {
         "temperature_c": 47,
-        "depth_m": 166.0
+        "depth_m": 166
       },
       "pro": {
         "research_status": "CONFIRMED_MISSING",
         "research_enrichment": {
-          "depth_m": 166.0,
+          "depth_m": 166,
           "water_bearing_interval_m": "57.30-158.00",
           "mh_balneological_assessment_no": "264",
           "mh_balneological_assessment_date": "12.01.2024",
@@ -42651,7 +42614,7 @@
       "pro": {
         "research_status": "CONFIRMED_MISSING",
         "research_enrichment": {
-          "temperature_c": 19.0,
+          "temperature_c": 19,
           "mh_balneological_assessment_no": "195",
           "source_type": "MH balneological assessment",
           "coordinate_status": "TO_RESEARCH",
@@ -42817,37 +42780,37 @@
             "technical_flow_l_s": 8.45,
             "sample_flow_l_s": 7.76,
             "resource_temperature_c": 59.7,
-            "sample_temperature_c": 56.0,
+            "sample_temperature_c": 56,
             "artesian_character": true,
             "construction_period": "1978",
             "construction": [
               {
-                "from_m": 0.0,
+                "from_m": 0,
                 "to_m": 45.9,
                 "type": "casing",
                 "note": "casing Ø168 mm"
               },
               {
                 "from_m": 45.9,
-                "to_m": 116.0,
+                "to_m": 116,
                 "type": "casing",
                 "note": "casing Ø146 mm"
               },
               {
-                "from_m": 0.0,
-                "to_m": 116.0,
+                "from_m": 0,
+                "to_m": 116,
                 "type": "cemented_interval",
                 "note": "documented cementation to 116 m"
               },
               {
-                "from_m": 116.0,
+                "from_m": 116,
                 "to_m": 279.2,
                 "type": "open_hole",
                 "note": "open hole Ø130 mm"
               }
             ],
             "documented_open_hole": {
-              "from_m": 116.0,
+              "from_m": 116,
               "to_m": 279.2
             },
             "source_note": "Dolna Banya No.13hg. Exact depth and construction from SOF-LITH-002; technical/sample discharge and temperature from official Ministry of Health assessment. Open hole is construction and is not treated as an inflow interval.",
@@ -42989,10 +42952,10 @@
           "spatial_research_note": "Facility identity is retained as CONFIRMED_MISSING. No sufficiently reliable facility-level coordinate has been established. Research is closed for the current national spatial-completion pass; the facility may be reopened only if a new authoritative source with facility-level coordinates or cadastral geometry becomes available.",
           "mineral_hydrothermal_research": {
             "role": "verified individual mineral-water facility evidence",
-            "documented_depth_m": 515.0,
+            "documented_depth_m": 515,
             "documented_flow_l_s": 1.65,
             "approved_resource_l_s": 1.65,
-            "documented_temperature_c": 22.0,
+            "documented_temperature_c": 22,
             "facility_confirmed": true,
             "source_note": "Dolna Banya No.141 / Byalata voda. Official local exploitation resource QER1 0.99 + QER2 0.66 = 1.65 l/s. Documented facility temperature 22 C. No exact productive inflow interval is assigned.",
             "regional_context": {
@@ -43001,7 +42964,7 @@
               "geological_framework": "The Byalata Voda occurrence is associated with Paleogene sedimentary rocks, with sandstone units acting as the documented regional collector context.",
               "structural_context": "The occurrence is associated with the structurally controlled basin setting and the regional Maritsa suture zone. This is regional/local structural context and does not prove an exact productive fault beneath a selected point.",
               "temperature_context": {
-                "documented_local_value_c": 22.0,
+                "documented_local_value_c": 22,
                 "interpretation": "The markedly cooler water shows that the Dolna Banya area does not represent one uniform thermal regime. The Byalata Voda setting must not be merged automatically with the hotter main Dolna Banya thermal field."
               },
               "potential_interpretation": "A selected point in the wider Dolna Banya area must be evaluated spatially against both the main thermal field and the cooler Byalata Voda subsystem. Proximity alone does not justify assigning the approximately 60 C main-field regime to every point.",
@@ -45286,7 +45249,7 @@
         "origin": null
       },
       "free": {
-        "temperature_c": 23.0,
+        "temperature_c": 23,
         "depth_m": null
       },
       "pro": {
@@ -45296,7 +45259,7 @@
           "mineral_hydrothermal_research": {
             "technical_flow_l_s": 5.67,
             "resource_temperature_c": 22.8,
-            "sample_temperature_c": 23.0,
+            "sample_temperature_c": 23,
             "flow_regime": "pumped",
             "free_self_flow": false,
             "static_water_level_elevation_m": 273.17,
@@ -45305,12 +45268,12 @@
             "collector": "гнайси и мрамори; основни колектори са окарстените мрамори, дрениращи водите в гнайсите",
             "construction": [
               {
-                "from_m": 0.0,
-                "to_m": 26.0,
+                "from_m": 0,
+                "to_m": 26,
                 "description_bg": "кондукторна обсадна колона Ø146 mm, затръбено и циментирано"
               },
               {
-                "from_m": 0.0,
+                "from_m": 0,
                 "to_m": 82.6,
                 "description_bg": "експлоатационна обсадна колона Ø127 mm, затръбено и циментирано"
               },
@@ -45333,7 +45296,7 @@
           "official_facility_name": "Сондаж №3",
           "technical_possible_discharge_l_s": 5.67,
           "resource_temperature_c": 22.8,
-          "sample_temperature_c": 23.0,
+          "sample_temperature_c": 23,
           "free_self_flow": false,
           "flow_regime": "pumped",
           "static_water_level_elevation_m": 273.17,
@@ -45342,12 +45305,12 @@
           "collector": "гнайси и мрамори; основни колектори са окарстените мрамори, дрениращи водите в гнайсите",
           "construction": [
             {
-              "from_m": 0.0,
-              "to_m": 26.0,
+              "from_m": 0,
+              "to_m": 26,
               "description_bg": "кондукторна обсадна колона Ø146 mm, затръбено и циментирано"
             },
             {
-              "from_m": 0.0,
+              "from_m": 0,
               "to_m": 82.6,
               "description_bg": "експлоатационна обсадна колона Ø127 mm, затръбено и циментирано"
             },
@@ -45391,7 +45354,7 @@
       },
       "free": {
         "temperature_c": 87.3,
-        "depth_m": 150.0
+        "depth_m": 150
       },
       "pro": {
         "research_status": "CONFIRMED_MISSING",
@@ -45409,7 +45372,7 @@
           "settlement": "Варвара",
           "current_deposit_name": "Варвара",
           "official_facility_name": "Сондаж №3",
-          "depth_m": 150.0,
+          "depth_m": 150,
           "technical_possible_discharge_l_s": 3.04,
           "temperature_c": 87.3,
           "artesian_character": true,
@@ -45447,7 +45410,7 @@
       },
       "free": {
         "temperature_c": 76.5,
-        "depth_m": 140.0
+        "depth_m": 140
       },
       "pro": {
         "research_status": "CONFIRMED_MISSING",
@@ -45465,7 +45428,7 @@
           "settlement": "Варвара",
           "current_deposit_name": "Варвара",
           "official_facility_name": "Сондаж №4",
-          "depth_m": 140.0,
+          "depth_m": 140,
           "technical_possible_discharge_l_s": 4.24,
           "temperature_c": 76.5,
           "artesian_character": true,
@@ -45503,7 +45466,7 @@
       },
       "free": {
         "temperature_c": 71.2,
-        "depth_m": 230.0
+        "depth_m": 230
       },
       "pro": {
         "research_status": "CONFIRMED_MISSING",
@@ -45521,7 +45484,7 @@
           "settlement": "Варвара",
           "current_deposit_name": "Варвара",
           "official_facility_name": "Сондаж №5",
-          "depth_m": 230.0,
+          "depth_m": 230,
           "technical_possible_discharge_l_s": 1.36,
           "temperature_c": 71.2,
           "artesian_character": true,
@@ -45559,7 +45522,7 @@
       },
       "free": {
         "temperature_c": 73.1,
-        "depth_m": 502.0
+        "depth_m": 502
       },
       "pro": {
         "research_status": "CONFIRMED_MISSING",
@@ -45577,7 +45540,7 @@
           "settlement": "Варвара",
           "current_deposit_name": "Варвара",
           "official_facility_name": "Сондаж №6",
-          "depth_m": 502.0,
+          "depth_m": 502,
           "technical_possible_discharge_l_s": 1.06,
           "temperature_c": 73.1,
           "artesian_character": true,
@@ -45725,8 +45688,8 @@
         "origin": null
       },
       "free": {
-        "temperature_c": 32.0,
-        "depth_m": 295.0
+        "temperature_c": 32,
+        "depth_m": 295
       },
       "pro": {
         "research_status": "CONFIRMED_MISSING",
@@ -45734,7 +45697,7 @@
           "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
           "mineral_hydrothermal_research": {
             "technical_flow_l_s": 3.1,
-            "temperature_c": 32.0,
+            "temperature_c": 32,
             "artesian_character": true,
             "dynamic_level_note": "самоизлив до кота 755.95 m",
             "collector": "биотитови гнайси; пукнатинно-жилна система"
@@ -45744,9 +45707,9 @@
           "settlement": "Ракитово",
           "current_deposit_name": "Ракитово",
           "official_facility_name": "Сондаж №7",
-          "depth_m": 295.0,
+          "depth_m": 295,
           "technical_possible_discharge_l_s": 3.1,
-          "temperature_c": 32.0,
+          "temperature_c": 32,
           "artesian_character": true,
           "collector": "биотитови гнайси; пукнатинно-жилна система"
         },
@@ -45895,7 +45858,7 @@
       },
       "free": {
         "temperature_c": 18.7,
-        "depth_m": 404.0
+        "depth_m": 404
       },
       "pro": {
         "research_status": "CONFIRMED_MISSING",
@@ -45912,7 +45875,7 @@
           "settlement": "Брацигово",
           "current_deposit_name": "Брацигово",
           "official_facility_name": "Сондаж №5",
-          "depth_m": 404.0,
+          "depth_m": 404,
           "construction_year": 1988,
           "technical_possible_discharge_l_s": 1.25,
           "temperature_c": 18.7,
@@ -45950,7 +45913,7 @@
         "origin": null
       },
       "free": {
-        "temperature_c": 56.0,
+        "temperature_c": 56,
         "depth_m": 487.5
       },
       "pro": {
@@ -45959,7 +45922,7 @@
           "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
           "mineral_hydrothermal_research": {
             "technical_flow_l_s": 7.1,
-            "temperature_c": 56.0,
+            "temperature_c": 56,
             "artesian_character": true,
             "dynamic_level_note": "самоизлив до кота 480.90 m",
             "collector": "пукнатинно-жилен колектор в палеозойски гранити",
@@ -45973,7 +45936,7 @@
           "depth_m": 487.5,
           "construction_year": 1965,
           "technical_possible_discharge_l_s": 7.1,
-          "temperature_c": 56.0,
+          "temperature_c": 56,
           "artesian_character": true,
           "collector": "пукнатинно-жилен колектор в палеозойски гранити"
         },
@@ -46016,8 +45979,8 @@
         "research_enrichment": {
           "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
           "mineral_hydrothermal_research": {
-            "documented_flow_l_s": 1.0,
-            "documented_temperature_c": 46.0,
+            "documented_flow_l_s": 1,
+            "documented_temperature_c": 46,
             "allowable_water_level_elevation_m": 480.69,
             "current_use_note": "Не се използва според общинската програма.",
             "collector": "находище Стрелча: пукнатинно-жилна хидротермална система",
@@ -46029,8 +45992,8 @@
           "settlement": "Стрелча",
           "current_deposit_name": "Стрелча",
           "official_facility_name": "Сондаж №2 ВКП",
-          "documented_flow_l_s": 1.0,
-          "documented_temperature_c": 46.0,
+          "documented_flow_l_s": 1,
+          "documented_temperature_c": 46,
           "allowable_water_level_elevation_m": 480.69,
           "collector": "находище Стрелча: пукнатинно-жилна хидротермална система",
           "collector_scope": "regional_deposit_context",
@@ -46185,24 +46148,24 @@
       },
       "free": {
         "temperature_c": 25.7,
-        "depth_m": 505.0
+        "depth_m": 505
       },
       "pro": {
         "research_status": "CONFIRMED_MISSING",
         "research_enrichment": {
           "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
           "mineral_hydrothermal_research": {
-            "total_depth_m": 505.0,
+            "total_depth_m": 505,
             "construction_period": "1967-1968",
             "documented_inflow_zones": [
               {
-                "from_m": 170.0,
-                "to_m": 213.0,
+                "from_m": 170,
+                "to_m": 213,
                 "evidence": "documented_individual_inflow"
               },
               {
-                "from_m": 412.0,
-                "to_m": 437.0,
+                "from_m": 412,
+                "to_m": 437,
                 "evidence": "documented_individual_inflow"
               }
             ],
@@ -46218,17 +46181,17 @@
             "collector": "ефузивни скали; водопроводящите участъци са свързани с напукани и смлени риолити и разломни структури",
             "construction": [
               {
-                "from_m": 0.0,
+                "from_m": 0,
                 "to_m": 11.7,
                 "description_bg": "сондирано Ø295 mm"
               },
               {
-                "from_m": 0.0,
+                "from_m": 0,
                 "to_m": 48.5,
                 "description_bg": "стоманена обсадна колона Ø168 mm, задтръбно циментирана"
               },
               {
-                "from_m": 0.0,
+                "from_m": 0,
                 "to_m": 195.3,
                 "description_bg": "стоманена обсадна колона Ø146 mm"
               },
@@ -46239,7 +46202,7 @@
               },
               {
                 "from_m": 325.7,
-                "to_m": 505.0,
+                "to_m": 505,
                 "description_bg": "стоманена обсадна колона Ø108 mm"
               }
             ],
@@ -46254,7 +46217,7 @@
           "settlement": "Брацигово",
           "current_deposit_name": "Брацигово",
           "official_facility_name": "Сондаж №2",
-          "depth_m": 505.0,
+          "depth_m": 505,
           "technical_possible_discharge_l_s": 0.5,
           "initial_documented_flow_l_s": 1.1,
           "test_self_flow_l_s": 1.4,
@@ -46267,29 +46230,29 @@
           "collector": "ефузивни скали; водопроводящите участъци са свързани с напукани и смлени риолити и разломни структури",
           "documented_inflow_zones": [
             {
-              "from_m": 170.0,
-              "to_m": 213.0,
+              "from_m": 170,
+              "to_m": 213,
               "evidence": "documented_individual_inflow"
             },
             {
-              "from_m": 412.0,
-              "to_m": 437.0,
+              "from_m": 412,
+              "to_m": 437,
               "evidence": "documented_individual_inflow"
             }
           ],
           "construction": [
             {
-              "from_m": 0.0,
+              "from_m": 0,
               "to_m": 11.7,
               "description_bg": "сондирано Ø295 mm"
             },
             {
-              "from_m": 0.0,
+              "from_m": 0,
               "to_m": 48.5,
               "description_bg": "стоманена обсадна колона Ø168 mm, задтръбно циментирана"
             },
             {
-              "from_m": 0.0,
+              "from_m": 0,
               "to_m": 195.3,
               "description_bg": "стоманена обсадна колона Ø146 mm"
             },
@@ -46300,7 +46263,7 @@
             },
             {
               "from_m": 325.7,
-              "to_m": 505.0,
+              "to_m": 505,
               "description_bg": "стоманена обсадна колона Ø108 mm"
             }
           ],
@@ -46342,18 +46305,18 @@
       },
       "free": {
         "temperature_c": null,
-        "depth_m": 160.0
+        "depth_m": 160
       },
       "pro": {
         "research_status": "CONFIRMED_MISSING",
         "research_enrichment": {
           "pazardzhik_mineral_import_tag": "PAZARDZHIK_MINERAL_2026_10_03",
           "mineral_hydrothermal_research": {
-            "documented_depth_m": 160.0,
+            "documented_depth_m": 160,
             "documented_initial_flow_l_s": 0.5,
-            "documented_temperature_c": 19.0,
+            "documented_temperature_c": 19,
             "artesian_character": true,
-            "pressure_head_m": 1.0,
+            "pressure_head_m": 1,
             "role": "monitoring",
             "collector": "находище Брацигово: затворена пукнатинно-жилна водонапорна система в палеогенски седименти и ефузивни скали",
             "collector_scope": "regional_deposit_context",
@@ -46364,11 +46327,11 @@
           "settlement": "Брацигово",
           "current_deposit_name": "Брацигово",
           "official_facility_name": "Сондаж №1",
-          "depth_m": 160.0,
+          "depth_m": 160,
           "construction_year": 1963,
-          "documented_temperature_c": 19.0,
+          "documented_temperature_c": 19,
           "artesian_character": true,
-          "pressure_head_m": 1.0,
+          "pressure_head_m": 1,
           "collector": "находище Брацигово: затворена пукнатинно-жилна водонапорна система в палеогенски седименти и ефузивни скали",
           "collector_scope": "regional_deposit_context",
           "source_note": "Официалният документ за Сондаж №2 описва историята на находището и Сондаж №1: прокаран през 1963 г., достигнал около 160 m, получена минерална вода с дебит 0.5 l/s, температура 19°C и напор около 1 m над терена. Сондаж №1 се използва като наблюдателен пункт."
@@ -46755,7 +46718,7 @@
       },
       "free": {
         "temperature_c": null,
-        "depth_m": 2.0
+        "depth_m": 2
       },
       "pro": {
         "existing_properties": {
@@ -46789,21 +46752,21 @@
           "coordinate_source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
           "official_registry_number": "351046001",
           "capture_year": 1936,
-          "capture_depth_m": 2.0,
+          "capture_depth_m": 2,
           "capture_depth_scope": "facility/capture depth only; not thermal circulation depth",
           "natural_discharge_status": "CONFIRMED",
           "flow_regime": "natural discharge / self-flow",
-          "self_flow_elevation_m": 537.0,
+          "self_flow_elevation_m": 537,
           "temperature_assignment_status": "NO_EXACT_FACILITY_TEMPERATURE_ASSIGNED",
           "temperature_note": "The regional 63.8-65.4 C deposit range remains regional-model context and is not copied as an exact facility measurement.",
           "mineral_hydrothermal_research": {
             "role": "verified natural mineral-water abstraction facility and spatial anchor",
             "facility_confirmed": true,
             "facility_type": "captured natural spring",
-            "capture_depth_m": 2.0,
+            "capture_depth_m": 2,
             "capture_depth_interpretation": "capture construction depth; not mineral-water source depth",
             "natural_discharge": true,
-            "self_flow_elevation_m": 537.0,
+            "self_flow_elevation_m": 537,
             "collector_scope": "natural spring/captured source; exact subsurface productive fracture depth not assigned",
             "regional_model_id": "momin-prohod",
             "evidence_limit": "Facility coordinates anchor the known mineral occurrence spatially. They do not define exact mineral-water depth, temperature, discharge or productive fracture at another selected point."
@@ -46831,6 +46794,77 @@
         }
       ],
       "origin": "official_register_research"
+    },
+    {
+      "mineral_id": "mw_8a9a162b5981be86",
+      "identity": {
+        "name": "Сондаж №5",
+        "facility_type": "Минерален водовземен сондаж",
+        "deposit": "Кюстендил",
+        "settlement": "Кюстендил"
+      },
+      "location": {
+        "lat": null,
+        "lon": null,
+        "status": "TO_RESEARCH",
+        "origin": null
+      },
+      "free": {
+        "temperature_c": null,
+        "depth_m": 53.0
+      },
+      "pro": {
+        "research_status": "CONFIRMED_MISSING",
+        "research_enrichment": {
+          "identity_source": "Berov 2018 Table 1; MH balneological assessment No.203/12.11.2021",
+          "documented_total_depth_m": 53.0,
+          "documented_basement_contact_m": 42.5,
+          "basement_contact_evidence": "PUBLISHED_BOREHOLE_SPECIFIC_DEPTH",
+          "drilling_period": "1955-1956",
+          "bedrock_contact_is_water_inflow": false,
+          "individual_first_mineral_inflow_depth_m": null,
+          "individual_discharge_l_s": null,
+          "individual_temperature_c": null,
+          "coordinate_status": "TO_RESEARCH",
+          "location_note": "Kyustendil mineral-water deposit, below Hisarlaka locality; no verified individual borehole-mouth coordinates.",
+          "associated_facility_id": "mw_2161a43ca462a579",
+          "associated_facility_name": "Сондаж №БУ",
+          "combined_system_note": "Boreholes No.5 and BU participate in a combined abstraction system. The documented 17.54 l/s resource and 74.8 C technical temperature belong to the combined system, not this individual borehole.",
+          "combined_system_evidence_reference": "MH assessment No.203/12.11.2021",
+          "individual_resource_assignment": false,
+          "verified_lithology_source": "KNL-SECTION-013",
+          "regional_context_source": "KNL-REGION-024",
+          "full_lithological_log_available": false,
+          "spatial_research_result": "NO_SAFE_RESOLUTION"
+        },
+        "research_source_record": {
+          "status": "CONFIRMED_BOREHOLE_IDENTITY",
+          "mh_facility": "Сондаж №5",
+          "mh_deposit": "Кюстендил",
+          "mh_settlement": "Кюстендил",
+          "research_status": "CONFIRMED_MISSING",
+          "research_note": "Separate physical borehole, paired with borehole BU in MH assessment 203. No exact coordinates or individual water-flow measurements established."
+        },
+        "duplicate_mh_records": []
+      },
+      "sources": [
+        {
+          "source_type": "scientific_publication",
+          "title": "Lazar Berov (2018), Conceptual model of the Kyustendil deposit of thermal mineral water",
+          "source_url": "https://igh-bg.com/Vol/Vol_32_2018/8_Berov.pdf",
+          "source_location": "Table 1, printed page 70",
+          "research_record": "KNL-SECTION-013"
+        },
+        {
+          "source_type": "balneology",
+          "title": "Балнеологична оценка №203 от 12.11.2021 г. — сондажи №5 и №БУ",
+          "source_url": "https://old.mh.government.bg/media/filer_public/2021/12/13/203-kustendil-sondazh_5_i_sondazh_bu-12-11-2021.pdf",
+          "assessment_no": "203",
+          "assessment_date": "12.11.2021",
+          "research_record": "KNL-REGION-024"
+        }
+      ],
+      "origin": "mh_confirmed_missing"
     }
   ],
   "non_point_research_records": [
@@ -47497,9 +47531,9 @@
         "facility_ids": [],
         "evidence_scope": "official mineral-water deposit documentation, verified borehole lithology and official historical drilling context",
         "known_reference_drilling_m": [
-          197.0,
+          197,
           444.7,
-          530.0
+          530
         ],
         "verified_reference_borehole": {
           "name": "Сондаж №2хг",
@@ -47518,13 +47552,13 @@
       "synthesis": {
         "temperature_model": {
           "status": "SUPPORTED",
-          "regional_temperature_c": 46.0,
+          "regional_temperature_c": 46,
           "conclusion": "Official deposit-level data support a mineral-water temperature context of approximately 46 C for the Kostenets deposit. This value characterizes the established system and must not be assigned directly as the expected temperature at an arbitrary selected point.",
           "temperature_gradient_status": "NOT_DEFENSIBLE_FROM_CURRENT_DATA"
         },
         "resource_context": {
           "status": "SUPPORTED_AT_DEPOSIT_SCALE",
-          "approved_deposit_resource_l_s": 15.0,
+          "approved_deposit_resource_l_s": 15,
           "conclusion": "The documented approved exploitation resource of approximately 15 l/s applies to the deposit-scale resource context and must not be interpreted as expected discharge from a new borehole at a selected point."
         },
         "deep_system_evidence": {
@@ -47802,8 +47836,8 @@
       "synthesis": {
         "temperature_model": {
           "status": "SUPPORTED",
-          "technical_temperature_c": 45.0,
-          "sample_temperature_c": 43.0,
+          "technical_temperature_c": 45,
+          "sample_temperature_c": 43,
           "conclusion": "Belchin-Verila is documented with a somewhat hotter thermal regime than Belchinski Bani. The difference supports real spatial variation of the thermal system in the wider Belchin area.",
           "interpretation_limit": "These values apply to the documented facility/system and must not be assigned directly to arbitrary selected points."
         },
@@ -47917,7 +47951,7 @@
           "status": "SUPPORTED_AS_DISTINCT_LOCAL_CONTEXT",
           "name": "Бялата вода",
           "facility_id": "mw_a7d5b002d3dfb0da",
-          "temperature_context_c": 22.0,
+          "temperature_context_c": 22,
           "geological_context": "Paleogene sedimentary setting with sandstone collector context",
           "structural_context": "regional association with the basin structural setting and the Maritsa suture context",
           "conclusion": "The markedly cooler Byalata Voda occurrence demonstrates that the wider Dolna Banya area does not represent one uniform thermal regime. The cooler local subsystem must not be merged automatically with the hotter main Dolna Banya thermal field.",

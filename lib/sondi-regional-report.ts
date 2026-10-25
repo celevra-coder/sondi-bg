@@ -1828,6 +1828,64 @@ export function getSondiRegionalReport(
       return [overview, ...analogueCards];
     }
 
+
+    // SONDI_KNL_SINGLE_READER_CARD_68ER
+    // Presentation-only adjustment for Kyustendil municipalities.
+    // Original evidence notes and source records stay in the model.
+    if (entry.id.startsWith("KNL-M-")) {
+      const regionalCards = makeCards(entry, zone);
+      const overviewId = `${entry.id}-reader-overview`;
+
+      const overview = regionalCards.find(
+        card => card.id === overviewId
+      );
+
+      const evidenceCards = regionalCards.filter(
+        card => card.id.startsWith(`${entry.id}-evidence-`)
+      );
+
+      // Do not discard other scientifically significant cards.
+      const otherCards = regionalCards.filter(
+        card =>
+          card.id !== overviewId &&
+          !card.id.startsWith(`${entry.id}-evidence-`)
+      );
+
+      if (
+        overview &&
+        evidenceCards.length > 0
+      ) {
+        const originalParagraphs = overview.paragraphs;
+        const additionalParagraphs = evidenceCards.flatMap(
+          card => card.paragraphs
+        ).filter(
+          paragraph => paragraph.trim().length > 0 &&
+            !originalParagraphs.includes(paragraph)
+        );
+
+        const lastParagraph = originalParagraphs.slice(-1);
+        const initialParagraphs = originalParagraphs.slice(0, -1);
+
+        const combined: SondiRegionalReportCard = {
+          ...overview,
+          paragraphs: [
+            ...initialParagraphs,
+            ...additionalParagraphs,
+            ...lastParagraph
+          ],
+          sources: unique([
+            ...overview.sources,
+            ...evidenceCards.flatMap(card => card.sources)
+          ])
+        };
+
+        return [combined, ...otherCards];
+      }
+
+      // Preserve existing behavior if the expected model shape changes.
+      return regionalCards;
+    }
+
     return makeCards(entry, zone);
   }
 

@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "model_id": "KNL-M-KNL05-Z01",
+  "oblast": "Кюстендил",
+  "municipality": "Бобошево",
+  "status": "RESEARCH_DRAFT_NOT_PRODUCTION",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "KNL-M-KNL05-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Бобошево и Вуково — палеозойски скални комплекси",
+          "dominant_lithology_context": [
+            "Палеозойски седиментни скални комплекси",
+            "Различни скални последователности в рамките на регионалните свити"
+          ],
+          "regional_units": [
+            {
+              "unit": "Мюдоволска свита"
+            },
+            {
+              "unit": "Скринска свита"
+            },
+            {
+              "unit": "Вуковска свита"
+            },
+            {
+              "unit": "Бобошевска свита"
+            }
+          ],
+          "source_id": "KNL-SECTION-010"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Бобошево",
+          "informationType": "Геоложки строеж и практическо значение",
+          "paragraphs": [
+            "Документираните мощности са стратиграфски, а не измерени дълбочини под конкретен имот."
+          ],
+          "source_ids": [
+            "KNL-SECTION-010"
+          ]
+        }
+      ],
+      "source_ids": [
+        "KNL-SECTION-010",
+        "KNL-SECTION-006"
+      ],
+      "research_evidence_ids": [
+        "KNL-SECTION-010",
+        "KNL-SECTION-006"
+      ],
+      "wider_studies": []
+    }
+  }
+}

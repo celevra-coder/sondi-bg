@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "model_id": "KNL-M-KNL27-Z01",
+  "oblast": "Кюстендил",
+  "municipality": "Кочериново",
+  "status": "RESEARCH_DRAFT_NOT_PRODUCTION",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "KNL-M-KNL27-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Кочериново — долините на Струма, Рилска и Джерман",
+          "dominant_lithology_context": [
+            "Пясъци и чакъли",
+            "Песъчливи и алевритни глини",
+            "Пясъчници и конгломерати",
+            "Делувиални и речни наслаги"
+          ],
+          "regional_units": [
+            {
+              "unit": "Джерманска свита"
+            },
+            {
+              "unit": "Бараковска свита"
+            },
+            {
+              "unit": "Речни терасни комплекси"
+            }
+          ],
+          "source_id": "KNL-SECTION-007"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Кочериново",
+          "informationType": "Геоложки строеж и практическо значение",
+          "paragraphs": [
+            "Речните тераси и по-старите седиментни формации имат различно пространствено разпространение. Двата проверени шурфа документират само плитката зона до 2 м."
+          ],
+          "source_ids": [
+            "KNL-SECTION-007",
+            "KNL-REGION-020"
+          ]
+        }
+      ],
+      "source_ids": [
+        "KNL-SECTION-007",
+        "KNL-LITH-008",
+        "KNL-LITH-009",
+        "KNL-REGION-020"
+      ],
+      "research_evidence_ids": [
+        "KNL-SECTION-007",
+        "KNL-LITH-008",
+        "KNL-LITH-009",
+        "KNL-REGION-020"
+      ],
+      "wider_studies": []
+    }
+  }
+}

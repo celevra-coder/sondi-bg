@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "model_id": "KNL-M-KNL31-Z01",
+  "oblast": "Кюстендил",
+  "municipality": "Невестино",
+  "status": "RESEARCH_DRAFT_NOT_PRODUCTION",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "KNL-M-KNL31-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Невестино — район на Барището",
+          "dominant_lithology_context": [
+            "Алувиални чакъли и пясъци",
+            "Глинести шисти, конгломерати и пясъчници",
+            "Брекчоконгломерати",
+            "Диорити"
+          ],
+          "regional_units": [
+            {
+              "unit": "Кватернерни алувиални наслаги"
+            },
+            {
+              "unit": "Палеогенски седиментни скали"
+            },
+            {
+              "unit": "Долнотриаски брекчоконгломерати"
+            },
+            {
+              "unit": "Палеозойски диорити"
+            }
+          ],
+          "source_id": "KNL-LITH-011"
+        },
+        {
+          "area": "Невестино — район на Топилата",
+          "dominant_lithology_context": [
+            "Глини и ръбести чакъли",
+            "Конгломерати и алевролити",
+            "Кварцити и конгломерати"
+          ],
+          "regional_units": [
+            {
+              "unit": "Склонови наслаги"
+            },
+            {
+              "unit": "Палеогенски седиментни скали"
+            },
+            {
+              "unit": "Долнотриаски кварцити и конгломерати"
+            }
+          ],
+          "source_id": "KNL-LITH-012"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Геоложки сведения за Невестино",
+          "informationType": "Геоложки строеж и практическо значение",
+          "paragraphs": [
+            "Документираните сондажи при Барището и Топилата показват различни скални последователности. В единия са установени седиментни скали и диорити, а в другия — глини, конгломерати, алевролити и кварцити. Различията показват значението на местната геоложка структура при оценката на условията за сондиране."
+          ],
+          "source_ids": [
+            "KNL-LITH-011",
+            "KNL-LITH-012"
+          ]
+        }
+      ],
+      "source_ids": [
+        "KNL-LITH-011",
+        "KNL-LITH-012",
+        "KNL-STRUCT-014"
+      ],
+      "research_evidence_ids": [
+        "KNL-LITH-011",
+        "KNL-LITH-012",
+        "KNL-STRUCT-014"
+      ],
+      "wider_studies": []
+    }
+  }
+}

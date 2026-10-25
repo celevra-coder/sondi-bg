@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "model_id": "KNL-M-KNL50-Z01",
+  "oblast": "Кюстендил",
+  "municipality": "Трекляно",
+  "status": "RESEARCH_DRAFT_NOT_PRODUCTION",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "KNL-M-KNL50-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Треклянско Краище",
+          "dominant_lithology_context": [
+            "Варовици и варовикови брекчи",
+            "Пясъчници и конгломерати",
+            "Шисти и други седиментни комплекси",
+            "Метаморфни скални комплекси"
+          ],
+          "regional_units": [
+            {
+              "unit": "Треклянска група"
+            },
+            {
+              "unit": "Комщичка свита"
+            },
+            {
+              "unit": "Различни юрски седиментни формации"
+            }
+          ],
+          "source_id": "KNL-STRUCT-029"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Трекляно",
+          "informationType": "Геоложки строеж и практическо значение",
+          "paragraphs": [
+            "Разломите, навлаците и нагънатите структури усложняват разпространението на геоложките единици. Измерената мощност в естествен разрез не е дълбочина под произволна GPS точка."
+          ],
+          "source_ids": [
+            "KNL-STRUCT-029",
+            "KNL-SECTION-030"
+          ]
+        }
+      ],
+      "source_ids": [
+        "KNL-STRUCT-029",
+        "KNL-SECTION-030"
+      ],
+      "research_evidence_ids": [
+        "KNL-STRUCT-029",
+        "KNL-SECTION-030"
+      ],
+      "wider_studies": []
+    }
+  }
+}

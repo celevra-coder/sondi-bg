@@ -19,7 +19,7 @@
     "Пазарджик",
     "Пловдив"
   ],
-  "borehole_count": 98,
+  "borehole_count": 104,
   "boreholes": [
     {
       "borehole_id": "PLD-Z037",
@@ -12922,6 +12922,154 @@
           ]
         }
       ]
+    },
+    {
+      "borehole_id": "KNL-LITH-023",
+      "name_bg": "Сапарева баня – сондаж №1хг",
+      "oblast": "Кюстендил",
+      "region_code": "KNL",
+      "status": "documented_lithology_pending_geolocation",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "TO_RESEARCH",
+        "evidence_level": "official_site_identification"
+      },
+      "total_depth_m": 458.0,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 10,
+          "expected_material_bg": "Насипи от чакъл, пясък и глини. Произходът на материалите не се прекласифицира автоматично.",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "KNL-S023"
+          ]
+        },
+        {
+          "depth_from_m": 10,
+          "depth_to_m": 21,
+          "expected_material_bg": "Валуни и късове от амфиболити и пегматити, пясъчници и конгломерати.",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "KNL-S023"
+          ]
+        },
+        {
+          "depth_from_m": 21,
+          "depth_to_m": 50.8,
+          "expected_material_bg": "Късове от гнайси, гранитогнайси и амфиболити.",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "KNL-S023"
+          ]
+        },
+        {
+          "depth_from_m": 50.8,
+          "depth_to_m": 60.8,
+          "expected_material_bg": "Едрозърнест здраво споен пясъчник.",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "KNL-S023"
+          ]
+        },
+        {
+          "depth_from_m": 60.8,
+          "depth_to_m": 78,
+          "expected_material_bg": "Късове от гнайси и пегматити.",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "KNL-S023"
+          ]
+        },
+        {
+          "depth_from_m": 78,
+          "depth_to_m": 388,
+          "expected_material_bg": "Тектонски милонитизирана зона от гнайси, амфиболити и тектонски глини.",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "KNL-S023"
+          ]
+        },
+        {
+          "depth_from_m": 388,
+          "depth_to_m": 458,
+          "expected_material_bg": "Силно тектонски променени метаморфни и гранитоидни скали, катаклазирани материали и тектонска брекча.",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "KNL-S023"
+          ]
+        }
+      ],
+      "structural_intervals": [
+        {
+          "depth_from_m": 78,
+          "depth_to_m": 388,
+          "type_bg": "Тектонски милонитизирана зона",
+          "significance_bg": "Документиран нарушен скален комплекс с тектонски глини, гнайси и амфиболити.",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "KNL-S023"
+          ]
+        },
+        {
+          "depth_from_m": 388,
+          "depth_to_m": 458,
+          "type_bg": "Силно тектонски променени метаморфни и гранитоидни скали",
+          "significance_bg": "Катаклазирани скали и тектонска брекча. Не е доказан самостоятелен водоприток само от литологията.",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "KNL-S023"
+          ]
+        }
+      ],
+      "hydraulic_intervals": [],
+      "intake_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "approximate_location": {
+        "status": "LOCATION_EVIDENCE_ONLY",
+        "latitude": null,
+        "longitude": null,
+        "location_note_bg": "Сондаж №1хг в находище на минерална вода Сапарева баня. Точните координати на сондажното устие все още не са удостоверени.",
+        "evidence_level": "official_site_identification",
+        "source_ids": [
+          "KNL-S023"
+        ],
+        "usable_for_public_map": false,
+        "usable_for_pro_context": true,
+        "distance_is_exact": false
+      },
+      "borehole_construction": {
+        "year_constructed": 1966,
+        "total_depth_m": 458.0,
+        "source_ids": [
+          "KNL-S023"
+        ],
+        "note_bg": "Конструкцията и литоложките интервали са отделни категории. Обсадни и филтрови интервали не са въвеждани без допълнителна проверка на оригинала."
+      },
+      "hydro_notes_bg": "Минерално-термално съоръжение. Точни първи водопритоци, интервали на приток и напор не са определяни в тази операция.",
+      "expert_context": {
+        "simple_text_bg": "При сондаж №1хг в Сапарева баня до 78 м са документирани насипни, късови и седиментни материали. От 78 до 388 м следва тектонски милонитизирана зона с гнайси, амфиболити и тектонски глини. От 388 до 458 м са преминати силно тектонски променени метаморфни и гранитоидни скали.",
+        "usage": "Verified 458 m lithological research reference; precise spatial application pending.",
+        "warning": "Точните координати липсват. Сондажът не може да участва в пространствено претегляне по разстояние. Литологията не доказва сама по себе си водоприточни зони."
+      },
+      "research_origin": {
+        "record_id": "KNL-LITH-023",
+        "source_id": "KNL-S023",
+        "identity_verified": true,
+        "exact_coordinates_verified": false,
+        "research_only_spatial_status": true
+      }
     }
   ],
   "sources": [
@@ -13977,6 +14125,17 @@
       "url": "https://www.mh.government.bg/upload/14245/23-Velingrad-Kamenica-sondazh-4-Vlasa-20-05-2025.pdf",
       "geographic_scope": "Област Пазарджик — Велинград-Каменица",
       "notes": "Дата на документа: 2025-05-20; PDF стр. 2; референтен сондаж PLD-Z114; точните координати не са потвърдени. Заглавието е описателно, ако не е посочено в provenance."
+    },
+    {
+      "source_id": "KNL-S023",
+      "title": "Балнеологична оценка №93 от 20.07.2018 г. – сондаж №1хг, Сапарева баня",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "deep_borehole_and_hydrogeology",
+      "url": "https://www.mh.government.bg/upload/6812/93-sapareva_banya-sondazh1hg-20-07-2018.pdf",
+      "publication_year": 2018,
+      "accessed_date": "2026-10-25",
+      "geographic_scope": "гр. Сапарева баня, община Сапарева баня, област Кюстендил",
+      "notes": "Официално документирани седем литоложки интервала до 458 m. Точните координати на сондаж №1хг не са потвърдени. Съоръжението е различно от сондаж №10 Гейзера и каптиран извор Галерията. Research: KNL-LITH-023."
     }
   ]
 }

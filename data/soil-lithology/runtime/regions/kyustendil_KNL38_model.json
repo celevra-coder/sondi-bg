@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "model_id": "KNL-M-KNL38-Z01",
+  "oblast": "Кюстендил",
+  "municipality": "Рила",
+  "status": "RESEARCH_DRAFT_NOT_PRODUCTION",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "KNL-M-KNL38-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "Рила и долината на Рилска река",
+          "dominant_lithology_context": [
+            "Гнайси и биотитови гнайси",
+            "Слюдени шисти и гнайсошисти",
+            "Гранити и гранодиорити",
+            "Пегматитови и аплитови тела"
+          ],
+          "regional_units": [
+            {
+              "unit": "Метаморфни скални комплекси"
+            },
+            {
+              "unit": "Интрузивни магмени комплекси"
+            }
+          ],
+          "source_id": "KNL-REGION-028"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Рила",
+          "informationType": "Геоложки строеж и практическо значение",
+          "paragraphs": [
+            "Проучването обхваща природен парк Рилски манастир и прилежащи участъци, а не всички части на общината. Контактите зависят от местната структура."
+          ],
+          "source_ids": [
+            "KNL-REGION-028"
+          ]
+        }
+      ],
+      "source_ids": [
+        "KNL-REGION-028"
+      ],
+      "research_evidence_ids": [
+        "KNL-REGION-028"
+      ],
+      "wider_studies": []
+    }
+  }
+}
