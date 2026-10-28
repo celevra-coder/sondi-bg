@@ -1328,8 +1328,21 @@ export async function getLithologyProfile(
         result.zone.zone_id !== null
       );
 
+  // SONDI_PERNIK_SHALLOW_CHECKPOINTS_70CK
+  // Add shallow national checks only inside Pernik.
+  // Leave the Vratsa spatial-depth model unchanged.
+  const pernikDepthRegion = resolveNationalDepthLithology({
+    latitude,
+    longitude,
+    depthM: 20,
+  }).region_id?.startsWith("PER-M-") === true;
+
+  const nationalDepthCheckpoints = pernikDepthRegion
+    ? [1, 5, 10, 15, 19, ...spatialDepthCheckpoints]
+    : spatialDepthCheckpoints;
+
   const targetNationalDepthModel =
-    spatialDepthCheckpoints.map(depthM =>
+    nationalDepthCheckpoints.map(depthM =>
       resolveNationalDepthLithology({
         latitude,
         longitude,

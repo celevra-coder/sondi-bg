@@ -819,6 +819,291 @@ export function resolveNationalDepthLithology(
     input.depthM < item.interval_to_m
   );
 
+  // SONDI_PERNIK_EXACT_BOREHOLE_70CG
+  // Only the four verified Stomana columns, at their documented
+  // coordinates and within their actual measured depth intervals.
+  // No nearby-land extrapolation and no change to other regions.
+  if (base.region_id === "PER-M-PER32") {
+    const pernikExact = base.evidence.filter(item =>
+      item.type === "BOREHOLE" &&
+      typeof item.borehole_id === "string" &&
+      /^PERNIK_STOMANA_MK[1-4]$/.test(item.borehole_id) &&
+      item.coordinate_status === "REGIONAL_DOCUMENTED" &&
+      item.site_relation === "COLOCATED_COORDINATES" &&
+      typeof item.distance_km === "number" &&
+      item.distance_km <= 0.001 &&
+      typeof item.interval_from_m === "number" &&
+      typeof item.interval_to_m === "number" &&
+      item.interval_from_m <= input.depthM &&
+      input.depthM < item.interval_to_m &&
+      typeof item.interval_material_bg === "string" &&
+      item.interval_material_bg.trim().length > 0
+    );
+
+    const pernikMaterials = [...new Set(
+      pernikExact.map(item => item.interval_material_bg!.trim())
+    )];
+
+    if (pernikMaterials.length === 1) {
+      return {
+        ...base,
+        status: "CONDITIONAL",
+        evidence_tier: "DOCUMENTED_BOREHOLE",
+        probable_lithology: pernikMaterials[0],
+        alternative_lithologies: [],
+        confidence: "LOW",
+        interpretation_scope: "REFERENCE_BOREHOLE_ONLY",
+        source_ids: [...new Set([
+          ...base.source_ids,
+          ...pernikExact.flatMap(item => item.source_ids)
+        ])]
+      };
+    }
+  }
+
+
+  // SONDI_PERNIK_TRIANGULATED_CORRELATION_70CV
+  // A conditional lithological-family analogue, not a measured
+  // column. Only inside the MK2/MK3/MK4 observation triangle.
+  // No fixed kilometre cutoff and no effect outside PER-M-PER32.
+  if (
+    base.region_id === "PER-M-PER32" &&
+    input.depthM >= 0 &&
+    input.depthM < 20 &&
+    !hasColocatedReference
+  ) {
+    const ids = [
+      "PERNIK_STOMANA_MK2",
+      "PERNIK_STOMANA_MK3",
+      "PERNIK_STOMANA_MK4"
+    ];
+
+    const holes = ids.map(id =>
+      getNationalBoreholeIndex().find(hole =>
+        hole.id === id &&
+        hole.origin === "REGIONAL" &&
+        hole.coordinate_status === "REGIONAL_DOCUMENTED" &&
+        typeof hole.latitude === "number" &&
+        typeof hole.longitude === "number"
+      )
+    );
+
+    if (holes.every(hole => hole !== undefined)) {
+      const controls = holes.filter(
+        (hole): hole is NonNullable<typeof hole> =>
+          hole !== undefined
+      );
+
+      const [a, b, c] = controls;
+
+      const ax = a.longitude!;
+      const ay = a.latitude!;
+      const bx = b.longitude!;
+      const by = b.latitude!;
+      const cx = c.longitude!;
+      const cy = c.latitude!;
+      const px = input.longitude;
+      const py = input.latitude;
+
+      const cross = (
+        x1: number, y1: number,
+        x2: number, y2: number,
+        x3: number, y3: number
+      ) => (x2 - x1) * (y3 - y1) -
+           (y2 - y1) * (x3 - x1);
+
+      const area = cross(ax, ay, bx, by, cx, cy);
+      const ab = cross(ax, ay, bx, by, px, py);
+      const bc = cross(bx, by, cx, cy, px, py);
+      const ca = cross(cx, cy, ax, ay, px, py);
+
+      const insideTriangle =
+        Math.abs(area) > 1e-12 &&
+        (
+          area > 0
+            ? ab >= 0 && bc >= 0 && ca >= 0
+            : ab <= 0 && bc <= 0 && ca <= 0
+        );
+
+      const matching = ids.map(id =>
+        base.evidence.find(item =>
+          item.type === "BOREHOLE" &&
+          item.borehole_id === id &&
+          item.coordinate_status === "REGIONAL_DOCUMENTED" &&
+          item.interval_evidence_level ===
+            "regional_documented_interval" &&
+          item.interval_status === null &&
+          typeof item.interval_from_m === "number" &&
+          typeof item.interval_to_m === "number" &&
+          item.interval_from_m <= input.depthM &&
+          input.depthM < item.interval_to_m &&
+          typeof item.interval_material_bg === "string" &&
+          item.mapped_fault_intersection_count === 0
+        )
+      );
+
+      const family = (value: string): string | null => {
+        const material = value.toLocaleLowerCase("bg");
+
+        if (material.includes("\u043f\u044f\u0441\u044a\u0447\u043d\u0438\u043a"))
+          return "SANDSTONE";
+        if (material.includes("\u0430\u0440\u0433\u0438\u043b\u0438\u0442"))
+          return "ARGILLITE";
+        if (material.includes("\u043c\u0435\u0440\u0433\u0435\u043b"))
+          return "MARL";
+        if (material.includes("\u0433\u043b\u0438\u043d"))
+          return "CLAY";
+        if (material.includes("\u043f\u044f\u0441\u044a\u043a"))
+          return "SAND";
+
+        return null;
+      };
+
+      const families = matching.map(item =>
+        item?.interval_material_bg
+          ? family(item.interval_material_bg)
+          : null
+      );
+
+      const unanimous =
+        families.length === 3 &&
+        families[0] !== null &&
+        families.every(value => value === families[0]);
+
+      const labels: Record<string, string> = {
+        CLAY: "\u0413\u043b\u0438\u043d\u0435\u0441\u0442\u0438 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u0438",
+        ARGILLITE: "\u0410\u0440\u0433\u0438\u043b\u0438\u0442\u0438",
+        MARL: "\u041c\u0435\u0440\u0433\u0435\u043b\u0438",
+        SAND: "\u041f\u044f\u0441\u044a\u0447\u043d\u0438 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u0438",
+        SANDSTONE: "\u041f\u044f\u0441\u044a\u0447\u043d\u0438\u0446\u0438"
+      };
+
+      const selectedFamily = families[0];
+
+      if (
+        insideTriangle &&
+        unanimous &&
+        selectedFamily !== null &&
+        labels[selectedFamily]
+      ) {
+        return {
+          ...base,
+          status: "CONDITIONAL",
+          evidence_tier: "GEOLOGICAL_CORRELATION",
+          probable_lithology: labels[selectedFamily],
+          alternative_lithologies: [],
+          confidence: "LOW",
+          interpretation_scope:
+            "SPATIAL_CORRELATION_CONDITIONAL",
+          source_ids: [...new Set([
+            ...base.source_ids,
+            ...matching.flatMap(item => item?.source_ids ?? [])
+          ])]
+        };
+      }
+    }
+  }
+
+
+  // SONDI_PERNIK_CONSENSUS_EXTENSION_70FS
+  // Conditional shallow analogue outside the verified triangle.
+  // At least three independent Stomana logs must agree.
+  // Distance alone is never sufficient evidence.
+  if (
+    base.region_id === "PER-M-PER32" &&
+    input.depthM >= 0 &&
+    input.depthM < 20 &&
+    !hasColocatedReference
+  ) {
+    const familyOf = (material: string): string | null => {
+      const m = material.toLocaleLowerCase("bg");
+      if (m.includes("\u043f\u044f\u0441\u044a\u0447\u043d\u0438\u043a"))
+        return "SANDSTONE";
+      if (m.includes("\u0430\u0440\u0433\u0438\u043b\u0438\u0442"))
+        return "ARGILLITE";
+      if (m.includes("\u043c\u0435\u0440\u0433\u0435\u043b"))
+        return "MARL";
+      if (m.includes("\u0433\u043b\u0438\u043d"))
+        return "CLAY";
+      if (m.includes("\u043f\u044f\u0441\u044a\u043a"))
+        return "SAND";
+      return null;
+    };
+
+    const labels: Record<string, string> = {
+      CLAY: "\u0413\u043b\u0438\u043d\u0435\u0441\u0442\u0438 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u0438",
+      ARGILLITE: "\u0410\u0440\u0433\u0438\u043b\u0438\u0442\u0438",
+      MARL: "\u041c\u0435\u0440\u0433\u0435\u043b\u0438",
+      SAND: "\u041f\u044f\u0441\u044a\u0447\u043d\u0438 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u0438",
+      SANDSTONE: "\u041f\u044f\u0441\u044a\u0447\u043d\u0438\u0446\u0438"
+    };
+
+    const bestByHole = new Map<
+      string,
+      (typeof base.evidence)[number]
+    >();
+
+    for (const item of base.evidence) {
+      if (
+        item.type !== "BOREHOLE" ||
+        !/^PERNIK_STOMANA_MK[1-4]$/.test(item.borehole_id ?? "") ||
+        item.coordinate_status !== "REGIONAL_DOCUMENTED" ||
+        item.interval_evidence_level !== "regional_documented_interval" ||
+        item.interval_status !== null ||
+        typeof item.distance_km !== "number" ||
+        item.distance_km > 5 ||
+        item.distance_km <= 0.001 ||
+        item.mapped_fault_intersection_count !== 0 ||
+        typeof item.interval_material_bg !== "string" ||
+        !familyOf(item.interval_material_bg)
+      ) continue;
+
+      const id = item.borehole_id!;
+      if (!bestByHole.has(id)) bestByHole.set(id, item);
+    }
+
+    const eligible = [...bestByHole.values()];
+
+    const counts = new Map<string, number>();
+    for (const item of eligible) {
+      const family = familyOf(item.interval_material_bg!);
+      if (family) counts.set(family, (counts.get(family) ?? 0) + 1);
+    }
+
+    const ranked = [...counts.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+
+    const winning = ranked[0];
+    if (winning && winning[1] >= 3 && labels[winning[0]]) {
+      const supporting = eligible.filter(item =>
+        familyOf(item.interval_material_bg!) === winning[0]
+      );
+
+      const alternatives = eligible
+        .filter(item =>
+          familyOf(item.interval_material_bg!) !== winning[0]
+        )
+        .map(item => item.interval_material_bg!)
+        .filter((value, index, arr) =>
+          arr.indexOf(value) === index
+        );
+
+      return {
+        ...base,
+        status: "CONDITIONAL",
+        evidence_tier: "GEOLOGICAL_CORRELATION",
+        probable_lithology: labels[winning[0]],
+        alternative_lithologies: alternatives,
+        confidence: "LOW",
+        interpretation_scope: "SPATIAL_CORRELATION_CONDITIONAL",
+        source_ids: [...new Set([
+          ...base.source_ids,
+          ...supporting.flatMap(item => item.source_ids)
+        ])]
+      };
+    }
+  }
+
   // SONDI_NATIONAL_CORRELATION_V1
   // Never replace a colocated documented reference.
   const correlation = hasColocatedReference

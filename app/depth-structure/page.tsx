@@ -271,7 +271,15 @@ export default async function DepthStructurePage({
   const synthesis =
     synthesizeLithologyEvidence(profile);
 
-  const checkpoints = [20, 50, 80, 100, 150, 200, 300, 500];
+  // SONDI_PERNIK_SHALLOW_CLIENT_70CK
+  const pernikShallowClient = profile.target_national_depth_model.some(
+    item => typeof item.region_id === "string" &&
+      item.region_id.startsWith("PER-M-")
+  );
+
+  const checkpoints = pernikShallowClient
+    ? [1, 5, 10, 15, 19, 20, 50, 80, 100, 150, 200, 300, 500]
+    : [20, 50, 80, 100, 150, 200, 300, 500];
 
 
   const unified = buildUnifiedLithology(
@@ -1004,7 +1012,7 @@ const material = point.material
     : null;
 
   const regionalFallbackRow = {
-    depth: "20–500 м",
+    depth: pernikShallowClient ? "1–500 м" : "20–500 м",
     material: isSofiaCityRegional || rockFamilies.length > 0 || regionalOverview
       ? "Регионални геоложки варианти"
       : "Регионален геоложки анализ",
@@ -1031,8 +1039,21 @@ const material = point.material
   // sampled checkpoints. Never use nearby holes as exact logs.
   const exactNationalBorehole = getNationalBoreholeIndex().find(
     hole =>
-      hole.origin === "NATIONAL" &&
-      hole.coordinate_status === "OFFICIAL_EXACT" &&
+      (
+        (
+          hole.origin === "NATIONAL" &&
+          hole.coordinate_status === "OFFICIAL_EXACT"
+        ) ||
+        (
+          // SONDI_PERNIK_EXACT_CLIENT_70CM
+          // Permit only the four documented Stomana boreholes
+          // at their recorded coordinates, never nearby land.
+          pernikShallowClient &&
+          hole.origin === "REGIONAL" &&
+          hole.coordinate_status === "REGIONAL_DOCUMENTED" &&
+          /^PERNIK_STOMANA_MK[1-4]$/.test(hole.id)
+        )
+      ) &&
       hole.latitude !== null &&
       hole.longitude !== null &&
       Math.abs(hole.latitude - lat) <= 0.000001 &&
@@ -1046,7 +1067,15 @@ const material = point.material
       interval.interval_status === null &&
       (
         interval.evidence_level === "borehole_exact" ||
-        interval.evidence_level === "documented_borehole_log"
+        interval.evidence_level === "documented_borehole_log" ||
+        (
+          pernikShallowClient &&
+          exactNationalBorehole?.origin === "REGIONAL" &&
+          /^PERNIK_STOMANA_MK[1-4]$/.test(
+            exactNationalBorehole.id
+          ) &&
+          interval.evidence_level === "regional_documented_interval"
+        )
       ) &&
       interval.from_m !== null &&
       interval.to_m !== null &&

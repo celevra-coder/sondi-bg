@@ -1,0 +1,192 @@
+{
+  "zones": {
+    "PER-M-PER32-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "\u041f\u0435\u0440\u043d\u0438\u043a, \u0418\u043d\u0434\u0443\u0441\u0442\u0440\u0438\u0430\u043b\u043d\u0430 \u0437\u043e\u043d\u0430, \u043f\u044a\u0442 I-6",
+          "source_id": "_research/pernik/pernik_geozashtita_2025_field_evidence_v1.json",
+          "dominant_lithology_context": [
+            "\u043f\u0430\u043b\u0435\u043e\u0433\u0435\u043d\u0441\u043a\u0438 \u043f\u044a\u0441\u0442\u0440\u0438 \u043f\u0440\u0430\u0445\u043e\u0432\u0438 \u0433\u043b\u0438\u043d\u0438",
+            "\u0441\u0438\u0432\u0438 \u043c\u0435\u0440\u0433\u0435\u043b\u0438, \u043d\u0435\u0438\u0437\u0434\u044a\u0440\u0436\u0430\u043d\u0438 \u043f\u0440\u043e\u0441\u043b\u043e\u0439\u043a\u0438"
+          ]
+        },
+        {
+          "area": "\u0420\u0443\u0434\u0430\u0440\u0446\u0438, \u0443\u043b. \u0421\u043a\u043e\u0431\u0435\u043b\u0435\u0432",
+          "source_id": "_research/pernik/pernik_geozashtita_2025_field_evidence_v1.json",
+          "dominant_lithology_context": [
+            "\u043f\u043b\u044a\u0442\u043d\u0438 \u043f\u0430\u043b\u0435\u043e\u0433\u0435\u043d\u0441\u043a\u0438 \u0433\u043b\u0438\u043d\u0438"
+          ]
+        },
+        {
+          "area": "\u0420\u0443\u0434\u0430\u0440\u0446\u0438, \u0443\u043b. \u0420\u043e\u0434\u043e\u043f\u0438, \u043a\u0432. 41",
+          "source_id": "_research/pernik/pernik_geozashtita_2025_field_evidence_v1.json",
+          "dominant_lithology_context": [
+            "\u043a\u0430\u0444\u044f\u0432\u0438 \u0434\u0435\u043b\u0443\u0432\u0438\u0430\u043b\u043d\u0438 \u0433\u043b\u0438\u043d\u0438",
+            "\u043c\u0435\u0440\u0433\u0435\u043b\u043e\u043f\u043e\u0434\u043e\u0431\u043d\u0438 \u043f\u044a\u0441\u0442\u0440\u0438 \u043f\u0430\u043b\u0435\u043e\u0433\u0435\u043d\u0441\u043a\u0438 \u0433\u043b\u0438\u043d\u0438"
+          ]
+        },
+        {
+          "area": "\u0420\u0443\u0434\u0430\u0440\u0446\u0438, \u0443\u043b. \u0420\u043e\u0434\u043e\u043f\u0438, \u043a\u0432. 42, 44, 47",
+          "source_id": "_research/pernik/pernik_geozashtita_2025_field_evidence_v1.json",
+          "dominant_lithology_context": [
+            "\u043a\u0430\u0444\u044f\u0432\u0438 \u0433\u043b\u0438\u043d\u0438",
+            "\u043f\u044a\u0441\u0442\u0440\u0438 \u0433\u043b\u0438\u043d\u0438"
+          ]
+        }
+      ],
+      "documented_reference_intervals": [
+        {
+          "borehole_id": "PERNIK_STOMANA_MK1",
+          "latitude": 42.593861111,
+          "longitude": 23.092130556,
+          "intervals": [
+            {
+              "from_m": 0,
+              "to_m": 3.1,
+              "material_bg": "\u041f\u044a\u0441\u0442\u0440\u0430 \u0447\u0435\u0440\u0432\u0435\u043d\u0430 \u0438 \u0436\u044a\u043b\u0442\u043e\u0437\u0435\u043b\u0435\u043d\u0430 \u0433\u043b\u0438\u043d\u0430"
+            },
+            {
+              "from_m": 3.1,
+              "to_m": 3.8,
+              "material_bg": "\u0416\u044a\u043b\u0442 \u043f\u044f\u0441\u044a\u043a"
+            },
+            {
+              "from_m": 3.8,
+              "to_m": 4.6,
+              "material_bg": "\u041f\u044f\u0441\u044a\u043a \u0441 \u0434\u0440\u0435\u0431\u0435\u043d \u0447\u0430\u043a\u044a\u043b, \u0441\u043b\u0430\u0431\u043e \u0437\u0430\u0433\u043b\u0438\u043d\u0435\u043d"
+            },
+            {
+              "from_m": 4.6,
+              "to_m": 6.3,
+              "material_bg": "\u0414\u0440\u0435\u0431\u0435\u043d \u043f\u044f\u0441\u044a\u043a"
+            },
+            {
+              "from_m": 6.3,
+              "to_m": 12.6,
+              "material_bg": "\u041f\u044a\u0441\u0442\u0440\u0430 \u0433\u043b\u0438\u043d\u0430: \u0447\u0435\u0440\u0432\u0435\u043d\u0430, \u0436\u044a\u043b\u0442\u043e\u0437\u0435\u043b\u0435\u043d\u0438\u043a\u0430\u0432\u0430 \u0438 \u0441\u0438\u0432\u0430"
+            },
+            {
+              "from_m": 12.6,
+              "to_m": 20.0,
+              "material_bg": "\u0427\u0435\u0440\u0432\u0435\u043d\u0438\u043a\u0430\u0432\u043e\u0432\u0438\u043e\u043b\u0435\u0442\u043e\u0432\u0438 \u0430\u0440\u0433\u0438\u043b\u0438\u0442\u0438 \u0432 \u0430\u043b\u0442\u0435\u0440\u043d\u0430\u0446\u0438\u044f \u0441\u044a\u0441 \u0441\u0438\u0432\u043e\u0437\u0435\u043b\u0435\u043d\u0438\u043a\u0430\u0432\u0438 \u0430\u043b\u0435\u0432\u0440\u043e\u043b\u0438\u0442\u0438"
+            }
+          ],
+          "source_ids": [
+            "_research/pernik/pernik_stomana_MK1_MK4_verified_lithology_v1.json"
+          ]
+        },
+        {
+          "borehole_id": "PERNIK_STOMANA_MK2",
+          "latitude": 42.591652778,
+          "longitude": 23.092125,
+          "intervals": [
+            {
+              "from_m": 0,
+              "to_m": 0.5,
+              "material_bg": "\u0422\u044a\u043c\u043d\u043e\u043a\u0430\u0444\u044f\u0432\u0430 \u0433\u043b\u0438\u043d\u0430"
+            },
+            {
+              "from_m": 0.5,
+              "to_m": 3.2,
+              "material_bg": "\u0427\u0435\u0440\u0432\u0435\u043d\u0430 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0430 \u0433\u043b\u0438\u043d\u0430"
+            },
+            {
+              "from_m": 3.2,
+              "to_m": 7.6,
+              "material_bg": "\u0410\u043b\u0442\u0435\u0440\u043d\u0430\u0446\u0438\u044f \u043d\u0430 \u0447\u0435\u0440\u0432\u0435\u043d\u0438 \u0438 \u0441\u0438\u0432\u043e\u0437\u0435\u043b\u0435\u043d\u0438 \u0433\u043b\u0438\u043d\u0438"
+            },
+            {
+              "from_m": 7.6,
+              "to_m": 20.0,
+              "material_bg": "\u0418\u0437\u0432\u0435\u0442\u0440\u0435\u043b\u0438 \u0430\u0440\u0433\u0438\u043b\u0438\u0442\u0438 \u0434\u043e \u0447\u0430\u043a\u043b\u0435\u0441\u0442\u0430 \u0433\u043b\u0438\u043d\u0430, \u0441\u0438\u0432\u043e\u0437\u0435\u043b\u0435\u043d\u0438 \u0438 \u0447\u0435\u0440\u0432\u0435\u043d\u043e\u0432\u0438\u043e\u043b\u0435\u0442\u043e\u0432\u0438"
+            }
+          ],
+          "source_ids": [
+            "_research/pernik/pernik_stomana_MK1_MK4_verified_lithology_v1.json"
+          ]
+        },
+        {
+          "borehole_id": "PERNIK_STOMANA_MK3",
+          "latitude": 42.588802778,
+          "longitude": 23.089827778,
+          "intervals": [
+            {
+              "from_m": 0,
+              "to_m": 0.8,
+              "material_bg": "\u0422\u044a\u043c\u043d\u043e\u043a\u0430\u0444\u044f\u0432\u0430 \u0433\u043b\u0438\u043d\u0430"
+            },
+            {
+              "from_m": 0.8,
+              "to_m": 2.2,
+              "material_bg": "\u041a\u0430\u0444\u044f\u0432\u0430 \u0433\u043b\u0438\u043d\u0430"
+            },
+            {
+              "from_m": 2.2,
+              "to_m": 4.5,
+              "material_bg": "\u0427\u0435\u0440\u0432\u0435\u043d\u043e\u043a\u0430\u0444\u044f\u0432\u0430 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0430 \u0433\u043b\u0438\u043d\u0430"
+            },
+            {
+              "from_m": 4.5,
+              "to_m": 11.2,
+              "material_bg": "\u0410\u043b\u0442\u0435\u0440\u043d\u0430\u0446\u0438\u044f \u043d\u0430 \u0436\u044a\u043b\u0442\u043e\u0437\u0435\u043b\u0435\u043d\u0438\u043a\u0430\u0432\u0430 \u0438 \u0447\u0435\u0440\u0432\u0435\u043d\u043e\u043a\u0430\u0444\u044f\u0432\u0430 \u0433\u043b\u0438\u043d\u0430, \u043f\u043b\u0430\u0441\u0442\u043e\u0432\u0435 0,80\u20132,00 \u043c"
+            },
+            {
+              "from_m": 11.2,
+              "to_m": 17.0,
+              "material_bg": "\u0418\u0437\u0432\u0435\u0442\u0440\u0435\u043b\u0438 \u0441\u0438\u0432\u043e\u0437\u0435\u043b\u0435\u043d\u0438\u043a\u0430\u0432\u0438 \u0438 \u0447\u0435\u0440\u0432\u0435\u043d\u043e\u0432\u0438\u043e\u043b\u0435\u0442\u043e\u0432\u0438 \u0430\u0440\u0433\u0438\u043b\u0438\u0442\u0438"
+            },
+            {
+              "from_m": 17.0,
+              "to_m": 20.0,
+              "material_bg": "\u0421\u043b\u0430\u0431\u043e \u0441\u043f\u043e\u0435\u043d, \u0441\u0438\u0432\u043e\u0437\u0435\u043b\u0435\u043d\u0438\u043a\u0430\u0432, \u0441\u043b\u0430\u0431\u043e \u0438\u0437\u0432\u0435\u0442\u0440\u044f\u043b \u043f\u044f\u0441\u044a\u0447\u043d\u0438\u043a"
+            }
+          ],
+          "source_ids": [
+            "_research/pernik/pernik_stomana_MK1_MK4_verified_lithology_v1.json"
+          ]
+        },
+        {
+          "borehole_id": "PERNIK_STOMANA_MK4",
+          "latitude": 42.591552778,
+          "longitude": 23.088908333,
+          "intervals": [
+            {
+              "from_m": 0,
+              "to_m": 0.8,
+              "material_bg": "\u0422\u044a\u043c\u043d\u043e\u043a\u0430\u0444\u044f\u0432\u0430 \u0433\u043b\u0438\u043d\u0430"
+            },
+            {
+              "from_m": 0.8,
+              "to_m": 2.2,
+              "material_bg": "\u041f\u044a\u0441\u0442\u0440\u0430 \u0441\u0432\u0435\u0442\u043b\u043e\u043a\u0430\u0444\u044f\u0432\u0430 \u0438 \u0447\u0435\u0440\u0432\u0435\u043d\u0430 \u0433\u043b\u0438\u043d\u0430 \u0441 \u0440\u0435\u0434\u043a\u0438 \u0434\u0440\u0435\u0431\u043d\u0438 \u0447\u0430\u043a\u044a\u043b\u0438"
+            },
+            {
+              "from_m": 2.2,
+              "to_m": 4.3,
+              "material_bg": "\u0427\u0435\u0440\u0432\u0435\u043d\u0430 \u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0430 \u0433\u043b\u0438\u043d\u0430"
+            },
+            {
+              "from_m": 4.3,
+              "to_m": 8.9,
+              "material_bg": "\u0421\u0438\u0432\u043e\u0437\u0435\u043b\u0435\u043d\u0430 \u0433\u043b\u0438\u043d\u0430 \u0441 \u043f\u0440\u043e\u0441\u043b\u043e\u0439\u043a\u0438 \u043e\u0442 \u0447\u0435\u0440\u0432\u0435\u043d\u0430 \u0433\u043b\u0438\u043d\u0430"
+            },
+            {
+              "from_m": 8.9,
+              "to_m": 20.0,
+              "material_bg": "\u0418\u0437\u0432\u0435\u0442\u0440\u0435\u043b\u0438 \u0430\u0440\u0433\u0438\u043b\u0438\u0442\u0438 \u0434\u043e \u0447\u0430\u043a\u043b\u0435\u0441\u0442\u0430 \u0433\u043b\u0438\u043d\u0430, \u0441\u0438\u0432\u043e\u0437\u0435\u043b\u0435\u043d\u0438\u043a\u0430\u0432\u0438 \u0438 \u0447\u0435\u0440\u0432\u0435\u043d\u043e\u0432\u0438\u043e\u043b\u0435\u0442\u043e\u0432\u0438"
+            }
+          ],
+          "source_ids": [
+            "_research/pernik/pernik_stomana_MK1_MK4_verified_lithology_v1.json"
+          ]
+        }
+      ],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "source_ids": [
+        "_research/pernik/pernik_stomana_MK1_MK4_verified_lithology_v1.json",
+        "_research/pernik/pernik_geozashtita_2025_field_evidence_v1.json"
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "zones": {
+    "PER-M-PER51-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "\u0422\u0440\u044a\u043d\u0441\u043a\u0430 \u0411\u0430\u043d\u043a\u044f",
+          "source_id": "_research/pernik/mineral/tran_bankya_mineral_evidence_v1.json",
+          "dominant_lithology_context": [
+            "\u0432\u0430\u0440\u043e\u0432\u0438\u0446\u0438 \u043d\u0430 \u0421\u043b\u0438\u0432\u043d\u0438\u0448\u043a\u0430\u0442\u0430 \u0441\u0432\u0438\u0442\u0430"
+          ]
+        },
+        {
+          "area": "Luzhnitsa-Trun structural unit - Triassic regional geology",
+          "source_id": "_research/pernik/zemen/zagorchev_1996_zemen_gorge_geology.pdf",
+          "dominant_lithology_context": [
+            "\u0432\u0430\u0440\u043e\u0432\u0438\u0446\u0438",
+            "\u0434\u043e\u043b\u043e\u043c\u0438\u0442\u0438",
+            "\u043c\u0435\u0440\u0433\u0435\u043b\u043d\u0438 \u043f\u0440\u043e\u0441\u043b\u043e\u0439\u043a\u0438",
+            "\u0433\u043b\u0438\u043d\u0435\u0441\u0442\u0438 \u0448\u0438\u0441\u0442\u0438",
+            "\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438"
+          ],
+          "source_pdf_pages": [
+            2,
+            3
+          ],
+          "evidence_scope": "REGIONAL_TECTONIC_UNIT_ONLY",
+          "verified_local_polygon": false,
+          "local_depth_contacts_established": false
+        },
+        {
+          "area": "Luzhnitsa-Trun structural unit - Jurassic regional geology",
+          "source_id": "_research/pernik/zemen/zagorchev_1996_zemen_gorge_geology.pdf",
+          "dominant_lithology_context": [
+            "\u043f\u044f\u0441\u044a\u0447\u043d\u0438\u0446\u0438",
+            "\u0432\u0430\u0440\u043e\u0432\u0438\u0446\u0438",
+            "\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438",
+            "\u0448\u0438\u0441\u0442\u0438",
+            "\u043c\u0435\u0440\u0433\u0435\u043b\u0438"
+          ],
+          "source_pdf_pages": [
+            2,
+            3
+          ],
+          "evidence_scope": "REGIONAL_TECTONIC_UNIT_ONLY",
+          "verified_local_polygon": false,
+          "local_depth_contacts_established": false
+        }
+      ],
+      "documented_reference_intervals": [],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "source_ids": [
+        "_research/pernik/mineral/tran_bankya_mineral_evidence_v1.json",
+        "_research/pernik/zemen/zagorchev_1996_zemen_gorge_geology.pdf"
+      ]
+    }
+  }
+}

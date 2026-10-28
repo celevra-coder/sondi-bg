@@ -1,0 +1,77 @@
+{
+  "zones": {
+    "PER-M-PER19-Z01": {
+      "regional_structural_context": [
+        {
+          "area": "\u041f\u043e\u0440\u043e\u0432\u0438 \u0432\u043e\u0434\u0438 \u0432 \u043d\u0435\u043e\u0433\u0435\u043d - \u0411\u0440\u0435\u0437\u043d\u0438\u043a-\u0417\u0435\u043c\u0435\u043d",
+          "source_id": "_research/pernik/regional/radomir_breznik_zemen_hydrogeology_v1.json",
+          "dominant_lithology_context": [
+            "\u0433\u043b\u0438\u043d\u0438",
+            "\u043f\u044f\u0441\u044a\u0446\u0438",
+            "\u043f\u0435\u0441\u044a\u0447\u043b\u0438\u0432\u0438 \u0433\u043b\u0438\u043d\u0438",
+            "\u0430\u0440\u0433\u0438\u043b\u0438\u0442\u0438",
+            "\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442\u0438"
+          ]
+        },
+        {
+          "area": "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442: Quaternary Radomir-Breznik",
+          "source_id": "_research/pernik/zemen/zemen_regional_geology_70AM.json",
+          "dominant_lithology_context": [
+            "\u0433\u043b\u0438\u043d\u0435\u0441\u0442 \u043f\u044f\u0441\u044a\u043a",
+            "\u043f\u044f\u0441\u044a\u043a \u0438 \u0447\u0430\u043a\u044a\u043b",
+            "\u0433\u043b\u0438\u043d\u0435\u0441\u0442\u0438 \u043f\u0440\u043e\u0441\u043b\u043e\u0439\u043a\u0438"
+          ],
+          "evidence_scope": "REGIONAL_CONTEXT_ONLY",
+          "observation_id": "ZEM-Q-01",
+          "source_pdf_page": 168,
+          "local_depth_contacts_established": false
+        },
+        {
+          "area": "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442: Neogene Breznik-Zemen",
+          "source_id": "_research/pernik/zemen/zemen_regional_geology_70AM.json",
+          "dominant_lithology_context": [
+            "\u0433\u043b\u0438\u043d\u0430",
+            "\u043f\u044f\u0441\u044a\u043a",
+            "\u043f\u044f\u0441\u044a\u0447\u043d\u0438\u043a",
+            "\u0430\u0440\u0433\u0438\u043b\u0438\u0442",
+            "\u043a\u043e\u043d\u0433\u043b\u043e\u043c\u0435\u0440\u0430\u0442"
+          ],
+          "evidence_scope": "REGIONAL_CONTEXT_ONLY",
+          "observation_id": "ZEM-N-01",
+          "source_pdf_page": 168,
+          "local_depth_contacts_established": false
+        },
+        {
+          "area": "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442: Zemen karst basin",
+          "source_id": "_research/pernik/zemen/zemen_regional_geology_70AM.json",
+          "dominant_lithology_context": [
+            "\u0442\u0440\u0438\u0430\u0441\u043a\u0438 \u0432\u0430\u0440\u043e\u0432\u0438\u0446\u0438",
+            "\u0434\u043e\u043b\u043e\u043c\u0438\u0442\u0438"
+          ],
+          "evidence_scope": "REGIONAL_CONTEXT_ONLY",
+          "observation_id": "ZEM-K-01",
+          "source_pdf_page": 170,
+          "local_depth_contacts_established": false
+        },
+        {
+          "area": "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u0433\u0435\u043e\u043b\u043e\u0436\u043a\u0438 \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442: Elovdol karst basin",
+          "source_id": "_research/pernik/zemen/zemen_regional_geology_70AM.json",
+          "dominant_lithology_context": [
+            "\u0433\u043e\u0440\u043d\u043e\u0442\u0440\u0438\u0430\u0441\u043a\u0438 \u0432\u0430\u0440\u043e\u0432\u0438\u0446\u0438"
+          ],
+          "evidence_scope": "REGIONAL_CONTEXT_ONLY",
+          "observation_id": "ZEM-K-02",
+          "source_pdf_page": 170,
+          "local_depth_contacts_established": false
+        }
+      ],
+      "documented_reference_intervals": [],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "source_ids": [
+        "_research/pernik/regional/radomir_breznik_zemen_hydrogeology_v1.json",
+        "_research/pernik/zemen/zemen_regional_geology_70AM.json"
+      ]
+    }
+  }
+}

@@ -1886,6 +1886,51 @@ export function getSondiRegionalReport(
       return regionalCards;
     }
 
+
+    // SONDI_PERNIK_READER_OVERVIEW_V4_70FH
+    // Only the six Pernik reader-overview paragraphs are replaced.
+    // Keep all other regional cards and documented borehole intervals.
+    if (/^PER-M-PER(?:08|19|22|32|36|51)$/.test(entry.id)) {
+      const originalCards = makeCards(entry, zone);
+      const readerFile = path.join(
+        process.cwd(),
+        "data",
+        "soil-lithology",
+        "runtime",
+        "regions",
+        "pernik_regional_reader_v4.json"
+      );
+
+      const readerData = JSON.parse(
+        fs.readFileSync(readerFile, "utf8")
+      ) as Record<string, {
+        zone_id: string;
+        paragraphs: string[];
+        sources: string[];
+      }>;
+
+      const selected = readerData[entry.id];
+
+      if (
+        selected &&
+        selected.zone_id === entry.zone_id &&
+        Array.isArray(selected.paragraphs) &&
+        selected.paragraphs.length > 0
+      ) {
+        return originalCards.map(card =>
+          card.id === `${entry.id}-reader-overview`
+            ? {
+                ...card,
+                paragraphs: selected.paragraphs,
+                sources: selected.sources
+              }
+            : card
+        );
+      }
+
+      return originalCards;
+    }
+
     return makeCards(entry, zone);
   }
 

@@ -7336,6 +7336,300 @@
         "Липсва проверена индивидуална литоложка колонка.",
         "Не се прави дълбочинна екстраполация."
       ]
+    },
+    {
+      "borehole_id": "PERNIK_STOMANA_MK1",
+      "name_bg": "Перник – Стомана – MK1",
+      "oblast": "Перник",
+      "region_code": "Pernik",
+      "status": "documented_regional_borehole",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.593861111,
+        "longitude": 23.092130556,
+        "status": "REGIONAL_DOCUMENTED",
+        "evidence_level": "documented_original_drawing",
+        "origin": "pernik_stomana_MK1_MK4_verified_lithology_v1.json"
+      },
+      "total_depth_m": 20.0,
+      "water_type": "unknown",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 3.1,
+          "expected_material_bg": "Пъстра червена и жълтозелена глина",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK1"
+          ]
+        },
+        {
+          "depth_from_m": 3.1,
+          "depth_to_m": 3.8,
+          "expected_material_bg": "Жълт пясък",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK1"
+          ]
+        },
+        {
+          "depth_from_m": 3.8,
+          "depth_to_m": 4.6,
+          "expected_material_bg": "Пясък с дребен чакъл, слабо заглинен",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK1"
+          ]
+        },
+        {
+          "depth_from_m": 4.6,
+          "depth_to_m": 6.3,
+          "expected_material_bg": "Дребен пясък",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK1"
+          ]
+        },
+        {
+          "depth_from_m": 6.3,
+          "depth_to_m": 12.6,
+          "expected_material_bg": "Пъстра глина: червена, жълтозеленикава и сива",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK1"
+          ]
+        },
+        {
+          "depth_from_m": 12.6,
+          "depth_to_m": 20.0,
+          "expected_material_bg": "Червеникавовиолетови аргилити в алтернация със сивозеленикави алевролити",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK1"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": []
+    },
+    {
+      "borehole_id": "PERNIK_STOMANA_MK2",
+      "name_bg": "Перник – Стомана – MK2",
+      "oblast": "Перник",
+      "region_code": "Pernik",
+      "status": "documented_regional_borehole",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.591652778,
+        "longitude": 23.092125,
+        "status": "REGIONAL_DOCUMENTED",
+        "evidence_level": "documented_original_drawing",
+        "origin": "pernik_stomana_MK1_MK4_verified_lithology_v1.json"
+      },
+      "total_depth_m": 20.0,
+      "water_type": "unknown",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 0.5,
+          "expected_material_bg": "Тъмнокафява глина",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK2"
+          ]
+        },
+        {
+          "depth_from_m": 0.5,
+          "depth_to_m": 3.2,
+          "expected_material_bg": "Червена песъчлива глина",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK2"
+          ]
+        },
+        {
+          "depth_from_m": 3.2,
+          "depth_to_m": 7.6,
+          "expected_material_bg": "Алтернация на червени и сивозелени глини",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK2"
+          ]
+        },
+        {
+          "depth_from_m": 7.6,
+          "depth_to_m": 20.0,
+          "expected_material_bg": "Изветрели аргилити до чаклеста глина, сивозелени и червеновиолетови",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK2"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": []
+    },
+    {
+      "borehole_id": "PERNIK_STOMANA_MK3",
+      "name_bg": "Перник – Стомана – MK3",
+      "oblast": "Перник",
+      "region_code": "Pernik",
+      "status": "documented_regional_borehole",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.588802778,
+        "longitude": 23.089827778,
+        "status": "REGIONAL_DOCUMENTED",
+        "evidence_level": "documented_original_drawing",
+        "origin": "pernik_stomana_MK1_MK4_verified_lithology_v1.json"
+      },
+      "total_depth_m": 20.0,
+      "water_type": "unknown",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 0.8,
+          "expected_material_bg": "Тъмнокафява глина",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK3"
+          ]
+        },
+        {
+          "depth_from_m": 0.8,
+          "depth_to_m": 2.2,
+          "expected_material_bg": "Кафява глина",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK3"
+          ]
+        },
+        {
+          "depth_from_m": 2.2,
+          "depth_to_m": 4.5,
+          "expected_material_bg": "Червенокафява песъчлива глина",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK3"
+          ]
+        },
+        {
+          "depth_from_m": 4.5,
+          "depth_to_m": 11.2,
+          "expected_material_bg": "Алтернация на жълтозеленикава и червенокафява глина, пластове 0,80–2,00 м",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK3"
+          ]
+        },
+        {
+          "depth_from_m": 11.2,
+          "depth_to_m": 17.0,
+          "expected_material_bg": "Изветрели сивозеленикави и червеновиолетови аргилити",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK3"
+          ]
+        },
+        {
+          "depth_from_m": 17.0,
+          "depth_to_m": 20.0,
+          "expected_material_bg": "Слабо споен, сивозеленикав, слабо изветрял пясъчник",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK3"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": []
+    },
+    {
+      "borehole_id": "PERNIK_STOMANA_MK4",
+      "name_bg": "Перник – Стомана – MK4",
+      "oblast": "Перник",
+      "region_code": "Pernik",
+      "status": "documented_regional_borehole",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.591552778,
+        "longitude": 23.088908333,
+        "status": "REGIONAL_DOCUMENTED",
+        "evidence_level": "documented_original_drawing",
+        "origin": "pernik_stomana_MK1_MK4_verified_lithology_v1.json"
+      },
+      "total_depth_m": 20.0,
+      "water_type": "unknown",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 0.8,
+          "expected_material_bg": "Тъмнокафява глина",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK4"
+          ]
+        },
+        {
+          "depth_from_m": 0.8,
+          "depth_to_m": 2.2,
+          "expected_material_bg": "Пъстра светлокафява и червена глина с редки дребни чакъли",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK4"
+          ]
+        },
+        {
+          "depth_from_m": 2.2,
+          "depth_to_m": 4.3,
+          "expected_material_bg": "Червена песъчлива глина",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK4"
+          ]
+        },
+        {
+          "depth_from_m": 4.3,
+          "depth_to_m": 8.9,
+          "expected_material_bg": "Сивозелена глина с прослойки от червена глина",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK4"
+          ]
+        },
+        {
+          "depth_from_m": 8.9,
+          "depth_to_m": 20.0,
+          "expected_material_bg": "Изветрели аргилити до чаклеста глина, сивозеленикави и червеновиолетови",
+          "confidence": "high",
+          "evidence_level": "regional_documented_interval",
+          "source_ids": [
+            "PERNIK_STOMANA_MK4"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": []
     }
   ]
 }
