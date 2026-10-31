@@ -30,6 +30,7 @@ import {
   resolveNationalDepthLithology,
   type NationalDepthResult,
 } from "./sondi-national-depth-engine";
+import { getNationalDynamicDepths } from "./sondi-national-dynamic-depths";
 
 type VratsaDocumentedGeologicalContext = {
   zone_id: string;
@@ -1312,7 +1313,7 @@ export async function getLithologyProfile(
    * filtered out, preserving all existing behaviour.
    */
   const spatialDepthCheckpoints =
-    [20, 50, 80, 100, 150, 200, 300, 500];
+    getNationalDynamicDepths(latitude, longitude);
 
   const targetSpatialDepthModel =
     spatialDepthCheckpoints
@@ -1331,15 +1332,7 @@ export async function getLithologyProfile(
   // SONDI_PERNIK_SHALLOW_CHECKPOINTS_70CK
   // Add shallow national checks only inside Pernik.
   // Leave the Vratsa spatial-depth model unchanged.
-  const pernikDepthRegion = resolveNationalDepthLithology({
-    latitude,
-    longitude,
-    depthM: 20,
-  }).region_id?.startsWith("PER-M-") === true;
-
-  const nationalDepthCheckpoints = pernikDepthRegion
-    ? [1, 5, 10, 15, 19, ...spatialDepthCheckpoints]
-    : spatialDepthCheckpoints;
+  const nationalDepthCheckpoints = spatialDepthCheckpoints;
 
   const targetNationalDepthModel =
     nationalDepthCheckpoints.map(depthM =>

@@ -43,7 +43,8 @@ function validCoords(lat: unknown, lon: unknown): boolean {
 
 function normalizeInterval(
   raw: any,
-  regional: boolean
+  regional: boolean,
+  inheritedSourceIds: unknown = []
 ): IndexedInterval | null {
   const from = regional ? raw?.from_m : raw?.depth_from_m;
   const to = regional ? raw?.to_m : raw?.depth_to_m;
@@ -83,11 +84,18 @@ function normalizeInterval(
       : typeof raw.evidence_level === "string"
         ? raw.evidence_level
         : null,
-    source_ids: Array.isArray(raw.source_ids)
-      ? raw.source_ids.filter(
-          (x: unknown): x is string => typeof x === "string"
-        )
-      : [],
+    source_ids: [...new Set([
+      ...(Array.isArray(raw.source_ids)
+        ? raw.source_ids.filter(
+            (x: unknown): x is string => typeof x === "string"
+          )
+        : []),
+      ...(regional && Array.isArray(inheritedSourceIds)
+        ? inheritedSourceIds.filter(
+            (x: unknown): x is string => typeof x === "string"
+          )
+        : [])
+    ])],
   };
 }
 
@@ -161,7 +169,7 @@ export function getNationalBoreholeIndex(): IndexedBorehole[] {
           ? "REGIONAL_DOCUMENTED"
           : "NOT_DOCUMENTED",
         intervals: (hole.intervals ?? [])
-          .map((x: any) => normalizeInterval(x, true))
+          .map((x: any) => normalizeInterval(x, true, hole.source_ids))
           .filter((x: IndexedInterval | null): x is IndexedInterval =>
             x !== null
           ),

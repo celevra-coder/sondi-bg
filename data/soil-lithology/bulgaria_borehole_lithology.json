@@ -19,7 +19,7 @@
     "Пазарджик",
     "Пловдив"
   ],
-  "borehole_count": 104,
+  "borehole_count": 111,
   "boreholes": [
     {
       "borehole_id": "PLD-Z037",
@@ -2872,7 +2872,7 @@
           ]
         },
         {
-          "depth_from_m": 121.0,
+          "depth_from_m": 121,
           "depth_to_m": 246.1,
           "expected_material_bg": "Трахиандезити, напукани, силно променени до бели; началната граница 121,00 м е запазена както е публикувана в източника",
           "confidence": "high",
@@ -2902,7 +2902,7 @@
           ]
         },
         {
-          "depth_from_m": 121.0,
+          "depth_from_m": 121,
           "depth_to_m": 246.1,
           "description_bg": "Напукани, силно променени трахиандезити",
           "evidence_level": "borehole_exact_source_overlap",
@@ -5167,7 +5167,7 @@
       "source_overlaps": [],
       "source_gaps": [],
       "groundwater_discharge": {
-        "technical_possible_flow_l_s": 13.0,
+        "technical_possible_flow_l_s": 13,
         "status": "historical_official_assessment",
         "source_ids": [
           "PLD-S085"
@@ -5175,7 +5175,7 @@
         "notes_bg": "Стойност от балнеологичната оценка от 2015 г.; по-късни режими следва да се пазят отделно при наличие на нов официален източник."
       },
       "water_temperature": {
-        "technical_resource_temperature_c": 58.0,
+        "technical_resource_temperature_c": 58,
         "status": "documented",
         "source_ids": [
           "PLD-S085"
@@ -5232,7 +5232,7 @@
         },
         {
           "depth_from_m": 1.5,
-          "depth_to_m": 63.0,
+          "depth_to_m": 63,
           "expected_material_bg": "Глинести сиво-сини пясъчници",
           "stratigraphy_bg": "Неврокопска свита",
           "confidence": "high",
@@ -5242,8 +5242,8 @@
           ]
         },
         {
-          "depth_from_m": 63.0,
-          "depth_to_m": 64.0,
+          "depth_from_m": 63,
+          "depth_to_m": 64,
           "expected_material_bg": "Гранит, силно грусифициран; среднозърнест биотитов гранит",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -5252,7 +5252,7 @@
           ]
         },
         {
-          "depth_from_m": 64.0,
+          "depth_from_m": 64,
           "depth_to_m": 145.6,
           "expected_material_bg": "Среднозърнести биотитови гранити",
           "confidence": "high",
@@ -5264,8 +5264,8 @@
       ],
       "structural_intervals": [
         {
-          "depth_from_m": 63.0,
-          "depth_to_m": 64.0,
+          "depth_from_m": 63,
+          "depth_to_m": 64,
           "description_bg": "Силно грусифициран гранит.",
           "evidence_level": "borehole_exact",
           "source_ids": [
@@ -5279,7 +5279,7 @@
         "casing_intervals": [
           {
             "depth_from_m": 0,
-            "depth_to_m": 6.0
+            "depth_to_m": 6
           },
           {
             "depth_from_m": 0,
@@ -5351,12 +5351,12 @@
         "status": "TO_RESEARCH",
         "evidence_level": "official_relative_location_only"
       },
-      "total_depth_m": 156.0,
+      "total_depth_m": 156,
       "water_type": "mineral",
       "lithology": [
         {
           "depth_from_m": 0,
-          "depth_to_m": 10.0,
+          "depth_to_m": 10,
           "expected_material_bg": "Алувиални наслаги - валуни и чакъли с глинесто-песъчлив запълнител",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -5365,7 +5365,7 @@
           ]
         },
         {
-          "depth_from_m": 10.0,
+          "depth_from_m": 10,
           "depth_to_m": 35.2,
           "expected_material_bg": "Гранит - раздробена зона",
           "confidence": "high",
@@ -5376,7 +5376,7 @@
         },
         {
           "depth_from_m": 35.2,
-          "depth_to_m": 74.0,
+          "depth_to_m": 74,
           "expected_material_bg": "Гранит - силно напукан и разложен",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -5385,8 +5385,8 @@
           ]
         },
         {
-          "depth_from_m": 74.0,
-          "depth_to_m": 92.0,
+          "depth_from_m": 74,
+          "depth_to_m": 92,
           "expected_material_bg": "Гранит - раздробена зона",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -5395,8 +5395,8 @@
           ]
         },
         {
-          "depth_from_m": 92.0,
-          "depth_to_m": 156.0,
+          "depth_from_m": 92,
+          "depth_to_m": 156,
           "expected_material_bg": "Здрав гранит",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -5407,7 +5407,7 @@
       ],
       "structural_intervals": [
         {
-          "depth_from_m": 10.0,
+          "depth_from_m": 10,
           "depth_to_m": 35.2,
           "description_bg": "Раздробена зона в гранита.",
           "evidence_level": "borehole_exact",
@@ -5417,7 +5417,7 @@
         },
         {
           "depth_from_m": 35.2,
-          "depth_to_m": 74.0,
+          "depth_to_m": 74,
           "description_bg": "Силно напукан и разложен гранит.",
           "evidence_level": "borehole_exact",
           "source_ids": [
@@ -5425,8 +5425,8 @@
           ]
         },
         {
-          "depth_from_m": 74.0,
-          "depth_to_m": 92.0,
+          "depth_from_m": 74,
+          "depth_to_m": 92,
           "description_bg": "Раздробена зона в гранита.",
           "evidence_level": "borehole_exact",
           "source_ids": [
@@ -5436,28 +5436,28 @@
       ],
       "hydraulic_intervals": [],
       "borehole_construction": {
-        "total_depth_m": 156.0,
+        "total_depth_m": 156,
         "casing_intervals": [
           {
             "depth_from_m": 0,
             "depth_to_m": 6.1
           },
           {
-            "depth_from_m": 17.0,
-            "depth_to_m": 74.0
+            "depth_from_m": 17,
+            "depth_to_m": 74
           }
         ],
         "drilled_intervals": [
           {
             "depth_from_m": 6.1,
-            "depth_to_m": 17.0,
+            "depth_to_m": 17,
             "diameter_mm": 146
           }
         ],
         "open_hole_intervals": [
           {
-            "depth_from_m": 74.0,
-            "depth_to_m": 156.0,
+            "depth_from_m": 74,
+            "depth_to_m": 156,
             "diameter_mm": 108
           }
         ],
@@ -5838,7 +5838,7 @@
       "source_overlaps": [],
       "source_gaps": [],
       "groundwater_discharge": {
-        "technical_possible_flow_l_s": 1.0,
+        "technical_possible_flow_l_s": 1,
         "status": "documented",
         "source_ids": [
           "PLD-S091"
@@ -5885,11 +5885,11 @@
         "evidence_level": "no_verified_facility_coordinate",
         "origin": "pazardzhik_lithology_research"
       },
-      "total_depth_m": 150.0,
+      "total_depth_m": 150,
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 12.8,
           "expected_material_bg": "едър, ръбест блокаж и чакъли с песъчливо-глинест запълнител",
           "confidence": "high",
@@ -5900,7 +5900,7 @@
         },
         {
           "depth_from_m": 12.8,
-          "depth_to_m": 60.0,
+          "depth_to_m": 60,
           "expected_material_bg": "биотитови гнайси, инжектирани с пегматит и на места изветрели",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -5909,8 +5909,8 @@
           ]
         },
         {
-          "depth_from_m": 60.0,
-          "depth_to_m": 70.0,
+          "depth_from_m": 60,
+          "depth_to_m": 70,
           "expected_material_bg": "тектонична зона",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -5919,8 +5919,8 @@
           ]
         },
         {
-          "depth_from_m": 70.0,
-          "depth_to_m": 72.0,
+          "depth_from_m": 70,
+          "depth_to_m": 72,
           "expected_material_bg": "гнайси, здрави",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -5929,8 +5929,8 @@
           ]
         },
         {
-          "depth_from_m": 72.0,
-          "depth_to_m": 150.0,
+          "depth_from_m": 72,
+          "depth_to_m": 150,
           "expected_material_bg": "биотитови гнайси, сивочерни, напукани",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -5941,8 +5941,8 @@
       ],
       "structural_intervals": [
         {
-          "depth_from_m": 60.0,
-          "depth_to_m": 70.0,
+          "depth_from_m": 60,
+          "depth_to_m": 70,
           "type": "documented_structural_zone",
           "description_bg": "тектонична зона",
           "evidence_level": "borehole_exact",
@@ -5979,11 +5979,11 @@
         "evidence_level": "no_verified_facility_coordinate",
         "origin": "pazardzhik_lithology_research"
       },
-      "total_depth_m": 140.0,
+      "total_depth_m": 140,
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 6.6,
           "expected_material_bg": "чакъли, пясъци, валуни, песъчливи материали",
           "confidence": "high",
@@ -5994,7 +5994,7 @@
         },
         {
           "depth_from_m": 6.6,
-          "depth_to_m": 140.0,
+          "depth_to_m": 140,
           "expected_material_bg": "биотитови гнайси, сивочерни, напукани, окварцени, с пегматитови жили до 1 m, с тектонични зони",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6032,12 +6032,12 @@
         "evidence_level": "no_verified_facility_coordinate",
         "origin": "pazardzhik_lithology_research"
       },
-      "total_depth_m": 230.0,
+      "total_depth_m": 230,
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 6.0,
+          "depth_from_m": 0,
+          "depth_to_m": 6,
           "expected_material_bg": "ръбести скални късове с глинесто-песъчлив запълнител",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6046,8 +6046,8 @@
           ]
         },
         {
-          "depth_from_m": 6.0,
-          "depth_to_m": 160.0,
+          "depth_from_m": 6,
+          "depth_to_m": 160,
           "expected_material_bg": "биотитови гнайси, сивочерни, напукани, окварцени, с пегматитови жили до 1 m",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6056,8 +6056,8 @@
           ]
         },
         {
-          "depth_from_m": 160.0,
-          "depth_to_m": 220.0,
+          "depth_from_m": 160,
+          "depth_to_m": 220,
           "expected_material_bg": "тектонична зона",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6066,8 +6066,8 @@
           ]
         },
         {
-          "depth_from_m": 220.0,
-          "depth_to_m": 230.0,
+          "depth_from_m": 220,
+          "depth_to_m": 230,
           "expected_material_bg": "биотитови гнайси",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6078,8 +6078,8 @@
       ],
       "structural_intervals": [
         {
-          "depth_from_m": 160.0,
-          "depth_to_m": 220.0,
+          "depth_from_m": 160,
+          "depth_to_m": 220,
           "type": "documented_structural_zone",
           "description_bg": "тектонична зона",
           "evidence_level": "borehole_exact",
@@ -6116,11 +6116,11 @@
         "evidence_level": "no_verified_facility_coordinate",
         "origin": "pazardzhik_lithology_research"
       },
-      "total_depth_m": 502.0,
+      "total_depth_m": 502,
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 48.8,
           "expected_material_bg": "биотитови гнайси, среднозърнести, силно напукани",
           "confidence": "high",
@@ -6191,7 +6191,7 @@
         },
         {
           "depth_from_m": 412.2,
-          "depth_to_m": 502.0,
+          "depth_to_m": 502,
           "expected_material_bg": "амфибол-биотитови гнайси, напукани с пегматитови инжекции",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6240,11 +6240,11 @@
         "evidence_level": "no_verified_facility_coordinate",
         "origin": "pazardzhik_lithology_research"
       },
-      "total_depth_m": 295.0,
+      "total_depth_m": 295,
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 40.4,
           "expected_material_bg": "кватернерни и плиоценски наслаги",
           "confidence": "high",
@@ -6265,7 +6265,7 @@
         },
         {
           "depth_from_m": 266.5,
-          "depth_to_m": 295.0,
+          "depth_to_m": 295,
           "expected_material_bg": "разлом",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6277,7 +6277,7 @@
       "structural_intervals": [
         {
           "depth_from_m": 266.5,
-          "depth_to_m": 295.0,
+          "depth_to_m": 295,
           "type": "documented_structural_zone",
           "description_bg": "разлом",
           "evidence_level": "borehole_exact",
@@ -6318,8 +6318,8 @@
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 126.0,
+          "depth_from_m": 0,
+          "depth_to_m": 126,
           "expected_material_bg": "кватернерни и плиоценски наслаги; в интервала 78.50-82.00 m са пресечени прослойки от лигнитни въглища с мощност около 0.30 m",
           "confidence": "high",
           "evidence_level": "borehole_exact_partial_column",
@@ -6328,8 +6328,8 @@
           ]
         },
         {
-          "depth_from_m": 126.0,
-          "depth_to_m": 147.0,
+          "depth_from_m": 126,
+          "depth_to_m": 147,
           "expected_material_bg": "биотитови гнайси, дребно до среднозърнести",
           "confidence": "high",
           "evidence_level": "borehole_exact_partial_column",
@@ -6343,7 +6343,7 @@
       "source_overlaps": [],
       "source_gaps": [
         {
-          "depth_from_m": 147.0,
+          "depth_from_m": 147,
           "depth_to_m": 485.5,
           "reason": "Lithology not documented in the reviewed source. No extrapolation performed.",
           "source_ids": [
@@ -6376,11 +6376,11 @@
         "evidence_level": "no_verified_facility_coordinate",
         "origin": "pazardzhik_lithology_research"
       },
-      "total_depth_m": 271.0,
+      "total_depth_m": 271,
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 1.2,
           "expected_material_bg": "чакъли, кватернер",
           "confidence": "high",
@@ -6391,7 +6391,7 @@
         },
         {
           "depth_from_m": 1.2,
-          "depth_to_m": 35.0,
+          "depth_to_m": 35,
           "expected_material_bg": "конгломерати, гранитни материали, неоген",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6400,8 +6400,8 @@
           ]
         },
         {
-          "depth_from_m": 35.0,
-          "depth_to_m": 271.0,
+          "depth_from_m": 35,
+          "depth_to_m": 271,
           "expected_material_bg": "гранитогнайси, напукани, с карбонат по пукнатините и пиритни прояви",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6443,7 +6443,7 @@
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 0.7,
           "expected_material_bg": "глина, песъчлива, кафява, с чакъли",
           "confidence": "high",
@@ -6454,7 +6454,7 @@
         },
         {
           "depth_from_m": 0.7,
-          "depth_to_m": 1.0,
+          "depth_to_m": 1,
           "expected_material_bg": "глина, песъчлива, сива",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6463,7 +6463,7 @@
           ]
         },
         {
-          "depth_from_m": 1.0,
+          "depth_from_m": 1,
           "depth_to_m": 1.5,
           "expected_material_bg": "пясък и чакъл",
           "confidence": "high",
@@ -6526,7 +6526,7 @@
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 1.7,
           "expected_material_bg": "валуни с глинесто-песъчлив запълнител",
           "confidence": "high",
@@ -6579,8 +6579,8 @@
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 2.0,
+          "depth_from_m": 0,
+          "depth_to_m": 2,
           "expected_material_bg": "валуни с глинесто-песъчлив запълнител",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6589,7 +6589,7 @@
           ]
         },
         {
-          "depth_from_m": 2.0,
+          "depth_from_m": 2,
           "depth_to_m": 101.4,
           "expected_material_bg": "гранитогнайс, биотит-амфиболов, с пегматитови жили, силно напукан в отделни участъци",
           "confidence": "high",
@@ -6628,11 +6628,11 @@
         "evidence_level": "official_facility_coordinate",
         "origin": "mineral_water_master:mw_724e20e5fe0d26f4"
       },
-      "total_depth_m": 246.0,
+      "total_depth_m": 246,
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 6.5,
           "expected_material_bg": "чакъли и валуни от гранитогнайси, мрамори и гранити, късове 4-15 cm",
           "confidence": "high",
@@ -6643,7 +6643,7 @@
         },
         {
           "depth_from_m": 6.5,
-          "depth_to_m": 246.0,
+          "depth_to_m": 246,
           "expected_material_bg": "гранитогнайси, в началото слабо изветрели, сиви, дребно до среднозърнести, напукани",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6685,8 +6685,8 @@
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 2.0,
+          "depth_from_m": 0,
+          "depth_to_m": 2,
           "expected_material_bg": "много здрав конгломерат от гранитови, гнайсови и пегматитови късове и валуни",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6695,8 +6695,8 @@
           ]
         },
         {
-          "depth_from_m": 2.0,
-          "depth_to_m": 25.0,
+          "depth_from_m": 2,
+          "depth_to_m": 25,
           "expected_material_bg": "гнайсови, гранитови и пегматитови валуни с глинесто-песъчлив запълнител",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6705,7 +6705,7 @@
           ]
         },
         {
-          "depth_from_m": 25.0,
+          "depth_from_m": 25,
           "depth_to_m": 37.8,
           "expected_material_bg": "грубозърнест пясъчник с чакъли, алтерниращи пластове с чакъли",
           "confidence": "high",
@@ -6764,12 +6764,12 @@
         "evidence_level": "official_facility_coordinate",
         "origin": "mineral_water_master:mw_86298c6e69df230f"
       },
-      "total_depth_m": 159.0,
+      "total_depth_m": 159,
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 47.0,
+          "depth_from_m": 0,
+          "depth_to_m": 47,
           "expected_material_bg": "пясъци, чакъли и валуни с глинести прослойки",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6778,8 +6778,8 @@
           ]
         },
         {
-          "depth_from_m": 47.0,
-          "depth_to_m": 92.0,
+          "depth_from_m": 47,
+          "depth_to_m": 92,
           "expected_material_bg": "гранити, променени, брекчирани, милонитизирани и грусирани; грусиране 51-56 m",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6788,8 +6788,8 @@
           ]
         },
         {
-          "depth_from_m": 92.0,
-          "depth_to_m": 100.0,
+          "depth_from_m": 92,
+          "depth_to_m": 100,
           "expected_material_bg": "разломна зона",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6798,8 +6798,8 @@
           ]
         },
         {
-          "depth_from_m": 100.0,
-          "depth_to_m": 159.0,
+          "depth_from_m": 100,
+          "depth_to_m": 159,
           "expected_material_bg": "гранити, дребнозърнести, слабо напукани, с кварцови инжекции и карбонат по пукнатините",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6810,8 +6810,8 @@
       ],
       "structural_intervals": [
         {
-          "depth_from_m": 92.0,
-          "depth_to_m": 100.0,
+          "depth_from_m": 92,
+          "depth_to_m": 100,
           "type": "documented_structural_zone",
           "description_bg": "разломна зона",
           "evidence_level": "borehole_exact",
@@ -6848,12 +6848,12 @@
         "evidence_level": "no_verified_facility_coordinate",
         "origin": "pazardzhik_lithology_research"
       },
-      "total_depth_m": 404.0,
+      "total_depth_m": 404,
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 40.0,
+          "depth_from_m": 0,
+          "depth_to_m": 40,
           "expected_material_bg": "делувиални наслаги и валуни от андезити и риолити с песъчливо-глинест запълнител",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6862,8 +6862,8 @@
           ]
         },
         {
-          "depth_from_m": 40.0,
-          "depth_to_m": 62.0,
+          "depth_from_m": 40,
+          "depth_to_m": 62,
           "expected_material_bg": "пясъчници, светлосиви, дребнозърнести",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6872,8 +6872,8 @@
           ]
         },
         {
-          "depth_from_m": 62.0,
-          "depth_to_m": 290.0,
+          "depth_from_m": 62,
+          "depth_to_m": 290,
           "expected_material_bg": "риолити, розови, среднопорфирни, напукани и натрошени, с лимонитизация и хематизация по пукнатините",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6882,8 +6882,8 @@
           ]
         },
         {
-          "depth_from_m": 290.0,
-          "depth_to_m": 324.0,
+          "depth_from_m": 290,
+          "depth_to_m": 324,
           "expected_material_bg": "разломна зона; риолити силно променени, милонитизирани, хидротермално изменени и брекчирани",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6892,8 +6892,8 @@
           ]
         },
         {
-          "depth_from_m": 324.0,
-          "depth_to_m": 361.0,
+          "depth_from_m": 324,
+          "depth_to_m": 361,
           "expected_material_bg": "риолити, розови до сиворозови, среднопорфирни, напукани и натрошени",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6902,8 +6902,8 @@
           ]
         },
         {
-          "depth_from_m": 361.0,
-          "depth_to_m": 404.0,
+          "depth_from_m": 361,
+          "depth_to_m": 404,
           "expected_material_bg": "риолити, розови, среднопорфирни, променени и грусирани в 361-371 m, напукани, на места излужени и брекчирани, с карбонатни налепи",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6914,8 +6914,8 @@
       ],
       "structural_intervals": [
         {
-          "depth_from_m": 290.0,
-          "depth_to_m": 324.0,
+          "depth_from_m": 290,
+          "depth_to_m": 324,
           "type": "documented_structural_zone",
           "description_bg": "разломна зона; риолити силно променени, милонитизирани, хидротермално изменени и брекчирани",
           "evidence_level": "borehole_exact",
@@ -6956,7 +6956,7 @@
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 9.2,
           "expected_material_bg": "глинесто-песъчливи отложения - алувий",
           "confidence": "high",
@@ -6987,7 +6987,7 @@
         },
         {
           "depth_from_m": 139.8,
-          "depth_to_m": 295.0,
+          "depth_to_m": 295,
           "expected_material_bg": "гранит, средно до едрозърнест - палеозой",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -6996,8 +6996,8 @@
           ]
         },
         {
-          "depth_from_m": 295.0,
-          "depth_to_m": 335.0,
+          "depth_from_m": 295,
+          "depth_to_m": 335,
           "expected_material_bg": "гранит, средно до едрозърнест, слабо напукан - палеозой",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -7006,7 +7006,7 @@
           ]
         },
         {
-          "depth_from_m": 335.0,
+          "depth_from_m": 335,
           "depth_to_m": 485.7,
           "expected_material_bg": "гранит, среднозърнест, напукан - палеозой",
           "confidence": "high",
@@ -7045,12 +7045,12 @@
         "evidence_level": "official_facility_coordinate",
         "origin": "mineral_water_master:mw_136837cfbe19195a"
       },
-      "total_depth_m": 428.0,
+      "total_depth_m": 428,
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 61.0,
+          "depth_from_m": 0,
+          "depth_to_m": 61,
           "expected_material_bg": "неоген-кватернерна покривка",
           "confidence": "high",
           "evidence_level": "borehole_exact_partial_column",
@@ -7064,8 +7064,8 @@
       "source_overlaps": [],
       "source_gaps": [
         {
-          "depth_from_m": 61.0,
-          "depth_to_m": 428.0,
+          "depth_from_m": 61,
+          "depth_to_m": 428,
           "reason": "Lithology not documented in the reviewed source. No extrapolation performed.",
           "source_ids": [
             "PLD-S107"
@@ -8118,12 +8118,12 @@
         "evidence_level": "no_verified_facility_coordinate",
         "origin": "plovdiv_lithology_research"
       },
-      "total_depth_m": 322.0,
+      "total_depth_m": 322,
       "water_type": "not_classified",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 22.0,
+          "depth_from_m": 0,
+          "depth_to_m": 22,
           "expected_material_bg": "Валуни и чакъли с глинесто-песъчлив запълнител",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8132,7 +8132,7 @@
           ]
         },
         {
-          "depth_from_m": 22.0,
+          "depth_from_m": 22,
           "depth_to_m": 37.67,
           "expected_material_bg": "Биотитов гранитогнайс, силно изветрял",
           "confidence": "high",
@@ -8143,7 +8143,7 @@
         },
         {
           "depth_from_m": 37.67,
-          "depth_to_m": 156.0,
+          "depth_to_m": 156,
           "expected_material_bg": "Редуване на гранитогнайс, слабо напукан и тектонски натрошен",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8152,8 +8152,8 @@
           ]
         },
         {
-          "depth_from_m": 156.0,
-          "depth_to_m": 181.0,
+          "depth_from_m": 156,
+          "depth_to_m": 181,
           "expected_material_bg": "Гранит, здрав",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8162,8 +8162,8 @@
           ]
         },
         {
-          "depth_from_m": 181.0,
-          "depth_to_m": 254.0,
+          "depth_from_m": 181,
+          "depth_to_m": 254,
           "expected_material_bg": "Гранитогнайс, напукан и на места натрошен",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8172,8 +8172,8 @@
           ]
         },
         {
-          "depth_from_m": 254.0,
-          "depth_to_m": 299.0,
+          "depth_from_m": 254,
+          "depth_to_m": 299,
           "expected_material_bg": "Гранит, силно напукан",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8182,8 +8182,8 @@
           ]
         },
         {
-          "depth_from_m": 299.0,
-          "depth_to_m": 312.0,
+          "depth_from_m": 299,
+          "depth_to_m": 312,
           "expected_material_bg": "Гранит, тектонски стрита зона",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8192,8 +8192,8 @@
           ]
         },
         {
-          "depth_from_m": 312.0,
-          "depth_to_m": 322.0,
+          "depth_from_m": 312,
+          "depth_to_m": 322,
           "expected_material_bg": "Гнайс с кварцови жили, тектонски стрита зона",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8242,11 +8242,11 @@
         "evidence_level": "no_verified_facility_coordinate",
         "origin": "plovdiv_lithology_research"
       },
-      "total_depth_m": 520.0,
+      "total_depth_m": 520,
       "water_type": "not_classified",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 1.4,
           "expected_material_bg": "Почвен слой",
           "confidence": "high",
@@ -8257,7 +8257,7 @@
         },
         {
           "depth_from_m": 1.4,
-          "depth_to_m": 9.0,
+          "depth_to_m": 9,
           "expected_material_bg": "Гранит-порфир, изветрял",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8266,8 +8266,8 @@
           ]
         },
         {
-          "depth_from_m": 9.0,
-          "depth_to_m": 14.0,
+          "depth_from_m": 9,
+          "depth_to_m": 14,
           "expected_material_bg": "Напълно променена масивна скала",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8276,8 +8276,8 @@
           ]
         },
         {
-          "depth_from_m": 14.0,
-          "depth_to_m": 99.0,
+          "depth_from_m": 14,
+          "depth_to_m": 99,
           "expected_material_bg": "Гранит, слабо напукан",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8286,8 +8286,8 @@
           ]
         },
         {
-          "depth_from_m": 99.0,
-          "depth_to_m": 160.0,
+          "depth_from_m": 99,
+          "depth_to_m": 160,
           "expected_material_bg": "Гранит, тъмносив, средно- до едрозърнест",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8296,8 +8296,8 @@
           ]
         },
         {
-          "depth_from_m": 160.0,
-          "depth_to_m": 346.0,
+          "depth_from_m": 160,
+          "depth_to_m": 346,
           "expected_material_bg": "Гранит, на места доста напукан",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8306,8 +8306,8 @@
           ]
         },
         {
-          "depth_from_m": 346.0,
-          "depth_to_m": 520.0,
+          "depth_from_m": 346,
+          "depth_to_m": 520,
           "expected_material_bg": "Гранодиорити, здрави, само в отделни участъци напукани",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8356,7 +8356,7 @@
       "water_type": "not_classified",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 8.4,
           "expected_material_bg": "Травертинови отложения",
           "confidence": "high",
@@ -8377,7 +8377,7 @@
         },
         {
           "depth_from_m": 15.4,
-          "depth_to_m": 19.0,
+          "depth_to_m": 19,
           "expected_material_bg": "Тектонска стрита зона — сивозелени глини",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8386,8 +8386,8 @@
           ]
         },
         {
-          "depth_from_m": 19.0,
-          "depth_to_m": 29.0,
+          "depth_from_m": 19,
+          "depth_to_m": 29,
           "expected_material_bg": "Гнайси, силно напукани",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8396,7 +8396,7 @@
           ]
         },
         {
-          "depth_from_m": 29.0,
+          "depth_from_m": 29,
           "depth_to_m": 31.4,
           "expected_material_bg": "Гнайси с кварцови жилки",
           "confidence": "high",
@@ -8470,7 +8470,7 @@
       "source_gaps": [
         {
           "depth_from_m": 19.5,
-          "depth_to_m": 20.0,
+          "depth_to_m": 20,
           "reason": "Lithology for the final 19.5-20.0 m interval is not documented in the reviewed source. No extrapolation performed.",
           "source_ids": [
             "PLD-S122"
@@ -8478,7 +8478,7 @@
         }
       ],
       "groundwater_context": {
-        "documented_level_m": 4.0,
+        "documented_level_m": 4,
         "projected_fluctuation_m": 0.5,
         "note": "Document states groundwater level at 4.0 m during a wet period.",
         "source_ids": [
@@ -8519,7 +8519,7 @@
       "water_type": "mineral",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 4.5,
           "expected_material_bg": "Дребнозърнести сивозеленикави пясъчници; палеоген.",
           "confidence": "high",
@@ -8530,7 +8530,7 @@
         },
         {
           "depth_from_m": 4.5,
-          "depth_to_m": 19.0,
+          "depth_to_m": 19,
           "expected_material_bg": "Песъчливи глини и пясъци, тъмнозелени до черни, плътни, с плоскости на триене; палеоген.",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8539,7 +8539,7 @@
           ]
         },
         {
-          "depth_from_m": 19.0,
+          "depth_from_m": 19,
           "depth_to_m": 36.6,
           "expected_material_bg": "Дребно- и среднозърнести сиви до зеленикави пясъчници с прослойка от тъмносиви до черни песъчливи глини; палеоген.",
           "confidence": "high",
@@ -8560,7 +8560,7 @@
         },
         {
           "depth_from_m": 64.2,
-          "depth_to_m": 411.0,
+          "depth_to_m": 411,
           "expected_material_bg": "Сиви среднозърнести слабонапукани гранити; по пукнатините карбонатни налепи, хематитизация и хлоритизация, с редки пегматитови инжекции. Документирани характерни пукнатини при 192–193, 200–202, 204–213, 223–227, 249–263, 269–271, 275–277, 293–297, 303–306, 388–391, 401–403 m. Палеозой.",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8569,7 +8569,7 @@
           ]
         },
         {
-          "depth_from_m": 411.0,
+          "depth_from_m": 411,
           "depth_to_m": 420.1,
           "expected_material_bg": "Разломна зона, представена от силно изменени, напукани, излужени и на места брекчирани гранити; по пукнатините силно хематитизирани. Палеозой.",
           "confidence": "high",
@@ -8595,30 +8595,30 @@
         "total_depth_m": 444.7,
         "casing_intervals": [
           {
-            "from_m": 0.0,
-            "to_m": 80.0,
+            "from_m": 0,
+            "to_m": 80,
             "diameter_mm": 168,
             "cemented": true
           },
           {
-            "from_m": 387.0,
-            "to_m": 394.0,
+            "from_m": 387,
+            "to_m": 394,
             "diameter_mm": 127
           }
         ],
         "open_hole_intervals": [
           {
-            "from_m": 80.0,
+            "from_m": 80,
             "to_m": 117.3,
             "diameter_mm": 150
           },
           {
             "from_m": 117.3,
-            "to_m": 387.0,
+            "to_m": 387,
             "diameter_mm": 130
           },
           {
-            "from_m": 394.0,
+            "from_m": 394,
             "to_m": 444.7,
             "diameter_mm": 127
           }
@@ -8661,8 +8661,8 @@
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 31.0,
+          "depth_from_m": 0,
+          "depth_to_m": 31,
           "expected_material_bg": "Чакъли и валуни с песъчлив запълнител, алувий",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8671,8 +8671,8 @@
           ]
         },
         {
-          "depth_from_m": 31.0,
-          "depth_to_m": 50.0,
+          "depth_from_m": 31,
+          "depth_to_m": 50,
           "expected_material_bg": "Глинести пясъци",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8681,7 +8681,7 @@
           ]
         },
         {
-          "depth_from_m": 50.0,
+          "depth_from_m": 50,
           "depth_to_m": 114.4,
           "expected_material_bg": "Редуване на глини и пясъци",
           "confidence": "high",
@@ -8768,20 +8768,20 @@
         "construction_year": 1978,
         "casing_intervals": [
           {
-            "from_m": 0.0,
+            "from_m": 0,
             "to_m": 45.9,
             "diameter_mm": 168
           },
           {
             "from_m": 45.9,
-            "to_m": 116.0,
+            "to_m": 116,
             "diameter_mm": 146
           }
         ],
-        "cemented_to_m": 116.0,
+        "cemented_to_m": 116,
         "open_hole_intervals": [
           {
-            "from_m": 116.0,
+            "from_m": 116,
             "to_m": 279.2,
             "diameter_mm": 130
           }
@@ -8824,8 +8824,8 @@
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 8.0,
+          "depth_from_m": 0,
+          "depth_to_m": 8,
           "expected_material_bg": "Сивокафяви песъчливи глини със заоблени скални късове",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8834,8 +8834,8 @@
           ]
         },
         {
-          "depth_from_m": 8.0,
-          "depth_to_m": 20.0,
+          "depth_from_m": 8,
+          "depth_to_m": 20,
           "expected_material_bg": "Дребнозърнести и едрозърнести глинести пясъци",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8844,8 +8844,8 @@
           ]
         },
         {
-          "depth_from_m": 20.0,
-          "depth_to_m": 22.0,
+          "depth_from_m": 20,
+          "depth_to_m": 22,
           "expected_material_bg": "Едрозърнести гравийни пясъци",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8854,8 +8854,8 @@
           ]
         },
         {
-          "depth_from_m": 22.0,
-          "depth_to_m": 29.0,
+          "depth_from_m": 22,
+          "depth_to_m": 29,
           "expected_material_bg": "Сивокафяви песъчливи глини",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8864,8 +8864,8 @@
           ]
         },
         {
-          "depth_from_m": 29.0,
-          "depth_to_m": 121.0,
+          "depth_from_m": 29,
+          "depth_to_m": 121,
           "expected_material_bg": "Пясъчници със слаба глинеста спойка, прослойки от гравий и едрозърнести пясъчници; напукани",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8874,8 +8874,8 @@
           ]
         },
         {
-          "depth_from_m": 121.0,
-          "depth_to_m": 186.0,
+          "depth_from_m": 121,
+          "depth_to_m": 186,
           "expected_material_bg": "Средно до едрозърнести пясъчници с конгломератни прослойки и късове от диорити, гранитогнайси и гнайси",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8884,7 +8884,7 @@
           ]
         },
         {
-          "depth_from_m": 186.0,
+          "depth_from_m": 186,
           "depth_to_m": 198.1,
           "expected_material_bg": "Едрозърнести пясъци с прослойки от въглища и чакълни късове",
           "confidence": "high",
@@ -8915,7 +8915,7 @@
         },
         {
           "depth_from_m": 303.5,
-          "depth_to_m": 362.0,
+          "depth_to_m": 362,
           "expected_material_bg": "Среднозърнести гранодиорити, слабо напукани; много пукнатини са запълнени с калцит",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -8924,7 +8924,7 @@
           ]
         },
         {
-          "depth_from_m": 362.0,
+          "depth_from_m": 362,
           "depth_to_m": 418.7,
           "expected_material_bg": "Среднозърнести гранодиорити, силно тектонски напукани",
           "confidence": "high",
@@ -8941,20 +8941,20 @@
         "construction_year": 1964,
         "casing_intervals": [
           {
-            "from_m": 0.0,
-            "to_m": 29.0,
+            "from_m": 0,
+            "to_m": 29,
             "diameter_mm": 146,
             "cemented": true
           },
           {
-            "from_m": 29.0,
+            "from_m": 29,
             "to_m": 313.2,
             "diameter_mm": 127
           }
         ],
         "cemented_interval_m": {
-          "from_m": 250.0,
-          "to_m": 313.0
+          "from_m": 250,
+          "to_m": 313
         },
         "open_hole_intervals": [
           {
@@ -8990,7 +8990,7 @@
       "region_code": "Sofia",
       "zone_type": "site_specific",
       "status": "documented_exact_lithological_profile",
-      "total_depth_m": 200.0,
+      "total_depth_m": 200,
       "coordinates": {
         "latitude": 42.79775,
         "longitude": 23.1719333,
@@ -9001,8 +9001,8 @@
       "water_type": "mineral",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 12.0,
+          "depth_from_m": 0,
+          "depth_to_m": 12,
           "expected_material_bg": "Кватернерни материали",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -9011,8 +9011,8 @@
           ]
         },
         {
-          "depth_from_m": 12.0,
-          "depth_to_m": 145.0,
+          "depth_from_m": 12,
+          "depth_to_m": 145,
           "expected_material_bg": "Неогенски материали – Лозенецка и Новиискърска свита",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -9021,8 +9021,8 @@
           ]
         },
         {
-          "depth_from_m": 145.0,
-          "depth_to_m": 200.0,
+          "depth_from_m": 145,
+          "depth_to_m": 200,
           "expected_material_bg": "Горнокредни напукани пясъчници със силициева спойка с прослойки от глинести мергели",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -9034,7 +9034,7 @@
       "source_gaps": [],
       "source_overlaps": [],
       "borehole_construction": {
-        "total_depth_m": 200.0,
+        "total_depth_m": 200,
         "construction_year": 2000,
         "water_intake_below_m": 151.5,
         "upper_neogene_aquifer_isolated": true,
@@ -9066,7 +9066,7 @@
       "region_code": "Sofia",
       "zone_type": "site_specific",
       "status": "documented_exact_lithological_profile",
-      "total_depth_m": 550.0,
+      "total_depth_m": 550,
       "coordinates": {
         "latitude": 42.6687381,
         "longitude": 23.5222372,
@@ -9077,7 +9077,7 @@
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 73.5,
           "expected_material_bg": "Песъчливи глини, пясъци, глина с чакъли и чакъли; кватернер",
           "confidence": "high",
@@ -9108,7 +9108,7 @@
         },
         {
           "depth_from_m": 464.7,
-          "depth_to_m": 493.0,
+          "depth_to_m": 493,
           "expected_material_bg": "Песъчливи глини; неоген",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -9117,8 +9117,8 @@
           ]
         },
         {
-          "depth_from_m": 493.0,
-          "depth_to_m": 515.0,
+          "depth_from_m": 493,
+          "depth_to_m": 515,
           "expected_material_bg": "Среднозърнести пясъци с песъчливо-глинеста прослойка от 500 до 504 m; неоген",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -9127,8 +9127,8 @@
           ]
         },
         {
-          "depth_from_m": 515.0,
-          "depth_to_m": 550.0,
+          "depth_from_m": 515,
+          "depth_to_m": 550,
           "expected_material_bg": "Песъчливи глини; неоген",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -9140,40 +9140,40 @@
       "source_gaps": [],
       "source_overlaps": [],
       "borehole_construction": {
-        "total_depth_m": 550.0,
+        "total_depth_m": 550,
         "construction_year": 1966,
         "drilling_intervals": [
           {
-            "from_m": 0.0,
+            "from_m": 0,
             "to_m": 138.2,
             "diameter_mm": 150
           },
           {
             "from_m": 138.2,
-            "to_m": 550.0,
+            "to_m": 550,
             "diameter_mm": 130
           }
         ],
         "casing_intervals": [
           {
-            "from_m": 0.0,
+            "from_m": 0,
             "to_m": 138.2,
             "diameter_mm": 146
           },
           {
-            "from_m": 0.0,
-            "to_m": 525.0,
+            "from_m": 0,
+            "to_m": 525,
             "diameter_mm": 108
           }
         ],
         "filter_intervals_m": [
           {
-            "from_m": 451.0,
-            "to_m": 460.0,
+            "from_m": 451,
+            "to_m": 460,
             "diameter_mm": 89
           },
           {
-            "from_m": 493.0,
+            "from_m": 493,
             "to_m": 497.5,
             "diameter_mm": 108
           }
@@ -9205,7 +9205,7 @@
       "region_code": "Sofia",
       "zone_type": "site_specific",
       "status": "documented_exact_lithological_profile",
-      "total_depth_m": 758.0,
+      "total_depth_m": 758,
       "coordinates": {
         "latitude": 42.6717289,
         "longitude": 23.5295917,
@@ -9216,8 +9216,8 @@
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 2.0,
+          "depth_from_m": 0,
+          "depth_to_m": 2,
           "expected_material_bg": "Почвен слой",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -9226,8 +9226,8 @@
           ]
         },
         {
-          "depth_from_m": 2.0,
-          "depth_to_m": 80.0,
+          "depth_from_m": 2,
+          "depth_to_m": 80,
           "expected_material_bg": "Пясъци с прослойки от глини; кватернер",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -9236,7 +9236,7 @@
           ]
         },
         {
-          "depth_from_m": 80.0,
+          "depth_from_m": 80,
           "depth_to_m": 699.6,
           "expected_material_bg": "Песъчливи глини с прослойки от пясъци; неоген",
           "confidence": "high",
@@ -9247,7 +9247,7 @@
         },
         {
           "depth_from_m": 699.6,
-          "depth_to_m": 758.0,
+          "depth_to_m": 758,
           "expected_material_bg": "Доломитизирани варовици; триас",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -9259,11 +9259,11 @@
       "source_gaps": [],
       "source_overlaps": [],
       "borehole_construction": {
-        "total_depth_m": 758.0,
+        "total_depth_m": 758,
         "construction_year": 1985,
         "drilling_intervals": [
           {
-            "from_m": 0.0,
+            "from_m": 0,
             "to_m": 215.5,
             "diameter_mm": 170
           },
@@ -9274,31 +9274,31 @@
           },
           {
             "from_m": 688.5,
-            "to_m": 758.0,
+            "to_m": 758,
             "diameter_mm": 91
           }
         ],
         "casing_intervals": [
           {
-            "from_m": 0.0,
+            "from_m": 0,
             "to_m": 215.5,
             "diameter_mm": 146
           },
           {
-            "from_m": 0.0,
-            "to_m": 684.0,
+            "from_m": 0,
+            "to_m": 684,
             "diameter_mm": 108
           },
           {
-            "from_m": 684.0,
-            "to_m": 758.0,
+            "from_m": 684,
+            "to_m": 758,
             "diameter_mm": 89
           }
         ],
         "filter_intervals_m": [
           {
-            "from_m": 678.0,
-            "to_m": 758.0,
+            "from_m": 678,
+            "to_m": 758,
             "diameter_mm": 146
           }
         ],
@@ -9503,7 +9503,7 @@
       "region_code": "Sofia",
       "zone_type": "site_specific",
       "status": "documented_exact_lithological_profile",
-      "total_depth_m": 652.0,
+      "total_depth_m": 652,
       "coordinates": {
         "latitude": 42.6678286,
         "longitude": 23.5221481,
@@ -12058,7 +12058,7 @@
         "status": "OFFICIAL_EXACT",
         "evidence_level": "official_projected_coordinate_crossvalidated",
         "origin": "Official_MOEW_2023_register",
-        "bgs2005_northing_m": 4729086.0,
+        "bgs2005_northing_m": 4729086,
         "bgs2005_easting_m": 333866.275,
         "source_ids": [
           "SOF-CITY-KRIVINA-C58HG-MH-2024"
@@ -12447,12 +12447,12 @@
         "status": "OFFICIAL_EXACT",
         "evidence_level": "official_site_document_coordinates"
       },
-      "total_depth_m": 4.0,
+      "total_depth_m": 4,
       "water_type": "ordinary",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 4.0,
+          "depth_from_m": 0,
+          "depth_to_m": 4,
           "expected_material_bg": "Алувиални наслаги - руслови и речни тераси (чакъли и пясъци)",
           "confidence": "high",
           "evidence_level": "documented_borehole_log",
@@ -12464,7 +12464,7 @@
       "structural_intervals": [],
       "hydraulic_intervals": [],
       "borehole_construction": {
-        "total_depth_m": 4.0,
+        "total_depth_m": 4,
         "type": "shaft_well",
         "diameter_mm": 800,
         "source_ids": [
@@ -12764,8 +12764,8 @@
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 10.0,
+          "depth_from_m": 0,
+          "depth_to_m": 10,
           "expected_material_bg": "Делувиални отложения от силно заглинени метаморфни късове с размери 2–3 см",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -12774,8 +12774,8 @@
           ]
         },
         {
-          "depth_from_m": 10.0,
-          "depth_to_m": 16.0,
+          "depth_from_m": 10,
+          "depth_to_m": 16,
           "expected_material_bg": "Мрамор, силно окварцен и напукан",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -12784,8 +12784,8 @@
           ]
         },
         {
-          "depth_from_m": 16.0,
-          "depth_to_m": 19.0,
+          "depth_from_m": 16,
+          "depth_to_m": 19,
           "expected_material_bg": "Тектонична зона от глинясали мраморни късове",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -12794,7 +12794,7 @@
           ]
         },
         {
-          "depth_from_m": 19.0,
+          "depth_from_m": 19,
           "depth_to_m": 95.7,
           "expected_material_bg": "Мрамор, на места окварцен, с каверни",
           "confidence": "high",
@@ -12823,7 +12823,7 @@
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
+          "depth_from_m": 0,
           "depth_to_m": 1.2,
           "expected_material_bg": "Песъчлива глина, кафява",
           "confidence": "high",
@@ -12888,12 +12888,12 @@
         "evidence_level": "no_verified_facility_coordinate",
         "origin": "pazardzhik_66U_research"
       },
-      "total_depth_m": 450.0,
+      "total_depth_m": 450,
       "water_type": "mineral_thermal",
       "lithology": [
         {
-          "depth_from_m": 0.0,
-          "depth_to_m": 11.0,
+          "depth_from_m": 0,
+          "depth_to_m": 11,
           "expected_material_bg": "Чакъли и валуни; кватернер",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -12902,8 +12902,8 @@
           ]
         },
         {
-          "depth_from_m": 11.0,
-          "depth_to_m": 59.0,
+          "depth_from_m": 11,
+          "depth_to_m": 59,
           "expected_material_bg": "Пясъчници и граведити; неоген",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -12912,8 +12912,8 @@
           ]
         },
         {
-          "depth_from_m": 59.0,
-          "depth_to_m": 450.0,
+          "depth_from_m": 59,
+          "depth_to_m": 450,
           "expected_material_bg": "Биотитови и амфиболови, гранитизирани гнайси, напукани и нарушени; Богутевска свита, докамбрий",
           "confidence": "high",
           "evidence_level": "borehole_exact",
@@ -12936,7 +12936,7 @@
         "status": "TO_RESEARCH",
         "evidence_level": "official_site_identification"
       },
-      "total_depth_m": 458.0,
+      "total_depth_m": 458,
       "water_type": "mineral_thermal",
       "lithology": [
         {
@@ -13051,7 +13051,7 @@
       },
       "borehole_construction": {
         "year_constructed": 1966,
-        "total_depth_m": 458.0,
+        "total_depth_m": 458,
         "source_ids": [
           "KNL-S023"
         ],
@@ -13069,6 +13069,742 @@
         "identity_verified": true,
         "exact_coordinates_verified": false,
         "research_only_spatial_status": true
+      }
+    },
+    {
+      "borehole_id": "MON-BER-BARZIA-1",
+      "name_bg": "Сондаж № 1",
+      "oblast": "Монтана",
+      "region_code": "Montana",
+      "status": "DOCUMENTED_LITHOLOGY_UNLOCATED",
+      "zone_type": null,
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "exact_wellhead_not_verified",
+        "source_note": "Парцел I, квартал 48, с. Бързия"
+      },
+      "total_depth_m": 425,
+      "water_type": null,
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 138,
+          "expected_material_bg": "Гранити",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71C"
+          ]
+        },
+        {
+          "depth_from_m": 138,
+          "depth_to_m": 236,
+          "expected_material_bg": "Гранити с прослои от диорити",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71C"
+          ]
+        },
+        {
+          "depth_from_m": 236,
+          "depth_to_m": 376,
+          "expected_material_bg": "Редуване на гранити, амфиболити и диорити, хидротермално променени",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71C"
+          ]
+        },
+        {
+          "depth_from_m": 376,
+          "depth_to_m": 378,
+          "expected_material_bg": "Биотитов гнайс",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71C"
+          ]
+        },
+        {
+          "depth_from_m": 378,
+          "depth_to_m": 400,
+          "expected_material_bg": "Гранит",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71C"
+          ]
+        },
+        {
+          "depth_from_m": 400,
+          "depth_to_m": 410,
+          "expected_material_bg": "Диорити, силно гнайсовани и хидротермално променени",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71C"
+          ]
+        },
+        {
+          "depth_from_m": 410,
+          "depth_to_m": 425,
+          "expected_material_bg": "Гранит, здрав дребнокристален",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71C"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": null,
+      "expert_context": {
+        "research_file": "_research/montana/lithology/barzia_borehole_1_verified_71C.json",
+        "settlement": "Бързия",
+        "spatial_projection_approved": false,
+        "wellhead_coordinates_verified": false,
+        "scope": "Documented intervals only at original borehole"
+      }
+    },
+    {
+      "borehole_id": "MON-BER-SLATINA-3HG",
+      "name_bg": "Сондаж № 3хг",
+      "oblast": "Монтана",
+      "region_code": "Montana",
+      "status": "DOCUMENTED_LITHOLOGY_UNLOCATED",
+      "zone_type": null,
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "exact_wellhead_not_verified",
+        "source_note": "УПИ ПИ-289, квартал 40, с. Слатина"
+      },
+      "total_depth_m": 613.1,
+      "water_type": null,
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 2.8,
+          "expected_material_bg": "Кватернерни наслаги – склонов насип",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 2.8,
+          "depth_to_m": 7.5,
+          "expected_material_bg": "Гранодиорит, силно напукан и променен, с калцитни прожилки",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 7.5,
+          "depth_to_m": 13.2,
+          "expected_material_bg": "Гранодиорит с бели до млечнорозови калцитни жили и тектонски фрагменти",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 13.2,
+          "depth_to_m": 19.7,
+          "expected_material_bg": "Напукан гранодиорит с шлирови, зеолитизирани и пиритизирани участъци",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 19.7,
+          "depth_to_m": 38.4,
+          "expected_material_bg": "Сив до розов напукан и процепен гранодиорит с калцитни прожилки",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 38.4,
+          "depth_to_m": 40.8,
+          "expected_material_bg": "Силно окварцена и зеолитизирана контактна зона",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 40.8,
+          "depth_to_m": 87.7,
+          "expected_material_bg": "Среднозърнест сив гранодиорит, слабо променен, с жили, дайки и харниши",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 87.7,
+          "depth_to_m": 96.2,
+          "expected_material_bg": "Силно хидротермално променен гранодиорит",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 96.2,
+          "depth_to_m": 131.5,
+          "expected_material_bg": "Силно напукан гранодиорит с карбонатни жилки",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 131.5,
+          "depth_to_m": 152.8,
+          "expected_material_bg": "Тъмносиви плътни микродиорити с маломощни карбонатни прожилки",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 152.8,
+          "depth_to_m": 224,
+          "expected_material_bg": "Среднозърнест сравнително здрав гранодиорит",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 224,
+          "depth_to_m": 378.1,
+          "expected_material_bg": "Силно напукан и хидротермално променен гранодиорит с карбонатни налепи и харниши",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 378.1,
+          "depth_to_m": 402.9,
+          "expected_material_bg": "Окварцен гранодиорит с дайка, пирит, калцит и кварц",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 402.9,
+          "depth_to_m": 473.8,
+          "expected_material_bg": "Светлосив плътен среднозърнест гранодиорит с карбонатни и зеолитни налепи",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 473.8,
+          "depth_to_m": 545.6,
+          "expected_material_bg": "Тъмносив слабо напукан гранодиорит с кварцови, карбонатни и зеолитни прожилки",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 545.6,
+          "depth_to_m": 605.3,
+          "expected_material_bg": "Светлосив среднозърнест гранодиорит с локални тектонски и вторично променени зони",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        },
+        {
+          "depth_from_m": 605.3,
+          "depth_to_m": 613.1,
+          "expected_material_bg": "Тъмносива дребнозърнеста дайка от микродиорит с калцитни и зеолитни налепи",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71D"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": null,
+      "expert_context": {
+        "research_file": "_research/montana/lithology/slatina_borehole_3hg_verified_71D.json",
+        "settlement": "Слатина",
+        "spatial_projection_approved": false,
+        "wellhead_coordinates_verified": false,
+        "scope": "Documented intervals only at original borehole"
+      }
+    },
+    {
+      "borehole_id": "MON-LOM-AIKON-C1",
+      "name_bg": "С1 - вътре в халето",
+      "oblast": "Монтана",
+      "region_code": "Montana",
+      "status": "DOCUMENTED_LITHOLOGY_UNLOCATED",
+      "zone_type": null,
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "exact_wellhead_not_verified",
+        "source_note": "Промишлена зона на гр. Лом, южно от пристанището"
+      },
+      "total_depth_m": 5,
+      "water_type": null,
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 1,
+          "expected_material_bg": "Паваж и подложка от жълтеникав дребен пясък, на места глинест",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71G"
+          ]
+        },
+        {
+          "depth_from_m": 1,
+          "depth_to_m": 3,
+          "expected_material_bg": "Насип от кафяво-бежова песъчлива глина с хумус и керамика",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71G"
+          ]
+        },
+        {
+          "depth_from_m": 3,
+          "depth_to_m": 3.7,
+          "expected_material_bg": "Кафяво-черна хумусна глина, съвременен почвен хоризонт",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71G"
+          ]
+        },
+        {
+          "depth_from_m": 3.7,
+          "depth_to_m": 4.8,
+          "expected_material_bg": "Алувиална песъчлива глина, бежово-кафява, твърдопластична",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71G"
+          ]
+        },
+        {
+          "depth_from_m": 4.8,
+          "depth_to_m": 5,
+          "expected_material_bg": "Алувиален чакъл с пясък",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71G"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": null,
+      "expert_context": {
+        "research_file": "_research/montana/lithology/lom_two_shallow_boreholes_71G.json",
+        "settlement": "Лом",
+        "spatial_projection_approved": false,
+        "wellhead_coordinates_verified": false,
+        "scope": "Documented intervals only at original borehole"
+      }
+    },
+    {
+      "borehole_id": "MON-LOM-AIKON-C2",
+      "name_bg": "С2 - пред халето",
+      "oblast": "Монтана",
+      "region_code": "Montana",
+      "status": "DOCUMENTED_LITHOLOGY_UNLOCATED",
+      "zone_type": null,
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "exact_wellhead_not_verified",
+        "source_note": "Промишлена зона на гр. Лом, южно от пристанището"
+      },
+      "total_depth_m": 5,
+      "water_type": null,
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 1.7,
+          "expected_material_bg": "Насип от жълтеникав дребен пясък",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71G"
+          ]
+        },
+        {
+          "depth_from_m": 1.7,
+          "depth_to_m": 3,
+          "expected_material_bg": "Насип от кафяво-черна песъчлива глина с хумус и керамика",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71G"
+          ]
+        },
+        {
+          "depth_from_m": 3,
+          "depth_to_m": 3.6,
+          "expected_material_bg": "Кафяво-черна хумусна глина, съвременен почвен хоризонт",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71G"
+          ]
+        },
+        {
+          "depth_from_m": 3.6,
+          "depth_to_m": 4.1,
+          "expected_material_bg": "Алувиална песъчлива глина, бежово-кафява, твърдопластична",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71G"
+          ]
+        },
+        {
+          "depth_from_m": 4.1,
+          "depth_to_m": 5,
+          "expected_material_bg": "Алувиален чакъл с пясък",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "MON-71G"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": null,
+      "expert_context": {
+        "research_file": "_research/montana/lithology/lom_two_shallow_boreholes_71G.json",
+        "settlement": "Лом",
+        "spatial_projection_approved": false,
+        "wellhead_coordinates_verified": false,
+        "scope": "Documented intervals only at original borehole"
+      }
+    },
+    {
+      "borehole_id": "VRA-CTX-002",
+      "name_bg": "B-1a",
+      "oblast": "Враца",
+      "region_code": "Vratsa",
+      "status": "DOCUMENTED_UNLOCATED_REFERENCE_ONLY",
+      "zone_type": "documentary_unlocated",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "site_description_only"
+      },
+      "total_depth_m": null,
+      "water_type": null,
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 7.5,
+          "expected_material_bg": "силтист льос",
+          "stratigraphy": null,
+          "interval_status": null,
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        },
+        {
+          "depth_from_m": 7.5,
+          "depth_to_m": 10,
+          "expected_material_bg": "глинест льос",
+          "stratigraphy": null,
+          "interval_status": null,
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        },
+        {
+          "depth_from_m": 10,
+          "depth_to_m": 10.7,
+          "expected_material_bg": "червена глина",
+          "stratigraphy": null,
+          "interval_status": null,
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        },
+        {
+          "depth_from_m": 10.7,
+          "depth_to_m": null,
+          "expected_material_bg": "плиоценска глина",
+          "stratigraphy": null,
+          "interval_status": "OPEN_ENDED_DOCUMENTED_NOT_DEPTH_PREDICTION",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_ids": [
+        "VRA-S004"
+      ],
+      "expert_context": {
+        "source_research_file": "data/soil-lithology/research/vratsa_borehole_controls_draft.json",
+        "geographic_scope": "UNLOCATED_DOCUMENTARY_ONLY",
+        "spatial_interpolation_allowed": false,
+        "documented_open_ended_interval": true
+      }
+    },
+    {
+      "borehole_id": "VRA-CTX-003",
+      "name_bg": "B-2a",
+      "oblast": "Враца",
+      "region_code": "Vratsa",
+      "status": "DOCUMENTED_UNLOCATED_REFERENCE_ONLY",
+      "zone_type": "documentary_unlocated",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "site_description_only"
+      },
+      "total_depth_m": null,
+      "water_type": null,
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 1.3,
+          "expected_material_bg": "глинест льос",
+          "stratigraphy": null,
+          "interval_status": null,
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        },
+        {
+          "depth_from_m": 1.3,
+          "depth_to_m": 1.8,
+          "expected_material_bg": "червена глина",
+          "stratigraphy": null,
+          "interval_status": null,
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        },
+        {
+          "depth_from_m": 1.8,
+          "depth_to_m": 2,
+          "expected_material_bg": "червена глина с чакъл",
+          "stratigraphy": null,
+          "interval_status": null,
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        },
+        {
+          "depth_from_m": 2,
+          "depth_to_m": 3.4,
+          "expected_material_bg": "глинест чакъл с пясък",
+          "stratigraphy": null,
+          "interval_status": null,
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        },
+        {
+          "depth_from_m": 3.4,
+          "depth_to_m": null,
+          "expected_material_bg": "плиоценска глина",
+          "stratigraphy": null,
+          "interval_status": "OPEN_ENDED_DOCUMENTED_NOT_DEPTH_PREDICTION",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_ids": [
+        "VRA-S004"
+      ],
+      "expert_context": {
+        "source_research_file": "data/soil-lithology/research/vratsa_borehole_controls_draft.json",
+        "geographic_scope": "UNLOCATED_DOCUMENTARY_ONLY",
+        "spatial_interpolation_allowed": false,
+        "documented_open_ended_interval": true
+      }
+    },
+    {
+      "borehole_id": "VRA-CTX-004",
+      "name_bg": "B-2b / Site 3 profile",
+      "oblast": "Враца",
+      "region_code": "Vratsa",
+      "status": "DOCUMENTED_UNLOCATED_REFERENCE_ONLY",
+      "zone_type": "documentary_unlocated",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "NOT_DOCUMENTED",
+        "evidence_level": "site_description_only"
+      },
+      "total_depth_m": null,
+      "water_type": null,
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 1.25,
+          "expected_material_bg": "глинест льос",
+          "stratigraphy": null,
+          "interval_status": null,
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        },
+        {
+          "depth_from_m": 1.25,
+          "depth_to_m": 1.6,
+          "expected_material_bg": "червена глина",
+          "stratigraphy": null,
+          "interval_status": null,
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        },
+        {
+          "depth_from_m": 1.6,
+          "depth_to_m": 1.8,
+          "expected_material_bg": "червена глина с чакъл",
+          "stratigraphy": null,
+          "interval_status": null,
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        },
+        {
+          "depth_from_m": 1.8,
+          "depth_to_m": 2.3,
+          "expected_material_bg": "глинест чакъл с пясък",
+          "stratigraphy": null,
+          "interval_status": null,
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        },
+        {
+          "depth_from_m": 2.3,
+          "depth_to_m": 3.3,
+          "expected_material_bg": "силно карбонатен слой / bioherm",
+          "stratigraphy": null,
+          "interval_status": null,
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        },
+        {
+          "depth_from_m": 3.3,
+          "depth_to_m": null,
+          "expected_material_bg": "плиоценска глина",
+          "stratigraphy": null,
+          "interval_status": "OPEN_ENDED_DOCUMENTED_NOT_DEPTH_PREDICTION",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "VRA-S004"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_ids": [
+        "VRA-S004"
+      ],
+      "expert_context": {
+        "source_research_file": "data/soil-lithology/research/vratsa_borehole_controls_draft.json",
+        "geographic_scope": "UNLOCATED_DOCUMENTARY_ONLY",
+        "spatial_interpolation_allowed": false,
+        "documented_open_ended_interval": true
       }
     }
   ],
@@ -14136,6 +14872,39 @@
       "accessed_date": "2026-10-25",
       "geographic_scope": "гр. Сапарева баня, община Сапарева баня, област Кюстендил",
       "notes": "Официално документирани седем литоложки интервала до 458 m. Точните координати на сондаж №1хг не са потвърдени. Съоръжението е различно от сондаж №10 Гейзера и каптиран извор Галерията. Research: KNL-LITH-023."
+    },
+    {
+      "source_id": "MON-71C",
+      "title": "Балнеологична оценка № 194, 31.05.2021",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "documented_lithological_log",
+      "url": "https://www.mh.government.bg/upload/6712/194-barzia-sondazh1-31-05-2021.pdf",
+      "publication_year": null,
+      "accessed_date": null,
+      "geographic_scope": "Област Монтана",
+      "notes": "Research extraction: barzia_borehole_1_verified_71C.json"
+    },
+    {
+      "source_id": "MON-71D",
+      "title": "Балнеологична оценка № 304 от 23.12.2025",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "documented_lithological_log",
+      "url": "https://www.mh.government.bg/upload/17942/304-Slatina-sondazh%203hg-23-12-2025.pdf",
+      "publication_year": null,
+      "accessed_date": null,
+      "geographic_scope": "Област Монтана",
+      "notes": "Research extraction: slatina_borehole_3hg_verified_71D.json"
+    },
+    {
+      "source_id": "MON-71G",
+      "title": "Доклад за ОВОС, складова база за минерални торове, ПИ 44238.507.215",
+      "institution": "Публикуван на сайта на община Лом",
+      "source_type": "documented_lithological_log",
+      "url": "https://lom.bg/storage-assets/96e10fa5-5630-436e-a1d4-da46b07bc487/OBIAVI/09/20170911_INV_PREDL/01/DOVOS-Aikon_2017.07.pdf",
+      "publication_year": 2017,
+      "accessed_date": null,
+      "geographic_scope": "Област Монтана",
+      "notes": "Research extraction: lom_two_shallow_boreholes_71G.json"
     }
   ]
 }

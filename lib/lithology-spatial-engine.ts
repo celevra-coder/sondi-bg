@@ -1,3 +1,4 @@
+import { combineNationalConfidence } from "./sondi-national-confidence";
 import "server-only";
 
 import fs from "node:fs";
@@ -759,7 +760,7 @@ export function resolveVratsaSpatialContext(
    */
   const combinedConfidence =
     qaRaw
-      ? lowerConfidence(
+      ? combineNationalConfidence(
           zoneConfidence,
           qaConfidence
         )
@@ -840,8 +841,7 @@ export function resolveVratsaSpatialContext(
           ...rawDepthLithology,
 
           confidence:
-            lowerConfidence(
-              combinedConfidence,
+            combineNationalConfidence(combinedConfidence,
               rawDepthLithology.confidence
             ),
         };

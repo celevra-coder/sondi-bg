@@ -1,0 +1,78 @@
+{
+  "zones": {
+    "VRA-Z03": {
+      "regional_structural_context": [
+        {
+          "dominant_lithology_context": [
+            "Документални регионални геоложки алтернативи — конкретният пласт на избраната точка не е установен.",
+            "Възможна алтернатива: Sumer marl",
+            "Възможна алтернатива: Mramoren marl",
+            "Възможна алтернатива: Vratsa Urgonian carbonate complex",
+            "Възможна алтернатива: Pastrina limestone/calcareous marl"
+          ],
+          "regional_units": [],
+          "source_id": "VRA-S057"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "source_ids": [
+        "VRA-S057",
+        "VRA-S058",
+        "VRA-S059",
+        "VRA-S047"
+      ],
+      "research_provenance": {
+        "source_model": "data/soil-lithology/research/vratsa_depth_lithology_model.json",
+        "source_zone": "VRA-Z03",
+        "geographic_scope": "OFFICIAL_MUNICIPALITY_CONTEXT_ONLY",
+        "geology_boundary_verified": false,
+        "exact_depth_prediction_authorized": false,
+        "regional_model_not_a_borehole_log": true,
+        "original_model": "data/soil-lithology/research/vratsa_depth_lithology_model.json",
+        "alternative_materials": [
+          "Sumer marl",
+          "Mramoren marl",
+          "Vratsa Urgonian carbonate complex",
+          "Pastrina limestone/calcareous marl"
+        ],
+        "facies_guards": [
+          "Botunya is a lateral facies equivalent of the Vratsa Urgonian carbonate group.",
+          "Botunya thins westward and pinches out.",
+          "West of Krivodol, Botunya is replaced by Mramoren marl.",
+          "Sumer may overlie either Mramoren or Urgonian units depending on structural/facies position.",
+          "Do not interpolate linearly through these transitions."
+        ],
+        "original_evidence": [
+          {
+            "record_id": "VRA-CTX-015",
+            "status": "SPATIAL_VERTICAL_LITHOLOGY_MODEL",
+            "source_ids": [
+              "VRA-S047"
+            ],
+            "priority_depth_range_m": "0-500+"
+          },
+          {
+            "record_id": "VRA-CTX-025",
+            "status": "REGIONAL_STRUCTURAL_LITHOLOGY_MODEL",
+            "source_ids": [
+              "VRA-S057",
+              "VRA-S058",
+              "VRA-S059"
+            ],
+            "priority_depth_range_m": "0-500+"
+          }
+        ],
+        "confidence_not_transferred": "MEDIUM",
+        "spatial_selector_verified": false,
+        "depth_prediction_authorized": false,
+        "linear_interpolation_authorized": false
+      },
+      "regional_documented_alternatives": [
+        "Sumer marl",
+        "Mramoren marl",
+        "Vratsa Urgonian carbonate complex",
+        "Pastrina limestone/calcareous marl"
+      ]
+    }
+  }
+}

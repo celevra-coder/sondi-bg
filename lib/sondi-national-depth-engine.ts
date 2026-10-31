@@ -1,4 +1,7 @@
+import { resolveNationalDocumentaryDecision, resolveNationalDocumentaryCompatibilityPolicy, applyNationalDocumentaryDecision, getNationalDocumentaryFallback } from "./sondi-national-evidence-engine";
+import { resolveNationalColocatedMaterial, resolveNationalNearbyCandidates } from "./sondi-national-evidence-engine";
 import { getNationalBoreholeResearchReferences } from "./sondi-national-borehole-index";
+import { resolveNationalContactEvidence } from "./sondi-national-evidence-engine";
 import "server-only";
 // Unified national access to documented borehole contacts.
 export {
@@ -15,6 +18,7 @@ export type {
 import { getNationalBoreholeIndex } from "./sondi-national-borehole-index";
 import { resolveStratigraphicResearch, type StratigraphicResearchResult } from "./sondi-national-stratigraphic-interpreter";
 import { resolveNationalCorrelation } from "./sondi-national-correlation";
+import { assessLithologySemantic } from "./sondi-lithology-semantic";
 import { resolveNationalSpatialContacts, type NationalSpatialContact, getNationalDocumentedContactContext, type NationalDocumentedContactContext } from "./sondi-national-contact-spatial";
 
 import { getGeologyAtLocation } from "./geology-location";
@@ -72,6 +76,18 @@ type RegionalContext = {
 };
 
 type RegionalZone = {
+  documented_regional_sequence?: {
+    record_id: string;
+    source_ids: string[];
+    units: Array<{
+      unit: string;
+      probable_material: string;
+      contact_depth: string;
+    }>;
+    exact_contact_depths_verified: false;
+    location_specific_depth_prediction_authorized: false;
+  };
+  regional_documented_alternatives?: string[];
   regional_structural_context?: RegionalContext[];
   documented_reference_intervals?: ReferenceBorehole[];
   source_ids?: string[];
@@ -88,6 +104,18 @@ export type NationalDepthInput = {
 };
 
 export type NationalDepthResult = {
+  regional_sequence_context?: {
+    units: Array<{
+      unit: string;
+      probable_material: string;
+      contact_depth: string;
+    }>;
+    source_ids: string[];
+    interpretation_scope: "REGIONAL_REFERENCE_ONLY";
+    exact_contact_depths_verified: false;
+    depth_prediction_authorized: false;
+  };
+
   status:
     | "OK"
     | "CONDITIONAL"
@@ -559,6 +587,7 @@ function resolveNationalDepthLithologyBase(
   });
 
   if (
+    process.env.SONDI_LEGACY_REGIONAL_MODE === "1" &&
     vratsa.status === "OK" &&
     vratsa.zone.zone_id !== null
   ) {
@@ -704,11 +733,21 @@ function resolveNationalDepthLithologyBase(
         source_scale: surface.sourceScale,
       },
       probable_lithology: null,
-      alternative_lithologies: [],
+      alternative_lithologies:
+        zone.regional_documented_alternatives ?? [],
       confidence: evidence.length
         ? "LOW"
         : "UNRESOLVED",
       evidence,
+      regional_sequence_context: zone.documented_regional_sequence
+        ? {
+            units: zone.documented_regional_sequence.units,
+            source_ids: zone.documented_regional_sequence.source_ids,
+            interpretation_scope: "REGIONAL_REFERENCE_ONLY" as const,
+            exact_contact_depths_verified: false as const,
+            depth_prediction_authorized: false as const
+          }
+        : undefined,
       source_ids: unique(sources),
     };
   }
@@ -761,6 +800,27 @@ function resolveNationalDepthLithologyBase(
     };
   }
 
+
+  // Common national documentary fallback in shadow mode only.
+  // Surface geology is not proof of subsurface lithology.
+  if (process.env.SONDI_LEGACY_REGIONAL_MODE !== "1") {
+    const mapped = getGeologyAtLocation(latitude, longitude);
+    if (mapped.status === "DIRECT" && mapped.unit?.code) {
+      return {
+        ...emptyResult(input, "CONDITIONAL"),
+        surface_geology: {
+          status: mapped.status,
+          code: mapped.unit.code,
+          name_bg: null,
+          source: null,
+          source_scale: null
+        },
+        evidence_tier: "REGIONAL_CONTEXT",
+        probable_lithology: null,
+        confidence: "LOW"
+      };
+    }
+  }
   return emptyResult(input, "OUTSIDE_MODEL");
 }
 
@@ -769,22 +829,29 @@ export function resolveNationalDepthLithology(
   input: NationalDepthInput
 ): NationalDepthResult {
   const resolvedBase = resolveNationalDepthLithologyBase(input);
+
+  // Preserve the verified legacy Vratsa behavior until the
+  // national structural replacement passes its own regression.
+  const preserveLegacyContacts =
+    resolvedBase.engine === "VRATSA_COMPATIBLE" ||
+    resolvedBase.status === "INVALID_INPUT";
+
+  const nationalContacts = preserveLegacyContacts
+    ? {
+        documented_contacts: [],
+        spatial_contact_research: []
+      }
+    : resolveNationalContactEvidence(
+        input.latitude,
+        input.longitude
+      );
+
   const base: NationalDepthResult = {
     ...resolvedBase,
     documented_contact_context:
-      resolvedBase.engine === "VRATSA_COMPATIBLE" ||
-      resolvedBase.status === "INVALID_INPUT"
-        ? []
-        : getNationalDocumentedContactContext(
-            input.latitude, input.longitude
-          ),
+      nationalContacts.documented_contacts,
     spatial_contact_research:
-      resolvedBase.engine === "VRATSA_COMPATIBLE" ||
-      resolvedBase.status === "INVALID_INPUT"
-        ? []
-        : resolveNationalSpatialContacts(
-            input.latitude, input.longitude
-          )
+      nationalContacts.spatial_contact_research
   };
 
   if (base.engine === "VRATSA_COMPATIBLE") {
@@ -819,54 +886,46 @@ export function resolveNationalDepthLithology(
     input.depthM < item.interval_to_m
   );
 
-  // SONDI_PERNIK_EXACT_BOREHOLE_70CG
-  // Only the four verified Stomana columns, at their documented
-  // coordinates and within their actual measured depth intervals.
-  // No nearby-land extrapolation and no change to other regions.
-  if (base.region_id === "PER-M-PER32") {
-    const pernikExact = base.evidence.filter(item =>
-      item.type === "BOREHOLE" &&
-      typeof item.borehole_id === "string" &&
-      /^PERNIK_STOMANA_MK[1-4]$/.test(item.borehole_id) &&
-      item.coordinate_status === "REGIONAL_DOCUMENTED" &&
-      item.site_relation === "COLOCATED_COORDINATES" &&
-      typeof item.distance_km === "number" &&
-      item.distance_km <= 0.001 &&
-      typeof item.interval_from_m === "number" &&
-      typeof item.interval_to_m === "number" &&
-      item.interval_from_m <= input.depthM &&
-      input.depthM < item.interval_to_m &&
-      typeof item.interval_material_bg === "string" &&
-      item.interval_material_bg.trim().length > 0
-    );
+  // Universal documented-material assessment for all regions.
+  const colocatedResult = resolveNationalColocatedMaterial(
+    base.evidence,
+    input.depthM
+  );
 
-    const pernikMaterials = [...new Set(
-      pernikExact.map(item => item.interval_material_bg!.trim())
-    )];
-
-    if (pernikMaterials.length === 1) {
-      return {
-        ...base,
-        status: "CONDITIONAL",
-        evidence_tier: "DOCUMENTED_BOREHOLE",
-        probable_lithology: pernikMaterials[0],
-        alternative_lithologies: [],
-        confidence: "LOW",
-        interpretation_scope: "REFERENCE_BOREHOLE_ONLY",
-        source_ids: [...new Set([
-          ...base.source_ids,
-          ...pernikExact.flatMap(item => item.source_ids)
-        ])]
-      };
-    }
+  if (colocatedResult.materials.length > 1) {
+    return {
+      ...base,
+      status: "UNRESOLVED",
+      probable_lithology: null,
+      alternative_lithologies: colocatedResult.materials,
+      confidence: "UNRESOLVED",
+      evidence_tier: "REGIONAL_CONTEXT",
+      interpretation_scope: "REFERENCE_BOREHOLE_ONLY"
+    };
   }
 
+  if (colocatedResult.materials.length === 1) {
+    return {
+      ...base,
+      status: "CONDITIONAL",
+      evidence_tier: "DOCUMENTED_BOREHOLE",
+      probable_lithology: colocatedResult.materials[0],
+      alternative_lithologies: [],
+      confidence: "LOW",
+      interpretation_scope: "REFERENCE_BOREHOLE_ONLY",
+      source_ids: [...new Set([
+        ...base.source_ids,
+        ...colocatedResult.source_ids
+      ])]
+    };
+  }
 
   // SONDI_PERNIK_TRIANGULATED_CORRELATION_70CV
   // A conditional lithological-family analogue, not a measured
   // column. Only inside the MK2/MK3/MK4 observation triangle.
   // No fixed kilometre cutoff and no effect outside PER-M-PER32.
   if (
+    process.env.SONDI_LEGACY_REGIONAL_MODE === "1" &&
     base.region_id === "PER-M-PER32" &&
     input.depthM >= 0 &&
     input.depthM < 20 &&
@@ -1010,6 +1069,7 @@ export function resolveNationalDepthLithology(
   // At least three independent Stomana logs must agree.
   // Distance alone is never sufficient evidence.
   if (
+    process.env.SONDI_LEGACY_REGIONAL_MODE === "1" &&
     base.region_id === "PER-M-PER32" &&
     input.depthM >= 0 &&
     input.depthM < 20 &&
@@ -1127,79 +1187,36 @@ export function resolveNationalDepthLithology(
   }
 
 
-  // SONDI_PLD_PZ_SPATIAL_CORRELATION_67BS
-  // A nearby borehole is a conditional analogue, never proof
-  // of lithology beneath the selected property.
-  if (
-    !hasColocatedReference &&
-    base.region_id !== null &&
-    base.region_id !== "VRA"
-  ) {
-    // SONDI_NATIONAL_NEARBY_ROUTING_67DO
-    // Existing PLD/PZ behavior is preserved. Other regions
-    // require a tighter, independently checked local reference.
-    const legacyRegion =
-      base.region_id.startsWith("PZ-")
-        ? "Pazardzhik"
-        : base.region_id.startsWith("PLD-") ||
-          base.region_id === "PLD"
-          ? "Plovdiv"
-          : null;
+  // SONDI_NATIONAL_NEARBY_EVIDENCE_77N
+  // Same selection criteria at every GPS coordinate.
+  // This does not establish stratigraphic continuity.
+  const candidates = resolveNationalNearbyCandidates(
+    base.evidence,
+    input.depthM
+  );
 
-    const expectedRegion = legacyRegion ??
-      (base.region_id === "BLG"
-        ? "Blagoevgrad"
-        : base.region_id === "SOF-CITY"
-          ? "Sofia-city"
-          : base.region_id.startsWith("SOF-")
-            ? "Sofia"
-            : null);
-
-    const maxDistanceKm = legacyRegion ? 8 : 1;
-
-    const permittedIds = new Set(
-      getNationalBoreholeIndex()
-        .filter(hole =>
-          hole.origin === "NATIONAL" &&
-          expectedRegion !== null &&
-          hole.region_code === expectedRegion &&
-          hole.coordinate_status === "OFFICIAL_EXACT"
-        )
-        .map(hole => hole.id)
-    );
-
-    const candidates = base.evidence
-      .filter(item =>
-        item.type === "BOREHOLE" &&
-        typeof item.borehole_id === "string" &&
-        permittedIds.has(item.borehole_id) &&
-        item.coordinate_status === "OFFICIAL_EXACT" &&
-        item.site_relation === "NEARBY_REFERENCE" &&
-        typeof item.distance_km === "number" &&
-        item.distance_km > 0.001 &&
-        item.distance_km <= maxDistanceKm &&
-        item.surface_comparison === "SAME_MAPPED_UNIT" &&
-        item.mapped_fault_intersection_count === 0 &&
-        item.interval_status === null &&
-        (
-          item.interval_evidence_level === "borehole_exact" ||
-          item.interval_evidence_level === "documented_borehole_log" ||
-          item.interval_evidence_level === "borehole_exact_partial_column"
-        ) &&
-        typeof item.interval_from_m === "number" &&
-        typeof item.interval_to_m === "number" &&
-        item.interval_from_m <= input.depthM &&
-        input.depthM < item.interval_to_m &&
-        typeof item.interval_material_bg === "string" &&
-        item.interval_material_bg.trim().length > 0
-      )
-      .sort((a, b) =>
-        (a.distance_km ?? Infinity) - (b.distance_km ?? Infinity)
-      );
-
+  if (!hasColocatedReference) {
     if (candidates.length > 0) {
       const primary = candidates[0];
       const primaryMaterial = String(primary.interval_material_bg).trim();
+      const semantic = assessLithologySemantic(primaryMaterial);
+
+      // Preserve composite borehole descriptions as documentary evidence.
+      // Never silently substitute a more distant analogue.
+      if (!semantic.spatial_material_candidate) {
+        return {
+          ...base,
+          evidence_tier: "REGIONAL_CONTEXT",
+          probable_lithology: null,
+          alternative_lithologies: [primaryMaterial],
+          confidence: "UNRESOLVED",
+          interpretation_scope: "NEARBY_BOREHOLE_ANALOG_UNVERIFIED",
+          source_ids: [...new Set([
+            ...base.source_ids,
+            ...primary.source_ids
+          ])]
+        };
+      }
 
       const alternatives = [...new Set(
         candidates.slice(1)
@@ -1225,174 +1242,78 @@ export function resolveNationalDepthLithology(
     }
   }
 
+
   // SONDI_SOFIA_NEARBY_DEPTH_FORECAST_V1
   // Low-confidence forecast from documented nearby boreholes.
   // Do not affect Vratsa, exact boreholes or other regions.
-  if (
-    !hasColocatedReference &&
-    base.region_id !== null &&
-    (base.region_id.startsWith("SOF-") || base.region_id === "BLG")
-  ) {
-    const expectedRegion = base.region_id === "BLG"
-      ? "Blagoevgrad"
-      : base.region_id === "SOF-CITY"
-      ? "Sofia-city"
-      : "Sofia";
+  // 77U: region compatibility is resolved outside this engine.
+  const documentaryPolicy =
+    resolveNationalDocumentaryCompatibilityPolicy(base.region_id);
 
-    const radians = (value: number) => value * Math.PI / 180;
+  if (!hasColocatedReference && documentaryPolicy) {
+    const expectedRegion = documentaryPolicy.expectedRegion;
+const documentaryDecision =
+      resolveNationalDocumentaryDecision({
+        latitude:input.latitude,
+        longitude:input.longitude,
+        depthM:input.depthM,
+        expectedRegion,
+        requireLocalAnalogue:documentaryPolicy.requireLocalAnalogue,
+        evidence:base.evidence,
+        isSpatialMaterialCandidate:material =>
+          assessLithologySemantic(material).spatial_material_candidate
+      });
 
-    const distanceBetween = (
-      lat1: number, lon1: number,
-      lat2: number, lon2: number
-    ) => {
-      const dLat = radians(lat2 - lat1);
-      const dLon = radians(lon2 - lon1);
-      const a =
-        Math.sin(dLat / 2) ** 2 +
-        Math.cos(radians(lat1)) *
-        Math.cos(radians(lat2)) *
-        Math.sin(dLon / 2) ** 2;
-      return 6371 * 2 * Math.atan2(
-        Math.sqrt(a),
-        Math.sqrt(Math.max(0, 1 - a))
+    if (documentaryDecision) {
+      return applyNationalDocumentaryDecision(
+        base,
+        documentaryDecision
       );
-    };
-
-    const candidates = getNationalBoreholeIndex()
-      .filter(hole =>
-        hole.origin === "NATIONAL" &&
-        (
-          hole.coordinate_status === "OFFICIAL_EXACT" ||
-          (
-            base.region_id === "BLG" &&
-            (
-              (hole.id === "PLD-Z040" &&
-               hole.coordinate_status === "official_documented") ||
-              (hole.id === "PLD-Z067" &&
-               hole.coordinate_status === "official_documented") ||
-              (hole.id === "PLD-Z068" &&
-               hole.coordinate_status === "official_documented") ||
-              (hole.id === "PLD-Z070" &&
-               hole.coordinate_status === "official_documented_external")
-            )
-          )
-        ) &&
-        expectedRegion !== null &&
-          hole.region_code === expectedRegion &&
-        hole.latitude !== null &&
-        hole.longitude !== null
-      )
-      .flatMap(hole => {
-        const distance = distanceBetween(
-          input.latitude, input.longitude,
-          hole.latitude!, hole.longitude!
-        );
-
-        if (distance > 30) return [];
-
-        return hole.intervals
-          .filter(interval =>
-            interval.from_m !== null &&
-            interval.to_m !== null &&
-            interval.from_m <= input.depthM &&
-            input.depthM < interval.to_m &&
-            !interval.interval_status &&
-            (
-              interval.evidence_level === "borehole_exact" ||
-              interval.evidence_level === "documented_borehole_log"
-            ) &&
-            interval.material_bg.trim().length > 0
-          )
-          .map(interval => ({
-            id: hole.id,
-            distance,
-            material: interval.material_bg.trim(),
-            sources: interval.source_ids
-          }));
-      })
-      .sort((a, b) => a.distance - b.distance);
-
-    const close = candidates.filter(c => c.distance <= 15);
-    const distinct = new Set(candidates.map(c => c.id));
-
-    // Either one reasonably close documented analogue or
-    // at least two independent nearby documented analogues.
-    // SONDI_SOFIA_LOCAL_ANALOGUE_GUARD_63DE
-    // Distant boreholes remain comparative evidence.
-    // They must not supply a depth-specific material for
-    // Sofia solely because two or more exist within 30 km.
-    const eligible = base.region_id.startsWith("SOF-")
-      ? close.length > 0
-      : close.length > 0 || distinct.size >= 2;
-
-    if (eligible && candidates.length > 0) {
-      const primary = close[0] ?? candidates[0];
-
-      const alternatives = [...new Set(
-        candidates
-          .filter(c => c.id !== primary.id)
-          .map(c => c.material)
-          .filter(material => material !== primary.material)
-      )].slice(0, 5);
-
-      return {
-        ...base,
-        status: "CONDITIONAL",
-        evidence_tier: base.region_id === "BLG"
-          ? "REGIONAL_CONTEXT"
-          : "GEOLOGICAL_CORRELATION",
-        probable_lithology: primary.material,
-        alternative_lithologies: alternatives,
-        confidence: "LOW",
-        interpretation_scope: base.region_id === "BLG"
-          ? "NEARBY_BOREHOLE_ANALOG_UNVERIFIED"
-          : "SPATIAL_CORRELATION_CONDITIONAL",
-        source_ids: [...new Set([
-          ...base.source_ids,
-          ...candidates.flatMap(c => c.sources)
-        ])]
-      };
     }
   }
 
-  const matches = base.evidence.filter(item =>
-    item.type === "BOREHOLE" &&
-    item.depth_evidence_class ===
-      "DOCUMENTED_REFERENCE_COORDINATE_MATCH" &&
-    item.coordinate_status === "OFFICIAL_EXACT" &&
-    typeof item.distance_km === "number" &&
-    item.distance_km <= 0.001 &&
-    typeof item.interval_from_m === "number" &&
-    typeof item.interval_to_m === "number" &&
-    item.interval_from_m <= input.depthM &&
-    input.depthM < item.interval_to_m &&
-    typeof item.interval_material_bg === "string" &&
-    item.interval_material_bg.trim().length > 0
-  );
 
-  const materials = Array.from(new Set(
-    matches.map(item => item.interval_material_bg!.trim())
-  ));
+  // Unified exact borehole handling is performed above
+  // by SONDI_NATIONAL_UNIFIED_COLOCATED_BOREHOLE_77F.
+  // No second, less restrictive exact-reference path.
+  // 77W: nationwide documentary-only fallback.
+  // Never convert this comparison to a predicted site material.
+  const documentaryFallback =
+    !hasColocatedReference &&
+    !documentaryPolicy &&
+    base.probable_lithology === null &&
+    base.alternative_lithologies.length === 0
+      ? getNationalDocumentaryFallback(
+          input.latitude,
+          input.longitude,
+          input.depthM
+        )
+      : null;
 
-  // Ambiguous or absent references cannot produce a material.
-  if (materials.length !== 1) {
+  if (documentaryFallback) {
     return {
       ...base,
-      evidence_tier: base.evidence.length > 0 ||
-        base.surface_geology !== null
-        ? "REGIONAL_CONTEXT"
-        : "INSUFFICIENT_EVIDENCE"
+      status: "CONDITIONAL",
+      evidence_tier: "REGIONAL_CONTEXT",
+      probable_lithology: null,
+      alternative_lithologies: [documentaryFallback.material],
+      confidence: "UNRESOLVED",
+      interpretation_scope: "NEARBY_BOREHOLE_ANALOG_UNVERIFIED",
+      source_ids: [...new Set([
+        ...base.source_ids,
+        ...documentaryFallback.source_ids
+      ])]
     };
   }
 
   return {
     ...base,
-    status: "CONDITIONAL",
-    confidence: "LOW",
-    evidence_tier: "DOCUMENTED_BOREHOLE",
-    probable_lithology: materials[0],
-    interpretation_scope: "REFERENCE_BOREHOLE_ONLY",
+    evidence_tier: base.evidence.length > 0 ||
+      base.surface_geology !== null
+      ? "REGIONAL_CONTEXT"
+      : "INSUFFICIENT_EVIDENCE"
   };
+
 }
 
 

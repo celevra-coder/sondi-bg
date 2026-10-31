@@ -1,0 +1,52 @@
+{
+    "schema_version":  "1.0",
+    "model_id":  "MON-REGIONAL-72CJ",
+    "oblast":  "Монтана",
+    "status":  "REGIONAL_CONTEXT_WITH_SPATIAL_VERIFICATION_PENDING",
+    "production_enabled":  true,
+    "zones":  {
+                  "MON-Z01":  {
+                                  "regional_structural_context":  [
+                                                                      {
+                                                                          "dominant_lithology_context":  [
+                                                                                                             "Северната част на областта включва льосови, льосовидни, алувиални и по-стари седиментни образувания.",
+                                                                                                             "Южната предпланинска и планинска част включва магмени, метаморфни и седиментни скални комплекси.",
+                                                                                                             "Точната геоложка последователност се определя според конкретната зона, разрезите и надеждните сондажни данни."
+                                                                                                         ],
+                                                                          "regional_units":  [
+
+                                                                                             ],
+                                                                          "source_id":  "MON-RESEARCH-GEOLOGICAL-SHEETS"
+                                                                      }
+                                                                  ],
+                                  "documented_reference_intervals":  [
+
+                                                                     ],
+                                  "source_ids":  [
+                                                     "K-34-011-LOM",
+                                                     "K-34-023-MONTANA",
+                                                     "K-34-035-BERKOVITSA",
+                                                     "MON-BER-BARZIA-1",
+                                                     "MON-BER-SLATINA-3HG",
+                                                     "MON-LOM-AIKON-C1",
+                                                     "MON-LOM-AIKON-C2"
+                                                 ],
+                                  "regional_evidence_notes":  [
+
+                                                              ]
+                              }
+              },
+    "research_sources":  [
+                             "_research/montana/administrative/72BL_montana_BG312_boundary_candidate.geojson",
+                             "_research/montana/administrative/72BM_montana_regional_model_DRAFT.json",
+                             "_research/montana/lithology/72BY_west_montana_unicode_recovered_evidence.json",
+                             "_research/montana/lithology/72BD_verified_borehole_depth_anchors.json"
+                         ],
+    "limitations":  [
+                        "The administrative polygon is not a geological contact.",
+                        "Regional formations are not assigned to specific points.",
+                        "Borehole intervals remain confined to their documented locations.",
+                        "Formation thickness is not local depth below ground.",
+                        "Existing national depth inference remains unchanged."
+                    ]
+}

@@ -1,4 +1,5 @@
 import { getRavnoPolePilot } from "../../lib/sondi-ravno-pole-local-pilot";
+import { resolveNationalEvidence } from "../../lib/sondi-national-evidence-engine";
 import { getNationalBoreholeIndex } from "../../lib/sondi-national-borehole-index";
 import { assessGlimAlternatives } from "@/lib/glim-alternative-assessment";
 import Link from "next/link";
@@ -277,9 +278,9 @@ export default async function DepthStructurePage({
       item.region_id.startsWith("PER-M-")
   );
 
-  const checkpoints = pernikShallowClient
-    ? [1, 5, 10, 15, 19, 20, 50, 80, 100, 150, 200, 300, 500]
-    : [20, 50, 80, 100, 150, 200, 300, 500];
+  const checkpoints = profile.target_national_depth_model.map(
+    item => item.target.depth_m
+  );
 
 
   const unified = buildUnifiedLithology(
@@ -1012,7 +1013,7 @@ const material = point.material
     : null;
 
   const regionalFallbackRow = {
-    depth: pernikShallowClient ? "1–500 м" : "20–500 м",
+    depth: "Регионален контекст",
     material: isSofiaCityRegional || rockFamilies.length > 0 || regionalOverview
       ? "Регионални геоложки варианти"
       : "Регионален геоложки анализ",
@@ -1020,10 +1021,7 @@ const material = point.material
       regionalSurfaceExplanation ||
       sofiaRegionalSummary ||
       regionalDescription,
-    evidenceNote:
-      "Сходен резултат при проверените дълбочини: " +
-      checkpoints.join(", ") +
-      " м. Това не доказва непрекъснат пласт между тях.",
+    evidenceNote: "Не е установен надежден конкретен дълбочинен интервал за избраната точка.",
     confidence: "Не е доказан конкретен пласт",
     analogueCount: 0,
   };
@@ -1106,9 +1104,68 @@ const material = point.material
         exactDocumentedIntervals[index - 1].to_m! + 0.001
     );
 
-  const displayRows = hasSpecificDepthEvidence
-    ? rows
-    : [{
+  const nationalEvidence = resolveNationalEvidence(lat, lng);
+  const nationalReferenceColumns = nationalEvidence.references;
+
+  // National dynamic-interval migration:
+  // No user-facing layer may be inferred from a sampled midpoint.
+  // Exact documented borehole columns and nearby reference columns
+  // are rendered separately. Spatially predicted intervals will
+  // replace this regional fallback only after geological approval.
+
+  // SONDI_78AR_DOCUMENTED_REGIONAL_DISPLAY
+  // Regional context is not a measured depth column.
+  // Keep the established single-row regional presentation.
+  const documentedNationalSequence =
+    profile.target_national_depth_model.find(
+      item =>
+        item.engine === "NATIONAL_REGIONAL" &&
+        (item.regional_sequence_context?.units.length ?? 0) > 0
+    )?.regional_sequence_context;
+
+  const regionalNationalAlternatives = Array.from(new Set(
+    profile.target_national_depth_model
+      .filter(item => item.engine === "NATIONAL_REGIONAL")
+      .flatMap(item => item.alternative_lithologies)
+      .filter(value => value.trim().length > 0)
+  ));
+
+  const documentedSequenceTranslations: Record<string, string> = {
+    Quaternary:
+      "Кватернерни наслаги: алувиални, еолични и еолично-алувиални отложения; чакъли, пясъци, глини и льос според местната тераса.",
+    Romanian:
+      "Румънски етаж: плътни жълтеникави глини с варовити конкреции; на места песъчливи глини и прослойки от глинест пясък.",
+    Dacian:
+      "Дакийски етаж: сиво-синкави песъчливи глини и пясъци; на места въглищни прослойки и песъчливи глини."
+  };
+
+  const nationalRegionalDisplayDetails = [
+    ...(documentedNationalSequence
+      ? [
+          "Документирана геоложка последователност за района: " +
+          documentedNationalSequence.units.map(unit =>
+            documentedSequenceTranslations[unit.unit] ??
+            (geologyTextBg(unit.unit) + ": " +
+              geologyTextBg(unit.probable_material))
+          ).join(" Следват ") +
+          ". Тази последователност е регионална. " +
+          "Не са установени точните дълбочини на границите " +
+          "под избраната точка."
+        ]
+      : []),
+    ...(regionalNationalAlternatives.length > 0
+      ? [
+          "Документирани регионални геоложки варианти: " +
+          regionalNationalAlternatives
+            .map(value => geologyTextBg(familyLabel(value)))
+            .join("; ") +
+          ". Не е потвърдено кой от тях се среща " +
+          "на избраните координати."
+        ]
+      : [])
+  ];
+
+  const displayRows = [{
         ...regionalFallbackRow,
         material: "Регионален геоложки анализ",
         description: [
@@ -1117,7 +1174,8 @@ const material = point.material
             regionalDescription,
           "Това е регионална геоложка интерпретация, " +
           "а не доказателство за конкретен пласт " +
-          "или точна дълбочина на геоложки контакт."
+          "или точна дълбочина на геоложки контакт.",
+          ...nationalRegionalDisplayDetails
         ].filter(Boolean).filter((value, index, all) =>
           all.indexOf(value) === index
         ).join(" ")
@@ -1250,7 +1308,7 @@ const material = point.material
                 fontWeight: 800,
                 marginBottom: 9
               }}>
-                20–500 м
+                Регионален геоложки контекст
               </div>
               <h2 style={{
                 margin: "0 0 12px",
@@ -1261,7 +1319,7 @@ const material = point.material
               </h2>
               <p style={{ color: "#405a61", lineHeight: 1.7 }}>
                 За избраната точка няма доказана непрекъсната
-                литоложка колонка от 20 до 500 метра. Проучванията
+                литоложка колонка за избраните координати. Проучванията
                 в София показват, че в различни части на града
                 се срещат глини, пясъци, чакъли и по-стари,
                 по-твърди скали.
@@ -1395,6 +1453,77 @@ const material = point.material
           </div>
         ) : (
           <>
+
+        {exactDocumentedIntervals.length === 0 &&
+         nationalReferenceColumns.length > 0 && (
+          <section style={{
+            marginTop: 22,
+            padding: 18,
+            borderRadius: 14,
+            background: "#f3f9fb",
+            border: "1px solid #d9e7ea"
+          }}>
+            <h2 style={{
+              margin: "0 0 9px",
+              color: "#173f49",
+              fontSize: 19
+            }}>
+              Документирани интервали в близки сондажи
+            </h2>
+            <p style={{
+              color: "#405963",
+              lineHeight: 1.6,
+              margin: "0 0 14px"
+            }}>
+              Това са действителни наблюдения на местата
+              на посочените сондажи. Не представляват
+              измерена или потвърдена геоложка колонка
+              под избраните координати.
+            </p>
+            {nationalReferenceColumns.map(column => (
+              <details key={column.borehole_id} style={{
+                marginBottom: 9,
+                padding: 12,
+                background: "#fff",
+                border: "1px solid #d9e7ea",
+                borderRadius: 9
+              }}>
+                <summary style={{
+                  cursor: "pointer",
+                  fontWeight: 700,
+                  color: "#173f49"
+                }}>
+                  {column.borehole_id}
+                  {" — "}
+                  {column.distance_km.toFixed(2)} км
+                  {" — "}
+                  {column.intervals.length} интервала
+                </summary>
+                <div style={{ marginTop: 12 }}>
+                  {column.intervals.map((interval, index) => (
+                    <div key={index} style={{
+                      padding: "8px 0",
+                      borderTop: "1px solid #e4edef",
+                      lineHeight: 1.5
+                    }}>
+                      <strong>
+                        {interval.from_m.toLocaleString("bg-BG")}
+                        {"–"}
+                        {interval.to_m.toLocaleString("bg-BG")} м
+                      </strong>
+                      {" — "}{interval.material}
+                      {interval.stratigraphy &&
+                        <span>
+                          {" ("}{interval.stratigraphy}{")"}
+                        </span>
+                      }
+                    </div>
+                  ))}
+                </div>
+              </details>
+            ))}
+          </section>
+        )}
         {exactDocumentedIntervals.length > 0 ? (
           <section
             data-sondi-exact-borehole-column="true"

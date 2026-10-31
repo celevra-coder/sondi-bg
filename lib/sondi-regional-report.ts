@@ -435,7 +435,22 @@ function makeCards(
       );
     }
 
-    if (paragraphs.length) {
+    if (entry.id === "MON") {
+      paragraphs.length = 0;
+      paragraphs.push(
+        "В северните равнинни части на област Монтана са разпространени льосови и льосовидни наслаги — предимно фини праховити материали, натрупани в миналото. По речните долини се срещат алувиални наслаги — пясъци, чакъли и глинести материали, отложени от течащи води.",
+        "В южната предпланинска и планинска част, включително по-широкия район на Берковица, геоложкият строеж включва седиментни, магмени и метаморфни скални комплекси. Седиментните скали са образувани от натрупани и уплътнени утайки. Магмените произхождат от застинала магма, а метаморфните представляват по-стари скали, преобразувани под въздействието на висока температура и налягане.",
+        "Различните скални комплекси имат собствен строеж и разпространение. В предпланинските райони геоложките пластове могат да бъдат нагънати или разломно разместени. Това означава, че съседни участъци могат да имат различна скална основа, без една и съща последователност от пластове да продължава навсякъде.",
+        "За конкретното местоположение трябва да се различават действително картографираните геоложки единици от общата регионална характеристика. Наличните регионални сведения не установяват точните дълбочини на скалните контакти под избраната точка."
+      );
+      cards.push({
+        id: `${entry.id}-reader-overview`,
+        title: `Регионален геоложки анализ — ${entry.name_bg}`,
+        informationType: "Регионална геоложка интерпретация",
+        paragraphs,
+        sources
+      });
+    } else if (paragraphs.length) {
       paragraphs.push(
         "Геоложките материали могат да се редуват, " +
         "да променят дебелината си и да преминават един " +
@@ -1777,6 +1792,17 @@ export function getSondiRegionalReport(
     // SONDI_PAZARDZHIK_CLEAN_REGIONAL_REPORT_67DZ
     // Keep substantive regional interpretations, not the
     // raw list of every borehole and technical evidence card.
+    // SONDI_MON_LOCATION_DRIVEN_72LF
+    // Use the existing polygon-driven interpreter for Montana.
+    // Do not expose the oblast-wide research prose as a local result.
+    if (entry.id === "MON") {
+      return [buildAutomaticGeologicalOverview(
+        latitude, longitude,
+        "Регионален геоложки анализ",
+        "MON-location-driven-overview"
+      )];
+    }
+
     if (entry.id.startsWith("PZ-")) {
       const automatic = buildAutomaticGeologicalOverview(
         latitude,

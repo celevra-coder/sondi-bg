@@ -1,0 +1,82 @@
+{
+  "zones": {
+    "VRA-Z01": {
+      "regional_structural_context": [
+        {
+          "dominant_lithology_context": [
+            "Quaternary",
+            "Romanian",
+            "Dacian",
+            "Brusartsi Formation",
+            "loess / loess-like and deluvial-proluvial clay",
+            "Brusartsi Formation clay with local sand beds",
+            "sand"
+          ],
+          "regional_units": [],
+          "source_id": "VRA-S045"
+        },
+        {
+          "dominant_lithology_context": [],
+          "regional_units": [
+            {
+              "unit": "Quaternary — alluvial, eolian and eolian-alluvial deposits; terrace-dependent gravel, sand, clay and loess. Граница: SPATIALLY_VARIABLE. Регионална последователност; не е доказан пласт на конкретна дълбочина.",
+              "regional_thickness_m": "НЕОПРЕДЕЛЕНА ЛОКАЛНА МОЩНОСТ"
+            },
+            {
+              "unit": "Romanian — dense yellowish clays with calcareous concretions; locally sandy with clayey-sand intercalations. Граница: NOT_EXACTLY_RESOLVED. Регионална последователност; не е доказан пласт на конкретна дълбочина.",
+              "regional_thickness_m": "НЕОПРЕДЕЛЕНА ЛОКАЛНА МОЩНОСТ"
+            },
+            {
+              "unit": "Dacian — grey-bluish sandy clays and sands; locally lignitic coal horizons and sandy clays. Граница: NOT_EXACTLY_RESOLVED. Регионална последователност; не е доказан пласт на конкретна дълбочина.",
+              "regional_thickness_m": "НЕОПРЕДЕЛЕНА ЛОКАЛНА МОЩНОСТ"
+            }
+          ],
+          "source_id": "VRA-S046"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "source_ids": [
+        "VRA-S045",
+        "VRA-S046",
+        "VRA-S047"
+      ],
+      "research_provenance": {
+        "source_model": "data/soil-lithology/research/vratsa_depth_lithology_model.json",
+        "source_zone": "VRA-Z01",
+        "geographic_scope": "OFFICIAL_MUNICIPALITY_CONTEXT_ONLY",
+        "geology_boundary_verified": false,
+        "exact_depth_prediction_authorized": false,
+        "regional_model_not_a_borehole_log": true
+      },
+      "documented_regional_sequence": {
+        "record_id": "VRA-CTX-012",
+        "source_ids": [
+          "VRA-S046"
+        ],
+        "units": [
+          {
+            "unit": "Quaternary",
+            "probable_material": "alluvial, eolian and eolian-alluvial deposits; terrace-dependent gravel, sand, clay and loess",
+            "contact_depth": "SPATIALLY_VARIABLE"
+          },
+          {
+            "unit": "Romanian",
+            "probable_material": "dense yellowish clays with calcareous concretions; locally sandy with clayey-sand intercalations",
+            "contact_depth": "NOT_EXACTLY_RESOLVED"
+          },
+          {
+            "unit": "Dacian",
+            "probable_material": "grey-bluish sandy clays and sands; locally lignitic coal horizons and sandy clays",
+            "contact_depth": "NOT_EXACTLY_RESOLVED"
+          }
+        ],
+        "depth_scope": "0-550+",
+        "total_neogene_thickness_m": ">550",
+        "interpretation_scope": "REGIONAL_REFERENCE_ONLY",
+        "exact_contact_depths_verified": false,
+        "location_specific_depth_prediction_authorized": false,
+        "local_templates_activated": false
+      }
+    }
+  }
+}

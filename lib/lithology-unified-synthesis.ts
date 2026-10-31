@@ -23,7 +23,7 @@ export type UnifiedLithologyPoint = {
 export function buildUnifiedLithology(
   profile: LithologyProfile,
   synthesis: LithologySynthesis,
-  depths: number[] = [20, 50, 100, 150, 200, 300, 500]
+  depths: number[] = profile.target_national_depth_model.map(item => item.target.depth_m)
 ): UnifiedLithologyPoint[] {
   return depths.map((depth) => {
     // SONDI_DOCUMENTED_EXACT_COORDINATE_V1
@@ -141,14 +141,7 @@ export function buildUnifiedLithology(
       national.probable_lithology &&
       (
         national.evidence_tier === "DOCUMENTED_BOREHOLE" ||
-        national.evidence_tier === "GEOLOGICAL_CORRELATION" ||
-        (
-          national.evidence_tier === "REGIONAL_CONTEXT" &&
-          national.interpretation_scope ===
-            "NEARBY_BOREHOLE_ANALOG_UNVERIFIED" &&
-          national.confidence === "LOW" &&
-          national.region_id === "BLG"
-        )
+        national.evidence_tier === "GEOLOGICAL_CORRELATION"
       )
     ) {
       const documented =
@@ -281,6 +274,49 @@ export function buildUnifiedLithology(
           ...(lithology?.limitations || []),
           ...structuralLimitations,
         ],
+      };
+    }
+
+    // SONDI_78AO_NATIONAL_REGIONAL_CONTEXT
+    // Only reached after all documented, spatial and projected
+    // results have been evaluated. Never infer a local depth contact.
+    if (
+      national?.engine === "NATIONAL_REGIONAL" &&
+      (
+        national.alternative_lithologies.length > 0 ||
+        (national.regional_sequence_context?.units.length ?? 0) > 0
+      )
+    ) {
+      const sequence = national.regional_sequence_context;
+      const sequenceDescription = sequence?.units
+        .map(unit =>
+          unit.unit + ": " + unit.probable_material
+        )
+        .join("; ");
+
+      return {
+        depth_m: depth,
+        material: null,
+        evidence_kind: "REGIONAL_CONTEXT" as const,
+        confidence: null,
+        alternatives: [...new Set(
+          national.alternative_lithologies
+        )],
+        borehole_ids: [],
+        source_ids: [...new Set([
+          ...national.source_ids,
+          ...(sequence?.source_ids ?? [])
+        ])],
+        limitations: [
+          "Регионална геоложка информация, а не установен пласт на посочената дълбочина.",
+          ...(sequenceDescription
+            ? ["Документирана регионална последователност: " + sequenceDescription + "."]
+            : []),
+          ...(national.alternative_lithologies.length > 0
+            ? ["Възможни регионални геоложки материали; не е определено кой се намира под избраната точка."]
+            : []),
+          "Точните граници между пластовете не са потвърдени за избраните координати."
+        ]
       };
     }
 

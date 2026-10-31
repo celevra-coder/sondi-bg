@@ -1,0 +1,43 @@
+{
+  "zones": {
+    "VRA-Z04": {
+      "regional_structural_context": [
+        {
+          "dominant_lithology_context": [
+            "Darmantsi Formation",
+            "glauconitic/calcareous sandstone and sandy limestone",
+            "Kunino Formation",
+            "micritic and argillaceous limestone",
+            "Mezdra Formation",
+            "micritic/flint-bearing limestone with local marl intervals",
+            "Kaylaka Formation",
+            "bioclastic to massive organogenic limestone"
+          ],
+          "regional_units": [],
+          "source_id": "VRA-S062"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "source_ids": [
+        "VRA-S062",
+        "VRA-S063",
+        "VRA-S064",
+        "VRA-S065",
+        "VRA-S066",
+        "VRA-S067",
+        "VRA-S068",
+        "VRA-S069",
+        "VRA-S070",
+        "VRA-S071"
+      ],
+      "research_provenance": {
+        "source_model": "data/soil-lithology/research/vratsa_depth_lithology_model.json",
+        "source_zone": "VRA-Z04",
+        "geographic_scope": "OFFICIAL_MUNICIPALITY_CONTEXT_ONLY",
+        "geology_boundary_verified": false,
+        "exact_depth_prediction_authorized": false,
+        "regional_model_not_a_borehole_log": true
+      }
+    }
+  }
+}

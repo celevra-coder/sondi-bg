@@ -1,0 +1,41 @@
+{
+  "zones": {
+    "VRA-Z02": {
+      "regional_structural_context": [
+        {
+          "dominant_lithology_context": [
+            "Quaternary",
+            "alluvial deposits and loess",
+            "Sarmatian",
+            "sandstones, dark-bedded limestones and calcareous clays",
+            "Furen Formation",
+            "Byala Slatina Formation",
+            "Brusartsi Formation"
+          ],
+          "regional_units": [],
+          "source_id": "VRA-S053"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "source_ids": [
+        "VRA-S053",
+        "VRA-S054",
+        "VRA-S055",
+        "VRA-S056",
+        "VRA-S048",
+        "VRA-S049",
+        "VRA-S050",
+        "VRA-S051",
+        "VRA-S052"
+      ],
+      "research_provenance": {
+        "source_model": "data/soil-lithology/research/vratsa_depth_lithology_model.json",
+        "source_zone": "VRA-Z02",
+        "geographic_scope": "OFFICIAL_MUNICIPALITY_CONTEXT_ONLY",
+        "geology_boundary_verified": false,
+        "exact_depth_prediction_authorized": false,
+        "regional_model_not_a_borehole_log": true
+      }
+    }
+  }
+}
