@@ -1,0 +1,1260 @@
+{
+  "version": "78ES",
+  "source": "ISRIC SoilGrids WCS",
+  "model": "mean",
+  "depth_cm": [
+    0,
+    5
+  ],
+  "coordinate_reference": "EPSG:4326",
+  "properties": [
+    "clay",
+    "sand",
+    "silt",
+    "phh2o",
+    "cfvo"
+  ],
+  "origin_lon": 22.25,
+  "origin_lat": 41.25,
+  "tile_size_degrees": 0.25,
+  "notes": [
+    "Tiles are spatial envelopes, not active-region polygons.",
+    "All requests must be gated against the existing region registry.",
+    "Zero-filled missing soil pixels must not be interpreted as measurements.",
+    "No salinity or magnetic mineralization is derived from these layers."
+  ],
+  "tiles": [
+    {
+      "id": "soil_x2_y0",
+      "x": 2,
+      "y": 0,
+      "bounds": {
+        "min_lon": 22.75,
+        "min_lat": 41.25,
+        "max_lon": 23,
+        "max_lat": 41.5
+      }
+    },
+    {
+      "id": "soil_x3_y0",
+      "x": 3,
+      "y": 0,
+      "bounds": {
+        "min_lon": 23,
+        "min_lat": 41.25,
+        "max_lon": 23.25,
+        "max_lat": 41.5
+      }
+    },
+    {
+      "id": "soil_x4_y0",
+      "x": 4,
+      "y": 0,
+      "bounds": {
+        "min_lon": 23.25,
+        "min_lat": 41.25,
+        "max_lon": 23.5,
+        "max_lat": 41.5
+      }
+    },
+    {
+      "id": "soil_x5_y0",
+      "x": 5,
+      "y": 0,
+      "bounds": {
+        "min_lon": 23.5,
+        "min_lat": 41.25,
+        "max_lon": 23.75,
+        "max_lat": 41.5
+      }
+    },
+    {
+      "id": "soil_x6_y0",
+      "x": 6,
+      "y": 0,
+      "bounds": {
+        "min_lon": 23.75,
+        "min_lat": 41.25,
+        "max_lon": 24,
+        "max_lat": 41.5
+      }
+    },
+    {
+      "id": "soil_x7_y0",
+      "x": 7,
+      "y": 0,
+      "bounds": {
+        "min_lon": 24,
+        "min_lat": 41.25,
+        "max_lon": 24.25,
+        "max_lat": 41.5
+      }
+    },
+    {
+      "id": "soil_x2_y1",
+      "x": 2,
+      "y": 1,
+      "bounds": {
+        "min_lon": 22.75,
+        "min_lat": 41.5,
+        "max_lon": 23,
+        "max_lat": 41.75
+      }
+    },
+    {
+      "id": "soil_x3_y1",
+      "x": 3,
+      "y": 1,
+      "bounds": {
+        "min_lon": 23,
+        "min_lat": 41.5,
+        "max_lon": 23.25,
+        "max_lat": 41.75
+      }
+    },
+    {
+      "id": "soil_x4_y1",
+      "x": 4,
+      "y": 1,
+      "bounds": {
+        "min_lon": 23.25,
+        "min_lat": 41.5,
+        "max_lon": 23.5,
+        "max_lat": 41.75
+      }
+    },
+    {
+      "id": "soil_x5_y1",
+      "x": 5,
+      "y": 1,
+      "bounds": {
+        "min_lon": 23.5,
+        "min_lat": 41.5,
+        "max_lon": 23.75,
+        "max_lat": 41.75
+      }
+    },
+    {
+      "id": "soil_x6_y1",
+      "x": 6,
+      "y": 1,
+      "bounds": {
+        "min_lon": 23.75,
+        "min_lat": 41.5,
+        "max_lon": 24,
+        "max_lat": 41.75
+      }
+    },
+    {
+      "id": "soil_x7_y1",
+      "x": 7,
+      "y": 1,
+      "bounds": {
+        "min_lon": 24,
+        "min_lat": 41.5,
+        "max_lon": 24.25,
+        "max_lat": 41.75
+      }
+    },
+    {
+      "id": "soil_x8_y1",
+      "x": 8,
+      "y": 1,
+      "bounds": {
+        "min_lon": 24.25,
+        "min_lat": 41.5,
+        "max_lon": 24.5,
+        "max_lat": 41.75
+      }
+    },
+    {
+      "id": "soil_x9_y1",
+      "x": 9,
+      "y": 1,
+      "bounds": {
+        "min_lon": 24.5,
+        "min_lat": 41.5,
+        "max_lon": 24.75,
+        "max_lat": 41.75
+      }
+    },
+    {
+      "id": "soil_x10_y1",
+      "x": 10,
+      "y": 1,
+      "bounds": {
+        "min_lon": 24.75,
+        "min_lat": 41.5,
+        "max_lon": 25,
+        "max_lat": 41.75
+      }
+    },
+    {
+      "id": "soil_x11_y1",
+      "x": 11,
+      "y": 1,
+      "bounds": {
+        "min_lon": 25,
+        "min_lat": 41.5,
+        "max_lon": 25.25,
+        "max_lat": 41.75
+      }
+    },
+    {
+      "id": "soil_x12_y1",
+      "x": 12,
+      "y": 1,
+      "bounds": {
+        "min_lon": 25.25,
+        "min_lat": 41.5,
+        "max_lon": 25.5,
+        "max_lat": 41.75
+      }
+    },
+    {
+      "id": "soil_x2_y2",
+      "x": 2,
+      "y": 2,
+      "bounds": {
+        "min_lon": 22.75,
+        "min_lat": 41.75,
+        "max_lon": 23,
+        "max_lat": 42
+      }
+    },
+    {
+      "id": "soil_x3_y2",
+      "x": 3,
+      "y": 2,
+      "bounds": {
+        "min_lon": 23,
+        "min_lat": 41.75,
+        "max_lon": 23.25,
+        "max_lat": 42
+      }
+    },
+    {
+      "id": "soil_x4_y2",
+      "x": 4,
+      "y": 2,
+      "bounds": {
+        "min_lon": 23.25,
+        "min_lat": 41.75,
+        "max_lon": 23.5,
+        "max_lat": 42
+      }
+    },
+    {
+      "id": "soil_x5_y2",
+      "x": 5,
+      "y": 2,
+      "bounds": {
+        "min_lon": 23.5,
+        "min_lat": 41.75,
+        "max_lon": 23.75,
+        "max_lat": 42
+      }
+    },
+    {
+      "id": "soil_x6_y2",
+      "x": 6,
+      "y": 2,
+      "bounds": {
+        "min_lon": 23.75,
+        "min_lat": 41.75,
+        "max_lon": 24,
+        "max_lat": 42
+      }
+    },
+    {
+      "id": "soil_x7_y2",
+      "x": 7,
+      "y": 2,
+      "bounds": {
+        "min_lon": 24,
+        "min_lat": 41.75,
+        "max_lon": 24.25,
+        "max_lat": 42
+      }
+    },
+    {
+      "id": "soil_x8_y2",
+      "x": 8,
+      "y": 2,
+      "bounds": {
+        "min_lon": 24.25,
+        "min_lat": 41.75,
+        "max_lon": 24.5,
+        "max_lat": 42
+      }
+    },
+    {
+      "id": "soil_x9_y2",
+      "x": 9,
+      "y": 2,
+      "bounds": {
+        "min_lon": 24.5,
+        "min_lat": 41.75,
+        "max_lon": 24.75,
+        "max_lat": 42
+      }
+    },
+    {
+      "id": "soil_x10_y2",
+      "x": 10,
+      "y": 2,
+      "bounds": {
+        "min_lon": 24.75,
+        "min_lat": 41.75,
+        "max_lon": 25,
+        "max_lat": 42
+      }
+    },
+    {
+      "id": "soil_x11_y2",
+      "x": 11,
+      "y": 2,
+      "bounds": {
+        "min_lon": 25,
+        "min_lat": 41.75,
+        "max_lon": 25.25,
+        "max_lat": 42
+      }
+    },
+    {
+      "id": "soil_x12_y2",
+      "x": 12,
+      "y": 2,
+      "bounds": {
+        "min_lon": 25.25,
+        "min_lat": 41.75,
+        "max_lon": 25.5,
+        "max_lat": 42
+      }
+    },
+    {
+      "id": "soil_x0_y3",
+      "x": 0,
+      "y": 3,
+      "bounds": {
+        "min_lon": 22.25,
+        "min_lat": 42,
+        "max_lon": 22.5,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x1_y3",
+      "x": 1,
+      "y": 3,
+      "bounds": {
+        "min_lon": 22.5,
+        "min_lat": 42,
+        "max_lon": 22.75,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x2_y3",
+      "x": 2,
+      "y": 3,
+      "bounds": {
+        "min_lon": 22.75,
+        "min_lat": 42,
+        "max_lon": 23,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x3_y3",
+      "x": 3,
+      "y": 3,
+      "bounds": {
+        "min_lon": 23,
+        "min_lat": 42,
+        "max_lon": 23.25,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x4_y3",
+      "x": 4,
+      "y": 3,
+      "bounds": {
+        "min_lon": 23.25,
+        "min_lat": 42,
+        "max_lon": 23.5,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x5_y3",
+      "x": 5,
+      "y": 3,
+      "bounds": {
+        "min_lon": 23.5,
+        "min_lat": 42,
+        "max_lon": 23.75,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x6_y3",
+      "x": 6,
+      "y": 3,
+      "bounds": {
+        "min_lon": 23.75,
+        "min_lat": 42,
+        "max_lon": 24,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x7_y3",
+      "x": 7,
+      "y": 3,
+      "bounds": {
+        "min_lon": 24,
+        "min_lat": 42,
+        "max_lon": 24.25,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x8_y3",
+      "x": 8,
+      "y": 3,
+      "bounds": {
+        "min_lon": 24.25,
+        "min_lat": 42,
+        "max_lon": 24.5,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x9_y3",
+      "x": 9,
+      "y": 3,
+      "bounds": {
+        "min_lon": 24.5,
+        "min_lat": 42,
+        "max_lon": 24.75,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x10_y3",
+      "x": 10,
+      "y": 3,
+      "bounds": {
+        "min_lon": 24.75,
+        "min_lat": 42,
+        "max_lon": 25,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x11_y3",
+      "x": 11,
+      "y": 3,
+      "bounds": {
+        "min_lon": 25,
+        "min_lat": 42,
+        "max_lon": 25.25,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x12_y3",
+      "x": 12,
+      "y": 3,
+      "bounds": {
+        "min_lon": 25.25,
+        "min_lat": 42,
+        "max_lon": 25.5,
+        "max_lat": 42.25
+      }
+    },
+    {
+      "id": "soil_x0_y4",
+      "x": 0,
+      "y": 4,
+      "bounds": {
+        "min_lon": 22.25,
+        "min_lat": 42.25,
+        "max_lon": 22.5,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x1_y4",
+      "x": 1,
+      "y": 4,
+      "bounds": {
+        "min_lon": 22.5,
+        "min_lat": 42.25,
+        "max_lon": 22.75,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x2_y4",
+      "x": 2,
+      "y": 4,
+      "bounds": {
+        "min_lon": 22.75,
+        "min_lat": 42.25,
+        "max_lon": 23,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x3_y4",
+      "x": 3,
+      "y": 4,
+      "bounds": {
+        "min_lon": 23,
+        "min_lat": 42.25,
+        "max_lon": 23.25,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x4_y4",
+      "x": 4,
+      "y": 4,
+      "bounds": {
+        "min_lon": 23.25,
+        "min_lat": 42.25,
+        "max_lon": 23.5,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x5_y4",
+      "x": 5,
+      "y": 4,
+      "bounds": {
+        "min_lon": 23.5,
+        "min_lat": 42.25,
+        "max_lon": 23.75,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x6_y4",
+      "x": 6,
+      "y": 4,
+      "bounds": {
+        "min_lon": 23.75,
+        "min_lat": 42.25,
+        "max_lon": 24,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x7_y4",
+      "x": 7,
+      "y": 4,
+      "bounds": {
+        "min_lon": 24,
+        "min_lat": 42.25,
+        "max_lon": 24.25,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x8_y4",
+      "x": 8,
+      "y": 4,
+      "bounds": {
+        "min_lon": 24.25,
+        "min_lat": 42.25,
+        "max_lon": 24.5,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x9_y4",
+      "x": 9,
+      "y": 4,
+      "bounds": {
+        "min_lon": 24.5,
+        "min_lat": 42.25,
+        "max_lon": 24.75,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x10_y4",
+      "x": 10,
+      "y": 4,
+      "bounds": {
+        "min_lon": 24.75,
+        "min_lat": 42.25,
+        "max_lon": 25,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x11_y4",
+      "x": 11,
+      "y": 4,
+      "bounds": {
+        "min_lon": 25,
+        "min_lat": 42.25,
+        "max_lon": 25.25,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x12_y4",
+      "x": 12,
+      "y": 4,
+      "bounds": {
+        "min_lon": 25.25,
+        "min_lat": 42.25,
+        "max_lon": 25.5,
+        "max_lat": 42.5
+      }
+    },
+    {
+      "id": "soil_x0_y5",
+      "x": 0,
+      "y": 5,
+      "bounds": {
+        "min_lon": 22.25,
+        "min_lat": 42.5,
+        "max_lon": 22.5,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x1_y5",
+      "x": 1,
+      "y": 5,
+      "bounds": {
+        "min_lon": 22.5,
+        "min_lat": 42.5,
+        "max_lon": 22.75,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x2_y5",
+      "x": 2,
+      "y": 5,
+      "bounds": {
+        "min_lon": 22.75,
+        "min_lat": 42.5,
+        "max_lon": 23,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x3_y5",
+      "x": 3,
+      "y": 5,
+      "bounds": {
+        "min_lon": 23,
+        "min_lat": 42.5,
+        "max_lon": 23.25,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x4_y5",
+      "x": 4,
+      "y": 5,
+      "bounds": {
+        "min_lon": 23.25,
+        "min_lat": 42.5,
+        "max_lon": 23.5,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x5_y5",
+      "x": 5,
+      "y": 5,
+      "bounds": {
+        "min_lon": 23.5,
+        "min_lat": 42.5,
+        "max_lon": 23.75,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x6_y5",
+      "x": 6,
+      "y": 5,
+      "bounds": {
+        "min_lon": 23.75,
+        "min_lat": 42.5,
+        "max_lon": 24,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x7_y5",
+      "x": 7,
+      "y": 5,
+      "bounds": {
+        "min_lon": 24,
+        "min_lat": 42.5,
+        "max_lon": 24.25,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x8_y5",
+      "x": 8,
+      "y": 5,
+      "bounds": {
+        "min_lon": 24.25,
+        "min_lat": 42.5,
+        "max_lon": 24.5,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x9_y5",
+      "x": 9,
+      "y": 5,
+      "bounds": {
+        "min_lon": 24.5,
+        "min_lat": 42.5,
+        "max_lon": 24.75,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x10_y5",
+      "x": 10,
+      "y": 5,
+      "bounds": {
+        "min_lon": 24.75,
+        "min_lat": 42.5,
+        "max_lon": 25,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x11_y5",
+      "x": 11,
+      "y": 5,
+      "bounds": {
+        "min_lon": 25,
+        "min_lat": 42.5,
+        "max_lon": 25.25,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x12_y5",
+      "x": 12,
+      "y": 5,
+      "bounds": {
+        "min_lon": 25.25,
+        "min_lat": 42.5,
+        "max_lon": 25.5,
+        "max_lat": 42.75
+      }
+    },
+    {
+      "id": "soil_x0_y6",
+      "x": 0,
+      "y": 6,
+      "bounds": {
+        "min_lon": 22.25,
+        "min_lat": 42.75,
+        "max_lon": 22.5,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x1_y6",
+      "x": 1,
+      "y": 6,
+      "bounds": {
+        "min_lon": 22.5,
+        "min_lat": 42.75,
+        "max_lon": 22.75,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x2_y6",
+      "x": 2,
+      "y": 6,
+      "bounds": {
+        "min_lon": 22.75,
+        "min_lat": 42.75,
+        "max_lon": 23,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x3_y6",
+      "x": 3,
+      "y": 6,
+      "bounds": {
+        "min_lon": 23,
+        "min_lat": 42.75,
+        "max_lon": 23.25,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x4_y6",
+      "x": 4,
+      "y": 6,
+      "bounds": {
+        "min_lon": 23.25,
+        "min_lat": 42.75,
+        "max_lon": 23.5,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x5_y6",
+      "x": 5,
+      "y": 6,
+      "bounds": {
+        "min_lon": 23.5,
+        "min_lat": 42.75,
+        "max_lon": 23.75,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x6_y6",
+      "x": 6,
+      "y": 6,
+      "bounds": {
+        "min_lon": 23.75,
+        "min_lat": 42.75,
+        "max_lon": 24,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x7_y6",
+      "x": 7,
+      "y": 6,
+      "bounds": {
+        "min_lon": 24,
+        "min_lat": 42.75,
+        "max_lon": 24.25,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x8_y6",
+      "x": 8,
+      "y": 6,
+      "bounds": {
+        "min_lon": 24.25,
+        "min_lat": 42.75,
+        "max_lon": 24.5,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x9_y6",
+      "x": 9,
+      "y": 6,
+      "bounds": {
+        "min_lon": 24.5,
+        "min_lat": 42.75,
+        "max_lon": 24.75,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x10_y6",
+      "x": 10,
+      "y": 6,
+      "bounds": {
+        "min_lon": 24.75,
+        "min_lat": 42.75,
+        "max_lon": 25,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x11_y6",
+      "x": 11,
+      "y": 6,
+      "bounds": {
+        "min_lon": 25,
+        "min_lat": 42.75,
+        "max_lon": 25.25,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x12_y6",
+      "x": 12,
+      "y": 6,
+      "bounds": {
+        "min_lon": 25.25,
+        "min_lat": 42.75,
+        "max_lon": 25.5,
+        "max_lat": 43
+      }
+    },
+    {
+      "id": "soil_x1_y7",
+      "x": 1,
+      "y": 7,
+      "bounds": {
+        "min_lon": 22.5,
+        "min_lat": 43,
+        "max_lon": 22.75,
+        "max_lat": 43.25
+      }
+    },
+    {
+      "id": "soil_x2_y7",
+      "x": 2,
+      "y": 7,
+      "bounds": {
+        "min_lon": 22.75,
+        "min_lat": 43,
+        "max_lon": 23,
+        "max_lat": 43.25
+      }
+    },
+    {
+      "id": "soil_x3_y7",
+      "x": 3,
+      "y": 7,
+      "bounds": {
+        "min_lon": 23,
+        "min_lat": 43,
+        "max_lon": 23.25,
+        "max_lat": 43.25
+      }
+    },
+    {
+      "id": "soil_x4_y7",
+      "x": 4,
+      "y": 7,
+      "bounds": {
+        "min_lon": 23.25,
+        "min_lat": 43,
+        "max_lon": 23.5,
+        "max_lat": 43.25
+      }
+    },
+    {
+      "id": "soil_x5_y7",
+      "x": 5,
+      "y": 7,
+      "bounds": {
+        "min_lon": 23.5,
+        "min_lat": 43,
+        "max_lon": 23.75,
+        "max_lat": 43.25
+      }
+    },
+    {
+      "id": "soil_x6_y7",
+      "x": 6,
+      "y": 7,
+      "bounds": {
+        "min_lon": 23.75,
+        "min_lat": 43,
+        "max_lon": 24,
+        "max_lat": 43.25
+      }
+    },
+    {
+      "id": "soil_x7_y7",
+      "x": 7,
+      "y": 7,
+      "bounds": {
+        "min_lon": 24,
+        "min_lat": 43,
+        "max_lon": 24.25,
+        "max_lat": 43.25
+      }
+    },
+    {
+      "id": "soil_x8_y7",
+      "x": 8,
+      "y": 7,
+      "bounds": {
+        "min_lon": 24.25,
+        "min_lat": 43,
+        "max_lon": 24.5,
+        "max_lat": 43.25
+      }
+    },
+    {
+      "id": "soil_x1_y8",
+      "x": 1,
+      "y": 8,
+      "bounds": {
+        "min_lon": 22.5,
+        "min_lat": 43.25,
+        "max_lon": 22.75,
+        "max_lat": 43.5
+      }
+    },
+    {
+      "id": "soil_x2_y8",
+      "x": 2,
+      "y": 8,
+      "bounds": {
+        "min_lon": 22.75,
+        "min_lat": 43.25,
+        "max_lon": 23,
+        "max_lat": 43.5
+      }
+    },
+    {
+      "id": "soil_x3_y8",
+      "x": 3,
+      "y": 8,
+      "bounds": {
+        "min_lon": 23,
+        "min_lat": 43.25,
+        "max_lon": 23.25,
+        "max_lat": 43.5
+      }
+    },
+    {
+      "id": "soil_x4_y8",
+      "x": 4,
+      "y": 8,
+      "bounds": {
+        "min_lon": 23.25,
+        "min_lat": 43.25,
+        "max_lon": 23.5,
+        "max_lat": 43.5
+      }
+    },
+    {
+      "id": "soil_x5_y8",
+      "x": 5,
+      "y": 8,
+      "bounds": {
+        "min_lon": 23.5,
+        "min_lat": 43.25,
+        "max_lon": 23.75,
+        "max_lat": 43.5
+      }
+    },
+    {
+      "id": "soil_x6_y8",
+      "x": 6,
+      "y": 8,
+      "bounds": {
+        "min_lon": 23.75,
+        "min_lat": 43.25,
+        "max_lon": 24,
+        "max_lat": 43.5
+      }
+    },
+    {
+      "id": "soil_x7_y8",
+      "x": 7,
+      "y": 8,
+      "bounds": {
+        "min_lon": 24,
+        "min_lat": 43.25,
+        "max_lon": 24.25,
+        "max_lat": 43.5
+      }
+    },
+    {
+      "id": "soil_x8_y8",
+      "x": 8,
+      "y": 8,
+      "bounds": {
+        "min_lon": 24.25,
+        "min_lat": 43.25,
+        "max_lon": 24.5,
+        "max_lat": 43.5
+      }
+    },
+    {
+      "id": "soil_x1_y9",
+      "x": 1,
+      "y": 9,
+      "bounds": {
+        "min_lon": 22.5,
+        "min_lat": 43.5,
+        "max_lon": 22.75,
+        "max_lat": 43.75
+      }
+    },
+    {
+      "id": "soil_x2_y9",
+      "x": 2,
+      "y": 9,
+      "bounds": {
+        "min_lon": 22.75,
+        "min_lat": 43.5,
+        "max_lon": 23,
+        "max_lat": 43.75
+      }
+    },
+    {
+      "id": "soil_x3_y9",
+      "x": 3,
+      "y": 9,
+      "bounds": {
+        "min_lon": 23,
+        "min_lat": 43.5,
+        "max_lon": 23.25,
+        "max_lat": 43.75
+      }
+    },
+    {
+      "id": "soil_x4_y9",
+      "x": 4,
+      "y": 9,
+      "bounds": {
+        "min_lon": 23.25,
+        "min_lat": 43.5,
+        "max_lon": 23.5,
+        "max_lat": 43.75
+      }
+    },
+    {
+      "id": "soil_x5_y9",
+      "x": 5,
+      "y": 9,
+      "bounds": {
+        "min_lon": 23.5,
+        "min_lat": 43.5,
+        "max_lon": 23.75,
+        "max_lat": 43.75
+      }
+    },
+    {
+      "id": "soil_x6_y9",
+      "x": 6,
+      "y": 9,
+      "bounds": {
+        "min_lon": 23.75,
+        "min_lat": 43.5,
+        "max_lon": 24,
+        "max_lat": 43.75
+      }
+    },
+    {
+      "id": "soil_x7_y9",
+      "x": 7,
+      "y": 9,
+      "bounds": {
+        "min_lon": 24,
+        "min_lat": 43.5,
+        "max_lon": 24.25,
+        "max_lat": 43.75
+      }
+    },
+    {
+      "id": "soil_x8_y9",
+      "x": 8,
+      "y": 9,
+      "bounds": {
+        "min_lon": 24.25,
+        "min_lat": 43.5,
+        "max_lon": 24.5,
+        "max_lat": 43.75
+      }
+    },
+    {
+      "id": "soil_x1_y10",
+      "x": 1,
+      "y": 10,
+      "bounds": {
+        "min_lon": 22.5,
+        "min_lat": 43.75,
+        "max_lon": 22.75,
+        "max_lat": 44
+      }
+    },
+    {
+      "id": "soil_x2_y10",
+      "x": 2,
+      "y": 10,
+      "bounds": {
+        "min_lon": 22.75,
+        "min_lat": 43.75,
+        "max_lon": 23,
+        "max_lat": 44
+      }
+    },
+    {
+      "id": "soil_x3_y10",
+      "x": 3,
+      "y": 10,
+      "bounds": {
+        "min_lon": 23,
+        "min_lat": 43.75,
+        "max_lon": 23.25,
+        "max_lat": 44
+      }
+    },
+    {
+      "id": "soil_x4_y10",
+      "x": 4,
+      "y": 10,
+      "bounds": {
+        "min_lon": 23.25,
+        "min_lat": 43.75,
+        "max_lon": 23.5,
+        "max_lat": 44
+      }
+    },
+    {
+      "id": "soil_x5_y10",
+      "x": 5,
+      "y": 10,
+      "bounds": {
+        "min_lon": 23.5,
+        "min_lat": 43.75,
+        "max_lon": 23.75,
+        "max_lat": 44
+      }
+    },
+    {
+      "id": "soil_x6_y10",
+      "x": 6,
+      "y": 10,
+      "bounds": {
+        "min_lon": 23.75,
+        "min_lat": 43.75,
+        "max_lon": 24,
+        "max_lat": 44
+      }
+    },
+    {
+      "id": "soil_x7_y10",
+      "x": 7,
+      "y": 10,
+      "bounds": {
+        "min_lon": 24,
+        "min_lat": 43.75,
+        "max_lon": 24.25,
+        "max_lat": 44
+      }
+    },
+    {
+      "id": "soil_x8_y10",
+      "x": 8,
+      "y": 10,
+      "bounds": {
+        "min_lon": 24.25,
+        "min_lat": 43.75,
+        "max_lon": 24.5,
+        "max_lat": 44
+      }
+    }
+  ]
+}

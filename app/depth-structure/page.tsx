@@ -7,7 +7,7 @@ import { getVratsaDocumentedColumns } from "@/lib/vratsa-documented-columns";
 import { getVratsaRegionReport } from "@/lib/vratsa-region-report";
 import { getSondiRegionalReport, getSondiWiderStudies, isSondiLithologyLocationRegistered } from "@/lib/sondi-regional-report";
 import { formatRegionalParagraphsForDepthMode } from "@/lib/sondi-regional-text-mode";
-import { getSondiSoilSummaryWithRegionalContext } from "@/lib/sondi-soil-mineralization";
+import { getSondiSoilWithNearbyFallback } from "@/lib/sondi-national-soil-nearby";
 import { buildSondiReadableRegionalNarrative } from "@/lib/sondi-regional-narrative";
 import { redirect } from "next/navigation";
 
@@ -763,6 +763,7 @@ const material = point.material
   }
 
   const sondiRegionalCards = getSondiRegionalReport(lat, lng);
+  const sondiSoil = await getSondiSoilWithNearbyFallback(lat, lng);
   const sondiWiderStudies = getSondiWiderStudies(lat, lng);
   const selectedWiderStudies = sondiWiderStudies.slice(0, 3);
 
@@ -2292,71 +2293,61 @@ const material = point.material
         })()}
 
 
-        {/* SONDI_78DY_SOIL_MINERALIZATION: one summary for registered locations only */}
-        {false && isSondiLithologyLocationRegistered(lat, lng) && (() => {
-          // Exact documented intervals are allowed only when
-          // their recorded top is within the first two metres.
-          const shallowMaterials = exactDocumentedIntervals
-            .filter(interval =>
-              typeof interval.from_m === "number" &&
-              interval.from_m >= 0 &&
-              interval.from_m <= 2 &&
-              (interval.to_m === null ||
-               interval.to_m > interval.from_m)
-            )
-            .map(interval => interval.material_bg);
-
-          // SONDI_78EA_REGIONAL_SOIL_CONTEXT
-          const soil = getSondiSoilSummaryWithRegionalContext(
-            profile.target_glim_surface_context?.status === "OK"
-              ? profile.target_glim_surface_context.material_bg
-              : null,
-            shallowMaterials,
-            sondiRegionalCards.flatMap(card => card.paragraphs)
-          );
-
-          return (
-            <section
-              aria-label="Почва и минерализация"
-              style={{
-                marginTop: 24,
-                padding: 20,
-                border: "1px solid #d9e7e9",
-                borderRadius: 14,
-                background: "#f8fbfa"
-              }}
-            >
-              <h2 style={{
-                margin: "0 0 14px",
-                fontSize: 19,
-                color: "#173f49"
-              }}>
-                Почва и минерализация
-              </h2>
-              <p style={{ lineHeight: 1.75 }}>
-                <strong>Общ тип:</strong>{" "}
-                {soil.kind}
-              </p>
-              <p style={{ lineHeight: 1.75 }}>
-                <strong>Характеристика:</strong>{" "}
-                {soil.description}
-              </p>
-              <p style={{ lineHeight: 1.75 }}>
-                <strong>Минерализация:</strong>{" "}
-                {soil.mineralization}
-              </p>
-              <p style={{
-                color: "#657c80",
-                fontSize: 12,
-                lineHeight: 1.65
-              }}>
-                Основа на оценката: {soil.basis}.
-                Предварителна характеристика,
-                не лабораторно изследване на почвата.
-              </p>
-            </section>
-          );
-        })()}
+        {/* SONDI_78EX_NATIONAL_SOIL_UI */}
+        {sondiSoil && (
+          <section
+            aria-label="Почва и минерализация"
+            style={{
+              marginTop: 24,
+              padding: 20,
+              border: "1px solid #d9e7e9",
+              borderRadius: 14,
+              background: "#f8fbfa"
+            }}
+          >
+            <h2 style={{
+              margin: "0 0 14px",
+              fontSize: 19,
+              color: "#173f49"
+            }}>
+              Почва и минерализация
+            </h2>
+            <p style={{ lineHeight: 1.75 }}>
+              <strong>Механичен състав:</strong>{' '}
+              {sondiSoil.summary.texture_bg}.
+            </p>
+            <p style={{ lineHeight: 1.75 }}>
+              <strong>Почвени фракции:</strong>{' '}
+              пясък {sondiSoil.summary.sand_percent.toFixed(1)}%,{' '}
+              прах {sondiSoil.summary.silt_percent.toFixed(1)}%,{' '}
+              глина {sondiSoil.summary.clay_percent.toFixed(1)}%.
+            </p>
+            <p style={{ lineHeight: 1.75 }}>
+              <strong>pH:</strong>{' '}
+              {sondiSoil.summary.ph.toFixed(1)}.
+            </p>
+            <p style={{ lineHeight: 1.75 }}>
+              <strong>Едри фрагменти:</strong>{' '}
+              {sondiSoil.summary.coarse_fragments_vol_percent.toFixed(1)}% по обем.
+            </p>
+            <p style={{ lineHeight: 1.75 }}>
+              <strong>Соленост и минерализация:</strong>{' '}
+              Няма потвърдени измервания в използваните почвени слоеве.
+            </p>
+            <p style={{
+              color: "#657c80",
+              fontSize: 12,
+              lineHeight: 1.65
+            }}>
+              {sondiSoil.status === 'NEARBY_REGIONAL_ESTIMATE'
+                ? `Регионална почвена оценка по съседна картографска клетка на приблизително ${Math.round(sondiSoil.summary.distance_m)} м от избраната точка. `
+                : 'Моделирана оценка за картографската клетка на избраните координати. '}
+              Източник: ISRIC SoilGrids, почвен слой 0–5 см.
+              Данните са пространствен модел, не лабораторен анализ.
+              Механичният състав не определя автоматично геоложките пластове в дълбочина.
+            </p>
+          </section>
+        )}
 
         {/* VRATSA_DOCUMENTED_CONTEXT_UI_START */}
         {Boolean(0) && (vratsaReportCards.length > 0 ||

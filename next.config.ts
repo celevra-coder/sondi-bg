@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
   ],
 
   outputFileTracingIncludes: {
+    // SONDI_78EW_NATIONAL_SOIL_RASTERS
+    "/depth-structure": [
+      "./data/soil-lithology/runtime/soilgrids/index.json",
+      "./data/soil-lithology/runtime/soilgrids/tiles/**/*.tif",
+    ],
     "/api/expert-pdf/render-save": [
       "./node_modules/@sparticuz/chromium/bin/**/*",
     ],
