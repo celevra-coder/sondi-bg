@@ -5,7 +5,10 @@ import { assessGlimAlternatives } from "@/lib/glim-alternative-assessment";
 import Link from "next/link";
 import { getVratsaDocumentedColumns } from "@/lib/vratsa-documented-columns";
 import { getVratsaRegionReport } from "@/lib/vratsa-region-report";
-import { getSondiRegionalReport, getSondiWiderStudies } from "@/lib/sondi-regional-report";
+import { getSondiRegionalReport, getSondiWiderStudies, isSondiLithologyLocationRegistered } from "@/lib/sondi-regional-report";
+import { formatRegionalParagraphsForDepthMode } from "@/lib/sondi-regional-text-mode";
+import { getSondiSoilSummaryWithRegionalContext } from "@/lib/sondi-soil-mineralization";
+import { buildSondiReadableRegionalNarrative } from "@/lib/sondi-regional-narrative";
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase-server";
@@ -15,6 +18,7 @@ import {
 } from "@/lib/lithology-profile";
 import { synthesizeLithologyEvidence } from "@/lib/lithology-synthesis";
 import { buildUnifiedLithology } from "@/lib/lithology-unified-synthesis";
+import { getNationalAutomaticPredictedIntervals } from "@/lib/sondi-national-automatic-intervals";
 import { explainDepthLithology } from "@/lib/lithology-depth-display";
 
 type SearchParams = Promise<{
@@ -724,6 +728,40 @@ const material = point.material
     analogueCount: row.analogueCount,
   }));
   const regionalColumns = getVratsaDocumentedColumns(profile);
+
+  // SONDI_78DX_REGISTERED_LITHOLOGY_ONLY
+  // The EXPERT access checks remain above this point.
+  // Unregistered regions must not receive a generated
+  // lithological report from generic geological-map data.
+  if (!isSondiLithologyLocationRegistered(lat, lng)) {
+    return (
+      <main style={{
+        maxWidth: 860,
+        margin: "48px auto",
+        padding: 28,
+        background: "#ffffff",
+        borderRadius: 16,
+        color: "#173f49"
+      }}>
+        <h1 style={{ fontSize: 24 }}>
+          Геоложки анализ
+        </h1>
+        <p style={{ lineHeight: 1.7 }}>
+          Избраният район все още не е включен в
+          националния литоложки модел на SONDI.BG.
+        </p>
+        <p style={{ lineHeight: 1.7 }}>
+          За тази локация засега не се предоставя
+          литоложки анализ по дълбочини или
+          регионален литоложки анализ.
+        </p>
+        <a href="/explore">
+          Назад към картата
+        </a>
+      </main>
+    );
+  }
+
   const sondiRegionalCards = getSondiRegionalReport(lat, lng);
   const sondiWiderStudies = getSondiWiderStudies(lat, lng);
   const selectedWiderStudies = sondiWiderStudies.slice(0, 3);
@@ -1165,7 +1203,118 @@ const material = point.material
       : [])
   ];
 
-  const displayRows = [{
+
+  // SONDI_78BV_AUTOMATIC_SPATIAL_DISPLAY
+  // Automatically expose only material predictions approved by
+  // the national engine for the selected depth.
+  // Sampled depths are NOT geological contact boundaries.
+
+  // SONDI_78CA_NATIONAL_INTERVAL_RULE
+  // National, evidence-gated dynamic interval proposals.
+  // These are conditional predictions, never measured logs.
+  const automaticPredictedIntervals =
+    getNationalAutomaticPredictedIntervals(lat,lng);
+
+  const automaticIntervalRows =
+    automaticPredictedIntervals
+      .slice()
+      .sort((a,b) => a.from_m-b.from_m)
+      .map(interval => ({
+      intervalFromM: interval.from_m,
+      intervalToM: interval.to_m,
+      depth:
+        "≈ " + interval.from_m.toLocaleString("bg-BG") +
+        "–" + interval.to_m.toLocaleString("bg-BG") + " м",
+      material: geologyTextBg(familyLabel(interval.material)),
+      description:
+        "Условен прогнозен интервал въз основа на " +
+        "съпоставени независими сондажни колонки. " +
+        "Границите са ориентировъчни и не са " +
+        "измерени под избраната точка.",
+      evidenceNote:
+        "Пространствена геоложка корелация. " +
+        "Независими сондажи: " +
+        interval.borehole_ids.length +
+        ". Необходима е местна проверка при сондиране.",
+      confidence:"Ниска увереност",
+      analogueCount:interval.borehole_ids.length
+    }));
+
+  const automaticSpatialRows =
+    profile.target_national_depth_model
+      .filter(result =>
+        result.engine === "NATIONAL_REGIONAL" &&
+        result.status === "CONDITIONAL" &&
+        result.evidence_tier === "GEOLOGICAL_CORRELATION" &&
+        result.interpretation_scope ===
+          "SPATIAL_CORRELATION_CONDITIONAL" &&
+        result.confidence !== "UNRESOLVED" &&
+        typeof result.probable_lithology === "string" &&
+        result.probable_lithology.trim().length > 0 &&
+        Number.isFinite(result.target.depth_m)
+      )
+      .slice()
+      .sort((a,b) => a.target.depth_m-b.target.depth_m)
+      .map(result => ({
+        sampleDepthM: result.target.depth_m,
+        depth: "≈ " +
+          result.target.depth_m.toLocaleString("bg-BG") +
+          " м",
+        material: geologyTextBg(
+          familyLabel(result.probable_lithology!)
+        ),
+        description:
+          "Условна геоложка прогноза за материала " +
+          "на посочената ориентировъчна дълбочина. " +
+          "Това не доказва непрекъснат пласт или " +
+          "точните дълбочини на неговите граници.",
+        evidenceNote:
+          "Резултат от автоматична пространствена " +
+          "геоложка корелация. Не е измерена " +
+          "сондажна колонка на избраните координати.",
+        confidence: "Ниска увереност",
+        analogueCount: 0,
+      }));
+
+  // SONDI_78CM_NUMERIC_SPATIAL_DISPLAY
+  // Numeric evaluation: never parse geological depth from UI text.
+  // Duplicated or contradictory samples are not shown as certainty.
+  const uniqueSpatialRows =
+    automaticSpatialRows.filter((row,index,all) => {
+      const atSameDepth = all.filter(other =>
+        other.sampleDepthM === row.sampleDepthM
+      );
+
+      if(atSameDepth.some(other =>
+        other.material !== row.material
+      )) return false;
+
+      if(all.findIndex(other =>
+        other.sampleDepthM === row.sampleDepthM
+      ) !== index) return false;
+
+      return !automaticPredictedIntervals.some(interval =>
+        row.sampleDepthM >= interval.from_m &&
+        row.sampleDepthM < interval.to_m
+      );
+    });
+
+  // SONDI_78CZ_CONTEXT_AWARE_REGIONAL_TEXT
+  // Only evidence accepted for the selected coordinates counts.
+  const hasDepthEvidenceForRegionalText =
+    exactDocumentedIntervals.length > 0 ||
+    automaticIntervalRows.length > 0 ||
+    uniqueSpatialRows.length > 0;
+
+  // SONDI_78CU_NO_CONTRADICTORY_REGIONAL_FALLBACK
+  // A regional fallback is needed only when no supported
+  // depth-specific prediction is available.
+  // The separate regional geology section remains intact.
+  const displayRows = [
+    ...automaticIntervalRows,
+    ...uniqueSpatialRows,
+    ...((Boolean(0) && automaticIntervalRows.length === 0 &&
+         uniqueSpatialRows.length === 0) ? [{
         ...regionalFallbackRow,
         material: "Регионален геоложки анализ",
         description: [
@@ -1179,7 +1328,8 @@ const material = point.material
         ].filter(Boolean).filter((value, index, all) =>
           all.indexOf(value) === index
         ).join(" ")
-      }];
+      }] : [])
+  ];
 
   // National documented contacts, independent of raster coverage.
   // These are measurements at neighbouring boreholes, NOT
@@ -1454,76 +1604,6 @@ const material = point.material
         ) : (
           <>
 
-        {exactDocumentedIntervals.length === 0 &&
-         nationalReferenceColumns.length > 0 && (
-          <section style={{
-            marginTop: 22,
-            padding: 18,
-            borderRadius: 14,
-            background: "#f3f9fb",
-            border: "1px solid #d9e7ea"
-          }}>
-            <h2 style={{
-              margin: "0 0 9px",
-              color: "#173f49",
-              fontSize: 19
-            }}>
-              Документирани интервали в близки сондажи
-            </h2>
-            <p style={{
-              color: "#405963",
-              lineHeight: 1.6,
-              margin: "0 0 14px"
-            }}>
-              Това са действителни наблюдения на местата
-              на посочените сондажи. Не представляват
-              измерена или потвърдена геоложка колонка
-              под избраните координати.
-            </p>
-            {nationalReferenceColumns.map(column => (
-              <details key={column.borehole_id} style={{
-                marginBottom: 9,
-                padding: 12,
-                background: "#fff",
-                border: "1px solid #d9e7ea",
-                borderRadius: 9
-              }}>
-                <summary style={{
-                  cursor: "pointer",
-                  fontWeight: 700,
-                  color: "#173f49"
-                }}>
-                  {column.borehole_id}
-                  {" — "}
-                  {column.distance_km.toFixed(2)} км
-                  {" — "}
-                  {column.intervals.length} интервала
-                </summary>
-                <div style={{ marginTop: 12 }}>
-                  {column.intervals.map((interval, index) => (
-                    <div key={index} style={{
-                      padding: "8px 0",
-                      borderTop: "1px solid #e4edef",
-                      lineHeight: 1.5
-                    }}>
-                      <strong>
-                        {interval.from_m.toLocaleString("bg-BG")}
-                        {"–"}
-                        {interval.to_m.toLocaleString("bg-BG")} м
-                      </strong>
-                      {" — "}{interval.material}
-                      {interval.stratigraphy &&
-                        <span>
-                          {" ("}{interval.stratigraphy}{")"}
-                        </span>
-                      }
-                    </div>
-                  ))}
-                </div>
-              </details>
-            ))}
-          </section>
-        )}
         {exactDocumentedIntervals.length > 0 ? (
           <section
             data-sondi-exact-borehole-column="true"
@@ -1671,8 +1751,7 @@ const material = point.material
                 key={row.depth}
                 style={{
                   display: "grid",
-                  gridTemplateColumns:
-                    "90px minmax(0,1fr)",
+                  gridTemplateColumns: row.depth === "Регионален контекст" ? "minmax(0,1fr)" : "90px minmax(0,1fr)",
                   gap: 14,
                   padding: "14px 16px",
                   border:
@@ -1899,7 +1978,10 @@ const material = point.material
           </section>
         )}
 
-        {profile.target_glim_surface_context?.status === "OK" && (
+        {Boolean(0) && !hasDepthEvidenceForRegionalText &&
+         profile.target_glim_surface_context?.status === "OK" &&
+         profile.target_glim_surface_context.material_bg !==
+           "Друг тип геоложка основа" && (
           <section
             style={{
               marginTop: 24,
@@ -1940,7 +2022,9 @@ const material = point.material
           </section>
         )}
         {/* Единна регионална геоложка основа, когато GLIM няма локален отговор. */}
-        {vratsaReportCards.length > 0 && profile.target_glim_surface_context?.status !== "OK" && (
+        {Boolean(0) && !hasDepthEvidenceForRegionalText &&
+         vratsaReportCards.length > 0 &&
+         profile.target_glim_surface_context?.status !== "OK" && (
           <section style={{ marginTop: 24, padding: 18, border: "1px solid #d9e7e9", borderRadius: 14, background: "#f8fbfa" }}>
             <h2 style={{ margin: "0 0 14px", fontSize: 21, color: "#173f49" }}>Геоложка основа в района</h2>
             <p style={{ margin: "0 0 7px", fontWeight: 700, color: "#173f49" }}>{vratsaReportCards[0].title}</p>
@@ -1948,7 +2032,7 @@ const material = point.material
             <p style={{ margin: "9px 0 0", fontSize: 12, color: "#657c80" }}>Регионална геоложка основа, не доказан пласт на конкретна дълбочина.</p>
           </section>
         )}
-        {regionalColumns.length > 0 && (
+        {Boolean(0) && regionalColumns.length > 0 && (
           <section style={{ marginTop: 26, padding: 18, border: "1px solid #d9e7e9", borderRadius: 14, background: "#f8fbfa" }}>
             <h2 style={{ margin: "0 0 10px", fontSize: 19, color: "#173f49" }}>Регионална геоложка информация — документирани сондажни разрези</h2>
             <p style={{ color: "#405a61", fontSize: 13, lineHeight: 1.6 }}>
@@ -1991,8 +2075,291 @@ const material = point.material
             ))}
           </section>
         )}
-                {/* VRATSA_DOCUMENTED_CONTEXT_UI_START */}
-        {(vratsaReportCards.length > 0 ||
+
+        {/* SONDI_78DT_SINGLE_READER: one location-driven regional result */}
+        {(() => {
+          const eligible = regionalCardsForDisplay
+            .filter(card =>
+              Array.isArray(card.paragraphs) &&
+              card.paragraphs.some(p =>
+                typeof p === "string" && p.trim().length > 0
+              ) &&
+              !card.informationType?.startsWith("SONDI_DEPTH_REFERENCE_") &&
+              !card.informationType?.startsWith(
+                "SONDI_REGIONAL_BOREHOLE_ANALOGUE_"
+              ) &&
+              !card.id.endsWith("-reference-intervals") &&
+              !card.id.endsWith("-well-depths") &&
+              !/сондажен аналог|сондажни материали/i.test(card.title)
+            );
+
+          const priority = (id: string) =>
+            id.endsWith("-reader-overview") ? 0 :
+            id.endsWith("-automatic-overview") ||
+            id.endsWith("-location-driven-overview") ? 1 :
+            id.endsWith("-overview") ? 2 : 3;
+
+          const selected = eligible
+            .slice()
+            .sort((a, b) => priority(a.id) - priority(b.id))[0];
+
+          const materials = [
+            ...automaticIntervalRows.map(row => row.material),
+            ...uniqueSpatialRows.map(row => row.material),
+            ...exactDocumentedIntervals.map(row => row.material_bg)
+          ].filter(Boolean);
+
+          const raw = selected
+            ? formatRegionalParagraphsForDepthMode(
+                selected,
+                hasDepthEvidenceForRegionalText,
+                materials
+              )
+            : [
+                regionalSurfaceExplanation ||
+                sofiaRegionalSummary ||
+                regionalDescription
+              ].filter(Boolean);
+
+          // Special regional descriptions are preserved, while
+          // the approved depth materials receive an explanation.
+          const supplementary = selected &&
+            hasDepthEvidenceForRegionalText &&
+            selected.informationType !==
+              "Автоматичен регионален геоложки анализ"
+            ? formatRegionalParagraphsForDepthMode(
+                {
+                  informationType:
+                    "Автоматичен регионален геоложки анализ",
+                  paragraphs: []
+                },
+                true,
+                materials
+              ).filter(p =>
+                p.startsWith("За по-доброто разбиране")
+              )
+            : [];
+
+
+          // SONDI_78DV_COMPLETE_REGIONAL_READER
+          // Enrich only short regional-only reports. Every statement
+          // below is conditioned on existing location-derived evidence.
+          const additionalContext: string[] = [];
+          const existingText = raw.join(" ").trim();
+
+          if (!hasDepthEvidenceForRegionalText &&
+              existingText.length < 900) {
+            const related = [
+              regionalSurfaceExplanation,
+              sofiaRegionalSummary,
+              regionalDescription
+            ].filter((p): p is string =>
+              typeof p === "string" && p.trim().length > 70
+            );
+
+            for (const candidate of related) {
+              const cleaned = candidate.trim();
+              const contained = existingText
+                .toLocaleLowerCase("bg")
+                .includes(cleaned.toLocaleLowerCase("bg"));
+
+              if (!contained &&
+                  !additionalContext.includes(cleaned) &&
+                  additionalContext.length < 2) {
+                additionalContext.push(cleaned);
+              }
+            }
+
+            // Explain only rock types actually present in
+            // the selected reader or related regional context.
+            const geology = [
+              existingText,
+              ...additionalContext
+            ].join(" ").toLocaleLowerCase("bg");
+
+            const explanations: string[] = [];
+
+            if (/глин|аргилит/.test(geology)) {
+              explanations.push(
+                "Глинестите материали обикновено пропускат " +
+                "водата по-трудно. При сондиране тяхната " +
+                "плътност и устойчивост имат значение " +
+                "за начина на укрепване."
+              );
+            }
+
+            if (/пясъц|пясък|чакъл|алувиал|кватернерни отложения/.test(geology)) {
+              explanations.push(
+                "Пясъчните и чакълестите наслаги " +
+                "могат да бъдат по-пропускливи. " +
+                "Това обаче не означава, че " +
+                "във всеки такъв участък има вода."
+              );
+            }
+
+            if (/гранит|гранодиорит|гнайс|кристалин/.test(geology)) {
+              explanations.push(
+                "Твърдите кристалинни скали изискват " +
+                "различен подход при пробиване от " +
+                "рохкавите наслаги. Напукаността " +
+                "може да влияе на движението на " +
+                "подземната вода."
+              );
+            }
+
+            if (/варовик|варовици|доломит|мрамор/.test(geology)) {
+              explanations.push(
+                "При карбонатните скали пукнатините " +
+                "и разтворените участъци могат " +
+                "да влияят на водопропускливостта, " +
+                "но не доказват сами по себе си " +
+                "наличието на вода."
+              );
+            }
+
+            if (/алевролит|пясъчник|конгломерат|филит|шист/.test(geology)) {
+              explanations.push(
+                "Уплътнените и споени скални " +
+                "материали могат да се различават " +
+                "значително по здравина. При " +
+                "сондиране значение имат съставът, " +
+                "напукаността и изветрянето."
+              );
+            }
+
+            if (explanations.length > 0) {
+              additionalContext.push(
+                "Практическо значение за сондирането: " +
+                explanations.slice(0,4).join(" ")
+              );
+            }
+          }
+
+          // SONDI_78DW_NATIONAL_REGIONAL_NARRATIVE
+          const useFullExistingReader =
+            !hasDepthEvidenceForRegionalText &&
+            selected?.id.endsWith("-reader-overview") &&
+            raw.length >= 4 &&
+            raw.join(" ").length >= 1000;
+
+          const paragraphs = hasDepthEvidenceForRegionalText
+            ? [...raw, ...supplementary]
+            : buildSondiReadableRegionalNarrative(
+                [...raw, ...additionalContext].filter(p =>
+                  typeof p === "string" && p.trim().length > 0
+                ),
+                Boolean(useFullExistingReader)
+              )
+            .filter(p => typeof p === "string" &&
+              p.trim().length > 0);
+
+          if (paragraphs.length === 0) return null;
+
+          return (
+            <section
+              aria-label="Единен регионален геоложки анализ"
+              style={{
+                marginTop: 26,
+                padding: 20,
+                border: "1px solid #d9e7e9",
+                borderRadius: 14,
+                background: "#f8fbfa"
+              }}
+            >
+              <h2 style={{
+                margin: "0 0 15px",
+                fontSize: 19,
+                color: "#173f49"
+              }}>
+                Регионален геоложки анализ
+              </h2>
+              <div style={{
+                color: "#344f55",
+                fontSize: 14,
+                lineHeight: 1.8
+              }}>
+                {paragraphs.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    style={{ margin: "0 0 14px" }}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </section>
+          );
+        })()}
+
+
+        {/* SONDI_78DY_SOIL_MINERALIZATION: one summary for registered locations only */}
+        {false && isSondiLithologyLocationRegistered(lat, lng) && (() => {
+          // Exact documented intervals are allowed only when
+          // their recorded top is within the first two metres.
+          const shallowMaterials = exactDocumentedIntervals
+            .filter(interval =>
+              typeof interval.from_m === "number" &&
+              interval.from_m >= 0 &&
+              interval.from_m <= 2 &&
+              (interval.to_m === null ||
+               interval.to_m > interval.from_m)
+            )
+            .map(interval => interval.material_bg);
+
+          // SONDI_78EA_REGIONAL_SOIL_CONTEXT
+          const soil = getSondiSoilSummaryWithRegionalContext(
+            profile.target_glim_surface_context?.status === "OK"
+              ? profile.target_glim_surface_context.material_bg
+              : null,
+            shallowMaterials,
+            sondiRegionalCards.flatMap(card => card.paragraphs)
+          );
+
+          return (
+            <section
+              aria-label="Почва и минерализация"
+              style={{
+                marginTop: 24,
+                padding: 20,
+                border: "1px solid #d9e7e9",
+                borderRadius: 14,
+                background: "#f8fbfa"
+              }}
+            >
+              <h2 style={{
+                margin: "0 0 14px",
+                fontSize: 19,
+                color: "#173f49"
+              }}>
+                Почва и минерализация
+              </h2>
+              <p style={{ lineHeight: 1.75 }}>
+                <strong>Общ тип:</strong>{" "}
+                {soil.kind}
+              </p>
+              <p style={{ lineHeight: 1.75 }}>
+                <strong>Характеристика:</strong>{" "}
+                {soil.description}
+              </p>
+              <p style={{ lineHeight: 1.75 }}>
+                <strong>Минерализация:</strong>{" "}
+                {soil.mineralization}
+              </p>
+              <p style={{
+                color: "#657c80",
+                fontSize: 12,
+                lineHeight: 1.65
+              }}>
+                Основа на оценката: {soil.basis}.
+                Предварителна характеристика,
+                не лабораторно изследване на почвата.
+              </p>
+            </section>
+          );
+        })()}
+
+        {/* VRATSA_DOCUMENTED_CONTEXT_UI_START */}
+        {Boolean(0) && (vratsaReportCards.length > 0 ||
           (profile.target_documented_geological_context?.records.length ?? 0) > 0) && (
             <section
               aria-label="Документиран регионален геоложки контекст"
@@ -2036,10 +2403,27 @@ const material = point.material
                   ...(regionalEvidenceCard
                     ? [regionalEvidenceCard]
                     : [])
-                ].map((card, cardIndex) => (
+                ]
+                // SONDI_78DB_HIDE_REGIONAL_BOREHOLE_INVENTORY
+                // Keep the underlying geological evidence intact.
+                // These inventories are not reader-facing analyses.
+                .filter(card =>
+                  !card.informationType?.startsWith(
+                    "SONDI_DEPTH_REFERENCE_"
+                  ) &&
+                  !card.informationType?.startsWith(
+                    "SONDI_REGIONAL_BOREHOLE_ANALOGUE_"
+                  ) &&
+                  card.title !==
+                    "Документирани сондажни материали по дълбочина" &&
+                  !card.title.startsWith(
+                    "Регионален сондажен аналог"
+                  )
+                )
+                .map((card, cardIndex) => (
                 <div key={`${card.id}-${cardIndex}`} style={{ marginTop: 14, padding: 14, border: "1px solid #d9e7e9", borderRadius: 10, background: "#ffffff" }}>
                   <h3 style={{ margin: "0 0 7px", fontSize: 16, color: "#173f49" }}>{card.title}</h3>
-                  {!card.id.endsWith("-reader-overview") && (<p style={{ margin: "0 0 8px", fontSize: 12, color: "#405a61" }}>Вид информация: {card.informationType}</p>)}
+                  {/* SONDI_78DH_UNIFIED_READER_PRESENTATION: metadata hidden */}
                   {card.id.endsWith("-reader-overview") ? (
                     <div style={{
                       marginTop: 12,
@@ -2056,9 +2440,17 @@ const material = point.material
                   ) : (
 <details open={card.id.endsWith("-overview")}>
                     <summary style={{ cursor: "pointer", color: "#176c72", fontSize: 13, fontWeight: 700 }}>Покажи геоложките сведения</summary>
-                    <ul style={{ margin: "12px 0 0", paddingLeft: 21, color: "#344f55", fontSize: 13, lineHeight: 1.8 }}>
-                      {card.paragraphs.filter(item => item.trim().length > 0).map((item, index) => <li key={index}>{item}</li>)}
-                    </ul>
+                    <div style={{ margin: "12px 0 0", color: "#344f55", fontSize: 14, lineHeight: 1.75 }}>
+                      {formatRegionalParagraphsForDepthMode(
+      card,
+      hasDepthEvidenceForRegionalText,
+      [
+        ...automaticIntervalRows.map(row => row.material),
+        ...uniqueSpatialRows.map(row => row.material),
+        ...exactDocumentedIntervals.map(interval => interval.material_bg)
+      ]
+    ).filter(item => item.trim().length > 0).map((item, index) => <p key={index} style={{ margin: "0 0 13px" }}>{item}</p>)}
+                    </div>
                   </details>
                   )}
                   {!card.id.endsWith("-reader-overview") && (<p style={{ margin: "10px 0 0", fontSize: 11, color: "#71858b" }}>Източници: {card.sources.length ? card.sources.join(", ") : "Регионален геоложки модел"}</p>)}
@@ -2100,12 +2492,7 @@ const material = point.material
                         fontSize: 16,
                         color: "#173f49"
                       }}>{card.title}</h3>
-                      <p style={{
-                        fontSize: 12,
-                        color: "#405a61"
-                      }}>
-                        Вид информация: {card.informationType}
-                      </p>
+                      {/* Technical metadata hidden */}
                       <details>
                         <summary style={{
                           cursor: "pointer",
@@ -2115,16 +2502,16 @@ const material = point.material
                         }}>
                           Покажи геоложките сведения
                         </summary>
-                        <ul style={{
+                        <div style={{
                           paddingLeft: 21,
                           color: "#344f55",
                           fontSize: 13,
                           lineHeight: 1.8
                         }}>
-                          {card.paragraphs.map((paragraph, index) => (
-                            <li key={index}>{paragraph}</li>
+                          {card.paragraphs.filter(paragraph => paragraph.trim().length > 0).map((paragraph, index) => (
+                            <p key={index} style={{ margin: "0 0 12px", lineHeight: 1.75 }}>{paragraph}</p>
                           ))}
-                        </ul>
+                        </div>
                       </details>
                       <p style={{
                         marginTop: 10,

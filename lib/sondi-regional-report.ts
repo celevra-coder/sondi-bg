@@ -393,8 +393,54 @@ function makeCards(
 
 
   } else {
-    const cleanRegionalTerm = (raw: string): string =>
-      raw
+
+    // SONDI_78BD_READABLE_REGION
+    const readableRegionalTerm = (raw: string): string => {
+      const text = raw.trim();
+      const rules: Array<[RegExp, string]> = [
+        [/^Quaternary\b/i,
+          "Най-новите повърхностни наслаги — пясъци, чакъли, глини и льос, натрупани от реки и вятър"],
+        [/^Romanian\b/i,
+          "По-стари пластове от плътни жълтеникави глини, на места с пясък и варовити частици"],
+        [/^Dacian\b/i,
+          "По-стари сиво-синкави глини и пясъци, на места с въглищни прослойки"],
+        [/^Sumer marl\b/i,
+          "Сумерски мергели — скали от глина и варовит материал"],
+        [/^Mramoren marl\b/i,
+          "Мраморенски мергели — глинесто-варовити скали"],
+        [/^Vratsa Urgonian carbonate complex\b/i,
+          "Врачански карбонатен комплекс — предимно варовикови скали"],
+        [/^Pastrina limestone\/calcareous marl\b/i,
+          "Варовици и варовити мергели от района на Пъстрина"],
+        [/^Neogene clay-sand sedimentary sequence\b/i,
+          "По-стари глинести и песъчливи наслаги"],
+        [/^Brusartsi Formation\b/i,
+          "Брусарска свита — глинести и песъчливи пластове"]
+      ];
+
+      for (const [pattern, translation] of rules) {
+        if (pattern.test(text)) return translation;
+      }
+
+      // Preserve Cyrillic material descriptions. Do not print
+      // untranslated Latin source codes or English fragments.
+      if (/[A-Za-z]/.test(text)) {
+        const cyrillic = text
+          .replace(/\b[A-Za-z][A-Za-z0-9_-]*\b/g, " ")
+          .replace(/\s+/g, " ")
+          .replace(/^[\s,;:.—-]+|[\s,;:.—-]+$/g, "")
+          .trim();
+
+        return /[А-Яа-яЁё]/.test(cyrillic)
+          ? cyrillic
+          : "Допълнителна геоложка единица, описана в използваните източници";
+      }
+
+      return text;
+    };
+
+const cleanRegionalTerm = (raw: string): string =>
+      readableRegionalTerm(raw)
         .replace(/Картографирана категория:/gi, "")
         .replace(/;?\s*\d+\s*полигона?/gi, "")
         .replace(/Пространствено различна в рамките на общината;?/gi, "")
@@ -435,6 +481,19 @@ function makeCards(
       );
     }
 
+
+    // SONDI_78BI_KOZLODUY_READER
+    // Reader-facing wording only; preserve original model data.
+    if (/Козлодуйска низина/i.test(contextName)) {
+      paragraphs.splice(0, paragraphs.length,
+        "Според публикуваните геоложки проучвания районът е изграден от няколко групи земни наслаги с различна възраст и състав.",
+        "Най-близо до повърхността са разпространени пясъци, чакъли, глини и льос, натрупани в миналото от реки и вятър.",
+        "В района са описани и по-стари пластове от плътни жълтеникави глини, на места с пясъчни прослойки и варовити частици.",
+        "Други документирани отложения включват сиво-синкави глини и пясъци, в които на отделни места се срещат и въглищни прослойки.",
+        "Тези материали са установени в проучени части на района. Точните дълбочини, на които преминават един в друг под избраната точка, не са потвърдени."
+      );
+    }
+
     if (entry.id === "MON") {
       paragraphs.length = 0;
       paragraphs.push(
@@ -451,29 +510,11 @@ function makeCards(
         sources
       });
     } else if (paragraphs.length) {
-      paragraphs.push(
-        "Геоложките материали могат да се редуват, " +
-        "да променят дебелината си и да преминават един " +
-        "в друг. Подредбата им зависи от конкретното " +
-        "местоположение и геоложкия строеж."
-      );
-
-      paragraphs.push(
-        "Практическо значение за сондирането: " +
-        "различните материали се отличават по здравина, " +
-        "устойчивост и пропускливост. Глинестите пластове " +
-        "обикновено пропускат вода по-трудно, докато " +
-        "пясъчните и чакълестите могат да бъдат " +
-        "по-пропускливи. При твърдите скали значение " +
-        "имат изветрянето и напукаността. " +
-        "Тези регионални сведения не доказват " +
-        "конкретен пласт на определена дълбочина " +
-        "под избраната точка."
-      );
-
       cards.push({
         id: `${entry.id}-reader-overview`,
-        title: `Регионален геоложки анализ — ${entry.name_bg}`,
+        title: /Козлодуйска низина/i.test(contextName)
+          ? "Геоложки строеж в района на Козлодуй"
+          : `Регионален геоложки анализ — ${entry.name_bg}`,
         informationType:
           "Геоложки строеж и практическо значение",
         paragraphs,
@@ -1524,9 +1565,11 @@ function buildAutomaticGeologicalOverview(
   }
 
 
-  // SONDI_CONCISE_AUTOMATIC_OVERVIEW_65X
-  // Plain-language summary based on this exact GPS location.
-  // No borehole interval is transferred to the target site.
+
+  // SONDI_78CX_NATIONAL_READER_STYLE
+  // National reader-facing text from existing geographical evidence.
+  // Never convert a mapped age or a regional analogue into
+  // a documented lithological interval at the target.
   const conciseParagraphs: string[] = [];
 
   const regionalTypes = [...new Set(
@@ -1541,47 +1584,45 @@ function buildAutomaticGeologicalOverview(
       .filter((value): value is string => !!value)
   )];
 
-  const geologyParts: string[] = [];
-
   if (mappedUnit) {
-    geologyParts.push(
-      /кватернер/i.test(mappedUnit)
-        ? "Повърхностните наслаги са от кватернерна " +
-          "възраст. В такива наслаги могат да се " +
-          "срещат пясъци, чакъли и глини."
-        : "За повърхността е картографирана " +
-          "геоложка единица „" + mappedUnit + "“."
+    conciseParagraphs.push(
+      "Според използваната геоложка карта при избраната " +
+      "точка е обозначена геоложка единица „" +
+      mappedUnit + "“. " +
+      "Това е картографирана характеристика на района. " +
+      "Тя не определя сама по себе си точната " +
+      "последователност на скалите в дълбочина."
     );
-  }
-
-  if (gwbProfiles.length > 0) {
-    geologyParts.push(
-      "В района са описани " +
-      gwbProfiles.length +
-      " регионални подземни водни " +
-      (gwbProfiles.length === 1 ? "тела." : "тела.")
-    );
-  }
-
-  if (regionalTypes.length > 0) {
-    geologyParts.push(
-      "Те са свързани с " +
-      regionalTypes
-        .map(s => s.toLocaleLowerCase("bg"))
-        .join(" и ") + "."
+  } else {
+    conciseParagraphs.push(
+      "За избраното местоположение наличните регионални " +
+      "проучвания дават обща представа за геоложкия строеж, " +
+      "но не установяват еднозначна повърхностна " +
+      "геоложка единица."
     );
   }
 
   if (regionalLithologies.length > 0) {
-    geologyParts.push(
-      "В регионалните профили са описани " +
-      regionalLithologies.join("; ") + "."
+    conciseParagraphs.push(
+      "В публикуваните регионални хидрогеоложки профили " +
+      "са описани следните скални материали и наслаги: " +
+      regionalLithologies.join("; ") + ". " +
+      "Те характеризират проучени части от района, " +
+      "но не представляват измерена колонка " +
+      "под конкретния имот."
     );
   }
 
-  if (geologyParts.length > 0) {
+  if (regionalTypes.length > 0) {
     conciseParagraphs.push(
-      "Геоложки строеж: " + geologyParts.join(" ")
+      "Регионалните сведения за подземните води " +
+      "са свързани с геоложки среди, описани като " +
+      regionalTypes
+        .map(value => value.toLocaleLowerCase("bg"))
+        .join("; ") + ". " +
+      "Тези сведения допълват представата за " +
+      "геоложката среда, без да определят сами " +
+      "по себе си дълбочината на водоносен пласт."
     );
   }
 
@@ -1639,40 +1680,62 @@ function buildAutomaticGeologicalOverview(
     .sort((a, b) => a.distance - b.distance)
     .slice(0, 1);
 
+
   if (shortReferences.length > 0) {
     const item = shortReferences[0];
 
-    const intervals = item.intervals
-      .slice(0, 3)
-      .map(interval =>
-        interval.from_m + "–" +
-        interval.to_m + " м — " +
-        interval.material_bg.trim().replace(/[.!?]+$/u, "")
+    // Retain source provenance without displaying a
+    // technical borehole ID or transferring borehole contacts.
+    const observedMaterials = [...new Set(
+      item.intervals
+        .map(interval => interval.material_bg.trim())
+        .filter(Boolean)
+    )].slice(0, 3);
+
+    if (observedMaterials.length > 0) {
+      conciseParagraphs.push(
+        "Допълнителна информация дават документираните " +
+        "сондажни проучвания в близост до избраната точка. " +
+        "В сондаж на приблизително " +
+        item.distance.toFixed(1) +
+        " км са описани " +
+        observedMaterials.join("; ") + ". " +
+        "Това са действителни наблюдения на мястото " +
+        "на съответния сондаж. Те подпомагат сравнението " +
+        "между геоложките материали в района, но не " +
+        "доказват същите пластове и граници " +
+        "под избраните координати."
       );
+    }
 
-    conciseParagraphs.push(
-      "Близки сондажи: " +
-      "в документиран сондаж " + item.hole.id +
-      " на около " + item.distance.toFixed(1) +
-      " км са установени: " +
-      intervals.join("; ") + "."
-    );
-
-    for (const interval of item.intervals.slice(0, 3)) {
+    for (const interval of item.intervals) {
       sources.push(...interval.source_ids);
     }
   }
 
-  conciseParagraphs.push(
-    "Практическо значение: " +
-    "различните геоложки материали могат да " +
-    "изискват различен подход при сондиране. " +
-    "Регионалните сведения и близките сондажи " +
-    "помагат за предварителната оценка, но " +
-    "не доказват точната последователност " +
-    "и дълбочина на пластовете под избрания имот."
-  );
+  if (
+    regionalLithologies.length === 0 &&
+    shortReferences.length === 0
+  ) {
+    conciseParagraphs.push(
+      "Наличните сведения не съдържат достатъчно " +
+      "местни литоложки наблюдения, за да се опише " +
+      "по-конкретно скалният състав под избраното " +
+      "местоположение. Регионалната геоложка " +
+      "характеристика остава ориентировъчна."
+    );
+  }
 
+  conciseParagraphs.push(
+    "При планиране на сондаж тази информация " +
+    "може да помогне за предварителната оценка " +
+    "на възможните геоложки условия. Различните " +
+    "скални материали могат да изискват различен " +
+    "начин на пробиване и укрепване. " +
+    "Точните преходи между пластовете под избрания " +
+    "имот могат да се определят само когато " +
+    "са подкрепени с достатъчно локални данни."
+  );
 
   return {
     id: cardId,
@@ -1681,6 +1744,41 @@ function buildAutomaticGeologicalOverview(
     paragraphs: conciseParagraphs,
     sources: [...new Set(sources.filter(Boolean))]
   };
+}
+
+
+/**
+ * SONDI_78DX_REGISTERED_LITHOLOGY_ONLY
+ * A location is eligible only if its coordinates fall within
+ * an actual region in the active lithology registry.
+ * Geological-map coverage alone is not activation.
+ */
+export function isSondiLithologyLocationRegistered(
+  latitude: number,
+  longitude: number
+): boolean {
+  if (
+    !Number.isFinite(latitude) ||
+    !Number.isFinite(longitude) ||
+    latitude < -90 || latitude > 90 ||
+    longitude < -180 || longitude > 180
+  ) return false;
+
+  const registry = readJson<RegionRegistry>(
+    "regional_registry.json"
+  );
+
+  for (const entry of registry.regions) {
+    const geometry = readJson<Geometry>(
+      entry.boundary_file
+    );
+
+    if (containsPoint(geometry, latitude, longitude)) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 export function getSondiRegionalReport(
