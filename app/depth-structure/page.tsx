@@ -10,6 +10,7 @@ import { formatRegionalParagraphsForDepthMode } from "@/lib/sondi-regional-text-
 import { getSondiSoilWithNearbyFallback } from "@/lib/sondi-national-soil-nearby";
 import { getSondiExtendedSoilAtSample } from "@/lib/sondi-extended-soil-reader";
 import { getSondiNationalWrbAtPoint } from "@/lib/sondi-national-wrb-reader";
+import { getSondiHwsd2WithNearbyFallback } from "@/lib/sondi-national-hwsd2-reader";
 import { buildSondiReadableRegionalNarrative } from "@/lib/sondi-regional-narrative";
 import { redirect } from "next/navigation";
 
@@ -768,6 +769,7 @@ const material = point.material
   const sondiSoil = await getSondiSoilWithNearbyFallback(lat, lng);
   const sondiExtendedSoil = sondiSoil ? await getSondiExtendedSoilAtSample(sondiSoil).catch(() => null) : null;
   const sondiWrb = await getSondiNationalWrbAtPoint(lat, lng).catch(() => null);
+  const sondiHwsd2 = await getSondiHwsd2WithNearbyFallback(lat, lng).catch(() => null);
   const sondiWiderStudies = getSondiWiderStudies(lat, lng);
   const selectedWiderStudies = sondiWiderStudies.slice(0, 3);
 
@@ -2404,10 +2406,118 @@ const material = point.material
               </>
             )}
 
-            <p style={{ lineHeight: 1.75 }}>
-              <strong>Соленост и минерализация:</strong>{' '}
-              Няма потвърдени измервания в използваните почвени слоеве.
-            </p>
+            {/* SONDI_78HP_HWSD2_UI */}
+            {sondiHwsd2 && (
+              <div style={{
+                marginTop: 18,
+                paddingTop: 14,
+                borderTop: "1px solid #d9e7e9"
+              }}>
+                <h3 style={{
+                  margin: "0 0 12px",
+                  fontSize: 16,
+                  color: "#173f49"
+                }}>
+                  Почвена соленост и минерален състав
+                </h3>
+
+                <p style={{ lineHeight: 1.7, fontSize: 13 }}>
+                  {sondiHwsd2.status === "NEARBY_REGIONAL_ESTIMATE"
+                    ? `Регионална оценка по почвена клетка на приблизително ${Math.round(sondiHwsd2.distanceM)} м от избраната точка.`
+                    : "Моделирана оценка за почвената клетка на избраните координати."}
+                </p>
+
+                <div style={{ overflowX: "auto", marginTop: 12 }}>
+                  <table style={{
+                    width: "100%",
+                    borderCollapse: "collapse",
+                    fontSize: 12,
+                    textAlign: "left"
+                  }}>
+                    <thead>
+                      <tr>
+                        {[
+                          "Дълбочина",
+                          "EC (dS/m)",
+                          "ESP (%)",
+                          "CaCO₃ (%)",
+                          "Гипс (%)"
+                        ].map(label => (
+                          <th key={label} style={{
+                            padding: "8px 6px",
+                            borderBottom: "1px solid #c7dadd",
+                            whiteSpace: "nowrap",
+                            color: "#173f49"
+                          }}>
+                            {label}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      {sondiHwsd2.depthGroups.map(depth => (
+                        <tr key={`${depth.topCm}-${depth.bottomCm}`}>
+                          <td style={{
+                            padding: "7px 6px",
+                            borderBottom: "1px solid #e4eded",
+                            whiteSpace: "nowrap"
+                          }}>
+                            {depth.topCm}–{depth.bottomCm} см
+                          </td>
+
+                          {(
+                            ["ELEC_COND", "ESP", "TCARBON_EQ", "GYPSUM"] as const
+                          ).map(field => {
+                            const p = depth.properties[field];
+                            const usable =
+                              p.weightedMean !== null &&
+                              p.validSharePercent >= 80;
+
+                            return (
+                              <td key={field} style={{
+                                padding: "7px 6px",
+                                borderBottom: "1px solid #e4eded",
+                                whiteSpace: "nowrap"
+                              }}>
+                                {usable
+                                  ? p.weightedMean!.toFixed(2)
+                                  : "—"}
+                                {usable && p.validSharePercent < 100
+                                  ? ` (${p.validSharePercent}%)`
+                                  : ""}
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <p style={{
+                  marginTop: 12,
+                  color: "#657c80",
+                  fontSize: 12,
+                  lineHeight: 1.65
+                }}>
+                  Източник: FAO HWSD2. Почвени моделни оценки,
+                  а не измервания на избрания имот.
+                  „—“ означава недостатъчно валидни данни.
+                  Процентът в скоби показва валидното
+                  компонентно покритие.
+                  Почвените интервали не описват геоложки
+                  пластове или минерализация на подземни води.
+                </p>
+              </div>
+            )}
+
+            {!sondiHwsd2 && (
+              <p style={{ lineHeight: 1.75 }}>
+                <strong>Соленост и минерализация:</strong>{" "}
+                Няма потвърдени измервания в използваните почвени слоеве.
+              </p>
+            )}
             <p style={{
               color: "#657c80",
               fontSize: 12,

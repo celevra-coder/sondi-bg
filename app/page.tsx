@@ -3,12 +3,24 @@ export const metadata = {
 };
 
 import Link from "next/link";
-import { Cormorant_Garamond } from "next/font/google";
+import localFont from "next/font/local";
 
-const heroFont = Cormorant_Garamond({
-  subsets: ["cyrillic", "latin"],
-  weight: ["400", "500", "600"],
+// SONDI_78HW_LOCAL_CORMORANT
+// Original variable Cormorant Garamond, hosted locally.
+const heroCyrFont = localFont({
+  src: "./fonts/sondi-cormorant-cyrillic.woff2",
+  weight: "300 700",
+  style: "normal",
   display: "swap",
+  variable: "--sondi-hero-cormorant-cyr",
+});
+
+const heroLatinFont = localFont({
+  src: "./fonts/sondi-cormorant-latin.woff2",
+  weight: "300 700",
+  style: "normal",
+  display: "swap",
+  variable: "--sondi-hero-cormorant-latin",
 });
 
 export default function Home() {
@@ -55,8 +67,11 @@ export default function Home() {
           </div>
 
           <h1
+            style={{
+              fontFamily: "var(--sondi-hero-cormorant-cyr), var(--sondi-hero-cormorant-latin), serif",
+            }}
             className={`
-              ${heroFont.className}
+              ${heroCyrFont.variable} ${heroLatinFont.variable}
               mx-auto max-w-[1150px]
               text-[42px] font-medium
               leading-[0.98] tracking-[-0.035em]

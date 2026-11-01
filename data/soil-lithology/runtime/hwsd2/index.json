@@ -1,0 +1,21 @@
+{
+  "version": "78HJ",
+  "source": "FAO HWSD2",
+  "width": 841,
+  "height": 421,
+  "west": 21.991666666667335,
+  "north": 44.50833333333367,
+  "pixelWidth": 0.008333333333333,
+  "pixelHeight": 0.008333333333333,
+  "nodata": 65535,
+  "urbanId": 7001,
+  "rasterFile": "bulgaria.bil",
+  "profilesFile": "profiles.json.gz",
+  "soilUnitCount": 64,
+  "units": {
+    "ELEC_COND": "dS/m",
+    "ESP": "%",
+    "TCARBON_EQ": "% weight",
+    "GYPSUM": "% weight"
+  }
+}

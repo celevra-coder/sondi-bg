@@ -16,6 +16,9 @@ const nextConfig: NextConfig = {
       "./data/soil-lithology/runtime/soilgrids/extended/**/*.tif",
       "./data/soil-lithology/runtime/wrb/index.json",
       "./data/soil-lithology/runtime/wrb/*.bin.gz",
+      "./data/soil-lithology/runtime/hwsd2/index.json",
+      "./data/soil-lithology/runtime/hwsd2/bulgaria.bil",
+      "./data/soil-lithology/runtime/hwsd2/profiles.json.gz",
     ],
     "/api/expert-pdf/render-save": [
       "./node_modules/@sparticuz/chromium/bin/**/*",
