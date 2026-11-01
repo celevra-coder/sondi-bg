@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
     "/depth-structure": [
       "./data/soil-lithology/runtime/soilgrids/index.json",
       "./data/soil-lithology/runtime/soilgrids/tiles/**/*.tif",
+      "./data/soil-lithology/runtime/soilgrids/extended/**/*.tif",
     ],
     "/api/expert-pdf/render-save": [
       "./node_modules/@sparticuz/chromium/bin/**/*",

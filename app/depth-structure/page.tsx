@@ -8,6 +8,7 @@ import { getVratsaRegionReport } from "@/lib/vratsa-region-report";
 import { getSondiRegionalReport, getSondiWiderStudies, isSondiLithologyLocationRegistered } from "@/lib/sondi-regional-report";
 import { formatRegionalParagraphsForDepthMode } from "@/lib/sondi-regional-text-mode";
 import { getSondiSoilWithNearbyFallback } from "@/lib/sondi-national-soil-nearby";
+import { getSondiExtendedSoilAtSample } from "@/lib/sondi-extended-soil-reader";
 import { buildSondiReadableRegionalNarrative } from "@/lib/sondi-regional-narrative";
 import { redirect } from "next/navigation";
 
@@ -764,6 +765,7 @@ const material = point.material
 
   const sondiRegionalCards = getSondiRegionalReport(lat, lng);
   const sondiSoil = await getSondiSoilWithNearbyFallback(lat, lng);
+  const sondiExtendedSoil = sondiSoil ? await getSondiExtendedSoilAtSample(sondiSoil).catch(() => null) : null;
   const sondiWiderStudies = getSondiWiderStudies(lat, lng);
   const selectedWiderStudies = sondiWiderStudies.slice(0, 3);
 
@@ -2331,6 +2333,43 @@ const material = point.material
               {sondiSoil.summary.coarse_fragments_vol_percent.toFixed(1)}% по обем.
             </p>
             <p style={{ lineHeight: 1.75 }}>
+
+            {/* SONDI_78FK_EXTENDED_SOIL_UI */}
+            {sondiExtendedSoil && (
+              <>
+                <p style={{ lineHeight: 1.75 }}>
+                  <strong>Органичен въглерод:</strong>{" "}
+                  {sondiExtendedSoil.values.organic_carbon_g_kg.toFixed(1)} g/kg.
+                </p>
+                <p style={{ lineHeight: 1.75 }}>
+                  <strong>Обемна плътност:</strong>{" "}
+                  {sondiExtendedSoil.values.bulk_density_g_cm3.toFixed(2)} g/cm³.
+                </p>
+                <p style={{ lineHeight: 1.75 }}>
+                  <strong>Катионообменен капацитет:</strong>{" "}
+                  {sondiExtendedSoil.values.cation_exchange_capacity_cmol_kg.toFixed(1)} cmol(+)/kg.
+                </p>
+                <p style={{ lineHeight: 1.75 }}>
+                  <strong>Общ азот:</strong>{" "}
+                  {sondiExtendedSoil.values.total_nitrogen_g_kg.toFixed(2)} g/kg.
+                </p>
+                <p style={{ lineHeight: 1.75 }}>
+                  <strong>Водно съдържание при 33 kPa:</strong>{" "}
+                  {sondiExtendedSoil.values.water_content_33kpa_vol_percent.toFixed(1)}% по обем.
+                </p>
+                <p style={{
+                  color: "#657c80",
+                  fontSize: 12,
+                  lineHeight: 1.65
+                }}>
+                  Водното съдържание при 33 kPa е моделирана
+                  водозадържаща характеристика, а не измерена
+                  текуща влажност на избрания терен.
+                  Всички показатели са за почвения слой 0–5 см.
+                </p>
+              </>
+            )}
+
               <strong>Соленост и минерализация:</strong>{' '}
               Няма потвърдени измервания в използваните почвени слоеве.
             </p>
