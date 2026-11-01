@@ -9,6 +9,7 @@ import { getSondiRegionalReport, getSondiWiderStudies, isSondiLithologyLocationR
 import { formatRegionalParagraphsForDepthMode } from "@/lib/sondi-regional-text-mode";
 import { getSondiSoilWithNearbyFallback } from "@/lib/sondi-national-soil-nearby";
 import { getSondiExtendedSoilAtSample } from "@/lib/sondi-extended-soil-reader";
+import { getSondiNationalWrbAtPoint } from "@/lib/sondi-national-wrb-reader";
 import { buildSondiReadableRegionalNarrative } from "@/lib/sondi-regional-narrative";
 import { redirect } from "next/navigation";
 
@@ -766,6 +767,7 @@ const material = point.material
   const sondiRegionalCards = getSondiRegionalReport(lat, lng);
   const sondiSoil = await getSondiSoilWithNearbyFallback(lat, lng);
   const sondiExtendedSoil = sondiSoil ? await getSondiExtendedSoilAtSample(sondiSoil).catch(() => null) : null;
+  const sondiWrb = await getSondiNationalWrbAtPoint(lat, lng).catch(() => null);
   const sondiWiderStudies = getSondiWiderStudies(lat, lng);
   const selectedWiderStudies = sondiWiderStudies.slice(0, 3);
 
@@ -2332,9 +2334,46 @@ const material = point.material
               <strong>Едри фрагменти:</strong>{' '}
               {sondiSoil.summary.coarse_fragments_vol_percent.toFixed(1)}% по обем.
             </p>
-            <p style={{ lineHeight: 1.75 }}>
 
-            {/* SONDI_78FK_EXTENDED_SOIL_UI */}
+            {/* SONDI_78GA_WRB_UI */}
+            {sondiWrb && (
+              <>
+                <p style={{ lineHeight: 1.75 }}>
+                  <strong>Вероятен почвен тип (WRB):</strong>{" "}
+                  {sondiWrb.primary_name} —{" "}
+                  {sondiWrb.primary_probability_percent}% моделна вероятност.
+                </p>
+                <p style={{ lineHeight: 1.75 }}>
+                  <strong>Следващ вероятен тип:</strong>{" "}
+                  {sondiWrb.secondary_name} —{" "}
+                  {sondiWrb.secondary_probability_percent}%.
+                </p>
+                {sondiWrb.has_tied_winner && (
+                  <p style={{ lineHeight: 1.75 }}>
+                    Има {sondiWrb.tied_maximum_classes} почвени типа
+                    с еднаква най-висока моделна вероятност.
+                    Не може да се отдели един водещ тип.
+                  </p>
+                )}
+                <p style={{
+                  color: "#657c80",
+                  fontSize: 12,
+                  lineHeight: 1.65
+                }}>
+                  {sondiWrb.primary_probability_percent < 50
+                    ? "Ниска увереност в отделния почвен тип. "
+                    : "Прогнозна класификация с ограничена точност за конкретен имот. "}
+                  Източник: ISRIC SoilGrids, вероятностен WRB модел
+                  от 2017 г. Данните не представляват теренно
+                  или лабораторно потвърждение. WRB използва
+                  отделна координатна мрежа и не определя
+                  минерализацията, подпочвените води или
+                  геоложките пластове в дълбочина.
+                </p>
+              </>
+            )}
+
+{/* SONDI_78FK_EXTENDED_SOIL_UI */}
             {sondiExtendedSoil && (
               <>
                 <p style={{ lineHeight: 1.75 }}>
@@ -2370,6 +2409,7 @@ const material = point.material
               </>
             )}
 
+            <p style={{ lineHeight: 1.75 }}>
               <strong>Соленост и минерализация:</strong>{' '}
               Няма потвърдени измервания в използваните почвени слоеве.
             </p>

@@ -1,0 +1,2744 @@
+{
+  "version": "78FW",
+  "source": "ISRIC SoilGrids WRB",
+  "source_audit": "78FV",
+  "classification": "WRB 2017 probabilistic model",
+  "encoding": {
+    "bytes_per_cell": 8,
+    "primary_code": 0,
+    "primary_probability_percent": 1,
+    "secondary_code": 2,
+    "secondary_probability_percent": 3,
+    "tied_maximum_classes": 4,
+    "sum_uint16_le": 5,
+    "status": 7,
+    "status_codes": {
+      "0": "VALID",
+      "1": "ZERO",
+      "2": "INVALID"
+    },
+    "missing_class_code": 255
+  },
+  "legend": {
+    "0": "Acrisols",
+    "1": "Albeluvisols",
+    "2": "Alisols",
+    "3": "Andosols",
+    "4": "Arenosols",
+    "5": "Calcisols",
+    "6": "Cambisols",
+    "7": "Chernozems",
+    "8": "Cryosols",
+    "9": "Durisols",
+    "10": "Ferralsols",
+    "11": "Fluvisols",
+    "12": "Gleysols",
+    "13": "Gypsisols",
+    "14": "Histosols",
+    "15": "Kastanozems",
+    "16": "Leptosols",
+    "17": "Lixisols",
+    "18": "Luvisols",
+    "19": "Nitisols",
+    "20": "Phaeozems",
+    "21": "Planosols",
+    "22": "Plinthosols",
+    "23": "Podzols",
+    "24": "Regosols",
+    "25": "Solonchaks",
+    "26": "Solonetz",
+    "27": "Stagnosols",
+    "28": "Umbrisols",
+    "29": "Vertisols"
+  },
+  "tiles": [
+    {
+      "id": "soil_x2_y0",
+      "filename": "soil_x2_y0_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.75,
+        41.25,
+        23.000000000000004,
+        41.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 898,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 57,
+        "sum95to105": 14343,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x3_y0",
+      "filename": "soil_x3_y0_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23,
+        41.25,
+        23.250000000000004,
+        41.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14335,
+        "zero": 65,
+        "invalid": 0,
+        "ties": 773,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 70,
+        "sum95to105": 14265,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x4_y0",
+      "filename": "soil_x4_y0_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.25,
+        41.25,
+        23.500000000000004,
+        41.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14395,
+        "zero": 5,
+        "invalid": 0,
+        "ties": 1137,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 35,
+        "sum95to105": 14360,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x5_y0",
+      "filename": "soil_x5_y0_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.5,
+        41.25,
+        23.750000000000004,
+        41.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14399,
+        "zero": 1,
+        "invalid": 0,
+        "ties": 654,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 83,
+        "sum95to105": 14316,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x6_y0",
+      "filename": "soil_x6_y0_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.75,
+        41.25,
+        24.000000000000004,
+        41.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14379,
+        "zero": 21,
+        "invalid": 0,
+        "ties": 882,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 91,
+        "sum95to105": 14288,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x7_y0",
+      "filename": "soil_x7_y0_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24,
+        41.25,
+        24.250000000000004,
+        41.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14233,
+        "zero": 167,
+        "invalid": 0,
+        "ties": 737,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 77,
+        "sum95to105": 14156,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x2_y1",
+      "filename": "soil_x2_y1_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.75,
+        41.5,
+        23.000000000000004,
+        41.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14387,
+        "zero": 13,
+        "invalid": 0,
+        "ties": 320,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 83,
+        "sum95to105": 14304,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x3_y1",
+      "filename": "soil_x3_y1_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23,
+        41.5,
+        23.250000000000004,
+        41.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 655,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 52,
+        "sum95to105": 14348,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x4_y1",
+      "filename": "soil_x4_y1_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.25,
+        41.5,
+        23.500000000000004,
+        41.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 579,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 21,
+        "sum95to105": 14379,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x5_y1",
+      "filename": "soil_x5_y1_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.5,
+        41.5,
+        23.750000000000004,
+        41.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 381,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 32,
+        "sum95to105": 14368,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x6_y1",
+      "filename": "soil_x6_y1_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.75,
+        41.5,
+        24.000000000000004,
+        41.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 485,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 38,
+        "sum95to105": 14362,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x7_y1",
+      "filename": "soil_x7_y1_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24,
+        41.5,
+        24.250000000000004,
+        41.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 13887,
+        "zero": 513,
+        "invalid": 0,
+        "ties": 172,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 45,
+        "sum95to105": 13842,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x8_y1",
+      "filename": "soil_x8_y1_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.25,
+        41.5,
+        24.500000000000004,
+        41.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 57,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 8,
+        "sum95to105": 14392,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x9_y1",
+      "filename": "soil_x9_y1_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.5,
+        41.5,
+        24.750000000000004,
+        41.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 32,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 13,
+        "sum95to105": 14387,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x10_y1",
+      "filename": "soil_x10_y1_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.75,
+        41.5,
+        25.000000000000004,
+        41.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 175,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 69,
+        "sum95to105": 14331,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x11_y1",
+      "filename": "soil_x11_y1_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        25,
+        41.5,
+        25.250000000000004,
+        41.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14313,
+        "zero": 87,
+        "invalid": 0,
+        "ties": 682,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 90,
+        "sum95to105": 14222,
+        "over105": 1
+      }
+    },
+    {
+      "id": "soil_x12_y1",
+      "filename": "soil_x12_y1_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        25.25,
+        41.5,
+        25.500000000000004,
+        41.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 13899,
+        "zero": 501,
+        "invalid": 0,
+        "ties": 399,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 136,
+        "sum95to105": 13763,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x2_y2",
+      "filename": "soil_x2_y2_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.75,
+        41.75,
+        23.000000000000004,
+        42
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14372,
+        "zero": 28,
+        "invalid": 0,
+        "ties": 725,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 80,
+        "sum95to105": 14292,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x3_y2",
+      "filename": "soil_x3_y2_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23,
+        41.75,
+        23.250000000000004,
+        42
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14384,
+        "zero": 16,
+        "invalid": 0,
+        "ties": 920,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 79,
+        "sum95to105": 14305,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x4_y2",
+      "filename": "soil_x4_y2_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.25,
+        41.75,
+        23.500000000000004,
+        42
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 330,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 17,
+        "sum95to105": 14383,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x5_y2",
+      "filename": "soil_x5_y2_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.5,
+        41.75,
+        23.750000000000004,
+        42
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 368,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 51,
+        "sum95to105": 14349,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x6_y2",
+      "filename": "soil_x6_y2_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.75,
+        41.75,
+        24.000000000000004,
+        42
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 6,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 4,
+        "sum95to105": 14396,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x7_y2",
+      "filename": "soil_x7_y2_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24,
+        41.75,
+        24.250000000000004,
+        42
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 13781,
+        "zero": 619,
+        "invalid": 0,
+        "ties": 65,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 8,
+        "sum95to105": 13773,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x8_y2",
+      "filename": "soil_x8_y2_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.25,
+        41.75,
+        24.500000000000004,
+        42
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14293,
+        "zero": 107,
+        "invalid": 0,
+        "ties": 96,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 38,
+        "sum95to105": 14255,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x9_y2",
+      "filename": "soil_x9_y2_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.5,
+        41.75,
+        24.750000000000004,
+        42
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 41,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 29,
+        "sum95to105": 14371,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x10_y2",
+      "filename": "soil_x10_y2_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.75,
+        41.75,
+        25.000000000000004,
+        42
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14396,
+        "zero": 4,
+        "invalid": 0,
+        "ties": 219,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 54,
+        "sum95to105": 14342,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x11_y2",
+      "filename": "soil_x11_y2_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        25,
+        41.75,
+        25.250000000000004,
+        42
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14340,
+        "zero": 60,
+        "invalid": 0,
+        "ties": 416,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 176,
+        "sum95to105": 14164,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x12_y2",
+      "filename": "soil_x12_y2_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        25.25,
+        41.75,
+        25.500000000000004,
+        42
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14255,
+        "zero": 145,
+        "invalid": 0,
+        "ties": 417,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 190,
+        "sum95to105": 14065,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x0_y3",
+      "filename": "soil_x0_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.25,
+        42,
+        22.500000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 385,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 64,
+        "sum95to105": 14336,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x1_y3",
+      "filename": "soil_x1_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.5,
+        42,
+        22.750000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14389,
+        "zero": 11,
+        "invalid": 0,
+        "ties": 267,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 31,
+        "sum95to105": 14358,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x2_y3",
+      "filename": "soil_x2_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.75,
+        42,
+        23.000000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 661,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 132,
+        "sum95to105": 14268,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x3_y3",
+      "filename": "soil_x3_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23,
+        42,
+        23.250000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 841,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 70,
+        "sum95to105": 14330,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x4_y3",
+      "filename": "soil_x4_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.25,
+        42,
+        23.500000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14398,
+        "zero": 2,
+        "invalid": 0,
+        "ties": 319,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 5,
+        "sum95to105": 14393,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x5_y3",
+      "filename": "soil_x5_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.5,
+        42,
+        23.750000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14394,
+        "zero": 6,
+        "invalid": 0,
+        "ties": 280,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 4,
+        "sum95to105": 14390,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x6_y3",
+      "filename": "soil_x6_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.75,
+        42,
+        24.000000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14321,
+        "zero": 79,
+        "invalid": 0,
+        "ties": 213,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 31,
+        "sum95to105": 14290,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x7_y3",
+      "filename": "soil_x7_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24,
+        42,
+        24.250000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14346,
+        "zero": 54,
+        "invalid": 0,
+        "ties": 860,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 61,
+        "sum95to105": 14285,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x8_y3",
+      "filename": "soil_x8_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.25,
+        42,
+        24.500000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14347,
+        "zero": 53,
+        "invalid": 0,
+        "ties": 1261,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 134,
+        "sum95to105": 14213,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x9_y3",
+      "filename": "soil_x9_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.5,
+        42,
+        24.750000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14362,
+        "zero": 38,
+        "invalid": 0,
+        "ties": 1473,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 304,
+        "sum95to105": 14058,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x10_y3",
+      "filename": "soil_x10_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.75,
+        42,
+        25.000000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14382,
+        "zero": 18,
+        "invalid": 0,
+        "ties": 1584,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 375,
+        "sum95to105": 14007,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x11_y3",
+      "filename": "soil_x11_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        25,
+        42,
+        25.250000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14388,
+        "zero": 12,
+        "invalid": 0,
+        "ties": 1261,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 329,
+        "sum95to105": 14059,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x12_y3",
+      "filename": "soil_x12_y3_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        25.25,
+        42,
+        25.500000000000004,
+        42.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14366,
+        "zero": 34,
+        "invalid": 0,
+        "ties": 756,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 136,
+        "sum95to105": 14230,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x0_y4",
+      "filename": "soil_x0_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.25,
+        42.25,
+        22.500000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 297,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 38,
+        "sum95to105": 14362,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x1_y4",
+      "filename": "soil_x1_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.5,
+        42.25,
+        22.750000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14392,
+        "zero": 8,
+        "invalid": 0,
+        "ties": 652,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 72,
+        "sum95to105": 14320,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x2_y4",
+      "filename": "soil_x2_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.75,
+        42.25,
+        23.000000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14371,
+        "zero": 29,
+        "invalid": 0,
+        "ties": 1051,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 99,
+        "sum95to105": 14271,
+        "over105": 1
+      }
+    },
+    {
+      "id": "soil_x3_y4",
+      "filename": "soil_x3_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23,
+        42.25,
+        23.250000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14335,
+        "zero": 65,
+        "invalid": 0,
+        "ties": 968,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 114,
+        "sum95to105": 14221,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x4_y4",
+      "filename": "soil_x4_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.25,
+        42.25,
+        23.500000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 449,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 55,
+        "sum95to105": 14345,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x5_y4",
+      "filename": "soil_x5_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.5,
+        42.25,
+        23.750000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 13726,
+        "zero": 674,
+        "invalid": 0,
+        "ties": 473,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 76,
+        "sum95to105": 13650,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x6_y4",
+      "filename": "soil_x6_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.75,
+        42.25,
+        24.000000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14362,
+        "zero": 38,
+        "invalid": 0,
+        "ties": 734,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 110,
+        "sum95to105": 14252,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x7_y4",
+      "filename": "soil_x7_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24,
+        42.25,
+        24.250000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14345,
+        "zero": 55,
+        "invalid": 0,
+        "ties": 852,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 135,
+        "sum95to105": 14210,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x8_y4",
+      "filename": "soil_x8_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.25,
+        42.25,
+        24.500000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14391,
+        "zero": 9,
+        "invalid": 0,
+        "ties": 1021,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 175,
+        "sum95to105": 14216,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x9_y4",
+      "filename": "soil_x9_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.5,
+        42.25,
+        24.750000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14064,
+        "zero": 336,
+        "invalid": 0,
+        "ties": 1077,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 156,
+        "sum95to105": 13908,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x10_y4",
+      "filename": "soil_x10_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.75,
+        42.25,
+        25.000000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14364,
+        "zero": 36,
+        "invalid": 0,
+        "ties": 1401,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 264,
+        "sum95to105": 14100,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x11_y4",
+      "filename": "soil_x11_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        25,
+        42.25,
+        25.250000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14357,
+        "zero": 43,
+        "invalid": 0,
+        "ties": 717,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 261,
+        "sum95to105": 14096,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x12_y4",
+      "filename": "soil_x12_y4_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        25.25,
+        42.25,
+        25.500000000000004,
+        42.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14396,
+        "zero": 4,
+        "invalid": 0,
+        "ties": 810,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 178,
+        "sum95to105": 14218,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x0_y5",
+      "filename": "soil_x0_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.25,
+        42.5,
+        22.500000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14088,
+        "zero": 312,
+        "invalid": 0,
+        "ties": 109,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 36,
+        "sum95to105": 14052,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x1_y5",
+      "filename": "soil_x1_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.5,
+        42.5,
+        22.750000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 349,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 71,
+        "sum95to105": 14329,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x2_y5",
+      "filename": "soil_x2_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.75,
+        42.5,
+        23.000000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14264,
+        "zero": 136,
+        "invalid": 0,
+        "ties": 885,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 230,
+        "sum95to105": 14034,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x3_y5",
+      "filename": "soil_x3_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23,
+        42.5,
+        23.250000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14350,
+        "zero": 50,
+        "invalid": 0,
+        "ties": 795,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 144,
+        "sum95to105": 14206,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x4_y5",
+      "filename": "soil_x4_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.25,
+        42.5,
+        23.500000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14306,
+        "zero": 94,
+        "invalid": 0,
+        "ties": 778,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 94,
+        "sum95to105": 14212,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x5_y5",
+      "filename": "soil_x5_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.5,
+        42.5,
+        23.750000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14294,
+        "zero": 106,
+        "invalid": 0,
+        "ties": 953,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 144,
+        "sum95to105": 14150,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x6_y5",
+      "filename": "soil_x6_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.75,
+        42.5,
+        24.000000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14375,
+        "zero": 25,
+        "invalid": 0,
+        "ties": 625,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 126,
+        "sum95to105": 14249,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x7_y5",
+      "filename": "soil_x7_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24,
+        42.5,
+        24.250000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14320,
+        "zero": 80,
+        "invalid": 0,
+        "ties": 622,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 102,
+        "sum95to105": 14218,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x8_y5",
+      "filename": "soil_x8_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.25,
+        42.5,
+        24.500000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14376,
+        "zero": 24,
+        "invalid": 0,
+        "ties": 340,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 64,
+        "sum95to105": 14312,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x9_y5",
+      "filename": "soil_x9_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.5,
+        42.5,
+        24.750000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14395,
+        "zero": 5,
+        "invalid": 0,
+        "ties": 649,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 152,
+        "sum95to105": 14243,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x10_y5",
+      "filename": "soil_x10_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.75,
+        42.5,
+        25.000000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14372,
+        "zero": 28,
+        "invalid": 0,
+        "ties": 589,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 224,
+        "sum95to105": 14148,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x11_y5",
+      "filename": "soil_x11_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        25,
+        42.5,
+        25.250000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14386,
+        "zero": 14,
+        "invalid": 0,
+        "ties": 752,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 106,
+        "sum95to105": 14280,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x12_y5",
+      "filename": "soil_x12_y5_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        25.25,
+        42.5,
+        25.500000000000004,
+        42.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14191,
+        "zero": 209,
+        "invalid": 0,
+        "ties": 942,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 136,
+        "sum95to105": 14055,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x0_y6",
+      "filename": "soil_x0_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.25,
+        42.75,
+        22.500000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 483,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 41,
+        "sum95to105": 14359,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x1_y6",
+      "filename": "soil_x1_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.5,
+        42.75,
+        22.750000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14387,
+        "zero": 13,
+        "invalid": 0,
+        "ties": 482,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 60,
+        "sum95to105": 14327,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x2_y6",
+      "filename": "soil_x2_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.75,
+        42.75,
+        23.000000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14389,
+        "zero": 11,
+        "invalid": 0,
+        "ties": 902,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 127,
+        "sum95to105": 14262,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x3_y6",
+      "filename": "soil_x3_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23,
+        42.75,
+        23.250000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14397,
+        "zero": 3,
+        "invalid": 0,
+        "ties": 1124,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 121,
+        "sum95to105": 14276,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x4_y6",
+      "filename": "soil_x4_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.25,
+        42.75,
+        23.500000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14388,
+        "zero": 12,
+        "invalid": 0,
+        "ties": 723,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 62,
+        "sum95to105": 14326,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x5_y6",
+      "filename": "soil_x5_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.5,
+        42.75,
+        23.750000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14399,
+        "zero": 1,
+        "invalid": 0,
+        "ties": 514,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 53,
+        "sum95to105": 14346,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x6_y6",
+      "filename": "soil_x6_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.75,
+        42.75,
+        24.000000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14372,
+        "zero": 28,
+        "invalid": 0,
+        "ties": 688,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 82,
+        "sum95to105": 14290,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x7_y6",
+      "filename": "soil_x7_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24,
+        42.75,
+        24.250000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 562,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 82,
+        "sum95to105": 14318,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x8_y6",
+      "filename": "soil_x8_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.25,
+        42.75,
+        24.500000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14347,
+        "zero": 53,
+        "invalid": 0,
+        "ties": 336,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 35,
+        "sum95to105": 14312,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x9_y6",
+      "filename": "soil_x9_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.5,
+        42.75,
+        24.750000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 553,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 78,
+        "sum95to105": 14322,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x10_y6",
+      "filename": "soil_x10_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.75,
+        42.75,
+        25.000000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 534,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 92,
+        "sum95to105": 14308,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x11_y6",
+      "filename": "soil_x11_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        25,
+        42.75,
+        25.250000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14391,
+        "zero": 9,
+        "invalid": 0,
+        "ties": 628,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 84,
+        "sum95to105": 14307,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x12_y6",
+      "filename": "soil_x12_y6_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        25.25,
+        42.75,
+        25.500000000000004,
+        43
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14385,
+        "zero": 15,
+        "invalid": 0,
+        "ties": 709,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 136,
+        "sum95to105": 14249,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x1_y7",
+      "filename": "soil_x1_y7_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.5,
+        43,
+        22.750000000000004,
+        43.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14341,
+        "zero": 59,
+        "invalid": 0,
+        "ties": 920,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 111,
+        "sum95to105": 14230,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x2_y7",
+      "filename": "soil_x2_y7_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.75,
+        43,
+        23.000000000000004,
+        43.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14396,
+        "zero": 4,
+        "invalid": 0,
+        "ties": 718,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 113,
+        "sum95to105": 14283,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x3_y7",
+      "filename": "soil_x3_y7_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23,
+        43,
+        23.250000000000004,
+        43.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14377,
+        "zero": 23,
+        "invalid": 0,
+        "ties": 466,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 79,
+        "sum95to105": 14298,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x4_y7",
+      "filename": "soil_x4_y7_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.25,
+        43,
+        23.500000000000004,
+        43.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 544,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 82,
+        "sum95to105": 14318,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x5_y7",
+      "filename": "soil_x5_y7_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.5,
+        43,
+        23.750000000000004,
+        43.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14359,
+        "zero": 41,
+        "invalid": 0,
+        "ties": 834,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 139,
+        "sum95to105": 14219,
+        "over105": 1
+      }
+    },
+    {
+      "id": "soil_x6_y7",
+      "filename": "soil_x6_y7_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.75,
+        43,
+        24.000000000000004,
+        43.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 1111,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 110,
+        "sum95to105": 14290,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x7_y7",
+      "filename": "soil_x7_y7_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24,
+        43,
+        24.250000000000004,
+        43.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14394,
+        "zero": 6,
+        "invalid": 0,
+        "ties": 849,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 161,
+        "sum95to105": 14233,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x8_y7",
+      "filename": "soil_x8_y7_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.25,
+        43,
+        24.500000000000004,
+        43.25
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14343,
+        "zero": 57,
+        "invalid": 0,
+        "ties": 811,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 116,
+        "sum95to105": 14227,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x1_y8",
+      "filename": "soil_x1_y8_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.5,
+        43.25,
+        22.750000000000004,
+        43.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14362,
+        "zero": 38,
+        "invalid": 0,
+        "ties": 479,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 81,
+        "sum95to105": 14281,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x2_y8",
+      "filename": "soil_x2_y8_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.75,
+        43.25,
+        23.000000000000004,
+        43.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 617,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 59,
+        "sum95to105": 14341,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x3_y8",
+      "filename": "soil_x3_y8_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23,
+        43.25,
+        23.250000000000004,
+        43.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 13962,
+        "zero": 438,
+        "invalid": 0,
+        "ties": 911,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 116,
+        "sum95to105": 13846,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x4_y8",
+      "filename": "soil_x4_y8_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.25,
+        43.25,
+        23.500000000000004,
+        43.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14387,
+        "zero": 13,
+        "invalid": 0,
+        "ties": 567,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 42,
+        "sum95to105": 14345,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x5_y8",
+      "filename": "soil_x5_y8_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.5,
+        43.25,
+        23.750000000000004,
+        43.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14364,
+        "zero": 36,
+        "invalid": 0,
+        "ties": 431,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 43,
+        "sum95to105": 14321,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x6_y8",
+      "filename": "soil_x6_y8_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.75,
+        43.25,
+        24.000000000000004,
+        43.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14389,
+        "zero": 11,
+        "invalid": 0,
+        "ties": 285,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 46,
+        "sum95to105": 14343,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x7_y8",
+      "filename": "soil_x7_y8_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24,
+        43.25,
+        24.250000000000004,
+        43.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14343,
+        "zero": 57,
+        "invalid": 0,
+        "ties": 530,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 75,
+        "sum95to105": 14268,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x8_y8",
+      "filename": "soil_x8_y8_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.25,
+        43.25,
+        24.500000000000004,
+        43.5
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14179,
+        "zero": 221,
+        "invalid": 0,
+        "ties": 422,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 26,
+        "sum95to105": 14153,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x1_y9",
+      "filename": "soil_x1_y9_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.5,
+        43.5,
+        22.750000000000004,
+        43.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14348,
+        "zero": 52,
+        "invalid": 0,
+        "ties": 963,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 109,
+        "sum95to105": 14239,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x2_y9",
+      "filename": "soil_x2_y9_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.75,
+        43.5,
+        23.000000000000004,
+        43.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14389,
+        "zero": 11,
+        "invalid": 0,
+        "ties": 662,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 47,
+        "sum95to105": 14342,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x3_y9",
+      "filename": "soil_x3_y9_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23,
+        43.5,
+        23.250000000000004,
+        43.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14392,
+        "zero": 8,
+        "invalid": 0,
+        "ties": 126,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 19,
+        "sum95to105": 14373,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x4_y9",
+      "filename": "soil_x4_y9_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.25,
+        43.5,
+        23.500000000000004,
+        43.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14395,
+        "zero": 5,
+        "invalid": 0,
+        "ties": 17,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 5,
+        "sum95to105": 14390,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x5_y9",
+      "filename": "soil_x5_y9_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.5,
+        43.5,
+        23.750000000000004,
+        43.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14376,
+        "zero": 24,
+        "invalid": 0,
+        "ties": 12,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 7,
+        "sum95to105": 14369,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x6_y9",
+      "filename": "soil_x6_y9_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.75,
+        43.5,
+        24.000000000000004,
+        43.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14212,
+        "zero": 188,
+        "invalid": 0,
+        "ties": 204,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 17,
+        "sum95to105": 14195,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x7_y9",
+      "filename": "soil_x7_y9_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24,
+        43.5,
+        24.250000000000004,
+        43.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 13878,
+        "zero": 522,
+        "invalid": 0,
+        "ties": 299,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 48,
+        "sum95to105": 13830,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x8_y9",
+      "filename": "soil_x8_y9_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.25,
+        43.5,
+        24.500000000000004,
+        43.75
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 13942,
+        "zero": 458,
+        "invalid": 0,
+        "ties": 459,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 54,
+        "sum95to105": 13888,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x1_y10",
+      "filename": "soil_x1_y10_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.5,
+        43.75,
+        22.750000000000004,
+        44
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14367,
+        "zero": 33,
+        "invalid": 0,
+        "ties": 638,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 78,
+        "sum95to105": 14289,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x2_y10",
+      "filename": "soil_x2_y10_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        22.75,
+        43.75,
+        23.000000000000004,
+        44
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 13549,
+        "zero": 851,
+        "invalid": 0,
+        "ties": 782,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 71,
+        "sum95to105": 13478,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x3_y10",
+      "filename": "soil_x3_y10_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23,
+        43.75,
+        23.250000000000004,
+        44
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 13801,
+        "zero": 599,
+        "invalid": 0,
+        "ties": 612,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 21,
+        "sum95to105": 13780,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x4_y10",
+      "filename": "soil_x4_y10_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.25,
+        43.75,
+        23.500000000000004,
+        44
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 13851,
+        "zero": 549,
+        "invalid": 0,
+        "ties": 357,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 24,
+        "sum95to105": 13827,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x5_y10",
+      "filename": "soil_x5_y10_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.5,
+        43.75,
+        23.750000000000004,
+        44
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 13405,
+        "zero": 995,
+        "invalid": 0,
+        "ties": 379,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 37,
+        "sum95to105": 13368,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x6_y10",
+      "filename": "soil_x6_y10_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        23.75,
+        43.75,
+        24.000000000000004,
+        44
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 13889,
+        "zero": 511,
+        "invalid": 0,
+        "ties": 776,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 100,
+        "sum95to105": 13789,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x7_y10",
+      "filename": "soil_x7_y10_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24,
+        43.75,
+        24.250000000000004,
+        44
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14400,
+        "zero": 0,
+        "invalid": 0,
+        "ties": 499,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 13,
+        "sum95to105": 14387,
+        "over105": 0
+      }
+    },
+    {
+      "id": "soil_x8_y10",
+      "filename": "soil_x8_y10_wrb.bin.gz",
+      "width": 120,
+      "height": 120,
+      "bbox": [
+        24.25,
+        43.75,
+        24.500000000000004,
+        44
+      ],
+      "bytes_per_cell": 8,
+      "counts": {
+        "positive": 14276,
+        "zero": 124,
+        "invalid": 0,
+        "ties": 135,
+        "mismatch": 0,
+        "below90": 0,
+        "sum90to94": 7,
+        "sum95to105": 14269,
+        "over105": 0
+      }
+    }
+  ]
+}
