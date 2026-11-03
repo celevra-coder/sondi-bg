@@ -1,0 +1,38 @@
+{
+  "schema_version": "78LY-vidin-research-v1",
+  "model_id": "VID-M-VID25",
+  "oblast": "Видин",
+  "municipality": "Макреш",
+  "status": "ISOLATED_STRUCTURAL_CONTEXT_QA",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "VID-M-VID25-Z01": {
+      "regional_structural_context": [],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Макреш",
+          "informationType": "Регионален геоложки контекст",
+          "paragraphs": [
+            "Научните проучвания в района на Макреш включват сведения за дълбоки скални комплекси и частични ядкови интервали от сондажа Макреш Р-1. Налични са и стратиграфски данни за Кулската зона.",
+            "Сведенията са ценни за регионалния геоложки строеж, но не представляват непрекъсната плитка сондажна колонка. За Толовишки дол е известен повърхностен научен разрез с предварителна географска връзка към района на Толовица; точното му местоположение не е потвърдено."
+          ],
+          "source_ids": [
+            "78JP_V_BAS_KULA_ZONE_EVIDENCE"
+          ]
+        }
+      ],
+      "source_ids": [
+        "78JP_V_BAS_KULA_ZONE_EVIDENCE"
+      ],
+      "research_evidence_ids": [
+        "VID-KULA-03",
+        "VID-KULA-10",
+        "VID-KULA-11",
+        "VID-KULA-13"
+      ],
+      "wider_studies": []
+    }
+  }
+}

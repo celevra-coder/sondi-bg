@@ -1,0 +1,50 @@
+{
+  "schema_version": "78LY-vidin-research-v1",
+  "model_id": "VID-M-VID09",
+  "oblast": "Видин",
+  "municipality": "Видин",
+  "status": "ISOLATED_STRUCTURAL_CONTEXT_QA",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "VID-M-VID09-Z01": {
+      "regional_structural_context": [],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Видин",
+          "informationType": "Регионален геоложки контекст",
+          "paragraphs": [
+            "По документирани участъци от железопътното трасе в община Видин са описани делувиални и льосовидни глини, плиоценски седименти и алувиални отложения. В близост до Дунав са описани глини, пясъци и чакъли.",
+            "Три плитки сондажа от пристанищната зона документират насипи, глини и чакъли с песъчлив запълнител. Техните отделни литоложки интервали са действителни измервания, но местоположенията на сондажните устия не са потвърдени. Данните не определят автоматично разреза под други имоти."
+          ],
+          "source_ids": [
+            "78KD_VIDIN_RAILWAY_RESEARCH_FINAL",
+            "78LD_VIDIN_ONLY_RAILWAY_EVIDENCE",
+            "78IG_VIDIN_PORT_THREE_BOREHOLES"
+          ]
+        }
+      ],
+      "source_ids": [
+        "78KD_VIDIN_RAILWAY_RESEARCH_FINAL",
+        "78LD_VIDIN_ONLY_RAILWAY_EVIDENCE",
+        "78IG_VIDIN_PORT_THREE_BOREHOLES"
+      ],
+      "research_evidence_ids": [
+        "VID-RAIL-13",
+        "VID-RAIL-14",
+        "VID-RAIL-15",
+        "VID-RAIL-16",
+        "VID-RAIL-17",
+        "VID-RAIL-18",
+        "VID-RAIL-19",
+        "VID-RAIL-20",
+        "VID-RAIL-21",
+        "VIDIN-PORT-CENTRE-2010-BH02",
+        "VIDIN-PORT-CENTRE-2010-BH03",
+        "VIDIN-PORT-CENTRE-2010-BH04"
+      ],
+      "wider_studies": []
+    }
+  }
+}

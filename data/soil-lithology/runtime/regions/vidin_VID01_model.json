@@ -1,0 +1,33 @@
+{
+  "schema_version": "78LY-vidin-research-v1",
+  "model_id": "VID-M-VID01",
+  "oblast": "Видин",
+  "municipality": "Белоградчик",
+  "status": "ISOLATED_STRUCTURAL_CONTEXT_QA",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "VID-M-VID01-Z01": {
+      "regional_structural_context": [],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Белоградчик",
+          "informationType": "Регионален геоложки контекст",
+          "paragraphs": [
+            "Белоградчишкият геоложки район включва разнообразни седиментни, магмени и метаморфни скални комплекси. Геоложката карта K-34-022 показва различни по възраст образувания, техните контакти и тектонски структури.",
+            "Тези сведения представят регионалния строеж, а не единна скална последователност за цялата община. Геоложкият картен лист все още няма потвърдена цифрова привръзка на отделните единици към всяка точка."
+          ],
+          "source_ids": [
+            "78KV_BELOGRADCHIK_ORIGINAL_MAP_RECOVERY"
+          ]
+        }
+      ],
+      "source_ids": [
+        "78KV_BELOGRADCHIK_ORIGINAL_MAP_RECOVERY"
+      ],
+      "research_evidence_ids": [],
+      "wider_studies": []
+    }
+  }
+}

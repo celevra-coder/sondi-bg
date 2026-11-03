@@ -1,0 +1,47 @@
+{
+  "schema_version": "78LY-vidin-research-v1",
+  "model_id": "VID-M-VID30",
+  "oblast": "Видин",
+  "municipality": "Ново село",
+  "status": "ISOLATED_STRUCTURAL_CONTEXT_QA",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "VID-M-VID30-Z01": {
+      "regional_structural_context": [
+        {
+          "dominant_lithology_context": [
+            "Варовици",
+            "Мергели",
+            "Льосови образувания"
+          ],
+          "regional_units": [],
+          "source_id": "VID-78LQ-NOVOSELO-PIRO"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Ново село",
+          "informationType": "Регионален геоложки контекст",
+          "paragraphs": [
+            "За община Ново село са описани седиментни скали, сред които варовици и мергели, както и льосови образувания. Крайдунавската Новоселска низина представлява отделна хидрогеоложка среда.",
+            "Строежът на крайдунавските наслаги не може автоматично да се пренася върху всички други терени в общината. Конкретните геоложки контакти по дълбочина изискват местни доказателства."
+          ],
+          "source_ids": [
+            "VID-78LQ-NOVOSELO-PIRO",
+            "VID-78LQ-BREGOVO-BAS2020"
+          ]
+        }
+      ],
+      "source_ids": [
+        "VID-78LQ-NOVOSELO-PIRO",
+        "VID-78LQ-BREGOVO-BAS2020"
+      ],
+      "research_evidence_ids": [
+        "VID-78LQ-NOVOSELO-PIRO"
+      ],
+      "wider_studies": []
+    }
+  }
+}

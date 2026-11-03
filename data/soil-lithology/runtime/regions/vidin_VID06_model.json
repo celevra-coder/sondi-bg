@@ -1,0 +1,35 @@
+{
+  "schema_version": "78LY-vidin-research-v1",
+  "model_id": "VID-M-VID06",
+  "oblast": "Видин",
+  "municipality": "Брегово",
+  "status": "ISOLATED_STRUCTURAL_CONTEXT_QA",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "VID-M-VID06-Z01": {
+      "regional_structural_context": [],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Брегово",
+          "informationType": "Регионален геоложки контекст",
+          "paragraphs": [
+            "В района на Брегово са разграничени крайречни низини, свързани с река Тимок, включително Бреговската и Балей–Куделинската низина. Научните сведения описват кватернерни алувиални, плейстоценски и льосови образувания.",
+            "Различните речни тераси и участъци могат да имат различен геоложки строеж. Тези сведения характеризират проучените низини, а не доказват еднакви пластове в цялата община."
+          ],
+          "source_ids": [
+            "VID-78LQ-BREGOVO-BAS2020"
+          ]
+        }
+      ],
+      "source_ids": [
+        "VID-78LQ-BREGOVO-BAS2020"
+      ],
+      "research_evidence_ids": [
+        "VID-78LQ-BREGOVO-BAS2020"
+      ],
+      "wider_studies": []
+    }
+  }
+}

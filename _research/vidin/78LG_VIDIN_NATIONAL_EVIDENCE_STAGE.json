@@ -1,0 +1,780 @@
+{
+  "step": "78LG-V",
+  "oblast": "Видин",
+  "nuts3_2024": "BG311",
+  "status": "RESEARCH_STAGED_NOT_RUNTIME",
+  "administrative_boundary": "administrative/78KO_VIDIN_11_MUNICIPALITIES.geojson",
+  "evidence_record_count": 34,
+  "evidence": [
+    {
+      "evidence_id": "VID-RAIL-08",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 110,
+      "source_description_bg": "От km 99+175 до km 102+100 трасето преминава върху алувиалната тераса на р Лом. Терасата е изградена от алувиални глини пясъци и чакъли с дебелина до 4-5 m. Те залягат върху плиоценски пясъци и глини (пластове 6.6. и 6.2). Нивото на подземните води е на дълбочина 1,5 до 3,5 m. При водообилни сезони – на повърхността на терена.",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-08",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID33"
+      ],
+      "chainage_from_m": 99175.0,
+      "chainage_to_m": 102100.0,
+      "original_chainage_from_m": 99175.0,
+      "original_chainage_to_m": 102100.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-09",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 110,
+      "source_description_bg": "От km 102+100 до km 111+800 трасето преминава върху полегат долинен склон изграден от делувиални глини с дебелина повече от 6,0 m. Дебелината на почвения слой достига 0,3 – 0,4 m. Трасето преминава по терен или в насипи с височина до около 7,0 m. Дълбочината на подземните води е на 2,8 m. Здрава и суха земна основа за изграждане на линията. В този участък попада и гаровата платформа на гара Воднянци.",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-09",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID33",
+        "VID16"
+      ],
+      "chainage_from_m": 102100.0,
+      "chainage_to_m": 111800.0,
+      "original_chainage_from_m": 102100.0,
+      "original_chainage_to_m": 111800.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-10",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 110,
+      "source_description_bg": "От km 111+800 до km 118+050 трасето преминава върху равнинен терен с дълбоко врязани дерета с дълбочина до 90 m. Земната основа е изградена от делувиални глини с дебелина повече от 6,0 m. Под нея са установени плиоценски седименти. Дебелината на почвения слой достига 0,2 – 0,5 m. Дълбочината на подземните води е на повече от 10 m в долинните участъци. Изкопите ще се изпълнят предимно в делувиални глини пластове. Само в най-дълбоките изкопи ще се достигнат плиоценските седименти. В зоната на изкопите ново на подземни води в сондажите не е установено. Може да се очакват слаби води на контакта между делувиалните глини и плиоценските седименти при водообилни сезони. Здрава и суха земна основа за изграждане на линията.",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-10",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID16"
+      ],
+      "chainage_from_m": 111800.0,
+      "chainage_to_m": 118050.0,
+      "original_chainage_from_m": 111800.0,
+      "original_chainage_to_m": 118050.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-11",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 110,
+      "source_description_bg": "От km 118+050 до km 124+300 трасето преминава върху полегат долинен склон изграден от делувиални глини с дебелина повече от 6,0 m. Под тях залягат плиоценски седименти. Дебелината на почвения слой достига 0,4 – 0,5 m. Трасето преминава по терен или в изкоп с дълбочина до около 14-15 m. Дълбочината на подземните води е на 12-17 m. В зоната на изкопите ниво на подземни води в сондажите не е установено. Може да се очакват слаби води на контакта между делувиалните глини и плиоценските седименти при водообилни сезони. Здрава и суха земна основа за изграждане на линията.",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-11",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID16"
+      ],
+      "chainage_from_m": 118050.0,
+      "chainage_to_m": 124300.0,
+      "original_chainage_from_m": 118050.0,
+      "original_chainage_to_m": 124300.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-12",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 110,
+      "source_description_bg": "От km 124+300 до km 126+150 трасето пресича дълбоко врязани дерета с дълбочина до 131 m (Въртопски дол). Предвижда се изграждането на два виадукта с  ДОВОС - „Модернизация на железопътна линия Видин – София“: железопътен участък I: Видин – Медковец“ ДАНГО ПРОЕКТ КОНСУЛТ ЕООД 102 дължина 1075 m и 200 m. Между двете съоръжения, трасето преминава в изкоп с дълбочина до 4- 5 m. Земната основа е изградена от делувиални глини с дебелина около 3,0 m. Под нея са установени плиоценски седименти. Дебелината на почвения слой достига 0,2 – 0,5 m.",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-12",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID16"
+      ],
+      "chainage_from_m": 124300.0,
+      "chainage_to_m": 126150.0,
+      "original_chainage_from_m": 124300.0,
+      "original_chainage_to_m": 126150.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-13",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 111,
+      "source_description_bg": "От km 126+150 до km 131+050 трасето преминава върху равнинен терен. Земната основа изградена от делувиални глини с дебелина повече 6-7 m. Под тях залягат плиоценски седименти. Дебелината на почвения слой достига 0,4 – 0,5 m. В този участък е разположена гаровата платформа на гара Срацимир (в дълбок изкоп). Трасето преминава по терен или в изкоп с дълбочина до около 8-10 m. Дълбочината на подземните води е на 8-12 m. Подземните води имат слабо напорен характер. Може да се очаква появата на подземни води в зоната на дъното на изкопа. Това налага проектиране на отводнителни съоръжения.",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-13",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID09",
+        "VID16"
+      ],
+      "chainage_from_m": 126150.0,
+      "chainage_to_m": 131050.0,
+      "original_chainage_from_m": 126150.0,
+      "original_chainage_to_m": 131050.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-14",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 111,
+      "source_description_bg": "От km 131+050 до km 132+025 трасето преминава върху долинен склон спускащ се към Видинската низина, прорязан от две дълбоки дерета. Дълбочината на деретата достига до 26-28 m. Земната основа изградена предимно от плиоценски седименти, които са покрити от тънка делувиална глина. Дебелината на почвения слой достига 0,4 – 0,5 m. Ниво на подземни води в сондажите не е установено.",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-14",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID09"
+      ],
+      "chainage_from_m": 131050.0,
+      "chainage_to_m": 132025.0,
+      "original_chainage_from_m": 131050.0,
+      "original_chainage_to_m": 132025.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-15",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 111,
+      "source_description_bg": "От km 132+025 до km 133+025 трасето преминава върху долинен склон спускащ се към Видинската низина прорязан от дълбоки дерета. Земната основа изградена предимно от плиоценски седименти , които са покрити от тънка делувиална глина с дебелина около 2-3- m. Дебелината на почвения слой достига 0,4 – 0,5 m. Трасето преминава в изкоп с дълбочина около 12 m. Ниво на подземни води в сондажите не е установено.",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-15",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID09"
+      ],
+      "chainage_from_m": 132025.0,
+      "chainage_to_m": 133025.0,
+      "original_chainage_from_m": 132025.0,
+      "original_chainage_to_m": 133025.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-16",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 111,
+      "source_description_bg": "От km 133+025 до km 134+625 трасето преминава върху долинен склон спускащ се към Видинската низина, прорязан от дълбоки дерета. Дълбочината на деретата достига до 80 m. Земната основа изградена предимно от плиоценски седименти, които са покрити от тънка делувиална глина. Дебелината на почвения слой достига 0,4 – 0,5 m. Ниво на подземни води е установено в един от сондажите, на дълбочина 4,0 m.",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-16",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID09"
+      ],
+      "chainage_from_m": 133025.0,
+      "chainage_to_m": 134625.0,
+      "original_chainage_from_m": 133025.0,
+      "original_chainage_to_m": 134625.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-17",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 111,
+      "source_description_bg": "От km 134+625 до 135+075 трасето преминава върху старо, периодично активно свлачище. Същото е регистрирано под № VID 09.66442.03. Свлачището е с дължина около 1400 m и широчина, около 450 m. Трасето пресича свлачището в западния край на свлачищния циркус (на около 200-250 m, източно от западната граница на свлачището). Укрепителните мероприятия достигат до km 135+250. От km 135+250 km 135+725 трасето на линията преминава в естакада, продължение на предишната до km 135+400. Следва насип до km 135+725. Насипът ще се изпълни върху полегат делувиален склон изграден от делувиални глини.",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-17",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID09"
+      ],
+      "chainage_from_m": 134625.0,
+      "chainage_to_m": 135075.0,
+      "original_chainage_from_m": 134625.0,
+      "original_chainage_to_m": 135075.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-18",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 111,
+      "source_description_bg": "От km 135+250 km 135+725 трасето на линията преминава в естакада, продължение на предишната до km 135+400. Следва насип до km 135+725. Насипът ще се изпълни върху полегат делувиален склон изграден от делувиални глини.",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-18",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID09"
+      ],
+      "chainage_from_m": 135250.0,
+      "chainage_to_m": 135725.0,
+      "original_chainage_from_m": 135250.0,
+      "original_chainage_to_m": 135725.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-19",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 112,
+      "source_description_bg": "От km 138+480 до km 140+725 трасето преминава върху полегат долинен склон. Земната основа изградена от делувиални и льосовидни глини с дебелина до 12 m. Под тях залягат плиоценски седименти. Дебелината на почвения слой достига 0,3 – 0,4 m. Трасето преминава в изкоп с дълбочина до около 16 m. Дълбочината на подземните води е на 15,7 m. Подземните води имат слабо напорен характер. Може да се очаква появата на подземни води в зоната на дъното на изкопа. Това налага проектиране на отводнителни съоръжения. След km 140+375 до km 140+72, трасето преминава върху полегат долинен склон. Земната основа изградена от плиоценски седименти. Дебелината на почвения слой достига 0,3 – 0,4 m. Трасето преминава в насип с височина до около 6-7 m. Подземни води в сондажа не са установени. Насипът ще се изпълни върху суха и здрава земна основа. В този участък, североизточно",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-19",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID09"
+      ],
+      "chainage_from_m": 138480.0,
+      "chainage_to_m": 140725.0,
+      "original_chainage_from_m": 138480.0,
+      "original_chainage_to_m": 140725.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-20",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 111,
+      "source_description_bg": "От km 138+710 до km 138+850 в “Геозащита Плевен” ЕООД e регистрирано древно, потенциално свлачище (№VID 09.29043.03) спускащо се към източния бряг на дерето „Първанов дол“. От проведените огледи на терена, считаме, че деформациите по десни бряг на дерето са предизвикани от ерозията на дерето. В този участък дерето прави ляв завой, като десния бряг, е подложен на силна странична и дълбочинна ерозия. Това е плитко, откосно свлачище, ще се изземе при изкопните работи и подравняване на терена за строителство. В източна посока от трасето на ж.п. линия, в откоса се разкрива не нарушен естествен терен изграден от плиоценски седименти с почти вертикален откос. Трасето след km 138+725 до km 139+050 преминава в естакада със специален начин на фундиране (поради свлачищните процеси), който е даден в отделен проект. Това допълнително ще повиши устойчивостта на склона.  ДОВОС - „Модернизация на железопътна линия Видин – София“: железопътен участък I: Видин – Медковец“ ДАНГО ПРОЕКТ КОНСУЛТ ЕООД 103",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-20",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID09"
+      ],
+      "chainage_from_m": 138710.0,
+      "chainage_to_m": 138850.0,
+      "original_chainage_from_m": 138710.0,
+      "original_chainage_to_m": 138850.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": true,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-RAIL-21",
+      "evidence_kind": "ROUTE_GEOLOGICAL_CONTEXT",
+      "source_file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+      "source_pdf_page": 112,
+      "source_description_bg": "От km 140+725 до km 149+593 трасето преминава върху алувиалните седименти на терасата на р. Дунав и нейните десни притоци. Това са предимно, слаби алувиални глини, рохки до средно плътни пясъци и чакъли. В зоната на гара Видбол съществува отводнително поле. По време на неговото изграждане са изпълнени насипи с установена дебелина до 8-9 m. Насипите на уплътняване машинно. Нивото на подземните води е плитко – на дълбочина около 1.0 m по време на проучването. При водообилни сезони и високи водни нива в р. Дунав, нивото може да достигне до повърхността на терена. Стройтелството на ИП „Модернизация на железопътна линия Видин – София: железопътен участък I: Видин – Медковец“, ще се изпълнява в Плиоценски и Кватернерни седименти. От дирекция „Информационно обслужване и системи за сигурност“ към МРРБ е представена информация и карти за геоложката опасност и геоложкия риск за територията на област Видин – общини Брусарци, Видин, Димово, Ружинци и област ДОВОС - „Модернизация на железопътна линия Видин – София“: железопътен участък I: Видин – Медковец“ ДАНГО ПРОЕКТ КОНСУЛТ ЕООД 104 Монтана, община Медковец. Нагледно тази информация е представена на фигура № 4.3.1-2. Фигура № 4.3.1-2: Карта на геоложкия риск в района ИП По информация на Министерството на енергетиката, дирекция „Природни ресурси, концесии и контрол“ – писмо с изх. № Е-26-Д-134/18.05.2020 г., трасето на ИП не засяга находища на подземни богатства, както и действащи концесии за добив на подземни богатства. Частите от железопътния участък Видин-Медковец, минаващи през общините Брусарци, Медковец и Ружинци попадат на територията на „Блок „1-25 Враца-Запад“, за който вече е предоставено разрешение за търсене и проучване на нефт и природен газ.",
+      "geometry_reference": {
+        "file": "railway_vidin_medkovets/78LD_VIDIN_ONLY_RAILWAY_EVIDENCE.geojson",
+        "feature_evidence_id": "VID-RAIL-21",
+        "geometry_type": "LineString",
+        "scope": "RAILWAY_ROUTE_ONLY"
+      },
+      "municipality_codes_intersected": [
+        "VID09"
+      ],
+      "chainage_from_m": 140725.0,
+      "chainage_to_m": 149000.0,
+      "original_chainage_from_m": 140725.0,
+      "original_chainage_to_m": 149593.0,
+      "geographic_alignment": "GEOMETRIC_QA_PASSED",
+      "project_revision": "NOT_INDEPENDENTLY_CONFIRMED",
+      "nested_local_detail": false,
+      "individual_borehole_column": false,
+      "off_route_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VIDIN-PORT-CENTRE-2010-BH02",
+      "evidence_kind": "DOCUMENTED_SHALLOW_BOREHOLE",
+      "source_file": "port_vidin_centre/78IG_VIDIN_PORT_THREE_BOREHOLES_RESEARCH.json",
+      "municipality_context": "VID09",
+      "location_precision": "PORT_SITE_ONLY",
+      "coordinates": null,
+      "total_depth_m": 24.0,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 3.5,
+          "material_group_bg": "Техногенен насип",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE"
+        },
+        {
+          "from_m": 3.5,
+          "to_m": 5,
+          "material_group_bg": "Глина",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE",
+          "note_bg": "Самостоятелен плитък глинест интервал"
+        },
+        {
+          "from_m": 5,
+          "to_m": 10,
+          "material_group_bg": "Глина",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE",
+          "note_bg": "Отделен глинест интервал; описанието е в оригиналната колонка"
+        },
+        {
+          "from_m": 10,
+          "to_m": 22,
+          "material_group_bg": "Чакъл с песъчлив запълнител",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE"
+        },
+        {
+          "from_m": 22,
+          "to_m": 24,
+          "material_group_bg": "Глина",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE",
+          "note_bg": "Долен глинест интервал"
+        }
+      ],
+      "individual_borehole_coordinates_verified": false,
+      "spatial_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VIDIN-PORT-CENTRE-2010-BH03",
+      "evidence_kind": "DOCUMENTED_SHALLOW_BOREHOLE",
+      "source_file": "port_vidin_centre/78IG_VIDIN_PORT_THREE_BOREHOLES_RESEARCH.json",
+      "municipality_context": "VID09",
+      "location_precision": "PORT_SITE_ONLY",
+      "coordinates": null,
+      "total_depth_m": 21.5,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 4.5,
+          "material_group_bg": "Техногенен насип",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE"
+        },
+        {
+          "from_m": 4.5,
+          "to_m": 9,
+          "material_group_bg": "Глина",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE"
+        },
+        {
+          "from_m": 9,
+          "to_m": 19.5,
+          "material_group_bg": "Чакъл с песъчлив запълнител",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE"
+        },
+        {
+          "from_m": 19.5,
+          "to_m": 21.5,
+          "material_group_bg": "Глина",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE",
+          "note_bg": "Долен глинест интервал"
+        }
+      ],
+      "individual_borehole_coordinates_verified": false,
+      "spatial_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VIDIN-PORT-CENTRE-2010-BH04",
+      "evidence_kind": "DOCUMENTED_SHALLOW_BOREHOLE",
+      "source_file": "port_vidin_centre/78IG_VIDIN_PORT_THREE_BOREHOLES_RESEARCH.json",
+      "municipality_context": "VID09",
+      "location_precision": "PORT_SITE_ONLY",
+      "coordinates": null,
+      "total_depth_m": 20.5,
+      "lithology_intervals": [
+        {
+          "from_m": 0,
+          "to_m": 3,
+          "material_group_bg": "Техногенен насип",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE"
+        },
+        {
+          "from_m": 3,
+          "to_m": 5.5,
+          "material_group_bg": "Глина",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE"
+        },
+        {
+          "from_m": 5.5,
+          "to_m": 18.5,
+          "material_group_bg": "Чакъл с песъчлив запълнител",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE"
+        },
+        {
+          "from_m": 18.5,
+          "to_m": 20.5,
+          "material_group_bg": "Глина",
+          "evidence": "ORIGINAL_BOREHOLE_COLUMN_IMAGE",
+          "note_bg": "Долен глинест интервал"
+        }
+      ],
+      "individual_borehole_coordinates_verified": false,
+      "spatial_projection_authorized": false,
+      "depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-01",
+      "evidence_kind": "STRATIGRAPHIC_SURFACE_SECTION",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 0,
+      "original_record": {
+        "thickness_m": 33,
+        "name": "Старопатица I",
+        "formation": "Кулска свита",
+        "type": "surface_section"
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-02",
+      "evidence_kind": "STRATIGRAPHIC_SURFACE_SECTION",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 1,
+      "original_record": {
+        "thickness_m": 22,
+        "name": "Старопатица II",
+        "formation": "Кулска свита",
+        "type": "surface_section"
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-03",
+      "evidence_kind": "STRATIGRAPHIC_SURFACE_SECTION",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 2,
+      "original_record": {
+        "thickness_m": 600,
+        "name": "Толовишки дол",
+        "formation": "Кулска свита",
+        "type": "surface_section"
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-04",
+      "evidence_kind": "STRATIGRAPHIC_SURFACE_SECTION",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 3,
+      "original_record": {
+        "thickness_m": 14,
+        "name": "Толовишко врело",
+        "formation": "Рабишка свита",
+        "type": "surface_section"
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-05",
+      "evidence_kind": "STRATIGRAPHIC_SURFACE_SECTION",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 4,
+      "original_record": {
+        "thickness_m": 135,
+        "name": "Кладоруб",
+        "formation": "Кладорубска свита",
+        "type": "surface_section"
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-06",
+      "evidence_kind": "STRATIGRAPHIC_SURFACE_SECTION",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 5,
+      "original_record": {
+        "thickness_m": 11,
+        "name": "Ружинци I",
+        "formation": "Варовиково-мергелна задруга",
+        "type": "surface_section"
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-07",
+      "evidence_kind": "STRATIGRAPHIC_SURFACE_SECTION",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 6,
+      "original_record": {
+        "thickness_m": 8,
+        "name": "Ружинци II",
+        "formation": "Варовиково-мергелна задруга",
+        "type": "surface_section"
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-08",
+      "evidence_kind": "STRATIGRAPHIC_CORE_INTERVAL",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 7,
+      "original_record": {
+        "to_m": 1536,
+        "name": "Шишенци Р-1",
+        "formation": "Рабишка свита",
+        "type": "core_interval",
+        "from_m": 1529
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-09",
+      "evidence_kind": "STRATIGRAPHIC_CORE_INTERVAL",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 8,
+      "original_record": {
+        "to_m": 1559,
+        "name": "Шишенци Р-1",
+        "formation": "Рабишка свита",
+        "type": "core_interval",
+        "from_m": 1550
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-10",
+      "evidence_kind": "STRATIGRAPHIC_CORE_INTERVAL",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 9,
+      "original_record": {
+        "to_m": 1328,
+        "name": "Макреш Р-1",
+        "formation": "Рабишка свита",
+        "type": "core_interval",
+        "from_m": 1323
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-11",
+      "evidence_kind": "STRATIGRAPHIC_CORE_INTERVAL",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 10,
+      "original_record": {
+        "to_m": 1438,
+        "name": "Макреш Р-1",
+        "formation": "Рабишка свита",
+        "type": "core_interval",
+        "from_m": 1433
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-12",
+      "evidence_kind": "STRATIGRAPHIC_CORE_INTERVAL",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 11,
+      "original_record": {
+        "to_m": 2174,
+        "name": "Бело поле Р-1",
+        "formation": "Рабишка свита",
+        "type": "core_interval",
+        "from_m": 2167
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-KULA-13",
+      "evidence_kind": "STRATIGRAPHIC_STRATIGRAPHIC_REVISION",
+      "source_file": "kula_zone/78JP_V_BAS_KULA_ZONE_EVIDENCE.json",
+      "source_record_index": 12,
+      "original_record": {
+        "to_m": 1472,
+        "name": "Макреш Р-1",
+        "formation": "Рабишка свита",
+        "type": "stratigraphic_revision",
+        "from_m": 1293
+      },
+      "location_precision": "NAMED_SITE_ONLY",
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-MAP-01",
+      "evidence_kind": "REGIONAL_MAP_CONTEXT",
+      "source_file": "belogradchik/78KV_BELOGRADCHIK_ORIGINAL_MAP_RECOVERY.json",
+      "observation": {
+        "type": "GEOLOGICAL_UNITS",
+        "description_bg": "Легендата разграничава кватернерни, неогенски, мезозойски и по-стари скални комплекси. Сред описаните материали са глини, пясъци, чакъли, пясъчници, конгломерати, мергели, варовици, магмени и метаморфни скали.",
+        "evidence_scope": "MAP_SHEET_REGIONAL_CONTEXT",
+        "local_point_depth_prediction": false
+      },
+      "map_sheet": "K-34-022",
+      "map_georeference": "PROVISIONAL_REQUIRES_QA",
+      "geological_unit_polygon_verified": false,
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-MAP-02",
+      "evidence_kind": "REGIONAL_MAP_CONTEXT",
+      "source_file": "belogradchik/78KV_BELOGRADCHIK_ORIGINAL_MAP_RECOVERY.json",
+      "observation": {
+        "type": "STRUCTURAL_SECTIONS",
+        "description_bg": "Геоложките профили I-II и III-IV представят регионалните структурни взаимоотношения между скалните комплекси, геоложките контакти и тектонските нарушения. Те не представляват непрекъснати сондажни колонки.",
+        "evidence_scope": "REGIONAL_GEOLOGICAL_CROSS_SECTIONS",
+        "local_point_depth_prediction": false
+      },
+      "map_sheet": "K-34-022",
+      "map_georeference": "PROVISIONAL_REQUIRES_QA",
+      "geological_unit_polygon_verified": false,
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-MAP-03",
+      "evidence_kind": "REGIONAL_MAP_CONTEXT",
+      "source_file": "belogradchik/78KV_BELOGRADCHIK_ORIGINAL_MAP_RECOVERY.json",
+      "observation": {
+        "type": "QUATERNARY_LIMITATION",
+        "description_bg": "Оригиналната бележка под геоложките профили посочва, че поради малките им дебелини кватернерните образувания не са показани. От това не следва, че те липсват на терена.",
+        "evidence_scope": "EXPLICIT_SOURCE_LIMITATION",
+        "local_point_depth_prediction": false
+      },
+      "map_sheet": "K-34-022",
+      "map_georeference": "PROVISIONAL_REQUIRES_QA",
+      "geological_unit_polygon_verified": false,
+      "point_depth_prediction_authorized": false
+    },
+    {
+      "evidence_id": "VID-MAP-04",
+      "evidence_kind": "REGIONAL_MAP_CONTEXT",
+      "source_file": "belogradchik/78KV_BELOGRADCHIK_ORIGINAL_MAP_RECOVERY.json",
+      "observation": {
+        "type": "VERTICAL_REFERENCE",
+        "description_bg": "Вертикалните мащаби на профилите представят регионалния строеж и надморските височини. Те не дават непосредствено доказани дълбочини на всички литоложки контакти под произволна избрана точка.",
+        "evidence_scope": "STRUCTURAL_CONTEXT_ONLY",
+        "local_point_depth_prediction": false
+      },
+      "map_sheet": "K-34-022",
+      "map_georeference": "PROVISIONAL_REQUIRES_QA",
+      "geological_unit_polygon_verified": false,
+      "point_depth_prediction_authorized": false
+    }
+  ],
+  "additional_original_sources": [
+    "belogradchik/78JM_MAKRESH_SHISHENTSI_PARTIAL_CORE_LOGS.json"
+  ],
+  "known_source_discrepancies": [
+    {
+      "issue": "PROJECT_REVISION",
+      "dovos_base_project_years": "2015-2017",
+      "kmz_technical_project_year": 2021,
+      "resolution": "NOT_INDEPENDENTLY_VERIFIED",
+      "source_file": "railway_vidin_medkovets/78LF_VIDIN_PROJECT_REVISION_CONCLUSION.json"
+    },
+    {
+      "issue": "ROUTE_ENDPOINT_CHAINAGE",
+      "dovos_project_end_m": 149393,
+      "geological_description_end_m": 149593,
+      "difference_m": 200,
+      "resolution": "UNEXPLAINED",
+      "source_file": "railway_vidin_medkovets/78LF_VIDIN_PROJECT_REVISION_CONCLUSION.json"
+    }
+  ],
+  "scientific_safeguards": {
+    "railway_evidence_off_route_prediction": false,
+    "regional_map_as_individual_borehole": false,
+    "port_boreholes_have_exact_coordinates": false,
+    "deep_core_as_shallow_log": false,
+    "fixed_depth_intervals_invented": false,
+    "automatic_depth_prediction_authorized": false
+  },
+  "national_engine_modified": false,
+  "regional_registry_modified": false,
+  "production_integration": false
+}

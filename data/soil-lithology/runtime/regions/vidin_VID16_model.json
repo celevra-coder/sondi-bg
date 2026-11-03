@@ -1,0 +1,44 @@
+{
+  "schema_version": "78LY-vidin-research-v1",
+  "model_id": "VID-M-VID16",
+  "oblast": "Видин",
+  "municipality": "Димово",
+  "status": "ISOLATED_STRUCTURAL_CONTEXT_QA",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "VID-M-VID16-Z01": {
+      "regional_structural_context": [],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Димово",
+          "informationType": "Регионален геоложки контекст",
+          "paragraphs": [
+            "По проучените железопътни участъци в община Димово са описани делувиални глини и плиоценски седиментни материали. Местните условия по трасето се променят между отделните участъци.",
+            "Научен повърхностен разрез при Кладоруб допълва сведенията за регионалния геоложки строеж. Той не е сондажна колонка. Железопътните и повърхностните наблюдения не доказват еднаква литология под всички имоти в общината."
+          ],
+          "source_ids": [
+            "78KD_VIDIN_RAILWAY_RESEARCH_FINAL",
+            "78LD_VIDIN_ONLY_RAILWAY_EVIDENCE",
+            "78JP_V_BAS_KULA_ZONE_EVIDENCE"
+          ]
+        }
+      ],
+      "source_ids": [
+        "78KD_VIDIN_RAILWAY_RESEARCH_FINAL",
+        "78LD_VIDIN_ONLY_RAILWAY_EVIDENCE",
+        "78JP_V_BAS_KULA_ZONE_EVIDENCE"
+      ],
+      "research_evidence_ids": [
+        "VID-RAIL-09",
+        "VID-RAIL-10",
+        "VID-RAIL-11",
+        "VID-RAIL-12",
+        "VID-RAIL-13",
+        "VID-KULA-05"
+      ],
+      "wider_studies": []
+    }
+  }
+}

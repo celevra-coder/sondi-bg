@@ -1,0 +1,47 @@
+{
+  "schema_version": "78LY-vidin-research-v1",
+  "model_id": "VID-M-VID37",
+  "oblast": "Видин",
+  "municipality": "Чупрене",
+  "status": "ISOLATED_STRUCTURAL_CONTEXT_QA",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "VID-M-VID37-Z01": {
+      "regional_structural_context": [
+        {
+          "dominant_lithology_context": [
+            "Гранитоиди",
+            "Пясъчници",
+            "Конгломерати",
+            "Карбонатни скали",
+            "Алувиални наслаги в речните долини"
+          ],
+          "regional_units": [],
+          "source_id": "VID-78LQ-CHUPRENE-PIRO"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Чупрене",
+          "informationType": "Регионален геоложки контекст",
+          "paragraphs": [
+            "Районът на Чупрене включва различни скални комплекси — гранитоиди, пясъчници, конгломерати и карбонатни скали. В отделни котловинни и долинни участъци са описани по-млади седименти.",
+            "Речните долини на Лом, Чупренска и Стакевска съдържат алувиални наслаги. Съчетанието на скални масиви, долини и структурни различия предполага изменчив геоложки строеж, без да определя точните дълбочини на пластовете под избран имот."
+          ],
+          "source_ids": [
+            "VID-78LQ-CHUPRENE-PIRO"
+          ]
+        }
+      ],
+      "source_ids": [
+        "VID-78LQ-CHUPRENE-PIRO"
+      ],
+      "research_evidence_ids": [
+        "VID-78LQ-CHUPRENE-PIRO"
+      ],
+      "wider_studies": []
+    }
+  }
+}

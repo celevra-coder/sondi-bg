@@ -1,0 +1,35 @@
+{
+  "schema_version": "78LY-vidin-research-v1",
+  "model_id": "VID-M-VID15",
+  "oblast": "Видин",
+  "municipality": "Грамада",
+  "status": "ISOLATED_STRUCTURAL_CONTEXT_QA",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "VID-M-VID15-Z01": {
+      "regional_structural_context": [],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Грамада",
+          "informationType": "Регионален геоложки контекст",
+          "paragraphs": [
+            "В района на Рушовски дол край Грамада е документирано геоложко разкритие с оолитни, органогенни и песъчливи варовици, както и по-малко глини.",
+            "Това е локално наблюдение на разкритие, а не доказана геоложка последователност за цялата община. Дебелината на разреза не може да се използва като дълбочина на пласт под избрана точка."
+          ],
+          "source_ids": [
+            "VID-78LQ-GRAMADA-MGU"
+          ]
+        }
+      ],
+      "source_ids": [
+        "VID-78LQ-GRAMADA-MGU"
+      ],
+      "research_evidence_ids": [
+        "VID-78LQ-GRAMADA-MGU"
+      ],
+      "wider_studies": []
+    }
+  }
+}

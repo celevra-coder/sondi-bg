@@ -1,0 +1,36 @@
+{
+  "schema_version": "78LY-vidin-research-v1",
+  "model_id": "VID-M-VID03",
+  "oblast": "Видин",
+  "municipality": "Бойница",
+  "status": "ISOLATED_STRUCTURAL_CONTEXT_QA",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "VID-M-VID03-Z01": {
+      "regional_structural_context": [],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Бойница",
+          "informationType": "Регионален геоложки контекст",
+          "paragraphs": [
+            "За района на Шишенци са публикувани научни сведения за мергели и мергелни варовици от дълбоки ядкови интервали. Те показват наличието на изучени скални комплекси в дълбочина при конкретния проучвателен сондаж.",
+            "Сведенията не представляват пълна плитка литоложка колонка и не определят какви пластове се срещат на малка дълбочина в останалите части на община Бойница."
+          ],
+          "source_ids": [
+            "78JP_V_BAS_KULA_ZONE_EVIDENCE"
+          ]
+        }
+      ],
+      "source_ids": [
+        "78JP_V_BAS_KULA_ZONE_EVIDENCE"
+      ],
+      "research_evidence_ids": [
+        "VID-KULA-08",
+        "VID-KULA-09"
+      ],
+      "wider_studies": []
+    }
+  }
+}

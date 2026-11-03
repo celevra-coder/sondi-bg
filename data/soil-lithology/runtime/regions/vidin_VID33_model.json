@@ -1,0 +1,43 @@
+{
+  "schema_version": "78LY-vidin-research-v1",
+  "model_id": "VID-M-VID33",
+  "oblast": "Видин",
+  "municipality": "Ружинци",
+  "status": "ISOLATED_STRUCTURAL_CONTEXT_QA",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "VID-M-VID33-Z01": {
+      "regional_structural_context": [],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Ружинци",
+          "informationType": "Регионален геоложки контекст",
+          "paragraphs": [
+            "В проучените железопътни участъци на община Ружинци са документирани алувиални и делувиални материали, включително глини, пясъци и чакъли в отделни речни и терасови среди.",
+            "Научните разрези при Ружинци дават допълнителен стратиграфски контекст. Записът за Бело поле Р-1 се отнася до дълбок ядков интервал, а не до плитката литология на всяка точка. Различните наблюдения не се обединяват в един фиктивен сондажен разрез."
+          ],
+          "source_ids": [
+            "78KD_VIDIN_RAILWAY_RESEARCH_FINAL",
+            "78LD_VIDIN_ONLY_RAILWAY_EVIDENCE",
+            "78JP_V_BAS_KULA_ZONE_EVIDENCE"
+          ]
+        }
+      ],
+      "source_ids": [
+        "78KD_VIDIN_RAILWAY_RESEARCH_FINAL",
+        "78LD_VIDIN_ONLY_RAILWAY_EVIDENCE",
+        "78JP_V_BAS_KULA_ZONE_EVIDENCE"
+      ],
+      "research_evidence_ids": [
+        "VID-RAIL-08",
+        "VID-RAIL-09",
+        "VID-KULA-06",
+        "VID-KULA-07",
+        "VID-KULA-12"
+      ],
+      "wider_studies": []
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "78LY-vidin-research-v1",
+  "model_id": "VID-M-VID22",
+  "oblast": "Видин",
+  "municipality": "Кула",
+  "status": "ISOLATED_STRUCTURAL_CONTEXT_QA",
+  "production_enabled": false,
+  "automatic_depth_prediction_enabled": false,
+  "zones": {
+    "VID-M-VID22-Z01": {
+      "regional_structural_context": [],
+      "documented_reference_intervals": [],
+      "regional_evidence_notes": [
+        {
+          "title": "Регионален геоложки анализ — Кула",
+          "informationType": "Регионален геоложки контекст",
+          "paragraphs": [
+            "При Старопатица са документирани повърхностни геоложки разрези на Кулската свита. Те дават информация за стратиграфската последователност и геоложките материали в конкретните изучени разкрития.",
+            "Дебелините на тези разрези са стратиграфски измервания, а не дълбочини на пластове под произволна точка в община Кула. Необходима е местна геоложка привръзка за по-конкретна оценка."
+          ],
+          "source_ids": [
+            "78JP_V_BAS_KULA_ZONE_EVIDENCE"
+          ]
+        }
+      ],
+      "source_ids": [
+        "78JP_V_BAS_KULA_ZONE_EVIDENCE"
+      ],
+      "research_evidence_ids": [
+        "VID-KULA-01",
+        "VID-KULA-02"
+      ],
+      "wider_studies": []
+    }
+  }
+}
