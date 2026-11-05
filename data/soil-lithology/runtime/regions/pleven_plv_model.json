@@ -1,0 +1,209 @@
+{
+    "schema_version":  1,
+    "model_id":  "PLE-PLV-RESEARCH-DRAFT",
+    "oblast":  "Плевен",
+    "purpose":  "DOCUMENTARY_STAGING_FOR_UNIFIED_NATIONAL_ENGINE",
+    "zones":  {
+                  "PLE-PLV-Z01":  {
+                                      "name":  "Плевен",
+                                      "municipalities":  [
+                                                             "Плевен"
+                                                         ],
+                                      "default_mode":  "REGIONAL_CONTEXT",
+                                      "regional_structural_context":  [
+                                                                          {
+                                                                              "context_id":  "PLE-83P-1a9fad7c8f6fc7308b5ef0",
+                                                                              "municipality":  "Плевен",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-446D1CF7D3F5E1A",
+                                                                              "area":  "Плевен",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "кватернерен льос, льосовидни глини и речни тераси"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "80L_pleven_regional_evidence\\80L_PLEVEN_REGIONAL_EVIDENCE.json",
+                                                                              "source_fact_pointer":  "/facts/1",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          },
+                                                                          {
+                                                                              "context_id":  "PLE-83P-2fefe02da7865df2c9a53f",
+                                                                              "municipality":  "Плевен",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-446D1CF7D3F5E1A",
+                                                                              "area":  "Плевен",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "неогенски глини, пясъци, пясъчници, варовици и чакълести отложения"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "80L_pleven_regional_evidence\\80L_PLEVEN_REGIONAL_EVIDENCE.json",
+                                                                              "source_fact_pointer":  "/facts/3",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          }
+                                                                      ],
+                                      "documented_reference_intervals":  [
+
+                                                                         ],
+                                      "source_ids":  [
+                                                         "PLE-S-446D1CF7D3F5E1A"
+                                                     ],
+                                      "research_staging":  {
+                                                               "reviewed_source_files":  [
+                                                                                             "80L_pleven_regional_evidence\\80L_PLEVEN_REGIONAL_EVIDENCE.json",
+                                                                                             "80P_2025_drilled_wells\\80P_PLEVEN_VERIFIED_DRILLING_LEADS.json",
+                                                                                             "80Q_drilling_facts\\80Q_PLEVEN_2025_DRILLING_FACTS.json"
+                                                                                         ],
+                                                               "geological_context_candidates":  [
+                                                                                                     "80L_pleven_regional_evidence\\80L_PLEVEN_REGIONAL_EVIDENCE.json"
+                                                                                                 ],
+                                                               "entire_oblast_research_crosswalk":  "83O_COMPLETE_PLEVEN_EVIDENCE_CROSSWALK.json",
+                                                               "not_authorized_for_depth_prediction":  true,
+                                                               "requires_context_extraction_before_activation":  true
+                                                           },
+                                      "research_evidence":  {
+                                                                "candidate_links":  [
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-a4f5f145eeb460ff1404ba",
+                                                                                            "source_file":  "80L_pleven_regional_evidence\\80L_PLEVEN_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/0",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-1a9fad7c8f6fc7308b5ef0",
+                                                                                            "source_file":  "80L_pleven_regional_evidence\\80L_PLEVEN_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/1",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-21944866e416af171fd08f",
+                                                                                            "source_file":  "80L_pleven_regional_evidence\\80L_PLEVEN_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/2",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-2fefe02da7865df2c9a53f",
+                                                                                            "source_file":  "80L_pleven_regional_evidence\\80L_PLEVEN_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/3",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-cf7da258a58ea099f08282",
+                                                                                            "source_file":  "80P_2025_drilled_wells\\80P_PLEVEN_VERIFIED_DRILLING_LEADS.json",
+                                                                                            "json_pointer":  "/source_records/0",
+                                                                                            "evidence_class":  "OTHER_DOCUMENTARY_EVIDENCE",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-bae29f1c32982393004dce",
+                                                                                            "source_file":  "80P_2025_drilled_wells\\80P_PLEVEN_VERIFIED_DRILLING_LEADS.json",
+                                                                                            "json_pointer":  "/source_records/1",
+                                                                                            "evidence_class":  "OTHER_DOCUMENTARY_EVIDENCE",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-ef3b9066ade0b86fbdb465",
+                                                                                            "source_file":  "80P_2025_drilled_wells\\80P_PLEVEN_VERIFIED_DRILLING_LEADS.json",
+                                                                                            "json_pointer":  "/source_records/2",
+                                                                                            "evidence_class":  "OTHER_DOCUMENTARY_EVIDENCE",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-fc490976ed2aa6a14e3d78",
+                                                                                            "source_file":  "80P_2025_drilled_wells\\80P_PLEVEN_VERIFIED_DRILLING_LEADS.json",
+                                                                                            "json_pointer":  "/source_records/3",
+                                                                                            "evidence_class":  "OTHER_DOCUMENTARY_EVIDENCE",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-76d1c7801de7a38a699ef7",
+                                                                                            "source_file":  "80P_2025_drilled_wells\\80P_PLEVEN_VERIFIED_DRILLING_LEADS.json",
+                                                                                            "json_pointer":  "/research_leads/0",
+                                                                                            "evidence_class":  "OTHER_DOCUMENTARY_EVIDENCE",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-74a316a76887de0b9aa75c",
+                                                                                            "source_file":  "80P_2025_drilled_wells\\80P_PLEVEN_VERIFIED_DRILLING_LEADS.json",
+                                                                                            "json_pointer":  "/research_leads/1",
+                                                                                            "evidence_class":  "OTHER_DOCUMENTARY_EVIDENCE",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-4aaaabb2f69c42144dc621",
+                                                                                            "source_file":  "80P_2025_drilled_wells\\80P_PLEVEN_VERIFIED_DRILLING_LEADS.json",
+                                                                                            "json_pointer":  "/research_leads/2",
+                                                                                            "evidence_class":  "OTHER_DOCUMENTARY_EVIDENCE",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-138ae6cc15d16b7c01df21",
+                                                                                            "source_file":  "80Q_drilling_facts\\80Q_PLEVEN_2025_DRILLING_FACTS.json",
+                                                                                            "json_pointer":  "/facts/0",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-a60ade1830342777311793",
+                                                                                            "source_file":  "80Q_drilling_facts\\80Q_PLEVEN_2025_DRILLING_FACTS.json",
+                                                                                            "json_pointer":  "/facts/1",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-9d63c58103b27671c4a00e",
+                                                                                            "source_file":  "80Q_drilling_facts\\80Q_PLEVEN_2025_DRILLING_FACTS.json",
+                                                                                            "json_pointer":  "/facts/2",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-0d473265dfd721de8ebe04",
+                                                                                            "source_file":  "80Q_drilling_facts\\80Q_PLEVEN_2025_DRILLING_FACTS.json",
+                                                                                            "json_pointer":  "/facts/3",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-1d42f4023cf863ab37533a",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/0",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-7b7ef4ac6f48fd1bfe7772",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/1",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        }
+                                                                                    ],
+                                                                "source_ids_from_research":  [
+                                                                                                 "80L_pleven_regional_evidence\\80L_PLEVEN_REGIONAL_EVIDENCE.json",
+                                                                                                 "80P_2025_drilled_wells\\80P_PLEVEN_VERIFIED_DRILLING_LEADS.json",
+                                                                                                 "80Q_drilling_facts\\80Q_PLEVEN_2025_DRILLING_FACTS.json",
+                                                                                                 "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json"
+                                                                                             ],
+                                                                "crosswalk_file":  "83Q_ALL_EVIDENCE_SPATIAL_CROSSWALK.json",
+                                                                "research_only":  true,
+                                                                "not_an_automatic_depth_model":  true
+                                                            }
+                                  }
+              },
+    "production_readiness":  "NOT_READY",
+    "no_oblast_specific_algorithm":  true,
+    "client_geological_analysis_ready":  false
+}

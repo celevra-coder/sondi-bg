@@ -1,0 +1,107 @@
+{
+    "schema_version":  1,
+    "model_id":  "PLE-LEV-RESEARCH-DRAFT",
+    "oblast":  "Плевен",
+    "purpose":  "DOCUMENTARY_STAGING_FOR_UNIFIED_NATIONAL_ENGINE",
+    "zones":  {
+                  "PLE-LEV-Z01":  {
+                                      "name":  "Левски",
+                                      "municipalities":  [
+                                                             "Левски"
+                                                         ],
+                                      "default_mode":  "REGIONAL_CONTEXT",
+                                      "regional_structural_context":  [
+                                                                          {
+                                                                              "context_id":  "PLE-83P-c88d231bedcb9e565ccafc",
+                                                                              "municipality":  "Левски",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-645F9687DE8820B",
+                                                                              "area":  "Левски",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "льосово-глинеста повърхнина; едрозърнести пясъци и пясъчни глини край Осъм"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "81U_levski_verified_leads\\81U_LEVSKI_REGIONAL_GEOLOGY.json",
+                                                                              "source_fact_pointer":  "/observations/0",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          },
+                                                                          {
+                                                                              "context_id":  "PLE-83P-640c19296e1635c12f08d1",
+                                                                              "municipality":  "Левски",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-645F9687DE8820B",
+                                                                              "area":  "Левски",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "алувиални чакълесто-песъчливи отложения по терасите на Осъм"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "81U_levski_verified_leads\\81U_LEVSKI_REGIONAL_GEOLOGY.json",
+                                                                              "source_fact_pointer":  "/observations/2",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          }
+                                                                      ],
+                                      "documented_reference_intervals":  [
+
+                                                                         ],
+                                      "source_ids":  [
+                                                         "PLE-S-645F9687DE8820B"
+                                                     ],
+                                      "research_staging":  {
+                                                               "reviewed_source_files":  [
+                                                                                             "81U_levski_verified_leads\\81U_LEVSKI_REGIONAL_GEOLOGY.json",
+                                                                                             "81U_levski_verified_leads\\81U_LEVSKI_WELL_LEADS.json"
+                                                                                         ],
+                                                               "geological_context_candidates":  [
+                                                                                                     "81U_levski_verified_leads\\81U_LEVSKI_REGIONAL_GEOLOGY.json"
+                                                                                                 ],
+                                                               "entire_oblast_research_crosswalk":  "83O_COMPLETE_PLEVEN_EVIDENCE_CROSSWALK.json",
+                                                               "not_authorized_for_depth_prediction":  true,
+                                                               "requires_context_extraction_before_activation":  true
+                                                           },
+                                      "research_evidence":  {
+                                                                "candidate_links":  [
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-c88d231bedcb9e565ccafc",
+                                                                                            "source_file":  "81U_levski_verified_leads\\81U_LEVSKI_REGIONAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/observations/0",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-4d6092c88a24fb24605648",
+                                                                                            "source_file":  "81U_levski_verified_leads\\81U_LEVSKI_REGIONAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/observations/1",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-640c19296e1635c12f08d1",
+                                                                                            "source_file":  "81U_levski_verified_leads\\81U_LEVSKI_REGIONAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/observations/2",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        }
+                                                                                    ],
+                                                                "source_ids_from_research":  [
+                                                                                                 "81U_levski_verified_leads\\81U_LEVSKI_REGIONAL_GEOLOGY.json"
+                                                                                             ],
+                                                                "crosswalk_file":  "83Q_ALL_EVIDENCE_SPATIAL_CROSSWALK.json",
+                                                                "research_only":  true,
+                                                                "not_an_automatic_depth_model":  true
+                                                            }
+                                  }
+              },
+    "production_readiness":  "NOT_READY",
+    "no_oblast_specific_algorithm":  true,
+    "client_geological_analysis_ready":  false
+}

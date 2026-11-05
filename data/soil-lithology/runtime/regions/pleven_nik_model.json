@@ -1,0 +1,168 @@
+{
+    "schema_version":  1,
+    "model_id":  "PLE-NIK-RESEARCH-DRAFT",
+    "oblast":  "Плевен",
+    "purpose":  "DOCUMENTARY_STAGING_FOR_UNIFIED_NATIONAL_ENGINE",
+    "zones":  {
+                  "PLE-NIK-Z01":  {
+                                      "name":  "Никопол",
+                                      "municipalities":  [
+                                                             "Никопол"
+                                                         ],
+                                      "default_mode":  "REGIONAL_CONTEXT",
+                                      "regional_structural_context":  [
+                                                                          {
+                                                                              "context_id":  "PLE-83CI-NIKOPOL-OUP-REGIONAL",
+                                                                              "municipality":  "Никопол",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-83CI-NIKOPOL-OUP",
+                                                                              "source_url":  "https://www.nikopol-bg.com/inc/service/service-download-file.php?fid=1990",
+                                                                              "area":  "Община Никопол — общ геоложки контекст",
+                                                                              "evidence_type":  "OFFICIAL_MUNICIPAL_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "Според общия устройствен план льосови отложения покриват значителна част от територията на община Никопол, особено централната ѝ зона. Разпространението им не е равномерно и не доказва наличие на льос във всяка избрана точка."
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "83CF_nikopol_iskar_sources\\83CF_R_SOURCE_RESULTS.json",
+                                                                              "scope":  "MUNICIPALITY_REGIONAL_OVERVIEW_NOT_POINT_DEPTH",
+                                                                              "status":  "DOCUMENTED_REGIONAL_CONTEXT",
+                                                                              "scientific_rule":  "Regional surface context only; no depth-specific lithology, groundwater depth or municipality-wide point prediction."
+                                                                          }
+                                                                      ],
+                                      "documented_reference_intervals":  [
+
+                                                                         ],
+                                      "source_ids":  [
+
+                                                     ],
+                                      "research_staging":  {
+                                                               "reviewed_source_files":  [
+                                                                                             "82E_nikopol_verified_sections\\82E_NIKOPOL_GEOLOGICAL_SECTIONS.json",
+                                                                                             "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json"
+                                                                                         ],
+                                                               "geological_context_candidates":  [
+                                                                                                     "82E_nikopol_verified_sections\\82E_NIKOPOL_GEOLOGICAL_SECTIONS.json",
+                                                                                                     "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json"
+                                                                                                 ],
+                                                               "entire_oblast_research_crosswalk":  "83O_COMPLETE_PLEVEN_EVIDENCE_CROSSWALK.json",
+                                                               "not_authorized_for_depth_prediction":  true,
+                                                               "requires_context_extraction_before_activation":  true
+                                                           },
+                                      "research_evidence":  {
+                                                                "candidate_links":  [
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-fe24553ff671b0a314a94d",
+                                                                                            "source_file":  "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/0",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-6993b8ec9cc97647c96f55",
+                                                                                            "source_file":  "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/1",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-ecac5ab151c9355af50db4",
+                                                                                            "source_file":  "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/2",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-98e4949d39ebb8ab571e0a",
+                                                                                            "source_file":  "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/3",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-7624b8a235f37319448ee7",
+                                                                                            "source_file":  "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/4",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-6027ec73d2a58d4037fb95",
+                                                                                            "source_file":  "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/5",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-169a01a32dbf8f7a5f85bf",
+                                                                                            "source_file":  "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/6",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-ffce4f8d8ee870272000e7",
+                                                                                            "source_file":  "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/7",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-a3acb452c36e9009fc5c4c",
+                                                                                            "source_file":  "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/8",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-735e53fe2cc0233d1f0c10",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/3",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-78f7bfab9ef714fb22bd72",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/4",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-10d3ad53d8e887c6674cf5",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/5",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-db7104c57cca10f0c77fab",
+                                                                                            "source_file":  "82E_nikopol_verified_sections\\82E_NIKOPOL_GEOLOGICAL_SECTIONS.json",
+                                                                                            "json_pointer":  "/sections/0",
+                                                                                            "evidence_class":  "LOCAL_GEOLOGICAL_SECTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-eb1bcfd43a589ab909124b",
+                                                                                            "source_file":  "82E_nikopol_verified_sections\\82E_NIKOPOL_GEOLOGICAL_SECTIONS.json",
+                                                                                            "json_pointer":  "/sections/1",
+                                                                                            "evidence_class":  "LOCAL_GEOLOGICAL_SECTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        }
+                                                                                    ],
+                                                                "source_ids_from_research":  [
+                                                                                                 "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json",
+                                                                                                 "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                                 "82E_nikopol_verified_sections\\82E_NIKOPOL_GEOLOGICAL_SECTIONS.json"
+                                                                                             ],
+                                                                "crosswalk_file":  "83Q_ALL_EVIDENCE_SPATIAL_CROSSWALK.json",
+                                                                "research_only":  true,
+                                                                "not_an_automatic_depth_model":  true
+                                                            }
+                                  }
+              },
+    "production_readiness":  "NOT_READY",
+    "no_oblast_specific_algorithm":  true,
+    "client_geological_analysis_ready":  false
+}

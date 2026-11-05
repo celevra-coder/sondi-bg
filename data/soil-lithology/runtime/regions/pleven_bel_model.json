@@ -1,0 +1,163 @@
+{
+    "schema_version":  1,
+    "model_id":  "PLE-BEL-RESEARCH-DRAFT",
+    "oblast":  "Плевен",
+    "purpose":  "DOCUMENTARY_STAGING_FOR_UNIFIED_NATIONAL_ENGINE",
+    "zones":  {
+                  "PLE-BEL-Z01":  {
+                                      "name":  "Белене",
+                                      "municipalities":  [
+                                                             "Белене"
+                                                         ],
+                                      "default_mode":  "REGIONAL_CONTEXT",
+                                      "regional_structural_context":  [
+                                                                          {
+                                                                              "context_id":  "PLE-83P-76682f2fd8607677431c67",
+                                                                              "municipality":  "Белене",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-89C2E8156AD4F86",
+                                                                              "area":  "Белене",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "варовици; песъчливи и черупчести варовици; мергели; пясъчници; глини; пясъци; чакъли; льос"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+                                                                              "source_fact_pointer":  "/observations/0",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          },
+                                                                          {
+                                                                              "context_id":  "PLE-83P-f7d4ad4a3cf2ab06abd18a",
+                                                                              "municipality":  "Белене",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-89C2E8156AD4F86",
+                                                                              "area":  "Белене",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "речни тераси на Дунав и Осъм: глини, пясъци и чакъли"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+                                                                              "source_fact_pointer":  "/observations/1",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          }
+                                                                      ],
+                                      "documented_reference_intervals":  [
+
+                                                                         ],
+                                      "source_ids":  [
+                                                         "PLE-S-89C2E8156AD4F86"
+                                                     ],
+                                      "research_staging":  {
+                                                               "reviewed_source_files":  [
+                                                                                             "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json"
+                                                                                         ],
+                                                               "geological_context_candidates":  [
+                                                                                                     "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json"
+                                                                                                 ],
+                                                               "entire_oblast_research_crosswalk":  "83O_COMPLETE_PLEVEN_EVIDENCE_CROSSWALK.json",
+                                                               "not_authorized_for_depth_prediction":  true,
+                                                               "requires_context_extraction_before_activation":  true
+                                                           },
+                                      "research_evidence":  {
+                                                                "candidate_links":  [
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-46fa3d2830c035ed92ce29",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/6",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-76682f2fd8607677431c67",
+                                                                                            "source_file":  "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/0",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-f7d4ad4a3cf2ab06abd18a",
+                                                                                            "source_file":  "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/1",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-d9bff602c16cc8a360efaa",
+                                                                                            "source_file":  "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/2",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-2834a442e0980026b9c2da",
+                                                                                            "source_file":  "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/0/materials/2",
+                                                                                            "evidence_class":  "LOCAL_MATERIAL_DESCRIPTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-fdc35a4f24933c6323713a",
+                                                                                            "source_file":  "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/0/materials/3",
+                                                                                            "evidence_class":  "LOCAL_MATERIAL_DESCRIPTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-e8c9e29970ab522e6a85e7",
+                                                                                            "source_file":  "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/0/materials/4",
+                                                                                            "evidence_class":  "LOCAL_MATERIAL_DESCRIPTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-effda369a3eb33a42173a0",
+                                                                                            "source_file":  "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/0/materials/6",
+                                                                                            "evidence_class":  "LOCAL_MATERIAL_DESCRIPTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-78c3085c46ed56e4a5239e",
+                                                                                            "source_file":  "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/0/materials/7",
+                                                                                            "evidence_class":  "LOCAL_MATERIAL_DESCRIPTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-0662dad99ba80d8c4991a3",
+                                                                                            "source_file":  "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/1/materials/0",
+                                                                                            "evidence_class":  "LOCAL_MATERIAL_DESCRIPTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-a831af189a5e1eeb5820ee",
+                                                                                            "source_file":  "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/1/materials/2",
+                                                                                            "evidence_class":  "LOCAL_MATERIAL_DESCRIPTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        }
+                                                                                    ],
+                                                                "source_ids_from_research":  [
+                                                                                                 "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                                 "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json"
+                                                                                             ],
+                                                                "crosswalk_file":  "83Q_ALL_EVIDENCE_SPATIAL_CROSSWALK.json",
+                                                                "research_only":  true,
+                                                                "not_an_automatic_depth_model":  true
+                                                            }
+                                  }
+              },
+    "production_readiness":  "NOT_READY",
+    "no_oblast_specific_algorithm":  true,
+    "client_geological_analysis_ready":  false
+}

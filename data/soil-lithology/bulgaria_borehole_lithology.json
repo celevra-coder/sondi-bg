@@ -17,9 +17,10 @@
   "oblasts_loaded": [
     "Благоевград",
     "Пазарджик",
-    "Пловдив"
+    "Пловдив",
+    "Плевен"
   ],
-  "borehole_count": 111,
+  "borehole_count": 112,
   "boreholes": [
     {
       "borehole_id": "PLD-Z037",
@@ -13806,6 +13807,132 @@
         "spatial_interpolation_allowed": false,
         "documented_open_ended_interval": true
       }
+    },
+    {
+      "borehole_id": "PLE-2HG-DOLNI-DABNIK-1985",
+      "name_bg": "Долни Дъбник – сондаж №2хг",
+      "oblast": "Плевен",
+      "region_code": "Pleven",
+      "status": "documented_lithology_pending_geolocation",
+      "zone_type": "facility_known_location_unresolved",
+      "coordinates": {
+        "latitude": null,
+        "longitude": null,
+        "status": "UNRESOLVED",
+        "evidence_level": "DOCUMENTED_SITE_NO_EXACT_WELLHEAD"
+      },
+      "total_depth_m": 300,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 20,
+          "expected_material_bg": "Почвен слой, льос",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLE-S-MH-2HG-DABNIK"
+          ],
+          "source_verification": "VISUAL_TRANSCRIPTION_FROM_OFFICIAL_SCAN"
+        },
+        {
+          "depth_from_m": 20,
+          "depth_to_m": 22,
+          "expected_material_bg": "Пясъци в основата с прослойки от чакъли",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLE-S-MH-2HG-DABNIK"
+          ],
+          "source_verification": "VISUAL_TRANSCRIPTION_FROM_OFFICIAL_SCAN"
+        },
+        {
+          "depth_from_m": 22,
+          "depth_to_m": 32,
+          "expected_material_bg": "Глини сивожълти",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLE-S-MH-2HG-DABNIK"
+          ],
+          "source_verification": "VISUAL_TRANSCRIPTION_FROM_OFFICIAL_SCAN"
+        },
+        {
+          "depth_from_m": 32,
+          "depth_to_m": 50,
+          "expected_material_bg": "Пясъци сиви с редки прослойки от глина",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLE-S-MH-2HG-DABNIK"
+          ],
+          "source_verification": "VISUAL_TRANSCRIPTION_FROM_OFFICIAL_SCAN"
+        },
+        {
+          "depth_from_m": 50,
+          "depth_to_m": 60,
+          "expected_material_bg": "Глини плътни, сиви",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLE-S-MH-2HG-DABNIK"
+          ],
+          "source_verification": "VISUAL_TRANSCRIPTION_FROM_OFFICIAL_SCAN"
+        },
+        {
+          "depth_from_m": 60,
+          "depth_to_m": 150,
+          "expected_material_bg": "Мергели плътни, сиви",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLE-S-MH-2HG-DABNIK"
+          ],
+          "source_verification": "VISUAL_TRANSCRIPTION_FROM_OFFICIAL_SCAN"
+        },
+        {
+          "depth_from_m": 150,
+          "depth_to_m": 200,
+          "expected_material_bg": "Варовици сиви и сивобели с флинтови включвания",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLE-S-MH-2HG-DABNIK"
+          ],
+          "source_verification": "VISUAL_TRANSCRIPTION_FROM_OFFICIAL_SCAN"
+        },
+        {
+          "depth_from_m": 200,
+          "depth_to_m": 240,
+          "expected_material_bg": "Варовици кремавобели, органогенни, кавернозни",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLE-S-MH-2HG-DABNIK"
+          ],
+          "source_verification": "VISUAL_TRANSCRIPTION_FROM_OFFICIAL_SCAN"
+        },
+        {
+          "depth_from_m": 240,
+          "depth_to_m": 300,
+          "expected_material_bg": "Варовици светлосиви с включения от флинт",
+          "confidence": "high",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "PLE-S-MH-2HG-DABNIK"
+          ],
+          "source_verification": "VISUAL_TRANSCRIPTION_FROM_OFFICIAL_SCAN"
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "research_origin": {
+        "source_file": "_research/pleven/80H_dolni_dabnik_verified/80H_2HG_LITHOLOGY.json",
+        "geolocation_restriction": "Exact wellhead coordinates not verified",
+        "spatial_projection_authorized": false
+      }
     }
   ],
   "sources": [
@@ -14905,6 +15032,17 @@
       "accessed_date": null,
       "geographic_scope": "Област Монтана",
       "notes": "Research extraction: lom_two_shallow_boreholes_71G.json"
+    },
+    {
+      "source_id": "PLE-S-MH-2HG-DABNIK",
+      "title": "Долни Дъбник – сондаж №2хг, официална оценка",
+      "institution": "Министерство на здравеопазването",
+      "source_type": "official_borehole_lithological_profile",
+      "url": "https://www.mh.government.bg/upload/6561/99-dolni_dubnik-sondazh2hg-06-07-2023.pdf",
+      "publication_year": 2023,
+      "accessed_date": "2026-11-05",
+      "geographic_scope": "гр. Долни Дъбник, област Плевен",
+      "notes": "Nine verified intervals to 300 m. Wellhead coordinates unresolved; not spatially projectable."
     }
   ]
 }

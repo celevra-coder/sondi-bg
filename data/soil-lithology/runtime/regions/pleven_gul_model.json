@@ -1,0 +1,223 @@
+{
+    "schema_version":  1,
+    "model_id":  "PLE-GUL-RESEARCH-DRAFT",
+    "oblast":  "Плевен",
+    "purpose":  "DOCUMENTARY_STAGING_FOR_UNIFIED_NATIONAL_ENGINE",
+    "zones":  {
+                  "PLE-GUL-Z01":  {
+                                      "name":  "Гулянци",
+                                      "municipalities":  [
+                                                             "Гулянци"
+                                                         ],
+                                      "default_mode":  "REGIONAL_CONTEXT",
+                                      "regional_structural_context":  [
+                                                                          {
+                                                                              "context_id":  "PLE-83CK-GUL-OUP-REGIONAL",
+                                                                              "municipality":  "Гулянци",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-83CK-GUL-OUP-REGIONAL",
+                                                                              "source_url":  "https://gulyantsi.bg/images/%D0%9E%D0%A3%D0%9F%D0%9E_%D0%93%D1%83%D0%BB%D1%8F%D0%BD%D1%86%D0%B8-_%D0%9E%D0%97%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_1-7_31.03.2020.pdf",
+                                                                              "area":  "Община Гулянци — регионален геоложки контекст",
+                                                                              "evidence_type":  "OFFICIAL_MUNICIPAL_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "В източните и южните части на района на град Гулянци са описани неогенски пясъци с глинести прослойки.",
+                                                                                                                 "Ограничени палеогенски разкрития с пясъчници и мергели са посочени северно от Сомовит и край река Вит.",
+                                                                                                                 "Пролувиални и делувиални наслаги са описани в отделни участъци южно от Гулянци и западно от Брест."
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "83CC_six_municipality_regional_evidence\\83CC_PLEVEN_SIX_MUNICIPALITY_EVIDENCE.json",
+                                                                              "scope":  "MUNICIPALITY_REGIONAL_OVERVIEW_NOT_POINT_DEPTH",
+                                                                              "status":  "DOCUMENTED_REGIONAL_CONTEXT",
+                                                                              "scientific_rule":  "Regional overview only. No point-specific lithological depths or groundwater horizons."
+                                                                          }
+                                                                      ],
+                                      "documented_reference_intervals":  [
+
+                                                                         ],
+                                      "source_ids":  [
+
+                                                     ],
+                                      "research_staging":  {
+                                                               "reviewed_source_files":  [
+                                                                                             "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json"
+                                                                                         ],
+                                                               "geological_context_candidates":  [
+
+                                                                                                 ],
+                                                               "entire_oblast_research_crosswalk":  "83O_COMPLETE_PLEVEN_EVIDENCE_CROSSWALK.json",
+                                                               "not_authorized_for_depth_prediction":  true,
+                                                               "requires_context_extraction_before_activation":  true
+                                                           },
+                                      "research_evidence":  {
+                                                                "candidate_links":  [
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-3fb5c516630ad87c017aa2",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/0",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-c8c9ecc663a7a3b412b627",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/1",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-dfa48ece1d66158f21ed08",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/2",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-8828a216d12fcc6272c221",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/3",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-2a6c6eb6995bccb297915c",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/4",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-b9bcf892575b410fc70874",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/5",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-24148469c28830459671aa",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/6",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-c02980f0bd4b52eca3e9a3",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/7",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-bee804f7400700e2cb93bd",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/8",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-adf2898fd8bd349d830b36",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/9",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-474e319d58f6e8dd55adf0",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/10",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-4b19104f5b4c8a3bf1b28b",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/11",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-2e82d627ce2c8b930150d1",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/12",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-e9016dee79dfb9e04b5dda",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/13",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-4970baed13dda65cf21eee",
+                                                                                            "source_file":  "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                            "json_pointer":  "/wells/14",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-1d42f4023cf863ab37533a",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/0",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-7b7ef4ac6f48fd1bfe7772",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/1",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-ac0f7394b00c6724e5d54a",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/2",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-735e53fe2cc0233d1f0c10",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/3",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-78f7bfab9ef714fb22bd72",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/4",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-10d3ad53d8e887c6674cf5",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/5",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-46fa3d2830c035ed92ce29",
+                                                                                            "source_file":  "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+                                                                                            "json_pointer":  "/confirmed_local_geological_records/6",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        }
+                                                                                    ],
+                                                                "source_ids_from_research":  [
+                                                                                                 "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+                                                                                                 "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json"
+                                                                                             ],
+                                                                "crosswalk_file":  "83Q_ALL_EVIDENCE_SPATIAL_CROSSWALK.json",
+                                                                "research_only":  true,
+                                                                "not_an_automatic_depth_model":  true
+                                                            }
+                                  }
+              },
+    "production_readiness":  "NOT_READY",
+    "no_oblast_specific_algorithm":  true,
+    "client_geological_analysis_ready":  false
+}

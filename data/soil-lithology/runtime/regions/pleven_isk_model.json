@@ -1,0 +1,50 @@
+{
+    "schema_version":  1,
+    "model_id":  "PLE-ISK-RESEARCH-DRAFT",
+    "oblast":  "Плевен",
+    "purpose":  "DOCUMENTARY_STAGING_FOR_UNIFIED_NATIONAL_ENGINE",
+    "zones":  {
+                  "PLE-ISK-Z01":  {
+                                      "name":  "Искър",
+                                      "municipalities":  [
+                                                             "Искър"
+                                                         ],
+                                      "default_mode":  "REGIONAL_CONTEXT",
+                                      "regional_structural_context":  [
+
+                                                                      ],
+                                      "documented_reference_intervals":  [
+
+                                                                         ],
+                                      "source_ids":  [
+
+                                                     ],
+                                      "research_staging":  {
+                                                               "reviewed_source_files":  [
+                                                                                             "81X_iskar_reconciled_facilities\\81X_ISKAR_FACILITY_RECONCILIATION.json",
+                                                                                             "81Z_iskar_monitoring_identity\\81Z_MONITORING_IDENTITY_CORRECTION.json"
+                                                                                         ],
+                                                               "geological_context_candidates":  [
+
+                                                                                                 ],
+                                                               "entire_oblast_research_crosswalk":  "83O_COMPLETE_PLEVEN_EVIDENCE_CROSSWALK.json",
+                                                               "not_authorized_for_depth_prediction":  true,
+                                                               "requires_context_extraction_before_activation":  true
+                                                           },
+                                      "research_evidence":  {
+                                                                "candidate_links":  [
+
+                                                                                    ],
+                                                                "source_ids_from_research":  [
+
+                                                                                             ],
+                                                                "crosswalk_file":  "83Q_ALL_EVIDENCE_SPATIAL_CROSSWALK.json",
+                                                                "research_only":  true,
+                                                                "not_an_automatic_depth_model":  true
+                                                            }
+                                  }
+              },
+    "production_readiness":  "NOT_READY",
+    "no_oblast_specific_algorithm":  true,
+    "client_geological_analysis_ready":  false
+}

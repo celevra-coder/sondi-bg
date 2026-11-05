@@ -12826,6 +12826,4044 @@
         "geological_unit_polygon_verified": false,
         "point_depth_prediction_authorized": false
       }
+    },
+    {
+      "intake_id": "PLE-c5859a0167bb56c2599e",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79B_PLEVEN_INITIAL_RESEARCH.json",
+      "source_file": "_research/pleven/79B_PLEVEN_INITIAL_RESEARCH.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "c775e96f620f07459ed19f5a9004bfcc7d5c4f67de87e8558446ff4fc1238897",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-dc6417d8aa586e17a901",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79C_PLEVEN_EXISTING_EVIDENCE.json",
+      "source_file": "_research/pleven/79C_PLEVEN_EXISTING_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "965a5b5215d05a3bec1e44ed20e0839ea3d48a9d3df751659c434510aa172223",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-3f3ce40b6f18bda17c29",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79D_PLEVEN_FACILITIES_AUDIT.json",
+      "source_file": "_research/pleven/79D_PLEVEN_FACILITIES_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "0413885d18e0db641cf2f221ce63f758ca5565a2954bbcee4a29756e1292b21a",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-bb5eb3cd97820ee95642",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79E_NIKOPOL_PRIMARY_SOURCE_QA.json",
+      "source_file": "_research/pleven/79E_NIKOPOL_PRIMARY_SOURCE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "2a1186eeda9d8bf0e8dfce0e8b6809566dd4f5748ceca43cdff418b1c4cd0ada",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "https://igh-bg.com/Vol/Vol_38_2024/7_Frangov-IGH-2024.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-5e9679fc64e01f7a02a2",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79F_NIKOPOL_PROFILE_REVIEW.json",
+      "source_file": "_research/pleven/79F_NIKOPOL_PROFILE_REVIEW.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "3254c4f8d390228c905ed2ca097a758c8756ed1e1bc54e3b3305d15b54c8b2ad",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-5186f31ea474486a4a04",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79G_nikopol_structured\\79G_NIKOPOL_QA.json",
+      "source_file": "_research/pleven/79G_nikopol_structured/79G_NIKOPOL_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "9349fd0ffc6dba87723670858c0e31d4177258141897c208eba8533f816128a0",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-6b6f7e3c40f70d8271d4",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79G_nikopol_structured\\79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json",
+      "source_file": "_research/pleven/79G_nikopol_structured/79G_NIKOPOL_SCIENTIFIC_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5e2ae9d0d98c42a8dd39b36047463e700d9c870fa73b239c29eddc525e596ee8",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "https://igh-bg.com/Vol/Vol_38_2024/7_Frangov-IGH-2024.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-e69e3a78c607bec3d8a0",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79H_belene_site\\79H_PLEVEN_BELENE_RESEARCH.json",
+      "source_file": "_research/pleven/79H_belene_site/79H_PLEVEN_BELENE_RESEARCH.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "8a6b50045744439c72c6d382cd916d6546ad8ae53740c869ba9efc1543203144",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-c96ff16fbeef6ceb12b6",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79H_belene_site\\79H_PLEVEN_SOURCE_QA.json",
+      "source_file": "_research/pleven/79H_belene_site/79H_PLEVEN_SOURCE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5c4343e431f58f249c10a73dc473304ef40918394451df2ff0cbdbab023fd3b3",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-7d025f39cb9d7772411f",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79I_belene_oupo\\79I_BELENE_OUPO_AUDIT.json",
+      "source_file": "_research/pleven/79I_belene_oupo/79I_BELENE_OUPO_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "84de790195371b731b6b10524b298fb09a6aec85cff848059bab4202b5a33592",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "578714a9dfe7d410d229d932fe1d42b19b1ce5495b6b750e52f437f7302faecd",
+          "_research\\pleven\\79I_belene_oupo\\79I_BELENE_OFFICIAL_OUPO.pdf",
+          "https://www.belene.bg/wp-content/uploads/%D0%9E%D0%91%D0%AF%D0%A1%D0%9D%D0%98%D0%A2%D0%95%D0%9B%D0%9D%D0%90-%D0%97%D0%90%D0%9F%D0%98%D0%A1%D0%9A%D0%90-%D0%91%D0%95%D0%9B%D0%95%D0%9D%D0%95-%D0%9F%D0%9F-%D0%9E%D0%A3%D0%9F%D0%9E_compressed.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-d85b07a1c84f2b69532a",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79J_belene_mineral\\79J_BELENE_BOREHOLE_SOURCE_AUDIT.json",
+      "source_file": "_research/pleven/79J_belene_mineral/79J_BELENE_BOREHOLE_SOURCE_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "032e0300d5b990a5317654a66294c3308f9631054ca6b898e6f4ae7ed9a5de2d",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "d231533b5a848b52c7e29afcc0080f0bbb38de2f58183b962086c90e8262e1fe",
+          "https://belene.bg/wp-content/uploads/CCF_000670_compressed.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-ad452e3ab019a38c48c5",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79K_belene_visual\\79K_BELENE_PDF_VISUAL_AUDIT.json",
+      "source_file": "_research/pleven/79K_belene_visual/79K_BELENE_PDF_VISUAL_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "29bfd709d02b9a5852f5846181f6fe75a9d8e66f54568821c0cfe4ba06f99dec",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-e2189d59bda1b8adcf82",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79L_belene_geothermal\\79L_BELENE_P1HG_SOURCE_QA.json",
+      "source_file": "_research/pleven/79L_belene_geothermal/79L_BELENE_P1HG_SOURCE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "b515230edc6ab3580789a7cb105a205e24e3b28daff55badc2867222ac14a6e2",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "880a1ef54c10a6e018a6d951e79ed2fea3c6110f4a2aff67f5ae5f1b91ce7577",
+          "https://belene.bg/wp-content/uploads/%D0%94%D0%9F%D0%92%D0%95%D0%98-2024-2033-%D0%B3._compressed.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-974bfb2b9f9e29fe06a9",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79M_groundwater\\79M_PLEVEN_GROUNDWATER_AUDIT.json",
+      "source_file": "_research/pleven/79M_groundwater/79M_PLEVEN_GROUNDWATER_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "601de5bbbbc839aff94c36830baa9c0e54b46195f56adce7c3481ea42f338429",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "86b44f4dd406e4630a04b0ddf6d7f376c1cd6b5c64d2c8d4c19abeadc8d9ec8c",
+          "_research\\pleven\\79M_groundwater\\79M_PLEVEN_BANKOVA_2024.pdf",
+          "https://mu-pleven.bg/procedures/196/Avtoreferat_en.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-f63a2544a9b018e2d0df",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79N_borehole_leads\\79N_PLEVEN_SOURCE_LEADS.json",
+      "source_file": "_research/pleven/79N_borehole_leads/79N_PLEVEN_SOURCE_LEADS.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "9a2fc2467e90303ef270b168952259094dc457695f5ad14f4ae8b7abba042d13",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "REGIONAL_OR_STRUCTURAL_GEOLOGY",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "86b44f4dd406e4630a04b0ddf6d7f376c1cd6b5c64d2c8d4c19abeadc8d9ec8c",
+          "_research\\pleven\\79M_groundwater\\79M_PLEVEN_BANKOVA_2024.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-ef10d34661d451f29250",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79O_trastenik_ves\\79O_R_SOURCE_IDENTITY.json",
+      "source_file": "_research/pleven/79O_trastenik_ves/79O_R_SOURCE_IDENTITY.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "c69829cdcf82a273aff5ab72f3b69d187781aa94d56e19b281614ac6da88fe39",
+        "evidence_categories_for_review": [
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "dbf714d1306e96c59adb7c0472a21e348868e501b9efd004cf7066be6a8eec63"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-939cfd89dbcb7dd4abbb",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79O_trastenik_ves\\79P_TRASTENIK_APPENDIX_REVIEW.json",
+      "source_file": "_research/pleven/79O_trastenik_ves/79P_TRASTENIK_APPENDIX_REVIEW.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "78061f37a94e032e959f12c32cab079c563553de924d20efa3a742bcecdb72bb",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\79O_trastenik_ves\\79O_TRASTENIK_RIEW_2024.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-99565661214718028878",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79Q_trastenik_verified\\79Q_TRASTENIK_VES_EVIDENCE.json",
+      "source_file": "_research/pleven/79Q_trastenik_verified/79Q_TRASTENIK_VES_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "3d5a9eb5efaf9961e81d134c0740810ef4729613072902651356d9306b36e709",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "_research\\pleven\\79O_trastenik_ves\\79O_TRASTENIK_RIEW_2024.pdf",
+          "https://riew-pleven.eu/doc/OVOSEO/uved_IP/2024/2133uve-19-4-24.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-3858c2b4741908530688",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79Q_trastenik_verified\\79Q_TRASTENIK_VES_QA.json",
+      "source_file": "_research/pleven/79Q_trastenik_verified/79Q_TRASTENIK_VES_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5050bc706a3a8816358065e6600cf586d46ff667c13f4b0e57ab4c2168c522ea",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-720b3c9eaf6565fb7b3e",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79R_knezha_pelovo\\79R_KNEZHA_PELOVO_SOURCE_AUDIT.json",
+      "source_file": "_research/pleven/79R_knezha_pelovo/79R_KNEZHA_PELOVO_SOURCE_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "64b85802d44088bf81813c33c60a89dbb04125211e7c25f72a00913788515bee",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "5f5658544576efecc0702b3b4934dfb65d8d2187a213b0517dd7b3c2872b0095",
+          "https://geobalcanica.org/wp-content/uploads/GBP/2015/PROCEEDINGS-2015-FINAL.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-b41abe953c368ea4bd23",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79S_knezha_deep_review\\79S_KNEZHA_DEEP_INTERVAL_CANDIDATES.json",
+      "source_file": "_research/pleven/79S_knezha_deep_review/79S_KNEZHA_DEEP_INTERVAL_CANDIDATES.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "b46f9f805735b2bfd9833a09493509e75471ab70ef7bb98124e5c75acaf5b68c",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "5f5658544576efecc0702b3b4934dfb65d8d2187a213b0517dd7b3c2872b0095",
+          "_research\\pleven\\79R_knezha_pelovo\\79R_GEOBALCANICA_2015.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-503b123fa2b30f9c54ad",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79T_knezha_verified\\79T_KNEZHA_DEEP_QA.json",
+      "source_file": "_research/pleven/79T_knezha_verified/79T_KNEZHA_DEEP_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "0eef5659f596377e5a24ad3a1615887703cfb7b2f96faec8104e39d8cfa74b11",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-d3f41587b2627ea1803c",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79T_knezha_verified\\79T_KNEZHA_DEEP_WELL_EVIDENCE.json",
+      "source_file": "_research/pleven/79T_knezha_verified/79T_KNEZHA_DEEP_WELL_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "50ecf3a2646d891a37f0bd43c15760b5d1f2da147eadf40c6778379401f6e168",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-1c9cd80a4f07bf3f3393",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79U_cherven_bryag\\79U_CHERVEN_BRYAG_GEOLOGY_AUDIT.json",
+      "source_file": "_research/pleven/79U_cherven_bryag/79U_CHERVEN_BRYAG_GEOLOGY_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "73a2a910625632fb595013f2bac551ef9161876f783c9fdca2a40d64531c7e10",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "REGIONAL_OR_STRUCTURAL_GEOLOGY",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "_research\\pleven\\79U_cherven_bryag\\79U_CHERVEN_BRYAG_OUP.pdf",
+          "b597a748a0a6647ab26e8d5b9f6c727692d02585645755a668b2a7e630344331",
+          "https://www.chervenbryag.bg/files/114f07106ae07247ba101b6e855e8366.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-1cc0f159bbeebf8e76af",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_QA.json",
+      "source_file": "_research/pleven/79W_cherven_bryag_evidence/79W_CHERVEN_BRYAG_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "a7fc598b7dd6a526e0fd670b426c194d11c8617a76d7feaed0bd5225f8d1ecbe",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-2636840d7ba99d30e3f0",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json",
+      "source_file": "_research/pleven/79W_cherven_bryag_evidence/79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "a347a412721f0b1c9b5352c4fe382ba758f6ca10d5b9e44713c01496574b3eef",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "_research\\pleven\\79U_cherven_bryag\\79U_CHERVEN_BRYAG_OUP.pdf",
+          "b597a748a0a6647ab26e8d5b9f6c727692d02585645755a668b2a7e630344331"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-15c9039a53455ddd5a93",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79X_eso_tender\\79X_ESO_PLEVEN_TENDER_AUDIT.json",
+      "source_file": "_research/pleven/79X_eso_tender/79X_ESO_PLEVEN_TENDER_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "a0c7e26e3e4eb725828f530cafe93f7a4911d48a437a21e5dfb63a5d51d3a63b",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-bb2eebe6c3067886feba",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79Y_eso_detail\\79Y_ESO_TENDER_DETAIL_AUDIT.json",
+      "source_file": "_research/pleven/79Y_eso_detail/79Y_ESO_TENDER_DETAIL_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "b94be4d2bd9d00275896d95b4f5139e35912d8fb4c27262df06444293a3d9e8f",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-e36c75706ba12eb14266",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "79Z_eso_documents\\79Z_ESO_TENDER_DOCUMENT_LINKS.json",
+      "source_file": "_research/pleven/79Z_eso_documents/79Z_ESO_TENDER_DOCUMENT_LINKS.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "1bab12159371c455ba185f71b6e79f56d9e0d515c19ad829644eda7b483792f7",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-db4e6af9d11a3c24cb21",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80A_eso_technical\\80A_ESO_TECHNICAL_AUDIT.json",
+      "source_file": "_research/pleven/80A_eso_technical/80A_ESO_TECHNICAL_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "3a95a51873aa09a87b976cd689fa79966f07a5a019ba2cf312e96c456434fad5",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-18ecc51923bbb1b6f773",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80B_eso_corrected\\80B_ESO_TECHNICAL_DOCUMENTS_QA.json",
+      "source_file": "_research/pleven/80B_eso_corrected/80B_ESO_TECHNICAL_DOCUMENTS_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "091e17e8d943b09f2402f5938a23174ba21a5b6bb32c2ddbf25adecededd5495",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-f17a0588313de28a1b9e",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80C_eso_visual\\80C_ESO_VISUAL_AUDIT.json",
+      "source_file": "_research/pleven/80C_eso_visual/80C_ESO_VISUAL_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "b851f2e55f5525297f31fc69f5d7b35d3e93ede5cee101140d53c41cdf4348df",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80B_eso_corrected\\80B_ESO_TECHNICAL_PROPOSAL.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-0ea4b3f40f62d3952164",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80D_geozashtita\\80D_GEOZASHTITA_DISCOVERY.json",
+      "source_file": "_research/pleven/80D_geozashtita/80D_GEOZASHTITA_DISCOVERY.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "bee18206e5ce7a87dadd63a6cd759f340b691adc77db8f4d363645f96580b8d7",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-d83b2891e056e9549ec4",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80E_geozashtita_attachments\\80E_ATTACHMENT_AUDIT.json",
+      "source_file": "_research/pleven/80E_geozashtita_attachments/80E_ATTACHMENT_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "227224fc86f3df10ee2c3dc8b3ce115716ae8d7e4ddf0be5d8d4d25bdd298611",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-a54ddebc0bb13d1c3eb4",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80F_geozashtita_public\\80F_PUBLIC_ATTACHMENT_ACCESS.json",
+      "source_file": "_research/pleven/80F_geozashtita_public/80F_PUBLIC_ATTACHMENT_ACCESS.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "d18734f2ec622d10f862bb750bf44c05d843fb143072861202cc283ccd5f381a",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-16a75fe92336334b4a05",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80H_dolni_dabnik_verified\\80H_2HG_LITHOLOGY.json",
+      "source_file": "_research/pleven/80H_dolni_dabnik_verified/80H_2HG_LITHOLOGY.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "1e3e0dddcaf0edb09c88ee3f5e82a18aa4641516418240d51a1e6918b48c3fcf",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "REGIONAL_OR_STRUCTURAL_GEOLOGY"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80G_dolni_dabnik_2hg\\80G_DOLNI_DABNIK_2HG_OFFICIAL.pdf",
+          "eea6dcea66b2ccc17cdeb10c7f586c3dc51534365fc3d9a3f4927a1a697552bc",
+          "https://www.mh.government.bg/upload/6561/99-dolni_dubnik-sondazh2hg-06-07-2023.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-92514df5d377241c471a",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80H_dolni_dabnik_verified\\80H_2HG_MINERAL_RESEARCH.json",
+      "source_file": "_research/pleven/80H_dolni_dabnik_verified/80H_2HG_MINERAL_RESEARCH.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "9716b81aeb481b62d189f49bbd05d9e368b7bfc13f73a5ad310904c2fd8d900e",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80G_dolni_dabnik_2hg\\80G_DOLNI_DABNIK_2HG_OFFICIAL.pdf",
+          "eea6dcea66b2ccc17cdeb10c7f586c3dc51534365fc3d9a3f4927a1a697552bc",
+          "https://www.mh.government.bg/upload/6561/99-dolni_dubnik-sondazh2hg-06-07-2023.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-6d4ee76f3d233ee24481",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80H_dolni_dabnik_verified\\80H_2HG_QA.json",
+      "source_file": "_research/pleven/80H_dolni_dabnik_verified/80H_2HG_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5a830431466dce7225d52d34ac54d0c086c0292bb2314cf9673e3f2d5f2118e6",
+        "evidence_categories_for_review": [
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-38435e32b2bf9cad46d0",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80I_dabnik_scientific\\80I_MGU_DABNIK_SOURCE_AUDIT.json",
+      "source_file": "_research/pleven/80I_dabnik_scientific/80I_MGU_DABNIK_SOURCE_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "69d0d1382a8e3cc300dc4f713c848d715b0fae26da4c9625a1d2427a4297a8fd",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "https://mgu.bg/wp-content/uploads/2025/04/Vol.-57-I-2014-137-141.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-d29c6d2ee6771fe613b8",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+      "source_file": "_research/pleven/80J_dabnik_deep_verified/80J_DABNIK_DEEP_LITHOLOGY.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "b7ec7cc81ea693b168dbd9ea7c724936ce24fd9487bc7c4e798faf254771cd96",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "9d22806c033d926d14703be7e60194111fbca617d53f295982d69b6eadf4e150",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80I_dabnik_scientific\\80I_MGU_DABNIK_2014.pdf",
+          "https://mgu.bg/wp-content/uploads/2025/04/Vol.-57-I-2014-137-141.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-a68ff17c767a82c8fa3c",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_QA.json",
+      "source_file": "_research/pleven/80J_dabnik_deep_verified/80J_DABNIK_DEEP_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5928cdc21643462e108b90820fa0f1daa70502ed14ee6e3efadc5bec6ecdaf33",
+        "evidence_categories_for_review": [
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-4745d3b7e90bda0a16ee",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80K_pleven_shallow\\80K_SHALLOW_GEOLOGY_AUDIT.json",
+      "source_file": "_research/pleven/80K_pleven_shallow/80K_SHALLOW_GEOLOGY_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "a495f7892fcb3ce568b8494a1071b5bc129d42ba47b36780dd54b8a9a4b9c4a9",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "a0a453f9a70be0b6cffbc9146a7a4b917073166066473061921dafaf5a349356"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-0e724e4d0669596df0a2",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80L_pleven_regional_evidence\\80L_PLEVEN_REGIONAL_EVIDENCE.json",
+      "source_file": "_research/pleven/80L_pleven_regional_evidence/80L_PLEVEN_REGIONAL_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "bb54bd11b9e6c177810457a6bd6342c989bc74506a1ad046b770de8ed802eafc",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80K_pleven_shallow\\80K_OFFICIAL_PLEVEN_OUP_ECOLOGY.pdf",
+          "a0a453f9a70be0b6cffbc9146a7a4b917073166066473061921dafaf5a349356",
+          "https://riew-pleven.eu/doc/OVOSEO/konsult/OUP_Obst_Pleven/DEO_OUP_Pleven_2-fin.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-e1010df13aacb1fbd8b0",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80L_pleven_regional_evidence\\80L_SOURCE_QA.json",
+      "source_file": "_research/pleven/80L_pleven_regional_evidence/80L_SOURCE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "4e68748d5bd223a20f916684a23ae337c38f5d36251bbc8e7cef6d9cf3926079",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-5730b3fd55272d76e1e8",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80N_pordim_diagnostic\\80N_PORDIM_DIAGNOSTIC.json",
+      "source_file": "_research/pleven/80N_pordim_diagnostic/80N_PORDIM_DIAGNOSTIC.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "fdc38eb7085da0df214436a0c1a6b1c1965905e9ddc0a57ad57c68b236fca102",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80M_pordim_shallow\\80M_PORDIM_LANDFILL_TECHNICAL.pdf",
+          "d43f461a86d761f0a7d8b80147f5911da771f5b44376a6d92752b4323ae08d83"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-0cbbd4c0bcf1ab223433",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80O_pordim_verified\\80O_PORDIM_SHALLOW_EVIDENCE.json",
+      "source_file": "_research/pleven/80O_pordim_verified/80O_PORDIM_SHALLOW_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "3a546b98d92b26106f039078bc7a7c5c8450b7cb907df685151a44d85c91602c",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80M_pordim_shallow\\80M_PORDIM_LANDFILL_TECHNICAL.pdf",
+          "d43f461a86d761f0a7d8b80147f5911da771f5b44376a6d92752b4323ae08d83",
+          "https://sop.bg/download/AOCOphkkeT/"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-f09f43adc51c3fa47a6d",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80O_pordim_verified\\80O_PORDIM_SHALLOW_QA.json",
+      "source_file": "_research/pleven/80O_pordim_verified/80O_PORDIM_SHALLOW_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "8813e065df54ebddd5fbcc581aac2f422eb3039f7c9f4a688aab2fb16691ceba",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-8166654324e4bc4d3164",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80P_2025_drilled_wells\\80P_PLEVEN_DRILLING_QA.json",
+      "source_file": "_research/pleven/80P_2025_drilled_wells/80P_PLEVEN_DRILLING_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "a378f38750395f74d6b22cecc57e78b85526d8b7fdf5ec759750950540ba2818",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-3e3b400f494bb2d344b8",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80P_2025_drilled_wells\\80P_PLEVEN_VERIFIED_DRILLING_LEADS.json",
+      "source_file": "_research/pleven/80P_2025_drilled_wells/80P_PLEVEN_VERIFIED_DRILLING_LEADS.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "7f1ec51c2ccd15219e0545c05e72daf12e894aacdd5025e17f9235ddb544571b",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-ee0b0170cdc49156caa4",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80Q_drilling_facts\\80Q_DRILLING_FACTS_QA.json",
+      "source_file": "_research/pleven/80Q_drilling_facts/80Q_DRILLING_FACTS_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "cd507d19033c371cd23a6ab6b720d44179232fb9931c26e5e96f6fc0ca6453ce",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-8c412dcf2cef243b4239",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80Q_drilling_facts\\80Q_PLEVEN_2025_DRILLING_FACTS.json",
+      "source_file": "_research/pleven/80Q_drilling_facts/80Q_PLEVEN_2025_DRILLING_FACTS.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5085ba10819f7eb622c236c82115a0f1ab0d1003a756526fa6bbf28e3a495a03",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-688902518e6c3d180920",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80S_brest_visual\\80S_BREST_SOURCE_QA.json",
+      "source_file": "_research/pleven/80S_brest_visual/80S_BREST_SOURCE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "be0c8d2f16d8d2a6edb233c9645ff558c2151841d639e10f3584706090f1c6e0",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "82884ab033f31da024ca21153364024607c02343f2f98d2b3d89f44b0635ba96"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-0fb0836c63f18553b567",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80T_brest_verified_coordinates\\80T_BREST_COORDINATE_QA.json",
+      "source_file": "_research/pleven/80T_brest_verified_coordinates/80T_BREST_COORDINATE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "759ba444b5ae272b0dacc4c586427a4bf03c064e123b84450dc775e6da50dfb0",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-907caaf2b6c68b479cd2",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80T_brest_verified_coordinates\\80T_BREST_PROJECT_COORDINATES.json",
+      "source_file": "_research/pleven/80T_brest_verified_coordinates/80T_BREST_PROJECT_COORDINATES.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "2b0602dba593cf0d87f0c20c32e57f1f01e8082fa1eaa24a075f32dc7d81ec17",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-1e6adbd270da63478f53",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80U_belene_r1hg_parcel\\80U_BELENE_PARCEL_QA.json",
+      "source_file": "_research/pleven/80U_belene_r1hg_parcel/80U_BELENE_PARCEL_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "ac224511c14ac1ea4a2e1578f0265980f5870c1660b568f78e2ec7f9f2bba819",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-08f8c23feedc9e1d6116",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80U_belene_r1hg_parcel\\80U_BELENE_R1HG_PARCEL_EVIDENCE.json",
+      "source_file": "_research/pleven/80U_belene_r1hg_parcel/80U_BELENE_R1HG_PARCEL_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "1157e84ccc737386001269a77c5655168c788641c1bdaf660893e67b7fece2ba",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80U_belene_r1hg_parcel\\80U_BELENE_DOSV_2024.pdf",
+          "bc886e63e693b1f0f8e08dfe88853cbd740a3ffc177078c63e5113eda688b052",
+          "https://riew-pleven.eu/doc/naturaconsult/2595_Belene_FEC_4-MW/DOSV%20BELENE%204MV%20FEC%20%E2%80%93%20corr%20last.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-c2519b934ff8c5ae0c43",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80V_nikopol_geotechnical\\80V_NIKOPOL_DOCUMENT_DISCOVERY.json",
+      "source_file": "_research/pleven/80V_nikopol_geotechnical/80V_NIKOPOL_DOCUMENT_DISCOVERY.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "9a586c3352dfd84bea253e482e22f6ce86d26299e1619dc5cdfe0584c0c6f2c9",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-8ff62e2a83cb5b19c85e",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80W_nikopol_download_chain\\80W_NIKOPOL_FILES_AUDIT.json",
+      "source_file": "_research/pleven/80W_nikopol_download_chain/80W_NIKOPOL_FILES_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "68a7430090709cdff9cc0a120c7c4b9f1fd1517f4465bcf21d2cf99dc0ee1303",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-2efa82c70c223abd5409",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80X_geozashtita_2023\\80X_PLEVEN_LOCAL_GEOLOGY_AUDIT.json",
+      "source_file": "_research/pleven/80X_geozashtita_2023/80X_PLEVEN_LOCAL_GEOLOGY_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "6723427daaa894d05f7ebc23372ace0813dbb4c3666e4dbb11090843c4fcbe8a",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "1866c62cc2072f9ab83b0f078e9eca7f2373e84477c7d5d317863a00c5abb1e5",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80X_geozashtita_2023\\80X_GEOZASHTITA_OFFICIAL_2023.pdf",
+          "https://www.mrrb.bg/static/media/ups/articles/attachments/%D0%93%D0%BE%D0%B4%D0%B8%D1%88%D0%B5%D0%BD_%D0%B4%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4_2023_%D0%93%D0%B5%D0%BE%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%B0-%D0%9F%D0%BB%D0%B5%D0%B2%D0%B5%D0%BDe4162fcaa9f52fde16779b4e07f3559c.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-c037e7862483056e17d2",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80Y_geozashtita_local_evidence\\80Y_PLEVEN_LOCAL_GEOLOGY.json",
+      "source_file": "_research/pleven/80Y_geozashtita_local_evidence/80Y_PLEVEN_LOCAL_GEOLOGY.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "271adff55abf619ad1fc338749f8f9fbc8acd53b8397d7488157875b9369a741",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "1866c62cc2072f9ab83b0f078e9eca7f2373e84477c7d5d317863a00c5abb1e5",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80X_geozashtita_2023\\80X_GEOZASHTITA_OFFICIAL_2023.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-84ca3e4d1cebb4597c1e",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80Y_geozashtita_local_evidence\\80Y_PLEVEN_LOCAL_QA.json",
+      "source_file": "_research/pleven/80Y_geozashtita_local_evidence/80Y_PLEVEN_LOCAL_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "0304b99d039c87c4bc0d233cd841e143862e63df792c0863633228578b00b477",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-1213cf61035a76337cbb",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "80Z_geozashtita_site_identity\\80Z_SITE_IDENTITY_AUDIT.json",
+      "source_file": "_research/pleven/80Z_geozashtita_site_identity/80Z_SITE_IDENTITY_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "f29dc31b3c26599297e31d81747e8a2f6aaa51a9b2fe19352c1db9ad9e63d05e",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "1866c62cc2072f9ab83b0f078e9eca7f2373e84477c7d5d317863a00c5abb1e5",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80X_geozashtita_2023\\80X_GEOZASHTITA_OFFICIAL_2023.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-e26d3e654f0b11b1f02e",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81B_pleven_site_identity\\81B_PLEVEN_SITE_IDENTITIES.json",
+      "source_file": "_research/pleven/81B_pleven_site_identity/81B_PLEVEN_SITE_IDENTITIES.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "ec49b3cebb8334ae8fb6be5834bde7ab86c9d290cffe196f4ba4215809a81928",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "1866c62cc2072f9ab83b0f078e9eca7f2373e84477c7d5d317863a00c5abb1e5",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80X_geozashtita_2023\\80X_GEOZASHTITA_OFFICIAL_2023.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-c01a3cc5bebde11d15bc",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81B_pleven_site_identity\\81B_SITE_QA.json",
+      "source_file": "_research/pleven/81B_pleven_site_identity/81B_SITE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "ef639a550ab333a9f68a7c94cbd38e2cb58b645c43d492c4669f6714db5a789c",
+        "evidence_categories_for_review": [
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-64dfd7a86b3810dd6081",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_GEOLOGY.json",
+      "source_file": "_research/pleven/81C_pleven_consolidated_geology/81C_PLEVEN_LOCAL_GEOLOGY.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "b5212fbedffc040ecf5e50baba15def91f3eab0449dbe583ba71e036562b6b25",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "1866c62cc2072f9ab83b0f078e9eca7f2373e84477c7d5d317863a00c5abb1e5",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\80X_geozashtita_2023\\80X_GEOZASHTITA_OFFICIAL_2023.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-50a8a3736513953d40b2",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81C_pleven_consolidated_geology\\81C_PLEVEN_LOCAL_QA.json",
+      "source_file": "_research/pleven/81C_pleven_consolidated_geology/81C_PLEVEN_LOCAL_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "590c71ff2c5e5316c8d49ffad0943e6ad3bed86455d9f5f8d5f0e29f94a96f71",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-31312262c5d01a657dae",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81D_knezha_shallow_profile\\81D_KNEZHA_SHALLOW_SOURCE_AUDIT.json",
+      "source_file": "_research/pleven/81D_knezha_shallow_profile/81D_KNEZHA_SHALLOW_SOURCE_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "fb7a87247dc19aae98921eb32e9009a35ce7a1ca36fdde34f1a5c1afde640048",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "7502dd6ff3488e6f32257572512215a3259499e914b6e8453e0a22ee17777c84",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81D_knezha_shallow_profile\\81D_BAS_ALEXIEV_AGALAREVA_2021.pdf",
+          "https://geoproblems.eu/wp-content/uploads/2021/08/2021_2/1_alexiev.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-5af24cd2af2fb8486b1c",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81E_knezha_verified_samples\\81E_KNEZHA_SAMPLES_QA.json",
+      "source_file": "_research/pleven/81E_knezha_verified_samples/81E_KNEZHA_SAMPLES_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "7f0717f231c8fde6803cc805a78b19a4094485030705ad420cb3fa1543ec8cb2",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-7cbc05b094d763dc0456",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81E_knezha_verified_samples\\81E_KNEZHA_SEDIMENT_SAMPLES.json",
+      "source_file": "_research/pleven/81E_knezha_verified_samples/81E_KNEZHA_SEDIMENT_SAMPLES.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "b329062eca6eadcecfa9a372beb62159bf0cdad61e902a25e96a0afb5c6bd2e5",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "7502dd6ff3488e6f32257572512215a3259499e914b6e8453e0a22ee17777c84",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81D_knezha_shallow_profile\\81D_BAS_ALEXIEV_AGALAREVA_2021.pdf",
+          "https://geoproblems.eu/wp-content/uploads/2021/08/2021_2/1_alexiev.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-835dba25ed3668647d15",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81F_pleven_borehole_biostratigraphy\\81F_PLEVEN_BOREHOLE_EVIDENCE.json",
+      "source_file": "_research/pleven/81F_pleven_borehole_biostratigraphy/81F_PLEVEN_BOREHOLE_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5468befed3f571b753aec473eec8c5df4f17edf92dd762ea583c3c48c922e845",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81F_pleven_borehole_biostratigraphy\\81F_GEOL_BALC_DODEKOVA_2022.pdf",
+          "f72773bb6d72fb28292d9d1eb904696f8b2fad7714255ba66a14570394c3688f",
+          "https://www.geologica-balcanica.eu/sites/default/files/articles/Dodekova_Geol_Balc_51-2-2022.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-2db47188b45b31f9e457",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81F_pleven_borehole_biostratigraphy\\81F_PLEVEN_BOREHOLE_QA.json",
+      "source_file": "_research/pleven/81F_pleven_borehole_biostratigraphy/81F_PLEVEN_BOREHOLE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "a21133f93ede3efd36977503b356142a07985c40677067c5eabea14562b2ba05",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-5229822ce1d01d71bd47",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81G_verified_deep_stratigraphic_samples\\81G_PLEVEN_DEEP_SAMPLES.json",
+      "source_file": "_research/pleven/81G_verified_deep_stratigraphic_samples/81G_PLEVEN_DEEP_SAMPLES.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "3e67cdc83702ae4c6061e94cbfd654a00a7f6bc9acdafc4e339bbb9f2245e687",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81F_pleven_borehole_biostratigraphy\\81F_GEOL_BALC_DODEKOVA_2022.pdf",
+          "f72773bb6d72fb28292d9d1eb904696f8b2fad7714255ba66a14570394c3688f"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-39ea31f35b9ece0a6219",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81G_verified_deep_stratigraphic_samples\\81G_PLEVEN_DEEP_SAMPLES_QA.json",
+      "source_file": "_research/pleven/81G_verified_deep_stratigraphic_samples/81G_PLEVEN_DEEP_SAMPLES_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "deac4ab6c53ff431f58f8b6842896d8fec3332bbaf650a4f8fb06a5359109be2",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-5a2ccdef00d2d1f5c170",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81H_pleven_final_deep_samples\\81H_PLEVEN_DEEP_SAMPLES_CONSOLIDATED.json",
+      "source_file": "_research/pleven/81H_pleven_final_deep_samples/81H_PLEVEN_DEEP_SAMPLES_CONSOLIDATED.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "1bfb11a4a10e4eeff11d11d6c86ff3cb908a5faddde745dfc77930b9415026e0",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81F_pleven_borehole_biostratigraphy\\81F_GEOL_BALC_DODEKOVA_2022.pdf",
+          "f72773bb6d72fb28292d9d1eb904696f8b2fad7714255ba66a14570394c3688f"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-83335bf0c8635ce5ba09",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81H_pleven_final_deep_samples\\81H_PLEVEN_DEEP_SAMPLES_QA.json",
+      "source_file": "_research/pleven/81H_pleven_final_deep_samples/81H_PLEVEN_DEEP_SAMPLES_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "95a28ff261b31dae147b1217b204adc5b33852d5464f77767b696d81182ce42d",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-9c4e66418e5b6070c705",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81I_shallow_source_discovery\\81I_DISCOVERY_QA.json",
+      "source_file": "_research/pleven/81I_shallow_source_discovery/81I_DISCOVERY_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "fff450cb66a4a471bcc52777a45f05157a07bbdead24b57d049120525d296f77",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-9229ae36cee284fed120",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81I_shallow_source_discovery\\81I_SHALLOW_CANDIDATE_PAGES.json",
+      "source_file": "_research/pleven/81I_shallow_source_discovery/81I_SHALLOW_CANDIDATE_PAGES.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "0dbbbbd4d9d0900c420c8b869005ae057f37551ce27e619e936fcb37ee74120d",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-f4b49b2e2574e0c733b9",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81J_breste_chuklite\\81J_BRESTE_GEOLOGICAL_EXPOSURE.json",
+      "source_file": "_research/pleven/81J_breste_chuklite/81J_BRESTE_GEOLOGICAL_EXPOSURE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "eb7f39687de81731d13d703394c3fbec1f70d61b2dadc00a412918a01d814cfe",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "dedbde582d54877ea9a718046af5d3472c218cd3cef12ff3a0c4db99d02abd4c",
+          "https://mgu.bg/%D0%B3%D0%B5%D0%BE%D0%BB%D0%BE%D0%B6%D0%BA%D0%B8-%D1%84%D0%B5%D0%BD%D0%BE%D0%BC%D0%B5%D0%BD%D0%B8-%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F/%D1%87%D1%83%D0%BA%D0%BB%D0%B8%D1%82%D0%B5/"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-7e4bcd037ed4dde42e58",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81J_breste_chuklite\\81J_BRESTE_QA.json",
+      "source_file": "_research/pleven/81J_breste_chuklite/81J_BRESTE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "84a859e3123d97e03ef23ae7400a6fdfd578fc189039835b596ae7dce07d2f9c",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-870d8ce63a8b6cb9ef27",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81K_fast_danube_boreholes\\81K_CROSSBORDER_BOREHOLE_EVIDENCE.json",
+      "source_file": "_research/pleven/81K_fast_danube_boreholes/81K_CROSSBORDER_BOREHOLE_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "e1c3ee2e16c492292061ef6a2138832a8bfb83327cef96f9b9c444941f574631",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "093c4249d58455a2682f2498c0821638d983fe81234d9ba866aeeb00a03a4178",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81K_fast_danube_boreholes\\81K_FAST_DANUBE_MOEW_2019.pdf",
+          "https://www.moew.government.bg/static/media/ups/tiny/EO_OVOS/EO_OVOS-2019/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%9E%D0%92%D0%9E%D0%A1%20%D1%80%D0%B5%D0%B2%202.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-2f66f361ed36e6fdb2da",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81K_fast_danube_boreholes\\81K_CROSSBORDER_QA.json",
+      "source_file": "_research/pleven/81K_fast_danube_boreholes/81K_CROSSBORDER_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5f5d1a92f603546f88439a17ce34be69ff72c8deb578046b3ee896309c4c5288",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-44f94b0dd23e252ce36b",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81L_fast_danube_primary_geosond\\81L_PLEVEN_BG_BOREHOLE_CORRECTION.json",
+      "source_file": "_research/pleven/81L_fast_danube_primary_geosond/81L_PLEVEN_BG_BOREHOLE_CORRECTION.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "ec6bb9c20e803f97ff0de05751702f2bce31d08f08863998d28882f1b7a4bd7f",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "4c741331fcff16a0dd623aa08283d3a35e430ddf32676e109a4169ab42a3570f"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-e72cf76f969241de97ad",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81L_fast_danube_primary_geosond\\81L_PRIMARY_SOURCE_QA.json",
+      "source_file": "_research/pleven/81L_fast_danube_primary_geosond/81L_PRIMARY_SOURCE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "4ad48960cd38bb5ae331c5c2feb8e449b585e2403d553f3723a9bc853e9c8eac",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-298e52a6ac28fb9a571d",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81M_fast_danube_appendix_discovery\\81M_APPENDIX_DISCOVERY_QA.json",
+      "source_file": "_research/pleven/81M_fast_danube_appendix_discovery/81M_APPENDIX_DISCOVERY_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "bdd28a956a9ae19511fddd1a281a8e4181ac76838682f74d4533af878cad42fd",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-a5aecb8cbeed2773fd83",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81M_fast_danube_appendix_discovery\\81M_OFFICIAL_APPENDIX_DISCOVERY.json",
+      "source_file": "_research/pleven/81M_fast_danube_appendix_discovery/81M_OFFICIAL_APPENDIX_DISCOVERY.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "51a3616c52f07d3e2dac0fe2036c555fe5c7c8e617b963c8c9daf8e8d4aeae10",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-4cfb273a90560659f94f",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81N_fast_danube_attachment_triage\\81N_ATTACHMENT_TRIAGE.json",
+      "source_file": "_research/pleven/81N_fast_danube_attachment_triage/81N_ATTACHMENT_TRIAGE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "de6f9f483a6497c64e54aa25f48e5803681b0a579cf0fa8eda465b3a976da0b3",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-36493be6831047c20a78",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81O_fast_danube_bg_consolidated\\81O_BG_BOREHOLE_EVIDENCE.json",
+      "source_file": "_research/pleven/81O_fast_danube_bg_consolidated/81O_BG_BOREHOLE_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "d37dd343404e08fa930c2b22153f3473b0901bb7519ceb51632e6fe80f75fb8a",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "4c741331fcff16a0dd623aa08283d3a35e430ddf32676e109a4169ab42a3570f",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81K_fast_danube_boreholes\\81K_FAST_DANUBE_MOEW_2019.pdf",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81L_fast_danube_primary_geosond\\81L_GEOSOND_PRIMARY_2017.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-671daf721f6fda75e879",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81O_fast_danube_bg_consolidated\\81O_BG_BOREHOLE_QA.json",
+      "source_file": "_research/pleven/81O_fast_danube_bg_consolidated/81O_BG_BOREHOLE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "eeb298d03ce62bf53e402ee015913f1007062f2c3e57287d6dcfb0b7a292bb0d",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-e21c6e29c9ccc669e067",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81P_geosond_final_context\\81P_WELL_CONTEXT_AUDIT.json",
+      "source_file": "_research/pleven/81P_geosond_final_context/81P_WELL_CONTEXT_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "6ab132281a4b5a8bc0a0a193ff77ce1be6c9f4cdc1ced8dc88b00182eef532c7",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81L_fast_danube_primary_geosond\\81L_GEOSOND_PRIMARY_2017.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-ec10a79f71b479a684fb",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81Q_pleven_evidence_coverage\\81Q_COVERAGE_QA.json",
+      "source_file": "_research/pleven/81Q_pleven_evidence_coverage/81Q_COVERAGE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "43902f9920580d6e76aaaaadae3d584c0224226a4b0ae2d6b9ca6c17d6aa4e00",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-b6af29c55c62234416cf",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81Q_pleven_evidence_coverage\\81Q_MUNICIPALITY_COVERAGE.json",
+      "source_file": "_research/pleven/81Q_pleven_evidence_coverage/81Q_MUNICIPALITY_COVERAGE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "ffa3163684689b366f80c4651c6140ad2e905242fe57a948a3c56f9eafc90c90",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-f056560b73ea3c9ca35c",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81S_levski_source_recovery\\81S_LEVSKI_SOURCE_AUDIT.json",
+      "source_file": "_research/pleven/81S_levski_source_recovery/81S_LEVSKI_SOURCE_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "ae3b0f3ae33798461a5d4e102f13697129218c19abf1516fb316ccd9b0d5fe39",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "238f249bdd7b387c7f71e050fcbb4934d53f1f9be518fe427dabc24068764661",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81S_levski_source_recovery\\81S_LEVSKI_OFFICIAL_OUP_2017.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-4018180f59ccbcadd502",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81U_levski_verified_leads\\81U_LEVSKI_QA.json",
+      "source_file": "_research/pleven/81U_levski_verified_leads/81U_LEVSKI_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "cbab0026e4cb95c5b267c86ff66470f299a1d0f4719efd82ac26d9019b8d8a58",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-6f18991e9c760c72b2e3",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81U_levski_verified_leads\\81U_LEVSKI_REGIONAL_GEOLOGY.json",
+      "source_file": "_research/pleven/81U_levski_verified_leads/81U_LEVSKI_REGIONAL_GEOLOGY.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "871743eef9a3f6fca8eabfae725df894a75a480c1412f84b62ce88ddc210fea8",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "238f249bdd7b387c7f71e050fcbb4934d53f1f9be518fe427dabc24068764661"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-d1df6f1fc6c4f6a00a94",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81U_levski_verified_leads\\81U_LEVSKI_WELL_LEADS.json",
+      "source_file": "_research/pleven/81U_levski_verified_leads/81U_LEVSKI_WELL_LEADS.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "1dee660fba1b3f5faa6c0bd1f7e1eb1d9de5d3d41dbcbcdbdfc9a18d3cbf631e",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "238f249bdd7b387c7f71e050fcbb4934d53f1f9be518fe427dabc24068764661"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-05fb97608691d4e98726",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81V_iskar_municipality_official\\81V_ISKAR_PRIMARY_AUDIT.json",
+      "source_file": "_research/pleven/81V_iskar_municipality_official/81V_ISKAR_PRIMARY_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5b27eda86ea8312d204343d7c3d01508900a7df9e1dbda111b279a58c0610745",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "3aacac10df9f185fcc219a90bfc7ae75a5bd6bc4398abebbec6285d993b5dfbe",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81V_iskar_municipality_official\\81V_ISKAR_OUP_EXPLANATORY_2018.pdf",
+          "https://iskarbg.bg/download/oup-iskar/D0BED0B1D18FD181D0BDD0B8D182D0B5D0BBD0BDD0B0-D0B7D0B0D0BFD0B8D181D0BAD0B0.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-ae173f0fef5d534b0eed",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81V_iskar_municipality_official\\81V_ISKAR_QA.json",
+      "source_file": "_research/pleven/81V_iskar_municipality_official/81V_ISKAR_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "99a3bcb0a704c57b31e883ea0aed423f379ff00724a0fb82cfd0eaf564e9991b",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-08b334ad44e8b05d5984",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81W_iskar_water_facilities\\81W_ISKAR_FACILITIES_QA.json",
+      "source_file": "_research/pleven/81W_iskar_water_facilities/81W_ISKAR_FACILITIES_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "540d1377e8ce1c807c9f5768532460e02c60b3cd784e63b8781dc2b104b32c5a",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-256509882c15265cc6bb",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81W_iskar_water_facilities\\81W_ISKAR_WATER_FACILITY_EVIDENCE.json",
+      "source_file": "_research/pleven/81W_iskar_water_facilities/81W_ISKAR_WATER_FACILITY_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "41681fea94383455250393f2cf04ce7a120125e4076e62d5e8ee425a9f3d4626",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "3aacac10df9f185fcc219a90bfc7ae75a5bd6bc4398abebbec6285d993b5dfbe",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81V_iskar_municipality_official\\81V_ISKAR_OUP_EXPLANATORY_2018.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-50c9c993330370174ff1",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81X_iskar_reconciled_facilities\\81X_ISKAR_FACILITY_RECONCILIATION.json",
+      "source_file": "_research/pleven/81X_iskar_reconciled_facilities/81X_ISKAR_FACILITY_RECONCILIATION.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "d487478e02eb8e72c9896604cc50c15e98c64c80f7e733cf496e44b050594d8d",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-f3a4b4ccf9e49b117ccb",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81X_iskar_reconciled_facilities\\81X_ISKAR_QA.json",
+      "source_file": "_research/pleven/81X_iskar_reconciled_facilities/81X_ISKAR_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "3bd88bc226c72ce1026fa2c40420c50b259fa51ad0198c069cc4accd17edf7c7",
+        "evidence_categories_for_review": [
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-b83e496850ff4c86e5b0",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81Y_iskar_shk1_official_depth\\81Y_ISKAR_SHK1_DEPTH_EVIDENCE.json",
+      "source_file": "_research/pleven/81Y_iskar_shk1_official_depth/81Y_ISKAR_SHK1_DEPTH_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "b470f0b3009d0909a1adeb00de387f76a2a04f56b26109ad276252cae34dd80e",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "89db212411ebae27bf7f77a29f7f9c7746d049e751e04a832ae314971a50baeb",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81Y_iskar_shk1_official_depth\\81Y_BDDR_MONITORING_APPENDIX.pdf",
+          "https://www.bd-dunav.bg/uploads/content/files/upravlenie-na-vodite/PURB-2022-2027-final/Razdel%204/p/Pril_4311_final.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-268effdb186a045b75d4",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81Y_iskar_shk1_official_depth\\81Y_ISKAR_SHK1_QA.json",
+      "source_file": "_research/pleven/81Y_iskar_shk1_official_depth/81Y_ISKAR_SHK1_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "9774f62eb4ee720068fc52aee091aba7f268eb0cd503fba4f9418500ad9cad0d",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-1c3f2b77a8f58462d26f",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81Z_iskar_monitoring_identity\\81Z_IDENTITY_QA.json",
+      "source_file": "_research/pleven/81Z_iskar_monitoring_identity/81Z_IDENTITY_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "55e807df54b72d3f6a94761570835ec663ba723366acf6bc8905c4160014078b",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-488faac3285c57b62d72",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "81Z_iskar_monitoring_identity\\81Z_MONITORING_IDENTITY_CORRECTION.json",
+      "source_file": "_research/pleven/81Z_iskar_monitoring_identity/81Z_MONITORING_IDENTITY_CORRECTION.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "43ada3062faa0d89a3cb5f31b1293ccc8850dc1d5cbdeebf507ccc0b06279334",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-6ed93ef5c3cd4d9d148e",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82A_iskar_deep_well_leads\\82A_VERIFIED_PUBLIC_WELL_LEADS.json",
+      "source_file": "_research/pleven/82A_iskar_deep_well_leads/82A_VERIFIED_PUBLIC_WELL_LEADS.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "693e0e08f539e2fd5cc1bf8af26db32cae9b7549bb8282977ff9ac4e936029f3",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-8e7462899a35109143ce",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82A_iskar_deep_well_leads\\82A_WELL_LEADS_QA.json",
+      "source_file": "_research/pleven/82A_iskar_deep_well_leads/82A_WELL_LEADS_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5d86a16745e4f38ad2cb1a6035935fa2e319ab5b8b5de6c56d7df8d6cb77e37e",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-ed89bcc37429d1b89dd5",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82B_gorni_dabnik_primary_geology\\82B_GEOLOGY_CANDIDATES.json",
+      "source_file": "_research/pleven/82B_gorni_dabnik_primary_geology/82B_GEOLOGY_CANDIDATES.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "6cfd984d1eb44a7341b5759ea12f85ae47299aecc738a0642af8c29237d34b00",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "8340c865cdb419c1247e952a655b743f2676adddceb404c77acbbc58e8d5de2d",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\82B_gorni_dabnik_primary_geology\\82B_GORNI_DABNIK_OVOS.pdf",
+          "https://riew-pleven.eu/doc/OVOSEO/konsult/Gorni_Dabnik/Doklad%20OVOS.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-f5988e1c9d68486fbd1f",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82B_gorni_dabnik_primary_geology\\82B_SOURCE_QA.json",
+      "source_file": "_research/pleven/82B_gorni_dabnik_primary_geology/82B_SOURCE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "576385c9ec7774b0629da19083a57ad712e62142a6a7cb7a575e20113b598902",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-790f8ef15d985c969b02",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82C_gorni_dabnik_regional_evidence\\82C_GORNI_DABNIK_REGIONAL_EVIDENCE.json",
+      "source_file": "_research/pleven/82C_gorni_dabnik_regional_evidence/82C_GORNI_DABNIK_REGIONAL_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "dc94c5c2a7a15548aa0d5b08925b062f12a6c523f50e8af5c38e5fdd4890aa4c",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "8340c865cdb419c1247e952a655b743f2676adddceb404c77acbbc58e8d5de2d",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\82B_gorni_dabnik_primary_geology\\82B_GORNI_DABNIK_OVOS.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-4f101fa79d82654e60de",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82C_gorni_dabnik_regional_evidence\\82C_REGIONAL_EVIDENCE_QA.json",
+      "source_file": "_research/pleven/82C_gorni_dabnik_regional_evidence/82C_REGIONAL_EVIDENCE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "eabf499ae22562e81b5832026fc520bd3a894adefe14d789b7c1d2ce6326c51d",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-5fbd5911717dad79a34f",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82D_nikopol_profile_figure_qa\\82D_NIKOPOL_FIGURE_AUDIT.json",
+      "source_file": "_research/pleven/82D_nikopol_profile_figure_qa/82D_NIKOPOL_FIGURE_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "9479544f2ddfbe9452fc94522dadbdd5ea3684949d92fd9b4bc566291b5ebfb5",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\79E_NIKOPOL_FRANGOV_2024.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-56b30d2ba8c0c7809d5a",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82D_nikopol_profile_figure_qa\\82D_NIKOPOL_QA.json",
+      "source_file": "_research/pleven/82D_nikopol_profile_figure_qa/82D_NIKOPOL_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "0dea327b11779edbec1d2147a681b375d3bab87b5e3e34f3ca7c6099a11feae2",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-8bbcd7b8763d73e2071f",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82E_nikopol_verified_sections\\82E_NIKOPOL_GEOLOGICAL_SECTIONS.json",
+      "source_file": "_research/pleven/82E_nikopol_verified_sections/82E_NIKOPOL_GEOLOGICAL_SECTIONS.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "2fb7f45bb5dbe54cbbf644d427099498ec6f9237f1fef318fafe8595f6265389",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\79E_NIKOPOL_FRANGOV_2024.pdf",
+          "f3ab28b0e17542192ecb15bc726b8c6abca8722dc8dfee313a238f1500d3e49d"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-a6e56828d1165ac9fd45",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82E_nikopol_verified_sections\\82E_NIKOPOL_SECTIONS_QA.json",
+      "source_file": "_research/pleven/82E_nikopol_verified_sections/82E_NIKOPOL_SECTIONS_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "27e04bc84fd21b053d032c5d620d082aab30d4f62760d80d2b5a120f6fa2a3c1",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-395d37e60d28e4534eab",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82F_complete_research_inventory\\82F_ALL_RESEARCH_FILES.json",
+      "source_file": "_research/pleven/82F_complete_research_inventory/82F_ALL_RESEARCH_FILES.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "f993ff005ca323ca3c7cec104fc2ae3a151540f95e6cf4115ed4b0dae5c97e12",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-2d3acdc25627d9919428",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82F_complete_research_inventory\\82F_INVENTORY_QA.json",
+      "source_file": "_research/pleven/82F_complete_research_inventory/82F_INVENTORY_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "837de9998463f29342f2b9b63bc3fa801d07bc197178db85533329453e94eba9",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-e737a462f27c41440a3b",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82G_evidence_quality_audit\\82G_EVIDENCE_QA.json",
+      "source_file": "_research/pleven/82G_evidence_quality_audit/82G_EVIDENCE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "3e61802f7a74fbdc574748c9e1eec9a7d59c71175db4071de034c37a0c6d9009",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-54c2d19c1ac54b82dda7",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82G_evidence_quality_audit\\82G_PLEVEN_EVIDENCE_CLASSIFICATION.json",
+      "source_file": "_research/pleven/82G_evidence_quality_audit/82G_PLEVEN_EVIDENCE_CLASSIFICATION.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "bdc606291d6a1355d8c9d07baf5feb18efd384bfe9145db08686ea2511ae433a",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-06c50162854521a900e0",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82H_primary_depth_eligibility\\82H_PRIMARY_DEPTH_EVIDENCE.json",
+      "source_file": "_research/pleven/82H_primary_depth_eligibility/82H_PRIMARY_DEPTH_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "b2e9a07505e973dcaa69b3cb172ac5c13f989eebb105760212d4635a166d38e7",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE",
+          "REGIONAL_OR_STRUCTURAL_GEOLOGY",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-7b8245b73f710eb7e02f",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82H_primary_depth_eligibility\\82H_PRIMARY_DEPTH_QA.json",
+      "source_file": "_research/pleven/82H_primary_depth_eligibility/82H_PRIMARY_DEPTH_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "67cb7489928756e57be0a1525ec92dd9d589671e9d80530f83881fd4282ec691",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-2efb50a34e3ff4df6198",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82I_depth_readiness\\82I_DEPTH_READINESS_QA.json",
+      "source_file": "_research/pleven/82I_depth_readiness/82I_DEPTH_READINESS_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "25f713da0ff3582583fb17a9a2d92d5ca351a058fb652eef3af1d8f856e8e882",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-4c242f2bdb255ae8bb6c",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82I_depth_readiness\\82I_PLEVEN_DEPTH_READINESS.json",
+      "source_file": "_research/pleven/82I_depth_readiness/82I_PLEVEN_DEPTH_READINESS.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "f857ca32443085d217bd92a0d5db96f287c725030efa518c75c073ce2616290f",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-1f55d6d418cf79cb456a",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82J_dolni_dabnik_2hg_location\\82J_EXISTING_LOCATION_CANDIDATES.json",
+      "source_file": "_research/pleven/82J_dolni_dabnik_2hg_location/82J_EXISTING_LOCATION_CANDIDATES.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "a4682391b74139c65492698fa36850a48fef2af2a93a8d646d4af7b9715934e7",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-41b4c23e0f4956500f3e",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82J_dolni_dabnik_2hg_location\\82J_LOCATION_QA.json",
+      "source_file": "_research/pleven/82J_dolni_dabnik_2hg_location/82J_LOCATION_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "09acbf143262354c8b1bbfb5464dbf9931225f595ee089c764a966e54075725a",
+        "evidence_categories_for_review": [
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-d81d59120d960acc722a",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82K_mineral_identity_audit\\82K_2HG_IDENTITY_AUDIT.json",
+      "source_file": "_research/pleven/82K_mineral_identity_audit/82K_2HG_IDENTITY_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5c621ca745d298d4bffe5907f94d3fb4dd68ca8f988ad399904414f43cbe68a8",
+        "evidence_categories_for_review": [
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE",
+          "AUDIT_OR_DERIVED_RECORD",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-e441a60b61b3a0f2fdc9",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82K_mineral_identity_audit\\82K_IDENTITY_QA.json",
+      "source_file": "_research/pleven/82K_mineral_identity_audit/82K_IDENTITY_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "027237bc1bd10ef448149b7e6f06e54eacc5205d41878b498c386d169d3f573e",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-7770d30f88a8709ade32",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82L_mineral_usage_qa\\82L_MINERAL_USAGE_AUDIT.json",
+      "source_file": "_research/pleven/82L_mineral_usage_qa/82L_MINERAL_USAGE_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "6178095c722d076e70612a9f862a1b66698b88bfea334c47a76a4d544327c654",
+        "evidence_categories_for_review": [
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-7d7b93d2015ffab7a0fc",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82L_mineral_usage_qa\\82L_USAGE_QA.json",
+      "source_file": "_research/pleven/82L_mineral_usage_qa/82L_USAGE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "031f4dce464f014be1b0d389d918b836eeb01acfd0a6614cf59fe5025f2989a4",
+        "evidence_categories_for_review": [
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-d669649d1b8ca4f88a2a",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82M_dabnik_shared_parcel\\82M_R2_PDF_DIAGNOSTIC.json",
+      "source_file": "_research/pleven/82M_dabnik_shared_parcel/82M_R2_PDF_DIAGNOSTIC.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "8decacdcd42c4c4f60ac95c529f1a545d0c66cd879b61c872b0795bff01bddb2",
+        "evidence_categories_for_review": [
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-b813f0baa933a85cd95a",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82N_dabnik_verified_parcel\\82N_DABNIK_PARCEL_EVIDENCE.json",
+      "source_file": "_research/pleven/82N_dabnik_verified_parcel/82N_DABNIK_PARCEL_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "66a8fdb51c3ea49f15a145fff91758f424e6610057fdfba11aa0ac216bc129a4",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-bf315bc349f18faa1d64",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82N_dabnik_verified_parcel\\82N_PARCEL_QA.json",
+      "source_file": "_research/pleven/82N_dabnik_verified_parcel/82N_PARCEL_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "b26d6a42d02d3c8e2b39180247b8a40a4f3579212fbda36e9c8fa9b3fa2f56ee",
+        "evidence_categories_for_review": [
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-363de4806a72447504e7",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82O_dabnik_georeference_closure\\82O_DABNIK_FINAL_RESEARCH_STATUS.json",
+      "source_file": "_research/pleven/82O_dabnik_georeference_closure/82O_DABNIK_FINAL_RESEARCH_STATUS.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "ffeb52ddd65e39b2db2340d2f45a2984a805b473351554cc0211aeb071ecd964",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-388ce49dc1cfbbd167b8",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82O_dabnik_georeference_closure\\82O_FINAL_QA.json",
+      "source_file": "_research/pleven/82O_dabnik_georeference_closure/82O_FINAL_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "ce7eea4cfcddb5362ce9d889050bd8ff203459702b38f4a46b8a04ef7f0749ea",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-b1bc4e52caf66273d1b3",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82P_pleven_2025_water_wells\\82P_WATER_WELL_EVIDENCE.json",
+      "source_file": "_research/pleven/82P_pleven_2025_water_wells/82P_WATER_WELL_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "9437581d77036a91cc7631e79ac5492946bc8adcd26068b65778f4451958c500",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-3a571392a97fa9425440",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82P_pleven_2025_water_wells\\82P_WATER_WELL_QA.json",
+      "source_file": "_research/pleven/82P_pleven_2025_water_wells/82P_WATER_WELL_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "79ac8bdb6b7899cc454b736a0f530a3f7d8c04f86ca9199b7676b4ee96fb674e",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-c60dd365edb024ef4cf4",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82Q_belene_source_triage\\82Q_BELENE_SOURCE_TRIAGE.json",
+      "source_file": "_research/pleven/82Q_belene_source_triage/82Q_BELENE_SOURCE_TRIAGE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "597b81372b110c6a27acf8ceeb0c3f3d1e641ffa01f5834d80786b3b965d85df",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "https://www.belene.bg/wp-content/uploads/%D0%9E%D0%91%D0%AF%D0%A1%D0%9D%D0%98%D0%A2%D0%95%D0%9B%D0%9D%D0%90-%D0%97%D0%90%D0%9F%D0%98%D0%A1%D0%9A%D0%90-%D0%91%D0%95%D0%9B%D0%95%D0%9D%D0%95-%D0%9F%D0%9F-%D0%9E%D0%A3%D0%9F%D0%9E_compressed.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-401f75875f5472d8d2ff",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82R_belene_regional_closure\\82R_BELENE_QA.json",
+      "source_file": "_research/pleven/82R_belene_regional_closure/82R_BELENE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "887f9f9e003b972f4bf00174c1e02e0191c03f2ae523b395d2a95708024aa3ac",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-395eb2f3b8196659bf35",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82R_belene_regional_closure\\82R_BELENE_REGIONAL_EVIDENCE.json",
+      "source_file": "_research/pleven/82R_belene_regional_closure/82R_BELENE_REGIONAL_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "08f166224d376a8a9f50428c9c079c27fe1cd974ee44165e4432968a772aedc7",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "578714a9dfe7d410d229d932fe1d42b19b1ce5495b6b750e52f437f7302faecd",
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\82Q_belene_source_triage\\82Q_BELENE_OFFICIAL_OUP.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-474202ece2cd48e657c9",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82S_unreviewed_pdf_logs\\82S_PDF_BOREHOLE_LOG_CANDIDATES.json",
+      "source_file": "_research/pleven/82S_unreviewed_pdf_logs/82S_PDF_BOREHOLE_LOG_CANDIDATES.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "7351682bc07043518d2885335683dee748872b8f60539beb6834995d5f16dd9c",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-81064b416a5a2866a1d3",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82S_unreviewed_pdf_logs\\82S_PDF_QA.json",
+      "source_file": "_research/pleven/82S_unreviewed_pdf_logs/82S_PDF_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "fc9bc99d6c4c26ba7a094e2a8676d54bd578d443dec7fb92cc145869e263821f",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-5275f6b314108d478828",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82T_knezha_hayredin_identity\\82T_IDENTITY_QA.json",
+      "source_file": "_research/pleven/82T_knezha_hayredin_identity/82T_IDENTITY_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "611367fcc51383fc7ff4b52f5645434aaa58077b511af915938c097dacb71b8e",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-65c99a6abbb2d58eac76",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82T_knezha_hayredin_identity\\82T_SOURCE_IDENTITY_AUDIT.json",
+      "source_file": "_research/pleven/82T_knezha_hayredin_identity/82T_SOURCE_IDENTITY_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "c5e818ee98081f59f480d18cd333f03e8156812d28d2b37226e4a60084e79d49",
+        "evidence_categories_for_review": [
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-18f8eab5dda6260eb0a6",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82U_R_knezha_geography_corrected\\82U_R_KNEZHA_QA.json",
+      "source_file": "_research/pleven/82U_R_knezha_geography_corrected/82U_R_KNEZHA_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "d50d4f20f5c40c123fd1a8eca2550c2792acfbe2d7094068e3361d27882272cc",
+        "evidence_categories_for_review": [
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-5eb7267c92419dc1c785",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82U_R_knezha_geography_corrected\\82U_R_KNEZHA_VERIFIED_SAMPLES.json",
+      "source_file": "_research/pleven/82U_R_knezha_geography_corrected/82U_R_KNEZHA_VERIFIED_SAMPLES.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "63240b8a38f4bf90a5470f992f1d3fbfecc6d11744df4782fb283ecede72f433",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": true,
+        "source_references": [
+          "C:\\Users\\Micron\\sondi-bg\\_research\\pleven\\81D_knezha_shallow_profile\\81D_BAS_ALEXIEV_AGALAREVA_2021.pdf"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-e6da8fd70cf615146fe0",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82V_municipality_coverage_audit\\82V_PLEVEN_COVERAGE_QA.json",
+      "source_file": "_research/pleven/82V_municipality_coverage_audit/82V_PLEVEN_COVERAGE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "402ab08bedb0c01792f579bb1d4093862e8a5e35c7d69de048edff683c15b196",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-99154c78f91c5090be09",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82V_municipality_coverage_audit\\82V_PLEVEN_EVIDENCE_MATRIX.json",
+      "source_file": "_research/pleven/82V_municipality_coverage_audit/82V_PLEVEN_EVIDENCE_MATRIX.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "7e6add5b190ecc9f3b4157610e962aac8f88dce763a0de9f9efc3348a0c79e6a",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE",
+          "REGIONAL_OR_STRUCTURAL_GEOLOGY",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-8482897f62948f6339d4",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82W_spatial_coverage_discovery\\82W_COVERAGE_QA.json",
+      "source_file": "_research/pleven/82W_spatial_coverage_discovery/82W_COVERAGE_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "1964517363b95237f7e9799a462973060828bc76bb7a509058172374d4d829c7",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-3e85ae915c0d05c8d71c",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82W_spatial_coverage_discovery\\82W_SPATIAL_EVIDENCE_DISCOVERY.json",
+      "source_file": "_research/pleven/82W_spatial_coverage_discovery/82W_SPATIAL_EVIDENCE_DISCOVERY.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "447a42aeb272d99890f89b6a0d2058b6fdb4b40a044106544b1485ddfaa7defe",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-37038e7fd1de4b91e802",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82X_facility_depth_crosscheck\\82X_FACILITY_QA.json",
+      "source_file": "_research/pleven/82X_facility_depth_crosscheck/82X_FACILITY_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "eb14758e1fe702f564c7750758b4b43935018976f9d22a3536ba4ae35d3a1fe2",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-641d31c7798a6af9eadd",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82X_facility_depth_crosscheck\\82X_PLEVEN_FACILITY_EVIDENCE.json",
+      "source_file": "_research/pleven/82X_facility_depth_crosscheck/82X_PLEVEN_FACILITY_EVIDENCE.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "95f75edcf6f1b0ec2785cfc349407ea6afc21b8bcafe11d1d220de164ed1c384",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-28e2c047d1bcb944dca2",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82Y_registry_identity_qa\\82Y_PLEVEN_REGISTRY_RECONCILIATION.json",
+      "source_file": "_research/pleven/82Y_registry_identity_qa/82Y_PLEVEN_REGISTRY_RECONCILIATION.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "7651af20d32888e6606f48550ecb9fc89c001ba0c13a3d03e45a4796a1144de4",
+        "evidence_categories_for_review": [
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-363b931761077ff4358f",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82Y_registry_identity_qa\\82Y_REGISTRY_QA.json",
+      "source_file": "_research/pleven/82Y_registry_identity_qa/82Y_REGISTRY_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "dc7bf43a10448b945e9307b1835ec75f39b2cfce49587ae54aeea1b4bf37f4da",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD",
+          "IDENTITY_OR_LIMITATION_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-1a8cd25c168d6bac764c",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82Z_registry_evidence_links\\82Z_LINK_QA.json",
+      "source_file": "_research/pleven/82Z_registry_evidence_links/82Z_LINK_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5163dfc70b540e70362aadfe93d3d1d05802c25253ea8d90b7fd36848522199a",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-f7d0116d875994475381",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "82Z_registry_evidence_links\\82Z_REGISTRY_AND_SOURCE_LINKS.json",
+      "source_file": "_research/pleven/82Z_registry_evidence_links/82Z_REGISTRY_AND_SOURCE_LINKS.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "e558752206398401cfe8d81faab6457e9d6b52169829a4e3fd4ee80e214bebb1",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-980510e9ea825f33b33f",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "83A_national_schema_audit\\83A_NATIONAL_SCHEMA_AUDIT.json",
+      "source_file": "_research/pleven/83A_national_schema_audit/83A_NATIONAL_SCHEMA_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "5d4b26574547cdbbd0e9ce7fa477296ecc590468ee576b2da8d2ba9bc54f9874",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE",
+          "REGIONAL_OR_STRUCTURAL_GEOLOGY",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-dc18cd31d93fb9845251",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "83A_national_schema_audit\\83A_SCHEMA_QA.json",
+      "source_file": "_research/pleven/83A_national_schema_audit/83A_SCHEMA_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "e4fa93a1e747af9c3bfa9bffb3f453d5fd5fb63f010d9bccd52b1baf0ac299a2",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-343cd27dbd993862f9dd",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "83B_engine_integration_contract\\83B_CONTRACT_QA.json",
+      "source_file": "_research/pleven/83B_engine_integration_contract/83B_CONTRACT_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "15155f4761972125a3681d987092737e86f338fee01dded49f7e6b9518ce2b28",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-3d109239c5a76a468148",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "83B_engine_integration_contract\\83B_INTEGRATION_CONTRACT.json",
+      "source_file": "_research/pleven/83B_engine_integration_contract/83B_INTEGRATION_CONTRACT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "e0184a3e91c5fe4da8e9222b4779b94d7c806dadfd24998dcb02dd8b6c705634",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-7c39f58f337f32d7660e",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "83C_national_runtime_path\\83C_RUNTIME_PATH_AUDIT.json",
+      "source_file": "_research/pleven/83C_national_runtime_path/83C_RUNTIME_PATH_AUDIT.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "d930d5775b69c715650ff35bbb25faf29cb5bafe69aea3245384631b8e00acd0",
+        "evidence_categories_for_review": [
+          "LITHOLOGICAL_OR_INTERVAL_EVIDENCE",
+          "BOREHOLE_OR_DRILLING_EVIDENCE",
+          "SPATIAL_OR_LOCATION_EVIDENCE",
+          "GEOPHYSICAL_EVIDENCE",
+          "HYDROGEOLOGICAL_EVIDENCE",
+          "POSSIBLE_MINERAL_WATER_CROSSREFERENCE",
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
+    },
+    {
+      "intake_id": "PLE-97d9112910afe7dfc5dd",
+      "evidence_kind": "PLEVEN_DOCUMENTARY_RESEARCH",
+      "original_id": "83C_national_runtime_path\\83C_RUNTIME_PATH_QA.json",
+      "source_file": "_research/pleven/83C_national_runtime_path/83C_RUNTIME_PATH_QA.json",
+      "json_pointer": "/",
+      "source_ids": [],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "oblast": "Плевен",
+        "source_sha256": "0acaf5b491086ae867bbc2932a140c52ef471a8a2ace8fcc305b818f1d648235",
+        "evidence_categories_for_review": [
+          "AUDIT_OR_DERIVED_RECORD"
+        ],
+        "priority_source": false,
+        "source_references": [
+          "NO_EXPLICIT_PRIMARY_SOURCE"
+        ],
+        "original_record_preserved": true
+      }
     }
   ]
 }

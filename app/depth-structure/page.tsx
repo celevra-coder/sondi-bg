@@ -8,6 +8,7 @@ import { getVratsaRegionReport } from "@/lib/vratsa-region-report";
 import { getSondiRegionalReport, getSondiWiderStudies, isSondiLithologyLocationRegistered } from "@/lib/sondi-regional-report";
 import { formatRegionalParagraphsForDepthMode } from "@/lib/sondi-regional-text-mode";
 import { getSondiSoilWithNearbyFallback } from "@/lib/sondi-national-soil-nearby";
+import { getSondiSoilSummary } from "@/lib/sondi-soil-mineralization";
 import { getSondiExtendedSoilAtSample } from "@/lib/sondi-extended-soil-reader";
 import { getSondiNationalWrbAtPoint } from "@/lib/sondi-national-wrb-reader";
 import { getSondiHwsd2WithNearbyFallback } from "@/lib/sondi-national-hwsd2-reader";
@@ -767,6 +768,14 @@ const material = point.material
 
   const sondiRegionalCards = getSondiRegionalReport(lat, lng);
   const sondiSoil = await getSondiSoilWithNearbyFallback(lat, lng);
+  // SONDI_83CO_NATIONAL_SOIL_FALLBACK
+  // Presentation only; no inferred soil measurements.
+  const sondiSoilRegionalFallback = getSondiSoilSummary(
+    profile.target_glim_surface_context?.status === "OK"
+      ? profile.target_glim_surface_context.material_bg
+      : null,
+    []
+  );
   const sondiExtendedSoil = sondiSoil ? await getSondiExtendedSoilAtSample(sondiSoil).catch(() => null) : null;
   const sondiWrb = await getSondiNationalWrbAtPoint(lat, lng).catch(() => null);
   const sondiHwsd2 = await getSondiHwsd2WithNearbyFallback(lat, lng).catch(() => null);
@@ -2255,7 +2264,7 @@ const material = point.material
                 [...raw, ...additionalContext].filter(p =>
                   typeof p === "string" && p.trim().length > 0
                 ),
-                Boolean(useFullExistingReader)
+                Boolean(useFullExistingReader || !hasDepthEvidenceForRegionalText)
               )
             .filter(p => typeof p === "string" &&
               p.trim().length > 0);
@@ -2300,7 +2309,7 @@ const material = point.material
 
 
         {/* SONDI_78EX_NATIONAL_SOIL_UI */}
-        {sondiSoil && (
+        {!sondiSoil && !sondiWrb && !sondiHwsd2 && (
           <section
             aria-label="Почва и минерализация"
             style={{
@@ -2318,6 +2327,40 @@ const material = point.material
             }}>
               Почва и минерализация
             </h2>
+            <p style={{ lineHeight: 1.75 }}>
+              {sondiSoilRegionalFallback.description}
+            </p>
+            <p style={{ lineHeight: 1.75 }}>
+              <strong>Минерализация:</strong>{" "}
+              {sondiSoilRegionalFallback.mineralization}.
+            </p>
+            <p style={{ lineHeight: 1.75 }}>
+              <strong>Основа на анализа:</strong>{" "}
+              {sondiSoilRegionalFallback.basis}.
+            </p>
+          </section>
+        )}
+        {(sondiSoil || sondiWrb || sondiHwsd2) && (
+          <section
+            aria-label="Почва и минерализация"
+            style={{
+              marginTop: 24,
+              padding: 20,
+              border: "1px solid #d9e7e9",
+              borderRadius: 14,
+              background: "#f8fbfa"
+            }}
+          >
+            <h2 style={{
+              margin: "0 0 14px",
+              fontSize: 19,
+              color: "#173f49"
+            }}>
+              Почва и минерализация
+            </h2>
+            {/* SONDI_83CT_INDEPENDENT_SOIL_SOURCES */}
+            {sondiSoil && (
+              <>
             <p style={{ lineHeight: 1.75 }}>
               <strong>Механичен състав:</strong>{' '}
               {sondiSoil.summary.texture_bg}.
@@ -2337,17 +2380,20 @@ const material = point.material
               {sondiSoil.summary.coarse_fragments_vol_percent.toFixed(1)}% по обем.
             </p>
 
+              </>
+            )}
+
             {/* SONDI_78GA_WRB_UI */}
             {sondiWrb && (
               <>
                 <p style={{ lineHeight: 1.75 }}>
                   <strong>Вероятен почвен тип (WRB):</strong>{" "}
-                  {sondiWrb.primary_name} —{" "}
+                  {sondiWrb.primary_name === "Chernozems" ? "Черноземи" : sondiWrb.primary_name === "Luvisols" ? "Лесивирани почви" : sondiWrb.primary_name} —{" "}
                   {sondiWrb.primary_probability_percent}% моделна вероятност.
                 </p>
                 <p style={{ lineHeight: 1.75 }}>
                   <strong>Следващ вероятен тип:</strong>{" "}
-                  {sondiWrb.secondary_name} —{" "}
+                  {sondiWrb.secondary_name === "Chernozems" ? "Черноземи" : sondiWrb.secondary_name === "Luvisols" ? "Лесивирани почви" : sondiWrb.secondary_name} —{" "}
                   {sondiWrb.secondary_probability_percent}%.
                 </p>
                 {sondiWrb.has_tied_winner && (
@@ -2365,7 +2411,7 @@ const material = point.material
                   {sondiWrb.primary_probability_percent < 50
                     ? "Ниска увереност в отделния почвен тип. "
                     : "Прогнозна класификация с ограничена точност за конкретен имот. "}
-                  Източник: ISRIC SoilGrids.
+                  {sondiSoil ? "Източник: ISRIC SoilGrids." : ""}
                 </p>
               </>
             )}
@@ -2427,6 +2473,66 @@ const material = point.material
                     : "Моделирана оценка за почвената клетка на избраните координати."}
                 </p>
 
+                {/* SONDI_83CW_SOIL_CONCLUSION */}
+                {(() => {
+                  const usable = (key: "ELEC_COND" | "ESP" | "TCARBON_EQ" | "GYPSUM") =>
+                    sondiHwsd2.depthGroups
+                      .map(d => d.properties[key])
+                      .filter(p => p.weightedMean !== null && Number.isFinite(p.weightedMean) && p.validSharePercent >= 80)
+                      .map(p => p.weightedMean as number);
+                  const maximum = (key: "ELEC_COND" | "ESP" | "TCARBON_EQ" | "GYPSUM") => {
+                    const values = usable(key);
+                    return values.length ? Math.max(...values) : null;
+                  };
+                  const salt = maximum("ELEC_COND");
+                  const sodium = maximum("ESP");
+                  const lime = maximum("TCARBON_EQ");
+                  const gypsum = maximum("GYPSUM");
+                  return (
+                    <div style={{ lineHeight: 1.7, margin: "14px 0" }}>
+                      <p><strong>Засоляване:</strong>{" "}
+                        {salt === null ? "Няма достатъчно данни за оценка."
+                          : salt >= 4 ? "Моделът показва повишена соленост в поне един почвен слой."
+                          : salt >= 2 ? "Умерено повишена соленост в отделни слоеве."
+                          : "Няма изразени признаци за засоляване по модела."}
+                      </p>
+                      <p><strong>Обменен натрий:</strong>{" "}
+                        {sodium === null ? "Няма надеждна оценка."
+                          : sodium >= 15 ? "Повишен дял в поне един слой."
+                          : "Не се отчита висок дял."}
+                      </p>
+                      <p><strong>Минерален състав:</strong>{" "}
+                        {lime === null ? "Карбонатите не са оценени."
+                          : `Карбонати до ${lime.toFixed(1)}%.`}{" "}
+                        {gypsum === null ? "Гипсът не е оценен."
+                          : `Гипс до ${gypsum.toFixed(1)}%.`}
+                      </p>
+                      {/* SONDI_83CY_FINAL_SOIL_ASSESSMENT */}
+                      <p>
+                        <strong>Крайна оценка за минерализацията:</strong>{" "}
+                        {lime === null
+                          ? "Минералният състав не е достатъчно определен."
+                          : lime >= 10
+                            ? "Почвеният профил е осезаемо обогатен с варовити минерални компоненти."
+                            : lime > 0
+                              ? "В почвата се съдържат варовити минерални компоненти."
+                              : "Няма отчетени карбонати в модела."}{" "}
+                        {salt === null
+                          ? "Степента на засоляване не е определена."
+                          : salt >= 4
+                            ? "Има признаци на повишено засоляване в отделни слоеве."
+                            : salt >= 2
+                              ? "Има умерено повишена соленост в отделни слоеве."
+                              : "Не се установява изразено засоляване."}
+                      </p>
+
+                      <p style={{ fontSize: 12, color: "#657c80" }}>
+                        Ориентировъчна почвена оценка, не лабораторно измерване.
+                        Не установява рудна минерализация или минерални води.
+                      </p>
+                    </div>
+                  );
+                })()}
                 <div style={{ overflowX: "auto", marginTop: 12 }}>
                   <table style={{
                     width: "100%",
@@ -2438,9 +2544,9 @@ const material = point.material
                       <tr>
                         {[
                           "Дълбочина",
-                          "EC (dS/m)",
-                          "ESP (%)",
-                          "CaCO₃ (%)",
+                          "Соленост (dS/m)",
+                          "Обменен натрий (%)",
+                          "Карбонати (%)",
                           "Гипс (%)"
                         ].map(label => (
                           <th key={label} style={{
@@ -2515,7 +2621,7 @@ const material = point.material
               </p>
             )}
             <p style={{ lineHeight: 1.7 }}>
-                Източник: ISRIC SoilGrids.
+                {sondiSoil ? "Източник: ISRIC SoilGrids." : ""}
               </p>
           </section>
         )}

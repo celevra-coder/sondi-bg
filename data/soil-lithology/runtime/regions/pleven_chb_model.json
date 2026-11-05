@@ -1,0 +1,208 @@
+{
+    "schema_version":  1,
+    "model_id":  "PLE-CHB-RESEARCH-DRAFT",
+    "oblast":  "Плевен",
+    "purpose":  "DOCUMENTARY_STAGING_FOR_UNIFIED_NATIONAL_ENGINE",
+    "zones":  {
+                  "PLE-CHB-Z01":  {
+                                      "name":  "Червен бряг",
+                                      "municipalities":  [
+                                                             "Червен бряг"
+                                                         ],
+                                      "default_mode":  "REGIONAL_CONTEXT",
+                                      "regional_structural_context":  [
+                                                                          {
+                                                                              "context_id":  "PLE-83P-cd7c8e797375f68e38fe33",
+                                                                              "municipality":  "Червен бряг",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-675941AEEAF6EB6",
+                                                                              "area":  "Червен бряг",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "неогенски глини с прослойки от пясъци и гипс; Опанецка, Делейнска и Криводолска свита"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json",
+                                                                              "source_fact_pointer":  "/facts/0",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          },
+                                                                          {
+                                                                              "context_id":  "PLE-83P-c950d93db3b767ecb7c8a2",
+                                                                              "municipality":  "Червен бряг",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-675941AEEAF6EB6",
+                                                                              "area":  "Червен бряг",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "пясъци, пясъчници и чакъли с алевролитни и глинести прослойки; разпространението е неравномерно"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json",
+                                                                              "source_fact_pointer":  "/facts/1",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          },
+                                                                          {
+                                                                              "context_id":  "PLE-83P-f44c29fad8d58414676c18",
+                                                                              "municipality":  "Червен бряг",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-675941AEEAF6EB6",
+                                                                              "area":  "Червен бряг",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "еоплейстоценски алувиално-пролувиални чакъли с песъчливо-глинест запълнител"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json",
+                                                                              "source_fact_pointer":  "/facts/2",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          },
+                                                                          {
+                                                                              "context_id":  "PLE-83P-e64d58af8081f00cd017a1",
+                                                                              "municipality":  "Червен бряг",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-675941AEEAF6EB6",
+                                                                              "area":  "Червен бряг",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "горнокредни мастрихтски варовици с блоково променливо залягане; оригиналната мерна единица за дълбочините не е потвърдена"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json",
+                                                                              "source_fact_pointer":  "/facts/4",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          }
+                                                                      ],
+                                      "documented_reference_intervals":  [
+
+                                                                         ],
+                                      "source_ids":  [
+                                                         "PLE-S-675941AEEAF6EB6"
+                                                     ],
+                                      "research_staging":  {
+                                                               "reviewed_source_files":  [
+
+                                                                                         ],
+                                                               "geological_context_candidates":  [
+
+                                                                                                 ],
+                                                               "entire_oblast_research_crosswalk":  "83O_COMPLETE_PLEVEN_EVIDENCE_CROSSWALK.json",
+                                                               "not_authorized_for_depth_prediction":  true,
+                                                               "requires_context_extraction_before_activation":  true
+                                                           },
+                                      "research_evidence":  {
+                                                                "candidate_links":  [
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-99838743f23ea69cc2f456",
+                                                                                            "source_file":  "79T_knezha_verified\\79T_KNEZHA_DEEP_WELL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/wells/R-1_PELOVO/intervals/0",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-c7932916af48b110ec7943",
+                                                                                            "source_file":  "79T_knezha_verified\\79T_KNEZHA_DEEP_WELL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/wells/R-1_PELOVO/intervals/1",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-8f1bf754301c2abdcc51b8",
+                                                                                            "source_file":  "79T_knezha_verified\\79T_KNEZHA_DEEP_WELL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/wells/R-1_PELOVO/intervals/2",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-6808d6e630d54cc231852a",
+                                                                                            "source_file":  "79T_knezha_verified\\79T_KNEZHA_DEEP_WELL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/wells/R-1_PELOVO/intervals/3",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-f6e769aa11de0a4ae44b57",
+                                                                                            "source_file":  "79T_knezha_verified\\79T_KNEZHA_DEEP_WELL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/wells/R-1_PELOVO/intervals/4",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-e7a4d5e4b9428ee80653f5",
+                                                                                            "source_file":  "79T_knezha_verified\\79T_KNEZHA_DEEP_WELL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/wells/R-1_PELOVO/intervals/5",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-cd7c8e797375f68e38fe33",
+                                                                                            "source_file":  "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/0",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-c950d93db3b767ecb7c8a2",
+                                                                                            "source_file":  "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/1",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-f44c29fad8d58414676c18",
+                                                                                            "source_file":  "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/2",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-d5d9120a36903b0edf644e",
+                                                                                            "source_file":  "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/3",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-e64d58af8081f00cd017a1",
+                                                                                            "source_file":  "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/4",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-8f6ebe4561794865da022b",
+                                                                                            "source_file":  "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/facts/5",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        }
+                                                                                    ],
+                                                                "source_ids_from_research":  [
+                                                                                                 "79T_knezha_verified\\79T_KNEZHA_DEEP_WELL_EVIDENCE.json",
+                                                                                                 "79W_cherven_bryag_evidence\\79W_CHERVEN_BRYAG_REGIONAL_EVIDENCE.json"
+                                                                                             ],
+                                                                "crosswalk_file":  "83Q_ALL_EVIDENCE_SPATIAL_CROSSWALK.json",
+                                                                "research_only":  true,
+                                                                "not_an_automatic_depth_model":  true
+                                                            }
+                                  }
+              },
+    "production_readiness":  "NOT_READY",
+    "no_oblast_specific_algorithm":  true,
+    "client_geological_analysis_ready":  false
+}

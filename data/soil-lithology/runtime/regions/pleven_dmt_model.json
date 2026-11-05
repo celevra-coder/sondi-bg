@@ -1,0 +1,88 @@
+{
+    "schema_version":  1,
+    "model_id":  "PLE-DMT-RESEARCH-DRAFT",
+    "oblast":  "Плевен",
+    "purpose":  "DOCUMENTARY_STAGING_FOR_UNIFIED_NATIONAL_ENGINE",
+    "zones":  {
+                  "PLE-DMT-Z01":  {
+                                      "name":  "Долна Митрополия",
+                                      "municipalities":  [
+                                                             "Долна Митрополия"
+                                                         ],
+                                      "default_mode":  "REGIONAL_CONTEXT",
+                                      "regional_structural_context":  [
+                                                                          {
+                                                                              "context_id":  "PLE-83CK-DMT-OFFICIAL-REGIONAL",
+                                                                              "municipality":  "Долна Митрополия",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-83CK-DMT-OFFICIAL-REGIONAL",
+                                                                              "source_url":  "https://strategy.bg/files/strategic_doc/opr_dm_2014_2020.pdf",
+                                                                              "area":  "Община Долна Митрополия — регионален геоложки контекст",
+                                                                              "evidence_type":  "OFFICIAL_MUNICIPAL_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "В община Долна Митрополия са описани льосови наслаги по вододелните пространства.",
+                                                                                                                 "В определени райони са разпространени кватернерни пясъци и чакъли, свързани с речните наслаги."
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "83CC_six_municipality_regional_evidence\\83CC_PLEVEN_SIX_MUNICIPALITY_EVIDENCE.json",
+                                                                              "scope":  "MUNICIPALITY_REGIONAL_OVERVIEW_NOT_POINT_DEPTH",
+                                                                              "status":  "DOCUMENTED_REGIONAL_CONTEXT",
+                                                                              "scientific_rule":  "Regional overview only. No point-specific lithological depths or groundwater horizons."
+                                                                          }
+                                                                      ],
+                                      "documented_reference_intervals":  [
+
+                                                                         ],
+                                      "source_ids":  [
+
+                                                     ],
+                                      "research_staging":  {
+                                                               "reviewed_source_files":  [
+                                                                                             "79Q_trastenik_verified\\79Q_TRASTENIK_VES_EVIDENCE.json"
+                                                                                         ],
+                                                               "geological_context_candidates":  [
+                                                                                                     "79Q_trastenik_verified\\79Q_TRASTENIK_VES_EVIDENCE.json"
+                                                                                                 ],
+                                                               "entire_oblast_research_crosswalk":  "83O_COMPLETE_PLEVEN_EVIDENCE_CROSSWALK.json",
+                                                               "not_authorized_for_depth_prediction":  true,
+                                                               "requires_context_extraction_before_activation":  true
+                                                           },
+                                      "research_evidence":  {
+                                                                "candidate_links":  [
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-1307c7f178eb63a206cfec",
+                                                                                            "source_file":  "79Q_trastenik_verified\\79Q_TRASTENIK_VES_EVIDENCE.json",
+                                                                                            "json_pointer":  "/author_interpreted_lithology/0",
+                                                                                            "evidence_class":  "GEOPHYSICAL_INTERPRETATION_NOT_DRILLED_LOG",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-3c387dccd8f55165f0ef53",
+                                                                                            "source_file":  "79Q_trastenik_verified\\79Q_TRASTENIK_VES_EVIDENCE.json",
+                                                                                            "json_pointer":  "/author_interpreted_lithology/1",
+                                                                                            "evidence_class":  "GEOPHYSICAL_INTERPRETATION_NOT_DRILLED_LOG",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-9c6e6ebcd02fa31adc64bb",
+                                                                                            "source_file":  "79Q_trastenik_verified\\79Q_TRASTENIK_VES_EVIDENCE.json",
+                                                                                            "json_pointer":  "/author_interpreted_lithology/2",
+                                                                                            "evidence_class":  "GEOPHYSICAL_INTERPRETATION_NOT_DRILLED_LOG",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        }
+                                                                                    ],
+                                                                "source_ids_from_research":  [
+                                                                                                 "79Q_trastenik_verified\\79Q_TRASTENIK_VES_EVIDENCE.json"
+                                                                                             ],
+                                                                "crosswalk_file":  "83Q_ALL_EVIDENCE_SPATIAL_CROSSWALK.json",
+                                                                "research_only":  true,
+                                                                "not_an_automatic_depth_model":  true
+                                                            }
+                                  }
+              },
+    "production_readiness":  "NOT_READY",
+    "no_oblast_specific_algorithm":  true,
+    "client_geological_analysis_ready":  false
+}

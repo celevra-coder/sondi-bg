@@ -1,0 +1,110 @@
+{
+    "schema_version":  1,
+    "model_id":  "PLE-POR-RESEARCH-DRAFT",
+    "oblast":  "Плевен",
+    "purpose":  "DOCUMENTARY_STAGING_FOR_UNIFIED_NATIONAL_ENGINE",
+    "zones":  {
+                  "PLE-POR-Z01":  {
+                                      "name":  "Пордим",
+                                      "municipalities":  [
+                                                             "Пордим"
+                                                         ],
+                                      "default_mode":  "REGIONAL_CONTEXT",
+                                      "regional_structural_context":  [
+                                                                          {
+                                                                              "context_id":  "PLE-83CK-POR-OUP-REGIONAL",
+                                                                              "municipality":  "Пордим",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-83CK-POR-OUP-REGIONAL",
+                                                                              "source_url":  "https://www.old.pordim.bg/wp-content/uploads/2017/02/d0b5d0be_d0bfd0bed180d0b4d0b8d0bc_2016.pdf",
+                                                                              "area":  "Община Пордим — регионален геоложки контекст",
+                                                                              "evidence_type":  "OFFICIAL_MUNICIPAL_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "Екологичната оценка за община Пордим описва плейстоценска льосова и льосовидна покривка с неравномерно разпространение и променлива мощност, която на отделни места отсъства.",
+                                                                                                                 "В регионалния геоложки строеж са описани изветрели глинести пясъчници, мергелни кафяви глини и пясъчни прослойки."
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "83CE_verified_regional_sources\\83CE_REGIONAL_SOURCE_EVIDENCE.json",
+                                                                              "scope":  "MUNICIPALITY_REGIONAL_OVERVIEW_NOT_POINT_DEPTH",
+                                                                              "status":  "DOCUMENTED_REGIONAL_CONTEXT",
+                                                                              "scientific_rule":  "Regional overview only. No point-specific lithological depths or groundwater horizons."
+                                                                          }
+                                                                      ],
+                                      "documented_reference_intervals":  [
+
+                                                                         ],
+                                      "source_ids":  [
+
+                                                     ],
+                                      "research_staging":  {
+                                                               "reviewed_source_files":  [
+                                                                                             "80O_pordim_verified\\80O_PORDIM_SHALLOW_EVIDENCE.json"
+                                                                                         ],
+                                                               "geological_context_candidates":  [
+                                                                                                     "80O_pordim_verified\\80O_PORDIM_SHALLOW_EVIDENCE.json"
+                                                                                                 ],
+                                                               "entire_oblast_research_crosswalk":  "83O_COMPLETE_PLEVEN_EVIDENCE_CROSSWALK.json",
+                                                               "not_authorized_for_depth_prediction":  true,
+                                                               "requires_context_extraction_before_activation":  true
+                                                           },
+                                      "research_evidence":  {
+                                                                "candidate_links":  [
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-ecec408902a8ce3ce8e417",
+                                                                                            "source_file":  "80O_pordim_verified\\80O_PORDIM_SHALLOW_EVIDENCE.json",
+                                                                                            "json_pointer":  "/materials/0",
+                                                                                            "evidence_class":  "ANTHROPOGENIC_NOT_NATURAL_GEOLOGY",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-10e961455daeb9ecac580b",
+                                                                                            "source_file":  "80O_pordim_verified\\80O_PORDIM_SHALLOW_EVIDENCE.json",
+                                                                                            "json_pointer":  "/materials/1",
+                                                                                            "evidence_class":  "LOCAL_MATERIAL_DESCRIPTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-2e5ea699cdc79cba1b43ed",
+                                                                                            "source_file":  "80O_pordim_verified\\80O_PORDIM_SHALLOW_EVIDENCE.json",
+                                                                                            "json_pointer":  "/materials/2",
+                                                                                            "evidence_class":  "LOCAL_MATERIAL_DESCRIPTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-9375030e232c65721e1149",
+                                                                                            "source_file":  "80O_pordim_verified\\80O_PORDIM_SHALLOW_EVIDENCE.json",
+                                                                                            "json_pointer":  "/materials/3",
+                                                                                            "evidence_class":  "LOCAL_MATERIAL_DESCRIPTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-7eb24c529fb616734735dc",
+                                                                                            "source_file":  "80O_pordim_verified\\80O_PORDIM_SHALLOW_EVIDENCE.json",
+                                                                                            "json_pointer":  "/materials/4",
+                                                                                            "evidence_class":  "LOCAL_MATERIAL_DESCRIPTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-43daf73b4cfe892fea75b6",
+                                                                                            "source_file":  "83A_national_schema_audit\\83A_NATIONAL_SCHEMA_AUDIT.json",
+                                                                                            "json_pointer":  "/research_evidence_shapes/1/shape/materials",
+                                                                                            "evidence_class":  "LOCAL_MATERIAL_DESCRIPTION",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        }
+                                                                                    ],
+                                                                "source_ids_from_research":  [
+                                                                                                 "80O_pordim_verified\\80O_PORDIM_SHALLOW_EVIDENCE.json",
+                                                                                                 "83A_national_schema_audit\\83A_NATIONAL_SCHEMA_AUDIT.json"
+                                                                                             ],
+                                                                "crosswalk_file":  "83Q_ALL_EVIDENCE_SPATIAL_CROSSWALK.json",
+                                                                "research_only":  true,
+                                                                "not_an_automatic_depth_model":  true
+                                                            }
+                                  }
+              },
+    "production_readiness":  "NOT_READY",
+    "no_oblast_specific_algorithm":  true,
+    "client_geological_analysis_ready":  false
+}

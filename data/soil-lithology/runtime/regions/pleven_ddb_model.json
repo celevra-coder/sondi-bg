@@ -1,0 +1,396 @@
+{
+    "schema_version":  1,
+    "model_id":  "PLE-DDB-RESEARCH-DRAFT",
+    "oblast":  "Плевен",
+    "purpose":  "DOCUMENTARY_STAGING_FOR_UNIFIED_NATIONAL_ENGINE",
+    "zones":  {
+                  "PLE-DDB-Z01":  {
+                                      "name":  "Долни Дъбник",
+                                      "municipalities":  [
+                                                             "Долни Дъбник"
+                                                         ],
+                                      "default_mode":  "REGIONAL_CONTEXT",
+                                      "regional_structural_context":  [
+                                                                          {
+                                                                              "context_id":  "PLE-83P-a5071f02e9560e1edb730c",
+                                                                              "municipality":  "Долни Дъбник",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-C48E82065BE8F78",
+                                                                              "area":  "Долни Дъбник",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "Свищовска свита: пясъчници, алевролити и глини; горнокредни варовикови и мергелни образувания"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "82C_gorni_dabnik_regional_evidence\\82C_GORNI_DABNIK_REGIONAL_EVIDENCE.json",
+                                                                              "source_fact_pointer":  "/observations/0",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          },
+                                                                          {
+                                                                              "context_id":  "PLE-83P-6c157f897390a36891647c",
+                                                                              "municipality":  "Долни Дъбник",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-C48E82065BE8F78",
+                                                                              "area":  "Долни Дъбник",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "неогенски глини, пясъци, пясъчници и варовици; кватернерни алувиални, еолични и делувиални материали"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "82C_gorni_dabnik_regional_evidence\\82C_GORNI_DABNIK_REGIONAL_EVIDENCE.json",
+                                                                              "source_fact_pointer":  "/observations/1",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          },
+                                                                          {
+                                                                              "context_id":  "PLE-83P-24ee9137b832dac1f66096",
+                                                                              "municipality":  "Долни Дъбник",
+                                                                              "oblast":  "Плевен",
+                                                                              "source_id":  "PLE-S-C48E82065BE8F78",
+                                                                              "area":  "Долни Дъбник",
+                                                                              "evidence_type":  "PUBLISHED_REGIONAL_GEOLOGY",
+                                                                              "dominant_lithology_context":  [
+                                                                                                                 "делувиални глинесто-песъчливи и льосовидни материали"
+                                                                                                             ],
+                                                                              "regional_units":  [
+
+                                                                                                 ],
+                                                                              "source_research_file":  "82C_gorni_dabnik_regional_evidence\\82C_GORNI_DABNIK_REGIONAL_EVIDENCE.json",
+                                                                              "source_fact_pointer":  "/observations/2",
+                                                                              "scope":  "REGIONAL_DOCUMENTARY_CONTEXT",
+                                                                              "status":  "AREA_GEOLOGY_CONTEXT_ONLY",
+                                                                              "scientific_rule":  "Formation thickness is not a measured target depth; geographic variation is not overridden."
+                                                                          }
+                                                                      ],
+                                      "documented_reference_intervals":  [
+
+                                                                         ],
+                                      "source_ids":  [
+                                                         "PLE-S-C48E82065BE8F78"
+                                                     ],
+                                      "research_staging":  {
+                                                               "reviewed_source_files":  [
+                                                                                             "80H_dolni_dabnik_verified\\80H_2HG_LITHOLOGY.json",
+                                                                                             "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                             "82C_gorni_dabnik_regional_evidence\\82C_GORNI_DABNIK_REGIONAL_EVIDENCE.json",
+                                                                                             "82O_dabnik_georeference_closure\\82O_DABNIK_FINAL_RESEARCH_STATUS.json"
+                                                                                         ],
+                                                               "geological_context_candidates":  [
+                                                                                                     "82C_gorni_dabnik_regional_evidence\\82C_GORNI_DABNIK_REGIONAL_EVIDENCE.json"
+                                                                                                 ],
+                                                               "entire_oblast_research_crosswalk":  "83O_COMPLETE_PLEVEN_EVIDENCE_CROSSWALK.json",
+                                                               "not_authorized_for_depth_prediction":  true,
+                                                               "requires_context_extraction_before_activation":  true
+                                                           },
+                                      "research_evidence":  {
+                                                                "candidate_links":  [
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-d3dd186f96f0874e941268",
+                                                                                            "source_file":  "80H_dolni_dabnik_verified\\80H_2HG_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/intervals/0",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-45d05b803ad8bd877d11bf",
+                                                                                            "source_file":  "80H_dolni_dabnik_verified\\80H_2HG_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/intervals/1",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-32e0ba2bdd85de5ca700c6",
+                                                                                            "source_file":  "80H_dolni_dabnik_verified\\80H_2HG_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/intervals/2",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-05321d23602002d7c34bfc",
+                                                                                            "source_file":  "80H_dolni_dabnik_verified\\80H_2HG_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/intervals/3",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-49a00c86b59609b4f31fda",
+                                                                                            "source_file":  "80H_dolni_dabnik_verified\\80H_2HG_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/intervals/4",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-5cdbb97f001046e55d61e1",
+                                                                                            "source_file":  "80H_dolni_dabnik_verified\\80H_2HG_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/intervals/5",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-2f2dde31402b531787b39b",
+                                                                                            "source_file":  "80H_dolni_dabnik_verified\\80H_2HG_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/intervals/6",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-a5faefa3aea44937e531f5",
+                                                                                            "source_file":  "80H_dolni_dabnik_verified\\80H_2HG_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/intervals/7",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-ab31c0e26b90c556f6d8fc",
+                                                                                            "source_file":  "80H_dolni_dabnik_verified\\80H_2HG_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/intervals/8",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-567c5c17448fefaa7caa44",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/0",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-b5f69669d0ae12ae36bed9",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/1",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-a982a0b298333bd55e4fe3",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/2",
+                                                                                            "evidence_class":  "WELL_IDENTITY_AND_LOG_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-d4d471fa0427e954a84030",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/0/intervals/0",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-7b4bb6d8973cf155ac53e0",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/0/intervals/1",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-2ba349263a4d92fdbe0908",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/0/intervals/2",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-739dda56bf566f403507b3",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/0/intervals/3",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-e8fbec9868a6a900426bee",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/0/intervals/4",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-7e3b4354f07bf521ac4d24",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/0/intervals/5",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-25a5462217d20732c74273",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/0/intervals/6",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-365d13e6f00d50eee94625",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/0/intervals/7",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-a781eafa43562ba4d48358",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/0/intervals/8",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-1f55336caadaa6adf971e6",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/1/intervals/0",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-3a246f82bed8433b39d630",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/1/intervals/1",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-4e1d434320b9b00cd6e7d0",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/1/intervals/2",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-c29040dd702dd710b9c30f",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/1/intervals/3",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-c674d58db7f1fa514bed95",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/1/intervals/4",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-7005e84ae40854ad1196d8",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/1/intervals/5",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-613ca94b7828586274b4fb",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/1/intervals/6",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-5529d6aaaeb49dff0dd15c",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/1/intervals/7",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-ef1b39660fbdad6c2bc8a3",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/1/intervals/8",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-11190b7fe60d488293ebd9",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/2/intervals/0",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-775baffab9ab31e9a77684",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/2/intervals/1",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-3bfc7f5815fd555c574469",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/2/intervals/2",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-fbfe874275f372d2cc0f8f",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/2/intervals/3",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-add7b870c11582097eeae7",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/2/intervals/4",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-59309788f495c8a2fff574",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/2/intervals/5",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-88668f7f4cf5d8d7efb30f",
+                                                                                            "source_file":  "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                            "json_pointer":  "/wells/2/intervals/6",
+                                                                                            "evidence_class":  "DOCUMENTED_DEPTH_OR_LITHOLOGY_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-a5071f02e9560e1edb730c",
+                                                                                            "source_file":  "82C_gorni_dabnik_regional_evidence\\82C_GORNI_DABNIK_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/0",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-6c157f897390a36891647c",
+                                                                                            "source_file":  "82C_gorni_dabnik_regional_evidence\\82C_GORNI_DABNIK_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/1",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-24ee9137b832dac1f66096",
+                                                                                            "source_file":  "82C_gorni_dabnik_regional_evidence\\82C_GORNI_DABNIK_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/2",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        },
+                                                                                        {
+                                                                                            "candidate_id":  "PLE-83P-960bd0a056125691c45901",
+                                                                                            "source_file":  "82C_gorni_dabnik_regional_evidence\\82C_GORNI_DABNIK_REGIONAL_EVIDENCE.json",
+                                                                                            "json_pointer":  "/observations/3",
+                                                                                            "evidence_class":  "GEOLOGICAL_CONTEXT_REVIEW",
+                                                                                            "location_specific_not_municipality_wide":  true
+                                                                                        }
+                                                                                    ],
+                                                                "source_ids_from_research":  [
+                                                                                                 "80H_dolni_dabnik_verified\\80H_2HG_LITHOLOGY.json",
+                                                                                                 "80J_dabnik_deep_verified\\80J_DABNIK_DEEP_LITHOLOGY.json",
+                                                                                                 "82C_gorni_dabnik_regional_evidence\\82C_GORNI_DABNIK_REGIONAL_EVIDENCE.json"
+                                                                                             ],
+                                                                "crosswalk_file":  "83Q_ALL_EVIDENCE_SPATIAL_CROSSWALK.json",
+                                                                "research_only":  true,
+                                                                "not_an_automatic_depth_model":  true
+                                                            }
+                                  }
+              },
+    "production_readiness":  "NOT_READY",
+    "no_oblast_specific_algorithm":  true,
+    "client_geological_analysis_ready":  false
+}
