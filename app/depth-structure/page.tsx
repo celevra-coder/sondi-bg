@@ -1,6 +1,7 @@
 import { getRavnoPolePilot } from "../../lib/sondi-ravno-pole-local-pilot";
 import { resolveNationalEvidence } from "../../lib/sondi-national-evidence-engine";
 import { getNationalBoreholeIndex } from "../../lib/sondi-national-borehole-index";
+import { getNationalInterimLocalReader, getNationalInterimConditionalWindows } from "@/lib/sondi-national-interim-policy";
 import { assessGlimAlternatives } from "@/lib/glim-alternative-assessment";
 import Link from "next/link";
 import { getVratsaDocumentedColumns } from "@/lib/vratsa-documented-columns";
@@ -13,6 +14,7 @@ import { getSondiExtendedSoilAtSample } from "@/lib/sondi-extended-soil-reader";
 import { getSondiNationalWrbAtPoint } from "@/lib/sondi-national-wrb-reader";
 import { getSondiHwsd2WithNearbyFallback } from "@/lib/sondi-national-hwsd2-reader";
 import { buildSondiReadableRegionalNarrative } from "@/lib/sondi-regional-narrative";
+import { getSondiLunaGeologicalAnalysis } from "@/lib/sondi-luna-geological-analyst";
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase-server";
@@ -1158,6 +1160,8 @@ const material = point.material
         exactDocumentedIntervals[index - 1].to_m! + 0.001
     );
 
+  // Point-specific evidence for the regional reader; NEVER promotes depth contacts.
+  const nationalLocalReader = getNationalInterimLocalReader(lat, lng);
   const nationalEvidence = resolveNationalEvidence(lat, lng);
   const nationalReferenceColumns = nationalEvidence.references;
 
@@ -1256,6 +1260,37 @@ const material = point.material
       analogueCount:interval.borehole_ids.length
     }));
 
+  // Unified interim national 2 km rule: all VERIFIED georeferenced depth
+  // sources, not only boreholes. Interval endpoints are overlap limits in
+  // reference observations, never proven formation contacts at the site.
+  const interimConditionalWindows = exactDocumentedIntervals.length > 0
+    ? []
+    : getNationalInterimConditionalWindows(lat,lng).filter(window =>
+      !automaticPredictedIntervals.some(existing =>
+        existing.from_m < window.to_m && existing.to_m > window.from_m
+      )
+    );
+  const interimConditionalRows = interimConditionalWindows.map(window=>({
+    intervalFromM:window.from_m,
+    intervalToM:window.to_m,
+    depth:"≈ " + window.from_m.toLocaleString("bg-BG") +
+      "–" + window.to_m.toLocaleString("bg-BG") + " м",
+    material:window.material,
+    description:
+      "Условна интерпретация на вероятния материал в този дълбочинен обхват " +
+      "от съгласувани наблюдения в близки геореферирани обекти. " +
+      "Посочените граници са обхват на съвпадащите референтни наблюдения, " +
+      "а не измерени контакти или доказан пласт под избраната точка.",
+    evidenceNote:
+      "Независими документирани източници: " +
+      window.independent_controls +
+      (window.map_comparison === "MAP_UNKNOWN"
+        ? ". Картографското съвпадение остава непотвърдено."
+        : ". Картографската единица е съвместима."),
+    confidence:"Ниска увереност",
+    analogueCount:window.independent_controls
+  }));
+
   const automaticSpatialRows =
     profile.target_national_depth_model
       .filter(result =>
@@ -1312,6 +1347,9 @@ const material = point.material
       return !automaticPredictedIntervals.some(interval =>
         row.sampleDepthM >= interval.from_m &&
         row.sampleDepthM < interval.to_m
+      ) && !interimConditionalWindows.some(window =>
+        row.sampleDepthM >= window.from_m &&
+        row.sampleDepthM < window.to_m
       );
     });
 
@@ -1320,7 +1358,68 @@ const material = point.material
   const hasDepthEvidenceForRegionalText =
     exactDocumentedIntervals.length > 0 ||
     automaticIntervalRows.length > 0 ||
+    interimConditionalRows.length > 0 ||
     uniqueSpatialRows.length > 0;
+
+  // SONDI_CLIENT_AI_V1: optional server-side regional prose only.
+  // Existing expert access was checked above; depth rows are unchanged.
+  // Feature is OFF by default and any failure preserves the original reader.
+  const regionalAISelected = regionalCardsForDisplay
+    .filter(card =>
+      Array.isArray(card.paragraphs) &&
+      card.paragraphs.some(p => typeof p === "string" && p.trim()) &&
+      !card.informationType?.startsWith("SONDI_DEPTH_REFERENCE_") &&
+      !card.informationType?.startsWith("SONDI_REGIONAL_BOREHOLE_ANALOGUE_") &&
+      !card.id.endsWith("-reference-intervals") &&
+      !card.id.endsWith("-well-depths") &&
+      !/сондажен аналог|сондажни материали/i.test(card.title)
+    )
+    .slice()
+    .sort((a, b) => {
+      const rank = (id: string) =>
+        id.endsWith("-reader-overview") ? 0 :
+        id.endsWith("-automatic-overview") ||
+        id.endsWith("-location-driven-overview") ? 1 :
+        id.endsWith("-overview") ? 2 : 3;
+      return rank(a.id) - rank(b.id);
+    })[0];
+
+  const regionalAIResearch = nationalEvidence.research_catalog_context;
+  const lunaAnalysis = await getSondiLunaGeologicalAnalysis({
+    latitude: lat,
+    longitude: lng,
+    existingConditionalRows: interimConditionalRows.map(row=>({depth:row.depth,material:row.material,evidence:row.evidenceNote})),
+    regionalParagraphs: regionalAISelected?.paragraphs ?? [],
+    extraRegionalParagraphs: regionalCardsForDisplay
+      .filter(card => card.informationType === "Регионални геоложки доказателства")
+      .flatMap(card => card.paragraphs)
+      .filter((p): p is string => typeof p === "string")
+      .slice(0, 3),
+    mapStatus: nationalEvidence.geology?.status ?? "UNAVAILABLE",
+    mapUnit: nationalEvidence.geology?.unit?.name_bg ?? null,
+    spatialDescriptions: regionalAIResearch.spatial_descriptions,
+    nearbyResearch: regionalAIResearch.nearby_research_cells.map(cell => ({
+      distanceKm: cell.distance_km,
+      scope: cell.evidence_level,
+      sources: cell.sources.map(source => source.text),
+    })),
+    sheetCandidates: regionalAIResearch.broad_sheet_candidates.map(candidate => ({
+      name: candidate.name,
+      materials: candidate.materials,
+      scope: candidate.evidence_level,
+    })),
+  });
+
+  const regionalAIParagraphs = lunaAnalysis?.regionalParagraphs ?? null;
+  const lunaDepthRows = (lunaAnalysis?.depthInterpretations ?? []).map(window=>({
+    intervalFromM: window.from_m, intervalToM: window.to_m,
+    depth: "≈ " + window.from_m.toLocaleString("bg-BG") + "–" + window.to_m.toLocaleString("bg-BG") + " м",
+    material: window.material,
+    description: window.explanation,
+    evidenceNote: "",
+    confidence: "", analogueCount: window.source_ids.length
+  }));
+  const displayedConditionalRows = lunaAnalysis ? lunaDepthRows : interimConditionalRows;
 
   // SONDI_78CU_NO_CONTRADICTORY_REGIONAL_FALLBACK
   // A regional fallback is needed only when no supported
@@ -1328,6 +1427,7 @@ const material = point.material
   // The separate regional geology section remains intact.
   const displayRows = [
     ...automaticIntervalRows,
+    ...displayedConditionalRows,
     ...uniqueSpatialRows,
     ...((Boolean(0) && automaticIntervalRows.length === 0 &&
          uniqueSpatialRows.length === 0) ? [{
@@ -1703,6 +1803,54 @@ const material = point.material
                       {interval.material_bg}
                     </div>
 
+                    {/* SONDI_LUNA_EXACT_COLUMN_EXPLANATIONS_V1
+                        Only an exact material, depth and borehole-ID match
+                        may supply Luna's individual interpretation. */}
+                    {(() => {
+                      // Short lithological description for the client.
+                      // Original documented depths and materials stay intact.
+                      const material = String(
+                        interval.material_bg
+                      ).toLocaleLowerCase("bg-BG");
+
+                      const explanation =
+                        /пясъчливо-глинеста прослойка/u.test(material)
+                          ? "Песъчлив материал с локално по-слабо пропусклива прослойка."
+                        : /алтернация|редуване/u.test(material)
+                          ? "Последователност от фини глинести и по-едрозърнести песъчливи седименти."
+                        : /чакъл/u.test(material) && /глин|пяс/u.test(material)
+                          ? "Смесени наслаги от глини, пясъци и чакъли с различна зърненост."
+                        : /среднозърнести пясъци/u.test(material)
+                          ? "Ронлив, сравнително водопропусклив песъчлив материал."
+                        : /песъчливи глини/u.test(material)
+                          ? "Глинест материал с пясъчна съставка и сравнително ниска пропускливост."
+                        : /гнайс/u.test(material)
+                          ? "Твърда метаморфна скала, чиято напуканост влияе върху пробиването."
+                        : /варовик|доломит/u.test(material)
+                          ? "Карбонатна скала с променлива здравина и възможна напуканост."
+                        : /конгломерат/u.test(material)
+                          ? "Скални късове, свързани с по-фин циментиращ материал."
+                        : /гранит/u.test(material)
+                          ? "Твърда кристалинна скала с висока устойчивост при пробиване."
+                        : sondiMaterialExplanation(
+                            String(interval.material_bg)
+                          );
+
+                      return explanation ? (
+                        <div
+                          style={{
+                            marginTop: 7,
+                            fontSize: 13,
+                            lineHeight: 1.6,
+                            color: "#4f666d"
+                          }}
+                        >
+                          {explanation}
+                        </div>
+                      ) : null;
+                    })()}
+
+
                     {interval.stratigraphy && (
                       <div style={{
                         marginTop: 5,
@@ -1838,23 +1986,9 @@ const material = point.material
               </div>
             ))}
           </div>
-        ) : (
-          <div
-            style={{
-              marginTop: 24,
-              padding: 16,
-              borderRadius: 12,
-              background: "#f5f7f8",
-              color: "#52666c",
-            }}
-          >
-            Представен е регионален геоложки анализ.
-            Местните сондажни данни не доказват
-            конкретна вертикална колонка за избраната точка.
-          </div>
-        )}
+        ) : null}
 
-        {showNeighbourContactContext && (
+        {showNeighbourContactContext && !lunaAnalysis && (
           <section
             data-sondi-national-contact-context="true"
             style={{
@@ -2121,11 +2255,12 @@ const material = point.material
 
           const materials = [
             ...automaticIntervalRows.map(row => row.material),
+            ...displayedConditionalRows.map(row => row.material),
             ...uniqueSpatialRows.map(row => row.material),
             ...exactDocumentedIntervals.map(row => row.material_bg)
           ].filter(Boolean);
 
-          const raw = selected
+          const rawBase = selected
             ? formatRegionalParagraphsForDepthMode(
                 selected,
                 hasDepthEvidenceForRegionalText,
@@ -2136,6 +2271,21 @@ const material = point.material
                 sofiaRegionalSummary ||
                 regionalDescription
               ].filter(Boolean);
+
+
+          // National reader: include verified regional geological evidence
+          // in the main text without treating it as a local depth profile.
+          const regionalGeologicalEvidence = regionalCardsForDisplay
+            .filter(card =>
+              card.informationType === "Регионални геоложки доказателства" &&
+              card.id !== selected?.id
+            )
+            .flatMap(card => card.paragraphs)
+            .filter((p): p is string =>
+              typeof p === "string" && p.trim().length > 0
+            );
+
+          const raw = rawBase;
 
           // Special regional descriptions are preserved, while
           // the approved depth materials receive an explanation.
@@ -2269,7 +2419,28 @@ const material = point.material
             .filter(p => typeof p === "string" &&
               p.trim().length > 0);
 
-          if (paragraphs.length === 0) return null;
+          // Only the regional prose is replaceable; depth evidence is independent.
+          const readerBaseParagraphs = regionalAIParagraphs?.length
+            ? regionalAIParagraphs
+            : paragraphs;
+          // Keep the established regional reader. Add only observations
+          // that are independently located near THIS selected coordinate.
+          // The location-specific evidence belongs in the regional reader
+          // EVEN when the page also shows conditional depth windows.
+          // Previously the evidence was silently discarded in that case.
+          // Luna's successful narrative is complete.
+          // Keep national reader paragraphs only when Luna is unavailable.
+          const clientParagraphs = regionalAIParagraphs?.length
+            ? [...regionalAIParagraphs]
+            : [
+                ...readerBaseParagraphs,
+                ...nationalLocalReader.paragraphs.filter(local =>
+                  !readerBaseParagraphs.some(
+                    base => base.trim() === local.trim()
+                  )
+                ),
+              ];
+          if (clientParagraphs.length === 0) return null;
 
           return (
             <section
@@ -2294,7 +2465,7 @@ const material = point.material
                 fontSize: 14,
                 lineHeight: 1.8
               }}>
-                {paragraphs.map((paragraph, index) => (
+                {clientParagraphs.map((paragraph, index) => (
                   <p
                     key={index}
                     style={{ margin: "0 0 14px" }}
@@ -2714,6 +2885,7 @@ const material = point.material
       hasDepthEvidenceForRegionalText,
       [
         ...automaticIntervalRows.map(row => row.material),
+            ...displayedConditionalRows.map(row => row.material),
         ...uniqueSpatialRows.map(row => row.material),
         ...exactDocumentedIntervals.map(interval => interval.material_bg)
       ]

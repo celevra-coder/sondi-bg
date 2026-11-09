@@ -1,52 +1,81 @@
 {
-    "schema_version":  "1.0",
-    "model_id":  "MON-REGIONAL-72CJ",
-    "oblast":  "Монтана",
-    "status":  "REGIONAL_CONTEXT_WITH_SPATIAL_VERIFICATION_PENDING",
-    "production_enabled":  true,
-    "zones":  {
-                  "MON-Z01":  {
-                                  "regional_structural_context":  [
-                                                                      {
-                                                                          "dominant_lithology_context":  [
-                                                                                                             "Северната част на областта включва льосови, льосовидни, алувиални и по-стари седиментни образувания.",
-                                                                                                             "Южната предпланинска и планинска част включва магмени, метаморфни и седиментни скални комплекси.",
-                                                                                                             "Точната геоложка последователност се определя според конкретната зона, разрезите и надеждните сондажни данни."
-                                                                                                         ],
-                                                                          "regional_units":  [
-
-                                                                                             ],
-                                                                          "source_id":  "MON-RESEARCH-GEOLOGICAL-SHEETS"
-                                                                      }
-                                                                  ],
-                                  "documented_reference_intervals":  [
-
-                                                                     ],
-                                  "source_ids":  [
-                                                     "K-34-011-LOM",
-                                                     "K-34-023-MONTANA",
-                                                     "K-34-035-BERKOVITSA",
-                                                     "MON-BER-BARZIA-1",
-                                                     "MON-BER-SLATINA-3HG",
-                                                     "MON-LOM-AIKON-C1",
-                                                     "MON-LOM-AIKON-C2"
-                                                 ],
-                                  "regional_evidence_notes":  [
-
-                                                              ]
-                              }
-              },
-    "research_sources":  [
-                             "_research/montana/administrative/72BL_montana_BG312_boundary_candidate.geojson",
-                             "_research/montana/administrative/72BM_montana_regional_model_DRAFT.json",
-                             "_research/montana/lithology/72BY_west_montana_unicode_recovered_evidence.json",
-                             "_research/montana/lithology/72BD_verified_borehole_depth_anchors.json"
-                         ],
-    "limitations":  [
-                        "The administrative polygon is not a geological contact.",
-                        "Regional formations are not assigned to specific points.",
-                        "Borehole intervals remain confined to their documented locations.",
-                        "Formation thickness is not local depth below ground.",
-                        "Existing national depth inference remains unchanged."
-                    ]
+  "schema_version": "1.0",
+  "model_id": "MON-REGIONAL-72CJ",
+  "oblast": "Монтана",
+  "status": "REGIONAL_CONTEXT_WITH_SPATIAL_VERIFICATION_PENDING",
+  "production_enabled": true,
+  "zones": {
+    "MON-Z01": {
+      "regional_structural_context": [
+        {
+          "dominant_lithology_context": [
+            "Северната част на областта включва льосови, льосовидни, алувиални и по-стари седиментни образувания.",
+            "Южната предпланинска и планинска част включва магмени, метаморфни и седиментни скални комплекси.",
+            "Точната геоложка последователност се определя според конкретната зона, разрезите и надеждните сондажни данни."
+          ],
+          "regional_units": [],
+          "source_id": "MON-RESEARCH-GEOLOGICAL-SHEETS"
+        }
+      ],
+      "documented_reference_intervals": [],
+      "source_ids": [
+        "K-34-011-LOM",
+        "K-34-023-MONTANA",
+        "K-34-035-BERKOVITSA",
+        "MON-BER-BARZIA-1",
+        "MON-BER-SLATINA-3HG",
+        "MON-LOM-AIKON-C1",
+        "MON-LOM-AIKON-C2"
+      ],
+      "regional_evidence_notes": [
+        {
+          "title": "Проверени седиментни геоложки единици",
+          "informationType": "Регионални геоложки доказателства",
+          "paragraphs": [
+            "В геоложките проучвания за района на Монтана са описани различни по възраст и състав седиментни образувания. Сред тях се срещат глини, пясъци, пясъчници, чакълести материали и варовици. Разпределението им не е еднакво навсякъде, тъй като геоложкият строеж е формиран при различни условия на натрупване на скалните материали.",
+            "В по-старите седиментни комплекси са документирани редувания на глини и пясъци, пясъчникови и мергелни прослойки, както и отделни конгломератни и варовикови образувания. Това означава, че в различните части на проучения район може да се преминава от по-рохкави наслаги към по-плътни и твърди скали."
+          ],
+          "source_ids": [
+            "K-34-023-MONTANA"
+          ]
+        },
+        {
+          "title": "Повърхностни и кватернерни наслаги",
+          "informationType": "Регионални геоложки доказателства",
+          "paragraphs": [
+            "В речните долини и терасните терени геоложките материали могат да включват чакъли, пясъци и глини, натрупвани при развитието на речната мрежа. В други части на картографирания район са описани льосови и льосовидни глинести наслаги. Тези образувания се различават по зърнометричен състав, плътност и поведение при сондиране.",
+            "Пясъчните и чакълестите наслаги обикновено са по-пропускливи, докато глините могат да ограничават движението на водата. Самото наличие на такъв материал обаче не доказва водоносен пласт или определен дебит на избраното място."
+          ],
+          "source_ids": [
+            "K-34-023-MONTANA"
+          ]
+        },
+        {
+          "title": "Други проверени скални материали",
+          "informationType": "Регионални геоложки доказателства",
+          "paragraphs": [
+            "В геоложките сведения са установени и варовикови и мергелни комплекси. Варовиците могат да бъдат плътни или напукани, а мергелите съдържат различни количества карбонатен и глинест материал. Тези особености имат значение за начина на пробиване, устойчивостта на стените на сондажа и възможното движение на подземните води по пукнатините.",
+            "Практическо значение за сондирането: В по-рохкавите наслаги може да е необходимо укрепване на сондажа, а при твърдите скали условията зависят от тяхната здравина, напуканост и изветряне. Описаните материали са установени в регионалните проучвания, но точната им последователност и дълбочина под избрания имот не могат да се определят само от геоложката легенда."
+          ],
+          "source_ids": [
+            "K-34-023-MONTANA"
+          ]
+        }
+      ]
+    }
+  },
+  "research_sources": [
+    "_research/montana/administrative/72BL_montana_BG312_boundary_candidate.geojson",
+    "_research/montana/administrative/72BM_montana_regional_model_DRAFT.json",
+    "_research/montana/lithology/72BY_west_montana_unicode_recovered_evidence.json",
+    "_research/montana/lithology/72BD_verified_borehole_depth_anchors.json",
+    "_research/montana/surface_geology/72AA_legend_verified_lithology.json"
+  ],
+  "limitations": [
+    "The administrative polygon is not a geological contact.",
+    "Regional formations are not assigned to specific points.",
+    "Borehole intervals remain confined to their documented locations.",
+    "Formation thickness is not local depth below ground.",
+    "Existing national depth inference remains unchanged."
+  ]
 }

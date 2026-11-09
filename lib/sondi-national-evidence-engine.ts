@@ -1,6 +1,7 @@
 import { resolveNationalResearchEvidenceScope } from "./sondi-national-research-scope";
 import { getNationalBoreholeIndex } from "./sondi-national-borehole-index";
 import "server-only";
+import { resolveNationalResearchIntegration } from "./sondi-national-research-integration";
 
 import {
   getNationalDynamicIntervals,
@@ -13,6 +14,7 @@ import {
 } from "./sondi-national-contact-spatial";
 
 import { getGeologyAtLocation } from "./geology-location";
+import { resolveNationalSpatialResearch } from "./sondi-national-spatial-research";
 import { getFaultSpatialProfile } from "./fault-spatial-profile";
 
 /**
@@ -41,6 +43,8 @@ export function resolveNationalEvidence(
       references: [],
       documented_contacts: [],
       spatial_contact_research: [],
+      spatial_research: resolveNationalSpatialResearch(latitude, longitude),
+      research_catalog_context: resolveNationalResearchIntegration(latitude, longitude),
       spatial_prediction_approved: false as const
     };
   }
@@ -80,7 +84,9 @@ export function resolveNationalEvidence(
     references,
     documented_contacts: documentedContacts,
     spatial_contact_research: spatialContacts,
-    spatial_prediction_approved: false as const,
+    spatial_research: resolveNationalSpatialResearch(latitude, longitude),
+      research_catalog_context: resolveNationalResearchIntegration(latitude, longitude),
+      spatial_prediction_approved: false as const,
     research_references:
       resolveNationalResearchEvidenceScope(
         latitude, longitude

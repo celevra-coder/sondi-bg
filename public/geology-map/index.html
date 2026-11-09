@@ -1228,6 +1228,10 @@ const rightLayerControl = L.control.layers(
     position: 'bottomright'
   }
 ).addTo(map);
+// SONDI_MONTANA_GEOREF_OVERLAY_83LD
+const montanaGeorefLayer = L.imageOverlay('/geology/montana/K-34-023-georef.jpg', [[43.3333333333,23],[43.6666666667,23.5]], {opacity:0.55,interactive:false});
+rightLayerControl.addOverlay(montanaGeorefLayer, 'Геоложка карта — Монтана (1:100 000)');
+
 
 
 let userLocationMarker = null;

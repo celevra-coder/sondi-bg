@@ -1,3 +1,10 @@
+import { resolveNationalApplicabilityVerdict } from "./sondi-national-geological-decision";
+import { assessNationalGeologicalDecision } from "./sondi-national-geological-decision";
+import { assessNationalSiteMaterialEvidence } from "./sondi-national-site-material-assessment";
+import { assessNationalSpatialCorrelation } from "./sondi-national-spatial-correlation";
+import { resolveNationalDistanceFreeV2 } from "./sondi-distance-free-v2";
+import { resolveNationalConditionalSpatial } from "./sondi-national-conditional-spatial";
+import { resolveNationalDistanceFreeConsensus } from "./sondi-distance-free-consensus";
 import { resolveNationalDocumentaryDecision, resolveNationalDocumentaryCompatibilityPolicy, applyNationalDocumentaryDecision, getNationalDocumentaryFallback } from "./sondi-national-evidence-engine";
 import { resolveNationalColocatedMaterial, resolveNationalNearbyCandidates } from "./sondi-national-evidence-engine";
 import { getNationalBoreholeResearchReferences } from "./sondi-national-borehole-index";
@@ -700,8 +707,8 @@ function resolveNationalDepthLithologyBase(
       latitude,
       longitude,
       depthM,
-      maxDistanceKm: 50,
-      maxBoreholes: 12,
+      maxDistanceKm: (process.env.SONDI_DISTANCE_FREE_CORRELATION_TEST === "1" || process.env.SONDI_DISTANCE_FREE_V2_TEST === "1") && process.env.NODE_ENV !== "production" ? null : 50,
+      maxBoreholes: process.env.SONDI_DISTANCE_FREE_V2_TEST === "1" && process.env.NODE_ENV !== "production" ? Number.MAX_SAFE_INTEGER : (process.env.SONDI_DISTANCE_FREE_CORRELATION_TEST === "1" && process.env.NODE_ENV !== "production" ? 80 : 12),
     });
 
     evidence.push(...nationalBoreholes.evidence);
@@ -766,8 +773,8 @@ function resolveNationalDepthLithologyBase(
     latitude,
     longitude,
     depthM,
-    maxDistanceKm: 50,
-    maxBoreholes: 8,
+    maxDistanceKm: (process.env.SONDI_DISTANCE_FREE_CORRELATION_TEST === "1" || process.env.SONDI_DISTANCE_FREE_V2_TEST === "1") && process.env.NODE_ENV !== "production" ? null : 50,
+    maxBoreholes: process.env.SONDI_DISTANCE_FREE_V2_TEST === "1" && process.env.NODE_ENV !== "production" ? Number.MAX_SAFE_INTEGER : (process.env.SONDI_DISTANCE_FREE_CORRELATION_TEST === "1" && process.env.NODE_ENV !== "production" ? 80 : 8),
   });
 
   const fallbackEvidence = nationalBoreholes.evidence;
@@ -1187,6 +1194,80 @@ export function resolveNationalDepthLithology(
   }
 
 
+  // SONDI_NATIONAL_CONDITIONAL_SPATIAL_V4 (local opt-in only).
+  // In contrast to earlier V2 this reads ALL eligible indexed boreholes,
+  // not the nearest 8/12 from the baseline evidence collector. Never claims
+  // exact contact depths or structural continuity from mapped fault absence.
+  if (
+    process.env.NODE_ENV !== "production" &&
+    process.env.SONDI_NATIONAL_CONDITIONAL_SPATIAL_TEST === "1" &&
+    !hasColocatedReference
+  ) {
+    const candidate = resolveNationalConditionalSpatial(
+      input.latitude, input.longitude, input.depthM
+    );
+    if (candidate.status === "CONDITIONAL_ANALOG" && candidate.material) {
+      return {
+        ...base,
+        status: "CONDITIONAL",
+        probable_lithology: candidate.material,
+        evidence_tier: "GEOLOGICAL_CORRELATION",
+        interpretation_scope: "SPATIAL_CORRELATION_CONDITIONAL",
+        confidence: "LOW",
+        alternative_lithologies: [],
+        source_ids: [...new Set([...base.source_ids, ...candidate.source_ids])],
+      };
+    }
+  }
+
+  // SONDI_DISTANCE_FREE_V2: local-only, no fixed radius or triangle.
+  // Two independent compatible boreholes are necessary but never sufficient
+  // without confirmed mapped-unit comparison and no mapped fault crossing.
+  if (
+    process.env.NODE_ENV !== "production" &&
+    process.env.SONDI_DISTANCE_FREE_V2_TEST === "1" &&
+    !hasColocatedReference
+  ) {
+    const candidate = resolveNationalDistanceFreeV2(base.evidence, input.depthM);
+    if (candidate.material) {
+      return {
+        ...base,
+        status: "CONDITIONAL",
+        evidence_tier: "GEOLOGICAL_CORRELATION",
+        probable_lithology: candidate.material,
+        alternative_lithologies: [],
+        confidence: "LOW",
+        interpretation_scope: "SPATIAL_CORRELATION_CONDITIONAL",
+        source_ids: [...new Set([...base.source_ids, ...candidate.source_ids])]
+      };
+    }
+  }
+
+  // SONDI_DISTANCE_FREE_CONSENSUS_TEST_V1
+  // Local-only evidence-led trial: no fixed kilometre threshold.
+  // Never promotes a single remote column to a depth prediction.
+  if (
+    process.env.NODE_ENV !== "production" &&
+    process.env.SONDI_DISTANCE_FREE_CORRELATION_TEST === "1" &&
+    !hasColocatedReference
+  ) {
+    const consensus = resolveNationalDistanceFreeConsensus(
+      base.evidence, input.latitude, input.longitude, input.depthM
+    );
+    if (consensus) {
+      return {
+        ...base,
+        status: "CONDITIONAL",
+        evidence_tier: "GEOLOGICAL_CORRELATION",
+        probable_lithology: consensus.material,
+        alternative_lithologies: [],
+        confidence: "LOW",
+        interpretation_scope: "SPATIAL_CORRELATION_CONDITIONAL",
+        source_ids: [...new Set([...base.source_ids, ...consensus.source_ids])]
+      };
+    }
+  }
+
   // SONDI_NATIONAL_NEARBY_EVIDENCE_77N
   // Same selection criteria at every GPS coordinate.
   // This does not establish stratigraphic continuity.
@@ -1358,3 +1439,73 @@ export function resolveNationalDepthResearchComparison(
     production_result_modified: false
   };
 }
+
+// SONDI_NATIONAL_SPATIAL_BRIDGE_V1_LOCAL
+// Explicit diagnostic entry point; never modifies the production depth decision.
+export type NationalSpatialBridgeComparison = {
+  national: NationalDepthResult;
+  spatial: ReturnType<typeof assessNationalSpatialCorrelation> | null;
+  spatial_assessment_scope: "RESEARCH_ONLY";
+  site_depth_intervals_promoted: false;
+  production_result_modified: false;
+};
+
+export function resolveNationalDepthSpatialComparison(
+  input: NationalDepthInput
+): NationalSpatialBridgeComparison {
+  const national = resolveNationalDepthLithology(input);
+  // Do not change the reference-only and Vratsa branches.
+  if (
+    national.engine === "VRATSA_COMPATIBLE" ||
+    national.status === "INVALID_INPUT" ||
+    national.status === "OUTSIDE_MODEL" ||
+    process.env.NODE_ENV === "production"
+  ) {
+    return {
+      national, spatial: null,
+      spatial_assessment_scope: "RESEARCH_ONLY",
+      site_depth_intervals_promoted: false,
+      production_result_modified: false,
+    };
+  }
+  return {
+    national,
+    spatial: assessNationalSpatialCorrelation(input.latitude, input.longitude),
+    spatial_assessment_scope: "RESEARCH_ONLY",
+    site_depth_intervals_promoted: false,
+    production_result_modified: false,
+  };
+}
+// SONDI_NATIONAL_SPATIAL_BRIDGE_V2_LOCAL - strictly read-only diagnostic comparison.
+export function resolveNationalDepthSpatialMaterialComparison(input: NationalDepthInput) {
+  const bridge = resolveNationalDepthSpatialComparison(input);
+  const material = bridge.spatial && process.env.NODE_ENV !== "production"
+    ? assessNationalSiteMaterialEvidence(input.latitude,input.longitude) : null;
+  return {
+    ...bridge,
+    material,
+    site_material_intervals_promoted:false as const,
+    site_depth_intervals_promoted:false as const,
+    production_result_modified:false as const,
+  };
+}
+
+// SONDI_NATIONAL_GEOLOGICAL_DECISION_CORE_V1 — independent national evidence decision.
+// Default production behavior remains identical to resolveNationalDepthLithology().
+export function resolveNationalDepthGeologicalDecision(input: NationalDepthInput) {
+  const national = resolveNationalDepthLithology(input);
+  const policy = process.env.NODE_ENV !== "production"
+    ? assessNationalGeologicalDecision(input.latitude, input.longitude, national)
+    : null;
+  return {
+    national,
+    geological_decision: policy,
+    geological_applicability: resolveNationalApplicabilityVerdict(national, policy),
+    national_result_modified: false as const,
+    reference_depths_promoted: false as const,
+    new_site_intervals_promoted: false as const,
+  };
+}
+
+// SONDI_NATIONAL_INTERIM_2KM_ENTRY - explicit local policy; normal production resolver unchanged.
+export { resolveNationalInterimPolicy } from './sondi-national-interim-policy';

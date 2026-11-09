@@ -1,4 +1,5 @@
 import { getNationalGwbGeologyContext } from "./sondi-national-gwb-geology-context";
+import { getNationalSpatialResearchDescriptions } from "./sondi-national-spatial-research";
 import { getGeologyAtLocation } from "./geology-location";
 import { getNationalBoreholeIndex } from "./sondi-national-borehole-index";
 import "server-only";
@@ -1224,6 +1225,8 @@ function blgLocalOverview(
 // SONDI_AUTOMATIC_GEOLOGICAL_OVERVIEW_65J
 // Shared, evidence-based geological overview.
 // Surface map units are not interpreted as measured depth logs.
+// SONDI_MON_PROVISIONAL_SPATIAL_83LP
+function getNationalProvisionalSurfaceText(lat:number,lon:number):string|null { try { const file=path.join(process.cwd(),"data","soil-lithology","runtime","regions","montana_provisional_surface_units.geojson"); const data=JSON.parse(fs.readFileSync(file,"utf8")) as {features?:Array<{geometry:Geometry;properties:{geological_unit_bg?:string;materials_bg?:string[];evidence_status?:string;production_approved?:boolean;local_depth_prediction_authorized?:boolean}}>}; for(const feature of data.features??[]){const p=feature.properties;if(!p||p.evidence_status!=="PROVISIONAL_LEGEND_MATCH"||p.production_approved!==false||p.local_depth_prediction_authorized!==false||!p.geological_unit_bg||!Array.isArray(p.materials_bg))continue;if(containsPoint(feature.geometry,lat,lon)){return "Според геореферираната геоложка карта K-34-023 в района на избраната точка предварително е разпозната "+p.geological_unit_bg+". Описаните в картната легенда материали включват: "+p.materials_bg.join(", ")+". Класификацията и границите са ориентировъчни за мащаб 1:100 000 и не доказват последователността или дълбочината на пластовете под имота.";}}}catch{return null;}return null;}
 function buildAutomaticGeologicalOverview(
   latitude: number,
   longitude: number,
@@ -1781,7 +1784,7 @@ export function isSondiLithologyLocationRegistered(
   return false;
 }
 
-export function getSondiRegionalReport(
+function getSondiRegionalReportBase(
   latitude: number,
   longitude: number
 ): SondiRegionalReportCard[] {
@@ -1894,11 +1897,43 @@ export function getSondiRegionalReport(
     // Use the existing polygon-driven interpreter for Montana.
     // Do not expose the oblast-wide research prose as a local result.
     if (entry.id === "MON") {
-      return [buildAutomaticGeologicalOverview(
+      const automatic = buildAutomaticGeologicalOverview(
         latitude, longitude,
         "Регионален геоложки анализ",
         "MON-location-driven-overview"
-      )];
+      );
+
+      // SONDI_83VO_DYNAMIC_MONTANA
+      // Compose from coordinate-scoped evidence, not editorial
+      // regional_evidence_notes. Research remains provisional.
+      const spatial = getNationalSpatialResearchDescriptions(
+        latitude, longitude
+      );
+
+      return [{
+        ...automatic,
+        // Spatial evidence is presented first when available.
+        // General fallback language must not bury concrete context.
+        paragraphs: spatial.paragraphs.length > 0
+          ? [
+              ...spatial.paragraphs,
+              ...automatic.paragraphs.filter(p =>
+                !p.startsWith(
+                  "За избраното местоположение наличните регионални"
+                ) &&
+                !p.startsWith(
+                  "Наличните сведения не съдържат достатъчно"
+                )
+              )
+            ]
+          : automatic.paragraphs,
+        sources: [
+          ...new Set([
+            ...automatic.sources,
+            ...spatial.sources
+          ])
+        ]
+      }];
     }
 
     if (entry.id.startsWith("PZ-")) {
@@ -2059,6 +2094,17 @@ export function getSondiRegionalReport(
   }
 
   return [];
+}
+
+/** Shared coordinate-driven provisional surface evidence; does not change depth models. */
+export function getSondiRegionalReport(latitude: number, longitude: number): SondiRegionalReportCard[] {
+  const cards = getSondiRegionalReportBase(latitude, longitude);
+  if (!Number.isFinite(latitude) || !Number.isFinite(longitude) || cards.length === 0) return cards;
+  const surfaceText = getNationalProvisionalSurfaceText(latitude, longitude);
+  if (!surfaceText) return cards;
+  return cards.map((card, index) => index === 0
+    ? { ...card, paragraphs: [surfaceText, ...card.paragraphs] }
+    : card);
 }
 
 /**
