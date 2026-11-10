@@ -1425,7 +1425,9 @@ const material = point.material
   // A regional fallback is needed only when no supported
   // depth-specific prediction is available.
   // The separate regional geology section remains intact.
-  const displayRows = [
+  const displayRows = lunaAnalysis
+    ? lunaDepthRows
+    : [
     ...automaticIntervalRows,
     ...displayedConditionalRows,
     ...uniqueSpatialRows,
@@ -1953,7 +1955,7 @@ const material = point.material
                         color: "#4f666d",
                       }}
                     >
-                      {sondiMaterialExplanation(String(row.material))}
+                      {lunaAnalysis ? row.description : sondiMaterialExplanation(String(row.material))}
                     </div>
                   )}
 
@@ -1977,8 +1979,8 @@ const material = point.material
                       color: "#71858b",
                     }}
                   >
-                    {sondiMaterialConfidence(row.confidence)}
-                    {row.analogueCount > 1
+                    {!lunaAnalysis ? sondiMaterialConfidence(row.confidence) : null}
+                    {!lunaAnalysis && row.analogueCount > 1
                       ? ` · ${row.analogueCount} близки аналога`
                       : ""}
                   </div>
