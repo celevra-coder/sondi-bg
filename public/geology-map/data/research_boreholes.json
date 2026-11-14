@@ -7630,6 +7630,779 @@
       ],
       "structural_intervals": [],
       "hydraulic_intervals": []
+    },
+    {
+      "borehole_id": "LOVECH-016",
+      "name_bg": "Шипково — сондаж Л-2",
+      "oblast": "Ловеч",
+      "region_code": "Lovech",
+      "status": "documented_lithology_published_coordinate",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.87908333,
+        "longitude": 24.53786111,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "published_borehole_or_facility_coordinate",
+        "origin": "LOVECH_STEP4_BOREHOLE_COORDINATES_RESEARCH_V3.json"
+      },
+      "total_depth_m": 433.5,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 133.6,
+          "expected_material_bg": "Титонски флиш: варовити пясъчници, глинести варовици, мергели, алевролити и шистови прослойки",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-016"
+          ],
+          "original_interval": {
+            "from_m": 0,
+            "to_m": 133.6,
+            "material": "Титонски флиш: варовити пясъчници, глинести варовици, мергели, алевролити и шистови прослойки",
+            "age": "Горна юра - титон"
+          },
+          "provenance_intake_id": "LOVECH-S2-016"
+        },
+        {
+          "depth_from_m": 133.6,
+          "depth_to_m": 433.5,
+          "expected_material_bg": "Тъмносиви до черни плътни и напукани доломити",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-016"
+          ],
+          "original_interval": {
+            "from_m": 133.6,
+            "to_m": 433.5,
+            "material": "Тъмносиви до черни плътни и напукани доломити",
+            "age": "Среден триас"
+          },
+          "provenance_intake_id": "LOVECH-S2-016"
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "source_ids": [
+        "LOVECH-S2-016"
+      ],
+      "original_locality": "Западния край на с. Шипково, община Троян, област Ловеч",
+      "geographic_application": "DOCUMENTED_BOREHOLE_ONLY",
+      "lateral_transfer_automatically_authorized": false,
+      "mineral_water_registry_modified": false
+    },
+    {
+      "borehole_id": "LOVECH-017",
+      "name_bg": "Шипково — сондаж Л-1",
+      "oblast": "Ловеч",
+      "region_code": "Lovech",
+      "status": "documented_lithology_published_coordinate",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.87908333,
+        "longitude": 24.53788889,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "published_borehole_or_facility_coordinate",
+        "origin": "LOVECH_STEP4_BOREHOLE_COORDINATES_RESEARCH_V3.json"
+      },
+      "total_depth_m": 612.5,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 124,
+          "expected_material_bg": "Титонски флиш: варовити пясъчници, глинести варовици, мергели, алевролити и шистови прослойки",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-017"
+          ],
+          "original_interval": {
+            "from_m": 0,
+            "to_m": 124,
+            "material": "Титонски флиш: варовити пясъчници, глинести варовици, мергели, алевролити и шистови прослойки"
+          },
+          "provenance_intake_id": "LOVECH-S2-017"
+        },
+        {
+          "depth_from_m": 124,
+          "depth_to_m": 399.9,
+          "expected_material_bg": "Тъмносиви до сивочерни финозърнести доломити",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-017"
+          ],
+          "original_interval": {
+            "from_m": 124,
+            "to_m": 399.9,
+            "material": "Тъмносиви до сивочерни финозърнести доломити"
+          },
+          "provenance_intake_id": "LOVECH-S2-017"
+        },
+        {
+          "depth_from_m": 399.9,
+          "depth_to_m": 593.2,
+          "expected_material_bg": "Тъмносиви до сивочерни доломитни варовици",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-017"
+          ],
+          "original_interval": {
+            "from_m": 399.9,
+            "to_m": 593.2,
+            "material": "Тъмносиви до сивочерни доломитни варовици"
+          },
+          "provenance_intake_id": "LOVECH-S2-017"
+        },
+        {
+          "depth_from_m": 593.2,
+          "depth_to_m": 612.5,
+          "expected_material_bg": "Тъмносиви финозърнести варовици",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-017"
+          ],
+          "original_interval": {
+            "from_m": 593.2,
+            "to_m": 612.5,
+            "material": "Тъмносиви финозърнести варовици"
+          },
+          "provenance_intake_id": "LOVECH-S2-017"
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "source_ids": [
+        "LOVECH-S2-017"
+      ],
+      "original_locality": "Находище Шипково, община Троян, област Ловеч",
+      "geographic_application": "DOCUMENTED_BOREHOLE_ONLY",
+      "lateral_transfer_automatically_authorized": false,
+      "mineral_water_registry_modified": false
+    },
+    {
+      "borehole_id": "LOVECH-018",
+      "name_bg": "Шипково — сондаж Л-36",
+      "oblast": "Ловеч",
+      "region_code": "Lovech",
+      "status": "documented_lithology_published_coordinate",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.87747222,
+        "longitude": 24.54941667,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "published_borehole_or_facility_coordinate",
+        "origin": "LOVECH_STEP4_BOREHOLE_COORDINATES_RESEARCH_V3.json"
+      },
+      "total_depth_m": 1031,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 552.7,
+          "expected_material_bg": "Флиш - непрекъснато редуване на пясъчници, варовици, мергели, аргилити и алевролити",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-018"
+          ],
+          "original_interval": {
+            "from_m": 0,
+            "to_m": 552.7,
+            "material": "Флиш - непрекъснато редуване на пясъчници, варовици, мергели, аргилити и алевролити"
+          },
+          "provenance_intake_id": "LOVECH-S2-018"
+        },
+        {
+          "depth_from_m": 552.7,
+          "depth_to_m": 1031,
+          "expected_material_bg": "Глинести и варовити доломити с прослойки от оолитни варовици; към края доломитна брекча",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-018"
+          ],
+          "original_interval": {
+            "from_m": 552.7,
+            "to_m": 1031,
+            "material": "Глинести и варовити доломити с прослойки от оолитни варовици; към края доломитна брекча"
+          },
+          "provenance_intake_id": "LOVECH-S2-018"
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "source_ids": [
+        "LOVECH-S2-018"
+      ],
+      "original_locality": "Находище Шипково, с. Шипково, община Троян, област Ловеч",
+      "geographic_application": "DOCUMENTED_BOREHOLE_ONLY",
+      "lateral_transfer_automatically_authorized": false,
+      "mineral_water_registry_modified": false
+    },
+    {
+      "borehole_id": "LOVECH-019",
+      "name_bg": "Шипково — сондаж Л-28",
+      "oblast": "Ловеч",
+      "region_code": "Lovech",
+      "status": "documented_lithology_published_coordinate",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.88,
+        "longitude": 24.53544444,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "published_borehole_or_facility_coordinate",
+        "origin": "LOVECH_STEP4_BOREHOLE_COORDINATES_RESEARCH_V3.json"
+      },
+      "total_depth_m": 230,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 7.5,
+          "expected_material_bg": "Алувиално-делувиални наслаги, валуни и чакъли",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-019"
+          ],
+          "original_interval": {
+            "from_m": 0,
+            "to_m": 7.5,
+            "material": "Алувиално-делувиални наслаги, валуни и чакъли",
+            "age_original": "Кватернер"
+          },
+          "provenance_intake_id": "LOVECH-S2-019"
+        },
+        {
+          "depth_from_m": 7.5,
+          "depth_to_m": 47.4,
+          "expected_material_bg": "Варовици и глинести варовици",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-019"
+          ],
+          "original_interval": {
+            "from_m": 7.5,
+            "to_m": 47.4,
+            "material": "Варовици и глинести варовици",
+            "age_original": "Горна юра"
+          },
+          "provenance_intake_id": "LOVECH-S2-019"
+        },
+        {
+          "depth_from_m": 47.4,
+          "depth_to_m": 52.8,
+          "expected_material_bg": "Плътни глинести мергели",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-019"
+          ],
+          "original_interval": {
+            "from_m": 47.4,
+            "to_m": 52.8,
+            "material": "Плътни глинести мергели",
+            "age_original": "Средна юра, както е обозначена в документа"
+          },
+          "provenance_intake_id": "LOVECH-S2-019"
+        },
+        {
+          "depth_from_m": 52.8,
+          "depth_to_m": 82.2,
+          "expected_material_bg": "Песъчливи варовици",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-019"
+          ],
+          "original_interval": {
+            "from_m": 52.8,
+            "to_m": 82.2,
+            "material": "Песъчливи варовици",
+            "age_original": "Средна юра, както е обозначена в документа"
+          },
+          "provenance_intake_id": "LOVECH-S2-019"
+        },
+        {
+          "depth_from_m": 82.2,
+          "depth_to_m": 230,
+          "expected_material_bg": "Варовици, редуващи се с варовити доломити и пясъчни прослойки",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-019"
+          ],
+          "original_interval": {
+            "from_m": 82.2,
+            "to_m": 230,
+            "material": "Варовици, редуващи се с варовити доломити и пясъчни прослойки",
+            "age_original": "Среден-горен триас"
+          },
+          "provenance_intake_id": "LOVECH-S2-019"
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "source_ids": [
+        "LOVECH-S2-019"
+      ],
+      "original_locality": "Ляв бряг на р. Ръждавец, между минералния извор и банята, с. Шипково",
+      "geographic_application": "DOCUMENTED_BOREHOLE_ONLY",
+      "lateral_transfer_automatically_authorized": false,
+      "mineral_water_registry_modified": false
+    },
+    {
+      "borehole_id": "LOVECH-020",
+      "name_bg": "Крушуна — сондаж Р-1хг",
+      "oblast": "Ловеч",
+      "region_code": "Lovech",
+      "status": "documented_lithology_published_coordinate",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 43.24932361,
+        "longitude": 25.03893639,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "published_borehole_or_facility_coordinate",
+        "origin": "LOVECH_STEP4_BOREHOLE_COORDINATES_RESEARCH_V3.json"
+      },
+      "total_depth_m": 1811,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 10,
+          "expected_material_bg": "Кватернер: почвен слой и чакъли",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 0,
+            "to_m": 10,
+            "material": "Кватернер: почвен слой и чакъли"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        },
+        {
+          "depth_from_m": 10,
+          "depth_to_m": 376,
+          "expected_material_bg": "Апт: мергели пепелносиви до тъмносиви, глинести, с алевролити и пясъчници",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 10,
+            "to_m": 376,
+            "material": "Апт: мергели пепелносиви до тъмносиви, глинести, с алевролити и пясъчници"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        },
+        {
+          "depth_from_m": 376,
+          "depth_to_m": 441,
+          "expected_material_bg": "Апт: варовици кремави до сивокремави, с песъчливи прослойки и мергели",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 376,
+            "to_m": 441,
+            "material": "Апт: варовици кремави до сивокремави, с песъчливи прослойки и мергели"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        },
+        {
+          "depth_from_m": 441,
+          "depth_to_m": 474,
+          "expected_material_bg": "Апт: сиви глинести мергели, с алевролитни пластини",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 441,
+            "to_m": 474,
+            "material": "Апт: сиви глинести мергели, с алевролитни пластини"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        },
+        {
+          "depth_from_m": 479,
+          "depth_to_m": 488,
+          "expected_material_bg": "Апт: варовици с алевро-песъчливи прослойки",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 479,
+            "to_m": 488,
+            "material": "Апт: варовици с алевро-песъчливи прослойки"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        },
+        {
+          "depth_from_m": 498,
+          "depth_to_m": 526,
+          "expected_material_bg": "Апт: сиви полимиктови пясъчници с мергелни и варовити прослойки",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 498,
+            "to_m": 526,
+            "material": "Апт: сиви полимиктови пясъчници с мергелни и варовити прослойки"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        },
+        {
+          "depth_from_m": 526,
+          "depth_to_m": 872,
+          "expected_material_bg": "Барем: мергели, често алевролитни и песъчливи, с прослойки от пясъчници",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 526,
+            "to_m": 872,
+            "material": "Барем: мергели, често алевролитни и песъчливи, с прослойки от пясъчници"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        },
+        {
+          "depth_from_m": 872,
+          "depth_to_m": 964,
+          "expected_material_bg": "Хотерив: редуване на мергели, алевролити и пясъчници",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 872,
+            "to_m": 964,
+            "material": "Хотерив: редуване на мергели, алевролити и пясъчници"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        },
+        {
+          "depth_from_m": 964,
+          "depth_to_m": 1294,
+          "expected_material_bg": "Хотерив: сиви мергели, често алевролитни, песъчливи или варовити",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 964,
+            "to_m": 1294,
+            "material": "Хотерив: сиви мергели, често алевролитни, песъчливи или варовити"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        },
+        {
+          "depth_from_m": 1294,
+          "depth_to_m": 1309,
+          "expected_material_bg": "Хотерив: варовити мергели с пелитова структура",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 1294,
+            "to_m": 1309,
+            "material": "Хотерив: варовити мергели с пелитова структура"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        },
+        {
+          "depth_from_m": 1309,
+          "depth_to_m": 1321,
+          "expected_material_bg": "Валанжин: кремави варовици, плътни, слабо напукани",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 1309,
+            "to_m": 1321,
+            "material": "Валанжин: кремави варовици, плътни, слабо напукани"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        },
+        {
+          "depth_from_m": 1321,
+          "depth_to_m": 1335,
+          "expected_material_bg": "Валанжин: светлосивокремави микрозърнести варовици",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 1321,
+            "to_m": 1335,
+            "material": "Валанжин: светлосивокремави микрозърнести варовици"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        },
+        {
+          "depth_from_m": 1335,
+          "depth_to_m": 1811,
+          "expected_material_bg": "Валанжин: кремави средно до дребнокристалинни доломити",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-020"
+          ],
+          "original_interval": {
+            "from_m": 1335,
+            "to_m": 1811,
+            "material": "Валанжин: кремави средно до дребнокристалинни доломити"
+          },
+          "provenance_intake_id": "LOVECH-S2-020"
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [
+        {
+          "from_m": 474,
+          "to_m": 479,
+          "reason": "NOT_DESCRIBED_IN_SOURCE"
+        },
+        {
+          "from_m": 488,
+          "to_m": 498,
+          "reason": "NOT_DESCRIBED_IN_SOURCE"
+        }
+      ],
+      "source_ids": [
+        "LOVECH-S2-020"
+      ],
+      "original_locality": "Находище Крушуна, община Летница, област Ловеч",
+      "geographic_application": "DOCUMENTED_BOREHOLE_ONLY",
+      "lateral_transfer_automatically_authorized": false,
+      "mineral_water_registry_modified": false
+    },
+    {
+      "borehole_id": "LOVECH-021",
+      "name_bg": "Чифлик — сондаж Р-1хг",
+      "oblast": "Ловеч",
+      "region_code": "Lovech",
+      "status": "documented_lithology_published_coordinate",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 42.82655556,
+        "longitude": 24.55036111,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "published_borehole_or_facility_coordinate",
+        "origin": "LOVECH_STEP4_BOREHOLE_COORDINATES_RESEARCH_V3.json"
+      },
+      "total_depth_m": 1574,
+      "water_type": "mineral_thermal",
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 5,
+          "expected_material_bg": "Почвен слой, изветряла основна скала, блокажи, пясъчници и кварцити",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-021"
+          ],
+          "original_interval": {
+            "from_m": 0,
+            "to_m": 5,
+            "material": "Почвен слой, изветряла основна скала, блокажи, пясъчници и кварцити",
+            "age_original": "Кватернер"
+          },
+          "provenance_intake_id": "LOVECH-S2-021"
+        },
+        {
+          "depth_from_m": 5,
+          "depth_to_m": 993,
+          "expected_material_bg": "Редуване на пясъчници, алевролити, мергели, алевритни варовици и варовици",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-021"
+          ],
+          "original_interval": {
+            "from_m": 5,
+            "to_m": 993,
+            "material": "Редуване на пясъчници, алевролити, мергели, алевритни варовици и варовици",
+            "age_original": "Горна юра, титон"
+          },
+          "provenance_intake_id": "LOVECH-S2-021"
+        },
+        {
+          "depth_from_m": 993,
+          "depth_to_m": 1047,
+          "expected_material_bg": "Варовици, силно напукани и здрави, в различни части на интервала",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-021"
+          ],
+          "original_interval": {
+            "from_m": 993,
+            "to_m": 1047,
+            "material": "Варовици, силно напукани и здрави, в различни части на интервала",
+            "age_original": "Горна юра, оксфорд и кимеридж"
+          },
+          "provenance_intake_id": "LOVECH-S2-021"
+        },
+        {
+          "depth_from_m": 1047,
+          "depth_to_m": 1088,
+          "expected_material_bg": "Варовици, сиви до тъмносиви, плътни и напукани",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-021"
+          ],
+          "original_interval": {
+            "from_m": 1047,
+            "to_m": 1088,
+            "material": "Варовици, сиви до тъмносиви, плътни и напукани",
+            "age_original": "Горна юра, калов"
+          },
+          "provenance_intake_id": "LOVECH-S2-021"
+        },
+        {
+          "depth_from_m": 1088,
+          "depth_to_m": 1338,
+          "expected_material_bg": "Аргилити, кварцови пясъчници и алевролити",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-021"
+          ],
+          "original_interval": {
+            "from_m": 1088,
+            "to_m": 1338,
+            "material": "Аргилити, кварцови пясъчници и алевролити",
+            "age_original": "Средна юра"
+          },
+          "provenance_intake_id": "LOVECH-S2-021"
+        },
+        {
+          "depth_from_m": 1338,
+          "depth_to_m": 1464,
+          "expected_material_bg": "Аргилитно-алевритно-пясъчникова задруга с доломитни варовици",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-021"
+          ],
+          "original_interval": {
+            "from_m": 1338,
+            "to_m": 1464,
+            "material": "Аргилитно-алевритно-пясъчникова задруга с доломитни варовици",
+            "age_original": "Долна юра"
+          },
+          "provenance_intake_id": "LOVECH-S2-021"
+        },
+        {
+          "depth_from_m": 1464,
+          "depth_to_m": 1508,
+          "expected_material_bg": "Тъмносиви глинести доломити с аргилитни и пясъчникови прослойки",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-021"
+          ],
+          "original_interval": {
+            "from_m": 1464,
+            "to_m": 1508,
+            "material": "Тъмносиви глинести доломити с аргилитни и пясъчникови прослойки",
+            "age_original": "Долен триас, Рьот"
+          },
+          "provenance_intake_id": "LOVECH-S2-021"
+        },
+        {
+          "depth_from_m": 1508,
+          "depth_to_m": 1568,
+          "expected_material_bg": "Керемидено-червени кварцови и кварцово-слюдести пясъчници",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-021"
+          ],
+          "original_interval": {
+            "from_m": 1508,
+            "to_m": 1568,
+            "material": "Керемидено-червени кварцови и кварцово-слюдести пясъчници",
+            "age_original": "Долен триас, Бунтзандщайн"
+          },
+          "provenance_intake_id": "LOVECH-S2-021"
+        },
+        {
+          "depth_from_m": 1568,
+          "depth_to_m": 1572,
+          "expected_material_bg": "Сиви туфити и късове от изменени вулканити и метаморфити",
+          "confidence": "high",
+          "evidence_level": "documented_borehole_log",
+          "source_ids": [
+            "LOVECH-S2-021"
+          ],
+          "original_interval": {
+            "from_m": 1568,
+            "to_m": 1572,
+            "material": "Сиви туфити и късове от изменени вулканити и метаморфити",
+            "age_original": "Долен триас според документа"
+          },
+          "provenance_intake_id": "LOVECH-S2-021"
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [
+        {
+          "from_m": 1572,
+          "to_m": 1574,
+          "reason": "DRILLED_BUT_LITHOLOGY_NOT_DESCRIBED"
+        }
+      ],
+      "source_ids": [
+        "LOVECH-S2-021"
+      ],
+      "original_locality": "2,5 км югозападно от центъра на с. Чифлик, десен бряг на р. Бели Осъм, на около 50 м от руслото",
+      "geographic_application": "DOCUMENTED_BOREHOLE_ONLY",
+      "lateral_transfer_automatically_authorized": false,
+      "mineral_water_registry_modified": false
     }
   ]
 }
