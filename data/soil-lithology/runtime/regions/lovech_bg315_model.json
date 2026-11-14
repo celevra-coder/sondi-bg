@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "model_id": "LOVECH_BG315_NATIONAL_ACCESS",
+  "oblast": "Ловеч",
+  "status": "LOCAL_QA_ONLY",
+  "purpose": "Province-wide geographical activation of existing national evidence and Luna analysis",
+  "boundary_role": "ADMINISTRATIVE_SERVICE_AREA_NOT_GEOLOGICAL_CONTACT",
+  "interpretation_contract": {
+    "use_existing_national_engine": true,
+    "luna_remains_independent": true,
+    "prewritten_regional_forecasts": false,
+    "fixed_depth_intervals": false,
+    "automatically_transfer_borehole_intervals": false,
+    "verified_geological_polygons_claimed": false
+  },
+  "zones": {
+    "LOV-BG315-Z01": {
+      "regional_structural_context": [],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [],
+      "documented_well_depths": [],
+      "regional_evidence_notes": [],
+      "wider_studies": [],
+      "source_ids": []
+    }
+  }
+}

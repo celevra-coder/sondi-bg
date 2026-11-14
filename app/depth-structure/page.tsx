@@ -2442,7 +2442,7 @@ const material = point.material
                   )
                 ),
               ];
-          if (clientParagraphs.length === 0) return null;
+          if (exactDocumentedIntervals.length > 0 || clientParagraphs.length === 0) return null;
 
           return (
             <section

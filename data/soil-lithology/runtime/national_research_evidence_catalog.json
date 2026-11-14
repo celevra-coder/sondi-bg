@@ -18954,6 +18954,2955 @@
         "integration_status": "RESEARCH_ONLY",
         "usable_for_shallow_prediction": false
       }
+    },
+    {
+      "intake_id": "LOVECH-S2-001",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-001",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/0",
+      "source_ids": [
+        "LOVECH-S2-001",
+        "https://www.lovech.bg/bg/novini/predstoyat-sondazhi-v-kvartalite-na-lovech"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-001",
+        "title": "Предстоят сондажи в кварталите на Ловеч",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Ловеч, Пресяка, Слатина",
+        "source_ids": [
+          "LOVECH-S2-001",
+          "https://www.lovech.bg/bg/novini/predstoyat-sondazhi-v-kvartalite-na-lovech"
+        ],
+        "document_type": "OFFICIAL_ENGINEERING_GEOLOGY_NOTICE",
+        "source_reference": "Община Ловеч, 13.10.2023",
+        "source_url": "https://www.lovech.bg/bg/novini/predstoyat-sondazhi-v-kvartalite-na-lovech",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Община Ловеч; описани проучвателни райони",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-001",
+          "title": "Предстоят сондажи в кварталите на Ловеч",
+          "author": "Община Ловеч",
+          "year": 2023,
+          "url": "https://www.lovech.bg/bg/novini/predstoyat-sondazhi-v-kvartalite-na-lovech",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_ENGINEERING_GEOLOGY_NOTICE",
+          "priority": "A3",
+          "location_original": "Ловеч, Пресяка, Слатина",
+          "scope_claim": "Община Ловеч; описани проучвателни райони",
+          "depth_evidence": "NOT_DOCUMENTED_IN_NOTICE",
+          "source_reference": "Община Ловеч, 13.10.2023",
+          "quality_flags": [
+            "BOREHOLE_LOGS_NOT_ATTACHED",
+            "EXACT_COORDINATES_NOT_VERIFIED"
+          ],
+          "status": "FOUND",
+          "next_action": "FIND_ORIGINAL_ENGINEERING_REPORTS"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-002",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-002",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/1",
+      "source_ids": [
+        "LOVECH-S2-002",
+        "https://geologica-balcanica.eu/journal/26/3/pp.-3-19"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-002",
+        "title": "The Lower Jurassic in the Troyan Region and the south-eastern part of the Teteven Region",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Troyan and south-eastern Teteven Region",
+        "source_ids": [
+          "LOVECH-S2-002",
+          "https://geologica-balcanica.eu/journal/26/3/pp.-3-19"
+        ],
+        "document_type": "PUBLISHED_GEOLOGICAL_SECTIONS",
+        "source_reference": "Geologica Balcanica 26(3), pages 3-19",
+        "source_url": "https://geologica-balcanica.eu/journal/26/3/pp.-3-19",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Eight Lower Jurassic geological sections",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-002",
+          "title": "The Lower Jurassic in the Troyan Region and the south-eastern part of the Teteven Region",
+          "author": "I. Sapunov; P. Tchoumatchenco; V. Shopov",
+          "year": 1996,
+          "url": "https://geologica-balcanica.eu/journal/26/3/pp.-3-19",
+          "retrieved_at": "2026-11-11",
+          "document_type": "PUBLISHED_GEOLOGICAL_SECTIONS",
+          "priority": "A2",
+          "location_original": "Troyan and south-eastern Teteven Region",
+          "scope_claim": "Eight Lower Jurassic geological sections",
+          "depth_evidence": "SECTIONS_REQUIRE_PRIMARY_FIGURE_REVIEW",
+          "source_reference": "Geologica Balcanica 26(3), pages 3-19",
+          "quality_flags": [
+            "EXACT_SECTION_LOCATIONS_NOT_VERIFIED",
+            "NOT_A_BOREHOLE_LOG"
+          ],
+          "status": "FOUND",
+          "next_action": "VERIFY_ORIGINAL_PDF_FIGURES_AND_SECTION_GEOMETRY",
+          "primary_pdf_url": "https://www.geologica-balcanica.eu/sites/default/files/articles/GB%281996%29_26_3_pp.3-19%20%28Sapunov%20et%20al%29.pdf",
+          "identified_sections": [
+            "Kostina",
+            "Cherna Reka",
+            "Gorno Shipkovo",
+            "Neshkovtsi",
+            "Ambaritsa",
+            "Dulgi Dyal",
+            "Koupena",
+            "Brousovete"
+          ]
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-003",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-003",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/2",
+      "source_ids": [
+        "LOVECH-S2-003",
+        "https://ogistoyanov.com/work/gis/геоложки-карти-на-българия-1100000.html"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-003",
+        "title": "Геоложки карти на България 1:100000",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "K-35-026 Lovech; K-35-037 Teteven; K-35-038 Troyan",
+        "source_ids": [
+          "LOVECH-S2-003",
+          "https://ogistoyanov.com/work/gis/геоложки-карти-на-българия-1100000.html"
+        ],
+        "document_type": "SECONDARY_MAP_CATALOG",
+        "source_reference": "Online index of 1:100000 geological maps",
+        "source_url": "https://ogistoyanov.com/work/gis/геоложки-карти-на-българия-1100000.html",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Map sheet references; actual coverage requires verification",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-003",
+          "title": "Геоложки карти на България 1:100000",
+          "author": "OCStoyanov - online map catalogue",
+          "year": 2016,
+          "url": "https://ogistoyanov.com/work/gis/геоложки-карти-на-българия-1100000.html",
+          "retrieved_at": "2026-11-11",
+          "document_type": "SECONDARY_MAP_CATALOG",
+          "priority": "B1",
+          "location_original": "K-35-026 Lovech; K-35-037 Teteven; K-35-038 Troyan",
+          "scope_claim": "Map sheet references; actual coverage requires verification",
+          "depth_evidence": "NONE_FROM_CATALOG",
+          "source_reference": "Online index of 1:100000 geological maps",
+          "quality_flags": [
+            "SECONDARY_SOURCE",
+            "ORIGINAL_MAPS_AND_LEGENDS_REQUIRE_REVIEW"
+          ],
+          "status": "FOUND",
+          "next_action": "VERIFY_ORIGINAL_MAPS_AND_EXPLANATORY_NOTES"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-004",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-004",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/3",
+      "source_ids": [
+        "LOVECH-S2-004",
+        "https://www.letnitsa.bg/sites/default/files/upload/archive/docs/2016-05/EO_OUP_Letnitsa_docx.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-004",
+        "title": "Екологична оценка на Общ устройствен план на община Летница",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Община Летница",
+        "source_ids": [
+          "LOVECH-S2-004",
+          "https://www.letnitsa.bg/sites/default/files/upload/archive/docs/2016-05/EO_OUP_Letnitsa_docx.pdf"
+        ],
+        "document_type": "OFFICIAL_ENVIRONMENTAL_GEOLOGICAL_REPORT",
+        "source_reference": "Section 4.5, pages 51-59; geological descriptions checked on page 52",
+        "source_url": "https://www.letnitsa.bg/sites/default/files/upload/archive/docs/2016-05/EO_OUP_Letnitsa_docx.pdf",
+        "source_status_original": "VERIFIED_SOURCE",
+        "scope_claim_original": "Municipality-wide geological and hydrogeological context",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-004",
+          "title": "Екологична оценка на Общ устройствен план на община Летница",
+          "author": "Екатерина Гюлеметова; Пламен Станев; авторски колектив",
+          "year": 2016,
+          "url": "https://www.letnitsa.bg/sites/default/files/upload/archive/docs/2016-05/EO_OUP_Letnitsa_docx.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_ENVIRONMENTAL_GEOLOGICAL_REPORT",
+          "priority": "A3_B1_C",
+          "location_original": "Община Летница",
+          "scope_claim": "Municipality-wide geological and hydrogeological context",
+          "source_reference": "Section 4.5, pages 51-59; geological descriptions checked on page 52",
+          "materials": [
+            "Смочанска свита",
+            "Деветашка свита",
+            "Тръмбешка свита",
+            "Кватернерни алувиални и пролувиални наслаги",
+            "Льосови и льосовидни наслаги"
+          ],
+          "depth_evidence": "NO_VERIFIED_POINT_DEPTH_INTERVALS",
+          "quality_flags": [
+            "REGIONAL_CONTEXT",
+            "SECONDARY_GEOLOGICAL_SYNTHESIS",
+            "ORIGINAL_MAP_SOURCES_REQUIRE_FOLLOWUP",
+            "NO_EXACT_BOREHOLE_COORDINATES_VERIFIED"
+          ],
+          "status": "VERIFIED_SOURCE",
+          "next_action": "REVIEW_GEOLOGICAL_FIGURES_AND_TRACE_PRIMARY_BOREHOLE_REFERENCES"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-005",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-005",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/4",
+      "source_ids": [
+        "LOVECH-S2-005",
+        "https://www.lovech.bg/bg/novini/mrrb-finansira-sas-124-200-leva-izrabotvane-na-inzhenerno-geolozhko-prouchvane-na-dva-obekta-na-teritoriyata-na-obshtina-lovech-i-izrabotvane-na-inzhenerno-geolozhko-rayonirane-na-gr-lovech-i-etap-v-opredelen-ot-geozashtita-eood-klon-pleven-i-obshtinata-teritorialen-obhvat"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-005",
+        "title": "МРРБ финансира инженерно-геоложки проучвания и райониране на гр. Ловеч",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "гр. Ловеч; с. Пресяка; с. Слатина",
+        "source_ids": [
+          "LOVECH-S2-005",
+          "https://www.lovech.bg/bg/novini/mrrb-finansira-sas-124-200-leva-izrabotvane-na-inzhenerno-geolozhko-prouchvane-na-dva-obekta-na-teritoriyata-na-obshtina-lovech-i-izrabotvane-na-inzhenerno-geolozhko-rayonirane-na-gr-lovech-i-etap-v-opredelen-ot-geozashtita-eood-klon-pleven-i-obshtinata-teritorialen-obhvat"
+        ],
+        "document_type": "OFFICIAL_ENGINEERING_GEOLOGY_PROJECT_NOTICE",
+        "source_reference": "Община Ловеч, 06.12.2022; agreements RD-02-30-262, 263, 264",
+        "source_url": "https://www.lovech.bg/bg/novini/mrrb-finansira-sas-124-200-leva-izrabotvane-na-inzhenerno-geolozhko-prouchvane-na-dva-obekta-na-teritoriyata-na-obshtina-lovech-i-izrabotvane-na-inzhenerno-geolozhko-rayonirane-na-gr-lovech-i-etap-v-opredelen-ot-geozashtita-eood-klon-pleven-i-obshtinata-teritorialen-obhvat",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Three engineering-geological studies; planned works",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-005",
+          "title": "МРРБ финансира инженерно-геоложки проучвания и райониране на гр. Ловеч",
+          "author": "Община Ловеч / МРРБ",
+          "year": 2022,
+          "url": "https://www.lovech.bg/bg/novini/mrrb-finansira-sas-124-200-leva-izrabotvane-na-inzhenerno-geolozhko-prouchvane-na-dva-obekta-na-teritoriyata-na-obshtina-lovech-i-izrabotvane-na-inzhenerno-geolozhko-rayonirane-na-gr-lovech-i-etap-v-opredelen-ot-geozashtita-eood-klon-pleven-i-obshtinata-teritorialen-obhvat",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_ENGINEERING_GEOLOGY_PROJECT_NOTICE",
+          "priority": "A3",
+          "location_original": "гр. Ловеч; с. Пресяка; с. Слатина",
+          "scope_claim": "Three engineering-geological studies; planned works",
+          "source_reference": "Община Ловеч, 06.12.2022; agreements RD-02-30-262, 263, 264",
+          "depth_evidence": "NO_BOREHOLE_INTERVALS_IN_NOTICE",
+          "related_intake_ids": [
+            "LOVECH-S2-001"
+          ],
+          "quality_flags": [
+            "PROJECT_DOCUMENTATION_LEAD",
+            "ORIGINAL_FINAL_REPORTS_NOT_VERIFIED",
+            "NO_EXACT_BOREHOLE_COORDINATES"
+          ],
+          "status": "FOUND",
+          "next_action": "SEARCH_PUBLIC_FINAL_ENGINEERING_REPORTS_AND_BOREHOLE_APPENDICES"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-006",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-006",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/5",
+      "source_ids": [
+        "LOVECH-S2-006",
+        "https://gz-pleven.mrrb.government.bg/landslide/"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-006",
+        "title": "Национален регистър на свлачищата — Геозащита Плевен",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Обекти с идентификатори LOV в област Ловеч",
+        "source_ids": [
+          "LOVECH-S2-006",
+          "https://gz-pleven.mrrb.government.bg/landslide/"
+        ],
+        "document_type": "OFFICIAL_LANDSLIDE_RESEARCH_REGISTER",
+        "source_reference": "Public landslide register; LOV records",
+        "source_url": "https://gz-pleven.mrrb.government.bg/landslide/",
+        "source_status_original": "VERIFIED_SOURCE",
+        "scope_claim_original": "Multiple mapped landslide sites; not borehole mouth coordinates",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-006",
+          "title": "Национален регистър на свлачищата — Геозащита Плевен",
+          "author": "МРРБ / Геозащита Плевен",
+          "year": null,
+          "url": "https://gz-pleven.mrrb.government.bg/landslide/",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_LANDSLIDE_RESEARCH_REGISTER",
+          "priority": "A3",
+          "location_original": "Обекти с идентификатори LOV в област Ловеч",
+          "scope_claim": "Multiple mapped landslide sites; not borehole mouth coordinates",
+          "depth_evidence": "NOT_VERIFIED",
+          "source_reference": "Public landslide register; LOV records",
+          "quality_flags": [
+            "PRIMARY_OFFICIAL_REGISTER",
+            "ATTACHMENTS_REQUIRE_REVIEW",
+            "LANDSLIDE_COORDINATES_NOT_BOREHOLE_COORDINATES"
+          ],
+          "status": "VERIFIED_SOURCE",
+          "next_action": "BATCH_REVIEW_LOV_ATTACHMENTS_AND_GEOLOGICAL_EVIDENCE"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-007",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-007",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/6",
+      "source_ids": [
+        "LOVECH-S2-007",
+        "https://gz-pleven.mrrb.government.bg/landslide/1190/"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-007",
+        "title": "Свлачищен обект LOV36.75054.01 — Угърчин",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Землище гр. Угърчин, АМ Хемус, район път III-3504",
+        "source_ids": [
+          "LOVECH-S2-007",
+          "https://gz-pleven.mrrb.government.bg/landslide/1190/"
+        ],
+        "document_type": "OFFICIAL_LANDSLIDE_SITE_RECORD",
+        "source_reference": null,
+        "source_url": "https://gz-pleven.mrrb.government.bg/landslide/1190/",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Mapped landslide site; published situation and engineering opinion",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-007",
+          "title": "Свлачищен обект LOV36.75054.01 — Угърчин",
+          "author": "МРРБ / Геозащита Плевен",
+          "year": 2026,
+          "url": "https://gz-pleven.mrrb.government.bg/landslide/1190/",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_LANDSLIDE_SITE_RECORD",
+          "priority": "A3",
+          "location_original": "Землище гр. Угърчин, АМ Хемус, район път III-3504",
+          "scope_claim": "Mapped landslide site; published situation and engineering opinion",
+          "original_record_id": "LOV36.75054.01",
+          "depth_evidence": "NOT_VERIFIED",
+          "related_intake_ids": [
+            "LOVECH-S2-006"
+          ],
+          "quality_flags": [
+            "APPENDIX_CONTENT_NOT_YET_REVIEWED",
+            "NO_VERIFIED_LITHOLOGICAL_COLUMN",
+            "SITE_COORDINATE_NOT_BOREHOLE_COORDINATE"
+          ],
+          "status": "FOUND",
+          "next_action": "REVIEW_ORIGINAL_2026_ENGINEERING_OPINION"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-008",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-008",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/7",
+      "source_ids": [
+        "LOVECH-S2-008",
+        "https://gz-pleven.mrrb.government.bg/landslide/1181/"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-008",
+        "title": "Свлачищен обект LOV18.35198.01 — Казачево",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Землище с. Казачево, път LOV1072",
+        "source_ids": [
+          "LOVECH-S2-008",
+          "https://gz-pleven.mrrb.government.bg/landslide/1181/"
+        ],
+        "document_type": "OFFICIAL_LANDSLIDE_SITE_RECORD",
+        "source_reference": null,
+        "source_url": "https://gz-pleven.mrrb.government.bg/landslide/1181/",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Mapped road-slope landslide site; published engineering opinion",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-008",
+          "title": "Свлачищен обект LOV18.35198.01 — Казачево",
+          "author": "МРРБ / Геозащита Плевен",
+          "year": 2026,
+          "url": "https://gz-pleven.mrrb.government.bg/landslide/1181/",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_LANDSLIDE_SITE_RECORD",
+          "priority": "A3",
+          "location_original": "Землище с. Казачево, път LOV1072",
+          "scope_claim": "Mapped road-slope landslide site; published engineering opinion",
+          "original_record_id": "LOV18.35198.01",
+          "depth_evidence": "NOT_VERIFIED",
+          "related_intake_ids": [
+            "LOVECH-S2-006"
+          ],
+          "quality_flags": [
+            "APPENDIX_CONTENT_NOT_YET_REVIEWED",
+            "NO_VERIFIED_LITHOLOGICAL_COLUMN",
+            "SITE_COORDINATE_NOT_BOREHOLE_COORDINATE"
+          ],
+          "status": "FOUND",
+          "next_action": "REVIEW_ORIGINAL_2026_ENGINEERING_OPINION"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-009",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-009",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/8",
+      "source_ids": [
+        "LOVECH-S2-009",
+        "https://www.lukovit.bg/bg/novini/saobshtenie-za-obshtestven-dostap-otnosno-pretsenyavane-na-neobhodimostta-ot-izvarshvane-na-ovos-na-ip-dobiv-na-podzemni-bogatstva-stroitelni-materiali-varovitsi-ot-nahodishte-karlukovo"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-009",
+        "title": "ОВОС документация за добив на варовици от находище Карлуково",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Находище Карлуково, община Луковит",
+        "source_ids": [
+          "LOVECH-S2-009",
+          "https://www.lukovit.bg/bg/novini/saobshtenie-za-obshtestven-dostap-otnosno-pretsenyavane-na-neobhodimostta-ot-izvarshvane-na-ovos-na-ip-dobiv-na-podzemni-bogatstva-stroitelni-materiali-varovitsi-ot-nahodishte-karlukovo"
+        ],
+        "document_type": "OFFICIAL_QUARRY_EIA_DOCUMENT_LEAD",
+        "source_reference": "Община Луковит, 18.06.2026",
+        "source_url": "https://www.lukovit.bg/bg/novini/saobshtenie-za-obshtestven-dostap-otnosno-pretsenyavane-na-neobhodimostta-ot-izvarshvane-na-ovos-na-ip-dobiv-na-podzemni-bogatstva-stroitelni-materiali-varovitsi-ot-nahodishte-karlukovo",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Named limestone deposit; no verified borehole point",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-009",
+          "title": "ОВОС документация за добив на варовици от находище Карлуково",
+          "author": "Община Луковит / НКЖИ",
+          "year": 2026,
+          "url": "https://www.lukovit.bg/bg/novini/saobshtenie-za-obshtestven-dostap-otnosno-pretsenyavane-na-neobhodimostta-ot-izvarshvane-na-ovos-na-ip-dobiv-na-podzemni-bogatstva-stroitelni-materiali-varovitsi-ot-nahodishte-karlukovo",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_QUARRY_EIA_DOCUMENT_LEAD",
+          "priority": "A1_A2_A3_B1",
+          "location_original": "Находище Карлуково, община Луковит",
+          "scope_claim": "Named limestone deposit; no verified borehole point",
+          "depth_evidence": "NOT_YET_VERIFIED",
+          "materials": [
+            "варовици"
+          ],
+          "source_reference": "Община Луковит, 18.06.2026",
+          "quality_flags": [
+            "ATTACHMENTS_NOT_YET_REVIEWED",
+            "NO_VERIFIED_BOREHOLE_COORDINATES",
+            "NO_VERIFIED_DEPTH_INTERVALS"
+          ],
+          "status": "FOUND",
+          "next_action": "REVIEW_GEOLOGICAL_APPENDICES_AND_EXPLORATION_SECTIONS"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-010",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-010",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/9",
+      "source_ids": [
+        "LOVECH-S2-010",
+        "https://www.lukovit.bg/bg/obyavleniya/obyava-za-provezhdane-na-obshtestveno-obsazhdane-na-doklad-za-ovos-za-investitsionno-predlozhenie-s-vazlozhitel-ass-inzhenering-eood"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-010",
+        "title": "ОВОС за добив и преработка на варовици от находище Гечовското",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Находище Гечовското, район на община Луковит",
+        "source_ids": [
+          "LOVECH-S2-010",
+          "https://www.lukovit.bg/bg/obyavleniya/obyava-za-provezhdane-na-obshtestveno-obsazhdane-na-doklad-za-ovos-za-investitsionno-predlozhenie-s-vazlozhitel-ass-inzhenering-eood"
+        ],
+        "document_type": "OFFICIAL_QUARRY_EIA_DOCUMENT_LEAD",
+        "source_reference": "Община Луковит, 29.05.2023",
+        "source_url": "https://www.lukovit.bg/bg/obyavleniya/obyava-za-provezhdane-na-obshtestveno-obsazhdane-na-doklad-za-ovos-za-investitsionno-predlozhenie-s-vazlozhitel-ass-inzhenering-eood",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Named limestone deposit; precise geographic coverage pending",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-010",
+          "title": "ОВОС за добив и преработка на варовици от находище Гечовското",
+          "author": "Община Луковит / АСС Инженеринг ЕООД",
+          "year": 2023,
+          "url": "https://www.lukovit.bg/bg/obyavleniya/obyava-za-provezhdane-na-obshtestveno-obsazhdane-na-doklad-za-ovos-za-investitsionno-predlozhenie-s-vazlozhitel-ass-inzhenering-eood",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_QUARRY_EIA_DOCUMENT_LEAD",
+          "priority": "A1_A2_A3_B1",
+          "location_original": "Находище Гечовското, район на община Луковит",
+          "scope_claim": "Named limestone deposit; precise geographic coverage pending",
+          "depth_evidence": "NOT_YET_VERIFIED",
+          "materials": [
+            "варовици"
+          ],
+          "source_reference": "Община Луковит, 29.05.2023",
+          "quality_flags": [
+            "FULL_EIA_REPORT_NOT_YET_REVIEWED",
+            "NO_VERIFIED_BOREHOLE_COORDINATES",
+            "NO_VERIFIED_DEPTH_INTERVALS"
+          ],
+          "status": "FOUND",
+          "next_action": "LOCATE_PRIMARY_BOREHOLE_LOGS_MS1_MS4_SN1_SN4",
+          "extracted_exploration_evidence": {
+            "evidence_id": "LOVECH-S2-010-EXPLORATION-001",
+            "primary_document_url": "https://riew-pleven.eu/doc/OVOSEO/konsult/DOVOS%20Gechevsko/DOVOS.pdf",
+            "original_document_year": 2022,
+            "document_author": "БАГГ-К ЕООД",
+            "printed_pages": [
+              "112-115"
+            ],
+            "deposit": "Гечовското",
+            "settlement": "Бежаново",
+            "municipality": "Луковит",
+            "earlier_exploration_year": 1970,
+            "earlier_borehole_ids": [
+              "МС1",
+              "МС2",
+              "МС3",
+              "МС4"
+            ],
+            "earlier_trench_count": 12,
+            "later_exploration_year": 2007,
+            "later_borehole_ids": [
+              "Сн1",
+              "Сн2",
+              "Сн3",
+              "Сн4"
+            ],
+            "geological_mapping_scale": "1:5000",
+            "geological_materials": [
+              "Дебелопластови органогенни варовици",
+              "Изветрели и напукани варовици",
+              "Песъчливи глини с варовикови късове",
+              "Делувиални отложения"
+            ],
+            "locality_observations": [
+              {
+                "feature": "Изветряла зона във варовиците",
+                "reported_extent_m": "до 10-12",
+                "evidence_type": "DEPOSIT_LEVEL_DESCRIPTION"
+              },
+              {
+                "feature": "Песъчливи глини в северни и североизточни участъци",
+                "reported_extent_m": "до 4-5",
+                "evidence_type": "DEPOSIT_LEVEL_DESCRIPTION"
+              }
+            ],
+            "original_borehole_logs_verified": false,
+            "individual_borehole_depths_verified": false,
+            "borehole_mouth_coordinates_verified": false,
+            "source_status": "PRIMARY_EIA_TEXT_VERIFIED",
+            "limitations": [
+              "EIGHT_BOREHOLES_ARE_NOT_EIGHT_VERIFIED_FULL_LOGS",
+              "DEPTH_RANGES_ARE_LOCALITY_DESCRIPTIONS",
+              "ORIGINAL_DRILLING_LOGS_NOT_ATTACHED_OR_VERIFIED",
+              "NO_RUNTIME_INTEGRATION"
+            ],
+            "next_action": "LOCATE_MS1_MS4_SN1_SN4_PRIMARY_DRILLING_LOGS_AND_SITE_PLAN"
+          }
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-011",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-011",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/10",
+      "source_ids": [
+        "LOVECH-S2-011",
+        "https://riew-pleven.eu/doc/OVOSEO/konsult/DEO_obst_Teteven.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-011",
+        "title": "Коригиран и допълнен доклад за екологична оценка на ОУП Тетевен",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Територията на община Тетевен",
+        "source_ids": [
+          "LOVECH-S2-011",
+          "https://riew-pleven.eu/doc/OVOSEO/konsult/DEO_obst_Teteven.pdf"
+        ],
+        "document_type": "OFFICIAL_ENVIRONMENTAL_ASSESSMENT",
+        "source_reference": "РИОСВ Плевен; титулна страница и съдържание",
+        "source_url": "https://riew-pleven.eu/doc/OVOSEO/konsult/DEO_obst_Teteven.pdf",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Municipality-wide environmental and regional context",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-011",
+          "title": "Коригиран и допълнен доклад за екологична оценка на ОУП Тетевен",
+          "author": "ЛЕМНА ЕКОИНВЕСТ-БЪЛГАРИЯ АД",
+          "year": "2019-2020",
+          "url": "https://riew-pleven.eu/doc/OVOSEO/konsult/DEO_obst_Teteven.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_ENVIRONMENTAL_ASSESSMENT",
+          "priority": "A3_B1_C",
+          "location_original": "Територията на община Тетевен",
+          "scope_claim": "Municipality-wide environmental and regional context",
+          "depth_evidence": "NOT_VERIFIED",
+          "source_reference": "РИОСВ Плевен; титулна страница и съдържание",
+          "quality_flags": [
+            "GEOLOGICAL_SECTIONS_REQUIRE_REVIEW",
+            "PDF_FIGURES_NOT_VISUALLY_VERIFIED",
+            "NO_VERIFIED_POINT_DEPTH_INTERVALS"
+          ],
+          "status": "FOUND",
+          "next_action": "REVIEW_GEOLOGY_HYDROGEOLOGY_AND_ORIGINAL_APPENDICES",
+          "extracted_geophysical_evidence": {
+            "evidence_id": "LOVECH-S2-011-GEOPHYS-001",
+            "source_section": "3.4.2 Инженерно-геоложки условия",
+            "printed_page": 183,
+            "survey_type": "VERTICAL_ELECTRICAL_SOUNDING",
+            "documented_ves_count": 23,
+            "geographic_scope": "Гр. Тетевен, долина на р. Бели Вит, централна част и прилежащи склонове",
+            "observations": [
+              {
+                "original_points": [
+                  "ВЕС 7",
+                  "ВЕС 8",
+                  "ВЕС 9"
+                ],
+                "location_description": "Северната висока част на гр. Тетевен",
+                "cover_thickness_min_m": 0.8,
+                "cover_thickness_max_m": 1.6,
+                "interpreted_bedrock": "Варовици и доломити, Могилска свита, Лакатнишки член",
+                "evidence_type": "GEOPHYSICAL_INTERPRETATION"
+              },
+              {
+                "original_points": [
+                  "ВЕС 10"
+                ],
+                "location_description": "Десен бряг на ляв приток на р. Бели Вит, централна част на Тетевен",
+                "observed_context": "Делувиални глини и чакъли; по-мощни повърхностни наслаги",
+                "evidence_type": "GEOPHYSICAL_INTERPRETATION"
+              }
+            ],
+            "additional_context": [
+              "Временни насипи от глина и чакълести включения",
+              "Алувиални отложения от чакъли, валуни и блокове",
+              "Делувиални глини с чакъли и блокажи"
+            ],
+            "limitations": [
+              "VES_IS_NOT_A_DRILLED_BOREHOLE",
+              "EXACT_VES_COORDINATES_NOT_VERIFIED",
+              "ORIGINAL_SURVEY_FIGURES_NOT_VISUALLY_VERIFIED",
+              "NO_GENERALIZATION_TO_ENTIRE_MUNICIPALITY",
+              "NO_RUNTIME_DEPTH_MODEL_AUTHORIZED"
+            ],
+            "status": "TEXT_VERIFIED_FIGURES_PENDING",
+            "next_action": "FIND_ORIGINAL_23_VES_SURVEY_AND_LOCATION_PLAN"
+          }
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-012",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-012",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/11",
+      "source_ids": [
+        "LOVECH-S2-012",
+        "https://www.obshtina-apriltsi.com/assets/Ikonomika/TSU/Obsht%20Ustroiven%20Plan/Planovo%20Zadanie%20OUP%20Aprilci.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-012",
+        "title": "Задание за изработване на Общ устройствен план на община Априлци",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Априлци, Велчево, Скандалото, Драшкова поляна",
+        "source_ids": [
+          "LOVECH-S2-012",
+          "https://www.obshtina-apriltsi.com/assets/Ikonomika/TSU/Obsht%20Ustroiven%20Plan/Planovo%20Zadanie%20OUP%20Aprilci.pdf"
+        ],
+        "document_type": "OFFICIAL_SPATIAL_PLANNING_SOURCE",
+        "source_reference": "Община Априлци, декември 2014, стр. 1-3",
+        "source_url": "https://www.obshtina-apriltsi.com/assets/Ikonomika/TSU/Obsht%20Ustroiven%20Plan/Planovo%20Zadanie%20OUP%20Aprilci.pdf",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Municipality-wide planning and source context",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-012",
+          "title": "Задание за изработване на Общ устройствен план на община Априлци",
+          "author": "БОРДО ЕООД / Община Априлци",
+          "year": 2014,
+          "url": "https://www.obshtina-apriltsi.com/assets/Ikonomika/TSU/Obsht%20Ustroiven%20Plan/Planovo%20Zadanie%20OUP%20Aprilci.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_SPATIAL_PLANNING_SOURCE",
+          "priority": "B2_C",
+          "location_original": "Априлци, Велчево, Скандалото, Драшкова поляна",
+          "scope_claim": "Municipality-wide planning and source context",
+          "depth_evidence": "NO_VERIFIED_BOREHOLE_INTERVALS",
+          "source_reference": "Община Априлци, декември 2014, стр. 1-3",
+          "quality_flags": [
+            "PLANNING_DOCUMENT_NOT_BOREHOLE_LOG",
+            "PRIMARY_GEOLOGICAL_SOURCES_REQUIRE_FOLLOWUP",
+            "NO_EXACT_BOREHOLE_COORDINATES"
+          ],
+          "status": "FOUND",
+          "next_action": "TRACE_GEOLOGICAL_AND_HYDROGEOLOGICAL_PRIMARY_SOURCES"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-013",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-013",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/12",
+      "source_ids": [
+        "LOVECH-S2-013",
+        "https://www.ncsip.bg/files/Documents/%D0%94%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4%20%D0%B7%D0%B0%20%D0%9E%D0%92%D0%9E%D0%A1%20%D0%BD%D0%B0%20%D0%90%D0%9C%20%D0%A5%D0%B5%D0%BC%D1%83%D1%81.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-013",
+        "title": "Доклад за ОВОС на доизграждане на АМ Хемус, Ябланица - Белокопитово",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "АМ Хемус, Ябланица - Белокопитово",
+        "source_ids": [
+          "LOVECH-S2-013",
+          "https://www.ncsip.bg/files/Documents/%D0%94%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4%20%D0%B7%D0%B0%20%D0%9E%D0%92%D0%9E%D0%A1%20%D0%BD%D0%B0%20%D0%90%D0%9C%20%D0%A5%D0%B5%D0%BC%D1%83%D1%81.pdf"
+        ],
+        "document_type": "PRIMARY_PUBLISHED_PROJECT_EIA",
+        "source_reference": "IV.2.1 p.109; IV.3.1 p.151; Figure IV.3.1-2",
+        "source_url": "https://www.ncsip.bg/files/Documents/%D0%94%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4%20%D0%B7%D0%B0%20%D0%9E%D0%92%D0%9E%D0%A1%20%D0%BD%D0%B0%20%D0%90%D0%9C%20%D0%A5%D0%B5%D0%BC%D1%83%D1%81.pdf",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Linear corridor; only independently confirmed Lovech sections applicable",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-013",
+          "title": "Доклад за ОВОС на доизграждане на АМ Хемус, Ябланица - Белокопитово",
+          "author": "ДАНГО ПРОЕКТ КОНСУЛТ ЕООД",
+          "year": 2015,
+          "url": "https://www.ncsip.bg/files/Documents/%D0%94%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4%20%D0%B7%D0%B0%20%D0%9E%D0%92%D0%9E%D0%A1%20%D0%BD%D0%B0%20%D0%90%D0%9C%20%D0%A5%D0%B5%D0%BC%D1%83%D1%81.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "PRIMARY_PUBLISHED_PROJECT_EIA",
+          "priority": "A2_A3_B1",
+          "location_original": "АМ Хемус, Ябланица - Белокопитово",
+          "scope_claim": "Linear corridor; only independently confirmed Lovech sections applicable",
+          "source_reference": "IV.2.1 p.109; IV.3.1 p.151; Figure IV.3.1-2",
+          "materials": [],
+          "depth_evidence": "NO_VERIFIED_POINT_LITHOLOGY_INTERVALS",
+          "quality_flags": [
+            "PROJECT_CORRIDOR_NOT_MUNICIPALITY_WIDE",
+            "ACTUAL_LOVECH_ROUTE_SEGMENTS_REQUIRE_CHECK",
+            "GEOLOGICAL_FIGURES_NOT_VISUALLY_VALIDATED",
+            "BOREHOLE_LOGS_NOT_CONFIRMED",
+            "PROJECT_BOREHOLES_NOT_AS_BUILT_RECORDS"
+          ],
+          "status": "FOUND",
+          "next_action": "REVIEW_GEOLOGICAL_FIGURES_AND_LOVECH_CORRIDOR_PRIMARY_APPENDICES"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-014",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-014",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/13",
+      "source_ids": [
+        "LOVECH-S2-014",
+        "https://op.lukovit.bg/vsichki-obshtestveni-porachki/201-lov19-44327-02"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-014",
+        "title": "Укрепване на свлачище LOV19.44327.02, ул. Синчец, гр. Луковит",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "гр. Луковит, откос на път за регионално ДТБО, ул. Синчец",
+        "source_ids": [
+          "LOVECH-S2-014",
+          "https://op.lukovit.bg/vsichki-obshtestveni-porachki/201-lov19-44327-02"
+        ],
+        "document_type": "OFFICIAL_ENGINEERING_PROJECT_ARCHIVE",
+        "source_reference": "Обществена поръчка 000091, 05.04.2018",
+        "source_url": "https://op.lukovit.bg/vsichki-obshtestveni-porachki/201-lov19-44327-02",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Specific landslide engineering project",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-014",
+          "title": "Укрепване на свлачище LOV19.44327.02, ул. Синчец, гр. Луковит",
+          "author": "Община Луковит",
+          "year": 2018,
+          "url": "https://op.lukovit.bg/vsichki-obshtestveni-porachki/201-lov19-44327-02",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_ENGINEERING_PROJECT_ARCHIVE",
+          "priority": "A2_A3",
+          "location_original": "гр. Луковит, откос на път за регионално ДТБО, ул. Синчец",
+          "scope_claim": "Specific landslide engineering project",
+          "original_record_id": "LOV19.44327.02",
+          "source_reference": "Обществена поръчка 000091, 05.04.2018",
+          "depth_evidence": "NOT_VERIFIED",
+          "quality_flags": [
+            "RAR_ARCHIVE_REQUIRES_REVIEW",
+            "GEOLOGICAL_SECTIONS_NOT_CONFIRMED",
+            "NO_VERIFIED_BOREHOLE_LOGS",
+            "SITE_LOCATION_NOT_BOREHOLE_COORDINATE"
+          ],
+          "status": "FOUND",
+          "next_action": "INSPECT_PUBLIC_PROJECT_ARCHIVE_AND_GEOLOGICAL_DRAWINGS"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-015",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-015",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/14",
+      "source_ids": [
+        "LOVECH-S2-015",
+        "https://gz-pleven.mrrb.government.bg/landslide/?page=12"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-015",
+        "title": "Свлачищен обект LOV33.15148.02, път за Глогово",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Община Тетевен, път за с. Глогово, мах. Глогова махала",
+        "source_ids": [
+          "LOVECH-S2-015",
+          "https://gz-pleven.mrrb.government.bg/landslide/?page=12"
+        ],
+        "document_type": "OFFICIAL_LANDSLIDE_SITE_RECORD",
+        "source_reference": "Геозащита Плевен, национален свлачищен регистър",
+        "source_url": "https://gz-pleven.mrrb.government.bg/landslide/?page=12",
+        "source_status_original": "FOUND",
+        "scope_claim_original": "Mapped landslide site and monitoring records",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-015",
+          "title": "Свлачищен обект LOV33.15148.02, път за Глогово",
+          "author": "МРРБ / Геозащита Плевен",
+          "year": null,
+          "url": "https://gz-pleven.mrrb.government.bg/landslide/?page=12",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_LANDSLIDE_SITE_RECORD",
+          "priority": "A3",
+          "location_original": "Община Тетевен, път за с. Глогово, мах. Глогова махала",
+          "scope_claim": "Mapped landslide site and monitoring records",
+          "original_record_id": "LOV33.15148.02",
+          "source_reference": "Геозащита Плевен, национален свлачищен регистър",
+          "depth_evidence": "NOT_VERIFIED",
+          "quality_flags": [
+            "EIGHT_ATTACHMENTS_LISTED",
+            "ATTACHMENT_CONTENT_NOT_YET_VERIFIED",
+            "NO_VERIFIED_BOREHOLE_INTERVALS",
+            "LANDSLIDE_COORDINATE_NOT_BOREHOLE_COORDINATE"
+          ],
+          "status": "FOUND",
+          "next_action": "REVIEW_GLOGOVO_ENGINEERING_ATTACHMENTS"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-016",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-016",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/15",
+      "source_ids": [
+        "LOVECH-S2-016",
+        "https://www.mh.government.bg/upload/17217/75-Shipkovo-sondazh-L2-06-11-2025.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-016",
+        "title": "Сертификат №75 - минерална вода Шипково, сондаж Л-2",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Западния край на с. Шипково, община Троян, област Ловеч",
+        "source_ids": [
+          "LOVECH-S2-016",
+          "https://www.mh.government.bg/upload/17217/75-Shipkovo-sondazh-L2-06-11-2025.pdf"
+        ],
+        "document_type": "OFFICIAL_MINERAL_CERTIFICATE_WITH_BOREHOLE_LITHOLOGY",
+        "source_reference": "Сертификат №75, страница 2, геоложки разрез",
+        "source_url": "https://www.mh.government.bg/upload/17217/75-Shipkovo-sondazh-L2-06-11-2025.pdf",
+        "source_status_original": "VERIFIED_SOURCE",
+        "scope_claim_original": "Documented borehole; exact mouth coordinates not verified",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-016",
+          "title": "Сертификат №75 - минерална вода Шипково, сондаж Л-2",
+          "author": "Министерство на здравеопазването",
+          "document_date_printed": "2023-11-06",
+          "document_date_note": "PDF filename indicates 2025; printed certificate date is 2023; laboratory references include 2025. Version chronology requires review.",
+          "url": "https://www.mh.government.bg/upload/17217/75-Shipkovo-sondazh-L2-06-11-2025.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_MINERAL_CERTIFICATE_WITH_BOREHOLE_LITHOLOGY",
+          "priority": "A1_A3",
+          "status": "VERIFIED_SOURCE",
+          "borehole_name": "Л-2",
+          "location_original": "Западния край на с. Шипково, община Троян, област Ловеч",
+          "scope_claim": "Documented borehole; exact mouth coordinates not verified",
+          "drilling_year": 1974,
+          "total_depth_m": 433.5,
+          "source_reference": "Сертификат №75, страница 2, геоложки разрез",
+          "lithology_intervals": [
+            {
+              "from_m": 0,
+              "to_m": 133.6,
+              "material": "Титонски флиш: варовити пясъчници, глинести варовици, мергели, алевролити и шистови прослойки",
+              "age": "Горна юра - титон"
+            },
+            {
+              "from_m": 133.6,
+              "to_m": 433.5,
+              "material": "Тъмносиви до черни плътни и напукани доломити",
+              "age": "Среден триас"
+            }
+          ],
+          "documented_fracture_intervals": [
+            [
+              170.1,
+              172.3
+            ],
+            [
+              193.5,
+              194.3
+            ],
+            [
+              259.3,
+              277.2
+            ],
+            [
+              335.4,
+              342.7
+            ]
+          ],
+          "mineral_registry_reference": "mw_ba0eb662318fc09a",
+          "mineral_evidence_note": "Water temperature, discharge and artesian conditions documented separately on page 3; do not merge with lithological intervals",
+          "quality_flags": [
+            "OFFICIAL_BOREHOLE_LITHOLOGY",
+            "EXACT_COORDINATES_NOT_VERIFIED",
+            "MINERAL_WATER_SEPARATE_REGISTRY",
+            "DOCUMENT_VERSION_CHRONOLOGY_REVIEW",
+            "RESEARCH_ONLY_NOT_RUNTIME"
+          ],
+          "next_action": "VERIFY_BOREHOLE_COORDINATES_AND_RECONCILE_WITH_EXISTING_MINERAL_RECORD"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-017",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-017",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/16",
+      "source_ids": [
+        "LOVECH-S2-017",
+        "https://www.mh.government.bg/upload/6908/9-shipkovo-sondazhl1-08-07-2014.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-017",
+        "title": "Балнеологична оценка №9 - Шипково, сондаж Л-1",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Находище Шипково, община Троян, област Ловеч",
+        "source_ids": [
+          "LOVECH-S2-017",
+          "https://www.mh.government.bg/upload/6908/9-shipkovo-sondazhl1-08-07-2014.pdf"
+        ],
+        "document_type": "OFFICIAL_MINERAL_ASSESSMENT_WITH_BOREHOLE_LITHOLOGY",
+        "source_reference": "Балнеологична оценка №9, 08.07.2014, стр. 2",
+        "source_url": "https://www.mh.government.bg/upload/6908/9-shipkovo-sondazhl1-08-07-2014.pdf",
+        "source_status_original": "VERIFIED_SOURCE",
+        "scope_claim_original": "Documented borehole; exact mouth coordinates not verified",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-017",
+          "title": "Балнеологична оценка №9 - Шипково, сондаж Л-1",
+          "author": "Министерство на здравеопазването",
+          "document_date_printed": "2014-07-08",
+          "url": "https://www.mh.government.bg/upload/6908/9-shipkovo-sondazhl1-08-07-2014.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_MINERAL_ASSESSMENT_WITH_BOREHOLE_LITHOLOGY",
+          "priority": "A1_A3",
+          "status": "VERIFIED_SOURCE",
+          "borehole_name": "Л-1",
+          "drilling_year": 1977,
+          "total_depth_m": 612.5,
+          "location_original": "Находище Шипково, община Троян, област Ловеч",
+          "scope_claim": "Documented borehole; exact mouth coordinates not verified",
+          "source_reference": "Балнеологична оценка №9, 08.07.2014, стр. 2",
+          "lithology_intervals": [
+            {
+              "from_m": 0,
+              "to_m": 124,
+              "material": "Титонски флиш: варовити пясъчници, глинести варовици, мергели, алевролити и шистови прослойки"
+            },
+            {
+              "from_m": 124,
+              "to_m": 399.9,
+              "material": "Тъмносиви до сивочерни финозърнести доломити"
+            },
+            {
+              "from_m": 399.9,
+              "to_m": 593.2,
+              "material": "Тъмносиви до сивочерни доломитни варовици"
+            },
+            {
+              "from_m": 593.2,
+              "to_m": 612.5,
+              "material": "Тъмносиви финозърнести варовици"
+            }
+          ],
+          "documented_broken_rock_intervals": [
+            {
+              "from_m": 399.9,
+              "to_m": 402.3,
+              "description": "Натрошени доломитни варовици"
+            }
+          ],
+          "related_intake_ids": [
+            "LOVECH-S2-016"
+          ],
+          "relation_note": "L-2 reported 1.8 m west of L-1; different flysch base depths; collar elevations not verified",
+          "mineral_evidence_note": "Mineral-water properties remain in the separate existing registry",
+          "quality_flags": [
+            "OFFICIAL_BOREHOLE_LITHOLOGY",
+            "EXACT_COORDINATES_NOT_VERIFIED",
+            "COLLAR_ELEVATIONS_NOT_VERIFIED",
+            "RESEARCH_ONLY_NOT_RUNTIME",
+            "MINERAL_WATER_SEPARATE_REGISTRY"
+          ],
+          "next_action": "RECONCILE_BOTH_BOREHOLE_COLLARS_AND_FIND_OTHER_SHIPKOVO_LOGS"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-018",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-018",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/17",
+      "source_ids": [
+        "LOVECH-S2-018",
+        "https://www.mh.government.bg/upload/6873/31-shipkovo-sondazhl36-11-02-2015.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-018",
+        "title": "Балнеологична оценка №31 - Шипково, сондаж Л-36",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Находище Шипково, с. Шипково, община Троян, област Ловеч",
+        "source_ids": [
+          "LOVECH-S2-018",
+          "https://www.mh.government.bg/upload/6873/31-shipkovo-sondazhl36-11-02-2015.pdf"
+        ],
+        "document_type": "OFFICIAL_MINERAL_ASSESSMENT_WITH_BOREHOLE_LITHOLOGY",
+        "source_reference": "Балнеологична оценка №31, страница 2, геоложки разрез",
+        "source_url": "https://www.mh.government.bg/upload/6873/31-shipkovo-sondazhl36-11-02-2015.pdf",
+        "source_status_original": "VERIFIED_SOURCE",
+        "scope_claim_original": "Documented borehole; exact mouth coordinates not verified",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-018",
+          "title": "Балнеологична оценка №31 - Шипково, сондаж Л-36",
+          "author": "Министерство на здравеопазването",
+          "year": 2015,
+          "document_date_printed": "2015-02-11",
+          "url": "https://www.mh.government.bg/upload/6873/31-shipkovo-sondazhl36-11-02-2015.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_MINERAL_ASSESSMENT_WITH_BOREHOLE_LITHOLOGY",
+          "priority": "A1_A3",
+          "status": "VERIFIED_SOURCE",
+          "borehole_name": "Л-36",
+          "drilling_year": 1983,
+          "total_depth_m": 1031,
+          "location_original": "Находище Шипково, с. Шипково, община Троян, област Ловеч",
+          "scope_claim": "Documented borehole; exact mouth coordinates not verified",
+          "source_reference": "Балнеологична оценка №31, страница 2, геоложки разрез",
+          "lithology_intervals": [
+            {
+              "from_m": 0,
+              "to_m": 552.7,
+              "material": "Флиш - непрекъснато редуване на пясъчници, варовици, мергели, аргилити и алевролити"
+            },
+            {
+              "from_m": 552.7,
+              "to_m": 1031,
+              "material": "Глинести и варовити доломити с прослойки от оолитни варовици; към края доломитна брекча"
+            }
+          ],
+          "borehole_construction": [
+            {
+              "from_m": 0,
+              "to_m": 44,
+              "description": "Стоманена обсадна колона 168 мм"
+            },
+            {
+              "from_m": 0,
+              "to_m": 591.7,
+              "description": "Стоманена обсадна колона 127 мм"
+            },
+            {
+              "from_m": 591.7,
+              "to_m": 1031,
+              "description": "Открит ствол 97 мм"
+            }
+          ],
+          "related_intake_ids": [
+            "LOVECH-S2-016",
+            "LOVECH-S2-017"
+          ],
+          "relation_note": "Flysch base differs substantially from L-1 and L-2; exact positions and collar elevations require verification",
+          "mineral_evidence_note": "Mineral-water temperature, discharge and artesian data belong to the separate existing mineral register; no mineral register changes in this stage",
+          "quality_flags": [
+            "OFFICIAL_BOREHOLE_LITHOLOGY",
+            "ORIGINAL_PDF_PAGE_2_VISUALLY_CHECKED",
+            "EXACT_COORDINATES_NOT_VERIFIED",
+            "COLLAR_ELEVATION_NOT_VERIFIED",
+            "NO_SPATIAL_INTERPOLATION_AUTHORIZED",
+            "RESEARCH_ONLY_NOT_RUNTIME"
+          ],
+          "next_action": "VERIFY_BOREHOLE_LOCATION_AND_REVIEW_OTHER_SHIPKOVO_COLUMNS"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-019",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-019",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/18",
+      "source_ids": [
+        "LOVECH-S2-019",
+        "https://www.mh.government.bg/upload/6784/121-shipkovo-sondazh-l28-15-05-2019.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-019",
+        "title": "Балнеологична оценка №121 - Шипково, сондаж Л-28",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Ляв бряг на р. Ръждавец, между минералния извор и банята, с. Шипково",
+        "source_ids": [
+          "LOVECH-S2-019",
+          "https://www.mh.government.bg/upload/6784/121-shipkovo-sondazh-l28-15-05-2019.pdf"
+        ],
+        "document_type": "OFFICIAL_MINERAL_ASSESSMENT_WITH_BOREHOLE_LITHOLOGY",
+        "source_reference": "Балнеологична оценка №121, 15.05.2019, страница 2",
+        "source_url": "https://www.mh.government.bg/upload/6784/121-shipkovo-sondazh-l28-15-05-2019.pdf",
+        "source_status_original": "VERIFIED_SOURCE",
+        "scope_claim_original": "Documented borehole; cadastral property known, mouth coordinates not verified",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-019",
+          "title": "Балнеологична оценка №121 - Шипково, сондаж Л-28",
+          "author": "Министерство на здравеопазването",
+          "year": 2019,
+          "document_date_printed": "2019-05-15",
+          "url": "https://www.mh.government.bg/upload/6784/121-shipkovo-sondazh-l28-15-05-2019.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_MINERAL_ASSESSMENT_WITH_BOREHOLE_LITHOLOGY",
+          "priority": "A1_A3",
+          "status": "VERIFIED_SOURCE",
+          "borehole_name": "Л-28",
+          "drilling_year": 1982,
+          "total_depth_m": 230,
+          "location_original": "Ляв бряг на р. Ръждавец, между минералния извор и банята, с. Шипково",
+          "cadastral_property_id": "83212.501.1110",
+          "scope_claim": "Documented borehole; cadastral property known, mouth coordinates not verified",
+          "source_reference": "Балнеологична оценка №121, 15.05.2019, страница 2",
+          "lithology_intervals": [
+            {
+              "from_m": 0,
+              "to_m": 7.5,
+              "material": "Алувиално-делувиални наслаги, валуни и чакъли",
+              "age_original": "Кватернер"
+            },
+            {
+              "from_m": 7.5,
+              "to_m": 47.4,
+              "material": "Варовици и глинести варовици",
+              "age_original": "Горна юра"
+            },
+            {
+              "from_m": 47.4,
+              "to_m": 52.8,
+              "material": "Плътни глинести мергели",
+              "age_original": "Средна юра, както е обозначена в документа"
+            },
+            {
+              "from_m": 52.8,
+              "to_m": 82.2,
+              "material": "Песъчливи варовици",
+              "age_original": "Средна юра, както е обозначена в документа"
+            },
+            {
+              "from_m": 82.2,
+              "to_m": 230,
+              "material": "Варовици, редуващи се с варовити доломити и пясъчни прослойки",
+              "age_original": "Среден-горен триас"
+            }
+          ],
+          "related_intake_ids": [
+            "LOVECH-S2-016",
+            "LOVECH-S2-017",
+            "LOVECH-S2-018"
+          ],
+          "mineral_evidence_note": "Temperature, discharge and water chemistry belong to the independent mineral-water register",
+          "quality_flags": [
+            "OFFICIAL_BOREHOLE_LITHOLOGY",
+            "ORIGINAL_PDF_PAGE_2_VISUALLY_CHECKED",
+            "CADASTRAL_PROPERTY_NOT_BOREHOLE_POINT",
+            "EXACT_MOUTH_COORDINATES_NOT_VERIFIED",
+            "STRATIGRAPHIC_AGE_LABELS_REQUIRE_CROSSCHECK",
+            "NO_SPATIAL_INTERPOLATION_AUTHORIZED",
+            "RESEARCH_ONLY_NOT_RUNTIME"
+          ],
+          "next_action": "VERIFY_BOREHOLE_LOCATION_AND_CORRELATE_ONLY_AFTER_SPATIAL_QA"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-020",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-020",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/19",
+      "source_ids": [
+        "LOVECH-S2-020",
+        "https://www.mh.government.bg/upload/6915/2-kroshuna-sondazhr-1hg-28-01-2014.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-020",
+        "title": "Балнеологична оценка №2 - Крушуна, сондаж Р-1хг",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Находище Крушуна, община Летница, област Ловеч",
+        "source_ids": [
+          "LOVECH-S2-020",
+          "https://www.mh.government.bg/upload/6915/2-kroshuna-sondazhr-1hg-28-01-2014.pdf"
+        ],
+        "document_type": "OFFICIAL_MINERAL_ASSESSMENT_WITH_BOREHOLE_LITHOLOGY",
+        "source_reference": "Балнеологична оценка №2, страници 1-2; разрез по Енчев, 1979",
+        "source_url": "https://www.mh.government.bg/upload/6915/2-kroshuna-sondazhr-1hg-28-01-2014.pdf",
+        "source_status_original": "VERIFIED_SOURCE",
+        "scope_claim_original": null,
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-020",
+          "title": "Балнеологична оценка №2 - Крушуна, сондаж Р-1хг",
+          "author": "Министерство на здравеопазването",
+          "year": 2014,
+          "document_date_printed": "2014-01-28",
+          "url": "https://www.mh.government.bg/upload/6915/2-kroshuna-sondazhr-1hg-28-01-2014.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_MINERAL_ASSESSMENT_WITH_BOREHOLE_LITHOLOGY",
+          "priority": "A1_A3",
+          "status": "VERIFIED_SOURCE",
+          "borehole_name": "Р-1хг",
+          "drilling_year": 1977,
+          "total_depth_m": 1811,
+          "location_original": "Находище Крушуна, община Летница, област Ловеч",
+          "location_note": "Approximately 594 m southeast of Letnitsa centre according to source; no surveyed mouth coordinates verified",
+          "source_reference": "Балнеологична оценка №2, страници 1-2; разрез по Енчев, 1979",
+          "lithology_intervals": [
+            {
+              "from_m": 0,
+              "to_m": 10,
+              "material": "Кватернер: почвен слой и чакъли"
+            },
+            {
+              "from_m": 10,
+              "to_m": 376,
+              "material": "Апт: мергели пепелносиви до тъмносиви, глинести, с алевролити и пясъчници"
+            },
+            {
+              "from_m": 376,
+              "to_m": 441,
+              "material": "Апт: варовици кремави до сивокремави, с песъчливи прослойки и мергели"
+            },
+            {
+              "from_m": 441,
+              "to_m": 474,
+              "material": "Апт: сиви глинести мергели, с алевролитни пластини"
+            },
+            {
+              "from_m": 479,
+              "to_m": 488,
+              "material": "Апт: варовици с алевро-песъчливи прослойки"
+            },
+            {
+              "from_m": 498,
+              "to_m": 526,
+              "material": "Апт: сиви полимиктови пясъчници с мергелни и варовити прослойки"
+            },
+            {
+              "from_m": 526,
+              "to_m": 872,
+              "material": "Барем: мергели, често алевролитни и песъчливи, с прослойки от пясъчници"
+            },
+            {
+              "from_m": 872,
+              "to_m": 964,
+              "material": "Хотерив: редуване на мергели, алевролити и пясъчници"
+            },
+            {
+              "from_m": 964,
+              "to_m": 1294,
+              "material": "Хотерив: сиви мергели, често алевролитни, песъчливи или варовити"
+            },
+            {
+              "from_m": 1294,
+              "to_m": 1309,
+              "material": "Хотерив: варовити мергели с пелитова структура"
+            },
+            {
+              "from_m": 1309,
+              "to_m": 1321,
+              "material": "Валанжин: кремави варовици, плътни, слабо напукани"
+            },
+            {
+              "from_m": 1321,
+              "to_m": 1335,
+              "material": "Валанжин: светлосивокремави микрозърнести варовици"
+            },
+            {
+              "from_m": 1335,
+              "to_m": 1811,
+              "material": "Валанжин: кремави средно до дребнокристалинни доломити"
+            }
+          ],
+          "unresolved_source_gaps": [
+            {
+              "from_m": 474,
+              "to_m": 479,
+              "reason": "Gap in original printed section"
+            },
+            {
+              "from_m": 488,
+              "to_m": 498,
+              "reason": "Gap in original printed section"
+            }
+          ],
+          "mineral_evidence_note": "Mineral-water observations remain exclusively in the separate mineral-water register",
+          "quality_flags": [
+            "OFFICIAL_BOREHOLE_LITHOLOGY",
+            "ORIGINAL_PDF_PAGES_1_AND_2_VISUALLY_CHECKED",
+            "TWO_PRINTED_INTERVAL_GAPS_PRESERVED",
+            "EXACT_MOUTH_COORDINATES_NOT_VERIFIED",
+            "NO_SPATIAL_INTERPOLATION_AUTHORIZED",
+            "RESEARCH_ONLY_NOT_RUNTIME"
+          ],
+          "next_action": "TRACE_ENCHEV_1979_AND_VERIFY_BOREHOLE_LOCATION"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-021",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-021",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/20",
+      "source_ids": [
+        "LOVECH-S2-021",
+        "https://old.mh.government.bg/media/filer_public/2019/10/03/138.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-021",
+        "title": "Балнеологична оценка №138 - Чифлик, сондаж Р-1хг",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "2,5 км югозападно от центъра на с. Чифлик, десен бряг на р. Бели Осъм, на около 50 м от руслото",
+        "source_ids": [
+          "LOVECH-S2-021",
+          "https://old.mh.government.bg/media/filer_public/2019/10/03/138.pdf"
+        ],
+        "document_type": "OFFICIAL_MINERAL_ASSESSMENT_WITH_BOREHOLE_LITHOLOGY",
+        "source_reference": "Балнеологична оценка №138, 05.09.2019, страници 1-2",
+        "source_url": "https://old.mh.government.bg/media/filer_public/2019/10/03/138.pdf",
+        "source_status_original": "VERIFIED_SOURCE",
+        "scope_claim_original": "Documented borehole; exact surveyed mouth coordinates not verified",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-021",
+          "title": "Балнеологична оценка №138 - Чифлик, сондаж Р-1хг",
+          "author": "Министерство на здравеопазването",
+          "year": 2019,
+          "document_date_printed": "2019-09-05",
+          "url": "https://old.mh.government.bg/media/filer_public/2019/10/03/138.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_MINERAL_ASSESSMENT_WITH_BOREHOLE_LITHOLOGY",
+          "priority": "A1_A3",
+          "status": "VERIFIED_SOURCE",
+          "borehole_name": "Р-1хг",
+          "drilling_period_original": "1972-1973",
+          "drilled_total_depth_m": 1574,
+          "described_lithology_depth_m": 1572,
+          "location_original": "2,5 км югозападно от центъра на с. Чифлик, десен бряг на р. Бели Осъм, на около 50 м от руслото",
+          "scope_claim": "Documented borehole; exact surveyed mouth coordinates not verified",
+          "source_reference": "Балнеологична оценка №138, 05.09.2019, страници 1-2",
+          "lithology_intervals": [
+            {
+              "from_m": 0,
+              "to_m": 5,
+              "material": "Почвен слой, изветряла основна скала, блокажи, пясъчници и кварцити",
+              "age_original": "Кватернер"
+            },
+            {
+              "from_m": 5,
+              "to_m": 993,
+              "material": "Редуване на пясъчници, алевролити, мергели, алевритни варовици и варовици",
+              "age_original": "Горна юра, титон"
+            },
+            {
+              "from_m": 993,
+              "to_m": 1047,
+              "material": "Варовици, силно напукани и здрави, в различни части на интервала",
+              "age_original": "Горна юра, оксфорд и кимеридж"
+            },
+            {
+              "from_m": 1047,
+              "to_m": 1088,
+              "material": "Варовици, сиви до тъмносиви, плътни и напукани",
+              "age_original": "Горна юра, калов"
+            },
+            {
+              "from_m": 1088,
+              "to_m": 1338,
+              "material": "Аргилити, кварцови пясъчници и алевролити",
+              "age_original": "Средна юра"
+            },
+            {
+              "from_m": 1338,
+              "to_m": 1464,
+              "material": "Аргилитно-алевритно-пясъчникова задруга с доломитни варовици",
+              "age_original": "Долна юра"
+            },
+            {
+              "from_m": 1464,
+              "to_m": 1508,
+              "material": "Тъмносиви глинести доломити с аргилитни и пясъчникови прослойки",
+              "age_original": "Долен триас, Рьот"
+            },
+            {
+              "from_m": 1508,
+              "to_m": 1568,
+              "material": "Керемидено-червени кварцови и кварцово-слюдести пясъчници",
+              "age_original": "Долен триас, Бунтзандщайн"
+            },
+            {
+              "from_m": 1568,
+              "to_m": 1572,
+              "material": "Сиви туфити и късове от изменени вулканити и метаморфити",
+              "age_original": "Долен триас според документа"
+            }
+          ],
+          "unresolved_source_gaps": [
+            {
+              "from_m": 1572,
+              "to_m": 1574,
+              "reason": "Drilled depth exceeds described lithology by 2 m"
+            }
+          ],
+          "documented_aquifer_intervals": [
+            {
+              "from_m": 1003,
+              "to_m": 1038,
+              "description": "Първи водоносен хоризонт, горна юра"
+            },
+            {
+              "from_m": 1170,
+              "to_m": 1180,
+              "description": "Втори водоносен хоризонт, средна юра"
+            },
+            {
+              "from_m": 1358,
+              "to_m": 1390,
+              "description": "Трети водоносен хоризонт, долна юра"
+            }
+          ],
+          "mineral_evidence_note": "Hydrogeological intervals preserved as source evidence; mineral chemistry, discharge and temperature remain in separate existing registry",
+          "quality_flags": [
+            "OFFICIAL_BOREHOLE_LITHOLOGY",
+            "ORIGINAL_PDF_PAGES_1_AND_2_VISUALLY_CHECKED",
+            "NINE_DOCUMENTED_LITHOLOGY_INTERVALS",
+            "LAST_TWO_METRES_NOT_LITHOLOGICALLY_DESCRIBED",
+            "EXACT_MOUTH_COORDINATES_NOT_VERIFIED",
+            "RESEARCH_ONLY_NOT_RUNTIME",
+            "NO_SPATIAL_INTERPOLATION_AUTHORIZED"
+          ],
+          "next_action": "VERIFY_COLLOCATION_AND_TRACE_PRIMARY_DRILLING_ARCHIVE"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-022",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-022",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/21",
+      "source_ids": [
+        "LOVECH-S2-022",
+        "https://igh-bg.com/Vol/Vol_33_2019/3_Benderev%20et%20al%20-%20IGH%2033.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-022",
+        "title": "Хидрохимична характеристика на термалните води в находище Шипково",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Шипковски минерални бани, долина на р. Ръждавец",
+        "source_ids": [
+          "LOVECH-S2-022",
+          "https://igh-bg.com/Vol/Vol_33_2019/3_Benderev%20et%20al%20-%20IGH%2033.pdf"
+        ],
+        "document_type": "PEER_REVIEWED_HYDROGEOLOGICAL_STUDY_WITH_BOREHOLE_SECTION",
+        "source_reference": "Pages 29-32; figures 1-3; table 1",
+        "source_url": "https://igh-bg.com/Vol/Vol_33_2019/3_Benderev%20et%20al%20-%20IGH%2033.pdf",
+        "source_status_original": "VERIFIED_SOURCE",
+        "scope_claim_original": "Local Shipkovo thermal-water field, not entire Troyan municipality",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-022",
+          "title": "Хидрохимична характеристика на термалните води в находище Шипково",
+          "author": "А. Бендерев; С. Станев; М. Траянова; С. Колев; А. Тотева",
+          "year": 2019,
+          "journal": "Инженерна геология и хидрогеология",
+          "volume": 33,
+          "pages": "27-39",
+          "url": "https://igh-bg.com/Vol/Vol_33_2019/3_Benderev%20et%20al%20-%20IGH%2033.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "PEER_REVIEWED_HYDROGEOLOGICAL_STUDY_WITH_BOREHOLE_SECTION",
+          "priority": "A1_A2_A3",
+          "status": "VERIFIED_SOURCE",
+          "location_original": "Шипковски минерални бани, долина на р. Ръждавец",
+          "scope_claim": "Local Shipkovo thermal-water field, not entire Troyan municipality",
+          "source_reference": "Pages 29-32; figures 1-3; table 1",
+          "borehole_summary_evidence": [
+            {
+              "borehole": "С-1",
+              "drilled_year": 1964,
+              "total_depth_m": 224.1,
+              "carbonate_contact_m": 127,
+              "evidence_type": "PUBLISHED_BOREHOLE_SUMMARY",
+              "complete_lithology_log": false
+            },
+            {
+              "borehole": "С-2",
+              "drilled_year": 1964,
+              "total_depth_m": 174,
+              "carbonate_contact_m": 0,
+              "evidence_type": "PUBLISHED_BOREHOLE_SUMMARY",
+              "complete_lithology_log": false
+            },
+            {
+              "borehole": "С-3",
+              "drilled_year": 1965,
+              "total_depth_m": 215.8,
+              "carbonate_contact_m": 28,
+              "evidence_type": "PUBLISHED_BOREHOLE_SUMMARY",
+              "complete_lithology_log": false
+            },
+            {
+              "borehole": "Л-37",
+              "drilled_year": 1984,
+              "total_depth_m": 1315,
+              "carbonate_contact_m": 1227,
+              "evidence_type": "PUBLISHED_BOREHOLE_SUMMARY",
+              "complete_lithology_log": false
+            }
+          ],
+          "geological_structure": {
+            "feature": "Шипковска антиклинала и Шипковски разлом",
+            "interpretation": "Triassic carbonate rocks deepen eastwards under Jurassic-Cretaceous rocks",
+            "figure": 3,
+            "spatial_status": "SCHEMATIC_NOT_GEOREFERENCED"
+          },
+          "source_discrepancies": [
+            {
+              "borehole": "Л-1",
+              "catalog_source": "LOVECH-S2-017",
+              "field": "drilling_year",
+              "catalog_value": "1977",
+              "publication_value": "1973",
+              "status": "UNRESOLVED"
+            },
+            {
+              "borehole": "Л-28",
+              "catalog_source": "LOVECH-S2-019",
+              "field": "carbonate_contact_depth",
+              "catalog_value": "Limestone described from 7.50 m",
+              "publication_value": "Carbonate contact at 60 m",
+              "status": "DIFFERENT_DEFINITION_OR_SOURCE_CONFLICT"
+            },
+            {
+              "borehole": "Л-36",
+              "catalog_source": "LOVECH-S2-018",
+              "field": "carbonate_contact_depth",
+              "catalog_value": "Flysch base 552.70 m",
+              "publication_value": "Carbonate contact 557 m",
+              "status": "UNRESOLVED"
+            }
+          ],
+          "archival_leads": [
+            {
+              "author": "Г. Михайлов",
+              "year": 1979,
+              "archive_reference": "Национален геофонд V-290"
+            },
+            {
+              "author": "Г. Михайлов",
+              "year": 1984,
+              "archive_reference": "Национален геофонд V-326"
+            }
+          ],
+          "related_intake_ids": [
+            "LOVECH-S2-016",
+            "LOVECH-S2-017",
+            "LOVECH-S2-018",
+            "LOVECH-S2-019"
+          ],
+          "quality_flags": [
+            "PUBLISHED_BOREHOLE_SUMMARY_NOT_COMPLETE_LOG",
+            "ORIGINAL_TABLE_AND_SECTION_VISUALLY_CHECKED",
+            "THREE_SOURCE_DIFFERENCES_RETAINED",
+            "NO_EXACT_BOREHOLE_MOUTH_COORDINATES",
+            "NO_AUTOMATIC_SPATIAL_INTERPOLATION",
+            "MINERAL_WATER_EVIDENCE_SEPARATE",
+            "RESEARCH_ONLY_NOT_RUNTIME"
+          ],
+          "next_action": "TRACE_ARCHIVAL_LOGS_V290_V326_AND_VALIDATE_SECTION_GEOMETRY"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-023",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-023",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/22",
+      "source_ids": [
+        "LOVECH-S2-023",
+        "https://gz-pleven.mrrb.government.bg/landslide/972/"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-023",
+        "title": "Свлачище LOV18.58308.02 - Пресяка",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "с. Пресяка, ул. Г. Бенковски, срещу имот №5",
+        "source_ids": [
+          "LOVECH-S2-023",
+          "https://gz-pleven.mrrb.government.bg/landslide/972/"
+        ],
+        "document_type": "OFFICIAL_LANDSLIDE_SITE_WITH_ATTACHMENTS",
+        "source_reference": null,
+        "source_url": "https://gz-pleven.mrrb.government.bg/landslide/972/",
+        "source_status_original": "FOUND",
+        "scope_claim_original": null,
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-023",
+          "title": "Свлачище LOV18.58308.02 - Пресяка",
+          "author": "МРРБ / Геозащита Плевен",
+          "year": null,
+          "url": "https://gz-pleven.mrrb.government.bg/landslide/972/",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_LANDSLIDE_SITE_WITH_ATTACHMENTS",
+          "priority": "A2_A3",
+          "status": "FOUND",
+          "original_record_id": "LOV18.58308.02",
+          "municipality": "Ловеч",
+          "location_original": "с. Пресяка, ул. Г. Бенковски, срещу имот №5",
+          "listed_attachments": [
+            "igst_17-03-2015.pdf",
+            "sit_2016.pdf",
+            "igst_09-11-2022.pdf",
+            "sit_2023.pdf"
+          ],
+          "related_intake_ids": [
+            "LOVECH-S2-006",
+            "LOVECH-S2-005"
+          ],
+          "depth_evidence": "NOT_VERIFIED",
+          "quality_flags": [
+            "OFFICIAL_SITE_RECORD",
+            "FOUR_ATTACHMENTS_LISTED",
+            "ATTACHMENTS_NOT_CONTENT_VERIFIED",
+            "LANDSLIDE_LOCATION_NOT_BOREHOLE_MOUTH",
+            "NO_VERIFIED_LITHOLOGY_INTERVALS"
+          ],
+          "next_action": "TRACE_PUBLIC_FINAL_ENGINEERING_REPORTS_THROUGH_OTHER_SOURCES",
+          "attachment_access_review": {
+            "checked_at": "2026-11-11",
+            "page_http_status": 200,
+            "filenames_listed": 4,
+            "filename_display": "PLAIN_TEXT_TABLE_CELLS",
+            "direct_download_links_found": 0,
+            "original_pdf_content_verified": false,
+            "borehole_log_content_verified": false,
+            "access_status": "FILENAMES_VISIBLE_DOCUMENT_BYTES_NOT_ACCESSED",
+            "interpretation": "Names of attachments are public; their content is not verified",
+            "next_action": "RETRY_ONLY_IF_OFFICIAL_DIRECT_DOCUMENT_URL_OR_PUBLIC_ARCHIVE_IS_FOUND"
+          }
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-024",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-024",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/23",
+      "source_ids": [
+        "LOVECH-S2-024",
+        "https://gz-pleven.mrrb.government.bg/landslide/1071/"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-024",
+        "title": "Свлачище LOV18.67218.01 - Слатина",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "с. Слатина, ул. Александър Стамболийски №33 и ул. Крайна №2",
+        "source_ids": [
+          "LOVECH-S2-024",
+          "https://gz-pleven.mrrb.government.bg/landslide/1071/"
+        ],
+        "document_type": "OFFICIAL_LANDSLIDE_SITE_WITH_ATTACHMENTS",
+        "source_reference": null,
+        "source_url": "https://gz-pleven.mrrb.government.bg/landslide/1071/",
+        "source_status_original": "FOUND",
+        "scope_claim_original": null,
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-024",
+          "title": "Свлачище LOV18.67218.01 - Слатина",
+          "author": "МРРБ / Геозащита Плевен",
+          "year": null,
+          "url": "https://gz-pleven.mrrb.government.bg/landslide/1071/",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_LANDSLIDE_SITE_WITH_ATTACHMENTS",
+          "priority": "A2_A3",
+          "status": "FOUND",
+          "original_record_id": "LOV18.67218.01",
+          "municipality": "Ловеч",
+          "location_original": "с. Слатина, ул. Александър Стамболийски №33 и ул. Крайна №2",
+          "listed_attachments": [
+            "Slatina_LOV18.pdf",
+            "LOV18.pdf",
+            "igst.pdf",
+            "sit.pdf"
+          ],
+          "related_intake_ids": [
+            "LOVECH-S2-006",
+            "LOVECH-S2-005"
+          ],
+          "depth_evidence": "NOT_VERIFIED",
+          "quality_flags": [
+            "OFFICIAL_SITE_RECORD",
+            "FOUR_ATTACHMENTS_LISTED",
+            "ATTACHMENTS_NOT_CONTENT_VERIFIED",
+            "LANDSLIDE_LOCATION_NOT_BOREHOLE_MOUTH",
+            "NO_VERIFIED_LITHOLOGY_INTERVALS"
+          ],
+          "next_action": "TRACE_PUBLIC_FINAL_ENGINEERING_REPORTS_THROUGH_OTHER_SOURCES",
+          "attachment_access_review": {
+            "checked_at": "2026-11-11",
+            "page_http_status": 200,
+            "filenames_listed": 4,
+            "filename_display": "PLAIN_TEXT_TABLE_CELLS",
+            "direct_download_links_found": 0,
+            "original_pdf_content_verified": false,
+            "borehole_log_content_verified": false,
+            "access_status": "FILENAMES_VISIBLE_DOCUMENT_BYTES_NOT_ACCESSED",
+            "interpretation": "Names of attachments are public; their content is not verified",
+            "next_action": "RETRY_ONLY_IF_OFFICIAL_DIRECT_DOCUMENT_URL_OR_PUBLIC_ARCHIVE_IS_FOUND"
+          }
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-025",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-025",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/24",
+      "source_ids": [
+        "LOVECH-S2-025",
+        "https://app.eop.bg/today/271786"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-025",
+        "title": "Инженерно-геоложки проучвания Ловеч, Пресяка и Слатина - преписка 00169-2023-0002",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": null,
+        "source_ids": [
+          "LOVECH-S2-025",
+          "https://app.eop.bg/today/271786"
+        ],
+        "document_type": "OFFICIAL_PROCUREMENT_CASE_LEAD",
+        "source_reference": null,
+        "source_url": "https://app.eop.bg/today/271786",
+        "source_status_original": "FOUND",
+        "scope_claim_original": null,
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-025",
+          "title": "Инженерно-геоложки проучвания Ловеч, Пресяка и Слатина - преписка 00169-2023-0002",
+          "author": "Община Ловеч / Геотехника - АБС ООД",
+          "year": 2023,
+          "url": "https://app.eop.bg/today/271786",
+          "supporting_url": "https://sigma.midt.bg/contracts/e:00169-2023-0002:104065:3:eik:130298379:1",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_PROCUREMENT_CASE_LEAD",
+          "priority": "A1_A2_A3",
+          "status": "FOUND",
+          "procurement_id": "00169-2023-0002",
+          "contractor": "Геотехника - АБС ООД",
+          "contract_date": "2023-07-11",
+          "municipality": "Ловеч",
+          "project_parts": [
+            "Позиция 1 - Пресяка",
+            "Позиция 2 - Слатина",
+            "Позиция 3 - Инженерно-геоложко райониране на гр. Ловеч"
+          ],
+          "related_intake_ids": [
+            "LOVECH-S2-001",
+            "LOVECH-S2-005",
+            "LOVECH-S2-023",
+            "LOVECH-S2-024"
+          ],
+          "depth_evidence": "NO_PUBLISHED_BOREHOLE_LOG_VERIFIED",
+          "quality_flags": [
+            "CONTRACT_VERIFIED",
+            "FINAL_REPORTS_NOT_VERIFIED_PUBLIC",
+            "NO_BOREHOLE_COORDINATES",
+            "NO_MEASURED_DEPTH_INTERVALS"
+          ],
+          "next_action": "LOCATE_PUBLIC_FINAL_REPORTS_IN_EOP_AND_MUNICIPAL_ARCHIVE"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-026",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-026",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/25",
+      "source_ids": [
+        "LOVECH-S2-026",
+        "https://riew-pleven.eu/doc/OVOSEO/konsult/OUP-Ugarchin/DEO_OUP_Ugarchin_2020_3.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-026",
+        "title": "Доклад за екологична оценка на ОУП на община Угърчин",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Територията на община Угърчин",
+        "source_ids": [
+          "LOVECH-S2-026",
+          "https://riew-pleven.eu/doc/OVOSEO/konsult/OUP-Ugarchin/DEO_OUP_Ugarchin_2020_3.pdf"
+        ],
+        "document_type": "OFFICIAL_REGIONAL_GEOLOGICAL_SYNTHESIS",
+        "source_reference": "Раздел 1.3 Земни недра, страница 61",
+        "source_url": "https://riew-pleven.eu/doc/OVOSEO/konsult/OUP-Ugarchin/DEO_OUP_Ugarchin_2020_3.pdf",
+        "source_status_original": "VERIFIED_SOURCE",
+        "scope_claim_original": "Municipality-wide geological context, not point-specific drilling evidence",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-026",
+          "title": "Доклад за екологична оценка на ОУП на община Угърчин",
+          "author": "Експертен колектив по екологична оценка, възложител Община Угърчин",
+          "year": 2020,
+          "url": "https://riew-pleven.eu/doc/OVOSEO/konsult/OUP-Ugarchin/DEO_OUP_Ugarchin_2020_3.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_REGIONAL_GEOLOGICAL_SYNTHESIS",
+          "priority": "B1_C",
+          "status": "VERIFIED_SOURCE",
+          "municipality": "Угърчин",
+          "location_original": "Територията на община Угърчин",
+          "scope_claim": "Municipality-wide geological context, not point-specific drilling evidence",
+          "source_reference": "Раздел 1.3 Земни недра, страница 61",
+          "mapped_geological_periods": [
+            "Кватернер",
+            "Неоген",
+            "Палеоген",
+            "Горна креда",
+            "Долна креда"
+          ],
+          "map_sheet_leads": [
+            "Ловеч",
+            "Тетевен",
+            "Червен бряг"
+          ],
+          "source_observation": "Докладът отбелязва ограничен обем на сондажни и геофизични проучвания",
+          "depth_evidence": "NO_POINT_DEPTH_INTERVALS_VERIFIED",
+          "quality_flags": [
+            "OFFICIAL_REGIONAL_DOCUMENT",
+            "PAGE_61_VISUALLY_CHECKED",
+            "REGIONAL_SYNTHESIS_NOT_BOREHOLE_LOG",
+            "ORIGINAL_GEOLOGICAL_MAPS_REQUIRE_REVIEW",
+            "NO_EXACT_BOREHOLE_COORDINATES",
+            "RESEARCH_ONLY_NOT_RUNTIME"
+          ],
+          "next_action": "TRACE_PRIMARY_MAPS_AND_ENGINEERING_BOREHOLES_IN_UGARCHIN"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-027",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-027",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/26",
+      "source_ids": [
+        "LOVECH-S2-027",
+        "https://riew-pleven.eu/doc/OVOSEO/precenkiOVOS/2025/PN43PR2025.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-027",
+        "title": "Решение ПН-43-ПР/2025 - проектен водоснабдителен сондаж Дренов",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": null,
+        "source_ids": [
+          "LOVECH-S2-027",
+          "https://riew-pleven.eu/doc/OVOSEO/precenkiOVOS/2025/PN43PR2025.pdf"
+        ],
+        "document_type": "OFFICIAL_ENVIRONMENTAL_DECISION_PROPOSED_BOREHOLE",
+        "source_reference": "Решение № ПН-43-ПР/2025, страница 1",
+        "source_url": "https://riew-pleven.eu/doc/OVOSEO/precenkiOVOS/2025/PN43PR2025.pdf",
+        "source_status_original": "PROJECT_ONLY",
+        "scope_claim_original": null,
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-027",
+          "title": "Решение ПН-43-ПР/2025 - проектен водоснабдителен сондаж Дренов",
+          "author": "РИОСВ - Плевен / МОСВ",
+          "year": 2025,
+          "url": "https://riew-pleven.eu/doc/OVOSEO/precenkiOVOS/2025/PN43PR2025.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_ENVIRONMENTAL_DECISION_PROPOSED_BOREHOLE",
+          "priority": "A1_A3",
+          "status": "PROJECT_ONLY",
+          "municipality": "Ловеч",
+          "settlement": "Дренов",
+          "locality": "Владинска мера",
+          "cadastral_property_id": "23666.203.5",
+          "proposed_depth_m": 100,
+          "proposed_coordinates_original": "N 43°17'13.81\"; E 24°49'52.76\"",
+          "coordinate_role": "PROPOSED_BOREHOLE_LOCATION_NOT_VERIFIED_MOUTH",
+          "source_reference": "Решение № ПН-43-ПР/2025, страница 1",
+          "proposed_purpose": "Допълнително питейно-битово водоснабдяване на с. Дренов",
+          "existing_facility_lead": "Дренов - ВиК Ловеч",
+          "actual_drilling_confirmed": false,
+          "actual_total_depth_verified": false,
+          "complete_lithology_log_verified": false,
+          "measured_lithology_intervals": [],
+          "quality_flags": [
+            "OFFICIAL_PRIMARY_DOCUMENT",
+            "PROJECTED_DEPTH_NOT_ACTUAL_DEPTH",
+            "PROPOSED_COORDINATES_NOT_AS_BUILT",
+            "EXISTING_WATER_FACILITY_MENTIONED_WITHOUT_LOG",
+            "NO_RUNTIME_DEPTH_MODEL_AUTHORIZED",
+            "RESEARCH_ONLY"
+          ],
+          "next_action": "TRACE_EXISTING_DRENOV_VIK_WELL_LOG_AND_PROJECT_COMPLETION_EVIDENCE"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-028",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-028",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/27",
+      "source_ids": [
+        "LOVECH-S2-028",
+        "https://riew-pleven.eu/doc/OVOSEO/konsult/DEO_Aprilsi/Doklad-Aprilsi.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-028",
+        "title": "Коригиран доклад за екологична оценка - частично изменение на ОУП Априлци, Долни шолуяци",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Местност Долни шолуяци, гр. Априлци",
+        "source_ids": [
+          "LOVECH-S2-028",
+          "https://riew-pleven.eu/doc/OVOSEO/konsult/DEO_Aprilsi/Doklad-Aprilsi.pdf"
+        ],
+        "document_type": "OFFICIAL_ENVIRONMENTAL_GEOLOGICAL_SYNTHESIS",
+        "source_reference": "Section VI.1.4 Земни недра, printed pages 40-42",
+        "source_url": "https://riew-pleven.eu/doc/OVOSEO/konsult/DEO_Aprilsi/Doklad-Aprilsi.pdf",
+        "source_status_original": "VERIFIED_SOURCE",
+        "scope_claim_original": "Municipality-level geological description; planning decision concerns one property",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-028",
+          "title": "Коригиран доклад за екологична оценка - частично изменение на ОУП Априлци, Долни шолуяци",
+          "author": "Община Априлци / експертен колектив по екологична оценка",
+          "year": 2025,
+          "document_date_printed": "2025-02",
+          "url": "https://riew-pleven.eu/doc/OVOSEO/konsult/DEO_Aprilsi/Doklad-Aprilsi.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_ENVIRONMENTAL_GEOLOGICAL_SYNTHESIS",
+          "priority": "B1_C",
+          "status": "VERIFIED_SOURCE",
+          "municipality": "Априлци",
+          "location_original": "Местност Долни шолуяци, гр. Априлци",
+          "cadastral_property_id": "52218.419.76",
+          "scope_claim": "Municipality-level geological description; planning decision concerns one property",
+          "source_reference": "Section VI.1.4 Земни недра, printed pages 40-42",
+          "geological_materials_reported": [
+            "Пясъчници",
+            "Мергелни варовици",
+            "Доломити",
+            "Глини",
+            "Гранити",
+            "Гранитогнайси",
+            "Кварцопорфири"
+          ],
+          "geological_context": "Сложен старопланински геоложки и тектоничен строеж; нееднородни седиментни, магмени и метаморфни комплекси",
+          "geological_hazards": "Обобщени сведения за свлачищни и срутищни процеси",
+          "site_specific_borehole_log": false,
+          "measured_lithology_intervals": [],
+          "depth_evidence": "NO_VERIFIED_POINT_DEPTH_INTERVALS",
+          "source_scope_warning": "Regional geology cannot be assigned to the named property without local evidence",
+          "quality_flags": [
+            "OFFICIAL_PUBLISHED_REPORT",
+            "ORIGINAL_GEOLOGICAL_SECTION_REVIEWED",
+            "REGIONAL_SYNTHESIS_NOT_BOREHOLE_LOG",
+            "NO_VERIFIED_BOREHOLE_MOUTH_COORDINATES",
+            "NO_POINT_DEPTH_MODEL_AUTHORIZED",
+            "RESEARCH_ONLY_NOT_RUNTIME"
+          ],
+          "next_action": "TRACE_APRILTSI_LANDSLIDE_FILES_AND_SHALLOW_ENGINEERING_GEOLOGY"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-029",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-029",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/28",
+      "source_ids": [
+        "LOVECH-S2-029",
+        "https://riew-pleven.eu/doc/OVOSEO/Konsult/DOVOS%20Uglen%202015.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-029",
+        "title": "Доклад за ОВОС - добив на варовици от находище Ъглен",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Explored limestone deposit, not the entire municipality",
+        "source_ids": [
+          "LOVECH-S2-029",
+          "https://riew-pleven.eu/doc/OVOSEO/Konsult/DOVOS%20Uglen%202015.pdf"
+        ],
+        "document_type": "PUBLIC_GEOLOGICAL_EXPLORATION_SYNTHESIS",
+        "source_reference": "Geological characterization and deposit exploration sections, printed pages 17 and 137-143",
+        "source_url": "https://riew-pleven.eu/doc/OVOSEO/Konsult/DOVOS%20Uglen%202015.pdf",
+        "source_status_original": "TEXT_VERIFIED_FIGURES_PENDING",
+        "scope_claim_original": "Explored limestone deposit, not the entire municipality",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-029",
+          "title": "Доклад за ОВОС - добив на варовици от находище Ъглен",
+          "author": "Публикуван от РИОСВ - Плевен",
+          "year": 2015,
+          "url": "https://riew-pleven.eu/doc/OVOSEO/Konsult/DOVOS%20Uglen%202015.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "PUBLIC_GEOLOGICAL_EXPLORATION_SYNTHESIS",
+          "priority": "A1_A2_A3",
+          "municipality": "Луковит",
+          "settlement": "Ъглен",
+          "deposit": "Ъглен",
+          "status": "TEXT_VERIFIED_FIGURES_PENDING",
+          "scope_claim": "Explored limestone deposit, not the entire municipality",
+          "source_reference": "Geological characterization and deposit exploration sections, printed pages 17 and 137-143",
+          "geological_units": [
+            "Кайлъшка свита - горен мастрихт",
+            "Кватернерни алувиално-пролувиални наслаги"
+          ],
+          "deposit_aggregate_measurements": [
+            {
+              "parameter": "mean_overburden_thickness",
+              "value_m": 3.8,
+              "evidence_role": "DEPOSIT_AVERAGE_FROM_EXPLORATION_BOREHOLES"
+            },
+            {
+              "parameter": "mean_useful_limestone_thickness",
+              "value_m": 41.3,
+              "evidence_role": "DEPOSIT_AVERAGE_FROM_EXPLORATION_BOREHOLES"
+            }
+          ],
+          "locality_descriptions": [
+            {
+              "parameter": "locally_described_quaternary_cover",
+              "from_m": 1.2,
+              "to_m": 2.5,
+              "evidence_role": "LOCAL_THICKNESS_RANGE_NOT_BOREHOLE_DEPTH_INTERVAL"
+            }
+          ],
+          "observed_materials": [
+            "Масивни органогенни варовици",
+            "Напукани и окарстени варовици",
+            "Глинести запълвания в пукнатини и каверни",
+            "Кватернерни песъчливо-глинести наслаги"
+          ],
+          "borehole_presence_reported": true,
+          "individual_borehole_ids_verified": false,
+          "individual_borehole_logs_verified": false,
+          "individual_borehole_coordinates_verified": false,
+          "measured_point_lithology_intervals": [],
+          "quality_flags": [
+            "DEPOSIT_LEVEL_AGGREGATE_EVIDENCE",
+            "MEAN_VALUES_NOT_POINT_DEPTH_INTERVALS",
+            "ORIGINAL_BOREHOLE_LOGS_NOT_VERIFIED",
+            "EXACT_BOREHOLE_COORDINATES_NOT_VERIFIED",
+            "PDF_FIGURES_NOT_VISUALLY_VERIFIED",
+            "NO_REGIONAL_EXTRAPOLATION",
+            "RESEARCH_ONLY_NOT_RUNTIME"
+          ],
+          "next_action": "TRACE_PRIMARY_EXPLORATION_REPORT_AND_INDIVIDUAL_BOREHOLE_LOGS"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-030",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-030",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/29",
+      "source_ids": [
+        "LOVECH-S2-030",
+        "https://geoproblems.eu/wp-content/uploads/2024/02/2023_34/6_alexiev.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-030",
+        "title": "Холистичен палеогеографски методологичен подход на изследване на археологически обект Боаза",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": null,
+        "source_ids": [
+          "LOVECH-S2-030",
+          "https://geoproblems.eu/wp-content/uploads/2024/02/2023_34/6_alexiev.pdf"
+        ],
+        "document_type": "PEER_REVIEWED_SHALLOW_EXCAVATION_AND_SEDIMENTOLOGY",
+        "source_reference": "Printed pages 61-62 and 68-69; figures 1 and 4",
+        "source_url": "https://geoproblems.eu/wp-content/uploads/2024/02/2023_34/6_alexiev.pdf",
+        "source_status_original": "VERIFIED_SOURCE",
+        "scope_claim_original": null,
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-030",
+          "title": "Холистичен палеогеографски методологичен подход на изследване на археологически обект Боаза",
+          "author": "Георги Алексиев; Маринела Агаларева",
+          "year": 2023,
+          "journal": "Проблеми на географията",
+          "issue": "3-4",
+          "pages": "59-76",
+          "doi": "10.35101/prg-2023.3-4.6",
+          "url": "https://geoproblems.eu/wp-content/uploads/2024/02/2023_34/6_alexiev.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "PEER_REVIEWED_SHALLOW_EXCAVATION_AND_SEDIMENTOLOGY",
+          "priority": "A2_A3_B2",
+          "status": "VERIFIED_SOURCE",
+          "municipality": "Ябланица",
+          "settlement": "Брестница",
+          "locality": "Полето - Боаза",
+          "geographic_scope": "Local archaeological site near the Hemus highway and Vit river valley",
+          "site_coordinates": {
+            "latitude": 43.056196,
+            "longitude": 24.234598,
+            "role": "PUBLISHED_SITE_LOCATION_NOT_TRENCH_OR_BOREHOLE_POINT"
+          },
+          "source_reference": "Printed pages 61-62 and 68-69; figures 1 and 4",
+          "fieldwork_period": "2019",
+          "extracted_shallow_evidence": [
+            {
+              "evidence": "ARCHAEOLOGICAL_EXCAVATION_NETWORK",
+              "count_description": "More than 20 trenches",
+              "typical_depth_min_m": 1.5,
+              "typical_depth_max_m": 2,
+              "individual_logs": false
+            },
+            {
+              "evidence": "THREE_LARGE_TRENCHES",
+              "count": 3,
+              "reported_depth_m": 3,
+              "individual_logs": false
+            },
+            {
+              "evidence": "LOCAL_GRAVELLY_SAND_COVER",
+              "reported_thickness_max_m": 0.8,
+              "material": "Делувиални гравийно-песъчливи наслаги",
+              "spatial_role": "SELECTED_TRENCHES"
+            },
+            {
+              "evidence": "LOCAL_CLAYEY_SAND_LAYER",
+              "reported_thickness_min_m": 0.4,
+              "reported_thickness_max_m": 0.5,
+              "material": "Излужени глинести пясъци",
+              "spatial_role": "SELECTED_TRENCHES"
+            },
+            {
+              "evidence": "COLLUVIAL_COVER",
+              "reported_thickness_max_m": 1.5,
+              "material": "Колувиални и делувиални глинесто-песъчливи наслаги",
+              "spatial_role": "LOCAL_SLOPE_AND_ALLUVIAL_FAN"
+            },
+            {
+              "evidence": "UNDERLYING_FINE_SEDIMENTS",
+              "material": "Алевритни и пелитни глини",
+              "thickness_m": null,
+              "spatial_role": "DESCRIBED_TRENCH_CONTEXT"
+            }
+          ],
+          "geologic_materials": [
+            "Алувиално-делувиално-пролувиални наслаги",
+            "Гравийни пясъци и чакъли",
+            "Валуни",
+            "Колувиални глинесто-песъчливи наслаги",
+            "Алевритни и пелитни глини"
+          ],
+          "trench_count_role": "ARCHAEOLOGICAL_TRENCHES_NOT_DRILLED_BOREHOLES",
+          "individual_trench_coordinates_verified": false,
+          "full_borehole_log_verified": false,
+          "measured_borehole_lithology_intervals": [],
+          "relation_to_groundwater": "NO_MEASURED_GROUNDWATER_LEVEL_VERIFIED",
+          "quality_flags": [
+            "ORIGINAL_PDF_TEXT_AND_SELECTED_FIGURES_CHECKED",
+            "SHALLOW_DIRECT_TRENCH_OBSERVATIONS",
+            "THICKNESSES_FROM_DIFFERENT_TRENCHES_NOT_ONE_LOG",
+            "SITE_COORDINATES_NOT_INDIVIDUAL_TRENCH_COORDINATES",
+            "NO_DEEP_BOREHOLE_EVIDENCE",
+            "NO_SPATIAL_EXTRAPOLATION",
+            "RESEARCH_ONLY_NOT_RUNTIME"
+          ],
+          "next_action": "TRACE_ORIGINAL_TRENCH_PLAN_AND_ENGINEERING_LOGS_NEAR_BOAZA"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-031",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-031",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/30",
+      "source_ids": [
+        "LOVECH-S2-031",
+        "https://www.moew.government.bg/static/media/ups/articles/attachments/%D0%94%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4%20%D0%B7%D0%B0%20%D0%9E%D0%92%D0%9E%D0%A1ae33092d2c0d48768bcf08508511ab22.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-031",
+        "title": "Доклад за ОВОС - газопровод Беглеж - Дерманци - Батулци - Калугерово",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Газопровод Беглеж - Дерманци - Батулци - Калугерово",
+        "source_ids": [
+          "LOVECH-S2-031",
+          "https://www.moew.government.bg/static/media/ups/articles/attachments/%D0%94%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4%20%D0%B7%D0%B0%20%D0%9E%D0%92%D0%9E%D0%A1ae33092d2c0d48768bcf08508511ab22.pdf"
+        ],
+        "document_type": "OFFICIAL_CORRIDOR_GEOLOGICAL_TABLE",
+        "source_reference": "Раздел 3.4.1; Таблица 3.4-1, стр. 97-99",
+        "source_url": "https://www.moew.government.bg/static/media/ups/articles/attachments/%D0%94%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4%20%D0%B7%D0%B0%20%D0%9E%D0%92%D0%9E%D0%A1ae33092d2c0d48768bcf08508511ab22.pdf",
+        "source_status_original": "TEXT_VERIFIED_MAP_FIGURE_PENDING",
+        "scope_claim_original": "Linear corridor crossing Lovech and adjoining territories",
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-031",
+          "title": "Доклад за ОВОС - газопровод Беглеж - Дерманци - Батулци - Калугерово",
+          "author": "ЕФ СИ ДЖИ ПОВВИК ЕАД / Булгартрансгаз ЕАД",
+          "year": 2018,
+          "url": "https://www.moew.government.bg/static/media/ups/articles/attachments/%D0%94%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4%20%D0%B7%D0%B0%20%D0%9E%D0%92%D0%9E%D0%A1ae33092d2c0d48768bcf08508511ab22.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "OFFICIAL_CORRIDOR_GEOLOGICAL_TABLE",
+          "priority": "A2_B1",
+          "status": "TEXT_VERIFIED_MAP_FIGURE_PENDING",
+          "location_original": "Газопровод Беглеж - Дерманци - Батулци - Калугерово",
+          "scope_claim": "Linear corridor crossing Lovech and adjoining territories",
+          "source_reference": "Раздел 3.4.1; Таблица 3.4-1, стр. 97-99",
+          "evidence_type": "LITHOSTRATIGRAPHIC_UNITS_BY_ROUTE_CHAINAGE",
+          "route_segments": [
+            {
+              "chainage_start": "14+660",
+              "chainage_end": "16+420",
+              "unit": "Ъгленски член на Луковитската свита",
+              "materials": "Мергели"
+            },
+            {
+              "chainage_start": "16+420",
+              "chainage_end": "16+650",
+              "unit": "Луковитска свита",
+              "materials": "Пясъчници, мергели, алевролити"
+            },
+            {
+              "chainage_start": "16+650",
+              "chainage_end": "21+120",
+              "unit": "Угърчинска свита",
+              "materials": "Слюдести пясъчници, глини, мергели, алевролити"
+            },
+            {
+              "chainage_start": "26+850",
+              "chainage_end": "27+315",
+              "unit": "Алувиални образувания на р. Златна Панега",
+              "materials": "Пясъци, чакъли, глини"
+            },
+            {
+              "chainage_start": "27+315",
+              "chainage_end": "28+690",
+              "unit": "Петревенска свита",
+              "materials": "Полимиктови пясъчници, алевролити"
+            }
+          ],
+          "chainage_units": "KILOMETRES_ALONG_PIPELINE_NOT_DEPTH",
+          "depth_evidence": "NO_POINT_BOREHOLE_DEPTH_INTERVALS",
+          "individual_borehole_logs_verified": false,
+          "exact_route_geometry_verified": false,
+          "figure_reference": "Фиг. 3.4-1",
+          "figure_visual_status": "NOT_VERIFIED",
+          "table_quality_note": "Some printed segment lengths are inconsistent with their chainage; preserve original and verify before spatial use",
+          "quality_flags": [
+            "OFFICIAL_PUBLISHED_GEOLOGICAL_TABLE",
+            "ROUTE_CHAINAGE_NOT_BOREHOLE_DEPTH",
+            "REGION_BOUNDARY_CROSSING_REQUIRES_SPATIAL_QA",
+            "MAP_FIGURE_NOT_VISUALLY_CHECKED",
+            "NO_VERIFIED_BOREHOLE_MOUTH_COORDINATES",
+            "NO_CLIENT_DEPTH_MODEL_AUTHORIZED",
+            "RESEARCH_ONLY_NOT_RUNTIME"
+          ],
+          "next_action": "VERIFY_ROUTE_GEOMETRY_AND_ORIGINAL_GEOLOGICAL_MAP"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-032",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-032",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/31",
+      "source_ids": [
+        "LOVECH-S2-032",
+        "https://www.geologica-balcanica.eu/sites/default/files/articles/Metodiev_Geol_Balc_49-3_2020.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-032",
+        "title": "Fossil holothurian ossicles from the lower Toarcian of the Balkan Mts, Bulgaria",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Northern end of the town of Teteven",
+        "source_ids": [
+          "LOVECH-S2-032",
+          "https://www.geologica-balcanica.eu/sites/default/files/articles/Metodiev_Geol_Balc_49-3_2020.pdf"
+        ],
+        "document_type": "PEER_REVIEWED_MEASURED_GEOLOGICAL_OUTCROP_SECTION",
+        "source_reference": "Printed page 5, section Varbanchovets; Figure 1c; Figure 2g-i",
+        "source_url": "https://www.geologica-balcanica.eu/sites/default/files/articles/Metodiev_Geol_Balc_49-3_2020.pdf",
+        "source_status_original": "TEXT_VERIFIED_FIGURE_PENDING",
+        "scope_claim_original": null,
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-032",
+          "title": "Fossil holothurian ossicles from the lower Toarcian of the Balkan Mts, Bulgaria",
+          "author": "Lubomir Metodiev; Silviya Petrova; Elena Koleva-Rekalova; Georgi Granchovski",
+          "year": 2020,
+          "journal": "Geologica Balcanica",
+          "volume": "49(3)",
+          "pages": "3-12",
+          "url": "https://www.geologica-balcanica.eu/sites/default/files/articles/Metodiev_Geol_Balc_49-3_2020.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "PEER_REVIEWED_MEASURED_GEOLOGICAL_OUTCROP_SECTION",
+          "priority": "A2_B2",
+          "status": "TEXT_VERIFIED_FIGURE_PENDING",
+          "municipality": "Тетевен",
+          "settlement": "Тетевен",
+          "locality": "Върбанчовец / Varbanchovets",
+          "location_original": "Northern end of the town of Teteven",
+          "geographic_scope": "Single documented Jurassic outcrop section",
+          "source_reference": "Printed page 5, section Varbanchovets; Figure 1c; Figure 2g-i",
+          "measured_section": {
+            "name": "Varbanchovets",
+            "measured_thickness_m": 3.3,
+            "thickness_role": "OUTCROP_STRATIGRAPHIC_THICKNESS_NOT_BOREHOLE_DEPTH",
+            "materials": [
+              "Железисти ооидни мергели",
+              "Шисти",
+              "Железисти биокластични варовици"
+            ],
+            "age": "Долна юра, тоарс",
+            "full_borehole_log": false,
+            "exact_section_coordinates_verified": false
+          },
+          "sampled_bed": {
+            "thickness_m": 0.2,
+            "material": "Тъмносиви до синкави мергели",
+            "evidence_role": "SAMPLED_BED_WITHIN_OUTCROP_SECTION"
+          },
+          "source_figure_status": "NOT_VISUALLY_VERIFIED",
+          "individual_borehole_log_verified": false,
+          "borehole_depth_intervals": [],
+          "quality_flags": [
+            "PRIMARY_SCIENTIFIC_FIELD_EVIDENCE",
+            "MEASURED_OUTCROP_NOT_DRILLED_BOREHOLE",
+            "SECTION_THICKNESS_NOT_DEPTH_BELOW_GROUND",
+            "EXACT_SECTION_COORDINATES_NOT_VERIFIED",
+            "FIGURE_REQUIRES_VISUAL_QA",
+            "NO_GENERALIZATION_TO_ENTIRE_TETEVEN",
+            "RESEARCH_ONLY_NOT_RUNTIME"
+          ],
+          "next_action": "VERIFY_FIGURE_1C_SECTION_LOCATION_AND_FIND_LOCAL_ENGINEERING_BOREHOLES"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-S2-033",
+      "evidence_kind": "DOCUMENTARY_GEOLOGICAL_EVIDENCE",
+      "original_id": "LOVECH-S2-033",
+      "source_file": "_research/lovech/LOVECH_STEP2_RESEARCH_CATALOG.json",
+      "json_pointer": "/source_records/32",
+      "source_ids": [
+        "LOVECH-S2-033",
+        "https://www.geologica-balcanica.eu/sites/default/files/articles/Metodiev_Geol_Balc_51-1-2022.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-S2-033",
+        "title": "New data on the stratigraphy of the Middle Jurassic siliciclastic rocks from the West Balkan Mountains",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": null,
+        "source_ids": [
+          "LOVECH-S2-033",
+          "https://www.geologica-balcanica.eu/sites/default/files/articles/Metodiev_Geol_Balc_51-1-2022.pdf"
+        ],
+        "document_type": "PEER_REVIEWED_FIELD_LITHOSTRATIGRAPHIC_EVIDENCE",
+        "source_reference": "Figures 7f-7g and 8; printed pages 47-49",
+        "source_url": "https://www.geologica-balcanica.eu/sites/default/files/articles/Metodiev_Geol_Balc_51-1-2022.pdf",
+        "source_status_original": "TEXT_VERIFIED_FIGURES_PENDING",
+        "scope_claim_original": null,
+        "original_document_record": {
+          "intake_id": "LOVECH-S2-033",
+          "title": "New data on the stratigraphy of the Middle Jurassic siliciclastic rocks from the West Balkan Mountains",
+          "author": "Lubomir Metodiev; Elena Koleva-Rekalova; Silviya Petrova; Docho Dochev; Louiza Dimowa",
+          "year": 2022,
+          "journal": "Geologica Balcanica",
+          "volume": "51(1)",
+          "pages": "35-56",
+          "doi": "10.52321/GeolBalc.51.1.35",
+          "url": "https://www.geologica-balcanica.eu/sites/default/files/articles/Metodiev_Geol_Balc_51-1-2022.pdf",
+          "retrieved_at": "2026-11-11",
+          "document_type": "PEER_REVIEWED_FIELD_LITHOSTRATIGRAPHIC_EVIDENCE",
+          "priority": "A2_B1_B2",
+          "status": "TEXT_VERIFIED_FIGURES_PENDING",
+          "geographic_scope": "Publication has wider western Balkan scope; selected field observations are within Lovech province",
+          "source_reference": "Figures 7f-7g and 8; printed pages 47-49",
+          "lovech_field_observations": [
+            {
+              "locality": "Шипково",
+              "municipality": "Троян",
+              "geological_unit": "Шипковски член на Етрополската свита",
+              "materials": [
+                "Тънкопластови глинести алевролити",
+                "Ламинирани алевролити"
+              ],
+              "original_figure": "7f",
+              "evidence_role": "PUBLISHED_FIELD_OUTCROP"
+            },
+            {
+              "locality": "Южно от Рибарица",
+              "municipality": "Тетевен",
+              "geological_unit": "Лопянски член на Етрополската свита",
+              "materials": [
+                "Финозърнести пясъчници",
+                "Тънко- до среднопластови пясъчници"
+              ],
+              "original_figure": "7g",
+              "evidence_role": "PUBLISHED_FIELD_OUTCROP"
+            },
+            {
+              "locality": "Гложене",
+              "municipality": "Тетевен",
+              "geological_unit": "Етрополска свита",
+              "materials": [
+                "Железисти конкреции",
+                "Гетитови конкреции"
+              ],
+              "original_figure": "8k, 8m, 8n",
+              "evidence_role": "PUBLISHED_FIELD_SAMPLE"
+            },
+            {
+              "locality": "Градежница",
+              "municipality": "Тетевен",
+              "geological_unit": "Етрополска свита",
+              "materials": [
+                "Калцитови конкреции",
+                "Гетитови конкреции"
+              ],
+              "original_figure": "8i, 8l",
+              "evidence_role": "PUBLISHED_FIELD_SAMPLE"
+            }
+          ],
+          "exact_outcrop_coordinates_verified": false,
+          "original_figures_visually_verified": false,
+          "full_borehole_log_verified": false,
+          "measured_point_depth_intervals": [],
+          "quality_flags": [
+            "PUBLISHED_LOCAL_FIELD_OBSERVATIONS",
+            "STRATIGRAPHIC_UNITS_NOT_POINT_DEPTH_INTERVALS",
+            "FIGURES_NOT_VISUALLY_VERIFIED",
+            "OUTCROP_COORDINATES_NOT_VERIFIED",
+            "NO_SPATIAL_EXTRAPOLATION",
+            "RESEARCH_ONLY_NOT_RUNTIME"
+          ],
+          "next_action": "VERIFY_FIELD_FIGURES_AND_50K_GEOLOGICAL_MAP_COVERAGE"
+        },
+        "spatial_application": "DOCUMENTED_SCOPE_ONLY",
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false
+      }
+    },
+    {
+      "intake_id": "LOVECH-L37-RESEARCH-2019",
+      "evidence_kind": "PARTIAL_BOREHOLE_GEOLOGICAL_EVIDENCE",
+      "original_id": "SHIPKOVO-L-37",
+      "source_file": "_research/lovech/LOVECH_STEP4_BOREHOLE_COORDINATES_RESEARCH_V3.json",
+      "json_pointer": "/boreholes/6",
+      "source_ids": [
+        "LOVECH-L37-RESEARCH-2019",
+        "https://igh-bg.com/Vol/Vol_33_2019/3_Benderev%20et%20al%20-%20IGH%2033.pdf"
+      ],
+      "intended_use": "RESEARCH_REFERENCE_ONLY",
+      "depth_prediction_authorized": false,
+      "spatial_projection_authorized": false,
+      "record": {
+        "evidence_id": "LOVECH-L37-RESEARCH-2019",
+        "title": "Шипково — сондаж Л-37, частични геоложки данни",
+        "oblast": "Ловеч",
+        "administrative_reference": {
+          "oblast": "Ловеч",
+          "nuts_id": "BG315"
+        },
+        "geographic_scope_description": "Сондаж Л-37, находище Шипково",
+        "latitude": 42.8815,
+        "longitude": 24.56236111,
+        "coordinate_status": "PUBLISHED_FACILITY_REGISTRY_GEOGRAPHIC",
+        "scientific_sources": [
+          {
+            "source_type": "PUBLISHED_SCIENTIFIC_ARTICLE",
+            "year": 2019,
+            "journal": "Известия на Института по хидрогеология и инженерна геология",
+            "url": "https://igh-bg.com/Vol/Vol_33_2019/3_Benderev%20et%20al%20-%20IGH%2033.pdf",
+            "evidence": "Геоложки разрез и сведения за сондаж Л-37"
+          },
+          {
+            "source_type": "ARCHIVAL_REFERENCE",
+            "year": 1984,
+            "author": "Г. Михайлов",
+            "title": "Хидрогеоложко проучване в района на с. Шипково през 1982–1984 г.",
+            "archive": "Национален геофонд",
+            "archive_reference": "V-326",
+            "original_archive_document_obtained": false
+          }
+        ],
+        "published_total_depth_variants_m": [
+          {
+            "depth_m": 1339.8,
+            "source": "OFFICIAL_SHIPKOVO_FACILITY_REGISTER",
+            "interpretation": "FACILITY_REGISTER_DEPTH"
+          },
+          {
+            "depth_m": 1315.0,
+            "source": "SCIENTIFIC_PUBLICATION_2019",
+            "interpretation": "PUBLISHED_BOREHOLE_DEPTH"
+          }
+        ],
+        "documented_geological_observations": [
+          {
+            "observation": "FIRST_REPORTED_TRIASSIC_CARBONATE_CONTACT",
+            "depth_below_mouth_m": 1227.0,
+            "material": "Триаски варовици и доломити",
+            "evidence_scope": "PUBLISHED_BOREHOLE_GEOLOGICAL_CONTACT",
+            "source": "SCIENTIFIC_PUBLICATION_2019",
+            "exact_water_inflow_depth_proven": false,
+            "continuous_lithology_above_contact_proven": false,
+            "spatial_transfer_to_nearby_properties_approved": false
+          }
+        ],
+        "scientific_conflicts": [
+          {
+            "field": "total_depth_m",
+            "values_m": [
+              1315.0,
+              1339.8
+            ],
+            "status": "UNRESOLVED_SOURCE_VARIANT",
+            "action": "PRESERVE_BOTH_VALUES"
+          }
+        ],
+        "full_lithological_log_available": false,
+        "open_bore_intervals_are_proven_aquifers": false,
+        "verified_geological_polygon": false,
+        "is_exact_point_evidence": false,
+        "usable_as_regional_context": true,
+        "usable_as_measured_depth_interval": false,
+        "spatial_application": "REFERENCE_ONLY"
+      }
     }
   ]
 }
