@@ -16,7 +16,7 @@ import {
   searchLunaNationalBoreholes
 } from "./sondi-luna-research-tools";
 
-const REVISION = "LUNA_RELEASE_GEOGRAPHIC_ISOLATION_V1";
+const REVISION = "LUNA_RELEASE_GEOGRAPHIC_ISOLATION_V4_SETTLEMENT_CONTEXT";
 
 const DATA_FILES = [
   "montana_research_spatial_evidence.geojson",
@@ -203,11 +203,60 @@ export async function runLunaResearchCycle(
 
   const lat = parsed.coordinate.latitude;
   const lon = parsed.coordinate.longitude;
+  // National settlement proximity is a search hint, not an
+  // administrative polygon or geological evidence.
+  const settlements = JSON.parse(
+    fs.readFileSync(
+      path.join(process.cwd(), "data", "settlements_master.json"),
+      "utf8"
+    )
+  ) as Array<{
+    name: string;
+    municipality: string;
+    district: string;
+    lat: number;
+    lon: number;
+  }>;
+
+  let nearestSettlement:
+    | { name: string; municipality: string; district: string; km: number }
+    | null = null;
+
+  for (const s of settlements) {
+    if (!Number.isFinite(s.lat) || !Number.isFinite(s.lon)) continue;
+    const dy = (s.lat - lat) * 111.195;
+    const dx = (s.lon - lon) * 111.195 *
+      Math.cos(lat * Math.PI / 180);
+    const km = Math.hypot(dx, dy);
+
+    if (km <= 2 && (!nearestSettlement || km < nearestSettlement.km)) {
+      nearestSettlement = {
+        name: s.name,
+        municipality: s.municipality,
+        district: s.district,
+        km
+      };
+    }
+  }
+
+  const locationContext = nearestSettlement
+    ? "\n\nНационален географски ориентир (не е геоложко доказателство): " +
+      JSON.stringify({
+        nearby_settlement: nearestSettlement.name,
+        municipality_of_settlement: nearestSettlement.municipality,
+        district_of_settlement: nearestSettlement.district,
+        distance_km: Number(nearestSettlement.km.toFixed(2)),
+        verification: "NEAREST_SETTLEMENT_CENTROID_ONLY",
+        caution: "Не доказва административната принадлежност на точката."
+      }) +
+      "\nИзползвай този ориентир за по-точно самостоятелно търсене. " +
+      "Самостоятелно проверявай географската приложимост на доказателствата."
+    : "";
 
   // Coordinates come exclusively from the server, never from AI arguments.
   const history: unknown[] = [{
     role: "user",
-    content: payload
+    content: payload + locationContext
   }];
 
   const researchInstructions = instructions + `
@@ -311,6 +360,32 @@ read_geological_record.
 разполагаш с достатъчни доказателства.
 
 SONDI_LUNA_NATIONAL_DOCUMENTARY_RESEARCH_V2:
+NATIONAL_DOCUMENTARY_SEARCH_RULES_V3:
+Полето region в search_national_research обозначава ОБЛАСТ,
+а не община, град, село или местност.
+При търсене по населено място използвай query с неговото име
+и region=null, ако областта не е надеждно установена.
+Ако областта е потвърдена, може да използваш името на областта
+като region. Не поставяй име на община в region.
+
+Търси документални сведения за съответния район,
+като отчитай българските и латинските имена.
+Когато търсенето върне относими записи, използвай
+read_national_research за проверка на най-подходящите,
+преди да правиш конкретни геоложки заключения.
+Приоритет имат документирани геоложки единици,
+местни геоложки проучвания и действителни сондажни сведения.
+
+Посочвай проверените източници, когато ги използваш.
+Не твърди, че липсват геоложки данни, само защото няма
+точна сондажна колона за избрания имот.
+Разграничавай регионалните сведения от доказателства
+за конкретните координати.
+Не пренасяй литоложки интервали или дълбочини
+от отдалечени сондажи върху избраната точка.
+Ако доказателствата не позволяват местна прогноза,
+представи съдържателен регионален анализ с ясни ограничения.
+
 Разполагаш с национални инструменти за сондажни и документални
 геоложки доказателства.
 
@@ -491,6 +566,10 @@ return {
             region: typeof args.region === "string"
               ? args.region : undefined
           });
+          const searchSummary = result as {
+            returned_count?: number;
+            error?: string;
+          };
         } else if (call.name === "read_national_research") {
           result = readLunaNationalResearch(String(args.id ?? ""));
         } else if (call.name === "search_geological_records") {

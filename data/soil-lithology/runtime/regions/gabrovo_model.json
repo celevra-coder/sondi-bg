@@ -1,0 +1,46 @@
+{
+    "schema_version":  "1.0",
+    "region_id":  "GAB",
+    "oblast":  "Gabrovo",
+    "status":  "REGIONAL_CONTEXT_ONLY",
+    "source":  {
+                   "boundary":  "Eurostat GISCO NUTS 2024 BG322",
+                   "boundary_role":  "ADMINISTRATIVE_ONLY",
+                   "research_package":  "_research/gabrovo/step04_spatial_package.json",
+                   "documentary_catalog":  "data/soil-lithology/runtime/national_research_evidence_catalog.json"
+               },
+    "zones":  {
+                  "GAB-Z01":  {
+                                  "regional_structural_context":  [
+
+                                                                  ],
+                                  "partial_borehole_profiles":  [
+
+                                                                ],
+                                  "documented_sample_depth_points":  [
+
+                                                                     ],
+                                  "documented_reference_intervals":  [
+
+                                                                     ],
+                                  "documented_well_depths":  [
+
+                                                             ],
+                                  "wider_studies":  [
+
+                                                    ],
+                                  "regional_evidence_notes":  [
+
+                                                              ],
+                                  "source_ids":  [
+
+                                                 ]
+                              }
+              },
+    "scientific_limitations":  [
+                                   "No verified geological polygons for Gabrovo",
+                                   "No measured lithological interval logs in the accepted Step 4 package",
+                                   "Administrative geometry is not a geological contact",
+                                   "Documentary evidence remains in the national research catalog"
+                               ]
+}

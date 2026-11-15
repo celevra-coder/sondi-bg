@@ -121,7 +121,7 @@ export function searchLunaNationalResearch(args: {
       record: r
     }));
 
-    if (query && !searchable.includes(query)) return [];
+    if (query && !canonical(searchable).includes(canonical(query))) return [];
 
     const primaryMatch = !!region &&
       declaredKeys.includes(requestedRegion);

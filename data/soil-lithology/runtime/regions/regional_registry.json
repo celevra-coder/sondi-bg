@@ -1,657 +1,664 @@
 {
-  "schema_version": "1.0",
-  "purpose": "National source-backed regional lithology reports",
-  "regions": [
-    {
-      "id": "SOF-SVG",
-      "name_bg": "Своге",
-      "zone_id": "SOF-SVG-Z01",
-      "model_file": "svoge_model.json",
-      "boundary_file": "svoge_boundary.json"
-    },
-    {
-      "id": "SOF-KOS",
-      "name_bg": "Костинброд",
-      "zone_id": "SOF-KOS-Z01",
-      "model_file": "kostinbrod_model.json",
-      "boundary_file": "kostinbrod_boundary.json"
-    },
-    {
-      "id": "SOF-SFO17",
-      "name_bg": "Елин Пелин",
-      "zone_id": "SOF-SFO17-Z01",
-      "model_file": "sofia_elin_pelin_model.json",
-      "boundary_file": "sofia_elin_pelin_boundary.json"
-    },
-    {
-      "id": "SOF-SFO25",
-      "name_bg": "Костенец",
-      "zone_id": "SOF-SFO25-Z01",
-      "model_file": "sofia_kostenets_model.json",
-      "boundary_file": "sofia_kostenets_boundary.json"
-    },
-    {
-      "id": "SOF-SFO39",
-      "name_bg": "Самоков",
-      "zone_id": "SOF-SFO39-Z01",
-      "model_file": "sofia_samokov_model.json",
-      "boundary_file": "sofia_samokov_boundary.json"
-    },
-    {
-      "id": "SOF-SFO58",
-      "name_bg": "Челопеч",
-      "zone_id": "SOF-SFO58-Z01",
-      "model_file": "sofia_chelopech_model.json",
-      "boundary_file": "sofia_chelopech_boundary.json"
-    },
-    {
-      "id": "SOF-SFO59",
-      "name_bg": "Долна баня",
-      "zone_id": "SOF-SFO59-Z01",
-      "model_file": "sofia_dolna_banya_model.json",
-      "boundary_file": "sofia_dolna_banya_boundary.json"
-    },
-    {
-      "id": "SOF-SFO10",
-      "name_bg": "Горна Малина",
-      "zone_id": "SOF-SFO10-Z01",
-      "model_file": "sofia_gorna_malina_model.json",
-      "boundary_file": "sofia_gorna_malina_boundary.json"
-    },
-    {
-      "id": "SOF-SFO20",
-      "name_bg": "Ихтиман",
-      "zone_id": "SOF-SFO20-Z01",
-      "model_file": "sofia_ihtiman_model.json",
-      "boundary_file": "sofia_ihtiman_boundary.json"
-    },
-    {
-      "id": "SOF-SFO24",
-      "name_bg": "Копривщица",
-      "zone_id": "SOF-SFO24-Z01",
-      "model_file": "sofia_koprivshtitsa_model.json",
-      "boundary_file": "sofia_koprivshtitsa_boundary.json"
-    },
-    {
-      "id": "SOF-SFO47",
-      "name_bg": "Златица",
-      "zone_id": "SOF-SFO47-Z01",
-      "model_file": "sofia_zlatitsa_model.json",
-      "boundary_file": "sofia_zlatitsa_boundary.json"
-    },
-    {
-      "id": "SOF-SFO57",
-      "name_bg": "Чавдар",
-      "zone_id": "SOF-SFO57-Z01",
-      "model_file": "sofia_chavdar_model.json",
-      "boundary_file": "sofia_chavdar_boundary.json"
-    },
-    {
-      "id": "SOF-SFO06",
-      "name_bg": "Божурище",
-      "zone_id": "SOF-SFO06-Z01",
-      "model_file": "sofia_bozhurishte_model.json",
-      "boundary_file": "sofia_bozhurishte_boundary.json"
-    },
-    {
-      "id": "SOF-SFO07",
-      "name_bg": "Ботевград",
-      "zone_id": "SOF-SFO07-Z01",
-      "model_file": "sofia_botevgrad_model.json",
-      "boundary_file": "sofia_botevgrad_boundary.json"
-    },
-    {
-      "id": "SOF-SFO16",
-      "name_bg": "Драгоман",
-      "zone_id": "SOF-SFO16-Z01",
-      "model_file": "sofia_dragoman_model.json",
-      "boundary_file": "sofia_dragoman_boundary.json"
-    },
-    {
-      "id": "SOF-SFO18",
-      "name_bg": "Етрополе",
-      "zone_id": "SOF-SFO18-Z01",
-      "model_file": "sofia_etropole_model.json",
-      "boundary_file": "sofia_etropole_boundary.json"
-    },
-    {
-      "id": "SOF-SFO34",
-      "name_bg": "Правец",
-      "zone_id": "SOF-SFO34-Z01",
-      "model_file": "sofia_pravets_model.json",
-      "boundary_file": "sofia_pravets_boundary.json"
-    },
-    {
-      "id": "SOF-SFO45",
-      "name_bg": "Сливница",
-      "zone_id": "SOF-SFO45-Z01",
-      "model_file": "sofia_slivnitsa_model.json",
-      "boundary_file": "sofia_slivnitsa_boundary.json"
-    },
-    {
-      "id": "SOF-SFO56",
-      "name_bg": "Мирково",
-      "zone_id": "SOF-SFO56-Z01",
-      "model_file": "sofia_mirkovo_model.json",
-      "boundary_file": "sofia_mirkovo_boundary.json"
-    },
-    {
-      "id": "SOF-SFO09",
-      "name_bg": "Годеч",
-      "zone_id": "SOF-SFO09-Z01",
-      "model_file": "sofia_godech_model.json",
-      "boundary_file": "sofia_godech_boundary.json"
-    },
-    {
-      "id": "SOF-SFO54",
-      "name_bg": "Антон",
-      "zone_id": "SOF-SFO54-Z01",
-      "model_file": "sofia_anton_model.json",
-      "boundary_file": "sofia_anton_boundary.json"
-    },
-    {
-      "id": "SOF-SFO55",
-      "name_bg": "Пирдоп",
-      "zone_id": "SOF-SFO55-Z01",
-      "model_file": "sofia_pirdop_model.json",
-      "boundary_file": "sofia_pirdop_boundary.json"
-    },
-    {
-      "id": "SOF-CITY",
-      "name_bg": "София-град (Столична община)",
-      "zone_id": "SOF-CITY-Z01",
-      "model_file": "sofia_city_model.json",
-      "boundary_file": "sofia_city_boundary.json"
-    },
-    {
-      "id": "KNL-M-KNL04",
-      "name_bg": "Община Бобов дол",
-      "zone_id": "KNL-M-KNL04-Z01",
-      "model_file": "kyustendil_KNL04_model.json",
-      "boundary_file": "kyustendil_KNL04_boundary.json"
-    },
-    {
-      "id": "KNL-M-KNL05",
-      "name_bg": "Община Бобошево",
-      "zone_id": "KNL-M-KNL05-Z01",
-      "model_file": "kyustendil_KNL05_model.json",
-      "boundary_file": "kyustendil_KNL05_boundary.json"
-    },
-    {
-      "id": "KNL-M-KNL27",
-      "name_bg": "Община Кочериново",
-      "zone_id": "KNL-M-KNL27-Z01",
-      "model_file": "kyustendil_KNL27_model.json",
-      "boundary_file": "kyustendil_KNL27_boundary.json"
-    },
-    {
-      "id": "KNL-M-KNL29",
-      "name_bg": "Община Кюстендил",
-      "zone_id": "KNL-M-KNL29-Z01",
-      "model_file": "kyustendil_KNL29_model.json",
-      "boundary_file": "kyustendil_KNL29_boundary.json"
-    },
-    {
-      "id": "KNL-M-KNL31",
-      "name_bg": "Община Невестино",
-      "zone_id": "KNL-M-KNL31-Z01",
-      "model_file": "kyustendil_KNL31_model.json",
-      "boundary_file": "kyustendil_KNL31_boundary.json"
-    },
-    {
-      "id": "KNL-M-KNL38",
-      "name_bg": "Община Рила",
-      "zone_id": "KNL-M-KNL38-Z01",
-      "model_file": "kyustendil_KNL38_model.json",
-      "boundary_file": "kyustendil_KNL38_boundary.json"
-    },
-    {
-      "id": "KNL-M-KNL41",
-      "name_bg": "Община Сапарева баня",
-      "zone_id": "KNL-M-KNL41-Z01",
-      "model_file": "kyustendil_KNL41_model.json",
-      "boundary_file": "kyustendil_KNL41_boundary.json"
-    },
-    {
-      "id": "KNL-M-KNL48",
-      "name_bg": "Община Дупница",
-      "zone_id": "KNL-M-KNL48-Z01",
-      "model_file": "kyustendil_KNL48_model.json",
-      "boundary_file": "kyustendil_KNL48_boundary.json"
-    },
-    {
-      "id": "KNL-M-KNL50",
-      "name_bg": "Община Трекляно",
-      "zone_id": "KNL-M-KNL50-Z01",
-      "model_file": "kyustendil_KNL50_model.json",
-      "boundary_file": "kyustendil_KNL50_boundary.json"
-    },
-    {
-      "id": "KNL",
-      "name_bg": "Област Кюстендил",
-      "zone_id": "KNL-Z01",
-      "model_file": "kyustendil_oblast_model.json",
-      "boundary_file": "kyustendil_oblast_boundary.json"
-    },
-    {
-      "id": "BLG",
-      "name_bg": "Област Благоевград",
-      "zone_id": "BLG-Z01",
-      "model_file": "blagoevgrad_model.json",
-      "boundary_file": "blagoevgrad_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV01-Z01",
-      "name_bg": "Община Асеновград",
-      "zone_id": "PLD-PDV01-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV01-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV01-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV07-Z01",
-      "name_bg": "Община Брезово",
-      "zone_id": "PLD-PDV07-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV07-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV07-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV12-Z01",
-      "name_bg": "Община Калояново",
-      "zone_id": "PLD-PDV12-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV12-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV12-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV13-Z01",
-      "name_bg": "Община Карлово",
-      "zone_id": "PLD-PDV13-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV13-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV13-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV15-Z01",
-      "name_bg": "Община Лъки",
-      "zone_id": "PLD-PDV15-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV15-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV15-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV17-Z01",
-      "name_bg": "Община Марица",
-      "zone_id": "PLD-PDV17-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV17-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV17-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV22-Z01",
-      "name_bg": "Община Пловдив",
-      "zone_id": "PLD-PDV22-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV22-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV22-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV23-Z01",
-      "name_bg": "Община Първомай",
-      "zone_id": "PLD-PDV23-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV23-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV23-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV25-Z01",
-      "name_bg": "Община Раковски",
-      "zone_id": "PLD-PDV25-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV25-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV25-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV26-Z01",
-      "name_bg": "Община Родопи",
-      "zone_id": "PLD-PDV26-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV26-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV26-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV28-Z01",
-      "name_bg": "Община Садово",
-      "zone_id": "PLD-PDV28-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV28-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV28-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV33-Z01",
-      "name_bg": "Община Съединение",
-      "zone_id": "PLD-PDV33-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV33-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV33-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV37-Z01",
-      "name_bg": "Община Хисаря",
-      "zone_id": "PLD-PDV37-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV37-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV37-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV39-Z01",
-      "name_bg": "Община Кричим",
-      "zone_id": "PLD-PDV39-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV39-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV39-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV40-Z01",
-      "name_bg": "Община Перущица",
-      "zone_id": "PLD-PDV40-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV40-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV40-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV41-Z01",
-      "name_bg": "Община Стамболийски",
-      "zone_id": "PLD-PDV41-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV41-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV41-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV42-Z01",
-      "name_bg": "Община Куклен",
-      "zone_id": "PLD-PDV42-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV42-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV42-Z01_boundary.json"
-    },
-    {
-      "id": "PLD-M-PLD-PDV43-Z01",
-      "name_bg": "Община Сопот",
-      "zone_id": "PLD-PDV43-Z01",
-      "model_file": "plovdiv_municipality_PLD-PDV43-Z01_model.json",
-      "boundary_file": "plovdiv_municipality_PLD-PDV43-Z01_boundary.json"
-    },
-    {
-      "id": "PLD",
-      "name_bg": "Област Пловдив",
-      "zone_id": "PLD-Z01",
-      "model_file": "plovdiv_model.json",
-      "boundary_file": "plovdiv_boundary.json"
-    },
-    {
-      "id": "PZ-01",
-      "name_bg": "Пазарджишко поле",
-      "zone_id": "PZ-ZONE-01",
-      "model_file": "pazardzhik_regional_model_67AN.json",
-      "boundary_file": "pazardzhik_zone_01_boundary.json"
-    },
-    {
-      "id": "PZ-02",
-      "name_bg": "Средногорски район",
-      "zone_id": "PZ-ZONE-02",
-      "model_file": "pazardzhik_regional_model_67AN.json",
-      "boundary_file": "pazardzhik_zone_02_boundary.json"
-    },
-    {
-      "id": "PZ-03",
-      "name_bg": "Севернородопска периферия",
-      "zone_id": "PZ-ZONE-03",
-      "model_file": "pazardzhik_regional_model_67AN.json",
-      "boundary_file": "pazardzhik_zone_03_boundary.json"
-    },
-    {
-      "id": "PZ-04",
-      "name_bg": "Баташки район",
-      "zone_id": "PZ-ZONE-04",
-      "model_file": "pazardzhik_regional_model_67AN.json",
-      "boundary_file": "pazardzhik_zone_04_boundary.json"
-    },
-    {
-      "id": "PZ-05",
-      "name_bg": "Чепинска котловина",
-      "zone_id": "PZ-ZONE-05",
-      "model_file": "pazardzhik_regional_model_67AN.json",
-      "boundary_file": "pazardzhik_zone_05_boundary.json"
-    },
-    {
-      "id": "PZ-06",
-      "name_bg": "Беловски район",
-      "zone_id": "PZ-ZONE-06",
-      "model_file": "pazardzhik_regional_model_67AN.json",
-      "boundary_file": "pazardzhik_zone_06_boundary.json"
-    },
-    {
-      "id": "PER-M-PER32",
-      "name_bg": "Перник",
-      "zone_id": "PER-M-PER32-Z01",
-      "model_file": "pernik_PER32_model.json",
-      "boundary_file": "pernik_PER32_boundary.json"
-    },
-    {
-      "id": "PER-M-PER36",
-      "name_bg": "Радомир",
-      "zone_id": "PER-M-PER36-Z01",
-      "model_file": "pernik_PER36_model.json",
-      "boundary_file": "pernik_PER36_boundary.json"
-    },
-    {
-      "id": "PER-M-PER08",
-      "name_bg": "Брезник",
-      "zone_id": "PER-M-PER08-Z01",
-      "model_file": "pernik_PER08_model.json",
-      "boundary_file": "pernik_PER08_boundary.json"
-    },
-    {
-      "id": "PER-M-PER19",
-      "name_bg": "Земен",
-      "zone_id": "PER-M-PER19-Z01",
-      "model_file": "pernik_PER19_model.json",
-      "boundary_file": "pernik_PER19_boundary.json"
-    },
-    {
-      "id": "PER-M-PER22",
-      "name_bg": "Ковачевци",
-      "zone_id": "PER-M-PER22-Z01",
-      "model_file": "pernik_PER22_model.json",
-      "boundary_file": "pernik_PER22_boundary.json"
-    },
-    {
-      "id": "PER-M-PER51",
-      "name_bg": "Трън",
-      "zone_id": "PER-M-PER51-Z01",
-      "model_file": "pernik_PER51_model.json",
-      "boundary_file": "pernik_PER51_boundary.json"
-    },
-    {
-      "id": "MON",
-      "name_bg": "Област Монтана",
-      "zone_id": "MON-Z01",
-      "model_file": "montana_model.json",
-      "boundary_file": "montana_boundary.json"
-    },
-    {
-      "id": "VRA-NATIONAL-VRA-Z01",
-      "name_bg": "Козлодуйска низина / Радиана / АЕЦ",
-      "zone_id": "VRA-Z01",
-      "model_file": "vratsa_unified_vra-z01_model.json",
-      "boundary_file": "vratsa_unified_vra-z01_boundary.json"
-    },
-    {
-      "id": "VRA-NATIONAL-VRA-Z02",
-      "name_bg": "Северна льосово-алувиална равнина",
-      "zone_id": "VRA-Z02",
-      "model_file": "vratsa_unified_vra-z02_model.json",
-      "boundary_file": "vratsa_unified_vra-z02_boundary.json"
-    },
-    {
-      "id": "VRA-NATIONAL-VRA-Z03",
-      "name_bg": "Криводолско-Врачански Предбалкан",
-      "zone_id": "VRA-Z03",
-      "model_file": "vratsa_unified_vra-z03_model.json",
-      "boundary_file": "vratsa_unified_vra-z03_boundary.json"
-    },
-    {
-      "id": "VRA-NATIONAL-VRA-Z04",
-      "name_bg": "Мездренско-Романски синклинален пояс",
-      "zone_id": "VRA-Z04",
-      "model_file": "vratsa_unified_vra-z04_model.json",
-      "boundary_file": "vratsa_unified_vra-z04_boundary.json"
-    },
-    {
-      "id": "VID-M-VID01",
-      "name_bg": "Видин – VID01",
-      "zone_id": "VID-M-VID01-Z01",
-      "model_file": "vidin_VID01_model.json",
-      "boundary_file": "78MT_VID01_boundary.json"
-    },
-    {
-      "id": "VID-M-VID03",
-      "name_bg": "Видин – VID03",
-      "zone_id": "VID-M-VID03-Z01",
-      "model_file": "vidin_VID03_model.json",
-      "boundary_file": "78MT_VID03_boundary.json"
-    },
-    {
-      "id": "VID-M-VID06",
-      "name_bg": "Видин – VID06",
-      "zone_id": "VID-M-VID06-Z01",
-      "model_file": "vidin_VID06_model.json",
-      "boundary_file": "78MT_VID06_boundary.json"
-    },
-    {
-      "id": "VID-M-VID09",
-      "name_bg": "Видин – VID09",
-      "zone_id": "VID-M-VID09-Z01",
-      "model_file": "vidin_VID09_model.json",
-      "boundary_file": "78MT_VID09_boundary.json"
-    },
-    {
-      "id": "VID-M-VID15",
-      "name_bg": "Видин – VID15",
-      "zone_id": "VID-M-VID15-Z01",
-      "model_file": "vidin_VID15_model.json",
-      "boundary_file": "78MT_VID15_boundary.json"
-    },
-    {
-      "id": "VID-M-VID16",
-      "name_bg": "Видин – VID16",
-      "zone_id": "VID-M-VID16-Z01",
-      "model_file": "vidin_VID16_model.json",
-      "boundary_file": "78MT_VID16_boundary.json"
-    },
-    {
-      "id": "VID-M-VID22",
-      "name_bg": "Видин – VID22",
-      "zone_id": "VID-M-VID22-Z01",
-      "model_file": "vidin_VID22_model.json",
-      "boundary_file": "78MT_VID22_boundary.json"
-    },
-    {
-      "id": "VID-M-VID25",
-      "name_bg": "Видин – VID25",
-      "zone_id": "VID-M-VID25-Z01",
-      "model_file": "vidin_VID25_model.json",
-      "boundary_file": "78MT_VID25_boundary.json"
-    },
-    {
-      "id": "VID-M-VID30",
-      "name_bg": "Видин – VID30",
-      "zone_id": "VID-M-VID30-Z01",
-      "model_file": "vidin_VID30_model.json",
-      "boundary_file": "78MT_VID30_boundary.json"
-    },
-    {
-      "id": "VID-M-VID33",
-      "name_bg": "Видин – VID33",
-      "zone_id": "VID-M-VID33-Z01",
-      "model_file": "vidin_VID33_model.json",
-      "boundary_file": "78MT_VID33_boundary.json"
-    },
-    {
-      "id": "VID-M-VID37",
-      "name_bg": "Видин – VID37",
-      "zone_id": "VID-M-VID37-Z01",
-      "model_file": "vidin_VID37_model.json",
-      "boundary_file": "78MT_VID37_boundary.json"
-    },
-    {
-      "id": "PLE-BEL",
-      "name_bg": "Белене",
-      "zone_id": "PLE-BEL-Z01",
-      "model_file": "pleven_bel_model.json",
-      "boundary_file": "pleven_bel_boundary.json"
-    },
-    {
-      "id": "PLE-GUL",
-      "name_bg": "Гулянци",
-      "zone_id": "PLE-GUL-Z01",
-      "model_file": "pleven_gul_model.json",
-      "boundary_file": "pleven_gul_boundary.json"
-    },
-    {
-      "id": "PLE-DMT",
-      "name_bg": "Долна Митрополия",
-      "zone_id": "PLE-DMT-Z01",
-      "model_file": "pleven_dmt_model.json",
-      "boundary_file": "pleven_dmt_boundary.json"
-    },
-    {
-      "id": "PLE-DDB",
-      "name_bg": "Долни Дъбник",
-      "zone_id": "PLE-DDB-Z01",
-      "model_file": "pleven_ddb_model.json",
-      "boundary_file": "pleven_ddb_boundary.json"
-    },
-    {
-      "id": "PLE-ISK",
-      "name_bg": "Искър",
-      "zone_id": "PLE-ISK-Z01",
-      "model_file": "pleven_isk_model.json",
-      "boundary_file": "pleven_isk_boundary.json"
-    },
-    {
-      "id": "PLE-KNZ",
-      "name_bg": "Кнежа",
-      "zone_id": "PLE-KNZ-Z01",
-      "model_file": "pleven_knz_model.json",
-      "boundary_file": "pleven_knz_boundary.json"
-    },
-    {
-      "id": "PLE-LEV",
-      "name_bg": "Левски",
-      "zone_id": "PLE-LEV-Z01",
-      "model_file": "pleven_lev_model.json",
-      "boundary_file": "pleven_lev_boundary.json"
-    },
-    {
-      "id": "PLE-NIK",
-      "name_bg": "Никопол",
-      "zone_id": "PLE-NIK-Z01",
-      "model_file": "pleven_nik_model.json",
-      "boundary_file": "pleven_nik_boundary.json"
-    },
-    {
-      "id": "PLE-PLV",
-      "name_bg": "Плевен",
-      "zone_id": "PLE-PLV-Z01",
-      "model_file": "pleven_plv_model.json",
-      "boundary_file": "pleven_plv_boundary.json"
-    },
-    {
-      "id": "PLE-POR",
-      "name_bg": "Пордим",
-      "zone_id": "PLE-POR-Z01",
-      "model_file": "pleven_por_model.json",
-      "boundary_file": "pleven_por_boundary.json"
-    },
-    {
-      "id": "PLE-CHB",
-      "name_bg": "Червен бряг",
-      "zone_id": "PLE-CHB-Z01",
-      "model_file": "pleven_chb_model.json",
-      "boundary_file": "pleven_chb_boundary.json"
-    },
-    {
-      "id": "LOV-BG315",
-      "name_bg": "Ловеч",
-      "zone_id": "LOV-BG315-Z01",
-      "model_file": "lovech_bg315_model.json",
-      "boundary_file": "lovech_bg315_boundary.json"
-    }
-  ]
+    "schema_version":  "1.0",
+    "purpose":  "National source-backed regional lithology reports",
+    "regions":  [
+                    {
+                        "id":  "SOF-SVG",
+                        "name_bg":  "Своге",
+                        "zone_id":  "SOF-SVG-Z01",
+                        "model_file":  "svoge_model.json",
+                        "boundary_file":  "svoge_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-KOS",
+                        "name_bg":  "Костинброд",
+                        "zone_id":  "SOF-KOS-Z01",
+                        "model_file":  "kostinbrod_model.json",
+                        "boundary_file":  "kostinbrod_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO17",
+                        "name_bg":  "Елин Пелин",
+                        "zone_id":  "SOF-SFO17-Z01",
+                        "model_file":  "sofia_elin_pelin_model.json",
+                        "boundary_file":  "sofia_elin_pelin_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO25",
+                        "name_bg":  "Костенец",
+                        "zone_id":  "SOF-SFO25-Z01",
+                        "model_file":  "sofia_kostenets_model.json",
+                        "boundary_file":  "sofia_kostenets_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO39",
+                        "name_bg":  "Самоков",
+                        "zone_id":  "SOF-SFO39-Z01",
+                        "model_file":  "sofia_samokov_model.json",
+                        "boundary_file":  "sofia_samokov_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO58",
+                        "name_bg":  "Челопеч",
+                        "zone_id":  "SOF-SFO58-Z01",
+                        "model_file":  "sofia_chelopech_model.json",
+                        "boundary_file":  "sofia_chelopech_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO59",
+                        "name_bg":  "Долна баня",
+                        "zone_id":  "SOF-SFO59-Z01",
+                        "model_file":  "sofia_dolna_banya_model.json",
+                        "boundary_file":  "sofia_dolna_banya_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO10",
+                        "name_bg":  "Горна Малина",
+                        "zone_id":  "SOF-SFO10-Z01",
+                        "model_file":  "sofia_gorna_malina_model.json",
+                        "boundary_file":  "sofia_gorna_malina_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO20",
+                        "name_bg":  "Ихтиман",
+                        "zone_id":  "SOF-SFO20-Z01",
+                        "model_file":  "sofia_ihtiman_model.json",
+                        "boundary_file":  "sofia_ihtiman_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO24",
+                        "name_bg":  "Копривщица",
+                        "zone_id":  "SOF-SFO24-Z01",
+                        "model_file":  "sofia_koprivshtitsa_model.json",
+                        "boundary_file":  "sofia_koprivshtitsa_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO47",
+                        "name_bg":  "Златица",
+                        "zone_id":  "SOF-SFO47-Z01",
+                        "model_file":  "sofia_zlatitsa_model.json",
+                        "boundary_file":  "sofia_zlatitsa_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO57",
+                        "name_bg":  "Чавдар",
+                        "zone_id":  "SOF-SFO57-Z01",
+                        "model_file":  "sofia_chavdar_model.json",
+                        "boundary_file":  "sofia_chavdar_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO06",
+                        "name_bg":  "Божурище",
+                        "zone_id":  "SOF-SFO06-Z01",
+                        "model_file":  "sofia_bozhurishte_model.json",
+                        "boundary_file":  "sofia_bozhurishte_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO07",
+                        "name_bg":  "Ботевград",
+                        "zone_id":  "SOF-SFO07-Z01",
+                        "model_file":  "sofia_botevgrad_model.json",
+                        "boundary_file":  "sofia_botevgrad_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO16",
+                        "name_bg":  "Драгоман",
+                        "zone_id":  "SOF-SFO16-Z01",
+                        "model_file":  "sofia_dragoman_model.json",
+                        "boundary_file":  "sofia_dragoman_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO18",
+                        "name_bg":  "Етрополе",
+                        "zone_id":  "SOF-SFO18-Z01",
+                        "model_file":  "sofia_etropole_model.json",
+                        "boundary_file":  "sofia_etropole_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO34",
+                        "name_bg":  "Правец",
+                        "zone_id":  "SOF-SFO34-Z01",
+                        "model_file":  "sofia_pravets_model.json",
+                        "boundary_file":  "sofia_pravets_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO45",
+                        "name_bg":  "Сливница",
+                        "zone_id":  "SOF-SFO45-Z01",
+                        "model_file":  "sofia_slivnitsa_model.json",
+                        "boundary_file":  "sofia_slivnitsa_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO56",
+                        "name_bg":  "Мирково",
+                        "zone_id":  "SOF-SFO56-Z01",
+                        "model_file":  "sofia_mirkovo_model.json",
+                        "boundary_file":  "sofia_mirkovo_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO09",
+                        "name_bg":  "Годеч",
+                        "zone_id":  "SOF-SFO09-Z01",
+                        "model_file":  "sofia_godech_model.json",
+                        "boundary_file":  "sofia_godech_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO54",
+                        "name_bg":  "Антон",
+                        "zone_id":  "SOF-SFO54-Z01",
+                        "model_file":  "sofia_anton_model.json",
+                        "boundary_file":  "sofia_anton_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-SFO55",
+                        "name_bg":  "Пирдоп",
+                        "zone_id":  "SOF-SFO55-Z01",
+                        "model_file":  "sofia_pirdop_model.json",
+                        "boundary_file":  "sofia_pirdop_boundary.json"
+                    },
+                    {
+                        "id":  "SOF-CITY",
+                        "name_bg":  "София-град (Столична община)",
+                        "zone_id":  "SOF-CITY-Z01",
+                        "model_file":  "sofia_city_model.json",
+                        "boundary_file":  "sofia_city_boundary.json"
+                    },
+                    {
+                        "id":  "KNL-M-KNL04",
+                        "name_bg":  "Община Бобов дол",
+                        "zone_id":  "KNL-M-KNL04-Z01",
+                        "model_file":  "kyustendil_KNL04_model.json",
+                        "boundary_file":  "kyustendil_KNL04_boundary.json"
+                    },
+                    {
+                        "id":  "KNL-M-KNL05",
+                        "name_bg":  "Община Бобошево",
+                        "zone_id":  "KNL-M-KNL05-Z01",
+                        "model_file":  "kyustendil_KNL05_model.json",
+                        "boundary_file":  "kyustendil_KNL05_boundary.json"
+                    },
+                    {
+                        "id":  "KNL-M-KNL27",
+                        "name_bg":  "Община Кочериново",
+                        "zone_id":  "KNL-M-KNL27-Z01",
+                        "model_file":  "kyustendil_KNL27_model.json",
+                        "boundary_file":  "kyustendil_KNL27_boundary.json"
+                    },
+                    {
+                        "id":  "KNL-M-KNL29",
+                        "name_bg":  "Община Кюстендил",
+                        "zone_id":  "KNL-M-KNL29-Z01",
+                        "model_file":  "kyustendil_KNL29_model.json",
+                        "boundary_file":  "kyustendil_KNL29_boundary.json"
+                    },
+                    {
+                        "id":  "KNL-M-KNL31",
+                        "name_bg":  "Община Невестино",
+                        "zone_id":  "KNL-M-KNL31-Z01",
+                        "model_file":  "kyustendil_KNL31_model.json",
+                        "boundary_file":  "kyustendil_KNL31_boundary.json"
+                    },
+                    {
+                        "id":  "KNL-M-KNL38",
+                        "name_bg":  "Община Рила",
+                        "zone_id":  "KNL-M-KNL38-Z01",
+                        "model_file":  "kyustendil_KNL38_model.json",
+                        "boundary_file":  "kyustendil_KNL38_boundary.json"
+                    },
+                    {
+                        "id":  "KNL-M-KNL41",
+                        "name_bg":  "Община Сапарева баня",
+                        "zone_id":  "KNL-M-KNL41-Z01",
+                        "model_file":  "kyustendil_KNL41_model.json",
+                        "boundary_file":  "kyustendil_KNL41_boundary.json"
+                    },
+                    {
+                        "id":  "KNL-M-KNL48",
+                        "name_bg":  "Община Дупница",
+                        "zone_id":  "KNL-M-KNL48-Z01",
+                        "model_file":  "kyustendil_KNL48_model.json",
+                        "boundary_file":  "kyustendil_KNL48_boundary.json"
+                    },
+                    {
+                        "id":  "KNL-M-KNL50",
+                        "name_bg":  "Община Трекляно",
+                        "zone_id":  "KNL-M-KNL50-Z01",
+                        "model_file":  "kyustendil_KNL50_model.json",
+                        "boundary_file":  "kyustendil_KNL50_boundary.json"
+                    },
+                    {
+                        "id":  "KNL",
+                        "name_bg":  "Област Кюстендил",
+                        "zone_id":  "KNL-Z01",
+                        "model_file":  "kyustendil_oblast_model.json",
+                        "boundary_file":  "kyustendil_oblast_boundary.json"
+                    },
+                    {
+                        "id":  "BLG",
+                        "name_bg":  "Област Благоевград",
+                        "zone_id":  "BLG-Z01",
+                        "model_file":  "blagoevgrad_model.json",
+                        "boundary_file":  "blagoevgrad_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV01-Z01",
+                        "name_bg":  "Община Асеновград",
+                        "zone_id":  "PLD-PDV01-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV01-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV01-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV07-Z01",
+                        "name_bg":  "Община Брезово",
+                        "zone_id":  "PLD-PDV07-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV07-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV07-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV12-Z01",
+                        "name_bg":  "Община Калояново",
+                        "zone_id":  "PLD-PDV12-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV12-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV12-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV13-Z01",
+                        "name_bg":  "Община Карлово",
+                        "zone_id":  "PLD-PDV13-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV13-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV13-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV15-Z01",
+                        "name_bg":  "Община Лъки",
+                        "zone_id":  "PLD-PDV15-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV15-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV15-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV17-Z01",
+                        "name_bg":  "Община Марица",
+                        "zone_id":  "PLD-PDV17-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV17-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV17-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV22-Z01",
+                        "name_bg":  "Община Пловдив",
+                        "zone_id":  "PLD-PDV22-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV22-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV22-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV23-Z01",
+                        "name_bg":  "Община Първомай",
+                        "zone_id":  "PLD-PDV23-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV23-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV23-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV25-Z01",
+                        "name_bg":  "Община Раковски",
+                        "zone_id":  "PLD-PDV25-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV25-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV25-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV26-Z01",
+                        "name_bg":  "Община Родопи",
+                        "zone_id":  "PLD-PDV26-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV26-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV26-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV28-Z01",
+                        "name_bg":  "Община Садово",
+                        "zone_id":  "PLD-PDV28-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV28-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV28-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV33-Z01",
+                        "name_bg":  "Община Съединение",
+                        "zone_id":  "PLD-PDV33-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV33-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV33-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV37-Z01",
+                        "name_bg":  "Община Хисаря",
+                        "zone_id":  "PLD-PDV37-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV37-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV37-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV39-Z01",
+                        "name_bg":  "Община Кричим",
+                        "zone_id":  "PLD-PDV39-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV39-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV39-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV40-Z01",
+                        "name_bg":  "Община Перущица",
+                        "zone_id":  "PLD-PDV40-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV40-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV40-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV41-Z01",
+                        "name_bg":  "Община Стамболийски",
+                        "zone_id":  "PLD-PDV41-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV41-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV41-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV42-Z01",
+                        "name_bg":  "Община Куклен",
+                        "zone_id":  "PLD-PDV42-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV42-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV42-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD-M-PLD-PDV43-Z01",
+                        "name_bg":  "Община Сопот",
+                        "zone_id":  "PLD-PDV43-Z01",
+                        "model_file":  "plovdiv_municipality_PLD-PDV43-Z01_model.json",
+                        "boundary_file":  "plovdiv_municipality_PLD-PDV43-Z01_boundary.json"
+                    },
+                    {
+                        "id":  "PLD",
+                        "name_bg":  "Област Пловдив",
+                        "zone_id":  "PLD-Z01",
+                        "model_file":  "plovdiv_model.json",
+                        "boundary_file":  "plovdiv_boundary.json"
+                    },
+                    {
+                        "id":  "PZ-01",
+                        "name_bg":  "Пазарджишко поле",
+                        "zone_id":  "PZ-ZONE-01",
+                        "model_file":  "pazardzhik_regional_model_67AN.json",
+                        "boundary_file":  "pazardzhik_zone_01_boundary.json"
+                    },
+                    {
+                        "id":  "PZ-02",
+                        "name_bg":  "Средногорски район",
+                        "zone_id":  "PZ-ZONE-02",
+                        "model_file":  "pazardzhik_regional_model_67AN.json",
+                        "boundary_file":  "pazardzhik_zone_02_boundary.json"
+                    },
+                    {
+                        "id":  "PZ-03",
+                        "name_bg":  "Севернородопска периферия",
+                        "zone_id":  "PZ-ZONE-03",
+                        "model_file":  "pazardzhik_regional_model_67AN.json",
+                        "boundary_file":  "pazardzhik_zone_03_boundary.json"
+                    },
+                    {
+                        "id":  "PZ-04",
+                        "name_bg":  "Баташки район",
+                        "zone_id":  "PZ-ZONE-04",
+                        "model_file":  "pazardzhik_regional_model_67AN.json",
+                        "boundary_file":  "pazardzhik_zone_04_boundary.json"
+                    },
+                    {
+                        "id":  "PZ-05",
+                        "name_bg":  "Чепинска котловина",
+                        "zone_id":  "PZ-ZONE-05",
+                        "model_file":  "pazardzhik_regional_model_67AN.json",
+                        "boundary_file":  "pazardzhik_zone_05_boundary.json"
+                    },
+                    {
+                        "id":  "PZ-06",
+                        "name_bg":  "Беловски район",
+                        "zone_id":  "PZ-ZONE-06",
+                        "model_file":  "pazardzhik_regional_model_67AN.json",
+                        "boundary_file":  "pazardzhik_zone_06_boundary.json"
+                    },
+                    {
+                        "id":  "PER-M-PER32",
+                        "name_bg":  "Перник",
+                        "zone_id":  "PER-M-PER32-Z01",
+                        "model_file":  "pernik_PER32_model.json",
+                        "boundary_file":  "pernik_PER32_boundary.json"
+                    },
+                    {
+                        "id":  "PER-M-PER36",
+                        "name_bg":  "Радомир",
+                        "zone_id":  "PER-M-PER36-Z01",
+                        "model_file":  "pernik_PER36_model.json",
+                        "boundary_file":  "pernik_PER36_boundary.json"
+                    },
+                    {
+                        "id":  "PER-M-PER08",
+                        "name_bg":  "Брезник",
+                        "zone_id":  "PER-M-PER08-Z01",
+                        "model_file":  "pernik_PER08_model.json",
+                        "boundary_file":  "pernik_PER08_boundary.json"
+                    },
+                    {
+                        "id":  "PER-M-PER19",
+                        "name_bg":  "Земен",
+                        "zone_id":  "PER-M-PER19-Z01",
+                        "model_file":  "pernik_PER19_model.json",
+                        "boundary_file":  "pernik_PER19_boundary.json"
+                    },
+                    {
+                        "id":  "PER-M-PER22",
+                        "name_bg":  "Ковачевци",
+                        "zone_id":  "PER-M-PER22-Z01",
+                        "model_file":  "pernik_PER22_model.json",
+                        "boundary_file":  "pernik_PER22_boundary.json"
+                    },
+                    {
+                        "id":  "PER-M-PER51",
+                        "name_bg":  "Трън",
+                        "zone_id":  "PER-M-PER51-Z01",
+                        "model_file":  "pernik_PER51_model.json",
+                        "boundary_file":  "pernik_PER51_boundary.json"
+                    },
+                    {
+                        "id":  "MON",
+                        "name_bg":  "Област Монтана",
+                        "zone_id":  "MON-Z01",
+                        "model_file":  "montana_model.json",
+                        "boundary_file":  "montana_boundary.json"
+                    },
+                    {
+                        "id":  "VRA-NATIONAL-VRA-Z01",
+                        "name_bg":  "Козлодуйска низина / Радиана / АЕЦ",
+                        "zone_id":  "VRA-Z01",
+                        "model_file":  "vratsa_unified_vra-z01_model.json",
+                        "boundary_file":  "vratsa_unified_vra-z01_boundary.json"
+                    },
+                    {
+                        "id":  "VRA-NATIONAL-VRA-Z02",
+                        "name_bg":  "Северна льосово-алувиална равнина",
+                        "zone_id":  "VRA-Z02",
+                        "model_file":  "vratsa_unified_vra-z02_model.json",
+                        "boundary_file":  "vratsa_unified_vra-z02_boundary.json"
+                    },
+                    {
+                        "id":  "VRA-NATIONAL-VRA-Z03",
+                        "name_bg":  "Криводолско-Врачански Предбалкан",
+                        "zone_id":  "VRA-Z03",
+                        "model_file":  "vratsa_unified_vra-z03_model.json",
+                        "boundary_file":  "vratsa_unified_vra-z03_boundary.json"
+                    },
+                    {
+                        "id":  "VRA-NATIONAL-VRA-Z04",
+                        "name_bg":  "Мездренско-Романски синклинален пояс",
+                        "zone_id":  "VRA-Z04",
+                        "model_file":  "vratsa_unified_vra-z04_model.json",
+                        "boundary_file":  "vratsa_unified_vra-z04_boundary.json"
+                    },
+                    {
+                        "id":  "VID-M-VID01",
+                        "name_bg":  "Видин – VID01",
+                        "zone_id":  "VID-M-VID01-Z01",
+                        "model_file":  "vidin_VID01_model.json",
+                        "boundary_file":  "78MT_VID01_boundary.json"
+                    },
+                    {
+                        "id":  "VID-M-VID03",
+                        "name_bg":  "Видин – VID03",
+                        "zone_id":  "VID-M-VID03-Z01",
+                        "model_file":  "vidin_VID03_model.json",
+                        "boundary_file":  "78MT_VID03_boundary.json"
+                    },
+                    {
+                        "id":  "VID-M-VID06",
+                        "name_bg":  "Видин – VID06",
+                        "zone_id":  "VID-M-VID06-Z01",
+                        "model_file":  "vidin_VID06_model.json",
+                        "boundary_file":  "78MT_VID06_boundary.json"
+                    },
+                    {
+                        "id":  "VID-M-VID09",
+                        "name_bg":  "Видин – VID09",
+                        "zone_id":  "VID-M-VID09-Z01",
+                        "model_file":  "vidin_VID09_model.json",
+                        "boundary_file":  "78MT_VID09_boundary.json"
+                    },
+                    {
+                        "id":  "VID-M-VID15",
+                        "name_bg":  "Видин – VID15",
+                        "zone_id":  "VID-M-VID15-Z01",
+                        "model_file":  "vidin_VID15_model.json",
+                        "boundary_file":  "78MT_VID15_boundary.json"
+                    },
+                    {
+                        "id":  "VID-M-VID16",
+                        "name_bg":  "Видин – VID16",
+                        "zone_id":  "VID-M-VID16-Z01",
+                        "model_file":  "vidin_VID16_model.json",
+                        "boundary_file":  "78MT_VID16_boundary.json"
+                    },
+                    {
+                        "id":  "VID-M-VID22",
+                        "name_bg":  "Видин – VID22",
+                        "zone_id":  "VID-M-VID22-Z01",
+                        "model_file":  "vidin_VID22_model.json",
+                        "boundary_file":  "78MT_VID22_boundary.json"
+                    },
+                    {
+                        "id":  "VID-M-VID25",
+                        "name_bg":  "Видин – VID25",
+                        "zone_id":  "VID-M-VID25-Z01",
+                        "model_file":  "vidin_VID25_model.json",
+                        "boundary_file":  "78MT_VID25_boundary.json"
+                    },
+                    {
+                        "id":  "VID-M-VID30",
+                        "name_bg":  "Видин – VID30",
+                        "zone_id":  "VID-M-VID30-Z01",
+                        "model_file":  "vidin_VID30_model.json",
+                        "boundary_file":  "78MT_VID30_boundary.json"
+                    },
+                    {
+                        "id":  "VID-M-VID33",
+                        "name_bg":  "Видин – VID33",
+                        "zone_id":  "VID-M-VID33-Z01",
+                        "model_file":  "vidin_VID33_model.json",
+                        "boundary_file":  "78MT_VID33_boundary.json"
+                    },
+                    {
+                        "id":  "VID-M-VID37",
+                        "name_bg":  "Видин – VID37",
+                        "zone_id":  "VID-M-VID37-Z01",
+                        "model_file":  "vidin_VID37_model.json",
+                        "boundary_file":  "78MT_VID37_boundary.json"
+                    },
+                    {
+                        "id":  "PLE-BEL",
+                        "name_bg":  "Белене",
+                        "zone_id":  "PLE-BEL-Z01",
+                        "model_file":  "pleven_bel_model.json",
+                        "boundary_file":  "pleven_bel_boundary.json"
+                    },
+                    {
+                        "id":  "PLE-GUL",
+                        "name_bg":  "Гулянци",
+                        "zone_id":  "PLE-GUL-Z01",
+                        "model_file":  "pleven_gul_model.json",
+                        "boundary_file":  "pleven_gul_boundary.json"
+                    },
+                    {
+                        "id":  "PLE-DMT",
+                        "name_bg":  "Долна Митрополия",
+                        "zone_id":  "PLE-DMT-Z01",
+                        "model_file":  "pleven_dmt_model.json",
+                        "boundary_file":  "pleven_dmt_boundary.json"
+                    },
+                    {
+                        "id":  "PLE-DDB",
+                        "name_bg":  "Долни Дъбник",
+                        "zone_id":  "PLE-DDB-Z01",
+                        "model_file":  "pleven_ddb_model.json",
+                        "boundary_file":  "pleven_ddb_boundary.json"
+                    },
+                    {
+                        "id":  "PLE-ISK",
+                        "name_bg":  "Искър",
+                        "zone_id":  "PLE-ISK-Z01",
+                        "model_file":  "pleven_isk_model.json",
+                        "boundary_file":  "pleven_isk_boundary.json"
+                    },
+                    {
+                        "id":  "PLE-KNZ",
+                        "name_bg":  "Кнежа",
+                        "zone_id":  "PLE-KNZ-Z01",
+                        "model_file":  "pleven_knz_model.json",
+                        "boundary_file":  "pleven_knz_boundary.json"
+                    },
+                    {
+                        "id":  "PLE-LEV",
+                        "name_bg":  "Левски",
+                        "zone_id":  "PLE-LEV-Z01",
+                        "model_file":  "pleven_lev_model.json",
+                        "boundary_file":  "pleven_lev_boundary.json"
+                    },
+                    {
+                        "id":  "PLE-NIK",
+                        "name_bg":  "Никопол",
+                        "zone_id":  "PLE-NIK-Z01",
+                        "model_file":  "pleven_nik_model.json",
+                        "boundary_file":  "pleven_nik_boundary.json"
+                    },
+                    {
+                        "id":  "PLE-PLV",
+                        "name_bg":  "Плевен",
+                        "zone_id":  "PLE-PLV-Z01",
+                        "model_file":  "pleven_plv_model.json",
+                        "boundary_file":  "pleven_plv_boundary.json"
+                    },
+                    {
+                        "id":  "PLE-POR",
+                        "name_bg":  "Пордим",
+                        "zone_id":  "PLE-POR-Z01",
+                        "model_file":  "pleven_por_model.json",
+                        "boundary_file":  "pleven_por_boundary.json"
+                    },
+                    {
+                        "id":  "PLE-CHB",
+                        "name_bg":  "Червен бряг",
+                        "zone_id":  "PLE-CHB-Z01",
+                        "model_file":  "pleven_chb_model.json",
+                        "boundary_file":  "pleven_chb_boundary.json"
+                    },
+                    {
+                        "id":  "LOV-BG315",
+                        "name_bg":  "Ловеч",
+                        "zone_id":  "LOV-BG315-Z01",
+                        "model_file":  "lovech_bg315_model.json",
+                        "boundary_file":  "lovech_bg315_boundary.json"
+                    },
+                    {
+                        "id":  "GAB",
+                        "name_bg":  "Габрово",
+                        "zone_id":  "GAB-Z01",
+                        "model_file":  "gabrovo_model.json",
+                        "boundary_file":  "gabrovo_boundary.json"
+                    }
+                ]
 }
