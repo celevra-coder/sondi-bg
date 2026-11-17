@@ -176,15 +176,14 @@ export function searchLunaNationalResearch(args: {
   });
 
   const matches = candidates
-    .sort((a, b) => b.geographic_rank - a.geographic_rank)
-    .slice(0, 15);
+    .sort((a, b) => b.geographic_rank - a.geographic_rank);
   return {
     query: args.query ?? null,
     region: args.region ?? null,
     total_catalog_records: catalog.length,
     returned_records: matches,
     returned_count: matches.length,
-    limit: 15,
+    limit: matches.length,
     warning:
       "Text matches are documentary references, not verified spatial matches. Check the original record and geographic precision before using geological conclusions."
   };

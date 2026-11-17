@@ -16,7 +16,7 @@ import {
   searchLunaNationalBoreholes
 } from "./sondi-luna-research-tools";
 
-const REVISION = "LUNA_RELEASE_GEOGRAPHIC_ISOLATION_V4_SETTLEMENT_CONTEXT";
+const REVISION = "LUNA_DOCUMENT_COMPATIBILITY_AUDIT_V8";
 
 const DATA_FILES = [
   "montana_research_spatial_evidence.geojson",
@@ -254,11 +254,440 @@ export async function runLunaResearchCycle(
     : "";
 
   // Coordinates come exclusively from the server, never from AI arguments.
+  // MANDATORY_SERVER_EVIDENCE_SEARCH_V1:
+  // Search coverage is selected by code; geological interpretation remains AI-owned.
+  const mandatorySearchJobs: Array<{
+    category: string;
+    run: () => unknown;
+  }> = [
+    {
+      category: "national_spatial_evidence",
+      run: () => searchLunaNationalSpatialEvidence({
+        latitude: lat, longitude: lon, radius_km: 20
+      })
+    },
+    {
+      category: "geological_maps_and_records",
+      run: () => searchLunaGeologicalRecords({
+        latitude: lat, longitude: lon, radius_km: 15
+      })
+    },
+    {
+      category: "national_borehole_observations",
+      run: () => searchLunaNationalBoreholes({
+        latitude: lat, longitude: lon, radius_km: 20
+      })
+    },
+    {
+      category: "national_documentary_research",
+      run: () => nearestSettlement?.district
+        ? searchLunaNationalResearch({
+            query: undefined,
+            region: nearestSettlement.district
+          })
+        : {
+            returned_records: [],
+            returned_count: 0,
+            skipped_reason: "NO_NEARBY_SETTLEMENT_DISTRICT",
+            note: "National thematic searches run separately. No administrative location is inferred from this missing settlement."
+          }
+    }
+  ];
+
+  // LUNA_COMPACT_THEMATIC_RESEARCH_V2
+  // Code defines research coverage; AI owns geological interpretation.
+  const thematicQueries = [
+    {
+      category: "geological_sections",
+      query: String.fromCharCode(1088,1072,1079,1088,1077,1079)
+    },
+    {
+      category: "stratigraphy",
+      query: String.fromCharCode(1089,1090,1088,1072,1090,1080,1075,1088,1072,1092)
+    },
+    {
+      category: "formation_thickness",
+      query: String.fromCharCode(1076,1077,1073,1077,1083,1080,1085)
+    },
+    {
+      category: "tectonics_and_faults",
+      query: String.fromCharCode(1088,1072,1079,1083,1086,1084)
+    },
+    {
+      category: "hydrogeology",
+      query: String.fromCharCode(1093,1080,1076,1088,1086,1075,1077,1086,1083,1086,1075)
+    }
+  ];
+
+  for (const topic of thematicQueries) {
+    mandatorySearchJobs.push({
+      category: topic.category,
+      run: () => {
+        const regional = searchLunaNationalResearch({
+          query: topic.query,
+          region: nearestSettlement?.district
+        });
+
+        if ((regional.returned_count ?? 0) > 0) {
+          return {
+            ...regional,
+            discovery_scope: "NEARBY_SETTLEMENT_DISTRICT",
+            geographic_applicability_at_target: "NOT_VERIFIED"
+          };
+        }
+
+        // Documentary discovery only; not a depth prediction.
+        const national = searchLunaNationalResearch({
+          query: topic.query
+        });
+
+        return {
+          ...national,
+          discovery_scope: "NATIONAL_THEMATIC_DISCOVERY",
+          regional_search_returned_count: regional.returned_count ?? 0,
+          nearby_settlement_district: nearestSettlement?.district ?? null,
+          geographic_applicability_at_target: "NOT_VERIFIED",
+          warning: "National thematic matches are unverified discovery leads. Independently verify geographic applicability, geological continuity and provenance before using any depths."
+        };
+      }
+    });
+  }
+  if (nearestSettlement) {
+    mandatorySearchJobs.push({
+      category: "local_settlement_documentary_research",
+      run: () => searchLunaNationalResearch({
+        query: nearestSettlement.name, region: undefined
+      })
+    });
+  }
+
+  // Keep tool-search payloads bounded and JSON-valid.
+  // Full source records remain available through read tools.
+  function compactMandatoryEvidence(value: unknown): string {
+    const raw = JSON.stringify(value) ?? "null";
+    if (raw.length <= 2400) return raw;
+
+    const candidates: Array<Record<string, unknown>> = [];
+    const seen = new Set<string>();
+    const collectionCounts: Record<string, number> = {};
+    let visited = 0;
+
+    function scan(node: unknown, pathName: string, depth: number): void {
+      if (visited++ > 900 || depth > 6 || node === null ||
+          typeof node !== "object") return;
+
+      if (Array.isArray(node)) {
+        if (depth <= 3) collectionCounts[pathName] = node.length;
+        for (const child of node.slice(0, 90)) {
+          scan(child, pathName, depth + 1);
+        }
+        return;
+      }
+
+      const item = node as Record<string, unknown>;
+      const idFields = [
+        "intake_id", "evidence_id", "borehole_id", "record_id", "id"
+      ];
+      const sourceId = idFields.map(k => item[k])
+        .find(v => typeof v === "string" && v.length > 0);
+
+      if (typeof sourceId === "string" && !seen.has(sourceId)) {
+        seen.add(sourceId);
+        if (candidates.length < 10) {
+          const title = item.title ?? item.name ??
+            item.borehole_name ?? item.source_file ?? null;
+
+          candidates.push({
+            id: sourceId,
+            kind: item.evidence_kind ?? item.kind ?? item.type ?? null,
+            title: typeof title === "string"
+              ? title.slice(0, 100) : null,
+            distance_km: item.distance_km ?? null,
+            status: item.status ?? item.verification_status ?? null
+          });
+        }
+      }
+
+      for (const [key, child] of Object.entries(item)) {
+        if (child !== null && typeof child === "object") {
+          scan(child, key, depth + 1);
+        }
+      }
+    }
+
+    scan(value, "root", 0);
+
+    return JSON.stringify({
+      format: "COMPACT_EVIDENCE_INDEX",
+      original_characters: raw.length,
+      complete_record_content: false,
+      collection_counts: collectionCounts,
+      candidate_ids: candidates,
+      indexed_ids_found: seen.size,
+      original_response_excerpt: raw.slice(0, 350),
+      next_action: "Read relevant original records using their IDs"
+    });
+  }
+
+  // SONDI_RAW_DOCUMENT_SEARCH_V4
+  // Extract real IDs before compressing results for AI.
+  const rawDocumentCandidates: Array<{
+    id: string;
+    category: string;
+    geographic_rank: number;
+  }> = [];
+
+  const rawDocumentIds = new Set<string>();
+
+  const documentSearchCategories = new Set([
+    "national_documentary_research",
+    "local_settlement_documentary_research",
+    "geological_sections",
+    "stratigraphy",
+    "formation_thickness",
+    "tectonics_and_faults",
+    "hydrogeology"
+  ]);
+
+  const mandatoryEvidenceResults = mandatorySearchJobs.map(job => {
+    try {
+      const rawResult = job.run();
+      const response = rawResult && typeof rawResult === "object"
+        ? rawResult as Record<string, unknown>
+        : {};
+
+      const error = typeof response.error === "string"
+        ? response.error : null;
+
+      const returnedRecords = Array.isArray(response.returned_records)
+        ? response.returned_records : [];
+
+      if (!error && documentSearchCategories.has(job.category)) {
+        for (const value of returnedRecords) {
+          if (!value || typeof value !== "object") continue;
+
+          const record = value as Record<string, unknown>;
+          const id = typeof record.id === "string"
+            ? record.id : null;
+
+          if (!id || rawDocumentIds.has(id)) continue;
+
+          rawDocumentIds.add(id);
+
+          rawDocumentCandidates.push({
+            id,
+            category: job.category,
+            geographic_rank:
+              typeof record.geographic_rank === "number"
+                ? record.geographic_rank : 0
+          });
+        }
+      }
+
+      return {
+        category: job.category,
+        status: error ? "SEARCH_ERROR" : response.skipped_reason ? "SEARCH_SKIPPED" : "SEARCH_COMPLETED",
+        returned_count:
+          typeof response.returned_count === "number"
+            ? response.returned_count
+            : returnedRecords.length,
+        error,
+        result: compactMandatoryEvidence(rawResult)
+      };
+    } catch (error) {
+      return {
+        category: job.category,
+        status: "SEARCH_ERROR",
+        returned_count: 0,
+        error: error instanceof Error
+          ? error.message : "UNKNOWN_ERROR",
+        result: "{}"
+      };
+    }
+  });
+  if (process.env.NODE_ENV !== "production") {
+    for (const item of mandatoryEvidenceResults) {
+      console.info(
+        "[SONDI_LUNA_RESEARCH] MANDATORY_SEARCH",
+        item.category, item.status
+      );
+    }
+  }
+
+  const mandatoryEvidenceContext =
+    "\n\nMANDATORY_SERVER_EVIDENCE_SEARCH_V1:\n" +
+    "The following searches were executed by server code before AI analysis. " +
+    "They are candidate evidence, not prewritten geological conclusions. " +
+    "Independently evaluate geological units, stratigraphy, sections, " +
+    "structural continuity, faults, terrain, hydrogeology, boreholes and " +
+    "documentary observations. The search results may be incomplete; " +
+    "use the research tools to read original records and investigate gaps. " +
+    "The AI alone decides geological relevance, interpretation and whether " +
+    "a conditional depth assessment is justified.\n" +
+    JSON.stringify(mandatoryEvidenceResults);
+  // SONDI_ALL_DOCUMENT_EVIDENCE_V6
+  // Read every discovered document without a fixed document count.
+  // Do not exclude by administrative district before AI review.
+  const allDocumentCandidates = rawDocumentCandidates
+    .slice()
+    .sort((a, b) => b.geographic_rank - a.geographic_rank);
+
+  const documentReadFailures: Array<{
+    id: string;
+    reason: string;
+  }> = [];
+
+  const documentBatches: string[] = [];
+  let currentBatch: string[] = [];
+  let currentBatchChars = 0;
+  let documentsRead = 0;
+  let documentChars = 0;
+
+  function flushDocumentBatch(): void {
+    if (currentBatch.length === 0) return;
+
+    documentBatches.push(
+      "[" + currentBatch.join(",") + "]"
+    );
+
+    currentBatch = [];
+    currentBatchChars = 0;
+  }
+
+  for (const candidate of allDocumentCandidates) {
+    try {
+      const result = readLunaNationalResearch(candidate.id);
+
+      if (!result || typeof result !== "object") {
+        documentReadFailures.push({
+          id: candidate.id,
+          reason: "INVALID_DOCUMENT_RESPONSE"
+        });
+        continue;
+      }
+
+      const source = result as Record<string, unknown>;
+
+      if (source.error) {
+        documentReadFailures.push({
+          id: candidate.id,
+          reason: String(source.error)
+        });
+        continue;
+      }
+
+      if (source.record === null ||
+          source.record_too_large_for_single_response === true) {
+        documentReadFailures.push({
+          id: candidate.id,
+          reason: "ORIGINAL_RECORD_REQUIRES_FULL_READING"
+        });
+        continue;
+      }
+
+      const fullDocument = JSON.stringify({
+        discovered_id: candidate.id,
+        discovered_category: candidate.category,
+        geographic_rank_hint: candidate.geographic_rank,
+        original_document: result
+      });
+
+      if (!fullDocument) {
+        documentReadFailures.push({
+          id: candidate.id,
+          reason: "DOCUMENT_SERIALIZATION_FAILED"
+        });
+        continue;
+      }
+
+      // Batches constrain individual message size.
+      // They never truncate original documentary content.
+      if (currentBatchChars > 0 &&
+          currentBatchChars + fullDocument.length > 22000) {
+        flushDocumentBatch();
+      }
+
+      currentBatch.push(fullDocument);
+      currentBatchChars += fullDocument.length;
+      documentChars += fullDocument.length;
+      documentsRead++;
+
+    } catch (error) {
+      documentReadFailures.push({
+        id: candidate.id,
+        reason: error instanceof Error
+          ? error.message : "DOCUMENT_READ_ERROR"
+      });
+    }
+  }
+
+  flushDocumentBatch();
+
+  const documentPrefetchContext = JSON.stringify({
+    version: "SONDI_ALL_DOCUMENT_EVIDENCE_V6",
+    total_discovered_candidates: allDocumentCandidates.length,
+    original_documents_read: documentsRead,
+    unreadable_documents: documentReadFailures,
+    delivery_batches: documentBatches.length,
+    all_records_delivered_without_truncation:
+      documentReadFailures.length === 0,
+    instructions: [
+      "Review every supplied original document.",
+      "Assess each source for geographic and geological compatibility with the selected coordinate.",
+      "Do not reject a document solely because of an administrative boundary.",
+      "Do not accept a document solely because of geographic proximity.",
+      "Separate measured contacts from formation thicknesses and geological analogues.",
+      "Exclude unsupported or incompatible sources from the final geological interpretation.",
+      "Use only geologically defensible evidence for conditional depth interpretations."
+    ],
+    geological_interpretation_owner: "AI"
+  });
+
+  if (process.env.NODE_ENV !== "production") {
+    console.info(
+      "[SONDI_LUNA_RESEARCH] DOCUMENT_PREFETCH",
+      "CANDIDATES=" + allDocumentCandidates.length,
+      "READ=" + documentsRead,
+      "FAILED=" + documentReadFailures.length,
+      "BATCHES=" + documentBatches.length,
+      "CHARS=" + documentChars
+    );
+
+    for (const failure of documentReadFailures) {
+      console.info(
+        "[SONDI_LUNA_RESEARCH] DOCUMENT_READ_FAILURE",
+        failure.id, failure.reason
+      );
+    }
+
+    for (const item of mandatoryEvidenceResults) {
+      console.info(
+        "[SONDI_LUNA_RESEARCH] SEARCH_COUNT",
+        item.category,
+        "COUNT=" + item.returned_count,
+        "STATUS=" + item.status,
+        "ERROR=" + (item.error ?? "NONE")
+      );
+    }
+  }
+
   const history: unknown[] = [{
     role: "user",
-    content: payload + locationContext
+    content: payload + locationContext + mandatoryEvidenceContext + documentPrefetchContext
   }];
 
+  // All original records are delivered in bounded, complete batches.
+  for (let index = 0; index < documentBatches.length; index++) {
+    history.push({
+      role: "user",
+      content:
+        "ORIGINAL_GEOLOGICAL_DOCUMENT_BATCH " +
+        (index + 1) + "/" + documentBatches.length +
+        "\nRead and independently assess every document in this batch. " +
+        "Do not treat geographic metadata as proof of geological continuity.\n" +
+        documentBatches[index]
+    });
+  }
   const researchInstructions = instructions + `
 
 SONDI_LUNA_AUTONOMOUS_RESEARCH_V1:
@@ -449,22 +878,242 @@ read_national_research за проверка на относимите запи�
 Върни окончателния JSON формат, указан по-горе.
 `;
 
+  // SONDI_DOCUMENT_COMPATIBILITY_AUDIT_V8
+  // AI decides applicability; code verifies that no read document is omitted.
+  const unreadableDocumentIds = new Set(
+    documentReadFailures.map(item => item.id)
+  );
+
+  const documentAuditIds = allDocumentCandidates
+    .filter(item => !unreadableDocumentIds.has(item.id))
+    .map(item => item.id);
+
+  const documentAuditInstructions = `
+SONDI_DOCUMENT_COMPATIBILITY_AUDIT_V8:
+
+The final response must retain its existing JSON geological analysis
+fields and MUST also include "document_compatibility_audit".
+
+Evaluate EACH supplied original geological document independently
+against the exact requested coordinate and geological context.
+
+Use exactly one audit item for each document ID in:
+${JSON.stringify(documentAuditIds)}
+
+Each item has this shape:
+{
+  "id": "original document ID",
+  "applicability": "APPLICABLE | CONDITIONAL | INAPPLICABLE",
+  "reason": "Specific geological explanation in Bulgarian"
+}
+
+Definitions:
+APPLICABLE: Evidence supports an interpretation relevant to the target.
+CONDITIONAL: A potentially informative analogy, but applicability
+is uncertain, incomplete, or limited.
+INAPPLICABLE: The source is geologically incompatible with the target
+or does not establish a defensible relationship to the target.
+
+For every source, assess geographic provenance, mapped formations,
+stratigraphic context, structural continuity, faults, lithology,
+hydrogeology, and the limits of the underlying observations as relevant.
+Explain which available features support the decision and which are
+missing or contradictory. Never invent missing comparisons.
+
+Do not use administrative location alone to accept or reject a source.
+Do not equate formation thickness with depth at the target.
+Do not import borehole contacts from unrelated geology.
+Do not infer water occurrence solely from documentary terminology.
+Do not force depth windows when evidence is insufficient.
+
+The audit is source-by-source accountability, NOT a predefined
+geological conclusion. The AI makes each decision independently.
+Include ALL listed IDs exactly once, even when marked INAPPLICABLE.
+Do not add IDs absent from the supplied document list.
+Keep each reason concise and specific.
+`;
+
+  // SONDI_LUNA_AUDIT_DEDUP_V12
+  // Exact duplicate audit entries only; conflicting evidence is rejected.
+  function normalizeAuditV12(raw:string):string {
+    try {
+      const parsed=JSON.parse(raw) as Record<string,unknown>;
+      const audit=parsed.document_compatibility_audit;
+      if(!Array.isArray(audit))return raw;
+
+      const expected=new Set(documentAuditIds);
+      const seen=new Map<string,{
+        applicability:string;
+        reason:string;
+      }>();
+      const unique:unknown[]=[];
+      let removed=0;
+
+      for(const value of audit){
+        if(!value||typeof value!=="object"||Array.isArray(value))
+          return raw;
+
+        const item=value as Record<string,unknown>;
+
+        if(typeof item.id!=="string"||
+           !expected.has(item.id)||
+           typeof item.reason!=="string"||
+           item.reason.trim().length<20||
+           item.reason.length>1200||
+           (item.applicability!=="APPLICABLE"&&
+            item.applicability!=="CONDITIONAL"&&
+            item.applicability!=="INAPPLICABLE"))
+          return raw;
+
+        const previous=seen.get(item.id);
+        if(previous){
+          if(previous.applicability!==item.applicability||
+             previous.reason!==item.reason)
+            return raw;
+          removed++;
+          continue;
+        }
+
+        seen.set(item.id,{
+          applicability:item.applicability,
+          reason:item.reason
+        });
+        unique.push(value);
+      }
+
+      if(removed===0||seen.size!==expected.size)return raw;
+
+      parsed.document_compatibility_audit=unique;
+
+      if(process.env.NODE_ENV!=="production")
+        console.info(
+          "[SONDI_LUNA_RESEARCH] AUDIT_EXACT_DEDUP_V12",
+          "REMOVED="+removed,
+          "RETAINED="+unique.length
+        );
+
+      return JSON.stringify(parsed);
+    }catch{
+      return raw;
+    }
+  }
+  function documentAuditComplete(raw: string): boolean {
+    try {
+      const parsed = JSON.parse(raw) as Record<string, unknown>;
+      const audit = parsed.document_compatibility_audit;
+
+      if (!Array.isArray(audit) ||
+          audit.length !== documentAuditIds.length) {
+        if (process.env.NODE_ENV !== "production") {
+          console.info(
+            "[SONDI_LUNA_RESEARCH] DOCUMENT_AUDIT_INCOMPLETE",
+            "EXPECTED=" + documentAuditIds.length,
+            "RECEIVED=" + (Array.isArray(audit) ? audit.length : 0)
+          );
+        }
+        return false;
+      }
+
+      const expected = new Set(documentAuditIds);
+      const seen = new Set<string>();
+      const accepted = new Set([
+        "APPLICABLE", "CONDITIONAL", "INAPPLICABLE"
+      ]);
+
+      for (const value of audit) {
+        if (!value || typeof value !== "object" ||
+            Array.isArray(value)) return false;
+
+        const item = value as Record<string, unknown>;
+
+        if (typeof item.id !== "string" ||
+            !expected.has(item.id) ||
+            seen.has(item.id) ||
+            !accepted.has(String(item.applicability)) ||
+            typeof item.reason !== "string" ||
+            item.reason.trim().length < 20 ||
+            item.reason.length > 1200) {
+          return false;
+        }
+
+        seen.add(item.id);
+      }
+
+      if (seen.size !== expected.size) return false;
+
+      if (process.env.NODE_ENV !== "production") {
+        const counts: Record<string, number> = {
+          APPLICABLE: 0,
+          CONDITIONAL: 0,
+          INAPPLICABLE: 0
+        };
+
+        for (const value of audit) {
+          const item = value as {
+            id: string;
+            applicability: string;
+            reason: string;
+          };
+
+          counts[item.applicability]++;
+
+          console.info(
+            "[SONDI_LUNA_RESEARCH] DOCUMENT_EVALUATED",
+            item.id,
+            item.applicability,
+            item.reason.slice(0, 220)
+          );
+        }
+
+        console.info(
+          "[SONDI_LUNA_RESEARCH] DOCUMENT_AUDIT_COMPLETE",
+          "EXPECTED=" + expected.size,
+          "EVALUATED=" + seen.size,
+          "APPLICABLE=" + counts.APPLICABLE,
+          "CONDITIONAL=" + counts.CONDITIONAL,
+          "INAPPLICABLE=" + counts.INAPPLICABLE
+        );
+      }
+
+      return true;
+    } catch {
+      return false;
+    }
+  }
   let executedCalls = 0;
 
   for (let round = 0; round < 5; round++) {
+    const roundStart = Date.now();
+    if(process.env.NODE_ENV !== "production")
+      console.info("[SONDI_LUNA_RESEARCH] ROUND_START=" + (round + 1));
     const response = await client.responses.create({
       model,
-      instructions: researchInstructions,
+      instructions: researchInstructions + documentAuditInstructions,
       input: history as OpenAI.Responses.ResponseInput,
       tools,
       tool_choice: round === 0 ? "required" :
                    round === 4 ? "none" : "auto",
       include: ["reasoning.encrypted_content"],
-      max_output_tokens: 6500,
+      max_output_tokens: 20000,
       store: false
     });
 
+    if(process.env.NODE_ENV !== "production")
+      console.info("[SONDI_LUNA_RESEARCH] ROUND_END=" + (round + 1) +
+        " ELAPSED_MS=" + (Date.now() - roundStart) +
+        " STATUS=" + response.status);
+
     if (response.status !== "completed") {
+      const details = response.incomplete_details;
+      console.error(
+        "[SONDI_LUNA_RESEARCH] INCOMPLETE_DIAGNOSTIC",
+        "ROUND=" + (round + 1),
+        "STATUS=" + response.status,
+        "REASON=" + (details?.reason ?? "UNKNOWN"),
+        "OUTPUT_TOKENS=" + (response.usage?.output_tokens ?? "UNKNOWN"),
+        "INPUT_TOKENS=" + (response.usage?.input_tokens ?? "UNKNOWN"),
+        "OUTPUT_ITEMS=" + (response.output?.length ?? 0)
+      );
       throw new Error("LUNA_RESEARCH_INCOMPLETE");
     }
 
@@ -483,7 +1132,22 @@ read_national_research за проверка на относимите запи�
       }
 
       // SONDI_LUNA_AUTONOMY_V1
-      if (acceptFinal && !acceptFinal(response.output_text)) {
+      // SONDI_LUNA_AUDIT_HANDOFF_V12
+      // Use one normalized result for every validation and cache handoff.
+      const finalTextV12=normalizeAuditV12(response.output_text);
+
+      // SONDI_LUNA_REVIEW_FEEDBACK_V15
+      const auditOKV15=documentAuditComplete(finalTextV12);
+      const geologicalOKV15=auditOKV15 &&
+        (!acceptFinal || acceptFinal(finalTextV12));
+
+      if(!auditOKV15 || !geologicalOKV15){
+        if(process.env.NODE_ENV!=="production"){
+          console.warn("[SONDI_LUNA_RESEARCH] REVIEW_REJECTED_V15",
+            "AUDIT="+(auditOKV15?"PASS":"FAIL"),
+            "GEOLOGY="+(auditOKV15
+              ?(geologicalOKV15?"PASS":"FAIL"):"NOT_CHECKED"));
+        }
         if (round === 4) {
           throw new Error("LUNA_REVIEW_RETRIES_EXHAUSTED");
         }
@@ -495,7 +1159,9 @@ read_national_research за проверка на относимите запи�
         history.push({
           role: "user",
           content:
-            "Проверката установи проблем с формата или доказателствата. " +
+            (!auditOKV15
+              ? "Документалният одит е невалиден. Включи всеки предоставен документ точно веднъж с валиден ID и обоснована оценка. "
+              : "Документалният одит е валиден, но окончателният геоложки резултат не преминава проверката. Провери числовите интервали, материалите, source_ids, структурните конфликти и формата. Ако дълбочинна прогноза не е достатъчно подкрепена, върни analysis_type REGIONAL и празен depthInterpretations. Не измисляй дълбочини. ") +
             "Прегледай източниците и поправи неподкрепените твърдения. " +
             "Можеш да продължиш проучването с инструментите. " +
             "Разграничавай документирани измервания от прогнози. " +
@@ -507,7 +1173,7 @@ read_national_research за проверка на относимите запи�
 
 return {
         status: response.status,
-        output_text: response.output_text
+        output_text: finalTextV12
       };
     }
 

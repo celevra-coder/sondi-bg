@@ -188,11 +188,80 @@ function sondiCleanDepthNote(value: unknown): string {
     .trim();
 }
 
+// SONDI_SHARED_LITHOLOGY_PROFILE_V1
+// Share concurrent calculations for identical coordinates.
+// Cache successful results briefly within this server process only.
+type SharedLithologyResult = Awaited<ReturnType<typeof getLithologyProfile>>;
+type SharedLithologyEntry = {
+  promise: Promise<SharedLithologyResult>;
+  finishedAt: number | null;
+};
+
+const sharedLithologyProfiles = new Map<string, SharedLithologyEntry>();
+
+function getSharedLithologyProfile(
+  latitude: number,
+  longitude: number
+): Promise<SharedLithologyResult> {
+  const key = `${latitude.toFixed(6)},${longitude.toFixed(6)}`;
+  const now = Date.now();
+  const previous = sharedLithologyProfiles.get(key);
+
+  if (
+    previous &&
+    (previous.finishedAt === null || now - previous.finishedAt < 30000)
+  ) {
+    if (process.env.NODE_ENV !== "production") {
+      console.info("[SONDI_PROFILE] SHARED_HIT", key);
+    }
+    return previous.promise;
+  }
+
+  sharedLithologyProfiles.delete(key);
+
+  if (process.env.NODE_ENV !== "production") {
+    console.info("[SONDI_PROFILE] COMPUTE", key);
+  }
+
+  const promise = Promise.resolve().then(
+    () => getLithologyProfile(latitude, longitude)
+  );
+
+  const entry: SharedLithologyEntry = {
+    promise,
+    finishedAt: null
+  };
+
+  sharedLithologyProfiles.set(key, entry);
+
+  void promise.then(
+    () => {
+      entry.finishedAt = Date.now();
+    },
+    () => {
+      if (sharedLithologyProfiles.get(key) === entry) {
+        sharedLithologyProfiles.delete(key);
+      }
+    }
+  );
+
+  if (sharedLithologyProfiles.size > 24) {
+    for (const [oldKey, oldEntry] of sharedLithologyProfiles) {
+      if (sharedLithologyProfiles.size <= 24) break;
+      if (oldEntry.finishedAt !== null && oldKey !== key) {
+        sharedLithologyProfiles.delete(oldKey);
+      }
+    }
+  }
+
+  return promise;
+}
 export default async function DepthStructurePage({
   searchParams,
 }: {
   searchParams: SearchParams;
 }) {
+  const __sondiPerfStart = performance.now();
   const params = await searchParams;
 
   const lat = Number(params.lat);
@@ -202,7 +271,7 @@ export default async function DepthStructurePage({
     !Number.isFinite(lat) ||
     !Number.isFinite(lng)
   ) {
-    redirect("/geology-map");
+    redirect("/explore");
   }
 
   const supabase = await createClient();
@@ -273,11 +342,7 @@ export default async function DepthStructurePage({
     );
   }
 
-  const profile =
-    await getLithologyProfile(
-      lat,
-      lng
-    ) as LithologyProfile;
+  const profile = await getSharedLithologyProfile(lat, lng) as LithologyProfile;
 
   const synthesis =
     synthesizeLithologyEvidence(profile);
@@ -1385,6 +1450,7 @@ const material = point.material
     })[0];
 
   const regionalAIResearch = nationalEvidence.research_catalog_context;
+  console.info("SONDI_PERF_BEFORE_LUNA_V1: "+(performance.now()-__sondiPerfStart).toFixed(1)+"ms");
   const lunaAnalysis = await getSondiLunaGeologicalAnalysis({
     latitude: lat,
     longitude: lng,
@@ -1403,6 +1469,20 @@ const material = point.material
       scope: cell.evidence_level,
       sources: cell.sources.map(source => source.text),
     })),
+    analogueContext: profile.exact_coordinate_analogues
+      .filter(a => a.distance_km !== null && a.distance_km <= 20)
+      .slice(0,10)
+      .map(a => ({
+        borehole_id:a.borehole_id,
+        distance_km:a.distance_km,
+        coordinate_quality:a.coordinate_quality,
+        analogue_score:a.analogue_score,
+        selection_reasons_bg:a.selection_reasons_bg,
+        geology:a.geology,
+        terrain_context:a.terrain_context,
+        fault_context:a.fault_context,
+        groundwater_body_context:a.groundwater_body_context
+      })),
     sheetCandidates: regionalAIResearch.broad_sheet_candidates.map(candidate => ({
       name: candidate.name,
       materials: candidate.materials,
@@ -1816,6 +1896,13 @@ const material = point.material
                       ).toLocaleLowerCase("bg-BG");
 
                       const explanation =
+                        /конгломерат/u.test(material)
+                          ? "Скални късове, свързани с цимент; здравината и пробиваемостта зависят от късовете и цимента."
+                        : /пясъчник/u.test(material)
+                          ? "Пясъчник с възможни чакълести участъци и прослойки; пробиваемостта зависи от здравината и напукаността."
+                        : /валун/u.test(material)
+                          ? "Едри скални късове със запълнител; условията за пробиване зависят от размера и здравината им."
+                        :
                         /пясъчливо-глинеста прослойка/u.test(material)
                           ? "Песъчлив материал с локално по-слабо пропусклива прослойка."
                         : /алтернация|редуване/u.test(material)

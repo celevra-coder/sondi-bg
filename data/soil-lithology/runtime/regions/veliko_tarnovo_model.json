@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "region_id": "VTR",
+  "oblast": "Велико Търново",
+  "status": "REGIONAL_CONTEXT_ONLY",
+  "source": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/distribution/BG321-region-01m-4326-2024.geojson",
+  "zones": {
+    "VTR-Z01": {
+      "regional_structural_context": [],
+      "partial_borehole_profiles": [],
+      "documented_sample_depth_points": [],
+      "documented_reference_intervals": [],
+      "documented_well_depths": [],
+      "wider_studies": [],
+      "regional_evidence_notes": [],
+      "source_ids": []
+    }
+  },
+  "scientific_limitations": [
+    "Generalized GISCO NUTS 2024 BG321 administrative boundary, EPSG:4326.",
+    "This is not a geological boundary or cadastral survey.",
+    "No verified geological polygons or exact borehole mouths.",
+    "Research evidence is held in the national documentary catalog.",
+    "No measured depths are assigned to target coordinates."
+  ]
+}
