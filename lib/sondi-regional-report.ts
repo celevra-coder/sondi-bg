@@ -1781,7 +1781,13 @@ export function isSondiLithologyLocationRegistered(
     }
   }
 
-  return false;
+  // SONDI_TG_STEP06_ADMINISTRATIVE_ACCESS_V4
+  // Administrative access boundary only, not geological evidence.
+  // Existing national Luna interpretation remains independent.
+  const tgAdministrativeBoundary = readJson<Geometry>(
+    "targovishte_administrative_boundary.json"
+  );
+  return containsPoint(tgAdministrativeBoundary, latitude, longitude);
 }
 
 function getSondiRegionalReportBase(
