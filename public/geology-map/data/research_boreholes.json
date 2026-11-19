@@ -8403,6 +8403,300 @@
       "geographic_application": "DOCUMENTED_BOREHOLE_ONLY",
       "lateral_transfer_automatically_authorized": false,
       "mineral_water_registry_modified": false
+    },
+    {
+      "borehole_id": "SH-BH-SH-A1-001",
+      "name_bg": "ТК Лавена — Шумен",
+      "oblast": "Шумен",
+      "region_code": "Shumen",
+      "status": "documented_borehole_exact_source_qa_pending",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 43.2624658333,
+        "longitude": 26.9679244444,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "published_documented_wgs84_coordinate",
+        "origin": "https://www.shumen.bg/uploads/deinosti/ut/2012233.pdf"
+      },
+      "total_depth_m": 550,
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 8,
+          "expected_material_bg": "Песъчливи глини с чакъл",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-001"
+          ]
+        },
+        {
+          "depth_from_m": 8,
+          "depth_to_m": 120,
+          "expected_material_bg": "Сиви мергели",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-001"
+          ]
+        },
+        {
+          "depth_from_m": 120,
+          "depth_to_m": 160,
+          "expected_material_bg": "Сиви кварцови пясъчници",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-001"
+          ]
+        },
+        {
+          "depth_from_m": 160,
+          "depth_to_m": 200,
+          "expected_material_bg": "Напукани окарстени варовици",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-001"
+          ]
+        },
+        {
+          "depth_from_m": 200,
+          "depth_to_m": 220,
+          "expected_material_bg": "Сиви кварцови пясъчници",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-001"
+          ]
+        },
+        {
+          "depth_from_m": 220,
+          "depth_to_m": 550,
+          "expected_material_bg": "Напукани окарстени варовици",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-001"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Direct documentary borehole evidence at registered EXACT position",
+        "warning": "Coordinates are operator-accepted EXACT; original coordinate provenance retained. Do not extrapolate measured depths to other sites without geological evidence."
+      }
+    },
+    {
+      "borehole_id": "SH-BH-SH-A1-004",
+      "name_bg": "ШК-3 — Салманово",
+      "oblast": "Шумен",
+      "region_code": "Shumen",
+      "status": "documented_borehole_exact_source_qa_pending",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 43.1706933333,
+        "longitude": 26.9861683333,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "published_documented_wgs84_coordinate",
+        "origin": "https://www.shumen.bg/uploads/deinosti/ut/2207261.pdf"
+      },
+      "total_depth_m": 10,
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 0.5,
+          "expected_material_bg": "Почвен слой",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-004"
+          ]
+        },
+        {
+          "depth_from_m": 0.5,
+          "depth_to_m": 5,
+          "expected_material_bg": "Глина, на места песъчлива",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-004"
+          ]
+        },
+        {
+          "depth_from_m": 5,
+          "depth_to_m": 8,
+          "expected_material_bg": "Чакъл с пясъци и единични валуни",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-004"
+          ]
+        },
+        {
+          "depth_from_m": 8,
+          "depth_to_m": 10,
+          "expected_material_bg": "Мергел, водоплътен",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-004"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Direct documentary borehole evidence at registered EXACT position",
+        "warning": "Coordinates are operator-accepted EXACT; original coordinate provenance retained. Do not extrapolate measured depths to other sites without geological evidence."
+      }
+    },
+    {
+      "borehole_id": "SH-BH-SH-A1-019",
+      "name_bg": "Шахтов кладенец — Ивански",
+      "oblast": "Шумен",
+      "region_code": "Shumen",
+      "status": "documented_borehole_exact_source_qa_pending",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 43.1730377778,
+        "longitude": 27.0544291667,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "published_documented_wgs84_coordinate",
+        "origin": "https://old.shumen.bg/deinosti/ut/2507081.pdf"
+      },
+      "total_depth_m": 8.5,
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 1,
+          "expected_material_bg": "Почвен слой",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-019"
+          ]
+        },
+        {
+          "depth_from_m": 1,
+          "depth_to_m": 4,
+          "expected_material_bg": "Глина песъчлива, чакълеста, белезникава с ръждиви петна",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-019"
+          ]
+        },
+        {
+          "depth_from_m": 4,
+          "depth_to_m": 8,
+          "expected_material_bg": "Глина песъчлива, белезникава с варовикови късове",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-019"
+          ]
+        },
+        {
+          "depth_from_m": 8,
+          "depth_to_m": 8.5,
+          "expected_material_bg": "Мергели, глинести, слоисти, сиво-сини",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-019"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Direct documentary borehole evidence at registered EXACT position",
+        "warning": "Coordinates are operator-accepted EXACT; original coordinate provenance retained. Do not extrapolate measured depths to other sites without geological evidence."
+      }
+    },
+    {
+      "borehole_id": "SH-BH-SH-A1-013",
+      "name_bg": "СН-1 (Р-2) — Мараш",
+      "oblast": "Шумен",
+      "region_code": "Shumen",
+      "status": "documented_borehole_exact_source_qa_pending",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 43.1970833,
+        "longitude": 26.9403333,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "official_water_facilities.geojson"
+      },
+      "total_depth_m": 2800,
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 30,
+          "expected_material_bg": "Почвен слой и наноси",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-013"
+          ]
+        },
+        {
+          "depth_from_m": 30,
+          "depth_to_m": 442,
+          "expected_material_bg": "Мергели",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-013"
+          ]
+        },
+        {
+          "depth_from_m": 442,
+          "depth_to_m": 1426,
+          "expected_material_bg": "Варовици, варовити мергели и доломитизирани варовици",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-013"
+          ]
+        },
+        {
+          "depth_from_m": 1426,
+          "depth_to_m": 1816,
+          "expected_material_bg": "Алевролити, аргилити, пясъчници и брекчоконгломерати",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-013"
+          ]
+        },
+        {
+          "depth_from_m": 1816,
+          "depth_to_m": 2800,
+          "expected_material_bg": "Варовици и доломити",
+          "confidence": "source_documented_recheck_pending",
+          "evidence_level": "borehole_exact",
+          "source_ids": [
+            "SH-SRC-013"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_overlaps": [],
+      "source_gaps": [],
+      "expert_context": {
+        "usage": "Direct documentary borehole evidence at registered EXACT position",
+        "warning": "Coordinates are operator-accepted EXACT; original coordinate provenance retained. Do not extrapolate measured depths to other sites without geological evidence."
+      }
     }
   ]
 }
