@@ -21,7 +21,7 @@
     "Плевен",
     "Lovech"
   ],
-  "borehole_count": 118,
+  "borehole_count": 119,
   "boreholes": [
     {
       "borehole_id": "PLD-Z037",
@@ -14707,6 +14707,32 @@
       "geographic_application": "DOCUMENTED_BOREHOLE_ONLY",
       "lateral_transfer_automatically_authorized": false,
       "mineral_water_registry_modified": false
+    },
+    {
+      "borehole_id": "VT-R2HG-OBEDINENIE",
+      "name_bg": "Р-2хг Обединение",
+      "oblast": "Велико Търново",
+      "region_code": "Veliko Tarnovo",
+      "status": "documented_borehole_published_coordinates",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 43.3372902778,
+        "longitude": 25.4918655556,
+        "status": "PUBLISHED_COORDINATES",
+        "evidence_level": "documented_source_coordinates",
+        "origin": "VT-R012"
+      },
+      "total_depth_m": 1720,
+      "lithology": [],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "source_ids": [
+        "VT-R012"
+      ],
+      "expert_context": {
+        "usage": "Documented borehole location; lithological intervals not imported",
+        "warning": "Published coordinates; independent geodetic wellhead accuracy not asserted"
+      }
     }
   ],
   "sources": [
