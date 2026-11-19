@@ -1787,7 +1787,17 @@ export function isSondiLithologyLocationRegistered(
   const tgAdministrativeBoundary = readJson<Geometry>(
     "targovishte_administrative_boundary.json"
   );
-  return containsPoint(tgAdministrativeBoundary, latitude, longitude);
+  if (containsPoint(tgAdministrativeBoundary, latitude, longitude)) {
+    return true;
+  }
+
+  // SONDI_SHUMEN_STEP06_ADMIN_ACCESS_BG333
+  // Eurostat GISCO NUTS3 2024, EPSG:4326.
+  // Access boundary only, not geological evidence.
+  const shumenAdministrativeBoundary = readJson<Geometry>(
+    "shumen_administrative_boundary.json"
+  );
+  return containsPoint(shumenAdministrativeBoundary, latitude, longitude);
 }
 
 function getSondiRegionalReportBase(
