@@ -1,0 +1,136 @@
+{
+    "schema_version":  "1.0",
+    "model_id":  "RG-REGIONAL-20261120",
+    "oblast":  "Разград",
+    "status":  "REGIONAL_DOCUMENTARY_CONTEXT_WITH_SPATIAL_LIMITATIONS",
+    "production_enabled":  true,
+    "automatic_depth_prediction_enabled":  false,
+    "zones":  {
+                  "RG-Z01":  {
+                                 "regional_structural_context":  [
+
+                                                                 ],
+                                 "documented_reference_intervals":  [
+
+                                                                    ],
+                                 "partial_borehole_profiles":  [
+
+                                                               ],
+                                 "documented_sample_depth_points":  [
+
+                                                                    ],
+                                 "regional_evidence_notes":  [
+                                                                 {
+                                                                     "title":  "Льос и льосовидни покривки",
+                                                                     "informationType":  "Документален регионален геоложки контекст",
+                                                                     "paragraphs":  [
+                                                                                        "Локална измерена опора при ДС Подайва; общински данни за Кубрат и Завет",
+                                                                                        "Мощностите извън сондажа са регионални; граници и изменчивост непроверени",
+                                                                                        "Сведенията имат ограничения според обхвата на първоизточника. Не удостоверяват литология или дълбочина под произволна точка."
+                                                                                    ],
+                                                                     "source_ids":  [
+                                                                                        "RG-SRC-001",
+                                                                                        "RG-SRC-008",
+                                                                                        "RG-SRC-009"
+                                                                                    ],
+                                                                     "research_zone_id":  "RG-Z-01",
+                                                                     "spatial_application":  "SOURCE_SCOPE_ONLY",
+                                                                     "verified_geological_polygon":  false,
+                                                                     "location_specific_depth_prediction_authorized":  false
+                                                                 },
+                                                                 {
+                                                                     "title":  "Карбонатни и карстови комплекси",
+                                                                     "informationType":  "Документален регионален геоложки контекст",
+                                                                     "paragraphs":  [
+                                                                                        "Регионални описания за Кубрат, Завет и Исперих; частичен факт за С-5 Брестовене",
+                                                                                        "Карстовата напуканост и положението на контактите не са доказани за произволна точка",
+                                                                                        "Сведенията имат ограничения според обхвата на първоизточника. Не удостоверяват литология или дълбочина под произволна точка."
+                                                                                    ],
+                                                                     "source_ids":  [
+                                                                                        "RG-SRC-006",
+                                                                                        "RG-SRC-008",
+                                                                                        "RG-SRC-009",
+                                                                                        "RG-SRC-013"
+                                                                                    ],
+                                                                     "research_zone_id":  "RG-Z-02",
+                                                                     "spatial_application":  "SOURCE_SCOPE_ONLY",
+                                                                     "verified_geological_polygon":  false,
+                                                                     "location_specific_depth_prediction_authorized":  false
+                                                                 },
+                                                                 {
+                                                                     "title":  "Мергелно-варовикови преходни фациеси",
+                                                                     "informationType":  "Документален регионален геоложки контекст",
+                                                                     "paragraphs":  [
+                                                                                        "Регионални стратиграфски и структурни описания за Разград, Самуил и Лозница",
+                                                                                        "Не е доказана странична непрекъснатост; означението на свитата 175-550 м при Подайва остава за сверяване",
+                                                                                        "Сведенията имат ограничения според обхвата на първоизточника. Не удостоверяват литология или дълбочина под произволна точка."
+                                                                                    ],
+                                                                     "source_ids":  [
+                                                                                        "RG-SRC-003",
+                                                                                        "RG-SRC-004",
+                                                                                        "RG-SRC-005",
+                                                                                        "RG-SRC-015"
+                                                                                    ],
+                                                                     "research_zone_id":  "RG-Z-03",
+                                                                     "spatial_application":  "SOURCE_SCOPE_ONLY",
+                                                                     "verified_geological_polygon":  false,
+                                                                     "location_specific_depth_prediction_authorized":  false
+                                                                 },
+                                                                 {
+                                                                     "title":  "Речни долини, тераси и наноси",
+                                                                     "informationType":  "Документален регионален геоложки контекст",
+                                                                     "paragraphs":  [
+                                                                                        "Регионални геоложки и инженерно-геоложки сведения",
+                                                                                        "Няма проверена геометрия на конкретните тераси и локални мощности",
+                                                                                        "Сведенията имат ограничения според обхвата на първоизточника. Не удостоверяват литология или дълбочина под произволна точка."
+                                                                                    ],
+                                                                     "source_ids":  [
+                                                                                        "RG-SRC-002",
+                                                                                        "RG-SRC-011",
+                                                                                        "RG-SRC-014"
+                                                                                    ],
+                                                                     "research_zone_id":  "RG-Z-04",
+                                                                     "spatial_application":  "SOURCE_SCOPE_ONLY",
+                                                                     "verified_geological_polygon":  false,
+                                                                     "location_specific_depth_prediction_authorized":  false
+                                                                 },
+                                                                 {
+                                                                     "title":  "Разломни и морфоструктурни зони",
+                                                                     "informationType":  "Документален регионален геоложки контекст",
+                                                                     "paragraphs":  [
+                                                                                        "Научно описание на Разградския блок и публикувани тектонски схеми",
+                                                                                        "Разломните линии и блоковите контакти не са геореферирани и не могат да се използват като точни бариери",
+                                                                                        "Сведенията имат ограничения според обхвата на първоизточника. Не удостоверяват литология или дълбочина под произволна точка."
+                                                                                    ],
+                                                                     "source_ids":  [
+                                                                                        "RG-SRC-007",
+                                                                                        "RG-SRC-012",
+                                                                                        "RG-SRC-014"
+                                                                                    ],
+                                                                     "research_zone_id":  "RG-Z-05",
+                                                                     "spatial_application":  "SOURCE_SCOPE_ONLY",
+                                                                     "verified_geological_polygon":  false,
+                                                                     "location_specific_depth_prediction_authorized":  false
+                                                                 }
+                                                             ],
+                                 "source_ids":  [
+
+                                                ],
+                                 "regional_documented_alternatives":  [
+
+                                                                      ]
+                             }
+              },
+    "research_sources":  [
+                             "RG-SRC-001",
+                             "RG-SRC-013"
+                         ],
+    "limitations":  [
+                        "Administrative boundary is not a geological unit boundary.",
+                        "No accepted georeferenced geological unit polygons.",
+                        "No oblast-wide measured lithological depths.",
+                        "Podayva documented column belongs only to its borehole.",
+                        "C-5 Brestovene has no verified borehole mouth coordinates.",
+                        "Source-specific geological context must not be extrapolated to all properties."
+                    ]
+}

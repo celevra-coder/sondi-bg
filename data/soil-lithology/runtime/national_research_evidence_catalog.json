@@ -43956,6 +43956,1397 @@
                                        "note":  "Льосовата основа е локално наблюдение за изследваните тераси, а не универсален профил на община Велики Преслав.",
                                        "oblast":  "Шумен"
                                    }
+                    },
+                    {
+                        "intake_id":  "RG-B2-001",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-001",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/0",
+                        "source_ids":  [
+                                           "https://www.isperih.bg/sites/default/files/2022-05/%D0%9F%D0%A0%D0%9E%D0%95%D0%9A%D0%A2.pdf"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-001",
+                                       "intake_id":  "RG-B2-001",
+                                       "title":  "Проект за санитарно-охранителна зона около ДС Подайва",
+                                       "oblast":  "Разград",
+                                       "classification":  "DOCUMENTED_BOREHOLE_LITHOLOGICAL_COLUMN",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "с. Подайва, община Исперих, област Разград"
+                                                                    },
+                                       "geographic_scope_description":  "SPECIFIC_WATER_FACILITY_AND_MODEL_AREA",
+                                       "source_reference":  "Графични приложения: Сондажна колонка, стр. 1 и 2 от 2",
+                                       "source_url":  "https://www.isperih.bg/sites/default/files/2022-05/%D0%9F%D0%A0%D0%9E%D0%95%D0%9A%D0%A2.pdf",
+                                       "publisher":  "Екология и Геология ООД",
+                                       "publication_year":  2009,
+                                       "regional_paragraphs":  [
+                                                                   "Four documented intervals 0-700 m in original two-page borehole column, drilled 1984"
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-001",
+                                                               "title":  "Проект за санитарно-охранителна зона около ДС Подайва",
+                                                               "publisher":  "Екология и Геология ООД",
+                                                               "year":  2009,
+                                                               "url":  "https://www.isperih.bg/sites/default/files/2022-05/%D0%9F%D0%A0%D0%9E%D0%95%D0%9A%D0%A2.pdf",
+                                                               "retrieved_at":  "2026-11-19",
+                                                               "document_type":  "DOCUMENTED_BOREHOLE_LITHOLOGICAL_COLUMN",
+                                                               "location_original":  "с. Подайва, община Исперих, област Разград",
+                                                               "scope_claim":  "SPECIFIC_WATER_FACILITY_AND_MODEL_AREA",
+                                                               "source_reference":  "Графични приложения: Сондажна колонка, стр. 1 и 2 от 2",
+                                                               "materials":  [
+                                                                                 "Льос и льосовидни глини",
+                                                                                 "Варовити глинесто-песъчливи отложения",
+                                                                                 "Глинести варовици и мергели",
+                                                                                 "Варовици и доломити"
+                                                                             ],
+                                                               "depth_evidence":  "Four documented intervals 0-700 m in original two-page borehole column, drilled 1984",
+                                                               "quality_flags":  [
+                                                                                     "ORIGINAL_BOREHOLE_COLUMN",
+                                                                                     "DOCUMENTED_LITHOLOGICAL_INTERVALS",
+                                                                                     "TWO_PAGE_COLUMN",
+                                                                                     "CONFLICTING_LONGITUDE_BETWEEN_PAGES",
+                                                                                     "NO_RUNTIME_IMPORT_AT_STEP_02"
+                                                                                 ],
+                                                               "status":  "VERIFIED_LITHOLOGICAL_SOURCE",
+                                                               "next_action":  "Step 3: validate original graphic labels and resolve conflicting coordinate values",
+                                                               "lithological_intervals":  [
+                                                                                              {
+                                                                                                  "from_m":  0,
+                                                                                                  "to_m":  21,
+                                                                                                  "material":  "Льос и льосовидни глини",
+                                                                                                  "formation":  "Еолични образувания"
+                                                                                              },
+                                                                                              {
+                                                                                                  "from_m":  21,
+                                                                                                  "to_m":  175,
+                                                                                                  "material":  "Варовити, глинесто-песъчливи отложения",
+                                                                                                  "formation":  "Русенска свита"
+                                                                                              },
+                                                                                              {
+                                                                                                  "from_m":  175,
+                                                                                                  "to_m":  550,
+                                                                                                  "material":  "Варовити, глинести варовици и мергели",
+                                                                                                  "formation":  "Разградска/Русенска свита - надпис за сверяване"
+                                                                                              },
+                                                                                              {
+                                                                                                  "from_m":  550,
+                                                                                                  "to_m":  700,
+                                                                                                  "material":  "Варовици, глинести варовици и доломити",
+                                                                                                  "formation":  "Каспичанска свита"
+                                                                                              }
+                                                                                          ],
+                                                               "coordinate_source_note":  "Page 1: latitude 43 40 10.67 N, longitude 26 54 46.39 E; page 2: latitude 43 40 10.67 N, longitude 26 54 49.38 E. Keep both original readings pending source reconciliation.",
+                                                               "coordinate_status":  "EXACT",
+                                                               "verified_borehole_location":  {
+                                                                                                  "latitude":  43.6696305556,
+                                                                                                  "longitude":  26.9137194444,
+                                                                                                  "crs":  "EPSG:4326",
+                                                                                                  "coordinate_status":  "EXACT",
+                                                                                                  "coordinate_target":  "WATER_INTAKE_BOREHOLE",
+                                                                                                  "original_dms":  "43 40 10.67 N; 26 54 49.39 E",
+                                                                                                  "bg70_y":  9558739.25,
+                                                                                                  "bg70_x":  4735981.39,
+                                                                                                  "property_description":  "UPI II-669, quarter 79, Podayva, Isperih municipality",
+                                                                                                  "source_url":  "https://www.isperih.bg/sites/default/files/2022-05/%D0%9F%D0%A0%D0%9E%D0%95%D0%9A%D0%A2.pdf",
+                                                                                                  "source_reference":  "Main text page 5, Table II.1",
+                                                                                                  "coordinate_conflict_note":  "Graphic lithology column first sheet gives longitude 26 54 46.39 E; second sheet gives 26 54 49.38 E; authoritative project Table II.1 gives 26 54 49.39 E",
+                                                                                                  "verified_at":  "2026-11-20"
+                                                                                              }
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-001"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-002",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-002",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/1",
+                        "source_ids":  [
+                                           "https://razgrad.bg/phocadownload/administration/obsht-ustroystven-plan/zapiska-razgrad.pdf"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-002",
+                                       "intake_id":  "RG-B2-002",
+                                       "title":  "Обяснителна записка към ОУП Разград",
+                                       "oblast":  "Разград",
+                                       "classification":  "REGIONAL_ENGINEERING_GEOLOGICAL_DESCRIPTION",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Община Разград"
+                                                                    },
+                                       "geographic_scope_description":  "MUNICIPAL_REGIONAL",
+                                       "source_reference":  "ОУП Разград, раздел 2.3.1 Геология, печатни стр. 46-47",
+                                       "source_url":  "https://razgrad.bg/phocadownload/administration/obsht-ustroystven-plan/zapiska-razgrad.pdf",
+                                       "publisher":  "Община Разград",
+                                       "publication_year":  null,
+                                       "regional_paragraphs":  [
+                                                                   "Reported regional thicknesses: deluvium 5-6 m; alluvium 0-5 m; not borehole intervals"
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-002",
+                                                               "title":  "Обяснителна записка към ОУП Разград",
+                                                               "publisher":  "Община Разград",
+                                                               "year":  null,
+                                                               "url":  "https://razgrad.bg/phocadownload/administration/obsht-ustroystven-plan/zapiska-razgrad.pdf",
+                                                               "retrieved_at":  "2026-11-19",
+                                                               "document_type":  "REGIONAL_ENGINEERING_GEOLOGICAL_DESCRIPTION",
+                                                               "location_original":  "Община Разград",
+                                                               "scope_claim":  "MUNICIPAL_REGIONAL",
+                                                               "source_reference":  "ОУП Разград, раздел 2.3.1 Геология, печатни стр. 46-47",
+                                                               "materials":  [
+                                                                                 "Льос и льосовидни глини",
+                                                                                 "Алувиални и делувиални глини",
+                                                                                 "Пясъци и чакъли",
+                                                                                 "Варовици, доломити и мергели"
+                                                                             ],
+                                                               "depth_evidence":  "Reported regional thicknesses: deluvium 5-6 m; alluvium 0-5 m; not borehole intervals",
+                                                               "coordinate_status":  "REGIONAL_ONLY",
+                                                               "quality_flags":  [
+                                                                                     "OFFICIAL_MUNICIPAL_PLAN",
+                                                                                     "REGIONAL_LITHOLOGICAL_DESCRIPTION",
+                                                                                     "THICKNESS_NOT_BOREHOLE_DEPTH"
+                                                                                 ],
+                                                               "status":  "VERIFIED_REGIONAL_LITHOLOGY",
+                                                               "next_action":  "Step 3: assess geographical applicability; do not convert formation thickness to borehole depth",
+                                                               "engineering_geological_map_evidence":  {
+                                                                                                           "title":  "Схема инженерна геология - община Разград",
+                                                                                                           "source_url":  "https://razgrad.bg/phocadownload/administration/obsht-ustroystven-plan/zapiska-razgrad.pdf",
+                                                                                                           "source_reference":  "Картна страница около печатна стр. 52-53",
+                                                                                                           "classes":  [
+                                                                                                                           "Алувиални наслаги",
+                                                                                                                           "Варовици и доломити",
+                                                                                                                           "Мергели",
+                                                                                                                           "Льосовидна глина",
+                                                                                                                           "Глинести инженерногеоложки терени",
+                                                                                                                           "Рохкави инженерногеоложки терени",
+                                                                                                                           "Скални инженерногеоложки терени"
+                                                                                                                       ],
+                                                                                                           "additional_symbols":  [
+                                                                                                                                      "Мощност на льосова покривка",
+                                                                                                                                      "Дълбочина на водното ниво",
+                                                                                                                                      "Показатели за якост на скалите"
+                                                                                                                                  ],
+                                                                                                           "localities":  [
+                                                                                                                              "Разград",
+                                                                                                                              "Гецово",
+                                                                                                                              "Недоклан",
+                                                                                                                              "Радинград",
+                                                                                                                              "Дряновец"
+                                                                                                                          ],
+                                                                                                           "evidence_status":  "PDF_TEXT_VERIFIED_MAP_IMAGE_NOT_VISUALLY_VERIFIED",
+                                                                                                           "georeferenced":  false,
+                                                                                                           "borehole_depth_intervals_verified":  false,
+                                                                                                           "coordinate_status":  "REGIONAL_MAP_ONLY",
+                                                                                                           "next_action":  "Visually verify original map and legend before spatial digitization"
+                                                                                                       }
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-002"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-003",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-003",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/2",
+                        "source_ids":  [
+                                           "https://www.isperih.bg/sites/default/files/2020-02/Zapiska.pdf"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-003",
+                                       "intake_id":  "RG-B2-003",
+                                       "title":  "Общ устройствен план на община Исперих - обяснителна записка",
+                                       "oblast":  "Разград",
+                                       "classification":  "REGIONAL_LITHOLOGY_STRATIGRAPHY",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Община Исперих, долините на Царацар и Сенковец"
+                                                                    },
+                                       "geographic_scope_description":  "MUNICIPAL_REGIONAL",
+                                       "source_reference":  "Печатни стр. 68-69, раздел 2.5.1",
+                                       "source_url":  "https://www.isperih.bg/sites/default/files/2020-02/Zapiska.pdf",
+                                       "publisher":  "Община Исперих",
+                                       "publication_year":  null,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-003",
+                                                               "oblast":  "Разград",
+                                                               "municipality":  "Исперих",
+                                                               "title":  "Общ устройствен план на община Исперих - обяснителна записка",
+                                                               "publisher":  "Община Исперих",
+                                                               "year":  null,
+                                                               "url":  "https://www.isperih.bg/sites/default/files/2020-02/Zapiska.pdf",
+                                                               "retrieved_at":  "2026-11-19",
+                                                               "document_type":  "REGIONAL_LITHOLOGY_STRATIGRAPHY",
+                                                               "location_original":  "Община Исперих, долините на Царацар и Сенковец",
+                                                               "scope_claim":  "MUNICIPAL_REGIONAL",
+                                                               "source_reference":  "Печатни стр. 68-69, раздел 2.5.1",
+                                                               "materials":  [
+                                                                                 "Алувиални глини, пясъци и чакъли",
+                                                                                 "Мергели и мергелни варовици",
+                                                                                 "Разградска свита - глинести варовици и мергели",
+                                                                                 "Льос и льосовидни образувания"
+                                                                             ],
+                                                               "regional_thickness_evidence":  [
+                                                                                                   "Алувий - средно около 7 м",
+                                                                                                   "Чакълеста прослойка - 1.5-2 м",
+                                                                                                   "Разградска свита - регионална мощност 70-250 м"
+                                                                                               ],
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "REGIONAL_ONLY",
+                                                               "quality_flags":  [
+                                                                                     "OFFICIAL_MUNICIPAL_SOURCE",
+                                                                                     "REGIONAL_THICKNESS_NOT_BOREHOLE_DEPTH"
+                                                                                 ],
+                                                               "status":  "VERIFIED_REGIONAL_LITHOLOGY",
+                                                               "next_action":  "Step 3: geological applicability assessment"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-003"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-004",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-004",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/3",
+                        "source_ids":  [
+                                           "https://loznitsa.bg/wp-content/uploads/2021/08/0_ZAPISKA_OUPO.pdf"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-004",
+                                       "intake_id":  "RG-B2-004",
+                                       "title":  "Общ устройствен план на община Лозница - обяснителна записка, окончателен проект",
+                                       "oblast":  "Разград",
+                                       "classification":  "REGIONAL_GEOLOGICAL_STRUCTURE_AND_LITHOLOGY",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Община Лозница, Разградско-Самуилски височини, Суха река и Бели Лом"
+                                                                    },
+                                       "geographic_scope_description":  "REGIONAL_STRUCTURAL_AND_LITHOLOGICAL_CONTEXT",
+                                       "source_reference":  "Печатна стр. 62, раздел 3.5.1 Геоложки строеж, PDF страница 62",
+                                       "source_url":  "https://loznitsa.bg/wp-content/uploads/2021/08/0_ZAPISKA_OUPO.pdf",
+                                       "publisher":  "Община Лозница",
+                                       "publication_year":  null,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-004",
+                                                               "oblast":  "Разград",
+                                                               "municipality":  "Лозница",
+                                                               "title":  "Общ устройствен план на община Лозница - обяснителна записка, окончателен проект",
+                                                               "publisher":  "Община Лозница",
+                                                               "year":  null,
+                                                               "url":  "https://loznitsa.bg/wp-content/uploads/2021/08/0_ZAPISKA_OUPO.pdf",
+                                                               "retrieved_at":  "2026-11-19",
+                                                               "document_type":  "REGIONAL_GEOLOGICAL_STRUCTURE_AND_LITHOLOGY",
+                                                               "location_original":  "Община Лозница, Разградско-Самуилски височини, Суха река и Бели Лом",
+                                                               "scope_claim":  "REGIONAL_STRUCTURAL_AND_LITHOLOGICAL_CONTEXT",
+                                                               "source_reference":  "Печатна стр. 62, раздел 3.5.1 Геоложки строеж, PDF страница 62",
+                                                               "materials":  [
+                                                                                 "Мергели и варовици по склоновете на Разградските и Самуилските височини",
+                                                                                 "Дебелослойни долнокредни варовици",
+                                                                                 "Льосова покривка"
+                                                                             ],
+                                                               "structures":  [
+                                                                                  "Разградско-Самуилска структурна подутина",
+                                                                                  "Карстови форми в карбонатните скали",
+                                                                                  "Самарско-Понтийска денудационна повърхност"
+                                                                              ],
+                                                               "regional_thickness_evidence":  [
+                                                                                                   "Льосова покривка: 5-20 м"
+                                                                                               ],
+                                                               "regional_depth_context":  [
+                                                                                              "Палеозойски комплекс по темето на подутината: 800-1000 м под терена; регионално описание, не сондажна граница"
+                                                                                          ],
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "REGIONAL_ONLY",
+                                                               "quality_flags":  [
+                                                                                     "OFFICIAL_MUNICIPAL_SOURCE",
+                                                                                     "PDF_PAGE_VISUALLY_VERIFIED",
+                                                                                     "REGIONAL_THICKNESS_NOT_BOREHOLE_DEPTH",
+                                                                                     "NO_EXACT_BOREHOLE_COORDINATES"
+                                                                                 ],
+                                                               "status":  "VERIFIED_REGIONAL_LITHOLOGY",
+                                                               "next_action":  "Step 3: evaluate spatial applicability and structural context"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-004"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-005",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-005",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/4",
+                        "source_ids":  [
+                                           "https://www.samuil.eu/media/Obshtinski%20syvet/Reshenija-54.pdf"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-005",
+                                       "intake_id":  "RG-B2-005",
+                                       "title":  "Публичен документ на Общински съвет Самуил - геоложка характеристика",
+                                       "oblast":  "Разград",
+                                       "classification":  "REGIONAL_GEOLOGICAL_STRUCTURE_AND_LITHOLOGY",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Община Самуил, Разградско-Самуилска структурна подутина, Самуилски височини"
+                                                                    },
+                                       "geographic_scope_description":  "MUNICIPAL_AND_REGIONAL_GEOLOGICAL_CONTEXT",
+                                       "source_reference":  "PDF page 31, zero-based index 30, Geological characteristics, Figure II.3.2",
+                                       "source_url":  "https://www.samuil.eu/media/Obshtinski%20syvet/Reshenija-54.pdf",
+                                       "publisher":  "Общински съвет Самуил",
+                                       "publication_year":  null,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-005",
+                                                               "oblast":  "Разград",
+                                                               "municipality":  "Самуил",
+                                                               "title":  "Публичен документ на Общински съвет Самуил - геоложка характеристика",
+                                                               "publisher":  "Общински съвет Самуил",
+                                                               "year":  null,
+                                                               "url":  "https://www.samuil.eu/media/Obshtinski%20syvet/Reshenija-54.pdf",
+                                                               "retrieved_at":  "2026-11-20",
+                                                               "document_type":  "REGIONAL_GEOLOGICAL_STRUCTURE_AND_LITHOLOGY",
+                                                               "location_original":  "Община Самуил, Разградско-Самуилска структурна подутина, Самуилски височини",
+                                                               "scope_claim":  "MUNICIPAL_AND_REGIONAL_GEOLOGICAL_CONTEXT",
+                                                               "source_reference":  "PDF page 31, zero-based index 30, Geological characteristics, Figure II.3.2",
+                                                               "materials":  [
+                                                                                 "Долнокредни дебелослойни варовици",
+                                                                                 "Мергели и варовици по склоновете на Разградските и Самуилските височини",
+                                                                                 "Льосова покривка"
+                                                                             ],
+                                                               "structures":  [
+                                                                                  "Разградско-Самуилска структурна подутина",
+                                                                                  "Карстови процеси в карбонатните скали",
+                                                                                  "Самарско-Понтийска денудационна повърхност"
+                                                                              ],
+                                                               "regional_thickness_evidence":  [
+                                                                                                   "Льосова покривка: 5-20 м, регионална мощност"
+                                                                                               ],
+                                                               "regional_depth_context":  [
+                                                                                              "Палеозойски комплекс: приблизително 800-1000 м под повърхността по темето на структурната подутина; не е измерена сондажна граница"
+                                                                                          ],
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "REGIONAL_ONLY",
+                                                               "quality_flags":  [
+                                                                                     "PUBLIC_MUNICIPAL_DOCUMENT",
+                                                                                     "PDF_PAGE_VISUALLY_VERIFIED",
+                                                                                     "GEOLOGICAL_FIGURE_PRESENT",
+                                                                                     "TEXT_OVERLAP_WITH_RG-B2-004",
+                                                                                     "REGIONAL_THICKNESS_NOT_BOREHOLE_DEPTH",
+                                                                                     "NO_EXACT_BOREHOLE_COORDINATES"
+                                                                                 ],
+                                                               "status":  "VERIFIED_REGIONAL_LITHOLOGY",
+                                                               "next_action":  "Step 3: assess thematic duplication with RG-B2-004 and geographical applicability"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-005"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-006",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-006",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/5",
+                        "source_ids":  [
+                                           "https://www.academia.edu/98047377/"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-006",
+                                       "intake_id":  "RG-B2-006",
+                                       "title":  "Атлас на пещерите в България - Разградска област",
+                                       "oblast":  "Разград",
+                                       "classification":  "SCIENTIFIC_REGIONAL_LITHOSTRATIGRAPHY_KARST_AND_GEOLOGICAL_MAP",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Лудогорско плато; Кубрат-Завет-Исперих; долините Царацар, Война и Чаирлък"
+                                                                    },
+                                       "geographic_scope_description":  "MULTI_MUNICIPAL_GEOLOGICAL_AND_KARST_CONTEXT",
+                                       "source_reference":  "Печатни стр. 7-10, кратка геоложка характеристика и геоложка карта",
+                                       "source_url":  "https://www.academia.edu/98047377/",
+                                       "publisher":  "Българска федерация по спелеология",
+                                       "publication_year":  2023,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-006",
+                                                               "oblast":  "Разград",
+                                                               "municipalities":  [
+                                                                                      "Кубрат",
+                                                                                      "Завет",
+                                                                                      "Исперих"
+                                                                                  ],
+                                                               "title":  "Атлас на пещерите в България - Разградска област",
+                                                               "author":  "Петър Делчев; геоложка характеристика: проф. Алексей Бендерев",
+                                                               "publisher":  "Българска федерация по спелеология",
+                                                               "year":  2023,
+                                                               "isbn":  "978-954-8827-15-7",
+                                                               "url":  "https://www.academia.edu/98047377/",
+                                                               "retrieved_at":  "2026-11-20",
+                                                               "document_type":  "SCIENTIFIC_REGIONAL_LITHOSTRATIGRAPHY_KARST_AND_GEOLOGICAL_MAP",
+                                                               "location_original":  "Лудогорско плато; Кубрат-Завет-Исперих; долините Царацар, Война и Чаирлък",
+                                                               "scope_claim":  "MULTI_MUNICIPAL_GEOLOGICAL_AND_KARST_CONTEXT",
+                                                               "source_reference":  "Печатни стр. 7-10, кратка геоложка характеристика и геоложка карта",
+                                                               "materials":  [
+                                                                                 "Русенска свита: органогенни и органогенно-оолитни долнокредни варовици",
+                                                                                 "Льосова покривка в района на Завет",
+                                                                                 "По-глинести и по-плътни карбонатни седименти около прехода Разградска-Русенска свита"
+                                                                             ],
+                                                               "structures":  [
+                                                                                  "Почти хоризонтално залягане на варовиковите пластове с лек северен наклон",
+                                                                                  "Каньоновидни долини и карстови форми",
+                                                                                  "Пукнатинно-карстови и карстови системи по линията Кубрат-Завет-Исперих"
+                                                                              ],
+                                                               "regional_thickness_evidence":  [
+                                                                                                   "Варовиков комплекс: 50-300 м, регионална мощност, не измерен сондажен интервал"
+                                                                                               ],
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "REGIONAL_AND_CAVE_LOCATIONS_ONLY",
+                                                               "quality_flags":  [
+                                                                                     "SCIENTIFIC_GEOLOGICAL_CHAPTER",
+                                                                                     "ORIGINAL_PUBLISHER_IDENTIFIED",
+                                                                                     "ONLINE_TEXT_VERIFIED",
+                                                                                     "MAP_IMAGE_PENDING_VERIFICATION",
+                                                                                     "FORMATION_THICKNESS_NOT_BOREHOLE_DEPTH",
+                                                                                     "CAVE_GPS_NOT_BOREHOLE_COORDINATES"
+                                                                                 ],
+                                                               "status":  "VERIFIED_REGIONAL_LITHOLOGY",
+                                                               "next_action":  "Step 3: assess source-specific geological applicability; verify map legend separately"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-006"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-007",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-007",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/6",
+                        "source_ids":  [
+                                           "https://www.razgrad.bg/planove-i-kontseptsii?download=225%3Aipgvr-razgrad"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-007",
+                                       "intake_id":  "RG-B2-007",
+                                       "title":  "Интегриран план за градско възстановяване и развитие на град Разград",
+                                       "oblast":  "Разград",
+                                       "classification":  "REGIONAL_GEOLOGICAL_STRUCTURE_AND_STRATIGRAPHY",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Град Разград и община Разград"
+                                                                    },
+                                       "geographic_scope_description":  "MUNICIPAL_REGIONAL",
+                                       "source_reference":  "Раздел 3.3 Геоложка основа, печатна стр. 80",
+                                       "source_url":  "https://www.razgrad.bg/planove-i-kontseptsii?download=225%3Aipgvr-razgrad",
+                                       "publisher":  "Община Разград",
+                                       "publication_year":  null,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-007",
+                                                               "oblast":  "Разград",
+                                                               "municipality":  "Разград",
+                                                               "title":  "Интегриран план за градско възстановяване и развитие на град Разград",
+                                                               "publisher":  "Община Разград",
+                                                               "author":  "ДЗЗД Консорциум Абритус III Консулт",
+                                                               "year":  null,
+                                                               "url":  "https://www.razgrad.bg/planove-i-kontseptsii?download=225%3Aipgvr-razgrad",
+                                                               "retrieved_at":  "2026-11-20",
+                                                               "document_type":  "REGIONAL_GEOLOGICAL_STRUCTURE_AND_STRATIGRAPHY",
+                                                               "location_original":  "Град Разград и община Разград",
+                                                               "scope_claim":  "MUNICIPAL_REGIONAL",
+                                                               "source_reference":  "Раздел 3.3 Геоложка основа, печатна стр. 80",
+                                                               "materials":  [
+                                                                                 "Мезозойски скални формации",
+                                                                                 "Кватернерни отложения",
+                                                                                 "Частично неогенски отложения"
+                                                                             ],
+                                                               "structures":  [
+                                                                                  "Мизийска платформа",
+                                                                                  "Северен склон на Северобългарското сводово издигане",
+                                                                                  "Общ наклон на пластовете север-северозапад",
+                                                                                  "Локални гъвкави структури"
+                                                                              ],
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "REGIONAL_ONLY",
+                                                               "quality_flags":  [
+                                                                                     "OFFICIAL_MUNICIPAL_DOCUMENT",
+                                                                                     "SOURCE_TEXT_VERIFIED",
+                                                                                     "PDF_SCREENSHOT_FAILED_FILE_TOO_LARGE",
+                                                                                     "STRUCTURAL_CONTEXT_NOT_BOREHOLE_COLUMN",
+                                                                                     "POSSIBLE_OVERLAP_WITH_RG-B2-002"
+                                                                                 ],
+                                                               "status":  "VERIFIED_TEXT_RESEARCH_ONLY",
+                                                               "next_action":  "Step 3: compare with RG-B2-002 and assess spatial applicability"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-007"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-008",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-008",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/7",
+                        "source_ids":  [
+                                           "https://kubrat.bg/bg/home/geography.php"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-008",
+                                       "intake_id":  "RG-B2-008",
+                                       "title":  "Географска характеристика - геоложки строеж на община Кубрат",
+                                       "oblast":  "Разград",
+                                       "classification":  "OFFICIAL_REGIONAL_SHALLOW_LITHOLOGY_AND_ENGINEERING_GEOLOGY",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Община Кубрат; град Кубрат; льосово плато и склонове на долове"
+                                                                    },
+                                       "geographic_scope_description":  "MUNICIPAL_REGIONAL_WITH_LOCAL_VARIATION",
+                                       "source_reference":  "Официална страница Географска характеристика, абзаци за геоложкия строеж; общинска екологична програма 2021-2027",
+                                       "source_url":  "https://kubrat.bg/bg/home/geography.php",
+                                       "publisher":  "Община Кубрат",
+                                       "publication_year":  null,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-008",
+                                                               "oblast":  "Разград",
+                                                               "municipality":  "Кубрат",
+                                                               "title":  "Географска характеристика - геоложки строеж на община Кубрат",
+                                                               "publisher":  "Община Кубрат",
+                                                               "year":  null,
+                                                               "url":  "https://kubrat.bg/bg/home/geography.php",
+                                                               "related_source_url":  "https://kubrat.bg/bg/strategies/environment_program_2021_2027.pdf",
+                                                               "retrieved_at":  "2026-11-20",
+                                                               "document_type":  "OFFICIAL_REGIONAL_SHALLOW_LITHOLOGY_AND_ENGINEERING_GEOLOGY",
+                                                               "location_original":  "Община Кубрат; град Кубрат; льосово плато и склонове на долове",
+                                                               "scope_claim":  "MUNICIPAL_REGIONAL_WITH_LOCAL_VARIATION",
+                                                               "source_reference":  "Официална страница Географска характеристика, абзаци за геоложкия строеж; общинска екологична програма 2021-2027",
+                                                               "materials":  [
+                                                                                 "Растителна почвена покривка",
+                                                                                 "Льосови хоризонти",
+                                                                                 "Погребани червено-кафяви глини",
+                                                                                 "Дегенерирал льос",
+                                                                                 "Долнокредни баремски варовици",
+                                                                                 "Резидуална глина в карстови кухини"
+                                                                             ],
+                                                               "regional_thickness_evidence":  [
+                                                                                                   "Почвена покривка: 0.80-1.50 м",
+                                                                                                   "Льосов комплекс: обикновено 10-12 м, локално 20-25 м"
+                                                                                               ],
+                                                               "engineering_geology":  [
+                                                                                           "Три льосови хоризонта и три погребани глинести пласта",
+                                                                                           "Пропадъчни свойства на льоса до около 8-10 м",
+                                                                                           "Варовикова основа с карстови каверни и пукнатини",
+                                                                                           "Варовикови разкрития по склоновете на доловете"
+                                                                                       ],
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "MUNICIPAL_REGIONAL_ONLY",
+                                                               "quality_flags":  [
+                                                                                     "OFFICIAL_MUNICIPAL_WEB_SOURCE",
+                                                                                     "TEXT_VERIFIED",
+                                                                                     "RELATED_MUNICIPAL_PDF_REPEATS_DESCRIPTION",
+                                                                                     "REGIONAL_THICKNESS_NOT_MEASURED_BOREHOLE_INTERVAL",
+                                                                                     "NO_BOREHOLE_COORDINATES"
+                                                                                 ],
+                                                               "status":  "VERIFIED_REGIONAL_LITHOLOGY",
+                                                               "next_action":  "Step 3: evaluate local lithological applicability; avoid duplicate evidence weighting"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-008"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-009",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-009",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/8",
+                        "source_ids":  [
+                                           "https://zavet-bg.com/zavetbgcom/e107_files/downloads/oupzavet/oupzavet_eo.pdf"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-009",
+                                       "intake_id":  "RG-B2-009",
+                                       "title":  "Екологична оценка на предварителен ОУП на община Завет",
+                                       "oblast":  "Разград",
+                                       "classification":  "REGIONAL_LITHOLOGY_ENGINEERING_GEOLOGY_AND_GEOLOGICAL_MAP",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Община Завет; долове; село Брестовене, находище Яна"
+                                                                    },
+                                       "geographic_scope_description":  "MUNICIPAL_REGIONAL_AND_NAMED_DEPOSIT",
+                                       "source_reference":  "Раздел 1.3 Геоложка основа и подземни природни богатства; раздел 7.3.2; фигури 14, 16 и 16а",
+                                       "source_url":  "https://zavet-bg.com/zavetbgcom/e107_files/downloads/oupzavet/oupzavet_eo.pdf",
+                                       "publisher":  "Община Завет",
+                                       "publication_year":  2016,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-009",
+                                                               "oblast":  "Разград",
+                                                               "municipality":  "Завет",
+                                                               "title":  "Екологична оценка на предварителен ОУП на община Завет",
+                                                               "author":  "ДЗЗД План Консулт Завет",
+                                                               "publisher":  "Община Завет",
+                                                               "year":  2016,
+                                                               "url":  "https://zavet-bg.com/zavetbgcom/e107_files/downloads/oupzavet/oupzavet_eo.pdf",
+                                                               "retrieved_at":  "2026-11-20",
+                                                               "document_type":  "REGIONAL_LITHOLOGY_ENGINEERING_GEOLOGY_AND_GEOLOGICAL_MAP",
+                                                               "location_original":  "Община Завет; долове; село Брестовене, находище Яна",
+                                                               "scope_claim":  "MUNICIPAL_REGIONAL_AND_NAMED_DEPOSIT",
+                                                               "source_reference":  "Раздел 1.3 Геоложка основа и подземни природни богатства; раздел 7.3.2; фигури 14, 16 и 16а",
+                                                               "materials":  [
+                                                                                 "Льосови и льосовидни праховидно-глинести отложения",
+                                                                                 "Погребани глинести почвени хоризонти",
+                                                                                 "Долнокредни баремски варовици",
+                                                                                 "Смектит-илитови алевролити - находище Яна при Брестовене"
+                                                                             ],
+                                                               "regional_depth_context":  [
+                                                                                              "Баремска варовикова основа обикновено на 10-25 м под терена; регионално описание, не измерен сондажен интервал"
+                                                                                          ],
+                                                               "structures":  [
+                                                                                  "Карбонатни разкрития по склоновете и дъната на доловете",
+                                                                                  "Карстови процеси",
+                                                                                  "Пропадъчни свойства на льосовите отложения"
+                                                                              ],
+                                                               "map_evidence":  "Фигура 14 - геоложка карта на община Завет; изображението още не е визуално проверено",
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "REGIONAL_AND_DEPOSIT_AREA_ONLY",
+                                                               "quality_flags":  [
+                                                                                     "PUBLIC_MUNICIPAL_PLANNING_DOCUMENT",
+                                                                                     "SOURCE_TEXT_VERIFIED",
+                                                                                     "PDF_SCREENSHOT_FAILED_LARGE_FILE",
+                                                                                     "GEOLOGICAL_MAP_IMAGE_PENDING_VERIFICATION",
+                                                                                     "REGIONAL_DEPTH_NOT_MEASURED_BOREHOLE_INTERVAL",
+                                                                                     "DEPOSIT_BOUNDARY_NOT_BOREHOLE_COORDINATES",
+                                                                                     "POSSIBLE_LOESS_CONTEXT_OVERLAP_WITH_RG-B2-008"
+                                                                                 ],
+                                                               "status":  "VERIFIED_TEXT_RESEARCH_ONLY",
+                                                               "next_action":  "Step 3: verify geological map and evaluate spatial applicability; search for original geological exploration of Yana deposit"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-009"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-010",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-010",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/9",
+                        "source_ids":  [
+                                           "https://www.tsarkaloyan.eu/index.php/79-history?start=2"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-010",
+                                       "intake_id":  "RG-B2-010",
+                                       "title":  "Община Цар Калоян - природогеографска и геоложка характеристика",
+                                       "oblast":  "Разград",
+                                       "classification":  "OFFICIAL_REGIONAL_LITHOLOGY_AND_HYDROGEOLOGY",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Община Цар Калоян, град Цар Калоян, село Езерче, село Костанденец"
+                                                                    },
+                                       "geographic_scope_description":  "MUNICIPAL_REGIONAL",
+                                       "source_reference":  "Официален общински сайт, раздел Природогеографска характеристика",
+                                       "source_url":  "https://www.tsarkaloyan.eu/index.php/79-history?start=2",
+                                       "publisher":  "Община Цар Калоян",
+                                       "publication_year":  null,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-010",
+                                                               "oblast":  "Разград",
+                                                               "municipality":  "Цар Калоян",
+                                                               "title":  "Община Цар Калоян - природогеографска и геоложка характеристика",
+                                                               "publisher":  "Община Цар Калоян",
+                                                               "year":  null,
+                                                               "url":  "https://www.tsarkaloyan.eu/index.php/79-history?start=2",
+                                                               "retrieved_at":  "2026-11-20",
+                                                               "document_type":  "OFFICIAL_REGIONAL_LITHOLOGY_AND_HYDROGEOLOGY",
+                                                               "location_original":  "Община Цар Калоян, град Цар Калоян, село Езерче, село Костанденец",
+                                                               "scope_claim":  "MUNICIPAL_REGIONAL",
+                                                               "source_reference":  "Официален общински сайт, раздел Природогеографска характеристика",
+                                                               "materials":  [
+                                                                                 "Варовици",
+                                                                                 "Пясъчници",
+                                                                                 "Мергели"
+                                                                             ],
+                                                               "hydrogeological_observations":  [
+                                                                                                    "Пукнатинна и карстова среда",
+                                                                                                    "Порови подземни води",
+                                                                                                    "Публикуваното описание не локализира отделни литоложки интервали"
+                                                                                                ],
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "REGIONAL_ONLY",
+                                                               "quality_flags":  [
+                                                                                     "OFFICIAL_MUNICIPAL_WEB_SOURCE",
+                                                                                     "SOURCE_TEXT_VERIFIED",
+                                                                                     "GENERAL_LITHOLOGY_ONLY",
+                                                                                     "NO_MEASURED_BOREHOLE_INTERVALS",
+                                                                                     "NO_EXACT_BOREHOLE_COORDINATES"
+                                                                                 ],
+                                                               "status":  "VERIFIED_REGIONAL_LITHOLOGY",
+                                                               "next_action":  "Find original engineering-geological borehole logs and geological sections for Tsar Kaloyan, Ezerche and Kostandenets"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-010"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-011",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-011",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/10",
+                        "source_ids":  [
+                                           "https://gis.mrrb.government.bg/KGR/11%20Geolojki%20risk%202025/Struktura%20GR2025/00%20AAOKG%20risk/%D0%93%D0%B5%D0%BE%D0%BB%D0%BE%D0%B6%D0%BA%D0%B8.%D1%80%D0%B8%D1%81%D0%BA-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%2C%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0%2C%D0%BA%D0%B0%D1%80%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%80%D0%B0%D0%BD%D0%B5-2025.pdf"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-011",
+                                       "intake_id":  "RG-B2-011",
+                                       "title":  "Актуализация на анализа, оценката и картите на геоложкия риск на територията на Р. България - 2025",
+                                       "oblast":  "Разград",
+                                       "classification":  "OFFICIAL_REGIONAL_LITHOLOGY_AND_ENGINEERING_GEOLOGY",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Област Разград; Лудогорско плато; Разградски и Самуилски височини; долината на Бели Лом"
+                                                                    },
+                                       "geographic_scope_description":  "OBLAST_REGIONAL",
+                                       "source_reference":  "Раздел Област Разград, Геоложки особености и Таблица 5.40",
+                                       "source_url":  "https://gis.mrrb.government.bg/KGR/11%20Geolojki%20risk%202025/Struktura%20GR2025/00%20AAOKG%20risk/%D0%93%D0%B5%D0%BE%D0%BB%D0%BE%D0%B6%D0%BA%D0%B8.%D1%80%D0%B8%D1%81%D0%BA-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%2C%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0%2C%D0%BA%D0%B0%D1%80%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%80%D0%B0%D0%BD%D0%B5-2025.pdf",
+                                       "publisher":  "Министерство на регионалното развитие и благоустройството",
+                                       "publication_year":  2025,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-011",
+                                                               "oblast":  "Разград",
+                                                               "municipality":  "ALL_SEVEN",
+                                                               "title":  "Актуализация на анализа, оценката и картите на геоложкия риск на територията на Р. България - 2025",
+                                                               "publisher":  "Министерство на регионалното развитие и благоустройството",
+                                                               "year":  2025,
+                                                               "url":  "https://gis.mrrb.government.bg/KGR/11%20Geolojki%20risk%202025/Struktura%20GR2025/00%20AAOKG%20risk/%D0%93%D0%B5%D0%BE%D0%BB%D0%BE%D0%B6%D0%BA%D0%B8.%D1%80%D0%B8%D1%81%D0%BA-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%2C%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0%2C%D0%BA%D0%B0%D1%80%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%80%D0%B0%D0%BD%D0%B5-2025.pdf",
+                                                               "retrieved_at":  "2026-11-20",
+                                                               "document_type":  "OFFICIAL_REGIONAL_LITHOLOGY_AND_ENGINEERING_GEOLOGY",
+                                                               "location_original":  "Област Разград; Лудогорско плато; Разградски и Самуилски височини; долината на Бели Лом",
+                                                               "scope_claim":  "OBLAST_REGIONAL",
+                                                               "source_reference":  "Раздел Област Разград, Геоложки особености и Таблица 5.40",
+                                                               "materials":  [
+                                                                                 "Обикновени долнокредни варовици",
+                                                                                 "Песъчливи варовици",
+                                                                                 "Черупчести варовици",
+                                                                                 "Мергели",
+                                                                                 "Пясъчници",
+                                                                                 "Глинест льос",
+                                                                                 "Кватернерни пясъци и глини в речните тераси"
+                                                                             ],
+                                                               "geological_observations":  [
+                                                                                               "Мергелите и пясъчниците често се разполагат под варовиците или льосовата покривка",
+                                                                                               "Карбонатните комплекси са свързани с повърхностен и подземен карст",
+                                                                                               "Речните долини са всечени в седиментните скали",
+                                                                                               "Описани са пропадане на льос, срутища, ерозия и втечняване на слаби почви"
+                                                                                           ],
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "REGIONAL_ONLY",
+                                                               "quality_flags":  [
+                                                                                     "OFFICIAL_NATIONAL_RESEARCH",
+                                                                                     "SOURCE_TEXT_VERIFIED",
+                                                                                     "PDF_SCREENSHOT_FAILED_502",
+                                                                                     "REGIONAL_CONTEXT_ONLY",
+                                                                                     "NO_MEASURED_BOREHOLE_INTERVALS",
+                                                                                     "POSSIBLE_THEMATIC_OVERLAP_WITH_EXISTING_RECORDS"
+                                                                                 ],
+                                                               "status":  "VERIFIED_TEXT_RESEARCH_ONLY",
+                                                               "next_action":  "Step 3: compare with existing Razgrad regional sources; assess geological applicability without duplicating evidence weight"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-011"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-012",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-012",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/11",
+                        "source_ids":  [
+                                           "https://reference-global.com/article/10.2478/asn-2025-0006"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-012",
+                                       "intake_id":  "RG-B2-012",
+                                       "title":  "Characteristic features of the Razgrad block morphostructure",
+                                       "oblast":  "Разград",
+                                       "classification":  "SCIENTIFIC_TECTONIC_GEOMORPHOLOGICAL_AND_STRATIGRAPHIC_RESEARCH",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Razgrad block morphostructure, North Bulgarian arch swelling"
+                                                                    },
+                                       "geographic_scope_description":  "REGIONAL_MORPHOSTRUCTURE_NOT_ADMINISTRATIVE_BOUNDARY",
+                                       "source_reference":  "Original published abstract, volume 12 issue 1, pages 49-58",
+                                       "source_url":  "https://reference-global.com/article/10.2478/asn-2025-0006",
+                                       "publisher":  "Konstantin Preslavski University of Shumen",
+                                       "publication_year":  2025,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-012",
+                                                               "oblast":  "Разград",
+                                                               "title":  "Characteristic features of the Razgrad block morphostructure",
+                                                               "author":  "Dimitar Vladev",
+                                                               "publisher":  "Konstantin Preslavski University of Shumen",
+                                                               "journal":  "Acta Scientifica Naturalis",
+                                                               "year":  2025,
+                                                               "volume":  12,
+                                                               "issue":  1,
+                                                               "pages":  "49-58",
+                                                               "doi":  "10.2478/asn-2025-0006",
+                                                               "url":  "https://reference-global.com/article/10.2478/asn-2025-0006",
+                                                               "retrieved_at":  "2026-11-20",
+                                                               "document_type":  "SCIENTIFIC_TECTONIC_GEOMORPHOLOGICAL_AND_STRATIGRAPHIC_RESEARCH",
+                                                               "location_original":  "Razgrad block morphostructure, North Bulgarian arch swelling",
+                                                               "scope_claim":  "REGIONAL_MORPHOSTRUCTURE_NOT_ADMINISTRATIVE_BOUNDARY",
+                                                               "source_reference":  "Original published abstract, volume 12 issue 1, pages 49-58",
+                                                               "materials":  [
+                                                                                 "Upper Jurassic-Valanginian carbonate complex",
+                                                                                 "Lower Cretaceous rock complexes",
+                                                                                 "Pleistocene deposits",
+                                                                                 "Holocene deposits"
+                                                                             ],
+                                                               "structures":  [
+                                                                                  "Old Permian-Triassic block",
+                                                                                  "Two subparallel faults bounding and uplifting the block",
+                                                                                  "North Bulgarian arch swelling",
+                                                                                  "Erosional slopes and river terraces",
+                                                                                  "Geophysical fields and gravity anomalies examined"
+                                                                              ],
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "REGIONAL_ONLY",
+                                                               "quality_flags":  [
+                                                                                     "PEER_REVIEWED_SCIENTIFIC_PUBLICATION",
+                                                                                     "PUBLISHER_ABSTRACT_VERIFIED",
+                                                                                     "FULL_ARTICLE_FIGURES_NOT_VERIFIED",
+                                                                                     "NO_MEASURED_BOREHOLE_INTERVALS",
+                                                                                     "MORPHOSTRUCTURAL_EXTENT_NOT_IDENTICAL_TO_OBLAST"
+                                                                                 ],
+                                                               "status":  "VERIFIED_ABSTRACT_RESEARCH_ONLY",
+                                                               "next_action":  "Review full article, geological-tectonic figures, fault geometry and underlying Razgrad geological map references"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-012"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-013",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-013",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/12",
+                        "source_ids":  [
+                                           "https://tutrakan.egov.bg/TUTRAKAN/home.nsf/0/B97841181E9B2898C2258780005B52B9/$FILE/HGD_Preslavci_p01-35.pdf"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-013",
+                                       "intake_id":  "RG-B2-013",
+                                       "title":  "Обосновка на резултатите от изпълнени хидрогеоложки проучвания - ТК Преславци",
+                                       "oblast":  "Разград",
+                                       "classification":  "DOCUMENTED_BOREHOLE_LITHOSTRATIGRAPHIC_OBSERVATION",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "С-5 Брестовене; община Завет; област Разград"
+                                                                    },
+                                       "geographic_scope_description":  "NAMED_REAL_BOREHOLE_SECONDARY_REFERENCE_WITH_REGIONAL_CONTEXT",
+                                       "source_reference":  "Печатни стр. 5-6; раздели 1.2.1, Каспичанска свита и Русенска свита",
+                                       "source_url":  "https://tutrakan.egov.bg/TUTRAKAN/home.nsf/0/B97841181E9B2898C2258780005B52B9/$FILE/HGD_Preslavci_p01-35.pdf",
+                                       "publisher":  "Община Тутракан - публичен документ",
+                                       "publication_year":  null,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-013",
+                                                               "oblast":  "Разград",
+                                                               "municipality":  "Завет",
+                                                               "locality":  "Брестовене",
+                                                               "borehole_id":  "C-5 Brestovene",
+                                                               "title":  "Обосновка на резултатите от изпълнени хидрогеоложки проучвания - ТК Преславци",
+                                                               "author":  "Аквавео България ЕООД",
+                                                               "publisher":  "Община Тутракан - публичен документ",
+                                                               "year":  null,
+                                                               "url":  "https://tutrakan.egov.bg/TUTRAKAN/home.nsf/0/B97841181E9B2898C2258780005B52B9/$FILE/HGD_Preslavci_p01-35.pdf",
+                                                               "retrieved_at":  "2026-11-20",
+                                                               "document_type":  "DOCUMENTED_BOREHOLE_LITHOSTRATIGRAPHIC_OBSERVATION",
+                                                               "location_original":  "С-5 Брестовене; община Завет; област Разград",
+                                                               "scope_claim":  "NAMED_REAL_BOREHOLE_SECONDARY_REFERENCE_WITH_REGIONAL_CONTEXT",
+                                                               "source_reference":  "Печатни стр. 5-6; раздели 1.2.1, Каспичанска свита и Русенска свита",
+                                                               "materials":  [
+                                                                                 "Каспичанска свита: сиви кавернозни варовици",
+                                                                                 "Плътни доломити",
+                                                                                 "Доломитизирани варовици",
+                                                                                 "Русенска свита: масивни, оолитни и органогенни варовици"
+                                                                             ],
+                                                               "borehole_observations":  [
+                                                                                             "С-5 Брестовене: преминати 171 м Каспичанска свита без достигната подложка",
+                                                                                             "Рязка литоложка граница Русенска-Каспичанска свита",
+                                                                                             "Латерално клиновидно защепване Русенска-Разградска свита"
+                                                                                         ],
+                                                               "documented_formation_thickness_m":  171,
+                                                               "absolute_from_to_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "quality_flags":  [
+                                                                                     "PUBLIC_HYDROGEOLOGICAL_REPORT",
+                                                                                     "PDF_PRINTED_PAGES_5_6_VISUALLY_VERIFIED",
+                                                                                     "REAL_BOREHOLE_FORMATION_PENETRATION",
+                                                                                     "SECONDARY_BOREHOLE_REFERENCE",
+                                                                                     "171M_PENETRATED_THICKNESS_NOT_0_TO_171M",
+                                                                                     "ABSOLUTE_DEPTH_BOUNDARIES_UNKNOWN",
+                                                                                     "NO_EXACT_BOREHOLE_COORDINATES",
+                                                                                     "REPORT_MAIN_SITE_OUTSIDE_RAZGRAD"
+                                                                                 ],
+                                                               "status":  "VERIFIED_BOREHOLE_LITHOSTRATIGRAPHIC_REFERENCE_RESEARCH_ONLY",
+                                                               "next_action":  "Find original geological log of C-5 Brestovene and exact borehole mouth coordinates; retain 171 m as penetrated thickness only",
+                                                               "coordinate_status":  "NAMED_SETTLEMENT_ONLY_NO_BOREHOLE_COORDINATES",
+                                                               "verified_borehole_location":  {
+                                                                                                  "latitude":  null,
+                                                                                                  "longitude":  null,
+                                                                                                  "coordinate_status":  "UNVERIFIED",
+                                                                                                  "coordinate_target":  "BOREHOLE_C5_BRESTOVENE",
+                                                                                                  "settlement":  "Брестовене",
+                                                                                                  "municipality":  "Завет",
+                                                                                                  "oblast":  "Разград",
+                                                                                                  "source_reference":  "Aquaveo hydrogeological report, printed pages 5-6",
+                                                                                                  "reason":  "Named borehole and 171 m penetrated formation thickness documented; no borehole mouth coordinates published in inspected reports",
+                                                                                                  "verified_at":  "2026-11-20"
+                                                                                              }
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-013"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-014",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-014",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/13",
+                        "source_ids":  [
+                                           "https://tutrakan.egov.bg/TUTRAKAN/home.nsf/0/1BA6296C3225B676C2258780005B6DD0/%24FILE/SOZ_TK-Preslavci_p01-40.pdf"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-014",
+                                       "intake_id":  "RG-B2-014",
+                                       "title":  "Проект за оразмеряване, изграждане и експлоатация на СОЗ около ТК-Преславци",
+                                       "oblast":  "Разград",
+                                       "classification":  "REGIONAL_TECTONIC_MAP_AND_LITHOSTRATIGRAPHIC_EVIDENCE",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Тутракан-Исперихски район, включително Кубрат и Исперих"
+                                                                    },
+                                       "geographic_scope_description":  "CROSS_REGIONAL_STRUCTURAL_MAP_WITH_RAZGRAD_COVERAGE",
+                                       "source_reference":  "Печатни стр. 5-8, раздели 1.2-1.3; фиг. 1 Аерофототектонска схема",
+                                       "source_url":  "https://tutrakan.egov.bg/TUTRAKAN/home.nsf/0/1BA6296C3225B676C2258780005B6DD0/%24FILE/SOZ_TK-Preslavci_p01-40.pdf",
+                                       "publisher":  "Община Тутракан - публичен източник",
+                                       "publication_year":  null,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-014",
+                                                               "oblast":  "Разград",
+                                                               "municipalities":  [
+                                                                                      "Кубрат",
+                                                                                      "Исперих"
+                                                                                  ],
+                                                               "title":  "Проект за оразмеряване, изграждане и експлоатация на СОЗ около ТК-Преславци",
+                                                               "author":  "Аквавео България ЕООД",
+                                                               "publisher":  "Община Тутракан - публичен източник",
+                                                               "year":  null,
+                                                               "url":  "https://tutrakan.egov.bg/TUTRAKAN/home.nsf/0/1BA6296C3225B676C2258780005B6DD0/%24FILE/SOZ_TK-Preslavci_p01-40.pdf",
+                                                               "retrieved_at":  "2026-11-20",
+                                                               "document_type":  "REGIONAL_TECTONIC_MAP_AND_LITHOSTRATIGRAPHIC_EVIDENCE",
+                                                               "location_original":  "Тутракан-Исперихски район, включително Кубрат и Исперих",
+                                                               "scope_claim":  "CROSS_REGIONAL_STRUCTURAL_MAP_WITH_RAZGRAD_COVERAGE",
+                                                               "source_reference":  "Печатни стр. 5-8, раздели 1.2-1.3; фиг. 1 Аерофототектонска схема",
+                                                               "related_intake_id":  "RG-B2-013",
+                                                               "materials":  [
+                                                                                 "Каспичанска свита: кавернозни варовици, доломити, доломитизирани варовици",
+                                                                                 "Русенска свита: масивни, оолитни и органогенни варовици",
+                                                                                 "Кватернерни алувиални чакъли и преотложени льосовидни материали"
+                                                                             ],
+                                                               "structures":  [
+                                                                                  "Кубратско-Ветрински разлом",
+                                                                                  "Исперихски линеамент",
+                                                                                  "Черноликски линеамент",
+                                                                                  "Самуиловско-Алфатарски линеамент",
+                                                                                  "Локални разсядания в Русенската свита с дължини 200-500 м и амплитуди 10-30 м в разглеждания район"
+                                                                              ],
+                                                               "map_evidence":  "Фигура 1, печатна стр. 8: аерофототектонска схема с легенда, линии и означения",
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "REGIONAL_MAP_NOT_BOREHOLE_COORDINATES",
+                                                               "quality_flags":  [
+                                                                                     "OFFICIAL_PUBLIC_TECHNICAL_REPORT",
+                                                                                     "PDF_PAGES_7_8_VISUALLY_VERIFIED",
+                                                                                     "MAP_IMAGE_VERIFIED",
+                                                                                     "CROSS_OBLAST_COVERAGE",
+                                                                                     "OVERLAP_WITH_RG-B2-013",
+                                                                                     "FAULT_LINES_NOT_DIGITIZED",
+                                                                                     "NO_MEASURED_BOREHOLE_DEPTH_INTERVALS"
+                                                                                 ],
+                                                               "status":  "VERIFIED_STRUCTURAL_MAP_RESEARCH_ONLY",
+                                                               "next_action":  "Step 3: assess map scale and spatial coverage; avoid double weighting with RG-B2-013"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-014"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-015",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-015",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/14",
+                        "source_ids":  [
+                                           "https://oblastshumen.government.bg/vik/wp-content/uploads/2016/04/Regionalen-generalen-plan.pdf"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-015",
+                                       "intake_id":  "RG-B2-015",
+                                       "title":  "Регионален генерален план за водоснабдяване и канализация на обособената територия на ВиК Шумен",
+                                       "oblast":  "Разград",
+                                       "classification":  "CROSS_REGIONAL_LITHOLOGICAL_FACIES_AND_STRATIGRAPHIC_EVIDENCE",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Линия Бяла-Попово-Разград-Самуил-Венец-Хърсово-Нови Пазар; район Разград-Хитрино"
+                                                                    },
+                                       "geographic_scope_description":  "CROSS_OBLAST_REGIONAL_FACIES_CONTEXT",
+                                       "source_reference":  "Печатни стр. 118-119, раздел Водоносни хоризонти в долнокредните седименти",
+                                       "source_url":  "https://oblastshumen.government.bg/vik/wp-content/uploads/2016/04/Regionalen-generalen-plan.pdf",
+                                       "publisher":  "ВиК Шумен - публичен регионален план",
+                                       "publication_year":  null,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-015",
+                                                               "oblast":  "Разград",
+                                                               "municipalities":  [
+                                                                                      "Разград",
+                                                                                      "Самуил"
+                                                                                  ],
+                                                               "title":  "Регионален генерален план за водоснабдяване и канализация на обособената територия на ВиК Шумен",
+                                                               "author":  "Ежис Инфраструктура България ДЗЗД",
+                                                               "publisher":  "ВиК Шумен - публичен регионален план",
+                                                               "year":  null,
+                                                               "url":  "https://oblastshumen.government.bg/vik/wp-content/uploads/2016/04/Regionalen-generalen-plan.pdf",
+                                                               "retrieved_at":  "2026-11-20",
+                                                               "document_type":  "CROSS_REGIONAL_LITHOLOGICAL_FACIES_AND_STRATIGRAPHIC_EVIDENCE",
+                                                               "location_original":  "Линия Бяла-Попово-Разград-Самуил-Венец-Хърсово-Нови Пазар; район Разград-Хитрино",
+                                                               "scope_claim":  "CROSS_OBLAST_REGIONAL_FACIES_CONTEXT",
+                                                               "source_reference":  "Печатни стр. 118-119, раздел Водоносни хоризонти в долнокредните седименти",
+                                                               "materials":  [
+                                                                                 "Глинести мергели и мергели",
+                                                                                 "Глинести варовици",
+                                                                                 "Мергели с пясъчникови прослойки",
+                                                                                 "Пясъчници с мергелни прослойки",
+                                                                                 "Плочести варовици с глауконит и флинтови ядки",
+                                                                                 "Башбунарски и Хитрински песъчливи до чисти варовици"
+                                                                             ],
+                                                               "formations":  [
+                                                                                  "Горнооряховска свита",
+                                                                                  "Разградска свита",
+                                                                                  "Романска свита",
+                                                                                  "Тръмбешка свита"
+                                                                              ],
+                                                               "structures":  [
+                                                                                  "Преход от глинесто-теригенно-карбонатен към карбонатен фациес на север-североизток",
+                                                                                  "Лещовидни литоложки тела в района Разград-Хитрино",
+                                                                                  "Условни и приблизителни граници между свитите"
+                                                                              ],
+                                                               "regional_thickness_evidence":  [
+                                                                                                   "Обща долнокредна мощност: приблизително 1600-1800 м в югозападна посока до 400-500 м на север и изток; не е локална сондажна дълбочина"
+                                                                                               ],
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "REGIONAL_ONLY",
+                                                               "quality_flags":  [
+                                                                                     "PUBLIC_TECHNICAL_REGIONAL_PLAN",
+                                                                                     "SOURCE_TEXT_VERIFIED",
+                                                                                     "PDF_SCREENSHOT_FAILED_LARGE_FILE",
+                                                                                     "CROSS_OBLAST_CONTEXT",
+                                                                                     "FORMATION_THICKNESS_NOT_BOREHOLE_DEPTH",
+                                                                                     "NO_MEASURED_BOREHOLE_INTERVALS",
+                                                                                     "CHECK_THEMATIC_OVERLAP_WITH_EXISTING_SOURCES"
+                                                                                 ],
+                                                               "status":  "VERIFIED_TEXT_RESEARCH_ONLY",
+                                                               "next_action":  "Step 3: assess facies applicability separately from borehole evidence; verify original stratigraphic references"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-015"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
+                    },
+                    {
+                        "intake_id":  "RG-B2-016",
+                        "evidence_kind":  "REGIONAL_GEOLOGICAL_EVIDENCE",
+                        "original_id":  "RG-SRC-016",
+                        "source_file":  "_research/SONDI_RAZGRAD_STEP03/manifest.json",
+                        "json_pointer":  "/documents/15",
+                        "source_ids":  [
+                                           "https://journals.ed.ac.uk/lithicstudies/article/download/1129/1634/3812?inline=1"
+                                       ],
+                        "intended_use":  "REGIONAL_CONTEXT_REFERENCE",
+                        "depth_prediction_authorized":  false,
+                        "spatial_projection_authorized":  false,
+                        "record":  {
+                                       "evidence_id":  "RG-SRC-016",
+                                       "intake_id":  "RG-B2-016",
+                                       "title":  "Chert raw materials and artefacts from NE Bulgaria: A combined petrographic and LA-ICP-MS study",
+                                       "oblast":  "Разград",
+                                       "classification":  "FIELD_PETROGRAPHY_AND_SECONDARY_LITHOLOGICAL_DEPOSITS",
+                                       "administrative_reference":  {
+                                                                        "oblast":  "Разград",
+                                                                        "original_locality":  "Ravno, Kamenovo, Nedoklan, Radingrad and other sites in northeastern Bulgaria"
+                                                                    },
+                                       "geographic_scope_description":  "NAMED_FIELD_LOCALITIES_AND_REGIONAL_PETROGRAPHIC_CONTEXT",
+                                       "source_reference":  "Sections 1.1, 2, 3.1 and 4; Figures 6, 10, 11 and 12",
+                                       "source_url":  "https://journals.ed.ac.uk/lithicstudies/article/download/1129/1634/3812?inline=1",
+                                       "publisher":  "Journal of Lithic Studies",
+                                       "publication_year":  null,
+                                       "regional_paragraphs":  [
+
+                                                               ],
+                                       "original_record":  {
+                                                               "intake_id":  "RG-B2-016",
+                                                               "oblast":  "Разград",
+                                                               "municipality":  "MULTIPLE",
+                                                               "localities":  [
+                                                                                  "Равно",
+                                                                                  "Каменово",
+                                                                                  "Недоклан",
+                                                                                  "Радинград"
+                                                                              ],
+                                                               "title":  "Chert raw materials and artefacts from NE Bulgaria: A combined petrographic and LA-ICP-MS study",
+                                                               "author":  "Polina Andreeva; Elitsa Stefanova; Maria Gurova",
+                                                               "publisher":  "Journal of Lithic Studies",
+                                                               "year":  null,
+                                                               "url":  "https://journals.ed.ac.uk/lithicstudies/article/download/1129/1634/3812?inline=1",
+                                                               "retrieved_at":  "2026-11-20",
+                                                               "document_type":  "FIELD_PETROGRAPHY_AND_SECONDARY_LITHOLOGICAL_DEPOSITS",
+                                                               "location_original":  "Ravno, Kamenovo, Nedoklan, Radingrad and other sites in northeastern Bulgaria",
+                                                               "scope_claim":  "NAMED_FIELD_LOCALITIES_AND_REGIONAL_PETROGRAPHIC_CONTEXT",
+                                                               "source_reference":  "Sections 1.1, 2, 3.1 and 4; Figures 6, 10, 11 and 12",
+                                                               "materials":  [
+                                                                                 "Lower Cretaceous limestone as primary source of siliceous concretions",
+                                                                                 "Secondary eluvial chert cobbles and nodules near Ravno",
+                                                                                 "Microcrystalline quartz and chalcedony",
+                                                                                 "Silicified fossil remains",
+                                                                                 "Locally associated carbonate and clastic quartz components"
+                                                                             ],
+                                                               "observations":  [
+                                                                                    "Field sampling of secondary chert deposits near Ravno",
+                                                                                    "Petrographic Type I Ravno distinguished from Type II Kriva Reka",
+                                                                                    "Kamenovo artefact material petrographically related to Ravno type",
+                                                                                    "Nedoklan artefacts assigned to a possible different secondary raw material source",
+                                                                                    "Secondary chert deposits must not be treated as a continuous in-situ bed"
+                                                                                ],
+                                                               "methods":  [
+                                                                               "Field survey",
+                                                                               "Thin-section petrography",
+                                                                               "LA-ICP-MS"
+                                                                           ],
+                                                               "depth_intervals_verified":  false,
+                                                               "borehole_column_verified":  false,
+                                                               "coordinate_status":  "FIELD_LOCALITIES_NO_VERIFIED_BOREHOLE_COORDINATES",
+                                                               "quality_flags":  [
+                                                                                     "SCIENTIFIC_PRIMARY_FIELD_RESEARCH",
+                                                                                     "FULL_TEXT_VERIFIED",
+                                                                                     "PETROGRAPHIC_OBSERVATIONS",
+                                                                                     "ARTEFACT_PROVENANCE_IS_INTERPRETATION",
+                                                                                     "NO_MEASURED_BOREHOLE_DEPTH_INTERVALS",
+                                                                                     "NO_EXACT_BOREHOLE_COORDINATES"
+                                                                                 ],
+                                                               "status":  "VERIFIED_FIELD_PETROGRAPHIC_RESEARCH_ONLY",
+                                                               "next_action":  "Step 3: separate in-situ bedrock, eluvial deposits and archaeological sample provenance; verify geological site locations if published"
+                                                           },
+                                       "source_ids":  [
+                                                          "RG-SRC-016"
+                                                      ],
+                                       "spatial_application":  "RESEARCH_REFERENCE_ONLY_UNTIL_SOURCE_SCOPE_VERIFIED",
+                                       "verified_geological_polygon":  false,
+                                       "is_exact_point_evidence":  false,
+                                       "usable_as_regional_context":  true,
+                                       "usable_as_measured_depth_interval":  false
+                                   }
                     }
                 ]
 }

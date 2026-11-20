@@ -22,7 +22,7 @@
                            "Lovech",
                            "Шумен"
                        ],
-    "borehole_count":  123,
+    "borehole_count":  124,
     "boreholes":  [
                       {
                           "borehole_id":  "PLD-Z037",
@@ -15876,6 +15876,116 @@
                                                  "usage":  "Direct documentary borehole evidence at registered EXACT position",
                                                  "warning":  "Coordinates are operator-accepted EXACT; original coordinate provenance retained. Do not extrapolate measured depths to other sites without geological evidence."
                                              }
+                      },
+                      {
+                          "borehole_id":  "RG-BH-001",
+                          "name_bg":  "ДС Подайва",
+                          "oblast":  "Разград",
+                          "region_code":  "Razgrad",
+                          "status":  "documented_borehole_official_facility_coordinate_with_source_conflict",
+                          "zone_type":  "site_specific",
+                          "coordinates":  {
+                                              "latitude":  43.6696305556,
+                                              "longitude":  26.9137194444,
+                                              "status":  "OFFICIAL_EXACT",
+                                              "evidence_level":  "official_facility_coordinate",
+                                              "origin":  "RG-SRC-001, Table II.1, page 5",
+                                              "coordinate_target":  "WATER_INTAKE_BOREHOLE",
+                                              "mouth_independently_verified":  false
+                                          },
+                          "total_depth_m":  700,
+                          "water_type":  null,
+                          "lithology":  [
+                                            {
+                                                "depth_from_m":  0,
+                                                "depth_to_m":  21,
+                                                "expected_material_bg":  "Льос и льосовидни глини",
+                                                "confidence":  "high",
+                                                "evidence_level":  "documented_borehole_log",
+                                                "source_ids":  [
+                                                                   "RG-SRC-001"
+                                                               ],
+                                                "source_interval_id":  "RG-INT-001",
+                                                "formation_original":  "Еолични образувания",
+                                                "formation_verification_status":  "SOURCE_LABEL_PRESERVED",
+                                                "original_extraction_evidence_level":  "documented_borehole_column_grouped_extraction"
+                                            },
+                                            {
+                                                "depth_from_m":  21,
+                                                "depth_to_m":  175,
+                                                "expected_material_bg":  "Варовити, глинесто-песъчливи отложения",
+                                                "confidence":  "high",
+                                                "evidence_level":  "documented_borehole_log",
+                                                "source_ids":  [
+                                                                   "RG-SRC-001"
+                                                               ],
+                                                "source_interval_id":  "RG-INT-002",
+                                                "formation_original":  "Русенска свита",
+                                                "formation_verification_status":  "SOURCE_LABEL_PRESERVED",
+                                                "original_extraction_evidence_level":  "documented_borehole_column_grouped_extraction"
+                                            },
+                                            {
+                                                "depth_from_m":  175,
+                                                "depth_to_m":  550,
+                                                "expected_material_bg":  "Варовити, глинести варовици и мергели",
+                                                "confidence":  "high",
+                                                "evidence_level":  "documented_borehole_log",
+                                                "source_ids":  [
+                                                                   "RG-SRC-001"
+                                                               ],
+                                                "source_interval_id":  "RG-INT-003",
+                                                "formation_original":  "Разградска/Русенска свита - надпис за сверяване",
+                                                "formation_verification_status":  "ORIGINAL_FORMATION_LABEL_REQUIRES_REVIEW",
+                                                "original_extraction_evidence_level":  "documented_borehole_column_grouped_extraction"
+                                            },
+                                            {
+                                                "depth_from_m":  550,
+                                                "depth_to_m":  700,
+                                                "expected_material_bg":  "Варовици, глинести варовици и доломити",
+                                                "confidence":  "high",
+                                                "evidence_level":  "documented_borehole_log",
+                                                "source_ids":  [
+                                                                   "RG-SRC-001"
+                                                               ],
+                                                "source_interval_id":  "RG-INT-004",
+                                                "formation_original":  "Каспичанска свита",
+                                                "formation_verification_status":  "SOURCE_LABEL_PRESERVED",
+                                                "original_extraction_evidence_level":  "documented_borehole_column_grouped_extraction"
+                                            }
+                                        ],
+                          "structural_intervals":  [
+
+                                                   ],
+                          "hydraulic_intervals":  [
+
+                                                  ],
+                          "borehole_construction":  null,
+                          "source_overlaps":  [
+
+                                              ],
+                          "source_gaps":  [
+
+                                          ],
+                          "groundwater_discharge":  null,
+                          "water_temperature":  null,
+                          "collector":  null,
+                          "intake_intervals":  [
+
+                                               ],
+                          "hydro_notes_bg":  "Няма удостоверени измерени дебит и водоприемни интервали в извлечената колонка.",
+                          "expert_context":  {
+                                                 "simple_text_bg":  "ДС Подайва: четири документирани литоложки интервала от 0 до 700 м. Данните принадлежат само на този сондаж.",
+                                                 "usage":  "Documented borehole column with published facility coordinates",
+                                                 "warning":  "Разминаване в дължината: графична стр. 1 26 54 46.39 E; стр. 2 26 54 49.38 E; таблица II.1 26 54 49.39 E. Проверката на точното устие остава открита. Наименованието на свитата 175-550 м е несигурно.",
+                                                 "original_source_id":  "RG-SRC-001",
+                                                 "original_intake_id":  "RG-B2-001",
+                                                 "measured_interval_ids":  [
+                                                                               "RG-INT-001",
+                                                                               "RG-INT-002",
+                                                                               "RG-INT-003",
+                                                                               "RG-INT-004"
+                                                                           ]
+                                             }
                       }
                   ],
     "sources":  [
@@ -17096,6 +17206,17 @@
                         "accessed_date":  "2026-11-19",
                         "geographic_scope":  "Marash village, Kara Meshe locality, approximately 1 km southwest of village",
                         "notes":  "Original intake SH-A1-013; Page 2, Geological section drilled by R-2; mineral water resource and analysis tables; SOURCE_QA_PENDING"
+                    },
+                    {
+                        "source_id":  "RG-SRC-001",
+                        "title":  "Проект за санитарно-охранителна зона около ДС Подайва",
+                        "institution":  "Екология и Геология ООД",
+                        "source_type":  "documented_borehole_lithological_column",
+                        "url":  "https://www.isperih.bg/sites/default/files/2022-05/%D0%9F%D0%A0%D0%9E%D0%95%D0%9A%D0%A2.pdf",
+                        "publication_year":  2009,
+                        "accessed_date":  "2026-11-20",
+                        "geographic_scope":  "с. Подайва, община Исперих, област Разград",
+                        "notes":  "Документирана колонка 0-700 м. Официални координати в таблица II.1; противоречие между графичните приложения."
                     }
                 ]
 }
