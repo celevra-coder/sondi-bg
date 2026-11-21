@@ -22,7 +22,7 @@
                            "Lovech",
                            "Шумен"
                        ],
-    "borehole_count":  124,
+    "borehole_count":  128,
     "boreholes":  [
                       {
                           "borehole_id":  "PLD-Z037",
@@ -15986,6 +15986,358 @@
                                                                                "RG-INT-004"
                                                                            ]
                                              }
+                      },
+                      {
+                          "borehole_id":  "SIL-BH-001",
+                          "name_bg":  "Сондаж №1 Енергопроект, Айдемирско-Сребърненска низина",
+                          "oblast":  "Силистра",
+                          "region_code":  "Silistra",
+                          "status":  "documented_partial_or_unlocated_lithological_profile",
+                          "zone_type":  "facility_known_location_unresolved",
+                          "coordinates":  {
+                                              "latitude":  null,
+                                              "longitude":  null,
+                                              "status":  "NOT_DOCUMENTED",
+                                              "evidence_level":  "no_verified_numeric_coordinate",
+                                              "origin":  "Silistra Step 3 / Step 4 research"
+                                          },
+                          "total_depth_m":  null,
+                          "water_type":  null,
+                          "lithology":  [
+                                            {
+                                                "depth_from_m":  0,
+                                                "depth_to_m":  0.5,
+                                                "expected_material_bg":  "Почвен слой и блатни глини",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-002"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  0.5,
+                                                "depth_to_m":  1,
+                                                "expected_material_bg":  "Тъмнокафява плътна глина с растителни корени",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-002"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  1,
+                                                "depth_to_m":  2,
+                                                "expected_material_bg":  "Черен торф, железно-манганови конкреции и хумусна глина",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-002"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  2,
+                                                "depth_to_m":  7.3,
+                                                "expected_material_bg":  "Сивосиня глина, богата на хумус",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-002"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  7.3,
+                                                "depth_to_m":  8.5,
+                                                "expected_material_bg":  "Жълт пясък и чакълчета с глина",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-002"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  8.5,
+                                                "depth_to_m":  12.5,
+                                                "expected_material_bg":  "Глинест пясък, Айдемирска свита",
+                                                "confidence":  "source_conflict",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-002"
+                                                               ]
+                                            }
+                                        ],
+                          "structural_intervals":  [
+
+                                                   ],
+                          "hydraulic_intervals":  [
+
+                                                  ],
+                          "borehole_construction":  null,
+                          "source_overlaps":  [
+
+                                              ],
+                          "source_gaps":  [
+
+                                          ],
+                          "groundwater_discharge":  null,
+                          "water_temperature":  null,
+                          "collector":  null,
+                          "intake_intervals":  [
+
+                                               ],
+                          "hydro_notes_bg":  null,
+                          "expert_context":  "Последният интервал 8,5–12,5 м е с несъответстваща публикувана мощност 1,50 м."
+                      },
+                      {
+                          "borehole_id":  "SIL-BH-002",
+                          "name_bg":  "ТК-Преславци / ПЕС-1",
+                          "oblast":  "Силистра",
+                          "region_code":  "Silistra",
+                          "status":  "documented_borehole_lithological_profile",
+                          "zone_type":  "site_specific",
+                          "coordinates":  {
+                                              "latitude":  43.9228888889,
+                                              "longitude":  26.709,
+                                              "status":  "OFFICIAL_EXACT",
+                                              "evidence_level":  "official_facility_coordinate",
+                                              "origin":  "SL-A1-006; surveyed borehole, Table 2 p.12; mouth independently unverified"
+                                          },
+                          "total_depth_m":  530,
+                          "water_type":  null,
+                          "lithology":  [
+                                            {
+                                                "depth_from_m":  0,
+                                                "depth_to_m":  10,
+                                                "expected_material_bg":  "Песъчлива глина",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-006"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  10,
+                                                "depth_to_m":  38,
+                                                "expected_material_bg":  "Пъстроцветна много плътна аргилитоподобна глина",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-006"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  38,
+                                                "depth_to_m":  50,
+                                                "expected_material_bg":  "Песъчливи окарстени варовици с глинест запълнител",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-006"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  50,
+                                                "depth_to_m":  200,
+                                                "expected_material_bg":  "Порцелановидни окарстени варовици",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-006"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  200,
+                                                "depth_to_m":  530,
+                                                "expected_material_bg":  "Песъчливи окарстени варовици",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-006"
+                                                               ]
+                                            }
+                                        ],
+                          "structural_intervals":  [
+
+                                                   ],
+                          "hydraulic_intervals":  [
+
+                                                  ],
+                          "borehole_construction":  null,
+                          "source_overlaps":  [
+
+                                              ],
+                          "source_gaps":  [
+
+                                          ],
+                          "groundwater_discharge":  null,
+                          "water_temperature":  null,
+                          "collector":  null,
+                          "intake_intervals":  [
+
+                                               ],
+                          "hydro_notes_bg":  null,
+                          "expert_context":  "Геодезически документирани координати на сондажното съоръжение. Колонката е факт само за този сондаж."
+                      },
+                      {
+                          "borehole_id":  "SIL-BH-003",
+                          "name_bg":  "Р-1 Дулово",
+                          "oblast":  "Силистра",
+                          "region_code":  "Silistra",
+                          "status":  "documented_partial_or_unlocated_lithological_profile",
+                          "zone_type":  "facility_known_location_unresolved",
+                          "coordinates":  {
+                                              "latitude":  null,
+                                              "longitude":  null,
+                                              "status":  "NOT_DOCUMENTED",
+                                              "evidence_level":  "no_verified_numeric_coordinate",
+                                              "origin":  "Silistra Step 3 / Step 4 research"
+                                          },
+                          "total_depth_m":  null,
+                          "water_type":  null,
+                          "lithology":  [
+                                            {
+                                                "depth_from_m":  1013,
+                                                "depth_to_m":  1542,
+                                                "expected_material_bg":  "Пъстроцветни мергели с прослойки варовици и доломити",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-015"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  1542,
+                                                "depth_to_m":  1819,
+                                                "expected_material_bg":  "Варовити пясъчници и песъчливи варовици в глинесто-карбонатна и мергелна последователност",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-015"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  2058,
+                                                "depth_to_m":  2460,
+                                                "expected_material_bg":  "Фаменски карбонатни скали, включително интракластични, пелоидни и органогенни варовици",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-014"
+                                                               ]
+                                            }
+                                        ],
+                          "structural_intervals":  [
+
+                                                   ],
+                          "hydraulic_intervals":  [
+
+                                                  ],
+                          "borehole_construction":  null,
+                          "source_overlaps":  [
+
+                                              ],
+                          "source_gaps":  [
+
+                                          ],
+                          "groundwater_discharge":  null,
+                          "water_temperature":  null,
+                          "collector":  null,
+                          "intake_intervals":  [
+
+                                               ],
+                          "hydro_notes_bg":  null,
+                          "expert_context":  "Частични публикувани дълбоки интервали; участък 1819–2058 м остава без установена литология."
+                      },
+                      {
+                          "borehole_id":  "SIL-BH-004",
+                          "name_bg":  "Р-2 Преславци",
+                          "oblast":  "Силистра",
+                          "region_code":  "Silistra",
+                          "status":  "documented_partial_or_unlocated_lithological_profile",
+                          "zone_type":  "facility_known_location_unresolved",
+                          "coordinates":  {
+                                              "latitude":  null,
+                                              "longitude":  null,
+                                              "status":  "NOT_DOCUMENTED",
+                                              "evidence_level":  "no_verified_numeric_coordinate",
+                                              "origin":  "Silistra Step 3 / Step 4 research"
+                                          },
+                          "total_depth_m":  null,
+                          "water_type":  null,
+                          "lithology":  [
+                                            {
+                                                "depth_from_m":  1220,
+                                                "depth_to_m":  1563,
+                                                "expected_material_bg":  "Кафеникавосиви до тъмносиви масивни фосилоносни варовици",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-014",
+                                                                   "SL-A1-018"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  1563,
+                                                "depth_to_m":  1894,
+                                                "expected_material_bg":  "Светлосиви до кремавосиви масивни варовици с прослойки тъмни глинести варовици",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-014",
+                                                                   "SL-A1-018"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  1893,
+                                                "depth_to_m":  2207,
+                                                "expected_material_bg":  "Сиви варовици и доломитизирани варовици с отделни кристалинни доломити",
+                                                "confidence":  "source_conflict",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-018"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  2207,
+                                                "depth_to_m":  2501,
+                                                "expected_material_bg":  "Тъмносиви до кафеникавосиви кристалинни доломити с редки прослойки варовици",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-018"
+                                                               ]
+                                            },
+                                            {
+                                                "depth_from_m":  2501,
+                                                "depth_to_m":  2997,
+                                                "expected_material_bg":  "Тъмносиви до кафеникавосиви глинести варовици, местно доломитизирани, с прослойки доломити",
+                                                "confidence":  "documented",
+                                                "evidence_level":  "published_borehole_lithology",
+                                                "source_ids":  [
+                                                                   "SL-A1-018"
+                                                               ]
+                                            }
+                                        ],
+                          "structural_intervals":  [
+
+                                                   ],
+                          "hydraulic_intervals":  [
+
+                                                  ],
+                          "borehole_construction":  null,
+                          "source_overlaps":  [
+
+                                              ],
+                          "source_gaps":  [
+
+                                          ],
+                          "groundwater_discharge":  null,
+                          "water_temperature":  null,
+                          "collector":  null,
+                          "intake_intervals":  [
+
+                                               ],
+                          "hydro_notes_bg":  null,
+                          "expert_context":  "Частични публикувани дълбоки интервали; спорна граница 1893–1894 м; две публикации описват един сондаж."
                       }
                   ],
     "sources":  [
@@ -17217,6 +17569,61 @@
                         "accessed_date":  "2026-11-20",
                         "geographic_scope":  "с. Подайва, община Исперих, област Разград",
                         "notes":  "Документирана колонка 0-700 м. Официални координати в таблица II.1; противоречие между графичните приложения."
+                    },
+                    {
+                        "source_id":  "SL-A1-002",
+                        "title":  "Stratigraphy of the Holocene sediments of the western part of the Ajdemir Lowland, Silistra District",
+                        "institution":  "Geologica Balcanica, Geological Institute BAS",
+                        "source_type":  "BOREHOLE_LITHOLOGICAL_COLUMN_AND_GEOLOGICAL_MAP",
+                        "url":  "https://www.geologica-balcanica.eu/sites/default/files/articles/GB%20%281995%29_25_1_pp.21-26%20%28Angelova%29.pdf",
+                        "publication_year":  1995,
+                        "accessed_date":  "2026-11-20",
+                        "geographic_scope":  "Energoproekt core well No. 1, approximately 400 m northwest of Todoranka spring, near Srebarna Lake",
+                        "notes":  "p.22 core well No.1; pp.22-23 Fig.1 geological and thickness maps"
+                    },
+                    {
+                        "source_id":  "SL-A1-006",
+                        "title":  "Геолого-литоложки разрез на ПЕС-1 / ТК-Преславци",
+                        "institution":  "Водпроект; архивен разрез, публикуван от община Тутракан",
+                        "source_type":  "PRIMARY_BOREHOLE_LITHOLOGICAL_COLUMN",
+                        "url":  "https://tutrakan.egov.bg/TUTRAKAN/home.nsf/0/1BA6296C3225B676C2258780005B6DD0/$FILE/SOZ_TK-Preslavci_p01-40.pdf",
+                        "publication_year":  1987,
+                        "accessed_date":  "2026-11-20",
+                        "geographic_scope":  "ПЕС-1 / ТК-Преславци, с. Преславци, община Тутракан, област Силистра",
+                        "notes":  "Раздел 2.4 и графично приложение 8.2, PDF стр. 40"
+                    },
+                    {
+                        "source_id":  "SL-A1-015",
+                        "title":  "Triassic Lithostratigraphic Correlation in the Moesian Platform (Bulgaria-Romania)",
+                        "institution":  "Stratigraphy and Geological Correlation",
+                        "source_type":  "BOREHOLE_LITHOSTRATIGRAPHIC_REFERENCE_SECTIONS",
+                        "url":  "https://www.researchgate.net/publication/259073740_Triassic_Lithostratigraphic_Correlation_in_the_Moesian_Platform_Bulgaria-Romania",
+                        "publication_year":  2013,
+                        "accessed_date":  "2026-11-21",
+                        "geographic_scope":  "Well R-1 Dulovo, northeastern Bulgaria",
+                        "notes":  "Published journal pages 619 and 621; sections Tulenovo Formation and Dulovo Formation"
+                    },
+                    {
+                        "source_id":  "SL-A1-014",
+                        "title":  "Famennian carbonate microfacies from the Preslavtsi-2 well (Moesian Platform, north-eastern Bulgaria)",
+                        "institution":  "Geologica Balcanica / Geological Institute BAS",
+                        "source_type":  "DEEP_BOREHOLE_LITHOLOGICAL_AND_PETROGRAPHIC_STUDY",
+                        "url":  "https://www.geologica-balcanica.eu/sites/default/files/articles/Andreeva_Geol_Balc_48-2_2019.pdf",
+                        "publication_year":  2019,
+                        "accessed_date":  "2026-11-20",
+                        "geographic_scope":  "R-2 Preslavtsi and R-1 Dulovo, Silistra Province",
+                        "notes":  "p. 13 introduction; pp. 14-15 geological setting and Fig. 2; pp. 16-22 petrography"
+                    },
+                    {
+                        "source_id":  "SL-A1-018",
+                        "title":  "Microfacies, sea-level fluctuations and conodont biostratigraphy of Frasnian-Famennian carbonate sequences from the Preslavtsi-2 well",
+                        "institution":  "Geologica Balcanica / Geological Institute BAS",
+                        "source_type":  "DEEP_BOREHOLE_LITHOSTRATIGRAPHIC_COLUMN",
+                        "url":  "https://www.geologica-balcanica.eu/sites/default/files/articles/Andreeva_Geol_Balc_53-2_2024.pdf",
+                        "publication_year":  2024,
+                        "accessed_date":  "2026-11-21",
+                        "geographic_scope":  "Preslavtsi-2 well, Moesian Platform, northeastern Bulgaria",
+                        "notes":  "p. 40 Fig. 1 lithostratigraphic log and accompanying geological background; pp. 40-41 lithological descriptions"
                     }
                 ]
 }

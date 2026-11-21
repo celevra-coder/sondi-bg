@@ -1797,7 +1797,17 @@ export function isSondiLithologyLocationRegistered(
   const shumenAdministrativeBoundary = readJson<Geometry>(
     "shumen_administrative_boundary.json"
   );
-  return containsPoint(shumenAdministrativeBoundary, latitude, longitude);
+  if (containsPoint(shumenAdministrativeBoundary, latitude, longitude)) {
+    return true;
+  }
+
+  // SONDI_SILISTRA_ADMIN_ACCESS_BG325
+  // Eurostat GISCO NUTS3 2024, EPSG:4326.
+  // Administrative access only; no geological model or depth rules.
+  const silistraAdministrativeBoundary = readJson<Geometry>(
+    "silistra_oblast_boundary.json"
+  );
+  return containsPoint(silistraAdministrativeBoundary, latitude, longitude);
 }
 
 function getSondiRegionalReportBase(

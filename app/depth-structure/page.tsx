@@ -1187,6 +1187,7 @@ const material = point.material
       (
         interval.evidence_level === "borehole_exact" ||
         interval.evidence_level === "documented_borehole_log" ||
+        interval.evidence_level === "published_borehole_lithology" ||
         (
           pernikShallowClient &&
           exactNationalBorehole?.origin === "REGIONAL" &&
