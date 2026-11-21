@@ -9443,6 +9443,86 @@
                                                                                "RG-INT-004"
                                                                            ]
                                              }
-                      }
-                  ]
+                      },
+    {
+      "borehole_id": "SIL-BH-002",
+      "name_bg": "ТК-Преславци / ПЕС-1",
+      "oblast": "Силистра",
+      "region_code": "Silistra",
+      "status": "documented_borehole_lithological_profile",
+      "zone_type": "site_specific",
+      "coordinates": {
+        "latitude": 43.9228888889,
+        "longitude": 26.709,
+        "status": "OFFICIAL_EXACT",
+        "evidence_level": "official_facility_coordinate",
+        "origin": "SL-A1-006; surveyed borehole, Table 2 p.12; mouth independently unverified"
+      },
+      "total_depth_m": 530,
+      "water_type": null,
+      "lithology": [
+        {
+          "depth_from_m": 0,
+          "depth_to_m": 10,
+          "expected_material_bg": "Песъчлива глина",
+          "confidence": "documented",
+          "evidence_level": "published_borehole_lithology",
+          "source_ids": [
+            "SL-A1-006"
+          ]
+        },
+        {
+          "depth_from_m": 10,
+          "depth_to_m": 38,
+          "expected_material_bg": "Пъстроцветна много плътна аргилитоподобна глина",
+          "confidence": "documented",
+          "evidence_level": "published_borehole_lithology",
+          "source_ids": [
+            "SL-A1-006"
+          ]
+        },
+        {
+          "depth_from_m": 38,
+          "depth_to_m": 50,
+          "expected_material_bg": "Песъчливи окарстени варовици с глинест запълнител",
+          "confidence": "documented",
+          "evidence_level": "published_borehole_lithology",
+          "source_ids": [
+            "SL-A1-006"
+          ]
+        },
+        {
+          "depth_from_m": 50,
+          "depth_to_m": 200,
+          "expected_material_bg": "Порцелановидни окарстени варовици",
+          "confidence": "documented",
+          "evidence_level": "published_borehole_lithology",
+          "source_ids": [
+            "SL-A1-006"
+          ]
+        },
+        {
+          "depth_from_m": 200,
+          "depth_to_m": 530,
+          "expected_material_bg": "Песъчливи окарстени варовици",
+          "confidence": "documented",
+          "evidence_level": "published_borehole_lithology",
+          "source_ids": [
+            "SL-A1-006"
+          ]
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": null,
+      "expert_context": "Геодезически документирани координати на сондажното съоръжение. Колонката е факт само за този сондаж."
+    }
+]
 }
