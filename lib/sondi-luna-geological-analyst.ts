@@ -75,7 +75,16 @@ function collectEvidence(lat:number,lon:number):Fact[] {
     const d=distanceKm(lat,lon,hole.latitude,hole.longitude);
     if(d>RADIUS_KM)continue;
     const intervals=hole.intervals.filter(x=>x.from_m!==null&&x.to_m!==null &&
-      x.interval_status===null && ["borehole_exact","documented_borehole_log"].includes(x.evidence_level??"") &&
+      x.interval_status===null && (
+        ["borehole_exact","documented_borehole_log"].includes(x.evidence_level??"") ||
+        // SONDI_DOB_STEP06_LUNA_EVIDENCE_V1
+        (hole.origin==="NATIONAL" &&
+         hole.id==="DOB-BH-025" &&
+         x.evidence_level==="OFFICIAL_ACTUAL_BOREHOLE_GEOLOGICAL_SECTION") ||
+        (hole.origin==="NATIONAL" &&
+         hole.id==="DOB-BH-040" &&
+         x.evidence_level==="PUBLISHED_BOREHOLE_LITHOSTRATIGRAPHIC_INTERVAL")
+      ) &&
       x.source_ids.length>0).map(x=>({from_m:x.from_m!,to_m:x.to_m!,material:safe(x.material_bg,350),source_ids:x.source_ids.slice(0,5)}));
     if(!intervals.length)continue;
     const fault=getMappedGemFaultsBetweenPoints(lat,lon,hole.latitude,hole.longitude);

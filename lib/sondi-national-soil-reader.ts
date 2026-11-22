@@ -1,3 +1,4 @@
+import { isSondiExactBoreholeSoilAccess } from "./sondi-exact-borehole-soil-access";
 // SONDI_78ES_NATIONAL_SOIL_READER
 // Server-side reader for locally stored SoilGrids rasters.
 // Does not alter the national lithology or depth engines.
@@ -109,7 +110,10 @@ export async function getSondiNationalSoilAtPoint(
   ) return null;
 
   // Reuse the exact national activation polygons.
-  if(!isSondiLithologyLocationRegistered(latitude,longitude)){
+  // SONDI_DOB_STEP06_SOIL_DIRECT_V2
+  // Permit direct raster lookup only at a documented exact borehole.
+  if(!isSondiLithologyLocationRegistered(latitude,longitude) &&
+     !isSondiExactBoreholeSoilAccess(latitude,longitude)){
     return null;
   }
 

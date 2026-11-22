@@ -15,6 +15,7 @@ import { getSondiNationalWrbAtPoint } from "@/lib/sondi-national-wrb-reader";
 import { getSondiHwsd2WithNearbyFallback } from "@/lib/sondi-national-hwsd2-reader";
 import { buildSondiReadableRegionalNarrative } from "@/lib/sondi-regional-narrative";
 import { getSondiLunaGeologicalAnalysis } from "@/lib/sondi-luna-geological-analyst";
+import { getSondiLunaMaterialLabelsBg, getSondiLunaExactMaterialExplanationsBg } from "@/lib/sondi-luna-material-labels-bg";
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase-server";
@@ -804,7 +805,32 @@ const material = point.material
   // The EXPERT access checks remain above this point.
   // Unregistered regions must not receive a generated
   // lithological report from generic geological-map data.
-  if (!isSondiLithologyLocationRegistered(lat, lng)) {
+  // SONDI_DOB_STEP06_EXACT_ACCESS_V2
+  // Only two individually documented national boreholes at
+  // their published coordinates. No nearby-property access.
+  const dobrichExactAccess = getNationalBoreholeIndex().some(hole =>
+    (hole.id === "DOB-BH-025" || hole.id === "DOB-BH-040") &&
+    hole.origin === "NATIONAL" &&
+    hole.coordinate_status === "OFFICIAL_EXACT" &&
+    hole.latitude !== null && hole.longitude !== null &&
+    Math.abs(hole.latitude - lat) <= 0.000001 &&
+    Math.abs(hole.longitude - lng) <= 0.000001 &&
+    hole.intervals.some(interval =>
+      interval.interval_status === null &&
+      interval.evidence_level === (
+        hole.id === "DOB-BH-025"
+          ? "OFFICIAL_ACTUAL_BOREHOLE_GEOLOGICAL_SECTION"
+          : "PUBLISHED_BOREHOLE_LITHOSTRATIGRAPHIC_INTERVAL"
+      ) &&
+      interval.from_m !== null && interval.to_m !== null &&
+      Number.isFinite(interval.from_m) &&
+      Number.isFinite(interval.to_m) &&
+      interval.to_m > interval.from_m &&
+      interval.material_bg.trim().length > 0
+    )
+  );
+  if (!isSondiLithologyLocationRegistered(lat, lng) &&
+      !dobrichExactAccess) {
     return (
       <main style={{
         maxWidth: 860,
@@ -1188,6 +1214,11 @@ const material = point.material
         interval.evidence_level === "borehole_exact" ||
         interval.evidence_level === "documented_borehole_log" ||
         interval.evidence_level === "published_borehole_lithology" ||
+        // SONDI_DOB_STEP06_EVIDENCE_V2
+        (exactNationalBorehole?.id === "DOB-BH-025" &&
+         interval.evidence_level === "OFFICIAL_ACTUAL_BOREHOLE_GEOLOGICAL_SECTION") ||
+        (exactNationalBorehole?.id === "DOB-BH-040" &&
+         interval.evidence_level === "PUBLISHED_BOREHOLE_LITHOSTRATIGRAPHIC_INTERVAL") ||
         (
           pernikShallowClient &&
           exactNationalBorehole?.origin === "REGIONAL" &&
@@ -1490,6 +1521,19 @@ const material = point.material
       scope: candidate.evidence_level,
     })),
   });
+
+  // SONDI_LUNA_BG_MATERIAL_LABELS_V1
+  // Display-only translation. Original evidence and numeric contacts stay intact.
+  const lunaMaterialLabelsBg = await getSondiLunaMaterialLabelsBg([
+    ...exactDocumentedIntervals.map(interval => interval.material_bg),
+    ...(lunaAnalysis?.depthInterpretations ?? []).map(interval => interval.material)
+  ]);
+
+  // SONDI_EXACT_MATERIAL_DESCRIPTIONS_DISPLAY_V1
+  const lunaExactExplanationsBg =
+    await getSondiLunaExactMaterialExplanationsBg(
+      exactDocumentedIntervals.map(interval=>interval.material_bg)
+    );
 
   const regionalAIParagraphs = lunaAnalysis?.regionalParagraphs ?? null;
   const lunaDepthRows = (lunaAnalysis?.depthInterpretations ?? []).map(window=>({
@@ -1883,62 +1927,21 @@ const material = point.material
                       fontWeight: 750,
                       overflowWrap: "anywhere",
                     }}>
-                      {interval.material_bg}
+                      {lunaMaterialLabelsBg[interval.material_bg] ?? interval.material_bg}
                     </div>
 
-                    {/* SONDI_LUNA_EXACT_COLUMN_EXPLANATIONS_V1
-                        Only an exact material, depth and borehole-ID match
-                        may supply Luna's individual interpretation. */}
-                    {(() => {
-                      // Short lithological description for the client.
-                      // Original documented depths and materials stay intact.
-                      const material = String(
-                        interval.material_bg
-                      ).toLocaleLowerCase("bg-BG");
-
-                      const explanation =
-                        /конгломерат/u.test(material)
-                          ? "Скални късове, свързани с цимент; здравината и пробиваемостта зависят от късовете и цимента."
-                        : /пясъчник/u.test(material)
-                          ? "Пясъчник с възможни чакълести участъци и прослойки; пробиваемостта зависи от здравината и напукаността."
-                        : /валун/u.test(material)
-                          ? "Едри скални късове със запълнител; условията за пробиване зависят от размера и здравината им."
-                        :
-                        /пясъчливо-глинеста прослойка/u.test(material)
-                          ? "Песъчлив материал с локално по-слабо пропусклива прослойка."
-                        : /алтернация|редуване/u.test(material)
-                          ? "Последователност от фини глинести и по-едрозърнести песъчливи седименти."
-                        : /чакъл/u.test(material) && /глин|пяс/u.test(material)
-                          ? "Смесени наслаги от глини, пясъци и чакъли с различна зърненост."
-                        : /среднозърнести пясъци/u.test(material)
-                          ? "Ронлив, сравнително водопропусклив песъчлив материал."
-                        : /песъчливи глини/u.test(material)
-                          ? "Глинест материал с пясъчна съставка и сравнително ниска пропускливост."
-                        : /гнайс/u.test(material)
-                          ? "Твърда метаморфна скала, чиято напуканост влияе върху пробиването."
-                        : /варовик|доломит/u.test(material)
-                          ? "Карбонатна скала с променлива здравина и възможна напуканост."
-                        : /конгломерат/u.test(material)
-                          ? "Скални късове, свързани с по-фин циментиращ материал."
-                        : /гранит/u.test(material)
-                          ? "Твърда кристалинна скала с висока устойчивост при пробиване."
-                        : sondiMaterialExplanation(
-                            String(interval.material_bg)
-                          );
-
-                      return explanation ? (
-                        <div
-                          style={{
-                            marginTop: 7,
-                            fontSize: 13,
-                            lineHeight: 1.6,
-                            color: "#4f666d"
-                          }}
-                        >
-                          {explanation}
-                        </div>
-                      ) : null;
-                    })()}
+                    {/* SONDI_EXACT_MATERIAL_DESCRIPTIONS_DISPLAY_V1:
+          Individual AI descriptions only; no generic fallback. */}
+                     {lunaExactExplanationsBg[interval.material_bg] ? (
+                       <div style={{
+                         marginTop:7,
+                         fontSize:13,
+                         lineHeight:1.6,
+                         color:"#4f666d"
+                       }}>
+                         {lunaExactExplanationsBg[interval.material_bg]}
+                       </div>
+                     ) : null}
 
 
                     {interval.stratigraphy && (
@@ -2031,7 +2034,7 @@ const material = point.material
                       color: "#173f49",
                     }}
                   >
-                    {row.material}
+                    {lunaMaterialLabelsBg[String(row.material)] ?? row.material}
                   </div>
 
                   {row.material && (

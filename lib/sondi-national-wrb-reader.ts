@@ -1,3 +1,4 @@
+import { isSondiExactBoreholeSoilAccess } from "./sondi-exact-borehole-soil-access";
 import "server-only";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -102,7 +103,8 @@ export async function getSondiNationalWrbAtPoint(
     return null;
   }
 
-  if (!isSondiLithologyLocationRegistered(lat, lon)) {
+  if (!isSondiLithologyLocationRegistered(lat, lon) &&
+      !isSondiExactBoreholeSoilAccess(lat, lon)) {
     return null;
   }
 

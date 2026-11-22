@@ -1,3 +1,4 @@
+import { isSondiExactBoreholeSoilAccess } from "./sondi-exact-borehole-soil-access";
 import "server-only";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -222,7 +223,8 @@ export async function getSondiSoilWithNearbyFallback(
   if (
     !Number.isFinite(latitude) ||
     !Number.isFinite(longitude) ||
-    !isSondiLithologyLocationRegistered(latitude,longitude)
+    (!isSondiLithologyLocationRegistered(latitude,longitude) &&
+     !isSondiExactBoreholeSoilAccess(latitude,longitude))
   ) return null;
 
   const direct = await getSondiNationalSoilAtPoint(
@@ -275,9 +277,14 @@ export async function getSondiSoilWithNearbyFallback(
         if (!values) continue;
 
         // Never borrow a modeled cell from an inactive area.
-        if (!isSondiLithologyLocationRegistered(
-          cellLat,cellLon
-        )) continue;
+        // SONDI_DOB_STEP06_SOIL_NEARBY_V1
+        // For a documented exact borehole, allow checking nearby
+        // raster cells within the EXISTING maximum search radius.
+        // No new soil values or regional boundaries are created.
+        if (
+          !isSondiLithologyLocationRegistered(cellLat,cellLon) &&
+          !isSondiExactBoreholeSoilAccess(latitude,longitude)
+        ) continue;
 
         nearest = {
           distance,
