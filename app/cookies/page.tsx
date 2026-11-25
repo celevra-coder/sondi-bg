@@ -40,7 +40,7 @@ export default function CookiesPage() {
         </h1>
 
         <p className="mt-5 text-sm text-[#71878d]">
-          Последна актуализация: 6 септември 2026 г.
+          Последна актуализация: 25 ноември 2026 г.
         </p>
 
         <div className="mt-8 rounded-2xl border border-[#d9e9e5] bg-[#f2f8f6] p-5 text-[15px] leading-7 text-[#46645c]">
@@ -133,6 +133,33 @@ export default function CookiesPage() {
             >
               info@sondi.bg
             </a>
+          </p>
+        </Section>
+
+        <Section title="9. Рекламни бисквитки и Google AdSense">
+          <p>
+            SONDI.BG може да използва Google AdSense за показване
+            на реклами в публичните раздели на сайта.
+          </p>
+          <p>
+            Google и рекламните му партньори могат да използват
+            бисквитки, идентификатори и сходни технологии за
+            предоставяне, измерване и персонализиране на реклами,
+            както и за предотвратяване на рекламни злоупотреби.
+          </p>
+          <p>
+            Рекламното съгласие се управлява отделно от съгласието
+            за Microsoft Clarity. Потребителят може да приеме,
+            откаже или управлява рекламните си предпочитания чрез
+            системата за съгласие на Google.
+          </p>
+          <p>
+            Повече информация за рекламните технологии на Google:{" "}
+            <a href="https://policies.google.com/technologies/ads"
+               target="_blank" rel="noopener noreferrer"
+               className="font-semibold text-[#167454] underline">
+              Реклами и поверителност
+            </a>.
           </p>
         </Section>
 

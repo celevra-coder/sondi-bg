@@ -4,6 +4,7 @@ import "./globals.css";
 import SiteShell from "@/components/SiteShell";
 import AnalysisEnhancements from "@/components/AnalysisEnhancements";
 import AnalyticsConsent from "@/components/AnalyticsConsent";
+import AdSenseGate from "@/components/AdSenseGate";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,9 @@ const siteStructuredData = {
 };
 
 export const metadata: Metadata = {
+  other: {
+    "google-adsense-account": "ca-pub-9282527731238854",
+  },
   metadataBase: new URL("https://www.sondi.bg"),
 
   title: {
@@ -98,6 +102,7 @@ export default function RootLayout({
         <SiteShell>{children}</SiteShell>
         <AnalysisEnhancements />
         <AnalyticsConsent />
+        <AdSenseGate />
       </body>
     </html>
   );
