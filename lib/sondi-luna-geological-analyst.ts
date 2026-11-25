@@ -12,6 +12,7 @@ import { resolveNationalContactEvidence } from "./sondi-national-evidence-engine
 import OpenAI from "openai";
 import { unstable_cache } from "next/cache";
 import { getNationalBoreholeIndex } from "./sondi-national-borehole-index";
+import { isNationalDocumentedLithologyInterval } from "./sondi-national-evidence-categories";
 import { getMappedGemFaultsBetweenPoints } from "./fault-spatial-profile";
 
 /** Luna is the GEOLOGICAL INTERPRETER, not a paraphraser of pre-approved rows.
@@ -74,18 +75,10 @@ function collectEvidence(lat:number,lon:number):Fact[] {
     if(hole.coordinate_status!=="OFFICIAL_EXACT"||hole.latitude===null||hole.longitude===null)continue;
     const d=distanceKm(lat,lon,hole.latitude,hole.longitude);
     if(d>RADIUS_KM)continue;
-    const intervals=hole.intervals.filter(x=>x.from_m!==null&&x.to_m!==null &&
-      x.interval_status===null && (
-        ["borehole_exact","documented_borehole_log"].includes(x.evidence_level??"") ||
-        // SONDI_DOB_STEP06_LUNA_EVIDENCE_V1
-        (hole.origin==="NATIONAL" &&
-         hole.id==="DOB-BH-025" &&
-         x.evidence_level==="OFFICIAL_ACTUAL_BOREHOLE_GEOLOGICAL_SECTION") ||
-        (hole.origin==="NATIONAL" &&
-         hole.id==="DOB-BH-040" &&
-         x.evidence_level==="PUBLISHED_BOREHOLE_LITHOSTRATIGRAPHIC_INTERVAL")
-      ) &&
-      x.source_ids.length>0).map(x=>({from_m:x.from_m!,to_m:x.to_m!,material:safe(x.material_bg,350),source_ids:x.source_ids.slice(0,5)}));
+    // SONDI_NATIONAL_EVIDENCE_SHARED_CONTRACT_V1
+    const intervals=hole.intervals.filter(x=>
+      isNationalDocumentedLithologyInterval(x)
+    ).map(x=>({from_m:x.from_m!,to_m:x.to_m!,material:safe(x.material_bg,350),source_ids:x.source_ids.slice(0,5)}));
     if(!intervals.length)continue;
     const fault=getMappedGemFaultsBetweenPoints(lat,lon,hole.latitude,hole.longitude);
     facts.push({id:hole.id,kind:"BOREHOLE",distance_km:+d.toFixed(3),coordinate_proof:"OFFICIAL_EXACT",

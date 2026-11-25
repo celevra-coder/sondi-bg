@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "project": "SONDI.BG",
+  "oblast": "Varna",
+  "stage": 5,
+  "title": "Local national-runtime integration acceptance",
+  "created_at_utc": "2026-11-24T21:41:38.810385+00:00",
+  "decision": "ACCEPTED_GO_WITH_DOCUMENTED_OPEN_QUESTIONS",
+  "acceptance_basis": {
+    "local_file_checks": "EXECUTED_BY_THIS_PROTOCOL_COMMAND",
+    "runtime_functional_checks": "USER_SUPPLIED_LOCAL_POWERSHELL_RESULTS",
+    "full_website_or_deployment_check": "NOT_PERFORMED"
+  },
+  "integrated_data": {
+    "national_boreholes_total": 174,
+    "varna_borehole_profiles": 21,
+    "varna_lithological_intervals": 139,
+    "varna_official_exact_positions": 9,
+    "varna_boreholes_without_numeric_position": 12,
+    "national_research_documents_added": 54,
+    "qa_held_raw_boreholes": 9,
+    "regional_registry_entries": 98,
+    "varna_municipalities": 12,
+    "administrative_nuts3": "BG331",
+    "invented_regional_depth_intervals": 0
+  },
+  "observed_functional_qa": {
+    "national_research_search_read": "PASS_54_DOCUMENTS_PREVIOUSLY_VERIFIED",
+    "national_borehole_index": "PASS_21_PROFILES_139_INTERVALS",
+    "official_exact_borehole_id_search": "PASS_9_OF_9",
+    "official_exact_borehole_spatial_search": "PASS_9_OF_9",
+    "regional_selection": "PASS_VARNA_AND_DOBRICH",
+    "national_depth_engine": "PASS_4_OF_4",
+    "varna_borehole_evidence_in_depth_engine": "CONFIRMED",
+    "conditional_results": {
+      "varna_borehole_area": "CONDITIONAL",
+      "varna_city": "CONDITIONAL",
+      "ereka_provadia": "CONDITIONAL",
+      "dobrich_control": "CONDITIONAL"
+    },
+    "luna_behavior_and_cache_regression": "PREVIOUS_USER_ACCEPTANCE_NOT_RERUN"
+  },
+  "documented_open_questions": [
+    {
+      "topic": "coordinates",
+      "detail": "12 integrated boreholes remain without numeric runtime positions"
+    },
+    {
+      "topic": "source_quality",
+      "detail": "9 raw borehole records retained for QA review, not promoted to canonical runtime profiles"
+    },
+    {
+      "topic": "ereka_coordinate_datum",
+      "detail": "Published geographic coordinates are OFFICIAL_EXACT under project policy; source does not state the original geodetic datum"
+    },
+    {
+      "topic": "administrative_geometry",
+      "detail": "Existing Dobrich boundary overlaps NSI Varna boundary by 8.77779 km2; existing Dobrich first-match priority preserved"
+    }
+  ],
+  "invariants": {
+    "luna_source_code_modified": false,
+    "national_depth_algorithm_modified": false,
+    "other_region_registry_records_modified": false,
+    "git_commit_created_by_stage": false,
+    "deployment_performed": false,
+    "production_verification_claimed": false
+  },
+  "input_sha256": {
+    "data/soil-lithology/bulgaria_borehole_lithology.json": "ff962f45483bb5bf821f1be176e7240a0a32f5cd2745ed853c5ac7c8a519ef2b",
+    "data/soil-lithology/runtime/regions/regional_registry.json": "196ec5523c3380f8cb26c89786b803a0c4cf97f676970fabf87e3accfcc12582",
+    "data/soil-lithology/runtime/regions/varna_model.json": "5a7606784e38d828aa197abc45a954b40f2070e7e8d3b1787964b8d7dc7acbdf",
+    "data/soil-lithology/runtime/regions/varna_boundary.json": "066e9c2d91e83ff1860b8949403b6fab965bb3ede90148cf52bda66336ccb2a7",
+    "data/soil-lithology/runtime/regions/varna_municipalities_2024.geojson": "822fb4fa0fec89d3c4c158eefeaf7c9907153da4799a5fa6de7e68ea2f39874e",
+    "data/soil-lithology/research/varna_step05_borehole_integration_manifest.json": "9cd1d23dafea069f9c38139061a33db0d20a847f1001bed4c780ccabd971d30c",
+    "data/soil-lithology/runtime/national_research_evidence_catalog.json": "915d20c33b1027c48b3cbf08cc737ce47bcd7553c961505ae2799fc49e885b23"
+  },
+  "handoff": "STEP_6_MANUAL_REQUIRED_BEFORE_NEXT_STAGE"
+}

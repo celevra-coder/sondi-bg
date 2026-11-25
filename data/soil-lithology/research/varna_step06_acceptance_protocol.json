@@ -1,0 +1,101 @@
+{
+  "project": "SONDI.BG",
+  "region": "VARNA",
+  "stage": 6,
+  "recorded_utc": "2026-11-25T01:41:42.178983+00:00",
+  "status": "VISUAL_TESTS_ACCEPTED_WITH_DOCUMENTED_OPEN_CHECKS",
+  "scope": "LOCAL_CLIENT_ONLY_NO_DEPLOYMENT",
+  "national_evidence_classification": {
+    "status": "PASS",
+    "national_boreholes_audited": 174,
+    "national_lithology_intervals": 1036,
+    "original_category_count": 18,
+    "active_documented_category_count": 11,
+    "eligible_documented_intervals": 987,
+    "excluded_or_separate_review_intervals": 49,
+    "eligible_intervals_with_official_exact_coordinates": 410,
+    "typescript": "PASS_AS_REPORTED_BY_LOCAL_COMMAND",
+    "category_regression": "PASS_AS_REPORTED_BY_LOCAL_COMMAND",
+    "shared_module": "lib/sondi-national-evidence-categories.ts",
+    "guide": "data/soil-lithology/research/NATIONAL_EVIDENCE_CATEGORIES.md",
+    "registry": "data/soil-lithology/research/national_evidence_category_registry.json",
+    "data_changes": "NONE",
+    "luna_instructions_changed": false,
+    "dynamic_prediction_rules_changed": false
+  },
+  "visual_tests": [
+    {
+      "test": "A",
+      "coordinates": [
+        43.03174611,
+        27.85337417
+      ],
+      "borehole_id": "VARNA-S3-VN-A1-045-01",
+      "result": "PASS_VISIBLE_EXACT_COLUMN",
+      "evidence": "Screenshot shows measured lithology column and first three documented intervals",
+      "remaining_check": "Confirm lower two intervals through 161.3 m if complete visual verification is required"
+    },
+    {
+      "test": "B1",
+      "coordinates": [
+        43.0362,
+        27.856
+      ],
+      "nearest_borehole_km": 0.539,
+      "result": "PASS_DYNAMIC_DEPTH",
+      "predicted_intervals_m": [
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          60
+        ]
+      ],
+      "evidence": "User-provided screenshot of conditional depth interpretation and contextual geological comparison"
+    },
+    {
+      "test": "B2",
+      "coordinates": [
+        43.3075,
+        28.055
+      ],
+      "nearest_borehole_km": 0.523,
+      "result": "PASS_DYNAMIC_DEPTH",
+      "predicted_intervals_m": [
+        [
+          25,
+          112
+        ]
+      ],
+      "evidence": "User-provided screenshot of conditional Neogene interpretation using nearby boreholes"
+    },
+    {
+      "test": "E",
+      "coordinates": [
+        43.205,
+        27.91
+      ],
+      "result": "PASS_REGIONAL",
+      "evidence": "User-provided screenshot of location-specific regional analysis for Varna"
+    }
+  ],
+  "documented_fixes": [
+    "Exact-client display recognized Varna documented borehole intervals",
+    "Independent Luna evidence collector previously omitted Varna evidence category",
+    "Shared national classifier now governs both national exact-client intervals and Luna verified-depth collection",
+    "Pernik Stomana regional special display preserved"
+  ],
+  "remaining_checks": [
+    "Confirm all five Test A intervals visually if needed",
+    "Minor responsive layout: depth unit wraps in some client interval cards",
+    "No independent deployment or production verification was performed"
+  ],
+  "previously_accepted_checks": {
+    "cache_behavior": "USER_ACCEPTED_FROM_PRIOR_REGIONAL_TESTS_NOT_INDEPENDENTLY_RETESTED_HERE"
+  },
+  "git_commit": false,
+  "deployment": false,
+  "next_action": "Use the next numbered stage manual before proceeding"
+}

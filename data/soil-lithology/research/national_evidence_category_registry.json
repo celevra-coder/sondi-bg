@@ -1,0 +1,353 @@
+{
+  "schema_version": "1.0",
+  "purpose": "National evidence classification inventory and future-chat contract",
+  "generated_utc": "2026-11-25T01:31:02.239525+00:00",
+  "source_file": "data/soil-lithology/bulgaria_borehole_lithology.json",
+  "runtime_active": true,
+  "canonical_types_proposed": [
+    "DOCUMENTED_BOREHOLE_INTERVAL",
+    "REGIONAL_GEOLOGICAL_CONTEXT",
+    "PREDICTED_INTERVAL"
+  ],
+  "rules": [
+    "Preserve original evidence_level, interval boundaries and source_ids.",
+    "Do not promote regional or predicted intervals to measured observations.",
+    "Coordinate status is independent from evidence type.",
+    "Exact-client display and Luna evidence collection must use one shared validated contract.",
+    "Unknown categories require review before canonical mapping.",
+    "A canonical documented interval does not prove geological continuity at a nearby point.",
+    "Luna independently interprets conditional dynamic depths; never hardcode forecast depths."
+  ],
+  "total_boreholes_in_file": 174,
+  "total_lithology_intervals": 1036,
+  "categories": [
+    {
+      "original_evidence_level": "",
+      "interval_count": 33,
+      "example_boreholes": [
+        "DOB-BH-002",
+        "DOB-BH-004",
+        "DOB-BH-014",
+        "DOB-BH-021",
+        "DOB-BH-032"
+      ],
+      "interval_status_distribution": {
+        "None": 33
+      },
+      "client_or_luna_code_references": [
+        "app/depth-structure/page.tsx",
+        "lib/sondi-luna-geological-analyst.ts",
+        "lib/sondi-luna-research-tools.ts",
+        "lib/sondi-national-borehole-index.ts",
+        "lib/sondi-luna-research-orchestrator.ts"
+      ],
+      "proposed_canonical_type": "REVIEW_REQUIRED",
+      "mapping_status": "EXCLUDED_FROM_AUTOMATIC_DOCUMENTED_FILTER"
+    },
+    {
+      "original_evidence_level": "ACTUAL_BOREHOLE_LITHOLOGY_REPORTED_IN_EIA_PROSE",
+      "interval_count": 4,
+      "example_boreholes": [
+        "DOB-BH-057"
+      ],
+      "interval_status_distribution": {
+        "None": 4
+      },
+      "client_or_luna_code_references": [],
+      "proposed_canonical_type": "DOCUMENTED_BOREHOLE_INTERVAL",
+      "mapping_status": "ACTIVE_DOCUMENTED"
+    },
+    {
+      "original_evidence_level": "ACTUAL_ENGINEERING_BOREHOLE_LOG",
+      "interval_count": 45,
+      "example_boreholes": [
+        "DOB-BH-051",
+        "DOB-BH-052",
+        "DOB-BH-053",
+        "DOB-BH-054",
+        "DOB-BH-055"
+      ],
+      "interval_status_distribution": {
+        "None": 45
+      },
+      "client_or_luna_code_references": [],
+      "proposed_canonical_type": "DOCUMENTED_BOREHOLE_INTERVAL",
+      "mapping_status": "ACTIVE_DOCUMENTED"
+    },
+    {
+      "original_evidence_level": "DOCUMENTED_ACTUAL_BOREHOLE_SECTION",
+      "interval_count": 23,
+      "example_boreholes": [
+        "DOB-BH-023",
+        "DOB-BH-024",
+        "DOB-BH-029"
+      ],
+      "interval_status_distribution": {
+        "None": 23
+      },
+      "client_or_luna_code_references": [],
+      "proposed_canonical_type": "DOCUMENTED_BOREHOLE_INTERVAL",
+      "mapping_status": "ACTIVE_DOCUMENTED"
+    },
+    {
+      "original_evidence_level": "OFFICIAL_ACTUAL_BOREHOLE_GEOLOGICAL_SECTION",
+      "interval_count": 34,
+      "example_boreholes": [
+        "DOB-BH-025",
+        "DOB-BH-030",
+        "DOB-BH-058",
+        "DOB-BH-059"
+      ],
+      "interval_status_distribution": {
+        "None": 34
+      },
+      "client_or_luna_code_references": [
+        "app/depth-structure/page.tsx",
+        "lib/sondi-luna-geological-analyst.ts"
+      ],
+      "proposed_canonical_type": "DOCUMENTED_BOREHOLE_INTERVAL",
+      "mapping_status": "ACTIVE_DOCUMENTED"
+    },
+    {
+      "original_evidence_level": "OFFICIAL_ACTUAL_BOREHOLE_SECTION",
+      "interval_count": 20,
+      "example_boreholes": [
+        "DOB-BH-034",
+        "DOB-BH-035",
+        "DOB-BH-042"
+      ],
+      "interval_status_distribution": {
+        "None": 20
+      },
+      "client_or_luna_code_references": [],
+      "proposed_canonical_type": "DOCUMENTED_BOREHOLE_INTERVAL",
+      "mapping_status": "ACTIVE_DOCUMENTED"
+    },
+    {
+      "original_evidence_level": "PUBLISHED_ACTUAL_BOREHOLE_STRATIGRAPHIC_INTERVAL",
+      "interval_count": 5,
+      "example_boreholes": [
+        "DOB-BH-038",
+        "DOB-BH-039"
+      ],
+      "interval_status_distribution": {
+        "None": 5
+      },
+      "client_or_luna_code_references": [],
+      "proposed_canonical_type": "DOCUMENTED_BOREHOLE_INTERVAL",
+      "mapping_status": "ACTIVE_DOCUMENTED"
+    },
+    {
+      "original_evidence_level": "PUBLISHED_BOREHOLE_LITHOSTRATIGRAPHIC_INTERVAL",
+      "interval_count": 2,
+      "example_boreholes": [
+        "DOB-BH-040"
+      ],
+      "interval_status_distribution": {
+        "None": 2
+      },
+      "client_or_luna_code_references": [
+        "app/depth-structure/page.tsx",
+        "lib/sondi-luna-geological-analyst.ts"
+      ],
+      "proposed_canonical_type": "DOCUMENTED_BOREHOLE_INTERVAL",
+      "mapping_status": "ACTIVE_DOCUMENTED"
+    },
+    {
+      "original_evidence_level": "borehole_exact",
+      "interval_count": 416,
+      "example_boreholes": [
+        "PLD-Z037",
+        "PLD-Z038",
+        "PLD-Z039",
+        "PLD-Z040",
+        "PLD-Z043"
+      ],
+      "interval_status_distribution": {
+        "None": 416
+      },
+      "client_or_luna_code_references": [
+        "app/depth-structure/page.tsx",
+        "lib/sondi-luna-geological-analyst.ts"
+      ],
+      "proposed_canonical_type": "DOCUMENTED_BOREHOLE_INTERVAL",
+      "mapping_status": "ACTIVE_DOCUMENTED"
+    },
+    {
+      "original_evidence_level": "borehole_exact_partial_column",
+      "interval_count": 5,
+      "example_boreholes": [
+        "PLD-Z086",
+        "PLD-Z096",
+        "PLD-Z111"
+      ],
+      "interval_status_distribution": {
+        "None": 3,
+        "UPPER_BOUNDARIES_NOT_DOCUMENTED": 1,
+        "EXACT_DOCUMENTED_INTERVAL": 1
+      },
+      "client_or_luna_code_references": [],
+      "proposed_canonical_type": "REVIEW_REQUIRED",
+      "mapping_status": "EXCLUDED_FROM_AUTOMATIC_DOCUMENTED_FILTER"
+    },
+    {
+      "original_evidence_level": "borehole_exact_source_overlap",
+      "interval_count": 2,
+      "example_boreholes": [
+        "PLD-Z058",
+        "PLD-Z059"
+      ],
+      "interval_status_distribution": {
+        "None": 2
+      },
+      "client_or_luna_code_references": [],
+      "proposed_canonical_type": "REVIEW_REQUIRED",
+      "mapping_status": "EXCLUDED_FROM_AUTOMATIC_DOCUMENTED_FILTER"
+    },
+    {
+      "original_evidence_level": "borehole_exact_with_source_conflict",
+      "interval_count": 1,
+      "example_boreholes": [
+        "PLD-Z037"
+      ],
+      "interval_status_distribution": {
+        "None": 1
+      },
+      "client_or_luna_code_references": [],
+      "proposed_canonical_type": "REVIEW_REQUIRED",
+      "mapping_status": "EXCLUDED_FROM_AUTOMATIC_DOCUMENTED_FILTER"
+    },
+    {
+      "original_evidence_level": "documented_borehole_interval_research_review",
+      "interval_count": 139,
+      "example_boreholes": [
+        "VARNA-S3-VN-A1-001-01",
+        "VARNA-S3-VN-A1-004-01",
+        "VARNA-S3-VN-A1-006-01",
+        "VARNA-S3-VN-A1-007-01",
+        "VARNA-S3-VN-A1-009-01"
+      ],
+      "interval_status_distribution": {
+        "None": 139
+      },
+      "client_or_luna_code_references": [
+        "app/depth-structure/page.tsx"
+      ],
+      "proposed_canonical_type": "DOCUMENTED_BOREHOLE_INTERVAL",
+      "mapping_status": "ACTIVE_DOCUMENTED"
+    },
+    {
+      "original_evidence_level": "documented_borehole_log",
+      "interval_count": 283,
+      "example_boreholes": [
+        "SOF-RP-S44HG",
+        "SOF-RP-S45HG",
+        "SOF-RP-S46HG",
+        "SOF-RP-S50HG",
+        "SOF-RP-S53HG"
+      ],
+      "interval_status_distribution": {
+        "None": 280,
+        "OPEN_ENDED_DOCUMENTED_NOT_DEPTH_PREDICTION": 3
+      },
+      "client_or_luna_code_references": [
+        "app/depth-structure/page.tsx",
+        "lib/sondi-luna-geological-analyst.ts"
+      ],
+      "proposed_canonical_type": "DOCUMENTED_BOREHOLE_INTERVAL",
+      "mapping_status": "ACTIVE_DOCUMENTED"
+    },
+    {
+      "original_evidence_level": "documented_structural_zone",
+      "interval_count": 3,
+      "example_boreholes": [
+        "SOF-CITY-OVCHA-C5HG",
+        "SOF-CITY-KNYAZHEVO-C1HG"
+      ],
+      "interval_status_distribution": {
+        "UNRESOLVED_LITHOLOGY": 1,
+        "UNRESOLVED_STRUCTURAL_ZONE": 2
+      },
+      "client_or_luna_code_references": [],
+      "proposed_canonical_type": "REVIEW_REQUIRED",
+      "mapping_status": "EXCLUDED_FROM_AUTOMATIC_DOCUMENTED_FILTER"
+    },
+    {
+      "original_evidence_level": "published_borehole_lithology",
+      "interval_count": 19,
+      "example_boreholes": [
+        "SIL-BH-001",
+        "SIL-BH-002",
+        "SIL-BH-003",
+        "SIL-BH-004"
+      ],
+      "interval_status_distribution": {
+        "None": 19
+      },
+      "client_or_luna_code_references": [
+        "app/depth-structure/page.tsx"
+      ],
+      "proposed_canonical_type": "DOCUMENTED_BOREHOLE_INTERVAL",
+      "mapping_status": "ACTIVE_DOCUMENTED"
+    },
+    {
+      "original_evidence_level": "source_gap",
+      "interval_count": 1,
+      "example_boreholes": [
+        "PLD-Z039"
+      ],
+      "interval_status_distribution": {
+        "None": 1
+      },
+      "client_or_luna_code_references": [],
+      "proposed_canonical_type": "REVIEW_REQUIRED",
+      "mapping_status": "EXCLUDED_FROM_AUTOMATIC_DOCUMENTED_FILTER"
+    },
+    {
+      "original_evidence_level": "unresolved_no_core",
+      "interval_count": 1,
+      "example_boreholes": [
+        "SOF-CITY-LOZENETS-C8HG"
+      ],
+      "interval_status_distribution": {
+        "UNRESOLVED_NO_CORE": 1
+      },
+      "client_or_luna_code_references": [],
+      "proposed_canonical_type": "REVIEW_REQUIRED",
+      "mapping_status": "EXCLUDED_FROM_AUTOMATIC_DOCUMENTED_FILTER"
+    }
+  ],
+  "runtime_contract_version": "SONDI_NATIONAL_EVIDENCE_SHARED_CONTRACT_V1",
+  "shared_contract": {
+    "module": "lib/sondi-national-evidence-categories.ts",
+    "function": "isNationalDocumentedLithologyInterval",
+    "client": "app/depth-structure/page.tsx",
+    "luna": "lib/sondi-luna-geological-analyst.ts",
+    "approved_documented_categories": [
+      "ACTUAL_BOREHOLE_LITHOLOGY_REPORTED_IN_EIA_PROSE",
+      "ACTUAL_ENGINEERING_BOREHOLE_LOG",
+      "DOCUMENTED_ACTUAL_BOREHOLE_SECTION",
+      "OFFICIAL_ACTUAL_BOREHOLE_GEOLOGICAL_SECTION",
+      "OFFICIAL_ACTUAL_BOREHOLE_SECTION",
+      "PUBLISHED_ACTUAL_BOREHOLE_STRATIGRAPHIC_INTERVAL",
+      "PUBLISHED_BOREHOLE_LITHOSTRATIGRAPHIC_INTERVAL",
+      "borehole_exact",
+      "documented_borehole_interval_research_review",
+      "documented_borehole_log",
+      "published_borehole_lithology"
+    ],
+    "excluded_special_categories": [
+      "",
+      "borehole_exact_partial_column",
+      "borehole_exact_source_overlap",
+      "borehole_exact_with_source_conflict",
+      "documented_structural_zone",
+      "source_gap",
+      "unresolved_no_core"
+    ],
+    "coordinate_requirement": "OFFICIAL_EXACT checked by consumers",
+    "regional_exception": "PERNIK_STOMANA_MK1-MK4 client only",
+    "depth_prediction": "Luna independent and dynamic"
+  },
+  "last_contract_update_utc": "2026-11-25T01:33:15.165780+00:00"
+}

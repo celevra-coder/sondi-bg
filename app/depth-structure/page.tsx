@@ -1,6 +1,7 @@
 import { getRavnoPolePilot } from "../../lib/sondi-ravno-pole-local-pilot";
 import { resolveNationalEvidence } from "../../lib/sondi-national-evidence-engine";
 import { getNationalBoreholeIndex } from "../../lib/sondi-national-borehole-index";
+import { isNationalDocumentedLithologyInterval } from "../../lib/sondi-national-evidence-categories";
 import { getNationalInterimLocalReader, getNationalInterimConditionalWindows } from "@/lib/sondi-national-interim-policy";
 import { assessGlimAlternatives } from "@/lib/glim-alternative-assessment";
 import Link from "next/link";
@@ -1208,17 +1209,11 @@ const material = point.material
   const exactIntervalsCandidate = (
     exactNationalBorehole?.intervals ?? []
   )
+    // SONDI_NATIONAL_EVIDENCE_SHARED_CONTRACT_V1
     .filter(interval =>
-      interval.interval_status === null &&
       (
-        interval.evidence_level === "borehole_exact" ||
-        interval.evidence_level === "documented_borehole_log" ||
-        interval.evidence_level === "published_borehole_lithology" ||
-        // SONDI_DOB_STEP06_EVIDENCE_V2
-        (exactNationalBorehole?.id === "DOB-BH-025" &&
-         interval.evidence_level === "OFFICIAL_ACTUAL_BOREHOLE_GEOLOGICAL_SECTION") ||
-        (exactNationalBorehole?.id === "DOB-BH-040" &&
-         interval.evidence_level === "PUBLISHED_BOREHOLE_LITHOSTRATIGRAPHIC_INTERVAL") ||
+        (exactNationalBorehole?.origin === "NATIONAL" &&
+         isNationalDocumentedLithologyInterval(interval)) ||
         (
           pernikShallowClient &&
           exactNationalBorehole?.origin === "REGIONAL" &&
@@ -1228,6 +1223,7 @@ const material = point.material
           interval.evidence_level === "regional_documented_interval"
         )
       ) &&
+      interval.interval_status === null &&
       interval.from_m !== null &&
       interval.to_m !== null &&
       Number.isFinite(interval.from_m) &&
