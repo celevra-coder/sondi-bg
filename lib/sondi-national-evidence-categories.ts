@@ -35,8 +35,18 @@ export function isNationalDocumentedLithologyInterval(
         interval.evidence_level !== "documented_borehole_interval"
       ) ||
       (
-        interval.interval_status === "PUBLISHED_NUMERIC_BOUNDARIES" &&
-        interval.evidence_level === "documented_borehole_interval"
+        (
+          interval.interval_status === "PUBLISHED_NUMERIC_BOUNDARIES" &&
+          interval.evidence_level === "documented_borehole_interval"
+        ) ||
+        (
+          // SONDI_NATIONAL_NUMERIC_SOURCE_COMPATIBILITY_V2
+          interval.evidence_level === "borehole_exact" &&
+          (
+            interval.interval_status === "NUMERIC_BOUNDARIES_FROM_SOURCE_TRANSCRIPTION" ||
+            interval.interval_status === "PUBLISHED_NUMERIC"
+          )
+        )
       )
     ) &&
     interval.from_m !== null &&

@@ -1213,7 +1213,19 @@ const material = point.material
     .filter(interval =>
       (
         (exactNationalBorehole?.origin === "NATIONAL" &&
-         isNationalDocumentedLithologyInterval(interval)) ||
+         (
+           isNationalDocumentedLithologyInterval(interval) ||
+           (interval.evidence_level === "borehole_exact" &&
+            ["NUMERIC_BOUNDARIES_FROM_SOURCE_TRANSCRIPTION",
+             "PUBLISHED_NUMERIC"].includes(interval.interval_status ?? "") &&
+            interval.from_m !== null && interval.from_m >= 0 &&
+            interval.source_ids.length > 0 &&
+            isNationalDocumentedLithologyInterval({
+              ...interval,
+              evidence_level: "documented_borehole_interval",
+              interval_status: "PUBLISHED_NUMERIC_BOUNDARIES"
+            }))
+         )) ||
         (
           pernikShallowClient &&
           exactNationalBorehole?.origin === "REGIONAL" &&
@@ -1248,7 +1260,7 @@ const material = point.material
     );
 
   const exactDocumentedIntervals =
-    exactIntervalsHaveOverlap ? [] : exactIntervalsCandidate;
+    exactIntervalsCandidate;
 
   const exactColumnHasGaps =
     exactDocumentedIntervals.some((interval, index) =>
@@ -1881,6 +1893,19 @@ const material = point.material
               описание, а не интерполация от съседни сондажи.
             </p>
 
+            {/* SONDI_NATIONAL_EXACT_SOURCE_OVERLAP_NOTICE_V1 */}
+            {exactIntervalsHaveOverlap && (
+              <p style={{
+                color: "#8a5b27",
+                fontSize: 13,
+                lineHeight: 1.6
+              }}>
+                В оригиналната документация има
+                припокриващи се интервали. Показани са
+                без промяна на първоначалните
+                граници и без изкуствено сливане.
+              </p>
+            )}
             {exactColumnHasGaps && (
               <p style={{
                 color: "#8a5b27",

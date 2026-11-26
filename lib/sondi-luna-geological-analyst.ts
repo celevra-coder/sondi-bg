@@ -532,17 +532,81 @@ const aiRequest=unstable_cache(async(payload:string,model:string):Promise<string
   return raw;
 },["sondi-luna-geological-contract-v1"],{revalidate:false});
 
+// SONDI_VALIDATION_REJECT_REASON_V1
 function validate(raw:string,facts:Fact[],independentEvidence?:unknown):LunaGeologicalAssessment|null {
-  let parsed:unknown;try{parsed=JSON.parse(raw);}catch{return null;}
-  if(!parsed||typeof parsed!=="object"||Array.isArray(parsed))return null;
+  let parsed:unknown;try{parsed=JSON.parse(raw);}catch{{
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=536",
+                        "JSON_PARSE_OR_OTHER_REJECTION"
+                    );
+                }
+                return null;
+            }}
+  if(!parsed||typeof parsed!=="object"||Array.isArray(parsed)){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=537",
+                        "!parsed||typeof parsed!==\"object\"||Array.isArray(parsed)"
+                    );
+                }
+                return null;
+            }
   const r=parsed as Record<string,unknown>;
-  if(r.analysis_type!=="DEPTH"&&r.analysis_type!=="REGIONAL")return null;
+  if(r.analysis_type!=="DEPTH"&&r.analysis_type!=="REGIONAL"){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=539",
+                        "r.analysis_type!==\"DEPTH\"&&r.analysis_type!==\"REGIONAL\""
+                    );
+                }
+                return null;
+            }
   if(!Array.isArray(r.regionalParagraphs)||r.regionalParagraphs.length<2||r.regionalParagraphs.length>6||
-    !r.regionalParagraphs.every(x=>typeof x==="string"&&x.length>=35&&x.length<=1700))return null;
+    !r.regionalParagraphs.every(x=>typeof x==="string"&&x.length>=35&&x.length<=1700)){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=541",
+                        "!Array.isArray(r.regionalParagraphs)||r.regionalParagraphs.length<2||r.regionalParagraphs.length>6|| !r.regionalParagraphs.every(x=>typeof x===\"string\"&&x.length>=35&&x.length<=1700)"
+                    );
+                }
+                return null;
+            }
   const text=r.regionalParagraphs.map(x=>safe(x as string,1700));
-  if(text.some(x=>!/\p{Script=Cyrillic}/u.test(x)||/\b(?:OUTSIDE_RASTER|RESEARCH_ONLY|OFFICIAL_EXACT|JSON)\b/u.test(x)))return null;
-  if(!Array.isArray(r.depthInterpretations)||r.depthInterpretations.length>8)return null;
-  if(r.analysis_type==="REGIONAL"&&r.depthInterpretations.length>0)return null;
+  if(text.some(x=>!/\p{Script=Cyrillic}/u.test(x)||/\b(?:OUTSIDE_RASTER|RESEARCH_ONLY|OFFICIAL_EXACT|JSON)\b/u.test(x))){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=543",
+                        "text.some(x=>!/\\p{Script=Cyrillic}/u.test(x)||/\\b(?:OUTSIDE_RASTER|RESEARCH_ONLY|OFFICIAL_EXACT|JSON)\\b/u.test(x))"
+                    );
+                }
+                return null;
+            }
+  if(!Array.isArray(r.depthInterpretations)||r.depthInterpretations.length>8){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=544",
+                        "!Array.isArray(r.depthInterpretations)||r.depthInterpretations.length>8"
+                    );
+                }
+                return null;
+            }
+  if(r.analysis_type==="REGIONAL"&&r.depthInterpretations.length>0){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=545",
+                        "r.analysis_type===\"REGIONAL\"&&r.depthInterpretations.length>0"
+                    );
+                }
+                return null;
+            }
   const ids=new Map(facts.map(f=>[f.id,f]));
   // A documentary source can support an AI inference without being
   // misrepresented as an exact measured borehole interval.
@@ -551,15 +615,42 @@ function validate(raw:string,facts:Fact[],independentEvidence?:unknown):LunaGeol
   );
   const windows:LunaDepthInterpretation[]=[];
   for(const entry of r.depthInterpretations) {
-    if(!entry||typeof entry!=="object"||Array.isArray(entry))return null;
+    if(!entry||typeof entry!=="object"||Array.isArray(entry)){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=554",
+                        "!entry||typeof entry!==\"object\"||Array.isArray(entry)"
+                    );
+                }
+                return null;
+            }
     const w=entry as Record<string,unknown>;
     if(typeof w.from_m!=="number"||typeof w.to_m!=="number"||!Number.isFinite(w.from_m)||!Number.isFinite(w.to_m)||w.from_m<0||w.to_m<=w.from_m||
       typeof w.material!=="string"||typeof w.explanation!=="string"||w.explanation.length<45||w.explanation.length>1400||
-      !Array.isArray(w.source_ids)||w.source_ids.length<1||w.source_ids.length>12||!w.source_ids.every(x=>typeof x==="string"))return null;
+      !Array.isArray(w.source_ids)||w.source_ids.length<1||w.source_ids.length>12||!w.source_ids.every(x=>typeof x==="string")){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=558",
+                        "typeof w.from_m!==\"number\"||typeof w.to_m!==\"number\"||!Number.isFinite(w.from_m)||!Number.isFinite(w.to_m)||w.from_m<0||w.to_m<=w.from_m|| typeof w.material!==\"string\"||typeof w.explanation!==\"string\"||w.explanation.length<45||w.explanation.length>1400|| !Array.isArray(w.source_ids)||w.source_ids.length<1||w.source_ids.length>12||!w.source_ids.every(x=>typeof x===\"string\")"
+                    );
+                }
+                return null;
+            }
     const citedIds=[...new Set(w.source_ids as string[])];
     const cited=citedIds.map(id=>ids.get(id));
     // Reject invented source IDs and known mapped fault conflicts.
-    if(cited.some(f=>f?.fault_crosses===true))return null;
+    if(cited.some(f=>f?.fault_crosses===true)){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=562",
+                        "cited.some(f=>f?.fault_crosses===true)"
+                    );
+                }
+                return null;
+            }
         // SONDI_LUNA_STRATIGRAPHY_VALIDATION_V16_4
     // Recognize only sources belonging to explicitly approved
     // independent contacts. No unknown source is trusted.
@@ -595,7 +686,16 @@ function validate(raw:string,facts:Fact[],independentEvidence?:unknown):LunaGeol
       !ids.has(id)&&
       !documentaryIds.has(id)&&
       !approvedContactSources.has(id)
-    ))return null;
+    )){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=598",
+                        "citedIds.some(id=> !ids.has(id)&& !documentaryIds.has(id)&& !approvedContactSources.has(id) )"
+                    );
+                }
+                return null;
+            }
     const supporting=cited.filter((f):f is Fact=>Boolean(f));
     const fromM = w.from_m as number;
     const toM = w.to_m as number;
@@ -634,7 +734,16 @@ function validate(raw:string,facts:Fact[],independentEvidence?:unknown):LunaGeol
 
     // The old exact-match path is retained for measured support.
     // Independent inference requires multiple compatible controls.
-    if(!measured.length&&!conditionalInterpolation&&!validateIndependentWindowV163({from_m:fromM,to_m:toM,material,stratigraphy:typeof w.stratigraphy==="string"?w.stratigraphy:"",source_ids:citedIds},independentEvidence))return null;
+    if(!measured.length&&!conditionalInterpolation&&!validateIndependentWindowV163({from_m:fromM,to_m:toM,material,stratigraphy:typeof w.stratigraphy==="string"?w.stratigraphy:"",source_ids:citedIds},independentEvidence)){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=637",
+                        "!measured.length&&!conditionalInterpolation&&!validateIndependentWindowV163({from_m:fromM,to_m:toM,material,stratigraphy:typeof w.stratigraphy===\"string\"?w.stratigraphy:\"\",source_ids:citedIds},independentEvidence)"
+                    );
+                }
+                return null;
+            }
 
     // Reject documentary citations that Luna herself assessed
     // as inapplicable or did not assess at all.
@@ -653,26 +762,89 @@ function validate(raw:string,facts:Fact[],independentEvidence?:unknown):LunaGeol
 
     if(citedIds.some(id=>
       documentaryIds.has(id)&&!applicableDocuments.has(id)
-    ))return null;
-    if(!/\p{Script=Cyrillic}/u.test(w.explanation))return null;
-    if(w.explanation.length>240)return null;
+    )){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=656",
+                        "citedIds.some(id=> documentaryIds.has(id)&&!applicableDocuments.has(id) )"
+                    );
+                }
+                return null;
+            }
+    if(!/\p{Script=Cyrillic}/u.test(w.explanation)){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=657",
+                        "!/\\p{Script=Cyrillic}/u.test(w.explanation)"
+                    );
+                }
+                return null;
+            }
+    if(w.explanation.length>240){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=658",
+                        "w.explanation.length>240"
+                    );
+                }
+                return null;
+            }
     windows.push({from_m:w.from_m,to_m:w.to_m,material:w.material,explanation:safe(w.explanation,1400),source_ids:citedIds,...(typeof w.stratigraphy==="string"&&w.stratigraphy.trim().length>0&&w.stratigraphy.length<=180?{stratigraphy:w.stratigraphy.trim()}:{}),confidence:"LOW"});
   }
-  if(windows.some((x,i)=>windows.some((y,j)=>i!==j&&x.from_m<y.to_m&&y.from_m<x.to_m&&x.material!==y.material)))return null;
-  if(r.analysis_type==="DEPTH"&&windows.length===0)return null;
+  if(windows.some((x,i)=>windows.some((y,j)=>i!==j&&x.from_m<y.to_m&&y.from_m<x.to_m&&x.material!==y.material))){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=661",
+                        "windows.some((x,i)=>windows.some((y,j)=>i!==j&&x.from_m<y.to_m&&y.from_m<x.to_m&&x.material!==y.material))"
+                    );
+                }
+                return null;
+            }
+  if(r.analysis_type==="DEPTH"&&windows.length===0){
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=662",
+                        "r.analysis_type===\"DEPTH\"&&windows.length===0"
+                    );
+                }
+                return null;
+            }
   const auditInput = r.document_compatibility_audit;
   let documentAudit:
     LunaGeologicalAssessment["document_compatibility_audit"];
 
   if (auditInput !== undefined) {
-    if (!Array.isArray(auditInput)) return null;
+    if (!Array.isArray(auditInput)) {
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=668",
+                        "!Array.isArray(auditInput)"
+                    );
+                }
+                return null;
+            }
 
     const seenAuditIds = new Set<string>();
     documentAudit = [];
 
     for (const value of auditInput) {
       if (!value || typeof value !== "object" ||
-          Array.isArray(value)) return null;
+          Array.isArray(value)) {
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=675",
+                        "!value || typeof value !== \"object\" || Array.isArray(value)"
+                    );
+                }
+                return null;
+            }
 
       const item = value as Record<string, unknown>;
 
@@ -683,7 +855,16 @@ function validate(raw:string,facts:Fact[],independentEvidence?:unknown):LunaGeol
            item.applicability !== "INAPPLICABLE") ||
           typeof item.reason !== "string" ||
           item.reason.trim().length < 20 ||
-          item.reason.length > 1200) return null;
+          item.reason.length > 1200) {
+                if(process.env.NODE_ENV!=="production"){
+                    console.warn(
+                        "[SONDI_LUNA_VALIDATION] REJECT",
+                        "LINE=686",
+                        "typeof item.id !== \"string\" || seenAuditIds.has(item.id) || (item.applicability !== \"APPLICABLE\" && item.applicability !== \"CONDITIONAL\" && item.applicability !== \"INAPPLICABLE\") || typeof item.reason !== \"string\" || item.reason.trim().length < 20 || item.reason.length > 1200"
+                    );
+                }
+                return null;
+            }
 
       seenAuditIds.add(item.id);
       documentAudit.push({
