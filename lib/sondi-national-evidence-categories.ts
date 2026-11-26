@@ -17,6 +17,7 @@ export const NATIONAL_DOCUMENTED_LITHOLOGY_CATEGORIES =
     "borehole_exact",
     "documented_borehole_interval_research_review",
     "documented_borehole_log",
+    "documented_borehole_interval",
     "published_borehole_lithology",
   ]);
 
@@ -27,7 +28,17 @@ export function isNationalDocumentedLithologyInterval(
     NATIONAL_DOCUMENTED_LITHOLOGY_CATEGORIES.has(
       interval.evidence_level ?? ""
     ) &&
-    interval.interval_status === null &&
+    // SONDI_PUBLISHED_NUMERIC_INTERVAL_COMPATIBILITY_V1
+    (
+      (
+        interval.interval_status === null &&
+        interval.evidence_level !== "documented_borehole_interval"
+      ) ||
+      (
+        interval.interval_status === "PUBLISHED_NUMERIC_BOUNDARIES" &&
+        interval.evidence_level === "documented_borehole_interval"
+      )
+    ) &&
     interval.from_m !== null &&
     interval.to_m !== null &&
     Number.isFinite(interval.from_m) &&

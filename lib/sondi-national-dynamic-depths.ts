@@ -1,5 +1,46 @@
 import "server-only";
-import { getNationalBoreholeIndex } from "./sondi-national-borehole-index";
+import { getNationalBoreholeIndex, type IndexedInterval } from "./sondi-national-borehole-index";
+import { isNationalDocumentedLithologyInterval } from "./sondi-national-evidence-categories";
+
+// SONDI_DYNAMIC_DOCUMENTED_COMPATIBILITY_V2
+function acceptsDocumentedInterval(
+  origin: "NATIONAL" | "REGIONAL",
+  i: IndexedInterval
+): boolean {
+  // Preserve the existing national and regional categories.
+  const legacy =
+    i.interval_status === null &&
+    (
+      (
+        origin === "NATIONAL" &&
+        (
+          i.evidence_level === "borehole_exact" ||
+          i.evidence_level === "documented_borehole_log"
+        )
+      ) ||
+      (
+        origin === "REGIONAL" &&
+        i.evidence_level === "regional_documented_interval"
+      )
+    );
+
+  // Use the shared contract for published numerical observations.
+  const published =
+    origin === "NATIONAL" &&
+    i.interval_status === "PUBLISHED_NUMERIC_BOUNDARIES" &&
+    isNationalDocumentedLithologyInterval(i);
+
+  return (
+    i.from_m !== null &&
+    i.to_m !== null &&
+    Number.isFinite(i.from_m) &&
+    Number.isFinite(i.to_m) &&
+    i.from_m >= 0 &&
+    i.to_m > i.from_m &&
+    i.material_bg.trim().length > 0 &&
+    (legacy || published)
+  );
+}
 
 export type NationalDynamicIntervalEvidence = {
   from_m: number;
@@ -85,27 +126,7 @@ export function getNationalDynamicIntervals(
 
   const observations = selected.flatMap(({hole}) =>
     hole.intervals.filter(i =>
-      i.from_m !== null &&
-      i.to_m !== null &&
-      Number.isFinite(i.from_m) &&
-      Number.isFinite(i.to_m) &&
-      i.from_m >= 0 &&
-      i.to_m > i.from_m &&
-      i.interval_status === null &&
-      i.material_bg.trim().length > 0 &&
-      (
-        (
-          hole.origin === "NATIONAL" &&
-          (
-            i.evidence_level === "borehole_exact" ||
-            i.evidence_level === "documented_borehole_log"
-          )
-        ) ||
-        (
-          hole.origin === "REGIONAL" &&
-          i.evidence_level === "regional_documented_interval"
-        )
-      )
+      acceptsDocumentedInterval(hole.origin, i)
     ).map(i => ({hole,interval:i}))
   );
 
@@ -235,21 +256,7 @@ export function getNationalReferenceColumns(
       distance_km: distance,
       intervals: hole.intervals
         .filter(i =>
-          i.from_m !== null &&
-          i.to_m !== null &&
-          Number.isFinite(i.from_m) &&
-          Number.isFinite(i.to_m) &&
-          i.from_m >= 0 &&
-          i.to_m > i.from_m &&
-          i.interval_status === null &&
-          i.material_bg.trim().length > 0 &&
-          (
-            (hole.origin === "NATIONAL" &&
-              (i.evidence_level === "borehole_exact" ||
-               i.evidence_level === "documented_borehole_log")) ||
-            (hole.origin === "REGIONAL" &&
-              i.evidence_level === "regional_documented_interval")
-          )
+          acceptsDocumentedInterval(hole.origin, i)
         )
         .map(i => ({
           from_m: i.from_m!,

@@ -1223,7 +1223,11 @@ const material = point.material
           interval.evidence_level === "regional_documented_interval"
         )
       ) &&
-      interval.interval_status === null &&
+      // SONDI_SHARED_DOCUMENTED_INTERVAL_STATUS_V2
+      (
+        exactNationalBorehole?.origin === "NATIONAL" ||
+        interval.interval_status === null
+      ) &&
       interval.from_m !== null &&
       interval.to_m !== null &&
       Number.isFinite(interval.from_m) &&
@@ -1479,7 +1483,10 @@ const material = point.material
 
   const regionalAIResearch = nationalEvidence.research_catalog_context;
   console.info("SONDI_PERF_BEFORE_LUNA_V1: "+(performance.now()-__sondiPerfStart).toFixed(1)+"ms");
-  const lunaAnalysis = await getSondiLunaGeologicalAnalysis({
+  // SONDI_EXACT_DOCUMENTED_COLUMN_PRIORITY_V2
+  const lunaAnalysis = exactDocumentedIntervals.length > 0
+    ? null
+    : await getSondiLunaGeologicalAnalysis({
     latitude: lat,
     longitude: lng,
     existingConditionalRows: interimConditionalRows.map(row=>({depth:row.depth,material:row.material,evidence:row.evidenceNote})),

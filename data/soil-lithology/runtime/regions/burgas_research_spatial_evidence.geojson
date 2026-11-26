@@ -1,0 +1,1343 @@
+{
+  "type": "FeatureCollection",
+  "name": "burgas_research_spatial_evidence",
+  "metadata": {
+    "oblast": "Бургас",
+    "region_id": "BURGAS-BG341",
+    "source_id": "BG-A2-079",
+    "coordinate_system": "EPSG:4326",
+    "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+    "source_sha256": "B92040201F121F2C91FDF625F2ADF391E73030D7BA4AD51E755EA8AC2FE525D5",
+    "scope": "RESEARCH_ONLY",
+    "feature_count": 12,
+    "independent_spatial_validation": false,
+    "complete_geological_contacts": false,
+    "automatic_depth_prediction_authorized": false
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.763447235675972,
+              42.73361405032592
+            ],
+            [
+              27.800439497807027,
+              42.732877763501094
+            ],
+            [
+              27.799994883092758,
+              42.720833284109446
+            ],
+            [
+              27.763009763708364,
+              42.72156943037638
+            ],
+            [
+              27.763447235675972,
+              42.73361405032592
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "evidence_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-001",
+        "oblast": "Бургас",
+        "source_id": "BG-A2-079",
+        "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+        "original_feature_index": 0,
+        "original_properties": {
+          "record_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-001",
+          "source_id": "BG-A2-079",
+          "map_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "source_url": "https://mgu.bg/wp-content/uploads/2025/01/07-24137-Dimitrov-Sachkov.pdf",
+          "source_figure": 3,
+          "source_printed_page": 155,
+          "legend_code": 14,
+          "geological_unit": "Еминска флишка свита",
+          "material": "Мергели, алевролити, пясъчници и варовици",
+          "original_legend_entry": {
+            "original_legend_code": 14,
+            "geological_unit": "Еминска флишка свита",
+            "material": "Мергели, алевролити, пясъчници и варовици",
+            "source_reference": "Figure 3, printed page 155",
+            "visual_verification": true
+          },
+          "locality_reference": "SVETI_VLAS_NORTH",
+          "observation_type": "MAPPED_SURFACE_GEOLOGY",
+          "geometry_role": "MANUAL_INTERIOR_CORE",
+          "native_pixel_vertices": [
+            [
+              825,
+              65
+            ],
+            [
+              990,
+              65
+            ],
+            [
+              990,
+              138
+            ],
+            [
+              825,
+              138
+            ]
+          ],
+          "source_crs": "EPSG:7801",
+          "output_crs": "EPSG:4326",
+          "area_km2": 4.053451,
+          "inside_burgas_km2": 4.053451,
+          "complete_unit_boundary": false,
+          "geological_contact_digitized": false,
+          "visual_interpretation": true,
+          "independent_spatial_validation": false,
+          "measured_vertical_intervals": [],
+          "depth_prediction": null,
+          "scope": "RESEARCH_ONLY",
+          "point_lookup_ready": false,
+          "geological_unit_bg": "Еминска флишка свита",
+          "materials_bg": [
+            "Мергели, алевролити, пясъчници и варовици"
+          ],
+          "evidence_status": "MANUAL_INTERIOR_CORE_VISUALLY_REVIEWED",
+          "source_sheet": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "research_normalized_unit_bg": "Еминска флишка свита",
+          "research_normalized_materials_bg": [
+            "Мергели, алевролити, пясъчници и варовици"
+          ],
+          "research_normalized_contact_verified": false,
+          "research_normalized_depth_authorized": false
+        },
+        "evidence_scope": "RESEARCH_ONLY",
+        "geometry_role": "MANUAL_INTERIOR_CORE_NOT_COMPLETE_CONTACT",
+        "verified_geological_contact": false,
+        "verified_geological_unit_at_point": false,
+        "depth_intervals_at_point": [],
+        "spatial_depth_projection_authorized": false,
+        "production_geology_activation_approved": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.821737674166304,
+              42.732448427696944
+            ],
+            [
+              27.85872854140663,
+              42.73169333780421
+            ],
+            [
+              27.85841628341635,
+              42.723443852461614
+            ],
+            [
+              27.821430308212037,
+              42.724198843622354
+            ],
+            [
+              27.821737674166304,
+              42.732448427696944
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "evidence_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-002",
+        "oblast": "Бургас",
+        "source_id": "BG-A2-079",
+        "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+        "original_feature_index": 1,
+        "original_properties": {
+          "record_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-002",
+          "source_id": "BG-A2-079",
+          "map_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "source_url": "https://mgu.bg/wp-content/uploads/2025/01/07-24137-Dimitrov-Sachkov.pdf",
+          "source_figure": 3,
+          "source_printed_page": 155,
+          "legend_code": 14,
+          "geological_unit": "Еминска флишка свита",
+          "material": "Мергели, алевролити, пясъчници и варовици",
+          "original_legend_entry": {
+            "original_legend_code": 14,
+            "geological_unit": "Еминска флишка свита",
+            "material": "Мергели, алевролити, пясъчници и варовици",
+            "source_reference": "Figure 3, printed page 155",
+            "visual_verification": true
+          },
+          "locality_reference": "EMONA_WEST",
+          "observation_type": "MAPPED_SURFACE_GEOLOGY",
+          "geometry_role": "MANUAL_INTERIOR_CORE",
+          "native_pixel_vertices": [
+            [
+              1085,
+              65
+            ],
+            [
+              1250,
+              65
+            ],
+            [
+              1250,
+              115
+            ],
+            [
+              1085,
+              115
+            ]
+          ],
+          "source_crs": "EPSG:7801",
+          "output_crs": "EPSG:4326",
+          "area_km2": 2.77638,
+          "inside_burgas_km2": 2.77638,
+          "complete_unit_boundary": false,
+          "geological_contact_digitized": false,
+          "visual_interpretation": true,
+          "independent_spatial_validation": false,
+          "measured_vertical_intervals": [],
+          "depth_prediction": null,
+          "scope": "RESEARCH_ONLY",
+          "point_lookup_ready": false,
+          "geological_unit_bg": "Еминска флишка свита",
+          "materials_bg": [
+            "Мергели, алевролити, пясъчници и варовици"
+          ],
+          "evidence_status": "MANUAL_INTERIOR_CORE_VISUALLY_REVIEWED",
+          "source_sheet": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "research_normalized_unit_bg": "Еминска флишка свита",
+          "research_normalized_materials_bg": [
+            "Мергели, алевролити, пясъчници и варовици"
+          ],
+          "research_normalized_contact_verified": false,
+          "research_normalized_depth_authorized": false
+        },
+        "evidence_scope": "RESEARCH_ONLY",
+        "geometry_role": "MANUAL_INTERIOR_CORE_NOT_COMPLETE_CONTACT",
+        "verified_geological_contact": false,
+        "verified_geological_unit_at_point": false,
+        "depth_intervals_at_point": [],
+        "spatial_depth_projection_authorized": false,
+        "production_geology_activation_approved": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.8210615764471,
+              42.71429932438118
+            ],
+            [
+              27.8401120461769,
+              42.7139119403174
+            ],
+            [
+              27.839876662336444,
+              42.70764227306759
+            ],
+            [
+              27.82082810689404,
+              42.70802961863281
+            ],
+            [
+              27.8210615764471,
+              42.71429932438118
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "evidence_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-003",
+        "oblast": "Бургас",
+        "source_id": "BG-A2-079",
+        "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+        "original_feature_index": 2,
+        "original_properties": {
+          "record_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-003",
+          "source_id": "BG-A2-079",
+          "map_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "source_url": "https://mgu.bg/wp-content/uploads/2025/01/07-24137-Dimitrov-Sachkov.pdf",
+          "source_figure": 3,
+          "source_printed_page": 155,
+          "legend_code": 14,
+          "geological_unit": "Еминска флишка свита",
+          "material": "Мергели, алевролити, пясъчници и варовици",
+          "original_legend_entry": {
+            "original_legend_code": 14,
+            "geological_unit": "Еминска флишка свита",
+            "material": "Мергели, алевролити, пясъчници и варовици",
+            "source_reference": "Figure 3, printed page 155",
+            "visual_verification": true
+          },
+          "locality_reference": "EMONA_SOUTHWEST",
+          "observation_type": "MAPPED_SURFACE_GEOLOGY",
+          "geometry_role": "MANUAL_INTERIOR_CORE",
+          "native_pixel_vertices": [
+            [
+              1085,
+              175
+            ],
+            [
+              1170,
+              175
+            ],
+            [
+              1170,
+              213
+            ],
+            [
+              1085,
+              213
+            ]
+          ],
+          "source_crs": "EPSG:7801",
+          "output_crs": "EPSG:4326",
+          "area_km2": 1.086993,
+          "inside_burgas_km2": 1.086993,
+          "complete_unit_boundary": false,
+          "geological_contact_digitized": false,
+          "visual_interpretation": true,
+          "independent_spatial_validation": false,
+          "measured_vertical_intervals": [],
+          "depth_prediction": null,
+          "scope": "RESEARCH_ONLY",
+          "point_lookup_ready": false,
+          "geological_unit_bg": "Еминска флишка свита",
+          "materials_bg": [
+            "Мергели, алевролити, пясъчници и варовици"
+          ],
+          "evidence_status": "MANUAL_INTERIOR_CORE_VISUALLY_REVIEWED",
+          "source_sheet": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "research_normalized_unit_bg": "Еминска флишка свита",
+          "research_normalized_materials_bg": [
+            "Мергели, алевролити, пясъчници и варовици"
+          ],
+          "research_normalized_contact_verified": false,
+          "research_normalized_depth_authorized": false
+        },
+        "evidence_scope": "RESEARCH_ONLY",
+        "geometry_role": "MANUAL_INTERIOR_CORE_NOT_COMPLETE_CONTACT",
+        "verified_geological_contact": false,
+        "verified_geological_unit_at_point": false,
+        "depth_intervals_at_point": [],
+        "spatial_depth_projection_authorized": false,
+        "production_geology_activation_approved": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.595451988931572,
+              42.72161781792332
+            ],
+            [
+              27.60726024129859,
+              42.719254984139866
+            ],
+            [
+              27.612500181726777,
+              42.715030889404936
+            ],
+            [
+              27.60521616529139,
+              42.711862795607615
+            ],
+            [
+              27.594754075504063,
+              42.7142008518124
+            ],
+            [
+              27.595451988931572,
+              42.72161781792332
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "evidence_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-004",
+        "oblast": "Бургас",
+        "source_id": "BG-A2-079",
+        "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+        "original_feature_index": 3,
+        "original_properties": {
+          "record_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-004",
+          "source_id": "BG-A2-079",
+          "map_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "source_url": "https://mgu.bg/wp-content/uploads/2025/01/07-24137-Dimitrov-Sachkov.pdf",
+          "source_figure": 3,
+          "source_printed_page": 155,
+          "legend_code": 14,
+          "geological_unit": "Еминска флишка свита",
+          "material": "Мергели, алевролити, пясъчници и варовици",
+          "original_legend_entry": {
+            "original_legend_code": 14,
+            "geological_unit": "Еминска флишка свита",
+            "material": "Мергели, алевролити, пясъчници и варовици",
+            "source_reference": "Figure 3, printed page 155",
+            "visual_verification": true
+          },
+          "locality_reference": "WESTERN_OUTCROP",
+          "observation_type": "MAPPED_SURFACE_GEOLOGY",
+          "geometry_role": "MANUAL_INTERIOR_CORE",
+          "native_pixel_vertices": [
+            [
+              78,
+              157
+            ],
+            [
+              131,
+              170
+            ],
+            [
+              155,
+              195
+            ],
+            [
+              123,
+              215
+            ],
+            [
+              76,
+              202
+            ]
+          ],
+          "source_crs": "EPSG:7801",
+          "output_crs": "EPSG:4326",
+          "area_km2": 0.994393,
+          "inside_burgas_km2": 0.994393,
+          "complete_unit_boundary": false,
+          "geological_contact_digitized": false,
+          "visual_interpretation": true,
+          "independent_spatial_validation": false,
+          "measured_vertical_intervals": [],
+          "depth_prediction": null,
+          "scope": "RESEARCH_ONLY",
+          "point_lookup_ready": false,
+          "geological_unit_bg": "Еминска флишка свита",
+          "materials_bg": [
+            "Мергели, алевролити, пясъчници и варовици"
+          ],
+          "evidence_status": "MANUAL_INTERIOR_CORE_VISUALLY_REVIEWED",
+          "source_sheet": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "research_normalized_unit_bg": "Еминска флишка свита",
+          "research_normalized_materials_bg": [
+            "Мергели, алевролити, пясъчници и варовици"
+          ],
+          "research_normalized_contact_verified": false,
+          "research_normalized_depth_authorized": false
+        },
+        "evidence_scope": "RESEARCH_ONLY",
+        "geometry_role": "MANUAL_INTERIOR_CORE_NOT_COMPLETE_CONTACT",
+        "verified_geological_contact": false,
+        "verified_geological_unit_at_point": false,
+        "depth_intervals_at_point": [],
+        "spatial_depth_projection_authorized": false,
+        "production_geology_activation_approved": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.590193936644845,
+              42.685225574875
+            ],
+            [
+              27.600275529268153,
+              42.685041194109644
+            ],
+            [
+              27.59964215569461,
+              42.66623066871828
+            ],
+            [
+              27.589563600862558,
+              42.666414994507576
+            ],
+            [
+              27.590193936644845,
+              42.685225574875
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "evidence_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-005",
+        "oblast": "Бургас",
+        "source_id": "BG-A2-079",
+        "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+        "original_feature_index": 4,
+        "original_properties": {
+          "record_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-005",
+          "source_id": "BG-A2-079",
+          "map_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "source_url": "https://mgu.bg/wp-content/uploads/2025/01/07-24137-Dimitrov-Sachkov.pdf",
+          "source_figure": 3,
+          "source_printed_page": 155,
+          "legend_code": 16,
+          "geological_unit": "Медовска свита",
+          "material": "Туфи",
+          "original_legend_entry": {
+            "original_legend_code": 16,
+            "geological_unit": "Медовска свита",
+            "material": "Туфи",
+            "source_reference": "Figure 3, printed page 155",
+            "visual_verification": true
+          },
+          "locality_reference": "AHELOY_WEST_01",
+          "observation_type": "MAPPED_SURFACE_GEOLOGY",
+          "geometry_role": "MANUAL_INTERIOR_CORE",
+          "native_pixel_vertices": [
+            [
+              60,
+              378
+            ],
+            [
+              105,
+              378
+            ],
+            [
+              105,
+              492
+            ],
+            [
+              60,
+              492
+            ]
+          ],
+          "source_crs": "EPSG:7801",
+          "output_crs": "EPSG:4326",
+          "area_km2": 1.726305,
+          "inside_burgas_km2": 1.726305,
+          "complete_unit_boundary": false,
+          "geological_contact_digitized": false,
+          "visual_interpretation": true,
+          "independent_spatial_validation": false,
+          "measured_vertical_intervals": [],
+          "depth_prediction": null,
+          "scope": "RESEARCH_ONLY",
+          "point_lookup_ready": false,
+          "geological_unit_bg": "Медовска свита",
+          "materials_bg": [
+            "Туфи"
+          ],
+          "evidence_status": "MANUAL_INTERIOR_CORE_VISUALLY_REVIEWED",
+          "source_sheet": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "research_normalized_unit_bg": "Медовска свита",
+          "research_normalized_materials_bg": [
+            "Туфи"
+          ],
+          "research_normalized_contact_verified": false,
+          "research_normalized_depth_authorized": false
+        },
+        "evidence_scope": "RESEARCH_ONLY",
+        "geometry_role": "MANUAL_INTERIOR_CORE_NOT_COMPLETE_CONTACT",
+        "verified_geological_contact": false,
+        "verified_geological_unit_at_point": false,
+        "depth_intervals_at_point": [],
+        "spatial_depth_projection_authorized": false,
+        "production_geology_activation_approved": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.603151875499396,
+              42.670624155795394
+            ],
+            [
+              27.613455051384804,
+              42.67043450182338
+            ],
+            [
+              27.616590791871797,
+              42.66377229605949
+            ],
+            [
+              27.6163948506756,
+              42.657997147968295
+            ],
+            [
+              27.60273466518832,
+              42.65824879659834
+            ],
+            [
+              27.603151875499396,
+              42.670624155795394
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "evidence_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-006",
+        "oblast": "Бургас",
+        "source_id": "BG-A2-079",
+        "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+        "original_feature_index": 5,
+        "original_properties": {
+          "record_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-006",
+          "source_id": "BG-A2-079",
+          "map_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "source_url": "https://mgu.bg/wp-content/uploads/2025/01/07-24137-Dimitrov-Sachkov.pdf",
+          "source_figure": 3,
+          "source_printed_page": 155,
+          "legend_code": 16,
+          "geological_unit": "Медовска свита",
+          "material": "Туфи",
+          "original_legend_entry": {
+            "original_legend_code": 16,
+            "geological_unit": "Медовска свита",
+            "material": "Туфи",
+            "source_reference": "Figure 3, printed page 155",
+            "visual_verification": true
+          },
+          "locality_reference": "AHELOY_WEST_02",
+          "observation_type": "MAPPED_SURFACE_GEOLOGY",
+          "geometry_role": "MANUAL_INTERIOR_CORE",
+          "native_pixel_vertices": [
+            [
+              120,
+              465
+            ],
+            [
+              166,
+              465
+            ],
+            [
+              181,
+              505
+            ],
+            [
+              181,
+              540
+            ],
+            [
+              120,
+              540
+            ]
+          ],
+          "source_crs": "EPSG:7801",
+          "output_crs": "EPSG:4326",
+          "area_km2": 1.438592,
+          "inside_burgas_km2": 1.438592,
+          "complete_unit_boundary": false,
+          "geological_contact_digitized": false,
+          "visual_interpretation": true,
+          "independent_spatial_validation": false,
+          "measured_vertical_intervals": [],
+          "depth_prediction": null,
+          "scope": "RESEARCH_ONLY",
+          "point_lookup_ready": false,
+          "geological_unit_bg": "Медовска свита",
+          "materials_bg": [
+            "Туфи"
+          ],
+          "evidence_status": "MANUAL_INTERIOR_CORE_VISUALLY_REVIEWED",
+          "source_sheet": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "research_normalized_unit_bg": "Медовска свита",
+          "research_normalized_materials_bg": [
+            "Туфи"
+          ],
+          "research_normalized_contact_verified": false,
+          "research_normalized_depth_authorized": false
+        },
+        "evidence_scope": "RESEARCH_ONLY",
+        "geometry_role": "MANUAL_INTERIOR_CORE_NOT_COMPLETE_CONTACT",
+        "verified_geological_contact": false,
+        "verified_geological_unit_at_point": false,
+        "depth_intervals_at_point": [],
+        "spatial_depth_projection_authorized": false,
+        "production_geology_activation_approved": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.636972934495574,
+              42.66999812441676
+            ],
+            [
+              27.645484087044455,
+              42.66983900754491
+            ],
+            [
+              27.647318099167048,
+              42.66452114842884
+            ],
+            [
+              27.64296652602699,
+              42.66179580548689
+            ],
+            [
+              27.63742999764884,
+              42.66371547055309
+            ],
+            [
+              27.636972934495574,
+              42.66999812441676
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "evidence_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-007",
+        "oblast": "Бургас",
+        "source_id": "BG-A2-079",
+        "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+        "original_feature_index": 6,
+        "original_properties": {
+          "record_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-007",
+          "source_id": "BG-A2-079",
+          "map_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "source_url": "https://mgu.bg/wp-content/uploads/2025/01/07-24137-Dimitrov-Sachkov.pdf",
+          "source_figure": 3,
+          "source_printed_page": 155,
+          "legend_code": 18,
+          "geological_unit": "Тънковска свита",
+          "material": "Глинести варовици, туфити и туфи",
+          "original_legend_entry": {
+            "original_legend_code": 18,
+            "geological_unit": "Тънковска свита",
+            "material": "Глинести варовици, туфити и туфи",
+            "source_reference": "Figure 3, printed page 155",
+            "visual_verification": true
+          },
+          "locality_reference": "TANKOVO_SOUTH",
+          "observation_type": "MAPPED_SURFACE_GEOLOGY",
+          "geometry_role": "MANUAL_INTERIOR_CORE",
+          "native_pixel_vertices": [
+            [
+              271,
+              465
+            ],
+            [
+              309,
+              465
+            ],
+            [
+              318,
+              497
+            ],
+            [
+              299,
+              514
+            ],
+            [
+              274,
+              503
+            ]
+          ],
+          "source_crs": "EPSG:7801",
+          "output_crs": "EPSG:4326",
+          "area_km2": 0.595632,
+          "inside_burgas_km2": 0.595632,
+          "complete_unit_boundary": false,
+          "geological_contact_digitized": false,
+          "visual_interpretation": true,
+          "independent_spatial_validation": false,
+          "measured_vertical_intervals": [],
+          "depth_prediction": null,
+          "scope": "RESEARCH_ONLY",
+          "point_lookup_ready": false,
+          "geological_unit_bg": "Тънковска свита",
+          "materials_bg": [
+            "Глинести варовици, туфити и туфи"
+          ],
+          "evidence_status": "MANUAL_INTERIOR_CORE_VISUALLY_REVIEWED",
+          "source_sheet": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "research_normalized_unit_bg": "Тънковска свита",
+          "research_normalized_materials_bg": [
+            "Глинести варовици, туфити и туфи"
+          ],
+          "research_normalized_contact_verified": false,
+          "research_normalized_depth_authorized": false
+        },
+        "evidence_scope": "RESEARCH_ONLY",
+        "geometry_role": "MANUAL_INTERIOR_CORE_NOT_COMPLETE_CONTACT",
+        "verified_geological_contact": false,
+        "verified_geological_unit_at_point": false,
+        "depth_intervals_at_point": [],
+        "spatial_depth_projection_authorized": false,
+        "production_geology_activation_approved": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.648769842222308,
+              42.66763099279002
+            ],
+            [
+              27.655488897997984,
+              42.667504734776486
+            ],
+            [
+              27.661226299413986,
+              42.66491996435646
+            ],
+            [
+              27.6610833841552,
+              42.660794915135035
+            ],
+            [
+              27.64928823615291,
+              42.66316331768569
+            ],
+            [
+              27.648769842222308,
+              42.66763099279002
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "evidence_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-008",
+        "oblast": "Бургас",
+        "source_id": "BG-A2-079",
+        "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+        "original_feature_index": 7,
+        "original_properties": {
+          "record_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-008",
+          "source_id": "BG-A2-079",
+          "map_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "source_url": "https://mgu.bg/wp-content/uploads/2025/01/07-24137-Dimitrov-Sachkov.pdf",
+          "source_figure": 3,
+          "source_printed_page": 155,
+          "legend_code": 18,
+          "geological_unit": "Тънковска свита",
+          "material": "Глинести варовици, туфити и туфи",
+          "original_legend_entry": {
+            "original_legend_code": 18,
+            "geological_unit": "Тънковска свита",
+            "material": "Глинести варовици, туфити и туфи",
+            "source_reference": "Figure 3, printed page 155",
+            "visual_verification": true
+          },
+          "locality_reference": "AHELOY_NORTH",
+          "observation_type": "MAPPED_SURFACE_GEOLOGY",
+          "geometry_role": "MANUAL_INTERIOR_CORE",
+          "native_pixel_vertices": [
+            [
+              324,
+              478
+            ],
+            [
+              354,
+              478
+            ],
+            [
+              380,
+              493
+            ],
+            [
+              380,
+              518
+            ],
+            [
+              327,
+              505
+            ]
+          ],
+          "source_crs": "EPSG:7801",
+          "output_crs": "EPSG:4326",
+          "area_km2": 0.545492,
+          "inside_burgas_km2": 0.545492,
+          "complete_unit_boundary": false,
+          "geological_contact_digitized": false,
+          "visual_interpretation": true,
+          "independent_spatial_validation": false,
+          "measured_vertical_intervals": [],
+          "depth_prediction": null,
+          "scope": "RESEARCH_ONLY",
+          "point_lookup_ready": false,
+          "geological_unit_bg": "Тънковска свита",
+          "materials_bg": [
+            "Глинести варовици, туфити и туфи"
+          ],
+          "evidence_status": "MANUAL_INTERIOR_CORE_VISUALLY_REVIEWED",
+          "source_sheet": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "research_normalized_unit_bg": "Тънковска свита",
+          "research_normalized_materials_bg": [
+            "Глинести варовици, туфити и туфи"
+          ],
+          "research_normalized_contact_verified": false,
+          "research_normalized_depth_authorized": false
+        },
+        "evidence_scope": "RESEARCH_ONLY",
+        "geometry_role": "MANUAL_INTERIOR_CORE_NOT_COMPLETE_CONTACT",
+        "verified_geological_contact": false,
+        "verified_geological_unit_at_point": false,
+        "depth_intervals_at_point": [],
+        "spatial_depth_projection_authorized": false,
+        "production_geology_activation_approved": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.66293540622194,
+              42.68189399063874
+            ],
+            [
+              27.669592822325022,
+              42.679951890804354
+            ],
+            [
+              27.6716720510547,
+              42.67528941326223
+            ],
+            [
+              27.666049245589605,
+              42.674735441000955
+            ],
+            [
+              27.661471187174254,
+              42.678454330692304
+            ],
+            [
+              27.66293540622194,
+              42.68189399063874
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "evidence_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-009",
+        "oblast": "Бургас",
+        "source_id": "BG-A2-079",
+        "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+        "original_feature_index": 8,
+        "original_properties": {
+          "record_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-009",
+          "source_id": "BG-A2-079",
+          "map_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "source_url": "https://mgu.bg/wp-content/uploads/2025/01/07-24137-Dimitrov-Sachkov.pdf",
+          "source_figure": 3,
+          "source_printed_page": 155,
+          "legend_code": 19,
+          "geological_unit": "Тънковска свита",
+          "material": "Алкални базалтоиди",
+          "original_legend_entry": {
+            "original_legend_code": 19,
+            "geological_unit": "Тънковска свита",
+            "material": "Алкални базалтоиди",
+            "source_reference": "Figure 3, printed page 155",
+            "visual_verification": true
+          },
+          "locality_reference": "TANKOVO_SOUTHEAST",
+          "observation_type": "MAPPED_SURFACE_GEOLOGY",
+          "geometry_role": "MANUAL_INTERIOR_CORE",
+          "native_pixel_vertices": [
+            [
+              385,
+              390
+            ],
+            [
+              415,
+              401
+            ],
+            [
+              425,
+              429
+            ],
+            [
+              400,
+              433
+            ],
+            [
+              379,
+              411
+            ]
+          ],
+          "source_crs": "EPSG:7801",
+          "output_crs": "EPSG:4326",
+          "area_km2": 0.410214,
+          "inside_burgas_km2": 0.410214,
+          "complete_unit_boundary": false,
+          "geological_contact_digitized": false,
+          "visual_interpretation": true,
+          "independent_spatial_validation": false,
+          "measured_vertical_intervals": [],
+          "depth_prediction": null,
+          "scope": "RESEARCH_ONLY",
+          "point_lookup_ready": false,
+          "geological_unit_bg": "Тънковска свита",
+          "materials_bg": [
+            "Алкални базалтоиди"
+          ],
+          "evidence_status": "MANUAL_INTERIOR_CORE_VISUALLY_REVIEWED",
+          "source_sheet": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "research_normalized_unit_bg": "Тънковска свита",
+          "research_normalized_materials_bg": [
+            "Алкални базалтоиди"
+          ],
+          "research_normalized_contact_verified": false,
+          "research_normalized_depth_authorized": false
+        },
+        "evidence_scope": "RESEARCH_ONLY",
+        "geometry_role": "MANUAL_INTERIOR_CORE_NOT_COMPLETE_CONTACT",
+        "verified_geological_contact": false,
+        "verified_geological_unit_at_point": false,
+        "depth_intervals_at_point": [],
+        "spatial_depth_projection_authorized": false,
+        "production_geology_activation_approved": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.652457744473494,
+              42.64461150672806
+            ],
+            [
+              27.65917431452417,
+              42.64448503197811
+            ],
+            [
+              27.659042999607763,
+              42.64068997122236
+            ],
+            [
+              27.65277458266082,
+              42.64080801947559
+            ],
+            [
+              27.652457744473494,
+              42.64461150672806
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "evidence_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-010",
+        "oblast": "Бургас",
+        "source_id": "BG-A2-079",
+        "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+        "original_feature_index": 9,
+        "original_properties": {
+          "record_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-010",
+          "source_id": "BG-A2-079",
+          "map_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "source_url": "https://mgu.bg/wp-content/uploads/2025/01/07-24137-Dimitrov-Sachkov.pdf",
+          "source_figure": 3,
+          "source_printed_page": 155,
+          "legend_code": 10,
+          "geological_unit": "Одърска свита",
+          "material": "Черупчести и оолитни варовици, пясъчници",
+          "original_legend_entry": {
+            "original_legend_code": 10,
+            "geological_unit": "Одърска свита",
+            "material": "Черупчести и оолитни варовици, пясъчници",
+            "source_reference": "Figure 3, printed page 155",
+            "visual_verification": true
+          },
+          "locality_reference": "RAVDA_WEST",
+          "observation_type": "MAPPED_SURFACE_GEOLOGY",
+          "geometry_role": "MANUAL_INTERIOR_CORE",
+          "native_pixel_vertices": [
+            [
+              344,
+              617
+            ],
+            [
+              374,
+              617
+            ],
+            [
+              374,
+              640
+            ],
+            [
+              346,
+              640
+            ]
+          ],
+          "source_crs": "EPSG:7801",
+          "output_crs": "EPSG:4326",
+          "area_km2": 0.224456,
+          "inside_burgas_km2": 0.224456,
+          "complete_unit_boundary": false,
+          "geological_contact_digitized": false,
+          "visual_interpretation": true,
+          "independent_spatial_validation": false,
+          "measured_vertical_intervals": [],
+          "depth_prediction": null,
+          "scope": "RESEARCH_ONLY",
+          "point_lookup_ready": false,
+          "geological_unit_bg": "Одърска свита",
+          "materials_bg": [
+            "Черупчести и оолитни варовици, пясъчници"
+          ],
+          "evidence_status": "MANUAL_INTERIOR_CORE_VISUALLY_REVIEWED",
+          "source_sheet": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "research_normalized_unit_bg": "Одърска свита",
+          "research_normalized_materials_bg": [
+            "Черупчести и оолитни варовици, пясъчници"
+          ],
+          "research_normalized_contact_verified": false,
+          "research_normalized_depth_authorized": false
+        },
+        "evidence_scope": "RESEARCH_ONLY",
+        "geometry_role": "MANUAL_INTERIOR_CORE_NOT_COMPLETE_CONTACT",
+        "verified_geological_contact": false,
+        "verified_geological_unit_at_point": false,
+        "depth_intervals_at_point": [],
+        "spatial_depth_projection_authorized": false,
+        "production_geology_activation_approved": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.604230873731566,
+              42.62288827195208
+            ],
+            [
+              27.613854738179008,
+              42.62271092313109
+            ],
+            [
+              27.613681526707612,
+              42.61759575306497
+            ],
+            [
+              27.604058450196757,
+              42.617773087502584
+            ],
+            [
+              27.604230873731566,
+              42.62288827195208
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "evidence_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-011",
+        "oblast": "Бургас",
+        "source_id": "BG-A2-079",
+        "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+        "original_feature_index": 10,
+        "original_properties": {
+          "record_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-011",
+          "source_id": "BG-A2-079",
+          "map_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "source_url": "https://mgu.bg/wp-content/uploads/2025/01/07-24137-Dimitrov-Sachkov.pdf",
+          "source_figure": 3,
+          "source_printed_page": 155,
+          "legend_code": 11,
+          "geological_unit": "Мугриска свита",
+          "material": "Мергели, глини, пясъци и варовици",
+          "original_legend_entry": {
+            "original_legend_code": 11,
+            "geological_unit": "Мугриска свита",
+            "material": "Мергели, глини, пясъци и варовици",
+            "source_reference": "Figure 3, printed page 155",
+            "visual_verification": true
+          },
+          "locality_reference": "AHELOY_SOUTHWEST_01",
+          "observation_type": "MAPPED_SURFACE_GEOLOGY",
+          "geometry_role": "MANUAL_INTERIOR_CORE",
+          "native_pixel_vertices": [
+            [
+              132,
+              754
+            ],
+            [
+              175,
+              754
+            ],
+            [
+              175,
+              785
+            ],
+            [
+              132,
+              785
+            ]
+          ],
+          "source_crs": "EPSG:7801",
+          "output_crs": "EPSG:4326",
+          "area_km2": 0.448571,
+          "inside_burgas_km2": 0.448571,
+          "complete_unit_boundary": false,
+          "geological_contact_digitized": false,
+          "visual_interpretation": true,
+          "independent_spatial_validation": false,
+          "measured_vertical_intervals": [],
+          "depth_prediction": null,
+          "scope": "RESEARCH_ONLY",
+          "point_lookup_ready": false,
+          "geological_unit_bg": "Мугриска свита",
+          "materials_bg": [
+            "Мергели, глини, пясъци и варовици"
+          ],
+          "evidence_status": "MANUAL_INTERIOR_CORE_VISUALLY_REVIEWED",
+          "source_sheet": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "research_normalized_unit_bg": "Мугриска свита",
+          "research_normalized_materials_bg": [
+            "Мергели, глини, пясъци и варовици"
+          ],
+          "research_normalized_contact_verified": false,
+          "research_normalized_depth_authorized": false
+        },
+        "evidence_scope": "RESEARCH_ONLY",
+        "geometry_role": "MANUAL_INTERIOR_CORE_NOT_COMPLETE_CONTACT",
+        "verified_geological_contact": false,
+        "verified_geological_unit_at_point": false,
+        "depth_intervals_at_point": [],
+        "spatial_depth_projection_authorized": false,
+        "production_geology_activation_approved": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.588981419033654,
+              42.61557268527164
+            ],
+            [
+              27.608003141254354,
+              42.615223864993176
+            ],
+            [
+              27.607847142646964,
+              42.610603698071095
+            ],
+            [
+              27.58882682693992,
+              42.610952492796514
+            ],
+            [
+              27.588981419033654,
+              42.61557268527164
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "evidence_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-012",
+        "oblast": "Бургас",
+        "source_id": "BG-A2-079",
+        "source_file": "data/soil-lithology/research/burgas_georeferencing/segmentation/BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024/sunny_beach_manual_geological_cores.geojson",
+        "original_feature_index": 11,
+        "original_properties": {
+          "record_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024-CORE-012",
+          "source_id": "BG-A2-079",
+          "map_id": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "source_url": "https://mgu.bg/wp-content/uploads/2025/01/07-24137-Dimitrov-Sachkov.pdf",
+          "source_figure": 3,
+          "source_printed_page": 155,
+          "legend_code": 11,
+          "geological_unit": "Мугриска свита",
+          "material": "Мергели, глини, пясъци и варовици",
+          "original_legend_entry": {
+            "original_legend_code": 11,
+            "geological_unit": "Мугриска свита",
+            "material": "Мергели, глини, пясъци и варовици",
+            "source_reference": "Figure 3, printed page 155",
+            "visual_verification": true
+          },
+          "locality_reference": "AHELOY_SOUTHWEST_02",
+          "observation_type": "MAPPED_SURFACE_GEOLOGY",
+          "geometry_role": "MANUAL_INTERIOR_CORE",
+          "native_pixel_vertices": [
+            [
+              65,
+              800
+            ],
+            [
+              150,
+              800
+            ],
+            [
+              150,
+              828
+            ],
+            [
+              65,
+              828
+            ]
+          ],
+          "source_crs": "EPSG:7801",
+          "output_crs": "EPSG:4326",
+          "area_km2": 0.800898,
+          "inside_burgas_km2": 0.800898,
+          "complete_unit_boundary": false,
+          "geological_contact_digitized": false,
+          "visual_interpretation": true,
+          "independent_spatial_validation": false,
+          "measured_vertical_intervals": [],
+          "depth_prediction": null,
+          "scope": "RESEARCH_ONLY",
+          "point_lookup_ready": false,
+          "geological_unit_bg": "Мугриска свита",
+          "materials_bg": [
+            "Мергели, глини, пясъци и варовици"
+          ],
+          "evidence_status": "MANUAL_INTERIOR_CORE_VISUALLY_REVIEWED",
+          "source_sheet": "BG-SUNNY-BEACH-GEOLOGICAL-MAP-2024",
+          "research_normalized_unit_bg": "Мугриска свита",
+          "research_normalized_materials_bg": [
+            "Мергели, глини, пясъци и варовици"
+          ],
+          "research_normalized_contact_verified": false,
+          "research_normalized_depth_authorized": false
+        },
+        "evidence_scope": "RESEARCH_ONLY",
+        "geometry_role": "MANUAL_INTERIOR_CORE_NOT_COMPLETE_CONTACT",
+        "verified_geological_contact": false,
+        "verified_geological_unit_at_point": false,
+        "depth_intervals_at_point": [],
+        "spatial_depth_projection_authorized": false,
+        "production_geology_activation_approved": false
+      }
+    }
+  ]
+}
