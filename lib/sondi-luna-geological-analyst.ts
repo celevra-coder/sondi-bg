@@ -172,6 +172,22 @@ SONDI_LUNA_BOREHOLE_VS_INDEPENDENT_CONTACT_EVIDENCE_V2:
 Това правило важи национално, без фиксиран радиус и без автоматично разрешаване на DEPTH.
 За старите сондажно подкрепени интервали
 полето "stratigraphy" остава незадължително.
+SONDI_LUNA_OUTPUT_CONTRACT_V18:
+For both DEPTH and REGIONAL, regionalParagraphs must contain 2 to 6 Bulgarian paragraphs.
+Each paragraph must contain 35 to 1700 characters.
+Prefer 3 to 5 paragraphs, each about 150 to 900 characters.
+Each depthInterpretations explanation must contain 45 to 240 characters.
+Return no more than 8 depth interpretations.
+These are editorial requirements, not geological eligibility criteria.
+A formatting correction must not by itself change the geological analysis type.
+
+SONDI_LUNA_CITATION_CONTRACT_V18:
+For numerical borehole support, use the exact borehole ID present in verifiedDepthObservationsInSearchArea.
+Original source IDs from its intervals may accompany that borehole ID.
+For documentary-only boreholes not present in the numerical observations, cite the exact assessed national catalog intake_id instead.
+Use documentary records only when assessed APPLICABLE or CONDITIONAL.
+Documentary citations alone do not create numerical evidence.
+Never invent source IDs or substitute uncertain measured boundaries with artificial exact values.
 SONDI_LUNA_SHORT_MATERIAL_EXPLANATIONS_V1:
 За ВСЕКИ елемент от depthInterpretations полето explanation е САМО кратко обяснение на материала за човек без геоложки познания.
 Напиши едно или най-много две кратки изречения, общо до 240 символа.
@@ -682,10 +698,19 @@ function validate(raw:string,facts:Fact[],independentEvidence?:unknown):LunaGeol
       }
     }
 
+    // SONDI_DOCUMENTARY_SOURCE_ID_COMPATIBILITY_V1
+    // Provenance aliases do not create numerical evidence.
+    const citedBoreholeSourceIds = new Set(
+      cited.filter((f): f is Fact => Boolean(f))
+        .flatMap(f => f.intervals)
+        .flatMap(i => i.source_ids)
+    );
+
     if(citedIds.some(id=>
       !ids.has(id)&&
       !documentaryIds.has(id)&&
-      !approvedContactSources.has(id)
+      !approvedContactSources.has(id)&&
+      !citedBoreholeSourceIds.has(id)
     )){
                 if(process.env.NODE_ENV!=="production"){
                     console.warn(

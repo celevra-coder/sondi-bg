@@ -2,6 +2,7 @@ import {
   searchLunaNationalSpatialEvidence
 } from "./sondi-luna-national-spatial-index";
 import "server-only";
+import { resolveNationalDocumentaryRegion } from "./sondi-national-depth-engine";
 import {
   searchLunaNationalResearch,
   readLunaNationalResearch
@@ -16,7 +17,7 @@ import {
   searchLunaNationalBoreholes
 } from "./sondi-luna-research-tools";
 
-const REVISION = "LUNA_DOCUMENT_COMPATIBILITY_AUDIT_V8";
+const REVISION = "LUNA_DOCUMENT_COMPATIBILITY_AUDIT_V10_OUTPUT_CONTRACT";
 
 const DATA_FILES = [
   "montana_research_spatial_evidence.geojson",
@@ -239,7 +240,27 @@ export async function runLunaResearchCycle(
     }
   }
 
-  const locationContext = nearestSettlement
+  const polygonRegion =
+    resolveNationalDocumentaryRegion(lat, lon);
+
+  const documentaryRegion =
+    polygonRegion ?? nearestSettlement?.district;
+
+  const documentaryRegionBasis = polygonRegion
+    ? "REGISTERED_BOUNDARY_MATCH"
+    : nearestSettlement?.district
+      ? "NEARBY_SETTLEMENT_DISTRICT"
+      : "UNRESOLVED";
+
+  if (process.env.NODE_ENV !== "production") {
+    console.info(
+      "[SONDI_LUNA_RESEARCH] DOCUMENTARY_REGION",
+      documentaryRegion ?? "NONE",
+      documentaryRegionBasis
+    );
+  }
+
+  const settlementLocationContext = nearestSettlement
     ? "\n\nНационален географски ориентир (не е геоложко доказателство): " +
       JSON.stringify({
         nearby_settlement: nearestSettlement.name,
@@ -253,6 +274,14 @@ export async function runLunaResearchCycle(
       "Самостоятелно проверявай географската приложимост на доказателствата."
     : "";
 
+  const locationContext =
+    settlementLocationContext +
+    (polygonRegion
+      ? "\n\nRegistered geographic search region: " +
+        polygonRegion +
+        ". Administrative context only, not geological evidence."
+      : "");
+
   // Coordinates come exclusively from the server, never from AI arguments.
   // MANDATORY_SERVER_EVIDENCE_SEARCH_V1:
   // Search coverage is selected by code; geological interpretation remains AI-owned.
@@ -263,7 +292,8 @@ export async function runLunaResearchCycle(
     {
       category: "national_spatial_evidence",
       run: () => searchLunaNationalSpatialEvidence({
-        latitude: lat, longitude: lon, radius_km: 20
+        latitude: lat, longitude: lon, radius_km: 20,
+        region: documentaryRegion
       })
     },
     {
@@ -280,15 +310,15 @@ export async function runLunaResearchCycle(
     },
     {
       category: "national_documentary_research",
-      run: () => nearestSettlement?.district
+      run: () => documentaryRegion
         ? searchLunaNationalResearch({
             query: undefined,
-            region: nearestSettlement.district
+            region: documentaryRegion
           })
         : {
             returned_records: [],
             returned_count: 0,
-            skipped_reason: "NO_NEARBY_SETTLEMENT_DISTRICT",
+            skipped_reason: "NO_RESOLVED_DOCUMENTARY_REGION",
             note: "National thematic searches run separately. No administrative location is inferred from this missing settlement."
           }
     }
@@ -325,13 +355,13 @@ export async function runLunaResearchCycle(
       run: () => {
         const regional = searchLunaNationalResearch({
           query: topic.query,
-          region: nearestSettlement?.district
+          region: documentaryRegion
         });
 
         if ((regional.returned_count ?? 0) > 0) {
           return {
             ...regional,
-            discovery_scope: "NEARBY_SETTLEMENT_DISTRICT",
+            discovery_scope: documentaryRegionBasis,
             geographic_applicability_at_target: "NOT_VERIFIED"
           };
         }
@@ -1543,7 +1573,7 @@ Do not add arbitrary regional depth ceilings.
           content:
             (!auditOKV15
               ? "Документалният одит е невалиден. Включи всеки предоставен документ точно веднъж с валиден ID и обоснована оценка. "
-              : "Документалният одит е валиден, но окончателният геоложки резултат не преминава проверката. Провери числовите интервали, материалите, source_ids, структурните конфликти и формата. Ако дълбочинна прогноза не е достатъчно подкрепена, върни analysis_type REGIONAL и празен depthInterpretations. Не измисляй дълбочини. ") +
+              : "The documentary audit passed, but the final result failed validation. Check the output format and citations separately from geological support. Use 2 to 6 Bulgarian regionalParagraphs, each 35 to 1700 characters, and explanations of 45 to 240 characters. Use no more than 8 depth interpretations. Cite exact numerical borehole IDs from the supplied observations. For documentary-only boreholes, use their assessed catalog intake_id. Keep the DEPTH analysis and its supported interpretations when correcting only formatting or citation identifiers. Reconsider geological conclusions only if the underlying evidence is insufficient or incompatible. Never invent depths, materials or sources. ") +
             "Прегледай източниците и поправи неподкрепените твърдения. " +
             "Можеш да продължиш проучването с инструментите. " +
             "Разграничавай документирани измервания от прогнози. " +

@@ -1509,3 +1509,67 @@ export function resolveNationalDepthGeologicalDecision(input: NationalDepthInput
 
 // SONDI_NATIONAL_INTERIM_2KM_ENTRY - explicit local policy; normal production resolver unchanged.
 export { resolveNationalInterimPolicy } from './sondi-national-interim-policy';
+
+
+// SONDI_NATIONAL_DOCUMENTARY_REGION_V1
+// Geographic routing only; no geological prediction.
+export function resolveNationalDocumentaryRegion(
+  latitude: number,
+  longitude: number
+): string | undefined {
+  if (!Number.isFinite(latitude) ||
+      !Number.isFinite(longitude) ||
+      Math.abs(latitude) > 90 ||
+      Math.abs(longitude) > 180) return undefined;
+
+  const regionMap: Record<string,string> =
+    {
+  "SOF": "Sofia",
+  "SOF-CITY": "Sofia City",
+  "KNL": "Kyustendil",
+  "BLG": "Blagoevgrad",
+  "PLD": "Plovdiv",
+  "PZ": "Pazardzhik",
+  "PER": "Pernik",
+  "MON": "Montana",
+  "VRA": "Vratsa",
+  "VID": "Vidin",
+  "PLE": "Pleven",
+  "LOV": "Lovech",
+  "GAB": "Gabrovo",
+  "VTR": "Veliko Tarnovo",
+  "RG": "Razgrad",
+  "DOB": "Dobrich",
+  "VAR": "Varna",
+  "BURGAS": "Burgas",
+  "YAMBOL": "Yambol",
+  "SLIVEN": "Sliven"
+};
+
+  const registry = readJson<RegionRegistry>(
+    "regional_registry.json"
+  );
+
+  const matches = new Set<string>();
+
+  for (const entry of registry.regions) {
+    const boundary = readJson<Geometry>(
+      entry.boundary_file
+    );
+
+    if (!containsPoint(
+      boundary, latitude, longitude
+    )) continue;
+
+    const key = entry.id === "SOF-CITY"
+      ? "SOF-CITY"
+      : entry.id.split("-")[0];
+
+    const region = regionMap[key];
+    if (region) matches.add(region);
+  }
+
+  return matches.size === 1
+    ? Array.from(matches)[0]
+    : undefined;
+}
