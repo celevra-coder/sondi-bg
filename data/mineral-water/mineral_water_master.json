@@ -4416,7 +4416,215 @@
         },
         "research_enrichment": [],
         "duplicate_mh_records": [],
-        "matched_existing_records": []
+        "matched_existing_records": [],
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-004",
+          "source_id": "SZ-A1-004",
+          "source_url": "https://www.mh.government.bg/upload/6891/12-pavel_banya-sondazh3-04-08-2014.pdf",
+          "source_reference": "Page 1 geological context; page 2 lithology and resources; page 3 chemical composition",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 3,
+              "material": "Песъчливо-глинест почвен слой",
+              "description": "Кафяво-ръждив цвят",
+              "interval_id": "SZ-BH-004-I001",
+              "material_original": "Песъчливо-глинест почвен слой",
+              "material_normalized": "Песъчливо-глинест почвен слой",
+              "source_id": "SZ-A1-004",
+              "source_reference": "Page 1 geological context; page 2 lithology and resources; page 3 chemical composition",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 3,
+              "to_m": 25,
+              "material": "Разнозърнести пясъци и чакъли",
+              "description": "Дребнокъсов чакъл, преминаващ в блокаж към основата",
+              "interval_id": "SZ-BH-004-I002",
+              "material_original": "Разнозърнести пясъци и чакъли",
+              "material_normalized": "Разнозърнести пясъци и чакъли",
+              "source_id": "SZ-A1-004",
+              "source_reference": "Page 1 geological context; page 2 lithology and resources; page 3 chemical composition",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 25,
+              "to_m": 35,
+              "material": "Уплътнени глини",
+              "description": "Жълтозелени глини с карбонатни налепи по пукнатините",
+              "interval_id": "SZ-BH-004-I003",
+              "material_original": "Уплътнени глини",
+              "material_normalized": "Уплътнени глини",
+              "source_id": "SZ-A1-004",
+              "source_reference": "Page 1 geological context; page 2 lithology and resources; page 3 chemical composition",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 35,
+              "to_m": 55,
+              "material": "Средно- и едрозърнести пясъци",
+              "description": "Глинести прослойки и дребнокъсови чакъли в основата",
+              "interval_id": "SZ-BH-004-I004",
+              "material_original": "Средно- и едрозърнести пясъци",
+              "material_normalized": "Средно- и едрозърнести пясъци",
+              "source_id": "SZ-A1-004",
+              "source_reference": "Page 1 geological context; page 2 lithology and resources; page 3 chemical composition",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 55,
+              "to_m": 102,
+              "material": "Биотитови гранити",
+              "description": "Левкократни, едрокристални, интензивно тектонски изменени",
+              "interval_id": "SZ-BH-004-I005",
+              "material_original": "Биотитови гранити",
+              "material_normalized": "Биотитови гранити",
+              "source_id": "SZ-A1-004",
+              "source_reference": "Page 1 geological context; page 2 lithology and resources; page 3 chemical composition",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "mineral_id": "mw_8de8f09d1322365d",
+            "geological_context": "Sedimentary cover over fractured granite",
+            "longitude": 25.2096111111,
+            "fault_context": {
+              "borehole_id": "SZ-BH-004",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "gem_fault_id": "EUR_BGCS015",
+              "gem_distance_m": 7405.1,
+              "mrrb_fault_id": "FLT-KARLOVO-KALOFER-REC40",
+              "mrrb_distance_m": 8426.4,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-004",
+              "source_id": "SZ-A1-004",
+              "mineral_id": "mw_8de8f09d1322365d",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 42.5995,
+              "longitude": 25.2096111111,
+              "documented_measurements": {
+                "temperature_c": null,
+                "sample_temperature_c": null,
+                "technical_discharge_lps": null,
+                "mineralization_mg_l": null,
+                "artesian_flow": null,
+                "temperature_observations": null,
+                "temperature_measurement_method": null,
+                "freshwater_observations": null,
+                "additional_observations": null
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": {
+                "temperature_c": null,
+                "depth_m": 102
+              },
+              "existing_enrichment": [],
+              "existing_sources": [
+                {
+                  "source_type": "existing_register",
+                  "title": "БДИБР – официален регистър",
+                  "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2024/11/15_web2021_REG_%D0%A1%D1%8A%D0%BE%D1%80%D1%8A%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D0%9C%D0%B8%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%BD%D0%B8%D0%92%D0%BE%D0%B4%D0%B8_%D0%91%D0%94%D0%98%D0%91%D0%A0_2019.xlsx",
+                  "published": "30.09.2019",
+                  "registry_number": "351054003  26.03.2008г."
+                }
+              ],
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-004",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G02",
+            "latitude": 42.5995
+          },
+          "original_borehole_record": {
+            "borehole_id": "SZ-BH-004",
+            "original_name": "Сондаж №3",
+            "aliases": [
+              "Сондаж 3 централен",
+              "Pavel Banya 3"
+            ],
+            "registry_id": "351054003",
+            "drilling_year": 1960,
+            "total_depth_m": 102,
+            "coordinate_status": "OFFICIAL_EXACT",
+            "latitude": 42.5995,
+            "longitude": 25.2096111111,
+            "coordinate_origin": {
+              "publisher": "БДИБР",
+              "year": 2022,
+              "reference": "Page 2, row 38, registration ID 351054003",
+              "coordinate_object": "Сондаж №3",
+              "original_latitude_dms": "42 35 58.2 N",
+              "original_longitude_dms": "25 12 34.6 E",
+              "coordinate_system_1970_x": 4653054.42,
+              "coordinate_system_1970_y": 9400253.67,
+              "url": "https://www.earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/31.12/Register_saoraje%20MV_%20BD%20IBR%20_2022.pdf",
+              "visually_verified": true
+            },
+            "alternative_coordinate_evidence": {
+              "publisher": "БДИБР",
+              "year": 2025,
+              "reference": "Registry row 38",
+              "original_latitude_dms": "42 37 58.2 N",
+              "original_longitude_dms": "25 12 34.6 E",
+              "latitude": 42.6328333333,
+              "longitude": 25.2096111111,
+              "selected_for_runtime": false,
+              "reason": "Conflicting latitude, requires spatial reconciliation",
+              "url": "https://www.earbd.org/files/File/Control/Registri/Saorajenia%20min%20vodi/Register_saoraje%20MV_%20BD%20IBR%20_2025.pdf"
+            },
+            "continuous_column": true,
+            "is_mineral_water": true,
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 3,
+                "material": "Песъчливо-глинест почвен слой",
+                "description": "Кафяво-ръждив цвят"
+              },
+              {
+                "from_m": 3,
+                "to_m": 25,
+                "material": "Разнозърнести пясъци и чакъли",
+                "description": "Дребнокъсов чакъл, преминаващ в блокаж към основата"
+              },
+              {
+                "from_m": 25,
+                "to_m": 35,
+                "material": "Уплътнени глини",
+                "description": "Жълтозелени глини с карбонатни налепи по пукнатините"
+              },
+              {
+                "from_m": 35,
+                "to_m": 55,
+                "material": "Средно- и едрозърнести пясъци",
+                "description": "Глинести прослойки и дребнокъсови чакъли в основата"
+              },
+              {
+                "from_m": 55,
+                "to_m": 102,
+                "material": "Биотитови гранити",
+                "description": "Левкократни, едрокристални, интензивно тектонски изменени"
+              }
+            ]
+          },
+          "previous_location": {
+            "lat": 42.5994556,
+            "lon": 25.2096139,
+            "status": "A – официални географски координати",
+            "origin": "official_water_facilities.geojson"
+          }
+        }
       },
       "sources": [
         {
@@ -4472,7 +4680,152 @@
         },
         "research_enrichment": [],
         "duplicate_mh_records": [],
-        "matched_existing_records": []
+        "matched_existing_records": [],
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-011",
+          "source_id": "SZ-A1-033",
+          "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=25",
+          "source_reference": "Стр. 1-3",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 60,
+              "material": "Песъчливи глини, глинести пясъци, чакъли с песъклив запълнител, в долната част заглинени",
+              "age": "Q-N",
+              "interval_id": "SZ-BH-011-I001",
+              "material_original": "Песъчливи глини, глинести пясъци, чакъли с песъклив запълнител, в долната част заглинени",
+              "material_normalized": "Песъчливи глини, глинести пясъци, чакъли с песъклив запълнител, в долната част заглинени",
+              "source_id": "SZ-A1-033",
+              "source_reference": "Стр. 1-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 60,
+              "to_m": 695.5,
+              "material": "Силно напукани гранити, на места със смляни зони",
+              "age": "Pz",
+              "interval_id": "SZ-BH-011-I002",
+              "material_original": "Силно напукани гранити, на места със смляни зони",
+              "material_normalized": "Силно напукани гранити, на места със смляни зони",
+              "source_id": "SZ-A1-033",
+              "source_reference": "Стр. 1-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "mineral_id": "mw_3646322df8e081cf",
+            "geological_context": "Sedimentary cover over fractured granite",
+            "longitude": 25.2141944444,
+            "fault_context": {
+              "borehole_id": "SZ-BH-011",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "gem_fault_id": "EUR_BGCS015",
+              "gem_distance_m": 7040.1,
+              "mrrb_fault_id": "FLT-KARLOVO-KALOFER-REC40",
+              "mrrb_distance_m": 8545.1,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-011",
+              "source_id": "SZ-A1-033",
+              "mineral_id": "mw_3646322df8e081cf",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 42.5999166667,
+              "longitude": 25.2141944444,
+              "documented_measurements": {
+                "temperature_c": 47.5,
+                "sample_temperature_c": 48.5,
+                "technical_discharge_lps": 1.0,
+                "mineralization_mg_l": 669,
+                "artesian_flow": true,
+                "temperature_observations": null,
+                "temperature_measurement_method": null,
+                "freshwater_observations": null,
+                "additional_observations": null
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": {
+                "temperature_c": null,
+                "depth_m": 695.5
+              },
+              "existing_enrichment": [],
+              "existing_sources": [
+                {
+                  "source_type": "existing_register",
+                  "title": "БДИБР – официален регистър",
+                  "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2024/11/15_web2021_REG_%D0%A1%D1%8A%D0%BE%D1%80%D1%8A%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D0%9C%D0%B8%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%BD%D0%B8%D0%92%D0%BE%D0%B4%D0%B8_%D0%91%D0%94%D0%98%D0%91%D0%A0_2019.xlsx",
+                  "published": "30.09.2019",
+                  "registry_number": "351054004  26.03.2008г."
+                }
+              ],
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-011",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G02",
+            "latitude": 42.5999166667
+          },
+          "original_borehole_record": {
+            "borehole_id": "SZ-BH-011",
+            "name": "Сз-7",
+            "settlement": "Павел баня",
+            "year": 1968,
+            "total_depth_m": 695.5,
+            "collar_elevation_m": 398.19,
+            "latitude": 42.5999166667,
+            "longitude": 25.2141944444,
+            "coordinate_status": "OFFICIAL_EXACT",
+            "coordinate_original": "42°35'59.7 N; 25°12'51.1 E",
+            "coordinate_source": "БДИБР, Приложение №2, стр. 9 от 11",
+            "coordinate_object": "Сондаж Сз-7",
+            "coordinate_reference_system_note": "Geographic coordinates; datum not explicitly stated",
+            "mineral_water": true,
+            "temperature_c": 47.5,
+            "sample_temperature_c": 48.5,
+            "technical_discharge_lps": 1.0,
+            "mineralization_mg_l": 669,
+            "artesian_flow": true,
+            "lithological_intervals": [
+              {
+                "from_m": 0,
+                "to_m": 60,
+                "material": "Песъчливи глини, глинести пясъци, чакъли с песъклив запълнител, в долната част заглинени",
+                "age": "Q-N"
+              },
+              {
+                "from_m": 60,
+                "to_m": 695.5,
+                "material": "Силно напукани гранити, на места със смляни зони",
+                "age": "Pz"
+              }
+            ],
+            "filter_intervals": [
+              {
+                "from_m": 445,
+                "to_m": 492,
+                "diameter_mm": 127
+              },
+              {
+                "from_m": 492,
+                "to_m": 695,
+                "diameter_mm": 108
+              }
+            ],
+            "coordinate_source_url": "https://earbd.bg/files/File/Start/Profil%20na%20kupuvacha/Pazarni%20konsultacii/5%20%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%202%20%D0%BA%D1%8A%D0%BC%20%D1%82%D0%B5%D1%85%D0%BD.%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D1%84.pdf"
+          },
+          "previous_location": {
+            "lat": 42.5999167,
+            "lon": 25.2141944,
+            "status": "A – официални географски координати",
+            "origin": "official_water_facilities.geojson"
+          }
+        }
       },
       "sources": [
         {
@@ -4528,7 +4881,152 @@
         },
         "research_enrichment": [],
         "duplicate_mh_records": [],
-        "matched_existing_records": []
+        "matched_existing_records": [],
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-012",
+          "source_id": "SZ-A1-034",
+          "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=25",
+          "source_reference": "Стр. 1-3",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 72,
+              "material": "Многократна и незакономерна алтернация от постепенно прехождащи пясъци и глини, в долната част чакъли",
+              "age": "N",
+              "interval_id": "SZ-BH-012-I001",
+              "material_original": "Многократна и незакономерна алтернация от постепенно прехождащи пясъци и глини, в долната част чакъли",
+              "material_normalized": "Многократна и незакономерна алтернация от постепенно прехождащи пясъци и глини, в долната част чакъли",
+              "source_id": "SZ-A1-034",
+              "source_reference": "Стр. 1-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 72,
+              "to_m": 655.2,
+              "material": "Здрави гранити, блоково напукани",
+              "age": "Pz",
+              "interval_id": "SZ-BH-012-I002",
+              "material_original": "Здрави гранити, блоково напукани",
+              "material_normalized": "Здрави гранити, блоково напукани",
+              "source_id": "SZ-A1-034",
+              "source_reference": "Стр. 1-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "mineral_id": "mw_151d1079503d97ee",
+            "geological_context": "Sedimentary cover over fractured granite",
+            "longitude": 25.2076388889,
+            "fault_context": {
+              "borehole_id": "SZ-BH-012",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "gem_fault_id": "EUR_BGCS015",
+              "gem_distance_m": 7585.9,
+              "mrrb_fault_id": "FLT-KARLOVO-KALOFER-REC40",
+              "mrrb_distance_m": 8231.7,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-012",
+              "source_id": "SZ-A1-034",
+              "mineral_id": "mw_151d1079503d97ee",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 42.60075,
+              "longitude": 25.2076388889,
+              "documented_measurements": {
+                "temperature_c": 60.2,
+                "sample_temperature_c": 57,
+                "technical_discharge_lps": 1.5,
+                "mineralization_mg_l": 652,
+                "artesian_flow": true,
+                "temperature_observations": null,
+                "temperature_measurement_method": null,
+                "freshwater_observations": null,
+                "additional_observations": null
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": {
+                "temperature_c": null,
+                "depth_m": 655.2
+              },
+              "existing_enrichment": [],
+              "existing_sources": [
+                {
+                  "source_type": "existing_register",
+                  "title": "БДИБР – официален регистър",
+                  "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2024/11/15_web2021_REG_%D0%A1%D1%8A%D0%BE%D1%80%D1%8A%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D0%9C%D0%B8%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%BD%D0%B8%D0%92%D0%BE%D0%B4%D0%B8_%D0%91%D0%94%D0%98%D0%91%D0%A0_2019.xlsx",
+                  "published": "30.09.2019",
+                  "registry_number": "351054005  26.03.2008г."
+                }
+              ],
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-012",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G02",
+            "latitude": 42.60075
+          },
+          "original_borehole_record": {
+            "borehole_id": "SZ-BH-012",
+            "name": "Сз-8",
+            "settlement": "Павел баня",
+            "year": 1969,
+            "total_depth_m": 655.2,
+            "collar_elevation_m": 400.76,
+            "latitude": 42.60075,
+            "longitude": 25.2076388889,
+            "coordinate_status": "OFFICIAL_EXACT",
+            "coordinate_original": "42°36'02.7 N; 25°12'27.5 E",
+            "coordinate_source": "БДИБР, Приложение №2, стр. 9 от 11",
+            "coordinate_object": "Сондаж Сз-8",
+            "coordinate_reference_system_note": "Geographic coordinates; datum not explicitly stated",
+            "mineral_water": true,
+            "temperature_c": 60.2,
+            "sample_temperature_c": 57,
+            "technical_discharge_lps": 1.5,
+            "mineralization_mg_l": 652,
+            "artesian_flow": true,
+            "lithological_intervals": [
+              {
+                "from_m": 0,
+                "to_m": 72,
+                "material": "Многократна и незакономерна алтернация от постепенно прехождащи пясъци и глини, в долната част чакъли",
+                "age": "N"
+              },
+              {
+                "from_m": 72,
+                "to_m": 655.2,
+                "material": "Здрави гранити, блоково напукани",
+                "age": "Pz"
+              }
+            ],
+            "filter_intervals": [
+              {
+                "from_m": 290,
+                "to_m": 610,
+                "diameter_mm": 127
+              }
+            ],
+            "sump": {
+              "from_m": 610,
+              "to_m": 638.5,
+              "diameter_mm": 108
+            },
+            "coordinate_source_url": "https://earbd.bg/files/File/Start/Profil%20na%20kupuvacha/Pazarni%20konsultacii/5%20%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%202%20%D0%BA%D1%8A%D0%BC%20%D1%82%D0%B5%D1%85%D0%BD.%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D1%84.pdf"
+          },
+          "previous_location": {
+            "lat": 42.60075,
+            "lon": 25.2076389,
+            "status": "A – официални географски координати",
+            "origin": "official_water_facilities.geojson"
+          }
+        }
       },
       "sources": [
         {
@@ -4584,7 +5082,165 @@
         },
         "research_enrichment": [],
         "duplicate_mh_records": [],
-        "matched_existing_records": []
+        "matched_existing_records": [],
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-013",
+          "source_id": "SZ-A1-035",
+          "source_url": "https://www.mh.government.bg/upload/6836/69-pavel_banya-sondazhx19-08-08-2017.pdf",
+          "source_reference": "Стр. 1-3",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 88,
+              "material": "Кватернерни пясъци и глини",
+              "age": "Q",
+              "interval_id": "SZ-BH-013-I001",
+              "material_original": "Кватернерни пясъци и глини",
+              "material_normalized": "Кватернерни пясъци и глини",
+              "source_id": "SZ-A1-035",
+              "source_reference": "Стр. 1-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 88,
+              "to_m": 483,
+              "material": "Здрави гранити, блоково напукани",
+              "age": "Pz",
+              "interval_id": "SZ-BH-013-I002",
+              "material_original": "Здрави гранити, блоково напукани",
+              "material_normalized": "Здрави гранити, блоково напукани",
+              "source_id": "SZ-A1-035",
+              "source_reference": "Стр. 1-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "mineral_id": "mw_1494f1f02e5b4305",
+            "geological_context": "Sedimentary cover over fractured granite",
+            "longitude": 25.2091106,
+            "fault_context": {
+              "borehole_id": "SZ-BH-013",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "gem_fault_id": "EUR_BGCS015",
+              "gem_distance_m": 7487.7,
+              "mrrb_fault_id": "FLT-KARLOVO-KALOFER-REC40",
+              "mrrb_distance_m": 8170.0,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-013",
+              "source_id": "SZ-A1-035",
+              "mineral_id": "mw_1494f1f02e5b4305",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 42.6019166667,
+              "longitude": 25.2091111111,
+              "documented_measurements": {
+                "temperature_c": 46.5,
+                "sample_temperature_c": 54.5,
+                "technical_discharge_lps": 0.84,
+                "mineralization_mg_l": 633,
+                "artesian_flow": true,
+                "temperature_observations": null,
+                "temperature_measurement_method": null,
+                "freshwater_observations": null,
+                "additional_observations": null
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": {
+                "temperature_c": null,
+                "depth_m": 483
+              },
+              "existing_enrichment": [],
+              "existing_sources": [
+                {
+                  "source_type": "existing_register",
+                  "title": "БДИБР – официален регистър",
+                  "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2024/11/15_web2021_REG_%D0%A1%D1%8A%D0%BE%D1%80%D1%8A%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D0%9C%D0%B8%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%BD%D0%B8%D0%92%D0%BE%D0%B4%D0%B8_%D0%91%D0%94%D0%98%D0%91%D0%A0_2019.xlsx",
+                  "published": "30.09.2019",
+                  "registry_number": "351054006  26.03.2008г."
+                }
+              ],
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-013",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G02",
+            "latitude": 42.6018775
+          },
+          "original_borehole_record": {
+            "borehole_id": "SZ-BH-013",
+            "name": "Х-19",
+            "settlement": "Павел баня",
+            "year": 1991,
+            "total_depth_m": 483,
+            "collar_elevation_m": 398.9,
+            "reported_artesian_outlet_elevation_m": 398,
+            "latitude": 42.6019166667,
+            "longitude": 25.2091111111,
+            "coordinate_status": "OFFICIAL_EXACT",
+            "coordinate_source": "БДИБР, Приложение №2, стр. 9 от 11",
+            "coordinate_source_url": "https://earbd.bg/files/File/Start/Profil%20na%20kupuvacha/Pazarni%20konsultacii/5%20%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%202%20%D0%BA%D1%8A%D0%BC%20%D1%82%D0%B5%D1%85%D0%BD.%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D1%84.pdf",
+            "coordinate_object": "Сондаж Х-19",
+            "coordinate_reference_system_note": "Datum not explicitly stated",
+            "mineral_water": true,
+            "temperature_c": 46.5,
+            "sample_temperature_c": 54.5,
+            "technical_discharge_lps": 0.84,
+            "mineralization_mg_l": 633,
+            "artesian_flow": true,
+            "lithological_intervals": [
+              {
+                "from_m": 0,
+                "to_m": 88,
+                "material": "Кватернерни пясъци и глини",
+                "age": "Q"
+              },
+              {
+                "from_m": 88,
+                "to_m": 483,
+                "material": "Здрави гранити, блоково напукани",
+                "age": "Pz"
+              }
+            ],
+            "casing_intervals": [
+              {
+                "from_m": 0,
+                "to_m": 88,
+                "diameter_mm": 324,
+                "cemented": true
+              },
+              {
+                "from_m": 75.5,
+                "to_m": 146.3,
+                "diameter_mm": 146
+              },
+              {
+                "from_m": 133.1,
+                "to_m": 152.2,
+                "diameter_mm": 127
+              }
+            ],
+            "filter_intervals": [
+              {
+                "from_m": 152.2,
+                "to_m": 483,
+                "diameter_mm": 127
+              }
+            ]
+          },
+          "previous_location": {
+            "lat": 42.6018775,
+            "lon": 25.2091106,
+            "status": "A – официални географски координати",
+            "origin": "official_water_facilities.geojson"
+          }
+        }
       },
       "sources": [
         {
@@ -43261,7 +43917,269 @@
           "research_status": "CONFIRMED_MISSING",
           "research_note": "?????? ?-12, ???????."
         },
-        "duplicate_mh_records": []
+        "duplicate_mh_records": [],
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-010",
+          "source_id": "SZ-A1-011",
+          "source_url": "https://mh.government.bg/upload/6639/261-ovoshtnik-sondazhk12-02-01-2024.pdf",
+          "source_reference": "Стр. 2-3",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 17,
+              "material": "Терасни наслаги на Тунджа",
+              "description": "Два водоносни чакълести хоризонта с обща мощност 3.8 м",
+              "interval_id": "SZ-BH-010-I001",
+              "material_original": "Терасни наслаги на Тунджа",
+              "material_normalized": "Терасни наслаги на Тунджа",
+              "source_id": "SZ-A1-011",
+              "source_reference": "Стр. 2-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 17,
+              "to_m": 47,
+              "material": "Силно заглинени чакъли",
+              "confidence": "UNCERTAIN",
+              "interval_id": "SZ-BH-010-I002",
+              "material_original": "Силно заглинени чакъли",
+              "material_normalized": "Силно заглинени чакъли",
+              "source_id": "SZ-A1-011",
+              "source_reference": "Стр. 2-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "UNCERTAIN"
+            },
+            {
+              "from_m": 47,
+              "to_m": 304,
+              "material": "Редуване на глини, пясъци и песъчливи глини с едри чакъли",
+              "interval_id": "SZ-BH-010-I003",
+              "material_original": "Редуване на глини, пясъци и песъчливи глини с едри чакъли",
+              "material_normalized": "Редуване на глини, пясъци и песъчливи глини с едри чакъли",
+              "source_id": "SZ-A1-011",
+              "source_reference": "Стр. 2-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 304,
+              "to_m": 308,
+              "material": "Силно изветрял и натрошен гранит",
+              "interval_id": "SZ-BH-010-I004",
+              "material_original": "Силно изветрял и натрошен гранит",
+              "material_normalized": "Силно изветрял и натрошен гранит",
+              "source_id": "SZ-A1-011",
+              "source_reference": "Стр. 2-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 308,
+              "to_m": 340,
+              "material": "Свеж плътен едроблоково напукан гранит",
+              "interval_id": "SZ-BH-010-I005",
+              "material_original": "Свеж плътен едроблоково напукан гранит",
+              "material_normalized": "Свеж плътен едроблоково напукан гранит",
+              "source_id": "SZ-A1-011",
+              "source_reference": "Стр. 2-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+            "mineral_id": "mw_d933182f49a71079",
+            "geological_context": "Variable sedimentary cover; alternating sands, gravels and clays",
+            "longitude": 25.425294269,
+            "fault_context": {
+              "borehole_id": "SZ-BH-010",
+              "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+              "gem_fault_id": "EUR_BGCS015",
+              "gem_distance_m": 2553.6,
+              "mrrb_fault_id": "FLT-KAZANLAK-NIKOLAEVO-REC41",
+              "mrrb_distance_m": 3754.8,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-010",
+              "source_id": "SZ-A1-011",
+              "mineral_id": "mw_d933182f49a71079",
+              "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+              "latitude": 42.580782008,
+              "longitude": 25.425294269,
+              "documented_measurements": {
+                "temperature_c": null,
+                "sample_temperature_c": null,
+                "technical_discharge_lps": null,
+                "mineralization_mg_l": null,
+                "artesian_flow": null,
+                "temperature_observations": null,
+                "temperature_measurement_method": null,
+                "freshwater_observations": null,
+                "additional_observations": null
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": {
+                "temperature_c": 44,
+                "depth_m": 340
+              },
+              "existing_enrichment": {
+                "current_deposit_name": "Овощник",
+                "identity_source": "Municipality of Kazanlak official mineral-water documents",
+                "location_note": "Сондаж К-12 е описан от Община Казанлък като разположен между с. Овощник и с. Розово. Няма установена точна facility-level координата.",
+                "cadastral_property_id": "35167.507.355",
+                "cadastral_settlement": "гр. Казанлък",
+                "locality": "Кълвачеви",
+                "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+                "spatial_accuracy": "official cadastral property containing facility",
+                "spatial_source_type": "MH balneological assessment No.261/02.01.2024",
+                "spatial_source_note": "Official MH assessment states that SOZ belt I includes the entire cadastral property 35167.507.355, in which borehole No.12, the pumping station and service facilities are constructed.",
+                "relative_location": "1310 m west of Ovoshtnik village; 52 m southeast of the entrance to the thermal bath; 42 m south of the road to Ovoshtnik",
+                "depth_m": 340,
+                "technical_possible_discharge_l_s": 0.21,
+                "technical_temperature_c": 54,
+                "static_water_level_elevation_m": 328.52,
+                "allowable_drawdown_m": 0.56,
+                "allowable_dynamic_water_level_elevation_m": 327.97,
+                "resource_scope": "technical possible facility discharge",
+                "borehole_geology_intervals": [
+                  {
+                    "from_m": 0,
+                    "to_m": 17,
+                    "description": "Tundzha River terrace deposits with two water-bearing gravel horizons"
+                  },
+                  {
+                    "from_m": 17,
+                    "to_m": 47,
+                    "description": "probable old Quaternary strongly clayey gravel deposits"
+                  },
+                  {
+                    "from_m": 47,
+                    "to_m": 304,
+                    "description": "repeated alternation of clays, sands and sandy clays, locally with individual coarse gravels"
+                  },
+                  {
+                    "from_m": 304,
+                    "to_m": 308,
+                    "description": "strongly weathered and fractured granite"
+                  },
+                  {
+                    "from_m": 308,
+                    "to_m": 340,
+                    "description": "fresh dense granite, block-fractured"
+                  }
+                ],
+                "sample_temperature_c": 44,
+                "sample_temperature_scope": "laboratory/sample value in MH assessment; separate from technical facility temperature",
+                "total_mineralization_mg_l": 454,
+                "ph": 8.84,
+                "fluoride_mg_l": 24.65,
+                "chloride_mg_l": 16.31,
+                "sulfate_mg_l": 59.67,
+                "bicarbonate_mg_l": 180,
+                "sodium_mg_l": 93.49,
+                "calcium_mg_l": 2.71,
+                "silicic_acid_mg_l": 61.24,
+                "potable_status": "not suitable for drinking due to high fluoride content according to MH assessment",
+                "verified_source": "MH balneological assessment No.261/02.01.2024",
+                "verified_source_url": "https://old.mh.government.bg/media/filer_public/2024/01/03/261-ovoshtnik-sondazhk12-02-01-2024.pdf",
+                "deposit_fault_context": "Находище Овощник е водонапорна система от пукнатинно-жилен тип в палеозойските гранити под Казанлъшкия грабен. Тунджанската разломна зона е колектор на термалните води. Основна хидрогеоложка роля имат тектонични нарушения с направления приблизително СЗ-ЮИ, ЗСЗ-ИЮИ и ССЗ-ЮЮИ; първите две системи са термоводоносни, а третата има бариерна роля.",
+                "deposit_fault_context_scope": "deposit-level structural interpretation; not proof that the individual borehole lies directly on a mapped fault trace",
+                "coordinate_resolution_source": "AGKK KAIS OpenData",
+                "coordinate_resolution_method": "Representative point inside exact cadastral land-plot geometry.",
+                "coordinate_precision_scope": "CADASTRAL_PARCEL_LEVEL_NOT_CONFIRMED_WELLHEAD",
+                "resolved_latitude": 42.580782008,
+                "resolved_longitude": 25.425294269,
+                "cadastral_parcel_centroid_latitude": 42.580814743,
+                "cadastral_parcel_centroid_longitude": 25.425294229,
+                "cadastral_parcel_area_m2": 495.43,
+                "cadastral_resolution_shapefile": "data/mineral-water/kais-parcels/35167/land_plots/поземлени имоти/Имоти (Polygon).shp",
+                "cadastral_resolution_previous_status": "CADASTRAL_LOCATION_TO_RESOLVE",
+                "cadastral_resolution_at": "2026-09-10T19:41:45+00:00",
+                "cadastral_resolution_note": "Exact cadastral parcel geometry resolved from AGKK KAIS OpenData. The map coordinate is a representative point guaranteed to lie inside the parcel and must not be interpreted as a surveyed wellhead/captage coordinate.",
+                "settlement": "Казанлък"
+              },
+              "existing_sources": [
+                {
+                  "source_type": "balneology",
+                  "title": "Балнеологична оценка № 261/02.01.2024 г.",
+                  "description": "за сондаж № К-12 от находище на минерална вода „Овощник“, с. Овощник, община Казанлък, област Стара Загора",
+                  "published": "03.01.2024",
+                  "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=9"
+                },
+                {
+                  "source_type": "verified_research",
+                  "title": "MH balneological assessment No.261/02.01.2024",
+                  "source_url": "https://old.mh.government.bg/media/filer_public/2024/01/03/261-ovoshtnik-sondazhk12-02-01-2024.pdf",
+                  "assessment_no": null,
+                  "assessment_date": null
+                }
+              ],
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-010",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G01",
+            "latitude": 42.580782008
+          },
+          "original_borehole_record": {
+            "borehole_id": "SZ-BH-010",
+            "original_name": "Сондаж №12",
+            "aliases": [
+              "К-12",
+              "С-12"
+            ],
+            "total_depth_m": 340,
+            "coordinate_status": "UNVERIFIED",
+            "coordinate_search_attempts": 2,
+            "latitude": null,
+            "longitude": null,
+            "cadastral_parcel": {
+              "identifier": "35167.507.355"
+            },
+            "continuous_column": true,
+            "is_mineral_water": true,
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 17,
+                "material": "Терасни наслаги на Тунджа",
+                "description": "Два водоносни чакълести хоризонта с обща мощност 3.8 м"
+              },
+              {
+                "from_m": 17,
+                "to_m": 47,
+                "material": "Силно заглинени чакъли",
+                "confidence": "UNCERTAIN"
+              },
+              {
+                "from_m": 47,
+                "to_m": 304,
+                "material": "Редуване на глини, пясъци и песъчливи глини с едри чакъли"
+              },
+              {
+                "from_m": 304,
+                "to_m": 308,
+                "material": "Силно изветрял и натрошен гранит"
+              },
+              {
+                "from_m": 308,
+                "to_m": 340,
+                "material": "Свеж плътен едроблоково напукан гранит"
+              }
+            ]
+          },
+          "previous_location": {
+            "lat": 42.580782008,
+            "lon": 25.425294269,
+            "status": "CADASTRAL_RESOLVED_APPROXIMATE",
+            "origin": "resolved_latitude+resolved_longitude"
+          }
+        }
       },
       "sources": [
         {
@@ -43432,7 +44350,388 @@
           "research_status": "CONFIRMED_MISSING",
           "research_note": "?????? ?-14, ???????."
         },
-        "duplicate_mh_records": []
+        "duplicate_mh_records": [],
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-006",
+          "source_id": "SZ-A1-006",
+          "source_url": "https://www.mh.government.bg/upload/6638/262-ovoshtnik-sondazhk14-02-01-2024.pdf",
+          "source_reference": "Pages 1-2, lithological section and resource tables on page 2",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 25,
+              "material": "Терасни материали на река Тунджа",
+              "interval_id": "SZ-BH-006-I001",
+              "material_original": "Терасни материали на река Тунджа",
+              "material_normalized": "Терасни материали на река Тунджа",
+              "source_id": "SZ-A1-006",
+              "source_reference": "Pages 1-2, lithological section and resource tables on page 2",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 25,
+              "to_m": 103,
+              "material": "Дребнозърнест пясък",
+              "description": "С тънки глинести прослойки",
+              "interval_id": "SZ-BH-006-I002",
+              "material_original": "Дребнозърнест пясък",
+              "material_normalized": "Дребнозърнест пясък",
+              "source_id": "SZ-A1-006",
+              "source_reference": "Pages 1-2, lithological section and resource tables on page 2",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 103,
+              "to_m": 254,
+              "material": "Песъчливи глини",
+              "description": "На места с тънки пясъчни прослойки",
+              "interval_id": "SZ-BH-006-I003",
+              "material_original": "Песъчливи глини",
+              "material_normalized": "Песъчливи глини",
+              "source_id": "SZ-A1-006",
+              "source_reference": "Pages 1-2, lithological section and resource tables on page 2",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 254,
+              "to_m": 273,
+              "material": "Силно изветрял гранит",
+              "description": "Почти разрушен",
+              "interval_id": "SZ-BH-006-I004",
+              "material_original": "Силно изветрял гранит",
+              "material_normalized": "Силно изветрял гранит",
+              "source_id": "SZ-A1-006",
+              "source_reference": "Pages 1-2, lithological section and resource tables on page 2",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 273,
+              "to_m": 425,
+              "material": "Гранит",
+              "description": "Здрав, свеж, едроблоково напукан",
+              "interval_id": "SZ-BH-006-I005",
+              "material_original": "Гранит",
+              "material_normalized": "Гранит",
+              "source_id": "SZ-A1-006",
+              "source_reference": "Pages 1-2, lithological section and resource tables on page 2",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+            "mineral_id": "mw_0e3b3633aa0989ad",
+            "geological_context": "Variable sedimentary cover; alternating sands, gravels and clays",
+            "longitude": 25.430596515,
+            "fault_context": {
+              "borehole_id": "SZ-BH-006",
+              "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+              "gem_fault_id": "EUR_BGCS015",
+              "gem_distance_m": 2486.8,
+              "mrrb_fault_id": "FLT-KAZANLAK-NIKOLAEVO-REC41",
+              "mrrb_distance_m": 3532.3,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-006",
+              "source_id": "SZ-A1-006",
+              "mineral_id": "mw_0e3b3633aa0989ad",
+              "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+              "latitude": 42.581562197,
+              "longitude": 25.430596515,
+              "documented_measurements": {
+                "temperature_c": null,
+                "sample_temperature_c": null,
+                "technical_discharge_lps": null,
+                "mineralization_mg_l": null,
+                "artesian_flow": null,
+                "temperature_observations": [
+                  {
+                    "depth_m": 10,
+                    "temperature_c": 9
+                  },
+                  {
+                    "depth_m": 30,
+                    "temperature_c": 11
+                  },
+                  {
+                    "depth_m": 85,
+                    "temperature_c": 15.5
+                  },
+                  {
+                    "depth_m": 175,
+                    "temperature_c": 20.5
+                  },
+                  {
+                    "depth_m": 193,
+                    "temperature_c": 21.5
+                  },
+                  {
+                    "depth_m": 200,
+                    "temperature_c": 22.5
+                  },
+                  {
+                    "depth_m": 252,
+                    "temperature_c": 25
+                  }
+                ],
+                "temperature_measurement_method": "Returning drilling mud temperature",
+                "freshwater_observations": [
+                  {
+                    "depth_m": 2.5,
+                    "type": "DOCUMENTED_FRESHWATER_INFLOW",
+                    "isolated_during_construction": true,
+                    "source_reference": "Balneological assessment, page 2"
+                  }
+                ],
+                "additional_observations": null
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": {
+                "temperature_c": 30.7,
+                "depth_m": 425
+              },
+              "existing_enrichment": {
+                "current_deposit_name": "Овощник",
+                "identity_source": "Municipality of Kazanlak official mineral-water documents",
+                "location_note": "Сондаж К-14 е описан от Община Казанлък като разположен западно от с. Овощник. Няма установена точна facility-level координата.",
+                "depth_m": 425,
+                "relative_location": "approximately 915 m northeast of Ovoshtnik village",
+                "technical_possible_discharge_l_s": 0.16,
+                "temperature_c": 45,
+                "static_water_level_elevation_m": 327.57,
+                "allowable_drawdown_m": 0.5,
+                "allowable_dynamic_water_level_elevation_m": 327.07,
+                "resource_scope": "technical possible facility discharge",
+                "fresh_water_intercept_m": 2.5,
+                "fresh_water_isolation_note": "Shallow fresh-water inflow at approximately 2.5 m was isolated by double casing and cementation of the annular space.",
+                "borehole_geology_intervals": [
+                  {
+                    "from_m": 0,
+                    "to_m": 25,
+                    "description": "Tundzha River terrace materials"
+                  },
+                  {
+                    "from_m": 25,
+                    "to_m": 103,
+                    "description": "fine-grained sand with thin clay interbeds"
+                  },
+                  {
+                    "from_m": 103,
+                    "to_m": 254,
+                    "description": "sandy clays with thin sandy interbeds"
+                  },
+                  {
+                    "from_m": 254,
+                    "to_m": 273,
+                    "description": "strongly weathered and almost decomposed granite"
+                  },
+                  {
+                    "from_m": 273,
+                    "to_m": 425,
+                    "description": "sound granite, fresh, locally fine-fractured"
+                  }
+                ],
+                "historical_temperature_profile_c": [
+                  {
+                    "depth_m": 10,
+                    "temperature_c": 9
+                  },
+                  {
+                    "depth_m": 30,
+                    "temperature_c": 11
+                  },
+                  {
+                    "depth_m": 85,
+                    "temperature_c": 15.5
+                  },
+                  {
+                    "depth_m": 175,
+                    "temperature_c": 20.5
+                  },
+                  {
+                    "depth_m": 193,
+                    "temperature_c": 21.5
+                  },
+                  {
+                    "depth_m": 200,
+                    "temperature_c": 22.5
+                  },
+                  {
+                    "depth_m": 252,
+                    "temperature_c": 25
+                  }
+                ],
+                "geothermal_gradient_c_per_m": 0.085,
+                "verified_source": "MH balneological assessment No.262/02.01.2024",
+                "verified_source_url": "https://www.mh.government.bg/upload/6638/262-ovoshtnik-sondazhk14-02-01-2024.pdf",
+                "cadastral_property_id": "35167.507.333",
+                "cadastral_settlement": "гр. Казанлък",
+                "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+                "spatial_accuracy": "official cadastral property containing facility",
+                "spatial_source_note": "MH assessment states that proposed SOZ belt I around borehole K-14 includes the entire cadastral property 35167.507.333.",
+                "spatial_source_type": "MH balneological assessment No.262/02.01.2024",
+                "sample_temperature_c": 30.7,
+                "sample_temperature_scope": "analytical sample value; separate from technical facility temperature",
+                "total_mineralization_mg_l": 470,
+                "ph": 8.8,
+                "fluoride_mg_l": 24.03,
+                "chloride_mg_l": 15.96,
+                "sulfate_mg_l": 61.93,
+                "carbonate_mg_l": 9,
+                "bicarbonate_mg_l": 186.1,
+                "sodium_mg_l": 94.03,
+                "calcium_mg_l": 3.91,
+                "lithium_mg_l": 0.64,
+                "silicic_acid_mg_l": 67.96,
+                "hydrogen_sulfide_mg_l": 2.14,
+                "potable_status": "not suitable for drinking due to high fluoride content according to MH assessment",
+                "deposit_fault_context": "Находище Овощник е водонапорна система от пукнатинно-жилен тип в палеозойските гранити под Казанлъшкия грабен. Тунджанската разломна зона е колектор на термалните води. Основна хидрогеоложка роля имат тектонични нарушения с направления приблизително СЗ-ЮИ, ЗСЗ-ИЮИ и ССЗ-ЮЮИ; първите две системи са термоводоносни, а третата има бариерна роля.",
+                "deposit_fault_context_scope": "deposit-level structural interpretation",
+                "coordinate_resolution_source": "AGKK KAIS OpenData",
+                "coordinate_resolution_method": "Representative point inside exact cadastral land-plot geometry.",
+                "coordinate_precision_scope": "CADASTRAL_PARCEL_LEVEL_NOT_CONFIRMED_WELLHEAD",
+                "resolved_latitude": 42.581562197,
+                "resolved_longitude": 25.430596515,
+                "cadastral_parcel_centroid_latitude": 42.58157724,
+                "cadastral_parcel_centroid_longitude": 25.430592975,
+                "cadastral_parcel_area_m2": 446.71,
+                "cadastral_resolution_shapefile": "data/mineral-water/kais-parcels/35167/land_plots/поземлени имоти/Имоти (Polygon).shp",
+                "cadastral_resolution_previous_status": "CADASTRAL_LOCATION_TO_RESOLVE",
+                "cadastral_resolution_at": "2026-09-10T19:41:45+00:00",
+                "cadastral_resolution_note": "Exact cadastral parcel geometry resolved from AGKK KAIS OpenData. The map coordinate is a representative point guaranteed to lie inside the parcel and must not be interpreted as a surveyed wellhead/captage coordinate.",
+                "settlement": "Казанлък"
+              },
+              "existing_sources": [
+                {
+                  "source_type": "balneology",
+                  "title": "Балнеологична оценка № 262/02.01.2024 г.",
+                  "description": "за сондаж № К-14 от находище на минерална вода „Овощник“, с. Овощник, община Казанлък, област Стара Загора",
+                  "published": "03.01.2024",
+                  "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=9"
+                },
+                {
+                  "source_type": "verified_research",
+                  "title": "MH balneological assessment No.262/02.01.2024",
+                  "source_url": "https://www.mh.government.bg/upload/6638/262-ovoshtnik-sondazhk14-02-01-2024.pdf",
+                  "assessment_no": null,
+                  "assessment_date": null
+                }
+              ],
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-006",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G01",
+            "latitude": 42.581562197
+          },
+          "original_borehole_record": {
+            "borehole_id": "SZ-BH-006",
+            "original_name": "Сондаж №14",
+            "aliases": [
+              "К-14",
+              "С-14",
+              "K-14",
+              "S-14"
+            ],
+            "registry_id": "351051006",
+            "drilling_year": 1960,
+            "total_depth_m": 425,
+            "elevation_m": 328.06,
+            "coordinate_status": "UNVERIFIED",
+            "latitude": null,
+            "longitude": null,
+            "coordinate_search_attempts": 2,
+            "coordinate_search_result": "BDIBR 2022 and Kazanlak municipal registry 2024 checked; coordinate fields blank",
+            "continuous_column": true,
+            "is_mineral_water": true,
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 25,
+                "material": "Терасни материали на река Тунджа"
+              },
+              {
+                "from_m": 25,
+                "to_m": 103,
+                "material": "Дребнозърнест пясък",
+                "description": "С тънки глинести прослойки"
+              },
+              {
+                "from_m": 103,
+                "to_m": 254,
+                "material": "Песъчливи глини",
+                "description": "На места с тънки пясъчни прослойки"
+              },
+              {
+                "from_m": 254,
+                "to_m": 273,
+                "material": "Силно изветрял гранит",
+                "description": "Почти разрушен"
+              },
+              {
+                "from_m": 273,
+                "to_m": 425,
+                "material": "Гранит",
+                "description": "Здрав, свеж, едроблоково напукан"
+              }
+            ],
+            "freshwater_observations": [
+              {
+                "depth_m": 2.5,
+                "type": "DOCUMENTED_FRESHWATER_INFLOW",
+                "isolated_during_construction": true,
+                "source_reference": "Balneological assessment, page 2"
+              }
+            ],
+            "temperature_observations": [
+              {
+                "depth_m": 10,
+                "temperature_c": 9
+              },
+              {
+                "depth_m": 30,
+                "temperature_c": 11
+              },
+              {
+                "depth_m": 85,
+                "temperature_c": 15.5
+              },
+              {
+                "depth_m": 175,
+                "temperature_c": 20.5
+              },
+              {
+                "depth_m": 193,
+                "temperature_c": 21.5
+              },
+              {
+                "depth_m": 200,
+                "temperature_c": 22.5
+              },
+              {
+                "depth_m": 252,
+                "temperature_c": 25
+              }
+            ],
+            "temperature_measurement_method": "Returning drilling mud temperature",
+            "reported_geothermal_gradient_c_per_m": 0.085,
+            "geothermal_gradient_is_equilibrium_measurement": false
+          },
+          "previous_location": {
+            "lat": 42.581562197,
+            "lon": 25.430596515,
+            "status": "CADASTRAL_RESOLVED_APPROXIMATE",
+            "origin": "resolved_latitude+resolved_longitude"
+          }
+        }
       },
       "sources": [
         {
@@ -43556,7 +44855,699 @@
           "research_status": "CONFIRMED_MISSING",
           "research_note": "?????? ?-2, ???????."
         },
-        "duplicate_mh_records": []
+        "duplicate_mh_records": [],
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-009",
+          "source_id": "SZ-A1-010",
+          "source_url": "https://mh.government.bg/upload/6642/258-ovoshtnik-sondazhk2-02-01-2024.pdf",
+          "source_reference": "Стр. 2-4",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 1.5,
+              "material": "Хумус",
+              "interval_id": "SZ-BH-009-I001",
+              "material_original": "Хумус",
+              "material_normalized": "Хумус",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 1.5,
+              "to_m": 3,
+              "material": "Глини",
+              "interval_id": "SZ-BH-009-I002",
+              "material_original": "Глини",
+              "material_normalized": "Глини",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 3,
+              "to_m": 14,
+              "material": "Дребнозърнести пясъци",
+              "interval_id": "SZ-BH-009-I003",
+              "material_original": "Дребнозърнести пясъци",
+              "material_normalized": "Дребнозърнести пясъци",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 14,
+              "to_m": 40.5,
+              "material": "Глини с пясък",
+              "interval_id": "SZ-BH-009-I004",
+              "material_original": "Глини с пясък",
+              "material_normalized": "Глини с пясък",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 40.5,
+              "to_m": 86.5,
+              "material": "Дребно- и среднозърнести пясъци",
+              "interval_id": "SZ-BH-009-I005",
+              "material_original": "Дребно- и среднозърнести пясъци",
+              "material_normalized": "Дребно- и среднозърнести пясъци",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 86.5,
+              "to_m": 88.2,
+              "material": "Светлосиви глини",
+              "interval_id": "SZ-BH-009-I006",
+              "material_original": "Светлосиви глини",
+              "material_normalized": "Светлосиви глини",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 88.2,
+              "to_m": 108.2,
+              "material": "Кварцови пясъци",
+              "interval_id": "SZ-BH-009-I007",
+              "material_original": "Кварцови пясъци",
+              "material_normalized": "Кварцови пясъци",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 108.2,
+              "to_m": 112.5,
+              "material": "Глини",
+              "interval_id": "SZ-BH-009-I008",
+              "material_original": "Глини",
+              "material_normalized": "Глини",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 112.5,
+              "to_m": 120.5,
+              "material": "Дребнозърнести кварцови пясъци",
+              "interval_id": "SZ-BH-009-I009",
+              "material_original": "Дребнозърнести кварцови пясъци",
+              "material_normalized": "Дребнозърнести кварцови пясъци",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 120.5,
+              "to_m": 157.4,
+              "material": "Пъстроцветни глини",
+              "interval_id": "SZ-BH-009-I010",
+              "material_original": "Пъстроцветни глини",
+              "material_normalized": "Пъстроцветни глини",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 157.4,
+              "to_m": 196.9,
+              "material": "Кварц-фелдшпатови пясъци",
+              "interval_id": "SZ-BH-009-I011",
+              "material_original": "Кварц-фелдшпатови пясъци",
+              "material_normalized": "Кварц-фелдшпатови пясъци",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 196.9,
+              "to_m": 199.1,
+              "material": "Плътни глини",
+              "interval_id": "SZ-BH-009-I012",
+              "material_original": "Плътни глини",
+              "material_normalized": "Плътни глини",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 199.1,
+              "to_m": 224.6,
+              "material": "Кварц-фелдшпатови пясъци",
+              "interval_id": "SZ-BH-009-I013",
+              "material_original": "Кварц-фелдшпатови пясъци",
+              "material_normalized": "Кварц-фелдшпатови пясъци",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 224.6,
+              "to_m": 227.1,
+              "material": "Глини с пясък",
+              "interval_id": "SZ-BH-009-I014",
+              "material_original": "Глини с пясък",
+              "material_normalized": "Глини с пясък",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 227.1,
+              "to_m": 230.1,
+              "material": "Кварцови пясъци",
+              "interval_id": "SZ-BH-009-I015",
+              "material_original": "Кварцови пясъци",
+              "material_normalized": "Кварцови пясъци",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 230.1,
+              "to_m": 231.2,
+              "material": "Плътни глини",
+              "interval_id": "SZ-BH-009-I016",
+              "material_original": "Плътни глини",
+              "material_normalized": "Плътни глини",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 237.2,
+              "to_m": 244,
+              "material": "Кварцови пясъци",
+              "interval_id": "SZ-BH-009-I017",
+              "material_original": "Кварцови пясъци",
+              "material_normalized": "Кварцови пясъци",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 244,
+              "to_m": 253.3,
+              "material": "Песъчливи глини",
+              "interval_id": "SZ-BH-009-I018",
+              "material_original": "Песъчливи глини",
+              "material_normalized": "Песъчливи глини",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 253.3,
+              "to_m": 255.1,
+              "material": "Чакъли и конгломерати",
+              "interval_id": "SZ-BH-009-I019",
+              "material_original": "Чакъли и конгломерати",
+              "material_normalized": "Чакъли и конгломерати",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 255.1,
+              "to_m": 260.6,
+              "material": "Кварцови пясъци",
+              "interval_id": "SZ-BH-009-I020",
+              "material_original": "Кварцови пясъци",
+              "material_normalized": "Кварцови пясъци",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 260.6,
+              "to_m": 264.5,
+              "material": "Глини",
+              "interval_id": "SZ-BH-009-I021",
+              "material_original": "Глини",
+              "material_normalized": "Глини",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 264.5,
+              "to_m": 270,
+              "material": "Кварцови пясъци",
+              "interval_id": "SZ-BH-009-I022",
+              "material_original": "Кварцови пясъци",
+              "material_normalized": "Кварцови пясъци",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 270,
+              "to_m": 283.2,
+              "material": "Песъчливи глини",
+              "interval_id": "SZ-BH-009-I023",
+              "material_original": "Песъчливи глини",
+              "material_normalized": "Песъчливи глини",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 283.2,
+              "to_m": 308.8,
+              "material": "Пясъци",
+              "interval_id": "SZ-BH-009-I024",
+              "material_original": "Пясъци",
+              "material_normalized": "Пясъци",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 308.8,
+              "to_m": 354.7,
+              "material": "Глини с пясъчни прослойки",
+              "interval_id": "SZ-BH-009-I025",
+              "material_original": "Глини с пясъчни прослойки",
+              "material_normalized": "Глини с пясъчни прослойки",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 354.7,
+              "to_m": 393,
+              "material": "Песъчливи глини",
+              "interval_id": "SZ-BH-009-I026",
+              "material_original": "Песъчливи глини",
+              "material_normalized": "Песъчливи глини",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 393,
+              "to_m": 406.2,
+              "material": "Силно изветрели гранити",
+              "interval_id": "SZ-BH-009-I027",
+              "material_original": "Силно изветрели гранити",
+              "material_normalized": "Силно изветрели гранити",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 406.2,
+              "to_m": 421.1,
+              "material": "Слабо изветрял гранит",
+              "interval_id": "SZ-BH-009-I028",
+              "material_original": "Слабо изветрял гранит",
+              "material_normalized": "Слабо изветрял гранит",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 421.1,
+              "to_m": 588.8,
+              "material": "Масивен гранит с напукани зони",
+              "interval_id": "SZ-BH-009-I029",
+              "material_original": "Масивен гранит с напукани зони",
+              "material_normalized": "Масивен гранит с напукани зони",
+              "source_id": "SZ-A1-010",
+              "source_reference": "Стр. 2-4",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+            "mineral_id": "mw_840c8905e80d26c8",
+            "geological_context": "Variable sedimentary cover; alternating sands, gravels and clays",
+            "longitude": 25.425383444,
+            "fault_context": {
+              "borehole_id": "SZ-BH-009",
+              "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+              "gem_fault_id": "EUR_BGCS015",
+              "gem_distance_m": 1927.6,
+              "mrrb_fault_id": "FLT-KAZANLAK-NIKOLAEVO-REC41",
+              "mrrb_distance_m": 3159.0,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-009",
+              "source_id": "SZ-A1-010",
+              "mineral_id": "mw_840c8905e80d26c8",
+              "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+              "latitude": 42.586427317,
+              "longitude": 25.425383444,
+              "documented_measurements": {
+                "temperature_c": null,
+                "sample_temperature_c": null,
+                "technical_discharge_lps": null,
+                "mineralization_mg_l": null,
+                "artesian_flow": null,
+                "temperature_observations": null,
+                "temperature_measurement_method": null,
+                "freshwater_observations": null,
+                "additional_observations": null
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": {
+                "temperature_c": 48.8,
+                "depth_m": 588.8
+              },
+              "existing_enrichment": {
+                "current_deposit_name": "Овощник",
+                "identity_source": "Municipality of Kazanlak official mineral-water documents",
+                "location_note": "Сондаж К-2 е описан от Община Казанлък като разположен в близост до летище Овощник. Няма установена точна facility-level координата.",
+                "cadastral_property_id": "35167.99.743",
+                "cadastral_settlement": "гр. Казанлък",
+                "locality": "Големите ливади",
+                "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+                "spatial_source_type": "Municipality of Kazanlak / Municipal Council official decision",
+                "spatial_source_note": "Official decision states that borehole K-2 is located within cadastral property 35167.99.743.",
+                "construction_year": 1965,
+                "depth_m": 588.8,
+                "terrain_elevation_m": 331.95,
+                "relative_location": "910 m north-northwest of Waterland aquapark and approximately 800 m northwest of the mineral bath in Ovoshtnik",
+                "spatial_accuracy": "official descriptive facility location",
+                "technical_possible_discharge_l_s": 1.93,
+                "technical_temperature_c": 64,
+                "static_water_level_elevation_m": 333.9,
+                "allowable_drawdown_m": 3.15,
+                "allowable_dynamic_water_level_elevation_m": 330.75,
+                "resource_scope": "technical possible facility discharge",
+                "borehole_geology_summary": "Neogene sediments to approximately 393 m, followed by South Bulgarian granites; strongly fractured and decomposed granite begins around 393 m, with several strongly fractured intervals continuing to 588.8 m.",
+                "granite_top_m": 393,
+                "strongly_fractured_granite_intervals_m": [
+                  "393.0-406.2",
+                  "412.8-421.1",
+                  "450.0-465.0",
+                  "516.5-519.2",
+                  "520.4-533.3",
+                  "541.6-542.9",
+                  "556.9-570.6",
+                  "576.7-588.8"
+                ],
+                "sample_temperature_c": 48.8,
+                "total_mineralization_mg_l": 421,
+                "ph": 8.9,
+                "fluoride_mg_l": 24.18,
+                "chloride_mg_l": 16.66,
+                "sulfate_mg_l": 52.26,
+                "bicarbonate_mg_l": 164.75,
+                "sodium_mg_l": 89.61,
+                "calcium_mg_l": 3.15,
+                "silicic_acid_mg_l": 52.06,
+                "potable_status": "not suitable for drinking due to high fluoride content according to MH assessment",
+                "verified_source": "MH balneological assessment No.258/02.01.2024",
+                "verified_source_url": "https://old.mh.government.bg/media/filer_public/2024/01/03/258-ovoshtnik-sondazhk2-02-01-2024.pdf",
+                "deposit_fault_context": "Находище Овощник е водонапорна система от пукнатинно-жилен тип в палеозойските гранити под Казанлъшкия грабен. Тунджанската разломна зона е колектор на термалните води. Основна хидрогеоложка роля имат тектонични нарушения с направления приблизително СЗ-ЮИ, ЗСЗ-ИЮИ и ССЗ-ЮЮИ; първите две системи са термоводоносни, а третата има бариерна роля.",
+                "deposit_fault_context_scope": "deposit-level structural interpretation; not proof that the individual borehole lies directly on a mapped fault trace",
+                "coordinate_resolution_source": "AGKK KAIS OpenData",
+                "coordinate_resolution_method": "Representative point inside exact cadastral land-plot geometry.",
+                "coordinate_precision_scope": "CADASTRAL_PARCEL_LEVEL_NOT_CONFIRMED_WELLHEAD",
+                "resolved_latitude": 42.586427317,
+                "resolved_longitude": 25.425383444,
+                "cadastral_parcel_centroid_latitude": 42.586160354,
+                "cadastral_parcel_centroid_longitude": 25.425508365,
+                "cadastral_parcel_area_m2": 318978.63,
+                "cadastral_resolution_shapefile": "data/mineral-water/kais-parcels/35167/land_plots/поземлени имоти/Имоти (Polygon).shp",
+                "cadastral_resolution_previous_status": "CADASTRAL_LOCATION_TO_RESOLVE",
+                "cadastral_resolution_at": "2026-09-10T19:41:45+00:00",
+                "cadastral_resolution_note": "Exact cadastral parcel geometry resolved from AGKK KAIS OpenData. The map coordinate is a representative point guaranteed to lie inside the parcel and must not be interpreted as a surveyed wellhead/captage coordinate.",
+                "settlement": "Казанлък"
+              },
+              "existing_sources": [
+                {
+                  "source_type": "balneology",
+                  "title": "Балнеологична оценка № 258/02.01.2024 г.",
+                  "description": "за сондаж № К-2 от находище на минерална вода „Овощник“, с. Овощник, община Казанлък, област Стара Загора",
+                  "published": "03.01.2024",
+                  "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=9"
+                },
+                {
+                  "source_type": "verified_research",
+                  "title": "MH balneological assessment No.258/02.01.2024",
+                  "source_url": "https://old.mh.government.bg/media/filer_public/2024/01/03/258-ovoshtnik-sondazhk2-02-01-2024.pdf",
+                  "assessment_no": null,
+                  "assessment_date": null
+                }
+              ],
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-009",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G01",
+            "latitude": 42.586427317
+          },
+          "original_borehole_record": {
+            "borehole_id": "SZ-BH-009",
+            "original_name": "К-2 Овощник",
+            "drilling_year": 1965,
+            "total_depth_m": 588.8,
+            "coordinate_status": "UNVERIFIED",
+            "coordinate_search_attempts": 2,
+            "latitude": null,
+            "longitude": null,
+            "cadastral_parcel": {
+              "identifier": "35167.99.743"
+            },
+            "continuous_column": false,
+            "is_mineral_water": true,
+            "documented_gaps": [
+              {
+                "from_m": 231.2,
+                "to_m": 237.2
+              }
+            ],
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 1.5,
+                "material": "Хумус"
+              },
+              {
+                "from_m": 1.5,
+                "to_m": 3,
+                "material": "Глини"
+              },
+              {
+                "from_m": 3,
+                "to_m": 14,
+                "material": "Дребнозърнести пясъци"
+              },
+              {
+                "from_m": 14,
+                "to_m": 40.5,
+                "material": "Глини с пясък"
+              },
+              {
+                "from_m": 40.5,
+                "to_m": 86.5,
+                "material": "Дребно- и среднозърнести пясъци"
+              },
+              {
+                "from_m": 86.5,
+                "to_m": 88.2,
+                "material": "Светлосиви глини"
+              },
+              {
+                "from_m": 88.2,
+                "to_m": 108.2,
+                "material": "Кварцови пясъци"
+              },
+              {
+                "from_m": 108.2,
+                "to_m": 112.5,
+                "material": "Глини"
+              },
+              {
+                "from_m": 112.5,
+                "to_m": 120.5,
+                "material": "Дребнозърнести кварцови пясъци"
+              },
+              {
+                "from_m": 120.5,
+                "to_m": 157.4,
+                "material": "Пъстроцветни глини"
+              },
+              {
+                "from_m": 157.4,
+                "to_m": 196.9,
+                "material": "Кварц-фелдшпатови пясъци"
+              },
+              {
+                "from_m": 196.9,
+                "to_m": 199.1,
+                "material": "Плътни глини"
+              },
+              {
+                "from_m": 199.1,
+                "to_m": 224.6,
+                "material": "Кварц-фелдшпатови пясъци"
+              },
+              {
+                "from_m": 224.6,
+                "to_m": 227.1,
+                "material": "Глини с пясък"
+              },
+              {
+                "from_m": 227.1,
+                "to_m": 230.1,
+                "material": "Кварцови пясъци"
+              },
+              {
+                "from_m": 230.1,
+                "to_m": 231.2,
+                "material": "Плътни глини"
+              },
+              {
+                "from_m": 237.2,
+                "to_m": 244,
+                "material": "Кварцови пясъци"
+              },
+              {
+                "from_m": 244,
+                "to_m": 253.3,
+                "material": "Песъчливи глини"
+              },
+              {
+                "from_m": 253.3,
+                "to_m": 255.1,
+                "material": "Чакъли и конгломерати"
+              },
+              {
+                "from_m": 255.1,
+                "to_m": 260.6,
+                "material": "Кварцови пясъци"
+              },
+              {
+                "from_m": 260.6,
+                "to_m": 264.5,
+                "material": "Глини"
+              },
+              {
+                "from_m": 264.5,
+                "to_m": 270,
+                "material": "Кварцови пясъци"
+              },
+              {
+                "from_m": 270,
+                "to_m": 283.2,
+                "material": "Песъчливи глини"
+              },
+              {
+                "from_m": 283.2,
+                "to_m": 308.8,
+                "material": "Пясъци"
+              },
+              {
+                "from_m": 308.8,
+                "to_m": 354.7,
+                "material": "Глини с пясъчни прослойки"
+              },
+              {
+                "from_m": 354.7,
+                "to_m": 393,
+                "material": "Песъчливи глини"
+              },
+              {
+                "from_m": 393,
+                "to_m": 406.2,
+                "material": "Силно изветрели гранити"
+              },
+              {
+                "from_m": 406.2,
+                "to_m": 421.1,
+                "material": "Слабо изветрял гранит"
+              },
+              {
+                "from_m": 421.1,
+                "to_m": 588.8,
+                "material": "Масивен гранит с напукани зони"
+              }
+            ],
+            "fracture_intervals": [
+              {
+                "from_m": 412.8,
+                "to_m": 421.1,
+                "type": "STRONG_FRACTURING"
+              },
+              {
+                "from_m": 450,
+                "to_m": 465,
+                "type": "STRONG_FRACTURING"
+              },
+              {
+                "from_m": 516.5,
+                "to_m": 519.2,
+                "type": "STRONG_FRACTURING"
+              },
+              {
+                "from_m": 520.4,
+                "to_m": 533.3,
+                "type": "STRONG_FRACTURING"
+              },
+              {
+                "from_m": 541.6,
+                "to_m": 542.9,
+                "type": "STRONG_FRACTURING"
+              },
+              {
+                "from_m": 556.9,
+                "to_m": 570.6,
+                "type": "STRONG_FRACTURING"
+              },
+              {
+                "from_m": 576.7,
+                "to_m": 588.8,
+                "type": "STRONG_FRACTURING"
+              }
+            ]
+          },
+          "previous_location": {
+            "lat": 42.586427317,
+            "lon": 25.425383444,
+            "status": "CADASTRAL_RESOLVED_APPROXIMATE",
+            "origin": "resolved_latitude+resolved_longitude"
+          }
+        }
       },
       "sources": [
         {
@@ -43684,7 +45675,564 @@
           "research_status": "CONFIRMED_MISSING",
           "research_note": "?????? ?-3, ???????."
         },
-        "duplicate_mh_records": []
+        "duplicate_mh_records": [],
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-003",
+          "source_id": "SZ-A1-003",
+          "source_url": "https://old.mh.government.bg/media/filer_public/2024/01/03/41-ovoshtnik-sondazhk3-02-01-2024.pdf",
+          "source_reference": "Page 2 lithology; page 3 resources",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 103,
+              "material": "Вероятно пясъци",
+              "age": "Q+N2",
+              "confidence": "UNCERTAIN",
+              "description": "Сработена ядка",
+              "interval_id": "SZ-BH-003-I001",
+              "material_original": "Вероятно пясъци",
+              "material_normalized": "Вероятно пясъци",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "UNCERTAIN"
+            },
+            {
+              "from_m": 103,
+              "to_m": 107,
+              "material": "Глини с песъчливи примеси и късове кварц и гранит",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I002",
+              "material_original": "Глини с песъчливи примеси и късове кварц и гранит",
+              "material_normalized": "Глини с песъчливи примеси и късове кварц и гранит",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 107,
+              "to_m": 108,
+              "material": "Дребнозърнести кварцови пясъци",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I003",
+              "material_original": "Дребнозърнести кварцови пясъци",
+              "material_normalized": "Дребнозърнести кварцови пясъци",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 108,
+              "to_m": 110.4,
+              "material": "Едрозърнест глинест пясъчник",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I004",
+              "material_original": "Едрозърнест глинест пясъчник",
+              "material_normalized": "Едрозърнест глинест пясъчник",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 110.4,
+              "to_m": 180,
+              "material": "Кафяви глини",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I005",
+              "material_original": "Кафяви глини",
+              "material_normalized": "Кафяви глини",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 180,
+              "to_m": 237.8,
+              "material": "Сивозелени до светлокафяви глини",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I006",
+              "material_original": "Сивозелени до светлокафяви глини",
+              "material_normalized": "Сивозелени до светлокафяви глини",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 237.8,
+              "to_m": 245.7,
+              "material": "Едрозърнести пясъци",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I007",
+              "material_original": "Едрозърнести пясъци",
+              "material_normalized": "Едрозърнести пясъци",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 245.7,
+              "to_m": 260,
+              "material": "Едри слабоспоени чакъли",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I008",
+              "material_original": "Едри слабоспоени чакъли",
+              "material_normalized": "Едри слабоспоени чакъли",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 260,
+              "to_m": 266.5,
+              "material": "Едрозърнести пясъци преминаващи в чакъли",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I009",
+              "material_original": "Едрозърнести пясъци преминаващи в чакъли",
+              "material_normalized": "Едрозърнести пясъци преминаващи в чакъли",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 266.5,
+              "to_m": 270.4,
+              "material": "Глини с гранитни късове",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I010",
+              "material_original": "Глини с гранитни късове",
+              "material_normalized": "Глини с гранитни късове",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 270.4,
+              "to_m": 314,
+              "material": "Глинести пясъчници",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I011",
+              "material_original": "Глинести пясъчници",
+              "material_normalized": "Глинести пясъчници",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 314,
+              "to_m": 430,
+              "material": "Песъчливи глини",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I012",
+              "material_original": "Песъчливи глини",
+              "material_normalized": "Песъчливи глини",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 430,
+              "to_m": 459.4,
+              "material": "Дребнозърнести ронливи глинести пясъци",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I013",
+              "material_original": "Дребнозърнести ронливи глинести пясъци",
+              "material_normalized": "Дребнозърнести ронливи глинести пясъци",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 459.4,
+              "to_m": 468.8,
+              "material": "Сивозелени глини с виолетови петна",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I014",
+              "material_original": "Сивозелени глини с виолетови петна",
+              "material_normalized": "Сивозелени глини с виолетови петна",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 468.8,
+              "to_m": 522.7,
+              "material": "Песъчливи глини с повърхнина на хлъзгане",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I015",
+              "material_original": "Песъчливи глини с повърхнина на хлъзгане",
+              "material_normalized": "Песъчливи глини с повърхнина на хлъзгане",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 522.7,
+              "to_m": 527.7,
+              "material": "Дребнозърнести кварцови глинести пясъци",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I016",
+              "material_original": "Дребнозърнести кварцови глинести пясъци",
+              "material_normalized": "Дребнозърнести кварцови глинести пясъци",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 527.7,
+              "to_m": 530.7,
+              "material": "Финопесъчливи глини преминаващи в глинести пясъци",
+              "age": "N2",
+              "interval_id": "SZ-BH-003-I017",
+              "material_original": "Финопесъчливи глини преминаващи в глинести пясъци",
+              "material_normalized": "Финопесъчливи глини преминаващи в глинести пясъци",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 530.7,
+              "to_m": 563.1,
+              "material": "Глинести пясъци с едри гранитни и кварцови късове",
+              "interval_id": "SZ-BH-003-I018",
+              "material_original": "Глинести пясъци с едри гранитни и кварцови късове",
+              "material_normalized": "Глинести пясъци с едри гранитни и кварцови късове",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 563.1,
+              "to_m": 570.6,
+              "material": "Изветрели южнобългарски гранити",
+              "age": "Pz",
+              "description": "Напукани и разложени до грус",
+              "interval_id": "SZ-BH-003-I019",
+              "material_original": "Изветрели южнобългарски гранити",
+              "material_normalized": "Изветрели южнобългарски гранити",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 570.6,
+              "to_m": 697.4,
+              "material": "Силно напукани и натрошени южнобългарски гранити",
+              "age": "Pz",
+              "interval_id": "SZ-BH-003-I020",
+              "material_original": "Силно напукани и натрошени южнобългарски гранити",
+              "material_normalized": "Силно напукани и натрошени южнобългарски гранити",
+              "source_id": "SZ-A1-003",
+              "source_reference": "Page 2 lithology; page 3 resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+            "mineral_id": "mw_34713a6394ec4efd",
+            "geological_context": "Variable sedimentary cover; alternating sands, gravels and clays",
+            "longitude": 25.416429534,
+            "fault_context": {
+              "borehole_id": "SZ-BH-003",
+              "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+              "gem_fault_id": "EUR_BGCS015",
+              "gem_distance_m": 522.7,
+              "mrrb_fault_id": "FLT-KAZANLAK-NIKOLAEVO-REC41",
+              "mrrb_distance_m": 2112.9,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-003",
+              "source_id": "SZ-A1-003",
+              "mineral_id": "mw_34713a6394ec4efd",
+              "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+              "latitude": 42.598789514,
+              "longitude": 25.416429534,
+              "documented_measurements": {
+                "temperature_c": null,
+                "sample_temperature_c": null,
+                "technical_discharge_lps": null,
+                "mineralization_mg_l": null,
+                "artesian_flow": null,
+                "temperature_observations": null,
+                "temperature_measurement_method": null,
+                "freshwater_observations": null,
+                "additional_observations": null
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": {
+                "temperature_c": 66.3,
+                "depth_m": 697.4
+              },
+              "existing_enrichment": {
+                "current_deposit_name": "Овощник",
+                "identity_source": "Municipality of Kazanlak official mineral-water documents",
+                "location_note": "Сондаж К-3 е разположен южно от гр. Казанлък; официалната оценка на МЗ го описва до помпена станция и на 2125 m С-СЗ от минералната баня в с. Овощник.",
+                "temperature_c": 78,
+                "source_type": "MH balneological assessment",
+                "source_note": "MH balneological assessment №41/02.01.2024 for Сондаж К-3, Овощник",
+                "cadastral_property_id": "35167.93.617",
+                "cadastral_settlement": "гр. Казанлък",
+                "locality": "Големите ливади",
+                "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+                "spatial_source_type": "Municipality of Kazanlak / Municipal Council official decision",
+                "spatial_source_note": "Official PUP decision identifies borehole K-3 as located in cadastral property 35167.93.617.",
+                "construction_year": 1966,
+                "depth_m": 697.4,
+                "terrain_elevation_m": 339.96,
+                "relative_location": "approximately 2125 m north-northwest of the mineral bath in Ovoshtnik",
+                "spatial_accuracy": "official descriptive facility location",
+                "technical_possible_discharge_l_s": 5.56,
+                "technical_temperature_c": 78,
+                "static_water_level_elevation_m": 346.45,
+                "allowable_drawdown_m": 5.75,
+                "allowable_dynamic_water_level_elevation_m": 340.7,
+                "resource_scope": "technical possible facility discharge",
+                "granite_top_m": 563.1,
+                "borehole_geology_summary": "Thick Neogene sedimentary succession to 563.1 m; weathered South Bulgarian granite from 563.1-570.6 m and strongly fractured to shattered South Bulgarian granite from 570.6-697.4 m.",
+                "strongly_fractured_granite_intervals_m": [
+                  "563.1-570.6",
+                  "570.6-697.4"
+                ],
+                "sample_temperature_c": 66.3,
+                "total_mineralization_mg_l": 450,
+                "ph": 8.94,
+                "fluoride_mg_l": 24.37,
+                "chloride_mg_l": 16.66,
+                "sulfate_mg_l": 54.32,
+                "bicarbonate_mg_l": 155.6,
+                "sodium_mg_l": 86.99,
+                "calcium_mg_l": 2.51,
+                "silicic_acid_mg_l": 85.04,
+                "potable_status": "not suitable for drinking due to high fluoride content according to MH assessment",
+                "verified_source": "MH balneological assessment No.41/02.01.2024",
+                "verified_source_url": "https://old.mh.government.bg/media/filer_public/2024/01/03/41-ovoshtnik-sondazhk3-02-01-2024.pdf",
+                "deposit_fault_context": "Находище Овощник е водонапорна система от пукнатинно-жилен тип в палеозойските гранити под Казанлъшкия грабен. Тунджанската разломна зона е колектор на термалните води. Основна хидрогеоложка роля имат тектонични нарушения с направления приблизително СЗ-ЮИ, ЗСЗ-ИЮИ и ССЗ-ЮЮИ; първите две системи са термоводоносни, а третата има бариерна роля.",
+                "deposit_fault_context_scope": "deposit-level structural interpretation; not proof that the individual borehole lies directly on a mapped fault trace",
+                "coordinate_resolution_source": "AGKK KAIS OpenData",
+                "coordinate_resolution_method": "Representative point inside exact cadastral land-plot geometry.",
+                "coordinate_precision_scope": "CADASTRAL_PARCEL_LEVEL_NOT_CONFIRMED_WELLHEAD",
+                "resolved_latitude": 42.598789514,
+                "resolved_longitude": 25.416429534,
+                "cadastral_parcel_centroid_latitude": 42.598808703,
+                "cadastral_parcel_centroid_longitude": 25.416417834,
+                "cadastral_parcel_area_m2": 1674.79,
+                "cadastral_resolution_shapefile": "data/mineral-water/kais-parcels/35167/land_plots/поземлени имоти/Имоти (Polygon).shp",
+                "cadastral_resolution_previous_status": "CADASTRAL_LOCATION_TO_RESOLVE",
+                "cadastral_resolution_at": "2026-09-10T19:41:45+00:00",
+                "cadastral_resolution_note": "Exact cadastral parcel geometry resolved from AGKK KAIS OpenData. The map coordinate is a representative point guaranteed to lie inside the parcel and must not be interpreted as a surveyed wellhead/captage coordinate.",
+                "settlement": "Казанлък"
+              },
+              "existing_sources": [
+                {
+                  "source_type": "balneology",
+                  "title": "Балнеологична оценка № 41/02.01.2024 г.",
+                  "description": "за сондаж № К-3 от находище на минерална вода „Овощник“, с. Овощник, община Казанлък, област Стара Загора",
+                  "published": "03.01.2024",
+                  "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=9"
+                },
+                {
+                  "source_type": "balneology",
+                  "title": "Балнеологична оценка № 41 от 07.05.2015 г.",
+                  "description": "„Сондаж № К-3“ - находище на минерална вода „Овощник“, с. Овощник, община Казанлък, област Стара Загора",
+                  "published": "14.06.2019",
+                  "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=32"
+                },
+                {
+                  "source_type": "verified_research",
+                  "title": "MH balneological assessment No.41/02.01.2024",
+                  "source_url": "https://old.mh.government.bg/media/filer_public/2024/01/03/41-ovoshtnik-sondazhk3-02-01-2024.pdf",
+                  "assessment_no": null,
+                  "assessment_date": null
+                }
+              ],
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-003",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G01",
+            "latitude": 42.598789514
+          },
+          "original_borehole_record": {
+            "borehole_id": "SZ-BH-003",
+            "original_name": "К-3",
+            "aliases": [
+              "K-3",
+              "К3",
+              "Сондаж № К-3 Овощник"
+            ],
+            "registry_id": "351051002",
+            "drilling_year": 1966,
+            "total_depth_m": 697.4,
+            "elevation_m": 339.96,
+            "coordinate_status": "UNVERIFIED",
+            "latitude": null,
+            "longitude": null,
+            "coordinate_search_attempts": 2,
+            "coordinate_search_result": "Official registry coordinates blank; municipal project checked; no verified numeric coordinate extracted",
+            "continuous_column": true,
+            "is_mineral_water": true,
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 103,
+                "material": "Вероятно пясъци",
+                "age": "Q+N2",
+                "confidence": "UNCERTAIN",
+                "description": "Сработена ядка"
+              },
+              {
+                "from_m": 103,
+                "to_m": 107,
+                "material": "Глини с песъчливи примеси и късове кварц и гранит",
+                "age": "N2"
+              },
+              {
+                "from_m": 107,
+                "to_m": 108,
+                "material": "Дребнозърнести кварцови пясъци",
+                "age": "N2"
+              },
+              {
+                "from_m": 108,
+                "to_m": 110.4,
+                "material": "Едрозърнест глинест пясъчник",
+                "age": "N2"
+              },
+              {
+                "from_m": 110.4,
+                "to_m": 180,
+                "material": "Кафяви глини",
+                "age": "N2"
+              },
+              {
+                "from_m": 180,
+                "to_m": 237.8,
+                "material": "Сивозелени до светлокафяви глини",
+                "age": "N2"
+              },
+              {
+                "from_m": 237.8,
+                "to_m": 245.7,
+                "material": "Едрозърнести пясъци",
+                "age": "N2"
+              },
+              {
+                "from_m": 245.7,
+                "to_m": 260,
+                "material": "Едри слабоспоени чакъли",
+                "age": "N2"
+              },
+              {
+                "from_m": 260,
+                "to_m": 266.5,
+                "material": "Едрозърнести пясъци преминаващи в чакъли",
+                "age": "N2"
+              },
+              {
+                "from_m": 266.5,
+                "to_m": 270.4,
+                "material": "Глини с гранитни късове",
+                "age": "N2"
+              },
+              {
+                "from_m": 270.4,
+                "to_m": 314,
+                "material": "Глинести пясъчници",
+                "age": "N2"
+              },
+              {
+                "from_m": 314,
+                "to_m": 430,
+                "material": "Песъчливи глини",
+                "age": "N2"
+              },
+              {
+                "from_m": 430,
+                "to_m": 459.4,
+                "material": "Дребнозърнести ронливи глинести пясъци",
+                "age": "N2"
+              },
+              {
+                "from_m": 459.4,
+                "to_m": 468.8,
+                "material": "Сивозелени глини с виолетови петна",
+                "age": "N2"
+              },
+              {
+                "from_m": 468.8,
+                "to_m": 522.7,
+                "material": "Песъчливи глини с повърхнина на хлъзгане",
+                "age": "N2"
+              },
+              {
+                "from_m": 522.7,
+                "to_m": 527.7,
+                "material": "Дребнозърнести кварцови глинести пясъци",
+                "age": "N2"
+              },
+              {
+                "from_m": 527.7,
+                "to_m": 530.7,
+                "material": "Финопесъчливи глини преминаващи в глинести пясъци",
+                "age": "N2"
+              },
+              {
+                "from_m": 530.7,
+                "to_m": 563.1,
+                "material": "Глинести пясъци с едри гранитни и кварцови късове"
+              },
+              {
+                "from_m": 563.1,
+                "to_m": 570.6,
+                "material": "Изветрели южнобългарски гранити",
+                "age": "Pz",
+                "description": "Напукани и разложени до грус"
+              },
+              {
+                "from_m": 570.6,
+                "to_m": 697.4,
+                "material": "Силно напукани и натрошени южнобългарски гранити",
+                "age": "Pz"
+              }
+            ],
+            "additional_interval_observations": [
+              {
+                "from_m": 102.8,
+                "to_m": 103.8,
+                "material": "Среднозърнести чакъли",
+                "overlapping_primary_intervals": true
+              }
+            ]
+          },
+          "previous_location": {
+            "lat": 42.598789514,
+            "lon": 25.416429534,
+            "status": "CADASTRAL_RESOLVED_APPROXIMATE",
+            "origin": "resolved_latitude+resolved_longitude"
+          }
+        }
       },
       "sources": [
         {
@@ -43832,7 +46380,309 @@
           "research_status": "CONFIRMED_MISSING",
           "research_note": "?????? ?-5, ???????."
         },
-        "duplicate_mh_records": []
+        "duplicate_mh_records": [],
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-007",
+          "source_id": "SZ-A1-007",
+          "source_url": "https://www.mh.government.bg/upload/6641/259-ovoshtnik-sondazhk5-02-01-2024_MrQuCxG.pdf",
+          "source_reference": "Page 1 location; page 2 lithology; page 3 resources and cadastral identification",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 52,
+              "material": "Дребнозърнести кварцови пясъци",
+              "description": "Жълтокафяви, преминаващи в чакъл след 37 м",
+              "age": "Q",
+              "interval_id": "SZ-BH-007-I001",
+              "material_original": "Дребнозърнести кварцови пясъци",
+              "material_normalized": "Дребнозърнести кварцови пясъци",
+              "source_id": "SZ-A1-007",
+              "source_reference": "Page 1 location; page 2 lithology; page 3 resources and cadastral identification",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 52,
+              "to_m": 61,
+              "material": "Едрозърнести пясъци с дребен чакъл",
+              "description": "Слабо споени",
+              "age": "N2",
+              "interval_id": "SZ-BH-007-I002",
+              "material_original": "Едрозърнести пясъци с дребен чакъл",
+              "material_normalized": "Едрозърнести пясъци с дребен чакъл",
+              "source_id": "SZ-A1-007",
+              "source_reference": "Page 1 location; page 2 lithology; page 3 resources and cadastral identification",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 61,
+              "to_m": 164,
+              "material": "Песъчлива глина",
+              "description": "Плътна, сива до кафява, с гранитни късове",
+              "possible_additional_material": "Пясък",
+              "age": "N2",
+              "interval_id": "SZ-BH-007-I003",
+              "material_original": "Песъчлива глина",
+              "material_normalized": "Песъчлива глина",
+              "source_id": "SZ-A1-007",
+              "source_reference": "Page 1 location; page 2 lithology; page 3 resources and cadastral identification",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 164,
+              "to_m": 186.1,
+              "material": "Изветрели южнобългарски гранити",
+              "description": "Едрозърнести, напукани и разложени до грус, амфибол-биотитов състав",
+              "age": "Pz",
+              "interval_id": "SZ-BH-007-I004",
+              "material_original": "Изветрели южнобългарски гранити",
+              "material_normalized": "Изветрели южнобългарски гранити",
+              "source_id": "SZ-A1-007",
+              "source_reference": "Page 1 location; page 2 lithology; page 3 resources and cadastral identification",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 186.1,
+              "to_m": 540,
+              "material": "Амфибол-биотитови и биотитови гранити",
+              "description": "Тектонски нарушени, напукани, локално раздробени и окварцени",
+              "age": "Pz",
+              "interval_id": "SZ-BH-007-I005",
+              "material_original": "Амфибол-биотитови и биотитови гранити",
+              "material_normalized": "Амфибол-биотитови и биотитови гранити",
+              "source_id": "SZ-A1-007",
+              "source_reference": "Page 1 location; page 2 lithology; page 3 resources and cadastral identification",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+            "mineral_id": "mw_ffc2ff1452065102",
+            "geological_context": "Variable sedimentary cover; alternating sands, gravels and clays",
+            "longitude": 25.435817998,
+            "fault_context": {
+              "borehole_id": "SZ-BH-007",
+              "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+              "gem_fault_id": "EUR_BGCS015",
+              "gem_distance_m": 2824.7,
+              "mrrb_fault_id": "FLT-KAZANLAK-NIKOLAEVO-REC41",
+              "mrrb_distance_m": 3695.8,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-007",
+              "source_id": "SZ-A1-007",
+              "mineral_id": "mw_ffc2ff1452065102",
+              "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+              "latitude": 42.578690576,
+              "longitude": 25.435817998,
+              "documented_measurements": {
+                "temperature_c": null,
+                "sample_temperature_c": null,
+                "technical_discharge_lps": null,
+                "mineralization_mg_l": null,
+                "artesian_flow": null,
+                "temperature_observations": null,
+                "temperature_measurement_method": null,
+                "freshwater_observations": null,
+                "additional_observations": null
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": {
+                "temperature_c": 45.9,
+                "depth_m": 540
+              },
+              "existing_enrichment": {
+                "current_deposit_name": "Овощник",
+                "identity_source": "Municipality of Kazanlak official mineral-water documents",
+                "location_note": "Сондаж К-5 е отделно водовземно съоръжение на находище Овощник, използвано за минералната баня Овощник. Няма установена точна facility-level координата.",
+                "construction_year": 1970,
+                "depth_m": 540,
+                "terrain_elevation_m": 324.97,
+                "relative_location": "approximately 150 m east of the New Mineral Bath in Ovoshtnik",
+                "technical_possible_discharge_l_s": 4.85,
+                "resource_scope": "technical possible facility discharge",
+                "filter_intervals_m": [
+                  "337.10-410.10",
+                  "410.10-539.70"
+                ],
+                "borehole_geology_intervals": [
+                  {
+                    "from_m": 0,
+                    "to_m": 52,
+                    "description": "fine-grained quartz sands; lower part grading into fine gravel"
+                  },
+                  {
+                    "from_m": 52,
+                    "to_m": 61,
+                    "description": "coarse-grained sands with fine gravel"
+                  },
+                  {
+                    "from_m": 61,
+                    "to_m": 164,
+                    "description": "dense sandy clay with local granite fragments"
+                  },
+                  {
+                    "from_m": 164,
+                    "to_m": 186.1,
+                    "description": "strongly weathered South Bulgarian granites"
+                  },
+                  {
+                    "from_m": 186.1,
+                    "to_m": 540,
+                    "description": "South Bulgarian granites, extensively fractured and tectonically disturbed in much of the interval"
+                  }
+                ],
+                "verified_source": "MH balneological assessment No.259/02.01.2024",
+                "verified_source_url": "https://www.mh.government.bg/upload/6641/259-ovoshtnik-sondazhk5-02-01-2024_MrQuCxG.pdf",
+                "cadastral_property_id": "35167.507.436",
+                "cadastral_settlement": "гр. Казанлък",
+                "coordinate_status": "CADASTRAL_RESOLVED_APPROXIMATE",
+                "spatial_accuracy": "official cadastral property containing facility",
+                "spatial_source_note": "MH assessment states that proposed SOZ belt I around borehole K-5 includes the entire cadastral property 35167.507.436.",
+                "spatial_source_type": "MH balneological assessment No.259/02.01.2024",
+                "technical_temperature_c": 52,
+                "sample_temperature_c": 45.9,
+                "sample_temperature_scope": "analytical sample value; separate from technical facility temperature",
+                "total_mineralization_mg_l": 488,
+                "ph": 8.72,
+                "fluoride_mg_l": 23.9,
+                "chloride_mg_l": 15.25,
+                "sulfate_mg_l": 61.93,
+                "carbonate_mg_l": 6,
+                "bicarbonate_mg_l": 192.21,
+                "sodium_mg_l": 91.39,
+                "calcium_mg_l": 3.91,
+                "lithium_mg_l": 0.6,
+                "silicic_acid_mg_l": 87.37,
+                "hydrogen_sulfide_mg_l": 1.8,
+                "potable_status": "not suitable for drinking due to high fluoride content according to MH assessment",
+                "deposit_fault_context": "Находище Овощник е водонапорна система от пукнатинно-жилен тип в палеозойските гранити под Казанлъшкия грабен. Тунджанската разломна зона е колектор на термалните води. Основна хидрогеоложка роля имат тектонични нарушения с направления приблизително СЗ-ЮИ, ЗСЗ-ИЮИ и ССЗ-ЮЮИ; първите две системи са термоводоносни, а третата има бариерна роля.",
+                "deposit_fault_context_scope": "deposit-level structural interpretation; borehole geology independently confirms strong tectonic fracturing",
+                "coordinate_resolution_source": "AGKK KAIS OpenData",
+                "coordinate_resolution_method": "Representative point inside exact cadastral land-plot geometry.",
+                "coordinate_precision_scope": "CADASTRAL_PARCEL_LEVEL_NOT_CONFIRMED_WELLHEAD",
+                "resolved_latitude": 42.578690576,
+                "resolved_longitude": 25.435817998,
+                "cadastral_parcel_centroid_latitude": 42.578691948,
+                "cadastral_parcel_centroid_longitude": 25.435814114,
+                "cadastral_parcel_area_m2": 337.46,
+                "cadastral_resolution_shapefile": "data/mineral-water/kais-parcels/35167/land_plots/поземлени имоти/Имоти (Polygon).shp",
+                "cadastral_resolution_previous_status": "CADASTRAL_LOCATION_TO_RESOLVE",
+                "cadastral_resolution_at": "2026-09-10T19:41:45+00:00",
+                "cadastral_resolution_note": "Exact cadastral parcel geometry resolved from AGKK KAIS OpenData. The map coordinate is a representative point guaranteed to lie inside the parcel and must not be interpreted as a surveyed wellhead/captage coordinate.",
+                "settlement": "Казанлък"
+              },
+              "existing_sources": [
+                {
+                  "source_type": "balneology",
+                  "title": "Балнеологична оценка № 259/02.01.2024 г.",
+                  "description": "за сондаж № К-5 от находище на минерална вода „Овощник“, с. Овощник, община Казанлък, област Стара Загора",
+                  "published": "03.01.2024",
+                  "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=9"
+                },
+                {
+                  "source_type": "verified_research",
+                  "title": "MH balneological assessment No.259/02.01.2024",
+                  "source_url": "https://www.mh.government.bg/upload/6641/259-ovoshtnik-sondazhk5-02-01-2024_MrQuCxG.pdf",
+                  "assessment_no": null,
+                  "assessment_date": null
+                }
+              ],
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-007",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G01",
+            "latitude": 42.578690576
+          },
+          "original_borehole_record": {
+            "borehole_id": "SZ-BH-007",
+            "original_name": "К-5",
+            "aliases": [
+              "K-5",
+              "Сондаж № К-5"
+            ],
+            "registry_id": "351051003",
+            "drilling_year": 1970,
+            "total_depth_m": 540,
+            "alternative_registry_depth_m": 539.7,
+            "elevation_m": 324.97,
+            "coordinate_status": "UNVERIFIED",
+            "latitude": null,
+            "longitude": null,
+            "coordinate_search_attempts": 2,
+            "coordinate_search_result": "BDIBR registry coordinate fields blank; targeted parcel and borehole searches did not yield verified numeric coordinates; municipal PDF inaccessible",
+            "cadastral_parcel": {
+              "identifier": "35167.507.436",
+              "area_m2": 337,
+              "source_reference": "Balneological assessment page 3",
+              "coordinate_object": "Parcel of the proposed sanitary protection zone",
+              "numeric_coordinates_verified": false
+            },
+            "continuous_column": true,
+            "is_mineral_water": true,
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 52,
+                "material": "Дребнозърнести кварцови пясъци",
+                "description": "Жълтокафяви, преминаващи в чакъл след 37 м",
+                "age": "Q"
+              },
+              {
+                "from_m": 52,
+                "to_m": 61,
+                "material": "Едрозърнести пясъци с дребен чакъл",
+                "description": "Слабо споени",
+                "age": "N2"
+              },
+              {
+                "from_m": 61,
+                "to_m": 164,
+                "material": "Песъчлива глина",
+                "description": "Плътна, сива до кафява, с гранитни късове",
+                "possible_additional_material": "Пясък",
+                "age": "N2"
+              },
+              {
+                "from_m": 164,
+                "to_m": 186.1,
+                "material": "Изветрели южнобългарски гранити",
+                "description": "Едрозърнести, напукани и разложени до грус, амфибол-биотитов състав",
+                "age": "Pz"
+              },
+              {
+                "from_m": 186.1,
+                "to_m": 540,
+                "material": "Амфибол-биотитови и биотитови гранити",
+                "description": "Тектонски нарушени, напукани, локално раздробени и окварцени",
+                "age": "Pz"
+              }
+            ],
+            "additional_interval_observations": [
+              {
+                "from_m": 37,
+                "to_m": 52,
+                "material": "Дребен чакъл",
+                "observation_type": "SUBINTERVAL_WITHIN_PRIMARY_LAYER"
+              }
+            ]
+          },
+          "previous_location": {
+            "lat": 42.578690576,
+            "lon": 25.435817998,
+            "status": "CADASTRAL_RESOLVED_APPROXIMATE",
+            "origin": "resolved_latitude+resolved_longitude"
+          }
+        }
       },
       "sources": [
         {
@@ -43965,7 +46815,435 @@
           "research_status": "CONFIRMED_MISSING",
           "research_note": "?????? ?-6, ???????."
         },
-        "duplicate_mh_records": []
+        "duplicate_mh_records": [],
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-008",
+          "source_id": "SZ-A1-009",
+          "source_url": "https://mh.government.bg/upload/6640/260-ovoshtnik-sondazhk6-02-01-2024.pdf",
+          "source_reference": "Pages 1-3; lithological section page 2; resources and chemistry page 3",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 1.5,
+              "material": "Едрозърнести полимиктови пясъци",
+              "age": "Q",
+              "interval_id": "SZ-BH-008-I001",
+              "material_original": "Едрозърнести полимиктови пясъци",
+              "material_normalized": "Едрозърнести полимиктови пясъци",
+              "source_id": "SZ-A1-009",
+              "source_reference": "Pages 1-3; lithological section page 2; resources and chemistry page 3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 9.5,
+              "to_m": 19.8,
+              "material": "Среднозърнест чакъл",
+              "description": "Гранитен състав, зърна до 10 мм",
+              "age": "Q+N2",
+              "interval_id": "SZ-BH-008-I002",
+              "material_original": "Среднозърнест чакъл",
+              "material_normalized": "Среднозърнест чакъл",
+              "source_id": "SZ-A1-009",
+              "source_reference": "Pages 1-3; lithological section page 2; resources and chemistry page 3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 19.8,
+              "to_m": 25.55,
+              "material": "Песъчлива глина",
+              "description": "Ръждивокафява, с гранитни късове до 5-6 см",
+              "age": "N2",
+              "interval_id": "SZ-BH-008-I003",
+              "material_original": "Песъчлива глина",
+              "material_normalized": "Песъчлива глина",
+              "source_id": "SZ-A1-009",
+              "source_reference": "Pages 1-3; lithological section page 2; resources and chemistry page 3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 25.55,
+              "to_m": 34.1,
+              "material": "Среднозърнест чакъл",
+              "description": "Слабо споен с глинесто вещество",
+              "age": "N2",
+              "interval_id": "SZ-BH-008-I004",
+              "material_original": "Среднозърнест чакъл",
+              "material_normalized": "Среднозърнест чакъл",
+              "source_id": "SZ-A1-009",
+              "source_reference": "Pages 1-3; lithological section page 2; resources and chemistry page 3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 34.1,
+              "to_m": 139,
+              "material": "Песъчлива глина",
+              "description": "Полутвърда, с кварцови и гранитни късове",
+              "possible_additional_material": "Пясък",
+              "quality_flag": "PARTIAL_CORE_LOSS",
+              "age": "N2",
+              "interval_id": "SZ-BH-008-I005",
+              "material_original": "Песъчлива глина",
+              "material_normalized": "Песъчлива глина",
+              "source_id": "SZ-A1-009",
+              "source_reference": "Pages 1-3; lithological section page 2; resources and chemistry page 3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "UNCERTAIN"
+            },
+            {
+              "from_m": 139,
+              "to_m": 173,
+              "material": "Сива слабопластична глина",
+              "age": "N2",
+              "interval_id": "SZ-BH-008-I006",
+              "material_original": "Сива слабопластична глина",
+              "material_normalized": "Сива слабопластична глина",
+              "source_id": "SZ-A1-009",
+              "source_reference": "Pages 1-3; lithological section page 2; resources and chemistry page 3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 179,
+              "to_m": 360.7,
+              "material": "Сивосива песъчлива глина",
+              "age": "N2",
+              "interval_id": "SZ-BH-008-I007",
+              "material_original": "Сивосива песъчлива глина",
+              "material_normalized": "Сивосива песъчлива глина",
+              "source_id": "SZ-A1-009",
+              "source_reference": "Pages 1-3; lithological section page 2; resources and chemistry page 3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 360.7,
+              "to_m": 370.8,
+              "material": "Ръждивокафява песъчлива глина",
+              "description": "Пясъчната фракция включва продукти от изветряне на граната",
+              "age": "N2",
+              "interval_id": "SZ-BH-008-I008",
+              "material_original": "Ръждивокафява песъчлива глина",
+              "material_normalized": "Ръждивокафява песъчлива глина",
+              "source_id": "SZ-A1-009",
+              "source_reference": "Pages 1-3; lithological section page 2; resources and chemistry page 3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 370.8,
+              "to_m": 378.8,
+              "material": "Изветрели южнобългарски гранити",
+              "description": "Силно разложени, ронливи и напукани",
+              "age": "Pz",
+              "interval_id": "SZ-BH-008-I009",
+              "material_original": "Изветрели южнобългарски гранити",
+              "material_normalized": "Изветрели южнобългарски гранити",
+              "source_id": "SZ-A1-009",
+              "source_reference": "Pages 1-3; lithological section page 2; resources and chemistry page 3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 378.8,
+              "to_m": 680.25,
+              "material": "Южнобългарски гранити",
+              "description": "Масивни, с кварц, калиев фелдшпат, плагиоклаз, биотит, амфибол и локален епидот",
+              "age": "Pz",
+              "interval_id": "SZ-BH-008-I010",
+              "material_original": "Южнобългарски гранити",
+              "material_normalized": "Южнобългарски гранити",
+              "source_id": "SZ-A1-009",
+              "source_reference": "Pages 1-3; lithological section page 2; resources and chemistry page 3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "mineral_id": "mw_1d345381deece27a",
+            "geological_context": "Variable sedimentary cover; alternating sands, gravels and clays",
+            "longitude": 25.404525275,
+            "fault_context": {
+              "borehole_id": "SZ-BH-008",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "gem_fault_id": "EUR_BGCS015",
+              "gem_distance_m": 1202.8,
+              "mrrb_fault_id": "FLT-KAZANLAK-NIKOLAEVO-REC41",
+              "mrrb_distance_m": 3239.2,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-008",
+              "source_id": "SZ-A1-009",
+              "mineral_id": "mw_1d345381deece27a",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 42.5922597,
+              "longitude": 25.404525275,
+              "documented_measurements": {
+                "temperature_c": null,
+                "sample_temperature_c": null,
+                "technical_discharge_lps": null,
+                "mineralization_mg_l": null,
+                "artesian_flow": null,
+                "temperature_observations": null,
+                "temperature_measurement_method": null,
+                "freshwater_observations": null,
+                "additional_observations": [
+                  {
+                    "type": "GEOPHYSICALLY_INTERPRETED_AQUIFER",
+                    "from_m": 405,
+                    "to_m": 520,
+                    "is_measured_water_strike": false
+                  },
+                  {
+                    "type": "DRILLING_MUD_TOTAL_LOSS",
+                    "context": "Crushed granite near borehole bottom",
+                    "lower_boundary_m": 680.25,
+                    "upper_boundary_m": null,
+                    "quality_flag": "UPPER_BOUNDARY_PARTIALLY_OBSCURED_BY_STAMP"
+                  }
+                ]
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": {
+                "temperature_c": 29.8,
+                "depth_m": 680.25
+              },
+              "existing_enrichment": {
+                "current_deposit_name": "Овощник",
+                "identity_source": "Municipality of Kazanlak official mineral-water documents",
+                "location_note": "Сондаж К-6 е описан от Община Казанлък като разположен до „Арсенал“ АД и като недействащ към момента на общинския план. Няма установена точна facility-level координата.",
+                "cadastral_property_id": "35167.119.370",
+                "cadastral_settlement": "гр. Казанлък",
+                "locality": "Малево",
+                "coordinate_status": "OFFICIAL_EXACT",
+                "spatial_source_type": "Municipality of Kazanlak / Municipal Council official decision",
+                "spatial_source_note": "Official decision states that borehole K-6 is located within cadastral property 35167.119.370.",
+                "spatial_accuracy": "official cadastral property containing facility",
+                "relative_location": "3000 m south-southeast of the centre of Kazanlak and 55 m east of Arsenal plant",
+                "terrain_elevation_m": 337.39,
+                "depth_m": 680.25,
+                "construction_start_date": "15.10.1970",
+                "construction_completion_date": "27.04.1971",
+                "technical_possible_discharge_l_s": 4.25,
+                "technical_temperature_c": 51,
+                "static_water_level_elevation_m": 331.97,
+                "allowable_drawdown_m": 3.15,
+                "allowable_dynamic_water_level_elevation_m": 328,
+                "resource_scope": "technical possible facility discharge",
+                "geophysical_water_bearing_interval_m": "405-520",
+                "geophysical_water_bearing_interval_scope": "water-bearing interval identified by geophysical data in MH assessment",
+                "borehole_geology_intervals": [
+                  {
+                    "from_m": 0,
+                    "to_m": 139,
+                    "description": "Quaternary and Neogene sands, gravels and sandy clays"
+                  },
+                  {
+                    "from_m": 139,
+                    "to_m": 370.8,
+                    "description": "predominantly Neogene grey to brown sandy clays"
+                  },
+                  {
+                    "from_m": 370.8,
+                    "to_m": 378.8,
+                    "description": "weathered crust of South Bulgarian granite; strongly decomposed and fractured"
+                  },
+                  {
+                    "from_m": 378.8,
+                    "to_m": 680.25,
+                    "description": "South Bulgarian granite, locally fractured; highly fractured interval near 665-680.25 m with total drilling-fluid loss"
+                  }
+                ],
+                "sample_temperature_c": 29.8,
+                "sample_temperature_scope": "analytical sample value in MH assessment; separate from technical facility temperature",
+                "total_mineralization_mg_l": 439,
+                "ph": 8.91,
+                "fluoride_mg_l": 24.55,
+                "chloride_mg_l": 16.31,
+                "sulfate_mg_l": 52.47,
+                "bicarbonate_mg_l": 161.7,
+                "sodium_mg_l": 84.89,
+                "calcium_mg_l": 2.91,
+                "silicic_acid_mg_l": 74.22,
+                "potable_status": "not suitable for drinking due to high fluoride content according to MH assessment",
+                "verified_source": "MH balneological assessment No.260/02.01.2024",
+                "verified_source_url": "https://old.mh.government.bg/media/filer_public/2024/02/26/260-ovoshtnik-sondazhk6-02-01-2024.pdf",
+                "deposit_fault_context": "Находище Овощник е водонапорна система от пукнатинно-жилен тип в палеозойските гранити под Казанлъшкия грабен. Тунджанската разломна зона е колектор на термалните води. Основна хидрогеоложка роля имат тектонични нарушения с направления приблизително СЗ-ЮИ, ЗСЗ-ИЮИ и ССЗ-ЮЮИ; първите две системи са термоводоносни, а третата има бариерна роля.",
+                "deposit_fault_context_scope": "deposit-level structural interpretation; not proof that the individual borehole lies directly on a mapped fault trace",
+                "latitude": 42.5922597,
+                "longitude": 25.404525275,
+                "coordinate_resolution_source": "Official sanitary protection zone project for mineral-water deposit Ovoshtnik, Municipality of Kazanlak",
+                "coordinate_resolution_source_url": "https://obs.kazanlak.bg/common/docs/2022-05/711_Prilojenie.pdf",
+                "coordinate_resolution_method": "Published WGS84 borehole coordinate from official SOZ engineering project.",
+                "coordinate_precision_scope": "OFFICIAL_FACILITY_COORDINATE",
+                "official_coordinate_dms": "42°35'32.13492\"N, 25°24'16.29099\"E",
+                "official_property_id": "35167.119.370",
+                "settlement": "Казанлък",
+                "coordinate_resolution_note": "Official AGKK sketch and SOZ project place borehole K-6 in PI 35167.119.370, locality Malevo, land of Kazanlak. Current KAIS OpenData no longer returned this parcel geometry, so the published official facility WGS84 coordinate is used instead."
+              },
+              "existing_sources": [
+                {
+                  "source_type": "balneology",
+                  "title": "Балнеологична оценка № 260/02.01.2024 г.",
+                  "description": "за сондаж № К-6 от находище на минерална вода „Овощник“, с. Овощник, община Казанлък, област Стара Загора",
+                  "published": "26.02.2024",
+                  "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=8"
+                },
+                {
+                  "source_type": "verified_research",
+                  "title": "MH balneological assessment No.260/02.01.2024",
+                  "source_url": "https://old.mh.government.bg/media/filer_public/2024/02/26/260-ovoshtnik-sondazhk6-02-01-2024.pdf",
+                  "assessment_no": null,
+                  "assessment_date": null
+                }
+              ],
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-008",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G01",
+            "latitude": 42.5922597
+          },
+          "original_borehole_record": {
+            "borehole_id": "SZ-BH-008",
+            "original_name": "К-6",
+            "aliases": [
+              "K-6",
+              "Сондаж № К-6"
+            ],
+            "drilling_start": "1970-10-15",
+            "drilling_end": "1971-04-27",
+            "total_depth_m": 680.25,
+            "cleaned_depth_after_reaming_m": 672,
+            "elevation_m": 337.39,
+            "coordinate_status": "UNVERIFIED",
+            "latitude": null,
+            "longitude": null,
+            "coordinate_search_attempts": 2,
+            "coordinate_search_result": "Official municipal documentation and targeted coordinate searches verified parcel identity but no numeric facility coordinate was established",
+            "cadastral_parcel": {
+              "identifier": "35167.119.370",
+              "locality": "Малево",
+              "settlement": "Казанлък",
+              "numeric_coordinates_verified": false,
+              "source_reference": "Municipal decision 711/26.05.2022 and administrative court order 2075/05.10.2022"
+            },
+            "continuous_column": false,
+            "is_mineral_water": true,
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 1.5,
+                "material": "Едрозърнести полимиктови пясъци",
+                "age": "Q"
+              },
+              {
+                "from_m": 9.5,
+                "to_m": 19.8,
+                "material": "Среднозърнест чакъл",
+                "description": "Гранитен състав, зърна до 10 мм",
+                "age": "Q+N2"
+              },
+              {
+                "from_m": 19.8,
+                "to_m": 25.55,
+                "material": "Песъчлива глина",
+                "description": "Ръждивокафява, с гранитни късове до 5-6 см",
+                "age": "N2"
+              },
+              {
+                "from_m": 25.55,
+                "to_m": 34.1,
+                "material": "Среднозърнест чакъл",
+                "description": "Слабо споен с глинесто вещество",
+                "age": "N2"
+              },
+              {
+                "from_m": 34.1,
+                "to_m": 139,
+                "material": "Песъчлива глина",
+                "description": "Полутвърда, с кварцови и гранитни късове",
+                "possible_additional_material": "Пясък",
+                "quality_flag": "PARTIAL_CORE_LOSS",
+                "age": "N2"
+              },
+              {
+                "from_m": 139,
+                "to_m": 173,
+                "material": "Сива слабопластична глина",
+                "age": "N2"
+              },
+              {
+                "from_m": 179,
+                "to_m": 360.7,
+                "material": "Сивосива песъчлива глина",
+                "age": "N2"
+              },
+              {
+                "from_m": 360.7,
+                "to_m": 370.8,
+                "material": "Ръждивокафява песъчлива глина",
+                "description": "Пясъчната фракция включва продукти от изветряне на граната",
+                "age": "N2"
+              },
+              {
+                "from_m": 370.8,
+                "to_m": 378.8,
+                "material": "Изветрели южнобългарски гранити",
+                "description": "Силно разложени, ронливи и напукани",
+                "age": "Pz"
+              },
+              {
+                "from_m": 378.8,
+                "to_m": 680.25,
+                "material": "Южнобългарски гранити",
+                "description": "Масивни, с кварц, калиев фелдшпат, плагиоклаз, биотит, амфибол и локален епидот",
+                "age": "Pz"
+              }
+            ],
+            "documented_gaps": [
+              {
+                "from_m": 1.5,
+                "to_m": 9.5,
+                "reason": "No lithology reported in original document"
+              },
+              {
+                "from_m": 173,
+                "to_m": 179,
+                "reason": "No lithology reported in original document"
+              }
+            ],
+            "additional_observations": [
+              {
+                "type": "GEOPHYSICALLY_INTERPRETED_AQUIFER",
+                "from_m": 405,
+                "to_m": 520,
+                "is_measured_water_strike": false
+              },
+              {
+                "type": "DRILLING_MUD_TOTAL_LOSS",
+                "context": "Crushed granite near borehole bottom",
+                "lower_boundary_m": 680.25,
+                "upper_boundary_m": null,
+                "quality_flag": "UPPER_BOUNDARY_PARTIALLY_OBSCURED_BY_STAMP"
+              }
+            ]
+          },
+          "previous_location": {
+            "lat": 42.5922597,
+            "lon": 25.404525275,
+            "status": "OFFICIAL_EXACT",
+            "origin": "latitude+longitude"
+          }
+        }
       },
       "sources": [
         {
@@ -43994,19 +47272,19 @@
         "settlement": "Ягода"
       },
       "location": {
-        "lat": null,
-        "lon": null,
-        "status": "TO_RESEARCH",
-        "origin": null
+        "lat": 42.5443055556,
+        "lon": 25.5722777778,
+        "status": "OFFICIAL_EXACT",
+        "origin": "BDIBR_OFFICIAL_REGISTER_2022_ROW_211"
       },
       "free": {
         "temperature_c": 48,
         "depth_m": 400.4
       },
       "pro": {
-        "research_status": "CONFIRMED_MISSING",
+        "research_status": "OFFICIAL_EXACT",
         "research_enrichment": {
-          "coordinate_status": "TO_RESEARCH",
+          "coordinate_status": "OFFICIAL_EXACT",
           "current_deposit_name": "Ягода",
           "identity_source": "Ministry of Health balneological assessment/certificate registry",
           "location_note": "Physical mineral-water abstraction facility confirmed by official source. Reliable facility-level coordinates or cadastral parcel have not yet been established.",
@@ -44034,10 +47312,20 @@
             42.5999167
           ],
           "rejected_current_coordinates_reason": "Legacy/fuzzy coordinate is not accepted as a verified facility-level coordinate for canonical mapping.",
-          "spatial_research_result": "NO_SAFE_RESOLUTION",
+          "spatial_research_result": "OFFICIAL_COORDINATES_RESOLVED",
           "spatial_research_closed_at": "2026-09-12T17:32:08.515581+00:00",
           "spatial_research_batch": 104,
-          "spatial_research_note": "Facility identity is retained as CONFIRMED_MISSING. No sufficiently reliable facility-level coordinate has been established. Research is closed for the current national spatial-completion pass. Reopen only if a new authoritative facility-level coordinate or cadastral geometry becomes available."
+          "spatial_research_note": "Facility identity is retained as CONFIRMED_MISSING. No sufficiently reliable facility-level coordinate has been established. Research is closed for the current national spatial-completion pass. Reopen only if a new authoritative facility-level coordinate or cadastral geometry becomes available.",
+          "latitude": 42.5443055556,
+          "longitude": 25.5722777778,
+          "coordinate_evidence": {
+            "publisher": "БДИБР",
+            "original_latitude_dms": "42 32 39.5 N",
+            "original_longitude_dms": "25 34 20.2 E",
+            "reference": "Registry row 211",
+            "coordinate_object": "Сондаж Сз-37",
+            "url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf"
+          }
         },
         "research_source_record": {
           "status": "MISSING",
@@ -44059,7 +47347,201 @@
           "research_status": "CONFIRMED_MISSING",
           "research_note": "?????? ??-37, ?????."
         },
-        "duplicate_mh_records": []
+        "duplicate_mh_records": [],
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-002",
+          "source_id": "SZ-A1-002",
+          "source_url": "https://www.mh.government.bg/upload/6816/89-yagoda-sondazhsz37-31-05-2018.pdf",
+          "source_reference": "Pages 1-4; geological section page 2",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 14,
+              "material": "Пясъци с чакълести прослойки",
+              "description": "Дребно-, средно- и едрозърнести пясъци с разнокъсови чакъли",
+              "age": "Quaternary",
+              "unit": "Qal",
+              "interval_id": "SZ-BH-002-I001",
+              "material_original": "Пясъци с чакълести прослойки",
+              "material_normalized": "Пясъци с чакълести прослойки",
+              "source_id": "SZ-A1-002",
+              "source_reference": "Pages 1-4; geological section page 2",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 14,
+              "to_m": 400.4,
+              "material": "Средногорски гранит",
+              "description": "Гранит с многобройни тънки аплитови и кварц-аплитови дайки и прожилки",
+              "age": "Paleozoic",
+              "unit": "gamma Pz",
+              "interval_id": "SZ-BH-002-I002",
+              "material_original": "Средногорски гранит",
+              "material_normalized": "Средногорски гранит",
+              "source_id": "SZ-A1-002",
+              "source_reference": "Pages 1-4; geological section page 2",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "mineral_id": "mw_b15053c6abe116ff",
+            "geological_context": "Shallow sedimentary cover",
+            "longitude": 25.5722777778,
+            "fault_context": {
+              "borehole_id": "SZ-BH-002",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "gem_fault_id": "EUR_BGCS015",
+              "gem_distance_m": 6972.3,
+              "mrrb_fault_id": "FLT-KAZANLAK-NIKOLAEVO-REC41",
+              "mrrb_distance_m": 7014.1,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-002",
+              "source_id": "SZ-A1-002",
+              "mineral_id": "mw_b15053c6abe116ff",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 42.5443055556,
+              "longitude": 25.5722777778,
+              "documented_measurements": {
+                "temperature_c": null,
+                "sample_temperature_c": null,
+                "technical_discharge_lps": null,
+                "mineralization_mg_l": null,
+                "artesian_flow": null,
+                "temperature_observations": null,
+                "temperature_measurement_method": null,
+                "freshwater_observations": null,
+                "additional_observations": null
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": {
+                "temperature_c": 48,
+                "depth_m": 400.4
+              },
+              "existing_enrichment": {
+                "coordinate_status": "TO_RESEARCH",
+                "current_deposit_name": "Ягода",
+                "identity_source": "Ministry of Health balneological assessment/certificate registry",
+                "location_note": "Physical mineral-water abstraction facility confirmed by official source. Reliable facility-level coordinates or cadastral parcel have not yet been established.",
+                "depth_m": 400.4,
+                "construction_year": 1982,
+                "technical_possible_discharge_l_s": 11.3,
+                "technical_temperature_c": 52,
+                "sample_temperature_c": 48,
+                "total_mineralization_mg_l": 563,
+                "ph": 8.68,
+                "fluoride_mg_l": 15.78,
+                "chloride_mg_l": 22.62,
+                "sulfate_mg_l": 116.66,
+                "bicarbonate_mg_l": 158.65,
+                "sodium_mg_l": 122.88,
+                "calcium_mg_l": 3.51,
+                "magnesium_mg_l": 0.12,
+                "silicic_acid_mg_l": 109.7,
+                "hydrogen_sulfide_mg_l": 2.2,
+                "radon_222_bq_l": 138.3,
+                "verified_source": "MH balneological assessment No.89/30.03.2018",
+                "verified_source_url": "https://www.mh.government.bg/upload/6816/89-yagoda-sondazhsz37-31-05-2018.pdf",
+                "rejected_current_coordinates": [
+                  25.2141944,
+                  42.5999167
+                ],
+                "rejected_current_coordinates_reason": "Legacy/fuzzy coordinate is not accepted as a verified facility-level coordinate for canonical mapping.",
+                "spatial_research_result": "NO_SAFE_RESOLUTION",
+                "spatial_research_closed_at": "2026-09-12T17:32:08.515581+00:00",
+                "spatial_research_batch": 104,
+                "spatial_research_note": "Facility identity is retained as CONFIRMED_MISSING. No sufficiently reliable facility-level coordinate has been established. Research is closed for the current national spatial-completion pass. Reopen only if a new authoritative facility-level coordinate or cadastral geometry becomes available."
+              },
+              "existing_sources": [
+                {
+                  "source_type": "balneology",
+                  "title": "Балнеологична оценка № 89 от 31.05.2018 г.",
+                  "description": "„Сондаж № Сз-37“ - находище на минерална вода „Ягода“, с. Ягода, община Мъглиж, област Стара Загора",
+                  "published": "20.06.2019",
+                  "source_url": "https://www.mh.government.bg/bg/administrativni-uslugi/registri/registr-na-izdadenite-ot-mz-balneologichni-ocenki-za-mineralni-v?p=26"
+                },
+                {
+                  "source_type": "verified_research",
+                  "title": "MH balneological assessment No.89/30.03.2018",
+                  "source_url": "https://www.mh.government.bg/upload/6816/89-yagoda-sondazhsz37-31-05-2018.pdf",
+                  "assessment_no": null,
+                  "assessment_date": null
+                }
+              ],
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-002",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G03",
+            "latitude": 42.5443055556
+          },
+          "original_borehole_record": {
+            "borehole_id": "SZ-BH-002",
+            "original_name": "Сз-37",
+            "aliases": [
+              "Sz-37",
+              "Сондаж № Сз-37"
+            ],
+            "registry_id": "351098001",
+            "drilling_year": 1982,
+            "drilling_organization": "ГПП Ямбол",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "latitude": 42.5443055556,
+            "longitude": 25.5722777778,
+            "coordinate_origin": {
+              "publisher": "БДИБР",
+              "original_latitude_dms": "42 32 39.5 N",
+              "original_longitude_dms": "25 34 20.2 E",
+              "reference": "Registry row 211",
+              "coordinate_object": "Сондаж Сз-37",
+              "url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf"
+            },
+            "additional_coordinate_evidence": {
+              "publisher": "МОСВ",
+              "coordinate_system": "1970",
+              "x": 4646498.467,
+              "y": 9430067.521,
+              "reference": "Page 2, section 1.3",
+              "url": "https://old1.maglizh.eu/storage/app/public/uploads/files/documents/news/obqvleniq/zapoved_MOSV.pdf"
+            },
+            "total_depth_m": 400.4,
+            "alternative_reported_depth_m": 404.4,
+            "alternative_depth_source": "БДИБР registry",
+            "continuous_column": true,
+            "is_mineral_water": true,
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 14,
+                "material": "Пясъци с чакълести прослойки",
+                "description": "Дребно-, средно- и едрозърнести пясъци с разнокъсови чакъли",
+                "age": "Quaternary",
+                "unit": "Qal"
+              },
+              {
+                "from_m": 14,
+                "to_m": 400.4,
+                "material": "Средногорски гранит",
+                "description": "Гранит с многобройни тънки аплитови и кварц-аплитови дайки и прожилки",
+                "age": "Paleozoic",
+                "unit": "gamma Pz"
+              }
+            ]
+          },
+          "previous_location": {
+            "lat": null,
+            "lon": null,
+            "status": "TO_RESEARCH",
+            "origin": null
+          }
+        }
       },
       "sources": [
         {
@@ -49137,6 +52619,731 @@
         }
       ],
       "origin": "mh_confirmed_missing"
+    },
+    {
+      "mineral_id": "mw_e3a731b27ce20fb6",
+      "identity": {
+        "name": "Сондаж №2",
+        "facility_type": "Минерален сондаж",
+        "deposit": "Старозагорски минерални бани",
+        "settlement": "Старозагорски минерални бани"
+      },
+      "location": {
+        "lat": 42.4499722222,
+        "lon": 25.4956666667,
+        "status": "OFFICIAL_EXACT",
+        "origin": "DOCUMENTED_OFFICIAL_COORDINATES"
+      },
+      "free": {
+        "temperature_c": null,
+        "depth_m": 126
+      },
+      "pro": {
+        "research_status": "OFFICIAL_EXACT",
+        "research_enrichment": {
+          "coordinate_status": "OFFICIAL_EXACT",
+          "latitude": 42.4499722222,
+          "longitude": 25.4956666667,
+          "technical_temperature_c": null,
+          "sample_temperature_c": null,
+          "technical_possible_discharge_l_s": null,
+          "total_mineralization_mg_l": null,
+          "verified_source_url": "https://www.mh.government.bg/upload/6825/80-starozagorski_mineralni_bani-sondazh2-30-04-2018.pdf"
+        },
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-005",
+          "source_id": "SZ-A1-005",
+          "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 10,
+              "material": "Пясъчници",
+              "description": "Силно раздробени",
+              "age": "Cr2t",
+              "interval_id": "SZ-BH-005-I001",
+              "material_original": "Пясъчници",
+              "material_normalized": "Пясъчници",
+              "source_id": "SZ-A1-005",
+              "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 10,
+              "to_m": 11,
+              "material": "Пясъчник",
+              "description": "Здрав",
+              "age": "Cr2t",
+              "interval_id": "SZ-BH-005-I002",
+              "material_original": "Пясъчник",
+              "material_normalized": "Пясъчник",
+              "source_id": "SZ-A1-005",
+              "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 11,
+              "to_m": 28,
+              "material": "Пясъчник",
+              "description": "Стрит",
+              "age": "Cr2t",
+              "interval_id": "SZ-BH-005-I003",
+              "material_original": "Пясъчник",
+              "material_normalized": "Пясъчник",
+              "source_id": "SZ-A1-005",
+              "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 28,
+              "to_m": 39.5,
+              "material": "Доломити",
+              "description": "Силно стрити",
+              "age": "T2",
+              "interval_id": "SZ-BH-005-I004",
+              "material_original": "Доломити",
+              "material_normalized": "Доломити",
+              "source_id": "SZ-A1-005",
+              "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 39.5,
+              "to_m": 42,
+              "material": "Доломити",
+              "description": "Здрави",
+              "age": "T2",
+              "interval_id": "SZ-BH-005-I005",
+              "material_original": "Доломити",
+              "material_normalized": "Доломити",
+              "source_id": "SZ-A1-005",
+              "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 42,
+              "to_m": 67,
+              "material": "Доломити",
+              "description": "Силно раздробени с червеникава хидротермална спойка",
+              "age": "T2",
+              "interval_id": "SZ-BH-005-I006",
+              "material_original": "Доломити",
+              "material_normalized": "Доломити",
+              "source_id": "SZ-A1-005",
+              "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 67,
+              "to_m": 85,
+              "material": "Доломити",
+              "description": "Здрави",
+              "age": "T2",
+              "interval_id": "SZ-BH-005-I007",
+              "material_original": "Доломити",
+              "material_normalized": "Доломити",
+              "source_id": "SZ-A1-005",
+              "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 85,
+              "to_m": 88,
+              "material": "Каверна",
+              "evidence_type": "DOCUMENTED_CAVITY",
+              "age": "T2",
+              "interval_id": "SZ-BH-005-I008",
+              "material_original": "Каверна",
+              "material_normalized": "Каверна",
+              "source_id": "SZ-A1-005",
+              "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 88,
+              "to_m": 126,
+              "material": "Доломити",
+              "description": "Силно стрити",
+              "age": "T2",
+              "interval_id": "SZ-BH-005-I009",
+              "material_original": "Доломити",
+              "material_normalized": "Доломити",
+              "source_id": "SZ-A1-005",
+              "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "original_registry_record": {
+            "borehole_id": "SZ-BH-005",
+            "source_id": "SZ-A1-005",
+            "source_url": "https://www.mh.government.bg/upload/6825/80-starozagorski_mineralni_bani-sondazh2-30-04-2018.pdf",
+            "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "latitude": 42.4499722222,
+            "longitude": 25.4956666667,
+            "total_depth_m": 126,
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 10,
+                "material": "Пясъчници",
+                "description": "Силно раздробени",
+                "age": "Cr2t",
+                "interval_id": "SZ-BH-005-I001",
+                "material_original": "Пясъчници",
+                "material_normalized": "Пясъчници",
+                "source_id": "SZ-A1-005",
+                "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              },
+              {
+                "from_m": 10,
+                "to_m": 11,
+                "material": "Пясъчник",
+                "description": "Здрав",
+                "age": "Cr2t",
+                "interval_id": "SZ-BH-005-I002",
+                "material_original": "Пясъчник",
+                "material_normalized": "Пясъчник",
+                "source_id": "SZ-A1-005",
+                "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              },
+              {
+                "from_m": 11,
+                "to_m": 28,
+                "material": "Пясъчник",
+                "description": "Стрит",
+                "age": "Cr2t",
+                "interval_id": "SZ-BH-005-I003",
+                "material_original": "Пясъчник",
+                "material_normalized": "Пясъчник",
+                "source_id": "SZ-A1-005",
+                "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              },
+              {
+                "from_m": 28,
+                "to_m": 39.5,
+                "material": "Доломити",
+                "description": "Силно стрити",
+                "age": "T2",
+                "interval_id": "SZ-BH-005-I004",
+                "material_original": "Доломити",
+                "material_normalized": "Доломити",
+                "source_id": "SZ-A1-005",
+                "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              },
+              {
+                "from_m": 39.5,
+                "to_m": 42,
+                "material": "Доломити",
+                "description": "Здрави",
+                "age": "T2",
+                "interval_id": "SZ-BH-005-I005",
+                "material_original": "Доломити",
+                "material_normalized": "Доломити",
+                "source_id": "SZ-A1-005",
+                "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              },
+              {
+                "from_m": 42,
+                "to_m": 67,
+                "material": "Доломити",
+                "description": "Силно раздробени с червеникава хидротермална спойка",
+                "age": "T2",
+                "interval_id": "SZ-BH-005-I006",
+                "material_original": "Доломити",
+                "material_normalized": "Доломити",
+                "source_id": "SZ-A1-005",
+                "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              },
+              {
+                "from_m": 67,
+                "to_m": 85,
+                "material": "Доломити",
+                "description": "Здрави",
+                "age": "T2",
+                "interval_id": "SZ-BH-005-I007",
+                "material_original": "Доломити",
+                "material_normalized": "Доломити",
+                "source_id": "SZ-A1-005",
+                "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              },
+              {
+                "from_m": 85,
+                "to_m": 88,
+                "material": "Каверна",
+                "evidence_type": "DOCUMENTED_CAVITY",
+                "age": "T2",
+                "interval_id": "SZ-BH-005-I008",
+                "material_original": "Каверна",
+                "material_normalized": "Каверна",
+                "source_id": "SZ-A1-005",
+                "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              },
+              {
+                "from_m": 88,
+                "to_m": 126,
+                "material": "Доломити",
+                "description": "Силно стрити",
+                "age": "T2",
+                "interval_id": "SZ-BH-005-I009",
+                "material_original": "Доломити",
+                "material_normalized": "Доломити",
+                "source_id": "SZ-A1-005",
+                "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              }
+            ],
+            "original_record": {
+              "borehole_id": "SZ-BH-005",
+              "original_name": "Сондаж №2",
+              "registry_id": "531084003",
+              "drilling_year": 1961,
+              "alternative_registry_drilling_year": 1958,
+              "total_depth_m": 126,
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 42.4499722222,
+              "longitude": 25.4956666667,
+              "coordinate_origin": {
+                "publisher": "БДИБР",
+                "year": 2022,
+                "reference": "Registry row 163, ID 531084003",
+                "coordinate_object": "Сондаж №2",
+                "original_latitude_dms": "42 26 59.9 N",
+                "original_longitude_dms": "25 29 44.4 E",
+                "url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf"
+              },
+              "continuous_column": true,
+              "is_mineral_water": true,
+              "intervals": [
+                {
+                  "from_m": 0,
+                  "to_m": 10,
+                  "material": "Пясъчници",
+                  "description": "Силно раздробени",
+                  "age": "Cr2t"
+                },
+                {
+                  "from_m": 10,
+                  "to_m": 11,
+                  "material": "Пясъчник",
+                  "description": "Здрав",
+                  "age": "Cr2t"
+                },
+                {
+                  "from_m": 11,
+                  "to_m": 28,
+                  "material": "Пясъчник",
+                  "description": "Стрит",
+                  "age": "Cr2t"
+                },
+                {
+                  "from_m": 28,
+                  "to_m": 39.5,
+                  "material": "Доломити",
+                  "description": "Силно стрити",
+                  "age": "T2"
+                },
+                {
+                  "from_m": 39.5,
+                  "to_m": 42,
+                  "material": "Доломити",
+                  "description": "Здрави",
+                  "age": "T2"
+                },
+                {
+                  "from_m": 42,
+                  "to_m": 67,
+                  "material": "Доломити",
+                  "description": "Силно раздробени с червеникава хидротермална спойка",
+                  "age": "T2"
+                },
+                {
+                  "from_m": 67,
+                  "to_m": 85,
+                  "material": "Доломити",
+                  "description": "Здрави",
+                  "age": "T2"
+                },
+                {
+                  "from_m": 85,
+                  "to_m": 88,
+                  "material": "Каверна",
+                  "evidence_type": "DOCUMENTED_CAVITY",
+                  "age": "T2"
+                },
+                {
+                  "from_m": 88,
+                  "to_m": 126,
+                  "material": "Доломити",
+                  "description": "Силно стрити",
+                  "age": "T2"
+                }
+              ]
+            },
+            "needs_spatial_review": true,
+            "original_spatial_status": "OFFICIAL_EXACT"
+          },
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "mineral_id": null,
+            "geological_context": "Carbonate rocks; documented cavity in BH-005",
+            "longitude": 25.4956666667,
+            "fault_context": {
+              "borehole_id": "SZ-BH-005",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "gem_fault_id": "EUR_BGCS004",
+              "gem_distance_m": 7878.6,
+              "mrrb_fault_id": "FLT-STARA-ZAGORA-REC11",
+              "mrrb_distance_m": 8915.5,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-005",
+              "source_id": "SZ-A1-005",
+              "mineral_id": null,
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 42.4499722222,
+              "longitude": 25.4956666667,
+              "documented_measurements": {
+                "temperature_c": null,
+                "sample_temperature_c": null,
+                "technical_discharge_lps": null,
+                "mineralization_mg_l": null,
+                "artesian_flow": null,
+                "temperature_observations": null,
+                "temperature_measurement_method": null,
+                "freshwater_observations": null,
+                "additional_observations": null
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": null,
+              "existing_enrichment": null,
+              "existing_sources": null,
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-005",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G04",
+            "latitude": 42.4499722222
+          }
+        }
+      },
+      "sources": [
+        {
+          "source_type": "verified_research",
+          "source_id": "SZ-A1-005",
+          "source_url": "https://www.mh.government.bg/upload/6825/80-starozagorski_mineralni_bani-sondazh2-30-04-2018.pdf",
+          "source_reference": "Page 1 geological context; page 2 lithology; page 3 water resources"
+        }
+      ],
+      "origin": "stara_zagora_verified_research"
+    },
+    {
+      "mineral_id": "mw_be5313a02fa878aa",
+      "identity": {
+        "name": "Сондаж №6",
+        "facility_type": "Минерален сондаж",
+        "deposit": "Старозагорски минерални бани",
+        "settlement": "Старозагорски минерални бани"
+      },
+      "location": {
+        "lat": 42.4517777778,
+        "lon": 25.4958333333,
+        "status": "OFFICIAL_EXACT",
+        "origin": "DOCUMENTED_OFFICIAL_COORDINATES"
+      },
+      "free": {
+        "temperature_c": 42,
+        "depth_m": 300.7
+      },
+      "pro": {
+        "research_status": "OFFICIAL_EXACT",
+        "research_enrichment": {
+          "coordinate_status": "OFFICIAL_EXACT",
+          "latitude": 42.4517777778,
+          "longitude": 25.4958333333,
+          "technical_temperature_c": 43,
+          "sample_temperature_c": 42,
+          "technical_possible_discharge_l_s": 4,
+          "total_mineralization_mg_l": 541,
+          "verified_source_url": "https://www.starazagora.bg/bg/mineralni-vodi/"
+        },
+        "stara_zagora_step05_evidence": {
+          "borehole_id": "SZ-BH-014",
+          "source_id": "SZ-A1-036",
+          "source_reference": "Стр. 2-3",
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 4,
+              "material": "Глинест насип с валуни",
+              "interval_id": "SZ-BH-014-I001",
+              "material_original": "Глинест насип с валуни",
+              "material_normalized": "Глинест насип с валуни",
+              "source_id": "SZ-A1-036",
+              "source_reference": "Стр. 2-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 4,
+              "to_m": 15.4,
+              "material": "Тектонски мергелизирана глина",
+              "interval_id": "SZ-BH-014-I002",
+              "material_original": "Тектонски мергелизирана глина",
+              "material_normalized": "Тектонски мергелизирана глина",
+              "source_id": "SZ-A1-036",
+              "source_reference": "Стр. 2-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 15.4,
+              "to_m": 36.3,
+              "material": "Брекчоконгломерат от доломитни и варовикови късове",
+              "interval_id": "SZ-BH-014-I003",
+              "material_original": "Брекчоконгломерат от доломитни и варовикови късове",
+              "material_normalized": "Брекчоконгломерат от доломитни и варовикови късове",
+              "source_id": "SZ-A1-036",
+              "source_reference": "Стр. 2-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 36.3,
+              "to_m": 200,
+              "material": "Сиво-синкави силно натрошени доломити",
+              "interval_id": "SZ-BH-014-I004",
+              "material_original": "Сиво-синкави силно натрошени доломити",
+              "material_normalized": "Сиво-синкави силно натрошени доломити",
+              "source_id": "SZ-A1-036",
+              "source_reference": "Стр. 2-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            },
+            {
+              "from_m": 200,
+              "to_m": 300.7,
+              "material": "Светлорозови шуплести силно натрошени варовици",
+              "interval_id": "SZ-BH-014-I005",
+              "material_original": "Светлорозови шуплести силно натрошени варовици",
+              "material_normalized": "Светлорозови шуплести силно натрошени варовици",
+              "source_id": "SZ-A1-036",
+              "source_reference": "Стр. 2-3",
+              "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+              "verification_status": "DOCUMENTED"
+            }
+          ],
+          "original_registry_record": {
+            "borehole_id": "SZ-BH-014",
+            "source_id": "SZ-A1-036",
+            "source_url": "https://www.starazagora.bg/bg/mineralni-vodi/",
+            "source_reference": "Стр. 2-3",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "latitude": 42.4517777778,
+            "longitude": 25.4958333333,
+            "total_depth_m": 300.7,
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 4,
+                "material": "Глинест насип с валуни",
+                "interval_id": "SZ-BH-014-I001",
+                "material_original": "Глинест насип с валуни",
+                "material_normalized": "Глинест насип с валуни",
+                "source_id": "SZ-A1-036",
+                "source_reference": "Стр. 2-3",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              },
+              {
+                "from_m": 4,
+                "to_m": 15.4,
+                "material": "Тектонски мергелизирана глина",
+                "interval_id": "SZ-BH-014-I002",
+                "material_original": "Тектонски мергелизирана глина",
+                "material_normalized": "Тектонски мергелизирана глина",
+                "source_id": "SZ-A1-036",
+                "source_reference": "Стр. 2-3",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              },
+              {
+                "from_m": 15.4,
+                "to_m": 36.3,
+                "material": "Брекчоконгломерат от доломитни и варовикови късове",
+                "interval_id": "SZ-BH-014-I003",
+                "material_original": "Брекчоконгломерат от доломитни и варовикови късове",
+                "material_normalized": "Брекчоконгломерат от доломитни и варовикови късове",
+                "source_id": "SZ-A1-036",
+                "source_reference": "Стр. 2-3",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              },
+              {
+                "from_m": 36.3,
+                "to_m": 200,
+                "material": "Сиво-синкави силно натрошени доломити",
+                "interval_id": "SZ-BH-014-I004",
+                "material_original": "Сиво-синкави силно натрошени доломити",
+                "material_normalized": "Сиво-синкави силно натрошени доломити",
+                "source_id": "SZ-A1-036",
+                "source_reference": "Стр. 2-3",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              },
+              {
+                "from_m": 200,
+                "to_m": 300.7,
+                "material": "Светлорозови шуплести силно натрошени варовици",
+                "interval_id": "SZ-BH-014-I005",
+                "material_original": "Светлорозови шуплести силно натрошени варовици",
+                "material_normalized": "Светлорозови шуплести силно натрошени варовици",
+                "source_id": "SZ-A1-036",
+                "source_reference": "Стр. 2-3",
+                "evidence_scope": "DOCUMENTED_BOREHOLE_ONLY",
+                "verification_status": "DOCUMENTED"
+              }
+            ],
+            "original_record": {
+              "borehole_id": "SZ-BH-014",
+              "name": "Сондаж №6",
+              "settlement": "Старозагорски минерални бани",
+              "year": 1964,
+              "total_depth_m": 300.7,
+              "latitude": 42.4517777778,
+              "longitude": 25.4958333333,
+              "coordinate_status": "OFFICIAL_EXACT",
+              "coordinate_original": "42°27'06.4 N; 25°29'45.0 E",
+              "coordinate_source": "Регистър на БДИБР, 28.01.2022",
+              "coordinate_source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+              "mineral_water": true,
+              "temperature_c": 43,
+              "sample_temperature_c": 42,
+              "technical_discharge_lps": 4,
+              "mineralization_mg_l": 541,
+              "artesian_flow": true,
+              "lithological_intervals": [
+                {
+                  "from_m": 0,
+                  "to_m": 4,
+                  "material": "Глинест насип с валуни"
+                },
+                {
+                  "from_m": 4,
+                  "to_m": 15.4,
+                  "material": "Тектонски мергелизирана глина"
+                },
+                {
+                  "from_m": 15.4,
+                  "to_m": 36.3,
+                  "material": "Брекчоконгломерат от доломитни и варовикови късове"
+                },
+                {
+                  "from_m": 36.3,
+                  "to_m": 200,
+                  "material": "Сиво-синкави силно натрошени доломити"
+                },
+                {
+                  "from_m": 200,
+                  "to_m": 300.7,
+                  "material": "Светлорозови шуплести силно натрошени варовици"
+                }
+              ],
+              "open_hole": {
+                "from_m": 212,
+                "to_m": 300.7
+              }
+            },
+            "needs_spatial_review": true,
+            "original_spatial_status": "OFFICIAL_EXACT"
+          },
+          "spatial_review": {
+            "applicability": "CONDITIONAL_REGIONAL_MINERAL_ANALOG",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "mineral_id": null,
+            "geological_context": "Carbonate rocks; documented cavity in BH-005",
+            "longitude": 25.4958333333,
+            "fault_context": {
+              "borehole_id": "SZ-BH-014",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "gem_fault_id": "EUR_BGCS004",
+              "gem_distance_m": 8030.4,
+              "mrrb_fault_id": "FLT-STARA-ZAGORA-REC11",
+              "mrrb_distance_m": 9042.3,
+              "inside_mrrb_corridor": false,
+              "hydraulic_connection_proven": false
+            },
+            "original_mineral_evidence": {
+              "borehole_id": "SZ-BH-014",
+              "source_id": "SZ-A1-036",
+              "mineral_id": null,
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 42.4517777778,
+              "longitude": 25.4958333333,
+              "documented_measurements": {
+                "temperature_c": 43,
+                "sample_temperature_c": 42,
+                "technical_discharge_lps": 4,
+                "mineralization_mg_l": 541,
+                "artesian_flow": true,
+                "temperature_observations": null,
+                "temperature_measurement_method": null,
+                "freshwater_observations": null,
+                "additional_observations": null
+              },
+              "source_mineral_evidence": null,
+              "existing_measurements": null,
+              "existing_enrichment": null,
+              "existing_sources": null,
+              "needs_spatial_review": true
+            },
+            "borehole_id": "SZ-BH-014",
+            "mineral_occurrence_documented": true,
+            "hydraulic_connection_to_mapped_fault_proven": false,
+            "geological_group": "SZ-G04",
+            "latitude": 42.4517777778
+          }
+        }
+      },
+      "sources": [
+        {
+          "source_type": "verified_research",
+          "source_id": "SZ-A1-036",
+          "source_url": "https://www.starazagora.bg/bg/mineralni-vodi/",
+          "source_reference": "Стр. 2-3"
+        }
+      ],
+      "origin": "stara_zagora_verified_research"
     }
   ],
   "non_point_research_records": [

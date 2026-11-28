@@ -1,0 +1,155 @@
+{
+  "region": "Stara Zagora",
+  "region_id": "STARA-ZAGORA-BG344",
+  "step": 5,
+  "created_at": "2026-11-28T09:33:28.928125+00:00",
+  "status": "LOCAL_INTEGRATED",
+  "decision": "GO_WITH_LIMITATIONS",
+  "git_head": "552efef35737d56ac3251fc3f33832804871dfde",
+  "counts": {
+    "sources": 39,
+    "boreholes": 14,
+    "intervals": 109,
+    "official_exact": 8,
+    "cadastral_approximate": 5,
+    "unverified": 1,
+    "documentary_records": 225,
+    "mineral_facilities_enriched": 11,
+    "mineral_facilities_added": 2,
+    "national_boreholes": 242,
+    "national_catalog": 3299,
+    "national_regions": 102,
+    "national_mineral_facilities": 557
+  },
+  "validation": {
+    "borehole_index": "PASS",
+    "located_borehole_tool": "PASS",
+    "verified_tool_intervals": 101,
+    "document_search": "PASS",
+    "full_document_read": "PASS",
+    "automatic_region_resolution": "PASS",
+    "spatial_search": "PASS",
+    "cross_region_isolation": "PASS",
+    "legacy_tool_isolation": "PASS",
+    "source_integrity": "PASS",
+    "cache": "USER_ACCEPTED_PREVIOUS_VALIDATION_NOT_RETESTED",
+    "ai_generation_test": "NOT_PERFORMED"
+  },
+  "dependency_map": {
+    "national_boreholes": [
+      "sondi-national-borehole-index.ts",
+      "lithology-profile.ts"
+    ],
+    "national_catalog": [
+      "sondi-national-research-evidence.ts",
+      "sondi-luna-national-research-tools.ts",
+      "sondi-luna-national-spatial-index.ts"
+    ],
+    "regional_registry": [
+      "sondi-national-depth-engine.ts",
+      "sondi-regional-report.ts"
+    ],
+    "regional_boundary": [
+      "sondi-national-depth-engine.ts",
+      "sondi-regional-report.ts"
+    ],
+    "regional_model": [
+      "sondi-national-depth-engine.ts",
+      "sondi-regional-report.ts"
+    ],
+    "documentary_routing": [
+      "sondi-luna-research-orchestrator.ts"
+    ],
+    "mineral_master": [
+      "MINERAL_DATA_REGISTRY"
+    ]
+  },
+  "files": [
+    {
+      "role": "national_boreholes",
+      "path": "data\\soil-lithology\\bulgaria_borehole_lithology.json",
+      "sha256": "51D092AB53466A0AAF0CEA54BA7415B214B7B828EF8170A5AA9E2039345A8E62"
+    },
+    {
+      "role": "national_catalog",
+      "path": "data\\soil-lithology\\runtime\\national_research_evidence_catalog.json",
+      "sha256": "932D773B08B38A21306126EE7DC265D974E648EB53634E5A61A06D0627E5EAFE"
+    },
+    {
+      "role": "regional_registry",
+      "path": "data\\soil-lithology\\runtime\\regions\\regional_registry.json",
+      "sha256": "311CC542E701AAE003E235DEA76877CA4B833049A746A4A97711E17162F621C0"
+    },
+    {
+      "role": "regional_boundary",
+      "path": "data\\soil-lithology\\runtime\\regions\\stara_zagora_boundary.json",
+      "sha256": "A7EC5714A7CFC5F6FFEB2D8F62D0CF7A80B0BD436F7302D75234EFA79A890A62"
+    },
+    {
+      "role": "regional_model",
+      "path": "data\\soil-lithology\\runtime\\regions\\stara_zagora_model.json",
+      "sha256": "92F634AB18EE69B2BD8435AEA3A47FD6F0F1B14F110D9ED04C4BAB2F4093DDED"
+    },
+    {
+      "role": "mineral_master",
+      "path": "data\\mineral-water\\mineral_water_master.json",
+      "sha256": "A36FBCAFEB8F48AFFE464632A2E78E56E6BD850528AFBF89DB91CA64B7F5A5E9"
+    },
+    {
+      "role": "documentary_routing",
+      "path": "lib\\sondi-national-depth-engine.ts",
+      "sha256": "9A48AEA8534015BAFC3FE976D48C9DE1AF96EA255974F429606E457B08F07D26"
+    }
+  ],
+  "verified_depth_sources_unchanged": true,
+  "validation_files": [
+    "data\\soil-lithology\\research\\stara_zagora_step05_spatial_validation.json",
+    "data\\soil-lithology\\research\\stara_zagora_step05_tool_validation.json"
+  ],
+  "limitations": [
+    "Troyanovo-3 remains spatially unverified.",
+    "Five cadastral locations remain approximate.",
+    "Three uncertain lithological intervals retain documentary review status.",
+    "Eleven documented profile gaps preserved.",
+    "Regional geological map is not site-scale proof.",
+    "Mechta K1970 transformation remains pending.",
+    "No newly verified geological polygons.",
+    "Legacy geological tools contain no newly integrated regional polygons.",
+    "Hydraulic connection to mapped faults is not independently proven.",
+    "Live AI-generated forecast not tested in this step."
+  ],
+  "step06_test_coordinates": [
+    {
+      "name": "Yagoda",
+      "lat": 42.5443055556,
+      "lon": 25.5722777778
+    },
+    {
+      "name": "Ovoshtnik",
+      "lat": 42.5922597,
+      "lon": 25.404525275
+    },
+    {
+      "name": "Pavel Banya",
+      "lat": 42.5999166667,
+      "lon": 25.2141944444
+    },
+    {
+      "name": "Mineral Baths",
+      "lat": 42.4517777778,
+      "lon": 25.4958333333
+    },
+    {
+      "name": "Varna negative control",
+      "lat": 43.2141,
+      "lon": 27.9147
+    }
+  ],
+  "regional_routing_mapping_added": true,
+  "national_algorithm_logic_modified": false,
+  "luna_prompt_modified": false,
+  "cache_modified": false,
+  "git_commit": false,
+  "deployment": false,
+  "public_map_integration": false
+}
