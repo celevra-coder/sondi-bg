@@ -1544,7 +1544,11 @@ export function resolveNationalDocumentaryRegion(
   "BURGAS": "Burgas",
   "YAMBOL": "Yambol",
   "SLIVEN": "Sliven",
-  "STARA": "Stara Zagora"
+  "STARA": "Stara Zagora",
+  "HASKOVO": "Haskovo",
+  "KARDZHALI": "Kardzhali",
+  "RUSE": "Ruse",
+  "SMOLYAN": "Smolyan"
 };
 
   const registry = readJson<RegionRegistry>(
