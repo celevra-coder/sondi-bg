@@ -27421,6 +27421,3012 @@
         },
         "not_measured_at_arbitrary_target": true
       }
+    },
+    {
+      "borehole_id": "HSK-MINERALNI-BANI-1VP",
+      "name_bg": "Хасковски минерални бани / 1ВП",
+      "oblast": "Хасково",
+      "region_code": "Haskovo",
+      "status": "documented_borehole_intervals",
+      "zone_type": "borehole_documented_location",
+      "coordinates": {
+        "latitude": 41.9417222222,
+        "longitude": 25.3441944444,
+        "status": "OFFICIAL_EXACT",
+        "exact_policy": "PUBLISHED_POINT_COORDINATES_NO_MOUTH_REQUIREMENT",
+        "original_coordinate_metadata": {
+          "record_id": "HSK-MINERALNI-BANI-1VP",
+          "observation_type": "DOCUMENTED_BOREHOLE",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "source_ids": [
+            "HSK-B1-023"
+          ],
+          "original_record": {
+            "borehole_id": "HSK-MINERALNI-BANI-1VP",
+            "original_borehole_id": "Сн-1ВП",
+            "original_table_id": "С1",
+            "total_depth_m": 196,
+            "latitude": 41.9417222222,
+            "longitude": 25.3441944444,
+            "latitude_original": "41 56 30.2 N",
+            "longitude_original": "25 20 39.1 E",
+            "coordinate_crs": "EPSG:4326",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "coordinate_role": "GEODETICALLY_SURVEYED_WATER_SOURCE",
+            "coordinate_source": "Table 1; printed page 8",
+            "coordinates_1970_original": {
+              "x": 4579854.138,
+              "y": 9410397.956
+            },
+            "terrain_elevation_m": 264.91,
+            "elevation_datum": "Baltic",
+            "operational_status": "REPORTED_DRY_HISTORICALLY_CURRENT_CONDITION_UNKNOWN",
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 1.2,
+                "material": "Едри чакъли от скални късове",
+                "geological_age": "Quaternary",
+                "source_reference": "Table 2; printed page 12",
+                "material_original": "Едри чакъли от скални късове",
+                "material_normalized": "Едри чакъли от скални късове",
+                "source_id": "HSK-B1-023"
+              },
+              {
+                "from_m": 1.2,
+                "to_m": 196,
+                "material": "Трахити и латити",
+                "color": "Сивочерни и сивозелени",
+                "structural_character": "Редуване на здрави и напукани скали",
+                "source_reference": "Table 2; printed page 12",
+                "material_original": "Трахити и латити",
+                "material_normalized": "Трахити и латити",
+                "source_id": "HSK-B1-023"
+              }
+            ],
+            "nested_intervals": [
+              {
+                "from_m": 126,
+                "to_m": 132,
+                "material": "Тектонски брекчирани и милонитизирани трахити и латити",
+                "source_reference": "Table 2; printed page 12",
+                "material_original": "Тектонски брекчирани и милонитизирани трахити и латити",
+                "material_normalized": "Тектонски брекчирани и милонитизирани трахити и латити",
+                "source_id": "HSK-B1-023",
+                "parent_interval": [
+                  1.2,
+                  196
+                ],
+                "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+                "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+              }
+            ],
+            "source_gaps": [],
+            "source_id": "HSK-B1-023",
+            "source_ids": [
+              "HSK-B1-023"
+            ],
+            "locality_original": "Хасковски минерални бани",
+            "independent_observation_id": "HSK-MINERALNI-BANI-1VP",
+            "verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+            "observation_type": "DOCUMENTED_BOREHOLE",
+            "needs_spatial_review": true,
+            "corroborating_versions": [],
+            "conflict_ids": [
+              "HSK-CF-002"
+            ],
+            "column_completeness": "COMPLETE_MAIN_INTERVALS"
+          },
+          "latitude": 41.9417222222,
+          "longitude": 25.3441944444,
+          "coordinate_source": "Table 1; printed page 8",
+          "inside_oblast": true,
+          "municipality_codes": [
+            "HKV19"
+          ],
+          "coordinate_variants": [],
+          "spatial_review_status": "ADMINISTRATIVE_POSITION_VALIDATED",
+          "original_projected_coordinates": {
+            "facility": "Сондаж 1ВП",
+            "x_northing": 4579854.14,
+            "y_easting": 9410397.96,
+            "official_reference_lat": 41.9417222222,
+            "official_reference_lon": 25.3441944444,
+            "transformed_lat": 41.9417175,
+            "transformed_lon": 25.3441945,
+            "difference_m_approx": 0.53
+          },
+          "original_crs": "BGS1970 K5",
+          "target_crs": "EPSG:4326",
+          "coordinate_target": "GEODETICALLY_SURVEYED_WATER_SOURCE",
+          "control_difference_m": 0.53
+        }
+      },
+      "total_depth_m": 196,
+      "water_type": "not_classified_from_lithology",
+      "lithology": [
+        {
+          "interval_id": "HSK-MINERALNI-BANI-1VP-I001",
+          "depth_from_m": 0.0,
+          "depth_to_m": 1.2,
+          "expected_material_bg": "Едри чакъли от скални късове",
+          "original_material_bg": "Едри чакъли от скални късове",
+          "material_normalized": "Едри чакъли от скални късове",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "HSK-B1-023"
+          ],
+          "original_interval": {
+            "from_m": 0,
+            "to_m": 1.2,
+            "material": "Едри чакъли от скални късове",
+            "geological_age": "Quaternary",
+            "source_reference": "Table 2; printed page 12",
+            "material_original": "Едри чакъли от скални късове",
+            "material_normalized": "Едри чакъли от скални късове",
+            "source_id": "HSK-B1-023"
+          }
+        },
+        {
+          "interval_id": "HSK-MINERALNI-BANI-1VP-I002",
+          "depth_from_m": 1.2,
+          "depth_to_m": 196.0,
+          "expected_material_bg": "Трахити и латити",
+          "original_material_bg": "Трахити и латити",
+          "material_normalized": "Трахити и латити",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "HSK-B1-023"
+          ],
+          "original_interval": {
+            "from_m": 1.2,
+            "to_m": 196,
+            "material": "Трахити и латити",
+            "color": "Сивочерни и сивозелени",
+            "structural_character": "Редуване на здрави и напукани скали",
+            "source_reference": "Table 2; printed page 12",
+            "material_original": "Трахити и латити",
+            "material_normalized": "Трахити и латити",
+            "source_id": "HSK-B1-023"
+          }
+        }
+      ],
+      "structural_intervals": [
+        {
+          "interval_id": "HSK-MINERALNI-BANI-1VP-S001",
+          "depth_from_m": 126,
+          "depth_to_m": 132,
+          "original_material_bg": "Тектонски брекчирани и милонитизирани трахити и латити",
+          "source_ids": [
+            "HSK-B1-023"
+          ],
+          "original_interval": {
+            "from_m": 126,
+            "to_m": 132,
+            "material": "Тектонски брекчирани и милонитизирани трахити и латити",
+            "source_reference": "Table 2; printed page 12",
+            "material_original": "Тектонски брекчирани и милонитизирани трахити и латити",
+            "material_normalized": "Тектонски брекчирани и милонитизирани трахити и латити",
+            "source_id": "HSK-B1-023",
+            "parent_interval": [
+              1.2,
+              196
+            ],
+            "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+            "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+          },
+          "independent_confirmation": false
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": null,
+      "expert_context": {
+        "source_ids": [
+          "HSK-B1-023"
+        ],
+        "original_locality": "Хасковски минерални бани",
+        "original_borehole_id": "Сн-1ВП",
+        "original_registry_record": {
+          "borehole_id": "HSK-MINERALNI-BANI-1VP",
+          "original_borehole_id": "Сн-1ВП",
+          "original_table_id": "С1",
+          "total_depth_m": 196,
+          "latitude": 41.9417222222,
+          "longitude": 25.3441944444,
+          "latitude_original": "41 56 30.2 N",
+          "longitude_original": "25 20 39.1 E",
+          "coordinate_crs": "EPSG:4326",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "coordinate_role": "GEODETICALLY_SURVEYED_WATER_SOURCE",
+          "coordinate_source": "Table 1; printed page 8",
+          "coordinates_1970_original": {
+            "x": 4579854.138,
+            "y": 9410397.956
+          },
+          "terrain_elevation_m": 264.91,
+          "elevation_datum": "Baltic",
+          "operational_status": "REPORTED_DRY_HISTORICALLY_CURRENT_CONDITION_UNKNOWN",
+          "intervals": [
+            {
+              "from_m": 0,
+              "to_m": 1.2,
+              "material": "Едри чакъли от скални късове",
+              "geological_age": "Quaternary",
+              "source_reference": "Table 2; printed page 12",
+              "material_original": "Едри чакъли от скални късове",
+              "material_normalized": "Едри чакъли от скални късове",
+              "source_id": "HSK-B1-023"
+            },
+            {
+              "from_m": 1.2,
+              "to_m": 196,
+              "material": "Трахити и латити",
+              "color": "Сивочерни и сивозелени",
+              "structural_character": "Редуване на здрави и напукани скали",
+              "source_reference": "Table 2; printed page 12",
+              "material_original": "Трахити и латити",
+              "material_normalized": "Трахити и латити",
+              "source_id": "HSK-B1-023"
+            }
+          ],
+          "nested_intervals": [
+            {
+              "from_m": 126,
+              "to_m": 132,
+              "material": "Тектонски брекчирани и милонитизирани трахити и латити",
+              "source_reference": "Table 2; printed page 12",
+              "material_original": "Тектонски брекчирани и милонитизирани трахити и латити",
+              "material_normalized": "Тектонски брекчирани и милонитизирани трахити и латити",
+              "source_id": "HSK-B1-023",
+              "parent_interval": [
+                1.2,
+                196
+              ],
+              "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+              "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+            }
+          ],
+          "source_gaps": [],
+          "source_id": "HSK-B1-023",
+          "source_ids": [
+            "HSK-B1-023"
+          ],
+          "locality_original": "Хасковски минерални бани",
+          "independent_observation_id": "HSK-MINERALNI-BANI-1VP",
+          "verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+          "observation_type": "DOCUMENTED_BOREHOLE",
+          "needs_spatial_review": true,
+          "corroborating_versions": [],
+          "conflict_ids": [
+            "HSK-CF-002"
+          ],
+          "column_completeness": "COMPLETE_MAIN_INTERVALS"
+        },
+        "existing_mineral_id": "mw_8d77e750b35cda84",
+        "spatial_context": {
+          "borehole_id": "HSK-MINERALNI-BANI-1VP",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "latitude": 41.9417222222,
+          "longitude": 25.3441944444,
+          "surface_geology": {
+            "record_id": "HSK-MINERALNI-BANI-1VP",
+            "observation_type": "DOCUMENTED_BOREHOLE",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "latitude": 41.9417222222,
+            "longitude": 25.3441944444,
+            "surface_geology_only": true,
+            "vertical_column_membership_confirmed": false,
+            "pixel_x": 1889,
+            "pixel_y": 1647,
+            "classification_status": "DIRECT",
+            "direct_id": 4,
+            "reliable_id": 4,
+            "source_obscured": false,
+            "class_id": 4,
+            "geological_unit": {
+              "id": 4,
+              "code": "Pg",
+              "name_bg": "Палеоген",
+              "name_en": "Paleogene",
+              "style": "solid",
+              "rgb": [
+                255,
+                211,
+                128
+              ]
+            },
+            "field_datum_limitation": null,
+            "scientifically_validated_map_contact": false
+          },
+          "terrain_context": {
+            "elevation_m": 269.36102294921875,
+            "source_file": "data\\terrain\\copernicus-glo30\\Copernicus_DSM_10_N41_00_E025_00_DEM.tif",
+            "source": "Copernicus GLO-30",
+            "surveyed_borehole_elevation": false
+          },
+          "fault_context": {
+            "borehole_id": "HSK-MINERALNI-BANI-1VP",
+            "latitude": 41.9417222222,
+            "longitude": 25.3441944444,
+            "nearest_gem_fault_id": "ME_BGCS001",
+            "gem_distance_m": 8947.935255442855,
+            "nearest_mrrb_fault_id": "FLT-MAR-HASKOVO-REC13",
+            "mrrb_distance_m": 6022.754063128849,
+            "inside_mrrb_corridor": false,
+            "groundwater_bodies": [
+              {
+                "localId": "BG3G0000PgN026",
+                "name": "Êàðñòîâè âîäè - ×èðïàí - Äèìèòðîâãðàä",
+                "horizon": "Палеоген - Неоген",
+                "water_type": "Порови, пукнатинни и карстови води"
+              }
+            ],
+            "distance_crs": "EPSG:9391",
+            "geological_contact_crossing_verified": false,
+            "hydraulic_connection_proven": false,
+            "fault_proximity_is_water_proof": false
+          },
+          "primary_intervals": [
+            {
+              "from_m": 0,
+              "to_m": 1.2,
+              "material": "Едри чакъли от скални късове",
+              "geological_age": "Quaternary",
+              "source_reference": "Table 2; printed page 12",
+              "material_original": "Едри чакъли от скални късове",
+              "material_normalized": "Едри чакъли от скални късове",
+              "source_id": "HSK-B1-023"
+            },
+            {
+              "from_m": 1.2,
+              "to_m": 196,
+              "material": "Трахити и латити",
+              "color": "Сивочерни и сивозелени",
+              "structural_character": "Редуване на здрави и напукани скали",
+              "source_reference": "Table 2; printed page 12",
+              "material_original": "Трахити и латити",
+              "material_normalized": "Трахити и латити",
+              "source_id": "HSK-B1-023"
+            }
+          ],
+          "nested_intervals": [
+            {
+              "from_m": 126,
+              "to_m": 132,
+              "material": "Тектонски брекчирани и милонитизирани трахити и латити",
+              "source_reference": "Table 2; printed page 12",
+              "material_original": "Тектонски брекчирани и милонитизирани трахити и латити",
+              "material_normalized": "Тектонски брекчирани и милонитизирани трахити и латити",
+              "source_id": "HSK-B1-023",
+              "parent_interval": [
+                1.2,
+                196
+              ],
+              "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+              "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+            }
+          ],
+          "source_gaps": [],
+          "source_ids": [
+            "HSK-B1-023"
+          ],
+          "conflict_ids": [
+            "HSK-CF-002"
+          ],
+          "vertical_column_membership_in_surface_unit_proven": false,
+          "hydraulic_connection_proven": false,
+          "measured_depths_preserved": true,
+          "usage_status": "RESEARCH_CONTEXT"
+        },
+        "not_measured_at_arbitrary_target": true,
+        "mineral_evidence": {
+          "borehole_id": "HSK-MINERALNI-BANI-1VP",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "documented_total_depth_m": 196,
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 1.2,
+              "material": "Едри чакъли от скални късове",
+              "geological_age": "Quaternary",
+              "source_reference": "Table 2; printed page 12",
+              "material_original": "Едри чакъли от скални късове",
+              "material_normalized": "Едри чакъли от скални късове",
+              "source_id": "HSK-B1-023"
+            },
+            {
+              "from_m": 1.2,
+              "to_m": 196,
+              "material": "Трахити и латити",
+              "color": "Сивочерни и сивозелени",
+              "structural_character": "Редуване на здрави и напукани скали",
+              "source_reference": "Table 2; printed page 12",
+              "material_original": "Трахити и латити",
+              "material_normalized": "Трахити и латити",
+              "source_id": "HSK-B1-023"
+            }
+          ],
+          "structural_intervals": [
+            {
+              "from_m": 126,
+              "to_m": 132,
+              "material": "Тектонски брекчирани и милонитизирани трахити и латити",
+              "source_reference": "Table 2; printed page 12",
+              "material_original": "Тектонски брекчирани и милонитизирани трахити и латити",
+              "material_normalized": "Тектонски брекчирани и милонитизирани трахити и латити",
+              "source_id": "HSK-B1-023",
+              "parent_interval": [
+                1.2,
+                196
+              ],
+              "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+              "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+            }
+          ],
+          "historical_water_observations": [
+            {
+              "record_id": "HSK-B1-023-MW-HSK-MINERALNI-BANI-1VP_water_inflow_intervals-1",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Table 2; printed page 12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-MINERALNI-BANI-1VP",
+              "original_borehole_id": "Сн-1ВП",
+              "original_manifest_field": "HSK-MINERALNI-BANI-1VP.water_inflow_intervals",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 2,
+                "to_m": 7,
+                "reported_flow_l_s": 0.5,
+                "temperature_c": 54.6
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "DOCUMENTARY_PROVENANCE_PRESERVED",
+              "needs_spatial_review": true
+            },
+            {
+              "record_id": "HSK-B1-023-MW-HSK-MINERALNI-BANI-1VP_water_inflow_intervals-2",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Table 2; printed page 12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-MINERALNI-BANI-1VP",
+              "original_borehole_id": "Сн-1ВП",
+              "original_manifest_field": "HSK-MINERALNI-BANI-1VP.water_inflow_intervals",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 8,
+                "to_m": 11,
+                "reported_flow_l_s": 1,
+                "temperature_c": 54.6
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "DOCUMENTARY_PROVENANCE_PRESERVED",
+              "needs_spatial_review": true
+            },
+            {
+              "record_id": "HSK-B1-023-MW-HSK-MINERALNI-BANI-1VP_water_inflow_intervals-3",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Table 2; printed page 12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-MINERALNI-BANI-1VP",
+              "original_borehole_id": "Сн-1ВП",
+              "original_manifest_field": "HSK-MINERALNI-BANI-1VP.water_inflow_intervals",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 17,
+                "to_m": 23,
+                "reported_flow_l_s": 6,
+                "temperature_c": 59.5
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "DOCUMENTARY_PROVENANCE_PRESERVED",
+              "needs_spatial_review": true
+            },
+            {
+              "record_id": "HSK-B1-023-MW-HSK-MINERALNI-BANI-1VP_water_inflow_intervals-4",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Table 2; printed page 12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-MINERALNI-BANI-1VP",
+              "original_borehole_id": "Сн-1ВП",
+              "original_manifest_field": "HSK-MINERALNI-BANI-1VP.water_inflow_intervals",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 25,
+                "to_m": 33,
+                "reported_flow_l_s": 9.7,
+                "temperature_c": 60.2
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "DOCUMENTARY_PROVENANCE_PRESERVED",
+              "needs_spatial_review": true
+            },
+            {
+              "record_id": "HSK-B1-023-MW-HSK-MINERALNI-BANI-1VP_water_inflow_intervals-5",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Table 2; printed page 12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-MINERALNI-BANI-1VP",
+              "original_borehole_id": "Сн-1ВП",
+              "original_manifest_field": "HSK-MINERALNI-BANI-1VP.water_inflow_intervals",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 50,
+                "to_m": 86,
+                "reported_flow_l_s": 13,
+                "temperature_c": 60.5
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "DOCUMENTARY_PROVENANCE_PRESERVED",
+              "needs_spatial_review": true
+            },
+            {
+              "record_id": "HSK-B1-023-MW-HSK-MINERALNI-BANI-1VP_water_inflow_intervals-6",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Table 2; printed page 12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-MINERALNI-BANI-1VP",
+              "original_borehole_id": "Сн-1ВП",
+              "original_manifest_field": "HSK-MINERALNI-BANI-1VP.water_inflow_intervals",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "depth_m": 128,
+                "reported_flow_l_s": 14,
+                "temperature_c": 60.5
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "DOCUMENTARY_PROVENANCE_PRESERVED",
+              "needs_spatial_review": true
+            }
+          ],
+          "mineral_collector_records": [],
+          "spatial_review": {
+            "borehole_id": "HSK-MINERALNI-BANI-1VP",
+            "mineral_id": null,
+            "identity_status": "NEW_DOCUMENTED_IDENTITY_PENDING_INTEGRATION",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "latitude": 41.9417222222,
+            "longitude": 25.3441944444,
+            "surface_geology": {
+              "record_id": "HSK-MINERALNI-BANI-1VP",
+              "observation_type": "DOCUMENTED_BOREHOLE",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 41.9417222222,
+              "longitude": 25.3441944444,
+              "surface_geology_only": true,
+              "vertical_column_membership_confirmed": false,
+              "pixel_x": 1889,
+              "pixel_y": 1647,
+              "classification_status": "DIRECT",
+              "direct_id": 4,
+              "reliable_id": 4,
+              "source_obscured": false,
+              "class_id": 4,
+              "geological_unit": {
+                "id": 4,
+                "code": "Pg",
+                "name_bg": "Палеоген",
+                "name_en": "Paleogene",
+                "style": "solid",
+                "rgb": [
+                  255,
+                  211,
+                  128
+                ]
+              },
+              "field_datum_limitation": null,
+              "scientifically_validated_map_contact": false
+            },
+            "terrain_context": {
+              "elevation_m": 269.36102294921875,
+              "source_file": "data\\terrain\\copernicus-glo30\\Copernicus_DSM_10_N41_00_E025_00_DEM.tif",
+              "source": "Copernicus GLO-30",
+              "surveyed_borehole_elevation": false
+            },
+            "fault_context": {
+              "borehole_id": "HSK-MINERALNI-BANI-1VP",
+              "latitude": 41.9417222222,
+              "longitude": 25.3441944444,
+              "nearest_gem_fault_id": "ME_BGCS001",
+              "gem_distance_m": 8947.935255442855,
+              "nearest_mrrb_fault_id": "FLT-MAR-HASKOVO-REC13",
+              "mrrb_distance_m": 6022.754063128849,
+              "inside_mrrb_corridor": false,
+              "groundwater_bodies": [
+                {
+                  "localId": "BG3G0000PgN026",
+                  "name": "Êàðñòîâè âîäè - ×èðïàí - Äèìèòðîâãðàä",
+                  "horizon": "Палеоген - Неоген",
+                  "water_type": "Порови, пукнатинни и карстови води"
+                }
+              ],
+              "distance_crs": "EPSG:9391",
+              "geological_contact_crossing_verified": false,
+              "hydraulic_connection_proven": false,
+              "fault_proximity_is_water_proof": false
+            },
+            "primary_intervals": [
+              {
+                "from_m": 0,
+                "to_m": 1.2,
+                "material": "Едри чакъли от скални късове",
+                "geological_age": "Quaternary",
+                "source_reference": "Table 2; printed page 12",
+                "material_original": "Едри чакъли от скални късове",
+                "material_normalized": "Едри чакъли от скални късове",
+                "source_id": "HSK-B1-023"
+              },
+              {
+                "from_m": 1.2,
+                "to_m": 196,
+                "material": "Трахити и латити",
+                "color": "Сивочерни и сивозелени",
+                "structural_character": "Редуване на здрави и напукани скали",
+                "source_reference": "Table 2; printed page 12",
+                "material_original": "Трахити и латити",
+                "material_normalized": "Трахити и латити",
+                "source_id": "HSK-B1-023"
+              }
+            ],
+            "nested_intervals": [
+              {
+                "from_m": 126,
+                "to_m": 132,
+                "material": "Тектонски брекчирани и милонитизирани трахити и латити",
+                "source_reference": "Table 2; printed page 12",
+                "material_original": "Тектонски брекчирани и милонитизирани трахити и латити",
+                "material_normalized": "Тектонски брекчирани и милонитизирани трахити и латити",
+                "source_id": "HSK-B1-023",
+                "parent_interval": [
+                  1.2,
+                  196
+                ],
+                "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+                "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+              }
+            ],
+            "source_ids": [
+              "HSK-B1-023"
+            ],
+            "conflict_ids": [
+              "HSK-CF-002"
+            ],
+            "hydraulic_connection_proven": false,
+            "local_fault_geometry_verified": false,
+            "current_operational_status_verified": false,
+            "publication_status": "PENDING_INTEGRATION"
+          },
+          "source_ids": [
+            "HSK-B1-023"
+          ],
+          "historical_flow_values_additive": false,
+          "current_discharge_verified": false,
+          "hydraulic_connection_proven": false
+        }
+      },
+      "linked_mineral_facility_id": "mw_8d77e750b35cda84"
+    },
+    {
+      "borehole_id": "HSK-BANI-2VP",
+      "name_bg": "Хасковски минерални бани / 2ВП",
+      "oblast": "Хасково",
+      "region_code": "Haskovo",
+      "status": "documented_borehole_intervals",
+      "zone_type": "borehole_documented_location",
+      "coordinates": {
+        "latitude": 41.9400044,
+        "longitude": 25.3450668,
+        "status": "OFFICIAL_EXACT",
+        "exact_policy": "PUBLISHED_POINT_COORDINATES_NO_MOUTH_REQUIREMENT",
+        "original_coordinate_metadata": {
+          "record_id": "HSK-BANI-2VP",
+          "observation_type": "DOCUMENTED_BOREHOLE",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "source_ids": [
+            "HSK-A1-001",
+            "HSK-B1-023"
+          ],
+          "original_record": {
+            "borehole_id": "HSK-BANI-2VP",
+            "original_borehole_id": "2ВП",
+            "drilling_year": 1957,
+            "total_depth_m": 203,
+            "existing_registry_depth_m": 203.5,
+            "latitude": 41.9400044,
+            "longitude": 25.3450668,
+            "coordinate_status": "OFFICIAL_EXACT",
+            "coordinate_source": "Existing mineral master registry; official BD IBR coordinate evidence",
+            "linked_mineral_id": "mw_8018a7574142d39d",
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 203,
+                "material": "Трахити и латити",
+                "description": "Сиво-червеникави и сиво-зелени, напукани до раздробени; редуване на по-здрави и напукани вулканити",
+                "interval_role": "PRIMARY_LITHOLOGY",
+                "material_original": "Трахити и латити",
+                "material_normalized": "Трахити и латити",
+                "source_id": "HSK-A1-001",
+                "source_reference": "Page 2"
+              }
+            ],
+            "nested_intervals": [
+              {
+                "from_m": 126,
+                "to_m": 132,
+                "material": "Тектонски брекчирани и милонитизирани вулканити",
+                "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+                "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+                "source_id": "HSK-A1-001",
+                "source_reference": "Page 2",
+                "parent_interval": [
+                  0,
+                  203
+                ],
+                "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+                "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+              }
+            ],
+            "source_gaps": [],
+            "source_id": "HSK-A1-001",
+            "source_ids": [
+              "HSK-A1-001",
+              "HSK-B1-023"
+            ],
+            "locality_original": "Хасковски минерални бани",
+            "independent_observation_id": "HSK-BANI-2VP",
+            "verification_status": "VERIFIED_VISUAL",
+            "observation_type": "DOCUMENTED_BOREHOLE",
+            "needs_spatial_review": true,
+            "corroborating_versions": [
+              {
+                "original_borehole_id": "Сн-2ВП",
+                "existing_source_id": "HSK-A1-001",
+                "coordinate_status": "OFFICIAL_EXACT",
+                "coordinate_crs": "EPSG:4326",
+                "latitude_original": "41 56 24.0 N",
+                "longitude_original": "25 20 42.2 E",
+                "latitude": 41.94,
+                "longitude": 25.3450555556,
+                "coordinates_1970_original": {
+                  "x": 4579662.984,
+                  "y": 9410467.953
+                },
+                "terrain_elevation_m": 262.45,
+                "reported_total_depth_m": 203,
+                "intervals": [
+                  {
+                    "from_m": 0,
+                    "to_m": 203,
+                    "material": "Трахити и латити"
+                  }
+                ],
+                "nested_intervals": [
+                  {
+                    "from_m": 126,
+                    "to_m": 132,
+                    "material": "Брекчирани и милонитизирани скали"
+                  }
+                ],
+                "source_reference": "Tables 1-2; printed pages 8,12",
+                "identity_status": "EXISTING_BOREHOLE_NOT_NEW",
+                "source_id": "HSK-B1-023",
+                "independent_observation_id": "HSK-BANI-2VP",
+                "is_independent_borehole": false
+              }
+            ],
+            "conflict_ids": [
+              "HSK-CF-001",
+              "HSK-CF-002"
+            ],
+            "column_completeness": "COMPLETE_MAIN_INTERVALS"
+          },
+          "latitude": 41.9400044,
+          "longitude": 25.3450668,
+          "coordinate_source": "Existing mineral master registry; official BD IBR coordinate evidence",
+          "inside_oblast": true,
+          "municipality_codes": [
+            "HKV19"
+          ],
+          "coordinate_variants": [
+            {
+              "source_id": "HSK-B1-023",
+              "latitude": 41.94,
+              "longitude": 25.3450555556,
+              "crs": "EPSG:4326",
+              "difference_m": 1.0527899923912005
+            }
+          ],
+          "spatial_review_status": "ADMINISTRATIVE_POSITION_VALIDATED",
+          "original_projected_coordinates": {
+            "x_northing": 4579662.98,
+            "y_easting": 9410467.95,
+            "lat": 41.9400044,
+            "lon": 25.3450668
+          },
+          "original_crs": "BGS1970 K5",
+          "target_crs": "WGS84 / ETRS89 geographic",
+          "coordinate_target": "PUBLISHED_FACILITY_COORDINATE",
+          "official_source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf"
+        }
+      },
+      "total_depth_m": 203,
+      "water_type": "not_classified_from_lithology",
+      "lithology": [
+        {
+          "interval_id": "HSK-BANI-2VP-I001",
+          "depth_from_m": 0.0,
+          "depth_to_m": 203.0,
+          "expected_material_bg": "Трахити и латити",
+          "original_material_bg": "Трахити и латити",
+          "material_normalized": "Трахити и латити",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "HSK-A1-001"
+          ],
+          "original_interval": {
+            "from_m": 0,
+            "to_m": 203,
+            "material": "Трахити и латити",
+            "description": "Сиво-червеникави и сиво-зелени, напукани до раздробени; редуване на по-здрави и напукани вулканити",
+            "interval_role": "PRIMARY_LITHOLOGY",
+            "material_original": "Трахити и латити",
+            "material_normalized": "Трахити и латити",
+            "source_id": "HSK-A1-001",
+            "source_reference": "Page 2"
+          }
+        }
+      ],
+      "structural_intervals": [
+        {
+          "interval_id": "HSK-BANI-2VP-S001",
+          "depth_from_m": 126,
+          "depth_to_m": 132,
+          "original_material_bg": "Тектонски брекчирани и милонитизирани вулканити",
+          "source_ids": [
+            "HSK-A1-001"
+          ],
+          "original_interval": {
+            "from_m": 126,
+            "to_m": 132,
+            "material": "Тектонски брекчирани и милонитизирани вулканити",
+            "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+            "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+            "source_id": "HSK-A1-001",
+            "source_reference": "Page 2",
+            "parent_interval": [
+              0,
+              203
+            ],
+            "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+            "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+          },
+          "independent_confirmation": false
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": null,
+      "expert_context": {
+        "source_ids": [
+          "HSK-A1-001",
+          "HSK-B1-023"
+        ],
+        "original_locality": "Хасковски минерални бани",
+        "original_borehole_id": "2ВП",
+        "original_registry_record": {
+          "borehole_id": "HSK-BANI-2VP",
+          "original_borehole_id": "2ВП",
+          "drilling_year": 1957,
+          "total_depth_m": 203,
+          "existing_registry_depth_m": 203.5,
+          "latitude": 41.9400044,
+          "longitude": 25.3450668,
+          "coordinate_status": "OFFICIAL_EXACT",
+          "coordinate_source": "Existing mineral master registry; official BD IBR coordinate evidence",
+          "linked_mineral_id": "mw_8018a7574142d39d",
+          "intervals": [
+            {
+              "from_m": 0,
+              "to_m": 203,
+              "material": "Трахити и латити",
+              "description": "Сиво-червеникави и сиво-зелени, напукани до раздробени; редуване на по-здрави и напукани вулканити",
+              "interval_role": "PRIMARY_LITHOLOGY",
+              "material_original": "Трахити и латити",
+              "material_normalized": "Трахити и латити",
+              "source_id": "HSK-A1-001",
+              "source_reference": "Page 2"
+            }
+          ],
+          "nested_intervals": [
+            {
+              "from_m": 126,
+              "to_m": 132,
+              "material": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+              "source_id": "HSK-A1-001",
+              "source_reference": "Page 2",
+              "parent_interval": [
+                0,
+                203
+              ],
+              "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+              "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+            }
+          ],
+          "source_gaps": [],
+          "source_id": "HSK-A1-001",
+          "source_ids": [
+            "HSK-A1-001",
+            "HSK-B1-023"
+          ],
+          "locality_original": "Хасковски минерални бани",
+          "independent_observation_id": "HSK-BANI-2VP",
+          "verification_status": "VERIFIED_VISUAL",
+          "observation_type": "DOCUMENTED_BOREHOLE",
+          "needs_spatial_review": true,
+          "corroborating_versions": [
+            {
+              "original_borehole_id": "Сн-2ВП",
+              "existing_source_id": "HSK-A1-001",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "coordinate_crs": "EPSG:4326",
+              "latitude_original": "41 56 24.0 N",
+              "longitude_original": "25 20 42.2 E",
+              "latitude": 41.94,
+              "longitude": 25.3450555556,
+              "coordinates_1970_original": {
+                "x": 4579662.984,
+                "y": 9410467.953
+              },
+              "terrain_elevation_m": 262.45,
+              "reported_total_depth_m": 203,
+              "intervals": [
+                {
+                  "from_m": 0,
+                  "to_m": 203,
+                  "material": "Трахити и латити"
+                }
+              ],
+              "nested_intervals": [
+                {
+                  "from_m": 126,
+                  "to_m": 132,
+                  "material": "Брекчирани и милонитизирани скали"
+                }
+              ],
+              "source_reference": "Tables 1-2; printed pages 8,12",
+              "identity_status": "EXISTING_BOREHOLE_NOT_NEW",
+              "source_id": "HSK-B1-023",
+              "independent_observation_id": "HSK-BANI-2VP",
+              "is_independent_borehole": false
+            }
+          ],
+          "conflict_ids": [
+            "HSK-CF-001",
+            "HSK-CF-002"
+          ],
+          "column_completeness": "COMPLETE_MAIN_INTERVALS"
+        },
+        "existing_mineral_id": "mw_8018a7574142d39d",
+        "spatial_context": {
+          "borehole_id": "HSK-BANI-2VP",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "latitude": 41.9400044,
+          "longitude": 25.3450668,
+          "surface_geology": {
+            "record_id": "HSK-BANI-2VP",
+            "observation_type": "DOCUMENTED_BOREHOLE",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "latitude": 41.9400044,
+            "longitude": 25.3450668,
+            "surface_geology_only": true,
+            "vertical_column_membership_confirmed": false,
+            "pixel_x": 1890,
+            "pixel_y": 1649,
+            "classification_status": "DIRECT",
+            "direct_id": 4,
+            "reliable_id": 4,
+            "source_obscured": false,
+            "class_id": 4,
+            "geological_unit": {
+              "id": 4,
+              "code": "Pg",
+              "name_bg": "Палеоген",
+              "name_en": "Paleogene",
+              "style": "solid",
+              "rgb": [
+                255,
+                211,
+                128
+              ]
+            },
+            "field_datum_limitation": null,
+            "scientifically_validated_map_contact": false
+          },
+          "terrain_context": {
+            "elevation_m": 268.6318664550781,
+            "source_file": "data\\terrain\\copernicus-glo30\\Copernicus_DSM_10_N41_00_E025_00_DEM.tif",
+            "source": "Copernicus GLO-30",
+            "surveyed_borehole_elevation": false
+          },
+          "fault_context": {
+            "borehole_id": "HSK-BANI-2VP",
+            "latitude": 41.9400044,
+            "longitude": 25.3450668,
+            "nearest_gem_fault_id": "ME_BGCS001",
+            "gem_distance_m": 9097.20908630178,
+            "nearest_mrrb_fault_id": "FLT-MAR-HASKOVO-REC13",
+            "mrrb_distance_m": 6181.047448578581,
+            "inside_mrrb_corridor": false,
+            "groundwater_bodies": [
+              {
+                "localId": "BG3G0000PgN026",
+                "name": "Êàðñòîâè âîäè - ×èðïàí - Äèìèòðîâãðàä",
+                "horizon": "Палеоген - Неоген",
+                "water_type": "Порови, пукнатинни и карстови води"
+              }
+            ],
+            "distance_crs": "EPSG:9391",
+            "geological_contact_crossing_verified": false,
+            "hydraulic_connection_proven": false,
+            "fault_proximity_is_water_proof": false
+          },
+          "primary_intervals": [
+            {
+              "from_m": 0,
+              "to_m": 203,
+              "material": "Трахити и латити",
+              "description": "Сиво-червеникави и сиво-зелени, напукани до раздробени; редуване на по-здрави и напукани вулканити",
+              "interval_role": "PRIMARY_LITHOLOGY",
+              "material_original": "Трахити и латити",
+              "material_normalized": "Трахити и латити",
+              "source_id": "HSK-A1-001",
+              "source_reference": "Page 2"
+            }
+          ],
+          "nested_intervals": [
+            {
+              "from_m": 126,
+              "to_m": 132,
+              "material": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+              "source_id": "HSK-A1-001",
+              "source_reference": "Page 2",
+              "parent_interval": [
+                0,
+                203
+              ],
+              "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+              "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+            }
+          ],
+          "source_gaps": [],
+          "source_ids": [
+            "HSK-A1-001",
+            "HSK-B1-023"
+          ],
+          "conflict_ids": [
+            "HSK-CF-001",
+            "HSK-CF-002"
+          ],
+          "vertical_column_membership_in_surface_unit_proven": false,
+          "hydraulic_connection_proven": false,
+          "measured_depths_preserved": true,
+          "usage_status": "RESEARCH_CONTEXT"
+        },
+        "not_measured_at_arbitrary_target": true,
+        "mineral_evidence": {
+          "borehole_id": "HSK-BANI-2VP",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "documented_total_depth_m": 203,
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 203,
+              "material": "Трахити и латити",
+              "description": "Сиво-червеникави и сиво-зелени, напукани до раздробени; редуване на по-здрави и напукани вулканити",
+              "interval_role": "PRIMARY_LITHOLOGY",
+              "material_original": "Трахити и латити",
+              "material_normalized": "Трахити и латити",
+              "source_id": "HSK-A1-001",
+              "source_reference": "Page 2"
+            }
+          ],
+          "structural_intervals": [
+            {
+              "from_m": 126,
+              "to_m": 132,
+              "material": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+              "source_id": "HSK-A1-001",
+              "source_reference": "Page 2",
+              "parent_interval": [
+                0,
+                203
+              ],
+              "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+              "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+            }
+          ],
+          "historical_water_observations": [
+            {
+              "record_id": "HSK-B1-023-MW-HSK-BANI-2VP_corroborating_water_inflow-1",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Tables 1-2; printed pages 8,12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-BANI-2VP",
+              "original_borehole_id": "Сн-2ВП",
+              "original_manifest_field": "HSK-BANI-2VP.corroborating_water_inflow",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 20,
+                "to_m": 23,
+                "reported_flow_l_s": 0.3,
+                "temperature_c": 56.5
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "MATCHING_DOCUMENTARY_INTERVAL_NOT_INDEPENDENT_MEASUREMENT",
+              "needs_spatial_review": true,
+              "corroborating_sources": [
+                {
+                  "source_id": "HSK-A1-001",
+                  "source_url": "https://www.mh.government.bg/upload/6855/50-haskovski_mineralni_bani-sondazh2vp-20-01-2017.pdf",
+                  "source_reference": "Page 2",
+                  "evidence_type": "DOCUMENTED_INFLOW_FILTER_INTERVALS",
+                  "original_interval_m": [
+                    20,
+                    23
+                  ]
+                }
+              ]
+            },
+            {
+              "record_id": "HSK-B1-023-MW-HSK-BANI-2VP_corroborating_water_inflow-2",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Tables 1-2; printed pages 8,12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-BANI-2VP",
+              "original_borehole_id": "Сн-2ВП",
+              "original_manifest_field": "HSK-BANI-2VP.corroborating_water_inflow",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 24,
+                "to_m": 26,
+                "reported_flow_l_s": 0.7,
+                "temperature_c": 56.5
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "MATCHING_DOCUMENTARY_INTERVAL_NOT_INDEPENDENT_MEASUREMENT",
+              "needs_spatial_review": true,
+              "corroborating_sources": [
+                {
+                  "source_id": "HSK-A1-001",
+                  "source_url": "https://www.mh.government.bg/upload/6855/50-haskovski_mineralni_bani-sondazh2vp-20-01-2017.pdf",
+                  "source_reference": "Page 2",
+                  "evidence_type": "DOCUMENTED_INFLOW_FILTER_INTERVALS",
+                  "original_interval_m": [
+                    24,
+                    26
+                  ]
+                }
+              ]
+            },
+            {
+              "record_id": "HSK-B1-023-MW-HSK-BANI-2VP_corroborating_water_inflow-3",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Tables 1-2; printed pages 8,12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-BANI-2VP",
+              "original_borehole_id": "Сн-2ВП",
+              "original_manifest_field": "HSK-BANI-2VP.corroborating_water_inflow",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 29,
+                "to_m": 39,
+                "reported_flow_l_s": 1.5,
+                "temperature_c": 58
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "MATCHING_DOCUMENTARY_INTERVAL_NOT_INDEPENDENT_MEASUREMENT",
+              "needs_spatial_review": true,
+              "corroborating_sources": [
+                {
+                  "source_id": "HSK-A1-001",
+                  "source_url": "https://www.mh.government.bg/upload/6855/50-haskovski_mineralni_bani-sondazh2vp-20-01-2017.pdf",
+                  "source_reference": "Page 2",
+                  "evidence_type": "DOCUMENTED_INFLOW_FILTER_INTERVALS",
+                  "original_interval_m": [
+                    29,
+                    39
+                  ]
+                }
+              ]
+            },
+            {
+              "record_id": "HSK-B1-023-MW-HSK-BANI-2VP_corroborating_water_inflow-4",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Tables 1-2; printed pages 8,12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-BANI-2VP",
+              "original_borehole_id": "Сн-2ВП",
+              "original_manifest_field": "HSK-BANI-2VP.corroborating_water_inflow",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 41,
+                "to_m": 56,
+                "reported_flow_l_s": 1.8,
+                "temperature_c": 58.5
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "MATCHING_DOCUMENTARY_INTERVAL_NOT_INDEPENDENT_MEASUREMENT",
+              "needs_spatial_review": true,
+              "corroborating_sources": [
+                {
+                  "source_id": "HSK-A1-001",
+                  "source_url": "https://www.mh.government.bg/upload/6855/50-haskovski_mineralni_bani-sondazh2vp-20-01-2017.pdf",
+                  "source_reference": "Page 2",
+                  "evidence_type": "DOCUMENTED_INFLOW_FILTER_INTERVALS",
+                  "original_interval_m": [
+                    41,
+                    56
+                  ]
+                }
+              ]
+            },
+            {
+              "record_id": "HSK-A1-001-MW-INTERVAL-5",
+              "source_id": "HSK-A1-001",
+              "source_url": "https://www.mh.government.bg/upload/6855/50-haskovski_mineralni_bani-sondazh2vp-20-01-2017.pdf",
+              "source_reference": "Page 2",
+              "borehole_id": "HSK-BANI-2VP",
+              "evidence_type": "DOCUMENTED_INFLOW_FILTER_INTERVALS",
+              "source_verification_status": "VERIFIED_VISUAL",
+              "original_manifest_field": "mineral_evidence.water_inflow_intervals_m",
+              "original_evidence": {
+                "from_m": 58,
+                "to_m": 78,
+                "reported_flow_l_s": null,
+                "temperature_c": null,
+                "original_interval_m": [
+                  58,
+                  78
+                ]
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "NOT_DOCUMENTED",
+              "temperature_measurement_location": "NOT_DOCUMENTED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "DOCUMENTARY_PROVENANCE_PRESERVED",
+              "needs_spatial_review": true
+            },
+            {
+              "record_id": "HSK-A1-001-MW-INTERVAL-6",
+              "source_id": "HSK-A1-001",
+              "source_url": "https://www.mh.government.bg/upload/6855/50-haskovski_mineralni_bani-sondazh2vp-20-01-2017.pdf",
+              "source_reference": "Page 2",
+              "borehole_id": "HSK-BANI-2VP",
+              "evidence_type": "DOCUMENTED_INFLOW_FILTER_INTERVALS",
+              "source_verification_status": "VERIFIED_VISUAL",
+              "original_manifest_field": "mineral_evidence.water_inflow_intervals_m",
+              "original_evidence": {
+                "from_m": 78,
+                "to_m": 81,
+                "reported_flow_l_s": null,
+                "temperature_c": null,
+                "original_interval_m": [
+                  78,
+                  81
+                ]
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "NOT_DOCUMENTED",
+              "temperature_measurement_location": "NOT_DOCUMENTED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "DOCUMENTARY_PROVENANCE_PRESERVED",
+              "needs_spatial_review": true
+            },
+            {
+              "record_id": "HSK-A1-001-MW-INTERVAL-7",
+              "source_id": "HSK-A1-001",
+              "source_url": "https://www.mh.government.bg/upload/6855/50-haskovski_mineralni_bani-sondazh2vp-20-01-2017.pdf",
+              "source_reference": "Page 2",
+              "borehole_id": "HSK-BANI-2VP",
+              "evidence_type": "DOCUMENTED_INFLOW_FILTER_INTERVALS",
+              "source_verification_status": "VERIFIED_VISUAL",
+              "original_manifest_field": "mineral_evidence.water_inflow_intervals_m",
+              "original_evidence": {
+                "from_m": 81,
+                "to_m": 115,
+                "reported_flow_l_s": null,
+                "temperature_c": null,
+                "original_interval_m": [
+                  81,
+                  115
+                ]
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "NOT_DOCUMENTED",
+              "temperature_measurement_location": "NOT_DOCUMENTED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "DOCUMENTARY_PROVENANCE_PRESERVED",
+              "needs_spatial_review": true
+            },
+            {
+              "record_id": "HSK-A1-001-MW-INTERVAL-8",
+              "source_id": "HSK-A1-001",
+              "source_url": "https://www.mh.government.bg/upload/6855/50-haskovski_mineralni_bani-sondazh2vp-20-01-2017.pdf",
+              "source_reference": "Page 2",
+              "borehole_id": "HSK-BANI-2VP",
+              "evidence_type": "DOCUMENTED_INFLOW_FILTER_INTERVALS",
+              "source_verification_status": "VERIFIED_VISUAL",
+              "original_manifest_field": "mineral_evidence.water_inflow_intervals_m",
+              "original_evidence": {
+                "from_m": 139,
+                "to_m": 141,
+                "reported_flow_l_s": null,
+                "temperature_c": null,
+                "original_interval_m": [
+                  139,
+                  141
+                ]
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "NOT_DOCUMENTED",
+              "temperature_measurement_location": "NOT_DOCUMENTED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "DOCUMENTARY_PROVENANCE_PRESERVED",
+              "needs_spatial_review": true
+            },
+            {
+              "record_id": "HSK-A1-001-MW-INTERVAL-9",
+              "source_id": "HSK-A1-001",
+              "source_url": "https://www.mh.government.bg/upload/6855/50-haskovski_mineralni_bani-sondazh2vp-20-01-2017.pdf",
+              "source_reference": "Page 2",
+              "borehole_id": "HSK-BANI-2VP",
+              "evidence_type": "DOCUMENTED_INFLOW_FILTER_INTERVALS",
+              "source_verification_status": "VERIFIED_VISUAL",
+              "original_manifest_field": "mineral_evidence.water_inflow_intervals_m",
+              "original_evidence": {
+                "from_m": 142,
+                "to_m": 176,
+                "reported_flow_l_s": null,
+                "temperature_c": null,
+                "original_interval_m": [
+                  142,
+                  176
+                ]
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "NOT_DOCUMENTED",
+              "temperature_measurement_location": "NOT_DOCUMENTED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "DOCUMENTARY_PROVENANCE_PRESERVED",
+              "needs_spatial_review": true
+            }
+          ],
+          "mineral_collector_records": [],
+          "spatial_review": {
+            "borehole_id": "HSK-BANI-2VP",
+            "mineral_id": "mw_8018a7574142d39d",
+            "identity_status": "EXISTING_MASTER_IDENTITY",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "latitude": 41.9400044,
+            "longitude": 25.3450668,
+            "surface_geology": {
+              "record_id": "HSK-BANI-2VP",
+              "observation_type": "DOCUMENTED_BOREHOLE",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 41.9400044,
+              "longitude": 25.3450668,
+              "surface_geology_only": true,
+              "vertical_column_membership_confirmed": false,
+              "pixel_x": 1890,
+              "pixel_y": 1649,
+              "classification_status": "DIRECT",
+              "direct_id": 4,
+              "reliable_id": 4,
+              "source_obscured": false,
+              "class_id": 4,
+              "geological_unit": {
+                "id": 4,
+                "code": "Pg",
+                "name_bg": "Палеоген",
+                "name_en": "Paleogene",
+                "style": "solid",
+                "rgb": [
+                  255,
+                  211,
+                  128
+                ]
+              },
+              "field_datum_limitation": null,
+              "scientifically_validated_map_contact": false
+            },
+            "terrain_context": {
+              "elevation_m": 268.6318664550781,
+              "source_file": "data\\terrain\\copernicus-glo30\\Copernicus_DSM_10_N41_00_E025_00_DEM.tif",
+              "source": "Copernicus GLO-30",
+              "surveyed_borehole_elevation": false
+            },
+            "fault_context": {
+              "borehole_id": "HSK-BANI-2VP",
+              "latitude": 41.9400044,
+              "longitude": 25.3450668,
+              "nearest_gem_fault_id": "ME_BGCS001",
+              "gem_distance_m": 9097.20908630178,
+              "nearest_mrrb_fault_id": "FLT-MAR-HASKOVO-REC13",
+              "mrrb_distance_m": 6181.047448578581,
+              "inside_mrrb_corridor": false,
+              "groundwater_bodies": [
+                {
+                  "localId": "BG3G0000PgN026",
+                  "name": "Êàðñòîâè âîäè - ×èðïàí - Äèìèòðîâãðàä",
+                  "horizon": "Палеоген - Неоген",
+                  "water_type": "Порови, пукнатинни и карстови води"
+                }
+              ],
+              "distance_crs": "EPSG:9391",
+              "geological_contact_crossing_verified": false,
+              "hydraulic_connection_proven": false,
+              "fault_proximity_is_water_proof": false
+            },
+            "primary_intervals": [
+              {
+                "from_m": 0,
+                "to_m": 203,
+                "material": "Трахити и латити",
+                "description": "Сиво-червеникави и сиво-зелени, напукани до раздробени; редуване на по-здрави и напукани вулканити",
+                "interval_role": "PRIMARY_LITHOLOGY",
+                "material_original": "Трахити и латити",
+                "material_normalized": "Трахити и латити",
+                "source_id": "HSK-A1-001",
+                "source_reference": "Page 2"
+              }
+            ],
+            "nested_intervals": [
+              {
+                "from_m": 126,
+                "to_m": 132,
+                "material": "Тектонски брекчирани и милонитизирани вулканити",
+                "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+                "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+                "source_id": "HSK-A1-001",
+                "source_reference": "Page 2",
+                "parent_interval": [
+                  0,
+                  203
+                ],
+                "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+                "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+              }
+            ],
+            "source_ids": [
+              "HSK-A1-001",
+              "HSK-B1-023"
+            ],
+            "conflict_ids": [
+              "HSK-CF-001",
+              "HSK-CF-002"
+            ],
+            "hydraulic_connection_proven": false,
+            "local_fault_geometry_verified": false,
+            "current_operational_status_verified": false,
+            "publication_status": "PENDING_INTEGRATION"
+          },
+          "source_ids": [
+            "HSK-A1-001",
+            "HSK-B1-023"
+          ],
+          "historical_flow_values_additive": false,
+          "current_discharge_verified": false,
+          "hydraulic_connection_proven": false,
+          "depth_discrepancy": {
+            "existing_master_depth_m": 203.5,
+            "documented_lithological_depth_m": 203,
+            "resolution": "PRESERVE_BOTH_SOURCE_VALUES"
+          }
+        }
+      },
+      "linked_mineral_facility_id": "mw_8018a7574142d39d"
+    },
+    {
+      "borehole_id": "HSK-BANI-3VP",
+      "name_bg": "Хасковски минерални бани / 3ВП",
+      "oblast": "Хасково",
+      "region_code": "Haskovo",
+      "status": "documented_borehole_intervals",
+      "zone_type": "borehole_documented_location",
+      "coordinates": {
+        "latitude": 41.9379,
+        "longitude": 25.3465872,
+        "status": "OFFICIAL_EXACT",
+        "exact_policy": "PUBLISHED_POINT_COORDINATES_NO_MOUTH_REQUIREMENT",
+        "original_coordinate_metadata": {
+          "record_id": "HSK-BANI-3VP",
+          "observation_type": "DOCUMENTED_BOREHOLE",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "source_ids": [
+            "HSK-A1-002",
+            "HSK-B1-023"
+          ],
+          "original_record": {
+            "borehole_id": "HSK-BANI-3VP",
+            "original_borehole_id": "3ВП",
+            "drilling_year": 1958,
+            "total_depth_m": 290,
+            "collar_elevation_m": 266,
+            "latitude": 41.9379,
+            "longitude": 25.3465872,
+            "coordinate_status": "OFFICIAL_EXACT",
+            "coordinate_source": "Existing mineral master registry; official BD IBR coordinate evidence",
+            "linked_mineral_id": "mw_e33efc83fc72acd1",
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 1.2,
+                "material": "Насип",
+                "description": "Едри ръбести скални късове с глинесто-песъчлив запълнител",
+                "interval_role": "PRIMARY_LITHOLOGY",
+                "material_original": "Насип",
+                "material_normalized": "Насип",
+                "source_id": "HSK-A1-002",
+                "source_reference": "Page 2"
+              },
+              {
+                "from_m": 1.2,
+                "to_m": 290,
+                "material": "Трахити и латити",
+                "description": "Напукани и раздробени вулканити с редуване на по-здрави и напукани разновидности",
+                "interval_role": "PRIMARY_LITHOLOGY",
+                "material_original": "Трахити и латити",
+                "material_normalized": "Трахити и латити",
+                "source_id": "HSK-A1-002",
+                "source_reference": "Page 2"
+              }
+            ],
+            "nested_intervals": [
+              {
+                "from_m": 126,
+                "to_m": 132,
+                "material": "Тектонски брекчирани и милонитизирани вулканити",
+                "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+                "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+                "source_id": "HSK-A1-002",
+                "source_reference": "Page 2",
+                "parent_interval": [
+                  1.2,
+                  290
+                ],
+                "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+                "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+              }
+            ],
+            "source_gaps": [],
+            "source_id": "HSK-A1-002",
+            "source_ids": [
+              "HSK-A1-002",
+              "HSK-B1-023"
+            ],
+            "locality_original": "Хасковски минерални бани",
+            "independent_observation_id": "HSK-BANI-3VP",
+            "verification_status": "VERIFIED_VISUAL",
+            "observation_type": "DOCUMENTED_BOREHOLE",
+            "needs_spatial_review": true,
+            "corroborating_versions": [
+              {
+                "original_borehole_id": "Сн-3ВП",
+                "existing_source_id": "HSK-A1-002",
+                "coordinate_status": "OFFICIAL_EXACT",
+                "coordinate_crs": "EPSG:4326",
+                "latitude_original": "41 56 16.4 N",
+                "longitude_original": "25 20 47.7 E",
+                "latitude": 41.9378888889,
+                "longitude": 25.3465833333,
+                "coordinates_1970_original": {
+                  "x": 4579427.7,
+                  "y": 9410591.157
+                },
+                "terrain_elevation_m": 266,
+                "reported_total_depth_m": 290,
+                "intervals": [
+                  {
+                    "from_m": 0,
+                    "to_m": 1.2,
+                    "material": "Насип от едри скални късове с глинесто-песъчлив запълнител"
+                  },
+                  {
+                    "from_m": 1.2,
+                    "to_m": 290,
+                    "material": "Трахити и латити"
+                  }
+                ],
+                "nested_126_132_interval_explicit_in_this_source": false,
+                "source_reference": "Tables 1-2; printed pages 8,12",
+                "identity_status": "EXISTING_BOREHOLE_NOT_NEW",
+                "source_id": "HSK-B1-023",
+                "independent_observation_id": "HSK-BANI-3VP",
+                "is_independent_borehole": false
+              }
+            ],
+            "conflict_ids": [
+              "HSK-CF-002",
+              "HSK-CF-003"
+            ],
+            "column_completeness": "COMPLETE_MAIN_INTERVALS"
+          },
+          "latitude": 41.9379,
+          "longitude": 25.3465872,
+          "coordinate_source": "Existing mineral master registry; official BD IBR coordinate evidence",
+          "inside_oblast": true,
+          "municipality_codes": [
+            "HKV19"
+          ],
+          "coordinate_variants": [
+            {
+              "source_id": "HSK-B1-023",
+              "latitude": 41.9378888889,
+              "longitude": 25.3465833333,
+              "crs": "EPSG:4326",
+              "difference_m": 1.2751131918366787
+            }
+          ],
+          "spatial_review_status": "ADMINISTRATIVE_POSITION_VALIDATED",
+          "original_projected_coordinates": {
+            "x_northing": 4579427.7,
+            "y_easting": 9410591.16,
+            "lat": 41.9379,
+            "lon": 25.3465872
+          },
+          "original_crs": "BGS1970 K5",
+          "target_crs": "WGS84 / ETRS89 geographic",
+          "coordinate_target": "PUBLISHED_FACILITY_COORDINATE",
+          "official_source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf"
+        }
+      },
+      "total_depth_m": 290,
+      "water_type": "not_classified_from_lithology",
+      "lithology": [
+        {
+          "interval_id": "HSK-BANI-3VP-I001",
+          "depth_from_m": 0.0,
+          "depth_to_m": 1.2,
+          "expected_material_bg": "Насип",
+          "original_material_bg": "Насип",
+          "material_normalized": "Насип",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "HSK-A1-002"
+          ],
+          "original_interval": {
+            "from_m": 0,
+            "to_m": 1.2,
+            "material": "Насип",
+            "description": "Едри ръбести скални късове с глинесто-песъчлив запълнител",
+            "interval_role": "PRIMARY_LITHOLOGY",
+            "material_original": "Насип",
+            "material_normalized": "Насип",
+            "source_id": "HSK-A1-002",
+            "source_reference": "Page 2"
+          }
+        },
+        {
+          "interval_id": "HSK-BANI-3VP-I002",
+          "depth_from_m": 1.2,
+          "depth_to_m": 290.0,
+          "expected_material_bg": "Трахити и латити",
+          "original_material_bg": "Трахити и латити",
+          "material_normalized": "Трахити и латити",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "HSK-A1-002"
+          ],
+          "original_interval": {
+            "from_m": 1.2,
+            "to_m": 290,
+            "material": "Трахити и латити",
+            "description": "Напукани и раздробени вулканити с редуване на по-здрави и напукани разновидности",
+            "interval_role": "PRIMARY_LITHOLOGY",
+            "material_original": "Трахити и латити",
+            "material_normalized": "Трахити и латити",
+            "source_id": "HSK-A1-002",
+            "source_reference": "Page 2"
+          }
+        }
+      ],
+      "structural_intervals": [
+        {
+          "interval_id": "HSK-BANI-3VP-S001",
+          "depth_from_m": 126,
+          "depth_to_m": 132,
+          "original_material_bg": "Тектонски брекчирани и милонитизирани вулканити",
+          "source_ids": [
+            "HSK-A1-002"
+          ],
+          "original_interval": {
+            "from_m": 126,
+            "to_m": 132,
+            "material": "Тектонски брекчирани и милонитизирани вулканити",
+            "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+            "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+            "source_id": "HSK-A1-002",
+            "source_reference": "Page 2",
+            "parent_interval": [
+              1.2,
+              290
+            ],
+            "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+            "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+          },
+          "independent_confirmation": false
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": null,
+      "expert_context": {
+        "source_ids": [
+          "HSK-A1-002",
+          "HSK-B1-023"
+        ],
+        "original_locality": "Хасковски минерални бани",
+        "original_borehole_id": "3ВП",
+        "original_registry_record": {
+          "borehole_id": "HSK-BANI-3VP",
+          "original_borehole_id": "3ВП",
+          "drilling_year": 1958,
+          "total_depth_m": 290,
+          "collar_elevation_m": 266,
+          "latitude": 41.9379,
+          "longitude": 25.3465872,
+          "coordinate_status": "OFFICIAL_EXACT",
+          "coordinate_source": "Existing mineral master registry; official BD IBR coordinate evidence",
+          "linked_mineral_id": "mw_e33efc83fc72acd1",
+          "intervals": [
+            {
+              "from_m": 0,
+              "to_m": 1.2,
+              "material": "Насип",
+              "description": "Едри ръбести скални късове с глинесто-песъчлив запълнител",
+              "interval_role": "PRIMARY_LITHOLOGY",
+              "material_original": "Насип",
+              "material_normalized": "Насип",
+              "source_id": "HSK-A1-002",
+              "source_reference": "Page 2"
+            },
+            {
+              "from_m": 1.2,
+              "to_m": 290,
+              "material": "Трахити и латити",
+              "description": "Напукани и раздробени вулканити с редуване на по-здрави и напукани разновидности",
+              "interval_role": "PRIMARY_LITHOLOGY",
+              "material_original": "Трахити и латити",
+              "material_normalized": "Трахити и латити",
+              "source_id": "HSK-A1-002",
+              "source_reference": "Page 2"
+            }
+          ],
+          "nested_intervals": [
+            {
+              "from_m": 126,
+              "to_m": 132,
+              "material": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+              "source_id": "HSK-A1-002",
+              "source_reference": "Page 2",
+              "parent_interval": [
+                1.2,
+                290
+              ],
+              "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+              "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+            }
+          ],
+          "source_gaps": [],
+          "source_id": "HSK-A1-002",
+          "source_ids": [
+            "HSK-A1-002",
+            "HSK-B1-023"
+          ],
+          "locality_original": "Хасковски минерални бани",
+          "independent_observation_id": "HSK-BANI-3VP",
+          "verification_status": "VERIFIED_VISUAL",
+          "observation_type": "DOCUMENTED_BOREHOLE",
+          "needs_spatial_review": true,
+          "corroborating_versions": [
+            {
+              "original_borehole_id": "Сн-3ВП",
+              "existing_source_id": "HSK-A1-002",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "coordinate_crs": "EPSG:4326",
+              "latitude_original": "41 56 16.4 N",
+              "longitude_original": "25 20 47.7 E",
+              "latitude": 41.9378888889,
+              "longitude": 25.3465833333,
+              "coordinates_1970_original": {
+                "x": 4579427.7,
+                "y": 9410591.157
+              },
+              "terrain_elevation_m": 266,
+              "reported_total_depth_m": 290,
+              "intervals": [
+                {
+                  "from_m": 0,
+                  "to_m": 1.2,
+                  "material": "Насип от едри скални късове с глинесто-песъчлив запълнител"
+                },
+                {
+                  "from_m": 1.2,
+                  "to_m": 290,
+                  "material": "Трахити и латити"
+                }
+              ],
+              "nested_126_132_interval_explicit_in_this_source": false,
+              "source_reference": "Tables 1-2; printed pages 8,12",
+              "identity_status": "EXISTING_BOREHOLE_NOT_NEW",
+              "source_id": "HSK-B1-023",
+              "independent_observation_id": "HSK-BANI-3VP",
+              "is_independent_borehole": false
+            }
+          ],
+          "conflict_ids": [
+            "HSK-CF-002",
+            "HSK-CF-003"
+          ],
+          "column_completeness": "COMPLETE_MAIN_INTERVALS"
+        },
+        "existing_mineral_id": "mw_e33efc83fc72acd1",
+        "spatial_context": {
+          "borehole_id": "HSK-BANI-3VP",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "latitude": 41.9379,
+          "longitude": 25.3465872,
+          "surface_geology": {
+            "record_id": "HSK-BANI-3VP",
+            "observation_type": "DOCUMENTED_BOREHOLE",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "latitude": 41.9379,
+            "longitude": 25.3465872,
+            "surface_geology_only": true,
+            "vertical_column_membership_confirmed": false,
+            "pixel_x": 1891,
+            "pixel_y": 1652,
+            "classification_status": "DIRECT",
+            "direct_id": 4,
+            "reliable_id": 4,
+            "source_obscured": false,
+            "class_id": 4,
+            "geological_unit": {
+              "id": 4,
+              "code": "Pg",
+              "name_bg": "Палеоген",
+              "name_en": "Paleogene",
+              "style": "solid",
+              "rgb": [
+                255,
+                211,
+                128
+              ]
+            },
+            "field_datum_limitation": null,
+            "scientifically_validated_map_contact": false
+          },
+          "terrain_context": {
+            "elevation_m": 276.0537414550781,
+            "source_file": "data\\terrain\\copernicus-glo30\\Copernicus_DSM_10_N41_00_E025_00_DEM.tif",
+            "source": "Copernicus GLO-30",
+            "surveyed_borehole_elevation": false
+          },
+          "fault_context": {
+            "borehole_id": "HSK-BANI-3VP",
+            "latitude": 41.9379,
+            "longitude": 25.3465872,
+            "nearest_gem_fault_id": "ME_BGCS001",
+            "gem_distance_m": 9265.912708594988,
+            "nearest_mrrb_fault_id": "FLT-MAR-HASKOVO-REC13",
+            "mrrb_distance_m": 6363.166036326781,
+            "inside_mrrb_corridor": false,
+            "groundwater_bodies": [
+              {
+                "localId": "BG3G0000PgN026",
+                "name": "Êàðñòîâè âîäè - ×èðïàí - Äèìèòðîâãðàä",
+                "horizon": "Палеоген - Неоген",
+                "water_type": "Порови, пукнатинни и карстови води"
+              }
+            ],
+            "distance_crs": "EPSG:9391",
+            "geological_contact_crossing_verified": false,
+            "hydraulic_connection_proven": false,
+            "fault_proximity_is_water_proof": false
+          },
+          "primary_intervals": [
+            {
+              "from_m": 0,
+              "to_m": 1.2,
+              "material": "Насип",
+              "description": "Едри ръбести скални късове с глинесто-песъчлив запълнител",
+              "interval_role": "PRIMARY_LITHOLOGY",
+              "material_original": "Насип",
+              "material_normalized": "Насип",
+              "source_id": "HSK-A1-002",
+              "source_reference": "Page 2"
+            },
+            {
+              "from_m": 1.2,
+              "to_m": 290,
+              "material": "Трахити и латити",
+              "description": "Напукани и раздробени вулканити с редуване на по-здрави и напукани разновидности",
+              "interval_role": "PRIMARY_LITHOLOGY",
+              "material_original": "Трахити и латити",
+              "material_normalized": "Трахити и латити",
+              "source_id": "HSK-A1-002",
+              "source_reference": "Page 2"
+            }
+          ],
+          "nested_intervals": [
+            {
+              "from_m": 126,
+              "to_m": 132,
+              "material": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+              "source_id": "HSK-A1-002",
+              "source_reference": "Page 2",
+              "parent_interval": [
+                1.2,
+                290
+              ],
+              "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+              "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+            }
+          ],
+          "source_gaps": [],
+          "source_ids": [
+            "HSK-A1-002",
+            "HSK-B1-023"
+          ],
+          "conflict_ids": [
+            "HSK-CF-002",
+            "HSK-CF-003"
+          ],
+          "vertical_column_membership_in_surface_unit_proven": false,
+          "hydraulic_connection_proven": false,
+          "measured_depths_preserved": true,
+          "usage_status": "RESEARCH_CONTEXT"
+        },
+        "not_measured_at_arbitrary_target": true,
+        "mineral_evidence": {
+          "borehole_id": "HSK-BANI-3VP",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "documented_total_depth_m": 290,
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 1.2,
+              "material": "Насип",
+              "description": "Едри ръбести скални късове с глинесто-песъчлив запълнител",
+              "interval_role": "PRIMARY_LITHOLOGY",
+              "material_original": "Насип",
+              "material_normalized": "Насип",
+              "source_id": "HSK-A1-002",
+              "source_reference": "Page 2"
+            },
+            {
+              "from_m": 1.2,
+              "to_m": 290,
+              "material": "Трахити и латити",
+              "description": "Напукани и раздробени вулканити с редуване на по-здрави и напукани разновидности",
+              "interval_role": "PRIMARY_LITHOLOGY",
+              "material_original": "Трахити и латити",
+              "material_normalized": "Трахити и латити",
+              "source_id": "HSK-A1-002",
+              "source_reference": "Page 2"
+            }
+          ],
+          "structural_intervals": [
+            {
+              "from_m": 126,
+              "to_m": 132,
+              "material": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+              "source_id": "HSK-A1-002",
+              "source_reference": "Page 2",
+              "parent_interval": [
+                1.2,
+                290
+              ],
+              "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+              "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+            }
+          ],
+          "historical_water_observations": [],
+          "mineral_collector_records": [
+            {
+              "record_id": "HSK-A1-002-MW-COLLECTOR-001",
+              "borehole_id": "HSK-BANI-3VP",
+              "source_id": "HSK-A1-002",
+              "source_url": "https://www.mh.government.bg/upload/6854/51-haskovski_mineralni_bani-sondazh3vp-20-01-2017.pdf",
+              "source_reference": "Page 2",
+              "material": "Напукани латити",
+              "collector_type": "FRACTURE_PORE_TO_FRACTURE_VEIN",
+              "evidence_type": "DOCUMENTED_MINERAL_WATER_COLLECTOR",
+              "original_evidence": [
+                {
+                  "borehole_id": "HSK-BANI-3VP",
+                  "collector": "Напукани латити",
+                  "collector_type": "FRACTURE_PORE_TO_FRACTURE_VEIN",
+                  "source_reference": "Page 2"
+                }
+              ],
+              "needs_spatial_review": true
+            }
+          ],
+          "spatial_review": {
+            "borehole_id": "HSK-BANI-3VP",
+            "mineral_id": "mw_e33efc83fc72acd1",
+            "identity_status": "EXISTING_MASTER_IDENTITY",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "latitude": 41.9379,
+            "longitude": 25.3465872,
+            "surface_geology": {
+              "record_id": "HSK-BANI-3VP",
+              "observation_type": "DOCUMENTED_BOREHOLE",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 41.9379,
+              "longitude": 25.3465872,
+              "surface_geology_only": true,
+              "vertical_column_membership_confirmed": false,
+              "pixel_x": 1891,
+              "pixel_y": 1652,
+              "classification_status": "DIRECT",
+              "direct_id": 4,
+              "reliable_id": 4,
+              "source_obscured": false,
+              "class_id": 4,
+              "geological_unit": {
+                "id": 4,
+                "code": "Pg",
+                "name_bg": "Палеоген",
+                "name_en": "Paleogene",
+                "style": "solid",
+                "rgb": [
+                  255,
+                  211,
+                  128
+                ]
+              },
+              "field_datum_limitation": null,
+              "scientifically_validated_map_contact": false
+            },
+            "terrain_context": {
+              "elevation_m": 276.0537414550781,
+              "source_file": "data\\terrain\\copernicus-glo30\\Copernicus_DSM_10_N41_00_E025_00_DEM.tif",
+              "source": "Copernicus GLO-30",
+              "surveyed_borehole_elevation": false
+            },
+            "fault_context": {
+              "borehole_id": "HSK-BANI-3VP",
+              "latitude": 41.9379,
+              "longitude": 25.3465872,
+              "nearest_gem_fault_id": "ME_BGCS001",
+              "gem_distance_m": 9265.912708594988,
+              "nearest_mrrb_fault_id": "FLT-MAR-HASKOVO-REC13",
+              "mrrb_distance_m": 6363.166036326781,
+              "inside_mrrb_corridor": false,
+              "groundwater_bodies": [
+                {
+                  "localId": "BG3G0000PgN026",
+                  "name": "Êàðñòîâè âîäè - ×èðïàí - Äèìèòðîâãðàä",
+                  "horizon": "Палеоген - Неоген",
+                  "water_type": "Порови, пукнатинни и карстови води"
+                }
+              ],
+              "distance_crs": "EPSG:9391",
+              "geological_contact_crossing_verified": false,
+              "hydraulic_connection_proven": false,
+              "fault_proximity_is_water_proof": false
+            },
+            "primary_intervals": [
+              {
+                "from_m": 0,
+                "to_m": 1.2,
+                "material": "Насип",
+                "description": "Едри ръбести скални късове с глинесто-песъчлив запълнител",
+                "interval_role": "PRIMARY_LITHOLOGY",
+                "material_original": "Насип",
+                "material_normalized": "Насип",
+                "source_id": "HSK-A1-002",
+                "source_reference": "Page 2"
+              },
+              {
+                "from_m": 1.2,
+                "to_m": 290,
+                "material": "Трахити и латити",
+                "description": "Напукани и раздробени вулканити с редуване на по-здрави и напукани разновидности",
+                "interval_role": "PRIMARY_LITHOLOGY",
+                "material_original": "Трахити и латити",
+                "material_normalized": "Трахити и латити",
+                "source_id": "HSK-A1-002",
+                "source_reference": "Page 2"
+              }
+            ],
+            "nested_intervals": [
+              {
+                "from_m": 126,
+                "to_m": 132,
+                "material": "Тектонски брекчирани и милонитизирани вулканити",
+                "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+                "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+                "source_id": "HSK-A1-002",
+                "source_reference": "Page 2",
+                "parent_interval": [
+                  1.2,
+                  290
+                ],
+                "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+                "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+              }
+            ],
+            "source_ids": [
+              "HSK-A1-002",
+              "HSK-B1-023"
+            ],
+            "conflict_ids": [
+              "HSK-CF-002",
+              "HSK-CF-003"
+            ],
+            "hydraulic_connection_proven": false,
+            "local_fault_geometry_verified": false,
+            "current_operational_status_verified": false,
+            "publication_status": "PENDING_INTEGRATION"
+          },
+          "source_ids": [
+            "HSK-A1-002",
+            "HSK-B1-023"
+          ],
+          "historical_flow_values_additive": false,
+          "current_discharge_verified": false,
+          "hydraulic_connection_proven": false
+        }
+      },
+      "linked_mineral_facility_id": "mw_e33efc83fc72acd1"
+    },
+    {
+      "borehole_id": "HSK-BANI-4VP",
+      "name_bg": "Хасковски минерални бани / 4ВП",
+      "oblast": "Хасково",
+      "region_code": "Haskovo",
+      "status": "documented_borehole_intervals",
+      "zone_type": "borehole_documented_location",
+      "coordinates": {
+        "latitude": 41.9409348,
+        "longitude": 25.3445907,
+        "status": "OFFICIAL_EXACT",
+        "exact_policy": "PUBLISHED_POINT_COORDINATES_NO_MOUTH_REQUIREMENT",
+        "original_coordinate_metadata": {
+          "record_id": "HSK-BANI-4VP",
+          "observation_type": "DOCUMENTED_BOREHOLE",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "source_ids": [
+            "HSK-A1-003",
+            "HSK-B1-023"
+          ],
+          "original_record": {
+            "borehole_id": "HSK-BANI-4VP",
+            "original_borehole_id": "4ВП",
+            "drilling_year": 1959,
+            "total_depth_m": 150,
+            "collar_elevation_m": 262.92,
+            "latitude": 41.9409348,
+            "longitude": 25.3445907,
+            "coordinate_status": "OFFICIAL_EXACT",
+            "coordinate_source": "Existing mineral master registry; official BD IBR coordinate evidence",
+            "linked_mineral_id": "mw_e60279f6dcdc0d9e",
+            "intervals": [
+              {
+                "from_m": 0,
+                "to_m": 150,
+                "material": "Трахити и латити",
+                "description": "Напукани до силно раздробени вулканити с редуване на по-здрави и напукани разновидности",
+                "interval_role": "PRIMARY_LITHOLOGY",
+                "material_original": "Трахити и латити",
+                "material_normalized": "Трахити и латити",
+                "source_id": "HSK-A1-003",
+                "source_reference": "Page 2"
+              }
+            ],
+            "nested_intervals": [
+              {
+                "from_m": 126,
+                "to_m": 132,
+                "material": "Тектонски брекчирани и милонитизирани вулканити",
+                "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+                "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+                "source_id": "HSK-A1-003",
+                "source_reference": "Page 2",
+                "parent_interval": [
+                  0,
+                  150
+                ],
+                "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+                "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+              }
+            ],
+            "source_gaps": [],
+            "source_id": "HSK-A1-003",
+            "source_ids": [
+              "HSK-A1-003",
+              "HSK-B1-023"
+            ],
+            "locality_original": "Хасковски минерални бани",
+            "independent_observation_id": "HSK-BANI-4VP",
+            "verification_status": "VERIFIED_VISUAL",
+            "observation_type": "DOCUMENTED_BOREHOLE",
+            "needs_spatial_review": true,
+            "corroborating_versions": [
+              {
+                "original_borehole_id": "Сн-4ВП",
+                "existing_source_id": "HSK-A1-003",
+                "coordinate_status": "OFFICIAL_EXACT",
+                "coordinate_crs": "EPSG:4326",
+                "latitude_original": "41 56 27.4 N",
+                "longitude_original": "25 20 40.5 E",
+                "latitude": 41.9409444444,
+                "longitude": 25.3445833333,
+                "coordinates_1970_original": {
+                  "x": 4579766.805,
+                  "y": 9410429.743
+                },
+                "terrain_elevation_m": 262.92,
+                "reported_total_depth_m": 150,
+                "intervals": [
+                  {
+                    "from_m": 0,
+                    "to_m": 150,
+                    "material": "Трахити и латити"
+                  }
+                ],
+                "nested_intervals": [
+                  {
+                    "from_m": 126,
+                    "to_m": 132,
+                    "material": "Брекчирани и милонитизирани скали"
+                  }
+                ],
+                "source_reference": "Tables 1-2; printed pages 8,12",
+                "identity_status": "EXISTING_BOREHOLE_NOT_NEW",
+                "source_id": "HSK-B1-023",
+                "independent_observation_id": "HSK-BANI-4VP",
+                "is_independent_borehole": false
+              }
+            ],
+            "conflict_ids": [
+              "HSK-CF-002"
+            ],
+            "column_completeness": "COMPLETE_MAIN_INTERVALS"
+          },
+          "latitude": 41.9409348,
+          "longitude": 25.3445907,
+          "coordinate_source": "Existing mineral master registry; official BD IBR coordinate evidence",
+          "inside_oblast": true,
+          "municipality_codes": [
+            "HKV19"
+          ],
+          "coordinate_variants": [
+            {
+              "source_id": "HSK-B1-023",
+              "latitude": 41.9409444444,
+              "longitude": 25.3445833333,
+              "crs": "EPSG:4326",
+              "difference_m": 1.2331751053258475
+            }
+          ],
+          "spatial_review_status": "ADMINISTRATIVE_POSITION_VALIDATED",
+          "original_projected_coordinates": {
+            "x_northing": 4579766.8,
+            "y_easting": 9410429.74,
+            "lat": 41.9409348,
+            "lon": 25.3445907
+          },
+          "original_crs": "BGS1970 K5",
+          "target_crs": "WGS84 / ETRS89 geographic",
+          "coordinate_target": "PUBLISHED_FACILITY_COORDINATE",
+          "official_source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf"
+        }
+      },
+      "total_depth_m": 150,
+      "water_type": "not_classified_from_lithology",
+      "lithology": [
+        {
+          "interval_id": "HSK-BANI-4VP-I001",
+          "depth_from_m": 0.0,
+          "depth_to_m": 150.0,
+          "expected_material_bg": "Трахити и латити",
+          "original_material_bg": "Трахити и латити",
+          "material_normalized": "Трахити и латити",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "HSK-A1-003"
+          ],
+          "original_interval": {
+            "from_m": 0,
+            "to_m": 150,
+            "material": "Трахити и латити",
+            "description": "Напукани до силно раздробени вулканити с редуване на по-здрави и напукани разновидности",
+            "interval_role": "PRIMARY_LITHOLOGY",
+            "material_original": "Трахити и латити",
+            "material_normalized": "Трахити и латити",
+            "source_id": "HSK-A1-003",
+            "source_reference": "Page 2"
+          }
+        }
+      ],
+      "structural_intervals": [
+        {
+          "interval_id": "HSK-BANI-4VP-S001",
+          "depth_from_m": 126,
+          "depth_to_m": 132,
+          "original_material_bg": "Тектонски брекчирани и милонитизирани вулканити",
+          "source_ids": [
+            "HSK-A1-003"
+          ],
+          "original_interval": {
+            "from_m": 126,
+            "to_m": 132,
+            "material": "Тектонски брекчирани и милонитизирани вулканити",
+            "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+            "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+            "source_id": "HSK-A1-003",
+            "source_reference": "Page 2",
+            "parent_interval": [
+              0,
+              150
+            ],
+            "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+            "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+          },
+          "independent_confirmation": false
+        }
+      ],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": null,
+      "expert_context": {
+        "source_ids": [
+          "HSK-A1-003",
+          "HSK-B1-023"
+        ],
+        "original_locality": "Хасковски минерални бани",
+        "original_borehole_id": "4ВП",
+        "original_registry_record": {
+          "borehole_id": "HSK-BANI-4VP",
+          "original_borehole_id": "4ВП",
+          "drilling_year": 1959,
+          "total_depth_m": 150,
+          "collar_elevation_m": 262.92,
+          "latitude": 41.9409348,
+          "longitude": 25.3445907,
+          "coordinate_status": "OFFICIAL_EXACT",
+          "coordinate_source": "Existing mineral master registry; official BD IBR coordinate evidence",
+          "linked_mineral_id": "mw_e60279f6dcdc0d9e",
+          "intervals": [
+            {
+              "from_m": 0,
+              "to_m": 150,
+              "material": "Трахити и латити",
+              "description": "Напукани до силно раздробени вулканити с редуване на по-здрави и напукани разновидности",
+              "interval_role": "PRIMARY_LITHOLOGY",
+              "material_original": "Трахити и латити",
+              "material_normalized": "Трахити и латити",
+              "source_id": "HSK-A1-003",
+              "source_reference": "Page 2"
+            }
+          ],
+          "nested_intervals": [
+            {
+              "from_m": 126,
+              "to_m": 132,
+              "material": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+              "source_id": "HSK-A1-003",
+              "source_reference": "Page 2",
+              "parent_interval": [
+                0,
+                150
+              ],
+              "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+              "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+            }
+          ],
+          "source_gaps": [],
+          "source_id": "HSK-A1-003",
+          "source_ids": [
+            "HSK-A1-003",
+            "HSK-B1-023"
+          ],
+          "locality_original": "Хасковски минерални бани",
+          "independent_observation_id": "HSK-BANI-4VP",
+          "verification_status": "VERIFIED_VISUAL",
+          "observation_type": "DOCUMENTED_BOREHOLE",
+          "needs_spatial_review": true,
+          "corroborating_versions": [
+            {
+              "original_borehole_id": "Сн-4ВП",
+              "existing_source_id": "HSK-A1-003",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "coordinate_crs": "EPSG:4326",
+              "latitude_original": "41 56 27.4 N",
+              "longitude_original": "25 20 40.5 E",
+              "latitude": 41.9409444444,
+              "longitude": 25.3445833333,
+              "coordinates_1970_original": {
+                "x": 4579766.805,
+                "y": 9410429.743
+              },
+              "terrain_elevation_m": 262.92,
+              "reported_total_depth_m": 150,
+              "intervals": [
+                {
+                  "from_m": 0,
+                  "to_m": 150,
+                  "material": "Трахити и латити"
+                }
+              ],
+              "nested_intervals": [
+                {
+                  "from_m": 126,
+                  "to_m": 132,
+                  "material": "Брекчирани и милонитизирани скали"
+                }
+              ],
+              "source_reference": "Tables 1-2; printed pages 8,12",
+              "identity_status": "EXISTING_BOREHOLE_NOT_NEW",
+              "source_id": "HSK-B1-023",
+              "independent_observation_id": "HSK-BANI-4VP",
+              "is_independent_borehole": false
+            }
+          ],
+          "conflict_ids": [
+            "HSK-CF-002"
+          ],
+          "column_completeness": "COMPLETE_MAIN_INTERVALS"
+        },
+        "existing_mineral_id": "mw_e60279f6dcdc0d9e",
+        "spatial_context": {
+          "borehole_id": "HSK-BANI-4VP",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "latitude": 41.9409348,
+          "longitude": 25.3445907,
+          "surface_geology": {
+            "record_id": "HSK-BANI-4VP",
+            "observation_type": "DOCUMENTED_BOREHOLE",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "latitude": 41.9409348,
+            "longitude": 25.3445907,
+            "surface_geology_only": true,
+            "vertical_column_membership_confirmed": false,
+            "pixel_x": 1889,
+            "pixel_y": 1648,
+            "classification_status": "DIRECT",
+            "direct_id": 4,
+            "reliable_id": 4,
+            "source_obscured": false,
+            "class_id": 4,
+            "geological_unit": {
+              "id": 4,
+              "code": "Pg",
+              "name_bg": "Палеоген",
+              "name_en": "Paleogene",
+              "style": "solid",
+              "rgb": [
+                255,
+                211,
+                128
+              ]
+            },
+            "field_datum_limitation": null,
+            "scientifically_validated_map_contact": false
+          },
+          "terrain_context": {
+            "elevation_m": 269.09716796875,
+            "source_file": "data\\terrain\\copernicus-glo30\\Copernicus_DSM_10_N41_00_E025_00_DEM.tif",
+            "source": "Copernicus GLO-30",
+            "surveyed_borehole_elevation": false
+          },
+          "fault_context": {
+            "borehole_id": "HSK-BANI-4VP",
+            "latitude": 41.9409348,
+            "longitude": 25.3445907,
+            "nearest_gem_fault_id": "ME_BGCS001",
+            "gem_distance_m": 9016.473681998768,
+            "nearest_mrrb_fault_id": "FLT-MAR-HASKOVO-REC13",
+            "mrrb_distance_m": 6095.407935382135,
+            "inside_mrrb_corridor": false,
+            "groundwater_bodies": [
+              {
+                "localId": "BG3G0000PgN026",
+                "name": "Êàðñòîâè âîäè - ×èðïàí - Äèìèòðîâãðàä",
+                "horizon": "Палеоген - Неоген",
+                "water_type": "Порови, пукнатинни и карстови води"
+              }
+            ],
+            "distance_crs": "EPSG:9391",
+            "geological_contact_crossing_verified": false,
+            "hydraulic_connection_proven": false,
+            "fault_proximity_is_water_proof": false
+          },
+          "primary_intervals": [
+            {
+              "from_m": 0,
+              "to_m": 150,
+              "material": "Трахити и латити",
+              "description": "Напукани до силно раздробени вулканити с редуване на по-здрави и напукани разновидности",
+              "interval_role": "PRIMARY_LITHOLOGY",
+              "material_original": "Трахити и латити",
+              "material_normalized": "Трахити и латити",
+              "source_id": "HSK-A1-003",
+              "source_reference": "Page 2"
+            }
+          ],
+          "nested_intervals": [
+            {
+              "from_m": 126,
+              "to_m": 132,
+              "material": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+              "source_id": "HSK-A1-003",
+              "source_reference": "Page 2",
+              "parent_interval": [
+                0,
+                150
+              ],
+              "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+              "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+            }
+          ],
+          "source_gaps": [],
+          "source_ids": [
+            "HSK-A1-003",
+            "HSK-B1-023"
+          ],
+          "conflict_ids": [
+            "HSK-CF-002"
+          ],
+          "vertical_column_membership_in_surface_unit_proven": false,
+          "hydraulic_connection_proven": false,
+          "measured_depths_preserved": true,
+          "usage_status": "RESEARCH_CONTEXT"
+        },
+        "not_measured_at_arbitrary_target": true,
+        "mineral_evidence": {
+          "borehole_id": "HSK-BANI-4VP",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "documented_total_depth_m": 150,
+          "documented_lithology": [
+            {
+              "from_m": 0,
+              "to_m": 150,
+              "material": "Трахити и латити",
+              "description": "Напукани до силно раздробени вулканити с редуване на по-здрави и напукани разновидности",
+              "interval_role": "PRIMARY_LITHOLOGY",
+              "material_original": "Трахити и латити",
+              "material_normalized": "Трахити и латити",
+              "source_id": "HSK-A1-003",
+              "source_reference": "Page 2"
+            }
+          ],
+          "structural_intervals": [
+            {
+              "from_m": 126,
+              "to_m": 132,
+              "material": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+              "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+              "source_id": "HSK-A1-003",
+              "source_reference": "Page 2",
+              "parent_interval": [
+                0,
+                150
+              ],
+              "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+              "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+            }
+          ],
+          "historical_water_observations": [
+            {
+              "record_id": "HSK-B1-023-MW-HSK-BANI-4VP_corroborating_water_inflow-1",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Tables 1-2; printed pages 8,12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-BANI-4VP",
+              "original_borehole_id": "Сн-4ВП",
+              "original_manifest_field": "HSK-BANI-4VP.corroborating_water_inflow",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 1,
+                "to_m": 10,
+                "reported_flow_l_s": 0.14,
+                "temperature_c": 39
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "MATCHING_DOCUMENTARY_INTERVAL_NOT_INDEPENDENT_MEASUREMENT",
+              "needs_spatial_review": true,
+              "corroborating_sources": [
+                {
+                  "source_id": "HSK-A1-003",
+                  "source_url": "https://old.mh.government.bg/media/filer_public/2019/06/19/52-haskovski_mineralni_bani-sondazh4vp-20-01-2017.pdf",
+                  "source_reference": "Page 2",
+                  "evidence_type": "REPORTED_WATER_INFLOW_FILTER_INTERVALS",
+                  "original_interval_m": [
+                    1,
+                    10
+                  ]
+                }
+              ]
+            },
+            {
+              "record_id": "HSK-B1-023-MW-HSK-BANI-4VP_corroborating_water_inflow-2",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Tables 1-2; printed pages 8,12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-BANI-4VP",
+              "original_borehole_id": "Сн-4ВП",
+              "original_manifest_field": "HSK-BANI-4VP.corroborating_water_inflow",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 10,
+                "to_m": 20,
+                "reported_flow_l_s": 1.1,
+                "temperature_c": 51
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "MATCHING_DOCUMENTARY_INTERVAL_NOT_INDEPENDENT_MEASUREMENT",
+              "needs_spatial_review": true,
+              "corroborating_sources": [
+                {
+                  "source_id": "HSK-A1-003",
+                  "source_url": "https://old.mh.government.bg/media/filer_public/2019/06/19/52-haskovski_mineralni_bani-sondazh4vp-20-01-2017.pdf",
+                  "source_reference": "Page 2",
+                  "evidence_type": "REPORTED_WATER_INFLOW_FILTER_INTERVALS",
+                  "original_interval_m": [
+                    10,
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "record_id": "HSK-B1-023-MW-HSK-BANI-4VP_corroborating_water_inflow-3",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Tables 1-2; printed pages 8,12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-BANI-4VP",
+              "original_borehole_id": "Сн-4ВП",
+              "original_manifest_field": "HSK-BANI-4VP.corroborating_water_inflow",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 21,
+                "to_m": 30,
+                "reported_flow_l_s": 3.2,
+                "temperature_c": 56
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "MATCHING_DOCUMENTARY_INTERVAL_NOT_INDEPENDENT_MEASUREMENT",
+              "needs_spatial_review": true,
+              "corroborating_sources": [
+                {
+                  "source_id": "HSK-A1-003",
+                  "source_url": "https://old.mh.government.bg/media/filer_public/2019/06/19/52-haskovski_mineralni_bani-sondazh4vp-20-01-2017.pdf",
+                  "source_reference": "Page 2",
+                  "evidence_type": "REPORTED_WATER_INFLOW_FILTER_INTERVALS",
+                  "original_interval_m": [
+                    21,
+                    30
+                  ]
+                }
+              ]
+            },
+            {
+              "record_id": "HSK-B1-023-MW-HSK-BANI-4VP_corroborating_water_inflow-4",
+              "source_id": "HSK-B1-023",
+              "source_url": "https://old-2014-2020.greece-bulgaria.eu/gallery/Files/PROJECT%20DELIVERABLES/MINERAL%20PATHS/D_4_1_3_Management-System-including-Quality-Assurance-for-Springs_BG-%28EN-summary%29.pdf",
+              "source_reference": "Tables 1-2; printed pages 8,12",
+              "source_verification_status": "VERIFIED_TEXT_TITLE_VISUAL",
+              "borehole_id": "HSK-BANI-4VP",
+              "original_borehole_id": "Сн-4ВП",
+              "original_manifest_field": "HSK-BANI-4VP.corroborating_water_inflow",
+              "evidence_type": "DOCUMENTED_WATER_OBSERVATION",
+              "original_evidence": {
+                "from_m": 35,
+                "to_m": 68,
+                "reported_flow_l_s": 24,
+                "temperature_c": 56
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "SOURCE_REPORTED_REQUIRES_CONTEXT_REVIEW",
+              "temperature_measurement_location": "NOT_ASSUMED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "MATCHING_DOCUMENTARY_INTERVAL_NOT_INDEPENDENT_MEASUREMENT",
+              "needs_spatial_review": true,
+              "corroborating_sources": [
+                {
+                  "source_id": "HSK-A1-003",
+                  "source_url": "https://old.mh.government.bg/media/filer_public/2019/06/19/52-haskovski_mineralni_bani-sondazh4vp-20-01-2017.pdf",
+                  "source_reference": "Page 2",
+                  "evidence_type": "REPORTED_WATER_INFLOW_FILTER_INTERVALS",
+                  "original_interval_m": [
+                    35,
+                    68
+                  ]
+                }
+              ]
+            },
+            {
+              "record_id": "HSK-A1-003-MW-INTERVAL-4",
+              "source_id": "HSK-A1-003",
+              "source_url": "https://old.mh.government.bg/media/filer_public/2019/06/19/52-haskovski_mineralni_bani-sondazh4vp-20-01-2017.pdf",
+              "source_reference": "Page 2",
+              "borehole_id": "HSK-BANI-4VP",
+              "evidence_type": "REPORTED_WATER_INFLOW_FILTER_INTERVALS",
+              "source_verification_status": "VERIFIED_VISUAL",
+              "original_manifest_field": "mineral_evidence.water_inflow_intervals_m",
+              "original_evidence": {
+                "from_m": 30,
+                "to_m": 35,
+                "reported_flow_l_s": null,
+                "temperature_c": null,
+                "original_interval_m": [
+                  30,
+                  35
+                ]
+              },
+              "historical_observation": true,
+              "flow_measurement_type": "NOT_DOCUMENTED",
+              "temperature_measurement_location": "NOT_DOCUMENTED",
+              "flow_values_additive": false,
+              "is_lithological_interval": false,
+              "independence_status": "DOCUMENTARY_PROVENANCE_PRESERVED",
+              "needs_spatial_review": true
+            }
+          ],
+          "mineral_collector_records": [],
+          "spatial_review": {
+            "borehole_id": "HSK-BANI-4VP",
+            "mineral_id": "mw_e60279f6dcdc0d9e",
+            "identity_status": "EXISTING_MASTER_IDENTITY",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "latitude": 41.9409348,
+            "longitude": 25.3445907,
+            "surface_geology": {
+              "record_id": "HSK-BANI-4VP",
+              "observation_type": "DOCUMENTED_BOREHOLE",
+              "coordinate_status": "OFFICIAL_EXACT",
+              "latitude": 41.9409348,
+              "longitude": 25.3445907,
+              "surface_geology_only": true,
+              "vertical_column_membership_confirmed": false,
+              "pixel_x": 1889,
+              "pixel_y": 1648,
+              "classification_status": "DIRECT",
+              "direct_id": 4,
+              "reliable_id": 4,
+              "source_obscured": false,
+              "class_id": 4,
+              "geological_unit": {
+                "id": 4,
+                "code": "Pg",
+                "name_bg": "Палеоген",
+                "name_en": "Paleogene",
+                "style": "solid",
+                "rgb": [
+                  255,
+                  211,
+                  128
+                ]
+              },
+              "field_datum_limitation": null,
+              "scientifically_validated_map_contact": false
+            },
+            "terrain_context": {
+              "elevation_m": 269.09716796875,
+              "source_file": "data\\terrain\\copernicus-glo30\\Copernicus_DSM_10_N41_00_E025_00_DEM.tif",
+              "source": "Copernicus GLO-30",
+              "surveyed_borehole_elevation": false
+            },
+            "fault_context": {
+              "borehole_id": "HSK-BANI-4VP",
+              "latitude": 41.9409348,
+              "longitude": 25.3445907,
+              "nearest_gem_fault_id": "ME_BGCS001",
+              "gem_distance_m": 9016.473681998768,
+              "nearest_mrrb_fault_id": "FLT-MAR-HASKOVO-REC13",
+              "mrrb_distance_m": 6095.407935382135,
+              "inside_mrrb_corridor": false,
+              "groundwater_bodies": [
+                {
+                  "localId": "BG3G0000PgN026",
+                  "name": "Êàðñòîâè âîäè - ×èðïàí - Äèìèòðîâãðàä",
+                  "horizon": "Палеоген - Неоген",
+                  "water_type": "Порови, пукнатинни и карстови води"
+                }
+              ],
+              "distance_crs": "EPSG:9391",
+              "geological_contact_crossing_verified": false,
+              "hydraulic_connection_proven": false,
+              "fault_proximity_is_water_proof": false
+            },
+            "primary_intervals": [
+              {
+                "from_m": 0,
+                "to_m": 150,
+                "material": "Трахити и латити",
+                "description": "Напукани до силно раздробени вулканити с редуване на по-здрави и напукани разновидности",
+                "interval_role": "PRIMARY_LITHOLOGY",
+                "material_original": "Трахити и латити",
+                "material_normalized": "Трахити и латити",
+                "source_id": "HSK-A1-003",
+                "source_reference": "Page 2"
+              }
+            ],
+            "nested_intervals": [
+              {
+                "from_m": 126,
+                "to_m": 132,
+                "material": "Тектонски брекчирани и милонитизирани вулканити",
+                "material_original": "Тектонски брекчирани и милонитизирани вулканити",
+                "material_normalized": "Тектонски брекчирани и милонитизирани вулканити",
+                "source_id": "HSK-A1-003",
+                "source_reference": "Page 2",
+                "parent_interval": [
+                  0,
+                  150
+                ],
+                "independence_status": "REPEATED_DESCRIPTION_REVIEW_REQUIRED",
+                "interval_role": "NESTED_STRUCTURAL_SUBINTERVAL"
+              }
+            ],
+            "source_ids": [
+              "HSK-A1-003",
+              "HSK-B1-023"
+            ],
+            "conflict_ids": [
+              "HSK-CF-002"
+            ],
+            "hydraulic_connection_proven": false,
+            "local_fault_geometry_verified": false,
+            "current_operational_status_verified": false,
+            "publication_status": "PENDING_INTEGRATION"
+          },
+          "source_ids": [
+            "HSK-A1-003",
+            "HSK-B1-023"
+          ],
+          "historical_flow_values_additive": false,
+          "current_discharge_verified": false,
+          "hydraulic_connection_proven": false
+        }
+      },
+      "linked_mineral_facility_id": "mw_e60279f6dcdc0d9e"
     }
   ]
 }
