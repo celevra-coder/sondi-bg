@@ -54950,6 +54950,439 @@
         }
       ],
       "origin": "haskovo_verified_research"
+    },
+    {
+      "mineral_id": "mw_125cf4adfce21dc6",
+      "identity": {
+        "name": "Сондаж №4 - Кирково",
+        "facility_type": "Минерален сондаж",
+        "deposit": "Кирково",
+        "settlement": "Кирково"
+      },
+      "location": {
+        "lat": null,
+        "lon": null,
+        "status": "UNVERIFIED",
+        "origin": "UNVERIFIED",
+        "coordinate_evidence": {
+          "record_id": "KRD-BH-001",
+          "source_id": "KRD-A1-001",
+          "name": "Сондаж №4 - Кирково",
+          "registration_number": "351034002",
+          "coordinate_status": "UNVERIFIED",
+          "original_coordinates": null,
+          "latitude": null,
+          "longitude": null,
+          "locality_scope": "SETTLEMENT_AND_REGISTERED_BOREHOLE",
+          "identity_verified": true,
+          "registration_registry_row": 92,
+          "registration_registry_page": 2,
+          "coordinate_recheck_completed": true,
+          "wgs84_ready": false,
+          "point_use_allowed": false,
+          "needs_spatial_review": true,
+          "next_action": "STEP4_OBJECT_LOCALIZATION"
+        }
+      },
+      "free": {
+        "temperature_c": 23.2,
+        "depth_m": 98
+      },
+      "pro": {
+        "research_status": "DOCUMENTED",
+        "research_enrichment": {
+          "borehole_id": "KRD-BH-001",
+          "registration_number": "351034002",
+          "source_id": "KRD-A1-001",
+          "depth_m": 98,
+          "documented_temperature_c": 23.2,
+          "reported_discharge_lps": 3.14,
+          "measurement_context_status": "PENDING_DETAILED_REVIEW",
+          "coordinate_status": "UNVERIFIED",
+          "original_water_evidence": {
+            "record_id": "KRD-MW-001",
+            "borehole_id": "KRD-BH-001",
+            "independent_observation_id": "KRD-BH-001",
+            "source_id": "KRD-A1-001",
+            "source_url": "https://www.mh.government.bg/upload/6588/96-kirkovo-sondazh4-20-01-2015.pdf",
+            "page_or_figure": "Страници 1-2",
+            "related_evidence_ids": [
+              "KRD-A1-001-EV-001"
+            ],
+            "name": "Сондаж №4 - Кирково",
+            "registration_number": "351034002",
+            "municipality": "Кирково",
+            "region": "Кърджали",
+            "observation_type": "DOCUMENTED_MINERAL_WATER_BOREHOLE",
+            "total_depth_m": 98,
+            "construction_year": 1976,
+            "collar_elevation_m": 327.67,
+            "water_observations": {
+              "temperature_c": 23.2,
+              "temperature_measurement_location": null,
+              "temperature_measurement_date": null,
+              "reported_discharge_lps": 3.14,
+              "discharge_type": "PENDING_SOURCE_FIELD_REVIEW",
+              "discharge_test_conditions": null,
+              "first_water_appearance_m": null,
+              "inflow_intervals": [],
+              "static_water_level_m": null,
+              "dynamic_water_level_m": null,
+              "artesian_pressure": null,
+              "mineralization_mg_l": null,
+              "measurement_context_status": "PENDING_DETAILED_REVIEW"
+            },
+            "coordinate_status": "UNVERIFIED",
+            "original_coordinates": null,
+            "coordinate_source": null,
+            "coordinate_source_reference": null,
+            "coordinate_object": null,
+            "registration_verification": {
+              "previous_number": "351034003",
+              "verified_number": "351034002",
+              "registry_row": 92,
+              "source_page": 2,
+              "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+              "verified_at": "2026-11-28",
+              "matched_name": "Сондаж №4",
+              "matched_depth_m": 98,
+              "visual_table_verification": true,
+              "coordinate_columns_empty": true,
+              "rejected_number": "351034003",
+              "rejected_number_belongs_to": "Сондаж №2",
+              "rejected_number_depth_m": 106,
+              "correction_reason": "PDF_TEXT_EXTRACTION_ROW_MISALIGNMENT"
+            },
+            "latitude": null,
+            "longitude": null,
+            "spatial_status": "NO_VERIFIED_NUMERIC_COORDINATES",
+            "original_water_evidence": [
+              {
+                "description": "Мраморни водоносни лещи в находище Кирково",
+                "type": "HYDROGEOLOGICAL_CONTEXT",
+                "applies_to": "DEPOSIT_NOT_INDIVIDUAL_BOREHOLE",
+                "reported_marble_depth_min_m": 8,
+                "reported_aquifer_thickness_min_m": 25,
+                "reported_aquifer_thickness_max_m": 78,
+                "dip_degrees": 25,
+                "reported_marble_depth_max_m": 62,
+                "source_reference": "Страница 1",
+                "dip_direction": "NW"
+              }
+            ],
+            "original_borehole_record": {
+              "borehole_id": "KRD-BH-001",
+              "name": "Сондаж №4 - Кирково",
+              "registration_number": "351034002",
+              "oblast": "Кърджали",
+              "municipality": "Кирково",
+              "construction_year": 1976,
+              "total_depth_m": 98,
+              "collar_elevation_m": 327.67,
+              "latitude": null,
+              "longitude": null,
+              "coordinate_status": "UNVERIFIED",
+              "coordinate_recheck_completed": true,
+              "coordinate_recheck_source": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+              "mineral_water": true,
+              "unknown_intervals": [
+                {
+                  "reason": "CORE_NOT_RECOVERED",
+                  "to_m": 4,
+                  "from_m": 0
+                }
+              ],
+              "intervals": [
+                {
+                  "material": "Валуни от мрамори и гнайси",
+                  "to_m": 8,
+                  "from_m": 4
+                },
+                {
+                  "material": "Амфибол-биотитови гнайси",
+                  "to_m": 25,
+                  "from_m": 8
+                },
+                {
+                  "material": "Нечисти мрамори",
+                  "to_m": 28,
+                  "from_m": 25
+                },
+                {
+                  "material": "Бели среднозърнести напукани мрамори",
+                  "to_m": 95,
+                  "from_m": 28
+                },
+                {
+                  "material": "Дребнозърнести биотитови гнайси",
+                  "to_m": 98,
+                  "from_m": 95
+                }
+              ],
+              "registration_verification": {
+                "previous_number": "351034003",
+                "verified_number": "351034002",
+                "registry_row": 92,
+                "source_page": 2,
+                "source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+                "verified_at": "2026-11-28",
+                "matched_name": "Сондаж №4",
+                "matched_depth_m": 98,
+                "visual_table_verification": true,
+                "coordinate_columns_empty": true,
+                "rejected_number": "351034003",
+                "rejected_number_belongs_to": "Сондаж №2",
+                "rejected_number_depth_m": 106,
+                "correction_reason": "PDF_TEXT_EXTRACTION_ROW_MISALIGNMENT"
+              }
+            },
+            "extraction_method": "STEP2_REPORTED_VALUES_WITH_ORIGINAL_EVIDENCE",
+            "verification_status": "STRUCTURED_PENDING_MEASUREMENT_CONTEXT_REVIEW",
+            "inferred_water_horizons_created": false,
+            "inferred_temperature_created": false,
+            "inferred_discharge_created": false,
+            "needs_spatial_review": true,
+            "runtime_ready": false,
+            "public_map_ready": false
+          },
+          "public_point_eligible": false
+        }
+      },
+      "sources": [
+        {
+          "source_id": "KRD-A1-001",
+          "source_url": "https://www.mh.government.bg/upload/6588/96-kirkovo-sondazh4-20-01-2015.pdf",
+          "source_reference": "Страници 1-2"
+        }
+      ],
+      "origin": "kardzhali_step05_documentary_integration"
+    },
+    {
+      "mineral_id": "mw_8f935ed7ed96b33c",
+      "identity": {
+        "name": "Сондаж №3 - Джебел",
+        "facility_type": "Минерален сондаж",
+        "deposit": "Джебел",
+        "settlement": "Джебел"
+      },
+      "location": {
+        "lat": 41.519349603331534,
+        "lon": 25.295767910742917,
+        "status": "OFFICIAL_EXACT",
+        "origin": "DOCUMENTED_SOURCE_COORDINATES",
+        "coordinate_evidence": {
+          "record_id": "KRD-BH-002",
+          "source_id": "KRD-A1-002",
+          "name": "Сондаж №3 - Джебел",
+          "registration_number": "351023001",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "original_coordinates": {
+            "x": 4532993.4,
+            "y": 9405777.772,
+            "crs": "BGS1970 K5"
+          },
+          "latitude": 41.519349603331534,
+          "longitude": 25.295767910742917,
+          "coordinate_object": "REGISTERED_WATER_ABSTRACTION_BOREHOLE",
+          "coordinate_registry_row": 83,
+          "coordinate_recheck_completed": true,
+          "wgs84_ready": true,
+          "point_use_allowed": false,
+          "needs_spatial_review": true,
+          "next_action": "ADMINISTRATIVE_BOUNDARY_VALIDATION",
+          "transformation": {
+            "library": "transformations@1.2.0",
+            "method": "BGS1970 K5 -> BGS2005 KK -> WGS84",
+            "axis_order": "X=Northing,Y=Easting",
+            "control_error_m": 0.5227572363873726,
+            "target_crs": "EPSG:4326",
+            "locality_check": "CONSISTENT_NORTH_OF_DZHEBEL",
+            "boundary_validation": "PENDING"
+          }
+        }
+      },
+      "free": {
+        "temperature_c": 32.7,
+        "depth_m": 542
+      },
+      "pro": {
+        "research_status": "DOCUMENTED",
+        "research_enrichment": {
+          "borehole_id": "KRD-BH-002",
+          "registration_number": "351023001",
+          "source_id": "KRD-A1-002",
+          "depth_m": 542,
+          "documented_temperature_c": 32.7,
+          "reported_discharge_lps": 8.4,
+          "measurement_context_status": "PENDING_DETAILED_REVIEW",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "original_water_evidence": {
+            "record_id": "KRD-MW-002",
+            "borehole_id": "KRD-BH-002",
+            "independent_observation_id": "KRD-BH-002",
+            "source_id": "KRD-A1-002",
+            "source_url": "https://www.mh.government.bg/upload/20838/28-Dzhebel-sondazh3-13-10-2026.pdf",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "related_evidence_ids": [
+              "KRD-A1-002-EV-001"
+            ],
+            "name": "Сондаж №3 - Джебел",
+            "registration_number": "351023001",
+            "municipality": "Джебел",
+            "region": "Кърджали",
+            "observation_type": "DOCUMENTED_MINERAL_WATER_BOREHOLE",
+            "total_depth_m": 542,
+            "construction_year": 1977,
+            "collar_elevation_m": 325.61,
+            "water_observations": {
+              "temperature_c": 32.7,
+              "temperature_measurement_location": null,
+              "temperature_measurement_date": null,
+              "reported_discharge_lps": 8.4,
+              "discharge_type": "PENDING_SOURCE_FIELD_REVIEW",
+              "discharge_test_conditions": null,
+              "first_water_appearance_m": null,
+              "inflow_intervals": [],
+              "static_water_level_m": null,
+              "dynamic_water_level_m": null,
+              "artesian_pressure": null,
+              "mineralization_mg_l": null,
+              "measurement_context_status": "PENDING_DETAILED_REVIEW"
+            },
+            "coordinate_status": "OFFICIAL_EXACT",
+            "original_coordinates": {
+              "y": 9405777.772,
+              "wgs84_conversion_status": "PENDING",
+              "crs": "PENDING_VERIFICATION",
+              "x": 4532993.4
+            },
+            "coordinate_source": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+            "coordinate_source_reference": "Ред 83",
+            "coordinate_object": "REGISTERED_WATER_ABSTRACTION_BOREHOLE",
+            "registration_verification": null,
+            "latitude": null,
+            "longitude": null,
+            "spatial_status": "PUBLISHED_NUMERIC_COORDINATES_CRS_PENDING",
+            "original_water_evidence": [
+              {
+                "groundwater_flow_direction": "E-SE",
+                "description": "Пукнатинно-карстова система в протерозойски мрамори. Подхранване от мраморните разкрития западно от сондажа.",
+                "source_reference": "Страница 1",
+                "type": "HYDROGEOLOGICAL_CONTEXT"
+              }
+            ],
+            "original_borehole_record": {
+              "borehole_id": "KRD-BH-002",
+              "name": "Сондаж №3 - Джебел",
+              "registration_number": "351023001",
+              "oblast": "Кърджали",
+              "municipality": "Джебел",
+              "construction_year": 1977,
+              "total_depth_m": 542,
+              "collar_elevation_m": 325.61,
+              "latitude": null,
+              "longitude": null,
+              "coordinate_status": "OFFICIAL_EXACT",
+              "coordinate_source": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+              "coordinate_source_reference": "Ред 83",
+              "coordinate_object": "REGISTERED_WATER_ABSTRACTION_BOREHOLE",
+              "coordinate_original": {
+                "y": 9405777.772,
+                "wgs84_conversion_status": "PENDING",
+                "crs": "PENDING_VERIFICATION",
+                "x": 4532993.4
+              },
+              "coordinate_recheck_completed": true,
+              "mineral_water": true,
+              "intervals": [
+                {
+                  "material": "Бели до сивозеленикави туфи",
+                  "age": "Палеоген",
+                  "to_m": 21.4,
+                  "from_m": 0
+                },
+                {
+                  "material": "Брекчирани варовици с глинести прослойки",
+                  "age": "Палеоген",
+                  "to_m": 42.8,
+                  "from_m": 21.4
+                },
+                {
+                  "material": "Сиви глини",
+                  "age": "Палеоген",
+                  "to_m": 43.8,
+                  "from_m": 42.8
+                },
+                {
+                  "material": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+                  "age": "Палеоген",
+                  "to_m": 286.5,
+                  "from_m": 43.8
+                },
+                {
+                  "material": "Нечисти мрамори с напукани биотитови гнайси",
+                  "age": "Протерозой",
+                  "to_m": 315,
+                  "from_m": 286.5
+                },
+                {
+                  "material": "Биотитови шисти с мраморни прослойки",
+                  "age": "Протерозой",
+                  "to_m": 447.2,
+                  "from_m": 315
+                },
+                {
+                  "material": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+                  "age": "Протерозой",
+                  "to_m": 505,
+                  "from_m": 447.2
+                },
+                {
+                  "material": "Бели до сиви дребнозърнести окварцени мрамори",
+                  "age": "Протерозой",
+                  "to_m": 525,
+                  "from_m": 505
+                },
+                {
+                  "material": "Амфибол-биотитови гнайси",
+                  "age": "Протерозой",
+                  "to_m": 527.4,
+                  "from_m": 525
+                },
+                {
+                  "material": "Пегматити",
+                  "age": "Протерозой",
+                  "to_m": 527.7,
+                  "from_m": 527.4
+                },
+                {
+                  "material": "Дребнозърнести амфиболити с пирит и халкопирит",
+                  "age": "Протерозой",
+                  "to_m": 542,
+                  "from_m": 527.7
+                }
+              ]
+            },
+            "extraction_method": "STEP2_REPORTED_VALUES_WITH_ORIGINAL_EVIDENCE",
+            "verification_status": "STRUCTURED_PENDING_MEASUREMENT_CONTEXT_REVIEW",
+            "inferred_water_horizons_created": false,
+            "inferred_temperature_created": false,
+            "inferred_discharge_created": false,
+            "needs_spatial_review": true,
+            "runtime_ready": false,
+            "public_map_ready": false
+          },
+          "public_point_eligible": true
+        }
+      },
+      "sources": [
+        {
+          "source_id": "KRD-A1-002",
+          "source_url": "https://www.mh.government.bg/upload/20838/28-Dzhebel-sondazh3-13-10-2026.pdf",
+          "source_reference": "Страници 1-2, литоложки разрез на стр. 2"
+        }
+      ],
+      "origin": "kardzhali_step05_documentary_integration"
     }
   ],
   "non_point_research_records": [

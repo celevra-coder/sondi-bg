@@ -41,7 +41,12 @@ export function searchLunaNationalResearch(args: {
   const canonical = (value: unknown): string =>
     transliterate(String(value ?? ""));
 
-  const requestedRegion = canonical(region);
+  // SONDI_REGION_PREFIX_NORMALIZATION_V1
+  const canonicalRegion = (value: unknown): string =>
+    canonical(String(value ?? "")
+      .replace(/^\s*(?:\u043e\u0431\u043b\u0430\u0441\u0442|\u043e\u0431\u043b\.?|oblast|district)(?:\s+|\.\s*)/iu, ""));
+
+  const requestedRegion = canonicalRegion(region);
 
   const primaryRegions = (record: Record<string, unknown>): string[] => {
     const result: string[] = [];
@@ -112,7 +117,7 @@ export function searchLunaNationalResearch(args: {
   const candidates = catalog.flatMap(item => {
     const r = item.record ?? {};
     const declared = primaryRegions(r);
-    const declaredKeys = declared.map(canonical);
+    const declaredKeys = declared.map(canonicalRegion);
     const fileHints = fileRegions(item.source_file);
 
     const searchable = normalize(JSON.stringify({

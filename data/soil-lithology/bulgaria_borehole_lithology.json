@@ -72794,6 +72794,830 @@
         }
       },
       "linked_mineral_facility_id": "mw_8d77e750b35cda84"
+    },
+    {
+      "borehole_id": "KRD-BH-002",
+      "name_bg": "Сондаж №3 - Джебел",
+      "oblast": "Кърджали",
+      "region_code": "Kardzhali",
+      "status": "documented_borehole_intervals",
+      "zone_type": "borehole_documented_location",
+      "coordinates": {
+        "latitude": 41.519349603331534,
+        "longitude": 25.295767910742917,
+        "status": "OFFICIAL_EXACT",
+        "exact_policy": "PUBLISHED_POINT_COORDINATES_NO_MOUTH_REQUIREMENT",
+        "original_coordinate_metadata": {
+          "record_id": "KRD-BH-002",
+          "source_id": "KRD-A1-002",
+          "name": "Сондаж №3 - Джебел",
+          "registration_number": "351023001",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "original_coordinates": {
+            "x": 4532993.4,
+            "y": 9405777.772,
+            "crs": "BGS1970 K5"
+          },
+          "latitude": 41.519349603331534,
+          "longitude": 25.295767910742917,
+          "coordinate_object": "REGISTERED_WATER_ABSTRACTION_BOREHOLE",
+          "coordinate_registry_row": 83,
+          "coordinate_recheck_completed": true,
+          "wgs84_ready": true,
+          "point_use_allowed": false,
+          "needs_spatial_review": true,
+          "next_action": "ADMINISTRATIVE_BOUNDARY_VALIDATION",
+          "transformation": {
+            "library": "transformations@1.2.0",
+            "method": "BGS1970 K5 -> BGS2005 KK -> WGS84",
+            "axis_order": "X=Northing,Y=Easting",
+            "control_error_m": 0.5227572363873726,
+            "target_crs": "EPSG:4326",
+            "locality_check": "CONSISTENT_NORTH_OF_DZHEBEL",
+            "boundary_validation": "PENDING"
+          }
+        }
+      },
+      "total_depth_m": 542,
+      "water_type": "not_classified_from_lithology",
+      "lithology": [
+        {
+          "interval_id": "KRD-BH-002-I001",
+          "depth_from_m": 0,
+          "depth_to_m": 21.4,
+          "expected_material_bg": "Бели до сивозеленикави туфи",
+          "original_material_bg": "Бели до сивозеленикави туфи",
+          "material_normalized": "TUFF",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I001",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 0,
+            "to_m": 21.4,
+            "thickness_m": 21.4,
+            "material_original": "Бели до сивозеленикави туфи",
+            "material_normalized": "TUFF",
+            "age_original": "Палеоген",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Бели до сивозеленикави туфи",
+              "age": "Палеоген",
+              "to_m": 21.4,
+              "from_m": 0
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I002",
+          "depth_from_m": 21.4,
+          "depth_to_m": 42.8,
+          "expected_material_bg": "Брекчирани варовици с глинести прослойки",
+          "original_material_bg": "Брекчирани варовици с глинести прослойки",
+          "material_normalized": "BRECCIATED_LIMESTONE_WITH_CLAY",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I002",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 21.4,
+            "to_m": 42.8,
+            "thickness_m": 21.4,
+            "material_original": "Брекчирани варовици с глинести прослойки",
+            "material_normalized": "BRECCIATED_LIMESTONE_WITH_CLAY",
+            "age_original": "Палеоген",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Брекчирани варовици с глинести прослойки",
+              "age": "Палеоген",
+              "to_m": 42.8,
+              "from_m": 21.4
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I003",
+          "depth_from_m": 42.8,
+          "depth_to_m": 43.8,
+          "expected_material_bg": "Сиви глини",
+          "original_material_bg": "Сиви глини",
+          "material_normalized": "CLAY",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I003",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 42.8,
+            "to_m": 43.8,
+            "thickness_m": 1.0,
+            "material_original": "Сиви глини",
+            "material_normalized": "CLAY",
+            "age_original": "Палеоген",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Сиви глини",
+              "age": "Палеоген",
+              "to_m": 43.8,
+              "from_m": 42.8
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I004",
+          "depth_from_m": 43.8,
+          "depth_to_m": 286.5,
+          "expected_material_bg": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+          "original_material_bg": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+          "material_normalized": "BRECCIA_CONGLOMERATE",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I004",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 43.8,
+            "to_m": 286.5,
+            "thickness_m": 242.7,
+            "material_original": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+            "material_normalized": "BRECCIA_CONGLOMERATE",
+            "age_original": "Палеоген",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+              "age": "Палеоген",
+              "to_m": 286.5,
+              "from_m": 43.8
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I005",
+          "depth_from_m": 286.5,
+          "depth_to_m": 315,
+          "expected_material_bg": "Нечисти мрамори с напукани биотитови гнайси",
+          "original_material_bg": "Нечисти мрамори с напукани биотитови гнайси",
+          "material_normalized": "MARBLE_WITH_FRACTURED_GNEISS",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I005",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 286.5,
+            "to_m": 315,
+            "thickness_m": 28.5,
+            "material_original": "Нечисти мрамори с напукани биотитови гнайси",
+            "material_normalized": "MARBLE_WITH_FRACTURED_GNEISS",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Нечисти мрамори с напукани биотитови гнайси",
+              "age": "Протерозой",
+              "to_m": 315,
+              "from_m": 286.5
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I006",
+          "depth_from_m": 315,
+          "depth_to_m": 447.2,
+          "expected_material_bg": "Биотитови шисти с мраморни прослойки",
+          "original_material_bg": "Биотитови шисти с мраморни прослойки",
+          "material_normalized": "BIOTITE_SCHIST_WITH_MARBLE",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I006",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 315,
+            "to_m": 447.2,
+            "thickness_m": 132.2,
+            "material_original": "Биотитови шисти с мраморни прослойки",
+            "material_normalized": "BIOTITE_SCHIST_WITH_MARBLE",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Биотитови шисти с мраморни прослойки",
+              "age": "Протерозой",
+              "to_m": 447.2,
+              "from_m": 315
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I007",
+          "depth_from_m": 447.2,
+          "depth_to_m": 505,
+          "expected_material_bg": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+          "original_material_bg": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+          "material_normalized": "FRACTURED_SILICIFIED_BIOTITE_GNEISS",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I007",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 447.2,
+            "to_m": 505,
+            "thickness_m": 57.8,
+            "material_original": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+            "material_normalized": "FRACTURED_SILICIFIED_BIOTITE_GNEISS",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+              "age": "Протерозой",
+              "to_m": 505,
+              "from_m": 447.2
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I008",
+          "depth_from_m": 505,
+          "depth_to_m": 525,
+          "expected_material_bg": "Бели до сиви дребнозърнести окварцени мрамори",
+          "original_material_bg": "Бели до сиви дребнозърнести окварцени мрамори",
+          "material_normalized": "SILICIFIED_MARBLE",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I008",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 505,
+            "to_m": 525,
+            "thickness_m": 20,
+            "material_original": "Бели до сиви дребнозърнести окварцени мрамори",
+            "material_normalized": "SILICIFIED_MARBLE",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Бели до сиви дребнозърнести окварцени мрамори",
+              "age": "Протерозой",
+              "to_m": 525,
+              "from_m": 505
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I009",
+          "depth_from_m": 525,
+          "depth_to_m": 527.4,
+          "expected_material_bg": "Амфибол-биотитови гнайси",
+          "original_material_bg": "Амфибол-биотитови гнайси",
+          "material_normalized": "AMPHIBOLE_BIOTITE_GNEISS",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I009",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 525,
+            "to_m": 527.4,
+            "thickness_m": 2.4,
+            "material_original": "Амфибол-биотитови гнайси",
+            "material_normalized": "AMPHIBOLE_BIOTITE_GNEISS",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Амфибол-биотитови гнайси",
+              "age": "Протерозой",
+              "to_m": 527.4,
+              "from_m": 525
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I010",
+          "depth_from_m": 527.4,
+          "depth_to_m": 527.7,
+          "expected_material_bg": "Пегматити",
+          "original_material_bg": "Пегматити",
+          "material_normalized": "PEGMATITE",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I010",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 527.4,
+            "to_m": 527.7,
+            "thickness_m": 0.3,
+            "material_original": "Пегматити",
+            "material_normalized": "PEGMATITE",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Пегматити",
+              "age": "Протерозой",
+              "to_m": 527.7,
+              "from_m": 527.4
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I011",
+          "depth_from_m": 527.7,
+          "depth_to_m": 542,
+          "expected_material_bg": "Дребнозърнести амфиболити с пирит и халкопирит",
+          "original_material_bg": "Дребнозърнести амфиболити с пирит и халкопирит",
+          "material_normalized": "AMPHIBOLITE",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I011",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 527.7,
+            "to_m": 542,
+            "thickness_m": 14.3,
+            "material_original": "Дребнозърнести амфиболити с пирит и халкопирит",
+            "material_normalized": "AMPHIBOLITE",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Дребнозърнести амфиболити с пирит и халкопирит",
+              "age": "Протерозой",
+              "to_m": 542,
+              "from_m": 527.7
+            }
+          }
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": null,
+      "expert_context": {
+        "source_ids": [
+          "KRD-A1-002"
+        ],
+        "original_registry_record": {
+          "record_id": "KRD-BH-002",
+          "independent_observation_id": "KRD-BH-002",
+          "original_name": "Сондаж №3 - Джебел",
+          "registration_number": "351023001",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "source_url": "https://www.mh.government.bg/upload/20838/28-Dzhebel-sondazh3-13-10-2026.pdf",
+          "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+          "observation_type": "DOCUMENTED_BOREHOLE",
+          "municipality": "Джебел",
+          "locality_original": "Сондаж №3 - Джебел",
+          "construction_year": 1977,
+          "total_depth_m": 542,
+          "collar_elevation_m": 325.61,
+          "coordinate_status": "OFFICIAL_EXACT",
+          "original_coordinates": {
+            "y": 9405777.772,
+            "wgs84_conversion_status": "PENDING",
+            "crs": "PENDING_VERIFICATION",
+            "x": 4532993.4
+          },
+          "coordinate_source": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+          "coordinate_source_reference": "Ред 83",
+          "coordinate_object": "REGISTERED_WATER_ABSTRACTION_BOREHOLE",
+          "coordinate_recheck_source": null,
+          "registration_verification": null,
+          "latitude": null,
+          "longitude": null,
+          "spatial_status": "PUBLISHED_NUMERIC_COORDINATES_CRS_PENDING",
+          "needs_spatial_review": true,
+          "mineral_water_record_required": true,
+          "intervals": [
+            {
+              "interval_id": "KRD-BH-002-I001",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 0,
+              "to_m": 21.4,
+              "thickness_m": 21.4,
+              "material_original": "Бели до сивозеленикави туфи",
+              "material_normalized": "TUFF",
+              "age_original": "Палеоген",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Бели до сивозеленикави туфи",
+                "age": "Палеоген",
+                "to_m": 21.4,
+                "from_m": 0
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I002",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 21.4,
+              "to_m": 42.8,
+              "thickness_m": 21.4,
+              "material_original": "Брекчирани варовици с глинести прослойки",
+              "material_normalized": "BRECCIATED_LIMESTONE_WITH_CLAY",
+              "age_original": "Палеоген",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Брекчирани варовици с глинести прослойки",
+                "age": "Палеоген",
+                "to_m": 42.8,
+                "from_m": 21.4
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I003",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 42.8,
+              "to_m": 43.8,
+              "thickness_m": 1.0,
+              "material_original": "Сиви глини",
+              "material_normalized": "CLAY",
+              "age_original": "Палеоген",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Сиви глини",
+                "age": "Палеоген",
+                "to_m": 43.8,
+                "from_m": 42.8
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I004",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 43.8,
+              "to_m": 286.5,
+              "thickness_m": 242.7,
+              "material_original": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+              "material_normalized": "BRECCIA_CONGLOMERATE",
+              "age_original": "Палеоген",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+                "age": "Палеоген",
+                "to_m": 286.5,
+                "from_m": 43.8
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I005",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 286.5,
+              "to_m": 315,
+              "thickness_m": 28.5,
+              "material_original": "Нечисти мрамори с напукани биотитови гнайси",
+              "material_normalized": "MARBLE_WITH_FRACTURED_GNEISS",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Нечисти мрамори с напукани биотитови гнайси",
+                "age": "Протерозой",
+                "to_m": 315,
+                "from_m": 286.5
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I006",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 315,
+              "to_m": 447.2,
+              "thickness_m": 132.2,
+              "material_original": "Биотитови шисти с мраморни прослойки",
+              "material_normalized": "BIOTITE_SCHIST_WITH_MARBLE",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Биотитови шисти с мраморни прослойки",
+                "age": "Протерозой",
+                "to_m": 447.2,
+                "from_m": 315
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I007",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 447.2,
+              "to_m": 505,
+              "thickness_m": 57.8,
+              "material_original": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+              "material_normalized": "FRACTURED_SILICIFIED_BIOTITE_GNEISS",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+                "age": "Протерозой",
+                "to_m": 505,
+                "from_m": 447.2
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I008",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 505,
+              "to_m": 525,
+              "thickness_m": 20,
+              "material_original": "Бели до сиви дребнозърнести окварцени мрамори",
+              "material_normalized": "SILICIFIED_MARBLE",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Бели до сиви дребнозърнести окварцени мрамори",
+                "age": "Протерозой",
+                "to_m": 525,
+                "from_m": 505
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I009",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 525,
+              "to_m": 527.4,
+              "thickness_m": 2.4,
+              "material_original": "Амфибол-биотитови гнайси",
+              "material_normalized": "AMPHIBOLE_BIOTITE_GNEISS",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Амфибол-биотитови гнайси",
+                "age": "Протерозой",
+                "to_m": 527.4,
+                "from_m": 525
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I010",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 527.4,
+              "to_m": 527.7,
+              "thickness_m": 0.3,
+              "material_original": "Пегматити",
+              "material_normalized": "PEGMATITE",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Пегматити",
+                "age": "Протерозой",
+                "to_m": 527.7,
+                "from_m": 527.4
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I011",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 527.7,
+              "to_m": 542,
+              "thickness_m": 14.3,
+              "material_original": "Дребнозърнести амфиболити с пирит и халкопирит",
+              "material_normalized": "AMPHIBOLITE",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Дребнозърнести амфиболити с пирит и халкопирит",
+                "age": "Протерозой",
+                "to_m": 542,
+                "from_m": 527.7
+              }
+            }
+          ],
+          "unknown_intervals": [],
+          "known_lithological_thickness_m": 542.0,
+          "verification_status": "NORMALIZED_FROM_STEP2",
+          "runtime_ready": false,
+          "original_record": {
+            "borehole_id": "KRD-BH-002",
+            "name": "Сондаж №3 - Джебел",
+            "registration_number": "351023001",
+            "oblast": "Кърджали",
+            "municipality": "Джебел",
+            "construction_year": 1977,
+            "total_depth_m": 542,
+            "collar_elevation_m": 325.61,
+            "latitude": null,
+            "longitude": null,
+            "coordinate_status": "OFFICIAL_EXACT",
+            "coordinate_source": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+            "coordinate_source_reference": "Ред 83",
+            "coordinate_object": "REGISTERED_WATER_ABSTRACTION_BOREHOLE",
+            "coordinate_original": {
+              "y": 9405777.772,
+              "wgs84_conversion_status": "PENDING",
+              "crs": "PENDING_VERIFICATION",
+              "x": 4532993.4
+            },
+            "coordinate_recheck_completed": true,
+            "mineral_water": true,
+            "intervals": [
+              {
+                "material": "Бели до сивозеленикави туфи",
+                "age": "Палеоген",
+                "to_m": 21.4,
+                "from_m": 0
+              },
+              {
+                "material": "Брекчирани варовици с глинести прослойки",
+                "age": "Палеоген",
+                "to_m": 42.8,
+                "from_m": 21.4
+              },
+              {
+                "material": "Сиви глини",
+                "age": "Палеоген",
+                "to_m": 43.8,
+                "from_m": 42.8
+              },
+              {
+                "material": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+                "age": "Палеоген",
+                "to_m": 286.5,
+                "from_m": 43.8
+              },
+              {
+                "material": "Нечисти мрамори с напукани биотитови гнайси",
+                "age": "Протерозой",
+                "to_m": 315,
+                "from_m": 286.5
+              },
+              {
+                "material": "Биотитови шисти с мраморни прослойки",
+                "age": "Протерозой",
+                "to_m": 447.2,
+                "from_m": 315
+              },
+              {
+                "material": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+                "age": "Протерозой",
+                "to_m": 505,
+                "from_m": 447.2
+              },
+              {
+                "material": "Бели до сиви дребнозърнести окварцени мрамори",
+                "age": "Протерозой",
+                "to_m": 525,
+                "from_m": 505
+              },
+              {
+                "material": "Амфибол-биотитови гнайси",
+                "age": "Протерозой",
+                "to_m": 527.4,
+                "from_m": 525
+              },
+              {
+                "material": "Пегматити",
+                "age": "Протерозой",
+                "to_m": 527.7,
+                "from_m": 527.4
+              },
+              {
+                "material": "Дребнозърнести амфиболити с пирит и халкопирит",
+                "age": "Протерозой",
+                "to_m": 542,
+                "from_m": 527.7
+              }
+            ]
+          }
+        },
+        "original_locality": "Сондаж №3 - Джебел",
+        "not_measured_at_arbitrary_target": true
+      }
     }
   ],
   "sources": [
@@ -92419,6 +93243,1047 @@
           "NO_ARTIFICIAL_COORDINATES",
           "NO_ARTIFICIAL_DEPTHS"
         ]
+      }
+    },
+    {
+      "source_id": "KRD-A1-001",
+      "title": "Сертификат №96 от 20.01.2015 г. - Кирково, сондаж №4",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.mh.government.bg/upload/6588/96-kirkovo-sondazh4-20-01-2015.pdf",
+      "publication_year": 2015,
+      "geographic_scope": "Находище Кирково, община Кирково, област Кърджали",
+      "research_origin": {
+        "source_id": "KRD-A1-001",
+        "title": "Сертификат №96 от 20.01.2015 г. - Кирково, сондаж №4",
+        "author": "Министерство на здравеопазването",
+        "publisher": null,
+        "year": 2015,
+        "url_or_path": "https://www.mh.government.bg/upload/6588/96-kirkovo-sondazh4-20-01-2015.pdf",
+        "page_or_figure": "Страници 1-2",
+        "source_type": "BOREHOLE_LITHOLOGICAL_SECTION",
+        "locality_original": "Находище Кирково, община Кирково, област Кърджали",
+        "scope_original": "IDENTIFIED_BOREHOLE",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "COORDINATES_NOT_FOUND_AFTER_RECHECK",
+          "CORE_RECOVERY_GAP_0_4_M",
+          "HISTORICAL_MINERAL_CERTIFICATE"
+        ],
+        "borehole_count": 1,
+        "section_count": 0,
+        "regional_evidence_count": 1
+      }
+    },
+    {
+      "source_id": "KRD-A1-002",
+      "title": "Балнеологична оценка №28 от 13.10.2026 г. - Джебел, сондаж №3",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.mh.government.bg/upload/20838/28-Dzhebel-sondazh3-13-10-2026.pdf",
+      "publication_year": 2026,
+      "geographic_scope": "1440 м северно от гр. Джебел",
+      "research_origin": {
+        "source_id": "KRD-A1-002",
+        "title": "Балнеологична оценка №28 от 13.10.2026 г. - Джебел, сондаж №3",
+        "author": "Министерство на здравеопазването",
+        "publisher": null,
+        "year": 2026,
+        "url_or_path": "https://www.mh.government.bg/upload/20838/28-Dzhebel-sondazh3-13-10-2026.pdf",
+        "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+        "source_type": "BOREHOLE_LITHOLOGICAL_SECTION",
+        "locality_original": "1440 м северно от гр. Джебел",
+        "scope_original": "IDENTIFIED_BOREHOLE",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "OFFICIAL_PROJECTED_COORDINATES_AVAILABLE",
+          "CRS_VERIFICATION_REQUIRED",
+          "WGS84_CONVERSION_PENDING",
+          "COMPLETE_LITHOLOGICAL_SECTION"
+        ],
+        "borehole_count": 1,
+        "section_count": 0,
+        "regional_evidence_count": 1
+      }
+    },
+    {
+      "source_id": "KRD-A2-003",
+      "title": "NI 43-101 Technical Report - Mineral Resource and Mineral Reserve Update - Ada Tepe Mine",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://minedocs.com/21/Ada-Tepe-TR-11202020.pdf",
+      "publication_year": 2020,
+      "geographic_scope": "Krumovgrad area, Ada Tepe Mine",
+      "research_origin": {
+        "source_id": "KRD-A2-003",
+        "title": "NI 43-101 Technical Report - Mineral Resource and Mineral Reserve Update - Ada Tepe Mine",
+        "author": "CSA Global / Dundee Precious Metals",
+        "publisher": null,
+        "year": 2020,
+        "url_or_path": "https://minedocs.com/21/Ada-Tepe-TR-11202020.pdf",
+        "page_or_figure": "Section 7, pages 30-33, Figures 7-1 to 7-3",
+        "source_type": "GEOLOGICAL_MAP_AND_SECTION",
+        "locality_original": "Krumovgrad area, Ada Tepe Mine",
+        "scope_original": "REGIONAL_AND_DEPOSIT",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "VISUAL_FETCH_HTTP_403",
+          "NO_INDIVIDUAL_LITHOLOGICAL_LOGS_EXTRACTED"
+        ],
+        "borehole_count": 0,
+        "section_count": 1,
+        "regional_evidence_count": 4
+      }
+    },
+    {
+      "source_id": "KRD-B2-004",
+      "title": "NI 43-101 Technical Report - Krumovgrad Project Bulgaria",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://minedocs.com/17/Krumovgrad_Project_TR_2014.pdf",
+      "publication_year": 2014,
+      "geographic_scope": "Ada Tepe deposit, Krumovgrad",
+      "research_origin": {
+        "source_id": "KRD-B2-004",
+        "title": "NI 43-101 Technical Report - Krumovgrad Project Bulgaria",
+        "author": "Dundee Precious Metals",
+        "publisher": null,
+        "year": 2014,
+        "url_or_path": "https://minedocs.com/17/Krumovgrad_Project_TR_2014.pdf",
+        "page_or_figure": "Section 14.2.1-14.2.2, page 105",
+        "source_type": "DRILLING_BASED_GEOLOGICAL_MODEL",
+        "locality_original": "Ada Tepe deposit, Krumovgrad",
+        "scope_original": "DEPOSIT",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "VISUAL_FETCH_HTTP_403",
+          "INDIVIDUAL_LOG_DATABASE_NOT_EXTRACTED"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 2
+      }
+    },
+    {
+      "source_id": "KRD-B2-005",
+      "title": "The Ada Tepe deposit: a sediment-hosted, detachment fault controlled, low-sulfidation gold deposit in the Eastern Rhodopes, SE Bulgaria",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.unige.ch/sciences/terre/research/Groups/mineral_resources/archive/pub_archive/marchev_ada_tepe_smpm04.pdf",
+      "publication_year": 2004,
+      "geographic_scope": "Ada Tepe, Kessebir dome, Eastern Rhodopes",
+      "research_origin": {
+        "source_id": "KRD-B2-005",
+        "title": "The Ada Tepe deposit: a sediment-hosted, detachment fault controlled, low-sulfidation gold deposit in the Eastern Rhodopes, SE Bulgaria",
+        "author": "P. Marchev et al.",
+        "publisher": null,
+        "year": 2004,
+        "url_or_path": "https://www.unige.ch/sciences/terre/research/Groups/mineral_resources/archive/pub_archive/marchev_ada_tepe_smpm04.pdf",
+        "page_or_figure": "Pages 62-63, Figure 3, Sections 3.1-3.2",
+        "source_type": "PRIMARY_ACADEMIC_GEOLOGICAL_STUDY",
+        "locality_original": "Ada Tepe, Kessebir dome, Eastern Rhodopes",
+        "scope_original": "DEPOSIT_AND_REGIONAL",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "DRILL_TRACES_ARE_NOT_INDIVIDUAL_LITHOLOGICAL_LOGS"
+        ],
+        "borehole_count": 0,
+        "section_count": 1,
+        "regional_evidence_count": 4
+      }
+    },
+    {
+      "source_id": "KRD-B2-006",
+      "title": "Architecture of the epithermal vein system in the Krumovgrad ore field and its relationship to the structure of the NE-flank of the Kesebir-Kardamos dome",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2025_2/PDF/35_Ivanov_Rev_BGS_2025-2.pdf",
+      "publication_year": 2025,
+      "geographic_scope": "Krumovgrad ore field, Kesebir-Kardamos dome",
+      "research_origin": {
+        "source_id": "KRD-B2-006",
+        "title": "Architecture of the epithermal vein system in the Krumovgrad ore field and its relationship to the structure of the NE-flank of the Kesebir-Kardamos dome",
+        "author": "Boris Ivanov; Yana Georgieva; Nikolay Zhivkov; Istvan Marton; Stefan Metodiev; Neven Georgiev",
+        "publisher": null,
+        "year": 2025,
+        "url_or_path": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2025_2/PDF/35_Ivanov_Rev_BGS_2025-2.pdf",
+        "page_or_figure": "Pages 226-230, Figure 1",
+        "source_type": "PRIMARY_STRUCTURAL_AND_LITHOLOGICAL_STUDY",
+        "locality_original": "Krumovgrad ore field, Kesebir-Kardamos dome",
+        "scope_original": "MULTIPLE_PROSPECTS_AND_REGIONAL",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "STRUCTURAL_MEASUREMENTS_NOT_BOREHOLE_COUNT",
+          "NO_INDIVIDUAL_DEPTH_INTERVALS_EXTRACTED"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 6
+      }
+    },
+    {
+      "source_id": "KRD-A2-007",
+      "title": "Lithological and magnetostratigraphic correlation of Paleogene sections in the Eastern Rhodopes (SE Bulgaria)",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.sav.sk/journals/uploads/05171442GeolCarp_Vol55_No3_251_260.pdf",
+      "publication_year": 2004,
+      "geographic_scope": "West and southeast of Momchilgrad",
+      "research_origin": {
+        "source_id": "KRD-A2-007",
+        "title": "Lithological and magnetostratigraphic correlation of Paleogene sections in the Eastern Rhodopes (SE Bulgaria)",
+        "author": "Stiliyan Moskovski; Vassil Karloukovski; Zlatka Milakovska; Alexandra Harkovska; Malcolm Pringle",
+        "publisher": null,
+        "year": 2004,
+        "url_or_path": "https://www.sav.sk/journals/uploads/05171442GeolCarp_Vol55_No3_251_260.pdf",
+        "page_or_figure": "Geologica Carpathica 55(3), pp.251-260, Figures 1,2,16",
+        "source_type": "PRIMARY_MEASURED_STRATIGRAPHIC_SECTIONS",
+        "locality_original": "West and southeast of Momchilgrad",
+        "scope_original": "MULTIPLE_MEASURED_FIELD_SECTIONS",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "THICKNESS_NOT_BOREHOLE_DEPTH",
+          "COMPOSITE_FIELD_SECTIONS",
+          "NO_SYNTHETIC_BOREHOLES"
+        ],
+        "borehole_count": 0,
+        "section_count": 2,
+        "regional_evidence_count": 11
+      }
+    },
+    {
+      "source_id": "KRD-B3-008",
+      "title": "First steps for monitoring on possibly active fault zone in East Rhodopes, Bulgaria",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.irsm.cas.cz/materialy/acta_content/2005_01/1_Dobrev.pdf",
+      "publication_year": 2005,
+      "geographic_scope": "Between General Geshevo and Ustren",
+      "research_origin": {
+        "source_id": "KRD-B3-008",
+        "title": "First steps for monitoring on possibly active fault zone in East Rhodopes, Bulgaria",
+        "author": "Nikolai Dobrev; Radoslav Varbanov; Margarita Matova; Georgi Frangov; George Drakatos; Blahoslav Kostak",
+        "publisher": null,
+        "year": 2005,
+        "url_or_path": "https://www.irsm.cas.cz/materialy/acta_content/2005_01/1_Dobrev.pdf",
+        "page_or_figure": "Acta Geodyn. Geomater. 2(1), pp.7-12, Figures 1-3",
+        "source_type": "PRIMARY_GEOLOGICAL_GEOPHYSICAL_STUDY",
+        "locality_original": "Between General Geshevo and Ustren",
+        "scope_original": "LOCAL_FIELD_AREA_AND_REGIONAL",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "NO_INDIVIDUAL_BOREHOLE_LOGS",
+          "RESISTIVITY_NOT_DIRECT_LITHOLOGY",
+          "FORMATION_THICKNESS_NOT_DEPTH"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 7
+      }
+    },
+    {
+      "source_id": "KRD-A3-009",
+      "title": "Геоложки маршрути в Източни Родопи",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.bgd.bg/EXCURZII/Excursion_2004/marshrut.htm",
+      "publication_year": 2004,
+      "geographic_scope": "Източнородопска палеогенска вулканска област",
+      "research_origin": {
+        "source_id": "KRD-A3-009",
+        "title": "Геоложки маршрути в Източни Родопи",
+        "author": "Йоцо Янев",
+        "publisher": null,
+        "year": 2004,
+        "url_or_path": "https://www.bgd.bg/EXCURZII/Excursion_2004/marshrut.htm",
+        "page_or_figure": "Маршрут 29.05.2004, HTML",
+        "source_type": "FIELD_GEOLOGICAL_EXCURSION_GUIDE",
+        "locality_original": "Източнородопска палеогенска вулканска област",
+        "scope_original": "REGIONAL_ROUTE_AND_LOCAL_OUTCROPS",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": null,
+        "quality_flags": [
+          "FIELD_GUIDE_WITH_PRIMARY_AND_SECONDARY_EVIDENCE",
+          "AGGREGATE_SECTION_NOT_INDIVIDUAL_BOREHOLE",
+          "NO_SYNTHETIC_DEPTH_INTERVALS"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 11
+      }
+    },
+    {
+      "source_id": "KRD-A3-010",
+      "title": "Observation and study of pollution in the region of the Lead-Zinc Factory - Kardzali",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://mgu.bg/wp-content/uploads/2022/02/ANNUAL-II-Vol.-45.pdf",
+      "publication_year": 2002,
+      "geographic_scope": "Lead-Zinc Factory, Kardzali",
+      "research_origin": {
+        "source_id": "KRD-A3-010",
+        "title": "Observation and study of pollution in the region of the Lead-Zinc Factory - Kardzali",
+        "author": "Slaveyko Tsvetkov",
+        "publisher": null,
+        "year": 2002,
+        "url_or_path": "https://mgu.bg/wp-content/uploads/2022/02/ANNUAL-II-Vol.-45.pdf",
+        "page_or_figure": "Annual MGU, vol.44-45, Part II, geological and hydrogeological conditions, pp.129-130",
+        "source_type": "PRIMARY_ENGINEERING_HYDROGEOLOGICAL_STUDY",
+        "locality_original": "Lead-Zinc Factory, Kardzali",
+        "scope_original": "LOCAL_DRILLING_SUPPORTED_AREA",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "INDIVIDUAL_LITHOLOGICAL_LOGS_NOT_PUBLISHED",
+          "FIGURE_1_IS_CONSTRUCTION_NOT_LITHOLOGY",
+          "THICKNESS_NOT_INDIVIDUAL_BOREHOLE_DEPTH",
+          "VISUAL_FETCH_FILE_TOO_LARGE",
+          "HISTORICAL_INDUSTRIAL_POLLUTION_CONTEXT"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 7
+      }
+    },
+    {
+      "source_id": "KRD-B2-011",
+      "title": "Геология, химичен състав и приложение на бентонитовите глини от находище Пропаст - Доброволец, Кърджали за сондажни цели",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://mgu.bg/wp-content/uploads/2025/05/ANNUAL-I-Vol.-50-109-113.pdf",
+      "publication_year": 2007,
+      "geographic_scope": "Propast-Dobrovoletz, east of Kurdjali",
+      "research_origin": {
+        "source_id": "KRD-B2-011",
+        "title": "Геология, химичен състав и приложение на бентонитовите глини от находище Пропаст - Доброволец, Кърджали за сондажни цели",
+        "author": "Станислав Стойков; Милко Харизанов; Валери Златанов",
+        "publisher": null,
+        "year": 2007,
+        "url_or_path": "https://mgu.bg/wp-content/uploads/2025/05/ANNUAL-I-Vol.-50-109-113.pdf",
+        "page_or_figure": "Geological setting, printed page 112",
+        "source_type": "GEOLOGICAL_AND_LABORATORY_STUDY",
+        "locality_original": "Propast-Dobrovoletz, east of Kurdjali",
+        "scope_original": "MINERAL_DEPOSIT",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "NO_INDIVIDUAL_BOREHOLE_LOGS",
+          "NO_DOCUMENTED_DEPTH_BOUNDARIES",
+          "PRINTED_PAGINATION_DIFFERS_FROM_FILENAME"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 4
+      }
+    },
+    {
+      "source_id": "KRD-B2-012",
+      "title": "Three-dimensional distribution of lithology varieties and stratigraphy units in Beli Plast deposit, Bulgaria",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.researchgate.net/publication/357096761_THREE-DIMENSIONAL_DISTRIBUTION_OF_LITHOLOGY_VARIETIES_AND_STRATIGRAPHY_UNITS_IN_BELI_PLAST_DEPOSIT_BULGARIA",
+      "publication_year": 2011,
+      "geographic_scope": "North of Beli Plast village, Kurdjali district",
+      "research_origin": {
+        "source_id": "KRD-B2-012",
+        "title": "Three-dimensional distribution of lithology varieties and stratigraphy units in Beli Plast deposit, Bulgaria",
+        "author": "Svetlozar Bakardjiev; Miloslav Katsarov",
+        "publisher": null,
+        "year": 2011,
+        "url_or_path": "https://www.researchgate.net/publication/357096761_THREE-DIMENSIONAL_DISTRIBUTION_OF_LITHOLOGY_VARIETIES_AND_STRATIGRAPHY_UNITS_IN_BELI_PLAST_DEPOSIT_BULGARIA",
+        "page_or_figure": "Published abstract",
+        "source_type": "DRILLING_BASED_GEOSTATISTICAL_MODEL",
+        "locality_original": "North of Beli Plast village, Kurdjali district",
+        "scope_original": "MINERAL_DEPOSIT",
+        "original_status": "ABSTRACT_VERIFIED",
+        "processing_status": "ABSTRACT_ONLY",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "FULL_TEXT_PENDING",
+          "INDIVIDUAL_LOGS_NOT_EXTRACTED",
+          "ELEVATION_NOT_BOREHOLE_DEPTH"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 2
+      }
+    },
+    {
+      "source_id": "KRD-B2-013",
+      "title": "Geochemistry of bentonite clays from the Eastern Rhodopes (SE Bulgaria): preliminary results",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2020_3/PDF/20_Ivanova_GeoSci_2020.pdf",
+      "publication_year": 2020,
+      "geographic_scope": "Eastern Rhodopes, Kardzhali area",
+      "research_origin": {
+        "source_id": "KRD-B2-013",
+        "title": "Geochemistry of bentonite clays from the Eastern Rhodopes (SE Bulgaria): preliminary results",
+        "author": "Rositsa Ivanova; Dimitrina Dimitrova; Ivanina Sergeeva; Yana Tzvetanova",
+        "publisher": null,
+        "year": 2020,
+        "url_or_path": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2020_3/PDF/20_Ivanova_GeoSci_2020.pdf",
+        "page_or_figure": "Review BGS 81(3), pp.78-80, Material and methods, Table 1",
+        "source_type": "PRIMARY_LITHOLOGICAL_MINERALOGICAL_SAMPLING",
+        "locality_original": "Eastern Rhodopes, Kardzhali area",
+        "scope_original": "MULTIPLE_LOCAL_FIELD_SAMPLES",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "NO_INDIVIDUAL_BOREHOLE_LOGS",
+          "FIELD_SAMPLES_NOT_DEPTH_INTERVALS",
+          "VISUAL_FETCH_SERVER_CHALLENGE"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 6
+      }
+    },
+    {
+      "source_id": "KRD-B1-014",
+      "title": "Окончателен проект за ОУПО Черноочене",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://chernoochene.com/wp-content/uploads/2016/05/oupo_chernoochene_obiasnitelna_zapiska.pdf",
+      "publication_year": 2017,
+      "geographic_scope": "Община Черноочене",
+      "research_origin": {
+        "source_id": "KRD-B1-014",
+        "title": "Окончателен проект за ОУПО Черноочене",
+        "author": "ГЕО ГРУП ООД",
+        "publisher": null,
+        "year": 2017,
+        "url_or_path": "https://chernoochene.com/wp-content/uploads/2016/05/oupo_chernoochene_obiasnitelna_zapiska.pdf",
+        "page_or_figure": "Геоложки строеж, стр. 61-63; раздел 4.11",
+        "source_type": "OFFICIAL_ENGINEERING_GEOLOGICAL_CONTEXT",
+        "locality_original": "Община Черноочене",
+        "scope_original": "MUNICIPAL_AND_LOCAL_GEOLOGICAL_CONTEXT",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "REGIONAL_AND_LOCAL_CONTEXT",
+          "THICKNESS_NOT_DEPTH",
+          "NO_INDIVIDUAL_BOREHOLE_LOGS"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 7
+      }
+    },
+    {
+      "source_id": "KRD-B2-015",
+      "title": "Металогенна еволюция на Момчилградската депресия (Източни Родопи)",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://mgu.bg/wp-content/uploads/2021/10/vgeorgiev.pdf",
+      "publication_year": null,
+      "geographic_scope": "Кърджали - Крумовград - Подкова - Светослав",
+      "research_origin": {
+        "source_id": "KRD-B2-015",
+        "title": "Металогенна еволюция на Момчилградската депресия (Източни Родопи)",
+        "author": "В. Георгиев",
+        "publisher": null,
+        "year": null,
+        "url_or_path": "https://mgu.bg/wp-content/uploads/2021/10/vgeorgiev.pdf",
+        "page_or_figure": "Геоложка карта и легенда; описание на вулканските комплекси",
+        "source_type": "ACADEMIC_REGIONAL_GEOLOGY",
+        "locality_original": "Кърджали - Крумовград - Подкова - Светослав",
+        "scope_original": "REGIONAL",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "MAP_TEXT_AND_LEGEND_VERIFIED",
+          "VISUAL_MAP_CHECK_PENDING",
+          "PUBLICATION_YEAR_PENDING",
+          "NO_INDIVIDUAL_BOREHOLE_LOGS"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 6
+      }
+    },
+    {
+      "source_id": "KRD-B1-016",
+      "title": "Explanatory note to the geological map of the Republic of Bulgaria, scale 1:50 000, map sheet K-35-75-V (Komuniga)",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.researchgate.net/publication/331100454_EXPLANATORY_NOTE_TO_THE_GEOLOGICAL_MAP_OF_THE_REPUBLIC_OF_BULGARIA_SCALE_150_000_MAP_SHEET_K-35-75-V_Komuniga",
+      "publication_year": null,
+      "geographic_scope": "Комунига",
+      "research_origin": {
+        "source_id": "KRD-B1-016",
+        "title": "Explanatory note to the geological map of the Republic of Bulgaria, scale 1:50 000, map sheet K-35-75-V (Komuniga)",
+        "author": null,
+        "publisher": null,
+        "year": null,
+        "url_or_path": "https://www.researchgate.net/publication/331100454_EXPLANATORY_NOTE_TO_THE_GEOLOGICAL_MAP_OF_THE_REPUBLIC_OF_BULGARIA_SCALE_150_000_MAP_SHEET_K-35-75-V_Komuniga",
+        "page_or_figure": "Публикуван документ и библиография",
+        "source_type": "GEOLOGICAL_MAP_EXPLANATORY_NOTE",
+        "locality_original": "Комунига",
+        "scope_original": "GEOLOGICAL_MAP_SHEET",
+        "original_status": "NEEDS_REVIEW",
+        "processing_status": "BLOCKED_PENDING_SOURCE_REVIEW",
+        "source_pages_visually_checked": null,
+        "quality_flags": [
+          "TEXT_ENCODING_CORRUPTED",
+          "READABLE_ORIGINAL_REQUIRED",
+          "BIBLIOGRAPHIC_REFERENCE_ONLY",
+          "NOT_READY_FOR_RUNTIME"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 0
+      }
+    },
+    {
+      "source_id": "KRD-A2-017",
+      "title": "Скарновото сребърно-полиметално находище Ардино",
+      "institution": "Българско геологическо дружество",
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.bgd.bg/REVIEW_BGS/REVIEW_BGD_1992_3/PDF/01_Bonev.pdf",
+      "publication_year": 1992,
+      "geographic_scope": "Ардинско рудно поле, гр. Ардино и околностите",
+      "research_origin": {
+        "source_id": "KRD-A2-017",
+        "title": "Скарновото сребърно-полиметално находище Ардино",
+        "author": "Иван К. Бонев; Веселин Н. Янев",
+        "publisher": "Българско геологическо дружество",
+        "year": 1992,
+        "url_or_path": "https://www.bgd.bg/REVIEW_BGS/REVIEW_BGD_1992_3/PDF/01_Bonev.pdf",
+        "page_or_figure": "Том LIII, кн. 3, стр. 3-5, фиг. 1",
+        "source_type": "PRIMARY_MINING_AND_DRILLING_SUPPORTED_GEOLOGY",
+        "locality_original": "Ардинско рудно поле, гр. Ардино и околностите",
+        "scope_original": "DEPOSIT_AND_LOCAL_GEOLOGY",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "PRIMARY_FIELD_AND_MINING_EVIDENCE",
+          "GEOLOGICAL_MAP_VISUALLY_VERIFIED",
+          "NO_INDIVIDUAL_DEPTH_LOGS_EXTRACTED",
+          "THICKNESS_NOT_BOREHOLE_DEPTH"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 11
+      }
+    },
+    {
+      "source_id": "KRD-B1-018",
+      "title": "Доклад за екологична оценка и оценка за съвместимост - община Ардино",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://ardino.bg/uploads/ads_docs/ekologicen%20doklad_112015_00100010.pdf",
+      "publication_year": null,
+      "geographic_scope": "Община Ардино",
+      "research_origin": {
+        "source_id": "KRD-B1-018",
+        "title": "Доклад за екологична оценка и оценка за съвместимост - община Ардино",
+        "author": "Общинска проектна документация",
+        "publisher": null,
+        "year": null,
+        "url_or_path": "https://ardino.bg/uploads/ads_docs/ekologicen%20doklad_112015_00100010.pdf",
+        "page_or_figure": "Раздел 3.1.2, Геоложки строеж и полезни изкопаеми, фиг. 6",
+        "source_type": "OFFICIAL_REGIONAL_GEOLOGICAL_CONTEXT",
+        "locality_original": "Община Ардино",
+        "scope_original": "MUNICIPAL_AND_LOCAL_GEOLOGY",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "NO_INDIVIDUAL_BOREHOLE_LOGS",
+          "FIGURE_6_VISUAL_RECHECK_PENDING",
+          "PUBLICATION_YEAR_PENDING",
+          "REGIONAL_CONTEXT_NOT_DEPTH_PROFILE"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 11
+      }
+    },
+    {
+      "source_id": "KRD-A2-019",
+      "title": "NI 43-101 Technical Report - Mineral Resource and Mineral Reserve Update - Ada Tepe Mine",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://dpmmetals.com/site/assets/files/16110/ada-tepe-technical-report-february-2023.pdf",
+      "publication_year": 2023,
+      "geographic_scope": "Ada Tepe Mine, Krumovgrad, Kardjali District",
+      "research_origin": {
+        "source_id": "KRD-A2-019",
+        "title": "NI 43-101 Technical Report - Mineral Resource and Mineral Reserve Update - Ada Tepe Mine",
+        "author": "CSA Global / Dundee Precious Metals",
+        "publisher": null,
+        "year": 2023,
+        "url_or_path": "https://dpmmetals.com/site/assets/files/16110/ada-tepe-technical-report-february-2023.pdf",
+        "page_or_figure": "Section 7, pp.49-52, Figures 7-1, 7-2, 7-3",
+        "source_type": "DRILLING_SUPPORTED_GEOLOGICAL_MAP_AND_SECTION",
+        "locality_original": "Ada Tepe Mine, Krumovgrad, Kardjali District",
+        "scope_original": "DEPOSIT_AND_REGIONAL",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "VISUAL_FETCH_FILE_TOO_LARGE",
+          "SHARED_MAPS_WITH_2020_REPORT",
+          "DEDUPLICATE_SHARED_FIGURES_IN_STEP_3",
+          "NO_INDIVIDUAL_LITHOLOGICAL_LOGS_EXTRACTED"
+        ],
+        "borehole_count": 0,
+        "section_count": 1,
+        "regional_evidence_count": 8
+      }
+    },
+    {
+      "source_id": "KRD-B1-020",
+      "title": "Актуализация на анализа, оценката и картите на геоложкия риск на територията на Република България - 2025 г.",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://gis.mrrb.government.bg/KGR/11%20Geolojki%20risk%202025/Struktura%20GR2025/00%20AAOKG%20risk/%D0%93%D0%B5%D0%BE%D0%BB%D0%BE%D0%B6%D0%BA%D0%B8.%D1%80%D0%B8%D1%81%D0%BA-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%2C%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0%2C%D0%BA%D0%B0%D1%80%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%80%D0%B0%D0%BD%D0%B5-2025.pdf",
+      "publication_year": 2025,
+      "geographic_scope": "Област Кърджали",
+      "research_origin": {
+        "source_id": "KRD-B1-020",
+        "title": "Актуализация на анализа, оценката и картите на геоложкия риск на територията на Република България - 2025 г.",
+        "author": "МРРБ",
+        "publisher": null,
+        "year": 2025,
+        "url_or_path": "https://gis.mrrb.government.bg/KGR/11%20Geolojki%20risk%202025/Struktura%20GR2025/00%20AAOKG%20risk/%D0%93%D0%B5%D0%BE%D0%BB%D0%BE%D0%B6%D0%BA%D0%B8.%D1%80%D0%B8%D1%81%D0%BA-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%2C%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0%2C%D0%BA%D0%B0%D1%80%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%80%D0%B0%D0%BD%D0%B5-2025.pdf",
+        "page_or_figure": "Област Кърджали - Геоложки особености",
+        "source_type": "OFFICIAL_REGIONAL_GEOLOGICAL_ASSESSMENT",
+        "locality_original": "Област Кърджали",
+        "scope_original": "OBLAST",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "REGIONAL_CONTEXT_ONLY",
+          "NO_INDIVIDUAL_DEPTH_INTERVALS",
+          "EXACT_PAGE_PENDING"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 1
+      }
+    },
+    {
+      "source_id": "KRD-B1-021",
+      "title": "Общински план за развитие на община Кърджали 2014-2020",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://kardjali.bg/docs/normativni_documenti/OPR-2014-2020-last.pdf",
+      "publication_year": 2014,
+      "geographic_scope": "Община Кърджали",
+      "research_origin": {
+        "source_id": "KRD-B1-021",
+        "title": "Общински план за развитие на община Кърджали 2014-2020",
+        "author": "Община Кърджали",
+        "publisher": null,
+        "year": 2014,
+        "url_or_path": "https://kardjali.bg/docs/normativni_documenti/OPR-2014-2020-last.pdf",
+        "page_or_figure": "Раздел 2.3.2 - Геоложки състав, почви и полезни изкопаеми",
+        "source_type": "OFFICIAL_REGIONAL_LITHOLOGICAL_CONTEXT",
+        "locality_original": "Община Кърджали",
+        "scope_original": "MUNICIPAL",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "REGIONAL_CONTEXT_ONLY",
+          "NO_INDIVIDUAL_BOREHOLE_LOGS",
+          "EXACT_PAGE_PENDING"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 4
+      }
+    },
+    {
+      "source_id": "KRD-B3-022",
+      "title": "Volcanic ring morphostructures in Momchilgrad area of Southeastern Rhodope, Bulgaria",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2024_3/PDF/04_Klimentov_REV_BGS_2024-3.pdf",
+      "publication_year": 2024,
+      "geographic_scope": "Momchilgrad area, Eastern Rhodopes",
+      "research_origin": {
+        "source_id": "KRD-B3-022",
+        "title": "Volcanic ring morphostructures in Momchilgrad area of Southeastern Rhodope, Bulgaria",
+        "author": "Stoyan Klimentov",
+        "publisher": null,
+        "year": 2024,
+        "url_or_path": "https://bgd.bg/REVIEW_BGS/REVIEW_BGD_2024_3/PDF/04_Klimentov_REV_BGS_2024-3.pdf",
+        "page_or_figure": "Review BGS 85(3), pp.23-26, Figure 1",
+        "source_type": "PRIMARY_REMOTE_SENSING_AND_GEOLOGICAL_MAP",
+        "locality_original": "Momchilgrad area, Eastern Rhodopes",
+        "scope_original": "REGIONAL_VOLCANIC_STRUCTURES",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "MAP_VISUALLY_VERIFIED",
+          "REMOTE_SENSING_INTERPRETATION",
+          "NO_INDIVIDUAL_BOREHOLE_LOGS",
+          "NO_SYNTHETIC_DEPTH_INTERVALS"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 9
+      }
+    },
+    {
+      "source_id": "KRD-B2-023",
+      "title": "Strontium isotope studies of the Late Alpine extensional magmatism in Eastern Rhodopes",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://mgu.bg/wp-content/uploads/2025/05/ANNUAL-I-Vol.-51-103-108.pdf",
+      "publication_year": 2008,
+      "geographic_scope": "Eastern Rhodopes, Bulgaria",
+      "research_origin": {
+        "source_id": "KRD-B2-023",
+        "title": "Strontium isotope studies of the Late Alpine extensional magmatism in Eastern Rhodopes",
+        "author": "Vladimir Georgiev; Petar Milovanov; Pavel Monchev",
+        "publisher": null,
+        "year": 2008,
+        "url_or_path": "https://mgu.bg/wp-content/uploads/2025/05/ANNUAL-I-Vol.-51-103-108.pdf",
+        "page_or_figure": "Annual MGU, Vol.51, Part I, pp.103-108, Figure 1, p.104",
+        "source_type": "PRIMARY_GEOLOGICAL_MAPPING_AND_LABORATORY_STUDY",
+        "locality_original": "Eastern Rhodopes, Bulgaria",
+        "scope_original": "REGIONAL_GEOLOGY",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "MAP_VISUALLY_VERIFIED",
+          "REGIONAL_MAPPING_EVIDENCE",
+          "SAMPLE_LOCATIONS_NOT_BOREHOLES",
+          "NO_INDIVIDUAL_DEPTH_INTERVALS"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 8
+      }
+    },
+    {
+      "source_id": "KRD-A2-024",
+      "title": "Velocity Announces Positive Drill Results from the Sedefche Gold Project, Bulgaria",
+      "institution": null,
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://velocityminerals.com/site/assets/files/5323/nr20-10_sedefche_drill_results_final.pdf",
+      "publication_year": 2020,
+      "geographic_scope": "Sedefche Gold Project, Bulgaria",
+      "research_origin": {
+        "source_id": "KRD-A2-024",
+        "title": "Velocity Announces Positive Drill Results from the Sedefche Gold Project, Bulgaria",
+        "author": "Velocity Minerals Ltd.",
+        "publisher": null,
+        "year": 2020,
+        "url_or_path": "https://velocityminerals.com/site/assets/files/5323/nr20-10_sedefche_drill_results_final.pdf",
+        "page_or_figure": "NR-20-10, 19.05.2020, pp.1-3, Figures 1-3",
+        "source_type": "PRIMARY_DRILLING_SUPPORTED_GEOLOGICAL_SECTIONS",
+        "locality_original": "Sedefche Gold Project, Bulgaria",
+        "scope_original": "DEPOSIT_AND_DRILL_SECTIONS",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "MAP_AND_SECTIONS_VISUALLY_VERIFIED",
+          "ASSAY_INTERVALS_NOT_LITHOLOGICAL_INTERVALS",
+          "ELEVATION_NOT_BOREHOLE_DEPTH",
+          "MAP_GRID_CRS_PENDING",
+          "NO_SYNTHETIC_BOREHOLES"
+        ],
+        "borehole_count": 0,
+        "section_count": 2,
+        "regional_evidence_count": 3
+      }
+    },
+    {
+      "source_id": "KRD-A2-025",
+      "title": "Silver-bearing minerals from the ore body North in Sedefche epithermal Au-Ag deposit (Eastern Rhodopes)",
+      "institution": "University of Mining and Geology",
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://mgu.bg/wp-content/uploads/2025/06/ANNUAL-I-Vol.-48-139-144.pdf",
+      "publication_year": 2005,
+      "geographic_scope": "Sedefche deposit, Zvezdel-Pcheloiad ore field",
+      "research_origin": {
+        "source_id": "KRD-A2-025",
+        "title": "Silver-bearing minerals from the ore body North in Sedefche epithermal Au-Ag deposit (Eastern Rhodopes)",
+        "author": "Strashimir Strashimirov; Sergey Dobrev; Stefan Stamenov; Haralampi Dragiev",
+        "publisher": "University of Mining and Geology",
+        "year": 2005,
+        "url_or_path": "https://mgu.bg/wp-content/uploads/2025/06/ANNUAL-I-Vol.-48-139-144.pdf",
+        "page_or_figure": "Annual MGU Vol.48, Part I, geological setting, printed pp.143-144, Figure 1",
+        "source_type": "PRIMARY_GEOLOGICAL_MAP_AND_SECTION",
+        "locality_original": "Sedefche deposit, Zvezdel-Pcheloiad ore field",
+        "scope_original": "DEPOSIT_AND_LOCAL_GEOLOGY",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "MAP_AND_SECTION_VISUALLY_VERIFIED",
+          "ELEVATION_NOT_BOREHOLE_DEPTH",
+          "NO_INDIVIDUAL_BOREHOLE_LOGS"
+        ],
+        "borehole_count": 0,
+        "section_count": 1,
+        "regional_evidence_count": 9
+      }
+    },
+    {
+      "source_id": "KRD-B2-026",
+      "title": "Sedimentary-rock-hosted epithermal systems of the Tertiary Eastern Rhodopes, Bulgaria: new constraints from the Stremtsi gold prospect",
+      "institution": "Geological Society of London",
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.researchgate.net/publication/260137336_Sedimentary-rock-hosted_epithermal_systems_of_the_Tertiary_Eastern_Rhodopes_Bulgaria_New_constraints_from_the_Stremtsi_gold_prospect",
+      "publication_year": 2014,
+      "geographic_scope": "Stremtsi gold prospect, north of Kardjali",
+      "research_origin": {
+        "source_id": "KRD-B2-026",
+        "title": "Sedimentary-rock-hosted epithermal systems of the Tertiary Eastern Rhodopes, Bulgaria: new constraints from the Stremtsi gold prospect",
+        "author": "Robert Moritz et al.",
+        "publisher": "Geological Society of London",
+        "year": 2014,
+        "url_or_path": "https://www.researchgate.net/publication/260137336_Sedimentary-rock-hosted_epithermal_systems_of_the_Tertiary_Eastern_Rhodopes_Bulgaria_New_constraints_from_the_Stremtsi_gold_prospect",
+        "page_or_figure": "Local geological setting, Figures 3-4",
+        "source_type": "PRIMARY_FIELD_LITHOLOGICAL_STUDY",
+        "locality_original": "Stremtsi gold prospect, north of Kardjali",
+        "scope_original": "DEPOSIT_AND_LOCAL_GEOLOGY",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "FIELD_LAYER_THICKNESS_NOT_BOREHOLE_DEPTH",
+          "NO_INDIVIDUAL_LITHOLOGICAL_LOGS",
+          "MAP_VISUAL_RECHECK_PENDING",
+          "ANCIENT_HYDROTHERMAL_MINERALIZATION_NOT_MODERN_THERMAL_WATER"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 10
+      }
+    },
+    {
+      "source_id": "KRD-A2-027",
+      "title": "Минерален състав на епитермалното златно рудопроявление Македонци, Кърджалийско",
+      "institution": "Минно-геоложки университет",
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://mgu.bg/wp-content/uploads/2025/05/Vol.-53-I-2010-111-118.pdf",
+      "publication_year": 2010,
+      "geographic_scope": "Връх Калето, землище Македонци, около 8 km южно от Кърджали",
+      "research_origin": {
+        "source_id": "KRD-A2-027",
+        "title": "Минерален състав на епитермалното златно рудопроявление Македонци, Кърджалийско",
+        "author": "Страшимир Страшимиров; Сергей Добрев; Хари Драгиев",
+        "publisher": "Минно-геоложки университет",
+        "year": 2010,
+        "url_or_path": "https://mgu.bg/wp-content/uploads/2025/05/Vol.-53-I-2010-111-118.pdf",
+        "page_or_figure": "Том 53, св. I, стр.111-118, фиг.1-2",
+        "source_type": "PRIMARY_FIELD_GEOLOGY_AND_GEOLOGICAL_MAPS",
+        "locality_original": "Връх Калето, землище Македонци, около 8 km южно от Кърджали",
+        "scope_original": "DEPOSIT_AND_REGIONAL_GEOLOGY",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "TWO_MAPS_VISUALLY_VERIFIED",
+          "NO_INDIVIDUAL_BOREHOLE_LOGS",
+          "MAP_GEOREFERENCING_PENDING",
+          "NO_SYNTHETIC_DEPTH_INTERVALS"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 9
+      }
+    },
+    {
+      "source_id": "KRD-A2-028",
+      "title": "Lithostratigraphy and formation conditions of Maastrichtian-Paleocene deposits in Krumovgrad District",
+      "institution": "Geologica Balcanica",
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.geologica-balcanica.eu/sites/default/files/articles/GB%20%281992%29_22%20%283%29_pp.%2071-82%20%28Goranov%20and%20Atanasov%29.pdf",
+      "publication_year": 1992,
+      "geographic_scope": "Krumovgrad District",
+      "research_origin": {
+        "source_id": "KRD-A2-028",
+        "title": "Lithostratigraphy and formation conditions of Maastrichtian-Paleocene deposits in Krumovgrad District",
+        "author": "Aleksander Goranov; Georgi Atanasov",
+        "publisher": "Geologica Balcanica",
+        "year": 1992,
+        "url_or_path": "https://www.geologica-balcanica.eu/sites/default/files/articles/GB%20%281992%29_22%20%283%29_pp.%2071-82%20%28Goranov%20and%20Atanasov%29.pdf",
+        "page_or_figure": "Vol.22(3), pp.71-82, Figures 1-5",
+        "source_type": "PRIMARY_MEASURED_STRATIGRAPHIC_SECTIONS",
+        "locality_original": "Krumovgrad District",
+        "scope_original": "MULTIPLE_FIELD_SECTIONS_AND_GEOLOGICAL_MAP",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "FIVE_FIELD_SECTIONS_VISUALLY_VERIFIED",
+          "GEOLOGICAL_MAP_VISUALLY_VERIFIED",
+          "STRATIGRAPHIC_THICKNESS_NOT_BOREHOLE_DEPTH",
+          "KANDILKA_PACKAGE_4_TEXT_FIGURE_DISCREPANCY",
+          "NO_SYNTHETIC_BOREHOLES"
+        ],
+        "borehole_count": 0,
+        "section_count": 5,
+        "regional_evidence_count": 6
+      }
+    },
+    {
+      "source_id": "KRD-A2-029",
+      "title": "Natural reservoir systems in the Tertiary section of the East Rhodope Depression and perspectives for storage of natural gas and carbon dioxide",
+      "institution": "Aristotle University of Thessaloniki",
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://geolib.geo.auth.gr/digeo/index.php/sasg/article/download/7677/7433",
+      "publication_year": 2010,
+      "geographic_scope": "East Rhodope Depression, Dzhebel and Krumovgrad depressions",
+      "research_origin": {
+        "source_id": "KRD-A2-029",
+        "title": "Natural reservoir systems in the Tertiary section of the East Rhodope Depression and perspectives for storage of natural gas and carbon dioxide",
+        "author": "V. Balinov; M. Doncheva; E. Zaneva-Dobranova",
+        "publisher": "Aristotle University of Thessaloniki",
+        "year": 2010,
+        "url_or_path": "https://geolib.geo.auth.gr/digeo/index.php/sasg/article/download/7677/7433",
+        "page_or_figure": "Special volume 100, pp.7-13, Figures 1-4, Sections 4.1-4.2",
+        "source_type": "REGIONAL_LITHOSTRATIGRAPHIC_AND_SEISMIC_STUDY",
+        "locality_original": "East Rhodope Depression, Dzhebel and Krumovgrad depressions",
+        "scope_original": "REGIONAL_GEOLOGICAL_STRUCTURES",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "REGIONAL_SEISMIC_INTERPRETATION_NOT_BOREHOLE_LOG",
+          "FORMATION_THICKNESS_NOT_POINT_DEPTH",
+          "VISUAL_FETCH_TIMEOUT",
+          "SHARED_PROFILE_WITH_HASKOVO_RESEARCH",
+          "NO_INDIVIDUAL_LITHOLOGICAL_LOGS",
+          "RESERVOIR_PROPERTIES_PARTIALLY_HYPOTHETICAL"
+        ],
+        "borehole_count": 0,
+        "section_count": 2,
+        "regional_evidence_count": 10
+      }
+    },
+    {
+      "source_id": "KRD-A3-030",
+      "title": "Sedimentological and Mineralogical Signature of Torrential Flow Depositional Area: A Case Study from Eastern Rhodopes, Bulgaria",
+      "institution": "MDPI",
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.mdpi.com/2673-7086/6/1/2",
+      "publication_year": 2026,
+      "geographic_scope": "Damdere and Duandere confluence, Varbitsa basin",
+      "research_origin": {
+        "source_id": "KRD-A3-030",
+        "title": "Sedimentological and Mineralogical Signature of Torrential Flow Depositional Area: A Case Study from Eastern Rhodopes, Bulgaria",
+        "author": null,
+        "publisher": "MDPI",
+        "year": 2026,
+        "url_or_path": "https://www.mdpi.com/2673-7086/6/1/2",
+        "page_or_figure": "Sections 2.1, 2.2, 3; Figures 1-2",
+        "source_type": "PRIMARY_FIELD_SEDIMENTOLOGICAL_STUDY",
+        "locality_original": "Damdere and Duandere confluence, Varbitsa basin",
+        "scope_original": "LOCAL_CATCHMENT_AND_FIELD_SAMPLES",
+        "original_status": "VERIFIED_TEXT",
+        "processing_status": "TEXT_ACCEPTED_WITH_LIMITATIONS",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "PRIMARY_FIELD_SAMPLES",
+          "SURFACE_SAMPLES_NOT_DEPTH_INTERVALS",
+          "MAP_VISUAL_CHECK_PENDING",
+          "NO_INDIVIDUAL_BOREHOLE_LOGS"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 6
+      }
+    },
+    {
+      "source_id": "KRD-B2-031",
+      "title": "Corundum mineralization in the marbles from the vicinity of Mishevsko village, the Eastern Rhodopes, Bulgaria - preliminary data",
+      "institution": "Geologica Balcanica",
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://geologica-balcanica.eu/journal/54/2/pp.-57-66",
+      "publication_year": 2025,
+      "geographic_scope": "Mishevsko village, Kardzhali region",
+      "research_origin": {
+        "source_id": "KRD-B2-031",
+        "title": "Corundum mineralization in the marbles from the vicinity of Mishevsko village, the Eastern Rhodopes, Bulgaria - preliminary data",
+        "author": "Petko Petrov; Stefka Pristavova; Kamelia Marinova; Beyhan Sabri",
+        "publisher": "Geologica Balcanica",
+        "year": 2025,
+        "url_or_path": "https://geologica-balcanica.eu/journal/54/2/pp.-57-66",
+        "page_or_figure": "Vol.54(2), pp.57-66, published abstract",
+        "source_type": "PRIMARY_PETROGRAPHIC_AND_MINERALOGICAL_STUDY",
+        "locality_original": "Mishevsko village, Kardzhali region",
+        "scope_original": "LOCAL_METAMORPHIC_OUTCROPS",
+        "original_status": "ABSTRACT_VERIFIED",
+        "processing_status": "ABSTRACT_ONLY",
+        "source_pages_visually_checked": false,
+        "quality_flags": [
+          "ABSTRACT_VERIFIED",
+          "FULL_TEXT_REVIEW_PENDING",
+          "NO_DOCUMENTED_DEPTH_INTERVALS",
+          "NO_INDIVIDUAL_BOREHOLE_LOGS"
+        ],
+        "borehole_count": 0,
+        "section_count": 0,
+        "regional_evidence_count": 3
+      }
+    },
+    {
+      "source_id": "KRD-A2-032",
+      "title": "Preliminary data on the electrum mineralization in the Synap occurrence, Krumovgrad goldfield, Eastern Rhodope Mountain, SE Bulgaria",
+      "institution": "Institute of Mineralogy and Crystallography, Bulgarian Academy of Sciences",
+      "source_type": "DOCUMENTARY_RESEARCH",
+      "url": "https://www.clmc.bas.bg/Staff/Iri_Mari/Publikacii/31_Marinova%202012a.pdf",
+      "publication_year": 2012,
+      "geographic_scope": "5 km south of Krumovgrad, 0.4 km NNW of Synap",
+      "research_origin": {
+        "source_id": "KRD-A2-032",
+        "title": "Preliminary data on the electrum mineralization in the Synap occurrence, Krumovgrad goldfield, Eastern Rhodope Mountain, SE Bulgaria",
+        "author": "Irina Marinova",
+        "publisher": "Institute of Mineralogy and Crystallography, Bulgarian Academy of Sciences",
+        "year": 2012,
+        "url_or_path": "https://www.clmc.bas.bg/Staff/Iri_Mari/Publikacii/31_Marinova%202012a.pdf",
+        "page_or_figure": "PDF pp.1-4, Figures 1-3",
+        "source_type": "PRIMARY_FIELD_GEOLOGY_MAP_AND_SECTION",
+        "locality_original": "5 km south of Krumovgrad, 0.4 km NNW of Synap",
+        "scope_original": "LOCAL_GEOLOGICAL_STRUCTURE",
+        "original_status": "VERIFIED",
+        "processing_status": "INTAKE_ACCEPTED",
+        "source_pages_visually_checked": true,
+        "quality_flags": [
+          "MAP_AND_SECTION_VISUALLY_VERIFIED",
+          "ELEVATION_NOT_BOREHOLE_DEPTH",
+          "ANCIENT_GEOTHERMAL_SYSTEM_NOT_MODERN_WATER_SOURCE",
+          "NO_INDIVIDUAL_BOREHOLE_LOGS"
+        ],
+        "borehole_count": 0,
+        "section_count": 1,
+        "regional_evidence_count": 8
       }
     }
   ]

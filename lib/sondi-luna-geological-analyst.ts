@@ -764,6 +764,14 @@ function validate(raw:string,facts:Fact[],independentEvidence?:unknown):LunaGeol
                     console.warn(
                         "[SONDI_LUNA_VALIDATION] REJECT",
                         "LINE=637",
+                        JSON.stringify({
+                          proposed:{from_m:fromM,to_m:toM,material,source_ids:citedIds},
+                          supporting_facts:supporting,
+                          available_facts:facts,
+                          measured_matches:measured.length,
+                          compatible_controls:independentControls.size,
+                          within_documented_envelope:withinDocumentedEnvelope
+                        }),
                         "!measured.length&&!conditionalInterpolation&&!validateIndependentWindowV163({from_m:fromM,to_m:toM,material,stratigraphy:typeof w.stratigraphy===\"string\"?w.stratigraphy:\"\",source_ids:citedIds},independentEvidence)"
                     );
                 }
@@ -1208,6 +1216,11 @@ ctx:Context
         );
 
         if(claimError){
+          if(process.env.NODE_ENV!=="production"){
+            console.warn("[SONDI_CACHE_CLAIM_DETAIL]",
+              "CODE="+String(claimError.code??"UNKNOWN"),
+              "MESSAGE="+String(claimError.message??"UNKNOWN").slice(0,500));
+          }
           throw new Error("LUNA_CACHE_CLAIM_FAILED");
         }
 

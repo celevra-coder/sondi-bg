@@ -366,6 +366,20 @@ export async function runLunaResearchCycle(
           };
         }
 
+        // SONDI_REGIONAL_FIRST_DISCOVERY_V1
+        if (documentaryRegion &&
+            (searchLunaNationalResearch({
+              region: documentaryRegion
+            }).returned_count ?? 0) > 0) {
+          return {
+            ...regional,
+            discovery_scope: "REGIONAL_FIRST",
+            geographic_applicability_at_target: "NOT_VERIFIED",
+            national_expansion_available: true,
+            note: "No local keyword match. Full regional documents remain available. Use research tools for relevant cross-regional evidence."
+          };
+        }
+
         // Documentary discovery only; not a depth prediction.
         const national = searchLunaNationalResearch({
           query: topic.query
@@ -468,6 +482,8 @@ export async function runLunaResearchCycle(
   }> = [];
 
   const rawDocumentIds = new Set<string>();
+  const documentDiscoveryMetadata =
+    new Map<string, Record<string, unknown>>();
 
   const documentSearchCategories = new Set([
     "national_documentary_research",
@@ -503,6 +519,7 @@ export async function runLunaResearchCycle(
           if (!id || rawDocumentIds.has(id)) continue;
 
           rawDocumentIds.add(id);
+          documentDiscoveryMetadata.set(id, record);
 
           rawDocumentCandidates.push({
             id,
@@ -558,9 +575,123 @@ export async function runLunaResearchCycle(
   // SONDI_ALL_DOCUMENT_EVIDENCE_V6
   // Read every discovered document without a fixed document count.
   // Do not exclude by administrative district before AI review.
-  const allDocumentCandidates = rawDocumentCandidates
+  // SONDI_SELECTIVE_DOCUMENT_RESEARCH_V18
+  const discoveredCandidates = rawDocumentCandidates
     .slice()
     .sort((a, b) => b.geographic_rank - a.geographic_rank);
+
+  const deferredIds = new Set<string>();
+
+  // SONDI_SOURCE_LEVEL_SCREENING_V20
+  const screeningStarted = Date.now();
+
+  const sourceGroups = new Map<string, {
+    ids: string[];
+    metadata: unknown[];
+    protected: boolean;
+  }>();
+
+  for (const candidate of discoveredCandidates) {
+    const m = documentDiscoveryMetadata.get(candidate.id);
+    const kind = String(m?.kind ?? "");
+
+    const sources = Array.isArray(m?.source_ids)
+      ? m.source_ids.filter(
+          (v): v is string => typeof v === "string" && !!v
+        )
+      : [];
+
+    const key = sources.length
+      ? JSON.stringify([...new Set(sources)].sort())
+      : candidate.id;
+
+    const group = sourceGroups.get(key) ?? {
+      ids: [], metadata: [], protected: false
+    };
+
+    group.ids.push(candidate.id);
+    group.protected ||= /BOREHOLE|MINERAL_WATER/i.test(
+      kind + " " + candidate.id
+    ) || sources.length === 0;
+
+    group.metadata.push({
+      id: candidate.id,
+      kind,
+      preview: m?.searchable_record_preview,
+      regions: m?.declared_primary_regions
+    });
+
+    sourceGroups.set(key, group);
+  }
+
+  const groups = [...sourceGroups.values()];
+  const review = groups.filter(g => !g.protected);
+
+  try {
+    if (review.length) {
+      const inventory = review.map((g, index) => ({
+        index,
+        records: g.metadata
+      }));
+
+      const screening = await client.responses.create({
+        model,
+        instructions:
+          "Select primary geological source groups for detailed research. " +
+          "Prioritize the target locality, nearby settlements, geological " +
+          "structures, relevant formations and useful regional comparisons. " +
+          "Defer groups that offer only unrelated or redundant regional context. " +
+          "Retain uncertain groups when they may materially affect interpretation. " +
+          "Do not exclude solely by administrative boundary. " +
+          "Deferred records remain accessible through research tools. " +
+          "This is research prioritization, not geological rejection. " +
+          'Return JSON only: {"deferred_indices":[0,1]}.',
+        input: [{
+          role: "user",
+          content: payload + locationContext +
+            "\nSOURCE_GROUP_INVENTORY:\n" +
+            JSON.stringify(inventory)
+        }],
+        max_output_tokens: 4000,
+        store: false
+      });
+
+      if (screening.status === "completed") {
+        const parsed = JSON.parse(screening.output_text.trim());
+        const indices: unknown = parsed.deferred_indices;
+
+        if (Array.isArray(indices) &&
+            indices.every(i =>
+              Number.isInteger(i) && i >= 0 && i < review.length
+            )) {
+          for (const i of indices) {
+            for (const id of review[i].ids) deferredIds.add(id);
+          }
+        }
+      }
+    }
+  } catch {
+    // Fail open: preserve all documentary evidence.
+  }
+
+  console.info(
+    "[SONDI_LUNA_RESEARCH] SOURCE_SCREENING_V20",
+    "GROUPS=" + groups.length,
+    "PROTECTED=" + groups.filter(g => g.protected).length,
+    "DEFERRED_RECORDS=" + deferredIds.size,
+    "ELAPSED_MS=" + (Date.now() - screeningStarted)
+  );
+
+  const allDocumentCandidates = discoveredCandidates.filter(
+    candidate => !deferredIds.has(candidate.id)
+  );
+
+  console.info(
+    "[SONDI_LUNA_RESEARCH] SELECTIVE_RESEARCH_V18",
+    "DISCOVERED=" + discoveredCandidates.length,
+    "SELECTED=" + allDocumentCandidates.length,
+    "DEFERRED=" + deferredIds.size
+  );
 
   const documentReadFailures: Array<{
     id: string;
@@ -655,7 +786,9 @@ export async function runLunaResearchCycle(
 
   const documentPrefetchContext = JSON.stringify({
     version: "SONDI_ALL_DOCUMENT_EVIDENCE_V6",
-    total_discovered_candidates: allDocumentCandidates.length,
+    total_discovered_candidates: discoveredCandidates.length,
+    selected_for_full_assessment: allDocumentCandidates.length,
+    deferred_for_optional_research: [...deferredIds],
     original_documents_read: documentsRead,
     unreadable_documents: documentReadFailures,
     delivery_batches: documentBatches.length,
@@ -1242,11 +1375,18 @@ Use exactly one item for every supplied document.
     );
   }
 
+  const assessmentStartedV22 = Date.now();
   const workerResultsV17 = await Promise.allSettled(
     Array.from(
-      { length: Math.min(3, assessmentGroupsV17.length) },
+      { length: Math.min(6, assessmentGroupsV17.length) },
       () => documentWorkerV17()
     )
+  );
+
+  console.info(
+    "[SONDI_LUNA_RESEARCH] PARALLEL_ASSESSMENT_V22",
+    "WORKERS=" + Math.min(6, assessmentGroupsV17.length),
+    "ELAPSED_MS=" + (Date.now() - assessmentStartedV22)
   );
 
   const failedWorkerV17 = workerResultsV17.find(
@@ -1649,7 +1789,39 @@ return {
             error?: string;
           };
         } else if (call.name === "read_national_research") {
-          result = readLunaNationalResearch(String(args.id ?? ""));
+          const requestedId = String(args.id ?? "");
+          result = readLunaNationalResearch(requestedId);
+
+          const original = result as Record<string, unknown>;
+
+          if (original.record && !original.error &&
+              !documentAssessmentMapV17.has(requestedId)) {
+
+            await assessDocumentGroupV17([{
+              discovered_id: requestedId,
+              original_document: result,
+              discovered_category: "additional_autonomous_research"
+            }]);
+
+            const assessment =
+              documentAssessmentMapV17.get(requestedId);
+
+            if (!assessment) {
+              throw new Error("ADDITIONAL_DOCUMENT_ASSESSMENT_FAILED");
+            }
+
+            documentAuditIds.push(requestedId);
+            finalDocumentAuditV17.push({
+              id: assessment.id,
+              applicability: assessment.applicability,
+              reason: assessment.reason
+            });
+
+            result = {
+              ...original,
+              completed_document_assessment: assessment
+            };
+          }
         } else if (call.name === "search_geological_records") {
           result = searchLunaGeologicalRecords({
             latitude: lat,
@@ -1705,7 +1877,9 @@ return {
               "DELIVERED=" + Math.min(serialized.length, 48000)
             );
           }
-          return serialized.slice(0, 48000);
+          // SONDI_VALID_JSON_TOOL_DELIVERY_V19
+          if (serialized.length <= 48000) return serialized;
+          return compactMandatoryEvidence(result);
         })()
       });
     }

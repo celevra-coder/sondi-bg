@@ -30427,6 +30427,831 @@
         }
       },
       "linked_mineral_facility_id": "mw_e60279f6dcdc0d9e"
+    },
+    {
+      "borehole_id": "KRD-BH-002",
+      "name_bg": "Сондаж №3 - Джебел",
+      "oblast": "Кърджали",
+      "region_code": "Kardzhali",
+      "status": "documented_borehole_intervals",
+      "zone_type": "borehole_documented_location",
+      "coordinates": {
+        "latitude": 41.519349603331534,
+        "longitude": 25.295767910742917,
+        "status": "OFFICIAL_EXACT",
+        "exact_policy": "PUBLISHED_POINT_COORDINATES_NO_MOUTH_REQUIREMENT",
+        "original_coordinate_metadata": {
+          "record_id": "KRD-BH-002",
+          "source_id": "KRD-A1-002",
+          "name": "Сондаж №3 - Джебел",
+          "registration_number": "351023001",
+          "coordinate_status": "OFFICIAL_EXACT",
+          "original_coordinates": {
+            "x": 4532993.4,
+            "y": 9405777.772,
+            "crs": "BGS1970 K5"
+          },
+          "latitude": 41.519349603331534,
+          "longitude": 25.295767910742917,
+          "coordinate_object": "REGISTERED_WATER_ABSTRACTION_BOREHOLE",
+          "coordinate_registry_row": 83,
+          "coordinate_recheck_completed": true,
+          "wgs84_ready": true,
+          "point_use_allowed": false,
+          "needs_spatial_review": true,
+          "next_action": "ADMINISTRATIVE_BOUNDARY_VALIDATION",
+          "transformation": {
+            "library": "transformations@1.2.0",
+            "method": "BGS1970 K5 -> BGS2005 KK -> WGS84",
+            "axis_order": "X=Northing,Y=Easting",
+            "control_error_m": 0.5227572363873726,
+            "target_crs": "EPSG:4326",
+            "locality_check": "CONSISTENT_NORTH_OF_DZHEBEL",
+            "boundary_validation": "PENDING"
+          }
+        }
+      },
+      "total_depth_m": 542,
+      "water_type": "not_classified_from_lithology",
+      "lithology": [
+        {
+          "interval_id": "KRD-BH-002-I001",
+          "depth_from_m": 0,
+          "depth_to_m": 21.4,
+          "expected_material_bg": "Бели до сивозеленикави туфи",
+          "original_material_bg": "Бели до сивозеленикави туфи",
+          "material_normalized": "TUFF",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I001",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 0,
+            "to_m": 21.4,
+            "thickness_m": 21.4,
+            "material_original": "Бели до сивозеленикави туфи",
+            "material_normalized": "TUFF",
+            "age_original": "Палеоген",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Бели до сивозеленикави туфи",
+              "age": "Палеоген",
+              "to_m": 21.4,
+              "from_m": 0
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I002",
+          "depth_from_m": 21.4,
+          "depth_to_m": 42.8,
+          "expected_material_bg": "Брекчирани варовици с глинести прослойки",
+          "original_material_bg": "Брекчирани варовици с глинести прослойки",
+          "material_normalized": "BRECCIATED_LIMESTONE_WITH_CLAY",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I002",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 21.4,
+            "to_m": 42.8,
+            "thickness_m": 21.4,
+            "material_original": "Брекчирани варовици с глинести прослойки",
+            "material_normalized": "BRECCIATED_LIMESTONE_WITH_CLAY",
+            "age_original": "Палеоген",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Брекчирани варовици с глинести прослойки",
+              "age": "Палеоген",
+              "to_m": 42.8,
+              "from_m": 21.4
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I003",
+          "depth_from_m": 42.8,
+          "depth_to_m": 43.8,
+          "expected_material_bg": "Сиви глини",
+          "original_material_bg": "Сиви глини",
+          "material_normalized": "CLAY",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I003",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 42.8,
+            "to_m": 43.8,
+            "thickness_m": 1.0,
+            "material_original": "Сиви глини",
+            "material_normalized": "CLAY",
+            "age_original": "Палеоген",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Сиви глини",
+              "age": "Палеоген",
+              "to_m": 43.8,
+              "from_m": 42.8
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I004",
+          "depth_from_m": 43.8,
+          "depth_to_m": 286.5,
+          "expected_material_bg": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+          "original_material_bg": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+          "material_normalized": "BRECCIA_CONGLOMERATE",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I004",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 43.8,
+            "to_m": 286.5,
+            "thickness_m": 242.7,
+            "material_original": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+            "material_normalized": "BRECCIA_CONGLOMERATE",
+            "age_original": "Палеоген",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+              "age": "Палеоген",
+              "to_m": 286.5,
+              "from_m": 43.8
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I005",
+          "depth_from_m": 286.5,
+          "depth_to_m": 315,
+          "expected_material_bg": "Нечисти мрамори с напукани биотитови гнайси",
+          "original_material_bg": "Нечисти мрамори с напукани биотитови гнайси",
+          "material_normalized": "MARBLE_WITH_FRACTURED_GNEISS",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I005",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 286.5,
+            "to_m": 315,
+            "thickness_m": 28.5,
+            "material_original": "Нечисти мрамори с напукани биотитови гнайси",
+            "material_normalized": "MARBLE_WITH_FRACTURED_GNEISS",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Нечисти мрамори с напукани биотитови гнайси",
+              "age": "Протерозой",
+              "to_m": 315,
+              "from_m": 286.5
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I006",
+          "depth_from_m": 315,
+          "depth_to_m": 447.2,
+          "expected_material_bg": "Биотитови шисти с мраморни прослойки",
+          "original_material_bg": "Биотитови шисти с мраморни прослойки",
+          "material_normalized": "BIOTITE_SCHIST_WITH_MARBLE",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I006",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 315,
+            "to_m": 447.2,
+            "thickness_m": 132.2,
+            "material_original": "Биотитови шисти с мраморни прослойки",
+            "material_normalized": "BIOTITE_SCHIST_WITH_MARBLE",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Биотитови шисти с мраморни прослойки",
+              "age": "Протерозой",
+              "to_m": 447.2,
+              "from_m": 315
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I007",
+          "depth_from_m": 447.2,
+          "depth_to_m": 505,
+          "expected_material_bg": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+          "original_material_bg": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+          "material_normalized": "FRACTURED_SILICIFIED_BIOTITE_GNEISS",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I007",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 447.2,
+            "to_m": 505,
+            "thickness_m": 57.8,
+            "material_original": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+            "material_normalized": "FRACTURED_SILICIFIED_BIOTITE_GNEISS",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+              "age": "Протерозой",
+              "to_m": 505,
+              "from_m": 447.2
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I008",
+          "depth_from_m": 505,
+          "depth_to_m": 525,
+          "expected_material_bg": "Бели до сиви дребнозърнести окварцени мрамори",
+          "original_material_bg": "Бели до сиви дребнозърнести окварцени мрамори",
+          "material_normalized": "SILICIFIED_MARBLE",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I008",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 505,
+            "to_m": 525,
+            "thickness_m": 20,
+            "material_original": "Бели до сиви дребнозърнести окварцени мрамори",
+            "material_normalized": "SILICIFIED_MARBLE",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Бели до сиви дребнозърнести окварцени мрамори",
+              "age": "Протерозой",
+              "to_m": 525,
+              "from_m": 505
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I009",
+          "depth_from_m": 525,
+          "depth_to_m": 527.4,
+          "expected_material_bg": "Амфибол-биотитови гнайси",
+          "original_material_bg": "Амфибол-биотитови гнайси",
+          "material_normalized": "AMPHIBOLE_BIOTITE_GNEISS",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I009",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 525,
+            "to_m": 527.4,
+            "thickness_m": 2.4,
+            "material_original": "Амфибол-биотитови гнайси",
+            "material_normalized": "AMPHIBOLE_BIOTITE_GNEISS",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Амфибол-биотитови гнайси",
+              "age": "Протерозой",
+              "to_m": 527.4,
+              "from_m": 525
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I010",
+          "depth_from_m": 527.4,
+          "depth_to_m": 527.7,
+          "expected_material_bg": "Пегматити",
+          "original_material_bg": "Пегматити",
+          "material_normalized": "PEGMATITE",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I010",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 527.4,
+            "to_m": 527.7,
+            "thickness_m": 0.3,
+            "material_original": "Пегматити",
+            "material_normalized": "PEGMATITE",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Пегматити",
+              "age": "Протерозой",
+              "to_m": 527.7,
+              "from_m": 527.4
+            }
+          }
+        },
+        {
+          "interval_id": "KRD-BH-002-I011",
+          "depth_from_m": 527.7,
+          "depth_to_m": 542,
+          "expected_material_bg": "Дребнозърнести амфиболити с пирит и халкопирит",
+          "original_material_bg": "Дребнозърнести амфиболити с пирит и халкопирит",
+          "material_normalized": "AMPHIBOLITE",
+          "confidence": "documented_source",
+          "evidence_level": "documented_borehole_interval",
+          "interval_status": "PUBLISHED_NUMERIC_BOUNDARIES",
+          "depth_reference": "SOURCE_BOREHOLE_DEPTH",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "original_interval": {
+            "interval_id": "KRD-BH-002-I011",
+            "source_id": "KRD-A1-002",
+            "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+            "from_m": 527.7,
+            "to_m": 542,
+            "thickness_m": 14.3,
+            "material_original": "Дребнозърнести амфиболити с пирит и халкопирит",
+            "material_normalized": "AMPHIBOLITE",
+            "age_original": "Протерозой",
+            "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+            "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+            "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+            "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+            "original_record": {
+              "material": "Дребнозърнести амфиболити с пирит и халкопирит",
+              "age": "Протерозой",
+              "to_m": 542,
+              "from_m": 527.7
+            }
+          }
+        }
+      ],
+      "structural_intervals": [],
+      "hydraulic_intervals": [],
+      "borehole_construction": null,
+      "source_overlaps": [],
+      "source_gaps": [],
+      "groundwater_discharge": null,
+      "water_temperature": null,
+      "collector": null,
+      "intake_intervals": [],
+      "hydro_notes_bg": null,
+      "expert_context": {
+        "source_ids": [
+          "KRD-A1-002"
+        ],
+        "original_registry_record": {
+          "record_id": "KRD-BH-002",
+          "independent_observation_id": "KRD-BH-002",
+          "original_name": "Сондаж №3 - Джебел",
+          "registration_number": "351023001",
+          "source_ids": [
+            "KRD-A1-002"
+          ],
+          "source_url": "https://www.mh.government.bg/upload/20838/28-Dzhebel-sondazh3-13-10-2026.pdf",
+          "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+          "observation_type": "DOCUMENTED_BOREHOLE",
+          "municipality": "Джебел",
+          "locality_original": "Сондаж №3 - Джебел",
+          "construction_year": 1977,
+          "total_depth_m": 542,
+          "collar_elevation_m": 325.61,
+          "coordinate_status": "OFFICIAL_EXACT",
+          "original_coordinates": {
+            "y": 9405777.772,
+            "wgs84_conversion_status": "PENDING",
+            "crs": "PENDING_VERIFICATION",
+            "x": 4532993.4
+          },
+          "coordinate_source": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+          "coordinate_source_reference": "Ред 83",
+          "coordinate_object": "REGISTERED_WATER_ABSTRACTION_BOREHOLE",
+          "coordinate_recheck_source": null,
+          "registration_verification": null,
+          "latitude": null,
+          "longitude": null,
+          "spatial_status": "PUBLISHED_NUMERIC_COORDINATES_CRS_PENDING",
+          "needs_spatial_review": true,
+          "mineral_water_record_required": true,
+          "intervals": [
+            {
+              "interval_id": "KRD-BH-002-I001",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 0,
+              "to_m": 21.4,
+              "thickness_m": 21.4,
+              "material_original": "Бели до сивозеленикави туфи",
+              "material_normalized": "TUFF",
+              "age_original": "Палеоген",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Бели до сивозеленикави туфи",
+                "age": "Палеоген",
+                "to_m": 21.4,
+                "from_m": 0
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I002",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 21.4,
+              "to_m": 42.8,
+              "thickness_m": 21.4,
+              "material_original": "Брекчирани варовици с глинести прослойки",
+              "material_normalized": "BRECCIATED_LIMESTONE_WITH_CLAY",
+              "age_original": "Палеоген",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Брекчирани варовици с глинести прослойки",
+                "age": "Палеоген",
+                "to_m": 42.8,
+                "from_m": 21.4
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I003",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 42.8,
+              "to_m": 43.8,
+              "thickness_m": 1.0,
+              "material_original": "Сиви глини",
+              "material_normalized": "CLAY",
+              "age_original": "Палеоген",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Сиви глини",
+                "age": "Палеоген",
+                "to_m": 43.8,
+                "from_m": 42.8
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I004",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 43.8,
+              "to_m": 286.5,
+              "thickness_m": 242.7,
+              "material_original": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+              "material_normalized": "BRECCIA_CONGLOMERATE",
+              "age_original": "Палеоген",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+                "age": "Палеоген",
+                "to_m": 286.5,
+                "from_m": 43.8
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I005",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 286.5,
+              "to_m": 315,
+              "thickness_m": 28.5,
+              "material_original": "Нечисти мрамори с напукани биотитови гнайси",
+              "material_normalized": "MARBLE_WITH_FRACTURED_GNEISS",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Нечисти мрамори с напукани биотитови гнайси",
+                "age": "Протерозой",
+                "to_m": 315,
+                "from_m": 286.5
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I006",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 315,
+              "to_m": 447.2,
+              "thickness_m": 132.2,
+              "material_original": "Биотитови шисти с мраморни прослойки",
+              "material_normalized": "BIOTITE_SCHIST_WITH_MARBLE",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Биотитови шисти с мраморни прослойки",
+                "age": "Протерозой",
+                "to_m": 447.2,
+                "from_m": 315
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I007",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 447.2,
+              "to_m": 505,
+              "thickness_m": 57.8,
+              "material_original": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+              "material_normalized": "FRACTURED_SILICIFIED_BIOTITE_GNEISS",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+                "age": "Протерозой",
+                "to_m": 505,
+                "from_m": 447.2
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I008",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 505,
+              "to_m": 525,
+              "thickness_m": 20,
+              "material_original": "Бели до сиви дребнозърнести окварцени мрамори",
+              "material_normalized": "SILICIFIED_MARBLE",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Бели до сиви дребнозърнести окварцени мрамори",
+                "age": "Протерозой",
+                "to_m": 525,
+                "from_m": 505
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I009",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 525,
+              "to_m": 527.4,
+              "thickness_m": 2.4,
+              "material_original": "Амфибол-биотитови гнайси",
+              "material_normalized": "AMPHIBOLE_BIOTITE_GNEISS",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Амфибол-биотитови гнайси",
+                "age": "Протерозой",
+                "to_m": 527.4,
+                "from_m": 525
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I010",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 527.4,
+              "to_m": 527.7,
+              "thickness_m": 0.3,
+              "material_original": "Пегматити",
+              "material_normalized": "PEGMATITE",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Пегматити",
+                "age": "Протерозой",
+                "to_m": 527.7,
+                "from_m": 527.4
+              }
+            },
+            {
+              "interval_id": "KRD-BH-002-I011",
+              "source_id": "KRD-A1-002",
+              "page_or_figure": "Страници 1-2, литоложки разрез на стр. 2",
+              "from_m": 527.7,
+              "to_m": 542,
+              "thickness_m": 14.3,
+              "material_original": "Дребнозърнести амфиболити с пирит и халкопирит",
+              "material_normalized": "AMPHIBOLITE",
+              "age_original": "Протерозой",
+              "observation_type": "DOCUMENTED_LITHOLOGICAL_INTERVAL",
+              "measured_or_interpreted": "DOCUMENTED_BOREHOLE_LOG",
+              "extraction_method": "STEP2_DOCUMENT_TRANSCRIPTION",
+              "verification_status": "ACCEPTED_FROM_VERIFIED_INTAKE",
+              "original_record": {
+                "material": "Дребнозърнести амфиболити с пирит и халкопирит",
+                "age": "Протерозой",
+                "to_m": 542,
+                "from_m": 527.7
+              }
+            }
+          ],
+          "unknown_intervals": [],
+          "known_lithological_thickness_m": 542.0,
+          "verification_status": "NORMALIZED_FROM_STEP2",
+          "runtime_ready": false,
+          "original_record": {
+            "borehole_id": "KRD-BH-002",
+            "name": "Сондаж №3 - Джебел",
+            "registration_number": "351023001",
+            "oblast": "Кърджали",
+            "municipality": "Джебел",
+            "construction_year": 1977,
+            "total_depth_m": 542,
+            "collar_elevation_m": 325.61,
+            "latitude": null,
+            "longitude": null,
+            "coordinate_status": "OFFICIAL_EXACT",
+            "coordinate_source": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+            "coordinate_source_reference": "Ред 83",
+            "coordinate_object": "REGISTERED_WATER_ABSTRACTION_BOREHOLE",
+            "coordinate_original": {
+              "y": 9405777.772,
+              "wgs84_conversion_status": "PENDING",
+              "crs": "PENDING_VERIFICATION",
+              "x": 4532993.4
+            },
+            "coordinate_recheck_completed": true,
+            "mineral_water": true,
+            "intervals": [
+              {
+                "material": "Бели до сивозеленикави туфи",
+                "age": "Палеоген",
+                "to_m": 21.4,
+                "from_m": 0
+              },
+              {
+                "material": "Брекчирани варовици с глинести прослойки",
+                "age": "Палеоген",
+                "to_m": 42.8,
+                "from_m": 21.4
+              },
+              {
+                "material": "Сиви глини",
+                "age": "Палеоген",
+                "to_m": 43.8,
+                "from_m": 42.8
+              },
+              {
+                "material": "Брекчоконгломерати с песъчлива спойка и късове от мрамори, гнайси и амфиболити",
+                "age": "Палеоген",
+                "to_m": 286.5,
+                "from_m": 43.8
+              },
+              {
+                "material": "Нечисти мрамори с напукани биотитови гнайси",
+                "age": "Протерозой",
+                "to_m": 315,
+                "from_m": 286.5
+              },
+              {
+                "material": "Биотитови шисти с мраморни прослойки",
+                "age": "Протерозой",
+                "to_m": 447.2,
+                "from_m": 315
+              },
+              {
+                "material": "Дребнозърнести напукани окварцени биотитови гнайси с хематит",
+                "age": "Протерозой",
+                "to_m": 505,
+                "from_m": 447.2
+              },
+              {
+                "material": "Бели до сиви дребнозърнести окварцени мрамори",
+                "age": "Протерозой",
+                "to_m": 525,
+                "from_m": 505
+              },
+              {
+                "material": "Амфибол-биотитови гнайси",
+                "age": "Протерозой",
+                "to_m": 527.4,
+                "from_m": 525
+              },
+              {
+                "material": "Пегматити",
+                "age": "Протерозой",
+                "to_m": 527.7,
+                "from_m": 527.4
+              },
+              {
+                "material": "Дребнозърнести амфиболити с пирит и халкопирит",
+                "age": "Протерозой",
+                "to_m": 542,
+                "from_m": 527.7
+              }
+            ]
+          }
+        },
+        "original_locality": "Сондаж №3 - Джебел",
+        "not_measured_at_arbitrary_target": true
+      },
+      "linked_mineral_facility_id": "mw_8f935ed7ed96b33c"
     }
   ]
 }
