@@ -3856,7 +3856,26 @@
         },
         "research_enrichment": [],
         "duplicate_mh_records": [],
-        "matched_existing_records": []
+        "matched_existing_records": [],
+        "smolyan_research_enrichment": {
+          "borehole_id": "SMO-DEVIN-S1",
+          "source_id": "SMO-B2-002",
+          "source_url": "https://www.mh.government.bg/upload/6630/126-devin-sondazh5-05-03-2024.pdf",
+          "source_reference": "Раздел А, таблица Водоносни интервали",
+          "documented_total_depth_m": 770.3,
+          "coordinate_status": "OFFICIAL_EXACT",
+          "coordinate_scope": "EXISTING_OFFICIAL_MINERAL_FACILITY_RECORD",
+          "coordinate_origin": "Existing official mineral water master",
+          "published_latitude": 41.7417778,
+          "published_longitude": 24.3965833,
+          "water_observations": {
+            "regional_temperature_max_c": 45,
+            "regional_temperature_min_c": 37,
+            "deposit": "Девин"
+          },
+          "existing_measurements_preserved": true,
+          "inferred_water_horizons_created": false
+        }
       },
       "sources": [
         {
@@ -3912,7 +3931,26 @@
         },
         "research_enrichment": [],
         "duplicate_mh_records": [],
-        "matched_existing_records": []
+        "matched_existing_records": [],
+        "smolyan_research_enrichment": {
+          "borehole_id": "SMO-DEVIN-S3",
+          "source_id": "SMO-B2-002",
+          "source_url": "https://www.mh.government.bg/upload/6630/126-devin-sondazh5-05-03-2024.pdf",
+          "source_reference": "Раздел А, таблица Водоносни интервали",
+          "documented_total_depth_m": 1093.6,
+          "coordinate_status": "OFFICIAL_EXACT",
+          "coordinate_scope": "EXISTING_OFFICIAL_MINERAL_FACILITY_RECORD",
+          "coordinate_origin": "Existing official mineral water master",
+          "published_latitude": 41.7439167,
+          "published_longitude": 24.383975,
+          "water_observations": {
+            "regional_temperature_max_c": 45,
+            "regional_temperature_min_c": 37,
+            "deposit": "Девин"
+          },
+          "existing_measurements_preserved": true,
+          "inferred_water_horizons_created": false
+        }
       },
       "sources": [
         {
@@ -3968,7 +4006,30 @@
         },
         "research_enrichment": [],
         "duplicate_mh_records": [],
-        "matched_existing_records": []
+        "matched_existing_records": [],
+        "smolyan_research_enrichment": {
+          "borehole_id": "SMO-DEVIN-S5",
+          "source_id": "SMO-B2-002",
+          "source_url": "https://www.mh.government.bg/upload/6630/126-devin-sondazh5-05-03-2024.pdf",
+          "source_reference": "Раздел А, таблица Водоносни интервали",
+          "documented_total_depth_m": 690,
+          "coordinate_status": "OFFICIAL_EXACT",
+          "coordinate_scope": "EXISTING_OFFICIAL_MINERAL_FACILITY_RECORD",
+          "coordinate_origin": "Existing official mineral water master",
+          "published_latitude": 41.7430556,
+          "published_longitude": 24.3692778,
+          "water_observations": {
+            "s5_reported_sample_temperature_c": 42,
+            "regional_temperature_max_c": 45,
+            "s5_technical_discharge_lps": 9.6,
+            "s5_artesian": true,
+            "regional_temperature_min_c": 37,
+            "s5_technical_temperature_c": 37.3,
+            "deposit": "Девин"
+          },
+          "existing_measurements_preserved": true,
+          "inferred_water_horizons_created": false
+        }
       },
       "sources": [
         {
@@ -4024,7 +4085,26 @@
         },
         "research_enrichment": [],
         "duplicate_mh_records": [],
-        "matched_existing_records": []
+        "matched_existing_records": [],
+        "smolyan_research_enrichment": {
+          "borehole_id": "SMO-DEVIN-S6",
+          "source_id": "SMO-B2-002",
+          "source_url": "https://www.mh.government.bg/upload/6630/126-devin-sondazh5-05-03-2024.pdf",
+          "source_reference": "Раздел А, таблица Водоносни интервали",
+          "documented_total_depth_m": 1201,
+          "coordinate_status": "OFFICIAL_EXACT",
+          "coordinate_scope": "EXISTING_OFFICIAL_MINERAL_FACILITY_RECORD",
+          "coordinate_origin": "Existing official mineral water master",
+          "published_latitude": 41.7428833,
+          "published_longitude": 24.3582333,
+          "water_observations": {
+            "regional_temperature_max_c": 45,
+            "regional_temperature_min_c": 37,
+            "deposit": "Девин"
+          },
+          "existing_measurements_preserved": true,
+          "inferred_water_horizons_created": false
+        }
       },
       "sources": [
         {
@@ -42936,10 +43016,136 @@
         "settlement": "Ерма река"
       },
       "location": {
-        "lat": null,
-        "lon": null,
-        "status": "TO_RESEARCH",
-        "origin": null
+        "lat": 41.4125333333,
+        "lon": 24.9664166667,
+        "status": "OFFICIAL_EXACT",
+        "origin": "Държавен вестник, бр.63, 07.08.2009",
+        "coordinate_evidence": {
+          "source_id": "SMO-A1-005",
+          "coordinate_scope": "OFFICIALLY_PUBLISHED_PLANNED_BOREHOLE_POSITION",
+          "independent_mouth_verification": "NOT_ESTABLISHED",
+          "original_location_record": {
+            "lat": null,
+            "lon": null,
+            "status": "TO_RESEARCH",
+            "origin": null
+          },
+          "original_borehole": {
+            "collar_verified": false,
+            "coordinate_source_url": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/issue/3381/unofficial",
+            "column_complete": true,
+            "intervals": [
+              {
+                "material": "Уплътнен баластрен насип",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "MH 54/2017, p.3",
+                "to_m": 5,
+                "from_m": 0
+              },
+              {
+                "formation": "Av3",
+                "to_m": 100,
+                "material": "Дребнозърнести биотитови гнайси, частично хлоритизирани, с кварц-карбонатни прожилки",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "MH 54/2017, p.3",
+                "from_m": 5
+              },
+              {
+                "formation": "Av3",
+                "to_m": 120,
+                "material": "Силно тектонски натрошени биотитови гнайси с пирит",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "MH 54/2017, p.3",
+                "from_m": 100
+              },
+              {
+                "formation": "Av3",
+                "to_m": 294,
+                "material": "Дребнозърнести биотитови гнайси, частично хлоритизирани, с кварц-карбонатни прожилки",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "MH 54/2017, p.3",
+                "from_m": 120
+              },
+              {
+                "formation": "Av3",
+                "to_m": 314,
+                "material": "Сиви дребнозърнести двуслюдени гнайси",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "MH 54/2017, p.3",
+                "from_m": 294
+              },
+              {
+                "formation": "Av3",
+                "to_m": 350,
+                "material": "Биотитови и амфибол-биотитови гнайси с кварцови прожилки",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "MH 54/2017, p.3",
+                "from_m": 314
+              },
+              {
+                "formation": "Левкократна свита Av2",
+                "to_m": 390,
+                "material": "Силно окварцени мусковитови гнайси с биотитови и амфибол-биотитови прослойки",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "MH 54/2017, p.3",
+                "from_m": 350
+              },
+              {
+                "formation": "Левкократна свита Av2",
+                "to_m": 435,
+                "material": "Мусковитови гнайси, богати на кварц, с кварц-пегматитови прожилки",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "MH 54/2017, p.3",
+                "from_m": 390
+              },
+              {
+                "formation": "Карбонатна свита Av1",
+                "to_m": 439,
+                "material": "Силно тектонски натрошена кварцова зона",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "MH 54/2017, p.3",
+                "from_m": 435
+              },
+              {
+                "formation": "Карбонатна свита Av1",
+                "to_m": 507,
+                "material": "Кавернозна кварцова зона, окварцени мрамори и метасоматичен кварц",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "MH 54/2017, p.3",
+                "from_m": 439
+              },
+              {
+                "formation": "Карбонатна свита Av1",
+                "to_m": 535,
+                "material": "Кварцова жила с млечнобял и сив кварц и биотитови прослойки",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "MH 54/2017, p.3",
+                "from_m": 507
+              },
+              {
+                "formation": "Карбонатна свита Av1",
+                "to_m": 860,
+                "material": "Среднозърнести бели мрамори със светлосиви прослойки и силикатни минерали",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "MH 54/2017, p.3",
+                "from_m": 535
+              }
+            ],
+            "drilling_year": 2014,
+            "collar_elevation_m": 669.5,
+            "borehole_id": "SMO-ERMA-REKA-2014",
+            "total_depth_m": 860,
+            "coordinate_conversion": "Degrees and decimal minutes to decimal degrees",
+            "coordinate_status": "OFFICIAL_EXACT",
+            "lon": 24.9664166667,
+            "coordinate_scope": "OFFICIALLY_PUBLISHED_PLANNED_BOREHOLE_POSITION",
+            "lat": 41.4125333333,
+            "coordinate_origin": "Държавен вестник, бр.63, 07.08.2009",
+            "mineral_water": true,
+            "coordinate_original": "N 41 24.752'; E 24 57.985'",
+            "name": "Сондаж Ерма река"
+          }
+        }
       },
       "free": {
         "temperature_c": 79.3,
@@ -42998,7 +43204,44 @@
           "research_status": "CONFIRMED_MISSING",
           "research_note": "?????? ???? ???? - confirmed separate physical facility."
         },
-        "duplicate_mh_records": []
+        "duplicate_mh_records": [],
+        "smolyan_research_enrichment": {
+          "borehole_id": "SMO-ERMA-REKA-2014",
+          "source_id": "SMO-A1-005",
+          "source_url": "https://www.mh.government.bg/upload/6851/54-erma_reka-sondazhermareka-20-01-2017.pdf",
+          "source_reference": "Pages 3-4",
+          "documented_total_depth_m": 860,
+          "coordinate_status": "OFFICIAL_EXACT",
+          "coordinate_scope": "OFFICIALLY_PUBLISHED_PLANNED_BOREHOLE_POSITION",
+          "coordinate_origin": "Държавен вестник, бр.63, 07.08.2009",
+          "published_latitude": 41.4125333333,
+          "published_longitude": 24.9664166667,
+          "water_observations": {
+            "approved_deposit_resource_lps": 27,
+            "ph": 6.69,
+            "borehole_id": "SMO-ERMA-REKA-2014",
+            "documented_open_hole_to_m": 860,
+            "allowable_dynamic_depth_m": 241.89,
+            "deposit": "Ерма река",
+            "technical_temperature_c": 87.8,
+            "allowable_drawdown_m": 53.16,
+            "collector_materials": [
+              "Кавернозен кварц",
+              "Напукани мрамори"
+            ],
+            "technical_discharge_lps": 26,
+            "static_water_elevation_m": 480.77,
+            "source_reference": "Pages 3-4",
+            "allowable_dynamic_elevation_m": 427.61,
+            "sample_temperature_c": 79.3,
+            "first_water_inflow_depth_m": null,
+            "extraction_type": "PUMPING",
+            "documented_open_hole_from_m": 431,
+            "mineralization_mg_l": 1254
+          },
+          "existing_measurements_preserved": true,
+          "inferred_water_horizons_created": false
+        }
       },
       "sources": [
         {
@@ -43106,7 +43349,33 @@
           "research_status": "CONFIRMED_MISSING",
           "research_note": "???-1?? ???????, ????? - confirmed separate physical facility."
         },
-        "duplicate_mh_records": []
+        "duplicate_mh_records": [],
+        "smolyan_research_enrichment": {
+          "borehole_id": "SMO-MADAN-YANOVSKA-PES1HG",
+          "source_id": "SMO-A1-007",
+          "source_url": "https://www.mh.government.bg/upload/6632/268-madan-sondazhpes-1hg-qnovska-02-02-2024.pdf",
+          "source_reference": "Pages 1-3",
+          "documented_total_depth_m": 600,
+          "coordinate_status": "OFFICIAL_EXACT",
+          "coordinate_scope": "PUBLISHED_FACILITY_POSITION",
+          "coordinate_origin": "Existing official mineral water registry / public export",
+          "published_latitude": 41.449300666,
+          "published_longitude": 24.927659547,
+          "water_observations": {
+            "technical_discharge_lps": 2.72,
+            "first_water_inflow_depth_m": null,
+            "mineralization_mg_l": 193,
+            "allowable_dynamic_depth_m": 209.5,
+            "sample_temperature_c": 14.2,
+            "technical_temperature_c": 16,
+            "deposit": "Мадан",
+            "allowable_drawdown_m": 206.3,
+            "ph": 7.32,
+            "static_water_elevation_m": 783.8
+          },
+          "existing_measurements_preserved": true,
+          "inferred_water_horizons_created": false
+        }
       },
       "sources": [
         {
@@ -43222,7 +43491,35 @@
           "research_status": "CONFIRMED_MISSING",
           "research_note": "???-1?? ??????? - confirmed separate physical facility."
         },
-        "duplicate_mh_records": []
+        "duplicate_mh_records": [],
+        "smolyan_research_enrichment": {
+          "borehole_id": "SMO-RUDOZEM-PES1HG",
+          "source_id": "SMO-A1-006",
+          "source_url": "https://www.mh.government.bg/upload/6557/103-rudozem-sondazhpes-1hg-rudozem-02-02-2024.pdf",
+          "source_reference": "Pages 1-3",
+          "documented_total_depth_m": 800,
+          "coordinate_status": "OFFICIAL_EXACT",
+          "coordinate_scope": "PUBLISHED_FACILITY_POSITION",
+          "coordinate_origin": "Existing official mineral water registry / public export",
+          "published_latitude": 41.485540081,
+          "published_longitude": 24.848717466,
+          "water_observations": {
+            "technical_discharge_lps": 2.41,
+            "first_water_inflow_depth_m": null,
+            "mineralization_mg_l": 552,
+            "allowable_dynamic_depth_m": 241,
+            "sample_temperature_c": 16.5,
+            "documented_open_hole_from_m": 300,
+            "technical_temperature_c": 18,
+            "deposit": "Рудозем",
+            "documented_open_hole_to_m": 800,
+            "allowable_drawdown_m": 230,
+            "ph": 7.41,
+            "static_water_elevation_m": 680.5
+          },
+          "existing_measurements_preserved": true,
+          "inferred_water_horizons_created": false
+        }
       },
       "sources": [
         {
@@ -55383,6 +55680,316 @@
         }
       ],
       "origin": "kardzhali_step05_documentary_integration"
+    },
+    {
+      "mineral_id": "mw_f72af6a06371a2f8",
+      "identity": {
+        "name": "Сондаж №4",
+        "facility_type": "Минерален сондаж",
+        "deposit": "Беденски бани",
+        "settlement": "Беденски бани",
+        "registration_number": "351007003"
+      },
+      "location": {
+        "lat": 41.7013666667,
+        "lon": 24.5015666667,
+        "status": "OFFICIAL_EXACT",
+        "origin": "БД Източнобеломорски район, официален регистър",
+        "coordinate_evidence": {
+          "borehole_id": "SMO-BEDENSKI-BANI-S4",
+          "source_id": "SMO-A1-008",
+          "coordinate_scope": "PUBLISHED_BOREHOLE_POSITION",
+          "original_borehole": {
+            "coordinate_source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf",
+            "intervals": [
+              {
+                "formation": "Q",
+                "to_m": 14,
+                "material": "Валуни, чакъли и пясъци",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 1",
+                "from_m": 0
+              },
+              {
+                "formation": "mdPcC",
+                "to_m": 33.5,
+                "material": "Биотитови гнайси с изветряне, раздробяване и пукнатини; карбонатни запълнения",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 2",
+                "from_m": 14
+              },
+              {
+                "formation": "mdPcC",
+                "to_m": 101,
+                "material": "Биотитови гнайси с локална хлоритизация и серицитизация",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 2",
+                "from_m": 33.5
+              },
+              {
+                "formation": "mdPcC",
+                "to_m": 202.6,
+                "material": "Гранитизирани биотитови гнайси, слабо напукани, с кварц-карбонатни прожилки",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 2",
+                "from_m": 101
+              },
+              {
+                "formation": "mdPcC",
+                "to_m": 326,
+                "material": "Биотитови гнайси с локални минерални изменения, серицитизация и хлоритизация",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 2",
+                "from_m": 202.6
+              },
+              {
+                "formation": "mdPcC",
+                "to_m": 338.4,
+                "material": "Биотитови гнайси с интензивна напуканост, окварцяване и карбонатни запълнения",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 2",
+                "from_m": 326
+              },
+              {
+                "formation": "mdPcC",
+                "to_m": 357,
+                "material": "Гранитизирани биотитови гнайси",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 2",
+                "from_m": 338.4
+              },
+              {
+                "formation": "mdPcC",
+                "to_m": 400,
+                "material": "Силно напукани биотитови гнайси с частично карбонатно запълване",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 2",
+                "from_m": 357
+              },
+              {
+                "formation": "mdPcC",
+                "to_m": 436.7,
+                "material": "Слабо напукани биотитови гнайси с окварцяване и карбонатни прожилки",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 2",
+                "from_m": 400
+              }
+            ],
+            "total_depth_m": 436.7,
+            "coordinate_status": "OFFICIAL_EXACT",
+            "coordinate_source_reference": "Row 27, registration 351007003",
+            "coordinate_origin": "БД Източнобеломорски район, официален регистър",
+            "name": "Беденски бани – сондаж №4",
+            "borehole_id": "SMO-BEDENSKI-BANI-S4",
+            "lat": 41.7013666667,
+            "coordinate_source_sha256": "A112E9C14EB7264C9815FDA7BE7A47A1FFB52E12EA9A73AD1A800D3EE30AA228",
+            "column_complete": true,
+            "coordinate_conversion": "Degrees and decimal minutes",
+            "coordinate_original": "N 41 42.082'; E 24 30.094'",
+            "collar_elevation_m": 844.4,
+            "lon": 24.5015666667,
+            "drilling_year": 1968,
+            "official_registration_id": "351007003",
+            "coordinate_scope": "PUBLISHED_BOREHOLE_POSITION",
+            "coordinate_source_local": "_research/smolyan/step02_sources/SMO-A1-008_BDIBR_Coordinate_Register_2022.pdf",
+            "mineral_water": true,
+            "collar_verified": false
+          }
+        }
+      },
+      "free": {
+        "temperature_c": 75,
+        "depth_m": 436.7
+      },
+      "pro": {
+        "research_status": "DOCUMENTED",
+        "smolyan_research_enrichment": {
+          "borehole_id": "SMO-BEDENSKI-BANI-S4",
+          "source_id": "SMO-A1-008",
+          "registration_number": "351007003",
+          "source_url": "https://www.mh.government.bg/upload/6865/40-badenski_mineralni_bani-sondazh4-07-05-2015.pdf",
+          "source_reference": "Pages 1-2, section A",
+          "water_observations": {
+            "ph": 6.77,
+            "deposit": "Беденски бани",
+            "mineralization_conclusion_mg_l": 1741.31,
+            "first_water_inflow_depth_m": null,
+            "source_reference": "Pages 2-3 and conclusion",
+            "sample_temperature_c": 73.3,
+            "artesian": true,
+            "documented_open_hole_from_m": 44.7,
+            "borehole_id": "SMO-BEDENSKI-BANI-S4",
+            "technical_discharge_lps": 2.5,
+            "documented_open_hole_to_m": 436.7,
+            "measurement_document_year": 2015,
+            "technical_temperature_c": 75,
+            "mineralization_discrepancy": true,
+            "free_flow_elevation_m": 844.6,
+            "mineralization_table_mg_l": 1714.31,
+            "reported_static_water_value_m": 173.8
+          },
+          "temperature_type": "DOCUMENTED_TECHNICAL_TEMPERATURE",
+          "inferred_water_horizons_created": false,
+          "quality_flags": []
+        }
+      },
+      "sources": [
+        {
+          "source_id": "SMO-A1-008",
+          "source_type": "DOCUMENTARY_RESEARCH",
+          "title": "Балнеологична оценка №40 от 07.05.2015 г. – Беденски бани, сондаж №4",
+          "url": "https://www.mh.government.bg/upload/6865/40-badenski_mineralni_bani-sondazh4-07-05-2015.pdf",
+          "source_url": "https://www.mh.government.bg/upload/6865/40-badenski_mineralni_bani-sondazh4-07-05-2015.pdf",
+          "publication_year": 2015
+        }
+      ],
+      "origin": "SMOLYAN_DOCUMENTARY_RESEARCH"
+    },
+    {
+      "mineral_id": "mw_a07a3f0630693bc3",
+      "identity": {
+        "name": "Сондаж №3хг",
+        "facility_type": "Минерален сондаж",
+        "deposit": "Баните",
+        "settlement": "Баните",
+        "registration_number": "351002001"
+      },
+      "location": {
+        "lat": 41.6142666667,
+        "lon": 25.0061,
+        "status": "OFFICIAL_EXACT",
+        "origin": "БД Източнобеломорски район",
+        "coordinate_evidence": {
+          "borehole_id": "SMO-BANITE-S3HG",
+          "source_id": "SMO-A1-009",
+          "coordinate_scope": "PUBLISHED_BOREHOLE_POSITION",
+          "original_borehole": {
+            "total_depth_m": 426.7,
+            "coordinate_source_sha256": "A112E9C14EB7264C9815FDA7BE7A47A1FFB52E12EA9A73AD1A800D3EE30AA228",
+            "name": "Баните – сондаж №3хг",
+            "collar_verified": false,
+            "coordinate_status": "OFFICIAL_EXACT",
+            "coordinate_source_local": "_research/smolyan/step02_sources/SMO-A1-008_BDIBR_Coordinate_Register_2022.pdf",
+            "column_complete": true,
+            "drilling_year": 1965,
+            "coordinate_scope": "PUBLISHED_BOREHOLE_POSITION",
+            "coordinate_origin": "БД Източнобеломорски район",
+            "lithological_column_end_m": 427,
+            "official_registration_id": "351002001",
+            "coordinate_conversion": "Degrees and decimal minutes",
+            "lat": 41.6142666667,
+            "mineral_water": true,
+            "coordinate_source_reference": "Page 1, row 5",
+            "additional_observations": [
+              {
+                "observation": "Документирано начало на напуканост в интервала 142.6-273.7 м",
+                "source_reference": "Page 2",
+                "depth_m": 185.5
+              }
+            ],
+            "depth_discrepancy_m": 0.3,
+            "lon": 25.0061,
+            "drilling_period": "1963-1965",
+            "intervals": [
+              {
+                "material": "Насип от глина и чакъл",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 1",
+                "to_m": 3.1,
+                "from_m": 0
+              },
+              {
+                "material": "Гранитизирани биотитови гнайси с карбонатни и епидотови прожилки",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 1",
+                "to_m": 81.5,
+                "from_m": 3.1
+              },
+              {
+                "material": "Биотитови гранитизирани гнайси, хлоритизирани, с кварц-карбонатни прожилки и локално раздробяване",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 1",
+                "to_m": 142.6,
+                "from_m": 81.5
+              },
+              {
+                "material": "Биотитови гранитизирани гнайси, първоначално здрави, след 185.5 м напукани и слабо хлоритизирани, локално окварцени",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 2",
+                "to_m": 273.7,
+                "from_m": 142.6
+              },
+              {
+                "material": "Биотитови гранитизирани гнайси със слаба тектонска преработка, хлоритизация, серицитизация и каолинизация",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 2",
+                "to_m": 347.4,
+                "from_m": 273.7
+              },
+              {
+                "material": "Биотитови гранитизирани гнайси с кварцови и карбонатни прожилки",
+                "evidence_type": "DOCUMENTED_BOREHOLE_LITHOLOGY",
+                "source_reference": "Page 2",
+                "to_m": 427,
+                "from_m": 347.4
+              }
+            ],
+            "coordinate_original": "N 41 36.856'; E 25 00.366'",
+            "collar_elevation_m": 684.12,
+            "depth_discrepancy_preserved": true,
+            "borehole_id": "SMO-BANITE-S3HG",
+            "coordinate_source_url": "https://earbd.bg/files/File/Razreshitelni/Registri%20na%20izdadenite%20razreshitelni/2022/28.01/Register_saoraje%20MV_%20BD%20IBR%20_%C2%A7133.pdf"
+          }
+        }
+      },
+      "free": {
+        "temperature_c": 42,
+        "depth_m": 426.7
+      },
+      "pro": {
+        "research_status": "DOCUMENTED",
+        "smolyan_research_enrichment": {
+          "borehole_id": "SMO-BANITE-S3HG",
+          "source_id": "SMO-A1-009",
+          "registration_number": "351002001",
+          "source_url": "https://www.mh.government.bg/upload/6892/11-banite-sondazh3hg-04-08-2014.pdf",
+          "source_reference": "Pages 1-2, section A",
+          "water_observations": {
+            "mineralization_mg_l": 840.05,
+            "borehole_id": "SMO-BANITE-S3HG",
+            "deposit": "Баните",
+            "documented_open_hole_from_m": 99.8,
+            "reported_water_level_elevation_m": 680.77,
+            "sample_discharge_lps": 6.64,
+            "first_water_inflow_depth_m": null,
+            "allowable_drawdown_m": 4.15,
+            "documented_open_hole_to_m": 427,
+            "approved_deposit_resource_lps": 6.64,
+            "source_reference": "Pages 1-3",
+            "sample_temperature_c": 40.3,
+            "technical_discharge_lps": 6.64,
+            "technical_temperature_c": 42,
+            "ph": 7.2,
+            "measurement_document_year": 2014
+          },
+          "temperature_type": "DOCUMENTED_TECHNICAL_TEMPERATURE",
+          "inferred_water_horizons_created": false,
+          "quality_flags": [
+            "DEPTH_CONFLICT: 427 > 426.7"
+          ]
+        }
+      },
+      "sources": [
+        {
+          "source_id": "SMO-A1-009",
+          "source_type": "DOCUMENTARY_RESEARCH",
+          "title": "Балнеологична оценка №11 от 04.08.2014 г. – Баните, сондаж №3хг",
+          "url": "https://www.mh.government.bg/upload/6892/11-banite-sondazh3hg-04-08-2014.pdf",
+          "source_url": "https://www.mh.government.bg/upload/6892/11-banite-sondazh3hg-04-08-2014.pdf",
+          "publication_year": 2014
+        }
+      ],
+      "origin": "SMOLYAN_DOCUMENTARY_RESEARCH"
     }
   ],
   "non_point_research_records": [
